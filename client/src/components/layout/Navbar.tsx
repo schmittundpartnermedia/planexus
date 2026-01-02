@@ -3,6 +3,7 @@ import { Menu, X, Phone, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import logo from "@assets/Planexus_Home-e1738171155684_1767361842201.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,20 +19,13 @@ export function Navbar() {
   }, []);
 
   const isHome = location === "/";
-
-  // Navbar style logic:
-  // On Home: Transparent (Dark Text Mode) initially? No, Home Hero is Dark. So Text White initially.
-  // On Other Pages: White background always? Or Transparent with Dark Text?
-  // Let's go with:
-  // Home: Transparent (White Text) -> Scrolled (White Bg, Dark Text)
-  // Others: White Bg (Dark Text) always
-  
   const isTransparent = isHome && !scrolled;
 
   const links = [
     { href: "/", label: "Start" },
     { href: "/about", label: "Über uns" },
     { href: "/services", label: "Leistungen" },
+    { href: "/magazine", label: "Magazin" }, // Added Magazine Link
     { href: "/team", label: "Team" },
     { href: "/contact", label: "Kontakt" },
   ];
@@ -47,22 +41,28 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         <Link href="/">
-          <a className={cn(
-            "text-2xl font-heading font-bold tracking-tighter flex items-center gap-2 transition-colors",
-            isTransparent ? "text-white" : "text-slate-900"
-          )}>
-            <div className={cn(
-                "w-10 h-10 rounded-lg flex items-center justify-center transition-colors",
-                isTransparent ? "bg-primary text-white" : "bg-primary text-white"
-            )}>
-              <span className="font-bold text-xl">P</span>
-            </div>
-            PLANEXUS
+          <a className="flex items-center gap-2">
+            <img 
+              src={logo} 
+              alt="Planexus Logo" 
+              className={cn(
+                "h-12 w-auto transition-all",
+                // If on transparent home, maybe we need a white version? 
+                // Assuming the logo provided is colored/suitable for white bg. 
+                // If it's dark text on dark bg, we might need a filter invert or brightness boost.
+                // The image shows white text logo. If the provided logo is the one with white text "PLANEXUS", 
+                // it will work great on dark home hero.
+                // But on scrolled (white) navbar, we need a dark version or invert it.
+                // Let's assume the logo provided has white text (based on the image name "Planexus_Home...").
+                // If so, we need to invert it when navbar is white.
+                !isTransparent && "invert contrast-150 brightness-0" // Hack to make white logo black
+              )} 
+            />
           </a>
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {links.map((link) => (
             <Link key={link.href} href={link.href}>
               <a
@@ -100,7 +100,7 @@ export function Navbar() {
         {/* Mobile Toggle */}
         <button
           className={cn(
-            "md:hidden p-2 transition-colors",
+            "lg:hidden p-2 transition-colors",
             isTransparent ? "text-white" : "text-slate-900"
           )}
           onClick={() => setIsOpen(!isOpen)}
@@ -116,7 +116,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-gray-100 overflow-hidden shadow-xl"
+            className="lg:hidden bg-white border-b border-gray-100 overflow-hidden shadow-xl"
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {links.map((link) => (

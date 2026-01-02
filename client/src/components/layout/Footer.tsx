@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import logo from "@assets/Planexus_Home-e1738171155684_1767361842201.png";
 
 export function Footer() {
   return (
@@ -9,11 +10,8 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/">
-              <a className="text-2xl font-heading font-bold tracking-tighter text-white flex items-center gap-2">
-                <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center text-white">
-                  <span className="font-bold text-lg">P</span>
-                </div>
-                PLANEXUS
+              <a className="flex items-center gap-2">
+                 <img src={logo} alt="Planexus" className="h-10 w-auto" />
               </a>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -28,6 +26,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li><Link href="/about"><a className="text-slate-400 hover:text-primary transition-colors">Über uns</a></Link></li>
               <li><Link href="/services"><a className="text-slate-400 hover:text-primary transition-colors">Leistungen</a></Link></li>
+              <li><Link href="/magazine"><a className="text-slate-400 hover:text-primary transition-colors">Magazin</a></Link></li>
               <li><Link href="/team"><a className="text-slate-400 hover:text-primary transition-colors">Team</a></Link></li>
               <li><Link href="/contact"><a className="text-slate-400 hover:text-primary transition-colors">Kontakt</a></Link></li>
             </ul>
