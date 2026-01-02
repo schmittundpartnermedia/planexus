@@ -18,14 +18,11 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isHome = location === "/";
-  const isTransparent = isHome && !scrolled;
-
   const links = [
     { href: "/", label: "Start" },
     { href: "/about", label: "Über uns" },
     { href: "/services", label: "Leistungen" },
-    { href: "/magazine", label: "Magazin" }, // Added Magazine Link
+    { href: "/magazine", label: "Magazin" },
     { href: "/team", label: "Team" },
     { href: "/contact", label: "Kontakt" },
   ];
@@ -33,10 +30,10 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isTransparent 
-          ? "bg-transparent border-transparent h-24" 
-          : "bg-white/95 backdrop-blur-md border-b border-gray-100 h-20 shadow-sm"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20",
+        scrolled 
+          ? "bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg" 
+          : "bg-slate-900 border-b border-slate-800"
       )}
     >
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
@@ -45,18 +42,7 @@ export function Navbar() {
             <img 
               src={logo} 
               alt="Planexus Logo" 
-              className={cn(
-                "h-12 w-auto transition-all",
-                // If on transparent home, maybe we need a white version? 
-                // Assuming the logo provided is colored/suitable for white bg. 
-                // If it's dark text on dark bg, we might need a filter invert or brightness boost.
-                // The image shows white text logo. If the provided logo is the one with white text "PLANEXUS", 
-                // it will work great on dark home hero.
-                // But on scrolled (white) navbar, we need a dark version or invert it.
-                // Let's assume the logo provided has white text (based on the image name "Planexus_Home...").
-                // If so, we need to invert it when navbar is white.
-                !isTransparent && "invert contrast-150 brightness-0" // Hack to make white logo black
-              )} 
+              className="h-10 w-auto" 
             />
           </a>
         </Link>
@@ -68,9 +54,7 @@ export function Navbar() {
               <a
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary relative group uppercase tracking-wide",
-                  isTransparent 
-                    ? (location === link.href ? "text-primary" : "text-white/80 hover:text-white") 
-                    : (location === link.href ? "text-primary" : "text-slate-600 hover:text-primary")
+                  location === link.href ? "text-primary" : "text-white/80 hover:text-white"
                 )}
               >
                 {link.label}
@@ -85,12 +69,7 @@ export function Navbar() {
           ))}
           <a
             href="tel:+4974357519700"
-            className={cn(
-              "flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all border",
-              isTransparent
-                ? "border-primary text-primary bg-white hover:bg-white/90"
-                : "bg-primary text-white border-primary hover:bg-primary/90"
-            )}
+            className="flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all border border-primary text-primary bg-transparent hover:bg-primary hover:text-white"
           >
             <Phone className="w-4 h-4" />
             <span>+49 7435 7519 700</span>
@@ -99,10 +78,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className={cn(
-            "lg:hidden p-2 transition-colors",
-            isTransparent ? "text-white" : "text-slate-900"
-          )}
+          className="lg:hidden p-2 transition-colors text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X /> : <Menu />}
