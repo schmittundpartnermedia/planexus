@@ -12,6 +12,9 @@ import Services from "@/pages/services";
 import Contact from "@/pages/contact";
 import Team from "@/pages/team";
 import Magazine from "@/pages/magazine";
+import Article1 from "@/pages/magazine/article1";
+import Article2 from "@/pages/magazine/article2";
+import Article3 from "@/pages/magazine/article3";
 import PlanningService from "@/pages/services/planning";
 import ConstructionService from "@/pages/services/construction";
 import LogisticsService from "@/pages/services/logistics";
@@ -34,6 +37,9 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/team" component={Team} />
       <Route path="/magazine" component={Magazine} />
+      <Route path="/magazine/1" component={Article1} />
+      <Route path="/magazine/2" component={Article2} />
+      <Route path="/magazine/3" component={Article3} />
       <Route component={NotFound} />
     </Switch>
   );
