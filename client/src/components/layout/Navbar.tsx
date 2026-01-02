@@ -17,6 +17,17 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isHome = location === "/";
+
+  // Navbar style logic:
+  // On Home: Transparent (Dark Text Mode) initially? No, Home Hero is Dark. So Text White initially.
+  // On Other Pages: White background always? Or Transparent with Dark Text?
+  // Let's go with:
+  // Home: Transparent (White Text) -> Scrolled (White Bg, Dark Text)
+  // Others: White Bg (Dark Text) always
+  
+  const isTransparent = isHome && !scrolled;
+
   const links = [
     { href: "/", label: "Start" },
     { href: "/about", label: "Über uns" },
@@ -28,17 +39,23 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-        scrolled
-          ? "bg-background/80 backdrop-blur-lg border-border h-16"
-          : "bg-transparent border-transparent h-20"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isTransparent 
+          ? "bg-transparent border-transparent h-24" 
+          : "bg-white/95 backdrop-blur-md border-b border-gray-100 h-20 shadow-sm"
       )}
     >
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         <Link href="/">
-          <a className="text-2xl font-heading font-bold tracking-tighter text-white flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center">
-              <span className="text-background font-bold text-lg">P</span>
+          <a className={cn(
+            "text-2xl font-heading font-bold tracking-tighter flex items-center gap-2 transition-colors",
+            isTransparent ? "text-white" : "text-slate-900"
+          )}>
+            <div className={cn(
+                "w-10 h-10 rounded-lg flex items-center justify-center transition-colors",
+                isTransparent ? "bg-primary text-white" : "bg-primary text-white"
+            )}>
+              <span className="font-bold text-xl">P</span>
             </div>
             PLANEXUS
           </a>
@@ -50,8 +67,10 @@ export function Navbar() {
             <Link key={link.href} href={link.href}>
               <a
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary relative group",
-                  location === link.href ? "text-primary" : "text-muted-foreground"
+                  "text-sm font-medium transition-colors hover:text-primary relative group uppercase tracking-wide",
+                  isTransparent 
+                    ? (location === link.href ? "text-primary" : "text-white/80 hover:text-white") 
+                    : (location === link.href ? "text-primary" : "text-slate-600 hover:text-primary")
                 )}
               >
                 {link.label}
@@ -66,7 +85,12 @@ export function Navbar() {
           ))}
           <a
             href="tel:+4974357519700"
-            className="flex items-center gap-2 text-sm font-bold text-primary border border-primary/20 px-4 py-2 rounded-full hover:bg-primary/10 transition-colors"
+            className={cn(
+              "flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all border",
+              isTransparent
+                ? "border-primary text-primary bg-white hover:bg-white/90"
+                : "bg-primary text-white border-primary hover:bg-primary/90"
+            )}
           >
             <Phone className="w-4 h-4" />
             <span>+49 7435 7519 700</span>
@@ -75,7 +99,10 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-foreground p-2"
+          className={cn(
+            "md:hidden p-2 transition-colors",
+            isTransparent ? "text-white" : "text-slate-900"
+          )}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X /> : <Menu />}
@@ -89,7 +116,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
+            className="md:hidden bg-white border-b border-gray-100 overflow-hidden shadow-xl"
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {links.map((link) => (
@@ -97,20 +124,20 @@ export function Navbar() {
                   <a
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "text-lg font-medium py-2 border-b border-border/50",
-                      location === link.href ? "text-primary" : "text-foreground"
+                      "text-lg font-medium py-3 border-b border-gray-50",
+                      location === link.href ? "text-primary" : "text-slate-700"
                     )}
                   >
                     {link.label}
                   </a>
                 </Link>
               ))}
-              <div className="flex flex-col gap-4 mt-4 pt-4 border-t border-border">
-                 <a href="tel:+4974357519700" className="flex items-center gap-3 text-muted-foreground hover:text-primary">
-                    <Phone className="w-5 h-5" /> +49 7435 7519 700
+              <div className="flex flex-col gap-4 mt-4 pt-4 border-t border-gray-100">
+                 <a href="tel:+4974357519700" className="flex items-center gap-3 text-slate-600 hover:text-primary">
+                    <Phone className="w-5 h-5 text-primary" /> +49 7435 7519 700
                  </a>
-                 <a href="mailto:info@planexus.de" className="flex items-center gap-3 text-muted-foreground hover:text-primary">
-                    <Mail className="w-5 h-5" /> info@planexus.de
+                 <a href="mailto:info@planexus.de" className="flex items-center gap-3 text-slate-600 hover:text-primary">
+                    <Mail className="w-5 h-5 text-primary" /> info@planexus.de
                  </a>
               </div>
             </div>

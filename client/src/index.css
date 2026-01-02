@@ -52,46 +52,71 @@
 }
 
 :root {
-  /* Elegant Tech Theme */
-  /* Deep Navy/Slate */
-  --background: 222 47% 11%;
-  --foreground: 210 40% 98%;
+  /* Clean White Theme with Planexus Green */
+  
+  /* White Background */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%; /* Dark Navy Text for contrast */
 
-  /* Darker Navy for cards */
-  --card: 222 47% 13%;
-  --card-foreground: 210 40% 98%;
+  /* White/Light Gray Cards */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
 
-  --popover: 222 47% 11%;
-  --popover-foreground: 210 40% 98%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
 
-  /* Electric Blue/Cyan Accent */
-  --primary: 199 89% 48%;
-  --primary-foreground: 222 47% 11%;
+  /* Planexus Green - Vibrant Lime/Chartreuse */
+  /* Extracted approx from logo: #9CCB00 -> hsl(84, 100%, 40%) */
+  --primary: 84 80% 40%; 
+  --primary-foreground: 0 0% 100%;
 
-  /* Muted Cool Gray */
-  --secondary: 217 33% 17%;
-  --secondary-foreground: 210 40% 98%;
+  /* Soft Gray Secondary */
+  --secondary: 210 20% 96%;
+  --secondary-foreground: 222 47% 11%;
 
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
+  --muted: 210 20% 96%;
+  --muted-foreground: 215 16% 47%;
 
-  --accent: 199 89% 48%;
-  --accent-foreground: 222 47% 11%;
+  --accent: 84 80% 40%;
+  --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 62.8% 30.6%;
+  --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 217 33% 20%;
-  --input: 217 33% 20%;
-  --ring: 199 89% 48%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 84 80% 40%;
 
-  --chart-1: 199 89% 48%;
+  --chart-1: 84 80% 40%;
   --chart-2: 173 58% 39%;
   --chart-3: 197 37% 24%;
   --chart-4: 43 74% 66%;
   --chart-5: 27 87% 67%;
 
-  --radius: 0.25rem;
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Fallback Dark Mode if needed, but primary is Light now */
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  --card: 222 47% 13%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 84 80% 45%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 84 80% 45%;
+  --accent-foreground: 222 47% 11%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217 33% 20%;
+  --input: 217 33% 20%;
+  --ring: 84 80% 45%;
 }
 
 @layer base {
@@ -106,20 +131,22 @@
   }
 }
 
-/* Custom utilities for glass effects and advanced styling */
 @layer utilities {
   .glass {
-    @apply bg-background/60 backdrop-blur-md border border-white/10;
+    @apply bg-white/60 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+     @apply bg-black/60 backdrop-blur-md border border-white/10;
   }
   
   .text-glow {
     text-shadow: 0 0 20px hsla(var(--primary), 0.5);
   }
 
-  .grid-pattern {
-    background-size: 40px 40px;
-    background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  /* Dot pattern for clean tech feel on white */
+  .bg-dot-pattern {
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }

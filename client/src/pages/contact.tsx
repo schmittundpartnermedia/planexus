@@ -38,12 +38,12 @@ export default function Contact() {
   }
 
   return (
-    <div className="pt-20 min-h-screen">
-      <section className="bg-card py-20 border-b border-border">
+    <div className="pt-20 min-h-screen bg-white">
+      <section className="bg-slate-50 py-20 border-b border-gray-100">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-heading font-bold mb-6">Kontaktieren Sie uns</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Starten Sie Ihr nächstes Projekt mit einem starken Partner.
+          <h1 className="text-5xl font-heading font-bold mb-6 text-slate-900">Kontaktieren Sie uns</h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Starten Sie Ihr Laborprojekt mit einem starken Partner.
           </p>
         </div>
       </section>
@@ -55,40 +55,40 @@ export default function Contact() {
             <div className="space-y-12">
               <div>
                 <h3 className="text-2xl font-bold mb-6 text-primary">Unsere Kontaktdaten</h3>
-                <p className="text-muted-foreground mb-8">
-                  Wir stehen Ihnen jederzeit für Fragen und Beratungen zur Verfügung.
+                <p className="text-gray-600 mb-8">
+                  Wir stehen Ihnen jederzeit für Fragen zu <strong>Laborcontainern</strong> und Planungsleistungen zur Verfügung.
                 </p>
                 
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center shrink-0">
-                      <MapPin className="text-primary w-6 h-6" />
+                  <div className="flex items-start gap-4 group">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
+                      <MapPin className="text-primary w-6 h-6 group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1">Adresse</h4>
-                      <p className="text-muted-foreground">Am Steinbach 8<br />72459 Albstadt – Laufen</p>
+                      <h4 className="font-bold text-lg mb-1 text-slate-900">Adresse</h4>
+                      <p className="text-gray-600">Am Steinbach 8<br />72459 Albstadt – Laufen</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center shrink-0">
-                      <Phone className="text-primary w-6 h-6" />
+                  <div className="flex items-start gap-4 group">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
+                      <Phone className="text-primary w-6 h-6 group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1">Telefon</h4>
-                      <a href="tel:+4974357519700" className="text-muted-foreground hover:text-white transition-colors">
+                      <h4 className="font-bold text-lg mb-1 text-slate-900">Telefon</h4>
+                      <a href="tel:+4974357519700" className="text-gray-600 hover:text-primary transition-colors block">
                         +49 7435 7519 700
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center shrink-0">
-                      <Mail className="text-primary w-6 h-6" />
+                  <div className="flex items-start gap-4 group">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
+                      <Mail className="text-primary w-6 h-6 group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1">Email</h4>
-                      <a href="mailto:info@planexus.de" className="text-muted-foreground hover:text-white transition-colors">
+                      <h4 className="font-bold text-lg mb-1 text-slate-900">Email</h4>
+                      <a href="mailto:info@planexus.de" className="text-gray-600 hover:text-primary transition-colors block">
                         info@planexus.de
                       </a>
                     </div>
@@ -96,19 +96,19 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="h-64 bg-secondary rounded-xl overflow-hidden border border-border">
-                 {/* Placeholder for Map - Since we can't embed GMaps easily without API key, use a visual placeholder */}
-                 <div className="w-full h-full flex items-center justify-center bg-card/50">
-                    <span className="text-muted-foreground flex items-center gap-2">
-                        <MapPin className="w-5 h-5" /> Karte wird geladen...
+              <div className="h-64 bg-slate-100 rounded-xl overflow-hidden border border-gray-200">
+                 {/* Placeholder for Map */}
+                 <div className="w-full h-full flex items-center justify-center bg-slate-50">
+                    <span className="text-gray-400 flex items-center gap-2">
+                        <MapPin className="w-5 h-5" /> Standort Albstadt
                     </span>
                  </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-card border border-border p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-8">Schreiben Sie uns</h3>
+            <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg shadow-gray-100">
+              <h3 className="text-2xl font-bold mb-8 text-slate-900">Schreiben Sie uns</h3>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -117,9 +117,9 @@ export default function Contact() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Ihr Name *</FormLabel>
+                          <FormLabel className="text-slate-700">Ihr Name *</FormLabel>
                           <FormControl>
-                            <Input placeholder="Max Mustermann" {...field} className="bg-background border-border" />
+                            <Input placeholder="Max Mustermann" {...field} className="bg-white border-gray-200 focus:border-primary focus:ring-primary/20" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -130,9 +130,9 @@ export default function Contact() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email Adresse *</FormLabel>
+                          <FormLabel className="text-slate-700">Email Adresse *</FormLabel>
                           <FormControl>
-                            <Input placeholder="max@beispiel.de" {...field} className="bg-background border-border" />
+                            <Input placeholder="max@beispiel.de" {...field} className="bg-white border-gray-200 focus:border-primary focus:ring-primary/20" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -145,9 +145,9 @@ export default function Contact() {
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Betreff *</FormLabel>
+                        <FormLabel className="text-slate-700">Betreff *</FormLabel>
                         <FormControl>
-                          <Input placeholder="Anfrage zu..." {...field} className="bg-background border-border" />
+                          <Input placeholder="Anfrage Laborcontainer..." {...field} className="bg-white border-gray-200 focus:border-primary focus:ring-primary/20" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -159,16 +159,16 @@ export default function Contact() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Nachricht *</FormLabel>
+                        <FormLabel className="text-slate-700">Nachricht *</FormLabel>
                         <FormControl>
-                          <Textarea placeholder="Ihre Nachricht an uns..." className="min-h-[150px] bg-background border-border" {...field} />
+                          <Textarea placeholder="Ihre Nachricht an uns..." className="min-h-[150px] bg-white border-gray-200 focus:border-primary focus:ring-primary/20" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
 
-                  <Button type="submit" className="w-full bg-primary text-background font-bold hover:bg-primary/90 h-12 text-lg">
+                  <Button type="submit" className="w-full bg-primary text-white font-bold hover:bg-primary/90 h-12 text-lg shadow-md shadow-primary/20">
                     <Send className="w-5 h-5 mr-2" /> Nachricht senden
                   </Button>
                 </form>
