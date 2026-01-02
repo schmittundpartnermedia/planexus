@@ -1,0 +1,81 @@
+import { SEO } from "@/components/SEO";
+
+export default function Impressum() {
+  return (
+    <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Impressum"
+        description="Impressum der Planexus GmbH - Angaben gemäß § 5 TMG. Laborcontainer und Modulbau Spezialist aus Albstadt."
+        canonical="/impressum"
+      />
+      
+      <section className="py-20 bg-slate-50 border-b border-gray-100">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 text-center">Impressum</h1>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto prose prose-lg prose-slate">
+            
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Angaben gemäß § 5 TMG</h2>
+            
+            <div className="bg-slate-50 p-6 rounded-xl mb-8">
+              <p className="text-lg font-semibold text-slate-900 mb-2">Planexus GmbH</p>
+              <p className="text-gray-600">
+                Am Steinbach 8<br />
+                72459 Albstadt<br />
+                Deutschland
+              </p>
+            </div>
+
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Vertreten durch</h3>
+            <p className="text-gray-600 mb-6">
+              Geschäftsführer: Sven Biewald & Thomas Boss
+            </p>
+
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Kontakt</h3>
+            <p className="text-gray-600 mb-6">
+              Telefon: <a href="tel:+4974357519700" className="text-primary hover:underline">+49 7435 7519 700</a><br />
+              E-Mail: <a href="mailto:info@planexus.de" className="text-primary hover:underline">info@planexus.de</a>
+            </p>
+
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Registereintrag</h3>
+            <p className="text-gray-600 mb-6">
+              Eintragung im Handelsregister<br />
+              Registergericht: Amtsgericht Stuttgart<br />
+              Registernummer: HRB 799338
+            </p>
+
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Umsatzsteuer-ID</h3>
+            <p className="text-gray-600 mb-8">
+              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+              <strong>DE454507127</strong>
+            </p>
+
+            <hr className="my-8 border-gray-200" />
+
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Haftungsausschluss</h2>
+
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Haftung für Inhalte</h3>
+            <p className="text-gray-600 mb-6">
+              Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+            </p>
+
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Haftung für Links</h3>
+            <p className="text-gray-600 mb-6">
+              Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+            </p>
+
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Urheberrecht</h3>
+            <p className="text-gray-600 mb-6">
+              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+            </p>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

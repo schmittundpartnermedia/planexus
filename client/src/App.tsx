@@ -21,6 +21,8 @@ import LogisticsService from "@/pages/services/logistics";
 import EquipmentService from "@/pages/services/equipment";
 import ConsultingService from "@/pages/services/consulting";
 import SmartLabService from "@/pages/services/smart-lab";
+import Impressum from "@/pages/impressum";
+import Datenschutz from "@/pages/datenschutz";
 
 function Router() {
   return (
@@ -40,6 +42,8 @@ function Router() {
       <Route path="/magazine/1" component={Article1} />
       <Route path="/magazine/2" component={Article2} />
       <Route path="/magazine/3" component={Article3} />
+      <Route path="/impressum" component={Impressum} />
+      <Route path="/datenschutz" component={Datenschutz} />
       <Route component={NotFound} />
     </Switch>
   );
