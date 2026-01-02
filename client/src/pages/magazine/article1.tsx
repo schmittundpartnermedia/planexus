@@ -17,7 +17,7 @@ export default function Article1() {
         description="Wie modulare Bauweisen die Flexibilität in der Forschung erhöhen und warum Containerlabore eine echte Alternative zum Massivbau sind."
         author="Sven Biewald"
         datePublished="2026-01-12"
-        image="https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=2070"
+        image="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070"
         url="/magazine/1"
       />
       <BreadcrumbSchema items={[
@@ -27,7 +27,7 @@ export default function Article1() {
       ]} />
       {/* Hero */}
       <section className="relative py-20 bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=2070')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
         
         <div className="container mx-auto px-4 relative z-10">

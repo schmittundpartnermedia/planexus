@@ -12,7 +12,7 @@ export default function Magazine() {
       date: "12. Januar 2026",
       author: "Sven Biewald",
       category: "Technologie",
-      image: "https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=2070&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop"
     },
     {
       id: 2,
