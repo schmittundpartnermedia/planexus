@@ -160,42 +160,71 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                icon: <Layout className="w-10 h-10 text-primary" />,
-                title: "Konzeption & Planung",
-                desc: "Maßgeschneiderte Labor-Layouts, Workflow-Optimierung und technische TGA-Fachplanung."
+                href: "/services/planning",
+                icon: <Layout className="w-8 h-8 text-primary" />,
+                title: "Technische Fachplanung",
+                desc: "Detaillierte Planung mit 3D-Visualisierung und TGA-Konzepten."
               },
               {
-                icon: <Layers className="w-10 h-10 text-primary" />,
-                title: "Modulbau & Realisierung",
-                desc: "Fertigung hochwertiger Laborcontainer 'Made in Germany' nach aktuellen Normen."
+                href: "/services/construction",
+                icon: <Layers className="w-8 h-8 text-primary" />,
+                title: "Modulbau & Fertigung",
+                desc: "Hochwertige Laborcontainer 'Made in Germany'."
               },
               {
-                icon: <ShieldCheck className="w-10 h-10 text-primary" />,
-                title: "Beratung & Service",
-                desc: "Begleitung bei Genehmigungsverfahren, Sicherheitskonzepte und After-Sales-Service."
+                href: "/services/logistics",
+                icon: <Box className="w-8 h-8 text-primary" />,
+                title: "Logistik & Montage",
+                desc: "Weltweiter Transport und schlüsselfertige Übergabe."
+              },
+              {
+                href: "/services/equipment",
+                icon: <Microscope className="w-8 h-8 text-primary" />,
+                title: "Laborausstattung",
+                desc: "Labormöbel, Abzüge und Sicherheitsausstattung."
+              },
+              {
+                href: "/services/consulting",
+                icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+                title: "Beratung & Genehmigung",
+                desc: "Unterstützung bei allen behördlichen Verfahren."
+              },
+              {
+                href: "/services/smart-lab",
+                icon: <Layout className="w-8 h-8 text-primary" />,
+                title: "Smart Lab Integration",
+                desc: "Digitale Vernetzung und IoT-Monitoring."
               }
             ].map((service, index) => (
               <motion.div 
                 key={index}
                 whileHover={{ y: -5 }}
-                className="bg-white border border-gray-100 p-8 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden"
+                className="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.desc}</p>
-                <Link href="/services">
-                  <a className="text-primary font-bold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                <h3 className="text-lg font-bold mb-2 text-slate-900">{service.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">{service.desc}</p>
+                <Link href={service.href}>
+                  <a className="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
                     Mehr erfahren <ArrowRight className="w-4 h-4" />
                   </a>
                 </Link>
               </motion.div>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/services">
+              <a className="inline-flex items-center gap-2 bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors">
+                Alle Leistungen ansehen <ArrowRight className="w-5 h-5" />
+              </a>
+            </Link>
           </div>
         </div>
       </section>

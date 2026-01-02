@@ -8,6 +8,7 @@ import logo from "@assets/Planexus_Home-e1738171155684_1767361842201.png";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
 
@@ -20,8 +21,6 @@ export function Navbar() {
   }, []);
 
   const links = [
-    { href: "/", label: "Start" },
-    { href: "/services", label: "Leistungen" },
     { href: "/magazine", label: "Magazin" },
     { href: "/contact", label: "Kontakt" },
   ];
@@ -29,6 +28,16 @@ export function Navbar() {
   const aboutLinks = [
     { href: "/about", label: "Über uns" },
     { href: "/team", label: "Team" },
+  ];
+
+  const serviceLinks = [
+    { href: "/services", label: "Leistungsübersicht" },
+    { href: "/services/planning", label: "Technische Fachplanung" },
+    { href: "/services/construction", label: "Modulbau & Fertigung" },
+    { href: "/services/logistics", label: "Logistik & Montage" },
+    { href: "/services/equipment", label: "Laborausstattung" },
+    { href: "/services/consulting", label: "Beratung & Genehmigung" },
+    { href: "/services/smart-lab", label: "Smart Lab Integration" },
   ];
 
   return (
@@ -117,9 +126,57 @@ export function Navbar() {
               )}
             </AnimatePresence>
           </div>
+
+          {/* Leistungen Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 uppercase tracking-wide",
+                location.startsWith("/services") ? "text-primary" : "text-white/80 hover:text-white"
+              )}
+            >
+              Leistungen
+              <ChevronDown className={cn("w-4 h-4 transition-transform", servicesOpen && "rotate-180")} />
+            </button>
+            {location.startsWith("/services") && (
+              <motion.div
+                layoutId="navbar-indicator-services"
+                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+              />
+            )}
+            
+            <AnimatePresence>
+              {servicesOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[220px] z-50"
+                >
+                  {serviceLinks.map((link, index) => (
+                    <Link key={link.href} href={link.href}>
+                      <a
+                        className={cn(
+                          "block px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary",
+                          location === link.href ? "text-primary bg-primary/5" : "text-slate-700",
+                          index === 0 && "border-b border-gray-100 mb-1 pb-3"
+                        )}
+                      >
+                        {link.label}
+                      </a>
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
           
           {/* Other Links */}
-          {links.slice(1).map((link) => (
+          {links.map((link) => (
             <Link key={link.href} href={link.href}>
               <a
                 className={cn(
@@ -195,9 +252,27 @@ export function Navbar() {
                   </Link>
                 ))}
               </div>
+
+              {/* Leistungen Section */}
+              <div className="border-b border-gray-50">
+                <p className="text-xs uppercase tracking-wider text-gray-400 pt-3 pb-1">Leistungen</p>
+                {serviceLinks.map((link) => (
+                  <Link key={link.href} href={link.href}>
+                    <a
+                      onClick={() => setIsOpen(false)}
+                      className={cn(
+                        "block text-lg font-medium py-2 pl-4",
+                        location === link.href ? "text-primary" : "text-slate-700"
+                      )}
+                    >
+                      {link.label}
+                    </a>
+                  </Link>
+                ))}
+              </div>
               
               {/* Other Links */}
-              {links.slice(1).map((link) => (
+              {links.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <a
                     onClick={() => setIsOpen(false)}
