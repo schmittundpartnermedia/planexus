@@ -1,10 +1,26 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Microscope, Beaker, Wind, Shield, Database, Gauge, Phone, ChevronRight, Lightbulb } from "lucide-react";
+import { SEO, ServiceSchema, BreadcrumbSchema } from "@/components/SEO";
 
 export default function EquipmentService() {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Laborausstattung"
+        description="Komplette Laborausstattung für Ihren Container. Labormöbel, Abzüge, Sicherheitseinrichtungen und Geräteintegration aus einer Hand."
+        canonical="/services/equipment"
+      />
+      <ServiceSchema 
+        name="Laborausstattung"
+        description="Komplette Laborausstattung mit Labormöbeln, Abzügen und Sicherheitseinrichtungen"
+        url="/services/equipment"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Start", url: "/" },
+        { name: "Leistungen", url: "/services" },
+        { name: "Laborausstattung", url: "/services/equipment" }
+      ]} />
       {/* Hero Section */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070')] bg-cover bg-center opacity-20"></div>

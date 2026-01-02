@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Linkedin, Mail, Quote } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 export default function Team() {
   const team = [
@@ -37,6 +38,11 @@ export default function Team() {
 
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Team - Experten für Laborcontainer"
+        description="Das Planexus Team: Sven Biewald und Thomas Boss - Experten für Laborcontainer und Modulbau mit über 10 Jahren Erfahrung."
+        canonical="/team"
+      />
        <section className="bg-slate-50 py-20 border-b border-gray-100">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-heading font-bold mb-6 text-slate-900">Das Planexus Team</h1>

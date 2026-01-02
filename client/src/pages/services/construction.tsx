@@ -1,10 +1,26 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Hammer, Layers, Shield, Factory, Wrench, Cog, Phone, ChevronRight, Lightbulb } from "lucide-react";
+import { SEO, ServiceSchema, BreadcrumbSchema } from "@/components/SEO";
 
 export default function ConstructionService() {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Modulbau & Fertigung"
+        description="Hochwertige Laborcontainer Made in Germany. Präzise Fertigung, robuste Stahlrahmenkonstruktion und labortaugliche Oberflächen. Qualität seit über 10 Jahren."
+        canonical="/services/construction"
+      />
+      <ServiceSchema 
+        name="Modulbau & Fertigung"
+        description="Hochwertige Laborcontainer-Fertigung Made in Germany mit Stahlrahmenkonstruktion"
+        url="/services/construction"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Start", url: "/" },
+        { name: "Leistungen", url: "/services" },
+        { name: "Modulbau & Fertigung", url: "/services/construction" }
+      ]} />
       {/* Hero Section */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070')] bg-cover bg-center opacity-20"></div>

@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, Award, History, Lightbulb, UserCheck } from "lucide-react";
 import interiorBg from "@assets/generated_images/high-tech_lab_interior.png";
+import { SEO } from "@/components/SEO";
 
 export default function About() {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Über Planexus - Ihre Laborcontainer Experten"
+        description="Lernen Sie Planexus kennen: Pioniere im modularen Laborbau seit 2016. Erfahrung, Innovation und Qualität für Ihre Laborprojekte."
+        canonical="/about"
+      />
       {/* Header */}
       <section className="py-20 bg-slate-50 border-b border-gray-100">
         <div className="container mx-auto px-4">

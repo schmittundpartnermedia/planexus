@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight, Calendar, User, Tag } from "lucide-react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 export default function Magazine() {
   const posts = [
@@ -35,6 +36,11 @@ export default function Magazine() {
 
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Magazin - Fachwissen Laborcontainer & Modulbau"
+        description="Das Planexus Magazin: Aktuelle Artikel, Fachwissen und Trends zu Laborcontainern, Modulbau, BSL-Laboren und nachhaltiger Laborplanung."
+        canonical="/magazine"
+      />
       <section className="bg-slate-50 py-20 border-b border-gray-100">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-heading font-bold mb-6 text-slate-900">Planexus Magazin</h1>

@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import heroBg from "@assets/generated_images/modern_laboratory_container_exterior.png";
 import blueprintBg from "@assets/generated_images/technical_blueprint_abstract_background.png";
 import { useEffect } from "react";
+import { SEO } from "@/components/SEO";
 
 export default function Home() {
   const x = useMotionValue(0);
@@ -26,6 +27,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground" onMouseMove={handleMouseMove}>
+      <SEO 
+        title="Laborcontainer & Modulbau Labor Spezialist"
+        description="Planexus ist Ihr Experte für Laborcontainer, mobile Labore und Modulbau. Über 10 Jahre Erfahrung in Laborplanung, BSL-2/BSL-3 Labore und Containerbau."
+        canonical="/"
+      />
       {/* Hero Section - Dark & Impactful (As requested "Hero lassen wir so") */}
       <section className="relative h-screen flex items-center overflow-hidden bg-slate-950 text-white">
         {/* Background Image with Overlay and Parallax */}

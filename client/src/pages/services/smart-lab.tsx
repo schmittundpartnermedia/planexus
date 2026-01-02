@@ -1,10 +1,26 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Zap, Wifi, Thermometer, Lock, BarChart3, Cloud, Phone, ChevronRight, Lightbulb } from "lucide-react";
+import { SEO, ServiceSchema, BreadcrumbSchema } from "@/components/SEO";
 
 export default function SmartLabService() {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Smart Lab Integration"
+        description="Intelligente Laborvernetzung mit IoT-Sensoren, Raumklima-Monitoring, Zugangskontrolle und Cloud-Anbindung. Digitale Workflows für maximale Effizienz."
+        canonical="/services/smart-lab"
+      />
+      <ServiceSchema 
+        name="Smart Lab Integration"
+        description="Intelligente Laborvernetzung mit IoT-Sensoren und Cloud-Anbindung für digitale Workflows"
+        url="/services/smart-lab"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Start", url: "/" },
+        { name: "Leistungen", url: "/services" },
+        { name: "Smart Lab Integration", url: "/services/smart-lab" }
+      ]} />
       {/* Hero Bereich */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070')] bg-cover bg-center opacity-20"></div>

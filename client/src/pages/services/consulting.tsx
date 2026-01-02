@@ -1,10 +1,26 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, ClipboardCheck, FileText, Scale, Building, Users, BookOpen, Phone, ChevronRight, Lightbulb } from "lucide-react";
+import { SEO, ServiceSchema, BreadcrumbSchema } from "@/components/SEO";
 
 export default function ConsultingService() {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Beratung & Genehmigung"
+        description="Expertenberatung für Laborcontainer-Projekte. Unterstützung bei Genehmigungsverfahren, Baurecht, Arbeitsschutz und Brandschutzkonzepten."
+        canonical="/services/consulting"
+      />
+      <ServiceSchema 
+        name="Beratung & Genehmigung"
+        description="Expertenberatung bei Genehmigungsverfahren, Baurecht und Arbeitsschutz für Laborcontainer"
+        url="/services/consulting"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Start", url: "/" },
+        { name: "Leistungen", url: "/services" },
+        { name: "Beratung & Genehmigung", url: "/services/consulting" }
+      ]} />
       {/* Hero Section */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070')] bg-cover bg-center opacity-20"></div>

@@ -1,10 +1,26 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Truck, MapPin, Package, Clock, Globe, Wrench, Phone, ChevronRight, Lightbulb } from "lucide-react";
+import { SEO, ServiceSchema, BreadcrumbSchema } from "@/components/SEO";
 
 export default function LogisticsService() {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Logistik & Montage"
+        description="Weltweiter Transport und fachgerechte Montage Ihres Laborcontainers. Schlüsselfertige Übergabe, Plug & Play Lösungen und Inbetriebnahme vor Ort."
+        canonical="/services/logistics"
+      />
+      <ServiceSchema 
+        name="Logistik & Montage"
+        description="Weltweiter Transport und fachgerechte Montage von Laborcontainern mit schlüsselfertiger Übergabe"
+        url="/services/logistics"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Start", url: "/" },
+        { name: "Leistungen", url: "/services" },
+        { name: "Logistik & Montage", url: "/services/logistics" }
+      ]} />
       {/* Hero Section */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070')] bg-cover bg-center opacity-20"></div>

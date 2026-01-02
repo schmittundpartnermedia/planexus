@@ -1,10 +1,30 @@
 import { Link } from "wouter";
 import { ArrowRight, ArrowLeft, Calendar, User, Tag, Clock, CheckCircle2, Lightbulb, AlertTriangle, ChevronRight, Share2, Bookmark, Leaf, Sun, Droplets, Wind, Thermometer, Recycle } from "lucide-react";
 import { motion } from "framer-motion";
+import { SEO, ArticleSchema, BreadcrumbSchema } from "@/components/SEO";
 
 export default function Article2() {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Nachhaltigkeit im Laborbau: Energieeffizienz trifft High-Tech"
+        description="Moderne Laborcontainer setzen neue Maßstäbe in Sachen Energieeffizienz. Erfahren Sie, wie nachhaltige Materialien und smarte Klimatechnik den CO2-Fußabdruck senken."
+        canonical="/magazine/2"
+        type="article"
+      />
+      <ArticleSchema 
+        headline="Nachhaltigkeit im Laborbau: Energieeffizienz trifft High-Tech"
+        description="Moderne Laborcontainer setzen neue Maßstäbe in Sachen Energieeffizienz."
+        author="Thomas Boss"
+        datePublished="2026-01-05"
+        image="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070"
+        url="/magazine/2"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Start", url: "/" },
+        { name: "Magazin", url: "/magazine" },
+        { name: "Nachhaltigkeit im Laborbau", url: "/magazine/2" }
+      ]} />
       {/* Hero */}
       <section className="relative py-20 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070')] bg-cover bg-center opacity-20"></div>

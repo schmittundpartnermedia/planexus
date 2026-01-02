@@ -1,10 +1,30 @@
 import { Link } from "wouter";
 import { ArrowRight, ArrowLeft, Calendar, User, Tag, Clock, CheckCircle2, Lightbulb, AlertTriangle, ChevronRight, Share2, Bookmark, TrendingUp, Zap, Box, Building } from "lucide-react";
 import { motion } from "framer-motion";
+import { SEO, ArticleSchema, BreadcrumbSchema } from "@/components/SEO";
 
 export default function Article1() {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Innovation im Modulbau: Die Zukunft des mobilen Labors"
+        description="Wie modulare Bauweisen die Flexibilität in der Forschung erhöhen und warum Containerlabore eine echte Alternative zum Massivbau sind."
+        canonical="/magazine/1"
+        type="article"
+      />
+      <ArticleSchema 
+        headline="Innovation im Modulbau: Die Zukunft des mobilen Labors"
+        description="Wie modulare Bauweisen die Flexibilität in der Forschung erhöhen und warum Containerlabore eine echte Alternative zum Massivbau sind."
+        author="Sven Biewald"
+        datePublished="2026-01-12"
+        image="https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=2070"
+        url="/magazine/1"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Start", url: "/" },
+        { name: "Magazin", url: "/magazine" },
+        { name: "Innovation im Modulbau", url: "/magazine/1" }
+      ]} />
       {/* Hero */}
       <section className="relative py-20 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=2070')] bg-cover bg-center opacity-20"></div>

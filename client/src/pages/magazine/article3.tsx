@@ -1,10 +1,30 @@
 import { Link } from "wouter";
 import { ArrowRight, ArrowLeft, Calendar, User, Tag, Clock, CheckCircle2, Lightbulb, AlertTriangle, ChevronRight, Share2, Bookmark, Shield, Lock, AlertCircle, FileCheck, Microscope, Wind } from "lucide-react";
 import { motion } from "framer-motion";
+import { SEO, ArticleSchema, BreadcrumbSchema } from "@/components/SEO";
 
 export default function Article3() {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="BSL-2 und BSL-3 im Container: Geht das?"
+        description="Sicherheitsstufen im Containerbau sind kein Problem mehr. Erfahren Sie, wie wir höchste Sicherheitsanforderungen in BSL-2 und BSL-3 Laboren in mobilen Einheiten realisieren."
+        canonical="/magazine/3"
+        type="article"
+      />
+      <ArticleSchema 
+        headline="BSL-2 und BSL-3 im Container: Geht das?"
+        description="Sicherheitsstufen im Containerbau sind kein Problem mehr. Erfahren Sie, wie wir höchste Sicherheitsanforderungen in mobilen Einheiten realisieren."
+        author="Redaktion Planexus"
+        datePublished="2025-12-20"
+        image="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2070"
+        url="/magazine/3"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Start", url: "/" },
+        { name: "Magazin", url: "/magazine" },
+        { name: "BSL-2 und BSL-3 im Container", url: "/magazine/3" }
+      ]} />
       {/* Hero */}
       <section className="relative py-20 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2070')] bg-cover bg-center opacity-20"></div>

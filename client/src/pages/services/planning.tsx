@@ -1,10 +1,26 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, PenTool, Layers, FileCheck, Ruler, LayoutGrid, Lightbulb, Phone, ChevronRight } from "lucide-react";
+import { SEO, ServiceSchema, BreadcrumbSchema } from "@/components/SEO";
 
 export default function PlanningService() {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Technische Fachplanung Labor"
+        description="Professionelle Laborplanung für Ihren Laborcontainer. CAD-Zeichnungen, 3D-Visualisierung, TGA-Konzepte und Workflow-Optimierung. Jetzt Planungsanfrage stellen."
+        canonical="/services/planning"
+      />
+      <ServiceSchema 
+        name="Technische Fachplanung Labor"
+        description="Detaillierte Planung von Laborcontainern mit CAD-Zeichnungen, 3D-Visualisierung und TGA-Konzepten"
+        url="/services/planning"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Start", url: "/" },
+        { name: "Leistungen", url: "/services" },
+        { name: "Technische Fachplanung", url: "/services/planning" }
+      ]} />
       {/* Hero Section */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=2070')] bg-cover bg-center opacity-20"></div>

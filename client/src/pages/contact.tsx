@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { SEO } from "@/components/SEO";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name muss mindestens 2 Zeichen lang sein"),
@@ -39,6 +40,11 @@ export default function Contact() {
 
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Kontakt - Laborcontainer Anfrage"
+        description="Kontaktieren Sie Planexus für Ihr Laborcontainer-Projekt. Beratung, Angebote und Projektstart. Wir freuen uns auf Ihre Anfrage."
+        canonical="/contact"
+      />
       <section className="bg-slate-50 py-20 border-b border-gray-100">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-heading font-bold mb-6 text-slate-900">Kontaktieren Sie uns</h1>

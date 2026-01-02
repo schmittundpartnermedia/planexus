@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Hammer, Truck, PenTool, ClipboardCheck, ArrowRight, Zap, Microscope, CheckCircle2, ChevronRight, Phone, Building, Award, Clock } from "lucide-react";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 export default function Services() {
   const services = [
@@ -56,6 +57,11 @@ export default function Services() {
 
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Leistungen - Laborcontainer Komplettservice"
+        description="Alle Leistungen von Planexus: Technische Fachplanung, Modulbau, Logistik, Laborausstattung, Beratung und Smart Lab Integration für Ihren Laborcontainer."
+        canonical="/services"
+      />
       {/* Hero Bereich */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581093588401-fbb62a02f388?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
