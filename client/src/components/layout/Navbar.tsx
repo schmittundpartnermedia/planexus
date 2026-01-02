@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -7,6 +7,7 @@ import logo from "@assets/Planexus_Home-e1738171155684_1767361842201.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
 
@@ -20,11 +21,14 @@ export function Navbar() {
 
   const links = [
     { href: "/", label: "Start" },
-    { href: "/about", label: "Über uns" },
     { href: "/services", label: "Leistungen" },
     { href: "/magazine", label: "Magazin" },
-    { href: "/team", label: "Team" },
     { href: "/contact", label: "Kontakt" },
+  ];
+  
+  const aboutLinks = [
+    { href: "/about", label: "Über uns" },
+    { href: "/team", label: "Team" },
   ];
 
   return (
@@ -49,11 +53,77 @@ export function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-8">
-          {links.map((link) => (
+          {/* Start Link */}
+          <Link href="/">
+            <a
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary relative uppercase tracking-wide",
+                location === "/" ? "text-primary" : "text-white/80 hover:text-white"
+              )}
+            >
+              Start
+              {location === "/" && (
+                <motion.div
+                  layoutId="navbar-indicator"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                />
+              )}
+            </a>
+          </Link>
+          
+          {/* Über uns Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setAboutOpen(true)}
+            onMouseLeave={() => setAboutOpen(false)}
+          >
+            <button
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 uppercase tracking-wide",
+                (location === "/about" || location === "/team") ? "text-primary" : "text-white/80 hover:text-white"
+              )}
+            >
+              Über uns
+              <ChevronDown className={cn("w-4 h-4 transition-transform", aboutOpen && "rotate-180")} />
+            </button>
+            {(location === "/about" || location === "/team") && (
+              <motion.div
+                layoutId="navbar-indicator"
+                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+              />
+            )}
+            
+            <AnimatePresence>
+              {aboutOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[160px] z-50"
+                >
+                  {aboutLinks.map((link) => (
+                    <Link key={link.href} href={link.href}>
+                      <a
+                        className={cn(
+                          "block px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary",
+                          location === link.href ? "text-primary bg-primary/5" : "text-slate-700"
+                        )}
+                      >
+                        {link.label}
+                      </a>
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          
+          {/* Other Links */}
+          {links.slice(1).map((link) => (
             <Link key={link.href} href={link.href}>
               <a
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary relative group uppercase tracking-wide",
+                  "text-sm font-medium transition-colors hover:text-primary relative uppercase tracking-wide",
                   location === link.href ? "text-primary" : "text-white/80 hover:text-white"
                 )}
               >
@@ -94,8 +164,40 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-white border-b border-gray-100 overflow-hidden shadow-xl"
           >
-            <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
-              {links.map((link) => (
+            <div className="container mx-auto px-4 py-6 flex flex-col gap-2">
+              {/* Start */}
+              <Link href="/">
+                <a
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "text-lg font-medium py-3 border-b border-gray-50",
+                    location === "/" ? "text-primary" : "text-slate-700"
+                  )}
+                >
+                  Start
+                </a>
+              </Link>
+              
+              {/* Über uns Section */}
+              <div className="border-b border-gray-50">
+                <p className="text-xs uppercase tracking-wider text-gray-400 pt-3 pb-1">Über uns</p>
+                {aboutLinks.map((link) => (
+                  <Link key={link.href} href={link.href}>
+                    <a
+                      onClick={() => setIsOpen(false)}
+                      className={cn(
+                        "block text-lg font-medium py-2 pl-4",
+                        location === link.href ? "text-primary" : "text-slate-700"
+                      )}
+                    >
+                      {link.label}
+                    </a>
+                  </Link>
+                ))}
+              </div>
+              
+              {/* Other Links */}
+              {links.slice(1).map((link) => (
                 <Link key={link.href} href={link.href}>
                   <a
                     onClick={() => setIsOpen(false)}
@@ -108,6 +210,7 @@ export function Navbar() {
                   </a>
                 </Link>
               ))}
+              
               <div className="flex flex-col gap-4 mt-4 pt-4 border-t border-gray-100">
                  <a href="tel:+4974357519700" className="flex items-center gap-3 text-slate-600 hover:text-primary">
                     <Phone className="w-5 h-5 text-primary" /> +49 7435 7519 700
