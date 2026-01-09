@@ -1,0 +1,294 @@
+# SEO SSR Content Injection - Universal Prompt für React SPA Projekte
+
+## Kopiere diesen kompletten Prompt für andere Projekte:
+
+---
+
+```
+Implementiere Server-Side Content Injection für SEO in diesem React SPA Projekt.
+
+## Problem
+Google sieht nur `<div id="root"></div>` weil der Content erst durch JavaScript gerendert wird. Die Website rankt nicht, obwohl Meta-Tags korrekt sind.
+
+## Lösung - 3-Schichten SSR Content System
+
+### Schicht 1: Meta-Registry erweitern
+
+Erstelle oder erweitere die Meta-Registry (z.B. server/lib/meta-registry.ts):
+
+```typescript
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface SSRContent {
+  h1: string;           // Haupt-Überschrift der Seite
+  intro: string;        // Einleitungstext (2-3 Sätze)
+  sections?: { heading: string; content: string }[];  // Weitere Abschnitte mit H2
+  faqs?: FAQItem[];     // FAQ für Schema.org FAQPage
+  localBusiness?: {     // Für lokale/regionale Seiten
+    name: string;
+    city: string;
+    services: string[];
+  };
+}
+
+interface PageMeta {
+  title: string;
+  description: string;
+  keywords: string;
+  canonical: string;
+  ogType: string;
+  robots: string;
+  ssrContent?: SSRContent;  // NEU: Content für Google
+}
+```
+
+### Schicht 2: Content Injection im Express Server
+
+Erstelle eine Funktion die HTML-Content generiert und injiziert:
+
+```typescript
+function generateSSRContentHtml(content: SSRContent, canonicalUrl: string): string {
+  const escapeHtml = (str: string) => str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+  let html = `
+<div id="ssr-content" itemscope itemtype="https://schema.org/WebPage">
+  <h1 itemprop="headline">${escapeHtml(content.h1)}</h1>
+  <p itemprop="description">${escapeHtml(content.intro)}</p>
+`;
+
+  // Sections mit H2
+  if (content.sections?.length) {
+    for (const section of content.sections) {
+      html += `  <section>
+    <h2>${escapeHtml(section.heading)}</h2>
+    <p>${escapeHtml(section.content)}</p>
+  </section>
+`;
+    }
+  }
+
+  // FAQs mit Schema.org Microdata
+  if (content.faqs?.length) {
+    html += `  <section itemscope itemtype="https://schema.org/FAQPage">
+    <h2>Häufig gestellte Fragen</h2>
+`;
+    for (const faq of content.faqs) {
+      html += `    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">${escapeHtml(faq.question)}</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">${escapeHtml(faq.answer)}</p>
+      </div>
+    </div>
+`;
+    }
+    html += `  </section>
+`;
+  }
+
+  // LocalBusiness Schema für regionale Seiten
+  if (content.localBusiness) {
+    const lb = content.localBusiness;
+    html += `  <div itemscope itemtype="https://schema.org/LocalBusiness" style="display:none;">
+    <meta itemprop="name" content="${escapeHtml(lb.name)}" />
+    <div itemprop="areaServed" itemscope itemtype="https://schema.org/City">
+      <meta itemprop="name" content="${escapeHtml(lb.city)}" />
+    </div>
+    <meta itemprop="url" content="${escapeHtml(canonicalUrl)}" />
+`;
+    for (const service of lb.services) {
+      html += `    <meta itemprop="makesOffer" content="${escapeHtml(service)}" />
+`;
+    }
+    html += `  </div>
+`;
+  }
+
+  html += `</div>`;
+  return html;
+}
+
+function generateFAQSchema(faqs: FAQItem[]): string {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+// In der injectMetaTags Funktion hinzufügen:
+function injectMetaTags(html: string, meta: MetaTags): string {
+  // ... bestehende Meta-Tag Injection ...
+
+  // SSR Content Injection - WICHTIG für SEO!
+  if (meta.ssrContent) {
+    const ssrHtml = generateSSRContentHtml(meta.ssrContent, meta.canonicalUrl);
+    
+    let schemaHtml = '';
+    if (meta.ssrContent.faqs?.length) {
+      schemaHtml = generateFAQSchema(meta.ssrContent.faqs);
+    }
+    
+    // Injiziere VOR dem React-Root
+    html = html.replace(
+      '<div id="root"></div>',
+      `${ssrHtml}\n${schemaHtml}\n<div id="root"></div>`
+    );
+  }
+
+  return html;
+}
+```
+
+### Schicht 3: React Client Cleanup
+
+In App.tsx oder Layout-Komponente:
+
+```typescript
+import { useEffect } from 'react';
+
+function App() {
+  // Entferne SSR-Content nach React-Hydratierung
+  useEffect(() => {
+    const ssrContent = document.getElementById('ssr-content');
+    if (ssrContent) {
+      ssrContent.remove();
+    }
+  }, []);
+
+  return (
+    // ... deine App
+  );
+}
+```
+
+### Schicht 4: SSR-Content für JEDE Route definieren
+
+Beispiel für verschiedene Seitentypen:
+
+```typescript
+const metaRegistry: Record<string, PageMeta> = {
+  "/": {
+    title: "Firmenname | Hauptkeyword",
+    description: "Beschreibung...",
+    keywords: "...",
+    canonical: "https://example.com",
+    ogType: "website",
+    robots: "index, follow",
+    ssrContent: {
+      h1: "Willkommen bei Firmenname - Hauptkeyword",
+      intro: "Wir sind Ihr Partner für X, Y und Z. Seit 20XX unterstützen wir Unternehmen bei...",
+      sections: [
+        { heading: "Unsere Leistungen", content: "Von A bis Z bieten wir..." },
+        { heading: "Warum wir?", content: "Mit über X Jahren Erfahrung..." }
+      ],
+      faqs: [
+        { question: "Was kostet Ihre Dienstleistung?", answer: "Unsere Preise beginnen bei..." },
+        { question: "Wie schnell können Sie starten?", answer: "Nach einem ersten Gespräch..." }
+      ]
+    }
+  },
+
+  "/leistungen/service-a": {
+    title: "Service A | Firmenname",
+    description: "...",
+    // ... andere Meta-Tags
+    ssrContent: {
+      h1: "Service A - Professionelle Lösung für Ihr Problem",
+      intro: "Mit unserem Service A helfen wir Ihnen bei...",
+      sections: [
+        { heading: "So funktioniert Service A", content: "..." },
+        { heading: "Vorteile von Service A", content: "..." },
+        { heading: "Für wen ist Service A geeignet?", content: "..." }
+      ],
+      faqs: [
+        { question: "Wie lange dauert Service A?", answer: "..." },
+        { question: "Was benötigen Sie von mir?", answer: "..." }
+      ]
+    }
+  },
+
+  "/standorte/stadt": {
+    title: "Service in Stadt | Firmenname",
+    // ... andere Meta-Tags
+    ssrContent: {
+      h1: "Ihr Partner für Service in Stadt",
+      intro: "Als lokaler Anbieter in Stadt verstehen wir die Bedürfnisse...",
+      sections: [
+        { heading: "Lokale Expertise in Stadt", content: "..." },
+        { heading: "Unsere Referenzen in der Region", content: "..." }
+      ],
+      faqs: [
+        { question: "Haben Sie ein Büro in Stadt?", answer: "..." },
+        { question: "Betreuen Sie auch umliegende Orte?", answer: "..." }
+      ],
+      localBusiness: {
+        name: "Firmenname Stadt",
+        city: "Stadt",
+        services: ["Service A", "Service B", "Service C"]
+      }
+    }
+  }
+};
+```
+
+## Wichtige Regeln
+
+1. **Content MUSS sichtbar sein** - Kein `display:none`, kein `position:absolute` mit negativen Werten auf dem Hauptcontent
+2. **Jede Route braucht eigenen Content** - Keine generischen Texte, jede Seite ist einzigartig
+3. **React ersetzt den Content** - Das ist normal und gewollt
+4. **FAQs generieren Schema** - Nutze FAQs wo sinnvoll für Rich Snippets
+5. **LocalBusiness für regionale Seiten** - Verbessert lokales Ranking
+
+## Testen
+
+```bash
+# Teste mit Googlebot User-Agent
+curl -A "Googlebot" https://deine-seite.de/ | grep -A 20 "ssr-content"
+
+# Sollte den kompletten H1, Intro, Sections zeigen
+```
+
+## Checkliste
+
+- [ ] Meta-Registry mit ssrContent Interface erstellt
+- [ ] generateSSRContentHtml Funktion implementiert
+- [ ] generateFAQSchema Funktion implementiert
+- [ ] injectMetaTags erweitert für SSR-Content
+- [ ] React useEffect Cleanup in App.tsx
+- [ ] SSR-Content für Homepage definiert
+- [ ] SSR-Content für alle Leistungsseiten definiert
+- [ ] SSR-Content für alle Standortseiten definiert
+- [ ] SSR-Content für Kontakt/Impressum/etc. definiert
+- [ ] Test mit curl -A "Googlebot" durchgeführt
+- [ ] Google Search Console Indexierung angefordert
+
+## Ergebnis
+
+Google sieht sofort:
+- ✅ Einzigartige H1 pro Seite
+- ✅ Beschreibende Texte mit Keywords
+- ✅ Strukturierte H2-Abschnitte
+- ✅ FAQ Schema für Rich Snippets
+- ✅ LocalBusiness Schema für lokales Ranking
+
+→ Besseres Ranking, mehr Traffic, mehr Kunden
+```
+
+---
+
+**Hinweis:** Dieser Prompt ist für Express + React SPA Projekte optimiert. Für Next.js oder andere SSR-Frameworks ist dieser Workaround nicht nötig, da diese bereits echtes SSR haben.
