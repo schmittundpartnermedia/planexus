@@ -103,38 +103,64 @@ export function injectSSRContent(html: string, path: string): string {
     return html;
   }
 
+  // Title tag
   if (meta.title) {
     html = html.replace(
-      /<title>.*?<\/title>/,
+      /<title>[^<]*<\/title>/,
       `<title>${escapeHtml(meta.title)}</title>`
     );
+    // og:title
+    html = html.replace(
+      /<meta property="og:title" content="[^"]*"/,
+      `<meta property="og:title" content="${escapeHtml(meta.title)}"`
+    );
+    // twitter:title
+    html = html.replace(
+      /<meta name="twitter:title" content="[^"]*"/,
+      `<meta name="twitter:title" content="${escapeHtml(meta.title)}"`
+    );
   }
 
+  // Description
   if (meta.description) {
     html = html.replace(
-      /<meta name="description" content=".*?"/,
+      /<meta name="description" content="[^"]*"/,
       `<meta name="description" content="${escapeHtml(meta.description)}"`
+    );
+    // og:description
+    html = html.replace(
+      /<meta property="og:description" content="[^"]*"/,
+      `<meta property="og:description" content="${escapeHtml(meta.description)}"`
+    );
+    // twitter:description
+    html = html.replace(
+      /<meta name="twitter:description" content="[^"]*"/,
+      `<meta name="twitter:description" content="${escapeHtml(meta.description)}"`
     );
   }
 
+  // Canonical URL
   if (meta.canonical) {
     html = html.replace(
-      /<link rel="canonical" href=".*?"/,
+      /<link rel="canonical" href="[^"]*"/,
       `<link rel="canonical" href="${escapeHtml(meta.canonical)}"`
     );
+    // og:url
     html = html.replace(
-      /<meta property="og:url" content=".*?"/,
+      /<meta property="og:url" content="[^"]*"/,
       `<meta property="og:url" content="${escapeHtml(meta.canonical)}"`
     );
   }
 
+  // og:type
   if (meta.ogType) {
     html = html.replace(
-      /<meta property="og:type" content=".*?"/,
+      /<meta property="og:type" content="[^"]*"/,
       `<meta property="og:type" content="${escapeHtml(meta.ogType)}"`
     );
   }
 
+  // SSR Content für Google
   if (meta.ssrContent) {
     const ssrHtml = generateSSRContentHtml(meta.ssrContent, meta.canonical);
     
