@@ -3,27 +3,28 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import NotFound from "@/pages/not-found";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import Home from "@/pages/home";
-import About from "@/pages/about";
-import Services from "@/pages/services";
-import Contact from "@/pages/contact";
-import Team from "@/pages/team";
-import Magazine from "@/pages/magazine";
-import Article1 from "@/pages/magazine/article1";
-import Article2 from "@/pages/magazine/article2";
-import Article3 from "@/pages/magazine/article3";
-import PlanningService from "@/pages/services/planning";
-import ConstructionService from "@/pages/services/construction";
-import LogisticsService from "@/pages/services/logistics";
-import EquipmentService from "@/pages/services/equipment";
-import ConsultingService from "@/pages/services/consulting";
-import SmartLabService from "@/pages/services/smart-lab";
-import Impressum from "@/pages/impressum";
-import Datenschutz from "@/pages/datenschutz";
+
+const About = lazy(() => import("@/pages/about"));
+const Services = lazy(() => import("@/pages/services"));
+const Contact = lazy(() => import("@/pages/contact"));
+const Team = lazy(() => import("@/pages/team"));
+const Magazine = lazy(() => import("@/pages/magazine"));
+const Article1 = lazy(() => import("@/pages/magazine/article1"));
+const Article2 = lazy(() => import("@/pages/magazine/article2"));
+const Article3 = lazy(() => import("@/pages/magazine/article3"));
+const PlanningService = lazy(() => import("@/pages/services/planning"));
+const ConstructionService = lazy(() => import("@/pages/services/construction"));
+const LogisticsService = lazy(() => import("@/pages/services/logistics"));
+const EquipmentService = lazy(() => import("@/pages/services/equipment"));
+const ConsultingService = lazy(() => import("@/pages/services/consulting"));
+const SmartLabService = lazy(() => import("@/pages/services/smart-lab"));
+const Impressum = lazy(() => import("@/pages/impressum"));
+const Datenschutz = lazy(() => import("@/pages/datenschutz"));
 
 function Router() {
   return (
@@ -64,7 +65,9 @@ function App() {
         <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
           <Navbar />
           <main className="flex-grow">
-            <Router />
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div></div>}>
+              <Router />
+            </Suspense>
           </main>
           <Footer />
           <Toaster />

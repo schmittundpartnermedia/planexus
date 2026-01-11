@@ -65,7 +65,7 @@ export default function About() {
 
             <div className="space-y-8">
                <div className="rounded-2xl overflow-hidden shadow-2xl h-[400px] relative">
-                  <img src={interiorBg} alt="High-Tech Labor Interior" className="w-full h-full object-cover" />
+                  <img src={interiorBg} alt="High-Tech Labor Interior" className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-6 left-6 text-white">
                     <p className="font-bold text-lg">Modernste Ausstattung</p>

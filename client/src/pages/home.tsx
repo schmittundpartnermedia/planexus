@@ -43,6 +43,7 @@ export default function Home() {
             src={heroBg} 
             alt="Moderner Laborcontainer Außenansicht" 
             className="w-full h-full object-cover"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-slate-950/80 md:bg-slate-950/70 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
         </motion.div>
@@ -58,10 +59,10 @@ export default function Home() {
               Denken. <span className="text-primary">Planen.</span><br />
               Verbinden.
             </h1>
-            <h2 className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-2xl font-light">
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-2xl font-light">
               Ihr Spezialist für <strong className="text-white font-medium">Laborcontainer</strong> und modulare Laborlösungen. 
               Wir realisieren flexible Forschungsumgebungen für die Zukunft.
-            </h2>
+            </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
                 <a className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(132,189,0,0.4)]">
