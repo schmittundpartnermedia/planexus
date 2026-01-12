@@ -1,52 +1,30 @@
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, Box, CheckCircle2, ChevronRight, Layers, Layout, ShieldCheck, Microscope, FlaskConical, Leaf } from "lucide-react";
 import { Link } from "wouter";
 import heroBg from "@assets/generated_images/modern_laboratory_container_exterior.png";
 import blueprintBg from "@assets/generated_images/technical_blueprint_abstract_background.png";
-import { useEffect } from "react";
 import { SEO } from "@/components/SEO";
+import { LiquidHero } from "@/components/LiquidHero";
 
 export default function Home() {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseX = useSpring(x, { stiffness: 50, damping: 20 });
-  const mouseY = useSpring(y, { stiffness: 50, damping: 20 });
-
-  function handleMouseMove(event: React.MouseEvent) {
-    const { clientX, clientY } = event;
-    const { innerWidth, innerHeight } = window;
-    // Calculate percentage from center
-    const xPct = (clientX / innerWidth - 0.5) * 2; // -1 to 1
-    const yPct = (clientY / innerHeight - 0.5) * 2; // -1 to 1
-    
-    // Move slightly (e.g. 20px max)
-    x.set(xPct * -20);
-    y.set(yPct * -20);
-  }
-
   return (
-    <div className="min-h-screen bg-background text-foreground" onMouseMove={handleMouseMove}>
+    <div className="min-h-screen bg-background text-foreground">
       <SEO 
         title="Laborcontainer & Modulbau Labor Spezialist"
         description="Planexus ist Ihr Experte für Laborcontainer, mobile Labore und Modulbau. Über 10 Jahre Erfahrung in Laborplanung, BSL-2/BSL-3 Labore und Containerbau."
         canonical="/"
       />
-      {/* Hero Section - Dark & Impactful (As requested "Hero lassen wir so") */}
+      {/* Hero Section - Dark & Impactful with Liquid Distortion Effect */}
       <section className="relative h-screen flex items-center overflow-hidden bg-slate-950 text-white">
-        {/* Background Image with Overlay and Parallax */}
-        <motion.div 
-            className="absolute inset-0 z-0"
-            style={{ x: mouseX, y: mouseY, scale: 1.05 }} // Scale up slightly to avoid edges showing
-        >
-          <img 
-            src={heroBg} 
-            alt="Moderner Laborcontainer Außenansicht" 
-            className="w-full h-full object-cover"
-            loading="eager"
+        {/* Background Image with Liquid Distortion Effect */}
+        <div className="absolute inset-0 z-0">
+          <LiquidHero 
+            imageSrc={heroBg} 
+            alt="Moderner Laborcontainer Außenansicht"
+            className="w-full h-full"
           />
-          <div className="absolute inset-0 bg-slate-950/80 md:bg-slate-950/70 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
-        </motion.div>
+          <div className="absolute inset-0 bg-slate-950/80 md:bg-slate-950/70 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent pointer-events-none" />
+        </div>
 
         <div className="container mx-auto px-4 relative z-10 pt-20">
           <motion.div 
