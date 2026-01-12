@@ -15,7 +15,7 @@ export default function Home() {
         canonical="/"
       />
       {/* Hero Section - Dark & Impactful with Liquid Distortion Effect */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-950 text-white py-32 md:py-0">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 text-white">
         {/* Background Image - Mobile: normal image, Desktop: Liquid Effect */}
         <div className="absolute inset-0 z-0">
           {/* Mobile: Static Image */}
@@ -38,7 +38,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-slate-950/80 md:bg-slate-950/70 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent pointer-events-none" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 pt-24 md:pt-20">
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
