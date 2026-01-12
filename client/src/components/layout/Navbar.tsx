@@ -9,7 +9,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -19,6 +19,14 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (href: string) => {
+    setLocation(href);
+    window.scrollTo({ top: 0, behavior: "instant" });
+    setIsOpen(false);
+    setAboutOpen(false);
+    setServicesOpen(false);
+  };
 
   const links = [
     { href: "/magazine", label: "Magazin" },
@@ -50,35 +58,32 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
-        <Link href="/">
-          <a className="flex items-center gap-2">
-            <img 
-              src={logo} 
-              alt="Planexus Logo" 
-              className="h-10 w-auto" 
-            />
-          </a>
-        </Link>
+        <button onClick={() => handleNavClick("/")} className="flex items-center gap-2">
+          <img 
+            src={logo} 
+            alt="Planexus Logo" 
+            className="h-10 lg:h-14 w-auto" 
+          />
+        </button>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-8">
           {/* Start Link */}
-          <Link href="/">
-            <a
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary relative uppercase tracking-wide",
-                location === "/" ? "text-primary" : "text-white/80 hover:text-white"
-              )}
-            >
-              Start
-              {location === "/" && (
-                <motion.div
-                  layoutId="navbar-indicator"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
-                />
-              )}
-            </a>
-          </Link>
+          <button
+            onClick={() => handleNavClick("/")}
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-primary relative uppercase tracking-wide",
+              location === "/" ? "text-primary" : "text-white/80 hover:text-white"
+            )}
+          >
+            Start
+            {location === "/" && (
+              <motion.div
+                layoutId="navbar-indicator"
+                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+              />
+            )}
+          </button>
           
           {/* Über uns Dropdown */}
           <div 
@@ -111,16 +116,16 @@ export function Navbar() {
                   className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[160px] z-50"
                 >
                   {aboutLinks.map((link) => (
-                    <Link key={link.href} href={link.href}>
-                      <a
-                        className={cn(
-                          "block px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary",
-                          location === link.href ? "text-primary bg-primary/5" : "text-slate-700"
-                        )}
-                      >
-                        {link.label}
-                      </a>
-                    </Link>
+                    <button
+                      key={link.href}
+                      onClick={() => handleNavClick(link.href)}
+                      className={cn(
+                        "block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary",
+                        location === link.href ? "text-primary bg-primary/5" : "text-slate-700"
+                      )}
+                    >
+                      {link.label}
+                    </button>
                   ))}
                 </motion.div>
               )}
@@ -158,17 +163,17 @@ export function Navbar() {
                   className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[220px] z-50"
                 >
                   {serviceLinks.map((link, index) => (
-                    <Link key={link.href} href={link.href}>
-                      <a
-                        className={cn(
-                          "block px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary",
-                          location === link.href ? "text-primary bg-primary/5" : "text-slate-700",
-                          index === 0 && "border-b border-gray-100 mb-1 pb-3"
-                        )}
-                      >
-                        {link.label}
-                      </a>
-                    </Link>
+                    <button
+                      key={link.href}
+                      onClick={() => handleNavClick(link.href)}
+                      className={cn(
+                        "block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary",
+                        location === link.href ? "text-primary bg-primary/5" : "text-slate-700",
+                        index === 0 && "border-b border-gray-100 mb-1 pb-3"
+                      )}
+                    >
+                      {link.label}
+                    </button>
                   ))}
                 </motion.div>
               )}
@@ -177,22 +182,22 @@ export function Navbar() {
           
           {/* Other Links */}
           {links.map((link) => (
-            <Link key={link.href} href={link.href}>
-              <a
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary relative uppercase tracking-wide",
-                  location === link.href ? "text-primary" : "text-white/80 hover:text-white"
-                )}
-              >
-                {link.label}
-                {location === link.href && (
-                  <motion.div
-                    layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
-                  />
-                )}
-              </a>
-            </Link>
+            <button
+              key={link.href}
+              onClick={() => handleNavClick(link.href)}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary relative uppercase tracking-wide",
+                location === link.href ? "text-primary" : "text-white/80 hover:text-white"
+              )}
+            >
+              {link.label}
+              {location === link.href && (
+                <motion.div
+                  layoutId="navbar-indicator"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                />
+              )}
+            </button>
           ))}
           <a
             href="tel:+4974357519700"
@@ -223,33 +228,30 @@ export function Navbar() {
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-2">
               {/* Start */}
-              <Link href="/">
-                <a
-                  onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "text-lg font-medium py-3 border-b border-gray-50",
-                    location === "/" ? "text-primary" : "text-slate-700"
-                  )}
-                >
-                  Start
-                </a>
-              </Link>
+              <button
+                onClick={() => handleNavClick("/")}
+                className={cn(
+                  "text-left text-lg font-medium py-3 border-b border-gray-50",
+                  location === "/" ? "text-primary" : "text-slate-700"
+                )}
+              >
+                Start
+              </button>
               
               {/* Über uns Section */}
               <div className="border-b border-gray-50">
                 <p className="text-xs uppercase tracking-wider text-gray-400 pt-3 pb-1">Über uns</p>
                 {aboutLinks.map((link) => (
-                  <Link key={link.href} href={link.href}>
-                    <a
-                      onClick={() => setIsOpen(false)}
-                      className={cn(
-                        "block text-lg font-medium py-2 pl-4",
-                        location === link.href ? "text-primary" : "text-slate-700"
-                      )}
-                    >
-                      {link.label}
-                    </a>
-                  </Link>
+                  <button
+                    key={link.href}
+                    onClick={() => handleNavClick(link.href)}
+                    className={cn(
+                      "block text-left text-lg font-medium py-2 pl-4 w-full",
+                      location === link.href ? "text-primary" : "text-slate-700"
+                    )}
+                  >
+                    {link.label}
+                  </button>
                 ))}
               </div>
 
@@ -257,33 +259,31 @@ export function Navbar() {
               <div className="border-b border-gray-50">
                 <p className="text-xs uppercase tracking-wider text-gray-400 pt-3 pb-1">Leistungen</p>
                 {serviceLinks.map((link) => (
-                  <Link key={link.href} href={link.href}>
-                    <a
-                      onClick={() => setIsOpen(false)}
-                      className={cn(
-                        "block text-lg font-medium py-2 pl-4",
-                        location === link.href ? "text-primary" : "text-slate-700"
-                      )}
-                    >
-                      {link.label}
-                    </a>
-                  </Link>
+                  <button
+                    key={link.href}
+                    onClick={() => handleNavClick(link.href)}
+                    className={cn(
+                      "block text-left text-lg font-medium py-2 pl-4 w-full",
+                      location === link.href ? "text-primary" : "text-slate-700"
+                    )}
+                  >
+                    {link.label}
+                  </button>
                 ))}
               </div>
               
               {/* Other Links */}
               {links.map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <a
-                    onClick={() => setIsOpen(false)}
-                    className={cn(
-                      "text-lg font-medium py-3 border-b border-gray-50",
-                      location === link.href ? "text-primary" : "text-slate-700"
-                    )}
-                  >
-                    {link.label}
-                  </a>
-                </Link>
+                <button
+                  key={link.href}
+                  onClick={() => handleNavClick(link.href)}
+                  className={cn(
+                    "text-left text-lg font-medium py-3 border-b border-gray-50 w-full",
+                    location === link.href ? "text-primary" : "text-slate-700"
+                  )}
+                >
+                  {link.label}
+                </button>
               ))}
               
               <div className="flex flex-col gap-4 mt-4 pt-4 border-t border-gray-100">
