@@ -16,13 +16,25 @@ export default function Home() {
       />
       {/* Hero Section - Dark & Impactful with Liquid Distortion Effect */}
       <section className="relative h-screen flex items-center overflow-hidden bg-slate-950 text-white">
-        {/* Background Image with Liquid Distortion Effect */}
+        {/* Background Image - Mobile: normal image, Desktop: Liquid Effect */}
         <div className="absolute inset-0 z-0">
-          <LiquidHero 
-            imageSrc={heroBg} 
-            alt="Moderner Laborcontainer Außenansicht"
-            className="w-full h-full"
-          />
+          {/* Mobile: Static Image */}
+          <div className="lg:hidden w-full h-full">
+            <img 
+              src={heroBg} 
+              alt="Moderner Laborcontainer Außenansicht"
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
+          </div>
+          {/* Desktop: Liquid Distortion Effect */}
+          <div className="hidden lg:block w-full h-full">
+            <LiquidHero 
+              imageSrc={heroBg} 
+              alt="Moderner Laborcontainer Außenansicht"
+              className="w-full h-full"
+            />
+          </div>
           <div className="absolute inset-0 bg-slate-950/80 md:bg-slate-950/70 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent pointer-events-none" />
         </div>
 
