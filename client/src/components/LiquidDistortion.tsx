@@ -36,7 +36,6 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
     });
     texture.minFilter = THREE.LinearFilter;
     texture.magFilter = THREE.LinearFilter;
-    texture.flipY = false;
 
     const vertexShader = `
       varying vec2 vUv;
@@ -114,7 +113,7 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
       if (!container || !material) return;
       const rect = container.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
+      const y = 1.0 - (e.clientY - rect.top) / rect.height;
       
       gsap.to(material.uniforms.uMouse.value, {
         x,
