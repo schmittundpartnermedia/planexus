@@ -16,29 +16,29 @@ export default function Home() {
       />
       {/* Hero Section - Dark & Impactful with Liquid Distortion Effect */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 text-white">
-        {/* Background Image - Mobile: normal image, Desktop: Liquid Effect */}
-        <div className="absolute inset-0 z-0">
-          {/* Mobile: Static Image */}
-          <div className="lg:hidden w-full h-full">
-            <img 
-              src={heroBg} 
-              alt="Moderner Laborcontainer Außenansicht"
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-          </div>
-          {/* Desktop: Liquid Distortion Effect */}
-          <div className="hidden lg:block w-full h-full relative z-10">
-            <LiquidHero 
-              imageSrc={heroBg} 
-              alt="Moderner Laborcontainer Außenansicht"
-              className="w-full h-full cursor-pointer"
-            />
-          </div>
-          <div className="absolute inset-0 bg-slate-950/20 bg-gradient-to-r from-slate-950/40 via-slate-950/20 to-transparent pointer-events-none z-0" />
+        {/* Mobile: Static Image */}
+        <div className="lg:hidden absolute inset-0 z-0">
+          <img 
+            src={heroBg} 
+            alt="Moderner Laborcontainer Außenansicht"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
         </div>
+        
+        {/* Desktop: Liquid Distortion Effect */}
+        <div className="hidden lg:block absolute inset-0 z-[5]">
+          <LiquidHero 
+            imageSrc={heroBg} 
+            alt="Moderner Laborcontainer Außenansicht"
+            className="w-full h-full"
+          />
+        </div>
+        
+        {/* Overlay - ÜBER dem LiquidHero aber pointer-events-none */}
+        <div className="absolute inset-0 bg-slate-950/20 bg-gradient-to-r from-slate-950/40 via-slate-950/20 to-transparent pointer-events-none z-[6]" />
 
-        <div className="container mx-auto px-4 relative z-10 pointer-events-none">
+        <div className="container mx-auto px-4 relative z-[10] pointer-events-none">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
