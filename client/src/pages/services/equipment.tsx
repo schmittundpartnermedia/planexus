@@ -81,7 +81,7 @@ export default function EquipmentService() {
                     Unser Ansatz ist dabei immer ganzheitlich: Wir betrachten Ihren Laborcontainer als integriertes System, in dem alle Komponenten optimal aufeinander abgestimmt sind. Die Möbel passen zu den technischen Anlagen, die Sicherheitseinrichtungen sind in den Arbeitsablauf integriert, und jedes Element trägt zur Effizienz und Sicherheit bei.
                   </p>
                   <p>
-                    Durch unsere langjährigen Partnerschaften mit führenden Laborausstattern haben wir Zugang zu einem breiten Sortiment hochwertiger Produkte. Gleichzeitig können wir Sonderlösungen realisieren, die speziell auf Ihre Anforderungen zugeschnitten sind.
+                    Als Teil der Wesemann Holding GmbH – einem der drei führenden Labormöbelhersteller in Europa – haben wir direkten Zugang zu erstklassigen Laborausstattungen. Dieses starke Netzwerk ermöglicht uns, Ihnen hochwertige Produkte zu optimalen Konditionen anzubieten. Gleichzeitig können wir Sonderlösungen realisieren, die speziell auf Ihre Anforderungen zugeschnitten sind.
                   </p>
                 </div>
               </div>

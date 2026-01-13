@@ -244,7 +244,7 @@ export default function SmartLabService() {
                     ))}
                   </ul>
                   <p>
-                    Standardprotokolle wie OPC-UA, MQTT oder REST-APIs ermöglichen die nahtlose Integration. Auf Wunsch entwickeln wir auch kundenspezifische Schnittstellen.
+                    Standardprotokolle wie OPC-UA, MQTT oder REST-APIs ermöglichen die nahtlose Integration. Auf Wunsch entwickeln wir auch kundenspezifische Schnittstellen. Für die Gebäudeautomation setzen wir unter anderem auf bewährte Systeme wie <a href="https://www.loxone.com/dede/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Loxone</a>, die eine intuitive Steuerung und Visualisierung aller Smart-Lab-Funktionen ermöglichen.
                   </p>
                 </div>
               </div>

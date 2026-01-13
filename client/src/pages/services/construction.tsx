@@ -78,7 +78,7 @@ export default function ConstructionService() {
                     Der Bau eines Laborcontainers erfordert höchste Präzision und ein tiefes Verständnis für die besonderen Anforderungen von Laborumgebungen. Bei Planexus vereinen wir handwerkliche Expertise mit modernster Fertigungstechnologie, um Containerlabore zu schaffen, die in Qualität und Funktionalität keine Kompromisse eingehen.
                   </p>
                   <p>
-                    Unsere Fertigung erfolgt ausschließlich in Deutschland, in enger Zusammenarbeit mit zertifizierten Partnerbetrieben, die unsere hohen Qualitätsstandards teilen. Jeder Laborcontainer wird individuell nach den Spezifikationen unserer Planung gefertigt – Serienfertigung gibt es bei uns nicht. Denn wir wissen: Jedes Labor ist einzigartig und verdient eine maßgeschneiderte Lösung.
+                    Die Containermodule werden bei unserem erfahrenen Partner in Polen gefertigt, die Endfertigung und Ausstattung erfolgt dann in unserem deutschen Werk in Albstadt (Emil-Mayer-Straße 1, 72461 Albstadt). So verbinden wir kosteneffiziente Produktion mit deutscher Qualitätskontrolle. Für unsere Mietcontainer und den LABtoGO bieten wir auch Serienfertigung an – standardisierte, sofort verfügbare Lösungen, die dennoch höchsten Qualitätsansprüchen genügen. Für individuelle Projekte fertigen wir natürlich auch maßgeschneiderte Einzellösungen.
                   </p>
                   <p>
                     Die Vorteile der Modulbauweise liegen auf der Hand: Kurze Bauzeiten, kontrollierte Fertigungsbedingungen und eine gleichbleibend hohe Qualität. Während konventionelle Laborbauten oft Monate oder Jahre dauern, können wir einen voll funktionsfähigen Laborcontainer in wenigen Wochen realisieren – ohne Abstriche bei der Qualität.
@@ -102,7 +102,7 @@ export default function ConstructionService() {
                   
                   <h4 className="text-xl font-bold text-slate-900 mt-8">Bodenaufbau</h4>
                   <p>
-                    Der Boden unserer Laborcontainer ist für hohe Punktlasten ausgelegt und nimmt auch schwere Laborgeräte problemlos auf. Ein mehrschichtiger Aufbau mit Stahlunterkonstruktion, Isolierung und Estrich bildet die Basis für verschiedene Bodenbeläge. Für Labore mit erhöhten Anforderungen an die Chemikalienbeständigkeit verwenden wir spezielle Laborböden aus Epoxidharz oder PVC mit verschweißten Nähten.
+                    Der Boden unserer Laborcontainer ist für hohe Punktlasten ausgelegt und nimmt auch schwere Laborgeräte problemlos auf. Ein mehrschichtiger Aufbau mit Stahlunterkonstruktion und Isolierung bildet die Basis für verschiedene Bodenbeläge. Für Labore mit erhöhten Anforderungen an die Chemikalienbeständigkeit verwenden wir spezielle Laborböden aus Epoxidharz oder PVC mit verschweißten Nähten.
                   </p>
                   
                   <h4 className="text-xl font-bold text-slate-900 mt-8">Dachkonstruktion</h4>
