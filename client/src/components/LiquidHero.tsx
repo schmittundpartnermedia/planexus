@@ -65,7 +65,7 @@ export function LiquidHero({ imageSrc, alt, className = "" }: LiquidHeroProps) {
         x,
         y,
         radius: 0,
-        strength: 30,
+        strength: 80,
         life: 1
       });
       
@@ -152,11 +152,11 @@ export function LiquidHero({ imageSrc, alt, className = "" }: LiquidHeroProps) {
                 const dy = py - ripple.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
                 
-                const waveWidth = 30;
+                const waveWidth = 60;
                 const waveDist = Math.abs(dist - ripple.radius);
                 
                 if (waveDist < waveWidth) {
-                  const waveStrength = (1 - waveDist / waveWidth) * ripple.strength * ripple.life;
+                  const waveStrength = (1 - waveDist / waveWidth) * ripple.strength * ripple.life * 2;
                   const angle = Math.atan2(dy, dx);
                   const wave = Math.sin((dist - ripple.radius) * 0.3) * waveStrength;
                   
