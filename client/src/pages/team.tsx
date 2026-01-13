@@ -18,6 +18,8 @@ export default function Team() {
       role: "Gesellschafter / Technik",
       initials: "TB",
       image: "/team/thomas-boss.jpg",
+      linkedin: "https://www.linkedin.com/in/thomas-boss-690091352",
+      facebook: "https://www.facebook.com/thomas.boss.9",
       desc: "Der technische Kopf hinter den Kulissen. Seine Expertise garantiert, dass visionäre Ideen in funktionale, robuste Realität umgesetzt werden."
     }
   ];
