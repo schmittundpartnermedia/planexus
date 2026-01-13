@@ -75,7 +75,7 @@ export default function Team() {
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className="w-24 h-24 rounded-full object-cover mb-6 shadow-md"
+                    className="w-24 h-24 rounded-full object-cover object-top mb-6 shadow-md"
                   />
                 ) : (
                   <div className="w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mb-6 shadow-md">
