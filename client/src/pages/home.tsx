@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Box, CheckCircle2, ChevronRight, Layers, Layout, ShieldCheck, Microscope, FlaskConical, Leaf } from "lucide-react";
 import { Link } from "wouter";
-import heroBg from "@assets/generated_images/modern_laboratory_container_exterior.png";
+import heroBg from "@assets/Kopf_green-scaled_1768306688943.jpg";
 import blueprintBg from "@assets/generated_images/technical_blueprint_abstract_background.png";
 import { SEO } from "@/components/SEO";
 import { LiquidHero } from "@/components/LiquidHero";

@@ -9,11 +9,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-6">
-            <Link href="/">
-              <a className="flex items-center gap-2">
-                 <img src={logo} alt="Planexus" className="h-10 w-auto" />
-              </a>
-            </Link>
+            <Link href="/" className="flex items-center gap-2">
+            <img src={logo} alt="Planexus" className="h-10 w-auto" />
+          </Link>
             <p className="text-slate-400 text-sm leading-relaxed">
               Ihr Fachplaner für <strong className="text-white">Containerlabore</strong> mit mehr als 10 Jahren Erfahrung.
               Intelligent, nachhaltig und modular.
@@ -24,11 +22,11 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-bold text-lg mb-6 text-white">Navigation</h4>
             <ul className="space-y-3">
-              <li><Link href="/about"><a className="text-slate-400 hover:text-primary transition-colors">Über uns</a></Link></li>
-              <li><Link href="/services"><a className="text-slate-400 hover:text-primary transition-colors">Leistungen</a></Link></li>
-              <li><Link href="/magazine"><a className="text-slate-400 hover:text-primary transition-colors">Magazin</a></Link></li>
-              <li><Link href="/team"><a className="text-slate-400 hover:text-primary transition-colors">Team</a></Link></li>
-              <li><Link href="/contact"><a className="text-slate-400 hover:text-primary transition-colors">Kontakt</a></Link></li>
+              <li><Link href="/about" className="text-slate-400 hover:text-primary transition-colors">Über uns</Link></li>
+              <li><Link href="/services" className="text-slate-400 hover:text-primary transition-colors">Leistungen</Link></li>
+              <li><Link href="/magazine" className="text-slate-400 hover:text-primary transition-colors">Magazin</Link></li>
+              <li><Link href="/team" className="text-slate-400 hover:text-primary transition-colors">Team</Link></li>
+              <li><Link href="/contact" className="text-slate-400 hover:text-primary transition-colors">Kontakt</Link></li>
             </ul>
           </div>
 
@@ -68,8 +66,8 @@ export function Footer() {
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
           <p>© 2025 Planexus GmbH. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/impressum"><a className="hover:text-white">Impressum</a></Link>
-            <Link href="/datenschutz"><a className="hover:text-white">Datenschutz</a></Link>
+            <Link href="/impressum" className="hover:text-white">Impressum</Link>
+            <Link href="/datenschutz" className="hover:text-white">Datenschutz</Link>
           </div>
         </div>
       </div>
