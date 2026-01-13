@@ -8,12 +8,14 @@ export default function Team() {
       name: "Sven Biewald",
       role: "Gesellschafter / Visionär",
       initials: "SB",
+      image: null,
       desc: "Der Pionier der modernen Laborcontainer. Mit über einem Jahrzehnt Erfahrung und einem unbändigen Willen zur Innovation treibt er die Vision von Planexus voran."
     },
     {
       name: "Thomas Boss",
       role: "Gesellschafter / Technik",
       initials: "TB",
+      image: "/team/thomas-boss.jpg",
       desc: "Der technische Kopf hinter den Kulissen. Seine Expertise garantiert, dass visionäre Ideen in funktionale, robuste Realität umgesetzt werden."
     }
   ];
@@ -65,9 +67,17 @@ export default function Team() {
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700" />
                 
-                <div className="w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mb-6 shadow-md">
-                  {member.initials}
-                </div>
+                {member.image ? (
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-24 h-24 rounded-full object-cover mb-6 shadow-md"
+                  />
+                ) : (
+                  <div className="w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mb-6 shadow-md">
+                    {member.initials}
+                  </div>
+                )}
                 
                 <h3 className="text-3xl font-heading font-bold mb-2 text-slate-900">{member.name}</h3>
                 <p className="text-primary font-bold mb-6 uppercase tracking-wider text-sm">{member.role}</p>
