@@ -59,21 +59,26 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
         vec2 mouse = uMouse;
         float dist = distance(uv, mouse);
         
-        float wave = sin(dist * 30.0 - uTime * 3.0) * 0.5 + 0.5;
-        float falloff = smoothstep(0.5, 0.0, dist);
+        // Sehr kleiner lokaler Radius - nur direkt um die Maus herum
+        float radius = 0.08;
+        float falloff = 1.0 - smoothstep(0.0, radius, dist);
+        falloff = falloff * falloff * falloff; // Steilerer Abfall
         
-        vec2 offset = normalize(uv - mouse) * wave * falloff * uIntensity * 0.05;
+        // Welleneffekt nur im lokalen Bereich
+        float wave = sin(dist * 80.0 - uTime * 5.0);
         
-        float ripple1 = sin(dist * 40.0 - uTime * 4.0) * falloff * uIntensity * 0.02;
-        float ripple2 = sin(dist * 25.0 - uTime * 2.5) * falloff * uIntensity * 0.015;
+        // Verzerrung nur lokal um die Maus
+        vec2 direction = uv - mouse;
+        float len = length(direction);
+        if (len > 0.001) {
+          direction = direction / len;
+        }
+        
+        vec2 offset = direction * wave * falloff * uIntensity * 0.015;
         
         uv += offset;
-        uv += vec2(ripple1, ripple2);
         
         vec4 color = texture2D(uTexture, uv);
-        
-        float highlight = wave * falloff * uIntensity * 0.15;
-        color.rgb += highlight;
         
         gl_FragColor = color;
       }
@@ -113,8 +118,8 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
       gsap.to(material.uniforms.uMouse.value, {
         x,
         y,
-        duration: 0.3,
-        ease: "power2.out"
+        duration: 0.1,
+        ease: "none"
       });
     }
 
