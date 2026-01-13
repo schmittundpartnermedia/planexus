@@ -60,7 +60,7 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
         float dist = distance(uv, mouse);
         
         // Sehr kleiner lokaler Radius - nur direkt um die Maus herum
-        float radius = 0.04;
+        float radius = 0.02;
         float falloff = 1.0 - smoothstep(0.0, radius, dist);
         falloff = falloff * falloff * falloff; // Steilerer Abfall
         
