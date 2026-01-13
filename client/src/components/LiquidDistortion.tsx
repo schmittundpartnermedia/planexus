@@ -56,8 +56,7 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
       void main() {
         vec2 uv = vUv;
         
-        // UV y ist invertiert (0 = oben, 1 = unten für Textur-Mapping)
-        vec2 mouse = vec2(uMouse.x, 1.0 - uMouse.y);
+        vec2 mouse = uMouse;
         float dist = distance(uv, mouse);
         
         // Sehr kleiner lokaler Radius - nur direkt um die Maus herum
