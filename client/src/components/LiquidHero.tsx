@@ -125,6 +125,14 @@ export function LiquidHero({ imageSrc, alt, className = "" }: LiquidHeroProps) {
 
       ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
 
+      // Gradient Overlay auf Canvas zeichnen (wird mit verzerrt)
+      const gradient = ctx.createLinearGradient(0, 0, w, 0);
+      gradient.addColorStop(0, 'rgba(2, 6, 23, 0.5)');
+      gradient.addColorStop(0.5, 'rgba(2, 6, 23, 0.3)');
+      gradient.addColorStop(1, 'rgba(2, 6, 23, 0.1)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, w, h);
+
       if (ripples.current.length > 0) {
         try {
           const imageData = ctx.getImageData(0, 0, w, h);

@@ -26,10 +26,7 @@ export default function Home() {
           />
         </div>
         
-        {/* Overlay - UNTER dem LiquidHero */}
-        <div className="hidden lg:block absolute inset-0 bg-slate-950/20 bg-gradient-to-r from-slate-950/40 via-slate-950/20 to-transparent pointer-events-none z-[4]" />
-        
-        {/* Desktop: Liquid Distortion Effect - ÜBER dem Overlay */}
+        {/* Desktop: Liquid Distortion Effect - Overlay ist jetzt IM Canvas integriert */}
         <div className="hidden lg:block absolute inset-0 z-[5]">
           <LiquidHero 
             imageSrc={heroBg} 
