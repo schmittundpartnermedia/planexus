@@ -61,9 +61,9 @@ export default function Article2() {
       <div className="bg-slate-50 border-b border-gray-100 py-4">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/"><a className="hover:text-primary">Start</a></Link>
+            <Link href="/" className="hover:text-primary">Start</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link href="/magazine"><a className="hover:text-primary">Magazin</a></Link>
+            <Link href="/magazine" className="hover:text-primary">Magazin</Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-primary font-medium">Nachhaltigkeit im Laborbau</span>
           </div>
@@ -133,7 +133,7 @@ export default function Article2() {
                     <div>
                       <h4 className="font-bold text-slate-900 mb-2">Profi-Tipp: Wärmebrücken vermeiden</h4>
                       <p className="text-gray-600 text-sm">
-                        Besondere Aufmerksamkeit gilt den Anschlusspunkten. In der <Link href="/services/planning"><a className="text-primary font-medium hover:underline">technischen Fachplanung</a></Link> optimieren wir jeden Detailanschluss, um Wärmebrücken zu minimieren. Dies betrifft insbesondere Fenster, Türen und Durchführungen für Medien.
+                        Besondere Aufmerksamkeit gilt den Anschlusspunkten. In der <Link href="/services/planning" className="text-primary font-medium hover:underline">technischen Fachplanung</Link> optimieren wir jeden Detailanschluss, um Wärmebrücken zu minimieren. Dies betrifft insbesondere Fenster, Türen und Durchführungen für Medien.
                       </p>
                     </div>
                   </div>
@@ -194,7 +194,7 @@ export default function Article2() {
                     <div>
                       <h4 className="font-bold text-slate-900 mb-2">Wichtig: Sicherheit geht vor</h4>
                       <p className="text-gray-600 text-sm">
-                        Bei der Implementierung von Energiesparmaßnahmen darf die Sicherheit nie kompromittiert werden. Unsere <Link href="/services/consulting"><a className="text-primary font-medium hover:underline">Beratungsexperten</a></Link> stellen sicher, dass alle Maßnahmen mit den geltenden Sicherheitsvorschriften konform sind.
+                        Bei der Implementierung von Energiesparmaßnahmen darf die Sicherheit nie kompromittiert werden. Unsere <Link href="/services/consulting" className="text-primary font-medium hover:underline">Beratungsexperten</Link> stellen sicher, dass alle Maßnahmen mit den geltenden Sicherheitsvorschriften konform sind.
                       </p>
                     </div>
                   </div>
@@ -245,7 +245,7 @@ export default function Article2() {
                 </h3>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Die Innenoberflächen von Laborcontainern müssen hohen Anforderungen genügen: chemikalienbeständig, leicht zu reinigen, abriebfest. Gleichzeitig sollten sie möglichst nachhaltig sein. Unsere <Link href="/services/equipment"><a className="text-primary font-medium hover:underline">Laborausstattung</a></Link> umfasst daher auch Arbeitsplatten aus recyceltem Material und Beschichtungen ohne bedenkliche Lösemittel.
+                  Die Innenoberflächen von Laborcontainern müssen hohen Anforderungen genügen: chemikalienbeständig, leicht zu reinigen, abriebfest. Gleichzeitig sollten sie möglichst nachhaltig sein. Unsere <Link href="/services/equipment" className="text-primary font-medium hover:underline">Laborausstattung</Link> umfasst daher auch Arbeitsplatten aus recyceltem Material und Beschichtungen ohne bedenkliche Lösemittel.
                 </p>
 
                 <h2 className="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
@@ -269,7 +269,7 @@ export default function Article2() {
                     <div>
                       <h4 className="font-bold text-slate-900 mb-2">Profi-Tipp: Fördermittel nutzen</h4>
                       <p className="text-gray-600 text-sm">
-                        Für energieeffiziente Laborgebäude und erneuerbare Energien gibt es attraktive Förderprogramme von Bund und Ländern. Im Rahmen unserer <Link href="/services/consulting"><a className="text-primary font-medium hover:underline">Beratungsleistungen</a></Link> unterstützen wir Sie bei der Identifikation und Beantragung geeigneter Förderungen.
+                        Für energieeffiziente Laborgebäude und erneuerbare Energien gibt es attraktive Förderprogramme von Bund und Ländern. Im Rahmen unserer <Link href="/services/consulting" className="text-primary font-medium hover:underline">Beratungsleistungen</Link> unterstützen wir Sie bei der Identifikation und Beantragung geeigneter Förderungen.
                       </p>
                     </div>
                   </div>
@@ -280,7 +280,7 @@ export default function Article2() {
                 </h2>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Die Vernetzung aller technischen Systeme ermöglicht ein intelligentes Energiemanagement. Unsere <Link href="/services/smart-lab"><a className="text-primary font-medium hover:underline">Smart-Lab-Lösungen</a></Link> erfassen kontinuierlich den Energieverbrauch aller Systeme und Geräte. Algorithmen identifizieren Einsparpotenziale und optimieren den Betrieb automatisch.
+                  Die Vernetzung aller technischen Systeme ermöglicht ein intelligentes Energiemanagement. Unsere <Link href="/services/smart-lab" className="text-primary font-medium hover:underline">Smart-Lab-Lösungen</Link> erfassen kontinuierlich den Energieverbrauch aller Systeme und Geräte. Algorithmen identifizieren Einsparpotenziale und optimieren den Betrieb automatisch.
                 </p>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
@@ -305,10 +305,8 @@ export default function Article2() {
                   <p className="text-gray-300 leading-relaxed mb-6">
                     Nachhaltiger Laborbau ist kein Widerspruch zu Funktionalität und Wirtschaftlichkeit – im Gegenteil. Energieeffiziente Laborcontainer senken die Betriebskosten, verbessern das Arbeitsklima und stärken das Image als verantwortungsvolles Unternehmen. Mit Planexus setzen Sie auf einen Partner, der Nachhaltigkeit nicht als Trend, sondern als Grundprinzip versteht.
                   </p>
-                  <Link href="/contact">
-                    <a className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+                  <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
                       Nachhaltigkeitsberatung anfordern <ArrowRight className="w-5 h-5" />
-                    </a>
                   </Link>
                 </div>
 
@@ -350,27 +348,21 @@ export default function Article2() {
                   <h4 className="font-bold text-slate-900 mb-4">Passende Leistungen</h4>
                   <ul className="space-y-3">
                     <li>
-                      <Link href="/services/construction">
-                        <a className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
+                      <Link href="/services/construction" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                           <ChevronRight className="w-4 h-4 text-primary" />
                           Modulbau & Fertigung
-                        </a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/smart-lab">
-                        <a className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
+                      <Link href="/services/smart-lab" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                           <ChevronRight className="w-4 h-4 text-primary" />
                           Smart Lab Integration
-                        </a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/consulting">
-                        <a className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
+                      <Link href="/services/consulting" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                           <ChevronRight className="w-4 h-4 text-primary" />
                           Beratung & Genehmigung
-                        </a>
                       </Link>
                     </li>
                   </ul>
@@ -382,10 +374,8 @@ export default function Article2() {
                   <p className="text-gray-400 text-sm mb-4">
                     Wir beraten Sie zu energieeffizienten Laborlösungen.
                   </p>
-                  <Link href="/contact">
-                    <a className="block w-full bg-primary text-white font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">
+                  <Link href="/contact" className="block w-full bg-primary text-white font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">
                       Kontakt aufnehmen
-                    </a>
                   </Link>
                 </div>
               </div>
@@ -399,8 +389,7 @@ export default function Article2() {
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-heading font-bold text-slate-900 mb-8">Weitere Artikel</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Link href="/magazine/1">
-              <a className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
+            <Link href="/magazine/1" className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
                 <div className="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=400" alt="" className="w-full h-full object-cover" />
                 </div>
@@ -408,10 +397,8 @@ export default function Article2() {
                   <p className="text-xs text-primary font-medium mb-2">Technologie</p>
                   <h3 className="font-bold text-slate-900 group-hover:text-primary transition-colors">Innovation im Modulbau: Die Zukunft des mobilen Labors</h3>
                 </div>
-              </a>
             </Link>
-            <Link href="/magazine/3">
-              <a className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
+            <Link href="/magazine/3" className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
                 <div className="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=400" alt="" className="w-full h-full object-cover" />
                 </div>
@@ -419,7 +406,6 @@ export default function Article2() {
                   <p className="text-xs text-primary font-medium mb-2">Sicherheit</p>
                   <h3 className="font-bold text-slate-900 group-hover:text-primary transition-colors">BSL-2 und BSL-3 im Container: Geht das?</h3>
                 </div>
-              </a>
             </Link>
           </div>
         </div>
@@ -427,10 +413,8 @@ export default function Article2() {
 
       {/* Zurück */}
       <div className="container mx-auto px-4 py-8">
-        <Link href="/magazine">
-          <a className="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <Link href="/magazine" className="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
             <ArrowLeft className="w-4 h-4" /> Zurück zum Magazin
-          </a>
         </Link>
       </div>
     </div>

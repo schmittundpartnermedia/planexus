@@ -61,9 +61,9 @@ export default function Article1() {
       <div className="bg-slate-50 border-b border-gray-100 py-4">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/"><a className="hover:text-primary">Start</a></Link>
+            <Link href="/" className="hover:text-primary">Start</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link href="/magazine"><a className="hover:text-primary">Magazin</a></Link>
+            <Link href="/magazine" className="hover:text-primary">Magazin</Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-primary font-medium">Innovation im Modulbau</span>
           </div>
@@ -104,7 +104,7 @@ export default function Article1() {
                     <div>
                       <h4 className="font-bold text-slate-900 mb-2">Profi-Tipp: Frühe Planung zahlt sich aus</h4>
                       <p className="text-gray-600 text-sm">
-                        Beginnen Sie mit der <Link href="/services/planning"><a className="text-primary font-medium hover:underline">technischen Fachplanung</a></Link> bereits in der Konzeptphase. Je früher die Anforderungen definiert werden, desto besser kann das Containermodul auf Ihre spezifischen Bedürfnisse abgestimmt werden – ohne Mehrkosten durch nachträgliche Änderungen.
+                        Beginnen Sie mit der <Link href="/services/planning" className="text-primary font-medium hover:underline">technischen Fachplanung</Link> bereits in der Konzeptphase. Je früher die Anforderungen definiert werden, desto besser kann das Containermodul auf Ihre spezifischen Bedürfnisse abgestimmt werden – ohne Mehrkosten durch nachträgliche Änderungen.
                       </p>
                     </div>
                   </div>
@@ -169,7 +169,7 @@ export default function Article1() {
                     <div>
                       <h4 className="font-bold text-slate-900 mb-2">Wichtig: Standortvorbereitung nicht vergessen</h4>
                       <p className="text-gray-600 text-sm">
-                        Während das Containermodul in der Fabrik entsteht, sollte parallel die Standortvorbereitung erfolgen. Unsere <Link href="/services/logistics"><a className="text-primary font-medium hover:underline">Logistik- und Montageexperten</a></Link> unterstützen Sie bei der Planung von Fundament und Medienanschlüssen.
+                        Während das Containermodul in der Fabrik entsteht, sollte parallel die Standortvorbereitung erfolgen. Unsere <Link href="/services/logistics" className="text-primary font-medium hover:underline">Logistik- und Montageexperten</Link> unterstützen Sie bei der Planung von Fundament und Medienanschlüssen.
                       </p>
                     </div>
                   </div>
@@ -235,7 +235,7 @@ export default function Article1() {
                     <div>
                       <h4 className="font-bold text-slate-900 mb-2">Profi-Tipp: Leasing-Optionen prüfen</h4>
                       <p className="text-gray-600 text-sm">
-                        Für temporäre Projekte oder bei begrenztem Investitionsbudget können Leasing-Modelle eine attraktive Alternative sein. Sprechen Sie uns in der <Link href="/services/consulting"><a className="text-primary font-medium hover:underline">Beratung</a></Link> auf die verschiedenen Finanzierungsoptionen an.
+                        Für temporäre Projekte oder bei begrenztem Investitionsbudget können Leasing-Modelle eine attraktive Alternative sein. Sprechen Sie uns in der <Link href="/services/consulting" className="text-primary font-medium hover:underline">Beratung</Link> auf die verschiedenen Finanzierungsoptionen an.
                       </p>
                     </div>
                   </div>
@@ -262,7 +262,7 @@ export default function Article1() {
                 </p>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Unsere <Link href="/services/consulting"><a className="text-primary font-medium hover:underline">Beratungsexperten</a></Link> unterstützen Sie bei der Navigation durch die verschiedenen regulatorischen Anforderungen und stellen sicher, dass Ihr Laborcontainer alle erforderlichen Genehmigungen erhält.
+                  Unsere <Link href="/services/consulting" className="text-primary font-medium hover:underline">Beratungsexperten</Link> unterstützen Sie bei der Navigation durch die verschiedenen regulatorischen Anforderungen und stellen sicher, dass Ihr Laborcontainer alle erforderlichen Genehmigungen erhält.
                 </p>
 
                 <h2 className="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
@@ -282,7 +282,7 @@ export default function Article1() {
                 </h2>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Die Entwicklung im modularen Laborbau schreitet stetig voran. Aktuelle Trends zeigen in Richtung einer noch stärkeren Integration digitaler Technologien. <Link href="/services/smart-lab"><a className="text-primary font-medium hover:underline">Smart-Lab-Systeme</a></Link> mit IoT-Sensoren, cloudbasierter Datenanalyse und automatisierten Workflows werden zum Standard.
+                  Die Entwicklung im modularen Laborbau schreitet stetig voran. Aktuelle Trends zeigen in Richtung einer noch stärkeren Integration digitaler Technologien. <Link href="/services/smart-lab" className="text-primary font-medium hover:underline">Smart-Lab-Systeme</Link> mit IoT-Sensoren, cloudbasierter Datenanalyse und automatisierten Workflows werden zum Standard.
                 </p>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
@@ -295,10 +295,8 @@ export default function Article1() {
                   <p className="text-gray-300 leading-relaxed mb-6">
                     Der modulare Laborbau hat sich von einer Nischenlösung zur ernsthaften Alternative für nahezu alle Laboranwendungen entwickelt. Die Kombination aus Geschwindigkeit, Flexibilität, Qualität und Wirtschaftlichkeit macht Containerlab ore zur ersten Wahl für zukunftsorientierte Unternehmen und Institutionen.
                   </p>
-                  <Link href="/contact">
-                    <a className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+                  <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
                       Beratungstermin vereinbaren <ArrowRight className="w-5 h-5" />
-                    </a>
                   </Link>
                 </div>
 
@@ -340,27 +338,21 @@ export default function Article1() {
                   <h4 className="font-bold text-slate-900 mb-4">Passende Leistungen</h4>
                   <ul className="space-y-3">
                     <li>
-                      <Link href="/services/planning">
-                        <a className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
+                      <Link href="/services/planning" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                           <ChevronRight className="w-4 h-4 text-primary" />
                           Technische Fachplanung
-                        </a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/construction">
-                        <a className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
+                      <Link href="/services/construction" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                           <ChevronRight className="w-4 h-4 text-primary" />
                           Modulbau & Fertigung
-                        </a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/smart-lab">
-                        <a className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
+                      <Link href="/services/smart-lab" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                           <ChevronRight className="w-4 h-4 text-primary" />
                           Smart Lab Integration
-                        </a>
                       </Link>
                     </li>
                   </ul>
@@ -372,10 +364,8 @@ export default function Article1() {
                   <p className="text-gray-400 text-sm mb-4">
                     Lassen Sie uns über Ihre Anforderungen sprechen.
                   </p>
-                  <Link href="/contact">
-                    <a className="block w-full bg-primary text-white font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">
+                  <Link href="/contact" className="block w-full bg-primary text-white font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">
                       Kontakt aufnehmen
-                    </a>
                   </Link>
                 </div>
               </div>
@@ -389,8 +379,7 @@ export default function Article1() {
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-heading font-bold text-slate-900 mb-8">Weitere Artikel</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Link href="/magazine/2">
-              <a className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
+            <Link href="/magazine/2" className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
                 <div className="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=400" alt="" className="w-full h-full object-cover" />
                 </div>
@@ -398,10 +387,8 @@ export default function Article1() {
                   <p className="text-xs text-primary font-medium mb-2">Nachhaltigkeit</p>
                   <h3 className="font-bold text-slate-900 group-hover:text-primary transition-colors">Nachhaltigkeit im Laborbau: Energieeffizienz trifft High-Tech</h3>
                 </div>
-              </a>
             </Link>
-            <Link href="/magazine/3">
-              <a className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
+            <Link href="/magazine/3" className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
                 <div className="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=400" alt="" className="w-full h-full object-cover" />
                 </div>
@@ -409,7 +396,6 @@ export default function Article1() {
                   <p className="text-xs text-primary font-medium mb-2">Sicherheit</p>
                   <h3 className="font-bold text-slate-900 group-hover:text-primary transition-colors">BSL-2 und BSL-3 im Container: Geht das?</h3>
                 </div>
-              </a>
             </Link>
           </div>
         </div>
@@ -417,10 +403,8 @@ export default function Article1() {
 
       {/* Zurück */}
       <div className="container mx-auto px-4 py-8">
-        <Link href="/magazine">
-          <a className="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <Link href="/magazine" className="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
             <ArrowLeft className="w-4 h-4" /> Zurück zum Magazin
-          </a>
         </Link>
       </div>
     </div>

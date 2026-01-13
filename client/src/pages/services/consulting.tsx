@@ -39,10 +39,8 @@ export default function ConsultingService() {
               Wir navigieren Sie sicher durch den Dschungel der Vorschriften und Genehmigungsverfahren. Mit unserer Expertise wird Ihr Laborprojekt zum Erfolg.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact">
-                <a className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+              <Link href="/contact" className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
                   Beratung anfragen <ArrowRight className="w-5 h-5" />
-                </a>
               </Link>
               <a href="tel:+4974357519700" className="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
                 <Phone className="w-5 h-5" /> Direkt anrufen
@@ -56,9 +54,9 @@ export default function ConsultingService() {
       <div className="bg-slate-50 border-b border-gray-100 py-4">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/"><a className="hover:text-primary">Start</a></Link>
+            <Link href="/" className="hover:text-primary">Start</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link href="/services"><a className="hover:text-primary">Leistungen</a></Link>
+            <Link href="/services" className="hover:text-primary">Leistungen</Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-primary font-medium">Beratung & Genehmigung</span>
           </div>
@@ -233,10 +231,8 @@ export default function ConsultingService() {
                   <p className="text-white/80 mb-6 text-sm">
                     Lassen Sie uns über die rechtlichen Anforderungen für Ihr Laborprojekt sprechen. Unverbindlich und kostenlos.
                   </p>
-                  <Link href="/contact">
-                    <a className="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">
+                  <Link href="/contact" className="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">
                       Beratung anfordern
-                    </a>
                   </Link>
                 </div>
 
@@ -264,11 +260,11 @@ export default function ConsultingService() {
                 <div className="bg-white p-8 rounded-2xl border border-gray-100">
                   <h3 className="text-lg font-bold mb-6 text-slate-900">Weitere Leistungen</h3>
                   <ul className="space-y-3">
-                    <li><Link href="/services/planning"><a className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Technische Fachplanung</a></Link></li>
-                    <li><Link href="/services/construction"><a className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Modulbau & Fertigung</a></Link></li>
-                    <li><Link href="/services/logistics"><a className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Logistik & Montage</a></Link></li>
-                    <li><Link href="/services/equipment"><a className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Laborausstattung</a></Link></li>
-                    <li><Link href="/services/smart-lab"><a className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Smart Lab Integration</a></Link></li>
+                    <li><Link href="/services/planning" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Technische Fachplanung</Link></li>
+                    <li><Link href="/services/construction" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Modulbau & Fertigung</Link></li>
+                    <li><Link href="/services/logistics" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Logistik & Montage</Link></li>
+                    <li><Link href="/services/equipment" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Laborausstattung</Link></li>
+                    <li><Link href="/services/smart-lab" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Smart Lab Integration</Link></li>
                   </ul>
                 </div>
               </div>
@@ -286,10 +282,8 @@ export default function ConsultingService() {
           <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
             Mit unserer Unterstützung meistern Sie alle behördlichen Hürden. Kontaktieren Sie uns für eine unverbindliche Erstberatung.
           </p>
-          <Link href="/contact">
-            <a className="bg-primary text-white font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+          <Link href="/contact" className="bg-primary text-white font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
               Jetzt Kontakt aufnehmen <ArrowRight className="w-5 h-5" />
-            </a>
           </Link>
         </div>
       </section>
