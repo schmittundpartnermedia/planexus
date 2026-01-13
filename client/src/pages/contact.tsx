@@ -43,7 +43,7 @@ export default function Contact() {
       <SEO 
         title="Kontakt - Laborcontainer Anfrage"
         description="Kontaktieren Sie Planexus für Ihr Laborcontainer-Projekt. Beratung, Angebote und Projektstart. Wir freuen uns auf Ihre Anfrage."
-        canonical="/contact"
+        canonical="/kontakt"
       />
       <section className="bg-slate-50 py-20 border-b border-gray-100">
         <div className="container mx-auto px-4 text-center">

@@ -9,7 +9,7 @@ export default function About() {
       <SEO 
         title="Über Planexus - Ihre Laborcontainer Experten"
         description="Lernen Sie Planexus kennen: Pioniere im modularen Laborbau seit 2016. Erfahrung, Innovation und Qualität für Ihre Laborprojekte."
-        canonical="/about"
+        canonical="/ueber-uns"
       />
       {/* Header */}
       <section className="py-20 bg-slate-50 border-b border-gray-100">

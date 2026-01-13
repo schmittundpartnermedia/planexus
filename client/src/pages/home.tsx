@@ -51,11 +51,11 @@ export default function Home() {
               Wir realisieren flexible Forschungsumgebungen für die Zukunft.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pointer-events-auto">
-              <Link href="/contact" className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(132,189,0,0.4)]">
+              <Link href="/kontakt" className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(132,189,0,0.4)]">
                 Labor Projekt starten
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/services" className="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors backdrop-blur-sm flex items-center justify-center">
+              <Link href="/leistungen" className="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors backdrop-blur-sm flex items-center justify-center">
                 Unsere Leistungen
               </Link>
             </div>
@@ -103,7 +103,7 @@ export default function Home() {
                   <strong>Planexus</strong> steht für intelligente Modulbauweise. Wir verbinden technisches Know-how mit Innovationskraft, um Labore zu schaffen, die exakt auf Ihre Analyseprozesse abgestimmt sind – schnell verfügbar, kosteneffizient und nachhaltig.
                 </p>
               </div>
-              <Link href="/about">
+              <Link href="/ueber-uns">
                 <a className="inline-flex items-center gap-2 text-primary font-bold mt-8 hover:gap-3 transition-all border-b-2 border-primary/20 hover:border-primary pb-1">
                   Mehr über Planexus erfahren <ChevronRight className="w-5 h-5" />
                 </a>
@@ -153,37 +153,37 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                href: "/services/planning",
+                href: "/leistungen/planung",
                 icon: <Layout className="w-8 h-8 text-primary" />,
                 title: "Technische Fachplanung",
                 desc: "Detaillierte Planung mit 3D-Visualisierung und TGA-Konzepten."
               },
               {
-                href: "/services/construction",
+                href: "/leistungen/modulbau",
                 icon: <Layers className="w-8 h-8 text-primary" />,
                 title: "Modulbau & Fertigung",
                 desc: "Hochwertige Laborcontainer 'Made in Germany'."
               },
               {
-                href: "/services/logistics",
+                href: "/leistungen/logistik",
                 icon: <Box className="w-8 h-8 text-primary" />,
                 title: "Logistik & Montage",
                 desc: "Weltweiter Transport und schlüsselfertige Übergabe."
               },
               {
-                href: "/services/equipment",
+                href: "/leistungen/ausstattung",
                 icon: <Microscope className="w-8 h-8 text-primary" />,
                 title: "Laborausstattung",
                 desc: "Labormöbel, Abzüge und Sicherheitsausstattung."
               },
               {
-                href: "/services/consulting",
+                href: "/leistungen/beratung",
                 icon: <ShieldCheck className="w-8 h-8 text-primary" />,
                 title: "Beratung & Genehmigung",
                 desc: "Unterstützung bei allen behördlichen Verfahren."
               },
               {
-                href: "/services/smart-lab",
+                href: "/leistungen/smart-lab",
                 icon: <Layout className="w-8 h-8 text-primary" />,
                 title: "Smart Lab Integration",
                 desc: "Digitale Vernetzung und IoT-Monitoring."
@@ -210,7 +210,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/services">
+            <Link href="/leistungen">
               <a className="inline-flex items-center gap-2 bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors">
                 Alle Leistungen ansehen <ArrowRight className="w-5 h-5" />
               </a>
@@ -231,7 +231,7 @@ export default function Home() {
              <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10 relative z-10">
                Lassen Sie uns gemeinsam Ihre Anforderungen besprechen. Wir erstellen Ihnen ein individuelles Konzept für Ihren Laborcontainer.
              </p>
-             <Link href="/contact">
+             <Link href="/kontakt">
                <a className="bg-white text-primary font-bold px-10 py-4 rounded-lg hover:bg-slate-100 transition-colors inline-flex items-center gap-2 shadow-lg">
                  Jetzt Kontakt aufnehmen <ArrowRight className="w-5 h-5" />
                </a>

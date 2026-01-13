@@ -29,23 +29,23 @@ export function Navbar() {
   };
 
   const links = [
-    { href: "/magazine", label: "Magazin" },
-    { href: "/contact", label: "Kontakt" },
+    { href: "/magazin", label: "Magazin" },
+    { href: "/kontakt", label: "Kontakt" },
   ];
   
   const aboutLinks = [
-    { href: "/about", label: "Über uns" },
+    { href: "/ueber-uns", label: "Über uns" },
     { href: "/team", label: "Team" },
   ];
 
   const serviceLinks = [
-    { href: "/services", label: "Leistungsübersicht" },
-    { href: "/services/planning", label: "Technische Fachplanung" },
-    { href: "/services/construction", label: "Modulbau & Fertigung" },
-    { href: "/services/logistics", label: "Logistik & Montage" },
-    { href: "/services/equipment", label: "Laborausstattung" },
-    { href: "/services/consulting", label: "Beratung & Genehmigung" },
-    { href: "/services/smart-lab", label: "Smart Lab Integration" },
+    { href: "/leistungen", label: "Leistungsübersicht" },
+    { href: "/leistungen/planung", label: "Technische Fachplanung" },
+    { href: "/leistungen/modulbau", label: "Modulbau & Fertigung" },
+    { href: "/leistungen/logistik", label: "Logistik & Montage" },
+    { href: "/leistungen/ausstattung", label: "Laborausstattung" },
+    { href: "/leistungen/beratung", label: "Beratung & Genehmigung" },
+    { href: "/leistungen/smart-lab", label: "Smart Lab Integration" },
   ];
 
   return (
@@ -94,13 +94,13 @@ export function Navbar() {
             <button
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 uppercase tracking-wide",
-                (location === "/about" || location === "/team") ? "text-primary" : "text-white/80 hover:text-white"
+                (location === "/ueber-uns" || location === "/team") ? "text-primary" : "text-white/80 hover:text-white"
               )}
             >
               Über uns
               <ChevronDown className={cn("w-4 h-4 transition-transform", aboutOpen && "rotate-180")} />
             </button>
-            {(location === "/about" || location === "/team") && (
+            {(location === "/ueber-uns" || location === "/team") && (
               <motion.div
                 layoutId="navbar-indicator"
                 className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
@@ -141,13 +141,13 @@ export function Navbar() {
             <button
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 uppercase tracking-wide",
-                location.startsWith("/services") ? "text-primary" : "text-white/80 hover:text-white"
+                location.startsWith("/leistungen") ? "text-primary" : "text-white/80 hover:text-white"
               )}
             >
               Leistungen
               <ChevronDown className={cn("w-4 h-4 transition-transform", servicesOpen && "rotate-180")} />
             </button>
-            {location.startsWith("/services") && (
+            {location.startsWith("/leistungen") && (
               <motion.div
                 layoutId="navbar-indicator-services"
                 className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"

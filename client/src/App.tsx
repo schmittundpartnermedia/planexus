@@ -30,20 +30,20 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/services" component={Services} />
-      <Route path="/services/planning" component={PlanningService} />
-      <Route path="/services/construction" component={ConstructionService} />
-      <Route path="/services/logistics" component={LogisticsService} />
-      <Route path="/services/equipment" component={EquipmentService} />
-      <Route path="/services/consulting" component={ConsultingService} />
-      <Route path="/services/smart-lab" component={SmartLabService} />
-      <Route path="/contact" component={Contact} />
+      <Route path="/ueber-uns" component={About} />
+      <Route path="/leistungen" component={Services} />
+      <Route path="/leistungen/planung" component={PlanningService} />
+      <Route path="/leistungen/modulbau" component={ConstructionService} />
+      <Route path="/leistungen/logistik" component={LogisticsService} />
+      <Route path="/leistungen/ausstattung" component={EquipmentService} />
+      <Route path="/leistungen/beratung" component={ConsultingService} />
+      <Route path="/leistungen/smart-lab" component={SmartLabService} />
+      <Route path="/kontakt" component={Contact} />
       <Route path="/team" component={Team} />
-      <Route path="/magazine" component={Magazine} />
-      <Route path="/magazine/1" component={Article1} />
-      <Route path="/magazine/2" component={Article2} />
-      <Route path="/magazine/3" component={Article3} />
+      <Route path="/magazin" component={Magazine} />
+      <Route path="/magazin/1" component={Article1} />
+      <Route path="/magazin/2" component={Article2} />
+      <Route path="/magazin/3" component={Article3} />
       <Route path="/impressum" component={Impressum} />
       <Route path="/datenschutz" component={Datenschutz} />
       <Route component={NotFound} />

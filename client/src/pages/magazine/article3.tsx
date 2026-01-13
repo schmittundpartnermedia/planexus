@@ -9,7 +9,7 @@ export default function Article3() {
       <SEO 
         title="BSL-2 und BSL-3 im Container: Geht das?"
         description="Sicherheitsstufen im Containerbau sind kein Problem mehr. Erfahren Sie, wie wir höchste Sicherheitsanforderungen in BSL-2 und BSL-3 Laboren in mobilen Einheiten realisieren."
-        canonical="/magazine/3"
+        canonical="/magazin/3"
         type="article"
       />
       <ArticleSchema 
@@ -18,12 +18,12 @@ export default function Article3() {
         author="Redaktion Planexus"
         datePublished="2025-12-20"
         image="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2070"
-        url="/magazine/3"
+        url="/magazin/3"
       />
       <BreadcrumbSchema items={[
         { name: "Start", url: "/" },
-        { name: "Magazin", url: "/magazine" },
-        { name: "BSL-2 und BSL-3 im Container", url: "/magazine/3" }
+        { name: "Magazin", url: "/magazin" },
+        { name: "BSL-2 und BSL-3 im Container", url: "/magazin/3" }
       ]} />
       {/* Hero */}
       <section className="relative py-20 bg-slate-900 text-white overflow-hidden">
@@ -63,7 +63,7 @@ export default function Article3() {
           <div className="flex items-center gap-2 text-sm text-gray-500">
             <Link href="/" className="hover:text-primary">Start</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link href="/magazine" className="hover:text-primary">Magazin</Link>
+            <Link href="/magazin" className="hover:text-primary">Magazin</Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-primary font-medium">BSL-2 und BSL-3 im Container</span>
           </div>
@@ -150,7 +150,7 @@ export default function Article3() {
                 </div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Diese Anforderungen lassen sich in einem gut geplanten Containermodul problemlos erfüllen. Unsere BSL-2 Container werden mit abwaschbaren Wandoberflächen, integrierten Handwaschbecken und Anschlüssen für Sicherheitswerkbänke ausgestattet. Die <Link href="/services/planning" className="text-primary font-medium hover:underline">technische Fachplanung</Link> berücksichtigt alle Details von Anfang an.
+                  Diese Anforderungen lassen sich in einem gut geplanten Containermodul problemlos erfüllen. Unsere BSL-2 Container werden mit abwaschbaren Wandoberflächen, integrierten Handwaschbecken und Anschlüssen für Sicherheitswerkbänke ausgestattet. Die <Link href="/leistungen/planung" className="text-primary font-medium hover:underline">technische Fachplanung</Link> berücksichtigt alle Details von Anfang an.
                 </p>
 
                 {/* Profi-Tipp */}
@@ -162,7 +162,7 @@ export default function Article3() {
                     <div>
                       <h4 className="font-bold text-slate-900 mb-2">Profi-Tipp: Durchreicheautoklav einplanen</h4>
                       <p className="text-gray-600 text-sm">
-                        Für effiziente Arbeitsabläufe empfehlen wir die Integration eines Durchreicheautoklaven. So können kontaminierte Materialien dekontaminiert werden, ohne sie durch den sauberen Bereich transportieren zu müssen. Unsere <Link href="/services/equipment" className="text-primary font-medium hover:underline">Laborausstattungsexperten</Link> beraten Sie zur optimalen Konfiguration.
+                        Für effiziente Arbeitsabläufe empfehlen wir die Integration eines Durchreicheautoklaven. So können kontaminierte Materialien dekontaminiert werden, ohne sie durch den sauberen Bereich transportieren zu müssen. Unsere <Link href="/leistungen/ausstattung" className="text-primary font-medium hover:underline">Laborausstattungsexperten</Link> beraten Sie zur optimalen Konfiguration.
                       </p>
                     </div>
                   </div>
@@ -215,7 +215,7 @@ export default function Article3() {
                     <div>
                       <h4 className="font-bold text-slate-900 mb-2">Wichtig: Genehmigungsverfahren beachten</h4>
                       <p className="text-gray-600 text-sm">
-                        Der Betrieb eines BSL-3 Labors erfordert eine Erlaubnis nach Biostoffverordnung. Das Genehmigungsverfahren kann mehrere Monate dauern. Beginnen Sie frühzeitig mit der Vorbereitung – unsere <Link href="/services/consulting" className="text-primary font-medium hover:underline">Beratungsexperten</Link> unterstützen Sie dabei.
+                        Der Betrieb eines BSL-3 Labors erfordert eine Erlaubnis nach Biostoffverordnung. Das Genehmigungsverfahren kann mehrere Monate dauern. Beginnen Sie frühzeitig mit der Vorbereitung – unsere <Link href="/leistungen/beratung" className="text-primary font-medium hover:underline">Beratungsexperten</Link> unterstützen Sie dabei.
                       </p>
                     </div>
                   </div>
@@ -258,7 +258,7 @@ export default function Article3() {
                     <div>
                       <h4 className="font-bold text-slate-900 mb-2">Profi-Tipp: Bag-In/Bag-Out Filtergehäuse</h4>
                       <p className="text-gray-600 text-sm">
-                        Für den sicheren Filterwechsel empfehlen wir Bag-In/Bag-Out (BIBO) Filtergehäuse. Diese ermöglichen den kontaminationsfreien Austausch der HEPA-Filter ohne Exposition des Servicepersonals. Unsere <Link href="/services/equipment" className="text-primary font-medium hover:underline">Laborausstattung</Link> umfasst alle erforderlichen Sicherheitssysteme.
+                        Für den sicheren Filterwechsel empfehlen wir Bag-In/Bag-Out (BIBO) Filtergehäuse. Diese ermöglichen den kontaminationsfreien Austausch der HEPA-Filter ohne Exposition des Servicepersonals. Unsere <Link href="/leistungen/ausstattung" className="text-primary font-medium hover:underline">Laborausstattung</Link> umfasst alle erforderlichen Sicherheitssysteme.
                       </p>
                     </div>
                   </div>
@@ -303,7 +303,7 @@ export default function Article3() {
                     ))}
                   </ul>
                   <div className="mt-4 pt-4 border-t border-gray-200">
-                    <Link href="/services/smart-lab" className="text-primary font-medium hover:underline flex items-center gap-2">
+                    <Link href="/leistungen/smart-lab" className="text-primary font-medium hover:underline flex items-center gap-2">
                         Mehr über Smart Lab Integration erfahren <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -347,7 +347,7 @@ export default function Article3() {
                 </p>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Parallel beginnt die Abstimmung mit den Genehmigungsbehörden. Für BSL-2 Labore ist in der Regel eine Anzeige bei der zuständigen Behörde ausreichend. BSL-3 Labore erfordern eine Erlaubnis, deren Erteilung von einer Prüfung der baulichen und organisatorischen Voraussetzungen abhängt. Unsere <Link href="/services/consulting" className="text-primary font-medium hover:underline">Beratungsexperten</Link> begleiten Sie durch diesen Prozess.
+                  Parallel beginnt die Abstimmung mit den Genehmigungsbehörden. Für BSL-2 Labore ist in der Regel eine Anzeige bei der zuständigen Behörde ausreichend. BSL-3 Labore erfordern eine Erlaubnis, deren Erteilung von einer Prüfung der baulichen und organisatorischen Voraussetzungen abhängt. Unsere <Link href="/leistungen/beratung" className="text-primary font-medium hover:underline">Beratungsexperten</Link> begleiten Sie durch diesen Prozess.
                 </p>
 
                 {/* Fazit */}
@@ -356,7 +356,7 @@ export default function Article3() {
                   <p className="text-gray-300 leading-relaxed mb-6">
                     Die Frage „BSL-2 und BSL-3 im Container – geht das?" können wir mit einem klaren Ja beantworten. Moderne Fertigungstechnologien und durchdachte Konzepte ermöglichen es, Hochsicherheitslabore in mobiler Bauweise zu realisieren, die konventionellen Anlagen in nichts nachstehen. Im Gegenteil: Die kontrollierte Werkstattfertigung bietet Qualitätsvorteile, während die Flexibilität des Container-Konzepts neue Einsatzmöglichkeiten eröffnet.
                   </p>
-                  <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+                  <Link href="/kontakt" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
                       Sicherheitslabor anfragen <ArrowRight className="w-5 h-5" />
                   </Link>
                 </div>
@@ -399,25 +399,25 @@ export default function Article3() {
                   <h4 className="font-bold text-slate-900 mb-4">Passende Leistungen</h4>
                   <ul className="space-y-3">
                     <li>
-                      <Link href="/services/planning" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
+                      <Link href="/leistungen/planung" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                           <ChevronRight className="w-4 h-4 text-primary" />
                           Technische Fachplanung
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/consulting" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
+                      <Link href="/leistungen/beratung" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                           <ChevronRight className="w-4 h-4 text-primary" />
                           Beratung & Genehmigung
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/equipment" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
+                      <Link href="/leistungen/ausstattung" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                           <ChevronRight className="w-4 h-4 text-primary" />
                           Laborausstattung
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/smart-lab" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
+                      <Link href="/leistungen/smart-lab" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                           <ChevronRight className="w-4 h-4 text-primary" />
                           Smart Lab Integration
                       </Link>
@@ -431,7 +431,7 @@ export default function Article3() {
                   <p className="text-gray-400 text-sm mb-4">
                     Wir beraten Sie zu allen Sicherheitsstufen.
                   </p>
-                  <Link href="/contact" className="block w-full bg-primary text-white font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">
+                  <Link href="/kontakt" className="block w-full bg-primary text-white font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">
                       Kontakt aufnehmen
                   </Link>
                 </div>
@@ -446,7 +446,7 @@ export default function Article3() {
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-heading font-bold text-slate-900 mb-8">Weitere Artikel</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Link href="/magazine/1" className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
+            <Link href="/magazin/1" className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
                 <div className="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=400" alt="" className="w-full h-full object-cover" />
                 </div>
@@ -455,7 +455,7 @@ export default function Article3() {
                   <h3 className="font-bold text-slate-900 group-hover:text-primary transition-colors">Innovation im Modulbau: Die Zukunft des mobilen Labors</h3>
                 </div>
             </Link>
-            <Link href="/magazine/2" className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
+            <Link href="/magazin/2" className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
                 <div className="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=400" alt="" className="w-full h-full object-cover" />
                 </div>
@@ -470,7 +470,7 @@ export default function Article3() {
 
       {/* Zurück */}
       <div className="container mx-auto px-4 py-8">
-        <Link href="/magazine" className="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <Link href="/magazin" className="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
             <ArrowLeft className="w-4 h-4" /> Zurück zum Magazin
         </Link>
       </div>

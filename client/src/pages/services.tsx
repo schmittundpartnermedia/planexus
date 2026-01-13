@@ -7,7 +7,7 @@ export default function Services() {
   const services = [
     {
       id: "planning",
-      href: "/services/planning",
+      href: "/leistungen/planung",
       icon: <PenTool className="w-8 h-8" />,
       title: "Technische Fachplanung Labor",
       desc: "Detaillierte Planung Ihres Laborcontainers unter Berücksichtigung aller Sicherheits- und Effizienzanforderungen. Wir erstellen CAD-Zeichnungen, Layouts und TGA-Konzepte für optimale Arbeitsabläufe.",
@@ -15,7 +15,7 @@ export default function Services() {
     },
     {
       id: "construction",
-      href: "/services/construction",
+      href: "/leistungen/modulbau",
       icon: <Hammer className="w-8 h-8" />,
       title: "Modulbau & Fertigung",
       desc: "Hochwertige Umsetzung in modularer Bauweise. Unsere Laborcontainer sind robust, langlebig und erfüllen alle relevanten Normen. Fertigung 'Made in Germany' mit höchsten Qualitätsstandards.",
@@ -23,7 +23,7 @@ export default function Services() {
     },
     {
       id: "logistics",
-      href: "/services/logistics",
+      href: "/leistungen/logistik",
       icon: <Truck className="w-8 h-8" />,
       title: "Logistik & Montage",
       desc: "Sicherer Transport und fachgerechte Montage vor Ort. Wir kümmern uns um die Aufstellung, den Anschluss aller Medien und die schlüsselfertige Übergabe Ihres mobilen Labors.",
@@ -31,7 +31,7 @@ export default function Services() {
     },
     {
       id: "equipment",
-      href: "/services/equipment",
+      href: "/leistungen/ausstattung",
       icon: <Microscope className="w-8 h-8" />,
       title: "Laborausstattung",
       desc: "Integration modernster Labortechnik und Möbel. Wir beraten Sie bei der Auswahl und integrieren Abzüge, Sicherheitseinrichtungen und Ihre Geräte nahtlos in den Container.",
@@ -39,7 +39,7 @@ export default function Services() {
     },
     {
       id: "consulting",
-      href: "/services/consulting",
+      href: "/leistungen/beratung",
       icon: <ClipboardCheck className="w-8 h-8" />,
       title: "Beratung & Genehmigung",
       desc: "Unterstützung bei Genehmigungsverfahren für Laborcontainer. Wir begleiten Sie durch alle behördlichen Anforderungen und sorgen für rechtssichere Lösungen.",
@@ -47,7 +47,7 @@ export default function Services() {
     },
     {
       id: "smart-lab",
-      href: "/services/smart-lab",
+      href: "/leistungen/smart-lab",
       icon: <Zap className="w-8 h-8" />,
       title: "Smart Lab Integration",
       desc: "Zukunftsfähige Vernetzung Ihres Labors. Integration von IoT-Sensoren, Monitoring-Systemen und digitalen Workflows für maximale Effizienz und Compliance.",
@@ -60,7 +60,7 @@ export default function Services() {
       <SEO 
         title="Leistungen - Laborcontainer Komplettservice"
         description="Alle Leistungen von Planexus: Technische Fachplanung, Modulbau, Logistik, Laborausstattung, Beratung und Smart Lab Integration für Ihren Laborcontainer."
-        canonical="/services"
+        canonical="/leistungen"
       />
       {/* Hero Bereich */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
@@ -80,7 +80,7 @@ export default function Services() {
               Von der ersten Idee bis zur schlüsselfertigen Übergabe – wir begleiten Sie durch alle Phasen Ihres Laborprojekts. Profitieren Sie von über 10 Jahren Erfahrung im modularen Laborbau.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/kontakt">
                 <a className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
                   Projekt anfragen <ArrowRight className="w-5 h-5" />
                 </a>
@@ -287,7 +287,7 @@ export default function Services() {
               Wir entwickeln individuelle Labor-Module auch fernab vom Standard. Sprechen Sie uns an – gemeinsam finden wir die optimale Lösung für Ihre Anforderungen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/kontakt">
                 <a className="bg-primary text-white px-10 py-4 rounded-lg font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 inline-flex items-center gap-2">
                   Individuelle Anfrage <ArrowRight className="w-5 h-5" />
                 </a>

@@ -39,7 +39,7 @@ export default function Magazine() {
       <SEO 
         title="Magazin - Fachwissen Laborcontainer & Modulbau"
         description="Das Planexus Magazin: Aktuelle Artikel, Fachwissen und Trends zu Laborcontainern, Modulbau, BSL-Laboren und nachhaltiger Laborplanung."
-        canonical="/magazine"
+        canonical="/magazin"
       />
       <section className="bg-slate-50 py-20 border-b border-gray-100">
         <div className="container mx-auto px-4 text-center">

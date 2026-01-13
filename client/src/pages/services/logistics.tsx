@@ -9,17 +9,17 @@ export default function LogisticsService() {
       <SEO 
         title="Logistik & Montage"
         description="Weltweiter Transport und fachgerechte Montage Ihres Laborcontainers. Schlüsselfertige Übergabe, Plug & Play Lösungen und Inbetriebnahme vor Ort."
-        canonical="/services/logistics"
+        canonical="/leistungen/logistik"
       />
       <ServiceSchema 
         name="Logistik & Montage"
         description="Weltweiter Transport und fachgerechte Montage von Laborcontainern mit schlüsselfertiger Übergabe"
-        url="/services/logistics"
+        url="/leistungen/logistik"
       />
       <BreadcrumbSchema items={[
         { name: "Start", url: "/" },
-        { name: "Leistungen", url: "/services" },
-        { name: "Logistik & Montage", url: "/services/logistics" }
+        { name: "Leistungen", url: "/leistungen" },
+        { name: "Logistik & Montage", url: "/leistungen/logistik" }
       ]} />
       {/* Hero Section */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
@@ -39,7 +39,7 @@ export default function LogisticsService() {
               Von der Werkhalle bis zum Einsatzort: Wir organisieren den sicheren Transport Ihres Laborcontainers und übernehmen die fachgerechte Aufstellung und Inbetriebnahme.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+              <Link href="/kontakt" className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
                   Logistik planen <ArrowRight className="w-5 h-5" />
               </Link>
               <a href="tel:+4974357519700" className="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
@@ -56,7 +56,7 @@ export default function LogisticsService() {
           <div className="flex items-center gap-2 text-sm text-gray-500">
             <Link href="/" className="hover:text-primary">Start</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link href="/services" className="hover:text-primary">Leistungen</Link>
+            <Link href="/leistungen" className="hover:text-primary">Leistungen</Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-primary font-medium">Logistik & Montage</span>
           </div>
@@ -235,7 +235,7 @@ export default function LogisticsService() {
                   <p className="text-white/80 mb-6 text-sm">
                     Wir übernehmen den kompletten Transport und die Montage. Alles aus einer Hand für einen reibungslosen Ablauf.
                   </p>
-                  <Link href="/contact" className="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">
+                  <Link href="/kontakt" className="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">
                       Logistik anfragen
                   </Link>
                 </div>
@@ -264,11 +264,11 @@ export default function LogisticsService() {
                 <div className="bg-white p-8 rounded-2xl border border-gray-100">
                   <h3 className="text-lg font-bold mb-6 text-slate-900">Weitere Leistungen</h3>
                   <ul className="space-y-3">
-                    <li><Link href="/services/planning" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Technische Fachplanung</Link></li>
-                    <li><Link href="/services/construction" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Modulbau & Fertigung</Link></li>
-                    <li><Link href="/services/equipment" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Laborausstattung</Link></li>
-                    <li><Link href="/services/consulting" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Beratung & Genehmigung</Link></li>
-                    <li><Link href="/services/smart-lab" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Smart Lab Integration</Link></li>
+                    <li><Link href="/leistungen/planung" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Technische Fachplanung</Link></li>
+                    <li><Link href="/leistungen/modulbau" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Modulbau & Fertigung</Link></li>
+                    <li><Link href="/leistungen/ausstattung" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Laborausstattung</Link></li>
+                    <li><Link href="/leistungen/beratung" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Beratung & Genehmigung</Link></li>
+                    <li><Link href="/leistungen/smart-lab" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Smart Lab Integration</Link></li>
                   </ul>
                 </div>
               </div>
@@ -286,7 +286,7 @@ export default function LogisticsService() {
           <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
             Verlassen Sie sich auf unsere Logistikexpertise. Wir liefern Ihr Labor sicher und termingerecht an jeden Ort der Welt.
           </p>
-          <Link href="/contact" className="bg-primary text-white font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+          <Link href="/kontakt" className="bg-primary text-white font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
               Jetzt Kontakt aufnehmen <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

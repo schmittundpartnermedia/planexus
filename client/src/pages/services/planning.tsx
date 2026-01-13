@@ -9,17 +9,17 @@ export default function PlanningService() {
       <SEO 
         title="Technische Fachplanung Labor"
         description="Professionelle Laborplanung für Ihren Laborcontainer. CAD-Zeichnungen, 3D-Visualisierung, TGA-Konzepte und Workflow-Optimierung. Jetzt Planungsanfrage stellen."
-        canonical="/services/planning"
+        canonical="/leistungen/planung"
       />
       <ServiceSchema 
         name="Technische Fachplanung Labor"
         description="Detaillierte Planung von Laborcontainern mit CAD-Zeichnungen, 3D-Visualisierung und TGA-Konzepten"
-        url="/services/planning"
+        url="/leistungen/planung"
       />
       <BreadcrumbSchema items={[
         { name: "Start", url: "/" },
-        { name: "Leistungen", url: "/services" },
-        { name: "Technische Fachplanung", url: "/services/planning" }
+        { name: "Leistungen", url: "/leistungen" },
+        { name: "Technische Fachplanung", url: "/leistungen/planung" }
       ]} />
       {/* Hero Section */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
@@ -39,7 +39,7 @@ export default function PlanningService() {
               Von der ersten Skizze bis zum detaillierten Ausführungsplan: Unsere erfahrenen Ingenieure entwickeln maßgeschneiderte Laborkonzepte, die Ihre wissenschaftlichen Anforderungen perfekt erfüllen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+              <Link href="/kontakt" className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
                   Planungsanfrage stellen <ArrowRight className="w-5 h-5" />
               </Link>
               <a href="tel:+4974357519700" className="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
@@ -56,7 +56,7 @@ export default function PlanningService() {
           <div className="flex items-center gap-2 text-sm text-gray-500">
             <Link href="/" className="hover:text-primary">Start</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link href="/services" className="hover:text-primary">Leistungen</Link>
+            <Link href="/leistungen" className="hover:text-primary">Leistungen</Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-primary font-medium">Technische Fachplanung</span>
           </div>
@@ -193,7 +193,7 @@ export default function PlanningService() {
                   <p className="text-white/80 mb-6 text-sm">
                     Lassen Sie uns über Ihr Projekt sprechen. Wir beraten Sie unverbindlich zu den Möglichkeiten.
                   </p>
-                  <Link href="/contact" className="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">
+                  <Link href="/kontakt" className="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">
                       Beratungstermin vereinbaren
                   </Link>
                 </div>
@@ -222,11 +222,11 @@ export default function PlanningService() {
                 <div className="bg-white p-8 rounded-2xl border border-gray-100">
                   <h3 className="text-lg font-bold mb-6 text-slate-900">Weitere Leistungen</h3>
                   <ul className="space-y-3">
-                    <li><Link href="/services/construction" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Modulbau & Fertigung</Link></li>
-                    <li><Link href="/services/logistics" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Logistik & Montage</Link></li>
-                    <li><Link href="/services/equipment" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Laborausstattung</Link></li>
-                    <li><Link href="/services/consulting" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Beratung & Genehmigung</Link></li>
-                    <li><Link href="/services/smart-lab" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Smart Lab Integration</Link></li>
+                    <li><Link href="/leistungen/modulbau" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Modulbau & Fertigung</Link></li>
+                    <li><Link href="/leistungen/logistik" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Logistik & Montage</Link></li>
+                    <li><Link href="/leistungen/ausstattung" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Laborausstattung</Link></li>
+                    <li><Link href="/leistungen/beratung" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Beratung & Genehmigung</Link></li>
+                    <li><Link href="/leistungen/smart-lab" className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><ChevronRight className="w-4 h-4" /> Smart Lab Integration</Link></li>
                   </ul>
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function PlanningService() {
           <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
             Kontaktieren Sie uns für eine unverbindliche Erstberatung. Gemeinsam finden wir die optimale Lösung für Ihre Anforderungen.
           </p>
-          <Link href="/contact" className="bg-primary text-white font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+          <Link href="/kontakt" className="bg-primary text-white font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
               Jetzt Kontakt aufnehmen <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
