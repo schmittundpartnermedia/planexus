@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 interface LiquidHeroProps {
   imageSrc: string;
@@ -7,18 +7,32 @@ interface LiquidHeroProps {
 }
 
 export function LiquidHero({ imageSrc, alt, className = "" }: LiquidHeroProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
   const animationRef = useRef<number>(0);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isReady, setIsReady] = useState(false);
   
   const mouseRef = useRef({ x: 0, y: 0, isOver: false });
   const ripples = useRef<Array<{ x: number; y: number; radius: number; strength: number; life: number }>>([]);
   const lastRippleTime = useRef(0);
 
-  useEffect(() => {
+  const resizeCanvas = useCallback(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const container = containerRef.current;
+    if (!canvas || !container) return;
+    
+    const rect = container.getBoundingClientRect();
+    if (rect.width > 0 && rect.height > 0) {
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    }
+  }, []);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const canvas = canvasRef.current;
+    if (!canvas || !container) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -29,15 +43,16 @@ export function LiquidHero({ imageSrc, alt, className = "" }: LiquidHeroProps) {
     
     img.onload = () => {
       imageRef.current = img;
-      setIsLoaded(true);
-      resizeCanvas();
+      setTimeout(() => {
+        resizeCanvas();
+        setIsReady(true);
+      }, 100);
     };
 
-    function resizeCanvas() {
-      if (!canvas) return;
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    }
+    const resizeObserver = new ResizeObserver(() => {
+      resizeCanvas();
+    });
+    resizeObserver.observe(container);
 
     window.addEventListener("resize", resizeCanvas);
 
@@ -111,48 +126,52 @@ export function LiquidHero({ imageSrc, alt, className = "" }: LiquidHeroProps) {
       ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
 
       if (ripples.current.length > 0) {
-        const imageData = ctx.getImageData(0, 0, w, h);
-        const data = imageData.data;
-        const originalData = new Uint8ClampedArray(data);
+        try {
+          const imageData = ctx.getImageData(0, 0, w, h);
+          const data = imageData.data;
+          const originalData = new Uint8ClampedArray(data);
 
-        for (const ripple of ripples.current) {
-          const maxRadius = ripple.radius + 50;
-          const minX = Math.max(0, Math.floor(ripple.x - maxRadius));
-          const maxX = Math.min(w, Math.ceil(ripple.x + maxRadius));
-          const minY = Math.max(0, Math.floor(ripple.y - maxRadius));
-          const maxY = Math.min(h, Math.ceil(ripple.y + maxRadius));
+          for (const ripple of ripples.current) {
+            const maxRadius = ripple.radius + 50;
+            const minX = Math.max(0, Math.floor(ripple.x - maxRadius));
+            const maxX = Math.min(w, Math.ceil(ripple.x + maxRadius));
+            const minY = Math.max(0, Math.floor(ripple.y - maxRadius));
+            const maxY = Math.min(h, Math.ceil(ripple.y + maxRadius));
 
-          for (let py = minY; py < maxY; py++) {
-            for (let px = minX; px < maxX; px++) {
-              const dx = px - ripple.x;
-              const dy = py - ripple.y;
-              const dist = Math.sqrt(dx * dx + dy * dy);
-              
-              const waveWidth = 30;
-              const waveDist = Math.abs(dist - ripple.radius);
-              
-              if (waveDist < waveWidth) {
-                const waveStrength = (1 - waveDist / waveWidth) * ripple.strength * ripple.life;
-                const angle = Math.atan2(dy, dx);
-                const wave = Math.sin((dist - ripple.radius) * 0.3) * waveStrength;
+            for (let py = minY; py < maxY; py++) {
+              for (let px = minX; px < maxX; px++) {
+                const dx = px - ripple.x;
+                const dy = py - ripple.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
                 
-                const sourceX = Math.round(px + Math.cos(angle) * wave);
-                const sourceY = Math.round(py + Math.sin(angle) * wave);
+                const waveWidth = 30;
+                const waveDist = Math.abs(dist - ripple.radius);
                 
-                if (sourceX >= 0 && sourceX < w && sourceY >= 0 && sourceY < h) {
-                  const targetIdx = (py * w + px) * 4;
-                  const sourceIdx = (sourceY * w + sourceX) * 4;
+                if (waveDist < waveWidth) {
+                  const waveStrength = (1 - waveDist / waveWidth) * ripple.strength * ripple.life;
+                  const angle = Math.atan2(dy, dx);
+                  const wave = Math.sin((dist - ripple.radius) * 0.3) * waveStrength;
                   
-                  data[targetIdx] = originalData[sourceIdx];
-                  data[targetIdx + 1] = originalData[sourceIdx + 1];
-                  data[targetIdx + 2] = originalData[sourceIdx + 2];
+                  const sourceX = Math.round(px + Math.cos(angle) * wave);
+                  const sourceY = Math.round(py + Math.sin(angle) * wave);
+                  
+                  if (sourceX >= 0 && sourceX < w && sourceY >= 0 && sourceY < h) {
+                    const targetIdx = (py * w + px) * 4;
+                    const sourceIdx = (sourceY * w + sourceX) * 4;
+                    
+                    data[targetIdx] = originalData[sourceIdx];
+                    data[targetIdx + 1] = originalData[sourceIdx + 1];
+                    data[targetIdx + 2] = originalData[sourceIdx + 2];
+                  }
                 }
               }
             }
           }
-        }
 
-        ctx.putImageData(imageData, 0, 0);
+          ctx.putImageData(imageData, 0, 0);
+        } catch (e) {
+          // Ignore getImageData errors
+        }
       }
 
       for (let i = ripples.current.length - 1; i >= 0; i--) {
@@ -171,27 +190,27 @@ export function LiquidHero({ imageSrc, alt, className = "" }: LiquidHeroProps) {
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      resizeObserver.disconnect();
       canvas.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(animationRef.current);
     };
-  }, [imageSrc]);
+  }, [imageSrc, resizeCanvas]);
 
   return (
-    <div className={`relative ${className}`}>
+    <div ref={containerRef} className={`relative ${className}`} style={{ minHeight: '100vh' }}>
       <canvas
         ref={canvasRef}
-        className="w-full h-full"
-        style={{ display: isLoaded ? "block" : "none" }}
+        className="absolute inset-0 w-full h-full"
+        style={{ opacity: isReady ? 1 : 0, transition: 'opacity 0.3s' }}
       />
-      {!isLoaded && (
-        <img 
-          src={imageSrc} 
-          alt={alt}
-          className="w-full h-full object-cover"
-          loading="eager"
-        />
-      )}
+      <img 
+        src={imageSrc} 
+        alt={alt}
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ opacity: isReady ? 0 : 1, transition: 'opacity 0.3s' }}
+        loading="eager"
+      />
       <span className="sr-only">{alt}</span>
     </div>
   );
