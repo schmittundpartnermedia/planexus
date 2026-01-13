@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, Mail, Quote } from "lucide-react";
+import { Linkedin, Quote, Facebook } from "lucide-react";
 import { SEO } from "@/components/SEO";
 
 export default function Team() {
@@ -8,7 +8,9 @@ export default function Team() {
       name: "Sven Biewald",
       role: "Gesellschafter / Visionär",
       initials: "SB",
-      image: null,
+      image: "/team/sven-biewald.jpg",
+      linkedin: "https://www.linkedin.com/in/sven-biewald-893a85a3/",
+      facebook: "https://www.facebook.com/sven.biewald.90",
       desc: "Der Pionier der modernen Laborcontainer. Mit über einem Jahrzehnt Erfahrung und einem unbändigen Willen zur Innovation treibt er die Vision von Planexus voran."
     },
     {
@@ -86,12 +88,16 @@ export default function Team() {
                 </p>
                 
                 <div className="flex gap-4">
-                  <a href="#" className="p-2 bg-gray-100 rounded-lg hover:bg-primary hover:text-white transition-colors text-slate-600">
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  <a href="#" className="p-2 bg-gray-100 rounded-lg hover:bg-primary hover:text-white transition-colors text-slate-600">
-                    <Mail className="w-5 h-5" />
-                  </a>
+                  {member.linkedin && (
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-100 rounded-lg hover:bg-primary hover:text-white transition-colors text-slate-600">
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  )}
+                  {member.facebook && (
+                    <a href={member.facebook} target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-100 rounded-lg hover:bg-primary hover:text-white transition-colors text-slate-600">
+                      <Facebook className="w-5 h-5" />
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
