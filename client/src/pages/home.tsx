@@ -26,11 +26,11 @@ export default function Home() {
           />
         </div>
         
-        {/* Desktop: Liquid Distortion Effect - Overlay ist jetzt IM Canvas integriert */}
+        {/* Desktop: Liquid Distortion Effect */}
         <div className="hidden lg:block absolute inset-0 z-[5]">
           <LiquidHero 
             imageSrc={heroBg} 
-            alt="Moderner Laborcontainer Außenansicht"
+            alt="Digitaler Kopf mit Schaltkreisen"
             className="w-full h-full"
           />
         </div>
