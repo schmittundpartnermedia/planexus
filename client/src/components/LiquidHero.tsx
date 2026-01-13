@@ -199,17 +199,19 @@ export function LiquidHero({ imageSrc, alt, className = "" }: LiquidHeroProps) {
 
   return (
     <div ref={containerRef} className={`relative ${className}`} style={{ minHeight: '100vh' }}>
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ opacity: isReady ? 1 : 0, transition: 'opacity 0.3s' }}
-      />
+      {/* Fallback Bild - unter dem Canvas, pointer-events-none */}
       <img 
         src={imageSrc} 
         alt={alt}
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: isReady ? 0 : 1, transition: 'opacity 0.3s' }}
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        style={{ opacity: isReady ? 0 : 1, transition: 'opacity 0.3s', zIndex: 0 }}
         loading="eager"
+      />
+      {/* Canvas - über dem Bild, empfängt Mausevents */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full cursor-crosshair"
+        style={{ opacity: isReady ? 1 : 0, transition: 'opacity 0.3s', zIndex: 1 }}
       />
       <span className="sr-only">{alt}</span>
     </div>
