@@ -60,7 +60,7 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
         float dist = distance(uv, mouse);
         
         // Sehr kleiner lokaler Radius - nur direkt um die Maus herum
-        float radius = 0.08;
+        float radius = 0.04;
         float falloff = 1.0 - smoothstep(0.0, radius, dist);
         falloff = falloff * falloff * falloff; // Steilerer Abfall
         
@@ -113,7 +113,7 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
       if (!container || !material) return;
       const rect = container.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
+      const y = 1.0 - (e.clientY - rect.top) / rect.height;
       
       gsap.to(material.uniforms.uMouse.value, {
         x,
