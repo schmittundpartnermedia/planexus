@@ -84,6 +84,11 @@ export function LiquidHero({ imageSrc, alt, className = "" }: LiquidHeroProps) {
       const w = canvas.width;
       const h = canvas.height;
 
+      if (w === 0 || h === 0) {
+        animationRef.current = requestAnimationFrame(render);
+        return;
+      }
+
       ctx.clearRect(0, 0, w, h);
 
       const imgRatio = img.width / img.height;

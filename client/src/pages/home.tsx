@@ -54,16 +54,12 @@ export default function Home() {
               Wir realisieren flexible Forschungsumgebungen für die Zukunft.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact">
-                <a className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(132,189,0,0.4)]">
-                  Labor Projekt starten
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+              <Link href="/contact" className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(132,189,0,0.4)]">
+                Labor Projekt starten
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/services">
-                <a className="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors backdrop-blur-sm flex items-center justify-center">
-                  Unsere Leistungen
-                </a>
+              <Link href="/services" className="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors backdrop-blur-sm flex items-center justify-center">
+                Unsere Leistungen
               </Link>
             </div>
           </motion.div>
