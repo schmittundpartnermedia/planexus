@@ -56,7 +56,8 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
       void main() {
         vec2 uv = vUv;
         
-        vec2 mouse = uMouse;
+        // UV y ist invertiert (0 = oben, 1 = unten für Textur-Mapping)
+        vec2 mouse = vec2(uMouse.x, 1.0 - uMouse.y);
         float dist = distance(uv, mouse);
         
         // Sehr kleiner lokaler Radius - nur direkt um die Maus herum
@@ -113,7 +114,7 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
       if (!container || !material) return;
       const rect = container.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
-      const y = 1.0 - (e.clientY - rect.top) / rect.height;
+      const y = (e.clientY - rect.top) / rect.height;
       
       gsap.to(material.uniforms.uMouse.value, {
         x,
