@@ -26,7 +26,10 @@ export default function Home() {
           />
         </div>
         
-        {/* Desktop: Liquid Distortion Effect */}
+        {/* Overlay - UNTER dem LiquidHero */}
+        <div className="hidden lg:block absolute inset-0 bg-slate-950/20 bg-gradient-to-r from-slate-950/40 via-slate-950/20 to-transparent pointer-events-none z-[4]" />
+        
+        {/* Desktop: Liquid Distortion Effect - ÜBER dem Overlay */}
         <div className="hidden lg:block absolute inset-0 z-[5]">
           <LiquidHero 
             imageSrc={heroBg} 
@@ -34,9 +37,6 @@ export default function Home() {
             className="w-full h-full"
           />
         </div>
-        
-        {/* Overlay - ÜBER dem LiquidHero aber pointer-events-none */}
-        <div className="absolute inset-0 bg-slate-950/20 bg-gradient-to-r from-slate-950/40 via-slate-950/20 to-transparent pointer-events-none z-[6]" />
 
         <div className="container mx-auto px-4 relative z-[10] pointer-events-none">
           <motion.div 
