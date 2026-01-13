@@ -38,7 +38,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-slate-950/20 bg-gradient-to-r from-slate-950/40 via-slate-950/20 to-transparent pointer-events-none z-0" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 pointer-events-none">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function Home() {
               Ihr Spezialist für <strong className="text-white font-medium">Laborcontainer</strong> und modulare Laborlösungen. 
               Wir realisieren flexible Forschungsumgebungen für die Zukunft.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 pointer-events-auto">
               <Link href="/contact" className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(132,189,0,0.4)]">
                 Labor Projekt starten
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
