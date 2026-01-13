@@ -28,14 +28,14 @@ export default function Home() {
             />
           </div>
           {/* Desktop: Liquid Distortion Effect */}
-          <div className="hidden lg:block w-full h-full">
+          <div className="hidden lg:block w-full h-full relative z-10">
             <LiquidHero 
               imageSrc={heroBg} 
               alt="Moderner Laborcontainer Außenansicht"
-              className="w-full h-full"
+              className="w-full h-full cursor-pointer"
             />
           </div>
-          <div className="absolute inset-0 bg-slate-950/80 md:bg-slate-950/70 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-slate-950/20 bg-gradient-to-r from-slate-950/40 via-slate-950/20 to-transparent pointer-events-none z-0" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
