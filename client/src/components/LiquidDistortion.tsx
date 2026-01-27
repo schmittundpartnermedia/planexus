@@ -58,8 +58,8 @@ export function LiquidDistortion({ imageSrc, className = "" }: { imageSrc: strin
 
     const flowmap = new Flowmap(gl, { 
       size: 1024, 
-      dissipation: 0.985,
-      falloff: 0.5 
+      dissipation: 0.992,
+      falloff: 0.6 
     });
 
     const program = new Program(gl, {
@@ -102,7 +102,7 @@ export function LiquidDistortion({ imageSrc, className = "" }: { imageSrc: strin
       if ((velocity as any).needsUpdate) {
         flowmap.aspect = renderer.width / renderer.height;
         flowmap.mouse.copy(mouse);
-        flowmap.velocity.lerp(velocity, 0.035);
+        flowmap.velocity.lerp(velocity, 0.02);
         (velocity as any).needsUpdate = false;
       }
       flowmap.update();
