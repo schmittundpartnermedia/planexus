@@ -86,8 +86,9 @@ export function LiquidDistortion({ imageSrc, className = "" }: { imageSrc: strin
       const delta = Math.max(1, time - lastTime);
       
       // Velocity muss die Richtung der Maus im Browser spiegeln
-      velocity.x = (clientX - lastMouse.x) / delta;
-      velocity.y = -(clientY - lastMouse.y) / delta; // Minus hier ist korrekt für OGL
+      // Minus bei X damit die Animation der Maus folgt (nicht entgegenkommt)
+      velocity.x = -(clientX - lastMouse.x) / delta;
+      velocity.y = -(clientY - lastMouse.y) / delta;
 
       lastMouse.set(clientX, clientY);
       lastTime = time;
