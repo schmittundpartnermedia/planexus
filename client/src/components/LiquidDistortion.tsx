@@ -147,7 +147,7 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
       lastTime = time;
 
       velocity.x = deltaX / delta;
-      velocity.y = deltaY / delta;
+      velocity.y = -deltaY / delta;
 
       (velocity as any).needsUpdate = true;
     }
