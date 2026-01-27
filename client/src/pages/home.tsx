@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import heroBg from "@assets/Kopf_green-scaled_1768306688943.jpg";
 import blueprintBg from "@assets/generated_images/technical_blueprint_abstract_background.png";
 import { SEO } from "@/components/SEO";
-import { LiquidHero } from "@/components/LiquidHero";
+import { LiquidDistortion } from "@/components/LiquidDistortion";
 
 export default function Home() {
   return (
@@ -27,10 +27,9 @@ export default function Home() {
         </div>
         
         {/* Desktop: Liquid Distortion Effect */}
-        <div className="hidden lg:block absolute inset-0 z-[5]">
-          <LiquidHero 
+        <div className="hidden lg:block absolute inset-0 z-[5] w-full h-full">
+          <LiquidDistortion 
             imageSrc={heroBg} 
-            alt="Digitaler Kopf mit Schaltkreisen"
             className="w-full h-full"
           />
         </div>
