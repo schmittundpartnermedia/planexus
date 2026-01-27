@@ -27,7 +27,7 @@ export function LiquidDistortion({ imageSrc, className = "" }: { imageSrc: strin
         vec3 flow = texture2D(tFlow, vUv).rgb;
         // Entscheidend: Wir nutzen den Flow um die UVs zu verschieben
         // + flow.xy zieht das Bild mit der Maus mit (Planexus-Style)
-        vec2 uv = vUv + flow.xy * 0.05;
+        vec2 uv = vUv + flow.xy * 0.07;
         vec3 tex = texture2D(tWater, uv).rgb;
         gl_FragColor = vec4(tex, 1.0);
       }
@@ -57,8 +57,8 @@ export function LiquidDistortion({ imageSrc, className = "" }: { imageSrc: strin
     img.src = imageSrc;
 
     const flowmap = new Flowmap(gl, { 
-      size: 512, 
-      dissipation: 0.96,
+      size: 1024, 
+      dissipation: 0.98,
       falloff: 0.3 
     });
 
@@ -102,7 +102,7 @@ export function LiquidDistortion({ imageSrc, className = "" }: { imageSrc: strin
       if ((velocity as any).needsUpdate) {
         flowmap.aspect = renderer.width / renderer.height;
         flowmap.mouse.copy(mouse);
-        flowmap.velocity.lerp(velocity, 0.1);
+        flowmap.velocity.lerp(velocity, 0.05);
         (velocity as any).needsUpdate = false;
       }
       flowmap.update();
