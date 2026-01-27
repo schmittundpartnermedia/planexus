@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Renderer, Program, Texture, Mesh, Vec2, Flowmap, Triangle } from "ogl";
 
 interface LiquidDistortionProps {
   imageSrc: string;
@@ -7,213 +8,187 @@ interface LiquidDistortionProps {
 
 export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
-    const canvas = canvasRef.current;
-    if (!container || !canvas) return;
+    if (!container) return;
 
-    const gl = canvas.getContext("webgl", { 
-      antialias: true, 
-      alpha: false,
-      preserveDrawingBuffer: false 
-    });
-    if (!gl) {
-      console.error("WebGL not supported");
-      return;
-    }
-
-    let animationId: number;
-    let mouse = { x: 0.5, y: 0.5 };
-    let lastMouse = { x: 0.5, y: 0.5 };
-    let velocity = { x: 0, y: 0 };
-
-    const vertexShaderSource = `
-      attribute vec2 a_position;
-      varying vec2 v_uv;
-      
+    // Vertex Shader
+    const vertex = `
+      attribute vec2 uv;
+      attribute vec2 position;
+      varying vec2 vUv;
       void main() {
-        gl_Position = vec4(a_position, 0.0, 1.0);
-        v_uv = a_position * 0.5 + 0.5;
+        vUv = uv;
+        gl_Position = vec4(position, 0, 1);
       }
     `;
 
-    const fragmentShaderSource = `
+    // Fragment Shader
+    const fragment = `
       precision highp float;
       
-      uniform sampler2D u_image;
-      uniform vec2 u_mouse;
-      uniform vec2 u_velocity;
-      uniform float u_aspect;
-      uniform float u_time;
-      
-      varying vec2 v_uv;
+      uniform sampler2D tWater;
+      uniform sampler2D tFlow;
+      uniform float uTime;
+      varying vec2 vUv;
       
       void main() {
-        vec2 uv = v_uv;
+        vec3 flow = texture2D(tFlow, vUv).rgb;
         
-        // Flip Y for correct orientation
-        vec2 mouse = vec2(u_mouse.x, 1.0 - u_mouse.y);
+        vec2 uv = vUv;
+        uv += flow.xy * 0.05;
         
-        // Calculate distance to mouse with aspect correction
-        vec2 diff = uv - mouse;
-        diff.x *= u_aspect;
-        float dist = length(diff);
+        vec3 tex = texture2D(tWater, uv).rgb;
         
-        // Flowmap parameters
-        float radius = 0.15;
-        float strength = 0.04;
-        
-        // Smooth falloff
-        float falloff = 1.0 - smoothstep(0.0, radius, dist);
-        falloff = pow(falloff, 2.0);
-        
-        // Use velocity for directional distortion
-        vec2 vel = u_velocity * 0.5;
-        
-        // Distortion follows mouse movement direction
-        vec2 distortion = vel * falloff * strength;
-        
-        // Add subtle wave effect
-        float wave = sin(dist * 20.0 - u_time * 3.0) * 0.003 * falloff;
-        distortion += vec2(wave * 0.5, wave);
-        
-        vec2 finalUV = uv - distortion;
-        finalUV = clamp(finalUV, 0.001, 0.999);
-        
-        // Flip Y for texture sampling
-        finalUV.y = 1.0 - finalUV.y;
-        
-        vec4 color = texture2D(u_image, finalUV);
-        gl_FragColor = color;
+        gl_FragColor = vec4(tex, 1.0);
       }
     `;
 
-    function createShader(type: number, source: string): WebGLShader | null {
-      const shader = gl!.createShader(type);
-      if (!shader) return null;
-      gl!.shaderSource(shader, source);
-      gl!.compileShader(shader);
-      if (!gl!.getShaderParameter(shader, gl!.COMPILE_STATUS)) {
-        console.error("Shader error:", gl!.getShaderInfoLog(shader));
-        gl!.deleteShader(shader);
-        return null;
-      }
-      return shader;
-    }
+    // Create renderer
+    const renderer = new Renderer({ 
+      dpr: Math.min(window.devicePixelRatio, 2),
+      alpha: false,
+      antialias: true
+    });
+    const gl = renderer.gl;
+    container.appendChild(gl.canvas);
+    gl.canvas.style.position = "absolute";
+    gl.canvas.style.top = "0";
+    gl.canvas.style.left = "0";
+    gl.canvas.style.width = "100%";
+    gl.canvas.style.height = "100%";
 
-    const vertexShader = createShader(gl.VERTEX_SHADER, vertexShaderSource);
-    const fragmentShader = createShader(gl.FRAGMENT_SHADER, fragmentShaderSource);
-    if (!vertexShader || !fragmentShader) return;
+    // Variables for mouse tracking
+    const mouse = new Vec2(-1);
+    const velocity = new Vec2();
+    let lastTime: number | null = null;
+    const lastMouse = new Vec2();
 
-    const program = gl.createProgram();
-    if (!program) return;
-    gl.attachShader(program, vertexShader);
-    gl.attachShader(program, fragmentShader);
-    gl.linkProgram(program);
-
-    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-      console.error("Program link error:", gl.getProgramInfoLog(program));
-      return;
-    }
-
-    gl.useProgram(program);
-
-    // Full screen quad
-    const positionBuffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-      -1, -1,   1, -1,   -1, 1,
-      -1,  1,   1, -1,    1, 1
-    ]), gl.STATIC_DRAW);
-
-    const positionLocation = gl.getAttribLocation(program, "a_position");
-    gl.enableVertexAttribArray(positionLocation);
-    gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
-
-    // Uniforms
-    const mouseLocation = gl.getUniformLocation(program, "u_mouse");
-    const velocityLocation = gl.getUniformLocation(program, "u_velocity");
-    const aspectLocation = gl.getUniformLocation(program, "u_aspect");
-    const timeLocation = gl.getUniformLocation(program, "u_time");
-
-    // Load texture
-    const texture = gl.createTexture();
-    gl.bindTexture(gl.TEXTURE_2D, texture);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-
-    // Placeholder pixel
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([0, 0, 0, 255]));
-
-    const image = new Image();
-    image.crossOrigin = "anonymous";
-    image.onload = () => {
-      gl.bindTexture(gl.TEXTURE_2D, texture);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
-    };
-    image.src = imageSrc;
-
+    // Resize handler
     function resize() {
       const rect = container!.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas!.width = rect.width * dpr;
-      canvas!.height = rect.height * dpr;
-      canvas!.style.width = rect.width + "px";
-      canvas!.style.height = rect.height + "px";
-      gl!.viewport(0, 0, canvas!.width, canvas!.height);
+      renderer.setSize(rect.width, rect.height);
     }
-
-    resize();
     window.addEventListener("resize", resize);
+    resize();
 
-    const startTime = Date.now();
+    // Triangle geometry covering viewport
+    const geometry = new Triangle(gl);
 
-    function render() {
-      const time = (Date.now() - startTime) / 1000;
-      const aspect = canvas!.width / canvas!.height;
+    // Load image texture
+    const texture = new Texture(gl, { 
+      wrapS: gl.CLAMP_TO_EDGE, 
+      wrapT: gl.CLAMP_TO_EDGE 
+    });
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => {
+      texture.image = img;
+    };
+    img.src = imageSrc;
 
-      // Calculate velocity from mouse movement
-      velocity.x = (mouse.x - lastMouse.x) * 10;
-      velocity.y = (mouse.y - lastMouse.y) * 10;
+    // Create flowmap with optimal settings
+    const flowmap = new Flowmap(gl, {
+      size: 512,
+      falloff: 0.3,
+      alpha: 1,
+      dissipation: 0.98,
+    });
+
+    // Create shader program
+    const program = new Program(gl, {
+      vertex,
+      fragment,
+      uniforms: {
+        uTime: { value: 0 },
+        tWater: { value: texture },
+        tFlow: flowmap.uniform,
+      },
+    });
+
+    const mesh = new Mesh(gl, { geometry, program });
+
+    // Mouse move handler
+    function updateMouse(e: MouseEvent | TouchEvent) {
+      let x: number, y: number;
       
-      // Smooth velocity decay
-      velocity.x *= 0.9;
-      velocity.y *= 0.9;
-      
-      lastMouse.x += (mouse.x - lastMouse.x) * 0.1;
-      lastMouse.y += (mouse.y - lastMouse.y) * 0.1;
+      if ("touches" in e && e.touches.length) {
+        x = e.touches[0].clientX;
+        y = e.touches[0].clientY;
+      } else if ("clientX" in e) {
+        x = e.clientX;
+        y = e.clientY;
+      } else {
+        return;
+      }
 
-      gl!.uniform2f(mouseLocation, lastMouse.x, lastMouse.y);
-      gl!.uniform2f(velocityLocation, velocity.x, velocity.y);
-      gl!.uniform1f(aspectLocation, aspect);
-      gl!.uniform1f(timeLocation, time);
-
-      gl!.drawArrays(gl!.TRIANGLES, 0, 6);
-
-      animationId = requestAnimationFrame(render);
-    }
-
-    function handleMouseMove(e: MouseEvent) {
       const rect = container!.getBoundingClientRect();
-      mouse.x = (e.clientX - rect.left) / rect.width;
-      mouse.y = (e.clientY - rect.top) / rect.height;
+      
+      // Normalize to 0-1 range relative to container
+      mouse.set(
+        (x - rect.left) / rect.width,
+        1.0 - (y - rect.top) / rect.height
+      );
+
+      // Calculate velocity
+      if (lastTime === null) {
+        lastTime = performance.now();
+        lastMouse.set(x, y);
+      }
+
+      const deltaX = x - lastMouse.x;
+      const deltaY = y - lastMouse.y;
+
+      lastMouse.set(x, y);
+
+      const time = performance.now();
+      const delta = Math.max(14, time - lastTime);
+      lastTime = time;
+
+      velocity.x = deltaX / delta;
+      velocity.y = deltaY / delta;
+
+      (velocity as any).needsUpdate = true;
     }
 
-    container.addEventListener("mousemove", handleMouseMove);
-    render();
+    // Event listeners
+    container.addEventListener("mousemove", updateMouse);
+    container.addEventListener("touchstart", updateMouse, { passive: true });
+    container.addEventListener("touchmove", updateMouse, { passive: true });
 
+    // Animation loop
+    let animationId: number;
+    
+    function update(t: number) {
+      animationId = requestAnimationFrame(update);
+
+      // Update flowmap
+      if ((velocity as any).needsUpdate) {
+        flowmap.aspect = renderer.width / renderer.height;
+        flowmap.mouse.copy(mouse);
+        flowmap.velocity.lerp(velocity, velocity.len() ? 0.5 : 0.1);
+        (velocity as any).needsUpdate = false;
+      }
+
+      flowmap.update();
+
+      program.uniforms.uTime.value = t * 0.001;
+      renderer.render({ scene: mesh });
+    }
+
+    animationId = requestAnimationFrame(update);
+
+    // Cleanup
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", resize);
-      container.removeEventListener("mousemove", handleMouseMove);
-      gl.deleteProgram(program);
-      gl.deleteShader(vertexShader);
-      gl.deleteShader(fragmentShader);
-      gl.deleteTexture(texture);
+      container.removeEventListener("mousemove", updateMouse);
+      container.removeEventListener("touchstart", updateMouse);
+      container.removeEventListener("touchmove", updateMouse);
+      if (gl.canvas.parentNode) {
+        gl.canvas.parentNode.removeChild(gl.canvas);
+      }
     };
   }, [imageSrc]);
 
@@ -222,12 +197,6 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
       ref={containerRef} 
       className={`relative cursor-pointer overflow-hidden ${className}`}
       style={{ minHeight: '100vh' }}
-    >
-      <canvas 
-        ref={canvasRef} 
-        className="absolute inset-0 w-full h-full"
-        style={{ display: 'block' }}
-      />
-    </div>
+    />
   );
 }
