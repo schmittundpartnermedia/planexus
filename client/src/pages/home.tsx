@@ -45,7 +45,7 @@ export default function Home() {
             <img 
               src={planexusLogo} 
               alt="Planexus GmbH" 
-              className="h-16 md:h-20 w-auto mb-8"
+              className="w-[280px] md:w-[420px] h-auto mb-8"
             />
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
               Denken. <span className="text-primary">Planen.</span><br />
