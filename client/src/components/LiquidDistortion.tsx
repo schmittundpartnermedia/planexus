@@ -146,8 +146,10 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
       const delta = Math.max(14, time - lastTime);
       lastTime = time;
 
+      // X: positive deltaX = move right = positive velocity (correct)
+      // Y: positive deltaY = move down in DOM, but UP is positive in WebGL, so invert
       velocity.x = deltaX / delta;
-      velocity.y = deltaY / delta;
+      velocity.y = -deltaY / delta;
 
       (velocity as any).needsUpdate = true;
     }
