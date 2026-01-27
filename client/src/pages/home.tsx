@@ -3,6 +3,7 @@ import { ArrowRight, Box, CheckCircle2, ChevronRight, Layers, Layout, ShieldChec
 import { Link } from "wouter";
 import heroBg from "@assets/Kopf_green-scaled_1768306688943.jpg";
 import blueprintBg from "@assets/generated_images/technical_blueprint_abstract_background.png";
+import planexusLogo from "@assets/Planexus_Home-e1738171155684_1767361842201.png";
 import { SEO } from "@/components/SEO";
 import { LiquidDistortion } from "@/components/LiquidDistortion";
 
@@ -41,6 +42,11 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
+            <img 
+              src={planexusLogo} 
+              alt="Planexus GmbH" 
+              className="h-16 md:h-20 w-auto mb-8"
+            />
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
               Denken. <span className="text-primary">Planen.</span><br />
               Verbinden.
