@@ -37,7 +37,8 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
         vec3 flow = texture2D(tFlow, vUv).rgb;
         
         vec2 uv = vUv;
-        uv -= flow.xy * 0.05;
+        uv.x -= flow.x * 0.05;
+        uv.y += flow.y * 0.05;
         
         vec3 tex = texture2D(tWater, uv).rgb;
         
@@ -146,10 +147,8 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
       const delta = Math.max(14, time - lastTime);
       lastTime = time;
 
-      // X: positive deltaX = move right = positive velocity (correct)
-      // Y: positive deltaY = move down in DOM, but UP is positive in WebGL, so invert
       velocity.x = deltaX / delta;
-      velocity.y = -deltaY / delta;
+      velocity.y = deltaY / delta;
 
       (velocity as any).needsUpdate = true;
     }
