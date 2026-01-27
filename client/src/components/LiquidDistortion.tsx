@@ -145,9 +145,10 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
 
     const texCoordBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, texCoordBuffer);
+    // Standard WebGL: Y=0 unten, Y=1 oben (Bild wird korrekt angezeigt)
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-      0, 1,  1, 1,  0, 0,
-      0, 0,  1, 1,  1, 0
+      0, 0,  1, 0,  0, 1,
+      0, 1,  1, 0,  1, 1
     ]), gl.STATIC_DRAW);
 
     const texCoordLocation = gl.getAttribLocation(program, "a_texCoord");
@@ -214,7 +215,8 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
     function handleMouseMove(e: MouseEvent) {
       const rect = container!.getBoundingClientRect();
       targetMouseX = (e.clientX - rect.left) / rect.width;
-      targetMouseY = (e.clientY - rect.top) / rect.height;
+      // Y invertieren: DOM Y=0 oben, WebGL UV Y=0 unten
+      targetMouseY = 1.0 - (e.clientY - rect.top) / rect.height;
     }
 
     function handleMouseEnter() {
