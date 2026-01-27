@@ -37,8 +37,8 @@ export function LiquidDistortion({ imageSrc, className = "" }: LiquidDistortionP
         vec3 flow = texture2D(tFlow, vUv).rgb;
         
         vec2 uv = vUv;
-        uv.x -= flow.x * 0.05;
-        uv.y += flow.y * 0.05;
+        uv.x += flow.x * 0.05;
+        uv.y -= flow.y * 0.05;
         
         vec3 tex = texture2D(tWater, uv).rgb;
         
