@@ -173,7 +173,7 @@ export default function Partner() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-primary to-primary/90 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-primary to-primary/90 text-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
@@ -182,7 +182,7 @@ export default function Partner() {
           <h2 className="text-3xl font-heading font-bold mb-6">
             Gemeinsam zum Erfolg
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-slate-700 max-w-2xl mx-auto mb-8">
             Sie möchten mehr über unser Netzwerk erfahren oder haben ein Laborprojekt? 
             Kontaktieren Sie uns - gemeinsam finden wir die optimale Lösung.
           </p>
