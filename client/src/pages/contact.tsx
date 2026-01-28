@@ -109,7 +109,7 @@ export default function Contact() {
                 <Map 
                   lat={48.2180461} 
                   lng={8.9140541} 
-                  zoom={17}
+                  zoom={14}
                   popupText="Planexus GmbH - Am Steinbach 8, 72459 Albstadt-Laufen"
                 />
               </div>
