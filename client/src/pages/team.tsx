@@ -49,10 +49,12 @@ export default function Team() {
         description="Das Planexus Team: Sven Biewald und Thomas Boss - Experten für Laborcontainer und Modulbau mit über 10 Jahren Erfahrung."
         canonical="/team"
       />
-       <section className="bg-slate-50 py-20 border-b border-gray-100">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-heading font-bold mb-6 text-slate-900">Das Planexus Team</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">Das Planexus Team</h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Erfahrung trifft Innovation. Wir sind Ihre Experten für Laborbau.
           </p>
         </div>

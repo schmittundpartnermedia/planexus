@@ -44,10 +44,12 @@ export default function Magazine() {
         description="Das Planexus Magazin: Aktuelle Artikel, Fachwissen und Trends zu Laborcontainern, Modulbau, BSL-Laboren und nachhaltiger Laborplanung."
         canonical="/magazin"
       />
-      <section className="bg-slate-50 py-20 border-b border-gray-100">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-heading font-bold mb-6 text-slate-900">Planexus Magazin</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+      <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">Planexus Magazin</h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Aktuelle Einblicke, Trends und Fachwissen rund um Laborcontainer und Modulbau.
           </p>
         </div>

@@ -12,16 +12,18 @@ export default function About() {
         canonical="/ueber-uns"
       />
       {/* Header */}
-      <section className="py-20 bg-slate-50 border-b border-gray-100">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-5xl font-heading font-bold mb-6 text-slate-900">Über Planexus</h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Ihr Partner für <strong>mobile Labore</strong> und modulare Raumlösungen. Wir verbinden langjährige Erfahrung mit visionärer Technik.
+            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">Über Planexus</h1>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Ihr Partner für <strong className="text-white">mobile Labore</strong> und modulare Raumlösungen. Wir verbinden langjährige Erfahrung mit visionärer Technik.
             </p>
           </motion.div>
         </div>
