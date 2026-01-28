@@ -19,8 +19,6 @@ const formSchema = z.object({
   message: z.string().min(10, "Nachricht muss mindestens 10 Zeichen lang sein"),
 });
 
-const FORMSPREE_ID = "xwpkgjvp";
-
 export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,7 +35,7 @@ export default function Contact() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
-      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
