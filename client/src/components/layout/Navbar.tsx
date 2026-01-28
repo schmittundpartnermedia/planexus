@@ -62,7 +62,7 @@ export function Navbar() {
           <img 
             src={logo} 
             alt="Planexus Logo" 
-            className="h-10 lg:h-14 w-auto" 
+            className="h-8 lg:h-10 w-auto" 
           />
         </button>
 
