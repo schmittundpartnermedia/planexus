@@ -1,28 +1,52 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-const partnerNodes = [
-  { name: "WS", subname: "Funktions- und\nReinraum GmbH", x: 0.62, y: 0.12, size: 45 },
-  { name: "MESYCON", subname: "GMBH", x: 0.52, y: 0.08, size: 50 },
-  { name: "wesemann", subname: "Reinraumtechnik", x: 0.68, y: 0.52, size: 48 },
-  { name: "ABARCON", subname: "", x: 0.38, y: 0.22, size: 55 },
-  { name: "wesemann", subname: "", x: 0.22, y: 0.32, size: 48 },
-  { name: "PLANEXUS", subname: "", x: 0.28, y: 0.52, size: 50 },
-  { name: "SYNERGIE", subname: "Mobiliar GmbH", x: 0.22, y: 0.68, size: 45 },
-  { name: "wesemann", subname: "BENELUX", x: 0.42, y: 0.78, size: 50 },
-  { name: "HibLab", subname: "Solutions", x: 0.58, y: 0.82, size: 48 },
-  { name: "wesemann", subname: "Schweiz", x: 0.68, y: 0.68, size: 48 },
-  { name: "wesemann", subname: "Middle East", x: 0.72, y: 0.28, size: 45 },
-  { name: "HibLab", subname: "Solutions", x: 0.55, y: 0.12, size: 42 },
-  { name: "AB.", subname: "", x: 0.58, y: 0.18, size: 35 },
-];
-
-const regionLabels = [
-  { name: "DEUTSCHLAND", x: 0.08, y: 0.42 },
-  { name: "BENELUX", x: 0.18, y: 0.92 },
-  { name: "SCHWEIZ", x: 0.92, y: 0.10 },
-  { name: "SPANIEN", x: 0.62, y: 0.92 },
-  { name: "NAHER OSTEN", x: 0.92, y: 0.48 },
+const regions = [
+  { 
+    name: "DEUTSCHLAND", 
+    x: 0.15, 
+    y: 0.42,
+    companies: [
+      { name: "wesemann", subname: "Reinraumtechnik", offsetX: 0.08, offsetY: -0.18 },
+      { name: "ABARCON", subname: "", offsetX: 0.18, offsetY: -0.08 },
+      { name: "WS", subname: "Funktions- und\nReinraum GmbH", offsetX: 0.22, offsetY: -0.22 },
+      { name: "MESYCON", subname: "GmbH", offsetX: 0.28, offsetY: -0.12 },
+      { name: "PLANEXUS", subname: "", offsetX: 0.08, offsetY: 0.15 },
+      { name: "SYNERGIE", subname: "Mobiliar GmbH", offsetX: -0.02, offsetY: 0.28 },
+    ]
+  },
+  { 
+    name: "SCHWEIZ", 
+    x: 0.85, 
+    y: 0.18,
+    companies: [
+      { name: "wesemann", subname: "Schweiz", offsetX: -0.12, offsetY: -0.08 },
+    ]
+  },
+  { 
+    name: "BENELUX", 
+    x: 0.28, 
+    y: 0.85,
+    companies: [
+      { name: "wesemann", subname: "BENELUX", offsetX: 0.10, offsetY: -0.12 },
+    ]
+  },
+  { 
+    name: "SPANIEN", 
+    x: 0.58, 
+    y: 0.88,
+    companies: [
+      { name: "HibLab", subname: "Solutions", offsetX: 0.08, offsetY: -0.12 },
+    ]
+  },
+  { 
+    name: "NAHER OSTEN", 
+    x: 0.88, 
+    y: 0.52,
+    companies: [
+      { name: "wesemann", subname: "Middle East", offsetX: -0.08, offsetY: 0.12 },
+    ]
+  },
 ];
 
 export function AnimatedGlobe() {
@@ -50,15 +74,16 @@ export function AnimatedGlobe() {
     window.addEventListener("resize", resize);
 
     const draw = () => {
-      const centerX = canvas.width * 0.48;
+      const centerX = canvas.width * 0.50;
       const centerY = canvas.height * 0.48;
       const scale = Math.min(canvas.width, canvas.height) / 800;
-      const globeRadius = 140 * scale;
+      const globeRadius = 130 * scale;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const rotation = time * 0.0002;
 
+      // Outer glow
       ctx.beginPath();
       ctx.arc(centerX, centerY, globeRadius + 60 * scale, 0, Math.PI * 2);
       const outerGlow = ctx.createRadialGradient(
@@ -71,14 +96,15 @@ export function AnimatedGlobe() {
       ctx.fillStyle = outerGlow;
       ctx.fill();
 
+      // Earth globe
       const earthGradient = ctx.createRadialGradient(
         centerX - globeRadius * 0.3, centerY - globeRadius * 0.3, 0,
         centerX, centerY, globeRadius
       );
-      earthGradient.addColorStop(0, "rgba(156, 203, 0, 0.45)");
-      earthGradient.addColorStop(0.4, "rgba(130, 180, 0, 0.3)");
-      earthGradient.addColorStop(0.7, "rgba(100, 150, 0, 0.2)");
-      earthGradient.addColorStop(1, "rgba(80, 120, 0, 0.12)");
+      earthGradient.addColorStop(0, "rgba(156, 203, 0, 0.4)");
+      earthGradient.addColorStop(0.4, "rgba(130, 180, 0, 0.28)");
+      earthGradient.addColorStop(0.7, "rgba(100, 150, 0, 0.18)");
+      earthGradient.addColorStop(1, "rgba(80, 120, 0, 0.1)");
 
       ctx.beginPath();
       ctx.arc(centerX, centerY, globeRadius, 0, Math.PI * 2);
@@ -88,138 +114,167 @@ export function AnimatedGlobe() {
       ctx.lineWidth = 2;
       ctx.stroke();
 
+      // Continents
       ctx.save();
       ctx.beginPath();
       ctx.arc(centerX, centerY, globeRadius - 2, 0, Math.PI * 2);
       ctx.clip();
 
-      ctx.fillStyle = "rgba(156, 203, 0, 0.18)";
+      ctx.fillStyle = "rgba(156, 203, 0, 0.15)";
       
       const europeX = centerX + Math.cos(rotation * 0.5) * globeRadius * 0.05;
       ctx.beginPath();
-      ctx.ellipse(europeX - globeRadius * 0.1, centerY - globeRadius * 0.25, globeRadius * 0.22, globeRadius * 0.18, 0.1, 0, Math.PI * 2);
+      ctx.ellipse(europeX - globeRadius * 0.1, centerY - globeRadius * 0.25, globeRadius * 0.2, globeRadius * 0.15, 0.1, 0, Math.PI * 2);
       ctx.fill();
 
       ctx.beginPath();
-      ctx.ellipse(europeX - globeRadius * 0.05, centerY + globeRadius * 0.2, globeRadius * 0.15, globeRadius * 0.28, -0.1, 0, Math.PI * 2);
+      ctx.ellipse(europeX - globeRadius * 0.05, centerY + globeRadius * 0.2, globeRadius * 0.12, globeRadius * 0.25, -0.1, 0, Math.PI * 2);
       ctx.fill();
 
       ctx.beginPath();
-      ctx.ellipse(europeX + globeRadius * 0.25, centerY - globeRadius * 0.1, globeRadius * 0.3, globeRadius * 0.22, 0.2, 0, Math.PI * 2);
-      ctx.fill();
-
-      ctx.beginPath();
-      ctx.ellipse(europeX - globeRadius * 0.5, centerY, globeRadius * 0.12, globeRadius * 0.35, -0.15, 0, Math.PI * 2);
+      ctx.ellipse(europeX + globeRadius * 0.25, centerY - globeRadius * 0.1, globeRadius * 0.25, globeRadius * 0.18, 0.2, 0, Math.PI * 2);
       ctx.fill();
 
       ctx.restore();
 
-      for (let i = 1; i < 6; i++) {
-        const latY = centerY + (i - 3) * globeRadius * 0.28;
+      // Grid lines
+      for (let i = 1; i < 5; i++) {
+        const latY = centerY + (i - 2.5) * globeRadius * 0.32;
         const latR = Math.sqrt(globeRadius * globeRadius - Math.pow(latY - centerY, 2));
         if (latR > 0) {
           ctx.beginPath();
-          ctx.ellipse(centerX, latY, latR, latR * 0.06, 0, 0, Math.PI * 2);
-          ctx.strokeStyle = "rgba(156, 203, 0, 0.15)";
+          ctx.ellipse(centerX, latY, latR, latR * 0.05, 0, 0, Math.PI * 2);
+          ctx.strokeStyle = "rgba(156, 203, 0, 0.12)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
       }
 
-      for (let i = 0; i < 10; i++) {
-        const lon = (i / 10) * Math.PI + rotation;
+      for (let i = 0; i < 8; i++) {
+        const lon = (i / 8) * Math.PI + rotation;
         const lonScale = Math.cos(lon);
-        if (Math.abs(lonScale) > 0.08) {
+        if (Math.abs(lonScale) > 0.1) {
           ctx.beginPath();
           ctx.ellipse(centerX, centerY, globeRadius * Math.abs(lonScale), globeRadius, 0, 0, Math.PI * 2);
-          ctx.strokeStyle = "rgba(156, 203, 0, 0.1)";
+          ctx.strokeStyle = "rgba(156, 203, 0, 0.08)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
       }
 
-      partnerNodes.forEach((node, index) => {
-        const nodeX = node.x * canvas.width;
-        const nodeY = node.y * canvas.height;
-        const nodeSize = node.size * scale;
+      // Draw regions and their companies
+      let pulseIndex = 0;
+      
+      regions.forEach((region) => {
+        const regionX = region.x * canvas.width;
+        const regionY = region.y * canvas.height;
 
+        // Line from center to region
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
-        
-        const cp1x = centerX + (nodeX - centerX) * 0.35;
-        const cp1y = centerY + (nodeY - centerY) * 0.15;
-        const cp2x = centerX + (nodeX - centerX) * 0.7;
-        const cp2y = nodeY - (nodeY - centerY) * 0.12;
-        ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, nodeX, nodeY);
-        
-        ctx.strokeStyle = "rgba(156, 203, 0, 0.4)";
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-
-        const pulseSpeed = 0.0018;
-        const pulsePhase = ((time * pulseSpeed + index * 0.3) % 1);
-        const t = pulsePhase;
-        const pulseX = Math.pow(1-t, 3) * centerX + 3 * Math.pow(1-t, 2) * t * cp1x + 3 * (1-t) * t * t * cp2x + t * t * t * nodeX;
-        const pulseY = Math.pow(1-t, 3) * centerY + 3 * Math.pow(1-t, 2) * t * cp1y + 3 * (1-t) * t * t * cp2y + t * t * t * nodeY;
-        
-        const pulseAlpha = 1 - pulsePhase * 0.6;
-        ctx.beginPath();
-        ctx.arc(pulseX, pulseY, 5 * scale, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(156, 203, 0, ${pulseAlpha})`;
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(nodeX, nodeY, nodeSize + 4, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(156, 203, 0, 0.1)";
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(nodeX, nodeY, nodeSize, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255, 255, 255, 0.97)";
-        ctx.fill();
+        ctx.lineTo(regionX, regionY);
         ctx.strokeStyle = "rgba(156, 203, 0, 0.5)";
         ctx.lineWidth = 2;
         ctx.stroke();
 
-        ctx.fillStyle = "#2a6565";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        
-        if (node.subname) {
-          ctx.font = `bold ${11 * scale}px system-ui`;
-          ctx.fillText(node.name, nodeX, nodeY - 5 * scale);
-          ctx.font = `${8 * scale}px system-ui`;
-          ctx.fillStyle = "#4a8585";
-          const sublines = node.subname.split("\n");
-          sublines.forEach((line, i) => {
-            ctx.fillText(line, nodeX, nodeY + (6 + i * 9) * scale);
-          });
-        } else {
-          ctx.font = `bold ${11 * scale}px system-ui`;
-          ctx.fillText(node.name, nodeX, nodeY);
-        }
-
+        // Animated pulse on main line
+        const mainPulsePhase = ((time * 0.0015 + pulseIndex * 0.2) % 1);
+        const mainPulseX = centerX + (regionX - centerX) * mainPulsePhase;
+        const mainPulseY = centerY + (regionY - centerY) * mainPulsePhase;
         ctx.beginPath();
-        ctx.arc(nodeX, nodeY - nodeSize + 8 * scale, 4 * scale, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(156, 203, 0, 0.8)";
+        ctx.arc(mainPulseX, mainPulseY, 5 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(156, 203, 0, ${1 - mainPulsePhase * 0.5})`;
         ctx.fill();
-      });
 
-      regionLabels.forEach((region) => {
-        const x = region.x * canvas.width;
-        const y = region.y * canvas.height;
-        
-        ctx.font = `bold ${12 * scale}px system-ui`;
+        // Region node
+        ctx.beginPath();
+        ctx.arc(regionX, regionY, 8 * scale, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(156, 203, 0, 0.9)";
-        ctx.textAlign = "center";
-        ctx.fillText(region.name, x, y);
+        ctx.fill();
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.8)";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Region label
+        ctx.font = `bold ${13 * scale}px system-ui`;
+        ctx.fillStyle = "rgba(156, 203, 0, 1)";
+        ctx.textAlign = region.x < 0.5 ? "right" : "left";
+        const labelOffset = region.x < 0.5 ? -15 * scale : 15 * scale;
+        ctx.fillText(region.name, regionX + labelOffset, regionY + 4 * scale);
+
+        // Draw companies for this region
+        region.companies.forEach((company, compIndex) => {
+          const compX = regionX + company.offsetX * canvas.width;
+          const compY = regionY + company.offsetY * canvas.height;
+          const nodeSize = 42 * scale;
+
+          // Line from region to company
+          ctx.beginPath();
+          ctx.moveTo(regionX, regionY);
+          ctx.lineTo(compX, compY);
+          ctx.strokeStyle = "rgba(156, 203, 0, 0.35)";
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+
+          // Pulse on company line
+          const compPulsePhase = ((time * 0.002 + pulseIndex * 0.15 + compIndex * 0.25) % 1);
+          const compPulseX = regionX + (compX - regionX) * compPulsePhase;
+          const compPulseY = regionY + (compY - regionY) * compPulsePhase;
+          ctx.beginPath();
+          ctx.arc(compPulseX, compPulseY, 4 * scale, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(156, 203, 0, ${1 - compPulsePhase * 0.6})`;
+          ctx.fill();
+
+          // Company node glow
+          ctx.beginPath();
+          ctx.arc(compX, compY, nodeSize + 5, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(156, 203, 0, 0.08)";
+          ctx.fill();
+
+          // Company node
+          ctx.beginPath();
+          ctx.arc(compX, compY, nodeSize, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(255, 255, 255, 0.97)";
+          ctx.fill();
+          ctx.strokeStyle = "rgba(156, 203, 0, 0.5)";
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          // Small green dot on top
+          ctx.beginPath();
+          ctx.arc(compX, compY - nodeSize + 6 * scale, 4 * scale, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(156, 203, 0, 0.85)";
+          ctx.fill();
+
+          // Company text
+          ctx.fillStyle = "#2a5555";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          
+          if (company.subname) {
+            ctx.font = `bold ${11 * scale}px system-ui`;
+            ctx.fillText(company.name, compX, compY - 5 * scale);
+            ctx.font = `${8 * scale}px system-ui`;
+            ctx.fillStyle = "#4a7575";
+            const sublines = company.subname.split("\n");
+            sublines.forEach((line, i) => {
+              ctx.fillText(line, compX, compY + (6 + i * 9) * scale);
+            });
+          } else {
+            ctx.font = `bold ${11 * scale}px system-ui`;
+            ctx.fillText(company.name, compX, compY);
+          }
+        });
+
+        pulseIndex++;
       });
 
-      const centerSize = 65 * scale;
+      // Center Wesemann logo
+      const centerSize = 60 * scale;
       
       ctx.beginPath();
-      ctx.arc(centerX, centerY, centerSize + 8, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(80, 120, 0, 0.3)";
+      ctx.arc(centerX, centerY, centerSize + 6, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(80, 120, 0, 0.25)";
       ctx.fill();
       
       ctx.beginPath();
@@ -239,11 +294,11 @@ export function AnimatedGlobe() {
       ctx.fillStyle = "#ffffff";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.font = `bold ${15 * scale}px system-ui`;
+      ctx.font = `bold ${14 * scale}px system-ui`;
       ctx.fillText("wesemann", centerX, centerY - 4 * scale);
-      ctx.font = `${7 * scale}px system-ui`;
-      ctx.fillStyle = "rgba(255, 255, 255, 0.75)";
-      ctx.fillText("LABOREINRICHTUNGEN", centerX, centerY + 12 * scale);
+      ctx.font = `${6 * scale}px system-ui`;
+      ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+      ctx.fillText("LABOREINRICHTUNGEN", centerX, centerY + 10 * scale);
 
       time += 16;
       animationId = requestAnimationFrame(draw);
