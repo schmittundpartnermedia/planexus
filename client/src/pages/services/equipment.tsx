@@ -28,7 +28,7 @@ export default function EquipmentService() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary font-medium text-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white font-medium text-sm mb-6">
               <Microscope className="w-4 h-4" />
               <span>Leistungen</span>
             </div>

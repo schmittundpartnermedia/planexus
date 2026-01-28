@@ -93,7 +93,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-white font-medium text-sm mb-6">
                 <Box className="w-4 h-4" />
                 <span>Modular & Flexibel</span>
               </div>
