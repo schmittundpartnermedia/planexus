@@ -61,7 +61,7 @@ export function Footer() {
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
           <div className="flex items-center gap-6">
-            <p>© 2025 Planexus GmbH. All rights reserved.</p>
+            <p>© 2026 Planexus GmbH. Alle Rechte vorbehalten.</p>
             <div className="flex gap-4">
               <a href="https://www.facebook.com/profile.php?id=61578221935839" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors">
                 <Facebook className="w-4 h-4" />
