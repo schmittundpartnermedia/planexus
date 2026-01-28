@@ -254,10 +254,10 @@ export default function SmartLabService() {
             <div className="lg:col-span-1">
               <div className="sticky top-24 space-y-6">
                 {/* CTA Karte */}
-                <div className="bg-primary text-white p-8 rounded-2xl">
+                <div className="bg-primary text-slate-900 p-8 rounded-2xl">
                   <Lightbulb className="w-10 h-10 mb-4" />
                   <h3 className="text-xl font-bold mb-3">Digitalisierung starten</h3>
-                  <p className="text-white/80 mb-6 text-sm">
+                  <p className="text-slate-700 mb-6 text-sm">
                     Machen Sie Ihr Labor zukunftsfähig. Wir beraten Sie zu den Möglichkeiten der Smart-Lab-Integration.
                   </p>
                   <Link href="/kontakt" className="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">

@@ -80,10 +80,8 @@ export default function Services() {
               Von der ersten Idee bis zur schlüsselfertigen Übergabe – wir begleiten Sie durch alle Phasen Ihres Laborprojekts. Profitieren Sie von über 10 Jahren Erfahrung im modularen Laborbau.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/kontakt">
-                <a className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+              <Link href="/kontakt" className="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
                   Projekt anfragen <ArrowRight className="w-5 h-5" />
-                </a>
               </Link>
               <a href="tel:+4974357519700" className="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
                 <Phone className="w-5 h-5" /> +49 7435 7519 700
@@ -173,10 +171,8 @@ export default function Services() {
                   </ul>
                 </div>
                 <div className="px-8 pb-8">
-                  <Link href={service.href}>
-                    <a className="w-full block text-center py-3 bg-slate-50 rounded-lg hover:bg-primary hover:text-white transition-all font-medium text-slate-700 group-hover:bg-primary group-hover:text-white">
+                  <Link href={service.href} className="w-full block text-center py-3 bg-slate-50 rounded-lg hover:bg-primary hover:text-slate-900 transition-all font-medium text-slate-700 group-hover:bg-primary group-hover:text-slate-900">
                       Mehr erfahren <ChevronRight className="w-4 h-4 inline-block ml-1" />
-                    </a>
                   </Link>
                 </div>
               </motion.div>
@@ -287,10 +283,8 @@ export default function Services() {
               Wir entwickeln individuelle Labor-Module auch fernab vom Standard. Sprechen Sie uns an – gemeinsam finden wir die optimale Lösung für Ihre Anforderungen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/kontakt">
-                <a className="bg-primary text-white px-10 py-4 rounded-lg font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 inline-flex items-center gap-2">
+              <Link href="/kontakt" className="bg-primary text-slate-900 px-10 py-4 rounded-lg font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 inline-flex items-center gap-2">
                   Individuelle Anfrage <ArrowRight className="w-5 h-5" />
-                </a>
               </Link>
               <a href="tel:+4974357519700" className="border border-white/20 text-white px-10 py-4 rounded-lg font-medium hover:bg-white/10 transition-colors inline-flex items-center gap-2">
                 <Phone className="w-5 h-5" /> Direkt anrufen

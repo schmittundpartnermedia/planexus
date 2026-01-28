@@ -56,7 +56,7 @@ export default function Home() {
               Wir realisieren flexible Forschungsumgebungen für die Zukunft.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pointer-events-auto">
-              <Link href="/kontakt" className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(132,189,0,0.4)]">
+              <Link href="/kontakt" className="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(132,189,0,0.4)]">
                 Labor Projekt starten
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -131,8 +131,8 @@ export default function Home() {
                             <Leaf className="w-10 h-10 text-primary mb-3" />
                             <span className="font-bold text-slate-800">Nachhaltig</span>
                         </div>
-                        <div className="bg-primary rounded-xl p-6 flex flex-col justify-center items-center text-center text-white shadow-lg shadow-primary/30 transform scale-105">
-                            <Box className="w-10 h-10 text-white mb-3" />
+                        <div className="bg-primary rounded-xl p-6 flex flex-col justify-center items-center text-center text-slate-900 shadow-lg shadow-primary/30 transform scale-105">
+                            <Box className="w-10 h-10 text-slate-900 mb-3" />
                             <span className="font-bold">Modular</span>
                         </div>
                     </div>
@@ -221,13 +221,13 @@ export default function Home() {
       {/* CTA - Green Accent */}
       <section className="py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="bg-primary rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden shadow-2xl shadow-primary/20">
+          <div className="bg-primary rounded-3xl p-12 md:p-16 text-center text-slate-900 relative overflow-hidden shadow-2xl shadow-primary/20">
              {/* Abstract circles bg */}
              <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
              <div className="absolute bottom-0 right-0 w-80 h-80 bg-black/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
              
              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 relative z-10">Bereit für Ihr Laborprojekt?</h2>
-             <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10 relative z-10">
+             <p className="text-xl text-slate-700 max-w-2xl mx-auto mb-10 relative z-10">
                Lassen Sie uns gemeinsam Ihre Anforderungen besprechen. Wir erstellen Ihnen ein individuelles Konzept für Ihren Laborcontainer.
              </p>
              <Link href="/kontakt" className="bg-white text-primary font-bold px-10 py-4 rounded-lg hover:bg-slate-100 transition-colors inline-flex items-center gap-2 shadow-lg">

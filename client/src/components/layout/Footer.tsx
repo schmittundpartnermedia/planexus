@@ -47,30 +47,30 @@ export function Footer() {
                 <a href="mailto:info@planexus.de">info@planexus.de</a>
               </li>
             </ul>
-            
-            <h4 className="font-heading font-bold text-lg mb-4 mt-8 text-white">Fertigung</h4>
+          </div>
+
+          {/* Fertigung */}
+          <div>
+            <h4 className="font-heading font-bold text-lg mb-6 text-white">Fertigung</h4>
             <div className="flex items-start gap-3 text-slate-400">
               <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
               <span>Emil-Mayer-Straße 1<br />72461 Albstadt</span>
             </div>
           </div>
-
-          {/* Social */}
-          <div>
-             <h4 className="font-heading font-bold text-lg mb-6 text-white">Folgen Sie uns</h4>
-             <div className="flex gap-4">
-                <a href="https://www.facebook.com/profile.php?id=61578221935839" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors">
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a href="https://www.linkedin.com/company/planexus-gmbh" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-             </div>
-          </div>
         </div>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-          <p>© 2025 Planexus GmbH. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <p>© 2025 Planexus GmbH. All rights reserved.</p>
+            <div className="flex gap-4">
+              <a href="https://www.facebook.com/profile.php?id=61578221935839" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href="https://www.linkedin.com/company/planexus-gmbh" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors">
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
           <div className="flex gap-6">
             <Link href="/impressum" className="hover:text-white">Impressum</Link>
             <Link href="/datenschutz" className="hover:text-white">Datenschutz</Link>

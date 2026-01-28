@@ -1,123 +1,142 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Renderer, Program, Texture, Mesh, Vec2, Flowmap, Triangle } from "ogl";
 
 export function LiquidDistortion({ imageSrc, className = "" }: { imageSrc: string; className?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [webglFailed, setWebglFailed] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    const vertex = `
-      attribute vec2 uv;
-      attribute vec2 position;
-      varying vec2 vUv;
-      void main() {
-        vUv = uv;
-        gl_Position = vec4(position, 0, 1);
-      }
-    `;
-
-    const fragment = `
-      precision highp float;
-      uniform sampler2D tWater;
-      uniform sampler2D tFlow;
-      varying vec2 vUv;
-      void main() {
-        vec3 flow = texture2D(tFlow, vUv).rgb;
-        // Entscheidend: Wir nutzen den Flow um die UVs zu verschieben
-        // + flow.xy zieht das Bild mit der Maus mit (Planexus-Style)
-        vec2 uv = vUv + flow.xy * 0.09;
-        vec3 tex = texture2D(tWater, uv).rgb;
-        gl_FragColor = vec4(tex, 1.0);
-      }
-    `;
-
-    const renderer = new Renderer({ dpr: Math.min(window.devicePixelRatio, 2), alpha: true });
-    const gl = renderer.gl;
-    container.appendChild(gl.canvas);
-
-    const mouse = new Vec2(-1);
-    const velocity = new Vec2();
-    let lastTime = performance.now();
-    const lastMouse = new Vec2();
-
-    function resize() {
-      const rect = container!.getBoundingClientRect();
-      renderer.setSize(rect.width, rect.height);
-    }
-    window.addEventListener("resize", resize);
-    resize();
-
-    const geometry = new Triangle(gl);
-    const texture = new Texture(gl, { wrapS: gl.CLAMP_TO_EDGE, wrapT: gl.CLAMP_TO_EDGE });
-    const img = new Image();
-    img.crossOrigin = "anonymous";
-    img.onload = () => (texture.image = img);
-    img.src = imageSrc;
-
-    const flowmap = new Flowmap(gl, { 
-      size: 1024, 
-      dissipation: 0.96,
-      falloff: 0.4 
-    });
-
-    const program = new Program(gl, {
-      vertex,
-      fragment,
-      uniforms: { tWater: { value: texture }, tFlow: flowmap.uniform },
-    });
-
-    const mesh = new Mesh(gl, { geometry, program });
-
-    function updateMouse(e: any) {
-      const rect = container!.getBoundingClientRect();
-      // Wir berechnen die Position RELATIV zum Container
-      const clientX = e.clientX || (e.touches && e.touches[0].clientX);
-      const clientY = e.clientY || (e.touches && e.touches[0].clientY);
-      
-      const x = (clientX - rect.left) / rect.width;
-      const y = (clientY - rect.top) / rect.height;
-
-      // WICHTIG: mouse.y muss für OGL 1.0 - y sein
-      mouse.set(x, 1.0 - y);
-
-      const time = performance.now();
-      const delta = Math.max(1, time - lastTime);
-      
-      // Velocity muss die Richtung der Maus im Browser spiegeln
-      // Minus bei X damit die Animation der Maus folgt (nicht entgegenkommt)
-      velocity.x = -(clientX - lastMouse.x) / delta;
-      velocity.y = -(clientY - lastMouse.y) / delta;
-
-      lastMouse.set(clientX, clientY);
-      lastTime = time;
-      (velocity as any).needsUpdate = true;
+    const testCanvas = document.createElement('canvas');
+    const testGl = testCanvas.getContext('webgl') || testCanvas.getContext('experimental-webgl');
+    if (!testGl) {
+      setWebglFailed(true);
+      return;
     }
 
-    container.addEventListener("mousemove", updateMouse);
+    try {
+      const vertex = `
+        attribute vec2 uv;
+        attribute vec2 position;
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = vec4(position, 0, 1);
+        }
+      `;
 
-    let animationId: number;
-    function update() {
-      animationId = requestAnimationFrame(update);
-      if ((velocity as any).needsUpdate) {
-        flowmap.aspect = renderer.width / renderer.height;
-        flowmap.mouse.copy(mouse);
-        flowmap.velocity.lerp(velocity, 0.15);
-        (velocity as any).needsUpdate = false;
-      }
-      flowmap.update();
-      renderer.render({ scene: mesh });
+      const fragment = `
+        precision highp float;
+        uniform sampler2D tWater;
+        uniform sampler2D tFlow;
+        varying vec2 vUv;
+        void main() {
+          vec3 flow = texture2D(tFlow, vUv).rgb;
+          vec2 uv = vUv + flow.xy * 0.09;
+          vec3 tex = texture2D(tWater, uv).rgb;
+          gl_FragColor = vec4(tex, 1.0);
+        }
+      `;
+
+      const renderer = new Renderer({ dpr: Math.min(window.devicePixelRatio, 2), alpha: true });
+      const gl = renderer.gl;
+      container.appendChild(gl.canvas);
+
+      const mouse = new Vec2(-1);
+      const velocity = new Vec2();
+      let lastTime = performance.now();
+      const lastMouse = new Vec2();
+
+      const resize = () => {
+        const rect = container!.getBoundingClientRect();
+        renderer.setSize(rect.width, rect.height);
+      };
+      window.addEventListener("resize", resize);
+      resize();
+
+      const geometry = new Triangle(gl);
+      const texture = new Texture(gl, { wrapS: gl.CLAMP_TO_EDGE, wrapT: gl.CLAMP_TO_EDGE });
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => (texture.image = img);
+      img.src = imageSrc;
+
+      const flowmap = new Flowmap(gl, { 
+        size: 1024, 
+        dissipation: 0.96,
+        falloff: 0.4 
+      });
+
+      const program = new Program(gl, {
+        vertex,
+        fragment,
+        uniforms: { tWater: { value: texture }, tFlow: flowmap.uniform },
+      });
+
+      const mesh = new Mesh(gl, { geometry, program });
+
+      const updateMouse = (e: any) => {
+        const rect = container!.getBoundingClientRect();
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+        
+        const x = (clientX - rect.left) / rect.width;
+        const y = (clientY - rect.top) / rect.height;
+
+        mouse.set(x, 1.0 - y);
+
+        const time = performance.now();
+        const delta = Math.max(1, time - lastTime);
+        
+        velocity.x = -(clientX - lastMouse.x) / delta;
+        velocity.y = -(clientY - lastMouse.y) / delta;
+
+        lastMouse.set(clientX, clientY);
+        lastTime = time;
+        (velocity as any).needsUpdate = true;
+      };
+
+      container.addEventListener("mousemove", updateMouse);
+
+      let animationId: number;
+      const update = () => {
+        animationId = requestAnimationFrame(update);
+        if ((velocity as any).needsUpdate) {
+          flowmap.aspect = renderer.width / renderer.height;
+          flowmap.mouse.copy(mouse);
+          flowmap.velocity.lerp(velocity, 0.15);
+          (velocity as any).needsUpdate = false;
+        }
+        flowmap.update();
+        renderer.render({ scene: mesh });
+      };
+      update();
+
+      return () => {
+        cancelAnimationFrame(animationId);
+        window.removeEventListener("resize", resize);
+        container.removeEventListener("mousemove", updateMouse);
+        if (gl.canvas.parentNode) gl.canvas.parentNode.removeChild(gl.canvas);
+      };
+    } catch (error) {
+      console.warn("WebGL initialization failed, using fallback image");
+      setWebglFailed(true);
     }
-    update();
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", resize);
-      container.removeEventListener("mousemove", updateMouse);
-      if (gl.canvas.parentNode) gl.canvas.parentNode.removeChild(gl.canvas);
-    };
   }, [imageSrc]);
+
+  if (webglFailed) {
+    return (
+      <div className={`w-full h-full min-h-[600px] overflow-hidden ${className}`}>
+        <img 
+          src={imageSrc} 
+          alt="Hero" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+    );
+  }
 
   return <div ref={containerRef} className={`w-full h-full min-h-[600px] overflow-hidden ${className}`} />;
 }

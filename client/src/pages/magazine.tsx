@@ -100,10 +100,10 @@ export default function Magazine() {
       </section>
       
       {/* Newsletter / CTA */}
-      <section className="py-20 bg-primary text-white">
+      <section className="py-20 bg-primary text-slate-900">
          <div className="container mx-auto px-4 text-center max-w-3xl">
             <h2 className="text-3xl font-heading font-bold mb-4">Keine Neuigkeiten verpassen</h2>
-            <p className="text-white/80 mb-8">
+            <p className="text-slate-700 mb-8">
                Abonnieren Sie unseren Newsletter und erhalten Sie regelmäßig Updates zu neuen Projekten und Innovationen im Laborbau.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
