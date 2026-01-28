@@ -52,17 +52,17 @@ export function AnimatedGlobe() {
         cx - r * 0.3, cy - r * 0.3, 0,
         cx, cy, r
       );
-      earthGradient.addColorStop(0, "rgba(180, 220, 220, 0.7)");
-      earthGradient.addColorStop(0.5, "rgba(120, 190, 190, 0.5)");
-      earthGradient.addColorStop(0.8, "rgba(80, 160, 160, 0.4)");
-      earthGradient.addColorStop(1, "rgba(60, 140, 140, 0.3)");
+      earthGradient.addColorStop(0, "rgba(156, 203, 0, 0.4)");
+      earthGradient.addColorStop(0.5, "rgba(100, 150, 50, 0.25)");
+      earthGradient.addColorStop(0.8, "rgba(80, 120, 40, 0.15)");
+      earthGradient.addColorStop(1, "rgba(60, 100, 30, 0.1)");
 
       ctx.beginPath();
       ctx.arc(cx, cy, r, 0, Math.PI * 2);
       ctx.fillStyle = earthGradient;
       ctx.fill();
 
-      ctx.strokeStyle = "rgba(80, 160, 160, 0.6)";
+      ctx.strokeStyle = "rgba(156, 203, 0, 0.6)";
       ctx.lineWidth = 2;
       ctx.stroke();
 
@@ -71,7 +71,7 @@ export function AnimatedGlobe() {
       ctx.arc(cx, cy, r - 2, 0, Math.PI * 2);
       ctx.clip();
 
-      ctx.fillStyle = "rgba(100, 170, 170, 0.25)";
+      ctx.fillStyle = "rgba(156, 203, 0, 0.2)";
       
       const europeX = cx + Math.cos(rotation) * r * 0.1;
       const europeY = cy - r * 0.2;
@@ -105,7 +105,7 @@ export function AnimatedGlobe() {
         if (latR > 0) {
           ctx.beginPath();
           ctx.ellipse(cx, latY, latR, latR * 0.08, 0, 0, Math.PI * 2);
-          ctx.strokeStyle = "rgba(100, 180, 180, 0.15)";
+          ctx.strokeStyle = "rgba(156, 203, 0, 0.2)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
@@ -117,7 +117,7 @@ export function AnimatedGlobe() {
         if (Math.abs(lonScale) > 0.1) {
           ctx.beginPath();
           ctx.ellipse(cx, cy, r * Math.abs(lonScale), r, 0, 0, Math.PI * 2);
-          ctx.strokeStyle = "rgba(100, 180, 180, 0.1)";
+          ctx.strokeStyle = "rgba(156, 203, 0, 0.15)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
@@ -125,13 +125,13 @@ export function AnimatedGlobe() {
 
       ctx.beginPath();
       ctx.arc(cx, cy, r + 8, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(100, 180, 180, 0.2)";
+      ctx.strokeStyle = "rgba(156, 203, 0, 0.25)";
       ctx.lineWidth = 1;
       ctx.stroke();
 
       ctx.beginPath();
       ctx.arc(cx, cy, r + 18, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(100, 180, 180, 0.1)";
+      ctx.strokeStyle = "rgba(156, 203, 0, 0.12)";
       ctx.lineWidth = 1;
       ctx.stroke();
     };
@@ -163,7 +163,7 @@ export function AnimatedGlobe() {
         const cp2y = nodeY - (nodeY - centerY) * 0.15;
         ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, nodeX, nodeY);
         
-        ctx.strokeStyle = "rgba(100, 180, 180, 0.4)";
+        ctx.strokeStyle = "rgba(156, 203, 0, 0.4)";
         ctx.lineWidth = 1.5;
         ctx.stroke();
 
@@ -181,13 +181,13 @@ export function AnimatedGlobe() {
 
         ctx.beginPath();
         ctx.arc(nodeX, nodeY, nodeSize, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255, 255, 255, 0.95)";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.98)";
         ctx.fill();
-        ctx.strokeStyle = "rgba(100, 180, 180, 0.5)";
+        ctx.strokeStyle = "rgba(156, 203, 0, 0.6)";
         ctx.lineWidth = 2;
         ctx.stroke();
 
-        ctx.fillStyle = "#2a7070";
+        ctx.fillStyle = "#1e3a3a";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         
@@ -195,7 +195,7 @@ export function AnimatedGlobe() {
           ctx.font = `bold ${12 * scale}px system-ui`;
           ctx.fillText(node.name, nodeX, nodeY - 6 * scale);
           ctx.font = `${9 * scale}px system-ui`;
-          ctx.fillStyle = "#4a9090";
+          ctx.fillStyle = "#3a6060";
           const sublines = node.subname.split("\n");
           sublines.forEach((line, i) => {
             ctx.fillText(line, nodeX, nodeY + (8 + i * 10) * scale);
@@ -211,7 +211,7 @@ export function AnimatedGlobe() {
         const y = region.y * canvas.height;
         
         ctx.font = `bold ${13 * scale}px system-ui`;
-        ctx.fillStyle = "#4a9090";
+        ctx.fillStyle = "rgba(156, 203, 0, 0.9)";
         ctx.textAlign = "center";
         ctx.fillText(region.name, x, y);
       });
@@ -223,11 +223,11 @@ export function AnimatedGlobe() {
         centerX - centerSize * 0.3, centerY - centerSize * 0.3, 0,
         centerX, centerY, centerSize
       );
-      centerGrad.addColorStop(0, "#3a8585");
-      centerGrad.addColorStop(1, "#1a5555");
+      centerGrad.addColorStop(0, "#5a8a30");
+      centerGrad.addColorStop(1, "#3a6020");
       ctx.fillStyle = centerGrad;
       ctx.fill();
-      ctx.strokeStyle = "rgba(100, 180, 180, 0.6)";
+      ctx.strokeStyle = "rgba(156, 203, 0, 0.7)";
       ctx.lineWidth = 3;
       ctx.stroke();
 
@@ -254,10 +254,7 @@ export function AnimatedGlobe() {
 
   return (
     <div 
-      className="relative w-full h-[650px] md:h-[800px] lg:h-[850px]" 
-      style={{ 
-        background: "linear-gradient(155deg, #e8f4f4 0%, #d5eaea 30%, #c5e0e0 60%, #b8d8d8 100%)" 
-      }}
+      className="relative w-full h-[650px] md:h-[800px] lg:h-[850px] bg-slate-900" 
     >
       <canvas ref={canvasRef} className="w-full h-full" />
       
@@ -267,13 +264,13 @@ export function AnimatedGlobe() {
         transition={{ delay: 0.2, duration: 0.6 }}
         className="absolute top-8 left-8 text-left"
       >
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-light text-slate-500">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-light text-white">
           Business
         </h2>
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-teal-600">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-primary">
           Ökosystem
         </h2>
-        <p className="text-teal-600/50 text-xs mt-2 uppercase tracking-[0.35em]">
+        <p className="text-gray-400 text-xs mt-2 uppercase tracking-[0.35em]">
           Wesemann Netzwerk
         </p>
       </motion.div>
@@ -284,7 +281,7 @@ export function AnimatedGlobe() {
         transition={{ delay: 0.5, duration: 0.8 }}
         className="absolute bottom-8 left-8 text-left hidden md:block"
       >
-        <div className="space-y-0.5 text-[11px] text-slate-500/80 leading-relaxed">
+        <div className="space-y-0.5 text-[11px] text-gray-400 leading-relaxed">
           <p>Wesemann GmbH</p>
           <p>Abarcon GmbH</p>
           <p>Wesemann Reinraumtechnik GmbH</p>
