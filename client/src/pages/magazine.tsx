@@ -86,10 +86,8 @@ export default function Magazine() {
                     {post.excerpt}
                   </p>
                   
-                  <Link href={`/magazine/${post.id}`}>
-                    <a className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all mt-auto">
-                      Artikel lesen <ArrowRight className="w-4 h-4" />
-                    </a>
+                  <Link href={`/magazin/${post.id}`} className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all mt-auto">
+                    Artikel lesen <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </motion.div>
