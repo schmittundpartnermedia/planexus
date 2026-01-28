@@ -90,9 +90,9 @@ export function AnimatedGlobe() {
         centerX, centerY, globeRadius,
         centerX, centerY, globeRadius + 80 * scale
       );
-      outerGlow.addColorStop(0, "rgba(156, 203, 0, 0.15)");
-      outerGlow.addColorStop(0.5, "rgba(156, 203, 0, 0.05)");
-      outerGlow.addColorStop(1, "rgba(156, 203, 0, 0)");
+      outerGlow.addColorStop(0, "rgba(187, 215, 0, 0.15)");
+      outerGlow.addColorStop(0.5, "rgba(187, 215, 0, 0.05)");
+      outerGlow.addColorStop(1, "rgba(187, 215, 0, 0)");
       ctx.fillStyle = outerGlow;
       ctx.fill();
 
@@ -101,7 +101,7 @@ export function AnimatedGlobe() {
         centerX - globeRadius * 0.3, centerY - globeRadius * 0.3, 0,
         centerX, centerY, globeRadius
       );
-      earthGradient.addColorStop(0, "rgba(156, 203, 0, 0.4)");
+      earthGradient.addColorStop(0, "rgba(187, 215, 0, 0.4)");
       earthGradient.addColorStop(0.4, "rgba(130, 180, 0, 0.28)");
       earthGradient.addColorStop(0.7, "rgba(100, 150, 0, 0.18)");
       earthGradient.addColorStop(1, "rgba(80, 120, 0, 0.1)");
@@ -110,7 +110,7 @@ export function AnimatedGlobe() {
       ctx.arc(centerX, centerY, globeRadius, 0, Math.PI * 2);
       ctx.fillStyle = earthGradient;
       ctx.fill();
-      ctx.strokeStyle = "rgba(156, 203, 0, 0.5)";
+      ctx.strokeStyle = "rgba(187, 215, 0, 0.5)";
       ctx.lineWidth = 2;
       ctx.stroke();
 
@@ -120,7 +120,7 @@ export function AnimatedGlobe() {
       ctx.arc(centerX, centerY, globeRadius - 2, 0, Math.PI * 2);
       ctx.clip();
 
-      ctx.fillStyle = "rgba(156, 203, 0, 0.15)";
+      ctx.fillStyle = "rgba(187, 215, 0, 0.15)";
       
       const europeX = centerX + Math.cos(rotation * 0.5) * globeRadius * 0.05;
       ctx.beginPath();
@@ -144,7 +144,7 @@ export function AnimatedGlobe() {
         if (latR > 0) {
           ctx.beginPath();
           ctx.ellipse(centerX, latY, latR, latR * 0.05, 0, 0, Math.PI * 2);
-          ctx.strokeStyle = "rgba(156, 203, 0, 0.12)";
+          ctx.strokeStyle = "rgba(187, 215, 0, 0.12)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
@@ -156,7 +156,7 @@ export function AnimatedGlobe() {
         if (Math.abs(lonScale) > 0.1) {
           ctx.beginPath();
           ctx.ellipse(centerX, centerY, globeRadius * Math.abs(lonScale), globeRadius, 0, 0, Math.PI * 2);
-          ctx.strokeStyle = "rgba(156, 203, 0, 0.08)";
+          ctx.strokeStyle = "rgba(187, 215, 0, 0.08)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
@@ -173,7 +173,7 @@ export function AnimatedGlobe() {
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
         ctx.lineTo(regionX, regionY);
-        ctx.strokeStyle = "rgba(156, 203, 0, 0.5)";
+        ctx.strokeStyle = "rgba(187, 215, 0, 0.5)";
         ctx.lineWidth = 2;
         ctx.stroke();
 
@@ -183,13 +183,13 @@ export function AnimatedGlobe() {
         const mainPulseY = centerY + (regionY - centerY) * mainPulsePhase;
         ctx.beginPath();
         ctx.arc(mainPulseX, mainPulseY, 5 * scale, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(156, 203, 0, ${1 - mainPulsePhase * 0.5})`;
+        ctx.fillStyle = `rgba(187, 215, 0, ${1 - mainPulsePhase * 0.5})`;
         ctx.fill();
 
         // Region node
         ctx.beginPath();
         ctx.arc(regionX, regionY, 8 * scale, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(156, 203, 0, 0.9)";
+        ctx.fillStyle = "rgba(187, 215, 0, 0.9)";
         ctx.fill();
         ctx.strokeStyle = "rgba(255, 255, 255, 0.8)";
         ctx.lineWidth = 2;
@@ -197,7 +197,7 @@ export function AnimatedGlobe() {
 
         // Region label
         ctx.font = `bold ${13 * scale}px system-ui`;
-        ctx.fillStyle = "rgba(156, 203, 0, 1)";
+        ctx.fillStyle = "rgba(187, 215, 0, 1)";
         ctx.textAlign = region.x < 0.5 ? "right" : "left";
         const labelOffset = region.x < 0.5 ? -15 * scale : 15 * scale;
         ctx.fillText(region.name, regionX + labelOffset, regionY + 4 * scale);
@@ -212,7 +212,7 @@ export function AnimatedGlobe() {
           ctx.beginPath();
           ctx.moveTo(regionX, regionY);
           ctx.lineTo(compX, compY);
-          ctx.strokeStyle = "rgba(156, 203, 0, 0.35)";
+          ctx.strokeStyle = "rgba(187, 215, 0, 0.35)";
           ctx.lineWidth = 1.5;
           ctx.stroke();
 
@@ -222,13 +222,13 @@ export function AnimatedGlobe() {
           const compPulseY = regionY + (compY - regionY) * compPulsePhase;
           ctx.beginPath();
           ctx.arc(compPulseX, compPulseY, 4 * scale, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(156, 203, 0, ${1 - compPulsePhase * 0.6})`;
+          ctx.fillStyle = `rgba(187, 215, 0, ${1 - compPulsePhase * 0.6})`;
           ctx.fill();
 
           // Company node glow
           ctx.beginPath();
           ctx.arc(compX, compY, nodeSize + 5, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(156, 203, 0, 0.08)";
+          ctx.fillStyle = "rgba(187, 215, 0, 0.08)";
           ctx.fill();
 
           // Company node
@@ -236,14 +236,14 @@ export function AnimatedGlobe() {
           ctx.arc(compX, compY, nodeSize, 0, Math.PI * 2);
           ctx.fillStyle = "rgba(255, 255, 255, 0.97)";
           ctx.fill();
-          ctx.strokeStyle = "rgba(156, 203, 0, 0.5)";
+          ctx.strokeStyle = "rgba(187, 215, 0, 0.5)";
           ctx.lineWidth = 2;
           ctx.stroke();
 
           // Small green dot on top
           ctx.beginPath();
           ctx.arc(compX, compY - nodeSize + 6 * scale, 4 * scale, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(156, 203, 0, 0.85)";
+          ctx.fillStyle = "rgba(187, 215, 0, 0.85)";
           ctx.fill();
 
           // Company text
@@ -287,7 +287,7 @@ export function AnimatedGlobe() {
       centerGrad.addColorStop(1, "#3a6020");
       ctx.fillStyle = centerGrad;
       ctx.fill();
-      ctx.strokeStyle = "rgba(156, 203, 0, 0.6)";
+      ctx.strokeStyle = "rgba(187, 215, 0, 0.6)";
       ctx.lineWidth = 3;
       ctx.stroke();
 
