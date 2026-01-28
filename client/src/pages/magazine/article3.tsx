@@ -9,7 +9,7 @@ export default function Article3() {
       <SEO 
         title="BSL-2 und BSL-3 im Container: Geht das?"
         description="Sicherheitsstufen im Containerbau sind kein Problem mehr. Erfahren Sie, wie wir höchste Sicherheitsanforderungen in BSL-2 und BSL-3 Laboren in mobilen Einheiten realisieren."
-        canonical="/magazin/3"
+        canonical="/magazin/bsl-2-bsl-3-container-labor"
         type="article"
       />
       <ArticleSchema 
@@ -18,12 +18,12 @@ export default function Article3() {
         author="Redaktion Planexus"
         datePublished="2025-12-20"
         image="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2070"
-        url="/magazin/3"
+        url="/magazin/bsl-2-bsl-3-container-labor"
       />
       <BreadcrumbSchema items={[
         { name: "Start", url: "/" },
         { name: "Magazin", url: "/magazin" },
-        { name: "BSL-2 und BSL-3 im Container", url: "/magazin/3" }
+        { name: "BSL-2 und BSL-3 im Container", url: "/magazin/bsl-2-bsl-3-container-labor" }
       ]} />
       {/* Hero */}
       <section className="relative py-20 bg-slate-900 text-white overflow-hidden">

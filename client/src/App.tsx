@@ -41,9 +41,9 @@ function Router() {
       <Route path="/kontakt" component={Contact} />
       <Route path="/team" component={Team} />
       <Route path="/magazin" component={Magazine} />
-      <Route path="/magazin/1" component={Article1} />
-      <Route path="/magazin/2" component={Article2} />
-      <Route path="/magazin/3" component={Article3} />
+      <Route path="/magazin/innovation-modulbau-zukunft-mobiles-labor" component={Article1} />
+      <Route path="/magazin/nachhaltigkeit-laborbau-energieeffizienz" component={Article2} />
+      <Route path="/magazin/bsl-2-bsl-3-container-labor" component={Article3} />
       <Route path="/impressum" component={Impressum} />
       <Route path="/datenschutz" component={Datenschutz} />
       <Route component={NotFound} />

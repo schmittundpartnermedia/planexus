@@ -9,7 +9,7 @@ export default function Article2() {
       <SEO 
         title="Nachhaltigkeit im Laborbau: Energieeffizienz trifft High-Tech"
         description="Moderne Laborcontainer setzen neue Maßstäbe in Sachen Energieeffizienz. Erfahren Sie, wie nachhaltige Materialien und smarte Klimatechnik den CO2-Fußabdruck senken."
-        canonical="/magazin/2"
+        canonical="/magazin/nachhaltigkeit-laborbau-energieeffizienz"
         type="article"
       />
       <ArticleSchema 
@@ -18,12 +18,12 @@ export default function Article2() {
         author="Thomas Boss"
         datePublished="2026-01-05"
         image="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070"
-        url="/magazin/2"
+        url="/magazin/nachhaltigkeit-laborbau-energieeffizienz"
       />
       <BreadcrumbSchema items={[
         { name: "Start", url: "/" },
         { name: "Magazin", url: "/magazin" },
-        { name: "Nachhaltigkeit im Laborbau", url: "/magazin/2" }
+        { name: "Nachhaltigkeit im Laborbau", url: "/magazin/nachhaltigkeit-laborbau-energieeffizienz" }
       ]} />
       {/* Hero */}
       <section className="relative py-20 bg-slate-900 text-white overflow-hidden">

@@ -9,7 +9,7 @@ export default function Article1() {
       <SEO 
         title="Innovation im Modulbau: Die Zukunft des mobilen Labors"
         description="Wie modulare Bauweisen die Flexibilität in der Forschung erhöhen und warum Containerlabore eine echte Alternative zum Massivbau sind."
-        canonical="/magazin/1"
+        canonical="/magazin/innovation-modulbau-zukunft-mobiles-labor"
         type="article"
       />
       <ArticleSchema 
@@ -18,12 +18,12 @@ export default function Article1() {
         author="Sven Biewald"
         datePublished="2026-01-12"
         image="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070"
-        url="/magazin/1"
+        url="/magazin/innovation-modulbau-zukunft-mobiles-labor"
       />
       <BreadcrumbSchema items={[
         { name: "Start", url: "/" },
         { name: "Magazin", url: "/magazin" },
-        { name: "Innovation im Modulbau", url: "/magazin/1" }
+        { name: "Innovation im Modulbau", url: "/magazin/innovation-modulbau-zukunft-mobiles-labor" }
       ]} />
       {/* Hero */}
       <section className="relative py-20 bg-slate-900 text-white overflow-hidden">

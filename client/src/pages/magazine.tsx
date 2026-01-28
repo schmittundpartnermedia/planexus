@@ -7,6 +7,7 @@ export default function Magazine() {
   const posts = [
     {
       id: 1,
+      slug: "innovation-modulbau-zukunft-mobiles-labor",
       title: "Innovation im Modulbau: Die Zukunft des mobilen Labors",
       excerpt: "Wie modulare Bauweisen die Flexibilität in der Forschung erhöhen und warum Containerlabore eine echte Alternative zum Massivbau sind.",
       date: "12. Januar 2026",
@@ -16,6 +17,7 @@ export default function Magazine() {
     },
     {
       id: 2,
+      slug: "nachhaltigkeit-laborbau-energieeffizienz",
       title: "Nachhaltigkeit im Laborbau: Energieeffizienz trifft High-Tech",
       excerpt: "Moderne Laborcontainer setzen neue Maßstäbe in Sachen Energieeffizienz. Wir zeigen, wie nachhaltige Materialien und smarte Klimatechnik den CO2-Fußabdruck senken.",
       date: "05. Januar 2026",
@@ -25,6 +27,7 @@ export default function Magazine() {
     },
     {
       id: 3,
+      slug: "bsl-2-bsl-3-container-labor",
       title: "BSL-2 und BSL-3 im Container: Geht das?",
       excerpt: "Sicherheitsstufen im Containerbau sind kein Problem mehr. Erfahren Sie, wie wir höchste Sicherheitsanforderungen in mobilen Einheiten realisieren.",
       date: "20. Dezember 2025",
@@ -86,7 +89,7 @@ export default function Magazine() {
                     {post.excerpt}
                   </p>
                   
-                  <Link href={`/magazin/${post.id}`} className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all mt-auto">
+                  <Link href={`/magazin/${post.slug}`} className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all mt-auto">
                     Artikel lesen <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
