@@ -178,7 +178,7 @@ export function AnimatedGlobe() {
         ctx.stroke();
 
         // Animated pulse on main line
-        const mainPulsePhase = ((time * 0.0015 + pulseIndex * 0.2) % 1);
+        const mainPulsePhase = ((time * 0.0006 + pulseIndex * 0.2) % 1);
         const mainPulseX = centerX + (regionX - centerX) * mainPulsePhase;
         const mainPulseY = centerY + (regionY - centerY) * mainPulsePhase;
         ctx.beginPath();
@@ -217,7 +217,7 @@ export function AnimatedGlobe() {
           ctx.stroke();
 
           // Pulse on company line
-          const compPulsePhase = ((time * 0.002 + pulseIndex * 0.15 + compIndex * 0.25) % 1);
+          const compPulsePhase = ((time * 0.0008 + pulseIndex * 0.15 + compIndex * 0.25) % 1);
           const compPulseX = regionX + (compX - regionX) * compPulsePhase;
           const compPulseY = regionY + (compY - regionY) * compPulsePhase;
           ctx.beginPath();
