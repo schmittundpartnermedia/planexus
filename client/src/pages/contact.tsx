@@ -68,7 +68,7 @@ export default function Contact() {
                 <div className="space-y-6">
                   <div className="flex items-start gap-4 group">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
-                      <MapPin className="text-primary w-6 h-6 group-hover:text-white transition-colors" />
+                      <MapPin className="text-primary w-6 h-6 group-hover:text-slate-900 transition-colors" />
                     </div>
                     <div>
                       <h4 className="font-bold text-lg mb-1 text-slate-900">Adresse</h4>
@@ -78,7 +78,7 @@ export default function Contact() {
 
                   <div className="flex items-start gap-4 group">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
-                      <Phone className="text-primary w-6 h-6 group-hover:text-white transition-colors" />
+                      <Phone className="text-primary w-6 h-6 group-hover:text-slate-900 transition-colors" />
                     </div>
                     <div>
                       <h4 className="font-bold text-lg mb-1 text-slate-900">Telefon</h4>
@@ -90,7 +90,7 @@ export default function Contact() {
 
                   <div className="flex items-start gap-4 group">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
-                      <Mail className="text-primary w-6 h-6 group-hover:text-white transition-colors" />
+                      <Mail className="text-primary w-6 h-6 group-hover:text-slate-900 transition-colors" />
                     </div>
                     <div>
                       <h4 className="font-bold text-lg mb-1 text-slate-900">Email</h4>
@@ -174,7 +174,7 @@ export default function Contact() {
                     )}
                   />
 
-                  <Button type="submit" className="w-full bg-primary text-white font-bold hover:bg-primary/90 h-12 text-lg shadow-md shadow-primary/20">
+                  <Button type="submit" className="w-full bg-primary text-slate-900 font-bold hover:bg-primary/90 h-12 text-lg shadow-md shadow-primary/20">
                     <Send className="w-5 h-5 mr-2" /> Nachricht senden
                   </Button>
                 </form>

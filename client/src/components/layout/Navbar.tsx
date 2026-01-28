@@ -202,7 +202,7 @@ export function Navbar() {
           ))}
           <a
             href="tel:+4974357519700"
-            className="flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all border border-primary text-primary bg-transparent hover:bg-primary hover:text-white"
+            className="flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all border border-primary text-primary bg-transparent hover:bg-primary hover:text-slate-900"
           >
             <Phone className="w-4 h-4" />
             <span>+49 7435 7519 700</span>

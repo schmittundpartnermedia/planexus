@@ -305,7 +305,7 @@ export default function Article2() {
                   <p className="text-gray-300 leading-relaxed mb-6">
                     Nachhaltiger Laborbau ist kein Widerspruch zu Funktionalität und Wirtschaftlichkeit – im Gegenteil. Energieeffiziente Laborcontainer senken die Betriebskosten, verbessern das Arbeitsklima und stärken das Image als verantwortungsvolles Unternehmen. Mit Planexus setzen Sie auf einen Partner, der Nachhaltigkeit nicht als Trend, sondern als Grundprinzip versteht.
                   </p>
-                  <Link href="/kontakt" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+                  <Link href="/kontakt" className="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
                       Nachhaltigkeitsberatung anfordern <ArrowRight className="w-5 h-5" />
                   </Link>
                 </div>
@@ -334,10 +334,10 @@ export default function Article2() {
                 <div className="bg-white p-6 rounded-2xl border border-gray-100">
                   <h4 className="font-bold text-slate-900 mb-4">Artikel teilen</h4>
                   <div className="flex gap-3">
-                    <button className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors">
+                    <button className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-slate-900 transition-colors">
                       <Share2 className="w-5 h-5" />
                     </button>
-                    <button className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors">
+                    <button className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-slate-900 transition-colors">
                       <Bookmark className="w-5 h-5" />
                     </button>
                   </div>
@@ -374,7 +374,7 @@ export default function Article2() {
                   <p className="text-gray-400 text-sm mb-4">
                     Wir beraten Sie zu energieeffizienten Laborlösungen.
                   </p>
-                  <Link href="/kontakt" className="block w-full bg-primary text-white font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">
+                  <Link href="/kontakt" className="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">
                       Kontakt aufnehmen
                   </Link>
                 </div>

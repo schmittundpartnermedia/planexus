@@ -63,10 +63,10 @@ export function Footer() {
           <div className="flex items-center gap-6">
             <p>© 2026 Planexus GmbH. Alle Rechte vorbehalten.</p>
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/profile.php?id=61578221935839" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61578221935839" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-slate-900 transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://www.linkedin.com/company/planexus-gmbh" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/planexus-gmbh" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-slate-900 transition-colors">
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>

@@ -91,12 +91,12 @@ export default function Team() {
                 
                 <div className="flex gap-4">
                   {member.linkedin && (
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-100 rounded-lg hover:bg-primary hover:text-white transition-colors text-slate-600">
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-100 rounded-lg hover:bg-primary hover:text-slate-900 transition-colors text-slate-600">
                       <Linkedin className="w-5 h-5" />
                     </a>
                   )}
                   {member.facebook && (
-                    <a href={member.facebook} target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-100 rounded-lg hover:bg-primary hover:text-white transition-colors text-slate-600">
+                    <a href={member.facebook} target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-100 rounded-lg hover:bg-primary hover:text-slate-900 transition-colors text-slate-600">
                       <Facebook className="w-5 h-5" />
                     </a>
                   )}

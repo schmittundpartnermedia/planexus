@@ -28,7 +28,7 @@ export default function ConsultingService() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white font-medium text-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
               <ClipboardCheck className="w-4 h-4" />
               <span>Leistungen</span>
             </div>
@@ -39,7 +39,7 @@ export default function ConsultingService() {
               Wir navigieren Sie sicher durch den Dschungel der Vorschriften und Genehmigungsverfahren. Mit unserer Expertise wird Ihr Laborprojekt zum Erfolg.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/kontakt" className="bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+              <Link href="/kontakt" className="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
                   Beratung anfragen <ArrowRight className="w-5 h-5" />
               </Link>
               <a href="tel:+4974357519700" className="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
@@ -282,7 +282,7 @@ export default function ConsultingService() {
           <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
             Mit unserer Unterstützung meistern Sie alle behördlichen Hürden. Kontaktieren Sie uns für eine unverbindliche Erstberatung.
           </p>
-          <Link href="/kontakt" className="bg-primary text-white font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+          <Link href="/kontakt" className="bg-primary text-slate-900 font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
               Jetzt Kontakt aufnehmen <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

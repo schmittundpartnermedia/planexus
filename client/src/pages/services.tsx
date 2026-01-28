@@ -69,7 +69,7 @@ export default function Services() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white font-medium text-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
               <Building className="w-4 h-4" />
               <span>Komplettanbieter für Laborcontainer</span>
             </div>
@@ -154,7 +154,7 @@ export default function Services() {
                 className="bg-white border border-gray-100 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xl hover:shadow-gray-100 group overflow-hidden"
               >
                 <div className="p-8">
-                  <div className="mb-6 bg-primary/10 text-primary w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+                  <div className="mb-6 bg-primary/10 text-primary w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-slate-900 transition-all duration-300 shadow-sm">
                     {service.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-slate-900">{service.title}</h3>
