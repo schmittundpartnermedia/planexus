@@ -105,12 +105,14 @@ export default function Contact() {
               </div>
 
               <div className="h-64 bg-slate-100 rounded-xl overflow-hidden border border-gray-200">
-                 {/* Placeholder for Map */}
-                 <div className="w-full h-full flex items-center justify-center bg-slate-50">
-                    <span className="text-gray-400 flex items-center gap-2">
-                        <MapPin className="w-5 h-5" /> Standort Albstadt
-                    </span>
-                 </div>
+                <iframe 
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=8.935%2C48.195%2C8.965%2C48.215&layer=mapnik&marker=48.205%2C8.950"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  title="Planexus Standort Albstadt"
+                ></iframe>
               </div>
             </div>
 
