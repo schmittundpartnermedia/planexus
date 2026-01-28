@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 const regions = [
   { 
     name: "DEUTSCHLAND", 
-    x: 0.22, 
-    y: 0.42,
+    x: 0.18, 
+    y: 0.45,
     companies: [
-      { name: "wesemann", subname: "Reinraumtechnik", offsetX: -0.08, offsetY: -0.14 },
-      { name: "ABARCON", subname: "", offsetX: 0.06, offsetY: -0.14 },
-      { name: "WS", subname: "Funktions- und\nReinraum GmbH", offsetX: 0.14, offsetY: -0.08 },
-      { name: "MESYCON", subname: "GmbH", offsetX: 0.16, offsetY: 0.06 },
-      { name: "PLANEXUS", subname: "", offsetX: 0.02, offsetY: 0.14 },
-      { name: "SYNERGIE", subname: "Mobiliar GmbH", offsetX: -0.08, offsetY: 0.22 },
+      { name: "wesemann", subname: "Reinraumtechnik", offsetX: -0.02, offsetY: -0.18 },
+      { name: "ABARCON", subname: "", offsetX: 0.10, offsetY: -0.14 },
+      { name: "WS", subname: "Funktions- und\nReinraum GmbH", offsetX: 0.18, offsetY: -0.06 },
+      { name: "MESYCON", subname: "GmbH", offsetX: 0.18, offsetY: 0.10 },
+      { name: "PLANEXUS", subname: "", offsetX: 0.08, offsetY: 0.18 },
+      { name: "SYNERGIE", subname: "Mobiliar GmbH", offsetX: -0.04, offsetY: 0.26 },
     ]
   },
   { 
@@ -206,7 +206,7 @@ export function AnimatedGlobe() {
         region.companies.forEach((company, compIndex) => {
           const compX = regionX + company.offsetX * canvas.width;
           const compY = regionY + company.offsetY * canvas.height;
-          const nodeSize = 42 * scale;
+          const nodeSize = 52 * scale;
 
           // Line from region to company
           ctx.beginPath();
@@ -322,11 +322,8 @@ export function AnimatedGlobe() {
         transition={{ delay: 0.2, duration: 0.6 }}
         className="absolute top-8 left-8 text-left"
       >
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-light text-white/90">
-          Business
-        </h2>
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-primary">
-          Ökosystem
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white/90">
+          <span className="font-light">Business</span> <span className="font-bold text-primary">Ökosystem</span>
         </h2>
         <p className="text-gray-500 text-xs mt-2 uppercase tracking-[0.35em]">
           Wesemann Netzwerk
@@ -337,7 +334,7 @@ export function AnimatedGlobe() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.8 }}
-        className="absolute bottom-8 left-8 text-left hidden md:block"
+        className="absolute bottom-8 right-8 text-right hidden md:block"
       >
         <div className="space-y-0.5 text-[11px] text-gray-500 leading-relaxed">
           <p>Wesemann GmbH</p>
