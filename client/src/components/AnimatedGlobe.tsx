@@ -334,7 +334,7 @@ export function AnimatedGlobe() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.8 }}
-        className="absolute bottom-8 right-8 text-right hidden md:block"
+        className="absolute top-8 right-8 text-right hidden md:block"
       >
         <div className="space-y-0.5 text-[11px] text-gray-500 leading-relaxed">
           <p>Wesemann GmbH</p>
