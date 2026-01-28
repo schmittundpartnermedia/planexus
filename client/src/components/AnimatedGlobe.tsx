@@ -4,23 +4,23 @@ import { motion } from "framer-motion";
 const regions = [
   { 
     name: "DEUTSCHLAND", 
-    x: 0.12, 
+    x: 0.18, 
     y: 0.45,
     companies: [
-      { name: "wesemann", subname: "Reinraumtechnik", offsetX: 0.02, offsetY: -0.18 },
-      { name: "ABARCON", subname: "", offsetX: 0.14, offsetY: -0.14 },
-      { name: "WS", subname: "Funktions- und\nReinraum GmbH", offsetX: 0.22, offsetY: -0.06 },
-      { name: "MESYCON", subname: "GmbH", offsetX: 0.22, offsetY: 0.10 },
-      { name: "PLANEXUS", subname: "", offsetX: 0.12, offsetY: 0.18 },
-      { name: "SYNERGIE", subname: "Mobiliar GmbH", offsetX: 0.00, offsetY: 0.26 },
+      { name: "wesemann", subname: "Reinraumtechnik", offsetX: -0.02, offsetY: -0.18 },
+      { name: "ABARCON", subname: "", offsetX: 0.10, offsetY: -0.14 },
+      { name: "WS", subname: "Funktions- und\nReinraum GmbH", offsetX: 0.18, offsetY: -0.06 },
+      { name: "MESYCON", subname: "GmbH", offsetX: 0.18, offsetY: 0.10 },
+      { name: "PLANEXUS", subname: "", offsetX: 0.08, offsetY: 0.18 },
+      { name: "SYNERGIE", subname: "Mobiliar GmbH", offsetX: -0.04, offsetY: 0.26 },
     ]
   },
   { 
     name: "SCHWEIZ", 
-    x: 0.70, 
-    y: 0.22,
+    x: 0.78, 
+    y: 0.18,
     companies: [
-      { name: "wesemann", subname: "Schweiz", offsetX: 0.10, offsetY: -0.10 },
+      { name: "wesemann", subname: "Schweiz", offsetX: -0.10, offsetY: -0.10 },
     ]
   },
   { 
@@ -41,10 +41,10 @@ const regions = [
   },
   { 
     name: "NAHER OSTEN", 
-    x: 0.72, 
+    x: 0.82, 
     y: 0.58,
     companies: [
-      { name: "wesemann", subname: "Middle East", offsetX: 0.10, offsetY: 0.10 },
+      { name: "wesemann", subname: "Middle East", offsetX: 0.08, offsetY: 0.10 },
     ]
   },
 ];
