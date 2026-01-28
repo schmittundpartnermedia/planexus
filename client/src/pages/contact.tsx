@@ -106,7 +106,7 @@ export default function Contact() {
 
               <div className="h-64 bg-slate-100 rounded-xl overflow-hidden border border-gray-200">
                 <iframe 
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=8.9358%2C48.2066%2C8.9558%2C48.2166&layer=mapnik&marker=48.2116%2C8.9458"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=8.9303%2C48.2161%2C8.9503%2C48.2261&layer=mapnik&marker=48.2211%2C8.9403"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
