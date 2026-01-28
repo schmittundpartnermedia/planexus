@@ -42,6 +42,12 @@ const partners = [
     category: "Versorgungssysteme"
   },
   {
+    name: "Planexus GmbH",
+    description: "Experte für Laborcontainer und modularen Laborbau. Mit innovativen Konzepten für mobile Laborlösungen, BSL-2/BSL-3 Sicherheitslabore und Smart Lab Integrationen bietet Planexus schlüsselfertige Lösungen für höchste Anforderungen.",
+    icon: Building2,
+    category: "Modulbau"
+  },
+  {
     name: "Wesemann Benelux B.V.",
     description: "Kompetenter Ansprechpartner für Laborprojekte in den Benelux-Ländern. Das erfahrene Team in Ede unterstützt bei Konfiguration, Lieferung, Montage und bietet darüber hinaus Wartungs- und Validierungsleistungen.",
     icon: Globe,
@@ -60,7 +66,7 @@ const partners = [
     category: "Spanien"
   },
   {
-    name: "Wesemann Lab Solutions Middle East",
+    name: "Wesemann Middle East",
     description: "Vertriebspartner für den Nahen Osten mit umfassendem Leistungsangebot. Von Labormöbeln über Reinraumlösungen bis zu Versorgungssystemen - Vertrieb, Installation und Wartung aus einer Hand für die gesamte Region.",
     icon: Globe,
     category: "Naher Osten"
