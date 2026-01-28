@@ -40,12 +40,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            className="max-w-3xl pt-16 md:pt-0"
           >
             <img 
               src={planexusLogo} 
               alt="Planexus GmbH" 
-              className="w-[300px] md:w-[520px] h-auto mb-8"
+              className="hidden md:block w-[520px] h-auto mb-8"
             />
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
               Denken. <span className="text-primary">Planen.</span><br />
