@@ -313,7 +313,7 @@ export function AnimatedGlobe() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen bg-transparent">
+    <div className="relative w-full h-screen bg-transparent pl-[4%]">
       <canvas ref={canvasRef} className="w-full h-full" />
       
       <motion.div
