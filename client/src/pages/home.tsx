@@ -157,37 +157,37 @@ export default function Home() {
             {[
               {
                 href: "/leistungen/planung",
-                icon: <Layout className="w-8 h-8 text-primary" />,
+                icon: <Layout className="w-8 h-8" />,
                 title: "Technische Fachplanung",
                 desc: "Detaillierte Planung mit 3D-Visualisierung und TGA-Konzepten."
               },
               {
                 href: "/leistungen/modulbau",
-                icon: <Layers className="w-8 h-8 text-primary" />,
+                icon: <Layers className="w-8 h-8" />,
                 title: "Modulbau & Fertigung",
                 desc: "Hochwertige Laborcontainer 'Made in Germany'."
               },
               {
                 href: "/leistungen/logistik",
-                icon: <Box className="w-8 h-8 text-primary" />,
+                icon: <Box className="w-8 h-8" />,
                 title: "Logistik & Montage",
                 desc: "Weltweiter Transport und schlüsselfertige Übergabe."
               },
               {
                 href: "/leistungen/ausstattung",
-                icon: <Microscope className="w-8 h-8 text-primary" />,
+                icon: <Microscope className="w-8 h-8" />,
                 title: "Laborausstattung",
                 desc: "Labormöbel, Abzüge und Sicherheitsausstattung."
               },
               {
                 href: "/leistungen/beratung",
-                icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+                icon: <ShieldCheck className="w-8 h-8" />,
                 title: "Beratung & Genehmigung",
                 desc: "Unterstützung bei allen behördlichen Verfahren."
               },
               {
                 href: "/leistungen/smart-lab",
-                icon: <Layout className="w-8 h-8 text-primary" />,
+                icon: <Layout className="w-8 h-8" />,
                 title: "Smart Lab Integration",
                 desc: "Digitale Vernetzung und IoT-Monitoring."
               }
@@ -198,7 +198,7 @@ export default function Home() {
                 className="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   {service.icon}
                 </div>
                 <h3 className="text-lg font-bold mb-2 text-slate-900">{service.title}</h3>
