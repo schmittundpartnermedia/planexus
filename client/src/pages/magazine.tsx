@@ -110,7 +110,7 @@ export default function Magazine() {
                <input 
                   type="email" 
                   placeholder="Ihre Email Adresse" 
-                  className="flex-grow px-6 py-3 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  className="flex-grow px-6 py-3 rounded-lg text-slate-900 bg-white border-2 border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900"
                />
                <button className="bg-slate-900 text-white font-bold px-8 py-3 rounded-lg hover:bg-slate-800 transition-colors">
                   Anmelden
