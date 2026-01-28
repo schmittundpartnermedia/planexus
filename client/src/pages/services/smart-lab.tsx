@@ -91,8 +91,23 @@ export default function SmartLabService() {
                   Unsere Smart-Lab-Komponenten
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <a 
+                    href="https://www.loxone.com/dede/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:shadow-xl hover:border-primary/50 transition-all group block"
+                  >
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white mb-4">
+                      <Thermometer className="w-6 h-6" />
+                    </div>
+                    <h4 className="font-bold text-lg mb-2 text-white">Umgebungsmonitoring</h4>
+                    <p className="text-slate-400 text-sm mb-4">Kontinuierliche Überwachung von Temperatur, Luftfeuchtigkeit, Druck und Luftqualität.</p>
+                    <div className="flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all">
+                      <span>Powered by Loxone</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </a>
                   {[
-                    { icon: <Thermometer className="w-6 h-6" />, title: "Umgebungsmonitoring", desc: "Kontinuierliche Überwachung von Temperatur, Luftfeuchtigkeit, Druck und Luftqualität." },
                     { icon: <Lock className="w-6 h-6" />, title: "Zugangskontrolle", desc: "Elektronische Schließsysteme mit Protokollierung aller Zutritte und Berechtigungsverwaltung." },
                     { icon: <BarChart3 className="w-6 h-6" />, title: "Datenanalyse", desc: "Automatische Auswertung und Visualisierung aller erfassten Daten in Echtzeit." },
                     { icon: <Cloud className="w-6 h-6" />, title: "Cloud-Anbindung", desc: "Sichere Datenspeicherung und Fernzugriff über verschlüsselte Verbindungen." },
