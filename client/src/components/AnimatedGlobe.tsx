@@ -4,47 +4,47 @@ import { motion } from "framer-motion";
 const regions = [
   { 
     name: "DEUTSCHLAND", 
-    x: 0.15, 
-    y: 0.42,
+    x: 0.28, 
+    y: 0.45,
     companies: [
-      { name: "wesemann", subname: "Reinraumtechnik", offsetX: 0.08, offsetY: -0.18 },
-      { name: "ABARCON", subname: "", offsetX: 0.18, offsetY: -0.08 },
-      { name: "WS", subname: "Funktions- und\nReinraum GmbH", offsetX: 0.22, offsetY: -0.22 },
-      { name: "MESYCON", subname: "GmbH", offsetX: 0.28, offsetY: -0.12 },
-      { name: "PLANEXUS", subname: "", offsetX: 0.08, offsetY: 0.15 },
-      { name: "SYNERGIE", subname: "Mobiliar GmbH", offsetX: -0.02, offsetY: 0.28 },
+      { name: "wesemann", subname: "Reinraumtechnik", offsetX: -0.06, offsetY: -0.12 },
+      { name: "ABARCON", subname: "", offsetX: 0.08, offsetY: -0.08 },
+      { name: "WS", subname: "Funktions- und\nReinraum GmbH", offsetX: 0.12, offsetY: -0.16 },
+      { name: "MESYCON", subname: "GmbH", offsetX: 0.16, offsetY: -0.04 },
+      { name: "PLANEXUS", subname: "", offsetX: -0.04, offsetY: 0.10 },
+      { name: "SYNERGIE", subname: "Mobiliar GmbH", offsetX: -0.10, offsetY: 0.18 },
     ]
   },
   { 
     name: "SCHWEIZ", 
-    x: 0.85, 
-    y: 0.18,
+    x: 0.75, 
+    y: 0.25,
     companies: [
-      { name: "wesemann", subname: "Schweiz", offsetX: -0.12, offsetY: -0.08 },
+      { name: "wesemann", subname: "Schweiz", offsetX: -0.08, offsetY: -0.10 },
     ]
   },
   { 
     name: "BENELUX", 
-    x: 0.28, 
-    y: 0.85,
+    x: 0.35, 
+    y: 0.75,
     companies: [
-      { name: "wesemann", subname: "BENELUX", offsetX: 0.10, offsetY: -0.12 },
+      { name: "wesemann", subname: "BENELUX", offsetX: 0.08, offsetY: -0.08 },
     ]
   },
   { 
     name: "SPANIEN", 
-    x: 0.58, 
-    y: 0.88,
+    x: 0.55, 
+    y: 0.78,
     companies: [
-      { name: "HibLab", subname: "Solutions", offsetX: 0.08, offsetY: -0.12 },
+      { name: "HibLab", subname: "Solutions", offsetX: 0.06, offsetY: -0.09 },
     ]
   },
   { 
     name: "NAHER OSTEN", 
-    x: 0.88, 
-    y: 0.52,
+    x: 0.78, 
+    y: 0.55,
     companies: [
-      { name: "wesemann", subname: "Middle East", offsetX: -0.08, offsetY: 0.12 },
+      { name: "wesemann", subname: "Middle East", offsetX: 0.06, offsetY: 0.09 },
     ]
   },
 ];
