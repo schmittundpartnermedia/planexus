@@ -25,6 +25,7 @@ const ConsultingService = lazy(() => import("@/pages/services/consulting"));
 const SmartLabService = lazy(() => import("@/pages/services/smart-lab"));
 const Impressum = lazy(() => import("@/pages/impressum"));
 const Datenschutz = lazy(() => import("@/pages/datenschutz"));
+const Partner = lazy(() => import("@/pages/partner"));
 
 function Router() {
   return (
@@ -44,6 +45,7 @@ function Router() {
       <Route path="/magazin/innovation-modulbau-zukunft-mobiles-labor" component={Article1} />
       <Route path="/magazin/nachhaltigkeit-laborbau-energieeffizienz" component={Article2} />
       <Route path="/magazin/bsl-2-bsl-3-container-labor" component={Article3} />
+      <Route path="/partner" component={Partner} />
       <Route path="/impressum" component={Impressum} />
       <Route path="/datenschutz" component={Datenschutz} />
       <Route component={NotFound} />

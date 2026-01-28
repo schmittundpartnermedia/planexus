@@ -29,6 +29,7 @@ export function Navbar() {
   };
 
   const links = [
+    { href: "/partner", label: "Partner" },
     { href: "/magazin", label: "Magazin" },
     { href: "/kontakt", label: "Kontakt" },
   ];
