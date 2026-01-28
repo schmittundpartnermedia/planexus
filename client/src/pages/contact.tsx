@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/SEO";
+import Map from "@/components/Map";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name muss mindestens 2 Zeichen lang sein"),
@@ -105,14 +106,12 @@ export default function Contact() {
               </div>
 
               <div className="h-64 bg-slate-100 rounded-xl overflow-hidden border border-gray-200">
-                <iframe 
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=8.9040%2C48.2130%2C8.9240%2C48.2230&layer=mapnik&marker=48.2180%2C8.9141"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  title="Planexus Büro - Am Steinbach 8, 72459 Albstadt-Laufen"
-                ></iframe>
+                <Map 
+                  lat={48.2180461} 
+                  lng={8.9140541} 
+                  zoom={17}
+                  popupText="Planexus GmbH - Am Steinbach 8, 72459 Albstadt-Laufen"
+                />
               </div>
             </div>
 
