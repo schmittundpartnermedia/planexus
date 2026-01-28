@@ -9,67 +9,78 @@ const partners = [
     name: "Wesemann GmbH",
     description: "Spezialisiert auf hochwertige Laboreinrichtungen mit individuell angepassten Lösungen. Das Portfolio umfasst flexible und modulare Möbelsysteme sowie modernste Sicherheitskomponenten wie Laborabzüge und Schutzschränke nach aktuellen Normen.",
     icon: Microscope,
-    category: "Laboreinrichtung"
+    category: "Laboreinrichtung",
+    url: "https://www.wesemann.com/"
   },
   {
     name: "Wesemann Reinraumtechnik GmbH",
     description: "Experte für maßgeschneiderte Reinraumsysteme als Komplettlösung. Von der Konzeption über Fertigung und Aufbau bis zur finalen Abnahme wird der gesamte Prozess aus einer Hand betreut, um individuelle Kundenanforderungen präzise zu erfüllen.",
     icon: Shield,
-    category: "Reinraumtechnik"
+    category: "Reinraumtechnik",
+    url: "https://www.wesemann-reinraumtechnik.de/"
   },
   {
     name: "Abarcon GmbH",
     description: "Fokussiert auf innovative Arbeitsplatzsysteme für Labor und Industrie. Das Leistungsspektrum erstreckt sich von der Entwicklung über die Produktion bis zum Service von Personen- und Produktschutzsystemen mit höchsten Qualitätsstandards.",
     icon: Users,
-    category: "Arbeitsplatzsysteme"
+    category: "Arbeitsplatzsysteme",
+    url: "https://www.abarcon.de/"
   },
   {
     name: "WS Funktions- und Reinraum GmbH",
     description: "Bietet ganzheitliche Lösungen für Reinräume und Funktionsräume. Die Leistungen umfassen Konzeption, Bau und Instandhaltung nach internationalen Standards wie ISO 14644 und GMP-Richtlinien mit Fokus auf Qualität und Nachhaltigkeit.",
     icon: Building2,
-    category: "Funktionsräume"
+    category: "Funktionsräume",
+    url: "https://www.ws-fr.de/"
   },
   {
     name: "Synergie Mobiliar GmbH",
     description: "Hersteller hochwertiger Möbel und innovativer Einrichtungskonzepte. Das Sortiment zeichnet sich durch robuste Materialqualität und ansprechendes Design aus, das funktionale Anforderungen mit ästhetischen Ansprüchen verbindet.",
     icon: Wrench,
-    category: "Mobiliar"
+    category: "Mobiliar",
+    url: "https://www.synergie-mobiliar.de/"
   },
   {
     name: "Mesycon GmbH",
     description: "Spezialist für hochreine Versorgungssysteme im Laborbereich. Das Angebot reicht von Reinstgas- und Reinstwassersystemen über Chemikalienversorgung bis hin zu Gaswarn- und Kryotechnik - inklusive Planung, Installation und Inbetriebnahme.",
     icon: FlaskConical,
-    category: "Versorgungssysteme"
+    category: "Versorgungssysteme",
+    url: "https://www.mesycon.com/"
   },
   {
     name: "Planexus GmbH",
     description: "Experte für Laborcontainer und modularen Laborbau. Mit innovativen Konzepten für mobile Laborlösungen, BSL-2/BSL-3 Sicherheitslabore und Smart Lab Integrationen bietet Planexus schlüsselfertige Lösungen für höchste Anforderungen.",
     icon: Building2,
-    category: "Modulbau"
+    category: "Modulbau",
+    url: "https://planexus.de/"
   },
   {
     name: "Wesemann Benelux B.V.",
     description: "Kompetenter Ansprechpartner für Laborprojekte in den Benelux-Ländern. Das erfahrene Team in Ede unterstützt bei Konfiguration, Lieferung, Montage und bietet darüber hinaus Wartungs- und Validierungsleistungen.",
     icon: Globe,
-    category: "Benelux"
+    category: "Benelux",
+    url: "https://www.wesemann-benelux.nl/"
   },
   {
     name: "Wesemann Schweiz AG",
     description: "Zentraler Partner für Laborlösungen in der Schweiz. Von der Erstberatung über Projektplanung bis zur Umsetzung, Montage und Wartung werden Kunden durch alle Projektphasen begleitet - funktional, sicher und normgerecht.",
     icon: Globe,
-    category: "Schweiz"
+    category: "Schweiz",
+    url: "https://www.wesemann-ag.ch/"
   },
   {
     name: "HibLab Solutions, S.L.",
     description: "Innovativer Anbieter für ganzheitliche Laborentwicklung. Die industrialisierten Lösungen werden individuell auf Kundenanforderungen zugeschnitten und decken den kompletten Laborlebenszyklus ab - von der Planung bis zur schlüsselfertigen Übergabe.",
     icon: Building2,
-    category: "Spanien"
+    category: "Spanien",
+    url: "https://hiblab.com/"
   },
   {
     name: "Wesemann Middle East",
     description: "Vertriebspartner für den Nahen Osten mit umfassendem Leistungsangebot. Von Labormöbeln über Reinraumlösungen bis zu Versorgungssystemen - Vertrieb, Installation und Wartung aus einer Hand für die gesamte Region.",
     icon: Globe,
-    category: "Naher Osten"
+    category: "Naher Osten",
+    url: "https://www.wesemann.com/Contact/International/EN_index_2002.html"
   }
 ];
 
@@ -123,15 +134,18 @@ export default function Partner() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {partners.map((partner, index) => (
-              <motion.div
+              <motion.a
                 key={partner.name}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className="relative bg-white rounded-2xl p-8 transition-all duration-300 group
+                className="relative bg-white rounded-2xl p-8 transition-all duration-300 group cursor-pointer
                   border-2 border-gray-100 hover:border-primary/30
                   shadow-lg shadow-gray-100/50 hover:shadow-2xl hover:shadow-primary/10
-                  hover:-translate-y-2"
+                  hover:-translate-y-2 block"
               >
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl"></div>
                 
@@ -153,7 +167,7 @@ export default function Partner() {
                 <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">
                   <ArrowRight className="w-4 h-4 text-primary" />
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
