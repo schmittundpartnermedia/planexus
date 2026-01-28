@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -18,8 +19,11 @@ const formSchema = z.object({
   message: z.string().min(10, "Nachricht muss mindestens 10 Zeichen lang sein"),
 });
 
+const FORMSPREE_ID = "xwpkgjvp";
+
 export default function Contact() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -30,13 +34,35 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Nachricht gesendet",
-      description: "Wir werden uns schnellstmöglich bei Ihnen melden.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Nachricht gesendet",
+          description: "Wir werden uns schnellstmöglich bei Ihnen melden.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Fehler beim Senden");
+      }
+    } catch (error) {
+      toast({
+        title: "Fehler",
+        description: "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -177,8 +203,16 @@ export default function Contact() {
                     )}
                   />
 
-                  <Button type="submit" className="w-full bg-primary text-slate-900 font-bold hover:bg-primary/90 h-12 text-lg shadow-md shadow-primary/20">
-                    <Send className="w-5 h-5 mr-2" /> Nachricht senden
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full bg-primary text-slate-900 font-bold hover:bg-primary/90 h-12 text-lg shadow-md shadow-primary/20 disabled:opacity-50"
+                  >
+                    {isSubmitting ? (
+                      <><Loader2 className="w-5 h-5 mr-2 animate-spin" /> Wird gesendet...</>
+                    ) : (
+                      <><Send className="w-5 h-5 mr-2" /> Nachricht senden</>
+                    )}
                   </Button>
                 </form>
               </Form>
