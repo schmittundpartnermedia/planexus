@@ -108,10 +108,8 @@ export default function Home() {
                   <strong>Planexus</strong> steht für intelligente Modulbauweise. Wir verbinden technisches Know-how mit Innovationskraft, um Labore zu schaffen, die exakt auf Ihre Analyseprozesse abgestimmt sind – schnell verfügbar, kosteneffizient und nachhaltig.
                 </p>
               </div>
-              <Link href="/ueber-uns">
-                <a className="inline-flex items-center gap-2 text-primary font-bold mt-8 hover:gap-3 transition-all border-b-2 border-primary/20 hover:border-primary pb-1">
+              <Link href="/ueber-uns" className="inline-flex items-center gap-2 text-primary font-bold mt-8 hover:gap-3 transition-all border-b-2 border-primary/20 hover:border-primary pb-1">
                   Mehr über Planexus erfahren <ChevronRight className="w-5 h-5" />
-                </a>
               </Link>
             </div>
             <div className="relative">
@@ -205,20 +203,16 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-bold mb-2 text-slate-900">{service.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{service.desc}</p>
-                <Link href={service.href}>
-                  <a className="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                <Link href={service.href} className="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
                     Mehr erfahren <ArrowRight className="w-4 h-4" />
-                  </a>
                 </Link>
               </motion.div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/leistungen">
-              <a className="inline-flex items-center gap-2 bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors">
+            <Link href="/leistungen" className="inline-flex items-center gap-2 bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors">
                 Alle Leistungen ansehen <ArrowRight className="w-5 h-5" />
-              </a>
             </Link>
           </div>
         </div>
@@ -236,10 +230,8 @@ export default function Home() {
              <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10 relative z-10">
                Lassen Sie uns gemeinsam Ihre Anforderungen besprechen. Wir erstellen Ihnen ein individuelles Konzept für Ihren Laborcontainer.
              </p>
-             <Link href="/kontakt">
-               <a className="bg-white text-primary font-bold px-10 py-4 rounded-lg hover:bg-slate-100 transition-colors inline-flex items-center gap-2 shadow-lg">
+             <Link href="/kontakt" className="bg-white text-primary font-bold px-10 py-4 rounded-lg hover:bg-slate-100 transition-colors inline-flex items-center gap-2 shadow-lg">
                  Jetzt Kontakt aufnehmen <ArrowRight className="w-5 h-5" />
-               </a>
              </Link>
           </div>
         </div>

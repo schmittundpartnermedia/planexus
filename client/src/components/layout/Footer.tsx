@@ -30,9 +30,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Büro */}
           <div>
-            <h4 className="font-heading font-bold text-lg mb-6 text-white">Kontakt</h4>
+            <h4 className="font-heading font-bold text-lg mb-6 text-white">Büro</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-slate-400">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
@@ -47,6 +47,12 @@ export function Footer() {
                 <a href="mailto:info@planexus.de">info@planexus.de</a>
               </li>
             </ul>
+            
+            <h4 className="font-heading font-bold text-lg mb-4 mt-8 text-white">Fertigung</h4>
+            <div className="flex items-start gap-3 text-slate-400">
+              <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
+              <span>Emil-Mayer-Straße 1<br />72461 Albstadt</span>
+            </div>
           </div>
 
           {/* Social */}
