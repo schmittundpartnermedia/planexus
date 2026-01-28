@@ -75,7 +75,7 @@ export function AnimatedGlobe() {
 
     const draw = () => {
       const centerX = canvas.width * 0.50;
-      const centerY = canvas.height * 0.48;
+      const centerY = canvas.height * 0.50;
       const scale = Math.min(canvas.width, canvas.height) / 800;
       const globeRadius = 130 * scale;
 
@@ -313,8 +313,8 @@ export function AnimatedGlobe() {
   }, []);
 
   return (
-    <div className="relative w-full h-[650px] md:h-[800px] lg:h-[850px] bg-slate-900">
-      <canvas ref={canvasRef} className="w-full h-full" />
+    <div className="relative w-full min-h-screen bg-transparent flex items-center justify-center">
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
       
       <motion.div
         initial={{ opacity: 0, x: -20 }}
