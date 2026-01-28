@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const regions = [
   { 
     name: "DEUTSCHLAND", 
-    x: 0.18, 
+    x: 0.12, 
     y: 0.45,
     companies: [
       { name: "wesemann", subname: "Reinraumtechnik", offsetX: -0.02, offsetY: -0.18 },
