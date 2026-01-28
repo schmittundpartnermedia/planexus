@@ -28,7 +28,7 @@ const regions = [
     x: 0.30, 
     y: 0.82,
     companies: [
-      { name: "wesemann", subname: "BENELUX", offsetX: 0.10, offsetY: -0.10 },
+      { name: "wesemann", subname: "BENELUX", offsetX: 0.10, offsetY: -0.14 },
     ]
   },
   { 
