@@ -106,12 +106,12 @@ export default function Contact() {
 
               <div className="h-64 bg-slate-100 rounded-xl overflow-hidden border border-gray-200">
                 <iframe 
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=8.935%2C48.195%2C8.965%2C48.215&layer=mapnik&marker=48.205%2C8.950"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=8.9358%2C48.2066%2C8.9558%2C48.2166&layer=mapnik&marker=48.2116%2C8.9458"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   loading="lazy"
-                  title="Planexus Standort Albstadt"
+                  title="Planexus Büro - Am Steinbach 8, 72459 Albstadt-Laufen"
                 ></iframe>
               </div>
             </div>
