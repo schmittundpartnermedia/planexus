@@ -17,8 +17,8 @@ const regions = [
   },
   { 
     name: "SCHWEIZ", 
-    x: 0.78, 
-    y: 0.18,
+    x: 0.68, 
+    y: 0.22,
     companies: [
       { name: "wesemann", subname: "Schweiz", offsetX: -0.10, offsetY: -0.10 },
     ]
