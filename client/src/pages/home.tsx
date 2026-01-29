@@ -226,7 +226,7 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
               <CheckCircle2 className="w-4 h-4" />
               <span>Unsere Projekte</span>
             </div>
