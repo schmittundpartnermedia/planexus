@@ -241,22 +241,26 @@ export default function Home() {
               {
                 image: refMobil,
                 title: "Mobiles Forschungslabor",
-                desc: "Vollausgestatteter Laborcontainer mit Abzügen und Lüftungstechnik"
+                desc: "Vollausgestatteter Laborcontainer mit Abzügen und Lüftungstechnik",
+                category: "Forschung"
               },
               {
                 image: refInnen,
                 title: "Laboreinrichtung",
-                desc: "Hochwertige Labormöbel und Arbeitsflächen nach Maß"
+                desc: "Hochwertige Labormöbel und Arbeitsflächen nach Maß",
+                category: "Industrie"
               },
               {
                 image: refKran,
                 title: "Container-Anlieferung",
-                desc: "Transport und Montage per Kran direkt am Einsatzort"
+                desc: "Transport und Montage per Kran direkt am Einsatzort",
+                category: "Logistik"
               },
               {
                 image: refAussen,
                 title: "Modulares Laborgebäude",
-                desc: "Mehrgeschossiger Laborcontainer mit Holzfassade"
+                desc: "Mehrgeschossiger Laborcontainer mit Holzfassade",
+                category: "Pharma"
               }
             ].map((ref, index) => (
               <motion.div 
@@ -265,7 +269,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-xl bg-slate-100"
+                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow group"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
@@ -275,15 +279,12 @@ export default function Home() {
                     loading="lazy"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                    <h3 className="font-bold text-lg mb-1">{ref.title}</h3>
-                    <p className="text-sm text-gray-300">{ref.desc}</p>
-                  </div>
-                </div>
-                <div className="p-4 bg-white">
-                  <h3 className="font-bold text-slate-900">{ref.title}</h3>
-                  <p className="text-sm text-gray-600 mt-1">{ref.desc}</p>
+                <div className="p-6">
+                  <span className="text-xs font-medium text-slate-900 bg-primary px-2 py-1 rounded-full">
+                    {ref.category}
+                  </span>
+                  <h3 className="text-xl font-bold text-slate-900 mt-3 mb-2">{ref.title}</h3>
+                  <p className="text-gray-600 text-sm">{ref.desc}</p>
                 </div>
               </motion.div>
             ))}
