@@ -163,7 +163,7 @@ export default function Projekte() {
                 onClick={() => setFilter(cat)}
                 className={`px-4 py-2 rounded-full font-medium text-sm transition-colors ${
                   filter === cat
-                    ? "bg-slate-900 text-white"
+                    ? "bg-primary text-slate-900"
                     : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                 }`}
                 data-testid={`filter-${cat.toLowerCase()}`}
@@ -201,12 +201,12 @@ export default function Projekte() {
                   />
                 </div>
                 <div className="p-6">
-                  <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
+                  <span className="text-xs font-medium text-slate-900 bg-primary px-2 py-1 rounded-full">
                     {project.category}
                   </span>
                   <h3 className="text-xl font-bold text-slate-900 mt-3 mb-2">{project.name}</h3>
                   <p className="text-gray-600 text-sm">{project.description}</p>
-                  <p className="text-primary font-medium text-sm mt-4">
+                  <p className="inline-block bg-primary text-slate-900 font-medium text-sm mt-4 px-3 py-1 rounded-full">
                     {project.images.length} Bilder ansehen →
                   </p>
                 </div>
