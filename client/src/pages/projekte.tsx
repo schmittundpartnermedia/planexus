@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Building2, X } from "lucide-react";
 import { SEO } from "@/components/SEO";
 
@@ -113,6 +113,10 @@ export default function Projekte() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [filter, setFilter] = useState<string>("Alle");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const categories = ["Alle", "Industrie", "Pharma", "Forschung", "Öffentlich"];
 
