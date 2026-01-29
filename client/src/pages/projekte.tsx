@@ -54,57 +54,57 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "ABX",
+    name: "Modulare F&E-Anlage",
     description: "Modulare Laborcontainer-Anlage mit mehreren Einheiten für Forschung und Entwicklung.",
     images: [abx1, abx2, abx3, abx4],
     category: "Industrie"
   },
   {
-    name: "Bosch",
+    name: "Industrielabor",
     description: "Mobile Laborlösung mit vollständiger Lüftungstechnik und Klimatisierung für den Industriestandort.",
     images: [bosch1, bosch2],
     category: "Industrie"
   },
   {
-    name: "Bundeswehr",
+    name: "Hochsicherheitslabor",
     description: "Hochsicherheits-Laborcontainer mit spezieller Fassadenverkleidung und mehrstöckiger Bauweise.",
     images: [bundeswehr1, bundeswehr2, bundeswehr3, bundeswehr4],
     category: "Öffentlich"
   },
   {
-    name: "CureVac",
+    name: "Pharma-Reinraumlabor",
     description: "Pharma-Labor mit kompletter Reinraumtechnik und Großanlagen für die Impfstoffforschung.",
     images: [curevac1, curevac2, curevac3, curevac4],
     category: "Pharma"
   },
   {
-    name: "KIT",
-    description: "Forschungslabor für das Karlsruher Institut für Technologie mit moderner Lamellenfassade.",
+    name: "Forschungslabor mit Lamellenfassade",
+    description: "Forschungslabor für eine technische Universität mit moderner Lamellenfassade.",
     images: [kit1, kit2, kit3, kit4],
     category: "Forschung"
   },
   {
-    name: "Merck Darmstadt",
+    name: "Mehrgeschossiges Pharmalabor",
     description: "Mehrgeschossiger Laborcontainer mit Secuflow-Abzügen und hochwertiger Laborausstattung.",
     images: [merckDa1, merckDa2, merckDa3, merckDa4],
     category: "Pharma"
   },
   {
-    name: "Merck Gernsheim",
+    name: "Produktionslabor",
     description: "Großprojekt mit umfangreicher Dachtechnik und RLT-Anlagen für den Produktionsstandort.",
     images: [merckGe1, merckGe2, merckGe3, merckGe4],
     category: "Pharma"
   },
   {
-    name: "Weihenstephan",
-    description: "Forschungslabor für die Hochschule mit modularer Bauweise und flexibler Raumaufteilung.",
+    name: "Hochschul-Forschungslabor",
+    description: "Forschungslabor für eine Hochschule mit modularer Bauweise und flexibler Raumaufteilung.",
     images: [weihen1, weihen2, weihen3, weihen4],
     category: "Forschung"
   }
 ];
 
 const messeImages = {
-  name: "Messe MC Labor 2016",
+  name: "Messeauftritt 2016",
   description: "Messeauftritt mit begehbarem Laborcontainer-Exponat.",
   images: [messe1, messe2, messe3]
 };
