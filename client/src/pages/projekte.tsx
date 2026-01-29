@@ -121,7 +121,7 @@ export default function Projekte() {
     : projects.filter(p => p.category === filter);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="pt-20 min-h-screen bg-background">
       <SEO 
         title="Projekte | Laborcontainer Referenzen"
         description="Entdecken Sie unsere erfolgreich realisierten Laborcontainer-Projekte für Bosch, CureVac, Merck, KIT, Bundeswehr und weitere namhafte Kunden."
@@ -130,18 +130,15 @@ export default function Projekte() {
 
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(187,215,0,0.15),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
+            className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary font-medium text-sm mb-6">
-              <Building2 className="w-4 h-4" />
-              <span>Unsere Projekte</span>
-            </div>
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-              Projekte
+              Unsere Projekte
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
               Von mobilen Forschungslaboren bis zu kompletten BSL-Anlagen – entdecken Sie unsere erfolgreich realisierten Laborcontainer-Projekte für namhafte Kunden.
