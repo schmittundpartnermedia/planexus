@@ -140,8 +140,11 @@ export default function Projekte() {
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">
               Unsere Projekte
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-gray-300 leading-relaxed mb-4">
               Von mobilen Forschungslaboren bis zu kompletten BSL-Anlagen – entdecken Sie unsere erfolgreich realisierten Laborcontainer-Projekte für namhafte Kunden.
+            </p>
+            <p className="text-sm text-gray-400">
+              Eine Auswahl unserer Referenzen
             </p>
           </motion.div>
         </div>
