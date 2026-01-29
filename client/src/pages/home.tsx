@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import heroBg from "@assets/Kopf_green-scaled_1768306688943.jpg";
 import blueprintBg from "@assets/generated_images/technical_blueprint_abstract_background.png";
 import planexusLogo from "@assets/Planexus_Home-e1738171155684_1767361842201.png";
-import refMobil from "@assets/IMG_8081_1769688326917.JPG";
+import refMobil from "@assets/IMG_8081_1769688326917.jpg";
 import refInnen from "@assets/IMG_20191114_093201_1769688326917.jpg";
 import refKran from "@assets/IMG_20200727_155538_1769688326918.jpg";
 import refAussen from "@assets/Laborcontainer_001_1769688326918.jpg";
@@ -290,8 +290,8 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/referenzen" className="inline-flex items-center gap-2 border-2 border-slate-900 text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-slate-900 hover:text-white transition-colors">
-                Alle Referenzen ansehen <ArrowRight className="w-5 h-5" />
+            <Link href="/projekte" className="inline-flex items-center gap-2 border-2 border-slate-900 text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-slate-900 hover:text-white transition-colors">
+                Alle Projekte ansehen <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
