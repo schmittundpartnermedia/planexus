@@ -10,6 +10,16 @@ The application is a full-stack TypeScript project with a React frontend and Exp
 
 Preferred communication style: Simple, everyday language.
 
+## Geplante Änderungen
+
+### Astro Migration (geplant für nächste Woche)
+- Umstellung von React/Vite auf Astro im SSG-Modus (Static Site Generation)
+- Fertiges, statisches HTML für besseres SEO und Google-Ranking
+- Tailwind CSS bleibt für Styling
+- Semantisches HTML, optimierte Bilder mit astro:assets
+- Automatische sitemap.xml und Meta-Tags für alle Seiten
+- **Design bleibt 1:1 identisch** - nur technische Umstellung im Hintergrund
+
 ## System Architecture
 
 ### Frontend Architecture
