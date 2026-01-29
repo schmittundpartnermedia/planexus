@@ -4,6 +4,10 @@ import { Link } from "wouter";
 import heroBg from "@assets/Kopf_green-scaled_1768306688943.jpg";
 import blueprintBg from "@assets/generated_images/technical_blueprint_abstract_background.png";
 import planexusLogo from "@assets/Planexus_Home-e1738171155684_1767361842201.png";
+import refMobil from "@assets/IMG_8081_1769688326917.JPG";
+import refInnen from "@assets/IMG_20191114_093201_1769688326917.jpg";
+import refKran from "@assets/IMG_20200727_155538_1769688326918.jpg";
+import refAussen from "@assets/Laborcontainer_001_1769688326918.jpg";
 import { SEO } from "@/components/SEO";
 import { LiquidDistortion } from "@/components/LiquidDistortion";
 
@@ -213,6 +217,81 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link href="/leistungen" className="inline-flex items-center gap-2 bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors">
                 Alle Leistungen ansehen <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Referenzen Teaser */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>Unsere Projekte</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Referenzen</h2>
+            <p className="text-gray-600 text-lg">
+              Von mobilen Forschungslaboren bis zu kompletten BSL-Anlagen – entdecken Sie unsere erfolgreich realisierten Laborcontainer-Projekte.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                image: refMobil,
+                title: "Mobiles Forschungslabor",
+                desc: "Vollausgestatteter Laborcontainer mit Abzügen und Lüftungstechnik"
+              },
+              {
+                image: refInnen,
+                title: "Laboreinrichtung",
+                desc: "Hochwertige Labormöbel und Arbeitsflächen nach Maß"
+              },
+              {
+                image: refKran,
+                title: "Container-Anlieferung",
+                desc: "Transport und Montage per Kran direkt am Einsatzort"
+              },
+              {
+                image: refAussen,
+                title: "Modulares Laborgebäude",
+                desc: "Mehrgeschossiger Laborcontainer mit Holzfassade"
+              }
+            ].map((ref, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group relative overflow-hidden rounded-xl bg-slate-100"
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={ref.image} 
+                    alt={ref.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                    <h3 className="font-bold text-lg mb-1">{ref.title}</h3>
+                    <p className="text-sm text-gray-300">{ref.desc}</p>
+                  </div>
+                </div>
+                <div className="p-4 bg-white">
+                  <h3 className="font-bold text-slate-900">{ref.title}</h3>
+                  <p className="text-sm text-gray-600 mt-1">{ref.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/referenzen" className="inline-flex items-center gap-2 border-2 border-slate-900 text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-slate-900 hover:text-white transition-colors">
+                Alle Referenzen ansehen <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
