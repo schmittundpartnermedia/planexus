@@ -207,7 +207,7 @@ export default function Projekte() {
                   <h3 className="text-xl font-bold text-slate-900 mt-3 mb-2">{project.name}</h3>
                   <p className="text-gray-600 text-sm">{project.description}</p>
                   <p className="inline-block bg-primary text-slate-900 font-medium text-sm mt-4 px-3 py-1 rounded-full">
-                    {project.images.length} Bilder ansehen →
+                    Bilder ansehen →
                   </p>
                 </div>
               </motion.div>
