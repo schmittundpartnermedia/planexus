@@ -78,8 +78,8 @@ const projects: Project[] = [
     category: "Pharma"
   },
   {
-    name: "Forschungslabor mit Lamellenfassade",
-    description: "Forschungslabor für eine technische Universität mit moderner Lamellenfassade.",
+    name: "Forschungslabor",
+    description: "Forschungslabor für eine technische Universität mit sichtbarer Unterkonstruktion.",
     images: [kit1, kit2, kit3, kit4],
     category: "Forschung"
   },
