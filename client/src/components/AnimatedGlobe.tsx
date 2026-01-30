@@ -177,13 +177,22 @@ export function AnimatedGlobe() {
         ctx.lineWidth = 2;
         ctx.stroke();
 
-        // Animated pulse on main line
+        // Animated pulse on main line - outgoing
         const mainPulsePhase = ((time * 0.0006 + pulseIndex * 0.2) % 1);
         const mainPulseX = centerX + (regionX - centerX) * mainPulsePhase;
         const mainPulseY = centerY + (regionY - centerY) * mainPulsePhase;
         ctx.beginPath();
         ctx.arc(mainPulseX, mainPulseY, 5 * scale, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(187, 215, 0, ${1 - mainPulsePhase * 0.5})`;
+        ctx.fill();
+
+        // Animated pulse on main line - returning
+        const returnPulsePhase = ((time * 0.0005 + pulseIndex * 0.3 + 0.5) % 1);
+        const returnPulseX = regionX + (centerX - regionX) * returnPulsePhase;
+        const returnPulseY = regionY + (centerY - regionY) * returnPulsePhase;
+        ctx.beginPath();
+        ctx.arc(returnPulseX, returnPulseY, 4 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.8 - returnPulsePhase * 0.5})`;
         ctx.fill();
 
         // Region node
@@ -216,13 +225,22 @@ export function AnimatedGlobe() {
           ctx.lineWidth = 1.5;
           ctx.stroke();
 
-          // Pulse on company line
+          // Pulse on company line - outgoing
           const compPulsePhase = ((time * 0.0008 + pulseIndex * 0.15 + compIndex * 0.25) % 1);
           const compPulseX = regionX + (compX - regionX) * compPulsePhase;
           const compPulseY = regionY + (compY - regionY) * compPulsePhase;
           ctx.beginPath();
           ctx.arc(compPulseX, compPulseY, 4 * scale, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(187, 215, 0, ${1 - compPulsePhase * 0.6})`;
+          ctx.fill();
+
+          // Pulse on company line - returning
+          const compReturnPhase = ((time * 0.0007 + pulseIndex * 0.2 + compIndex * 0.35 + 0.5) % 1);
+          const compReturnX = compX + (regionX - compX) * compReturnPhase;
+          const compReturnY = compY + (regionY - compY) * compReturnPhase;
+          ctx.beginPath();
+          ctx.arc(compReturnX, compReturnY, 3 * scale, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${0.7 - compReturnPhase * 0.5})`;
           ctx.fill();
 
           // Company node glow
