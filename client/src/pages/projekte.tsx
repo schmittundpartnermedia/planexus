@@ -72,7 +72,7 @@ const projects: Project[] = [
     category: "Öffentlich"
   },
   {
-    name: "Pharma-Reinraumlabor",
+    name: "Pharmalabor",
     description: "Pharma-Labor mit kompletter Reinraumtechnik und Großanlagen für die Impfstoffforschung.",
     images: [curevac1, curevac2, curevac3, curevac4],
     category: "Pharma"
