@@ -91,8 +91,14 @@ export default function EquipmentService() {
                   Unsere Ausstattungsbereiche
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <a href="https://www.wesemann.com/" target="_blank" rel="noopener noreferrer" className="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:shadow-lg transition-shadow group">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-slate-900 mb-4">
+                      <Database className="w-6 h-6" />
+                    </div>
+                    <h4 className="font-bold text-lg mb-2 text-white group-hover:text-primary transition-colors">Labormöbel</h4>
+                    <p className="text-gray-300 text-sm">Arbeitstische, Unterschränke, Oberschränke und Regalsysteme nach Laborstandard.</p>
+                  </a>
                   {[
-                    { icon: <Database className="w-6 h-6" />, title: "Labormöbel", desc: "Arbeitstische, Unterschränke, Oberschränke und Regalsysteme nach Laborstandard." },
                     { icon: <Wind className="w-6 h-6" />, title: "Abzugssysteme", desc: "Laborabzüge, Tischarbeitsplätze mit Absaugung und Umluftgeräte." },
                     { icon: <Shield className="w-6 h-6" />, title: "Sicherheitsausstattung", desc: "Notduschen, Augenspülungen, Feuerlöscher und Erste-Hilfe-Einrichtungen." },
                     { icon: <Gauge className="w-6 h-6" />, title: "Medienversorgung", desc: "Gasarmaturen, Wasserinstallationen und Druckluftanschlüsse." },
