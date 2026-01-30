@@ -54,7 +54,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "Modulare F&E-Anlage",
+    name: "Modulare Laboranlage",
     description: "Modulare Laborcontainer-Anlage mit mehreren Einheiten für Forschung und Entwicklung.",
     images: [abx1, abx2, abx3, abx4],
     category: "Industrie"
