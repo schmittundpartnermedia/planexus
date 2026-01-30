@@ -95,8 +95,9 @@ export default function EquipmentService() {
                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-slate-900 mb-4">
                       <Database className="w-6 h-6" />
                     </div>
-                    <h4 className="font-bold text-lg mb-2 text-white group-hover:text-primary transition-colors">Labormöbel</h4>
-                    <p className="text-gray-300 text-sm">Arbeitstische, Unterschränke, Oberschränke und Regalsysteme nach Laborstandard.</p>
+                    <h4 className="font-bold text-lg mb-2 text-white">Labormöbel</h4>
+                    <p className="text-gray-300 text-sm mb-4">Arbeitstische, Unterschränke, Oberschränke und Regalsysteme nach Laborstandard.</p>
+                    <p className="text-primary text-sm font-medium group-hover:underline">Powered by Wesemann Laboreinrichtungen →</p>
                   </a>
                   {[
                     { icon: <Wind className="w-6 h-6" />, title: "Abzugssysteme", desc: "Laborabzüge, Tischarbeitsplätze mit Absaugung und Umluftgeräte." },
