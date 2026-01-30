@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { sendContactEmail } from "./resend";
+import { sendContactEmail } from "./email";
 
 export async function registerRoutes(
   httpServer: Server,
