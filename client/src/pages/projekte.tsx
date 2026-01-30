@@ -67,7 +67,7 @@ const projects: Project[] = [
   },
   {
     name: "Hochsicherheitslabor",
-    description: "Hochsicherheits-Laborcontainer mit spezieller Fassadenverkleidung und mehrstöckiger Bauweise.",
+    description: "Hochsicherheits-Laborcontainer mit spezieller Fassadenverkleidung.",
     images: [bundeswehr1, bundeswehr2, bundeswehr3, bundeswehr4],
     category: "Öffentlich"
   },
