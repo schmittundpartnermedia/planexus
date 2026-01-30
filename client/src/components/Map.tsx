@@ -14,14 +14,21 @@ const icon = L.icon({
   shadowSize: [41, 41]
 });
 
+interface MarkerData {
+  lat: number;
+  lng: number;
+  popupText?: string;
+}
+
 interface MapProps {
   lat: number;
   lng: number;
   zoom?: number;
   popupText?: string;
+  markers?: MarkerData[];
 }
 
-export default function Map({ lat, lng, zoom = 16, popupText }: MapProps) {
+export default function Map({ lat, lng, zoom = 16, popupText, markers }: MapProps) {
   return (
     <MapContainer 
       center={[lat, lng]} 
@@ -33,9 +40,17 @@ export default function Map({ lat, lng, zoom = 16, popupText }: MapProps) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[lat, lng]} icon={icon}>
-        {popupText && <Popup>{popupText}</Popup>}
-      </Marker>
+      {markers ? (
+        markers.map((marker, index) => (
+          <Marker key={index} position={[marker.lat, marker.lng]} icon={icon}>
+            {marker.popupText && <Popup>{marker.popupText}</Popup>}
+          </Marker>
+        ))
+      ) : (
+        <Marker position={[lat, lng]} icon={icon}>
+          {popupText && <Popup>{popupText}</Popup>}
+        </Marker>
+      )}
     </MapContainer>
   );
 }

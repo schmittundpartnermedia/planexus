@@ -98,8 +98,18 @@ export default function Contact() {
                       <MapPin className="text-primary w-6 h-6 group-hover:text-slate-900 transition-colors" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1 text-slate-900">Adresse</h4>
+                      <h4 className="font-bold text-lg mb-1 text-slate-900">Büro</h4>
                       <p className="text-gray-600">Am Steinbach 8<br />72459 Albstadt – Laufen</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 group">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
+                      <MapPin className="text-primary w-6 h-6 group-hover:text-slate-900 transition-colors" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-1 text-slate-900">Fertigung</h4>
+                      <p className="text-gray-600">Emil-Mayer-Straße 1<br />72461 Albstadt</p>
                     </div>
                   </div>
 
@@ -131,10 +141,13 @@ export default function Contact() {
 
               <div className="h-64 bg-slate-100 rounded-xl overflow-hidden border border-gray-200">
                 <Map 
-                  lat={48.2180461} 
-                  lng={8.9140541} 
-                  zoom={14}
-                  popupText="Planexus GmbH - Am Steinbach 8, 72459 Albstadt-Laufen"
+                  lat={48.2158} 
+                  lng={8.9413} 
+                  zoom={12}
+                  markers={[
+                    { lat: 48.2180461, lng: 8.9140541, popupText: "Planexus GmbH - Büro\nAm Steinbach 8, 72459 Albstadt-Laufen" },
+                    { lat: 48.2136, lng: 8.9686, popupText: "Planexus GmbH - Fertigung\nEmil-Mayer-Straße 1, 72461 Albstadt" }
+                  ]}
                 />
               </div>
             </div>
