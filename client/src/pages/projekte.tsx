@@ -3,11 +3,6 @@ import { useState, useEffect } from "react";
 import { Building2, X } from "lucide-react";
 import { SEO } from "@/components/SEO";
 
-import abx1 from "@assets/20240924_135546_1769690466430.jpg";
-import abx2 from "@assets/20240924_152825_1769690466431.jpg";
-import abx3 from "@assets/IMG-20241008-WA0038_1769690466431.jpg";
-import abx4 from "@assets/IMG-20241008-WA0040_1769690466431.jpg";
-
 import bosch1 from "@assets/IMG_20210520_184046_1769690502588.jpg";
 import bosch2 from "@assets/Laborcontainer_010_1769690502589.jpg";
 
@@ -53,12 +48,6 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
-    name: "Modulare Laboranlage",
-    description: "Modulare Laborcontainer-Anlage mit mehreren Einheiten für Forschung und Entwicklung.",
-    images: [abx1, abx2, abx3, abx4],
-    category: "Industrie"
-  },
   {
     name: "Industrielabor",
     description: "Mobile Laborlösung mit vollständiger Lüftungstechnik und Klimatisierung für den Industriestandort.",
