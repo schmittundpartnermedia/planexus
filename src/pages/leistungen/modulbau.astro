@@ -1,0 +1,196 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Modulbau & Fertigung",
+  "description": "Hochwertige Laborcontainer-Fertigung Made in Germany mit Stahlrahmenkonstruktion",
+  "provider": { "@type": "Organization", "name": "Planexus GmbH" },
+  "url": "https://www.planexus.de/leistungen/modulbau"
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://www.planexus.de/leistungen" },
+    { "@type": "ListItem", "position": 3, "name": "Modulbau & Fertigung", "item": "https://www.planexus.de/leistungen/modulbau" }
+  ]
+};
+---
+
+<Layout
+  title="Modulbau & Fertigung"
+  description="Hochwertige Laborcontainer Made in Germany. Präzise Fertigung, robuste Stahlrahmenkonstruktion und labortaugliche Oberflächen. Qualität seit über 10 Jahren."
+  canonical="/leistungen/modulbau"
+  schema={serviceSchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg>
+            <span>Leistungen</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">Modulbau & <span class="text-primary">Fertigung</span></h1>
+          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mb-8">Hochwertige Laborcontainer 'Made in Germany'. Präzise Fertigung, robuste Konstruktion und durchdachte Details für langlebige Qualität.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Angebot anfordern <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Direkt anrufen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <a href="/leistungen" class="hover:text-primary">Leistungen</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <span class="text-primary font-medium">Modulbau & Fertigung</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div class="lg:col-span-2 space-y-12">
+            <div>
+              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">Präzision und Qualität in jedem Detail</h2>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Der Bau eines Laborcontainers erfordert höchste Präzision und ein tiefes Verständnis für die besonderen Anforderungen von Laborumgebungen. Bei Planexus vereinen wir handwerkliche Expertise mit modernster Fertigungstechnologie, um Containerlabore zu schaffen, die in Qualität und Funktionalität keine Kompromisse eingehen.</p>
+                <p>Die Containermodule werden bei unserem erfahrenen Partner in Polen gefertigt, die Endfertigung und Ausstattung erfolgt dann in unserem deutschen Werk in Albstadt (Emil-Mayer-Straße 1, 72461 Albstadt). So verbinden wir kosteneffiziente Produktion mit deutscher Qualitätskontrolle. Für unsere Mietcontainer und den LABtoGO bieten wir auch Serienfertigung an – standardisierte, sofort verfügbare Lösungen, die dennoch höchsten Qualitätsansprüchen genügen. Für individuelle Projekte fertigen wir natürlich auch maßgeschneiderte Einzellösungen.</p>
+                <p>Die Vorteile der Modulbauweise liegen auf der Hand: Kurze Bauzeiten, kontrollierte Fertigungsbedingungen und eine gleichbleibend hohe Qualität. Während konventionelle Laborbauten oft Monate oder Jahre dauern, können wir einen voll funktionsfähigen Laborcontainer in wenigen Wochen realisieren – ohne Abstriche bei der Qualität.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Die Konstruktion unserer Laborcontainer</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Das Herzstück jedes Planexus-Laborcontainers ist ein robuster Stahlrahmen, der höchsten Belastungen standhält. Die Rahmenkonstruktion ist so ausgelegt, dass sie den Transport per LKW, Schiff oder Bahn problemlos übersteht und auch bei gestapelten Containern absolute Stabilität gewährleistet.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Wandaufbau und Isolierung</h4>
+                <p>Die Wandelemente bestehen aus hochisolierenden Sandwichpaneelen mit einer Stärke von 80 bis 120 mm. Der Kern aus Polyurethan-Hartschaum oder Mineralwolle bietet eine hervorragende Wärmedämmung (U-Wert bis 0,20 W/m²K) und erfüllt höchste Brandschutzanforderungen. Die Oberflächen sind wahlweise aus pulverbeschichtetem Stahl, Edelstahl oder HPL-beschichteten Platten gefertigt – je nach Anforderung an Chemikalienbeständigkeit und Reinigungsfähigkeit.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Bodenaufbau</h4>
+                <p>Der Boden unserer Laborcontainer ist für hohe Punktlasten ausgelegt und nimmt auch schwere Laborgeräte problemlos auf. Ein mehrschichtiger Aufbau mit Stahlunterkonstruktion und Isolierung bildet die Basis für verschiedene Bodenbeläge. Für Labore mit erhöhten Anforderungen an die Chemikalienbeständigkeit verwenden wir spezielle Laborböden aus Epoxidharz oder PVC mit verschweißten Nähten.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Dachkonstruktion</h4>
+                <p>Das Dach ist nicht nur für die Witterungsbeständigkeit entscheidend, sondern auch für die Integration technischer Anlagen. Unsere Dachkonstruktionen bieten ausreichend Raum für Klimageräte, Lüftungsanlagen und Abluftführungen. Die thermische Trennung zwischen Dach und Innenraum verhindert Kondensatbildung und sorgt für ein stabiles Raumklima.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Technische Ausstattung ab Werk</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m11 13.73-4 6.93"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Elektroinstallation</h4>
+                  <p class="text-gray-600 text-sm">Komplette elektrische Ausstattung nach VDE mit Sicherungsverteiler, Steckdosen und Beleuchtung.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Medienversorgung</h4>
+                  <p class="text-gray-600 text-sm">Installation von Gas-, Wasser- und Druckluftleitungen nach Laborstandard.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Lüftungstechnik</h4>
+                  <p class="text-gray-600 text-sm">Integrierte Lüftungsanlagen mit Filterung und optionaler Klimatisierung.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Sicherheitstechnik</h4>
+                  <p class="text-gray-600 text-sm">Brandmeldeanlage, Notduschen und Augenspüleinrichtungen auf Wunsch.</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Fertigungsprozess und Qualitätssicherung</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Unser Fertigungsprozess folgt einem strukturierten Ablauf, der höchste Qualität bei effizienter Produktion gewährleistet. Jeder Arbeitsschritt wird dokumentiert und kontrolliert, sodass wir am Ende ein Produkt übergeben können, das unseren strengen Qualitätsanforderungen entspricht.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Vorfertigung der Komponenten</h4>
+                <p>Die einzelnen Komponenten – Stahlrahmen, Wandelemente, Dachelemente – werden in spezialisierten Werkstätten vorgefertigt. Dies ermöglicht eine präzise Fertigung unter kontrollierten Bedingungen und verkürzt die Montagezeit vor Ort erheblich. Die Stahlkonstruktion wird sandgestrahlt und mit einer mehrschichtigen Korrosionsschutzbeschichtung versehen, die jahrzehntelangen Schutz bietet.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Montage und Ausbau</h4>
+                <p>Die Montage erfolgt in einer überdachten Halle, geschützt vor Witterungseinflüssen. Die vorgefertigten Elemente werden zusammengefügt, die technischen Installationen eingebracht und der Innenausbau durchgeführt. Unser erfahrenes Montageteam arbeitet nach detaillierten Arbeitsplänen und stellt sicher, dass jedes Detail stimmt.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Endkontrolle und Abnahme</h4>
+                <p>Vor der Auslieferung durchläuft jeder Laborcontainer eine umfassende Endkontrolle. Wir prüfen alle technischen Systeme, führen Dichtigkeitstests durch und dokumentieren den Zustand fotografisch. Die Abnahme erfolgt gemeinsam mit dem Kunden, sodass Sie sich vor Ort von der Qualität überzeugen können.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Containergrößen und Konfigurationen</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Unsere Laborcontainer sind in verschiedenen Standardgrößen verfügbar, die sich an den gängigen Container-Maßen orientieren und somit einen problemlosen Transport ermöglichen:</p>
+                <ul class="list-none space-y-3">
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>20-Fuß-Container: ca. 6,0 x 2,4 m (14,4 m² Nutzfläche)</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>40-Fuß-Container: ca. 12,0 x 2,4 m (28,8 m² Nutzfläche)</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Überbreite Container: bis 3,0 m Breite (erhöhte Transportanforderungen)</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Doppelstöckige Anlagen: für maximale Raumnutzung</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Mehrteilige Komplexe: durch Verbindung mehrerer Module</span></li>
+                </ul>
+                <p>Auf Wunsch fertigen wir auch Sondergrößen, die exakt auf Ihre räumlichen Gegebenheiten abgestimmt sind. Sprechen Sie uns an – gemeinsam finden wir die optimale Lösung.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Nachhaltigkeit in der Fertigung</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Nachhaltigkeit ist für uns kein Marketing-Schlagwort, sondern gelebte Praxis. Bereits bei der Auswahl der Materialien achten wir auf Umweltverträglichkeit und Recyclingfähigkeit. Die modulare Bauweise unserer Container ermöglicht eine lange Lebensdauer und einfache Wiederverwendung oder Umnutzung.</p>
+                <p>Die effiziente Wärmedämmung unserer Container reduziert den Energiebedarf für Heizung und Kühlung erheblich. In Kombination mit energieeffizienten Lüftungs- und Klimaanlagen erreichen unsere Laborcontainer hervorragende Energiewerte, die konventionelle Laborgebäude oft übertreffen.</p>
+                <p>Am Ende ihrer Nutzungsdauer können die Container problemlos demontiert und die Materialien dem Recycling zugeführt werden. So schließt sich der Kreislauf, und auch die Entsorgung erfolgt umweltgerecht.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-1">
+            <div class="sticky top-24 space-y-6">
+              <div class="bg-primary text-slate-900 p-8 rounded-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                <h3 class="text-xl font-bold mb-3">Individuelle Fertigung</h3>
+                <p class="text-slate-700 mb-6 text-sm">Jeder Laborcontainer wird nach Ihren Spezifikationen gefertigt. Lassen Sie uns über Ihr Projekt sprechen.</p>
+                <a href="/kontakt" class="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">Angebot anfordern</a>
+              </div>
+              <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100">
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Qualitätsmerkmale</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Fertigung in Deutschland</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Robuste Stahlkonstruktion</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Hochwertige Isolierung</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Labortaugliche Oberflächen</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Vollständige Dokumentation</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>5 Jahre Gewährleistung</span></li>
+                </ul>
+              </div>
+              <div class="bg-white p-8 rounded-2xl border border-gray-100">
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Weitere Leistungen</h3>
+                <ul class="space-y-3">
+                  <li><a href="/leistungen/planung" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Technische Fachplanung</a></li>
+                  <li><a href="/leistungen/logistik" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Logistik & Montage</a></li>
+                  <li><a href="/leistungen/ausstattung" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Laborausstattung</a></li>
+                  <li><a href="/leistungen/beratung" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Beratung & Genehmigung</a></li>
+                  <li><a href="/leistungen/smart-lab" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Smart Lab Integration</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Qualität, die überzeugt</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Überzeugen Sie sich selbst von unserer Fertigungsqualität. Wir laden Sie herzlich ein, unsere Produktionsstätte zu besuchen.</p>
+        <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Kontakt aufnehmen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </section>
+  </div>
+</Layout>

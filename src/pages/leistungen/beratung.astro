@@ -1,0 +1,199 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Beratung & Genehmigung",
+  "description": "Expertenberatung bei Genehmigungsverfahren, Baurecht und Arbeitsschutz für Laborcontainer",
+  "provider": { "@type": "Organization", "name": "Planexus GmbH" },
+  "url": "https://www.planexus.de/leistungen/beratung"
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://www.planexus.de/leistungen" },
+    { "@type": "ListItem", "position": 3, "name": "Beratung & Genehmigung", "item": "https://www.planexus.de/leistungen/beratung" }
+  ]
+};
+---
+
+<Layout title="Beratung & Genehmigung" description="Expertenberatung für Laborcontainer-Projekte. Unterstützung bei Genehmigungsverfahren, Baurecht, Arbeitsschutz und Brandschutzkonzepten." canonical="/leistungen/beratung" schema={serviceSchema}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+            <span>Leistungen</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">Beratung & <span class="text-primary">Genehmigung</span></h1>
+          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mb-8">Wir navigieren Sie sicher durch den Dschungel der Vorschriften und Genehmigungsverfahren. Mit unserer Expertise wird Ihr Laborprojekt zum Erfolg.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Beratung anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Direkt anrufen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <a href="/leistungen" class="hover:text-primary">Leistungen</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <span class="text-primary font-medium">Beratung & Genehmigung</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div class="lg:col-span-2 space-y-12">
+            <div>
+              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">Kompetente Unterstützung bei allen Formalitäten</h2>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Die Errichtung eines Laborcontainers ist mit zahlreichen rechtlichen und behördlichen Anforderungen verbunden. Von der Baugenehmigung über Arbeitsschutzvorschriften bis hin zu speziellen Auflagen für Laboratorien – der Weg durch die Bürokratie kann lang und steinig sein. Doch Sie müssen diesen Weg nicht alleine gehen.</p>
+                <p>Bei Planexus verstehen wir nicht nur, wie man Labore baut, sondern auch, welche rechtlichen Rahmenbedingungen dabei zu beachten sind. Unsere Experten kennen die relevanten Vorschriften und haben langjährige Erfahrung im Umgang mit Behörden und Genehmigungsverfahren.</p>
+                <p>Wir begleiten Sie durch den gesamten Prozess – von der ersten Beratung über die Antragstellung bis zur erfolgreichen Genehmigung. So können Sie sich auf das konzentrieren, was Sie am besten können: Ihre Forschung und Entwicklung.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Unsere Beratungsleistungen</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Baurecht</h4>
+                  <p class="text-gray-600 text-sm">Beratung zu baurechtlichen Anforderungen und Unterstützung bei der Baugenehmigung.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Arbeitsschutz</h4>
+                  <p class="text-gray-600 text-sm">Einhaltung der Arbeitsstättenverordnung und Gefährdungsbeurteilung.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Genehmigungsverfahren</h4>
+                  <p class="text-gray-600 text-sm">Vorbereitung und Begleitung aller erforderlichen Genehmigungen.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Normenkompetenz</h4>
+                  <p class="text-gray-600 text-sm">Sicherstellung der Konformität mit DIN, EN und ISO-Normen.</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Baurechtliche Beratung</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Die baurechtliche Einordnung von Laborcontainern ist nicht immer eindeutig und hängt von verschiedenen Faktoren ab: Ist der Container dauerhaft aufgestellt oder temporär? Handelt es sich um ein Gebäude im baurechtlichen Sinne? Welche Nutzungsklasse ist anzuwenden?</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Genehmigungsfreie Aufstellung</h4>
+                <p>In vielen Fällen können Laborcontainer genehmigungsfrei aufgestellt werden – insbesondere bei temporärer Nutzung oder wenn sie als bewegliche Sache eingestuft werden. Wir prüfen die Voraussetzungen und beraten Sie zur optimalen Vorgehensweise.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Baugenehmigung</h4>
+                <p>Wenn eine Baugenehmigung erforderlich ist, unterstützen wir Sie bei der Erstellung aller erforderlichen Unterlagen: Bauantragsformulare, Lageplan, Grundrisse, Ansichten, Baubeschreibung, statische Berechnungen und Brandschutzkonzept. Wir begleiten das Verfahren und stehen als Ansprechpartner für die Behörden zur Verfügung.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Bebauungsplankonformität</h4>
+                <p>Die Aufstellung eines Laborcontainers muss mit dem Bebauungsplan vereinbar sein. Wir prüfen die planungsrechtlichen Voraussetzungen und zeigen Wege auf, wie Ihr Projekt realisiert werden kann – auch wenn der Bebauungsplan auf den ersten Blick dagegen zu sprechen scheint.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Arbeitsschutz und Arbeitssicherheit</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Labore sind Arbeitsstätten mit besonderen Gefahren. Die Einhaltung der arbeitsschutzrechtlichen Vorschriften ist daher nicht nur gesetzliche Pflicht, sondern auch Ausdruck der Fürsorgepflicht gegenüber Ihren Mitarbeitern.</p>
+                <p>Wir beraten Sie zu allen Aspekten des Arbeitsschutzes im Labor:</p>
+                <ul class="list-none space-y-3">
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Arbeitsstättenverordnung (ArbStättV) und Technische Regeln (ASR)</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Gefahrstoffverordnung (GefStoffV) und TRGS</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Biostoffverordnung (BioStoffV) für Labore mit biologischen Arbeitsstoffen</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Strahlenschutzverordnung (StrlSchV) für Isotopenlabore</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Betriebssicherheitsverordnung (BetrSichV) für Druckgeräte und Aufzüge</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Gefährdungsbeurteilung nach Arbeitsschutzgesetz</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Umweltrechtliche Anforderungen</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Labore können erhebliche Umweltauswirkungen haben – von der Emission gefährlicher Stoffe über das Abwasser bis hin zur Abfallentsorgung. Die Einhaltung der umweltrechtlichen Vorschriften ist daher ein wichtiger Aspekt bei der Planung und dem Betrieb eines Laborcontainers.</p>
+                <p><strong>Immissionsschutz:</strong> Wir beraten Sie zu den Anforderungen des Bundes-Immissionsschutzgesetzes (BImSchG) und prüfen, ob für Ihr Labor eine immissionsschutzrechtliche Genehmigung erforderlich ist. Unsere Lüftungs- und Abluftsysteme sind so ausgelegt, dass die Grenzwerte sicher eingehalten werden.</p>
+                <p><strong>Wasserrecht:</strong> Das Einleiten von Laborabwässern in die Kanalisation unterliegt strengen Vorschriften. Wir beraten Sie zur Abwasserbehandlung und unterstützen bei der Einholung der wasserrechtlichen Erlaubnis.</p>
+                <p><strong>Abfallrecht:</strong> Die ordnungsgemäße Entsorgung von Laborabfällen ist gesetzlich geregelt. Wir helfen Ihnen bei der Erstellung eines Abfallkonzepts und vermitteln Kontakte zu zertifizierten Entsorgungsunternehmen.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Spezielle Genehmigungen für besondere Labore</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Je nach Art des Labors können besondere Genehmigungen erforderlich sein:</p>
+                <p><strong>S1- bis S4-Labore:</strong> Für Arbeiten mit gentechnisch veränderten Organismen benötigen Sie eine Erlaubnis nach Gentechnikgesetz. Wir beraten Sie zu den baulichen und organisatorischen Anforderungen der verschiedenen Sicherheitsstufen.</p>
+                <p><strong>BSL-2 und BSL-3 Labore:</strong> Labore für Arbeiten mit gefährlichen biologischen Arbeitsstoffen erfordern eine Anzeige oder Erlaubnis nach Biostoffverordnung. Wir unterstützen Sie bei der Erstellung der erforderlichen Unterlagen.</p>
+                <p><strong>Isotopenlabore:</strong> Für den Umgang mit radioaktiven Stoffen benötigen Sie eine Genehmigung nach Strahlenschutzverordnung. Wir beraten zur baulichen Ausführung und den erforderlichen Schutzmaßnahmen.</p>
+                <p><strong>Arzneimittelherstellung:</strong> Labore für die Herstellung von Arzneimitteln unterliegen der GMP (Good Manufacturing Practice). Wir beraten zu den baulichen Anforderungen und der Qualifizierung der Räume.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Brandschutz</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Der Brandschutz ist ein zentrales Thema bei der Planung und Genehmigung von Laborcontainern. Wir erstellen Brandschutzkonzepte, die den Anforderungen der Bauordnung und der Industriebaurichtlinie entsprechen.</p>
+                <p>Unsere Brandschutzkonzepte umfassen baulichen, anlagentechnischen und organisatorischen Brandschutz. Von der feuerwiderstandsfähigen Konstruktion über Brandmeldeanlagen bis hin zu Flucht- und Rettungswegeplänen – wir denken an alles und stimmen das Konzept mit den zuständigen Brandschutzdienststellen ab.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-1">
+            <div class="sticky top-24 space-y-6">
+              <div class="bg-primary text-slate-900 p-8 rounded-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                <h3 class="text-xl font-bold mb-3">Kostenlose Erstberatung</h3>
+                <p class="text-slate-700 mb-6 text-sm">Lassen Sie uns über die rechtlichen Anforderungen für Ihr Laborprojekt sprechen. Unverbindlich und kostenlos.</p>
+                <a href="/kontakt" class="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">Beratung anfordern</a>
+              </div>
+              <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100">
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Unsere Expertise</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Baurecht & Genehmigungen</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Arbeitsschutz & Arbeitssicherheit</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Umweltrecht</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Gentechnikrecht</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Strahlenschutz</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Brandschutz</span></li>
+                </ul>
+              </div>
+              <div class="bg-white p-8 rounded-2xl border border-gray-100">
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Weitere Leistungen</h3>
+                <ul class="space-y-3">
+                  <li><a href="/leistungen/planung" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Technische Fachplanung</a></li>
+                  <li><a href="/leistungen/modulbau" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Modulbau & Fertigung</a></li>
+                  <li><a href="/leistungen/logistik" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Logistik & Montage</a></li>
+                  <li><a href="/leistungen/ausstattung" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Laborausstattung</a></li>
+                  <li><a href="/leistungen/smart-lab" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Smart Lab Integration</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Rechtssicherheit für Ihr Laborprojekt</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Mit unserer Unterstützung meistern Sie alle behördlichen Hürden. Kontaktieren Sie uns für eine unverbindliche Erstberatung.</p>
+        <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Jetzt Kontakt aufnehmen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </section>
+  </div>
+</Layout>

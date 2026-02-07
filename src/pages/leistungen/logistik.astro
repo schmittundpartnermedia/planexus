@@ -1,0 +1,206 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Logistik & Montage",
+  "description": "Weltweiter Transport und fachgerechte Montage von Laborcontainern mit schlüsselfertiger Übergabe",
+  "provider": { "@type": "Organization", "name": "Planexus GmbH" },
+  "url": "https://www.planexus.de/leistungen/logistik"
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://www.planexus.de/leistungen" },
+    { "@type": "ListItem", "position": 3, "name": "Logistik & Montage", "item": "https://www.planexus.de/leistungen/logistik" }
+  ]
+};
+---
+
+<Layout
+  title="Logistik & Montage"
+  description="Weltweiter Transport und fachgerechte Montage Ihres Laborcontainers. Schlüsselfertige Übergabe, Plug & Play Lösungen und Inbetriebnahme vor Ort."
+  canonical="/leistungen/logistik"
+  schema={serviceSchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            <span>Leistungen</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">Logistik & <span class="text-primary">Montage</span></h1>
+          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mb-8">Von der Werkhalle bis zum Einsatzort: Wir organisieren den sicheren Transport Ihres Laborcontainers und übernehmen die fachgerechte Aufstellung und Inbetriebnahme.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Logistik planen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Direkt anrufen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <a href="/leistungen" class="hover:text-primary">Leistungen</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <span class="text-primary font-medium">Logistik & Montage</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div class="lg:col-span-2 space-y-12">
+            <div>
+              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">Reibungslose Lieferung und professionelle Aufstellung</h2>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Ein Laborcontainer ist erst dann einsatzbereit, wenn er sicher an seinem Bestimmungsort steht und alle technischen Systeme funktionieren. Die Logistik und Montage sind daher entscheidende Phasen, die ebenso sorgfältig geplant werden müssen wie der Container selbst. Bei Planexus übernehmen wir diese Aufgaben mit der gleichen Präzision und Professionalität, die auch unsere Fertigung auszeichnet.</p>
+                <p>Von der Transportplanung über die Einholung notwendiger Genehmigungen bis hin zur Aufstellung vor Ort – wir kümmern uns um alle Details, damit Sie sich auf das Wesentliche konzentrieren können: Ihre Forschung und Arbeit im neuen Labor.</p>
+                <p>Unsere erfahrenen Logistikexperten und Montageteams haben bereits Hunderte von Containerlieferungen durchgeführt – in Deutschland, Europa und weltweit. Sie wissen genau, worauf es ankommt, und meistern auch schwierige Aufstellsituationen souverän.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Unsere Logistikleistungen im Überblick</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Standortanalyse</h4>
+                  <p class="text-gray-600 text-sm">Prüfung der Zugänglichkeit, Aufstellfläche und Anschlussmöglichkeiten vor Ort.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Transportplanung</h4>
+                  <p class="text-gray-600 text-sm">Auswahl des optimalen Transportwegs und Koordination aller beteiligten Parteien.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Weltweite Lieferung</h4>
+                  <p class="text-gray-600 text-sm">Transport per LKW, Bahn oder Schiff – auch an entlegene Standorte.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Komplettmontage</h4>
+                  <p class="text-gray-600 text-sm">Aufstellung, Ausrichtung und Anschluss aller technischen Systeme.</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Der Transportprozess im Detail</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Vorbereitung und Planung</h4>
+                <p>Jeder Transport beginnt mit einer sorgfältigen Planung. Wir analysieren den Zielstandort, prüfen die Zufahrtswege und identifizieren mögliche Hindernisse. Bei Schwertransporten oder Überbreitenfahrten holen wir die erforderlichen Genehmigungen ein und koordinieren Polizeibegleitungen, wenn notwendig.</p>
+                <p>Gleichzeitig bereiten wir den Aufstellort vor. Wir erstellen Fundamentpläne, klären die Medienanschlüsse (Strom, Wasser, Abwasser, ggf. Gase) und stimmen uns mit den örtlichen Versorgungsunternehmen ab. So ist bei der Anlieferung alles bereit für eine schnelle Inbetriebnahme.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Transport und Verladung</h4>
+                <p>Die Verladung erfolgt mit Spezialkränen, die den Container sicher auf den Transportfahrzeug heben. Unsere Container sind für den Transport optimiert und verfügen über genormte Hebeösen und Stapleraufnahmen. Während des Transports ist der Container gegen Verrutschen und Beschädigung gesichert.</p>
+                <p>Für den Straßentransport nutzen wir Tieflader oder Containerchassis, je nach Größe und Gewicht des Containers. Bei Standardcontainern (bis 2,55 m Breite) ist ein regulärer LKW-Transport möglich; bei breiteren Einheiten organisieren wir Schwertransporte mit den entsprechenden Genehmigungen.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Aufstellung vor Ort</h4>
+                <p>Am Zielort angekommen, wird der Container mit einem Autokran oder Mobilkran abgeladen und auf dem vorbereiteten Fundament positioniert. Unsere Montageteams richten den Container exakt aus und sichern ihn gegen Bewegung. Bei mehrteiligen Anlagen werden die einzelnen Module miteinander verbunden und abgedichtet.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Anschluss und Inbetriebnahme</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Nach der Aufstellung erfolgt der Anschluss an die örtliche Infrastruktur. Unsere Elektriker und Installateure verbinden den Container mit der Stromversorgung, schließen Wasser- und Abwasserleitungen an und stellen die Verbindung zu etwaigen Gasversorgungen her.</p>
+                <p>Anschließend nehmen wir alle technischen Systeme in Betrieb. Wir prüfen die Lüftungsanlage, testen die elektrischen Systeme und kontrollieren die Medienversorgung. Alle Prüfungen werden dokumentiert und dem Kunden als Teil der Übergabedokumentation ausgehändigt.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Einweisung der Nutzer</h4>
+                <p>Bevor wir das Labor übergeben, weisen wir Ihre Mitarbeiter in die Bedienung aller Systeme ein. Wir erklären die Lüftungssteuerung, zeigen die Sicherheitseinrichtungen und beantworten alle Fragen. So können Sie Ihr neues Labor sofort produktiv nutzen.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Besondere Aufstellsituationen</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Nicht immer ist die Aufstellung eines Laborcontainers einfach. Enge Zufahrten, begrenzter Platz oder schwierige Bodenverhältnisse stellen besondere Anforderungen. Unsere Experten haben jedoch schon die unterschiedlichsten Situationen gemeistert:</p>
+                <ul class="list-none space-y-3">
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Aufstellung in Innenhöfen mit begrenztem Kranzugang</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Positionierung auf Dächern von Bestandsgebäuden</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Installation in Reinräumen oder unter beengten Platzverhältnissen</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Aufstellung in abgelegenen Gebieten ohne befestigte Zufahrt</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Montage unter laufendem Betrieb in bestehenden Anlagen</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Temporäre Aufstellung mit späterem Standortwechsel</span></li>
+                </ul>
+                <p>Sprechen Sie uns an, wenn Sie eine besondere Aufstellsituation haben. Gemeinsam finden wir eine Lösung, die funktioniert.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Fundamente und Unterkonstruktionen</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Ein solides Fundament ist die Basis für einen stabilen und langlebigen Laborcontainer. Je nach Bodenbeschaffenheit und Nutzungsanforderungen empfehlen wir verschiedene Fundamentlösungen:</p>
+                <p><strong>Punktfundamente:</strong> Die wirtschaftlichste Lösung bei tragfähigem Untergrund. Betonpunkte an den Containerecken und unter tragenden Wänden reichen für eine sichere Aufstellung aus.</p>
+                <p><strong>Streifenfundamente:</strong> Bei höheren Lasten oder weniger tragfähigem Boden bieten durchgehende Betonstreifen zusätzliche Stabilität.</p>
+                <p><strong>Bodenplatte:</strong> Die massivste Lösung, ideal für dauerhafte Installationen oder wenn eine durchgehende Unterkellerung für Technik benötigt wird.</p>
+                <p><strong>Schraubfundamente:</strong> Eine schnelle und rückbaubare Alternative, besonders geeignet für temporäre Aufstellungen oder wenn keine Betonarbeiten gewünscht sind.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Internationale Logistik</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Unsere Laborcontainer sind weltweit im Einsatz – von der Arktis bis in tropische Regionen, von Forschungsstationen in der Wüste bis zu mobilen Laboren auf Schiffen. Für internationale Lieferungen organisieren wir den kompletten Transport inklusive aller erforderlichen Dokumente.</p>
+                <p>Wir kümmern uns um Zollformalitäten, erstellen die notwendigen Transportdokumente und koordinieren mit lokalen Partnern am Zielort. Unsere Container sind für den internationalen Transport optimiert und erfüllen alle Anforderungen der ISO-Normen für Frachtcontainer.</p>
+                <p>Auf Wunsch begleiten unsere Techniker den Container zum Zielort und übernehmen die Aufstellung und Inbetriebnahme vor Ort. So stellen wir sicher, dass Ihr Labor auch an entlegenen Standorten zuverlässig funktioniert.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-1">
+            <div class="sticky top-24 space-y-6">
+              <div class="bg-primary text-slate-900 p-8 rounded-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                <h3 class="text-xl font-bold mb-3">Logistik aus einer Hand</h3>
+                <p class="text-slate-700 mb-6 text-sm">Wir übernehmen den kompletten Transport und die Montage. Alles aus einer Hand für einen reibungslosen Ablauf.</p>
+                <a href="/kontakt" class="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">Logistik anfragen</a>
+              </div>
+              <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100">
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Unsere Stärken</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Weltweite Lieferung</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Schlüsselfertige Übergabe</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Erfahrene Montageteams</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Alle Genehmigungen inklusive</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Termingerechte Lieferung</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Vollständige Dokumentation</span></li>
+                </ul>
+              </div>
+              <div class="bg-white p-8 rounded-2xl border border-gray-100">
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Weitere Leistungen</h3>
+                <ul class="space-y-3">
+                  <li><a href="/leistungen/planung" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Technische Fachplanung</a></li>
+                  <li><a href="/leistungen/modulbau" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Modulbau & Fertigung</a></li>
+                  <li><a href="/leistungen/ausstattung" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Laborausstattung</a></li>
+                  <li><a href="/leistungen/beratung" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Beratung & Genehmigung</a></li>
+                  <li><a href="/leistungen/smart-lab" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Smart Lab Integration</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Ihr Labor, pünktlich geliefert</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Verlassen Sie sich auf unsere Logistikexpertise. Wir liefern Ihr Labor sicher und termingerecht an jeden Ort der Welt.</p>
+        <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Jetzt Kontakt aufnehmen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </section>
+  </div>
+</Layout>

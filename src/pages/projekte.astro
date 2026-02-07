@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjekteGallery from '../components/ProjekteGallery';
+---
+
+<Layout
+  title="Projekte | Laborcontainer Referenzen"
+  description="Entdecken Sie unsere erfolgreich realisierten Laborcontainer-Projekte für Bosch, CureVac, Merck, KIT, Bundeswehr und weitere namhafte Kunden."
+  canonical="/projekte"
+>
+  <div class="pt-20 min-h-screen bg-background">
+    <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(187,215,0,0.15),transparent_50%)]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">
+            Unsere Projekte
+          </h1>
+          <p class="text-xl text-gray-300 leading-relaxed mb-4">
+            Von mobilen Forschungslaboren bis zu kompletten BSL-Anlagen – entdecken Sie unsere erfolgreich realisierten Laborcontainer-Projekte für namhafte Kunden.
+          </p>
+          <p class="text-sm text-gray-400">
+            Eine Auswahl unserer Referenzen
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <ProjekteGallery client:load />
+  </div>
+</Layout>

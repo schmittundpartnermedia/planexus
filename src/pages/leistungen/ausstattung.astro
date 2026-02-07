@@ -1,0 +1,202 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Laborausstattung",
+  "description": "Komplette Laborausstattung mit Labormöbeln, Abzügen und Sicherheitseinrichtungen",
+  "provider": { "@type": "Organization", "name": "Planexus GmbH" },
+  "url": "https://www.planexus.de/leistungen/ausstattung"
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://www.planexus.de/leistungen" },
+    { "@type": "ListItem", "position": 3, "name": "Laborausstattung", "item": "https://www.planexus.de/leistungen/ausstattung" }
+  ]
+};
+---
+
+<Layout title="Laborausstattung" description="Komplette Laborausstattung für Ihren Container. Labormöbel, Abzüge, Sicherheitseinrichtungen und Geräteintegration aus einer Hand." canonical="/leistungen/ausstattung" schema={serviceSchema}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+            <span>Leistungen</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">Labor<span class="text-primary">ausstattung</span></h1>
+          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mb-8">Vom Labortisch bis zur Sicherheitseinrichtung: Wir statten Ihren Laborcontainer mit allem aus, was Sie für effizientes und sicheres Arbeiten benötigen.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Ausstattung anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Direkt anrufen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <a href="/leistungen" class="hover:text-primary">Leistungen</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <span class="text-primary font-medium">Laborausstattung</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div class="lg:col-span-2 space-y-12">
+            <div>
+              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">Komplettausstattung für Ihr Labor</h2>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Ein Laborcontainer ist nur so gut wie seine Ausstattung. Deshalb bieten wir nicht nur die Hülle, sondern auch alles, was Sie zum Arbeiten benötigen. Von hochwertigen Labormöbeln über spezialisierte Abzugssysteme bis hin zu kompletter Sicherheitsausstattung – bei Planexus erhalten Sie alles aus einer Hand.</p>
+                <p>Unser Ansatz ist dabei immer ganzheitlich: Wir betrachten Ihren Laborcontainer als integriertes System, in dem alle Komponenten optimal aufeinander abgestimmt sind. Die Möbel passen zu den technischen Anlagen, die Sicherheitseinrichtungen sind in den Arbeitsablauf integriert, und jedes Element trägt zur Effizienz und Sicherheit bei.</p>
+                <p>Als Teil der Wesemann Holding GmbH – einem der drei führenden Labormöbelhersteller in Europa – haben wir direkten Zugang zu erstklassigen Laborausstattungen. Dieses starke Netzwerk ermöglicht uns, Ihnen hochwertige Produkte zu optimalen Konditionen anzubieten. Gleichzeitig können wir Sonderlösungen realisieren, die speziell auf Ihre Anforderungen zugeschnitten sind.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Unsere Ausstattungsbereiche</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="https://www.wesemann.com/" target="_blank" rel="noopener noreferrer" class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:shadow-lg transition-shadow group">
+                  <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-slate-900 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-white">Labormöbel</h4>
+                  <p class="text-gray-300 text-sm mb-4">Arbeitstische, Unterschränke, Oberschränke und Regalsysteme nach Laborstandard.</p>
+                  <p class="text-primary text-sm font-medium group-hover:underline">Powered by Wesemann Laboreinrichtungen →</p>
+                </a>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Abzugssysteme</h4>
+                  <p class="text-gray-600 text-sm">Laborabzüge, Tischarbeitsplätze mit Absaugung und Umluftgeräte.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Sicherheitsausstattung</h4>
+                  <p class="text-gray-600 text-sm">Notduschen, Augenspülungen, Feuerlöscher und Erste-Hilfe-Einrichtungen.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Medienversorgung</h4>
+                  <p class="text-gray-600 text-sm">Gasarmaturen, Wasserinstallationen und Druckluftanschlüsse.</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Labormöbel im Detail</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Die Wahl der richtigen Labormöbel ist entscheidend für ergonomisches Arbeiten und effiziente Abläufe. Wir bieten eine breite Auswahl an hochwertigen Möbeln, die speziell für den Einsatz im Labor konzipiert sind.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Arbeitstische und Arbeitsplatten</h4>
+                <p>Unsere Labortische sind robust, chemikalienbeständig und ergonomisch gestaltet. Die Arbeitsplatten sind in verschiedenen Materialien erhältlich – von klassischem Laborstein über Edelstahl bis hin zu speziellen Kunststoffen für besondere Anforderungen. Standardbreiten von 600 mm bis 900 mm und Höhen von 750 mm bis 900 mm ermöglichen sowohl Sitz- als auch Steharbeitsplätze.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Schranksysteme</h4>
+                <p>Unterschränke, Oberschränke und Hochschränke bieten optimalen Stauraum für Laborgeräte, Chemikalien und Verbrauchsmaterialien. Für die sichere Aufbewahrung von Gefahrstoffen bieten wir zugelassene Sicherheitsschränke nach EN 14470-1 (für brennbare Flüssigkeiten) und EN 14470-2 (für Druckgasflaschen).</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Spülen und Becken</h4>
+                <p>Laborspülen aus PP, Keramik oder Edelstahl mit entsprechenden Armaturen und Siphons. Spezielle Ausführungen für säurebeständige Anwendungen oder die Mikrobiologie sind selbstverständlich möglich.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Abzüge und Absaugsysteme</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Laborabzüge sind das Herzstück vieler Laborarbeiten. Sie schützen den Anwender vor gefährlichen Dämpfen, Gasen und Stäuben und sind in vielen Bereichen gesetzlich vorgeschrieben. Wir bieten eine umfassende Auswahl an Abzugssystemen für verschiedene Anwendungen.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Standard-Laborabzüge</h4>
+                <p>Unsere Standard-Laborabzüge erfüllen die Anforderungen der EN 14175 und bieten zuverlässigen Schutz bei chemischen Arbeiten. Verschiedene Breiten von 1200 mm bis 1800 mm und unterschiedliche Ausstattungsvarianten ermöglichen eine optimale Anpassung an Ihre Bedürfnisse.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Spezialabzüge</h4>
+                <p>Für besondere Anwendungen bieten wir Spezialabzüge: Säure-Basen-Abzüge mit resistenten Oberflächen, Wägeabzüge für präzise Arbeiten ohne störende Luftströmungen, Zytostatika-Abzüge für die sichere Handhabung von Chemotherapeutika oder Radioisotopen-Abzüge mit spezieller Abschirmung.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Umluftgeräte</h4>
+                <p>Wenn eine Abluftführung ins Freie nicht möglich ist, bieten Umluftgeräte eine Alternative. Sie reinigen die Luft durch Aktivkohlefilter und führen sie in den Raum zurück. Ideal für mobile Anwendungen oder temporäre Aufstellungen.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Sicherheitsausstattung</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Sicherheit hat im Labor oberste Priorität. Unsere Laborcontainer sind mit allen erforderlichen Sicherheitseinrichtungen ausgestattet, die den geltenden Vorschriften entsprechen und den Schutz Ihrer Mitarbeiter gewährleisten.</p>
+                <ul class="list-none space-y-3">
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Notduschen nach DIN EN 15154 für den Ernstfall</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Augenspüleinrichtungen an jedem Arbeitsplatz mit Gefahrstoffumgang</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Feuerlöscher entsprechend der Brandklassen im Labor</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Erste-Hilfe-Ausstattung nach BGI/GUV-I 509</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Notausgänge mit Panikbeschlägen und Fluchtwegkennzeichnung</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Gaswarnanlagen für die Detektion gefährlicher Atmosphären</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Not-Aus-Schalter für schnelles Abschalten aller Medien</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Medienversorgung und Armaturen</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Die zuverlässige Versorgung mit Medien wie Gasen, Wasser und Druckluft ist für den Laborbetrieb unerlässlich. Wir installieren alle erforderlichen Systeme fachgerecht und nach den geltenden Normen.</p>
+                <p><strong>Gasarmaturen:</strong> Für die Versorgung mit technischen Gasen (Stickstoff, Argon, Helium) oder Laborgasen (Propan/Butan) installieren wir entsprechende Entnahmestellen mit Absperrhähnen und Schnellkupplungen. Die farbliche Kennzeichnung erfolgt nach DIN EN 13792.</p>
+                <p><strong>Wasserinstallationen:</strong> Laborwasser, VE-Wasser oder Reinstwasser – wir installieren die passenden Armaturen und Aufbereitungssysteme. Spezielle Laborarmaturen mit schwenkbarem Auslauf und Fußbedienung ermöglichen hygienisches Arbeiten.</p>
+                <p><strong>Druckluftversorgung:</strong> Für Anwendungen, die ölfreie Druckluft benötigen, installieren wir entsprechende Anschlüsse mit Druckminderern und Wartungseinheiten.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Geräteintegration</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Viele Laborgeräte haben spezielle Anforderungen an Stromversorgung, Kühlung oder Abluftführung. Wir planen die Integration Ihrer Geräte von Anfang an mit und stellen sicher, dass alle Anschlüsse vorhanden sind.</p>
+                <p>Ob Spektrometer, Chromatographen, Inkubatoren oder Autoklaven – wir berücksichtigen die spezifischen Anforderungen jedes Geräts und sorgen für eine optimale Aufstellung. Schwingungsdämpfung für empfindliche Messgeräte, USV-Anbindung für kritische Anlagen oder spezielle Abluftführungen für wärmeerzeugende Geräte – wir denken an alles.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-1">
+            <div class="sticky top-24 space-y-6">
+              <div class="bg-primary text-slate-900 p-8 rounded-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                <h3 class="text-xl font-bold mb-3">Alles aus einer Hand</h3>
+                <p class="text-slate-700 mb-6 text-sm">Container und Ausstattung perfekt abgestimmt. Profitieren Sie von unserer Komplettlösung.</p>
+                <a href="/kontakt" class="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">Beratung anfordern</a>
+              </div>
+              <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100">
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Unsere Stärken</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Führende Hersteller</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Individuelle Konfiguration</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Normgerechte Installation</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Integrierte Planung</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>After-Sales-Service</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Ersatzteilversorgung</span></li>
+                </ul>
+              </div>
+              <div class="bg-white p-8 rounded-2xl border border-gray-100">
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Weitere Leistungen</h3>
+                <ul class="space-y-3">
+                  <li><a href="/leistungen/planung" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Technische Fachplanung</a></li>
+                  <li><a href="/leistungen/modulbau" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Modulbau & Fertigung</a></li>
+                  <li><a href="/leistungen/logistik" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Logistik & Montage</a></li>
+                  <li><a href="/leistungen/beratung" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Beratung & Genehmigung</a></li>
+                  <li><a href="/leistungen/smart-lab" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Smart Lab Integration</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Optimal ausgestattet für Ihre Forschung</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Lassen Sie uns gemeinsam die perfekte Ausstattung für Ihr Labor zusammenstellen.</p>
+        <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Jetzt Kontakt aufnehmen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </section>
+  </div>
+</Layout>

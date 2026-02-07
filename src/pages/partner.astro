@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { AnimatedGlobe } from '../components/AnimatedGlobe';
+
+const partners = [
+  {
+    name: "Wesemann GmbH",
+    description: "Spezialisiert auf hochwertige Laboreinrichtungen mit individuell angepassten Lösungen. Das Portfolio umfasst flexible und modulare Möbelsysteme sowie modernste Sicherheitskomponenten wie Laborabzüge und Schutzschränke nach aktuellen Normen.",
+    category: "Laboreinrichtung",
+    url: "https://www.wesemann.com/"
+  },
+  {
+    name: "Wesemann Reinraumtechnik GmbH",
+    description: "Experte für maßgeschneiderte Reinraumsysteme als Komplettlösung. Von der Konzeption über Fertigung und Aufbau bis zur finalen Abnahme wird der gesamte Prozess aus einer Hand betreut, um individuelle Kundenanforderungen präzise zu erfüllen.",
+    category: "Reinraumtechnik",
+    url: "https://www.wesemann-reinraumtechnik.de/"
+  },
+  {
+    name: "Abarcon GmbH",
+    description: "Fokussiert auf innovative Arbeitsplatzsysteme für Labor und Industrie. Das Leistungsspektrum erstreckt sich von der Entwicklung über die Produktion bis zum Service von Personen- und Produktschutzsystemen mit höchsten Qualitätsstandards.",
+    category: "Arbeitsplatzsysteme",
+    url: "https://www.abarcon.de/"
+  },
+  {
+    name: "WS Funktions- und Reinraum GmbH",
+    description: "Bietet ganzheitliche Lösungen für Reinräume und Funktionsräume. Die Leistungen umfassen Konzeption, Bau und Instandhaltung nach internationalen Standards wie ISO 14644 und GMP-Richtlinien mit Fokus auf Qualität und Nachhaltigkeit.",
+    category: "Funktionsräume",
+    url: "https://www.ws-fr.de/"
+  },
+  {
+    name: "Synergie Mobiliar GmbH",
+    description: "Hersteller hochwertiger Möbel und innovativer Einrichtungskonzepte. Das Sortiment zeichnet sich durch robuste Materialqualität und ansprechendes Design aus, das funktionale Anforderungen mit ästhetischen Ansprüchen verbindet.",
+    category: "Mobiliar",
+    url: "https://www.synergie-mobiliar.de/"
+  },
+  {
+    name: "Mesycon GmbH",
+    description: "Spezialist für hochreine Versorgungssysteme im Laborbereich. Das Angebot reicht von Reinstgas- und Reinstwassersystemen über Chemikalienversorgung bis hin zu Gaswarn- und Kryotechnik - inklusive Planung, Installation und Inbetriebnahme.",
+    category: "Versorgungssysteme",
+    url: "https://www.mesycon.com/"
+  },
+  {
+    name: "Planexus GmbH",
+    description: "Experte für Laborcontainer und modularen Laborbau. Mit innovativen Konzepten für mobile Laborlösungen, BSL-2/BSL-3 Sicherheitslabore und Smart Lab Integrationen bietet Planexus schlüsselfertige Lösungen für höchste Anforderungen.",
+    category: "Modulbau",
+    url: "https://planexus.de/"
+  },
+  {
+    name: "Wesemann Benelux B.V.",
+    description: "Kompetenter Ansprechpartner für Laborprojekte in den Benelux-Ländern. Das erfahrene Team in Ede unterstützt bei Konfiguration, Lieferung, Montage und bietet darüber hinaus Wartungs- und Validierungsleistungen.",
+    category: "Benelux",
+    url: "https://www.wesemann-benelux.nl/"
+  },
+  {
+    name: "Wesemann Schweiz AG",
+    description: "Zentraler Partner für Laborlösungen in der Schweiz. Von der Erstberatung über Projektplanung bis zur Umsetzung, Montage und Wartung werden Kunden durch alle Projektphasen begleitet - funktional, sicher und normgerecht.",
+    category: "Schweiz",
+    url: "https://www.wesemann-ag.ch/"
+  },
+  {
+    name: "HibLab Solutions, S.L.",
+    description: "Innovativer Anbieter für ganzheitliche Laborentwicklung. Die industrialisierten Lösungen werden individuell auf Kundenanforderungen zugeschnitten und decken den kompletten Laborlebenszyklus ab - von der Planung bis zur schlüsselfertigen Übergabe.",
+    category: "Spanien",
+    url: "https://hiblab.com/"
+  },
+  {
+    name: "Wesemann Middle East",
+    description: "Vertriebspartner für den Nahen Osten mit umfassendem Leistungsangebot. Von Labormöbeln über Reinraumlösungen bis zu Versorgungssystemen - Vertrieb, Installation und Wartung aus einer Hand für die gesamte Region.",
+    category: "Naher Osten",
+    url: "https://www.wesemann.com/Contact/International/EN_index_2002.html"
+  }
+];
+---
+
+<Layout
+  title="Partner Netzwerk - Unser Business-Ökosystem"
+  description="Das Planexus Partner-Netzwerk: Erfahren Sie mehr über unser starkes Ökosystem aus spezialisierten Unternehmen für Laborlösungen, Reinraumtechnik und Laborausstattung."
+  canonical="/partner"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden flex items-center justify-center">
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
+      </div>
+      <AnimatedGlobe client:load />
+    </section>
+
+    <section class="py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+            <span>Starke Partnerschaften</span>
+          </div>
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6">
+            Kollaborative Stärke für Ihren Erfolg
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Unser Ökosystem vereint Expertise aus verschiedenen Fachbereichen. 
+            Durch die enge Zusammenarbeit erhöhen wir die Flexibilität, nutzen Marktchancen 
+            optimal und entwickeln zukunftsweisende Laborlösungen. Unsere umfassenden 
+            Dienstleistungen - von der ersten Idee bis zur langfristigen Betreuung - 
+            machen uns zum bevorzugten Partner für wissenschaftliche und industrielle Labore.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-4">
+            Unsere Partner im Überblick
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Jedes Unternehmen in unserem Netzwerk bringt einzigartige Kompetenzen ein
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {partners.map((partner) => (
+            <a
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="relative bg-white rounded-2xl p-8 transition-all duration-300 group cursor-pointer
+                border-2 border-gray-100 hover:border-primary/30
+                shadow-lg shadow-gray-100/50 hover:shadow-2xl hover:shadow-primary/10
+                hover:-translate-y-2 block"
+            >
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl"></div>
+
+              <div class="flex items-start gap-4 mb-4">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/10 transition-all shadow-inner">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                </div>
+                <div>
+                  <span class="inline-block px-2 py-0.5 text-xs font-bold text-primary bg-primary/10 rounded-full uppercase tracking-wide mb-1">{partner.category}</span>
+                  <h3 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors leading-tight">
+                    {partner.name}
+                  </h3>
+                </div>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                {partner.description}
+              </p>
+
+              <div class="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-r from-primary to-primary/90 text-slate-900 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      <div class="container mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl font-heading font-bold mb-6">
+          Gemeinsam zum Erfolg
+        </h2>
+        <p class="text-xl text-slate-700 max-w-2xl mx-auto mb-8">
+          Sie möchten mehr über unser Netzwerk erfahren oder haben ein Laborprojekt? 
+          Kontaktieren Sie uns - gemeinsam finden wir die optimale Lösung.
+        </p>
+        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors group shadow-xl">
+          Kontakt aufnehmen
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

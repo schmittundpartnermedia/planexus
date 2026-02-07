@@ -6,7 +6,6 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://www.planexus.de',
-  output: 'hybrid',
   adapter: node({
     mode: 'standalone',
   }),
