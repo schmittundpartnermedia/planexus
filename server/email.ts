@@ -2,8 +2,8 @@ import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || 'smtp.ionos.de',
-  port: parseInt(process.env.SMTP_PORT || '587'),
-  secure: false,
+  port: parseInt(process.env.SMTP_PORT || '465'),
+  secure: true,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
@@ -18,7 +18,7 @@ export async function sendContactEmail(data: {
 }) {
   const mailOptions = {
     from: process.env.SMTP_USER,
-    to: process.env.SMTP_USER || 'info@planexus.de',
+    to: process.env.CONTACT_EMAIL || 'info@planexus.de',
     replyTo: data.email,
     subject: `Kontaktanfrage: ${data.subject}`,
     html: `
