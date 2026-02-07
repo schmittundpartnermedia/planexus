@@ -1,0 +1,121 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  type?: string;
+  schema?: object;
+}
+
+const { title, description, canonical = '', type = 'website', schema } = Astro.props;
+const fullTitle = `${title} | Planexus GmbH`;
+const siteUrl = 'https://www.planexus.de';
+const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Laborcontainer, Modulbau Labor, Mobiles Labor, Containerlabor kaufen, Laborplanung, Laborcontainer mieten, BSL-2 Labor, BSL-3 Labor, Reinraum Container, Smart Lab, Laborausstattung, Planexus" />
+    <meta name="author" content="Planexus GmbH" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="geo.region" content="DE" />
+    <meta name="geo.placename" content="Deutschland" />
+    <meta name="language" content="German" />
+    <meta name="revisit-after" content="7 days" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={`${siteUrl}/opengraph.jpg`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Planexus GmbH" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/opengraph.jpg`} />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Planexus GmbH",
+      "alternateName": "Planexus",
+      "url": siteUrl,
+      "logo": `${siteUrl}/favicon.png`,
+      "description": "Spezialist für Laborcontainer, mobile Labore und Modulbau. Planung, Fertigung und schlüsselfertige Übergabe von Containerlaboren.",
+      "foundingDate": "2014",
+      "areaServed": { "@type": "Country", "name": "Germany" },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49 7435 7519 700",
+        "contactType": "customer service",
+        "availableLanguage": ["German", "English"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61578221935839",
+        "https://www.linkedin.com/company/planexus-gmbh"
+      ]
+    })} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Planexus GmbH",
+      "description": "Spezialist für Laborcontainer und Modulbau",
+      "url": siteUrl,
+      "priceRange": "€€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Am Steinbach 8",
+        "addressLocality": "Albstadt",
+        "postalCode": "72459",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.2180461,
+        "longitude": 8.9140541
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "telephone": "+49 7435 7519 700",
+      "email": "info@planexus.de"
+    })} />
+
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="min-h-screen bg-background text-foreground flex flex-col font-sans">
+    <Navbar client:load />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
