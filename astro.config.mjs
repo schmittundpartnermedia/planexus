@@ -28,7 +28,7 @@ export default defineConfig({
       },
     },
     server: {
-      allowedHosts: true,
+      allowedHosts: ['.replit.dev', '.janeway.replit.dev', '.repl.co'],
     },
   },
   server: {
