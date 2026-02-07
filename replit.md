@@ -12,6 +12,7 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 - Green accent color: #bbd700
 - No company names on Projekte page
 - Part of Wesemann Holding GmbH
+- WICHTIG: Gründlich arbeiten! Alles komplett durchdenken bevor etwas vorgeschlagen wird. Keine halben Sachen, keine oberflächlichen Fixes. Immer das Gesamtbild berücksichtigen (Server, Ports, Umgebungsvariablen, Dependencies, Nginx-Config). Jede Änderung muss vollständig und getestet sein – keine inkrementellen Debugging-Schleifen. User ist frustriert von Stückwerk und Korrekturschleifen.
 
 ## Recent Changes
 
