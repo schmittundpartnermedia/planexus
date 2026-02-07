@@ -6,14 +6,20 @@ import { isValidToken } from './login';
 
 export const prerender = false;
 
-export const GET: APIRoute = async ({ request }) => {
+async function checkAuth(request: Request): Promise<Response | null> {
   const token = request.headers.get('Authorization')?.replace('Bearer ', '');
-  if (!token || !isValidToken(token)) {
+  if (!token || !(await isValidToken(token))) {
     return new Response(JSON.stringify({ error: 'Nicht autorisiert.' }), {
       status: 401,
       headers: { 'Content-Type': 'application/json' },
     });
   }
+  return null;
+}
+
+export const GET: APIRoute = async ({ request }) => {
+  const authError = await checkAuth(request);
+  if (authError) return authError;
 
   try {
     const messages = await db.select().from(contactMessages).orderBy(desc(contactMessages.createdAt));
@@ -31,13 +37,8 @@ export const GET: APIRoute = async ({ request }) => {
 };
 
 export const PATCH: APIRoute = async ({ request }) => {
-  const token = request.headers.get('Authorization')?.replace('Bearer ', '');
-  if (!token || !isValidToken(token)) {
-    return new Response(JSON.stringify({ error: 'Nicht autorisiert.' }), {
-      status: 401,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
+  const authError = await checkAuth(request);
+  if (authError) return authError;
 
   try {
     const { id, read: isRead } = await request.json();
@@ -56,13 +57,8 @@ export const PATCH: APIRoute = async ({ request }) => {
 };
 
 export const DELETE: APIRoute = async ({ request }) => {
-  const token = request.headers.get('Authorization')?.replace('Bearer ', '');
-  if (!token || !isValidToken(token)) {
-    return new Response(JSON.stringify({ error: 'Nicht autorisiert.' }), {
-      status: 401,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
+  const authError = await checkAuth(request);
+  if (authError) return authError;
 
   try {
     const { id } = await request.json();

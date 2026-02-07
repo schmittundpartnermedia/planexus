@@ -10,3 +10,10 @@ export const contactMessages = pgTable('contact_messages', {
   read: boolean('read').default(false),
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
+
+export const adminSessions = pgTable('admin_sessions', {
+  id: serial('id').primaryKey(),
+  tokenHash: text('token_hash').notNull().unique(),
+  expiresAt: timestamp('expires_at').notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+});
