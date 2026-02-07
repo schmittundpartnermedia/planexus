@@ -1,0 +1,541 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Laborcontainer Stuttgart",
+  "description": "Laborcontainer für Stuttgart und Baden-Württemberg: Planung, Fertigung und schlüsselfertige Übergabe. BSL-2/BSL-3 Container, mobile Forschungslabore und Reinraumlösungen.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "url": "https://www.planexus.de"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Stuttgart" },
+    { "@type": "State", "name": "Baden-Württemberg" }
+  ],
+  "url": "https://www.planexus.de/laborcontainer-stuttgart"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Laborcontainer Stuttgart", "item": "https://www.planexus.de/laborcontainer-stuttgart" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet ein Laborcontainer in Stuttgart?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das hängt stark von Größe, Ausstattung und Sicherheitsstufe ab. Ein einfaches Analyselabor liegt in einem anderen Bereich als ein BSL-2-Containerlabor mit Schleusensystem. Am besten sprechen wir kurz über Ihr Projekt – dann können wir eine realistische Größenordnung nennen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie wird ein Laborcontainer nach Stuttgart geliefert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Per Tieflader direkt auf Ihr Gelände. Die Aufstellung erfolgt per Kran. Wir kümmern uns um Transportgenehmigungen, Kranstellplatz und die gesamte Logistik."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ein Laborcontainer dauerhaft genutzt werden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Unsere Container sind keine provisorischen Lösungen, sondern vollwertige Laborräume. Viele unserer Container sind seit Jahren im Dauerbetrieb."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Brauche ich eine Baugenehmigung für einen Laborcontainer in Stuttgart?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In vielen Fällen nicht. Laborcontainer gelten als temporäre bauliche Anlagen und fallen oft unter Verfahrensfreiheit. Das hängt vom Standort und der geplanten Nutzungsdauer ab – wir klären das gemeinsam mit Ihnen und den zuständigen Behörden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Liefert Planexus nur nach Stuttgart oder auch in die Region?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir liefern in ganz Baden-Württemberg und bundesweit. Neben Stuttgart bedienen wir unter anderem Tübingen, Reutlingen, Heilbronn, Karlsruhe und die gesamte Region."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was unterscheidet einen Laborcontainer von einem normalen Container?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alles. Ein Laborcontainer ist von Grund auf für den Laborbetrieb konstruiert – mit kontrollierter Belüftung, Medienversorgung, normgerechten Oberflächen und auf Wunsch Sicherheitstechnik bis BSL-3."
+      }
+    }
+  ]
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Planexus GmbH",
+  "description": "Laborcontainer für Stuttgart und Baden-Württemberg",
+  "url": "https://www.planexus.de",
+  "telephone": "+49 7435 7519 700",
+  "email": "info@planexus.de",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Am Steinbach 8",
+    "addressLocality": "Albstadt",
+    "postalCode": "72459",
+    "addressCountry": "DE"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Stuttgart" },
+    { "@type": "State", "name": "Baden-Württemberg" }
+  ]
+};
+---
+
+<Layout
+  title="Laborcontainer Stuttgart – Planung, Bau & Lieferung"
+  description="Laborcontainer für Stuttgart und die Region: Vom mobilen Forschungslabor bis zum BSL-3 Containerlabor. Eigene Fertigung in Albstadt – 80 km entfernt. Planexus GmbH."
+  canonical="/laborcontainer-stuttgart"
+  schema={serviceSchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} slot="head" />
+
+  <div class="pt-20 min-h-screen bg-white">
+
+    <!-- Hero -->
+    <section class="relative py-28 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=2070')] bg-cover bg-center opacity-15"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Stuttgart & Baden-Württemberg</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+            Laborcontainer in <span class="text-primary">Stuttgart</span> und Baden-Württemberg
+          </h1>
+          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mb-8">
+            Planung, Fertigung und Aufstellung aus einer Hand. Unser Werk in Albstadt liegt keine Stunde entfernt.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
+              Projekt besprechen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <span class="text-primary font-medium">Laborcontainer Stuttgart</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Einleitung -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
+            Laborcontainer für Forschung, Industrie und Pharma in Stuttgart
+          </h2>
+          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+            <p>
+              Stuttgart gehört zu den forschungsstärksten Regionen in ganz Europa. Zwischen Uni Stuttgart, Uni Hohenheim, dem Klinikum Stuttgart und den zahlreichen Fraunhofer-Instituten wird hier täglich auf höchstem Niveau geforscht, geprüft und entwickelt. Dazu kommen Unternehmen wie Mercedes-Benz, Porsche, Bosch und ein dichtes Netz aus Pharma- und Biotechfirmen in der gesamten Region.
+            </p>
+            <p>
+              Was all diese Einrichtungen gemeinsam haben: Irgendwann brauchen sie mehr Laborkapazität. Und zwar nicht in drei Jahren, sondern jetzt. Ein Gebäude zu errichten dauert Monate, oft Jahre. Die Genehmigungen allein können sich endlos ziehen.
+            </p>
+            <p>
+              Genau hier kommen wir ins Spiel. Planexus plant und baut <strong>Laborcontainer</strong> – vollwertige, normgerechte Labore im Containerformat. Unser Werk steht in Albstadt, rund 80 Kilometer südlich von Stuttgart. Von der ersten Skizze bis zur schlüsselfertigen Übergabe auf Ihrem Gelände übernehmen wir alles. <a href="/leistungen" class="text-primary font-medium hover:underline">Mehr über unsere Leistungen →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Einsatzbereiche -->
+    <section class="py-20 bg-slate-50 border-y border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
+            Wann ein Laborcontainer die richtige Lösung ist
+          </h2>
+          <p class="text-gray-600 text-lg mb-12">
+            Nicht jedes Labor muss ein festes Gebäude sein. Es gibt Situationen, in denen ein Containerlabor nicht nur die schnellere, sondern auch die bessere Lösung ist.
+          </p>
+
+          <div class="space-y-8">
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Sanierung oder Umbau am Standort</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Ein Institut der Uni Stuttgart muss sein Laborgebäude sanieren. Die Forschungsgruppen können aber nicht einfach zwei Jahre pausieren. Ein Containerlabor steht auf dem Campus, ist in wenigen Wochen betriebsbereit und wird nach Abschluss der Bauarbeiten wieder abgebaut.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Kurzfristiger Bedarf in der Pharmaindustrie</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Eine klinische Studie erfordert zusätzliche Laborkapazität unter BSL-2-Bedingungen. Der Massivbau würde 18 Monate dauern – die Studie startet in drei Monaten. Ein <a href="/leistungen/ausstattung" class="text-primary font-medium hover:underline">Containerlabor mit BSL-2-Ausstattung</a> ist in 8 bis 12 Wochen fertig.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Zusätzliches Prüflabor in der Industrie</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Ein Automobilzulieferer im Raum Stuttgart braucht ein Materiallabor direkt auf dem Werksgelände. Im Gebäude ist kein Platz, ein Anbau ist zu aufwändig. Ein Laborcontainer steht auf der Freifläche – oft sogar ohne Baugenehmigung.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Forschungsprojekte mit begrenzter Laufzeit</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Drittmittelprojekte laufen drei bis fünf Jahre. Danach ist die Laborkapazität nicht mehr nötig. Ein Container lässt sich versetzen, umnutzen oder zurückbauen. Das sind keine theoretischen Beispiele – so sieht der Alltag aus, wenn Labore schnell gebraucht werden. <a href="/projekte" class="text-primary font-medium hover:underline">Unsere bisherigen Projekte →</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungen für Stuttgart -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Was wir für Stuttgart übernehmen</h2>
+          <p class="text-gray-600 text-lg">
+            Von der ersten Idee bis zum funktionierenden Labor – nicht als Vermittler, sondern als Hersteller mit eigener Fertigung.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Technische Fachplanung</h3>
+            <p class="text-gray-600 text-sm mb-4">CAD-Zeichnungen, 3D-Visualisierungen und TGA-Konzepte. Abgestimmt auf die konkreten Anforderungen Ihres Standorts in Stuttgart.</p>
+            <a href="/leistungen/planung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Modulbau & Fertigung</h3>
+            <p class="text-gray-600 text-sm mb-4">Jeder Container wird individuell in unserem Werk in Albstadt gefertigt. Kein Standardprodukt – maßgeschneidert für Ihren Einsatz.</p>
+            <a href="/leistungen/modulbau" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 13h8"/><path d="M13 17h8"/><path d="M13 9h8"/><path d="M1 5h4l2 10h10l2-8H5"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Logistik & Montage</h3>
+            <p class="text-gray-600 text-sm mb-4">Transport per Tieflader, Aufstellung per Kran. In Stuttgart kennen wir die Zufahrtssituationen an Kliniken und Campusgeländen.</p>
+            <a href="/leistungen/logistik" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Laborausstattung</h3>
+            <p class="text-gray-600 text-sm mb-4">Abzüge, Sicherheitswerkbänke, Labormöbel, Kühlsysteme, Lüftungstechnik – alles eingebaut und betriebsfertig übergeben.</p>
+            <a href="/leistungen/ausstattung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Beratung & Genehmigung</h3>
+            <p class="text-gray-600 text-sm mb-4">Noch keinen konkreten Plan? Wir beraten von Anfang an – zu Genehmigungen, Normen, Zeitplanung und Kosten.</p>
+            <a href="/leistungen/beratung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Smart Lab Integration</h3>
+            <p class="text-gray-600 text-sm mb-4">Fernüberwachung, automatisierte Klimasteuerung, Zutrittskontrolle und Datenlogging auf Wunsch.</p>
+            <a href="/leistungen/smart-lab" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gut zu wissen -->
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-4">Gut zu wissen</h2>
+          <p class="text-gray-400 text-lg mb-12">Fakten, die bei der Entscheidung helfen.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">8–12 Wochen statt 18 Monate</h3>
+                <p class="text-gray-400 text-sm">Fertig geplant, gebaut und aufgestellt – während ein Massivbau noch in der Genehmigung steckt.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Oft genehmigungsfrei</h3>
+                <p class="text-gray-400 text-sm">In vielen Fällen als temporäre Anlage aufstellbar – ohne langwierige Baugenehmigung.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">BSL-2, BSL-3, Reinraum</h3>
+                <p class="text-gray-400 text-sm">Alle gängigen Sicherheitsstufen und Reinraumklassen im Container realisierbar.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">80 km bis Stuttgart</h3>
+                <p class="text-gray-400 text-sm">Unser Werk in Albstadt liegt direkt vor der Tür. Kurze Wege, persönliche Betreuung.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 17 3.5s1.5 2.5-.8 6.5C20.7 11.5 21 14 21 14s-1.5-.5-2.5-.5c-.5 2-2 3.5-2 3.5s-.5-1-1-2.5c-1.5 1-4.5 2.5-4.5 5.5"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Nachhaltig und flexibel</h3>
+                <p class="text-gray-400 text-sm">Kann nach Projektende versetzt, umgerüstet oder zurückgebaut werden.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Schlüsselfertig</h3>
+                <p class="text-gray-400 text-sm">Komplett ausgestattet und betriebsbereit übergeben. Einziehen und loslegen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warum Planexus -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
+            Warum Planexus für Stuttgart
+          </h2>
+          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+            <p>
+              Es gibt mehrere Anbieter für Laborcontainer in Deutschland. Aber nur wenige, die alles aus einer Hand liefern – und kaum einen, der so nah an Stuttgart sitzt wie wir.
+            </p>
+            <p>
+              Unser Werk in Albstadt liegt rund 80 Kilometer südlich. Das bedeutet: kurze Transportwege, persönliche Betreuung vor Ort und schnelle Reaktionszeiten. Wenn etwas geklärt werden muss, fahren wir hin – statt wochenlang E-Mails zu schreiben.
+            </p>
+            <p>
+              Planexus ist Teil der <a href="/ueber-uns" class="text-primary font-medium hover:underline">Wesemann Holding</a> und damit eingebettet in ein Netzwerk aus Laborausstattung, Labormöbeln und technischer Infrastruktur. Wir bauen nicht nur den Container – wir verstehen, was in einem Labor passiert und was es braucht, um sauber, sicher und effizient zu funktionieren.
+            </p>
+            <p>
+              Seit über zehn Jahren planen und bauen wir Laborcontainer. Für Universitäten, Forschungsinstitute, Pharmaunternehmen und Industriebetriebe. <a href="/team" class="text-primary font-medium hover:underline">Lernen Sie unser Team kennen →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-slate-50 border-y border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
+            Häufige Fragen zu Laborcontainern in Stuttgart
+          </h2>
+          <p class="text-gray-600 text-lg mb-12">
+            Die wichtigsten Fragen, die uns zu Projekten in Stuttgart und der Region gestellt werden.
+          </p>
+
+          <div class="space-y-4">
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Was kostet ein Laborcontainer in Stuttgart?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Das hängt stark von Größe, Ausstattung und Sicherheitsstufe ab. Ein einfaches Analyselabor liegt in einem anderen Bereich als ein BSL-2-Containerlabor mit Schleusensystem. Am besten sprechen wir kurz über Ihr Projekt – dann können wir eine realistische Größenordnung nennen.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Wie wird ein Laborcontainer nach Stuttgart geliefert?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Per Tieflader direkt auf Ihr Gelände. Die Aufstellung erfolgt per Kran. Wir kümmern uns um Transportgenehmigungen, Kranstellplatz und die gesamte Logistik.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Kann ein Laborcontainer dauerhaft genutzt werden?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Ja. Unsere Container sind keine provisorischen Lösungen, sondern vollwertige Laborräume. Viele unserer Container sind seit Jahren im Dauerbetrieb.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Brauche ich eine Baugenehmigung für einen Laborcontainer in Stuttgart?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                In vielen Fällen nicht. Laborcontainer gelten als temporäre bauliche Anlagen und fallen oft unter Verfahrensfreiheit. Das hängt vom Standort und der geplanten Nutzungsdauer ab – wir klären das gemeinsam mit Ihnen und den zuständigen Behörden in Stuttgart.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Liefert Planexus nur nach Stuttgart oder auch in die Region?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Wir liefern in ganz Baden-Württemberg und bundesweit. Neben Stuttgart bedienen wir unter anderem Tübingen, Reutlingen, Heilbronn, Karlsruhe und die gesamte Region.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Was unterscheidet einen Laborcontainer von einem normalen Container?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Alles. Ein Laborcontainer ist von Grund auf für den Laborbetrieb konstruiert – mit kontrollierter Belüftung, Medienversorgung, normgerechten Oberflächen und auf Wunsch Sicherheitstechnik bis BSL-3.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Kann ich den Laborcontainer vor der Bestellung besichtigen?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Ja, nach Terminvereinbarung in unserem Werk in Albstadt. Dort sehen Sie aktuelle Projekte in verschiedenen Bauphasen und können sich ein eigenes Bild machen.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-primary text-slate-900">
+      <div class="container mx-auto px-4 text-center max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Laborprojekt in Stuttgart? Sprechen Sie mit uns.</h2>
+        <p class="text-slate-700 text-lg mb-8">
+          Erzählen Sie uns von Ihrem Vorhaben. Wir melden uns in der Regel am gleichen Tag mit einer ersten Einschätzung.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt" class="bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors inline-flex items-center gap-2">
+            Projekt anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+4974357519700" class="bg-white text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-white/90 transition-colors inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
