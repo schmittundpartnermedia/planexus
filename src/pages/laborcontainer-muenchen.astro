@@ -1,0 +1,531 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Laborcontainer München",
+  "description": "Laborcontainer für München und Bayern: Planung, Fertigung und schlüsselfertige Übergabe. BSL-2/BSL-3 Container, mobile Forschungslabore und Reinraumlösungen.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "url": "https://www.planexus.de"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "München" },
+    { "@type": "State", "name": "Bayern" }
+  ],
+  "url": "https://www.planexus.de/laborcontainer-muenchen"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Laborcontainer München", "item": "https://www.planexus.de/laborcontainer-muenchen" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet ein Laborcontainer in München?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Kosten richten sich nach Größe, Ausstattung und Sicherheitsstufe. Ein Analyselabor liegt preislich deutlich unter einem BSL-3-Container mit Schleusen und Unterdrucksystem. Nennen Sie uns Ihr Vorhaben – wir geben Ihnen eine belastbare Einschätzung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert die Lieferung eines Laborcontainers nach München?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Von der Auftragserteilung bis zur schlüsselfertigen Übergabe vergehen in der Regel 8 bis 16 Wochen – abhängig von Komplexität und Ausstattung. Ein einfaches Labor geht schneller, ein BSL-2 oder BSL-3 Labor braucht entsprechend mehr Vorlauf."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Brauche ich in München eine Baugenehmigung für einen Laborcontainer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das kommt auf den Standort und die geplante Nutzungsdauer an. In Bayern gelten Laborcontainer oft als temporäre bauliche Anlagen und können verfahrensfrei aufgestellt werden. Wir klären das im Vorfeld mit den zuständigen Behörden für Sie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Labortypen kann Planexus im Container realisieren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grundsätzlich alle: Analytiklabore, mikrobiologische Labore, BSL-2 und BSL-3 Sicherheitslabore, Reinräume nach ISO-Klassifizierung, Prüflabore und QC-Labore. Jeder Container wird individuell auf den jeweiligen Einsatzzweck geplant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann der Laborcontainer nach Projektende wieder abgebaut werden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, das ist einer der größten Vorteile. Der Container kann versetzt, an einen anderen Standort transportiert oder zurückgebaut werden. Nichts wird dauerhaft in den Boden betoniert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist eine Besichtigung im Werk möglich?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Selbstverständlich. Unser Werk in Albstadt ist nach Terminvereinbarung jederzeit zugänglich. Dort sehen Sie Container in verschiedenen Fertigungsphasen und können sich direkt ein Bild von der Qualität machen."
+      }
+    }
+  ]
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Planexus GmbH",
+  "description": "Laborcontainer für München und Bayern",
+  "url": "https://www.planexus.de",
+  "telephone": "+49 7435 7519 700",
+  "email": "info@planexus.de",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Am Steinbach 8",
+    "addressLocality": "Albstadt",
+    "postalCode": "72459",
+    "addressCountry": "DE"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "München" },
+    { "@type": "State", "name": "Bayern" }
+  ]
+};
+---
+
+<Layout
+  title="Laborcontainer München – Planung, Bau & Lieferung | Planexus"
+  description="Laborcontainer für München und Bayern: Mobile Forschungslabore, BSL-2/BSL-3 Containerlabore und Reinraumlösungen. Eigene Fertigung in Albstadt. Planexus GmbH."
+  canonical="/laborcontainer-muenchen"
+  schema={serviceSchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} slot="head" />
+
+  <div class="pt-20 min-h-screen bg-white">
+
+    <!-- Hero -->
+    <section class="relative py-28 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=2070')] bg-cover bg-center opacity-15"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>München & Bayern</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+            Laborcontainer für <span class="text-primary">München</span>
+          </h1>
+          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mb-8">
+            Vom Biotech-Cluster in Martinsried bis zum Forschungscampus Garching – wir bauen Labore, die in Wochen stehen, nicht in Jahren.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
+              Projekt besprechen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <span class="text-primary font-medium">Laborcontainer München</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Einleitung -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
+            München: Wo Laborbedarf auf knappe Flächen trifft
+          </h2>
+          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+            <p>
+              München ist einer der forschungsintensivsten Standorte in Europa. Die Ludwig-Maximilians-Universität, die TU München mit ihrem Campus in Garching, das Helmholtz Zentrum München, das Klinikum der Universität München, das Klinikum rechts der Isar – die Liste der Einrichtungen, die täglich auf Laborkapazität angewiesen sind, ist lang. Dazu kommen die Hauptsitze der Max-Planck-Gesellschaft und der Fraunhofer-Gesellschaft, die beide von München aus arbeiten.
+            </p>
+            <p>
+              Gleichzeitig ist Baugrund in München teuer und knapp. Wer ein neues Laborgebäude plant, rechnet mit Jahren bis zur Fertigstellung. Genehmigungsverfahren, Ausschreibungen, Bauzeiten – das summiert sich. Die Forschung wartet aber nicht.
+            </p>
+            <p>
+              Ein <strong>Laborcontainer</strong> löst dieses Problem. In 8 bis 16 Wochen steht ein vollwertiges, normgerechtes Labor auf Ihrem Gelände – geplant, gebaut und aufgestellt von uns. Unser Werk in Albstadt liegt rund 200 Kilometer südwestlich von München. <a href="/leistungen" class="text-primary font-medium hover:underline">Alle unsere Leistungen im Überblick →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Einsatzbereiche -->
+    <section class="py-20 bg-slate-50 border-y border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
+            Typische Szenarien in München
+          </h2>
+          <p class="text-gray-600 text-lg mb-12">
+            So werden Laborcontainer in München und Umgebung tatsächlich eingesetzt.
+          </p>
+
+          <div class="space-y-8">
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Biotech-Cluster Martinsried und Planegg</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Westlich von München liegt einer der größten Biotech-Standorte Deutschlands. Start-ups und mittelständische Unternehmen brauchen dort regelmäßig zusätzliche Laborfläche – oft kurzfristig, weil eine Finanzierungsrunde steht oder ein neues Projekt startet. Ein Containerlabor lässt sich auf dem bestehenden Gelände aufstellen, ohne dass man Mietfläche im Gewerbepark suchen muss.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Forschungscampus Garching</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Der Campus der TU München in Garching wächst ständig. Neue Forschungsgruppen brauchen Laborkapazität, bevor die nächste Gebäudeerweiterung steht. Ein Laborcontainer auf dem Campusgelände überbrückt diese Phase – mit voller <a href="/leistungen/ausstattung" class="text-primary font-medium hover:underline">Laborausstattung</a>, betriebsbereit in wenigen Wochen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Klinische Forschung an den Münchner Kliniken</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Das Klinikum der Universität München und das Klinikum rechts der Isar gehören zu den größten Universitätskliniken in Deutschland. Klinische Studien erfordern regelmäßig zusätzliche BSL-2-Labore. Diese Kapazität auf dem Klinikgelände aufzubauen ist mit einem <a href="/leistungen/modulbau" class="text-primary font-medium hover:underline">Containerlabor</a> in Wochen umsetzbar.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Qualitätskontrolle in der Industrie</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    München und Oberbayern sind dicht besetzt mit Industrieunternehmen – von BMW über Siemens bis zu den zahlreichen Zulieferern. Wenn ein QC-Labor direkt am Produktionsstandort gebraucht wird, ist ein Container die schnellste Lösung. Kein Umbau, kein Genehmigungsmarathon. <a href="/projekte" class="text-primary font-medium hover:underline">Unsere Referenzprojekte →</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungen -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Was wir für München übernehmen</h2>
+          <p class="text-gray-600 text-lg">
+            Alles aus einer Hand – von der Planung über die Fertigung bis zur Aufstellung auf Ihrem Gelände.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Technische Fachplanung</h3>
+            <p class="text-gray-600 text-sm mb-4">CAD-Zeichnungen und 3D-Modelle, abgestimmt auf die Gegebenheiten Ihres Münchner Standorts – Zufahrt, Stellfläche, Medienanschlüsse.</p>
+            <a href="/leistungen/planung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Modulbau & Fertigung</h3>
+            <p class="text-gray-600 text-sm mb-4">Individuelle Fertigung in unserem Werk in Albstadt. Kein Container gleicht dem anderen – jeder wird für seinen konkreten Einsatz gebaut.</p>
+            <a href="/leistungen/modulbau" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Logistik & Montage</h3>
+            <p class="text-gray-600 text-sm mb-4">Transport per Tieflader über die A8, Aufstellung per Kran. Ob Klinikgelände, Campusareal oder Industriepark – wir kennen die Herausforderungen.</p>
+            <a href="/leistungen/logistik" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Laborausstattung</h3>
+            <p class="text-gray-600 text-sm mb-4">Abzüge, Sicherheitswerkbänke, Labormöbel, Lüftung und Medienversorgung. Komplett eingebaut, betriebsfertig übergeben.</p>
+            <a href="/leistungen/ausstattung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Beratung & Genehmigung</h3>
+            <p class="text-gray-600 text-sm mb-4">Wir beraten zu bayerischen Bauvorschriften, klären Genehmigungsfragen und begleiten Sie durch den gesamten Prozess.</p>
+            <a href="/leistungen/beratung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Smart Lab Integration</h3>
+            <p class="text-gray-600 text-sm mb-4">Digitale Gebäudetechnik: Fernüberwachung, Klimasteuerung, Zutrittskontrolle – alles über eine zentrale Plattform steuerbar.</p>
+            <a href="/leistungen/smart-lab" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gut zu wissen -->
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-4">Gut zu wissen</h2>
+          <p class="text-gray-400 text-lg mb-12">Zahlen und Fakten zum Laborcontainer-Projekt in München.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">8–16 Wochen Projektlaufzeit</h3>
+                <p class="text-gray-400 text-sm">Von der Beauftragung bis zur schlüsselfertigen Übergabe. Ein Massivbau braucht das Zehnfache.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">200 km bis München</h3>
+                <p class="text-gray-400 text-sm">Unser Werk in Albstadt ist über die A8 direkt angebunden. Persönliche Betreuung ist selbstverständlich.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Bis BSL-3 und Reinraum</h3>
+                <p class="text-gray-400 text-sm">Alle gängigen Sicherheitsstufen und Reinraumklassen nach ISO im Container realisierbar.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Oft genehmigungsfrei</h3>
+                <p class="text-gray-400 text-sm">Als temporäre Anlage in Bayern häufig verfahrensfrei aufstellbar. Wir prüfen das vorab.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 17 3.5s1.5 2.5-.8 6.5C20.7 11.5 21 14 21 14s-1.5-.5-2.5-.5c-.5 2-2 3.5-2 3.5s-.5-1-1-2.5c-1.5 1-4.5 2.5-4.5 5.5"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Miete oder Kauf</h3>
+                <p class="text-gray-400 text-sm">Beides möglich. Bei befristeten Projekten oft Miete sinnvoller, bei Dauerbetrieb der Kauf.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Schlüsselfertig ausgestattet</h3>
+                <p class="text-gray-400 text-sm">Labormöbel, Abzüge, Lüftung, Medien – Sie bekommen ein fertiges Labor, nicht eine leere Hülle.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warum Planexus -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
+            Planexus und München
+          </h2>
+          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+            <p>
+              München ist der größte Life-Science-Standort in Deutschland. Hier sitzen beide großen Forschungsgesellschaften – Max-Planck und Fraunhofer – sowie Dutzende Biotech-Unternehmen, Pharmafirmen und die beiden großen Universitätskliniken. Der Bedarf an Laborfläche ist entsprechend hoch.
+            </p>
+            <p>
+              Gleichzeitig ist München eine Stadt, in der Bauvorhaben besonders lange dauern. Hohe Bodenpreise, komplexe Genehmigungsverfahren, knappe Handwerkerkapazitäten. Ein Laborcontainer umgeht diese Engpässe. Er wird im Werk vorgefertigt, per Tieflader geliefert und per Kran aufgestellt. Das spart Zeit, Nerven und in vielen Fällen auch Geld.
+            </p>
+            <p>
+              Planexus ist Teil der <a href="/ueber-uns" class="text-primary font-medium hover:underline">Wesemann Holding</a> – einem der führenden Labormöbel-Hersteller in Deutschland. Wir bringen also nicht nur Erfahrung im Containerbau mit, sondern auch tiefes Verständnis für das, was in einem Labor passiert. Von der Abzugshaube bis zur Medienversorgung wissen wir, worauf es ankommt.
+            </p>
+            <p>
+              Unser Werk in Albstadt ist über die A8 in rund zwei Stunden erreichbar. Für Projektgespräche, Baustellenbesuche und die Aufstellung kommen wir selbstverständlich nach München. <a href="/team" class="text-primary font-medium hover:underline">Lernen Sie unser Team kennen →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-slate-50 border-y border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
+            Häufige Fragen zu Laborcontainern in München
+          </h2>
+          <p class="text-gray-600 text-lg mb-12">
+            Was uns Kunden aus München und Oberbayern am häufigsten fragen.
+          </p>
+
+          <div class="space-y-4">
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Was kostet ein Laborcontainer in München?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Die Kosten richten sich nach Größe, Ausstattung und Sicherheitsstufe. Ein Analyselabor liegt preislich deutlich unter einem BSL-3-Container mit Schleusen und Unterdrucksystem. Nennen Sie uns Ihr Vorhaben – wir geben Ihnen eine belastbare Einschätzung.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Wie lange dauert die Lieferung eines Laborcontainers nach München?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Von der Auftragserteilung bis zur schlüsselfertigen Übergabe vergehen in der Regel 8 bis 16 Wochen – abhängig von Komplexität und Ausstattung. Ein einfaches Labor geht schneller, ein BSL-2 oder BSL-3 Labor braucht entsprechend mehr Vorlauf.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Brauche ich in München eine Baugenehmigung für einen Laborcontainer?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Das kommt auf den Standort und die geplante Nutzungsdauer an. In Bayern gelten Laborcontainer oft als temporäre bauliche Anlagen und können verfahrensfrei aufgestellt werden. Wir klären das im Vorfeld mit den zuständigen Behörden für Sie.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Welche Labortypen kann Planexus im Container realisieren?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Grundsätzlich alle: Analytiklabore, mikrobiologische Labore, BSL-2 und BSL-3 Sicherheitslabore, Reinräume nach ISO-Klassifizierung, Prüflabore und QC-Labore. Jeder Container wird individuell auf den jeweiligen Einsatzzweck geplant.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Kann der Laborcontainer nach Projektende wieder abgebaut werden?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Ja, das ist einer der größten Vorteile. Der Container kann versetzt, an einen anderen Standort transportiert oder zurückgebaut werden. Nichts wird dauerhaft in den Boden betoniert.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Ist eine Besichtigung im Werk möglich?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Selbstverständlich. Unser Werk in Albstadt ist nach Terminvereinbarung jederzeit zugänglich. Dort sehen Sie Container in verschiedenen Fertigungsphasen und können sich direkt ein Bild von der Qualität machen.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-primary text-slate-900">
+      <div class="container mx-auto px-4 text-center max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Laborprojekt in München? Lassen Sie uns reden.</h2>
+        <p class="text-slate-700 text-lg mb-8">
+          Erzählen Sie uns, was Sie vorhaben. Wir melden uns in der Regel am gleichen Tag mit einer ersten Einschätzung.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt" class="bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors inline-flex items-center gap-2">
+            Projekt anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+4974357519700" class="bg-white text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-white/90 transition-colors inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
