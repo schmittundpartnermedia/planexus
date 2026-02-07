@@ -1,9 +1,11 @@
 ---
+import '../styles/global.css';
 import AdminPanel from '../components/AdminPanel';
 
 export const prerender = false;
 ---
 
+<!DOCTYPE html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
@@ -11,26 +13,9 @@ export const prerender = false;
     <title>Admin – Planexus GmbH</title>
     <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-      :root { --color-primary: #bbd700; }
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; }
-      .bg-primary { background-color: #bbd700; }
-      .text-primary { color: #bbd700; }
-      .bg-primary\/5 { background-color: rgba(187, 215, 0, 0.05); }
-      .bg-primary\/10 { background-color: rgba(187, 215, 0, 0.1); }
-      .border-primary { border-color: #bbd700; }
-      .border-primary\/30 { border-color: rgba(187, 215, 0, 0.3); }
-      .border-primary\/50 { border-color: rgba(187, 215, 0, 0.5); }
-      .hover\:bg-primary\/90:hover { background-color: rgba(187, 215, 0, 0.9); }
-      .focus\:border-primary:focus { border-color: #bbd700; }
-      .focus\:ring-primary\/20:focus { box-shadow: 0 0 0 3px rgba(187, 215, 0, 0.2); }
-      .hover\:underline:hover { text-decoration: underline; }
-      .hover\:bg-gray-50:hover { background-color: #f9fafb; }
-      .hover\:bg-red-50:hover { background-color: #fef2f2; }
-      .hover\:border-gray-200:hover { border-color: #e5e7eb; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <AdminPanel client:only="react" />
