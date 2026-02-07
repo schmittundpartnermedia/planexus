@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import sitemap from '@astrojs/sitemap';
 import node from '@astrojs/node';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -11,15 +10,6 @@ export default defineConfig({
   }),
   integrations: [
     react(),
-    sitemap({
-      filter: (page) => !page.includes('/admin'),
-      i18n: {
-        defaultLocale: 'de',
-        locales: {
-          de: 'de-DE',
-        },
-      },
-    }),
   ],
   vite: {
     plugins: [tailwindcss()],
