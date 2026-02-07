@@ -4,7 +4,7 @@
 
 This is a corporate website for Planexus GmbH, a German company specializing in laboratory containers (Laborcontainer) and modular laboratory construction (Modulbau). The site serves as a marketing and informational platform showcasing the company's services, team, and expertise in mobile laboratory solutions, BSL-2/BSL-3 labs, and smart lab integrations.
 
-The application uses Astro (SSG with Node adapter) for static site generation with React islands for interactive components. Deployed on Replit with plans for IONOS VPS deployment.
+The application uses Astro (SSG with Node adapter) for static site generation with React islands for interactive components. Deployed on IONOS VPS with PM2 process manager.
 
 ## User Preferences
 
@@ -99,8 +99,24 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 
 ### Build System
 - Development: `astro dev --port 5000 --host 0.0.0.0`
-- Production: `astro build` → `node dist/server/entry.mjs`
+- Production Build: `astro build` → `node server-start.mjs` (loads .env via dotenv)
 - Sitemap auto-generated via @astrojs/sitemap
+
+### IONOS VPS Deployment (LIVE)
+- Server: 82.165.27.244, Ubuntu, Nginx, PM2
+- App-Verzeichnis: `/var/www/app`
+- PM2 Startscript: `server-start.mjs` (lädt dotenv, dann dist/server/entry.mjs)
+- Alternativ: `ecosystem.config.cjs` für PM2
+- Server-Port: 5000 (Astro default via HOST/PORT env)
+- Nginx: proxy_pass auf localhost:5000
+- `.env` Datei auf Server mit: DATABASE_URL, ADMIN_PASSWORD, SMTP_PASS
+- Symlink nach Build: `ln -sf /var/www/app/attached_assets /var/www/app/dist/client/attached_assets`
+- Deployment-Befehl (komplett):
+  ```
+  cd /var/www/app && git pull origin main && npm install && npx astro build && ln -sf /var/www/app/attached_assets /var/www/app/dist/client/attached_assets && pm2 restart planexus
+  ```
+- Admin-Login: /admin, Passwort über ADMIN_PASSWORD in .env
+- WICHTIG: PM2 lädt .env NICHT automatisch – daher server-start.mjs mit dotenv
 
 ### SMTP Configuration
 - Host: smtp.ionos.de:465 (SSL)
