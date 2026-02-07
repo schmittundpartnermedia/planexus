@@ -27,6 +27,9 @@ export default defineConfig({
         '@assets': '/attached_assets',
       },
     },
+    server: {
+      allowedHosts: true,
+    },
   },
   server: {
     port: 5000,
