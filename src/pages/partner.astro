@@ -6,66 +6,77 @@ const partners = [
   {
     name: "Wesemann GmbH",
     description: "Spezialisiert auf hochwertige Laboreinrichtungen mit individuell angepassten Lösungen. Das Portfolio umfasst flexible und modulare Möbelsysteme sowie modernste Sicherheitskomponenten wie Laborabzüge und Schutzschränke nach aktuellen Normen.",
+    icon: "microscope",
     category: "Laboreinrichtung",
     url: "https://www.wesemann.com/"
   },
   {
     name: "Wesemann Reinraumtechnik GmbH",
     description: "Experte für maßgeschneiderte Reinraumsysteme als Komplettlösung. Von der Konzeption über Fertigung und Aufbau bis zur finalen Abnahme wird der gesamte Prozess aus einer Hand betreut, um individuelle Kundenanforderungen präzise zu erfüllen.",
+    icon: "shield",
     category: "Reinraumtechnik",
     url: "https://www.wesemann-reinraumtechnik.de/"
   },
   {
     name: "Abarcon GmbH",
     description: "Fokussiert auf innovative Arbeitsplatzsysteme für Labor und Industrie. Das Leistungsspektrum erstreckt sich von der Entwicklung über die Produktion bis zum Service von Personen- und Produktschutzsystemen mit höchsten Qualitätsstandards.",
+    icon: "users",
     category: "Arbeitsplatzsysteme",
     url: "https://www.abarcon.de/"
   },
   {
     name: "WS Funktions- und Reinraum GmbH",
     description: "Bietet ganzheitliche Lösungen für Reinräume und Funktionsräume. Die Leistungen umfassen Konzeption, Bau und Instandhaltung nach internationalen Standards wie ISO 14644 und GMP-Richtlinien mit Fokus auf Qualität und Nachhaltigkeit.",
+    icon: "building",
     category: "Funktionsräume",
     url: "https://www.ws-fr.de/"
   },
   {
     name: "Synergie Mobiliar GmbH",
     description: "Hersteller hochwertiger Möbel und innovativer Einrichtungskonzepte. Das Sortiment zeichnet sich durch robuste Materialqualität und ansprechendes Design aus, das funktionale Anforderungen mit ästhetischen Ansprüchen verbindet.",
+    icon: "wrench",
     category: "Mobiliar",
     url: "https://www.synergie-mobiliar.de/"
   },
   {
     name: "Mesycon GmbH",
     description: "Spezialist für hochreine Versorgungssysteme im Laborbereich. Das Angebot reicht von Reinstgas- und Reinstwassersystemen über Chemikalienversorgung bis hin zu Gaswarn- und Kryotechnik - inklusive Planung, Installation und Inbetriebnahme.",
+    icon: "flask",
     category: "Versorgungssysteme",
     url: "https://www.mesycon.com/"
   },
   {
     name: "Planexus GmbH",
     description: "Experte für Laborcontainer und modularen Laborbau. Mit innovativen Konzepten für mobile Laborlösungen, BSL-2/BSL-3 Sicherheitslabore und Smart Lab Integrationen bietet Planexus schlüsselfertige Lösungen für höchste Anforderungen.",
+    icon: "building",
     category: "Modulbau",
     url: "https://planexus.de/"
   },
   {
     name: "Wesemann Benelux B.V.",
     description: "Kompetenter Ansprechpartner für Laborprojekte in den Benelux-Ländern. Das erfahrene Team in Ede unterstützt bei Konfiguration, Lieferung, Montage und bietet darüber hinaus Wartungs- und Validierungsleistungen.",
+    icon: "globe",
     category: "Benelux",
     url: "https://www.wesemann-benelux.nl/"
   },
   {
     name: "Wesemann Schweiz AG",
     description: "Zentraler Partner für Laborlösungen in der Schweiz. Von der Erstberatung über Projektplanung bis zur Umsetzung, Montage und Wartung werden Kunden durch alle Projektphasen begleitet - funktional, sicher und normgerecht.",
+    icon: "globe",
     category: "Schweiz",
     url: "https://www.wesemann-ag.ch/"
   },
   {
     name: "HibLab Solutions, S.L.",
     description: "Innovativer Anbieter für ganzheitliche Laborentwicklung. Die industrialisierten Lösungen werden individuell auf Kundenanforderungen zugeschnitten und decken den kompletten Laborlebenszyklus ab - von der Planung bis zur schlüsselfertigen Übergabe.",
+    icon: "building",
     category: "Spanien",
     url: "https://hiblab.com/"
   },
   {
     name: "Wesemann Middle East",
     description: "Vertriebspartner für den Nahen Osten mit umfassendem Leistungsangebot. Von Labormöbeln über Reinraumlösungen bis zu Versorgungssystemen - Vertrieb, Installation und Wartung aus einer Hand für die gesamte Region.",
+    icon: "globe",
     category: "Naher Osten",
     url: "https://www.wesemann.com/Contact/International/EN_index_2002.html"
   }
@@ -132,7 +143,13 @@ const partners = [
 
               <div class="flex items-start gap-4 mb-4">
                 <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/10 transition-all shadow-inner">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                  {partner.icon === "microscope" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>}
+                  {partner.icon === "shield" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>}
+                  {partner.icon === "users" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
+                  {partner.icon === "building" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>}
+                  {partner.icon === "wrench" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>}
+                  {partner.icon === "flask" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>}
+                  {partner.icon === "globe" && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>}
                 </div>
                 <div>
                   <span class="inline-block px-2 py-0.5 text-xs font-bold text-primary bg-primary/10 rounded-full uppercase tracking-wide mb-1">{partner.category}</span>
