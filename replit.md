@@ -15,6 +15,21 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 
 ## Recent Changes
 
+### Admin-Bereich für Kontaktanfragen (February 2026)
+- PostgreSQL-Datenbank für Kontaktanfragen (contact_messages Tabelle)
+- Kontakt-API speichert jetzt IMMER in DB, SMTP ist optional/Bonus
+- Admin-Bereich unter /admin mit Passwort-Login (ADMIN_PASSWORD env var)
+- Token-basierte Auth mit DB-Sessions (admin_sessions Tabelle, 24h Ablauf)
+- Rate-Limiting: 5 Fehlversuche = 15 Min Sperre
+- Admin-Seite: noindex, nicht in Sitemap
+- Nachrichten lesen, als gelesen markieren, löschen, direkt per E-Mail antworten
+
+### Local SEO Städteseiten (February 2026)
+- 3 von 16 Städteseiten erstellt: Stuttgart, München, Berlin
+- Muster: laborcontainer-[stadt].astro
+- Jede Seite: 12+ interne Links, 4 Schema.org-Typen, 6 FAQs, einzigartiger Content
+- Verbleibend: 13 weitere Landeshauptstädte
+
 ### Astro Migration (COMPLETED - February 2026)
 - Migrated from React SPA (Vite + Express) to Astro SSG
 - 17+ pages fully migrated to .astro files
@@ -54,16 +69,24 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 │   │   │   ├── ausstattung.astro
 │   │   │   ├── beratung.astro
 │   │   │   └── smart-lab.astro
+│   │   ├── admin.astro (noindex, password-protected)
 │   │   └── api/
-│   │       └── contact.ts
+│   │       ├── contact.ts (saves to DB + tries SMTP)
+│   │       └── admin/
+│   │           ├── login.ts (token auth, rate-limiting)
+│   │           └── messages.ts (CRUD for contact messages)
 │   ├── components/       # React + Astro components
 │   │   ├── Navbar.tsx (React, client:load)
 │   │   ├── Footer.astro (static)
+│   │   ├── AdminPanel.tsx (React, client:only)
 │   │   ├── LiquidDistortion.tsx (React, client:load)
 │   │   ├── AnimatedGlobe.tsx (React, client:load)
 │   │   ├── Map.tsx (React, client:only="react")
 │   │   ├── ProjekteGallery.tsx (React, client:load)
 │   │   └── ContactForm.tsx (React, client:load)
+│   ├── lib/
+│   │   ├── db.ts (PostgreSQL connection via pg)
+│   │   └── schema.ts (Drizzle ORM schema)
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── styles/
