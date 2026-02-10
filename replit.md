@@ -25,6 +25,12 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 - Admin-Seite: noindex, nicht in Sitemap
 - Nachrichten lesen, als gelesen markieren, löschen, direkt per E-Mail antworten
 
+### 2 neue Blog-Beiträge (February 2026)
+- "Laborcontainer mieten oder kaufen?" – Ratgeber mit Kostenvergleich, Checkliste, FAQ, 6 FAQPage-Schema
+- "GMP-Reinraum im Container" – Pharma/Biotech Tiefeninhalt, GMP-Klassen, Qualifizierung, Kosten, FAQ
+- Beide: Schema.org (Article, BreadcrumbList, FAQPage), Canonical, 10+ interne Links
+- Sitemap.xml um 2 URLs erweitert, Magazin-Übersicht aktualisiert
+
 ### Local SEO Städteseiten (February 2026)
 - 3 von 16 Städteseiten erstellt: Stuttgart, München, Berlin
 - Muster: laborcontainer-[stadt].astro
