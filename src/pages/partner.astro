@@ -145,9 +145,9 @@ const partners = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {partners.map((partner) => (
             <a
-              href={partner.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={partner.url !== "#" ? partner.url : undefined}
+              target={partner.url !== "#" ? "_blank" : undefined}
+              rel={partner.url !== "#" ? "noopener noreferrer" : undefined}
               class="relative bg-white rounded-2xl p-8 transition-all duration-300 group cursor-pointer
                 border-2 border-gray-100 hover:border-primary/30
                 shadow-lg shadow-gray-100/50 hover:shadow-2xl hover:shadow-primary/10
