@@ -222,46 +222,56 @@ export function AnimatedGlobe() {
       <canvas ref={canvasRef} className="hidden md:block absolute inset-0 w-full h-full" />
 
       <div className="hidden md:block absolute inset-0 z-10">
-        <motion.div
-          className="absolute bg-white rounded-full shadow-xl shadow-primary/20 border-2 border-primary/40 flex items-center justify-center overflow-hidden"
+        <div
+          className="absolute"
           style={{
             left: `${CENTER.x}%`,
             top: `${CENTER.y}%`,
             transform: 'translate(-50%, -50%)',
-            width: '110px',
-            height: '110px'
           }}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
         >
-          <img
-            src="/attached_assets/Wesemann_Logo_1770839062818.png"
-            alt="Wesemann Laboreinrichtungen"
-            className="w-[80px] h-auto object-contain"
-          />
-        </motion.div>
+          <motion.div
+            className="bg-white rounded-full shadow-xl shadow-primary/20 border-2 border-primary/40 flex items-center justify-center overflow-hidden"
+            style={{
+              width: '110px',
+              height: '110px'
+            }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
+          >
+            <img
+              src="/attached_assets/Wesemann_Logo_1770839062818.png"
+              alt="Wesemann Laboreinrichtungen"
+              className="w-[80px] h-auto object-contain"
+            />
+          </motion.div>
+        </div>
 
         {companyNodes.map((company, i) => (
-          <motion.div
+          <div
             key={company.name}
-            className="absolute bg-white/95 backdrop-blur-sm rounded-xl shadow-md border border-white/60 flex items-center justify-center p-2.5 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300 cursor-default"
+            className="absolute"
             style={{
               left: `${company.x}%`,
               top: `${company.y}%`,
               transform: 'translate(-50%, -50%)',
             }}
-            initial={{ opacity: 0, scale: 0.3 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.15 + 0.06 * i, duration: 0.4, ease: "easeOut" }}
           >
-            <img
-              src={company.logo}
-              alt={company.name}
-              className="h-7 lg:h-9 w-auto max-w-[90px] lg:max-w-[110px] object-contain"
-              loading="eager"
-            />
-          </motion.div>
+            <motion.div
+              className="bg-white/95 backdrop-blur-sm rounded-xl shadow-md border border-white/60 flex items-center justify-center p-2.5 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300 cursor-default"
+              initial={{ opacity: 0, scale: 0.3 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.15 + 0.06 * i, duration: 0.4, ease: "easeOut" }}
+            >
+              <img
+                src={company.logo}
+                alt={company.name}
+                className="h-7 lg:h-9 w-auto max-w-[90px] lg:max-w-[110px] object-contain"
+                loading="eager"
+              />
+            </motion.div>
+          </div>
         ))}
       </div>
 
