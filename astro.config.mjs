@@ -17,6 +17,10 @@ export default defineConfig({
       alias: {
         '@assets': '/attached_assets',
       },
+      dedupe: ['react', 'react-dom'],
+    },
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
     },
     server: {
       allowedHosts: ['.replit.dev', '.janeway.replit.dev', '.repl.co'],
