@@ -1,52 +1,34 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-const regions = [
-  { 
-    name: "DEUTSCHLAND", 
-    x: 0.12, 
-    y: 0.45,
-    companies: [
-      { name: "wesemann", subname: "Reinraumtechnik", offsetX: -0.02, offsetY: -0.18 },
-      { name: "ABARCON", subname: "", offsetX: 0.10, offsetY: -0.14 },
-      { name: "WS", subname: "Funktions- und\nReinraum GmbH", offsetX: 0.18, offsetY: -0.06 },
-      { name: "MESYCON", subname: "GmbH", offsetX: 0.18, offsetY: 0.10 },
-      { name: "PLANEXUS", subname: "", offsetX: 0.08, offsetY: 0.18 },
-      { name: "SYNERGIE", subname: "Mobiliar GmbH", offsetX: -0.04, offsetY: 0.26 },
-    ]
-  },
-  { 
-    name: "SCHWEIZ", 
-    x: 0.68, 
-    y: 0.22,
-    companies: [
-      { name: "wesemann", subname: "Schweiz", offsetX: -0.10, offsetY: -0.10 },
-    ]
-  },
-  { 
-    name: "BENELUX", 
-    x: 0.30, 
-    y: 0.82,
-    companies: [
-      { name: "wesemann", subname: "BENELUX", offsetX: 0.12, offsetY: 0.04 },
-    ]
-  },
-  { 
-    name: "SPANIEN", 
-    x: 0.58, 
-    y: 0.85,
-    companies: [
-      { name: "HibLab", subname: "Solutions", offsetX: 0.08, offsetY: -0.10 },
-    ]
-  },
-  { 
-    name: "NAHER OSTEN", 
-    x: 0.72, 
-    y: 0.48,
-    companies: [
-      { name: "wesemann", subname: "Middle East", offsetX: 0.08, offsetY: 0.10 },
-    ]
-  },
+const CENTER = { x: 50, y: 50 };
+
+const regionHubs = [
+  { name: "DEUTSCHLAND", x: 24, y: 44 },
+  { name: "SCHWEIZ", x: 70, y: 22 },
+  { name: "BENELUX", x: 24, y: 80 },
+  { name: "SPANIEN", x: 56, y: 82 },
+  { name: "NAHER OSTEN", x: 78, y: 50 },
+];
+
+const companyNodes = [
+  { name: "Wesemann Reinraumtechnik", logo: "/attached_assets/wesemann-reinraumtechnik_1770839042056.png", x: 10, y: 22, region: "DEUTSCHLAND" },
+  { name: "Abarcon", logo: "/attached_assets/Abarcon_Logo_1770839042054.png", x: 24, y: 14, region: "DEUTSCHLAND" },
+  { name: "RPG Kunststoff", logo: "/attached_assets/Logo_RPG_Kuntstoff_1770839042055.png", x: 40, y: 16, region: "DEUTSCHLAND" },
+  { name: "WS Funktions- und Reinraum", logo: "/attached_assets/Logo_WS_Funktions_1770839062817.png", x: 42, y: 30, region: "DEUTSCHLAND" },
+  { name: "Mesycon", logo: "/attached_assets/Logo-Mesycon_283x62px_1770839042056.png", x: 40, y: 58, region: "DEUTSCHLAND" },
+  { name: "oneX", logo: "/attached_assets/oneX_logo_1770839042055.png", x: 6, y: 38, region: "DEUTSCHLAND" },
+  { name: "Planexus", logo: "/attached_assets/Planexus_Icon_1768324672124.png", x: 20, y: 66, region: "DEUTSCHLAND" },
+  { name: "Synergie Mobiliar", logo: "/attached_assets/Logo_SYNERGIE_1770839042055.png", x: 6, y: 62, region: "DEUTSCHLAND" },
+  { name: "Labco AG", logo: "/attached_assets/Labco_AG_Logo_1770839042055.png", x: 64, y: 12, region: "SCHWEIZ" },
+  { name: "Wesemann Benelux", logo: "/attached_assets/Logo_WS_Benelux_1770839042056.png", x: 32, y: 88, region: "BENELUX" },
+  { name: "HibLab Solutions", logo: "/attached_assets/HibLabSolutions_Logo_1770839042055.png", x: 62, y: 74, region: "SPANIEN" },
+  { name: "Wesemann Middle East", logo: "/attached_assets/Wesemann_Middle_East_Logo_1770839042055.png", x: 86, y: 40, region: "NAHER OSTEN" },
+];
+
+const allLogosForMobile = [
+  { name: "Wesemann", logo: "/attached_assets/Wesemann_Logo_1770839062818.png" },
+  ...companyNodes.map(c => ({ name: c.name, logo: c.logo })),
 ];
 
 export function AnimatedGlobe() {
@@ -55,7 +37,6 @@ export function AnimatedGlobe() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -63,88 +44,70 @@ export function AnimatedGlobe() {
     let time = 0;
 
     const resize = () => {
-      const rect = canvas.parentElement?.getBoundingClientRect();
-      if (rect) {
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-      }
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
     };
 
     resize();
     window.addEventListener("resize", resize);
 
     const draw = () => {
-      const centerX = canvas.width * 0.50;
-      const centerY = canvas.height * 0.50;
-      const scale = Math.min(canvas.width, canvas.height) / 1000;
-      const globeRadius = 130 * scale;
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+      const w = canvas.width;
+      const h = canvas.height;
+      const cX = (CENTER.x / 100) * w;
+      const cY = (CENTER.y / 100) * h;
+      const scale = Math.min(w, h) / 1000;
+      const globeRadius = 90 * scale;
       const rotation = time * 0.0002;
 
-      // Outer glow
+      ctx.clearRect(0, 0, w, h);
+
       ctx.beginPath();
-      ctx.arc(centerX, centerY, globeRadius + 60 * scale, 0, Math.PI * 2);
-      const outerGlow = ctx.createRadialGradient(
-        centerX, centerY, globeRadius,
-        centerX, centerY, globeRadius + 80 * scale
-      );
+      ctx.arc(cX, cY, globeRadius + 60 * scale, 0, Math.PI * 2);
+      const outerGlow = ctx.createRadialGradient(cX, cY, globeRadius, cX, cY, globeRadius + 80 * scale);
       outerGlow.addColorStop(0, "rgba(187, 215, 0, 0.15)");
       outerGlow.addColorStop(0.5, "rgba(187, 215, 0, 0.05)");
       outerGlow.addColorStop(1, "rgba(187, 215, 0, 0)");
       ctx.fillStyle = outerGlow;
       ctx.fill();
 
-      // Earth globe
-      const earthGradient = ctx.createRadialGradient(
-        centerX - globeRadius * 0.3, centerY - globeRadius * 0.3, 0,
-        centerX, centerY, globeRadius
-      );
-      earthGradient.addColorStop(0, "rgba(187, 215, 0, 0.4)");
-      earthGradient.addColorStop(0.4, "rgba(130, 180, 0, 0.28)");
-      earthGradient.addColorStop(0.7, "rgba(100, 150, 0, 0.18)");
-      earthGradient.addColorStop(1, "rgba(80, 120, 0, 0.1)");
-
+      const earthGrad = ctx.createRadialGradient(cX - globeRadius * 0.3, cY - globeRadius * 0.3, 0, cX, cY, globeRadius);
+      earthGrad.addColorStop(0, "rgba(187, 215, 0, 0.3)");
+      earthGrad.addColorStop(0.5, "rgba(130, 180, 0, 0.2)");
+      earthGrad.addColorStop(1, "rgba(80, 120, 0, 0.1)");
       ctx.beginPath();
-      ctx.arc(centerX, centerY, globeRadius, 0, Math.PI * 2);
-      ctx.fillStyle = earthGradient;
+      ctx.arc(cX, cY, globeRadius, 0, Math.PI * 2);
+      ctx.fillStyle = earthGrad;
       ctx.fill();
-      ctx.strokeStyle = "rgba(187, 215, 0, 0.5)";
+      ctx.strokeStyle = "rgba(187, 215, 0, 0.4)";
       ctx.lineWidth = 2;
       ctx.stroke();
 
-      // Continents
       ctx.save();
       ctx.beginPath();
-      ctx.arc(centerX, centerY, globeRadius - 2, 0, Math.PI * 2);
+      ctx.arc(cX, cY, globeRadius - 2, 0, Math.PI * 2);
       ctx.clip();
-
-      ctx.fillStyle = "rgba(187, 215, 0, 0.15)";
-      
-      const europeX = centerX + Math.cos(rotation * 0.5) * globeRadius * 0.05;
+      ctx.fillStyle = "rgba(187, 215, 0, 0.12)";
+      const europeX = cX + Math.cos(rotation * 0.5) * globeRadius * 0.05;
       ctx.beginPath();
-      ctx.ellipse(europeX - globeRadius * 0.1, centerY - globeRadius * 0.25, globeRadius * 0.2, globeRadius * 0.15, 0.1, 0, Math.PI * 2);
+      ctx.ellipse(europeX - globeRadius * 0.1, cY - globeRadius * 0.25, globeRadius * 0.2, globeRadius * 0.15, 0.1, 0, Math.PI * 2);
       ctx.fill();
-
       ctx.beginPath();
-      ctx.ellipse(europeX - globeRadius * 0.05, centerY + globeRadius * 0.2, globeRadius * 0.12, globeRadius * 0.25, -0.1, 0, Math.PI * 2);
+      ctx.ellipse(europeX - globeRadius * 0.05, cY + globeRadius * 0.2, globeRadius * 0.12, globeRadius * 0.25, -0.1, 0, Math.PI * 2);
       ctx.fill();
-
       ctx.beginPath();
-      ctx.ellipse(europeX + globeRadius * 0.25, centerY - globeRadius * 0.1, globeRadius * 0.25, globeRadius * 0.18, 0.2, 0, Math.PI * 2);
+      ctx.ellipse(europeX + globeRadius * 0.25, cY - globeRadius * 0.1, globeRadius * 0.25, globeRadius * 0.18, 0.2, 0, Math.PI * 2);
       ctx.fill();
-
       ctx.restore();
 
-      // Grid lines
       for (let i = 1; i < 5; i++) {
-        const latY = centerY + (i - 2.5) * globeRadius * 0.32;
-        const latR = Math.sqrt(globeRadius * globeRadius - Math.pow(latY - centerY, 2));
+        const latY = cY + (i - 2.5) * globeRadius * 0.32;
+        const latR = Math.sqrt(globeRadius * globeRadius - Math.pow(latY - cY, 2));
         if (latR > 0) {
           ctx.beginPath();
-          ctx.ellipse(centerX, latY, latR, latR * 0.05, 0, 0, Math.PI * 2);
-          ctx.strokeStyle = "rgba(187, 215, 0, 0.12)";
+          ctx.ellipse(cX, latY, latR, latR * 0.05, 0, 0, Math.PI * 2);
+          ctx.strokeStyle = "rgba(187, 215, 0, 0.1)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
@@ -155,168 +118,92 @@ export function AnimatedGlobe() {
         const lonScale = Math.cos(lon);
         if (Math.abs(lonScale) > 0.1) {
           ctx.beginPath();
-          ctx.ellipse(centerX, centerY, globeRadius * Math.abs(lonScale), globeRadius, 0, 0, Math.PI * 2);
-          ctx.strokeStyle = "rgba(187, 215, 0, 0.08)";
+          ctx.ellipse(cX, cY, globeRadius * Math.abs(lonScale), globeRadius, 0, 0, Math.PI * 2);
+          ctx.strokeStyle = "rgba(187, 215, 0, 0.06)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
       }
 
-      // Draw regions and their companies
-      let pulseIndex = 0;
-      
-      regions.forEach((region) => {
-        const regionX = region.x * canvas.width;
-        const regionY = region.y * canvas.height;
+      let pulseIdx = 0;
+      regionHubs.forEach(region => {
+        const rX = (region.x / 100) * w;
+        const rY = (region.y / 100) * h;
 
-        // Line from center to region
         ctx.beginPath();
-        ctx.moveTo(centerX, centerY);
-        ctx.lineTo(regionX, regionY);
-        ctx.strokeStyle = "rgba(187, 215, 0, 0.5)";
+        ctx.moveTo(cX, cY);
+        ctx.lineTo(rX, rY);
+        ctx.strokeStyle = "rgba(187, 215, 0, 0.45)";
         ctx.lineWidth = 2;
         ctx.stroke();
 
-        // Animated pulse on main line - outgoing
-        const mainPulsePhase = ((time * 0.0006 + pulseIndex * 0.2) % 1);
-        const mainPulseX = centerX + (regionX - centerX) * mainPulsePhase;
-        const mainPulseY = centerY + (regionY - centerY) * mainPulsePhase;
+        const mainPulse = ((time * 0.0006 + pulseIdx * 0.2) % 1);
+        const mpX = cX + (rX - cX) * mainPulse;
+        const mpY = cY + (rY - cY) * mainPulse;
         ctx.beginPath();
-        ctx.arc(mainPulseX, mainPulseY, 5 * scale, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(187, 215, 0, ${1 - mainPulsePhase * 0.5})`;
+        ctx.arc(mpX, mpY, 4 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(187, 215, 0, ${1 - mainPulse * 0.5})`;
         ctx.fill();
 
-        // Animated pulse on main line - returning
-        const returnPulsePhase = ((time * 0.0005 + pulseIndex * 0.3 + 0.5) % 1);
-        const returnPulseX = regionX + (centerX - regionX) * returnPulsePhase;
-        const returnPulseY = regionY + (centerY - regionY) * returnPulsePhase;
+        const retPulse = ((time * 0.0005 + pulseIdx * 0.3 + 0.5) % 1);
+        const rpX = rX + (cX - rX) * retPulse;
+        const rpY = rY + (cY - rY) * retPulse;
         ctx.beginPath();
-        ctx.arc(returnPulseX, returnPulseY, 4 * scale, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.8 - returnPulsePhase * 0.5})`;
+        ctx.arc(rpX, rpY, 3 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.7 - retPulse * 0.5})`;
         ctx.fill();
 
-        // Region node
         ctx.beginPath();
-        ctx.arc(regionX, regionY, 8 * scale, 0, Math.PI * 2);
+        ctx.arc(rX, rY, 6 * scale, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(187, 215, 0, 0.9)";
         ctx.fill();
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.8)";
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.5)";
+        ctx.lineWidth = 1.5;
         ctx.stroke();
 
-        // Region label
-        ctx.font = `bold ${13 * scale}px system-ui`;
-        ctx.fillStyle = "rgba(187, 215, 0, 1)";
-        ctx.textAlign = region.x < 0.5 ? "right" : "left";
-        const labelOffset = region.x < 0.5 ? -15 * scale : 15 * scale;
-        ctx.fillText(region.name, regionX + labelOffset, regionY + 4 * scale);
+        ctx.font = `bold ${10 * scale}px system-ui`;
+        ctx.fillStyle = "rgba(187, 215, 0, 0.85)";
+        ctx.textAlign = region.x < 50 ? "right" : "left";
+        const labelOff = region.x < 50 ? -12 * scale : 12 * scale;
+        ctx.fillText(region.name, rX + labelOff, rY + 4 * scale);
 
-        // Draw companies for this region
-        region.companies.forEach((company, compIndex) => {
-          const compX = regionX + company.offsetX * canvas.width;
-          const compY = regionY + company.offsetY * canvas.height;
-          const nodeSize = 52 * scale;
+        const regionCompanies = companyNodes.filter(c => c.region === region.name);
+        regionCompanies.forEach((comp, ci) => {
+          const compPxX = (comp.x / 100) * w;
+          const compPxY = (comp.y / 100) * h;
 
-          // Line from region to company
           ctx.beginPath();
-          ctx.moveTo(regionX, regionY);
-          ctx.lineTo(compX, compY);
-          ctx.strokeStyle = "rgba(187, 215, 0, 0.35)";
+          ctx.moveTo(rX, rY);
+          ctx.lineTo(compPxX, compPxY);
+          ctx.strokeStyle = "rgba(187, 215, 0, 0.25)";
           ctx.lineWidth = 1.5;
           ctx.stroke();
 
-          // Pulse on company line - outgoing
-          const compPulsePhase = ((time * 0.0008 + pulseIndex * 0.15 + compIndex * 0.25) % 1);
-          const compPulseX = regionX + (compX - regionX) * compPulsePhase;
-          const compPulseY = regionY + (compY - regionY) * compPulsePhase;
+          const cp = ((time * 0.0008 + pulseIdx * 0.15 + ci * 0.25) % 1);
+          const cpX = rX + (compPxX - rX) * cp;
+          const cpY = rY + (compPxY - rY) * cp;
           ctx.beginPath();
-          ctx.arc(compPulseX, compPulseY, 4 * scale, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(187, 215, 0, ${1 - compPulsePhase * 0.6})`;
+          ctx.arc(cpX, cpY, 3 * scale, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(187, 215, 0, ${0.9 - cp * 0.6})`;
           ctx.fill();
 
-          // Pulse on company line - returning
-          const compReturnPhase = ((time * 0.0007 + pulseIndex * 0.2 + compIndex * 0.35 + 0.5) % 1);
-          const compReturnX = compX + (regionX - compX) * compReturnPhase;
-          const compReturnY = compY + (regionY - compY) * compReturnPhase;
+          const crp = ((time * 0.0007 + pulseIdx * 0.2 + ci * 0.35 + 0.5) % 1);
+          const crpX = compPxX + (rX - compPxX) * crp;
+          const crpY = compPxY + (rY - compPxY) * crp;
           ctx.beginPath();
-          ctx.arc(compReturnX, compReturnY, 3 * scale, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, 255, 255, ${0.7 - compReturnPhase * 0.5})`;
+          ctx.arc(crpX, crpY, 2.5 * scale, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${0.6 - crp * 0.4})`;
           ctx.fill();
-
-          // Company node glow
-          ctx.beginPath();
-          ctx.arc(compX, compY, nodeSize + 5, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(187, 215, 0, 0.08)";
-          ctx.fill();
-
-          // Company node
-          ctx.beginPath();
-          ctx.arc(compX, compY, nodeSize, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(255, 255, 255, 0.97)";
-          ctx.fill();
-          ctx.strokeStyle = "rgba(187, 215, 0, 0.5)";
-          ctx.lineWidth = 2;
-          ctx.stroke();
-
-          // Small green dot on top
-          ctx.beginPath();
-          ctx.arc(compX, compY - nodeSize + 6 * scale, 4 * scale, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(187, 215, 0, 0.85)";
-          ctx.fill();
-
-          // Company text
-          ctx.fillStyle = "#2a5555";
-          ctx.textAlign = "center";
-          ctx.textBaseline = "middle";
-          
-          if (company.subname) {
-            ctx.font = `bold ${11 * scale}px system-ui`;
-            ctx.fillText(company.name, compX, compY - 5 * scale);
-            ctx.font = `${8 * scale}px system-ui`;
-            ctx.fillStyle = "#4a7575";
-            const sublines = company.subname.split("\n");
-            sublines.forEach((line, i) => {
-              ctx.fillText(line, compX, compY + (6 + i * 9) * scale);
-            });
-          } else {
-            ctx.font = `bold ${11 * scale}px system-ui`;
-            ctx.fillText(company.name, compX, compY);
-          }
         });
 
-        pulseIndex++;
+        pulseIdx++;
       });
 
-      // Center Wesemann logo
-      const centerSize = 60 * scale;
-      
+      const centerGlow = 55 * scale;
       ctx.beginPath();
-      ctx.arc(centerX, centerY, centerSize + 6, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(80, 120, 0, 0.25)";
+      ctx.arc(cX, cY, centerGlow + 8, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(187, 215, 0, 0.1)";
       ctx.fill();
-      
-      ctx.beginPath();
-      ctx.arc(centerX, centerY, centerSize, 0, Math.PI * 2);
-      const centerGrad = ctx.createRadialGradient(
-        centerX - centerSize * 0.3, centerY - centerSize * 0.3, 0,
-        centerX, centerY, centerSize
-      );
-      centerGrad.addColorStop(0, "#5a8a30");
-      centerGrad.addColorStop(1, "#3a6020");
-      ctx.fillStyle = centerGrad;
-      ctx.fill();
-      ctx.strokeStyle = "rgba(187, 215, 0, 0.6)";
-      ctx.lineWidth = 3;
-      ctx.stroke();
-
-      ctx.fillStyle = "#ffffff";
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.font = `bold ${14 * scale}px system-ui`;
-      ctx.fillText("wesemann", centerX, centerY - 4 * scale);
-      ctx.font = `${6 * scale}px system-ui`;
-      ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
-      ctx.fillText("LABOREINRICHTUNGEN", centerX, centerY + 10 * scale);
 
       time += 16;
       animationId = requestAnimationFrame(draw);
@@ -331,42 +218,92 @@ export function AnimatedGlobe() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen bg-transparent pl-[4%]">
-      <canvas ref={canvasRef} className="w-full h-full" />
-      
+    <div className="relative w-full h-screen overflow-hidden">
+      <canvas ref={canvasRef} className="hidden md:block absolute inset-0 w-full h-full" />
+
+      <div className="hidden md:block absolute inset-0 z-10">
+        <motion.div
+          className="absolute bg-white rounded-full shadow-xl shadow-primary/20 border-2 border-primary/40 flex items-center justify-center overflow-hidden"
+          style={{
+            left: `${CENTER.x}%`,
+            top: `${CENTER.y}%`,
+            transform: 'translate(-50%, -50%)',
+            width: '110px',
+            height: '110px'
+          }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
+        >
+          <img
+            src="/attached_assets/Wesemann_Logo_1770839062818.png"
+            alt="Wesemann Laboreinrichtungen"
+            className="w-[80px] h-auto object-contain"
+          />
+        </motion.div>
+
+        {companyNodes.map((company, i) => (
+          <motion.div
+            key={company.name}
+            className="absolute bg-white/95 backdrop-blur-sm rounded-xl shadow-md border border-white/60 flex items-center justify-center p-2.5 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300 cursor-default"
+            style={{
+              left: `${company.x}%`,
+              top: `${company.y}%`,
+              transform: 'translate(-50%, -50%)',
+            }}
+            initial={{ opacity: 0, scale: 0.3 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.15 + 0.06 * i, duration: 0.4, ease: "easeOut" }}
+          >
+            <img
+              src={company.logo}
+              alt={company.name}
+              className="h-7 lg:h-9 w-auto max-w-[90px] lg:max-w-[110px] object-contain"
+              loading="eager"
+            />
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="md:hidden flex flex-col items-center justify-center min-h-screen px-6 py-24 relative z-10">
+        <h2 className="text-3xl font-heading text-white/90 text-center mb-3">
+          <span className="font-light">Business</span>{" "}
+          <span className="font-bold text-primary">Ökosystem</span>
+        </h2>
+        <p className="text-gray-400 text-xs mb-10 uppercase tracking-[0.3em]">Wesemann Netzwerk</p>
+        <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
+          {allLogosForMobile.map((company, i) => (
+            <motion.div
+              key={company.name}
+              className="bg-white/95 backdrop-blur-sm rounded-xl p-3 flex items-center justify-center shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.05 * i, duration: 0.3 }}
+            >
+              <img
+                src={company.logo}
+                alt={company.name}
+                className="h-7 w-auto max-w-[100px] object-contain"
+                loading="eager"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="absolute top-8 left-8 text-left"
+        className="hidden md:block absolute top-8 left-8 z-20"
       >
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white/90">
-          <span className="font-light">Business</span> <span className="font-bold text-primary">Ökosystem</span>
+          <span className="font-light">Business</span>{" "}
+          <span className="font-bold text-primary">Ökosystem</span>
         </h2>
         <p className="text-gray-500 text-xs mt-2 uppercase tracking-[0.35em]">
           Wesemann Netzwerk
         </p>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.8 }}
-        className="absolute top-8 right-8 text-right hidden md:block"
-      >
-        <div className="space-y-1 text-[12px] text-gray-400 leading-relaxed font-medium">
-          <p>Wesemann GmbH</p>
-          <p>Abarcon GmbH</p>
-          <p>Wesemann Reinraumtechnik GmbH</p>
-          <p>Mesycon GmbH</p>
-          <p>Synergie Mobiliar GmbH</p>
-          <p>WS Funktions- und Reinraum GmbH</p>
-          <p>Planexus GmbH</p>
-          <p>Wesemann Benelux B.V.</p>
-          <p>Wesemann Schweiz AG</p>
-          <p>HibLab Solutions, S.L.</p>
-          <p>Wesemann Middle East</p>
-        </div>
       </motion.div>
     </div>
   );
