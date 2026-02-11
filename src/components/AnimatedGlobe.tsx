@@ -4,26 +4,26 @@ import { motion } from "framer-motion";
 const CENTER = { x: 50, y: 50 };
 
 const regionHubs = [
-  { name: "DEUTSCHLAND", x: 24, y: 44 },
-  { name: "SCHWEIZ", x: 70, y: 22 },
-  { name: "BENELUX", x: 24, y: 80 },
-  { name: "SPANIEN", x: 56, y: 82 },
-  { name: "NAHER OSTEN", x: 78, y: 50 },
+  { name: "DEUTSCHLAND", x: 25, y: 28 },
+  { name: "SCHWEIZ", x: 76, y: 20 },
+  { name: "BENELUX", x: 20, y: 78 },
+  { name: "SPANIEN", x: 66, y: 82 },
+  { name: "NAHER OSTEN", x: 84, y: 50 },
 ];
 
 const companyNodes = [
-  { name: "Wesemann Reinraumtechnik", logo: "/attached_assets/wesemann-reinraumtechnik_1770839042056.png", x: 10, y: 22, region: "DEUTSCHLAND" },
-  { name: "Abarcon", logo: "/attached_assets/Abarcon_Logo_1770839042054.png", x: 24, y: 14, region: "DEUTSCHLAND" },
-  { name: "RPG Kunststoff", logo: "/attached_assets/Logo_RPG_Kuntstoff_1770839042055.png", x: 40, y: 16, region: "DEUTSCHLAND" },
-  { name: "WS Funktions- und Reinraum", logo: "/attached_assets/Logo_WS_Funktions_1770839062817.png", x: 42, y: 30, region: "DEUTSCHLAND" },
-  { name: "Mesycon", logo: "/attached_assets/Logo-Mesycon_283x62px_1770839042056.png", x: 40, y: 58, region: "DEUTSCHLAND" },
-  { name: "oneX", logo: "/attached_assets/oneX_logo_1770839042055.png", x: 6, y: 38, region: "DEUTSCHLAND" },
-  { name: "Planexus", logo: "/attached_assets/Planexus_Icon_1768324672124.png", x: 20, y: 66, region: "DEUTSCHLAND" },
-  { name: "Synergie Mobiliar", logo: "/attached_assets/Logo_SYNERGIE_1770839042055.png", x: 6, y: 62, region: "DEUTSCHLAND" },
-  { name: "Labco AG", logo: "/attached_assets/Labco_AG_Logo_1770839042055.png", x: 64, y: 12, region: "SCHWEIZ" },
-  { name: "Wesemann Benelux", logo: "/attached_assets/Logo_WS_Benelux_1770839042056.png", x: 32, y: 88, region: "BENELUX" },
-  { name: "HibLab Solutions", logo: "/attached_assets/HibLabSolutions_Logo_1770839042055.png", x: 62, y: 74, region: "SPANIEN" },
-  { name: "Wesemann Middle East", logo: "/attached_assets/Wesemann_Middle_East_Logo_1770839042055.png", x: 86, y: 40, region: "NAHER OSTEN" },
+  { name: "Wesemann Reinraumtechnik", logo: "/attached_assets/wesemann-reinraumtechnik_1770839042056.png", x: 8, y: 12, region: "DEUTSCHLAND" },
+  { name: "Abarcon", logo: "/attached_assets/Abarcon_Logo_1770839042054.png", x: 25, y: 8, region: "DEUTSCHLAND" },
+  { name: "RPG Kunststoff", logo: "/attached_assets/Logo_RPG_Kuntstoff_1770839042055.png", x: 40, y: 10, region: "DEUTSCHLAND" },
+  { name: "WS Funktions- und Reinraum", logo: "/attached_assets/Logo_WS_Funktions_1770839062817.png", x: 42, y: 26, region: "DEUTSCHLAND" },
+  { name: "Mesycon", logo: "/attached_assets/Logo-Mesycon_283x62px_1770839042056.png", x: 8, y: 28, region: "DEUTSCHLAND" },
+  { name: "oneX", logo: "/attached_assets/oneX_logo_1770839042055.png", x: 8, y: 42, region: "DEUTSCHLAND" },
+  { name: "Planexus", logo: "/attached_assets/Planexus_Icon_1768324672124.png", x: 22, y: 46, region: "DEUTSCHLAND" },
+  { name: "Synergie Mobiliar", logo: "/attached_assets/Logo_SYNERGIE_1770839042055.png", x: 8, y: 56, region: "DEUTSCHLAND" },
+  { name: "Labco AG", logo: "/attached_assets/Labco_AG_Logo_1770839042055.png", x: 78, y: 8, region: "SCHWEIZ" },
+  { name: "Wesemann Benelux", logo: "/attached_assets/Logo_WS_Benelux_1770839042056.png", x: 10, y: 88, region: "BENELUX" },
+  { name: "HibLab Solutions", logo: "/attached_assets/HibLabSolutions_Logo_1770839042055.png", x: 60, y: 92, region: "SPANIEN" },
+  { name: "Wesemann Middle East", logo: "/attached_assets/Wesemann_Middle_East_Logo_1770839042055.png", x: 92, y: 40, region: "NAHER OSTEN" },
 ];
 
 const allLogosForMobile = [
