@@ -201,7 +201,8 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-b border-gray-100 overflow-hidden shadow-xl"
+            className="lg:hidden bg-white border-b border-gray-100 overflow-y-auto shadow-xl"
+            style={{ maxHeight: 'calc(100vh - 5rem)' }}
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-2">
               <a href="/" className={cn("text-left text-lg font-medium py-3 border-b border-gray-50", location === "/" ? "text-primary" : "text-slate-700")}>
