@@ -20,7 +20,7 @@ const companyNodes = [
   { name: "oneX", logo: "/attached_assets/oneX_logo_1770839042055.png", x: 6, y: 38, region: "DEUTSCHLAND" },
   { name: "Planexus", logo: "/attached_assets/Planexus_Icon_1768324672124.png", x: 20, y: 66, region: "DEUTSCHLAND" },
   { name: "Synergie Mobiliar", logo: "/attached_assets/Logo_SYNERGIE_1770839042055.png", x: 6, y: 62, region: "DEUTSCHLAND" },
-  { name: "Labco AG", logo: "/attached_assets/Labco_AG_Logo_1770839042055.png", x: 64, y: 12, region: "SCHWEIZ" },
+  { name: "Wesemann Schweiz", logo: "/attached_assets/Wesemann_Logo_1770839062818.png", x: 64, y: 12, region: "SCHWEIZ" },
   { name: "Wesemann Benelux", logo: "/attached_assets/Logo_WS_Benelux_1770839042056.png", x: 32, y: 88, region: "BENELUX" },
   { name: "HibLab Solutions", logo: "/attached_assets/HibLabSolutions_Logo_1770839042055.png", x: 62, y: 74, region: "SPANIEN" },
   { name: "Wesemann Middle East", logo: "/attached_assets/Wesemann_Middle_East_Logo_1770839042055.png", x: 86, y: 40, region: "NAHER OSTEN" },
