@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://www.planexus.de',
+  trailingSlash: 'never',
   adapter: node({
     mode: 'standalone',
   }),
