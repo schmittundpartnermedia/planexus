@@ -115,12 +115,14 @@ Für branchenspezifische Suchen wie „Laborcontainer Pharma" oder „Container-
 ### Ziel
 Informational Keywords abdecken, die kaufbereite Zielgruppen in der Recherche-Phase erreichen.
 
-### Bereits erstellt (5 Artikel)
+### Bereits erstellt (7 Artikel)
 - [x] Innovation im Modulbau: Die Zukunft des mobilen Labors
 - [x] Nachhaltigkeit im Laborbau: Energieeffizienz trifft High-Tech
 - [x] BSL-2 und BSL-3 im Container: Geht das?
 - [x] Laborcontainer mieten oder kaufen?
 - [x] GMP-Reinraum im Container
+- [x] Planexus auf der Analytica 2026
+- [x] Von der Idee bis zur Übergabe – Laborcontainer-Projektablauf
 
 ### Geplante Themen (Recherche-basiert, nach Suchvolumen)
 - Laborcontainer Kosten (Preise, Kalkulation, Faktoren)
