@@ -25,6 +25,9 @@ export default defineConfig({
     },
     server: {
       allowedHosts: ['.replit.dev', '.janeway.replit.dev', '.repl.co'],
+      watch: {
+        ignored: ['**/.local/**', '**/node_modules/**', '**/.git/**'],
+      },
     },
   },
   server: {
