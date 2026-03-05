@@ -36,20 +36,21 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 - Alle: Schema.org (Article, BreadcrumbList, FAQPage), Canonical, 10+ interne Links
 - Sitemap.xml aktualisiert, Magazin-Übersicht aktualisiert
 
-### SEO-Audit Ergebnisse (gespeichert für spätere Umsetzung, February 2026)
-- Title-Tags kürzen (10 Seiten, max 60 Zeichen)
-- Meta-Descriptions kürzen (8 Seiten, max 155 Zeichen)
+### SEO-Audit Fixes (March 2026 - UMGESETZT)
+- ✅ Title-Tags gekürzt (9 Seiten, alle ≤60 Zeichen mit Suffix)
+- ✅ Meta-Descriptions gekürzt (8 Seiten, alle ≤155 Zeichen mit CTA)
+- ✅ H1 auf Partner-Seite ergänzt
+- ✅ Interne Links auf Über-uns, Kontakt, Projekte, Partner (je 5-7 Links)
+- ✅ robots.txt: `/admin` statt `/admin/`
+- ✅ 404-Seite: HTTP Status Code 404 korrekt gesetzt
+- ✅ WebSite-Schema mit SearchAction im Layout
+
+### SEO-Audit (verbleibend für spätere Umsetzung)
 - Alt-Texte für alle Bilder ergänzen
-- H1 auf Partner-Seite ergänzen
-- Interne Links auf Über-uns/Kontakt/Projekte/Partner
-- robots.txt: `/admin` statt `/admin/`
-- 404-Seite: HTTP Status Code 404 setzen
 - Breadcrumbs auf Hauptseiten ergänzen
-- WebSite-Schema mit SearchAction im Layout
 - Nginx Trailing-Slash-Redirect
 
 ### Blog-Vorschläge (gespeichert für spätere Umsetzung)
-- Vorschlag 2: „Klimatisierung im Laborcontainer – Temperatur, Lüftung & Normen" (DIN 1946-7, TRGS 526, HEPA, Energieeffizienz)
 - Vorschlag 3: „Laborcontainer Ausstattung – Die komplette Checkliste von A bis Z" (Labormöbel, Medien, Sicherheit, Normen)
 
 ### Local SEO Städteseiten (February 2026)

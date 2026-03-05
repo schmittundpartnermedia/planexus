@@ -117,6 +117,21 @@ const ogImageUrl = ogImage
       "email": "info@planexus.de"
     })} />
 
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Planexus GmbH",
+      "url": siteUrl,
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `${siteUrl}/magazin?q={search_term_string}`
+        },
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 
     <slot name="head" />
