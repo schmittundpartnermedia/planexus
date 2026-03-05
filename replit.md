@@ -28,10 +28,11 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 - Admin-Seite: noindex, nicht in Sitemap
 - Nachrichten lesen, als gelesen markieren, löschen, direkt per E-Mail antworten
 
-### 3 neue Blog-Beiträge (February 2026)
+### 4 neue Blog-Beiträge (February/March 2026)
 - "Laborcontainer mieten oder kaufen?" – Ratgeber mit Kostenvergleich, Checkliste, FAQ, 6 FAQPage-Schema
 - "GMP-Reinraum im Container" – Pharma/Biotech Tiefeninhalt, GMP-Klassen, Qualifizierung, Kosten, FAQ
 - "Laborcontainer Genehmigung – Baurecht, Vorschriften & Praxisleitfaden" – 16 LBOs, Sonderfälle Labor, Bauvoranfrage vs. Bauantrag, Checkliste, 7 häufigste Fehler, 6 FAQs
+- "Klimatisierung im Laborcontainer – Temperatur, Lüftung & Normen" – DIN 1946-7, TRGS 526, Luftwechselraten, HEPA-Filtration, Unterdruckkonzepte, Energieeffizienz, Wartungsintervalle, Praxisbeispiel, 6 FAQs
 - Alle: Schema.org (Article, BreadcrumbList, FAQPage), Canonical, 10+ interne Links
 - Sitemap.xml aktualisiert, Magazin-Übersicht aktualisiert
 

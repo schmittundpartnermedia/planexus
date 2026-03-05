@@ -115,7 +115,7 @@ Für branchenspezifische Suchen wie „Laborcontainer Pharma" oder „Container-
 ### Ziel
 Informational Keywords abdecken, die kaufbereite Zielgruppen in der Recherche-Phase erreichen.
 
-### Bereits erstellt (8 Artikel)
+### Bereits erstellt (9 Artikel)
 - [x] Innovation im Modulbau: Die Zukunft des mobilen Labors
 - [x] Nachhaltigkeit im Laborbau: Energieeffizienz trifft High-Tech
 - [x] BSL-2 und BSL-3 im Container: Geht das?
@@ -124,6 +124,7 @@ Informational Keywords abdecken, die kaufbereite Zielgruppen in der Recherche-Ph
 - [x] Planexus auf der Analytica 2026
 - [x] Von der Idee bis zur Übergabe – Laborcontainer-Projektablauf
 - [x] Laborcontainer Genehmigung – Baurecht, Vorschriften & Praxisleitfaden
+- [x] Klimatisierung im Laborcontainer – Temperatur, Lüftung & Normen
 
 ### Geplante Themen (Recherche-basiert, nach Suchvolumen)
 - Laborcontainer Kosten (Preise, Kalkulation, Faktoren)
