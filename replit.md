@@ -28,7 +28,8 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 - Admin-Seite: noindex, nicht in Sitemap
 - Nachrichten lesen, als gelesen markieren, löschen, direkt per E-Mail antworten
 
-### 4 neue Blog-Beiträge (February/March 2026)
+### 5 neue Blog-Beiträge (February/March 2026)
+- "Laborcontainer Ausstattung – Die komplette Checkliste von A bis Z" – 13 Kapitel, 7 Ausstattungsbereiche, 6 FAQs, interaktive Checkliste, 7 Tabellen, Praxisbeispiel, Top-7-Fehler, 12 Normen, DACH-Besonderheiten
 - "Laborcontainer mieten oder kaufen?" – Ratgeber mit Kostenvergleich, Checkliste, FAQ, 6 FAQPage-Schema
 - "GMP-Reinraum im Container" – Pharma/Biotech Tiefeninhalt, GMP-Klassen, Qualifizierung, Kosten, FAQ
 - "Laborcontainer Genehmigung – Baurecht, Vorschriften & Praxisleitfaden" – 16 LBOs, Sonderfälle Labor, Bauvoranfrage vs. Bauantrag, Checkliste, 7 häufigste Fehler, 6 FAQs
@@ -51,7 +52,8 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 - Nginx Trailing-Slash-Redirect
 
 ### Blog-Vorschläge (gespeichert für spätere Umsetzung)
-- Vorschlag 3: „Laborcontainer Ausstattung – Die komplette Checkliste von A bis Z" (Labormöbel, Medien, Sicherheit, Normen)
+- Vorschlag 2: „Laborcontainer Kosten – Was kostet ein mobiles Labor wirklich?" (Kostenfaktoren, Container vs. Massivbau, Fördermöglichkeiten, ROI)
+- Vorschlag 3: „Laborcontainer Sicherheit – Brandschutz, Gefahrstoffe & Arbeitsschutz" (TRGS 510, Brandschutz, Arbeitsschutzverordnung, Notfallkonzepte)
 
 ### Local SEO Städteseiten (February 2026)
 - 3 von 16 Städteseiten erstellt: Stuttgart, München, Berlin
