@@ -1,91 +1,414 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/Footer.astro';
 ---
 
 <Layout
-  title="LABtoGO – Mobiles Plug & Play Labor"
-  description="LABtoGO von Planexus: Das mobile Plug & Play Labor im 20ft Container. 3D-Ansicht, Innenrundgang und alle technischen Daten. Jetzt entdecken."
+  title="LABtoGO – Der Laborcontainer 2.0 | Planexus"
+  description="LABtoGO von Planexus: Der standardisierte Plug & Play Laborcontainer. 100% vorgefertigt, sofort einsatzbereit. 3D-Modell, Innenrundgang & alle Fakten."
   canonical="/laborcontainer/lab-to-go"
-  ogImage="/images/blog-laborcontainer-ausstattung.jpg"
+  ogImage="/images/labtogo-logo.png"
 >
-  <div class="min-h-screen bg-[#13161c]">
 
-    <section id="hero-3d" class="relative w-full" style="height:100vh;">
-      <canvas id="c" class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing" style="z-index:1;"></canvas>
+  <section id="hero-3d" class="relative w-full bg-[#13161c]" style="height:100vh;">
+    <canvas id="c" class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing" style="z-index:1;"></canvas>
 
-      <div id="hero-overlay" class="absolute inset-0 z-10 pointer-events-none">
-        <div class="absolute top-24 left-0 right-0 flex flex-col items-center gap-4" id="headline">
-          <img src="/images/labtogo-logo.png" alt="LABtoGO Logo" class="h-14 md:h-20 w-auto" />
-          <p class="text-[11px] text-[#7a8fa8] tracking-[3px] uppercase">Plug & Play Labor · Sofort einsatzbereit · planexus.de</p>
+    <div id="hero-overlay" class="absolute inset-0 z-10 pointer-events-none">
+      <div class="absolute top-24 left-0 right-0 flex flex-col items-center gap-4" id="headline">
+        <img src="/images/labtogo-logo.png" alt="LABtoGO – Der Laborcontainer 2.0 von Planexus" class="h-14 md:h-20 w-auto" />
+        <p class="text-[11px] text-[#7a8fa8] tracking-[3px] uppercase">Der Laborcontainer 2.0 · 100% Plug & Play · planexus.de</p>
+      </div>
+
+      <button id="cta-btn" class="pointer-events-auto absolute left-1/2 -translate-x-1/2 bottom-28 md:bottom-32 flex items-center gap-3 bg-[#297a38] hover:bg-[#38a049] text-white font-semibold px-7 py-4 text-[11px] tracking-[3px] uppercase transition-all" style="clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));font-family:'Barlow Condensed',sans-serif;">
+        <div class="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[9px] border-l-white shrink-0"></div>
+        Innenansicht erleben
+      </button>
+
+      <div id="controls" class="pointer-events-auto absolute right-7 bottom-10 flex gap-3 items-center transition-opacity duration-500">
+        <button class="text-[10px] tracking-[2px] uppercase text-[#7a8fa8] bg-[rgba(19,22,28,0.8)] backdrop-blur-sm border border-[rgba(122,143,168,0.16)] px-4 py-2 cursor-pointer hover:text-white hover:border-[rgba(126,211,33,0.35)] transition-all" id="btn-reset" style="font-family:'Barlow Condensed',sans-serif;">Reset</button>
+        <span class="text-[10px] tracking-[1.5px] text-[rgba(122,143,168,0.38)] uppercase hidden md:inline">Drag · Scroll</span>
+        <button class="text-[10px] tracking-[2px] uppercase bg-[rgba(19,22,28,0.8)] backdrop-blur-sm border border-[rgba(126,211,33,0.18)] px-4 py-2 cursor-pointer hover:text-white transition-all" id="btn-auto" style="font-family:'Barlow Condensed',sans-serif;color:rgba(126,211,33,.65);">Auto &bull;</button>
+      </div>
+
+      <div id="specs" class="absolute top-1/2 right-7 -translate-y-1/2 flex-col gap-2 transition-opacity duration-500 hidden md:flex">
+        <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+          <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Typ <strong class="text-[#7a8fa8] font-normal">LABtoGO 2.0</strong>
         </div>
+        <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+          <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Außenlänge <strong class="text-[#7a8fa8] font-normal">9.500 mm</strong>
+        </div>
+        <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+          <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Außenbreite <strong class="text-[#7a8fa8] font-normal">3.000 mm</strong>
+        </div>
+        <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+          <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Außenhöhe <strong class="text-[#7a8fa8] font-normal">3.400 mm</strong>
+        </div>
+        <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+          <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Labortiefe <strong class="text-[#7a8fa8] font-normal">&gt; 6.200 mm</strong>
+        </div>
+        <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+          <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Raumhöhe <strong class="text-[#7a8fa8] font-normal">2.750 mm</strong>
+        </div>
+        <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+          <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Glasfront <strong class="text-[#7a8fa8] font-normal">Vollverglast</strong>
+        </div>
+        <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+          <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Lackierung <strong class="text-[#7a8fa8] font-normal">RAL 7016 Anthrazit</strong>
+        </div>
+      </div>
+    </div>
 
-        <button id="cta-btn" class="pointer-events-auto absolute left-1/2 -translate-x-1/2 bottom-28 md:bottom-32 flex items-center gap-3 bg-[#297a38] hover:bg-[#38a049] text-white font-semibold px-7 py-4 text-[11px] tracking-[3px] uppercase transition-all" style="clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));font-family:'Barlow Condensed',sans-serif;">
-          <div class="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[9px] border-l-white shrink-0"></div>
-          Innenansicht erleben
+    <div class="cm fixed z-20 w-6 h-6 pointer-events-none top-[62px] left-7 border-t border-l border-[rgba(126,211,33,0.35)]"></div>
+    <div class="cm fixed z-20 w-6 h-6 pointer-events-none bottom-8 right-7 border-b border-r border-[rgba(126,211,33,0.35)]"></div>
+
+    <div id="vign" class="fixed inset-0 z-[25] pointer-events-none opacity-0 transition-opacity duration-400" style="background:radial-gradient(ellipse at center,transparent 0%,#000 100%);"></div>
+
+    <div id="vid-ov" class="fixed inset-0 z-[30] bg-black flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-600">
+      <div id="vid-wrap" class="w-[min(90vw,1080px)] bg-black border border-[rgba(126,211,33,0.35)] overflow-hidden scale-[0.93] transition-transform duration-600" style="aspect-ratio:16/9;">
+        <video id="lab-video" class="w-full h-full object-cover" muted playsinline preload="auto">
+          <source src="/videos/laborcontainer-innenansicht.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div id="scrub-bar" class="w-[min(90vw,1080px)] mt-3 cursor-pointer">
+        <div class="relative h-1 bg-[rgba(122,143,168,0.2)] rounded-full overflow-hidden">
+          <div id="scrub-progress" class="absolute inset-y-0 left-0 bg-[#bbd700] rounded-full" style="width:0%;"></div>
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <div class="flex items-center gap-3">
+            <button id="play-pause" class="text-[10px] tracking-[2px] uppercase text-[#7a8fa8] hover:text-white transition-colors" style="font-family:'Barlow Condensed',sans-serif;">&#9654; Abspielen</button>
+            <span id="time-display" class="text-[10px] tracking-[2px] text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">0:00 / 0:00</span>
+          </div>
+          <div class="text-[11px] tracking-[3px] uppercase text-[#7a8fa8] hidden md:block" style="font-family:'Barlow Condensed',sans-serif;">
+            <strong class="text-white">Planexus</strong> — LABtoGO Innenansicht
+          </div>
+        </div>
+      </div>
+      <div class="w-[min(90vw,1080px)] flex items-center justify-between mt-4">
+        <p class="text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)] hidden md:block" style="font-family:'Barlow Condensed',sans-serif;">Ziehen Sie über das Video oder den Regler</p>
+        <button id="close-btn" class="text-[10px] tracking-[3px] uppercase text-[#7a8fa8] bg-transparent border border-[rgba(122,143,168,0.2)] px-5 py-2 cursor-pointer hover:text-white hover:border-[#bbd700] transition-all flex gap-2 items-center ml-auto" style="font-family:'Barlow Condensed',sans-serif;">
+          &#10005; Zurück zum Modell
         </button>
+      </div>
+    </div>
+  </section>
 
-        <div id="controls" class="pointer-events-auto absolute right-7 bottom-10 flex gap-3 items-center transition-opacity duration-500">
-          <button class="ctrl text-[10px] tracking-[2px] uppercase text-[#7a8fa8] bg-[rgba(19,22,28,0.8)] backdrop-blur-sm border border-[rgba(122,143,168,0.16)] px-4 py-2 cursor-pointer hover:text-white hover:border-[rgba(126,211,33,0.35)] transition-all" id="btn-reset" style="font-family:'Barlow Condensed',sans-serif;">Reset</button>
-          <span class="text-[10px] tracking-[1.5px] text-[rgba(122,143,168,0.38)] uppercase">Drag · Scroll</span>
-          <button class="ctrl text-[10px] tracking-[2px] uppercase bg-[rgba(19,22,28,0.8)] backdrop-blur-sm border border-[rgba(126,211,33,0.18)] px-4 py-2 cursor-pointer hover:text-white transition-all" id="btn-auto" style="font-family:'Barlow Condensed',sans-serif;color:rgba(126,211,33,.65);">Auto ●</button>
+  <section class="bg-white py-20 md:py-28">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-16">
+        <p class="text-[#bbd700] font-semibold text-sm tracking-widest uppercase mb-4">Der Laborcontainer 2.0</p>
+        <h1 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+          Ein normaler Laborcontainer passt<br class="hidden md:block" /> <span class="text-[#bbd700]">in unseren rein.</span>
+        </h1>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          Herkömmliche Laborcontainer basieren auf Standard-Containermaßen — klein, beengt, voller Kompromisse. 
+          Der LABtoGO von Planexus ist so groß, dass ein konventioneller Laborcontainer komplett hineinpassen würde. 
+          Das Ergebnis: echte Labortiefe, echte Raumhöhe, echtes Arbeiten.
+        </p>
+      </div>
+
+      <div class="relative bg-slate-50 rounded-2xl p-8 md:p-12 mb-16">
+        <h2 class="text-xl font-bold text-slate-900 mb-8 text-center">Größenvergleich: Standard vs. LABtoGO</h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="bg-white rounded-xl p-8 border border-slate-200 relative">
+            <div class="absolute top-4 right-4 bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Standard</div>
+            <div class="flex items-end gap-2 mb-6 h-32">
+              <div class="bg-slate-300 rounded" style="width:60%;height:72%;"></div>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-3">Konventioneller Laborcontainer</h3>
+            <div class="space-y-2 text-sm text-slate-600">
+              <div class="flex justify-between border-b border-slate-100 pb-1">
+                <span>Außenlänge</span><span class="font-semibold text-slate-800">6.050 mm</span>
+              </div>
+              <div class="flex justify-between border-b border-slate-100 pb-1">
+                <span>Außenbreite</span><span class="font-semibold text-slate-800">3.000 mm</span>
+              </div>
+              <div class="flex justify-between border-b border-slate-100 pb-1">
+                <span>Außenhöhe</span><span class="font-semibold text-slate-800">3.050 mm</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Raumhöhe innen</span><span class="font-semibold text-slate-800">~ 2.400 mm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 border-2 border-[#bbd700] relative shadow-lg">
+            <div class="absolute top-4 right-4 bg-[#bbd700] text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">LABtoGO</div>
+            <div class="flex items-end gap-2 mb-6 h-32">
+              <div class="bg-[#bbd700]/20 border-2 border-[#bbd700] rounded relative" style="width:95%;height:100%;">
+                <div class="absolute bottom-1 left-1 bg-slate-200 rounded opacity-60" style="width:60%;height:72%;"></div>
+              </div>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-3">LABtoGO – Laborcontainer 2.0</h3>
+            <div class="space-y-2 text-sm text-slate-600">
+              <div class="flex justify-between border-b border-slate-100 pb-1">
+                <span>Außenlänge</span><span class="font-bold text-[#7a9900]">9.500 mm</span>
+              </div>
+              <div class="flex justify-between border-b border-slate-100 pb-1">
+                <span>Außenbreite</span><span class="font-bold text-[#7a9900]">3.000 mm</span>
+              </div>
+              <div class="flex justify-between border-b border-slate-100 pb-1">
+                <span>Außenhöhe</span><span class="font-bold text-[#7a9900]">3.400 mm</span>
+              </div>
+              <div class="flex justify-between border-b border-slate-100 pb-1">
+                <span>Labortiefe</span><span class="font-bold text-[#7a9900]">&gt; 6.200 mm</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Raumhöhe innen</span><span class="font-bold text-[#7a9900]">2.750 mm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-sm text-slate-500 mt-6 italic">Der konventionelle Laborcontainer passt komplett in den LABtoGO hinein.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-900 py-20 md:py-28 text-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-16">
+        <p class="text-[#bbd700] font-semibold text-sm tracking-widest uppercase mb-4">Die entscheidende Frage</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Wann wird ein Container zu einem <span class="text-[#bbd700]">Laborcontainer?</span>
+        </h2>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">
+          Ein Container mit Labormöbeln ist noch lange kein Laborcontainer. Erst durch eine Vielzahl funktionaler, 
+          technischer und sicherheitsrelevanter Merkmale wird aus einem Raumcontainer ein vollwertiges Labor.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-6 hover:border-[#bbd700]/30 transition-colors">
+          <div class="w-12 h-12 bg-[#bbd700]/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-[#bbd700]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-2">Zweck & Nutzung</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Vollumfängliche Containerbasis, die die gängigsten Laborvarianten abdeckt. Durch minimale Eingriffe wird z.B. aus einem Gerätelabor ein Chemielabor. Jeder Container ist ein eigenständiges, autarkes System.</p>
         </div>
 
-        <div id="specs" class="absolute top-1/2 right-7 -translate-y-1/2 flex flex-col gap-2 transition-opacity duration-500">
-          <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
-            <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Typ <strong class="text-[#7a8fa8] font-normal">20ft High Cube</strong>
+        <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-6 hover:border-[#bbd700]/30 transition-colors">
+          <div class="w-12 h-12 bg-[#bbd700]/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-[#bbd700]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
           </div>
-          <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
-            <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Außenlänge <strong class="text-[#7a8fa8] font-normal">~6.058 mm</strong>
+          <h3 class="text-white font-bold text-lg mb-2">Infrastruktur</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Echte 2,75 m Raumhöhe, integrierte RLT-Anlage nach DIN 1946-7 mit Wärmerückgewinnung, regelbare Druckbereiche, getrenntes 24h-Abluftsystem mit PPs-Verrohrung, 500 kg/m² Bodenbelastung.</p>
+        </div>
+
+        <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-6 hover:border-[#bbd700]/30 transition-colors">
+          <div class="w-12 h-12 bg-[#bbd700]/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-[#bbd700]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
           </div>
-          <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
-            <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Außenbreite <strong class="text-[#7a8fa8] font-normal">~2.438 mm</strong>
+          <h3 class="text-white font-bold text-lg mb-2">Sicherheit</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Integriertes Notrufsystem (Web/GSM), Einbruchmeldeanlage, vernetzte Brandmeldetechnik, Zugangskontrolle mit Protokollierung, automatische Tag/Nacht-Absenkung der Lüftung mit Präsenzmelder.</p>
+        </div>
+
+        <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-6 hover:border-[#bbd700]/30 transition-colors">
+          <div class="w-12 h-12 bg-[#bbd700]/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-[#bbd700]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
           </div>
-          <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
-            <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Außenhöhe <strong class="text-[#7a8fa8] font-normal">~2.896 mm</strong>
+          <h3 class="text-white font-bold text-lg mb-2">Smart Lab</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Vollintegrierte Gebäudeleittechnik (GLT) mit Touchbedienfeld, Fernwartung und Ferndiagnose per Remote-Zugang, aktives LAN/WLAN mit Glasfaseranschluss, getrenntes Nutzer- und Techniker-WLAN.</p>
+        </div>
+
+        <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-6 hover:border-[#bbd700]/30 transition-colors">
+          <div class="w-12 h-12 bg-[#bbd700]/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-[#bbd700]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
           </div>
-          <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
-            <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Glasfront <strong class="text-[#7a8fa8] font-normal">Vollverglast</strong>
+          <h3 class="text-white font-bold text-lg mb-2">Modulares Möbelsystem</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Auswechselbares Möbelsystem ohne Raumanpassung, ableitfähiger ESD-Bodenbelag, S2-fähiger Laborraum, elektrisch steuerbare Milchglas-Folie für Know-How-Schutz auf Knopfdruck.</p>
+        </div>
+
+        <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-6 hover:border-[#bbd700]/30 transition-colors">
+          <div class="w-12 h-12 bg-[#bbd700]/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-[#bbd700]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
           </div>
+          <h3 class="text-white font-bold text-lg mb-2">Normen & Vorschriften</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">DIN 1946-7, DIN 12899-3, DIN EN 15154, DIN EN 12464-1, ASR A3.4, ASR A1.7, DVGW-konforme Wasserversorgung, Anti-Panik-Türen nach außen öffnend, vollverglast.</p>
         </div>
       </div>
 
-      <div class="cm fixed z-20 w-6 h-6 pointer-events-none top-[62px] left-7 border-t border-l border-[rgba(126,211,33,0.35)]"></div>
-      <div class="cm fixed z-20 w-6 h-6 pointer-events-none bottom-8 right-7 border-b border-r border-[rgba(126,211,33,0.35)]"></div>
+      <div class="bg-[#bbd700]/10 border border-[#bbd700]/30 rounded-xl p-8 text-center">
+        <p class="text-[#bbd700] text-lg font-semibold mb-2">Der entscheidende Unterschied:</p>
+        <p class="text-white text-xl md:text-2xl font-bold">Container mit Labormöbeln ≠ Laborcontainer</p>
+        <p class="text-slate-400 mt-3">Nur der LABtoGO wird durch alle funktionalen, technischen und sicherheitsrelevanten Merkmale zu einem vollwertigen, vollumfänglichen Laborcontainer.</p>
+      </div>
+    </div>
+  </section>
 
-      <div id="vign" class="fixed inset-0 z-[25] pointer-events-none opacity-0 transition-opacity duration-400" style="background:radial-gradient(ellipse at center,transparent 0%,#000 100%);"></div>
+  <section class="bg-white py-20 md:py-28">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-16">
+        <p class="text-[#bbd700] font-semibold text-sm tracking-widest uppercase mb-4">Bauartenvergleich</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          Fünf Bauarten im direkten Vergleich
+        </h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Vom klassischen Massivbau bis zum standardisierten Containerbau — wo steht der LABtoGO im Vergleich?
+        </p>
+      </div>
 
-      <div id="vid-ov" class="fixed inset-0 z-[30] bg-black flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-600">
-        <div id="vid-wrap" class="w-[min(90vw,1080px)] bg-black border border-[rgba(126,211,33,0.35)] overflow-hidden scale-[0.93] transition-transform duration-600" style="aspect-ratio:16/9;">
-          <video id="lab-video" class="w-full h-full object-cover" muted playsinline preload="auto">
-            <source src="/videos/laborcontainer-innenansicht.mp4" type="video/mp4" />
-          </video>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-slate-200">
+              <th class="text-left py-4 px-3 text-slate-900 font-bold">Kriterium</th>
+              <th class="text-center py-4 px-3 text-slate-600 font-semibold">Massivbau</th>
+              <th class="text-center py-4 px-3 text-slate-600 font-semibold">Modulbau</th>
+              <th class="text-center py-4 px-3 text-slate-600 font-semibold">Container klassisch</th>
+              <th class="text-center py-4 px-3 text-slate-600 font-semibold">Container vorgef.</th>
+              <th class="text-center py-4 px-3 text-[#7a9900] font-bold bg-[#bbd700]/5">LABtoGO<br/><span class="text-[10px] font-normal">standardisiert</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-slate-100">
+              <td class="py-4 px-3 font-medium text-slate-800">Vorlaufzeit</td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Sehr lang</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Kürzer</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Kürzer</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Kürzer</span></td>
+              <td class="text-center py-4 px-3 bg-[#bbd700]/5"><span class="inline-block bg-[#bbd700]/20 text-[#5a7a00] text-xs font-bold px-2 py-1 rounded">Minimal</span></td>
+            </tr>
+            <tr class="border-b border-slate-100 bg-slate-50/50">
+              <td class="py-4 px-3 font-medium text-slate-800">Individualität</td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">Sehr hoch</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">Höher</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Hoch</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Hoch</span></td>
+              <td class="text-center py-4 px-3 bg-[#bbd700]/5"><span class="inline-block bg-[#bbd700]/20 text-[#5a7a00] text-xs font-bold px-2 py-1 rounded">Mittel*</span></td>
+            </tr>
+            <tr class="border-b border-slate-100">
+              <td class="py-4 px-3 font-medium text-slate-800">Flexibilität</td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Sehr gering</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Gering</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Hoch</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Hoch</span></td>
+              <td class="text-center py-4 px-3 bg-[#bbd700]/5"><span class="inline-block bg-[#bbd700]/20 text-[#5a7a00] text-xs font-bold px-2 py-1 rounded">Sehr hoch</span></td>
+            </tr>
+            <tr class="border-b border-slate-100 bg-slate-50/50">
+              <td class="py-4 px-3 font-medium text-slate-800">Kosten</td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Sehr hoch</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Hoch</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Hoch</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Mittel</span></td>
+              <td class="text-center py-4 px-3 bg-[#bbd700]/5"><span class="inline-block bg-[#bbd700]/20 text-[#5a7a00] text-xs font-bold px-2 py-1 rounded">Niedrig</span></td>
+            </tr>
+            <tr class="border-b border-slate-100">
+              <td class="py-4 px-3 font-medium text-slate-800">Aufwand Baustelle</td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Sehr hoch</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Mittel</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Hoch</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Mittel</span></td>
+              <td class="text-center py-4 px-3 bg-[#bbd700]/5"><span class="inline-block bg-[#bbd700]/20 text-[#5a7a00] text-xs font-bold px-2 py-1 rounded">Minimal</span></td>
+            </tr>
+            <tr class="border-b border-slate-100 bg-slate-50/50">
+              <td class="py-4 px-3 font-medium text-slate-800">Gesamtdauer</td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Sehr lang</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Mittel</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Mittel</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Mittel</span></td>
+              <td class="text-center py-4 px-3 bg-[#bbd700]/5"><span class="inline-block bg-[#bbd700]/20 text-[#5a7a00] text-xs font-bold px-2 py-1 rounded">Minimal</span></td>
+            </tr>
+            <tr>
+              <td class="py-4 px-3 font-medium text-slate-800">Mobilität</td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-slate-100 text-slate-500 text-xs font-bold px-2 py-1 rounded">Keine</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Bedingt</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Bedingt</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Bedingt</span></td>
+              <td class="text-center py-4 px-3 bg-[#bbd700]/5"><span class="inline-block bg-[#bbd700]/20 text-[#5a7a00] text-xs font-bold px-2 py-1 rounded">Sehr hoch</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-500 mt-4">* Standardisierte Ausstattungsvarianten, kombinierbar. Durch De-/Remontage von Außenwänden auch Großraumlabore möglich.</p>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 py-20 md:py-28">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-16">
+        <p class="text-[#bbd700] font-semibold text-sm tracking-widest uppercase mb-4">Unique Design</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          Was den LABtoGO einzigartig macht
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-8 border border-slate-200">
+          <h3 class="font-bold text-slate-900 text-lg mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 bg-[#bbd700]/20 rounded-lg flex items-center justify-center text-[#7a9900] font-bold text-sm">1</span>
+            Containerdesign ohne Kompromisse
+          </h3>
+          <ul class="space-y-3 text-slate-600 text-sm">
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Keine Re- und Demontage von Anbauteilen</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Normaler Straßentransport ohne Sondergenehmigung</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Außenlackierung RAL 7016 Anthrazit</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Integrierte Klimaanlage — keine Anbauten, keine Überhänge</li>
+          </ul>
         </div>
 
-        <div id="scrub-bar" class="w-[min(90vw,1080px)] mt-3 cursor-pointer">
-          <div class="relative h-1 bg-[rgba(122,143,168,0.2)] rounded-full overflow-hidden">
-            <div id="scrub-progress" class="absolute inset-y-0 left-0 bg-[#7ed321] rounded-full" style="width:0%;"></div>
-          </div>
-          <div class="flex items-center justify-between mt-2">
-            <div class="flex items-center gap-3">
-              <button id="play-pause" class="text-[10px] tracking-[2px] uppercase text-[#7a8fa8] hover:text-white transition-colors" style="font-family:'Barlow Condensed',sans-serif;">▶ Abspielen</button>
-              <span id="time-display" class="text-[10px] tracking-[2px] text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">0:00 / 0:00</span>
-            </div>
-            <div class="text-[11px] tracking-[3px] uppercase text-[#7a8fa8]" style="font-family:'Barlow Condensed',sans-serif;">
-              <strong class="text-white">Planexus</strong> — LABtoGO Innenansicht
-            </div>
-          </div>
+        <div class="bg-white rounded-xl p-8 border border-slate-200">
+          <h3 class="font-bold text-slate-900 text-lg mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 bg-[#bbd700]/20 rounded-lg flex items-center justify-center text-[#7a9900] font-bold text-sm">2</span>
+            Vollintegrierte Zwischendecke
+          </h3>
+          <ul class="space-y-3 text-slate-600 text-sm">
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Ausreichend Platz für Erweiterungen</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Abwaschbar und desinfizierbar</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Keine sichtbaren Einbauten im Laborraum</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Getrennter Technikerzugang zu allen Wartungsbereichen</li>
+          </ul>
         </div>
 
-        <div class="w-[min(90vw,1080px)] flex items-center justify-between mt-4">
-          <p class="text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">Ziehen Sie über das Video oder den Regler um die Ansicht zu steuern</p>
-          <button id="close-btn" class="text-[10px] tracking-[3px] uppercase text-[#7a8fa8] bg-transparent border border-[rgba(122,143,168,0.2)] px-5 py-2 cursor-pointer hover:text-white hover:border-[#7ed321] transition-all flex gap-2 items-center" style="font-family:'Barlow Condensed',sans-serif;">
-            ✕ Zurück zum Modell
-          </button>
+        <div class="bg-white rounded-xl p-8 border border-slate-200">
+          <h3 class="font-bold text-slate-900 text-lg mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 bg-[#bbd700]/20 rounded-lg flex items-center justify-center text-[#7a9900] font-bold text-sm">3</span>
+            Maximale Flexibilität
+          </h3>
+          <ul class="space-y-3 text-slate-600 text-sm">
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Einzelne Module in Momenten austauschbar</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Raumreihenfolge an Arbeitsabläufe anpassbar</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Durch Wanddemontage zu Großraumlaboren erweiterbar</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Anpassung im laufenden Betrieb möglich</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-slate-200">
+          <h3 class="font-bold text-slate-900 text-lg mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 bg-[#bbd700]/20 rounded-lg flex items-center justify-center text-[#7a9900] font-bold text-sm">4</span>
+            Plug & Play Konzept
+          </h3>
+          <ul class="space-y-3 text-slate-600 text-sm">
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>100% im Werk vorgefertigt</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Nur noch Anschluss an Infrastruktur vor Ort</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Labor innerhalb weniger Tage in Betrieb</li>
+            <li class="flex items-start gap-2"><span class="text-[#bbd700] mt-0.5 shrink-0">&#10003;</span>Im Idealfall Bevorratung ab Lager verfügbar</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </div>
+  <section class="bg-slate-900 py-20 md:py-28">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <img src="/images/labtogo-logo.png" alt="LABtoGO Logo" class="h-12 md:h-16 w-auto mx-auto mb-8" />
+      <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">
+        Bereit für den <span class="text-[#bbd700]">Laborcontainer 2.0?</span>
+      </h2>
+      <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
+        Ob Gerätelabor, Chemielabor oder BSL-2 — der LABtoGO passt sich an. 
+        Sprechen Sie mit unseren Experten über Ihre Anforderungen.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-2 bg-[#bbd700] hover:bg-[#a8c200] text-slate-900 font-bold px-8 py-4 rounded-lg text-sm uppercase tracking-wider transition-colors">
+          Jetzt Beratung anfragen
+        </a>
+        <a href="tel:+4974357519700" class="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-[#bbd700] text-white hover:text-[#bbd700] font-semibold px-8 py-4 rounded-lg text-sm uppercase tracking-wider transition-colors">
+          +49 7435 7519 700
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400&display=swap" rel="stylesheet" />
@@ -100,7 +423,7 @@ import Layout from '../../layouts/Layout.astro';
     renderer.setClearColor(0x13161c,1);
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog(0x13161c, 20, 42);
+    scene.fog = new THREE.Fog(0x13161c, 24, 50);
     const camera = new THREE.PerspectiveCamera(38,1,0.1,100);
 
     scene.add(new THREE.AmbientLight(0xffffff, 0.5));
@@ -109,7 +432,6 @@ import Layout from '../../layouts/Layout.astro';
     sun.castShadow = true;
     sun.shadow.mapSize.set(1024,1024);
     scene.add(sun);
-
     const lZ = new THREE.DirectionalLight(0xffffff, 1.0);
     lZ.position.set(0, 5, 10);
     scene.add(lZ);
@@ -122,13 +444,13 @@ import Layout from '../../layouts/Layout.astro';
     const lBot = new THREE.DirectionalLight(0xffffff, 0.5);
     lBot.position.set(2, -5, 8);
     scene.add(lBot);
-    const intLight = new THREE.PointLight(0xfff5cc, 4.0, 6.0);
-    intLight.position.set(1.8, 0.3, 0.2);
+    const intLight = new THREE.PointLight(0xfff5cc, 4.0, 8.0);
+    intLight.position.set(2.5, 0.3, 0.2);
     scene.add(intLight);
 
-    const L=6.058, H=2.896, W=2.438;
+    const L=9.50, H=3.40, W=3.00;
     const hl=L/2, hh=H/2, hw=W/2;
-    const T=0.07;
+    const T=0.08;
 
     const mAnthrazit = new THREE.MeshStandardMaterial({color:0x252930, metalness:0.6, roughness:0.5});
     const mRahmen = new THREE.MeshStandardMaterial({color:0x1a1e24, metalness:0.75, roughness:0.3});
@@ -178,7 +500,7 @@ import Layout from '../../layouts/Layout.astro';
     lwX(W-T*2, H-T*2, -hl+T*0.26, 0, 0, -1);
     lwZ(L-T*2,H-T*2,0,0,-hw+T*0.26,-1);
 
-    const DX=hl-1.05, DW=0.90, DH=2.10, DL=DX-DW/2, DR=DX+DW/2;
+    const DX=hl-1.3, DW=1.0, DH=2.30, DL=DX-DW/2, DR=DX+DW/2;
     const solidW=DL-(-hl+T);
     lwZ(solidW,H-T*2,(-hl+T+DL)/2,0,hw-T*0.26,+1);
     const stripW=(hl-T)-DR;
@@ -200,27 +522,27 @@ import Layout from '../../layouts/Layout.astro';
     const mSilver=new THREE.MeshStandardMaterial({color:0x999faa,metalness:.85,roughness:.15});
     [-0.7,-0.05,0.6].forEach(dy=>{ mk(0.04,0.08,0.05,mSilver,DX-DW/2-0.01,-hh+DH/2+dy,hw+T*0.1); });
     const mGriff=new THREE.MeshStandardMaterial({color:0x111111,metalness:.85,roughness:.15});
-    mk(0.025,0.22,0.025,mGriff,DX+0.19,-hh+DH/2,hw+T*0.16);
-    mk(0.08,0.025,0.025,mGriff,DX+0.155,-hh+DH/2+0.10,hw+T*0.14);
-    mk(0.08,0.025,0.025,mGriff,DX+0.155,-hh+DH/2-0.10,hw+T*0.14);
+    mk(0.025,0.22,0.025,mGriff,DX+0.22,-hh+DH/2,hw+T*0.16);
+    mk(0.08,0.025,0.025,mGriff,DX+0.18,-hh+DH/2+0.10,hw+T*0.14);
+    mk(0.08,0.025,0.025,mGriff,DX+0.18,-hh+DH/2-0.10,hw+T*0.14);
 
     mk(T*0.8,H-T*2,T*0.8,mRahmen,hl,0,0);
     const gpZ=hw-T*1.8;
     mk(T*0.2,H-T*2,gpZ*2-0.02,mGlasAussen,hl,0,-(hw-T-gpZ));
     mk(T*0.2,H-T*2,gpZ*2-0.02,mGlasAussen,hl,0, (hw-T-gpZ));
 
-    const VX = hl - 1.5;
-    mk(1.5, T*0.18, W-T*2.5, mInnenwand, hl-0.75, hh-T*1.5, 0);
-    mk(1.5, T*0.18, W-T*2.5, mInnenboden, hl-0.75,-hh+T*1.4, 0);
-    mk(1.5, H-T*2.5, T*0.18, mInnenwand, hl-0.75, 0, hw-T*2.2);
-    mk(1.5, H-T*2.5, T*0.18, mInnenwand, hl-0.75, 0,-hw+T*1.8);
+    const VX = hl - 2.0;
+    mk(2.0, T*0.18, W-T*2.5, mInnenwand, hl-1.0, hh-T*1.5, 0);
+    mk(2.0, T*0.18, W-T*2.5, mInnenboden, hl-1.0,-hh+T*1.4, 0);
+    mk(2.0, H-T*2.5, T*0.18, mInnenwand, hl-1.0, 0, hw-T*2.2);
+    mk(2.0, H-T*2.5, T*0.18, mInnenwand, hl-1.0, 0,-hw+T*1.8);
 
-    const doorBackLight = new THREE.PointLight(0xfff8cc, 5.0, 2.5);
+    const doorBackLight = new THREE.PointLight(0xfff8cc, 5.0, 3.0);
     doorBackLight.position.set(DX, 0.3, hw-0.25);
     scene.add(doorBackLight);
 
     mk(T*0.18, H-T*2.2, W-T*2.2, mMilchglas, VX, 0, 0);
-    const IDW=0.80, IDH=2.05;
+    const IDW=0.90, IDH=2.20;
     const mWeiss = new THREE.MeshStandardMaterial({color:0xffffff,emissive:0xffffff,emissiveIntensity:0.2,roughness:0.7});
     mk(T*0.3, IDH, IDW, mMilchglas, VX-T*0.05, -hh+IDH/2+T, 0);
     mk(T*0.35, IDH+T*0.3, 0.055, mWeiss, VX, -hh+IDH/2+T,-IDW/2);
@@ -228,18 +550,18 @@ import Layout from '../../layouts/Layout.astro';
     mk(T*0.35, 0.055, IDW+0.06, mWeiss, VX, -hh+IDH+T, 0);
 
     const mLED = new THREE.MeshStandardMaterial({color:0xffffff,emissive:0xfff8cc,emissiveIntensity:2.5,roughness:0.8});
-    mk(0.45, T*0.15, 0.18, mLED, hl-0.65, hh-T*1.62, 0);
+    mk(0.6, T*0.15, 0.18, mLED, hl-0.8, hh-T*1.62, 0);
 
-    const gnd = new THREE.Mesh(new THREE.PlaneGeometry(26,26), mGround);
+    const gnd = new THREE.Mesh(new THREE.PlaneGeometry(30,30), mGround);
     gnd.rotation.x = -Math.PI/2;
     gnd.position.y = -hh-T*0.6;
     gnd.receiveShadow = true;
     scene.add(gnd);
-    const grid = new THREE.GridHelper(26,26,0x1a1e26,0x171b22);
+    const grid = new THREE.GridHelper(30,30,0x1a1e26,0x171b22);
     grid.position.y = -hh-T*0.59;
     scene.add(grid);
 
-    let sph = {theta:2.2, phi:1.08, r:12};
+    let sph = {theta:2.2, phi:1.08, r:15};
     let tgt = {...sph};
     let drag=false, prev={x:0,y:0};
     let autoRot=true, rotT=null;
@@ -262,29 +584,29 @@ import Layout from '../../layouts/Layout.astro';
     });
     window.addEventListener('mouseup',()=>{drag=false;rotT=setTimeout(()=>autoRot=true,4500);});
     canvas.addEventListener('wheel',e=>{
-      tgt.r=Math.max(4,Math.min(20,tgt.r+e.deltaY*0.013));
+      tgt.r=Math.max(5,Math.min(25,tgt.r+e.deltaY*0.013));
       autoRot=false;clearTimeout(rotT);rotT=setTimeout(()=>autoRot=true,3000);
     },{passive:true});
-    canvas.addEventListener('touchstart',e=>{drag=true;autoRot=false;prev={x:e.touches[0].clientX,y:e.touches[0].clientY};});
+    canvas.addEventListener('touchstart',e=>{drag=true;autoRot=false;prev={x:e.touches[0].clientX,y:e.touches[0].clientY};},{passive:true});
     canvas.addEventListener('touchmove',e=>{
       if(!drag)return;
       tgt.theta-=(e.touches[0].clientX-prev.x)*0.005;
       tgt.phi=Math.max(0.22,Math.min(1.52,tgt.phi+(e.touches[0].clientY-prev.y)*0.004));
       prev={x:e.touches[0].clientX,y:e.touches[0].clientY};
-    });
-    canvas.addEventListener('touchend',()=>{drag=false;});
+    },{passive:true});
+    canvas.addEventListener('touchend',()=>{drag=false;},{passive:true});
 
-    document.getElementById('btn-reset').addEventListener('click',()=>{tgt={theta:2.2,phi:1.08,r:12};autoRot=true;});
+    document.getElementById('btn-reset').addEventListener('click',()=>{tgt={theta:2.2,phi:1.08,r:15};autoRot=true;});
     const autoBtn=document.getElementById('btn-auto');
     autoBtn.addEventListener('click',()=>{
       autoRot=!autoRot;
-      autoBtn.textContent=autoRot?'Auto ●':'Auto ○';
+      autoBtn.innerHTML=autoRot?'Auto &bull;':'Auto &#9675;';
       autoBtn.style.color=autoRot?'rgba(126,211,33,.65)':'rgba(122,143,168,.45)';
     });
 
     let zooming=false, zProg=0;
     const zSt=new THREE.Vector3();
-    const zEn=new THREE.Vector3(hl-0.3, 0.1, 0.1);
+    const zEn=new THREE.Vector3(hl-0.4, 0.1, 0.1);
     const vign=document.getElementById('vign');
     const vidOv=document.getElementById('vid-ov');
     const ctaBtn=document.getElementById('cta-btn');
@@ -301,21 +623,20 @@ import Layout from '../../layouts/Layout.astro';
       if(zooming)return;
       zooming=true; autoRot=false;
       zSt.copy(camera.position);
-      [ctaBtn,hdl,ctrl,sps].forEach(el=>{if(el)el.style.opacity='0';if(el)el.style.pointerEvents='none';});
+      [ctaBtn,hdl,ctrl,sps].forEach(el=>{if(el){el.style.opacity='0';el.style.pointerEvents='none';}});
     }
-    ctaBtn.addEventListener('click',startZoom);
+    if(ctaBtn) ctaBtn.addEventListener('click',startZoom);
 
     document.getElementById('close-btn').addEventListener('click',()=>{
-      vidOv.classList.remove('on');
       vidOv.style.opacity='0';
       vidOv.style.pointerEvents='none';
       document.getElementById('vid-wrap').style.transform='scale(0.93)';
       video.pause();
       isPlaying=false;
-      playPause.textContent='▶ Abspielen';
+      playPause.innerHTML='&#9654; Abspielen';
       setTimeout(()=>{
-        tgt={theta:2.2,phi:1.08,r:12}; sph={...tgt}; camUp();
-        [ctaBtn,hdl,ctrl,sps].forEach(el=>{if(el)el.style.opacity='1';if(el)el.style.pointerEvents='auto';});
+        tgt={theta:2.2,phi:1.08,r:15}; sph={...tgt}; camUp();
+        [ctaBtn,hdl,ctrl,sps].forEach(el=>{if(el){el.style.opacity='1';el.style.pointerEvents='auto';}});
         autoRot=true; zooming=false; zProg=0;
         vign.style.opacity='0';
       },400);
@@ -325,8 +646,8 @@ import Layout from '../../layouts/Layout.astro';
     let videoDrag=false;
 
     playPause.addEventListener('click',()=>{
-      if(isPlaying){video.pause();isPlaying=false;playPause.textContent='▶ Abspielen';}
-      else{video.play();isPlaying=true;playPause.textContent='⏸ Pause';}
+      if(isPlaying){video.pause();isPlaying=false;playPause.innerHTML='&#9654; Abspielen';}
+      else{video.play();isPlaying=true;playPause.innerHTML='&#9208; Pause';}
     });
 
     function formatTime(s){
@@ -348,44 +669,32 @@ import Layout from '../../layouts/Layout.astro';
     function scrubTo(e){
       const rect=scrubBar.getBoundingClientRect();
       const pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
-      video.currentTime=pct*video.duration;
+      if(video.duration) video.currentTime=pct*video.duration;
     }
 
-    scrubBar.addEventListener('mousedown',e=>{videoDrag=true;scrubTo(e);if(isPlaying){video.pause();}});
+    scrubBar.addEventListener('mousedown',e=>{videoDrag=true;scrubTo(e);if(isPlaying)video.pause();});
     window.addEventListener('mousemove',e=>{if(videoDrag)scrubTo(e);});
-    window.addEventListener('mouseup',()=>{if(videoDrag&&isPlaying){video.play();}videoDrag=false;});
+    window.addEventListener('mouseup',()=>{if(videoDrag&&isPlaying)video.play();videoDrag=false;});
 
-    scrubBar.addEventListener('touchstart',e=>{videoDrag=true;scrubTo(e.touches[0]);if(isPlaying){video.pause();}});
-    window.addEventListener('touchmove',e=>{if(videoDrag)scrubTo(e.touches[0]);});
-    window.addEventListener('touchend',()=>{if(videoDrag&&isPlaying){video.play();}videoDrag=false;});
+    scrubBar.addEventListener('touchstart',e=>{videoDrag=true;scrubTo(e.touches[0]);if(isPlaying)video.pause();},{passive:true});
+    window.addEventListener('touchmove',e=>{if(videoDrag)scrubTo(e.touches[0]);},{passive:true});
+    window.addEventListener('touchend',()=>{if(videoDrag&&isPlaying)video.play();videoDrag=false;},{passive:true});
 
     let vidDrag=false, vidPrevX=0;
     const vidWrap=document.getElementById('vid-wrap');
-    vidWrap.addEventListener('mousedown',e=>{vidDrag=true;vidPrevX=e.clientX;if(isPlaying){video.pause();}e.preventDefault();});
+    vidWrap.addEventListener('mousedown',e=>{vidDrag=true;vidPrevX=e.clientX;if(isPlaying)video.pause();e.preventDefault();});
     window.addEventListener('mousemove',e=>{
       if(!vidDrag)return;
       const dx=e.clientX-vidPrevX;
       vidPrevX=e.clientX;
-      if(video.duration){
-        video.currentTime=Math.max(0,Math.min(video.duration,video.currentTime+dx*0.03));
-      }
+      if(video.duration) video.currentTime=Math.max(0,Math.min(video.duration,video.currentTime+dx*0.03));
     });
-    window.addEventListener('mouseup',()=>{if(vidDrag&&isPlaying){video.play();}vidDrag=false;});
-
-    vidWrap.addEventListener('touchstart',e=>{vidDrag=true;vidPrevX=e.touches[0].clientX;if(isPlaying){video.pause();}});
-    window.addEventListener('touchmove',e=>{
-      if(!vidDrag)return;
-      const dx=e.touches[0].clientX-vidPrevX;
-      vidPrevX=e.touches[0].clientX;
-      if(video.duration){
-        video.currentTime=Math.max(0,Math.min(video.duration,video.currentTime+dx*0.03));
-      }
-    });
-    window.addEventListener('touchend',()=>{if(vidDrag&&isPlaying){video.play();}vidDrag=false;});
+    window.addEventListener('mouseup',()=>{if(vidDrag&&isPlaying)video.play();vidDrag=false;});
 
     function resize(){
-      renderer.setSize(canvas.parentElement.clientWidth,canvas.parentElement.clientHeight);
-      camera.aspect=canvas.parentElement.clientWidth/canvas.parentElement.clientHeight;
+      const w=canvas.parentElement.clientWidth, h=canvas.parentElement.clientHeight;
+      renderer.setSize(w,h);
+      camera.aspect=w/h;
       camera.updateProjectionMatrix();
     }
     resize();
@@ -409,9 +718,7 @@ import Layout from '../../layouts/Layout.astro';
       } else {
         zProg=Math.min(1,zProg+dt*0.45);
         const ep=ease(zProg);
-        if(zProg>0.3){
-          vign.style.opacity=Math.min(1,(zProg-0.3)/0.42);
-        }
+        if(zProg>0.3) vign.style.opacity=Math.min(1,(zProg-0.3)/0.42);
         camera.position.lerpVectors(zSt,zEn,ep);
         camera.lookAt(0,0,0);
         if(zProg>=0.97 && vidOv.style.opacity==='0'){
@@ -424,5 +731,33 @@ import Layout from '../../layouts/Layout.astro';
     }
     animate();
   });
+  </script>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "LABtoGO – Laborcontainer 2.0",
+    "description": "Der standardisierte Plug & Play Laborcontainer von Planexus. 100% vorgefertigt, sofort einsatzbereit. Außenmaße: 9.500 x 3.000 x 3.400 mm.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Planexus GmbH"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Planexus GmbH",
+      "url": "https://planexus.de"
+    },
+    "additionalProperty": [
+      {"@type": "PropertyValue", "name": "Außenlänge", "value": "9.500 mm"},
+      {"@type": "PropertyValue", "name": "Außenbreite", "value": "3.000 mm"},
+      {"@type": "PropertyValue", "name": "Außenhöhe", "value": "3.400 mm"},
+      {"@type": "PropertyValue", "name": "Labortiefe", "value": "> 6.200 mm"},
+      {"@type": "PropertyValue", "name": "Raumhöhe", "value": "2.750 mm"},
+      {"@type": "PropertyValue", "name": "Bodenbelastung", "value": "500 kg/m²"},
+      {"@type": "PropertyValue", "name": "Bauart", "value": "Containerbau standardisiert"},
+      {"@type": "PropertyValue", "name": "Vorfertigung", "value": "100% im Werk"}
+    ]
+  }
   </script>
 </Layout>

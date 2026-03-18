@@ -163,6 +163,19 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
           
+          <a
+            href="/laborcontainer/lab-to-go"
+            className={cn(
+              "text-sm font-bold transition-colors relative uppercase tracking-wide",
+              location === "/laborcontainer/lab-to-go" ? "text-primary" : "text-primary/90 hover:text-primary"
+            )}
+          >
+            LABtoGO
+            {location === "/laborcontainer/lab-to-go" && (
+              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary" />
+            )}
+          </a>
+
           {links.map((link) => (
             <a
               key={link.href}
@@ -227,6 +240,10 @@ export default function Navbar() {
                 ))}
               </div>
               
+              <a href="/laborcontainer/lab-to-go" className={cn("text-left text-lg font-bold py-3 border-b border-gray-50 w-full block", location === "/laborcontainer/lab-to-go" ? "text-primary" : "text-primary/80")}>
+                LABtoGO
+              </a>
+
               {links.map((link) => (
                 <a key={link.href} href={link.href} className={cn("text-left text-lg font-medium py-3 border-b border-gray-50 w-full block", location === link.href ? "text-primary" : "text-slate-700")}>
                   {link.label}
