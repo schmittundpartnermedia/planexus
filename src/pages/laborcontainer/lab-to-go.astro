@@ -64,17 +64,25 @@ import Footer from '../../components/Footer.astro';
     <div id="vign" class="fixed inset-0 z-[25] pointer-events-none transition-opacity duration-400" style="opacity:0;background:radial-gradient(ellipse at center,transparent 0%,#000 100%);"></div>
 
     <div id="vid-ov" class="fixed inset-0 z-[30] bg-black flex flex-col items-center justify-center pointer-events-none transition-opacity duration-600" style="opacity:0;">
-      <div id="vid-wrap" class="w-[min(90vw,1080px)] bg-black border border-[rgba(187,215,0,0.35)] overflow-hidden transition-transform duration-600" style="aspect-ratio:16/9;transform:scale(0.93);">
+      <div id="vid-wrap" class="w-[min(90vw,1080px)] bg-black border border-[rgba(187,215,0,0.35)] overflow-hidden transition-transform duration-600" style="aspect-ratio:16/9;transform:scale(0.93);cursor:grab;">
         <div id="vid-screen" class="relative w-full h-full overflow-hidden" style="background:linear-gradient(135deg,#0a160b,#162814,#0a160b);">
           <div id="scan-line" class="absolute left-0 right-0 h-[2px]" style="background:linear-gradient(90deg,transparent,#bbd700,transparent);animation:scanAnim 3s linear infinite;"></div>
           <div class="absolute top-4 left-4 text-[9px] tracking-[3px] uppercase text-[#bbd700] border border-[rgba(187,215,0,0.2)] bg-[rgba(187,215,0,0.07)] px-3 py-1" style="font-family:'Barlow Condensed',sans-serif;">Imagefilm — LABtoGO Innenansicht</div>
-          <div class="flex flex-col items-center justify-center h-full gap-4">
+          <div id="vid-branding" class="flex flex-col items-center justify-center h-full gap-4">
             <button id="play-big" class="w-16 h-16 rounded-full border-2 border-[rgba(187,215,0,0.38)] flex items-center justify-center cursor-pointer hover:border-[#bbd700] transition-all" style="animation:pulse-glow 2s ease-in-out infinite;">
               <div class="w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-l-[20px] border-l-[#bbd700] ml-1"></div>
             </button>
             <div class="text-center">
               <h2 class="text-xl md:text-2xl font-bold tracking-[4px] uppercase text-white" style="font-family:'Barlow Condensed',sans-serif;">LABtoGO Innenansicht</h2>
-              <p class="text-[11px] text-[#7a8fa8] tracking-[2px] uppercase mt-1" style="font-family:'Barlow Condensed',sans-serif;">Video starten · Interaktiver Rundgang</p>
+              <p class="text-[11px] text-[#7a8fa8] tracking-[2px] uppercase mt-1" style="font-family:'Barlow Condensed',sans-serif;">Klicken zum Starten</p>
+            </div>
+          </div>
+          <div id="vid-hint" class="absolute bottom-4 left-0 right-0 text-center hidden">
+            <div class="inline-flex items-center gap-3 bg-[rgba(0,0,0,0.7)] backdrop-blur-sm border border-[rgba(187,215,0,0.2)] rounded-full px-5 py-2">
+              <svg class="w-4 h-4 text-[#bbd700] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+              <span class="text-[10px] tracking-[2px] uppercase text-[#bbd700]" style="font-family:'Barlow Condensed',sans-serif;">Maus ziehen: Rundgang steuern</span>
+              <span class="text-[10px] text-[rgba(122,143,168,0.5)]">|</span>
+              <span class="text-[10px] tracking-[2px] uppercase text-[#7a8fa8]" style="font-family:'Barlow Condensed',sans-serif;">Regler: Position wählen</span>
             </div>
           </div>
           <video id="lab-video" class="absolute inset-0 w-full h-full object-cover hidden" muted playsinline preload="auto">
@@ -657,15 +665,14 @@ import Footer from '../../components/Footer.astro';
       video.currentTime=0;
       video.classList.add('hidden');
       isPlaying=false;
+      videoReady=false;
       playPause.innerHTML='&#9654; Abspielen';
-      var vs=document.getElementById('vid-screen');
-      if(vs) vs.style.background='linear-gradient(135deg,#0a160b,#162814,#0a160b)';
-      var sl=document.getElementById('scan-line');
-      if(sl) sl.style.display='';
+      vidScreen.style.background='linear-gradient(135deg,#0a160b,#162814,#0a160b)';
+      scanLine.style.display='';
+      vidBranding.style.display='';
+      vidHint.classList.add('hidden');
       var lbl=document.querySelector('#vid-screen > .absolute.top-4');
       if(lbl) lbl.style.display='';
-      var pg=document.getElementById('play-big');
-      if(pg && pg.parentElement) pg.parentElement.style.display='';
       setTimeout(()=>{
         tgt={theta:2.2,phi:1.08,r:15}; sph={...tgt}; camUp();
         [ctaBtn,hdl,ctrl,sps].forEach(el=>{if(el){el.style.opacity='1';el.style.pointerEvents='auto';}});
@@ -680,21 +687,27 @@ import Footer from '../../components/Footer.astro';
     const playBig=document.getElementById('play-big');
     const vidScreen=document.getElementById('vid-screen');
     const scanLine=document.getElementById('scan-line');
+    const vidHint=document.getElementById('vid-hint');
+    const vidBranding=document.getElementById('vid-branding');
+    let videoReady=false;
 
-    function showVideo(){
+    function activateVideo(){
       video.classList.remove('hidden');
-      video.play();
-      isPlaying=true;
-      playPause.innerHTML='&#9208; Pause';
-      playBig.parentElement.style.display='none';
+      video.currentTime=0;
+      videoReady=true;
+      isPlaying=false;
+      vidBranding.style.display='none';
       scanLine.style.display='none';
-      document.querySelector('.absolute.top-4.left-4').style.display='none';
+      var lbl=document.querySelector('#vid-screen > .absolute.top-4');
+      if(lbl) lbl.style.display='none';
       vidScreen.style.background='#000';
+      vidHint.classList.remove('hidden');
+      playPause.innerHTML='&#9654; Abspielen';
     }
 
-    playBig.addEventListener('click',showVideo);
+    playBig.addEventListener('click',activateVideo);
     playPause.addEventListener('click',()=>{
-      if(video.classList.contains('hidden')){showVideo();return;}
+      if(!videoReady){activateVideo();return;}
       if(isPlaying){video.pause();isPlaying=false;playPause.innerHTML='&#9654; Abspielen';}
       else{video.play();isPlaying=true;playPause.innerHTML='&#9208; Pause';}
     });
@@ -731,14 +744,20 @@ import Footer from '../../components/Footer.astro';
 
     let vidDrag=false, vidPrevX=0;
     const vidWrap=document.getElementById('vid-wrap');
-    vidWrap.addEventListener('mousedown',e=>{vidDrag=true;vidPrevX=e.clientX;if(isPlaying)video.pause();e.preventDefault();});
+    vidWrap.addEventListener('mousedown',e=>{
+      if(!videoReady)return;
+      vidDrag=true;vidPrevX=e.clientX;
+      if(isPlaying){video.pause();isPlaying=false;playPause.innerHTML='&#9654; Abspielen';}
+      vidWrap.style.cursor='grabbing';
+      e.preventDefault();
+    });
     window.addEventListener('mousemove',e=>{
       if(!vidDrag)return;
       const dx=e.clientX-vidPrevX;
       vidPrevX=e.clientX;
       if(video.duration) video.currentTime=Math.max(0,Math.min(video.duration,video.currentTime+dx*0.03));
     });
-    window.addEventListener('mouseup',()=>{if(vidDrag&&isPlaying)video.play();vidDrag=false;});
+    window.addEventListener('mouseup',()=>{vidDrag=false;if(vidWrap)vidWrap.style.cursor='grab';});
 
     function resize(){
       const w=canvas.parentElement.clientWidth, h=canvas.parentElement.clientHeight;
