@@ -64,25 +64,42 @@ import Footer from '../../components/Footer.astro';
     <div id="vign" class="fixed inset-0 z-[25] pointer-events-none transition-opacity duration-400" style="opacity:0;background:radial-gradient(ellipse at center,transparent 0%,#000 100%);"></div>
 
     <div id="vid-ov" class="fixed inset-0 z-[30] bg-black flex flex-col items-center justify-center pointer-events-none transition-opacity duration-600" style="opacity:0;">
-      <div id="vid-wrap" class="w-[min(90vw,1080px)] bg-black border border-[rgba(126,211,33,0.35)] overflow-hidden scale-[0.93] transition-transform duration-600" style="aspect-ratio:16/9;">
-        <video id="lab-video" class="w-full h-full object-cover" muted playsinline preload="auto">
-          <source src="/videos/laborcontainer-innenansicht.mp4" type="video/mp4" />
-        </video>
+      <div id="vid-wrap" class="w-[min(90vw,1080px)] bg-black border border-[rgba(187,215,0,0.35)] overflow-hidden transition-transform duration-600" style="aspect-ratio:16/9;transform:scale(0.93);">
+        <div id="vid-screen" class="relative w-full h-full overflow-hidden" style="background:linear-gradient(135deg,#0a160b,#162814,#0a160b);">
+          <div id="scan-line" class="absolute left-0 right-0 h-[2px]" style="background:linear-gradient(90deg,transparent,#bbd700,transparent);animation:scanAnim 3s linear infinite;"></div>
+          <div class="absolute top-4 left-4 text-[9px] tracking-[3px] uppercase text-[#bbd700] border border-[rgba(187,215,0,0.2)] bg-[rgba(187,215,0,0.07)] px-3 py-1" style="font-family:'Barlow Condensed',sans-serif;">Imagefilm — LABtoGO Innenansicht</div>
+          <div class="flex flex-col items-center justify-center h-full gap-4">
+            <button id="play-big" class="w-16 h-16 rounded-full border-2 border-[rgba(187,215,0,0.38)] flex items-center justify-center cursor-pointer hover:border-[#bbd700] transition-all" style="animation:pulse-glow 2s ease-in-out infinite;">
+              <div class="w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-l-[20px] border-l-[#bbd700] ml-1"></div>
+            </button>
+            <div class="text-center">
+              <h2 class="text-xl md:text-2xl font-bold tracking-[4px] uppercase text-white" style="font-family:'Barlow Condensed',sans-serif;">LABtoGO Innenansicht</h2>
+              <p class="text-[11px] text-[#7a8fa8] tracking-[2px] uppercase mt-1" style="font-family:'Barlow Condensed',sans-serif;">Video starten · Interaktiver Rundgang</p>
+            </div>
+          </div>
+          <video id="lab-video" class="absolute inset-0 w-full h-full object-cover hidden" muted playsinline preload="auto">
+            <source src="/videos/laborcontainer-innenansicht.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
-      <div id="scrub-bar" class="w-[min(90vw,1080px)] mt-3 cursor-pointer">
-        <div class="relative h-1 bg-[rgba(122,143,168,0.2)] rounded-full overflow-hidden">
-          <div id="scrub-progress" class="absolute inset-y-0 left-0 bg-[#bbd700] rounded-full" style="width:0%;"></div>
+
+      <div class="w-[min(90vw,1080px)] mt-3">
+        <div id="scrub-bar" class="cursor-pointer">
+          <div class="relative h-1 bg-[rgba(122,143,168,0.2)] rounded-full overflow-hidden">
+            <div id="scrub-progress" class="absolute inset-y-0 left-0 bg-[#bbd700] rounded-full" style="width:0%;"></div>
+          </div>
         </div>
         <div class="flex items-center justify-between mt-2">
           <div class="flex items-center gap-3">
-            <button id="play-pause" class="text-[10px] tracking-[2px] uppercase text-[#7a8fa8] hover:text-white transition-colors" style="font-family:'Barlow Condensed',sans-serif;">&#9654; Abspielen</button>
+            <button id="play-pause" class="text-[10px] tracking-[2px] uppercase text-[#7a8fa8] hover:text-white transition-colors cursor-pointer" style="font-family:'Barlow Condensed',sans-serif;">&#9654; Abspielen</button>
             <span id="time-display" class="text-[10px] tracking-[2px] text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">0:00 / 0:00</span>
           </div>
           <div class="text-[11px] tracking-[3px] uppercase text-[#7a8fa8] hidden md:block" style="font-family:'Barlow Condensed',sans-serif;">
-            <strong class="text-white">Planexus</strong> — LABtoGO Innenansicht
+            <strong class="text-white">Planexus</strong> — LABtoGO Laborcontainer
           </div>
         </div>
       </div>
+
       <div class="w-[min(90vw,1080px)] flex items-center justify-between mt-4">
         <p class="text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)] hidden md:block" style="font-family:'Barlow Condensed',sans-serif;">Ziehen Sie über das Video oder den Regler</p>
         <button id="close-btn" class="text-[10px] tracking-[3px] uppercase text-[#7a8fa8] bg-transparent border border-[rgba(122,143,168,0.2)] px-5 py-2 cursor-pointer hover:text-white hover:border-[#bbd700] transition-all flex gap-2 items-center ml-auto" style="font-family:'Barlow Condensed',sans-serif;">
@@ -90,6 +107,11 @@ import Footer from '../../components/Footer.astro';
         </button>
       </div>
     </div>
+
+    <style>
+      @keyframes scanAnim { 0% { top: -2px; } 100% { top: 100%; } }
+      @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(187,215,0,0.28); } 50% { box-shadow: 0 0 0 12px rgba(187,215,0,0); } }
+    </style>
   </section>
 
   <section class="bg-white py-20 md:py-28">
@@ -632,8 +654,18 @@ import Footer from '../../components/Footer.astro';
       vidOv.style.pointerEvents='none';
       document.getElementById('vid-wrap').style.transform='scale(0.93)';
       video.pause();
+      video.currentTime=0;
+      video.classList.add('hidden');
       isPlaying=false;
       playPause.innerHTML='&#9654; Abspielen';
+      var vs=document.getElementById('vid-screen');
+      if(vs) vs.style.background='linear-gradient(135deg,#0a160b,#162814,#0a160b)';
+      var sl=document.getElementById('scan-line');
+      if(sl) sl.style.display='';
+      var lbl=document.querySelector('#vid-screen > .absolute.top-4');
+      if(lbl) lbl.style.display='';
+      var pg=document.getElementById('play-big');
+      if(pg && pg.parentElement) pg.parentElement.style.display='';
       setTimeout(()=>{
         tgt={theta:2.2,phi:1.08,r:15}; sph={...tgt}; camUp();
         [ctaBtn,hdl,ctrl,sps].forEach(el=>{if(el){el.style.opacity='1';el.style.pointerEvents='auto';}});
@@ -645,7 +677,24 @@ import Footer from '../../components/Footer.astro';
     let isPlaying=false;
     let videoDrag=false;
 
+    const playBig=document.getElementById('play-big');
+    const vidScreen=document.getElementById('vid-screen');
+    const scanLine=document.getElementById('scan-line');
+
+    function showVideo(){
+      video.classList.remove('hidden');
+      video.play();
+      isPlaying=true;
+      playPause.innerHTML='&#9208; Pause';
+      playBig.parentElement.style.display='none';
+      scanLine.style.display='none';
+      document.querySelector('.absolute.top-4.left-4').style.display='none';
+      vidScreen.style.background='#000';
+    }
+
+    playBig.addEventListener('click',showVideo);
     playPause.addEventListener('click',()=>{
+      if(video.classList.contains('hidden')){showVideo();return;}
       if(isPlaying){video.pause();isPlaying=false;playPause.innerHTML='&#9654; Abspielen';}
       else{video.play();isPlaying=true;playPause.innerHTML='&#9208; Pause';}
     });
