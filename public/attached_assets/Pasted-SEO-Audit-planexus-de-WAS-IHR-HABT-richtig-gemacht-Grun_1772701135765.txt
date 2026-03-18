@@ -1,0 +1,104 @@
+SEO-Audit: planexus.de
+WAS IHR HABT (richtig gemacht)
+Grundlagen (alles da):
+
+Astro SSG mit trailingSlash: 'never' – konsistent
+robots.txt korrekt (Admin + API blockiert, Sitemap verlinkt)
+Sitemap mit 26 URLs, alle ohne Trailing Slash
+Google Analytics eingebunden
+Canonical URL auf jeder Seite
+lang="de" im HTML-Tag
+Favicon + Apple Touch Icon
+OG-Image Fallback (opengraph.jpg)
+Meta-Tags (global im Layout):
+
+Title + Description auf jeder Seite individuell
+OG-Tags (Title, Description, Image, Type, URL, Locale)
+Twitter Cards (summary_large_image)
+robots: index, follow, max-image-preview:large
+geo.region, geo.placename
+Schema.org (gut aufgestellt):
+
+Organization + LocalBusiness global im Layout
+Service-Schema auf allen 6 Leistungs-Unterseiten
+BreadcrumbList auf Städteseiten + Magazin-Artikeln
+FAQPage-Schema auf Magazin-Artikeln
+Article-Schema auf allen Blog-Beiträgen
+Content-Strategie:
+
+7 Magazin-Artikel mit 3.000+ Wörtern
+3 Städteseiten (Berlin, München, Stuttgart)
+6 Leistungs-Unterseiten mit Tiefeninhalt
+H1 auf jeder Seite (außer partner.astro – fehlt!)
+Lazy Loading auf Bildern unterhalb der Faltlinie
+WAS FEHLT / PROBLEME
+KRITISCH (direkt SEO-relevant)
+1. Partner-Seite hat KEIN H1-Tag
+
+Nur H2 und H3 vorhanden. Google braucht ein H1 pro Seite.
+2. Title-Tags zu lang (10 Seiten betroffen)
+
+Google schneidet nach ~60 Zeichen ab. Diese Titles werden abgeschnitten:
+Laborcontainer Berlin – Planung, Bau & Lieferung | Planexus | Planexus GmbH (75 Z.)
+GMP-Reinraum im Container: Pharmazeutische Produktion auf kleinstem Raum | Planexus GmbH (88 Z.)
+Laborcontainer mieten oder kaufen? Der komplette Entscheidungsleitfaden 2026 | Planexus GmbH (92 Z.)
+Und 7 weitere.
+3. Meta-Descriptions zu lang (8 Seiten betroffen)
+
+Google schneidet nach ~155 Zeichen ab. 8 Descriptions sind 160–173 Zeichen lang.
+4. Fehlende Alt-Texte auf Bildern
+
+Alle 6 Leistungs-Seiten: Hero-Bilder als CSS background-image ohne Alt-Text
+4 von 7 Magazin-Artikel: Keine Alt-Texte
+kontakt.astro, projekte.astro: Bilder ohne Alt-Text
+Alt-Texte sind ein direkter Ranking-Faktor für Google Bilder-Suche.
+5. Seiten mit 0 internen Links (im Content)
+
+ueber-uns.astro: 0 interne Links
+kontakt.astro: 0 interne Links
+projekte.astro: 0 interne Links
+partner.astro: 1 interner Link
+Interne Links sind einer der stärksten On-Page-Faktoren.
+WICHTIG (solltet ihr haben)
+6. Keine robots.txt Disallow für /admin (nur /admin/)
+
+Aktuell: Disallow: /admin/ – das blockt /admin/ mit Slash, aber nicht /admin ohne Slash.
+Sollte beides sein: /admin
+7. Kein WebSite-Schema mit SearchAction
+
+Google kann dadurch keine Sitelinks-Searchbox anzeigen.
+8. Keine Breadcrumbs auf Hauptseiten
+
+Leistungen-Übersicht, Über uns, Team, Kontakt, Projekte, Partner – keine Breadcrumb-Navigation und kein BreadcrumbList-Schema.
+9. 404-Seite gibt keinen HTTP 404 Status Code
+
+Die Seite zeigt "404" visuell an, aber der Server antwortet vermutlich mit HTTP 200. Google indexiert das als normale Seite (Soft 404).
+10. Keine lastmod Updates in Sitemap
+
+Viele Seiten haben noch 2026-02-07 als lastmod, obwohl Content aktualisiert wurde.
+NICE-TO-HAVE (für maximale Performance)
+11. Font-Loading nicht optimal
+
+Google Fonts werden über <link> geladen (render-blocking). Besser: font-display: swap ist zwar bei Google Fonts default, aber preconnect allein reicht nicht – ein preload für die wichtigsten Font-Files wäre besser.
+12. Keine hreflang-Tags
+
+Nicht nötig solange nur deutsche Seite. Aber wenn CH/AT-Städteseiten kommen, braucht ihr hreflang="de-DE", de-CH, de-AT.
+13. Kein SiteNavigationElement-Schema
+
+Hilft Google die Hauptnavigation zu verstehen.
+14. Bilder als CSS background-image statt <img>
+
+Google kann CSS background-images schwerer crawlen als <img>-Tags. Hero-Bilder auf den Leistungsseiten sind alle via CSS eingebunden.
+PRIORISIERTE HANDLUNGSEMPFEHLUNG
+Prio	Maßnahme	Aufwand
+1	Title-Tags kürzen (10 Seiten)	30 min
+2	Meta-Descriptions kürzen (8 Seiten)	30 min
+3	Alt-Texte für alle Bilder ergänzen	1-2 h
+4	H1 auf Partner-Seite ergänzen	5 min
+5	Interne Links auf Über-uns, Kontakt, Projekte, Partner	1 h
+6	robots.txt: /admin statt /admin/	2 min
+7	404-Seite: HTTP Status Code 404 setzen	10 min
+8	Breadcrumbs auf Hauptseiten ergänzen	1-2 h
+9	WebSite-Schema mit SearchAction	15 min
+10	Nginx Trailing-Slash-Redirect (hatten wir)	5 min
+Soll ich mit den Fixes anfangen? Ich würde mit den kritischen Punkten 1–7 starten – das sind die Sachen, die Google direkt beeinflussen.

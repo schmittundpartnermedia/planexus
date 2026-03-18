@@ -1,0 +1,153 @@
+import { useEffect, useRef } from "react";
+import { Renderer, Program, Texture, Mesh, Vec2, Flowmap, Triangle } from "ogl";
+
+export function LiquidDistortion({ imageSrc, className = "" }: { imageSrc: string; className?: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const vertex = `
+      attribute vec2 uv;
+      attribute vec2 position;
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = vec4(position, 0, 1);
+      }
+    `;
+
+    const fragment = `
+      precision highp float;
+      uniform sampler2D tWater;
+      uniform sampler2D tFlow;
+      varying vec2 vUv;
+      void main() {
+        // Wir lesen die Richtung der Mausbewegung aus der Flowmap
+        vec3 flow = texture2D(tFlow, vUv).rgb;
+        
+        // Der entscheidende Fix: Wir verschieben die UVs 
+        // entgegengesetzt zum Flow-Vektor, damit das Bild MITZIEHT
+        vec2 uv = vUv - flow.xy * 0.05;
+        
+        vec3 tex = texture2D(tWater, uv).rgb;
+        gl_FragColor = vec4(tex, 1.0);
+      }
+    `;
+
+    const renderer = new Renderer({ 
+      dpr: Math.min(window.devicePixelRatio, 2), 
+      alpha: true,
+      antialias: true 
+    });
+    const gl = renderer.gl;
+    container.appendChild(gl.canvas);
+
+    const mouse = new Vec2(-1);
+    const velocity = new Vec2();
+    let lastTime = performance.now();
+    const lastMouse = new Vec2();
+
+    function resize() {
+      const rect = container!.getBoundingClientRect();
+      renderer.setSize(rect.width, rect.height);
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    const geometry = new Triangle(gl);
+    const texture = new Texture(gl, { 
+      wrapS: gl.CLAMP_TO_EDGE, 
+      wrapT: gl.CLAMP_TO_EDGE 
+    });
+    
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => (texture.image = img);
+    img.src = imageSrc;
+
+    // Höhere Dissipation für den flüssigen Planexus-Look
+    const flowmap = new Flowmap(gl, { 
+      size: 512, 
+      dissipation: 0.97,
+      falloff: 0.3
+    });
+
+    const program = new Program(gl, {
+      vertex,
+      fragment,
+      uniforms: {
+        tWater: { value: texture },
+        tFlow: flowmap.uniform
+      },
+    });
+
+    const mesh = new Mesh(gl, { geometry, program });
+
+    function updateMouse(e: any) {
+      const rect = container!.getBoundingClientRect();
+      const x = e.clientX || (e.touches && e.touches[0].clientX);
+      const y = e.clientY || (e.touches && e.touches[0].clientY);
+
+      // 1. Position für die Flowmap (Standard WebGL-Y: 0 ist unten)
+      mouse.set(
+        (x - rect.left) / rect.width, 
+        1.0 - (y - rect.top) / rect.height
+      );
+
+      const time = performance.now();
+      const delta = Math.max(1, time - lastTime);
+      
+      const deltaX = x - lastMouse.x;
+      const deltaY = y - lastMouse.y;
+
+      // 2. DER ENTSCHEIDENDE VELOCITY-FIX
+      // Wir invertieren Y hier, weil OGL's Flowmap intern 
+      // die Koordinaten nochmal spiegelt.
+      velocity.x = deltaX / delta;
+      velocity.y = -deltaY / delta; 
+
+      lastMouse.set(x, y);
+      lastTime = time;
+      (velocity as any).needsUpdate = true;
+    }
+
+    container.addEventListener("mousemove", updateMouse);
+    container.addEventListener("touchstart", updateMouse, { passive: true });
+    container.addEventListener("touchmove", updateMouse, { passive: true });
+
+    let animationId: number;
+    function update() {
+      animationId = requestAnimationFrame(update);
+      
+      if ((velocity as any).needsUpdate) {
+        flowmap.aspect = renderer.width / renderer.height;
+        flowmap.mouse.copy(mouse);
+        // Sanftes Einschwingen der Bewegung
+        flowmap.velocity.lerp(velocity, 0.15);
+        (velocity as any).needsUpdate = false;
+      }
+      
+      flowmap.update();
+      renderer.render({ scene: mesh });
+    }
+    update();
+
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener("resize", resize);
+      container.removeEventListener("mousemove", updateMouse);
+      container.removeEventListener("touchstart", updateMouse);
+      container.removeEventListener("touchmove", updateMouse);
+      if (gl.canvas.parentNode) gl.canvas.parentNode.removeChild(gl.canvas);
+    };
+  }, [imageSrc]);
+
+  return (
+    <div 
+      ref={containerRef} 
+      className={`w-full h-full min-h-[500px] overflow-hidden ${className}`} 
+    />
+  );
+}
