@@ -696,105 +696,138 @@ import Layout from '../../layouts/Layout.astro';
       </div>
       <p class="text-xs text-slate-500 mb-12">* Standardisierte Ausstattungsvarianten, kombinierbar. Durch De-/Remontage von Außenwänden auch Großraumlabore möglich.</p>
 
-      <div class="space-y-6 mb-12">
-        <h3 class="text-2xl font-bold text-slate-900">Was bedeuten die einzelnen Kriterien?</h3>
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold text-slate-900 mb-8">Was bedeuten die einzelnen Kriterien?</h3>
 
-        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-3">Vorlaufzeiten — Wie lange bis zum Baubeginn?</h4>
-          <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600">
-            <div>
-              <p class="mb-2"><strong class="text-slate-800">Massivbau:</strong> Je nach Größe, Bauweise und Art des Bauherrn (öffentlich/nicht öffentlich) dauert die Vorbereitung teilweise Jahre.</p>
-              <p class="mb-2"><strong class="text-slate-800">Modulbau:</strong> Kürzer, da Planungen oft „out of the box" kommen und diverse Verfahren verkürzt werden.</p>
-              <p><strong class="text-slate-800">Container klassisch:</strong> Durch die Nutzung von Standardcontainern kann z.B. eine Statik einfacher erstellt werden.</p>
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-[#bbd700]/10 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#7a9900]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <h4 class="font-bold text-slate-900">Vorlaufzeiten</h4>
             </div>
-            <div>
-              <p class="mb-2"><strong class="text-slate-800">Container vorgefertigt:</strong> Analog zum klassischen Containerbau.</p>
-              <p><strong class="text-[#7a9900]">LABtoGO (standardisiert):</strong> Sehr kurz — alles ist bereits geplant, es müssen nur noch standortspezifische Gegebenheiten geprüft werden. Im Idealfall steht der gewünschte Container am Lager.</p>
+            <p class="text-sm text-slate-600 mb-4">Wie lange dauert es bis zum Baubeginn?</p>
+            <div class="space-y-2 text-sm text-slate-500 mb-4">
+              <p><strong class="text-slate-700">Massivbau:</strong> Vorbereitung dauert teilweise Jahre.</p>
+              <p><strong class="text-slate-700">Modulbau:</strong> Kürzer durch standardisierte Planungen.</p>
+              <p><strong class="text-slate-700">Container klassisch/vorgefertigt:</strong> Vereinfachte Statik durch Standardcontainer.</p>
+            </div>
+            <div class="bg-[#bbd700]/10 rounded-lg p-3 border border-[#bbd700]/20">
+              <p class="text-sm text-slate-700"><strong class="text-[#5a7a00]">LABtoGO:</strong> Sehr kurz — alles ist bereits geplant. Im Idealfall steht der Container am Lager.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-[#bbd700]/10 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#7a9900]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+              </div>
+              <h4 class="font-bold text-slate-900">Individualität</h4>
+            </div>
+            <p class="text-sm text-slate-600 mb-4">Wie anpassbar ist das Labor?</p>
+            <div class="space-y-2 text-sm text-slate-500 mb-4">
+              <p><strong class="text-slate-700">Massivbau:</strong> Exakt auf den Kunden abstimmbar (budgetabhängig).</p>
+              <p><strong class="text-slate-700">Modulbau:</strong> Hoch, aber durch Transportmaße eingeschränkt.</p>
+              <p><strong class="text-slate-700">Container klassisch/vorgefertigt:</strong> Kombinierbar, kleineres Raster als Modulbau.</p>
+            </div>
+            <div class="bg-[#bbd700]/10 rounded-lg p-3 border border-[#bbd700]/20">
+              <p class="text-sm text-slate-700"><strong class="text-[#5a7a00]">LABtoGO:</strong> Verschiedene Ausstattungsvarianten, kombinierbar. Standardisierung sichert Qualität und Geschwindigkeit.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-[#bbd700]/10 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#7a9900]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+              </div>
+              <h4 class="font-bold text-slate-900">Flexibilität & Erweiterbarkeit</h4>
+            </div>
+            <p class="text-sm text-slate-600 mb-4">Wie gut passt es sich an?</p>
+            <div class="space-y-2 text-sm text-slate-500 mb-4">
+              <p><strong class="text-slate-700">Massivbau:</strong> Aufwendige Um-/Anbaumaßnahmen nötig.</p>
+              <p><strong class="text-slate-700">Modulbau:</strong> Gesamtgebäude, nur bedingt erweiterbar.</p>
+              <p><strong class="text-slate-700">Container klassisch/vorgefertigt:</strong> Erweiterung möglich, abhängig vom Standort.</p>
+            </div>
+            <div class="bg-[#bbd700]/10 rounded-lg p-3 border border-[#bbd700]/20">
+              <p class="text-sm text-slate-700"><strong class="text-[#5a7a00]">LABtoGO:</strong> Sehr hoch — „Plug and Play" Container ermöglichen Erweiterung, Austausch und Neuanordnung einzelner Gebäudeteile.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-[#bbd700]/10 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#7a9900]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <h4 class="font-bold text-slate-900">Kosten</h4>
+            </div>
+            <p class="text-sm text-slate-600 mb-4">Was muss investiert werden?</p>
+            <div class="space-y-2 text-sm text-slate-500 mb-4">
+              <p><strong class="text-slate-700">Massivbau:</strong> Sehr hoch — lange Bauzeit, viele Gewerke.</p>
+              <p><strong class="text-slate-700">Modulbau:</strong> Hoch — effizienter durch Vorfertigung im Werk.</p>
+              <p><strong class="text-slate-700">Container klassisch:</strong> Hoch — günstige Container, aber teure Montage vor Ort.</p>
+              <p><strong class="text-slate-700">Container vorgefertigt:</strong> Mittel — Vorfertigung spart Montagezeit.</p>
+            </div>
+            <div class="bg-[#bbd700]/10 rounded-lg p-3 border border-[#bbd700]/20">
+              <p class="text-sm text-slate-700"><strong class="text-[#5a7a00]">LABtoGO:</strong> Niedrig — fertig auf die Baustelle, nur noch Anschluss an die Infrastruktur.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-[#bbd700]/10 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#7a9900]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <h4 class="font-bold text-slate-900">Aufwand Baustelle</h4>
+            </div>
+            <p class="text-sm text-slate-600 mb-4">Was passiert noch vor Ort?</p>
+            <div class="space-y-2 text-sm text-slate-500 mb-4">
+              <p><strong class="text-slate-700">Massivbau:</strong> Alles wird auf der Baustelle gemacht.</p>
+              <p><strong class="text-slate-700">Modulbau:</strong> Module verbinden und an Infrastruktur anschließen.</p>
+              <p><strong class="text-slate-700">Container klassisch:</strong> Montage plus alle Einbauten vor Ort.</p>
+              <p><strong class="text-slate-700">Container vorgefertigt:</strong> Ähnlich dem Modulbau.</p>
+            </div>
+            <div class="bg-[#bbd700]/10 rounded-lg p-3 border border-[#bbd700]/20">
+              <p class="text-sm text-slate-700"><strong class="text-[#5a7a00]">LABtoGO:</strong> Minimal — lediglich Anschluss an die Infrastruktur.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-[#bbd700]/10 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#7a9900]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+              </div>
+              <h4 class="font-bold text-slate-900">Gesamtdauer Projekt</h4>
+            </div>
+            <p class="text-sm text-slate-600 mb-4">Von der Feststellung des Bedarfs bis zur Nutzung</p>
+            <div class="space-y-2 text-sm text-slate-500 mb-4">
+              <p><strong class="text-slate-700">Massivbau:</strong> Teilweise Jahrzehnte — oft haben sich Bedarfe bis dahin geändert.</p>
+              <p><strong class="text-slate-700">Modulbau:</strong> Mittel — kürzere Bauzeit, aber lange Genehmigungsverfahren.</p>
+              <p><strong class="text-slate-700">Container klassisch/vorgefertigt:</strong> Mittel — verkürzte Verfahren möglich.</p>
+            </div>
+            <div class="bg-[#bbd700]/10 rounded-lg p-3 border border-[#bbd700]/20">
+              <p class="text-sm text-slate-700"><strong class="text-[#5a7a00]">LABtoGO:</strong> Minimal — Bevorratung der Module möglich. Labor innerhalb weniger Tage in Betrieb.</p>
             </div>
           </div>
         </div>
 
-        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-3">Individualität — Wie anpassbar ist das Labor?</h4>
-          <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600">
-            <div>
-              <p class="mb-2"><strong class="text-slate-800">Massivbau:</strong> Sehr hoch — das Labor kann (budgetabhängig) exakt auf den Kunden abgestimmt werden.</p>
-              <p class="mb-2"><strong class="text-slate-800">Modulbau:</strong> Höher, aber durch begrenzte Transportmaße der Raummodule eingeschränkt.</p>
-              <p><strong class="text-slate-800">Container klassisch/vorgefertigt:</strong> Hoch — Container sind kombinierbar, aber fertigungstechnisch in kleinerem Raster als Modulbau.</p>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-[#bbd700]/10 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-[#7a9900]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
             </div>
-            <div>
-              <p><strong class="text-[#7a9900]">LABtoGO (standardisiert):</strong> Mittel — verschiedene Ausstattungsvarianten, miteinander kombinierbar. Ausstattungen sind weitestgehend standardisiert, was Qualität und Geschwindigkeit sichert.</p>
+            <h4 class="font-bold text-slate-900">Mobilität — Ein oft unterschätzter Faktor</h4>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6">
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Dieser Aspekt wird in vielen Vergleichen nicht berücksichtigt. Der Massivbau scheidet hier ohnehin aus. 
+              Die meisten Modulbauten sowie klassische Containerbauten sind nur bedingt an einen anderen Standort zu verbringen — 
+              in jedem Fall sind größere Montage- und Demontagearbeiten nötig.
+            </p>
+            <div class="bg-[#bbd700]/10 rounded-lg p-4 border border-[#bbd700]/20 flex items-center">
+              <p class="text-sm text-slate-700"><strong class="text-[#5a7a00]">LABtoGO:</strong> Der standardisierte Containerbau kann mit wenig Aufwand an einen anderen Standort verbracht werden — vollständig und betriebsbereit.</p>
             </div>
           </div>
-        </div>
-
-        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-3">Flexibilität & Erweiterbarkeit — Wie gut passt es sich an?</h4>
-          <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600">
-            <div>
-              <p class="mb-2"><strong class="text-slate-800">Massivbau:</strong> Sehr gering — Änderungen bedürfen aufwendiger Um-/Anbaumaßnahmen und erfordern bei Bau bereits deutliche Mehrinvestitionen.</p>
-              <p class="mb-2"><strong class="text-slate-800">Modulbau:</strong> Gering — Module werden zu einem Gesamtgebäude kombiniert und sind nur bedingt erweiterbar.</p>
-              <p><strong class="text-slate-800">Container klassisch/vorgefertigt:</strong> Hoch — solange örtliche Gegebenheiten es zulassen, ist eine einfache Erweiterung möglich.</p>
-            </div>
-            <div>
-              <p><strong class="text-[#7a9900]">LABtoGO (standardisiert):</strong> Sehr hoch — durch die in sich geschlossenen „Plug and Play" Container besteht nicht nur die Möglichkeit, ein Gebäude zu erweitern. Einzelne Gebäudeteile können ausgetauscht oder die Reihenfolge von Räumen an neue Arbeitsabläufe angepasst werden.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-3">Kosten — Was muss investiert werden?</h4>
-          <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600">
-            <div>
-              <p class="mb-2"><strong class="text-slate-800">Massivbau:</strong> Sehr hoch — lange Bauzeit, hohe Materialkosten, viele Gewerke gleichzeitig.</p>
-              <p class="mb-2"><strong class="text-slate-800">Modulbau:</strong> Hoch — günstiger durch effizienteren Bauprozess und Vorfertigung im Werk.</p>
-              <p><strong class="text-slate-800">Container klassisch:</strong> Hoch — Container und Transport sind günstig, aber die lange Montage vor Ort verteuert diese Bauart erheblich.</p>
-            </div>
-            <div>
-              <p class="mb-2"><strong class="text-slate-800">Container vorgefertigt:</strong> Mittel — Vorfertigung im Werk spart Montagezeit, weniger Lieferungen auf die Baustelle.</p>
-              <p><strong class="text-[#7a9900]">LABtoGO (standardisiert):</strong> Niedrig — die Container kommen fertig auf die Baustelle, es muss lediglich der Anschluss an die Infrastruktur erfolgen.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-3">Aufwand Baustelle — Was passiert noch vor Ort?</h4>
-          <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600">
-            <div>
-              <p class="mb-2"><strong class="text-slate-800">Massivbau:</strong> Sehr hoch — alles wird auf der Baustelle gemacht.</p>
-              <p class="mb-2"><strong class="text-slate-800">Modulbau:</strong> Mittel — Module müssen verbunden und mit der Infrastruktur vor Ort verbunden werden.</p>
-              <p><strong class="text-slate-800">Container klassisch:</strong> Hoch — neben der Montage müssen alle Einbauten vorgenommen werden.</p>
-            </div>
-            <div>
-              <p class="mb-2"><strong class="text-slate-800">Container vorgefertigt:</strong> Mittel — ähnlich dem Modulbau.</p>
-              <p><strong class="text-[#7a9900]">LABtoGO (standardisiert):</strong> Minimal — es muss lediglich noch der Anschluss an die Infrastruktur erfolgen.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-3">Gesamtdauer Projekt — Von der Feststellung der Notwendigkeit bis zur Nutzung</h4>
-          <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600">
-            <div>
-              <p class="mb-2"><strong class="text-slate-800">Massivbau:</strong> Sehr lang — sehr lange Planungsphasen, Ausschreibungsverfahren, Bauzeiten. Teilweise Jahrzehnte, bis ein Gebäude fertig ist. Oft haben sich dann die ursprünglichen Vorgaben und Bedarfe geändert.</p>
-              <p class="mb-2"><strong class="text-slate-800">Modulbau:</strong> Mittel — teilweise lange Ausschreibungs- und Genehmigungsverfahren, aber deutlich kürzere Bauzeit.</p>
-              <p><strong class="text-slate-800">Container klassisch:</strong> Mittel — Verfahren können durch temporären Charakter verkürzt werden, aber Bauzeit noch lang.</p>
-            </div>
-            <div>
-              <p class="mb-2"><strong class="text-slate-800">Container vorgefertigt:</strong> Mittel — ähnlich dem klassischen Containerbau, aber mit verkürzter Baustellenzeit.</p>
-              <p><strong class="text-[#7a9900]">LABtoGO (standardisiert):</strong> Minimal — die hohe Standardisierung ermöglicht sogar eine Bevorratung der Module. Im Idealfall kann ein Labor innerhalb weniger Tage in Betrieb genommen werden.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-3">Mobilität — Ein oft unterschätzter Faktor</h4>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Dieser Aspekt wird in vielen Vergleichen nicht berücksichtigt. Der Massivbau scheidet hier ohnehin aus. 
-            Die meisten Modulbauten sowie klassische Containerbauten sind auch nur bedingt an einen anderen Standort zu verbringen — 
-            in jedem Fall sind größere Montage- und Demontagearbeiten nötig. 
-            <strong class="text-[#7a9900]">Lediglich der standardisierte Containerbau (LABtoGO) kann mit wenig Aufwand an einen anderen Standort verbracht werden.</strong>
-          </p>
         </div>
       </div>
 
