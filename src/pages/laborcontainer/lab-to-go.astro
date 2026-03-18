@@ -1,0 +1,428 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="LABtoGO – Mobiles Plug & Play Labor"
+  description="LABtoGO von Planexus: Das mobile Plug & Play Labor im 20ft Container. 3D-Ansicht, Innenrundgang und alle technischen Daten. Jetzt entdecken."
+  canonical="/laborcontainer/lab-to-go"
+  ogImage="/images/blog-laborcontainer-ausstattung.jpg"
+>
+  <div class="min-h-screen bg-[#13161c]">
+
+    <section id="hero-3d" class="relative w-full" style="height:100vh;">
+      <canvas id="c" class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing" style="z-index:1;"></canvas>
+
+      <div id="hero-overlay" class="absolute inset-0 z-10 pointer-events-none">
+        <div class="absolute top-24 left-0 right-0 flex flex-col items-center gap-4" id="headline">
+          <img src="/images/labtogo-logo.png" alt="LABtoGO Logo" class="h-14 md:h-20 w-auto" />
+          <p class="text-[11px] text-[#7a8fa8] tracking-[3px] uppercase">Plug & Play Labor · Sofort einsatzbereit · planexus.de</p>
+        </div>
+
+        <button id="cta-btn" class="pointer-events-auto absolute left-1/2 -translate-x-1/2 bottom-28 md:bottom-32 flex items-center gap-3 bg-[#297a38] hover:bg-[#38a049] text-white font-semibold px-7 py-4 text-[11px] tracking-[3px] uppercase transition-all" style="clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));font-family:'Barlow Condensed',sans-serif;">
+          <div class="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[9px] border-l-white shrink-0"></div>
+          Innenansicht erleben
+        </button>
+
+        <div id="controls" class="pointer-events-auto absolute right-7 bottom-10 flex gap-3 items-center transition-opacity duration-500">
+          <button class="ctrl text-[10px] tracking-[2px] uppercase text-[#7a8fa8] bg-[rgba(19,22,28,0.8)] backdrop-blur-sm border border-[rgba(122,143,168,0.16)] px-4 py-2 cursor-pointer hover:text-white hover:border-[rgba(126,211,33,0.35)] transition-all" id="btn-reset" style="font-family:'Barlow Condensed',sans-serif;">Reset</button>
+          <span class="text-[10px] tracking-[1.5px] text-[rgba(122,143,168,0.38)] uppercase">Drag · Scroll</span>
+          <button class="ctrl text-[10px] tracking-[2px] uppercase bg-[rgba(19,22,28,0.8)] backdrop-blur-sm border border-[rgba(126,211,33,0.18)] px-4 py-2 cursor-pointer hover:text-white transition-all" id="btn-auto" style="font-family:'Barlow Condensed',sans-serif;color:rgba(126,211,33,.65);">Auto ●</button>
+        </div>
+
+        <div id="specs" class="absolute top-1/2 right-7 -translate-y-1/2 flex flex-col gap-2 transition-opacity duration-500">
+          <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+            <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Typ <strong class="text-[#7a8fa8] font-normal">20ft High Cube</strong>
+          </div>
+          <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+            <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Außenlänge <strong class="text-[#7a8fa8] font-normal">~6.058 mm</strong>
+          </div>
+          <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+            <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Außenbreite <strong class="text-[#7a8fa8] font-normal">~2.438 mm</strong>
+          </div>
+          <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+            <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Außenhöhe <strong class="text-[#7a8fa8] font-normal">~2.896 mm</strong>
+          </div>
+          <div class="flex items-center gap-2 text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">
+            <div class="w-1 h-1 rounded-full bg-[rgba(126,211,33,0.55)] shrink-0"></div>Glasfront <strong class="text-[#7a8fa8] font-normal">Vollverglast</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="cm fixed z-20 w-6 h-6 pointer-events-none top-[62px] left-7 border-t border-l border-[rgba(126,211,33,0.35)]"></div>
+      <div class="cm fixed z-20 w-6 h-6 pointer-events-none bottom-8 right-7 border-b border-r border-[rgba(126,211,33,0.35)]"></div>
+
+      <div id="vign" class="fixed inset-0 z-[25] pointer-events-none opacity-0 transition-opacity duration-400" style="background:radial-gradient(ellipse at center,transparent 0%,#000 100%);"></div>
+
+      <div id="vid-ov" class="fixed inset-0 z-[30] bg-black flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-600">
+        <div id="vid-wrap" class="w-[min(90vw,1080px)] bg-black border border-[rgba(126,211,33,0.35)] overflow-hidden scale-[0.93] transition-transform duration-600" style="aspect-ratio:16/9;">
+          <video id="lab-video" class="w-full h-full object-cover" muted playsinline preload="auto">
+            <source src="/videos/laborcontainer-innenansicht.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div id="scrub-bar" class="w-[min(90vw,1080px)] mt-3 cursor-pointer">
+          <div class="relative h-1 bg-[rgba(122,143,168,0.2)] rounded-full overflow-hidden">
+            <div id="scrub-progress" class="absolute inset-y-0 left-0 bg-[#7ed321] rounded-full" style="width:0%;"></div>
+          </div>
+          <div class="flex items-center justify-between mt-2">
+            <div class="flex items-center gap-3">
+              <button id="play-pause" class="text-[10px] tracking-[2px] uppercase text-[#7a8fa8] hover:text-white transition-colors" style="font-family:'Barlow Condensed',sans-serif;">▶ Abspielen</button>
+              <span id="time-display" class="text-[10px] tracking-[2px] text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">0:00 / 0:00</span>
+            </div>
+            <div class="text-[11px] tracking-[3px] uppercase text-[#7a8fa8]" style="font-family:'Barlow Condensed',sans-serif;">
+              <strong class="text-white">Planexus</strong> — LABtoGO Innenansicht
+            </div>
+          </div>
+        </div>
+
+        <div class="w-[min(90vw,1080px)] flex items-center justify-between mt-4">
+          <p class="text-[10px] tracking-[2px] uppercase text-[rgba(122,143,168,0.45)]" style="font-family:'Barlow Condensed',sans-serif;">Ziehen Sie über das Video oder den Regler um die Ansicht zu steuern</p>
+          <button id="close-btn" class="text-[10px] tracking-[3px] uppercase text-[#7a8fa8] bg-transparent border border-[rgba(122,143,168,0.2)] px-5 py-2 cursor-pointer hover:text-white hover:border-[#7ed321] transition-all flex gap-2 items-center" style="font-family:'Barlow Condensed',sans-serif;">
+            ✕ Zurück zum Modell
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" is:inline></script>
+  <script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('c');
+    if (!canvas) return;
+    const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
+    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    renderer.shadowMap.enabled = true;
+    renderer.setClearColor(0x13161c,1);
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0x13161c, 20, 42);
+    const camera = new THREE.PerspectiveCamera(38,1,0.1,100);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+    const sun = new THREE.DirectionalLight(0xfff8ee, 1.0);
+    sun.position.set(5, 10, 6);
+    sun.castShadow = true;
+    sun.shadow.mapSize.set(1024,1024);
+    scene.add(sun);
+
+    const lZ = new THREE.DirectionalLight(0xffffff, 1.0);
+    lZ.position.set(0, 5, 10);
+    scene.add(lZ);
+    const lX = new THREE.DirectionalLight(0xffffff, 0.8);
+    lX.position.set(10, 3, 0);
+    scene.add(lX);
+    const lXn = new THREE.DirectionalLight(0xffffff, 0.8);
+    lXn.position.set(-10, 3, 0);
+    scene.add(lXn);
+    const lBot = new THREE.DirectionalLight(0xffffff, 0.5);
+    lBot.position.set(2, -5, 8);
+    scene.add(lBot);
+    const intLight = new THREE.PointLight(0xfff5cc, 4.0, 6.0);
+    intLight.position.set(1.8, 0.3, 0.2);
+    scene.add(intLight);
+
+    const L=6.058, H=2.896, W=2.438;
+    const hl=L/2, hh=H/2, hw=W/2;
+    const T=0.07;
+
+    const mAnthrazit = new THREE.MeshStandardMaterial({color:0x252930, metalness:0.6, roughness:0.5});
+    const mRahmen = new THREE.MeshStandardMaterial({color:0x1a1e24, metalness:0.75, roughness:0.3});
+    const mRippe = new THREE.MeshStandardMaterial({color:0x2a2e36, metalness:0.55, roughness:0.55});
+    const mGlasAussen = new THREE.MeshStandardMaterial({color:0xd0eedd,emissive:0xaaddbb,emissiveIntensity:1.2,transparent:true,opacity:0.55,metalness:0.0,roughness:0.0,side:THREE.DoubleSide});
+    const mMilchglas = new THREE.MeshStandardMaterial({color:0xf5f8f5,emissive:0xffffff,emissiveIntensity:0.4,transparent:true,opacity:0.85,roughness:0.95,metalness:0.0,side:THREE.DoubleSide});
+    const mInnenwand = new THREE.MeshStandardMaterial({color:0xfffbf0,emissive:0xfff5dd,emissiveIntensity:0.8,roughness:0.9,metalness:0.0});
+    const mInnenboden = new THREE.MeshStandardMaterial({color:0xe8ece8, roughness:0.8, metalness:0.05});
+    const mGround = new THREE.MeshStandardMaterial({color:0x111418, roughness:0.92});
+
+    const root = new THREE.Group();
+    scene.add(root);
+
+    function mk(w,h,d,mat,x,y,z){
+      const m = new THREE.Mesh(new THREE.BoxGeometry(w,h,d), mat);
+      m.position.set(x,y,z);
+      m.castShadow = true;
+      m.receiveShadow = true;
+      root.add(m);
+      return m;
+    }
+
+    [[-hl,hw],[-hl,-hw],[hl,hw],[hl,-hw]].forEach(([x,z])=>{ mk(T,H,T,mRahmen,x,0,z); });
+    mk(L,T,T,mRahmen,0,hh,hw); mk(L,T,T,mRahmen,0,hh,-hw);
+    mk(L,T,T,mRahmen,0,-hh,hw); mk(L,T,T,mRahmen,0,-hh,-hw);
+    mk(T,T,W,mRahmen,hl,hh,0); mk(T,T,W,mRahmen,-hl,hh,0);
+    mk(T,T,W,mRahmen,hl,-hh,0); mk(T,T,W,mRahmen,-hl,-hh,0);
+
+    mk(L-T*2,T*0.5,W,mAnthrazit,0,hh-T*0.25,0);
+    for(let z=-hw+0.09;z<hw;z+=0.175){ mk(L-T*2,0.042,0.042,mRippe,0,hh-T*0.02,z); }
+
+    mk(L,T*0.5,0.12,mRahmen,0,-hh-T*0.25,hw-0.18);
+    mk(L,T*0.5,0.12,mRahmen,0,-hh-T*0.25,-hw+0.18);
+    [[-hl,hw],[-hl,-hw],[hl,hw],[hl,-hw]].forEach(([x,z])=>{ mk(0.18,T*0.5,0.18,mRahmen,x,-hh-T*0.25,z); });
+
+    function lwZ(sx,sy,cx,cy,cz,dirZ){
+      mk(sx,sy,T*0.42,mAnthrazit,cx,cy,cz);
+      for(let x=cx-sx/2+0.09;x<=cx+sx/2-0.05;x+=0.175)
+        mk(0.042,sy,0.05,mRippe,x,cy,cz+dirZ*T*0.26);
+    }
+    function lwX(sz,sy,cx,cy,cz,dirX){
+      mk(T*0.42,sy,sz,mAnthrazit,cx,cy,cz);
+      for(let z=cz-sz/2+0.09;z<=cz+sz/2-0.05;z+=0.175)
+        mk(0.05,sy,0.042,mRippe,cx+dirX*T*0.26,cy,z);
+    }
+
+    lwX(W-T*2, H-T*2, -hl+T*0.26, 0, 0, -1);
+    lwZ(L-T*2,H-T*2,0,0,-hw+T*0.26,-1);
+
+    const DX=hl-1.05, DW=0.90, DH=2.10, DL=DX-DW/2, DR=DX+DW/2;
+    const solidW=DL-(-hl+T);
+    lwZ(solidW,H-T*2,(-hl+T+DL)/2,0,hw-T*0.26,+1);
+    const stripW=(hl-T)-DR;
+    if(stripW>0.02) lwZ(stripW,H-T*2,DR+stripW/2,0,hw-T*0.26,+1);
+
+    const aboveH=(H-T*2)-DH;
+    const FR=0.05;
+    mk(FR,aboveH,T*0.28,mRahmen,DX-DW/2+FR/2,hh-aboveH/2,hw+T*0.06);
+    mk(FR,aboveH,T*0.28,mRahmen,DX+DW/2-FR/2,hh-aboveH/2,hw+T*0.06);
+    mk(DW,FR,T*0.28,mRahmen,DX,hh-FR/2,hw+T*0.06);
+    mk(DW,FR,T*0.28,mRahmen,DX,hh-aboveH+FR/2,hw+T*0.06);
+    mk(DW-FR*2,aboveH-FR*2,T*0.14,mGlasAussen,DX,hh-aboveH/2,hw+T*0.07);
+
+    mk(FR,DH,T*0.28,mRahmen,DX-DW/2+FR/2,-hh+DH/2,hw+T*0.06);
+    mk(FR,DH,T*0.28,mRahmen,DX+DW/2-FR/2,-hh+DH/2,hw+T*0.06);
+    mk(DW,FR,T*0.28,mRahmen,DX,-hh+DH-FR/2,hw+T*0.06);
+    mk(DW,FR,T*0.28,mRahmen,DX,-hh+FR/2,hw+T*0.06);
+    mk(DW-FR*2,DH-FR*2,T*0.14,mGlasAussen,DX,-hh+DH/2,hw+T*0.07);
+    const mSilver=new THREE.MeshStandardMaterial({color:0x999faa,metalness:.85,roughness:.15});
+    [-0.7,-0.05,0.6].forEach(dy=>{ mk(0.04,0.08,0.05,mSilver,DX-DW/2-0.01,-hh+DH/2+dy,hw+T*0.1); });
+    const mGriff=new THREE.MeshStandardMaterial({color:0x111111,metalness:.85,roughness:.15});
+    mk(0.025,0.22,0.025,mGriff,DX+0.19,-hh+DH/2,hw+T*0.16);
+    mk(0.08,0.025,0.025,mGriff,DX+0.155,-hh+DH/2+0.10,hw+T*0.14);
+    mk(0.08,0.025,0.025,mGriff,DX+0.155,-hh+DH/2-0.10,hw+T*0.14);
+
+    mk(T*0.8,H-T*2,T*0.8,mRahmen,hl,0,0);
+    const gpZ=hw-T*1.8;
+    mk(T*0.2,H-T*2,gpZ*2-0.02,mGlasAussen,hl,0,-(hw-T-gpZ));
+    mk(T*0.2,H-T*2,gpZ*2-0.02,mGlasAussen,hl,0, (hw-T-gpZ));
+
+    const VX = hl - 1.5;
+    mk(1.5, T*0.18, W-T*2.5, mInnenwand, hl-0.75, hh-T*1.5, 0);
+    mk(1.5, T*0.18, W-T*2.5, mInnenboden, hl-0.75,-hh+T*1.4, 0);
+    mk(1.5, H-T*2.5, T*0.18, mInnenwand, hl-0.75, 0, hw-T*2.2);
+    mk(1.5, H-T*2.5, T*0.18, mInnenwand, hl-0.75, 0,-hw+T*1.8);
+
+    const doorBackLight = new THREE.PointLight(0xfff8cc, 5.0, 2.5);
+    doorBackLight.position.set(DX, 0.3, hw-0.25);
+    scene.add(doorBackLight);
+
+    mk(T*0.18, H-T*2.2, W-T*2.2, mMilchglas, VX, 0, 0);
+    const IDW=0.80, IDH=2.05;
+    const mWeiss = new THREE.MeshStandardMaterial({color:0xffffff,emissive:0xffffff,emissiveIntensity:0.2,roughness:0.7});
+    mk(T*0.3, IDH, IDW, mMilchglas, VX-T*0.05, -hh+IDH/2+T, 0);
+    mk(T*0.35, IDH+T*0.3, 0.055, mWeiss, VX, -hh+IDH/2+T,-IDW/2);
+    mk(T*0.35, IDH+T*0.3, 0.055, mWeiss, VX, -hh+IDH/2+T, IDW/2);
+    mk(T*0.35, 0.055, IDW+0.06, mWeiss, VX, -hh+IDH+T, 0);
+
+    const mLED = new THREE.MeshStandardMaterial({color:0xffffff,emissive:0xfff8cc,emissiveIntensity:2.5,roughness:0.8});
+    mk(0.45, T*0.15, 0.18, mLED, hl-0.65, hh-T*1.62, 0);
+
+    const gnd = new THREE.Mesh(new THREE.PlaneGeometry(26,26), mGround);
+    gnd.rotation.x = -Math.PI/2;
+    gnd.position.y = -hh-T*0.6;
+    gnd.receiveShadow = true;
+    scene.add(gnd);
+    const grid = new THREE.GridHelper(26,26,0x1a1e26,0x171b22);
+    grid.position.y = -hh-T*0.59;
+    scene.add(grid);
+
+    let sph = {theta:2.2, phi:1.08, r:12};
+    let tgt = {...sph};
+    let drag=false, prev={x:0,y:0};
+    let autoRot=true, rotT=null;
+
+    function camUp(){
+      camera.position.set(
+        sph.r*Math.sin(sph.phi)*Math.sin(sph.theta),
+        sph.r*Math.cos(sph.phi),
+        sph.r*Math.sin(sph.phi)*Math.cos(sph.theta)
+      );
+      camera.lookAt(0,0,0);
+    }
+
+    canvas.addEventListener('mousedown',e=>{drag=true;autoRot=false;clearTimeout(rotT);prev={x:e.clientX,y:e.clientY};});
+    window.addEventListener('mousemove',e=>{
+      if(!drag)return;
+      tgt.theta-=(e.clientX-prev.x)*0.005;
+      tgt.phi=Math.max(0.22,Math.min(1.52,tgt.phi+(e.clientY-prev.y)*0.004));
+      prev={x:e.clientX,y:e.clientY};
+    });
+    window.addEventListener('mouseup',()=>{drag=false;rotT=setTimeout(()=>autoRot=true,4500);});
+    canvas.addEventListener('wheel',e=>{
+      tgt.r=Math.max(4,Math.min(20,tgt.r+e.deltaY*0.013));
+      autoRot=false;clearTimeout(rotT);rotT=setTimeout(()=>autoRot=true,3000);
+    },{passive:true});
+    canvas.addEventListener('touchstart',e=>{drag=true;autoRot=false;prev={x:e.touches[0].clientX,y:e.touches[0].clientY};});
+    canvas.addEventListener('touchmove',e=>{
+      if(!drag)return;
+      tgt.theta-=(e.touches[0].clientX-prev.x)*0.005;
+      tgt.phi=Math.max(0.22,Math.min(1.52,tgt.phi+(e.touches[0].clientY-prev.y)*0.004));
+      prev={x:e.touches[0].clientX,y:e.touches[0].clientY};
+    });
+    canvas.addEventListener('touchend',()=>{drag=false;});
+
+    document.getElementById('btn-reset').addEventListener('click',()=>{tgt={theta:2.2,phi:1.08,r:12};autoRot=true;});
+    const autoBtn=document.getElementById('btn-auto');
+    autoBtn.addEventListener('click',()=>{
+      autoRot=!autoRot;
+      autoBtn.textContent=autoRot?'Auto ●':'Auto ○';
+      autoBtn.style.color=autoRot?'rgba(126,211,33,.65)':'rgba(122,143,168,.45)';
+    });
+
+    let zooming=false, zProg=0;
+    const zSt=new THREE.Vector3();
+    const zEn=new THREE.Vector3(hl-0.3, 0.1, 0.1);
+    const vign=document.getElementById('vign');
+    const vidOv=document.getElementById('vid-ov');
+    const ctaBtn=document.getElementById('cta-btn');
+    const hdl=document.getElementById('headline');
+    const ctrl=document.getElementById('controls');
+    const sps=document.getElementById('specs');
+    const video=document.getElementById('lab-video');
+    const scrubBar=document.getElementById('scrub-bar');
+    const scrubProgress=document.getElementById('scrub-progress');
+    const playPause=document.getElementById('play-pause');
+    const timeDisplay=document.getElementById('time-display');
+
+    function startZoom(){
+      if(zooming)return;
+      zooming=true; autoRot=false;
+      zSt.copy(camera.position);
+      [ctaBtn,hdl,ctrl,sps].forEach(el=>{if(el)el.style.opacity='0';if(el)el.style.pointerEvents='none';});
+    }
+    ctaBtn.addEventListener('click',startZoom);
+
+    document.getElementById('close-btn').addEventListener('click',()=>{
+      vidOv.classList.remove('on');
+      vidOv.style.opacity='0';
+      vidOv.style.pointerEvents='none';
+      document.getElementById('vid-wrap').style.transform='scale(0.93)';
+      video.pause();
+      isPlaying=false;
+      playPause.textContent='▶ Abspielen';
+      setTimeout(()=>{
+        tgt={theta:2.2,phi:1.08,r:12}; sph={...tgt}; camUp();
+        [ctaBtn,hdl,ctrl,sps].forEach(el=>{if(el)el.style.opacity='1';if(el)el.style.pointerEvents='auto';});
+        autoRot=true; zooming=false; zProg=0;
+        vign.style.opacity='0';
+      },400);
+    });
+
+    let isPlaying=false;
+    let videoDrag=false;
+
+    playPause.addEventListener('click',()=>{
+      if(isPlaying){video.pause();isPlaying=false;playPause.textContent='▶ Abspielen';}
+      else{video.play();isPlaying=true;playPause.textContent='⏸ Pause';}
+    });
+
+    function formatTime(s){
+      const m=Math.floor(s/60);
+      const sec=Math.floor(s%60);
+      return m+':'+(sec<10?'0':'')+sec;
+    }
+
+    function updateScrub(){
+      if(video.duration){
+        const pct=(video.currentTime/video.duration)*100;
+        scrubProgress.style.width=pct+'%';
+        timeDisplay.textContent=formatTime(video.currentTime)+' / '+formatTime(video.duration);
+      }
+      requestAnimationFrame(updateScrub);
+    }
+    updateScrub();
+
+    function scrubTo(e){
+      const rect=scrubBar.getBoundingClientRect();
+      const pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
+      video.currentTime=pct*video.duration;
+    }
+
+    scrubBar.addEventListener('mousedown',e=>{videoDrag=true;scrubTo(e);if(isPlaying){video.pause();}});
+    window.addEventListener('mousemove',e=>{if(videoDrag)scrubTo(e);});
+    window.addEventListener('mouseup',()=>{if(videoDrag&&isPlaying){video.play();}videoDrag=false;});
+
+    scrubBar.addEventListener('touchstart',e=>{videoDrag=true;scrubTo(e.touches[0]);if(isPlaying){video.pause();}});
+    window.addEventListener('touchmove',e=>{if(videoDrag)scrubTo(e.touches[0]);});
+    window.addEventListener('touchend',()=>{if(videoDrag&&isPlaying){video.play();}videoDrag=false;});
+
+    let vidDrag=false, vidPrevX=0;
+    const vidWrap=document.getElementById('vid-wrap');
+    vidWrap.addEventListener('mousedown',e=>{vidDrag=true;vidPrevX=e.clientX;if(isPlaying){video.pause();}e.preventDefault();});
+    window.addEventListener('mousemove',e=>{
+      if(!vidDrag)return;
+      const dx=e.clientX-vidPrevX;
+      vidPrevX=e.clientX;
+      if(video.duration){
+        video.currentTime=Math.max(0,Math.min(video.duration,video.currentTime+dx*0.03));
+      }
+    });
+    window.addEventListener('mouseup',()=>{if(vidDrag&&isPlaying){video.play();}vidDrag=false;});
+
+    vidWrap.addEventListener('touchstart',e=>{vidDrag=true;vidPrevX=e.touches[0].clientX;if(isPlaying){video.pause();}});
+    window.addEventListener('touchmove',e=>{
+      if(!vidDrag)return;
+      const dx=e.touches[0].clientX-vidPrevX;
+      vidPrevX=e.touches[0].clientX;
+      if(video.duration){
+        video.currentTime=Math.max(0,Math.min(video.duration,video.currentTime+dx*0.03));
+      }
+    });
+    window.addEventListener('touchend',()=>{if(vidDrag&&isPlaying){video.play();}vidDrag=false;});
+
+    function resize(){
+      renderer.setSize(canvas.parentElement.clientWidth,canvas.parentElement.clientHeight);
+      camera.aspect=canvas.parentElement.clientWidth/canvas.parentElement.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+    resize();
+    window.addEventListener('resize',resize);
+
+    const clock=new THREE.Clock();
+    function lerp(a,b,t){return a+(b-a)*t;}
+    function ease(t){return t<.5?2*t*t:-1+(4-2*t)*t;}
+
+    function animate(){
+      requestAnimationFrame(animate);
+      const dt=clock.getDelta(), t=clock.getElapsedTime();
+      if(!zooming){
+        if(autoRot) tgt.theta+=dt*0.09;
+        sph.theta=lerp(sph.theta,tgt.theta,0.08);
+        sph.phi=lerp(sph.phi,tgt.phi,0.08);
+        sph.r=lerp(sph.r,tgt.r,0.08);
+        camUp();
+        root.position.y=Math.sin(t*0.4)*0.015;
+        intLight.intensity=3.5+Math.sin(t*0.9)*0.5;
+      } else {
+        zProg=Math.min(1,zProg+dt*0.45);
+        const ep=ease(zProg);
+        if(zProg>0.3){
+          vign.style.opacity=Math.min(1,(zProg-0.3)/0.42);
+        }
+        camera.position.lerpVectors(zSt,zEn,ep);
+        camera.lookAt(0,0,0);
+        if(zProg>=0.97 && vidOv.style.opacity==='0'){
+          vidOv.style.opacity='1';
+          vidOv.style.pointerEvents='all';
+          document.getElementById('vid-wrap').style.transform='scale(1)';
+        }
+      }
+      renderer.render(scene,camera);
+    }
+    animate();
+  });
+  </script>
+</Layout>
