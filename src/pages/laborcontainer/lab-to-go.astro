@@ -65,7 +65,7 @@ import Layout from '../../layouts/Layout.astro';
     </div>
 
     <div id="video-player" class="fixed inset-0 z-[50] bg-black/95 backdrop-blur-sm flex flex-col items-center justify-center transition-opacity duration-500 pointer-events-none" style="opacity:0;">
-      <div id="vid-wrap" class="w-[min(90vw,1080px)] bg-black border border-[rgba(187,215,0,0.35)] rounded-lg overflow-hidden" style="aspect-ratio:16/9;">
+      <div id="vid-wrap" class="w-[min(90vw,1080px)] bg-black border border-[rgba(187,215,0,0.35)] rounded-lg overflow-hidden" style="aspect-ratio:16/9;cursor:grab;">
         <div class="relative w-full h-full">
           <video id="lab-video" class="w-full h-full object-cover" muted playsinline preload="auto" style="opacity:0;">
             <source src="/videos/laborcontainer-innenansicht.mp4" type="video/mp4" />
@@ -76,6 +76,14 @@ import Layout from '../../layouts/Layout.astro';
             </button>
             <p class="text-white font-bold text-lg tracking-[3px] uppercase">LABtoGO Innenansicht</p>
             <p class="text-[#7a8fa8] text-xs tracking-[2px] uppercase">Klicken zum Starten</p>
+          </div>
+          <div id="vid-hint" class="absolute bottom-4 left-0 right-0 text-center hidden">
+            <div class="inline-flex items-center gap-3 bg-black/70 backdrop-blur-sm border border-[rgba(187,215,0,0.2)] rounded-full px-5 py-2">
+              <svg class="w-4 h-4 text-[#bbd700] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+              <span class="text-[10px] tracking-[2px] uppercase text-[#bbd700]">Maus ziehen: Rundgang steuern</span>
+              <span class="text-[10px] text-white/30">|</span>
+              <span class="text-[10px] tracking-[2px] uppercase text-[#7a8fa8]">Regler: Position wählen</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1148,6 +1156,7 @@ import Layout from '../../layouts/Layout.astro';
 
     let isPlaying = false;
     let videoDrag = false;
+    let videoReady = false;
 
     ctaVideo.addEventListener('click', () => {
       videoPlayer.style.opacity = '1';
@@ -1163,24 +1172,70 @@ import Layout from '../../layouts/Layout.astro';
       video.currentTime = 0;
       video.style.opacity = '0';
       vidPoster.style.display = '';
+      if (vidHint) vidHint.classList.add('hidden');
       isPlaying = false;
+      videoReady = false;
       playPause.innerHTML = '&#9654; Abspielen';
     });
+
+    const vidWrap = document.getElementById('vid-wrap');
+    const vidHint = document.getElementById('vid-hint');
+    let vidDrag = false;
+    let vidPrevX = 0;
+    let wasPlaying = false;
 
     function startVideo() {
       video.style.opacity = '1';
       vidPoster.style.display = 'none';
-      video.play();
-      isPlaying = true;
-      playPause.innerHTML = '&#9208; Pause';
+      videoReady = true;
+      video.currentTime = 0;
+      isPlaying = false;
+      playPause.innerHTML = '&#9654; Abspielen';
+      vidHint.classList.remove('hidden');
     }
 
     playBig.addEventListener('click', startVideo);
     playPause.addEventListener('click', () => {
-      if (vidPoster.style.display !== 'none') { startVideo(); return; }
+      if (!videoReady) { startVideo(); return; }
       if (isPlaying) { video.pause(); isPlaying = false; playPause.innerHTML = '&#9654; Abspielen'; }
-      else { video.play(); isPlaying = true; playPause.innerHTML = '&#9208; Pause'; }
+      else { video.play(); isPlaying = true; playPause.innerHTML = '&#9208; Pause'; vidHint.classList.add('hidden'); }
     });
+
+    vidWrap.addEventListener('mousedown', e => {
+      if (!videoReady) return;
+      vidDrag = true;
+      vidPrevX = e.clientX;
+      wasPlaying = isPlaying;
+      if (isPlaying) { video.pause(); isPlaying = false; playPause.innerHTML = '&#9654; Abspielen'; }
+      vidWrap.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', e => {
+      if (!vidDrag) return;
+      const dx = e.clientX - vidPrevX;
+      vidPrevX = e.clientX;
+      if (video.duration) video.currentTime = Math.max(0, Math.min(video.duration, video.currentTime + dx * 0.05));
+    });
+    window.addEventListener('mouseup', () => {
+      if (!vidDrag) return;
+      vidDrag = false;
+      vidWrap.style.cursor = 'grab';
+    });
+
+    vidWrap.addEventListener('touchstart', e => {
+      if (!videoReady) return;
+      vidDrag = true;
+      vidPrevX = e.touches[0].clientX;
+      wasPlaying = isPlaying;
+      if (isPlaying) { video.pause(); isPlaying = false; playPause.innerHTML = '&#9654; Abspielen'; }
+    }, { passive: true });
+    window.addEventListener('touchmove', e => {
+      if (!vidDrag) return;
+      const dx = e.touches[0].clientX - vidPrevX;
+      vidPrevX = e.touches[0].clientX;
+      if (video.duration) video.currentTime = Math.max(0, Math.min(video.duration, video.currentTime + dx * 0.05));
+    }, { passive: true });
+    window.addEventListener('touchend', () => { vidDrag = false; }, { passive: true });
 
     function formatTime(s) {
       const m = Math.floor(s / 60);
