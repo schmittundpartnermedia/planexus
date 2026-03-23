@@ -164,14 +164,14 @@ export default function Navbar() {
           </div>
           
           <a
-            href="/laborcontainer/lab-to-go"
+            href="/laborcontainer/labtogo"
             className={cn(
               "text-sm font-bold transition-colors relative uppercase tracking-wide",
-              location === "/laborcontainer/lab-to-go" ? "text-primary" : "text-primary/90 hover:text-primary"
+              location === "/laborcontainer/labtogo" ? "text-primary" : "text-primary/90 hover:text-primary"
             )}
           >
             LABtoGO
-            {location === "/laborcontainer/lab-to-go" && (
+            {location === "/laborcontainer/labtogo" && (
               <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary" />
             )}
           </a>
@@ -240,7 +240,7 @@ export default function Navbar() {
                 ))}
               </div>
               
-              <a href="/laborcontainer/lab-to-go" className={cn("text-left text-lg font-bold py-3 border-b border-gray-50 w-full block", location === "/laborcontainer/lab-to-go" ? "text-primary" : "text-primary/80")}>
+              <a href="/laborcontainer/labtogo" className={cn("text-left text-lg font-bold py-3 border-b border-gray-50 w-full block", location === "/laborcontainer/labtogo" ? "text-primary" : "text-primary/80")}>
                 LABtoGO
               </a>
 
