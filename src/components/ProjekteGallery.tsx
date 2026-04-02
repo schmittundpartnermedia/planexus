@@ -92,15 +92,15 @@ const messeImages = [
 ];
 
 const analyticaImages = [
-  "/attached_assets/IMG20260325103146_1775136296790.jpg",
-  "/attached_assets/IMG20260325103617_1775136310088.jpg",
-  "/attached_assets/IMG20260325104611_1775136310088.jpg",
-  "/attached_assets/IMG20260325105106_1775136310089.jpg",
-  "/attached_assets/IMG20260325104741_1775136310089.jpg",
-  "/attached_assets/IMG20260325104752_1775136310089.jpg",
-  "/attached_assets/IMG20260325104841_1775136310089.jpg",
-  "/attached_assets/IMG20260325105254_1775136310089.jpg",
-  "/attached_assets/IMG20260325105311_1775136310089.jpg"
+  "/images/analytica-2026/stand-uebersicht.jpg",
+  "/images/analytica-2026/stand-front.jpg",
+  "/images/analytica-2026/fachgespraeche.jpg",
+  "/images/analytica-2026/innenansicht.jpg",
+  "/images/analytica-2026/arbeitsflaeche.jpg",
+  "/images/analytica-2026/detail.jpg",
+  "/images/analytica-2026/wandorganizer.jpg",
+  "/images/analytica-2026/rueckseite.jpg",
+  "/images/analytica-2026/infowand.jpg"
 ];
 
 const categories = ["Alle", "Industrie", "Pharma", "Forschung", "Öffentlich"];
