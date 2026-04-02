@@ -82,6 +82,22 @@ const projects: Project[] = [
       "/attached_assets/IMG_5781_1769690606130.jpg"
     ],
     category: "Forschung"
+  },
+  {
+    name: "analytica 2026 — LABtoGO Premiere",
+    description: "Weltpremiere des LABtoGO auf der analytica 2026 in München. Begehbarer Laborcontainer 2.0 mit vollständiger Ausstattung live am Messestand.",
+    images: [
+      "/attached_assets/IMG20260325103146_1775136296790.jpg",
+      "/attached_assets/IMG20260325103617_1775136310088.jpg",
+      "/attached_assets/IMG20260325104611_1775136310088.jpg",
+      "/attached_assets/IMG20260325105106_1775136310089.jpg",
+      "/attached_assets/IMG20260325104741_1775136310089.jpg",
+      "/attached_assets/IMG20260325104752_1775136310089.jpg",
+      "/attached_assets/IMG20260325104841_1775136310089.jpg",
+      "/attached_assets/IMG20260325105254_1775136310089.jpg",
+      "/attached_assets/IMG20260325105311_1775136310089.jpg"
+    ],
+    category: "Messe"
   }
 ];
 
@@ -91,7 +107,7 @@ const messeImages = [
   "/attached_assets/IMG_20160509_190912_1769690631269.jpg"
 ];
 
-const categories = ["Alle", "Industrie", "Pharma", "Forschung", "Öffentlich"];
+const categories = ["Alle", "Industrie", "Pharma", "Forschung", "Öffentlich", "Messe"];
 
 export default function ProjekteGallery() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -166,7 +182,7 @@ export default function ProjekteGallery() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">Messe MC Labor 2016</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Messeauftritt mit begehbarem Laborcontainer-Exponat.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">Unser erster Messeauftritt mit begehbarem Laborcontainer-Exponat.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {messeImages.map((img, index) => (
