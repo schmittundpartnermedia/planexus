@@ -83,22 +83,6 @@ const projects: Project[] = [
     ],
     category: "Forschung"
   },
-  {
-    name: "analytica 2026 — LABtoGO Premiere",
-    description: "Weltpremiere des LABtoGO auf der analytica 2026 in München. Begehbarer Laborcontainer 2.0 mit vollständiger Ausstattung live am Messestand.",
-    images: [
-      "/attached_assets/IMG20260325103146_1775136296790.jpg",
-      "/attached_assets/IMG20260325103617_1775136310088.jpg",
-      "/attached_assets/IMG20260325104611_1775136310088.jpg",
-      "/attached_assets/IMG20260325105106_1775136310089.jpg",
-      "/attached_assets/IMG20260325104741_1775136310089.jpg",
-      "/attached_assets/IMG20260325104752_1775136310089.jpg",
-      "/attached_assets/IMG20260325104841_1775136310089.jpg",
-      "/attached_assets/IMG20260325105254_1775136310089.jpg",
-      "/attached_assets/IMG20260325105311_1775136310089.jpg"
-    ],
-    category: "Messe"
-  }
 ];
 
 const messeImages = [
@@ -107,7 +91,19 @@ const messeImages = [
   "/attached_assets/IMG_20160509_190912_1769690631269.jpg"
 ];
 
-const categories = ["Alle", "Industrie", "Pharma", "Forschung", "Öffentlich", "Messe"];
+const analyticaImages = [
+  "/attached_assets/IMG20260325103146_1775136296790.jpg",
+  "/attached_assets/IMG20260325103617_1775136310088.jpg",
+  "/attached_assets/IMG20260325104611_1775136310088.jpg",
+  "/attached_assets/IMG20260325105106_1775136310089.jpg",
+  "/attached_assets/IMG20260325104741_1775136310089.jpg",
+  "/attached_assets/IMG20260325104752_1775136310089.jpg",
+  "/attached_assets/IMG20260325104841_1775136310089.jpg",
+  "/attached_assets/IMG20260325105254_1775136310089.jpg",
+  "/attached_assets/IMG20260325105311_1775136310089.jpg"
+];
+
+const categories = ["Alle", "Industrie", "Pharma", "Forschung", "Öffentlich"];
 
 export default function ProjekteGallery() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -179,6 +175,30 @@ export default function ProjekteGallery() {
       </section>
 
       <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">analytica 2026 — LABtoGO Premiere</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Weltpremiere des LABtoGO auf der analytica 2026 in München. Begehbarer Laborcontainer 2.0 mit vollständiger Ausstattung live am Messestand — Halle B2, Stand 322.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {analyticaImages.map((img, index) => (
+              <div
+                key={index}
+                className="aspect-[4/3] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+              >
+                <img
+                  src={img}
+                  alt={`analytica 2026 LABtoGO Premiere - Bild ${index + 1}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">Messe MC Labor 2016</h2>
