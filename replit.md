@@ -56,6 +56,12 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 - ✅ Bilder: loading="lazy" auf Team-Fotos, alt-Texte verbessert
 - ✅ LiquidDistortion + Navbar: alt-Texte ergänzt
 - ✅ Analytica-Bilder: Von attached_assets nach public/images/analytica-2026/ verschoben
+- ✅ FAQPage-Schema + FAQ-Abschnitte (je 6 Fragen) auf 4 Blog-Artikeln: BSL-2, Innovation, Nachhaltigkeit, Analytica-Rückblick
+- ✅ Bildkomprimierung: Alle Bilder >500KB komprimiert (analytica-2026: 36MB→1.6MB, projekte: 21MB→3.2MB, blog-PNGs zu JPGs konvertiert)
+- ✅ LABtoGO: 10+ interne Links ergänzt (ueber-uns, ausstattung, smart-lab, bsl-2, mieten-oder-kaufen, team, beratung, planung, logistik, projektablauf)
+- ✅ Magazin-Übersicht: Intro-Sektion mit 6 internen Links (modulbau, planung, ausstattung, smart-lab, kontakt, beratung)
+- ✅ Kontakt: H3→H2 Überschrift-Hierarchie korrigiert
+- ✅ Datenschutz + Impressum: je 2-3 interne Links ergänzt
 - Verbleibend: Nginx Trailing-Slash-Redirect (Server-Konfiguration)
 
 ### Blog-Vorschläge (gespeichert für spätere Umsetzung)
