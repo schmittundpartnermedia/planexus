@@ -1,0 +1,403 @@
+Last login: Fri Apr  3 03:30:29 on console
+joachimschmitt@MinivonJoachim ~ % ssh root@82.165.27.244
+root@82.165.27.244's password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-90-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Fri Apr  3 14:01:25 UTC 2026
+
+  System load:  0.0                Processes:             131
+  Usage of /:   5.4% of 115.20GB   Users logged in:       0
+  Memory usage: 21%                IPv4 address for ens6: 82.165.27.244
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+26 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Thu Apr  2 13:41:35 2026 from 78.42.240.116
+root@ubuntu:~# cd /var/www/app && git pull origin main && npm install && npx astro build && ln -sf /var/www/app/attached_assets /var/www/app/dist/client/attached_assets && pm2 restart planexus
+remote: Enumerating objects: 76, done.
+remote: Counting objects: 100% (76/76), done.
+remote: Compressing objects: 100% (30/30), done.
+remote: Total 76 (delta 44), reused 76 (delta 44), pack-reused 0 (from 0)
+Unpacking objects: 100% (76/76), 3.61 MiB | 12.38 MiB/s, done.
+From https://github.com/schmittundpartnermedia/planexus
+ * branch            main       -> FETCH_HEAD
+   6b3c270..7cade80  main       -> origin/main
+Updating 6b3c270..7cade80
+Fast-forward
+ public/images/analytica-2026/arbeitsflaeche.jpg                             | Bin 2842949 -> 117165 bytes
+ public/images/analytica-2026/detail.jpg                                     | Bin 2762753 -> 103612 bytes
+ public/images/analytica-2026/fachgespraeche.jpg                             | Bin 4037155 -> 178000 bytes
+ public/images/analytica-2026/hero.jpg                                       | Bin 4524433 -> 235014 bytes
+ public/images/analytica-2026/infowand.jpg                                   | Bin 4034631 -> 190884 bytes
+ public/images/analytica-2026/innenansicht.jpg                               | Bin 2947469 -> 126072 bytes
+ public/images/analytica-2026/rueckseite.jpg                                 | Bin 4322795 -> 104987 bytes
+ public/images/analytica-2026/stand-front.jpg                                | Bin 4524433 -> 235014 bytes
+ public/images/analytica-2026/stand-uebersicht.jpg                           | Bin 4501550 -> 232699 bytes
+ public/images/analytica-2026/wandorganizer.jpg                              | Bin 2615814 -> 101355 bytes
+ public/images/blog-laborcontainer-ausstattung.jpg                           | Bin 2154027 -> 56870 bytes
+ public/images/blog-laborcontainer-ausstattung.png                           | Bin 1165143 -> 0 bytes
+ public/images/blog-laborcontainer-genehmigung.jpg                           | Bin 0 -> 76607 bytes
+ public/images/blog-laborcontainer-genehmigung.png                           | Bin 924445 -> 0 bytes
+ public/images/blog-laborcontainer-klimatisierung.jpg                        | Bin 0 -> 94874 bytes
+ public/images/blog-laborcontainer-klimatisierung.png                        | Bin 900341 -> 0 bytes
+ public/images/blog-laborcontainer-projektablauf.jpg                         | Bin 0 -> 113804 bytes
+ public/images/blog-laborcontainer-projektablauf.png                         | Bin 1621881 -> 0 bytes
+ public/images/lab-to-go-planexus.jpg                                        | Bin 0 -> 54330 bytes
+ public/images/lab-to-go-planexus.png                                        | Bin 4488372 -> 0 bytes
+ public/images/planexus-logo.png                                             | Bin 1568620 -> 59550 bytes
+ public/images/projekte/projekt1-1.jpg                                       | Bin 837059 -> 199742 bytes
+ public/images/projekte/projekt1-2.jpg                                       | Bin 474227 -> 136756 bytes
+ public/images/projekte/projekt2-1.jpg                                       | Bin 3279615 -> 204379 bytes
+ public/images/projekte/projekt2-2.jpg                                       | Bin 1518609 -> 166581 bytes
+ public/images/projekte/projekt2-3.jpg                                       | Bin 2258851 -> 221939 bytes
+ public/images/projekte/projekt2-4.jpg                                       | Bin 1032940 -> 187728 bytes
+ public/images/projekte/projekt3-1.jpg                                       | Bin 2744415 -> 230938 bytes
+ public/images/projekte/projekt3-2.jpg                                       | Bin 2485889 -> 196226 bytes
+ public/images/projekte/projekt4-1.jpg                                       | Bin 1677890 -> 196725 bytes
+ public/images/projekte/projekt4-2.jpg                                       | Bin 4003266 -> 213828 bytes
+ public/sitemap.xml                                                          |  14 +++++++-
+ replit.md                                                                   |  21 ++++++++---
+ src/components/LiquidDistortion.tsx                                         |   2 +-
+ src/pages/datenschutz.astro                                                 |   6 ++++
+ src/pages/impressum.astro                                                   |   6 ++++
+ src/pages/kontakt.astro                                                     |  10 +++++-
+ src/pages/laborcontainer/labtogo.astro                                      |  31 ++++++++++------
+ src/pages/leistungen/index.astro                                            |   8 +++++
+ src/pages/leistungen/modulbau.astro                                         |   2 +-
+ src/pages/leistungen/planung.astro                                          |   2 +-
+ src/pages/magazin.astro                                                     |  28 ++++++++++++---
+ src/pages/magazin/analytica-2026-rueckblick-labtogo-premiere.astro          |  64 +++++++++++++++++++++++++++++++--
+ src/pages/magazin/bsl-2-bsl-3-container-labor.astro                         |  68 ++++++++++++++++++++++++++++++++++--
+ src/pages/magazin/innovation-modulbau-zukunft-mobiles-labor.astro           |  68 ++++++++++++++++++++++++++++++++++--
+ src/pages/magazin/laborcontainer-genehmigung-baurecht-vorschriften.astro    |   8 ++---
+ src/pages/magazin/laborcontainer-klimatisierung-lueftung-normen.astro       |   6 ++--
+ src/pages/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe.astro |   8 ++---
+ src/pages/magazin/nachhaltigkeit-laborbau-energieeffizienz.astro            |  68 ++++++++++++++++++++++++++++++++++--
+ src/pages/partner.astro                                                     |   8 +++++
+ src/pages/projekte.astro                                                    |   8 +++++
+ src/pages/team.astro                                                        |  25 ++++++++++---
+ src/pages/ueber-uns.astro                                                   |   8 +++++
+ 53 files changed, 421 insertions(+), 48 deletions(-)
+ delete mode 100644 public/images/blog-laborcontainer-ausstattung.png
+ create mode 100644 public/images/blog-laborcontainer-genehmigung.jpg
+ delete mode 100644 public/images/blog-laborcontainer-genehmigung.png
+ create mode 100644 public/images/blog-laborcontainer-klimatisierung.jpg
+ delete mode 100644 public/images/blog-laborcontainer-klimatisierung.png
+ create mode 100644 public/images/blog-laborcontainer-projektablauf.jpg
+ delete mode 100644 public/images/blog-laborcontainer-projektablauf.png
+ create mode 100644 public/images/lab-to-go-planexus.jpg
+ delete mode 100644 public/images/lab-to-go-planexus.png
+
+up to date, audited 802 packages in 3s
+
+209 packages are looking for funding
+  run `npm fund` for details
+
+23 vulnerabilities (5 low, 9 moderate, 9 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+14:02:06 [@astrojs/node] Enabling sessions with filesystem storage
+14:02:06 [content] Syncing content
+14:02:06 [content] Synced content
+14:02:06 [types] Generated 55ms
+14:02:06 [build] output: "static"
+14:02:06 [build] mode: "server"
+14:02:06 [build] directory: /var/www/app/dist/
+14:02:06 [build] adapter: @astrojs/node
+14:02:06 [build] Collecting build info...
+14:02:06 [build] ✓ Completed in 138ms.
+14:02:06 [build] Building server entrypoints...
+14:02:10 [WARN] [vite] "gt" is imported from external module "drizzle-orm" but never used in "src/pages/api/admin/login.ts" and "src/pages/api/admin/messages.ts".
+14:02:10 [vite] ✓ built in 3.69s
+14:02:10 [build] ✓ Completed in 3.74s.
+
+ building client (vite) 
+14:02:14 [vite] ✓ 2183 modules transformed.
+14:02:14 [vite] dist/client/_astro/Map.CIGW-MKW.css               15.61 kB │ gzip:  6.46 kB
+14:02:14 [vite] dist/client/_astro/jsx-runtime.D_zvdyIk.js         0.73 kB │ gzip:  0.46 kB
+14:02:14 [vite] dist/client/_astro/index.BL2HOGcR.js               3.89 kB │ gzip:  1.52 kB
+14:02:14 [vite] dist/client/_astro/ContactForm.9qwyERSt.js         4.91 kB │ gzip:  1.77 kB
+14:02:14 [vite] dist/client/_astro/AnimatedGlobe.Bb2O237y.js       7.63 kB │ gzip:  2.62 kB
+14:02:14 [vite] dist/client/_astro/index.7in8nkh5.js               7.98 kB │ gzip:  3.10 kB
+14:02:14 [vite] dist/client/_astro/ProjekteGallery.cf_-xv8Z.js     8.14 kB │ gzip:  2.46 kB
+14:02:14 [vite] dist/client/_astro/AdminPanel.jfDTtBxI.js          9.00 kB │ gzip:  2.89 kB
+14:02:14 [vite] dist/client/_astro/Navbar.H-LZKO6I.js             13.98 kB │ gzip:  4.40 kB
+14:02:14 [vite] dist/client/_astro/LiquidDistortion.CWfs0-j3.js   60.33 kB │ gzip: 17.12 kB
+14:02:14 [vite] dist/client/_astro/proxy.DTdvDQjZ.js             112.15 kB │ gzip: 36.88 kB
+14:02:14 [vite] dist/client/_astro/Map.Dukma8Qt.js               154.96 kB │ gzip: 45.38 kB
+14:02:14 [vite] dist/client/_astro/client.qQeDOstP.js            182.74 kB │ gzip: 57.61 kB
+14:02:14 [vite] ✓ built in 4.47s
+
+ prerendering static routes 
+14:02:15 ▶ src/pages/404.astro
+14:02:15   └─ /404.html (+21ms) 
+14:02:15 ▶ src/pages/datenschutz.astro
+14:02:15   └─ /datenschutz/index.html (+5ms) 
+14:02:15 ▶ src/pages/impressum.astro
+14:02:15   └─ /impressum/index.html (+5ms) 
+14:02:15 ▶ src/pages/kontakt.astro
+14:02:15   └─ /kontakt/index.html (+11ms) 
+14:02:15 ▶ src/pages/laborcontainer/labtogo.astro
+14:02:15   └─ /laborcontainer/labtogo/index.html (+6ms) 
+14:02:15 ▶ src/pages/laborcontainer-berlin.astro
+14:02:15   └─ /laborcontainer-berlin/index.html (+4ms) 
+14:02:15 ▶ src/pages/laborcontainer-muenchen.astro
+14:02:15   └─ /laborcontainer-muenchen/index.html (+4ms) 
+14:02:15 ▶ src/pages/laborcontainer-stuttgart.astro
+14:02:15   └─ /laborcontainer-stuttgart/index.html (+4ms) 
+14:02:15 ▶ src/pages/leistungen/ausstattung.astro
+14:02:15   └─ /leistungen/ausstattung/index.html (+4ms) 
+14:02:15 ▶ src/pages/leistungen/beratung.astro
+14:02:15   └─ /leistungen/beratung/index.html (+4ms) 
+14:02:15 ▶ src/pages/leistungen/logistik.astro
+14:02:15   └─ /leistungen/logistik/index.html (+6ms) 
+14:02:15 ▶ src/pages/leistungen/modulbau.astro
+14:02:15   └─ /leistungen/modulbau/index.html (+4ms) 
+14:02:15 ▶ src/pages/leistungen/planung.astro
+14:02:15   └─ /leistungen/planung/index.html (+3ms) 
+14:02:15 ▶ src/pages/leistungen/smart-lab.astro
+14:02:15   └─ /leistungen/smart-lab/index.html (+3ms) 
+14:02:15 ▶ src/pages/leistungen/index.astro
+14:02:15   └─ /leistungen/index.html (+3ms) 
+14:02:15 ▶ src/pages/magazin/analytica-2026-rueckblick-labtogo-premiere.astro
+14:02:15   └─ /magazin/analytica-2026-rueckblick-labtogo-premiere/index.html (+3ms) 
+14:02:15 ▶ src/pages/magazin/bsl-2-bsl-3-container-labor.astro
+14:02:15   └─ /magazin/bsl-2-bsl-3-container-labor/index.html (+3ms) 
+14:02:15 ▶ src/pages/magazin/gmp-reinraum-container-pharma-produktion.astro
+14:02:15   └─ /magazin/gmp-reinraum-container-pharma-produktion/index.html (+3ms) 
+14:02:15 ▶ src/pages/magazin/innovation-modulbau-zukunft-mobiles-labor.astro
+14:02:15   └─ /magazin/innovation-modulbau-zukunft-mobiles-labor/index.html (+3ms) 
+14:02:15 ▶ src/pages/magazin/laborcontainer-ausstattung-checkliste.astro
+14:02:15   └─ /magazin/laborcontainer-ausstattung-checkliste/index.html (+6ms) 
+14:02:15 ▶ src/pages/magazin/laborcontainer-genehmigung-baurecht-vorschriften.astro
+14:02:15   └─ /magazin/laborcontainer-genehmigung-baurecht-vorschriften/index.html (+4ms) 
+14:02:15 ▶ src/pages/magazin/laborcontainer-klimatisierung-lueftung-normen.astro
+14:02:15   └─ /magazin/laborcontainer-klimatisierung-lueftung-normen/index.html (+4ms) 
+14:02:15 ▶ src/pages/magazin/laborcontainer-mieten-oder-kaufen.astro
+14:02:15   └─ /magazin/laborcontainer-mieten-oder-kaufen/index.html (+3ms) 
+14:02:15 ▶ src/pages/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe.astro
+14:02:15   └─ /magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe/index.html (+4ms) 
+14:02:15 ▶ src/pages/magazin/nachhaltigkeit-laborbau-energieeffizienz.astro
+14:02:15   └─ /magazin/nachhaltigkeit-laborbau-energieeffizienz/index.html (+3ms) 
+14:02:15 ▶ src/pages/magazin/planexus-analytica-2026-muenchen.astro
+14:02:15   └─ /magazin/planexus-analytica-2026-muenchen/index.html (+3ms) 
+14:02:15 ▶ src/pages/magazin.astro
+14:02:15   └─ /magazin/index.html (+3ms) 
+14:02:15 ▶ src/pages/partner.astro
+14:02:15   └─ /partner/index.html (+12ms) 
+14:02:15 ▶ src/pages/projekte.astro
+14:02:15   └─ /projekte/index.html (+5ms) 
+14:02:15 ▶ src/pages/team.astro
+14:02:15   └─ /team/index.html (+3ms) 
+14:02:15 ▶ src/pages/ueber-uns.astro
+14:02:15   └─ /ueber-uns/index.html (+3ms) 
+14:02:15 ▶ src/pages/index.astro
+14:02:15   └─ /index.html (+4ms) 
+14:02:15 ✓ Completed in 878ms.
+
+14:02:15 [build] Rearranging server assets...
+14:02:15 [build] Server built in 9.34s
+14:02:15 [build] Complete!
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [planexus](ids: [ 0 ])
+[PM2] [planexus](0) ✓
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ planexus           │ fork     │ 31   │ online    │ 0%       │ 19.0mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+root@ubuntu:/var/www/app# sudo nano /etc/nginx/sites-available/default
+root@ubuntu:/var/www/app# cat /etc/nginx/sites-available/default
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# https://www.nginx.com/resources/wiki/start/
+# https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+# https://wiki.debian.org/Nginx/DirectoryStructure
+#
+# In most cases, administrators will remove this file from sites-enabled/ and
+# leave it as reference inside of sites-available where it will continue to be
+# updated by the nginx packaging team.
+#
+# This file will automatically load configuration files provided by other
+# applications, such as Drupal or Wordpress. These applications will be made
+# available underneath a path with that package name, such as /drupal8.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+# Default server configuration
+#
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	# SSL configuration
+	#
+	# listen 443 ssl default_server;
+	# listen [::]:443 ssl default_server;
+	#
+	# Note: You should disable gzip for SSL traffic.
+	# See: https://bugs.debian.org/773332
+	#
+	# Read up on ssl_ciphers to ensure a secure configuration.
+	# See: https://bugs.debian.org/765782
+	#
+	# Self signed certs generated by the ssl-cert package
+	# Don't use them in a production server!
+	#
+	# include snippets/snakeoil.conf;
+
+	root /var/www/html;
+
+	# Add index.php to the list if you are using PHP
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+	}
+
+	# pass PHP scripts to FastCGI server
+	#
+	#location ~ \.php$ {
+	#	include snippets/fastcgi-php.conf;
+	#
+	#	# With php-fpm (or other unix sockets):
+	#	fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+	#	# With php-cgi (or other tcp sockets):
+	#	fastcgi_pass 127.0.0.1:9000;
+	#}
+
+	# deny access to .htaccess files, if Apache's document root
+	# concurs with nginx's one
+	#
+	#location ~ /\.ht {
+	#	deny all;
+	#}
+}
+
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+#server {
+#	listen 80;
+#	listen [::]:80;
+#
+#	server_name example.com;
+#
+#	root /var/www/example.com;
+#	index index.html;
+#
+#	location / {
+#		try_files $uri $uri/ =404;
+#	}
+#}
+root@ubuntu:/var/www/app# sudo nano /etc/nginx/sites-available/default
+
+  GNU nano 7.2                                                      /etc/nginx/sites-available/default                                                                
+##
+
+# Default server configuration
+#
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        # SSL configuration
+        #
+        # listen 443 ssl default_server;
+        # listen [::]:443 ssl default_server;
+        #
+        # Note: You should disable gzip for SSL traffic.
+        # See: https://bugs.debian.org/773332
+        #
+        # Read up on ssl_ciphers to ensure a secure configuration.
+        # See: https://bugs.debian.org/765782
+        #
+        # Self signed certs generated by the ssl-cert package
+        # Don't use them in a production server!
+        #
+        # include snippets/snakeoil.conf;
+
+        root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+
+        # pass PHP scripts to FastCGI server
+        #
+        #location ~ \.php$ {
+        #       include snippets/fastcgi-php.conf;
+        #
+        #       # With php-fpm (or other unix sockets):
+        #       fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        #       # With php-cgi (or other tcp sockets):
+        #       fastcgi_pass 127.0.0.1:9000;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #       deny all;
+        #}
+}
+
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+#server {
+#       listen 80;
+#       listen [::]:80;
+#
+#       server_name example.com;
+#
+#       root /var/www/example.com;
+#       index index.html;
+#
+#       location / {
+#               try_files $uri $uri/ =404;
+#       }
+#}
+
