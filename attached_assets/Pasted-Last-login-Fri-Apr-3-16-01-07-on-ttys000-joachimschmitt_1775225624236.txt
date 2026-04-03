@@ -1,0 +1,71 @@
+Last login: Fri Apr  3 16:01:07 on ttys000
+joachimschmitt@MinivonJoachim ~ % ssh root@82.165.27.244
+root@82.165.27.244's password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-90-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Fri Apr  3 14:13:18 UTC 2026
+
+  System load:  0.0                Processes:             135
+  Usage of /:   5.3% of 115.20GB   Users logged in:       0
+  Memory usage: 20%                IPv4 address for ens6: 82.165.27.244
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+26 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Fri Apr  3 14:01:26 2026 from 78.42.240.116
+root@ubuntu:~# cat /etc/nginx/sites-enabled/planexus.de
+server {
+    server_name planexus.de www.planexus.de;
+    location / {
+        proxy_pass http://localhost:5000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/planexus.de/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/planexus.de/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+server {
+    if ($host = www.planexus.de) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = planexus.de) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name planexus.de www.planexus.de;
+    return 404; # managed by Certbot
+
+
+
+
+}root@ubuntu:~# 
