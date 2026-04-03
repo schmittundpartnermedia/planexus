@@ -131,7 +131,7 @@ export function LiquidDistortion({ imageSrc, className = "" }: { imageSrc: strin
       <div className={`w-full h-full min-h-[600px] overflow-hidden ${className}`}>
         <img 
           src={imageSrc} 
-          alt="Hero" 
+          alt="Planexus GmbH — Laborcontainer und Modulbau Spezialist" 
           className="w-full h-full object-cover"
         />
       </div>

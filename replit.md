@@ -46,10 +46,17 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 - ✅ 404-Seite: HTTP Status Code 404 korrekt gesetzt
 - ✅ WebSite-Schema mit SearchAction im Layout
 
-### SEO-Audit (verbleibend für spätere Umsetzung)
-- Alt-Texte für alle Bilder ergänzen
-- Breadcrumbs auf Hauptseiten ergänzen
-- Nginx Trailing-Slash-Redirect
+### SEO-Audit April 2026 (KOMPLETT UMGESETZT)
+- ✅ Sitemap: LABtoGO + analytica-Rückblick-Blog hinzugefügt
+- ✅ Title-Tags gekürzt: Magazin (51 Z.), Analytica-Blog (49 Z.)
+- ✅ Meta-Descriptions gekürzt: 5 Seiten (alle ≤155 Z.)
+- ✅ 6 leere Alt-Texte ergänzt (Unsplash-Bilder in Blog-Artikeln)
+- ✅ Breadcrumbs auf 8 Seiten: Kontakt, Projekte, Partner, Team, Über uns, Magazin, Leistungen, LABtoGO
+- ✅ Team-Seite: 7 interne Links + CTA-Sektion hinzugefügt
+- ✅ Bilder: loading="lazy" auf Team-Fotos, alt-Texte verbessert
+- ✅ LiquidDistortion + Navbar: alt-Texte ergänzt
+- ✅ Analytica-Bilder: Von attached_assets nach public/images/analytica-2026/ verschoben
+- Verbleibend: Nginx Trailing-Slash-Redirect (Server-Konfiguration)
 
 ### Blog-Vorschläge (gespeichert für spätere Umsetzung)
 - Vorschlag 2: „Laborcontainer Kosten – Was kostet ein mobiles Labor wirklich?" (Kostenfaktoren, Container vs. Massivbau, Fördermöglichkeiten, ROI)
