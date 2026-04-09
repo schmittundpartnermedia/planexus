@@ -28,6 +28,17 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 - Admin-Seite: noindex, nicht in Sitemap
 - Nachrichten lesen, als gelesen markieren, löschen, direkt per E-Mail antworten
 
+### Blog-Artikel: Laborcontainer im Katastropheneinsatz (April 2026)
+- "Laborcontainer im Katastropheneinsatz – Schnelle Laborkapazität bei Krisen & Pandemien"
+- Einsatzszenarien: Pandemien (PCR), Hochwasser (Wasseranalyse), CBRN-Lagen, humanitäre Hilfe
+- Autarkie: Strom (Diesel/PV-Hybrid), Wasser (RO-Anlage), Satellitenkommunikation
+- Zeitvergleich Container vs. Massivbau (24h vs. 12-24 Monate)
+- 5 Praxisbeispiele: COVID-19, Ahrtal-Flut, Bundeswehr ABC, Ebola Westafrika, Türkei/Syrien
+- Normen: BioStoffV, TRBA 100, TRGS 526, ISO 668, MIL-STD-810G, DIN EN ISO/IEC 17025
+- 3 Beschaffungsmodelle: Vorhaltung, Rahmenvertrag, Mietmodell
+- 6 FAQs mit FAQPage-Schema, 12+ interne Links, Article + BreadcrumbList Schema
+- AI-generiertes Hero-Bild, Sitemap + Magazin-Übersicht aktualisiert
+
 ### 5 neue Blog-Beiträge (February/March 2026)
 - "Laborcontainer Ausstattung – Die komplette Checkliste von A bis Z" – 13 Kapitel, 7 Ausstattungsbereiche, 6 FAQs, interaktive Checkliste, 7 Tabellen, Praxisbeispiel, Top-7-Fehler, 12 Normen, DACH-Besonderheiten
 - "Laborcontainer mieten oder kaufen?" – Ratgeber mit Kostenvergleich, Checkliste, FAQ, 6 FAQPage-Schema
