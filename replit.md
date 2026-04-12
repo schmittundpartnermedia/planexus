@@ -12,6 +12,12 @@ This project is the corporate website for Planexus GmbH, a German company specia
 - Part of Wesemann Holding GmbH
 - WICHTIG: Gründlich arbeiten! Alles komplett durchdenken bevor etwas vorgeschlagen wird. Keine halben Sachen, keine oberflächlichen Fixes. Immer das Gesamtbild berücksichtigen (Server, Ports, Umgebungsvariablen, Dependencies, Nginx-Config). Jede Änderung muss vollständig und getestet sein – keine inkrementellen Debugging-Schleifen. User ist frustriert von Stückwerk und Korrekturschleifen.
 - BLAUPAUSE: Alle Content-Standards, SEO-Regeln und Qualitätschecklisten sind in `Blaupause.md` dokumentiert. Dieses Dokument ist verbindlich für jede neue Seite. Vor jeder Content-Erstellung: Konkurrenzanalyse → Top-3 analysieren → besser bauen. Kein Wort ohne Berechtigung, keine Lügen, alles belegbar.
+- PFLICHT-WORKFLOW FÜR JEDEN NEUEN CONTENT (Stadtseite, Branchenseite, Blog, Landing Page – AUSNAHMSLOS):
+  1. **Konkurrenzanalyse**: Ziel-Keyword googeln, Top-3 Ergebnisse analysieren (Inhalt, Struktur, Tiefe, Schwächen)
+  2. **Daten & Fakten sammeln**: Lokale Unternehmen, Institute, Baurecht, Normen, Branchendaten – alles verifiziert und belegbar
+  3. **Lücken identifizieren**: Was fehlt bei der Konkurrenz? Wo können wir besser/tiefer/genauer sein?
+  4. **Erst dann bauen**: Seite erstellen die nachweislich besser ist als alles was existiert
+  - Dieser Workflow gilt IMMER und für ALLES. Keine Ausnahme. Nie blind Content erstellen.
 - REIHENFOLGE: 1) Städteseiten (13 DE + 3 CH + 3 AT) → 2) Branchenseiten (6 Branchen) → 3) Blog-Beiträge (nach Recherche)
 - QUALITÄTSSTANDARD: Diese Website ist das Paradebeispiel einer Marketing-Maschine. Höchstes Level ist Standard. Jede Seite muss Top-3-Ranking-würdig sein.
 
