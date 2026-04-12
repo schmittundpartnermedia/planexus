@@ -42,7 +42,6 @@ export default function Navbar() {
     { href: "/leistungen/ausstattung", label: "Laborausstattung" },
     { href: "/leistungen/beratung", label: "Beratung & Genehmigung" },
     { href: "/leistungen/smart-lab", label: "Smart Lab Integration" },
-    { href: "/leistungen#projektablauf", label: "Projektablauf" },
   ];
 
   return (
