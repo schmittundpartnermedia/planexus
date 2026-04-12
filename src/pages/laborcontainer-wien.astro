@@ -1,0 +1,650 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Laborcontainer Wien",
+  "description": "Laborcontainer für Wien und Österreich: Planung, Fertigung und schlüsselfertige Übergabe. BSL-2/BSL-3 Container, mobile Forschungslabore und Reinraumlösungen für Pharma, Biotech und Forschung.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "url": "https://www.planexus.de"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Wien" },
+    { "@type": "AdministrativeArea", "name": "Wien" }
+  ],
+  "url": "https://www.planexus.de/laborcontainer-wien"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Laborcontainer Wien", "item": "https://www.planexus.de/laborcontainer-wien" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet ein Laborcontainer in Wien?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Kosten hängen von Größe, Ausstattung und Sicherheitsstufe ab. Dazu kommen Transportkosten und Zollformalitäten DE→AT. Wir nennen Ihnen eine realistische Größenordnung inklusive aller Nebenkosten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Brauche ich in Wien eine Baubewilligung für einen Laborcontainer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In der Regel ja. Die Bauordnung für Wien (BO Wien) sieht für Container grundsätzlich Bewilligungspflicht vor – §62a gilt nur in Ausnahmefällen (Wahlzeiten, Katastrophenfälle). Über §71 BO Wien können Bauten vorübergehenden Bestandes auf bestimmte Zeit bewilligt werden. Die MA 37 (Baupolizei Wien) ist die zuständige Behörde. Wir übernehmen die gesamte Abstimmung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert die Lieferung nach Wien?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Von der Auftragserteilung bis zur schlüsselfertigen Übergabe vergehen in der Regel 8 bis 12 Wochen. Der Transport von unserem Werk in Albstadt nach Wien erfolgt per Tieflader über die A8 und die A1 – rund 6 Stunden Fahrzeit. Aufstellung und Inbetriebnahme planen wir gemeinsam mit Ihnen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich einen Laborcontainer in Wien auch mieten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Miete, Kauf oder Mietkauf – wir bieten flexible Modelle. Besonders sinnvoll bei Produktionserweiterungen (z. B. Boehringer Ingelheim), klinischen Studien am AKH Wien oder befristeten Forschungsprojekten am Vienna BioCenter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Erfüllen Ihre Container österreichische Normen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Wir berücksichtigen ÖNORM-Standards, das ArbeitnehmerInnenschutzgesetz (ASchG) und die Arbeitsstättenverordnung (AStV). Auf Wunsch auch GMP-konform nach europäischen Pharma-Standards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Eignet sich ein Containerlabor für den Vienna BioCenter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, ideal sogar. Der VBC mit über 40 Biotech-Unternehmen und 2 Business-Inkubatoren ist das perfekte Umfeld. Ein Containerlabor ergänzt die bestehende Infrastruktur in 8–12 Wochen – ideal für Startups, Spin-offs oder temporäre Forschungsprojekte."
+      }
+    }
+  ]
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Planexus GmbH",
+  "description": "Laborcontainer für Wien und Österreich",
+  "url": "https://www.planexus.de",
+  "telephone": "+49 7435 7519 700",
+  "email": "info@planexus.de",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Am Steinbach 8",
+    "addressLocality": "Albstadt",
+    "postalCode": "72459",
+    "addressCountry": "DE"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Wien" },
+    { "@type": "AdministrativeArea", "name": "Wien" }
+  ]
+};
+---
+
+<Layout
+  title="Laborcontainer Wien – Planung & Bau"
+  description="Laborcontainer für Wien: Mobile Labore für Pharma, Biotech und Forschung. BSL-2/BSL-3, schlüsselfertig. Jetzt beraten lassen."
+  canonical="/laborcontainer-wien"
+  schema={serviceSchema}
+  ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} slot="head" />
+
+  <div class="pt-20 min-h-screen bg-white">
+
+    <section class="relative py-28 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516550893923-42d28e5677af?q=80&w=2070')] bg-cover bg-center opacity-15"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Wien & Ostösterreich</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+            Laborcontainer für <span class="text-primary">Wien</span>
+          </h1>
+          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mb-8">
+            Österreichs größter Life-Sciences-Standort – über 750 Unternehmen, 49.000 Fachkräfte und €22,7 Milliarden Umsatz. Wir planen, bauen und liefern schlüsselfertige Containerlabore für Wien und ganz Österreich.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
+              Projekt besprechen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <span class="text-primary font-medium">Laborcontainer Wien</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
+            Laborcontainer für Pharma, Biotech und Forschung in Wien
+          </h2>
+          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+            <p>
+              Wien ist das Zentrum der österreichischen Life-Sciences-Industrie. Über 750 Unternehmen und Institutionen erwirtschaften einen Umsatz von €22,7 Milliarden und beschäftigen rund 49.000 Fachkräfte. Der Vienna BioCenter (VBC) mit 2.800 Mitarbeitenden und über 40 Biotech-Unternehmen ist das Herzstück der Branche. Boehringer Ingelheim betreibt in Wien eines seiner wichtigsten Forschungs- und Produktionszentren weltweit – mit 3.500 Beschäftigten und €700 Millionen Investition in eine neue Biotech-Produktionsanlage. Die Medizinische Universität Wien, die Universität Wien, die TU Wien und die BOKU bilden das akademische Fundament.
+            </p>
+            <p>
+              Die Herausforderung: Laborraum in Wien ist gefragt wie nie. Klinische Studien, Biotech-Startups und Produktionserweiterungen schaffen permanenten Bedarf an zusätzlicher Laborkapazität. Aber konventionelle Laborbauten dauern Jahre und die Bauordnung für Wien kennt strenge Verfahren.
+            </p>
+            <p>
+              Planexus löst dieses Problem. Wir planen und bauen voll ausgestattete, normkonforme <strong>Containerlabore</strong> – maßgeschneidert für Ihren Standort in Wien. Von der ersten Skizze bis zur schlüsselfertigen Übergabe alles aus einer Hand. <a href="/leistungen" class="text-primary font-medium hover:underline">Unsere Leistungen im Überblick →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-50 border-y border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
+            Wo Laborcontainer in Wien gebraucht werden
+          </h2>
+          <p class="text-gray-600 text-lg mb-12">
+            Wien vereint Pharma-Produktion, biomedizinische Spitzenforschung und ein wachsendes Biotech-Ökosystem – ideale Voraussetzungen für flexible Laborlösungen.
+          </p>
+
+          <div class="space-y-8">
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Pharma-Produktion bei Boehringer Ingelheim</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Das Regional Center Vienna ist mit 3.500 Beschäftigten der einzige Boehringer-Ingelheim-Standort mit kompletter Wertschöpfungskette. €700 Mio. fliessen in eine neue Biotech-Produktionsanlage. Interimslabore für QC, Batchfreigabe und Prozessanalytik sind gefragt – ein Containerlabor liefert die Kapazität ohne Eingriff in den laufenden Betrieb. <a href="/magazin/gmp-reinraum-container-pharma-produktion" class="text-primary font-medium hover:underline">Mehr zu GMP-Reinraum im Container →</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Biomedizinische Forschung am Vienna BioCenter</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Sechs Forschungsinstitutionen – IMP (Boehringer Ingelheim), IMBA, GMI, Max Perutz Labs und zwei Business-Inkubatoren für Startups. <a href="/magazin/bsl-2-bsl-3-container-labor" class="text-primary font-medium hover:underline">BSL-2-Container</a> für Virologie, Immunologie und Molekularbiologie ergänzen die bestehende Infrastruktur in Wochen statt Jahren.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Klinische Forschung an MedUni Wien und AKH</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Die Medizinische Universität Wien und das Allgemeine Krankenhaus (AKH) – eines der größten Universitätskliniken Europas – treiben klinische Studien, translationale Medizin und Precision Medicine voran. Zusätzliche Laborkapazität direkt auf dem Campus, ohne Eingriff in die bestehende Infrastruktur. <a href="/leistungen/ausstattung" class="text-primary font-medium hover:underline">Mehr zur Laborausstattung →</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-5">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 text-slate-900">Biotech-Startups und Life-Sciences-Campus</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Vienna Muthgasse (BOKU Life Sciences Zentrum), Campus Vetmeduni und eine wachsende Startup-Szene mit 119 aktiven Biotech-Unternehmen. Schnelle Labore ohne jahrelange Bauplanung – ein Containerlabor ist in 8–12 Wochen einsatzbereit. <a href="/leistungen/beratung" class="text-primary font-medium hover:underline">Mehr zur Beratung →</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Was wir für Wien übernehmen</h2>
+          <p class="text-gray-600 text-lg">
+            Von der ersten Idee bis zum betriebsfertigen Labor – als Hersteller mit eigener Fertigung, nicht als Vermittler.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Technische Fachplanung</h3>
+            <p class="text-gray-600 text-sm mb-4">CAD-Entwürfe, 3D-Visualisierungen und TGA-Konzepte – abgestimmt auf die Anforderungen der Wiener Pharma-Standorte und die österreichischen ÖNORM-Standards.</p>
+            <a href="/leistungen/planung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Modulbau & Fertigung</h3>
+            <p class="text-gray-600 text-sm mb-4">Maßanfertigung in unserem Werk in Albstadt (DE). Der Transport nach Wien ist eingespielt – inklusive aller Zollformalitäten.</p>
+            <a href="/leistungen/modulbau" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 13h8"/><path d="M13 17h8"/><path d="M13 9h8"/><path d="M1 5h4l2 10h10l2-8H5"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Logistik & Montage</h3>
+            <p class="text-gray-600 text-sm mb-4">Transport per Tieflader über die A8 und A1 nach Wien. Aufstellung per Kran – auch auf Pharma-Geländen oder Klinik-Campus im Stadtgebiet.</p>
+            <a href="/leistungen/logistik" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Laborausstattung</h3>
+            <p class="text-gray-600 text-sm mb-4">Abzüge, Sicherheitswerkbänke, Labormöbel, Kühlsysteme, Lüftungstechnik – eingebaut und betriebsfertig. Auf Wunsch GMP-konform.</p>
+            <a href="/leistungen/ausstattung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Beratung & Genehmigung</h3>
+            <p class="text-gray-600 text-sm mb-4">Wir beraten zu österreichischen Normen (ÖNORM, ArbeitnehmerInnenschutzgesetz), Wiener Bauordnung und übernehmen die Abstimmung mit der MA 37 (Baupolizei Wien).</p>
+            <a href="/leistungen/beratung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-slate-900">Smart Lab Integration</h3>
+            <p class="text-gray-600 text-sm mb-4">Fernüberwachung, automatisierte Klimasteuerung, Zutrittskontrolle und Datenlogging – ideal für Pharma-Standorte mit GxP-Anforderungen.</p>
+            <a href="/leistungen/smart-lab" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-50 border-y border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
+            Wien als Laborstandort – Branchen und Forschung
+          </h2>
+          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+            <p>
+              Wien ist Österreichs größter Life-Sciences-Standort – über 50% der nationalen Branche konzentrieren sich in einer Stadt. Das schafft eine einzigartige Dichte an Forschung, Produktion und Innovation.
+            </p>
+            <h3 class="text-xl font-bold text-slate-900">Pharma und Biotech</h3>
+            <p>
+              <strong>Boehringer Ingelheim RCV</strong> beschäftigt 3.500 Mitarbeitende, forscht in der Onkologie und investiert €700 Mio. in eine neue Biotech-Produktionsanlage. <strong>Takeda</strong> betreibt ein €120 Mio. F&E-Zentrum in Wien. Dazu kommen <strong>Octapharma</strong>, <strong>Marinomed Biotech</strong>, <strong>Themis Bioscience</strong>, <strong>Shire/Takeda</strong>, <strong>Valneva</strong> (ehem. Intercell) und <strong>Apeiron Biologics</strong>. Insgesamt sind 119 aktive Biotech-Unternehmen in Wien registriert (Stand 2023).
+            </p>
+            <h3 class="text-xl font-bold text-slate-900">Forschungsinstitutionen</h3>
+            <p>
+              Die <strong>Medizinische Universität Wien</strong> (MedUni Wien) ist die drittgrößte medizinische Fakultät weltweit und betreibt mit dem <strong>AKH Wien</strong> eines der größten Universitätskliniken Europas. Die <strong>Universität Wien</strong> (Fakultäten Chemie, Lebenswissenschaften), die <strong>TU Wien</strong> (Technische Chemie, Verfahrenstechnik), die <strong>BOKU Wien</strong> (Biotechnologie, Vienna Muthgasse) und die <strong>Veterinärmedizinische Universität Wien</strong> (Vetmeduni) ergänzen das akademische Spektrum. Der <strong>Vienna BioCenter</strong> vereint IMP, IMBA, GMI, Max Perutz Labs und das VBC PhD Program. Das <strong>Austrian Institute of Technology</strong> (AIT) und das <strong>CeMM</strong> (Forschungszentrum für Molekulare Medizin der ÖAW) stärken die translationale Forschung.
+            </p>
+            <h3 class="text-xl font-bold text-slate-900">Life-Sciences-Infrastruktur</h3>
+            <p>
+              Der <strong>Vienna BioCenter</strong> mit 2.800 Mitarbeitenden, über 40 Biotech-Firmen und 2 Inkubatoren ist das Herzstück. Der <strong>Campus Vienna Muthgasse</strong> (BOKU) und das <strong>Technologiezentrum Donau-City</strong> bieten weitere Standorte. Die <strong>Wirtschaftsagentur Wien</strong> fungiert als Brücke zwischen Forschung und Wirtschaft. Rund 34.000 Life-Sciences-Studierende sind in Wien eingeschrieben. <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="text-primary font-medium hover:underline">Mehr zur Klimatisierung im Container →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
+            Baurecht und Baubewilligung in Wien
+          </h2>
+          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+            <p>
+              In Wien gilt die <strong>Bauordnung für Wien (BO Wien)</strong>. Die zuständige Behörde ist die <strong>MA 37 (Baupolizei Wien)</strong>. Im Gegensatz zu vielen deutschen Landesbauordnungen kennt die BO Wien keine generelle Verfahrensfreiheit für temporäre Container.
+            </p>
+            <p>
+              <strong>§62a BO Wien</strong> regelt bewilligungsfreie Bauführungen – Container fallen hier nur in Ausnahmefällen (Wahlzeiten, Ausweichlokale bei Bauführungen, Katastrophenfälle). Für Laborcontainer ist in der Regel eine <strong>Baubewilligung erforderlich</strong>.
+            </p>
+            <p>
+              <strong>§71 BO Wien</strong> ermöglicht Bauten vorübergehenden Bestandes – eine Bewilligung auf bestimmte Zeit oder auf Widerruf. Das Verfahren läuft über das ordentliche Bewilligungsverfahren nach §70 BO. <strong>§70a/§70b</strong> bieten ein vereinfachtes Verfahren für kleine Bauwerke (bis 150 m²), das für Container relevant sein kann – allerdings nicht für vorübergehende Bauten.
+            </p>
+            <p>
+              ÖNORM-Standards ergänzen die DIN-Normen im österreichischen Kontext. Das <strong>ArbeitnehmerInnenschutzgesetz (ASchG)</strong> und die <strong>Arbeitsstättenverordnung (AStV)</strong> regeln die Laborsicherheit. Wir übernehmen die gesamte Abstimmung mit der MA 37. <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="text-primary font-medium hover:underline">Alles zum Thema Genehmigung im Detail →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-[#7a9900] font-medium text-sm mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            <span>Transparent & nachvollziehbar</span>
+          </div>
+          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
+            Ihr Laborcontainer für Wien – so läuft es ab
+          </h2>
+          <p class="text-gray-600 text-lg mb-12">
+            Von der ersten Anfrage bis zur schlüsselfertigen Übergabe – ein strukturierter Prozess, der nichts dem Zufall überlässt.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
+              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">01</div>
+              <div>
+                <h3 class="font-bold text-sm text-slate-900 mb-1">Anfrage & Erstgespräch</h3>
+                <p class="text-gray-600 text-sm">Kennenlernen per Telko oder Video-Call, Anforderungen klären, Rahmenbedingungen für Ihren Standort in Wien oder Ostösterreich besprechen.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
+              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">02</div>
+              <div>
+                <h3 class="font-bold text-sm text-slate-900 mb-1">Standortprüfung</h3>
+                <p class="text-gray-600 text-sm">Zufahrt, Stellfläche und Kranposition prüfen – auch auf Pharma-Geländen, Klinik-Campus oder im dicht bebauten Stadtgebiet.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
+              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">03</div>
+              <div>
+                <h3 class="font-bold text-sm text-slate-900 mb-1">Planung & Fertigung</h3>
+                <p class="text-gray-600 text-sm">Maßanfertigung in unserem Werk in Albstadt (DE). Österreichische Normen (ÖNORM, ASchG) werden von Anfang an berücksichtigt.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
+              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">04</div>
+              <div>
+                <h3 class="font-bold text-sm text-slate-900 mb-1">Transport über A8/A1</h3>
+                <p class="text-gray-600 text-sm">Per Tieflader von Albstadt über die A8 und die A1 nach Wien – rund 6 Stunden Fahrzeit.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
+              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">05</div>
+              <div>
+                <h3 class="font-bold text-sm text-slate-900 mb-1">Aufstellung & Montage</h3>
+                <p class="text-gray-600 text-sm">Kranaufstellung durch lokale Partner in Wien, Montage auch auf Pharma-Arealen mit strengen Sicherheitsanforderungen.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
+              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">06</div>
+              <div>
+                <h3 class="font-bold text-sm text-slate-900 mb-1">Übergabe & Service</h3>
+                <p class="text-gray-600 text-sm">Finale Prüfung, schlüsselfertige Übergabe, laufende Wartung und Remote-Überwachung – auch grenzüberschreitend.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-900 text-white p-8 rounded-2xl">
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Dezentrale Leitwarte – Ihre Anlage im Blick</h3>
+                <p class="text-gray-300 leading-relaxed">
+                  Auch nach der Übergabe überwachen wir Ihre Containereinheit remote – egal ob bei Boehringer Ingelheim, am Vienna BioCenter oder auf dem Campus der MedUni Wien. Unsere dezentrale Leitwarte prüft Funktionstüchtigkeit, Klimadaten und Sicherheitssysteme in Echtzeit. Bei Störungen werden wir automatisch kontaktiert und reagieren – auch grenzüberschreitend. <a href="/leistungen" class="text-primary font-medium hover:underline">Mehr zu unserem Prozess →</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-4">Gut zu wissen</h2>
+          <p class="text-gray-400 text-lg mb-12">Fakten zu Laborcontainern in Wien, die bei der Entscheidung helfen.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">8–12 Wochen statt 24 Monate</h3>
+                <p class="text-gray-400 text-sm">Planung, Fertigung und Aufstellung in Wien – während ein Laborneubau noch im Bewilligungsverfahren der MA 37 steckt.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">BO Wien – wir kennen das Verfahren</h3>
+                <p class="text-gray-400 text-sm">§71 BO Wien für vorübergehende Bauten, §62a für Ausnahmen, §70a/b für vereinfachte Verfahren – wir navigieren die Wiener Bauordnung für Sie.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">BSL-2, BSL-3, GMP-Reinraum</h3>
+                <p class="text-gray-400 text-sm">Alle gängigen Sicherheitsstufen und Reinraumklassen im Container – relevant für die Pharma- und Biotech-Standorte in Wien.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Lieferung über die A8/A1</h3>
+                <p class="text-gray-400 text-sm">Von Albstadt nach Wien per Tieflader – rund 6 Stunden Fahrzeit. Aufstellung und Inbetriebnahme planen wir gemeinsam.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 17 3.5s1.5 2.5-.8 6.5C20.7 11.5 21 14 21 14s-1.5-.5-2.5-.5c-.5 2-2 3.5-2 3.5s-.5-1-1-2.5c-1.5 1-4.5 2.5-4.5 5.5"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Grenzüberschreitender Service</h3>
+                <p class="text-gray-400 text-sm">Wartung, Remote-Monitoring und Vor-Ort-Service in Österreich – auch nach der Übergabe sind wir Ihr Ansprechpartner.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Schlüsselfertig und normgerecht</h3>
+                <p class="text-gray-400 text-sm">Komplett ausgestattet und betriebsbereit übergeben – nach ÖNORM, GLP, GMP oder ASchG-Anforderungen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
+            Warum Planexus für Wien
+          </h2>
+          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+            <p>
+              Es gibt mehrere Anbieter für Containerlabore in Europa. Aber nur wenige, die alles aus einer Hand liefern – Planung, Fertigung, Ausstattung, Logistik und Genehmigung. Planexus ist einer davon.
+            </p>
+            <p>
+              Unser Werk steht in Albstadt – rund 6 Stunden von Wien entfernt. Die Distanz ist kein Nachteil, sondern gut kalkulierbar: Der Transport über die A8 und die A1 ist eingespielt, die Zollformalitäten erledigen wir routiniert. Für alles dazwischen – Planung, Abstimmung, Feinabstimmung – arbeiten wir digital und mit regelmässigen Vor-Ort-Terminen.
+            </p>
+            <p>
+              Planexus ist Teil der <a href="/ueber-uns" class="text-primary font-medium hover:underline">Wesemann Holding</a> – einem Unternehmen, das seit Jahrzehnten Laborausstattung, Labormöbel und technische Infrastruktur für Forschung und Industrie liefert. Wir kennen österreichische Normen (ÖNORM, ASchG) und berücksichtigen sie von Anfang an in der Planung.
+            </p>
+            <p>
+              International haben wir Projekte für Universitäten, Kliniken, Pharmaunternehmen und Industriebetriebe realisiert. <a href="/projekte" class="text-primary font-medium hover:underline">Unsere bisherigen Projekte →</a> | <a href="/team" class="text-primary font-medium hover:underline">Unser Team kennenlernen →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-50 border-y border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
+            Häufige Fragen zu Laborcontainern in Wien
+          </h2>
+          <p class="text-gray-600 text-lg mb-12">
+            Die wichtigsten Fragen, die uns zu Laborprojekten in Wien und Österreich gestellt werden.
+          </p>
+
+          <div class="space-y-4">
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Was kostet ein Laborcontainer in Wien?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Die Kosten hängen von Größe, Ausstattung und Sicherheitsstufe ab. Dazu kommen Transportkosten und Zollformalitäten DE→AT. Sprechen Sie mit uns über Ihr konkretes Projekt – wir nennen Ihnen eine realistische Größenordnung inklusive aller Nebenkosten.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Brauche ich in Wien eine Baubewilligung für einen Laborcontainer?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                In der Regel ja. Die Bauordnung für Wien (BO Wien) sieht für Container grundsätzlich Bewilligungspflicht vor – §62a gilt nur in Ausnahmefällen (Wahlzeiten, Katastrophenfälle). Über §71 BO Wien können Bauten vorübergehenden Bestandes auf bestimmte Zeit bewilligt werden. Die MA 37 (Baupolizei Wien) ist die zuständige Behörde. Wir übernehmen die gesamte Abstimmung.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Wie lange dauert die Lieferung nach Wien?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Von der Auftragserteilung bis zur schlüsselfertigen Übergabe vergehen in der Regel 8 bis 12 Wochen. Der Transport von unserem Werk in Albstadt nach Wien erfolgt per Tieflader über die A8 und die A1 – rund 6 Stunden Fahrzeit. Aufstellung und Inbetriebnahme planen wir gemeinsam mit Ihnen.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Kann ich einen Laborcontainer in Wien auch mieten?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Ja. Miete, Kauf oder Mietkauf – wir bieten flexible Modelle. Besonders sinnvoll bei Produktionserweiterungen (z. B. Boehringer Ingelheim), klinischen Studien am AKH Wien oder befristeten Forschungsprojekten am Vienna BioCenter. <a href="/magazin/laborcontainer-mieten-oder-kaufen" class="text-primary font-medium hover:underline">Mehr zum Thema Mieten vs. Kaufen →</a>
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Erfüllen Ihre Container österreichische Normen?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Ja. Wir berücksichtigen ÖNORM-Standards, das ArbeitnehmerInnenschutzgesetz (ASchG) und die Arbeitsstättenverordnung (AStV). Auf Wunsch auch GMP-konform nach europäischen Pharma-Standards.
+              </div>
+            </details>
+
+            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
+                Eignet sich ein Containerlabor für den Vienna BioCenter?
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                Ja, ideal sogar. Der VBC mit über 40 Biotech-Unternehmen und 2 Business-Inkubatoren ist das perfekte Umfeld. Ein Containerlabor ergänzt die bestehende Infrastruktur in 8–12 Wochen – ideal für Startups, Spin-offs oder temporäre Forschungsprojekte.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-primary text-slate-900">
+      <div class="container mx-auto px-4 text-center max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Laborprojekt in Wien? Sprechen Sie mit uns.</h2>
+        <p class="text-slate-700 text-lg mb-8">
+          Erzählen Sie uns von Ihrem Vorhaben. Wir melden uns in der Regel am gleichen Tag mit einer ersten Einschätzung – auch nach Österreich.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt" class="bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors inline-flex items-center gap-2">
+            Projekt anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+4974357519700" class="bg-white text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-white/90 transition-colors inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
