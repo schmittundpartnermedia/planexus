@@ -26,6 +26,15 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 - Blaupause (Staedteseiten-Blaupause.md) aktualisiert mit Prozess-Pflichtsektion
 - Hamburg als erstes Beispiel mit Prozess-Sektion implementiert
 
+### Städteseite Düsseldorf (April 2026)
+- /laborcontainer-duesseldorf: Pharma, Chemie, Materialforschung
+- Einzigartige Inhalte: HHU, UKD, Henkel, Qiagen (Hilden), Janssen-Cilag (Neuss), MPIE, IUF, Forschungszentrum Jülich, SMS Group, Rheinmetall, Vallourec, Messe Düsseldorf (MEDICA, K-Messe)
+- BauO NRW, Bauaufsicht Düsseldorf, Medienhafen-Auflagen, Hochwasserschutz Rhein
+- Rhein-Ruhr-Cluster als regionale Besonderheit (Evonik, Covestro, Lanxess, ThyssenKrupp)
+- Transport: A81/A61, ~5h Fahrzeit
+- 6 einzigartige FAQs (inkl. Chemie-Standorte Rhein-Ruhr)
+- 4 Schema-Typen, 19 interne Links, Prozess-Sektion + Leitwarte
+
 ### Städteseite Hamburg (April 2026)
 - /laborcontainer-hamburg: Life Sciences, Pharma, Hafenanalytik
 - Einzigartige Inhalte: UKE, BNITM, DESY, Beiersdorf, Eppendorf, Evotec, Hafen-Analytik
@@ -95,10 +104,10 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 - Vorschlag 3: „Laborcontainer Sicherheit – Brandschutz, Gefahrstoffe & Arbeitsschutz" (TRGS 510, Brandschutz, Arbeitsschutzverordnung, Notfallkonzepte)
 
 ### Local SEO Städteseiten (February 2026)
-- 3 von 16 Städteseiten erstellt: Stuttgart, München, Berlin
+- 5 von 19 Städteseiten erstellt: Hamburg, Stuttgart, München, Berlin, Düsseldorf
 - Muster: laborcontainer-[stadt].astro
 - Jede Seite: 12+ interne Links, 4 Schema.org-Typen, 6 FAQs, einzigartiger Content
-- Verbleibend: 13 weitere Landeshauptstädte
+- Verbleibend: Frankfurt (Runde 1), dann Runde 2-5
 
 ### Astro Migration (COMPLETED - February 2026)
 - Migrated from React SPA (Vite + Express) to Astro SSG
