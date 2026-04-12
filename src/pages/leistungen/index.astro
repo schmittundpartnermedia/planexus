@@ -8,15 +8,15 @@ import Layout from '../../layouts/Layout.astro';
   canonical="/leistungen"
   ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+      { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://www.planexus.de/leistungen" }
+    ]
+  })} slot="head" />
   <div class="pt-20 min-h-screen bg-white">
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://www.planexus.de/leistungen" }
-      ]
-    })} />
     <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
       <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581093588401-fbb62a02f388?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
       <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
@@ -277,41 +277,180 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900 text-center">
-            Unser Projektablauf
-          </h2>
-          <p class="text-gray-600 text-lg text-center mb-12 max-w-2xl mx-auto">
-            Von der ersten Anfrage bis zur Übergabe Ihres fertigen Laborcontainers begleiten wir Sie durch einen strukturierten Prozess.
-          </p>
-          
-          <div class="space-y-6">
-            <div class="flex gap-6 items-start bg-slate-50 p-6 rounded-xl border border-gray-100">
-              <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center font-bold text-lg shrink-0">01</div>
-              <div>
-                <h3 class="text-lg font-bold mb-2 text-slate-900">Beratung & Bedarfsanalyse</h3>
-                <p class="text-gray-600">Wir analysieren Ihre Anforderungen, besprechen technische Details und erstellen ein erstes Konzept für Ihr Laborprojekt.</p>
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-[#7a9900] font-medium text-sm mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span>Transparent & nachvollziehbar</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">
+              So läuft Ihr Projekt ab – Schritt für Schritt
+            </h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+              Von der ersten Anfrage bis zur Rückgabe nach Projektende – wir begleiten Sie durch den gesamten Lebenszyklus Ihres Laborcontainers. Kein anderer Anbieter zeigt Ihnen so offen, was passiert.
+            </p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/10 hidden md:block"></div>
+
+            <div class="space-y-6">
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">01</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Anfrage & Erstgespräch</h3>
+                  <p class="text-gray-600">Ihre Anfrage kommt rein – per Telefon, E-Mail oder <a href="/kontakt" class="text-primary font-medium hover:underline">Kontaktformular</a>. Wir vereinbaren zeitnah ein erstes Kennenlernen per Videokonferenz. In diesem Gespräch klären wir Ihre Anforderungen, den geplanten Einsatzzweck und die Rahmenbedingungen Ihres Projekts.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">02</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Detailbesprechung & Bedarfsanalyse</h3>
+                  <p class="text-gray-600">In einer ausführlichen Telko besprechen wir die technischen Details: Welche Laborprozesse sollen ablaufen? Welche Sicherheitsstufe wird benötigt? Welche Medienversorgung ist vor Ort verfügbar? Bei Bedarf kombinieren wir einen Vor-Ort-Termin mit anderen Fahrten in Ihrer Region.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">03</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Planung, Angebot & Auftrag</h3>
+                  <p class="text-gray-600">Auf Basis der Bedarfsanalyse erstellen unsere <a href="/leistungen/planung" class="text-primary font-medium hover:underline">Ingenieure detaillierte Pläne</a> – CAD-Zeichnungen, 3D-Visualisierungen und TGA-Konzepte. Sie erhalten ein transparentes Angebot. Nach Auftragserteilung geht es direkt in die Umsetzung.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">04</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Standortprüfung & Genehmigung</h3>
+                  <p class="text-gray-600">Wir prüfen die Anlieferung und Aufstellung gemeinsam mit Ihnen: Standsicherheitsnachweis, <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="text-primary font-medium hover:underline">baurechtliche Beurteilung</a>, Gutachten und Zufahrtssituation. Falls eine Baugenehmigung nötig ist, übernehmen wir die Abstimmung mit der Behörde – oder schauen uns den Standort persönlich an.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">05</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Fertigung im eigenen Werk</h3>
+                  <p class="text-gray-600">Ihr Laborcontainer entsteht in unserem Werk in Albstadt – <a href="/leistungen/modulbau" class="text-primary font-medium hover:underline">maßgefertigt, nicht von der Stange</a>. Unter kontrollierten Bedingungen und mit umfassender Qualitätskontrolle. Sie erhalten regelmäßige Updates zum Baufortschritt.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">06</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Transport per Tieflader</h3>
+                  <p class="text-gray-600">Der fertige Container wird per Tieflader direkt zu Ihrem Standort transportiert – ohne Sondergenehmigungen und ohne zeitliche Verzögerungen. Bei <a href="/leistungen/logistik" class="text-primary font-medium hover:underline">internationalen Projekten</a> übernehmen wir auf Wunsch auch die komplette Verzollung.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">07</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Aufstellung per Autokran</h3>
+                  <p class="text-gray-600">Vor Ort wird der Container per Autokran aufgestellt – durch ortsansässige Partnerunternehmen oder unser bewährtes Netzwerk aus spezialisierten Kranunternehmen. Wir koordinieren alles: Kranstellplatz, Zufahrt, Zeitfenster.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">08</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Montage & Installation</h3>
+                  <p class="text-gray-600">Bei größeren Anlagen übernehmen wir Aufbau und Montage – mit ortsansässigen Installationspartnern oder unserem eigenen Montagetrupp. Medienanschlüsse, <a href="/leistungen/ausstattung" class="text-primary font-medium hover:underline">Laborausstattung</a>, Sicherheitstechnik – alles wird fachgerecht angeschlossen.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">09</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Finale Prüfung & Übergabe</h3>
+                  <p class="text-gray-600">Nach Abschluss der Montage erfolgt eine umfassende Funktionsprüfung aller Systeme. Erst wenn alles einwandfrei läuft, übergeben wir die Anlage an Sie – schlüsselfertig und betriebsbereit.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">10</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Laufender Service & Wartung</h3>
+                  <p class="text-gray-600">Auch nach der Übergabe sind wir für Sie da. Wiederkehrende Serviceleistungen, Wartungen und Überprüfungen erfolgen durch ortsansässige Vertragspartner oder unseren europaweit tätigen Servicetrupp – je nach Standort und Bedarf.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">11</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Rückholung & Rückgabeprotokoll</h3>
+                  <p class="text-gray-600">Wenn das Projekt endet, holen wir den Container ab. Vor dem Abbau wird die Anlage auf Beschädigungen geprüft und ein detailliertes Rückgabeprotokoll erstellt. Der Rücktransport erfolgt auf gleiche Weise per Tieflader.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">12</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Reinigung, Dekontaminierung & Aufbereitung</h3>
+                  <p class="text-gray-600">Zurück in unserem Werk wird der Container komplett gereinigt, fachgerecht dekontaminiert und für den nächsten Einsatz vorbereitet. <a href="/magazin/nachhaltigkeit-laborbau-energieeffizienz" class="text-primary font-medium hover:underline">Nachhaltigkeit</a> ist kein Schlagwort – unsere Container haben mehrere Lebenszyklen.</p>
+                </div>
               </div>
             </div>
-            <div class="flex gap-6 items-start bg-slate-50 p-6 rounded-xl border border-gray-100">
-              <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center font-bold text-lg shrink-0">02</div>
-              <div>
-                <h3 class="text-lg font-bold mb-2 text-slate-900">Planung & Angebot</h3>
-                <p class="text-gray-600">Unsere Ingenieure entwickeln detaillierte Pläne, erstellen 3D-Visualisierungen und Sie erhalten ein transparentes Festpreisangebot.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+                <span>Alleinstellungsmerkmal</span>
               </div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">
+                Dezentrale Leitwarte – Ihre Anlage im Blick, weltweit
+              </h2>
+              <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                Unser wichtigstes Alleinstellungsmerkmal: Wir überwachen Ihre Containereinheiten remote – egal wo auf der Welt sie stehen. Über unsere dezentrale Leitwarte prüfen wir Funktionstüchtigkeit, Klimadaten, Sicherheitssysteme und Betriebsparameter in Echtzeit.
+              </p>
+              <p class="text-gray-300 text-lg leading-relaxed">
+                Bei Störungen werden wir direkt von der betroffenen Einheit kontaktiert – automatisch und sofort. So können wir reagieren, bevor ein Problem eskaliert. Kein anderer Anbieter bietet Ihnen diese Sicherheit.
+              </p>
             </div>
-            <div class="flex gap-6 items-start bg-slate-50 p-6 rounded-xl border border-gray-100">
-              <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center font-bold text-lg shrink-0">03</div>
-              <div>
-                <h3 class="text-lg font-bold mb-2 text-slate-900">Fertigung & Qualitätskontrolle</h3>
-                <p class="text-gray-600">In unserer Produktion entsteht Ihr Laborcontainer unter strengen Qualitätskontrollen – termingerecht und nach höchsten Standards.</p>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4 p-5 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-bold mb-1">Weltweite Überwachung</h3>
+                  <p class="text-gray-400 text-sm">Jede Containereinheit wird rund um die Uhr remote überwacht – unabhängig vom Standort.</p>
+                </div>
               </div>
-            </div>
-            <div class="flex gap-6 items-start bg-slate-50 p-6 rounded-xl border border-gray-100">
-              <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center font-bold text-lg shrink-0">04</div>
-              <div>
-                <h3 class="text-lg font-bold mb-2 text-slate-900">Lieferung & Inbetriebnahme</h3>
-                <p class="text-gray-600">Wir liefern Ihr Labor an den Zielort, übernehmen Aufstellung und Anschluss und übergeben Ihnen ein schlüsselfertiges Labor.</p>
+              <div class="flex items-start gap-4 p-5 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-bold mb-1">Automatische Fehlermeldungen</h3>
+                  <p class="text-gray-400 text-sm">Bei Abweichungen kontaktiert die Einheit uns direkt – wir reagieren, bevor Sie es bemerken.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-5 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-bold mb-1">Proaktiver Service</h3>
+                  <p class="text-gray-400 text-sm">Klimadaten, Sicherheitssysteme, Betriebsparameter – alles in Echtzeit, alles dokumentiert.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-5 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><path d="M12 7v5l3 3"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-bold mb-1">Maximale Betriebssicherheit</h3>
+                  <p class="text-gray-400 text-sm">Ausfallzeiten minimieren, Wartungsintervalle optimieren – Ihre Anlage läuft, wenn Sie sie brauchen.</p>
+                </div>
               </div>
             </div>
           </div>

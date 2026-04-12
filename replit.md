@@ -19,6 +19,21 @@ The application uses Astro (SSG with Node adapter) for static site generation wi
 
 ## Recent Changes
 
+### Projektablauf & Dezentrale Leitwarte (April 2026)
+- Leistungen-Seite: 12-Schritte-Prozess (Anfrage → Erstgespräch → Bedarfsanalyse → Planung → Standortprüfung → Fertigung → Transport → Kranaufstellung → Montage → Übergabe → Service → Rückholung/Dekontaminierung)
+- Dezentrale Leitwarte als USP-Sektion: Remote-Überwachung weltweit, automatische Fehlermeldungen, Echtzeit-Monitoring
+- Städteseiten: Kompakte 6-Schritte-Version mit regionalem Bezug + Leitwarte-Highlight-Box
+- Blaupause (Staedteseiten-Blaupause.md) aktualisiert mit Prozess-Pflichtsektion
+- Hamburg als erstes Beispiel mit Prozess-Sektion implementiert
+
+### Städteseite Hamburg (April 2026)
+- /laborcontainer-hamburg: Life Sciences, Pharma, Hafenanalytik
+- Einzigartige Inhalte: UKE, BNITM, DESY, Beiersdorf, Eppendorf, Evotec, Hafen-Analytik
+- HBauO (Hamburgische Bauordnung), 7 Bezirksämter, Hamburg Port Authority
+- Maritimer Korrosionsschutz als regionale Besonderheit
+- 6 einzigartige FAQs (inkl. Hafengebiet-Frage)
+- 4 Schema-Typen, 12+ interne Links, Prozess-Sektion + Leitwarte
+
 ### Admin-Bereich für Kontaktanfragen (February 2026)
 - PostgreSQL-Datenbank für Kontaktanfragen (contact_messages Tabelle)
 - Kontakt-API speichert jetzt IMMER in DB, SMTP ist optional/Bonus

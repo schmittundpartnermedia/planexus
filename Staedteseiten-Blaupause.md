@@ -77,11 +77,27 @@
 - Wenn Projekte in der Region: konkret benennen
 - Wenn nicht: "Deutschlandweit über X Projekte realisiert" + nächstgelegenes
 
-#### 4. Vorteile Container vs. Massivbau
-- 4-6 Vorteile mit regionalem Beispiel
-- Zeitvergleich, Kosteneffizienz, Flexibilität, Standortwechsel
+#### 4. Projektablauf kompakt (6 Schritte + Leitwarte)
+- 6 Schritte im 2-Spalten-Grid (kompakte Version des 12-Schritte-Prozesses auf /leistungen)
+- Jeder Schritt mit Nummer, Titel und 1 Satz Beschreibung
+- **Regionaler Bezug in den Schritten** (z.B. "Transport über die A7", "Kranaufstellung durch lokale Partner in [Stadt]")
+- Schritte:
+  1. Anfrage & Erstgespräch (Telko, Anforderungen klären)
+  2. Standortprüfung (Standsicherheitsnachweis, Zufahrt in [Stadt])
+  3. Planung & Fertigung (Maßfertigung in Albstadt, ggf. regionale Besonderheiten wie Korrosionsschutz)
+  4. Transport (Route ab Albstadt benennen, z.B. "über die A7")
+  5. Aufstellung & Montage (lokale Kranpartner, ortsansässige Installateure)
+  6. Übergabe & Service (finale Prüfung, schlüsselfertige Übergabe, laufende Wartung)
+- **Danach: Dezentrale Leitwarte als Highlight-Box** (dunkler Hintergrund, auffällig)
+  - USP: Remote-Überwachung weltweit, automatische Fehlermeldungen
+  - Link zu /leistungen für den vollständigen Prozess
+  - Regionaler Bezug: "ob in [Stadtteil] oder [Standort]"
 
-#### 5. FAQ-Sektion (6 Fragen, EINZIGARTIG pro Stadt)
+#### 5. Vorteile / Gut zu wissen
+- 6 Fakten-Karten im 2-Spalten-Grid (dunkler Hintergrund)
+- Zeitvergleich, Genehmigungsfreiheit, BSL-Stufen, Lieferweg, regionale Besonderheit, schlüsselfertig
+
+#### 6. FAQ-Sektion (6 Fragen, EINZIGARTIG pro Stadt)
 - Aufklappbare Details-Elemente
 - FAQPage-Schema im JSON-LD
 - Fragentypen:
@@ -92,7 +108,7 @@
   5. BSL: "Gibt es BSL-2/BSL-3 Containerlabore für [Stadt]?"
   6. Regional: Stadtspezifische Frage (z.B. Hafen, Klima, Uni-Nähe)
 
-#### 6. CTA-Sektion
+#### 7. CTA-Sektion
 - "Laborcontainer für [Stadt]? Wir beraten Sie."
 - Kontakt-Link + Telefonnummer
 - Vertrauenselemente (Erfahrung, Made in Germany, Wesemann Holding)
@@ -126,6 +142,8 @@
 - [ ] 6 FAQs (einzigartig, keine Dopplungen mit anderen Städten)
 - [ ] 12+ interne Links
 - [ ] 40%+ regionaler einzigartiger Content
+- [ ] Projektablauf kompakt (6 Schritte mit regionalem Bezug)
+- [ ] Dezentrale Leitwarte als Highlight-Box
 - [ ] Alt-Texte auf allen Bildern mit Stadtname
 - [ ] In Sitemap eingetragen
 - [ ] Kein Copy-Paste von anderen Städteseiten
