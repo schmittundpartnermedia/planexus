@@ -13,7 +13,7 @@ interface Props {
 }
 
 const { title, description, canonical = '', type = 'website', schema, ogImage } = Astro.props;
-const fullTitle = `${title} | Planexus GmbH`;
+const fullTitle = title.includes('Planexus') ? title : `${title} | Planexus GmbH`;
 const siteUrl = 'https://www.planexus.de';
 const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
 const ogImageUrl = ogImage
@@ -79,7 +79,11 @@ const ogImageUrl = ogImage
       "logo": `${siteUrl}/android-chrome-512x512.png`,
       "description": "Spezialist für Laborcontainer, mobile Labore und Modulbau. Planung, Fertigung und schlüsselfertige Übergabe von Containerlaboren.",
       "foundingDate": "2014",
-      "areaServed": { "@type": "Country", "name": "Germany" },
+      "areaServed": [
+        { "@type": "Country", "name": "Germany" },
+        { "@type": "Country", "name": "Switzerland" },
+        { "@type": "Country", "name": "Austria" }
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+49 7435 7519 700",

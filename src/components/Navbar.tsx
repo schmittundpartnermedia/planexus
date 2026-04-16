@@ -10,6 +10,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [locationsOpen, setLocationsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [location, setLocation] = useState('/');
 
@@ -42,6 +43,36 @@ export default function Navbar() {
     { href: "/leistungen/ausstattung", label: "Laborausstattung" },
     { href: "/leistungen/beratung", label: "Beratung & Genehmigung" },
     { href: "/leistungen/smart-lab", label: "Smart Lab Integration" },
+  ];
+
+  const locationGroups = [
+    {
+      label: "Deutschland",
+      links: [
+        { href: "/laborcontainer-hamburg", label: "Hamburg" },
+        { href: "/laborcontainer-berlin", label: "Berlin" },
+        { href: "/laborcontainer-muenchen", label: "München" },
+        { href: "/laborcontainer-stuttgart", label: "Stuttgart" },
+        { href: "/laborcontainer-duesseldorf", label: "Düsseldorf" },
+        { href: "/laborcontainer-frankfurt", label: "Frankfurt" },
+      ],
+    },
+    {
+      label: "Schweiz",
+      links: [
+        { href: "/laborcontainer-zuerich", label: "Zürich" },
+        { href: "/laborcontainer-basel", label: "Basel" },
+        { href: "/laborcontainer-bern", label: "Bern" },
+      ],
+    },
+    {
+      label: "Österreich",
+      links: [
+        { href: "/laborcontainer-wien", label: "Wien" },
+        { href: "/laborcontainer-graz", label: "Graz" },
+        { href: "/laborcontainer-linz", label: "Linz" },
+      ],
+    },
   ];
 
   return (
@@ -163,6 +194,63 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
           
+          <div 
+            className="relative"
+            onMouseEnter={() => setLocationsOpen(true)}
+            onMouseLeave={() => setLocationsOpen(false)}
+          >
+            <button
+              aria-expanded={locationsOpen}
+              aria-haspopup="true"
+              onClick={() => setLocationsOpen(!locationsOpen)}
+              onKeyDown={(e) => { if (e.key === 'Escape') setLocationsOpen(false); }}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 uppercase tracking-wide",
+                location.startsWith("/laborcontainer-") ? "text-primary" : "text-white/80 hover:text-white"
+              )}
+            >
+              Standorte
+              <ChevronDown className={cn("w-4 h-4 transition-transform", locationsOpen && "rotate-180")} />
+            </button>
+            {location.startsWith("/laborcontainer-") && (
+              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary" />
+            )}
+            
+            <AnimatePresence>
+              {locationsOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  role="menu"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-lg shadow-xl border border-gray-100 py-3 px-2 z-50"
+                  style={{ minWidth: '420px' }}
+                >
+                  <div className="grid grid-cols-3 gap-1">
+                    {locationGroups.map((group) => (
+                      <div key={group.label} role="group" aria-label={group.label}>
+                        <p className="text-[10px] uppercase tracking-wider text-gray-400 font-bold px-3 pb-1.5 mb-1 border-b border-gray-100">{group.label}</p>
+                        {group.links.map((link) => (
+                          <a
+                            key={link.href}
+                            href={link.href}
+                            role="menuitem"
+                            className={cn(
+                              "block px-3 py-1.5 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary rounded",
+                              location === link.href ? "text-primary bg-primary/5" : "text-slate-700"
+                            )}
+                          >
+                            {link.label}
+                          </a>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <a
             href="/laborcontainer/labtogo"
             className={cn(
@@ -240,6 +328,22 @@ export default function Navbar() {
                 ))}
               </div>
               
+              <div className="border-b border-gray-50">
+                <p className="text-xs uppercase tracking-wider text-gray-400 pt-3 pb-1">Standorte</p>
+                {locationGroups.map((group) => (
+                  <div key={group.label} className="mb-2">
+                    <p className="text-[10px] uppercase tracking-wider text-gray-300 pl-4 pt-1">{group.label}</p>
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 pl-4">
+                      {group.links.map((link) => (
+                        <a key={link.href} href={link.href} className={cn("text-sm font-medium py-1", location === link.href ? "text-primary" : "text-slate-600")}>
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               <a href="/laborcontainer/labtogo" className={cn("text-left text-lg font-bold py-3 border-b border-gray-50 w-full block", location === "/laborcontainer/labtogo" ? "text-primary" : "text-primary/80")}>
                 LABtoGO
               </a>

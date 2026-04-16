@@ -21,6 +21,7 @@ This project is the corporate website for Planexus GmbH, a German company specia
 - REIHENFOLGE: 1) Städteseiten (13 DE + 3 CH + 3 AT) → 2) Branchenseiten (6 Branchen) → 3) Blog-Beiträge (nach Recherche)
 - QUALITÄTSSTANDARD: Diese Website ist das Paradebeispiel einer Marketing-Maschine. Höchstes Level ist Standard. Jede Seite muss Top-3-Ranking-würdig sein.
 - STÄDTESEITEN STATUS (12 von 19): DE: Hamburg, Berlin, München, Stuttgart, Düsseldorf, Frankfurt (6/13) | CH: Zürich, Basel, Bern (3/3 ✓) | AT: Wien, Graz, Linz (3/3 ✓)
+- SEO-SANIERUNG ABGESCHLOSSEN: Doorway-Page-Pattern aufgelöst (Leistungen-Grid + Projektablauf entfernt, alle H2s individualisiert, "Gut zu wissen" → unique Fakten pro Stadt), Navbar mit Standorte-Dropdown (DE/CH/AT), Startseite Regionen-Block, Schema areaServed DACH, Hero-Bild-Duplikate (Berlin/München/Stuttgart) behoben, Title-Duplikation behoben
 
 ## System Architecture
 
