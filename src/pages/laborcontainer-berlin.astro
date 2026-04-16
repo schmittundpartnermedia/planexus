@@ -1,18 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.tsx';
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Laborcontainer Berlin",
-  "description": "Laborcontainer für Berlin und Brandenburg: Planung, Fertigung und schlüsselfertige Übergabe. BSL-2/BSL-3 Container, mobile Forschungslabore und Reinraumlösungen.",
+  "description": "Schlüsselfertige Laborcontainer für Berlin und Brandenburg. BSL-2/BSL-3, Reinraum, Analytik – Planung, Bau und Lieferung aus einer Hand.",
   "provider": {
     "@type": "Organization",
     "name": "Planexus GmbH",
-    "url": "https://www.planexus.de"
+    "url": "https://www.planexus.de",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Wesemann Holding GmbH"
+    }
   },
+  "serviceType": ["Laborcontainer", "Mobile Labore", "BSL-2 Labor", "BSL-3 Labor", "Reinraumlabor", "Containerlabor"],
   "areaServed": [
     { "@type": "City", "name": "Berlin" },
+    { "@type": "State", "name": "Berlin" },
     { "@type": "State", "name": "Brandenburg" }
   ],
   "url": "https://www.planexus.de/laborcontainer-berlin"
@@ -23,7 +30,8 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
-    { "@type": "ListItem", "position": 2, "name": "Laborcontainer Berlin", "item": "https://www.planexus.de/laborcontainer-berlin" }
+    { "@type": "ListItem", "position": 2, "name": "Standorte", "item": "https://www.planexus.de/#standorte" },
+    { "@type": "ListItem", "position": 3, "name": "Laborcontainer Berlin", "item": "https://www.planexus.de/laborcontainer-berlin" }
   ]
 };
 
@@ -36,7 +44,7 @@ const faqSchema = {
       "name": "Was kostet ein Laborcontainer in Berlin?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Kosten hängen von der Größe, der Ausstattung und der Sicherheitsstufe ab. Ein einfaches Analyselabor kostet deutlich weniger als ein BSL-3-Container mit Schleusen und Unterdrucksystem. Sprechen Sie mit uns über Ihr Projekt – wir nennen Ihnen eine realistische Größenordnung."
+        "text": "Die Kosten hängen von Größe, Ausstattung und Sicherheitsstufe ab. Ein Analytiklabor liegt in einer anderen Größenordnung als ein BSL-3-Container mit Schleusenkonzept. Wir erstellen Ihnen ein individuelles Angebot – sprechen Sie uns an."
       }
     },
     {
@@ -44,39 +52,31 @@ const faqSchema = {
       "name": "Wie kommt der Laborcontainer nach Berlin?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Per Schwertransport auf dem Tieflader, direkt auf Ihr Gelände. Die Aufstellung erfolgt per Mobilkran. Wir organisieren Transportgenehmigungen, Polizeibegleitung falls nötig und die komplette Kranlogistik – auch an schwer zugänglichen Standorten in der Berliner Innenstadt."
+        "text": "Per Schwertransport auf dem Tieflader über die A81 und A2. Die rund 640 km von unserem Werk in Albstadt nach Berlin legen wir in einem Tag zurück. Aufstellung per Mobilkran – auch an engen Standorten in der Berliner Innenstadt. Wir organisieren Transportgenehmigungen und Kranlogistik komplett."
       }
     },
     {
       "@type": "Question",
-      "name": "Brauche ich in Berlin eine Baugenehmigung?",
+      "name": "Brauche ich in Berlin eine Baugenehmigung für einen Laborcontainer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Das hängt vom Standort, der Größe und der geplanten Nutzungsdauer ab. In Berlin gilt die Berliner Bauordnung, die in vielen Fällen eine Verfahrensfreiheit für temporäre Bauten vorsieht. Wir klären das im Vorfeld mit dem zuständigen Bezirksamt."
+        "text": "Das regelt die Berliner Bauordnung (BauO Bln). Container gelten als bauliche Anlagen. Bei temporärer Nutzung unter 3 Monaten sind sie häufig verfahrensfrei. Bei dauerhafter Aufstellung ist in der Regel eine Genehmigung durch das zuständige Bezirksamt erforderlich. Wir klären das vorab für Sie."
       }
     },
     {
       "@type": "Question",
-      "name": "Kann ich einen Laborcontainer in Berlin auch mieten?",
+      "name": "Kann ich einen Laborcontainer in Berlin auch mieten statt kaufen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, sowohl Miete als auch Kauf sind möglich. Gerade bei Drittmittelprojekten oder befristeten Studien ist Miete oft die wirtschaftlichere Option. Wir beraten Sie, welches Modell für Ihre Situation besser passt."
+        "text": "Ja. Gerade bei drittmittelfinanzierten Forschungsprojekten oder befristeten klinischen Studien ist Miete oft die wirtschaftlichere Option. Wir bieten flexible Mietmodelle und auch Mietkauf an."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche Sicherheitsstufen sind im Container realisierbar?",
+      "name": "Welche Labortypen sind als Container in Berlin verfügbar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bis BSL-3 und Reinraumklassen nach ISO. Wir bauen Labore für einfache Analytik genauso wie für die Arbeit mit hochpathogenen Erregern – alles normgerecht und zertifizierbar."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie schnell steht ein Laborcontainer in Berlin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Vom Auftrag bis zur Übergabe rechnen Sie mit 8 bis 16 Wochen. Ein einfaches Analyselabor geht schneller, ein BSL-3-Labor mit komplexer Ausstattung braucht mehr Vorlauf. Die reine Aufstellung vor Ort dauert in der Regel ein bis zwei Tage."
+        "text": "Wir fertigen Analytiklabore, BSL-2- und BSL-3-Sicherheitslabore, GMP-Reinräume, QC-Labore und Wägelabore. Jeder Container wird individuell nach Ihren Anforderungen geplant – von der Einzeleinheit bis zur mehrgeschossigen Laboranlage auf dem Campusgelände."
       }
     }
   ]
@@ -85,8 +85,8 @@ const faqSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Planexus GmbH",
-  "description": "Laborcontainer für Berlin und Brandenburg",
+  "name": "Planexus GmbH – Laborcontainer Berlin",
+  "description": "Schlüsselfertige Laborcontainer für Berlin und Brandenburg",
   "url": "https://www.planexus.de",
   "telephone": "+49 7435 7519 700",
   "email": "info@planexus.de",
@@ -105,11 +105,11 @@ const localBusinessSchema = {
 ---
 
 <Layout
-  title="Laborcontainer Berlin – Planung & Bau"
-  description="Laborcontainer für Berlin und Brandenburg: Mobile Forschungslabore, BSL-2/BSL-3 Containerlabore und Reinraumlösungen. Jetzt anfragen."
+  title="Laborcontainer Berlin – Ihr Labor steht, bevor der Neubau genehmigt ist | Planexus"
+  description="Laborcontainer für Berlin: BSL-2/BSL-3, Reinraum & Analytik. Schlüsselfertig geliefert in 8–16 Wochen. Jetzt unverbindlich anfragen."
   canonical="/laborcontainer-berlin"
   schema={serviceSchema}
-  ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
+  ogImage="/attached_assets/Laborcontainer_007_1769688326918.jpg"
 >
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
@@ -117,392 +117,376 @@ const localBusinessSchema = {
 
   <div class="pt-20 min-h-screen bg-white">
 
-    <!-- Hero -->
-    <section class="relative py-28 bg-slate-900 text-white overflow-hidden">
-      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=2070')] bg-cover bg-center opacity-15"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
+    <section class="relative py-24 md:py-32 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="/attached_assets/Laborcontainer_007_1769688326918.jpg" alt="Laborcontainer von Planexus – schlüsselfertig für Berlin" class="w-full h-full object-cover opacity-20" loading="eager" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
 
       <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-4xl">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Berlin & Brandenburg</span>
-          </div>
-          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+        <div class="max-w-3xl">
+          <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+            <a href="/" class="hover:text-primary transition-colors">Start</a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span>Standorte</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span class="text-primary">Berlin</span>
+          </nav>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
             Laborcontainer für Berlin – <span class="text-primary">Ihr Labor steht, bevor der Neubau genehmigt ist</span>
           </h1>
-          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mb-8">
-            Deutschlands größte Wissenschaftsstadt braucht Labore, die Schritt halten. Wir bauen sie – in Wochen, nicht in Jahren.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
-              Projekt besprechen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Breadcrumb -->
-    <div class="bg-slate-50 border-b border-gray-100 py-4">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center gap-2 text-sm text-gray-500">
-          <a href="/" class="hover:text-primary">Start</a>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          <span class="text-primary font-medium">Laborcontainer Berlin</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Einleitung -->
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
-            Berlin hat über 80 Forschungseinrichtungen – und zu wenig Laborfläche
-          </h2>
-          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-            <p>
-              Berlin ist die Stadt mit der höchsten Dichte an Wissenschaftseinrichtungen in Deutschland. Die Charité allein ist eine der größten Universitätskliniken Europas. Dazu kommen die Freie Universität, die Humboldt-Universität, die TU Berlin, über 70 außeruniversitäre Forschungsinstitute und ein wachsendes Cluster aus Biotech- und Healthtech-Unternehmen rund um den Campus Berlin-Buch und Adlershof.
-            </p>
-            <p>
-              Das Problem: Laborfläche in Berlin ist knapp. Neubauprojekte dauern Jahre, Bestandsgebäude sind oft bis auf den letzten Quadratmeter belegt. Wer kurzfristig zusätzliche Laborkapazität braucht – für ein Forschungsprojekt, eine klinische Studie oder eine Übergangslösung während einer Sanierung – steht vor einem echten Engpass.
-            </p>
-            <p>
-              Genau dafür gibt es Laborcontainer. Vollwertige, normgerechte Labore im Containerformat, die in 8 bis 16 Wochen auf Ihrem Gelände stehen. Geplant, gebaut und aufgestellt von Planexus. <a href="/leistungen" class="text-primary font-medium hover:underline">Unsere Leistungen im Überblick →</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Einsatzbereiche -->
-    <section class="py-20 bg-slate-50 border-y border-gray-100">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
-            Wo Laborcontainer in Berlin zum Einsatz kommen
-          </h2>
-          <p class="text-gray-600 text-lg mb-12">
-            Berlin ist kein typischer Industriestandort. Die Anforderungen an Laborcontainer kommen hier aus einer anderen Richtung.
+          <p class="text-xl text-gray-300 leading-relaxed mb-8">
+            Über 80 Forschungseinrichtungen, kaum freie Laborfläche. Wir liefern normkonforme Containerlabore direkt auf Ihr Gelände – betriebsbereit in 8 bis 16 Wochen.
           </p>
 
-          <div class="space-y-8">
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">Charité und Berliner Kliniken</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    Die Charité betreibt Forschung an mehreren Standorten quer durch die Stadt – Campus Mitte, Virchow-Klinikum, Benjamin Franklin. Wenn dort zusätzliche BSL-2-Kapazität gebraucht wird, etwa für infektiologische Studien oder Pandemieforschung, ist ein Laborcontainer direkt auf dem Klinikgelände die schnellste Lösung. Kein Umbau in historischer Bausubstanz, kein jahrelanges Genehmigungsverfahren.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
+              Kostenlos anfragen
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +49 7435 7519 700
+            </a>
+          </div>
 
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">Biotech-Cluster Berlin-Buch</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    Im Norden Berlins hat sich einer der wichtigsten Biotech-Standorte Deutschlands entwickelt. Start-ups und Scale-ups siedeln sich dort an, wachsen schnell und brauchen Laborfläche, die mit ihnen Schritt hält. Ein Containerlabor auf dem Campus-Gelände lässt sich flexibel erweitern und bei Bedarf auch wieder abbauen – ohne langfristige Mietverträge für teure Gewerbeflächen.
-                  </p>
-                </div>
-              </div>
+          <div class="flex flex-wrap items-center gap-6 text-sm text-gray-400">
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+              Teil der Wesemann Holding
             </div>
-
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">Wissenschaftsstandort Adlershof</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    Berlin-Adlershof ist der größte Technologiepark Deutschlands. Über 1.200 Unternehmen und Institute arbeiten dort – viele davon in forschungsintensiven Bereichen. Wenn ein Institut der Humboldt-Universität oder ein Spin-off zusätzliche <a href="/leistungen/ausstattung" class="text-primary font-medium hover:underline">Laborausstattung</a> braucht und im Bestandsgebäude kein Platz ist, steht ein Containerlabor auf der Freifläche.
-                  </p>
-                </div>
-              </div>
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+              Eigene Fertigung in Deutschland
             </div>
-
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">Überbrückung bei Sanierung und Neubau</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    Berlin hat viele Forschungsgebäude aus den 60er- und 70er-Jahren, die dringend saniert werden müssen. Die Forschungsgruppen können aber nicht pausieren. Ein <a href="/leistungen/modulbau" class="text-primary font-medium hover:underline">Containerlabor</a> auf dem Campusgelände sichert den laufenden Betrieb, bis die Sanierung abgeschlossen ist. <a href="/projekte" class="text-primary font-medium hover:underline">Unsere bisherigen Projekte →</a>
-                  </p>
-                </div>
-              </div>
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+              Schlüsselfertig inkl. Qualifizierung
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Leistungen -->
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Was wir für Berlin leisten</h2>
-          <p class="text-gray-600 text-lg">
-            Planung, Fertigung, Lieferung und Aufstellung – komplett aus einer Hand. Kein Subunternehmer-Chaos, ein Ansprechpartner.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Technische Fachplanung</h3>
-            <p class="text-gray-600 text-sm mb-4">Grundrisse, TGA-Konzepte und 3D-Modelle – zugeschnitten auf die oft engen Platzverhältnisse an Berliner Standorten.</p>
-            <a href="/leistungen/planung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Modulbau & Fertigung</h3>
-            <p class="text-gray-600 text-sm mb-4">Jeder Container wird in unserem Werk in Albstadt individuell gefertigt. Made in Germany, exakt nach Ihren Anforderungen.</p>
-            <a href="/leistungen/modulbau" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Logistik & Montage</h3>
-            <p class="text-gray-600 text-sm mb-4">Schwertransport und Kranaufstellung – auch in der Berliner Innenstadt. Wir kümmern uns um Genehmigungen und Absperrungen.</p>
-            <a href="/leistungen/logistik" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Laborausstattung</h3>
-            <p class="text-gray-600 text-sm mb-4">Abzüge, Sicherheitswerkbänke, Labormöbel, Lüftung, Medienversorgung – komplett eingebaut und betriebsfertig.</p>
-            <a href="/leistungen/ausstattung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Beratung & Genehmigung</h3>
-            <p class="text-gray-600 text-sm mb-4">Berliner Bauordnung, Bezirksämter, Denkmalschutz – wir kennen die Besonderheiten und navigieren Sie durch den Prozess.</p>
-            <a href="/leistungen/beratung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Smart Lab Integration</h3>
-            <p class="text-gray-600 text-sm mb-4">Fernüberwachung, automatische Klimaregelung und Zutrittskontrolle – besonders relevant bei Standorten ohne Dauerpräsenz.</p>
-            <a href="/leistungen/smart-lab" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gut zu wissen -->
-    <section class="py-20 bg-slate-900 text-white">
+    <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-4">Gut zu wissen</h2>
-          <p class="text-gray-400 text-lg mb-12">Was Sie über Laborcontainer-Projekte in Berlin wissen sollten.</p>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">8–16 Wochen bis zum fertigen Labor</h3>
-                <p class="text-gray-400 text-sm">In Berlin kann allein die Baugenehmigung für einen Neubau länger dauern. Ein Containerlab steht in dieser Zeit komplett.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Bundesweite Lieferung</h3>
-                <p class="text-gray-400 text-sm">Unser Werk in Albstadt liefert bundesweit. Der Transport nach Berlin ist eingespielt und logistisch kein Problem.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Bis BSL-3 und Reinraum</h3>
-                <p class="text-gray-400 text-sm">Für die Berliner Infektionsforschung besonders relevant: BSL-2 und BSL-3 sind im Container voll realisierbar.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Berliner Bauordnung berücksichtigt</h3>
-                <p class="text-gray-400 text-sm">Wir kennen die Berliner Regelungen und klären Genehmigungsfragen direkt mit dem zuständigen Bezirksamt.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 17 3.5s1.5 2.5-.8 6.5C20.7 11.5 21 14 21 14s-1.5-.5-2.5-.5c-.5 2-2 3.5-2 3.5s-.5-1-1-2.5c-1.5 1-4.5 2.5-4.5 5.5"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Rückbau jederzeit möglich</h3>
-                <p class="text-gray-400 text-sm">In Berlin besonders wichtig: Der Container kann versetzt oder abgebaut werden, ohne Spuren zu hinterlassen.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Miete oder Kauf</h3>
-                <p class="text-gray-400 text-sm">Für Drittmittelprojekte und befristete Studien bietet sich Miete an. Für dauerhaften Betrieb ist Kauf wirtschaftlicher.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Warum Planexus -->
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
-            Planexus in Berlin
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">
+            80 Forschungseinrichtungen – und überall fehlt Laborfläche
           </h2>
-          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-            <p>
-              Unser Werk steht in Albstadt, nicht in Berlin. Aber das ist kein Nachteil – im Gegenteil. Laborcontainer werden im Werk vorgefertigt und erst als fertige Einheit geliefert. Das bedeutet: kontrollierte Fertigung, gleichbleibende Qualität, kein Wetterproblem auf der Baustelle. Der Transport per Tieflader nach Berlin ist logistisch eingespielt.
-            </p>
-            <p>
-              Für Projektgespräche, Standortbegehungen und die Aufstellung kommen wir selbstverständlich nach Berlin. Wir sind es gewohnt, bundesweit zu arbeiten, und haben die Abläufe von der Transportgenehmigung bis zur Kranaufstellung standardisiert.
-            </p>
-            <p>
-              Planexus ist Teil der <a href="/ueber-uns" class="text-primary font-medium hover:underline">Wesemann Holding</a> – einem der etabliertesten Labormöbel-Hersteller in Deutschland. Dieses Netzwerk verschafft uns Zugang zu allem, was ein Labor braucht: von der Abzugshaube über die Reinraumtechnik bis zur digitalen Gebäudesteuerung.
-            </p>
-            <p>
-              Wir arbeiten für Universitäten, Forschungsinstitute, Pharma- und Biotech-Unternehmen und öffentliche Einrichtungen. Seit über zehn Jahren. <a href="/team" class="text-primary font-medium hover:underline">Unser Team kennenlernen →</a>
-            </p>
+          <div class="grid md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-red-50 border border-red-100 rounded-xl p-6">
+              <div class="text-red-600 font-bold text-lg mb-2">Charité am Limit</div>
+              <p class="text-gray-600 text-sm">Europas größte Uniklinik forscht an vier Standorten – und kämpft um jeden Quadratmeter. Neubauprojekte wie der Charité-Campus 2030 dauern ein Jahrzehnt.</p>
+            </div>
+            <div class="bg-red-50 border border-red-100 rounded-xl p-6">
+              <div class="text-red-600 font-bold text-lg mb-2">Buch & Adlershof voll</div>
+              <p class="text-gray-600 text-sm">Berlins Biotech-Cluster wachsen schneller als die Infrastruktur. Start-ups finden keine Laborfläche, Scale-ups können nicht expandieren.</p>
+            </div>
+            <div class="bg-red-50 border border-red-100 rounded-xl p-6">
+              <div class="text-red-600 font-bold text-lg mb-2">Sanierungsstau überall</div>
+              <p class="text-gray-600 text-sm">Viele Laborgebäude stammen aus den 60er- und 70er-Jahren. Sanierungen stehen an, aber der Betrieb darf nicht stillstehen.</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-900 text-white rounded-2xl p-8 md:p-10">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <div class="text-xl font-bold mb-2">Die Lösung: Laborcontainer direkt auf dem Campus</div>
+                <p class="text-gray-300">Planexus plant, baut und liefert normkonforme Containerlabore – aufgestellt auf Ihrem Gelände in Berlin, betriebsbereit in Wochen statt Jahren. Kein Massivbau, keine Wartezeit, kein Flächenproblem.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-20 bg-slate-50 border-y border-gray-100">
+    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Warum Planexus für Berlin?</h2>
+          <p class="text-gray-600 text-lg">Alles aus einer Hand – auch bei Berliner Platzverhältnissen und Genehmigungswegen.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="font-bold text-slate-900 text-lg mb-2">8–16 Wochen</div>
+            <p class="text-gray-600 text-sm">Von Auftragserteilung bis schlüsselfertige Übergabe – statt jahrelanger Neubauplanung.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            </div>
+            <div class="font-bold text-slate-900 text-lg mb-2">Schlüsselfertig</div>
+            <p class="text-gray-600 text-sm">Planung, Fertigung, Schwertransport, Kranaufstellung, Qualifizierung – ein Ansprechpartner.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div class="font-bold text-slate-900 text-lg mb-2">Normkonform</div>
+            <p class="text-gray-600 text-sm">BSL-2/BSL-3 nach BioStoffV, GMP-Reinräume, DIN/ISO – vollständig qualifiziert und dokumentiert.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="font-bold text-slate-900 text-lg mb-2">Kauf, Miete, Leasing</div>
+            <p class="text-gray-600 text-sm">Flexibel finanziert – ob Interimslabor für ein Drittmittelprojekt oder dauerhafte Erweiterung.</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(132,189,0,0.3)]">
+            Jetzt unverbindlich beraten lassen
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">
+            Laborcontainer-Typen für Berlin
+          </h2>
+          <p class="text-gray-600 text-lg mb-10">
+            Jeder Container wird individuell geplant und in unserem Werk gefertigt – kein Standard von der Stange.
+          </p>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 mb-2">Analytiklabor</h3>
+              <p class="text-gray-600 text-sm">HPLC, GC, Spektroskopie – mit Abzügen, Medienversorgung und klimatisierten Geräteräumen.</p>
+            </a>
+
+            <a href="/magazin/bsl-2-bsl-3-container-labor" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 mb-2">BSL-2 / BSL-3 Sicherheitslabor</h3>
+              <p class="text-gray-600 text-sm">Unterdrucksysteme, HEPA-Filtration, Schleusen – nach BioStoffV und TRBA 100.</p>
+            </a>
+
+            <a href="/magazin/gmp-reinraum-container-pharma-produktion" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 mb-2">GMP-Reinraumlabor</h3>
+              <p class="text-gray-600 text-sm">Reinraumklassen nach ISO 14644. Für Pharma-Produktion, Qualitätskontrolle und aseptische Arbeiten.</p>
+            </a>
+
+            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0-6 0"/><path d="M12.5 2a9.5 9.5 0 0 0-7.14 15.73L12 22l6.64-4.27A9.5 9.5 0 0 0 12.5 2Z"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 mb-2">QC-Labor</h3>
+              <p class="text-gray-600 text-sm">Qualitätskontrolle für Pharma und Chemie – Wareneingangs-, Prozess- und Freigabeprüfung.</p>
+            </a>
+
+            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 mb-2">Wägelabor</h3>
+              <p class="text-gray-600 text-sm">Vibrationsarme Wägetische, kontrollierte Temperatur und Luftfeuchtigkeit für Präzisionswägungen.</p>
+            </a>
+
+            <a href="/leistungen" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 mb-2">Containeranlage / Mehrstöckig</h3>
+              <p class="text-gray-600 text-sm">Mehrere Container zu einer Laboranlage verbunden – eingeschossig oder mehrgeschossig, skalierbar nach Bedarf.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">
+            Lieferung nach Berlin – 640 km ab Werk
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-white rounded-xl p-6 border border-gray-100 text-center">
+              <div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">~640 km</div>
+              <p class="text-gray-600 text-sm">Albstadt → Berlin</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100 text-center">
+              <div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">1 Tag</div>
+              <p class="text-gray-600 text-sm">Transport per Tieflader über A81/A2</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100 text-center">
+              <div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">8–16 Wo.</div>
+              <p class="text-gray-600 text-sm">Bis zur schlüsselfertigen Übergabe</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 border border-gray-100 space-y-6">
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Aufstellung in der Hauptstadt</h3>
+              <p class="text-gray-600">Unsere Container stehen auf Klinikgeländen, Forschungscampi und Industrieflächen – von Buch über Mitte bis Adlershof. Aufstellung per Mobilkran, auch auf engen Innenstadtflächen. Wir organisieren Transportgenehmigungen, Polizeibegleitung und Absperrungen.</p>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Baugenehmigung in Berlin</h3>
+              <p class="text-gray-600">Die Berliner Bauordnung (BauO Bln) stuft Container als bauliche Anlagen ein. Bei temporärer Nutzung häufig verfahrensfrei. Bei Daueraufstellung klären wir die Genehmigung mit dem zuständigen Bezirksamt – ob Mitte, Pankow oder Treptow-Köpenick.</p>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Forschungslandschaft Berlin</h3>
+              <p class="text-gray-600">Charité, Max-Delbrück-Centrum, Helmholtz-Zentrum, Leibniz-Institute, Fraunhofer – Berlin hat die höchste Dichte an Forschungseinrichtungen in Deutschland. Dazu über 350 Biotech- und Healthtech-Unternehmen, die flexibel Laborfläche brauchen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">
+            So entsteht Ihr Containerlabor in Berlin
+          </h2>
+          <p class="text-gray-600 text-lg mb-12">Von der Idee bis zum betriebsbereiten Labor – in 5 klaren Schritten.</p>
+
+          <div class="space-y-0">
+            <div class="flex gap-6">
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">1</div>
+                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
+              </div>
+              <div class="pb-10">
+                <h3 class="font-bold text-slate-900 text-lg mb-1">Erstberatung & Anforderungsanalyse</h3>
+                <p class="text-gray-600">Welcher Labortyp? Welche Sicherheitsstufe? Wo genau in Berlin? Welche Normen und Förderrichtlinien gelten?</p>
+              </div>
+            </div>
+
+            <div class="flex gap-6">
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">2</div>
+                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
+              </div>
+              <div class="pb-10">
+                <h3 class="font-bold text-slate-900 text-lg mb-1">Planung & Engineering</h3>
+                <p class="text-gray-600">CAD-Entwurf, TGA-Planung, Raumlayout – abgestimmt auf Ihre Prozesse und die Berliner Platzverhältnisse. Freigabe durch Sie, bevor die Fertigung startet.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-6">
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">3</div>
+                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
+              </div>
+              <div class="pb-10">
+                <h3 class="font-bold text-slate-900 text-lg mb-1">Fertigung im Werk</h3>
+                <p class="text-gray-600">Produktion in Albstadt – wetterunabhängig, qualitätsgeprüft. Factory Acceptance Test (FAT) inklusive.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-6">
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">4</div>
+                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
+              </div>
+              <div class="pb-10">
+                <h3 class="font-bold text-slate-900 text-lg mb-1">Transport & Aufstellung</h3>
+                <p class="text-gray-600">Per Tieflader über die A81 und A2 nach Berlin. Aufstellung per Mobilkran, Anschluss an Medienversorgung – auch auf engen Campusflächen.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-6">
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">5</div>
+              </div>
+              <div class="pb-2">
+                <h3 class="font-bold text-slate-900 text-lg mb-1">Qualifizierung & Übergabe</h3>
+                <p class="text-gray-600">IQ/OQ/PQ-Dokumentation, Einweisung Ihres Teams, Übergabe eines betriebsbereiten Labors. Fertig.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-10">
+            <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(132,189,0,0.3)]">
+              Starten Sie bei Schritt 1 – kostenlose Erstberatung
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">
             Häufige Fragen zu Laborcontainern in Berlin
           </h2>
-          <p class="text-gray-600 text-lg mb-12">
-            Was uns Kunden aus Berlin und Brandenburg regelmäßig fragen.
-          </p>
 
           <div class="space-y-4">
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Was kostet ein Laborcontainer in Berlin?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <details class="bg-white border border-gray-100 rounded-xl group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <span class="font-bold text-slate-900 pr-4">Was kostet ein Laborcontainer in Berlin?</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Die Kosten hängen von der Größe, der Ausstattung und der Sicherheitsstufe ab. Ein einfaches Analyselabor kostet deutlich weniger als ein BSL-3-Container mit Schleusen und Unterdrucksystem. Sprechen Sie mit uns über Ihr Projekt – wir nennen Ihnen eine realistische Größenordnung.
+              <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">
+                Die Kosten hängen von Größe, Ausstattung und Sicherheitsstufe ab. Ein Analytiklabor liegt in einer anderen Größenordnung als ein BSL-3-Container mit Schleusenkonzept. Wir erstellen Ihnen ein individuelles Angebot – <a href="#anfrage" class="text-primary font-medium hover:underline">sprechen Sie uns an</a>.
               </div>
             </details>
 
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Wie kommt der Laborcontainer nach Berlin?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <details class="bg-white border border-gray-100 rounded-xl group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <span class="font-bold text-slate-900 pr-4">Wie kommt der Laborcontainer nach Berlin?</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Per Schwertransport auf dem Tieflader, direkt auf Ihr Gelände. Die Aufstellung erfolgt per Mobilkran. Wir organisieren Transportgenehmigungen, Polizeibegleitung falls nötig und die komplette Kranlogistik – auch an schwer zugänglichen Standorten in der Berliner Innenstadt.
+              <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">
+                Per Schwertransport auf dem Tieflader über die A81 und A2 – rund 640 km von Albstadt nach Berlin, in einem Tag. Aufstellung per Mobilkran, auch an engen Standorten in der Innenstadt. Wir organisieren Transportgenehmigungen und Kranlogistik komplett.
               </div>
             </details>
 
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Brauche ich in Berlin eine Baugenehmigung?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <details class="bg-white border border-gray-100 rounded-xl group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <span class="font-bold text-slate-900 pr-4">Brauche ich eine Baugenehmigung in Berlin?</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Das hängt vom Standort, der Größe und der geplanten Nutzungsdauer ab. In Berlin gilt die Berliner Bauordnung, die in vielen Fällen eine Verfahrensfreiheit für temporäre Bauten vorsieht. Wir klären das im Vorfeld mit dem zuständigen Bezirksamt.
+              <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">
+                Die Berliner Bauordnung (BauO Bln) stuft Container als bauliche Anlagen ein. Bei temporärer Nutzung unter 3 Monaten häufig verfahrensfrei. Bei dauerhafter Aufstellung klären wir die Genehmigung mit dem zuständigen Bezirksamt – ob Mitte, Pankow oder Treptow-Köpenick.
               </div>
             </details>
 
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Kann ich einen Laborcontainer in Berlin auch mieten?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <details class="bg-white border border-gray-100 rounded-xl group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <span class="font-bold text-slate-900 pr-4">Kann ich einen Laborcontainer in Berlin mieten?</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Ja, sowohl Miete als auch Kauf sind möglich. Gerade bei Drittmittelprojekten oder befristeten Studien ist Miete oft die wirtschaftlichere Option. Wir beraten Sie, welches Modell für Ihre Situation besser passt.
+              <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">
+                Ja. Gerade bei drittmittelfinanzierten Forschungsprojekten oder befristeten klinischen Studien ist Miete oft die wirtschaftlichere Option. Wir bieten flexible Mietmodelle und auch Mietkauf an.
               </div>
             </details>
 
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Welche Sicherheitsstufen sind im Container realisierbar?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <details class="bg-white border border-gray-100 rounded-xl group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <span class="font-bold text-slate-900 pr-4">Wo in Berlin werden Laborcontainer aufgestellt?</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Bis BSL-3 und Reinraumklassen nach ISO. Wir bauen Labore für einfache Analytik genauso wie für die Arbeit mit hochpathogenen Erregern – alles normgerecht und zertifizierbar.
-              </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Wie schnell steht ein Laborcontainer in Berlin?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Vom Auftrag bis zur Übergabe rechnen Sie mit 8 bis 16 Wochen. Ein einfaches Analyselabor geht schneller, ein BSL-3-Labor mit komplexer Ausstattung braucht mehr Vorlauf. Die reine Aufstellung vor Ort dauert in der Regel ein bis zwei Tage.
+              <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">
+                Auf Klinikgeländen (Charité, Vivantes), Forschungscampi (Buch, Adlershof), Industrieflächen und Universitätsarealen. Aufstellung per Kran – auch auf engen Flächen. Medienanschlüsse werden vor Ort hergestellt.
               </div>
             </details>
           </div>
@@ -510,20 +494,97 @@ const localBusinessSchema = {
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-24 bg-primary text-slate-900">
-      <div class="container mx-auto px-4 text-center max-w-3xl">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Laborprojekt in Berlin? Wir sind bereit.</h2>
-        <p class="text-slate-700 text-lg mb-8">
-          Beschreiben Sie uns Ihr Vorhaben. Wir melden uns in der Regel am gleichen Tag mit einer ersten Einschätzung.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/kontakt" class="bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors inline-flex items-center gap-2">
-            Projekt anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-          <a href="tel:+4974357519700" class="bg-white text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-white/90 transition-colors inline-flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
-          </a>
+    <section id="anfrage" class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid lg:grid-cols-5 gap-10">
+            <div class="lg:col-span-2">
+              <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
+                Laborcontainer für Berlin anfragen
+              </h2>
+              <p class="text-gray-600 mb-8">
+                Beschreiben Sie kurz Ihr Projekt – wir melden uns innerhalb von 24 Stunden mit einer ersten Einschätzung.
+              </p>
+
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900 text-sm">Telefon</div>
+                    <a href="tel:+4974357519700" class="text-[#7a9900] font-medium hover:underline">+49 7435 7519 700</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900 text-sm">E-Mail</div>
+                    <a href="mailto:info@planexus.de" class="text-[#7a9900] font-medium hover:underline">info@planexus.de</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900 text-sm">Werk & Zentrale</div>
+                    <p class="text-gray-600 text-sm">Am Steinbach 8, 72459 Albstadt</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-3">
+              <ContactForm client:load />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">
+            Bereit für Ihr Containerlabor in Berlin?
+          </h2>
+          <p class="text-gray-400 mb-6">Wir beraten Sie persönlich – unverbindlich und kostenlos.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Jetzt anrufen
+            </a>
+            <a href="#anfrage" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Anfrage senden
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-lg font-bold text-slate-900 mb-4">Weitere Standorte</h2>
+          <div class="flex flex-wrap gap-3">
+            <a href="/laborcontainer-hamburg" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Hamburg</a>
+            <a href="/laborcontainer-muenchen" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">München</a>
+            <a href="/laborcontainer-stuttgart" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Stuttgart</a>
+            <a href="/laborcontainer-duesseldorf" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Düsseldorf</a>
+            <a href="/laborcontainer-frankfurt" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Frankfurt</a>
+            <a href="/laborcontainer-zuerich" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Zürich</a>
+            <a href="/laborcontainer-basel" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Basel</a>
+            <a href="/laborcontainer-bern" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Bern</a>
+            <a href="/laborcontainer-wien" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Wien</a>
+            <a href="/laborcontainer-graz" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Graz</a>
+            <a href="/laborcontainer-linz" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Linz</a>
+          </div>
         </div>
       </div>
     </section>

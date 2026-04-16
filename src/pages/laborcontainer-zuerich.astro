@@ -1,659 +1,158 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.tsx';
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Laborcontainer Zürich",
-  "description": "Laborcontainer für Zürich und die Schweiz: Planung, Fertigung und schlüsselfertige Übergabe. BSL-2/BSL-3 Container, mobile Forschungslabore und Reinraumlösungen für Biotech, MedTech und Forschung.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Planexus GmbH",
-    "url": "https://www.planexus.de"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Zürich" },
-    { "@type": "AdministrativeArea", "name": "Kanton Zürich" }
-  ],
+const serviceSchema = { "@context": "https://schema.org", "@type": "Service", "name": "Laborcontainer Zürich", "description": "Schlüsselfertige Laborcontainer für Zürich und die Deutschschweiz. BSL-2/BSL-3, Reinraum, Analytik – geplant in Deutschland, geliefert in die Schweiz.",
+  "provider": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://www.planexus.de", "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" } },
+  "serviceType": ["Laborcontainer", "Mobile Labore", "BSL-2 Labor", "BSL-3 Labor", "Reinraumlabor"],
+  "areaServed": [{ "@type": "City", "name": "Zürich" }, { "@type": "State", "name": "Kanton Zürich" }],
   "url": "https://www.planexus.de/laborcontainer-zuerich"
 };
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
-    { "@type": "ListItem", "position": 2, "name": "Laborcontainer Zürich", "item": "https://www.planexus.de/laborcontainer-zuerich" }
-  ]
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was kostet ein Laborcontainer in Zürich?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Kosten hängen von Grösse, Ausstattung und Sicherheitsstufe ab. Dazu kommen Transportkosten und Zollabwicklung DE→CH. Wir nennen Ihnen eine realistische Grössenordnung inklusive aller Nebenkosten."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Brauche ich im Kanton Zürich eine Baubewilligung für einen Laborcontainer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In der Regel ja. Die kantonale Bauverfahrensverordnung (BVV) sieht für Bauten über 6 m² Bodenfläche eine Bewilligung vor. Je nach Standort kommen Meldeverfahren, Anzeigeverfahren (30 Tage) oder das ordentliche Verfahren infrage. Wir klären das vorab mit dem zuständigen Bauamt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie funktioniert die Lieferung eines Laborcontainers in die Schweiz?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wir fertigen in unserem Werk in Albstadt (Deutschland) und liefern per Tieflader über die A81 und den Grenzübergang Thayngen/Schaffhausen. Die Zollabwicklung übernehmen wir komplett – inklusive aller erforderlichen Dokumente. Für vorsteuerabzugsberechtigte Unternehmen ist die Schweizer MWST vollständig rückforderbar."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kann ich einen Laborcontainer in Zürich auch mieten?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Miete, Kauf oder Mietkauf – wir bieten flexible Modelle. Besonders für befristete Forschungsprojekte, Startup-Labore im Technopark Schlieren oder Interimslösungen während Umbauarbeiten sinnvoll."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Erfüllen Ihre Laborcontainer Schweizer Normen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Wir planen nach SIA-Normen (insbesondere SIA 382/1 für Lüftung, SIA 180 für Wärmeschutz), berücksichtigen SUVA-Richtlinien und EKAS 1871 für Arbeitssicherheit. Auf Wunsch auch nach Swissmedic-Standards für pharmazeutische Anwendungen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Eignet sich ein Containerlabor für Biotech-Startups in Zürich?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, ideal sogar. Ein Containerlabor ist in 8–12 Wochen einsatzbereit, flexibel erweiterbar und deutlich günstiger als ein Laborraum im Zürcher Immobilienmarkt. Viele Startups und ETH-Spin-offs nutzen Container als Erstlabor oder zur schnellen Skalierung."
-      }
-    }
-  ]
-};
-
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Planexus GmbH",
-  "description": "Laborcontainer für Zürich und die Schweiz",
-  "url": "https://www.planexus.de",
-  "telephone": "+49 7435 7519 700",
-  "email": "info@planexus.de",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Am Steinbach 8",
-    "addressLocality": "Albstadt",
-    "postalCode": "72459",
-    "addressCountry": "DE"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Zürich" },
-    { "@type": "AdministrativeArea", "name": "Kanton Zürich" }
-  ]
+const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+  { "@type": "ListItem", "position": 2, "name": "Standorte", "item": "https://www.planexus.de/#standorte" },
+  { "@type": "ListItem", "position": 3, "name": "Laborcontainer Zürich", "item": "https://www.planexus.de/laborcontainer-zuerich" }
+]};
+const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  { "@type": "Question", "name": "Was kostet ein Laborcontainer in Zürich?", "acceptedAnswer": { "@type": "Answer", "text": "Die Kosten hängen von Grösse, Ausstattung und Sicherheitsstufe ab. Da wir in Deutschland fertigen, profitieren Schweizer Kunden von wettbewerbsfähigen Konditionen. Wir erstellen Ihnen ein individuelles Angebot." } },
+  { "@type": "Question", "name": "Wie wird ein Laborcontainer in die Schweiz geliefert?", "acceptedAnswer": { "@type": "Answer", "text": "Per Schwertransport auf dem Tieflader von Albstadt über die A81 und den Grenzübergang Thayngen/Schaffhausen. Die rund 150 km legen wir in wenigen Stunden zurück. Zollabwicklung und Transportgenehmigungen übernehmen wir komplett." } },
+  { "@type": "Question", "name": "Brauche ich in Zürich eine Baubewilligung für einen Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Das regelt die kantonale Bauverordnung Zürich. Container gelten als Bauten und Anlagen. Bei temporärer Aufstellung unter 3 Monaten ist häufig keine Bewilligung nötig. Bei dauerhafter Nutzung klären wir das vorab mit der Baubehörde." } },
+  { "@type": "Question", "name": "Kann ich einen Laborcontainer in Zürich mieten?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Miete, Kauf und Mietkauf sind möglich – auch grenzüberschreitend. Gerade für befristete Projekte oder klinische Studien ist Miete eine flexible Option." } },
+  { "@type": "Question", "name": "Welche Vorteile hat ein deutscher Hersteller für die Schweiz?", "acceptedAnswer": { "@type": "Answer", "text": "Deutsche Fertigung bedeutet: wettbewerbsfähige Preise bei Schweizer Qualitätsanspruch. Unser Werk in Albstadt liegt nur 150 km von Zürich entfernt – näher als viele Schweizer Anbieter. Kurze Wege, deutsche Gründlichkeit, Schweizer Präzision." } }
+]};
+const localBusinessSchema = { "@context": "https://schema.org", "@type": "LocalBusiness", "name": "Planexus GmbH – Laborcontainer Zürich", "description": "Schlüsselfertige Laborcontainer für Zürich und die Deutschschweiz", "url": "https://www.planexus.de", "telephone": "+49 7435 7519 700", "email": "info@planexus.de",
+  "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt", "postalCode": "72459", "addressCountry": "DE" },
+  "areaServed": [{ "@type": "City", "name": "Zürich" }, { "@type": "State", "name": "Kanton Zürich" }]
 };
 ---
 
-<Layout
-  title="Laborcontainer Zürich – Planung & Bau"
-  description="Laborcontainer für Zürich und die Schweiz: Mobile Labore für Biotech, MedTech und Forschung. BSL-2/BSL-3, schlüsselfertig. Jetzt beraten lassen."
-  canonical="/laborcontainer-zuerich"
-  schema={serviceSchema}
-  ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
->
+<Layout title="Laborcontainer Zürich – geplant in Deutschland, geliefert in die Schweiz | Planexus" description="Laborcontainer für Zürich: BSL-2/BSL-3, Reinraum & Analytik. Nur 150 km ab Werk. Schlüsselfertig geliefert. Jetzt anfragen." canonical="/laborcontainer-zuerich" schema={serviceSchema} ogImage="/attached_assets/Laborcontainer_017_1769688326919.jpg">
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} slot="head" />
 
   <div class="pt-20 min-h-screen bg-white">
 
-    <section class="relative py-28 bg-slate-900 text-white overflow-hidden">
-      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=2070')] bg-cover bg-center opacity-15"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
-
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-4xl">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Zürich & Greater Zurich Area</span>
-          </div>
-          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-            Laborcontainer für Zürich – <span class="text-primary">geplant in Deutschland, geliefert in die Schweiz</span>
-          </h1>
-          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mb-8">
-            Europas führender Standort für Biotech, MedTech und Diagnostik – mit der ETH Zürich als Innovationsmotor. Wir planen, bauen und liefern schlüsselfertige Containerlabore für den Grossraum Zürich und die gesamte Deutschschweiz.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
-              Projekt besprechen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
-            </a>
-          </div>
+    <section class="relative py-24 md:py-32 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0"><img src="/attached_assets/Laborcontainer_017_1769688326919.jpg" alt="Laborcontainer von Planexus – schlüsselfertig für Zürich" class="w-full h-full object-cover opacity-20" loading="eager" /></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10"><div class="max-w-3xl">
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8"><a href="/" class="hover:text-primary transition-colors">Start</a><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg><span>Standorte</span><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg><span class="text-primary">Zürich</span></nav>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">Laborcontainer für Zürich – <span class="text-primary">geplant in Deutschland, geliefert in die Schweiz</span></h1>
+        <p class="text-xl text-gray-300 leading-relaxed mb-8">ETH, Biotech-Cluster, MedTech-Szene – Zürich braucht Laborfläche, die Schritt hält. Wir liefern sie. Nur 150 km ab Werk, schlüsselfertig und normkonform.</p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+          <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">Kostenlos anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700</a>
         </div>
-      </div>
+        <div class="flex flex-wrap items-center gap-6 text-sm text-gray-400">
+          <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>Teil der Wesemann Holding</div>
+          <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>Fertigung in Deutschland</div>
+          <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>Nur 150 km ab Werk</div>
+        </div>
+      </div></div>
     </section>
 
-    <div class="bg-slate-50 border-b border-gray-100 py-4">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center gap-2 text-sm text-gray-500">
-          <a href="/" class="hover:text-primary">Start</a>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          <span class="text-primary font-medium">Laborcontainer Zürich</span>
+    <section class="py-16 md:py-20"><div class="container mx-auto px-4"><div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Zürichs Forschung boomt – die Infrastruktur kommt nicht nach</h2>
+      <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <div class="bg-red-50 border border-red-100 rounded-xl p-6"><div class="text-red-600 font-bold text-lg mb-2">ETH & Uni am Limit</div><p class="text-gray-600 text-sm">Die ETH Zürich und die Universität Zürich gehören zu den forschungsstärksten Hochschulen Europas – aber die Laborgebäude sind voll. Neubauprojekte dauern in der Schweiz oft 7+ Jahre.</p></div>
+        <div class="bg-red-50 border border-red-100 rounded-xl p-6"><div class="text-red-600 font-bold text-lg mb-2">Biotech wächst rasant</div><p class="text-gray-600 text-sm">Die Greater Zurich Area ist Europas drittgrösster Biotech-Cluster. Start-ups und Scale-ups brauchen Laborfläche, die mit ihrem Wachstum Schritt hält.</p></div>
+        <div class="bg-red-50 border border-red-100 rounded-xl p-6"><div class="text-red-600 font-bold text-lg mb-2">Schweizer Bauzeiten</div><p class="text-gray-600 text-sm">Zwischen Baugesuch, Einsprachen und Fertigstellung vergehen in Zürich oft Jahre. Die Forschung kann nicht so lange warten.</p></div>
+      </div>
+      <div class="bg-slate-900 text-white rounded-2xl p-8 md:p-10"><div class="flex items-start gap-4">
+        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><div class="text-xl font-bold mb-2">Die Lösung: Containerlabore aus dem Nachbarland</div><p class="text-gray-300">Unser Werk in Albstadt liegt nur 150 km nördlich von Zürich. Wir planen, fertigen und liefern normkonforme Containerlabore – zu deutschen Fertigungskosten, mit Schweizer Qualitätsanspruch. Zollabwicklung inklusive.</p></div>
+      </div></div>
+    </div></div></section>
+
+    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100"><div class="container mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-12"><h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Warum Planexus für Zürich?</h2><p class="text-gray-600 text-lg">Deutsche Fertigung, Schweizer Nähe, alles aus einer Hand.</p></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center"><div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="font-bold text-slate-900 text-lg mb-2">8–14 Wochen</div><p class="text-gray-600 text-sm">Von Auftrag bis Übergabe – statt Jahren Bauzeit in der Schweiz.</p></div>
+        <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center"><div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div><div class="font-bold text-slate-900 text-lg mb-2">Schlüsselfertig</div><p class="text-gray-600 text-sm">Planung, Fertigung, Zoll, Transport, Aufstellung, Qualifizierung.</p></div>
+        <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center"><div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg></div><div class="font-bold text-slate-900 text-lg mb-2">Normkonform</div><p class="text-gray-600 text-sm">BSL-2/BSL-3, GMP-Reinräume, DIN/ISO – vollständig qualifiziert.</p></div>
+        <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center"><div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="font-bold text-slate-900 text-lg mb-2">Kauf, Miete, Leasing</div><p class="text-gray-600 text-sm">Flexibel finanziert – auch grenzüberschreitend.</p></div>
+      </div>
+      <div class="text-center mt-10"><a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(132,189,0,0.3)]">Jetzt unverbindlich beraten lassen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+    </div></section>
+
+    <section class="py-16 md:py-20"><div class="container mx-auto px-4"><div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Laborcontainer-Typen für Zürich</h2>
+      <p class="text-gray-600 text-lg mb-10">Individuell geplant und gefertigt – kein Standard von der Stange.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Analytiklabor</h3><p class="text-gray-600 text-sm">HPLC, GC, Spektroskopie – klimatisierte Geräteräume und Medienversorgung.</p></a>
+        <a href="/magazin/bsl-2-bsl-3-container-labor" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="font-bold text-slate-900 mb-2">BSL-2 / BSL-3 Sicherheitslabor</h3><p class="text-gray-600 text-sm">Unterdruck, HEPA-Filtration, Schleusen – nach BioStoffV/TRBA 100.</p></a>
+        <a href="/magazin/gmp-reinraum-container-pharma-produktion" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div><h3 class="font-bold text-slate-900 mb-2">GMP-Reinraumlabor</h3><p class="text-gray-600 text-sm">Reinraumklassen nach ISO 14644 – für Pharma und Diagnostik.</p></a>
+        <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0-6 0"/><path d="M12.5 2a9.5 9.5 0 0 0-7.14 15.73L12 22l6.64-4.27A9.5 9.5 0 0 0 12.5 2Z"/></svg></div><h3 class="font-bold text-slate-900 mb-2">QC-Labor</h3><p class="text-gray-600 text-sm">Qualitätskontrolle – Wareneingangsprüfung und Freigabeanalytik.</p></a>
+        <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Wägelabor</h3><p class="text-gray-600 text-sm">Vibrationsarme Wägetische, kontrollierte Klimabedingungen.</p></a>
+        <a href="/leistungen" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Containeranlage / Mehrstöckig</h3><p class="text-gray-600 text-sm">Mehrere Container verbunden – skalierbar nach Bedarf.</p></a>
+      </div>
+    </div></div></section>
+
+    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100"><div class="container mx-auto px-4"><div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Lieferung nach Zürich – nur 150 km ab Werk</h2>
+      <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <div class="bg-white rounded-xl p-6 border border-gray-100 text-center"><div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">~150 km</div><p class="text-gray-600 text-sm">Albstadt → Zürich</p></div>
+        <div class="bg-white rounded-xl p-6 border border-gray-100 text-center"><div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">~2,5 Std.</div><p class="text-gray-600 text-sm">Transport inkl. Grenzübergang</p></div>
+        <div class="bg-white rounded-xl p-6 border border-gray-100 text-center"><div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">8–14 Wo.</div><p class="text-gray-600 text-sm">Bis zur schlüsselfertigen Übergabe</p></div>
+      </div>
+      <div class="bg-white rounded-xl p-8 border border-gray-100 space-y-6">
+        <div><h3 class="font-bold text-slate-900 mb-2">Aufstellung im Grossraum Zürich</h3><p class="text-gray-600">Unsere Container stehen auf Hochschulgeländen, Klinikarealen und Industrieflächen – von der ETH Hönggerberg über das Universitätsspital bis zum Technopark. Aufstellung per Kran, Medienanschlüsse vor Ort.</p></div>
+        <div><h3 class="font-bold text-slate-900 mb-2">Baubewilligung im Kanton Zürich</h3><p class="text-gray-600">Die kantonale Bauverordnung regelt die Aufstellung von Containern. Bei temporärer Nutzung oft bewilligungsfrei. Bei dauerhafter Aufstellung klären wir das vorab mit der Baubehörde. Zollabwicklung für den Grenzübertritt übernehmen wir komplett.</p></div>
+        <div><h3 class="font-bold text-slate-900 mb-2">Forschungsstandort Zürich</h3><p class="text-gray-600">ETH Zürich (Platz 7 weltweit), Universität Zürich, Universitätsspital, über 400 Biotech- und MedTech-Unternehmen in der Greater Zurich Area – der Bedarf an flexibler Laborinfrastruktur ist enorm. Roche Diagnostics, Novartis-Spin-offs und zahlreiche Start-ups konkurrieren um dieselben Flächen.</p></div>
+      </div>
+    </div></div></section>
+
+    <section class="py-16 md:py-20"><div class="container mx-auto px-4"><div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">So entsteht Ihr Containerlabor in Zürich</h2>
+      <p class="text-gray-600 text-lg mb-12">Von der Idee bis zum betriebsbereiten Labor – in 5 klaren Schritten.</p>
+      <div class="space-y-0">
+        <div class="flex gap-6"><div class="flex flex-col items-center"><div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">1</div><div class="w-0.5 bg-gray-200 flex-grow mt-2"></div></div><div class="pb-10"><h3 class="font-bold text-slate-900 text-lg mb-1">Erstberatung & Anforderungsanalyse</h3><p class="text-gray-600">Labortyp, Sicherheitsstufe, Standort in Zürich, Schweizer Normen – wir klären alles.</p></div></div>
+        <div class="flex gap-6"><div class="flex flex-col items-center"><div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">2</div><div class="w-0.5 bg-gray-200 flex-grow mt-2"></div></div><div class="pb-10"><h3 class="font-bold text-slate-900 text-lg mb-1">Planung & Engineering</h3><p class="text-gray-600">CAD-Entwurf, TGA-Planung, Raumlayout – zugeschnitten auf Ihre Prozesse und die Schweizer Anforderungen.</p></div></div>
+        <div class="flex gap-6"><div class="flex flex-col items-center"><div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">3</div><div class="w-0.5 bg-gray-200 flex-grow mt-2"></div></div><div class="pb-10"><h3 class="font-bold text-slate-900 text-lg mb-1">Fertigung im Werk</h3><p class="text-gray-600">Produktion in Albstadt – wetterunabhängig, qualitätsgeprüft, FAT inklusive.</p></div></div>
+        <div class="flex gap-6"><div class="flex flex-col items-center"><div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">4</div><div class="w-0.5 bg-gray-200 flex-grow mt-2"></div></div><div class="pb-10"><h3 class="font-bold text-slate-900 text-lg mb-1">Transport & Aufstellung</h3><p class="text-gray-600">Per Tieflader über die Grenze nach Zürich – nur 150 km. Zollabwicklung, Aufstellung per Kran, Medienanschlüsse.</p></div></div>
+        <div class="flex gap-6"><div class="flex flex-col items-center"><div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">5</div></div><div class="pb-2"><h3 class="font-bold text-slate-900 text-lg mb-1">Qualifizierung & Übergabe</h3><p class="text-gray-600">IQ/OQ/PQ-Dokumentation, Einweisung, betriebsbereites Labor.</p></div></div>
+      </div>
+      <div class="text-center mt-10"><a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(132,189,0,0.3)]">Starten Sie bei Schritt 1 – kostenlose Erstberatung <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+    </div></div></section>
+
+    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100"><div class="container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">Häufige Fragen zu Laborcontainern in Zürich</h2>
+      <div class="space-y-4">
+        <details class="bg-white border border-gray-100 rounded-xl group" open><summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-bold text-slate-900 pr-4">Was kostet ein Laborcontainer in Zürich?</span><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">Die Kosten hängen von Grösse und Ausstattung ab. Deutsche Fertigung bedeutet wettbewerbsfähige Preise. Wir erstellen ein individuelles Angebot – <a href="#anfrage" class="text-primary font-medium hover:underline">fragen Sie an</a>.</div></details>
+        <details class="bg-white border border-gray-100 rounded-xl group"><summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-bold text-slate-900 pr-4">Wie kommt der Container über die Grenze?</span><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">Per Tieflader über den Grenzübergang Thayngen/Schaffhausen – nur 150 km ab Werk. Zollabwicklung, Transportgenehmigungen und Kranlogistik übernehmen wir komplett.</div></details>
+        <details class="bg-white border border-gray-100 rounded-xl group"><summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-bold text-slate-900 pr-4">Brauche ich eine Baubewilligung in Zürich?</span><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">Die kantonale Bauverordnung regelt das. Temporäre Aufstellungen sind oft bewilligungsfrei. Bei Dauernutzung klären wir alles mit der Baubehörde.</div></details>
+        <details class="bg-white border border-gray-100 rounded-xl group"><summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-bold text-slate-900 pr-4">Mieten oder kaufen?</span><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">Beides möglich – auch grenzüberschreitend. Miete eignet sich für befristete Projekte, Kauf für dauerhafte Erweiterung.</div></details>
+        <details class="bg-white border border-gray-100 rounded-xl group"><summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-bold text-slate-900 pr-4">Warum ein deutscher Hersteller für die Schweiz?</span><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">Wettbewerbsfähige Fertigungskosten bei gleichem Qualitätsstandard. 150 km Entfernung – näher als viele Schweizer Anbieter. Deutsche Gründlichkeit, Schweizer Präzision.</div></details>
+      </div>
+    </div></div></section>
+
+    <section id="anfrage" class="py-16 md:py-20"><div class="container mx-auto px-4"><div class="max-w-5xl mx-auto"><div class="grid lg:grid-cols-5 gap-10">
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">Laborcontainer für Zürich anfragen</h2>
+        <p class="text-gray-600 mb-8">Beschreiben Sie kurz Ihr Projekt – wir melden uns innerhalb von 24 Stunden.</p>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="font-bold text-slate-900 text-sm">Telefon</div><a href="tel:+4974357519700" class="text-[#7a9900] font-medium hover:underline">+49 7435 7519 700</a></div></div>
+          <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="font-bold text-slate-900 text-sm">E-Mail</div><a href="mailto:info@planexus.de" class="text-[#7a9900] font-medium hover:underline">info@planexus.de</a></div></div>
+          <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="font-bold text-slate-900 text-sm">Werk & Zentrale</div><p class="text-gray-600 text-sm">Am Steinbach 8, 72459 Albstadt</p></div></div>
         </div>
       </div>
-    </div>
+      <div class="lg:col-span-3"><ContactForm client:load /></div>
+    </div></div></div></section>
 
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
-            Laborcontainer für Biotech, MedTech und Forschung in Zürich
-          </h2>
-          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-            <p>
-              Zürich ist das wirtschaftliche Zentrum der Schweiz und einer der führenden Life-Sciences-Standorte Europas. Die ETH Zürich – eine der besten technischen Hochschulen weltweit (Rang 7 im QS-Ranking) – und die Universität Zürich bilden das akademische Fundament. Der Bio-Technopark Schlieren, der Balgrist Campus und das Universitätsspital Zürich treiben die Translation von Forschung in die Praxis voran. Unternehmen wie Roche (Schlieren), Biogen, Amgen und zahlreiche Biotech-Startups schaffen permanenten Bedarf an flexibler Laborinfrastruktur.
-            </p>
-            <p>
-              Doch Laborraum in Zürich ist knapp und teuer. Die hohen Immobilienpreise, die dichte Bebauung und lange Bewilligungsverfahren machen konventionelle Laborbauten zum Geduldspiel. Forschungsprojekte, klinische Studien und Produktentwicklungen warten nicht.
-            </p>
-            <p>
-              Genau hier setzen <strong>Laborcontainer</strong> an. Planexus plant und baut voll ausgestattete, normkonforme Containerlabore – massgeschneidert für Ihren Standort in Zürich. Von der ersten Skizze bis zur schlüsselfertigen Übergabe alles aus einer Hand. <a href="/leistungen" class="text-primary font-medium hover:underline">Unsere Leistungen im Überblick →</a>
-            </p>
-          </div>
-        </div>
+    <section class="py-12 bg-slate-900 text-white"><div class="container mx-auto px-4"><div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Bereit für Ihr Containerlabor in Zürich?</h2>
+      <p class="text-gray-400 mb-6">Wir beraten Sie persönlich – unverbindlich und kostenlos.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Jetzt anrufen</a>
+        <a href="#anfrage" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Anfrage senden</a>
       </div>
-    </section>
+    </div></div></section>
 
-    <section class="py-20 bg-slate-50 border-y border-gray-100">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
-            Wo Laborcontainer in Zürich gebraucht werden
-          </h2>
-          <p class="text-gray-600 text-lg mb-12">
-            Die Greater Zurich Area vereint Spitzenforschung, globale Pharmakonzerne und eine dynamische Startup-Szene – ideale Voraussetzungen für flexible Laborlösungen.
-          </p>
-
-          <div class="space-y-8">
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">Biotech und Startup-Labore im Technopark Schlieren</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    Der Bio-Technopark Schlieren ist das Herzstück der Zürcher Life-Sciences-Szene. Junge Biotech-Unternehmen und ETH-Spin-offs brauchen sofort einsatzfähige Labore – ohne jahrelange Bauplanung. Ein Containerlabor steht auf dem Gelände, betriebsbereit in Wochen statt Jahren. <a href="/leistungen/beratung" class="text-primary font-medium hover:underline">Mehr zur Beratung →</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">Klinische Forschung am Universitätsspital Zürich</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    USZ und UZH treiben klinische Studien in Onkologie, Immunologie und Neurowissenschaften voran. Wenn zusätzliche Laborkapazität unter <a href="/magazin/bsl-2-bsl-3-container-labor" class="text-primary font-medium hover:underline">BSL-2-Bedingungen</a> benötigt wird, liefert ein Containerlabor die Lösung – direkt auf dem Spital-Campus, ohne Eingriff in die bestehende Infrastruktur.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">MedTech und Diagnostik im Grossraum Zürich</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    Roche Diagnostics (Rotkreuz), Siemens Healthineers, Balgrist Campus – die Region ist ein Hotspot für Medizintechnik und In-vitro-Diagnostik. QC-Labore direkt auf dem Firmengelände ermöglichen schnelle Qualitätskontrollen ohne Probentransport. <a href="/leistungen/ausstattung" class="text-primary font-medium hover:underline">Mehr zur Laborausstattung →</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">Materialforschung und Analytik an der ETH</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    ETH Zürich, Empa Dübendorf, Paul Scherrer Institut (PSI, ~100 km) – hochspezialisierte Forschung, die flexible Laborkapazität direkt vor Ort benötigt. Ein Containerlabor ergänzt bestehende Infrastruktur ohne Bauzeit und Bewilligungsverfahren. <a href="/leistungen/smart-lab" class="text-primary font-medium hover:underline">Mehr zu Smart Lab →</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Was wir für Zürich übernehmen</h2>
-          <p class="text-gray-600 text-lg">
-            Von der ersten Idee bis zum betriebsfertigen Labor – als Hersteller mit eigener Fertigung, nicht als Vermittler.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Technische Fachplanung</h3>
-            <p class="text-gray-600 text-sm mb-4">CAD-Entwürfe, 3D-Visualisierungen und TGA-Konzepte – abgestimmt auf die hohen Schweizer Normen (SIA) und die oft beengten Platzverhältnisse an Zürcher Standorten.</p>
-            <a href="/leistungen/planung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Modulbau & Fertigung</h3>
-            <p class="text-gray-600 text-sm mb-4">Massfertigung in unserem Werk in Albstadt (Deutschland). Der Transport in die Schweiz ist eingespielt – inklusive Zollabwicklung und Dokumentation.</p>
-            <a href="/leistungen/modulbau" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 13h8"/><path d="M13 17h8"/><path d="M13 9h8"/><path d="M1 5h4l2 10h10l2-8H5"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Logistik & Montage</h3>
-            <p class="text-gray-600 text-sm mb-4">Transport per Tieflader über die A81 und die A1 nach Zürich. Aufstellung per Kran – auch auf Technopark-Geländen oder Spital-Campus.</p>
-            <a href="/leistungen/logistik" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Laborausstattung</h3>
-            <p class="text-gray-600 text-sm mb-4">Abzüge, Sicherheitswerkbänke, Labormöbel, Kühlsysteme, Lüftungstechnik – eingebaut und betriebsfertig. Auf Wunsch GMP-konform nach Swissmedic-Standards.</p>
-            <a href="/leistungen/ausstattung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Beratung & Genehmigung</h3>
-            <p class="text-gray-600 text-sm mb-4">Wir beraten zu Schweizer Normen (SIA, SUVA, EKAS), kantonalem Baurecht und übernehmen die Abstimmung mit dem Bauamt im Kanton Zürich.</p>
-            <a href="/leistungen/beratung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Smart Lab Integration</h3>
-            <p class="text-gray-600 text-sm mb-4">Fernüberwachung, automatisierte Klimasteuerung, Zutrittskontrolle und Datenlogging – ideal für Forschungsstandorte mit wechselnden Projektteams.</p>
-            <a href="/leistungen/smart-lab" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 bg-slate-50 border-y border-gray-100">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
-            Zürich als Laborstandort – Branchen und Forschung
-          </h2>
-          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-            <p>
-              Zürich ist das wirtschaftliche Zentrum der Schweiz, eingebettet in die Greater Zurich Area mit über 21.000 Beschäftigten in MedTech und Life Sciences. Die Kombination aus Spitzenforschung, globalen Konzernen und einer lebendigen Startup-Szene macht die Region zum idealen Standort für flexible Laborinfrastruktur.
-            </p>
-            <h3 class="text-xl font-bold text-slate-900">Hochschulen und Forschungsinstitute</h3>
-            <p>
-              Die <strong>ETH Zürich</strong> belegt Rang 7 im weltweiten QS-Ranking und beherbergt Departemente für Chemie, Biologie sowie Biosystems Science & Engineering (in Basel). Die <strong>Universität Zürich (UZH)</strong> hat das erste One Health Institute Europas gegründet und verfügt über eine der grössten medizinischen Fakultäten der Schweiz. Das <strong>Universitätsspital Zürich (USZ)</strong> ist ein Zentrum für klinische Forschung. Die <strong>Empa Dübendorf</strong>, ein ETH-Forschungsinstitut, forscht an Materialwissenschaft und Nanotechnologie. Der <strong>Balgrist Campus</strong> vereint 250 Forschende in muskuloskelettaler Medizin. Die <strong>Zürcher Hochschule für Angewandte Wissenschaften (ZHAW)</strong> bildet in Biotechnologie und Verfahrenstechnik aus.
-            </p>
-            <h3 class="text-xl font-bold text-slate-900">Pharma und Biotech</h3>
-            <p>
-              <strong>Roche</strong> betreibt in Schlieren einen grossen Forschungs- und Entwicklungsstandort. <strong>Biogen</strong> (Baar/Zug, ~30 km), <strong>Amgen</strong> (Rotkreuz/Zug), <strong>Janssen/Johnson & Johnson</strong> (Zug), <strong>Bristol Myers Squibb</strong> (Zug) und <strong>AstraZeneca</strong> (Zug) haben ihre Schweizer Niederlassungen in unmittelbarer Nähe. Der <strong>Bio-Technopark Schlieren</strong> ist die Brutstätte für Startups und Spin-offs. <strong>Molecular Partners</strong> (Schlieren) entwickelt neuartige Antikörper-Technologien.
-            </p>
-            <h3 class="text-xl font-bold text-slate-900">MedTech und Diagnostik</h3>
-            <p>
-              <strong>Roche Diagnostics</strong> in Rotkreuz ist ein globaler Marktführer für In-vitro-Diagnostik. Der <strong>Health Tech Cluster Switzerland (HTCS)</strong> im Kanton Schwyz vernetzt die Branche. Der <strong>Balgrist Campus</strong> forscht an Orthopädie und Robotik. <strong>Siemens Healthineers</strong> ist in Zürich präsent. Zahlreiche MedTech-Startups im ETH-Ökosystem treiben Innovationen voran. <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="text-primary font-medium hover:underline">Mehr zur Klimatisierung im Container →</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
-            Baurecht und Baubewilligung in Zürich
-          </h2>
-          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-            <p>
-              In der Schweiz ist das Baurecht kantonal geregelt – ein grundlegender Unterschied zu Deutschland, wo die Landesbauordnungen auf der Musterbauordnung basieren. Im <strong>Kanton Zürich</strong> gilt die <strong>Bauverfahrensverordnung (BVV)</strong> in Verbindung mit dem Planungs- und Baugesetz (PBG). Die zuständige Behörde ist das kommunale Bauamt der jeweiligen Gemeinde.
-            </p>
-            <p>
-              <strong>Bewilligungsfreie Bauten</strong> sind im Kanton Zürich nur bis 6 m² Bodenfläche und 2,5 m Höhe möglich. Laborcontainer überschreiten diese Grenzen in der Regel deutlich – eine <strong>Baubewilligung ist daher fast immer erforderlich</strong>.
-            </p>
-            <p>
-              Das Zürcher Baurecht kennt <strong>drei Verfahrensarten</strong>: das <strong>Meldeverfahren</strong> für geringfügige Vorhaben, das <strong>Anzeigeverfahren</strong> (30 Tage Bearbeitungsfrist, ohne öffentliche Bekanntmachung) und das <strong>ordentliche Baubewilligungsverfahren</strong> mit öffentlicher Auflage. Welches Verfahren für Ihren Laborcontainer greift, hängt von Standort, Zonenplan und Nutzung ab.
-            </p>
-            <p>
-              Wichtig: Pläne und technische Unterlagen müssen nach <strong>SIA 400</strong> erstellt werden – nicht nach DIN wie in Deutschland. Das betrifft Planformate, Massstäbe und Darstellungskonventionen. Wir erstellen alle erforderlichen Unterlagen normkonform.
-            </p>
-            <p>
-              <strong>Besondere Zonen</strong> wie Kernzonen, Landwirtschaftszonen oder Schutzgebiete können zusätzliche Auflagen erfordern. In Schlieren, Dübendorf oder auf Spitalarealen gelten teils eigene Gestaltungspläne.
-            </p>
-            <p>
-              Für die <strong>Arbeitssicherheit</strong> im Labor gelten in der Schweiz die <strong>SUVA-Richtlinien</strong> und die <strong>EKAS Laborrichtlinie 1871</strong> – nicht die deutsche DGUV oder TRGS. Wir kennen beide Normenwelten und planen von Anfang an nach den Vorgaben des Kantons Zürich.
-            </p>
-            <p>
-              Wir übernehmen die gesamte Abstimmung mit dem zuständigen Bauamt – von der Vorabklärung bis zur rechtskräftigen Baubewilligung. <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="text-primary font-medium hover:underline">Alles zum Thema Genehmigung im Detail →</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-[#7a9900] font-medium text-sm mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-            <span>Transparent & nachvollziehbar</span>
-          </div>
-          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
-            Ihr Laborcontainer für Zürich – so läuft es ab
-          </h2>
-          <p class="text-gray-600 text-lg mb-12">
-            Von der ersten Anfrage bis zur schlüsselfertigen Übergabe in der Schweiz – ein strukturierter Prozess, der nichts dem Zufall überlässt.
-          </p>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">01</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Anfrage & Erstgespräch</h3>
-                <p class="text-gray-600 text-sm">Kennenlernen per Telko oder Video-Call, Anforderungen klären, Rahmenbedingungen für Ihren Standort in Zürich oder der Deutschschweiz besprechen.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">02</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Standortprüfung</h3>
-                <p class="text-gray-600 text-sm">Zufahrt, Stellfläche und Kranposition prüfen – auch auf Technopark-Geländen oder Spital-Campus im Grossraum Zürich.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">03</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Planung & Fertigung</h3>
-                <p class="text-gray-600 text-sm">Massanfertigung in unserem Werk in Albstadt (DE). Wir berücksichtigen Schweizer Normen (SIA, SUVA) bereits in der Planungsphase.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">04</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Transport über A81/A1</h3>
-                <p class="text-gray-600 text-sm">Per Tieflader von Albstadt über die A81 und den Grenzübergang Thayngen/Schaffhausen nach Zürich – inklusive Zollabwicklung.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">05</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Aufstellung & Montage</h3>
-                <p class="text-gray-600 text-sm">Kranaufstellung durch lokale Partner in der Schweiz, Montage auch auf engen urbanen Standorten.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">06</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Übergabe & Service</h3>
-                <p class="text-gray-600 text-sm">Finale Prüfung, schlüsselfertige Übergabe, laufende Wartung und Remote-Überwachung – auch grenzüberschreitend.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-slate-900 text-white p-8 rounded-2xl">
-            <div class="flex items-start gap-5">
-              <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold mb-2">Dezentrale Leitwarte – Ihre Anlage im Blick</h3>
-                <p class="text-gray-300 leading-relaxed">
-                  Auch nach der Übergabe überwachen wir Ihre Containereinheit remote – egal ob im Bio-Technopark Schlieren, am Universitätsspital Zürich oder bei Roche Diagnostics in Rotkreuz. Unsere dezentrale Leitwarte prüft Funktionstüchtigkeit, Klimadaten und Sicherheitssysteme in Echtzeit. Bei Störungen werden wir automatisch kontaktiert und reagieren, bevor ein Problem eskaliert – auch über die Landesgrenze hinweg. <a href="/leistungen" class="text-primary font-medium hover:underline">Mehr zu unserem Prozess →</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 bg-slate-900 text-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-4">Gut zu wissen</h2>
-          <p class="text-gray-400 text-lg mb-12">Fakten zu Laborcontainern in Zürich, die bei der Entscheidung helfen.</p>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">8–12 Wochen statt 24 Monate</h3>
-                <p class="text-gray-400 text-sm">Planung, Fertigung und Aufstellung in Zürich – während ein Laborneubau noch im Bewilligungsverfahren steckt.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Schweizer Normen – wir kennen sie</h3>
-                <p class="text-gray-400 text-sm">SIA-Normen, SUVA-Richtlinien, EKAS 1871, kantonales Baurecht – wir planen nach Schweizer Standards, obwohl wir in Deutschland fertigen.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">BSL-2, BSL-3, GMP-Reinraum</h3>
-                <p class="text-gray-400 text-sm">Alle gängigen Sicherheitsstufen und Reinraumklassen im Container realisierbar – relevant für die Biotech- und Pharma-Standorte in Zürich.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Lieferung über die A81 + Zollabwicklung</h3>
-                <p class="text-gray-400 text-sm">Von Albstadt nach Zürich per Tieflader – inklusive Zollformalitäten. Für vorsteuerabzugsberechtigte Unternehmen ist die MWST vollständig rückforderbar.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 17 3.5s1.5 2.5-.8 6.5C20.7 11.5 21 14 21 14s-1.5-.5-2.5-.5c-.5 2-2 3.5-2 3.5s-.5-1-1-2.5c-1.5 1-4.5 2.5-4.5 5.5"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Grenzüberschreitender Service</h3>
-                <p class="text-gray-400 text-sm">Wartung, Remote-Monitoring und Vor-Ort-Service in der Schweiz – auch nach der Übergabe sind wir Ihr Ansprechpartner.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Schlüsselfertig und normgerecht</h3>
-                <p class="text-gray-400 text-sm">Komplett ausgestattet und betriebsbereit übergeben – nach SIA, GLP, GMP oder Swissmedic-Anforderungen.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
-            Warum Planexus für Zürich
-          </h2>
-          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-            <p>
-              Es gibt mehrere Anbieter für Containerlabore in der Schweiz. Aber kaum einer bietet alles aus einer Hand – Planung, Fertigung, Ausstattung, Logistik und Baubewilligung – mit echter Laborcontainer-Spezialisierung. Planexus ist einer der wenigen.
-            </p>
-            <p>
-              Unser Werk steht in Albstadt, nur 1,5 Stunden von der Schweizer Grenze entfernt – näher als mancher Schweizer Anbieter. Der Transport über die A81 und den Grenzübergang Thayngen/Schaffhausen ist eingespielt, die Zollabwicklung übernehmen wir komplett. Schweizer Normen und kantonales Baurecht sind bei uns Standard, nicht Ausnahme.
-            </p>
-            <p>
-              Planexus ist Teil der <a href="/ueber-uns" class="text-primary font-medium hover:underline">Wesemann Holding</a> – einem Unternehmen mit Labor-DNA seit Jahrzehnten. Wir bauen nicht nur den Container – wir verstehen, was ein Labor braucht, um sicher, normgerecht und effizient zu funktionieren. Unsere Erfahrung mit internationalen Projekten macht uns zum verlässlichen Partner für Kunden in der Schweiz.
-            </p>
-            <p>
-              Wir haben Projekte für Universitäten, Kliniken, Pharmaunternehmen und Industriebetriebe realisiert – auch grenzüberschreitend. <a href="/projekte" class="text-primary font-medium hover:underline">Unsere bisherigen Projekte →</a> | <a href="/team" class="text-primary font-medium hover:underline">Unser Team kennenlernen →</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 bg-slate-50 border-y border-gray-100">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
-            Häufige Fragen zu Laborcontainern in Zürich
-          </h2>
-          <p class="text-gray-600 text-lg mb-12">
-            Die wichtigsten Fragen, die uns zu Laborprojekten in Zürich und der Schweiz gestellt werden.
-          </p>
-
-          <div class="space-y-4">
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Was kostet ein Laborcontainer in Zürich?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Die Kosten hängen von Grösse, Ausstattung und Sicherheitsstufe ab. Dazu kommen Transportkosten und Zollabwicklung DE→CH. Wir nennen Ihnen eine realistische Grössenordnung inklusive aller Nebenkosten.
-              </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Brauche ich im Kanton Zürich eine Baubewilligung für einen Laborcontainer?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                In der Regel ja. Die kantonale Bauverfahrensverordnung (BVV) sieht für Bauten über 6 m² Bodenfläche eine Bewilligung vor. Je nach Standort kommen Meldeverfahren, Anzeigeverfahren (30 Tage) oder das ordentliche Verfahren infrage. Wir klären das vorab mit dem zuständigen Bauamt.
-              </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Wie funktioniert die Lieferung eines Laborcontainers in die Schweiz?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Wir fertigen in unserem Werk in Albstadt (Deutschland) und liefern per Tieflader über die A81 und den Grenzübergang Thayngen/Schaffhausen. Die Zollabwicklung übernehmen wir komplett – inklusive aller erforderlichen Dokumente. Für vorsteuerabzugsberechtigte Unternehmen ist die Schweizer MWST vollständig rückforderbar.
-              </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Kann ich einen Laborcontainer in Zürich auch mieten?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Ja. Miete, Kauf oder Mietkauf – wir bieten flexible Modelle. Besonders für befristete Forschungsprojekte, Startup-Labore im Technopark Schlieren oder Interimslösungen während Umbauarbeiten sinnvoll. <a href="/magazin/laborcontainer-mieten-oder-kaufen" class="text-primary font-medium hover:underline">Mehr zum Thema Mieten vs. Kaufen →</a>
-              </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Erfüllen Ihre Laborcontainer Schweizer Normen?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Ja. Wir planen nach SIA-Normen (insbesondere SIA 382/1 für Lüftung, SIA 180 für Wärmeschutz), berücksichtigen SUVA-Richtlinien und EKAS 1871 für Arbeitssicherheit. Auf Wunsch auch nach Swissmedic-Standards für pharmazeutische Anwendungen.
-              </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Eignet sich ein Containerlabor für Biotech-Startups in Zürich?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Ja, ideal sogar. Ein Containerlabor ist in 8–12 Wochen einsatzbereit, flexibel erweiterbar und deutlich günstiger als ein Laborraum im Zürcher Immobilienmarkt. Viele Startups und ETH-Spin-offs nutzen Container als Erstlabor oder zur schnellen Skalierung.
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-24 bg-primary text-slate-900">
-      <div class="container mx-auto px-4 text-center max-w-3xl">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Laborprojekt in Zürich? Sprechen Sie mit uns.</h2>
-        <p class="text-slate-700 text-lg mb-8">
-          Erzählen Sie uns von Ihrem Vorhaben. Wir melden uns in der Regel am gleichen Tag mit einer ersten Einschätzung – auch in die Schweiz.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/kontakt" class="bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors inline-flex items-center gap-2">
-            Projekt anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-          <a href="tel:+4974357519700" class="bg-white text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-white/90 transition-colors inline-flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
-          </a>
-        </div>
-      </div>
-    </section>
+    <section class="py-12 border-t border-gray-100"><div class="container mx-auto px-4"><div class="max-w-4xl mx-auto">
+      <h2 class="text-lg font-bold text-slate-900 mb-4">Weitere Standorte</h2>
+      <div class="flex flex-wrap gap-3"><a href="/laborcontainer-hamburg" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Hamburg</a><a href="/laborcontainer-berlin" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Berlin</a><a href="/laborcontainer-muenchen" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">München</a><a href="/laborcontainer-stuttgart" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Stuttgart</a><a href="/laborcontainer-duesseldorf" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Düsseldorf</a><a href="/laborcontainer-frankfurt" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Frankfurt</a><a href="/laborcontainer-basel" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Basel</a><a href="/laborcontainer-bern" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Bern</a><a href="/laborcontainer-wien" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Wien</a><a href="/laborcontainer-graz" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Graz</a><a href="/laborcontainer-linz" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Linz</a></div>
+    </div></div></section>
 
   </div>
 </Layout>
