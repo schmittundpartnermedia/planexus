@@ -1,0 +1,27 @@
+SEO-Audit & Ursachenanalyse Prompt
+„STOPP. Bevor du eine einzige Zeile Code änderst, führe eine radikale SEO-Schwachstellen-Analyse für das gesamte Projekt durch. Wir haben ein massives Problem: Seiten, die gestern auf Position 1 waren, sind heute auf Position 8, 9 oder Seite 2 abgestürzt (Google-Ranking-Drop).
+
+Deine Aufgabe ist es, die Architektur auf folgende 4 Defekte zu prüfen, die diesen Absturz verursacht haben könnten:
+
+Strukturelle Redundanz (Doorway Page Check):
+Prüfe alle Unterseiten (besonders Städte- oder Regions-Seiten). Nutzt du ein identisches HTML-Gerüst, bei dem nur Keywords getauscht werden? Google erkennt dieses Muster als Spam-Netzwerk. Analysiere, wie hoch die inhaltliche Überschneidung (%) zwischen den Seiten ist.
+
+Technischer Meta-Konflikt (Indexierungssignale):
+Prüfe die Kombination aus hreflang-Tags und canonical-Links. Gibt es widersprüchliche Signale? (Z. B. Canonical auf sich selbst, aber Hreflang auf fast identischen Content einer anderen Region?). Das führt dazu, dass Google die Seiten als 'Duplicate Content' aus dem Index wirft oder abwertet.
+
+Bot-Belastung durch JavaScript (Crawl-Budget):
+Untersuche das Verhältnis von statischem HTML zu JavaScript-Interaktivität (Astro Islands). Rendert der Google-Bot Animationen oder Scripte, die keinen inhaltlichen Mehrwert bieten, aber das Crawling verlangsamen? Prüfe, ob Animationen (wie Animated Lines) den Bot blockieren.
+
+Keyword-Spam vs. User Intent:
+Analysiere die Title-Tags und H1-Überschriften. Sind sie für den Bot optimiert (zu lang, Keyword-Listen) oder für den Nutzer? Ein plötzlicher Absturz deutet darauf hin, dass Google die Klickrate (CTR) gemessen hat und die Nutzer das Snippet ignorieren.
+
+ERGEBNIS DER ANALYSE:
+Erstelle mir eine detaillierte Liste aller gefundenen Probleme. Beantworte für jedes Problem:
+
+Was ist der Fehler?
+
+Warum führt genau dieser Punkt zum Ranking-Verlust?
+
+Wie sieht die konkrete technische Lösung aus, um die Seite wieder auf Position 1 zu bringen?
+
+Beginne erst mit der Fehlerbehebung, wenn ich dein Analyse-Ergebnis bestätigt habe.“
