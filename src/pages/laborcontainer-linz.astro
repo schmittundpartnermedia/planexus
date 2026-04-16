@@ -1,16 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.tsx';
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Laborcontainer Linz",
-  "description": "Laborcontainer für Linz und Oberösterreich: Planung, Fertigung und schlüsselfertige Übergabe. BSL-2/BSL-3 Container, mobile Forschungslabore und Reinraumlösungen für Industrie, Biotech und Forschung.",
+  "description": "Schlüsselfertige Laborcontainer für Linz und Oberösterreich. BSL-2/BSL-3, Reinraum, Analytik – Planung, Bau und Lieferung aus einer Hand. In 12 Wochen betriebsbereit.",
   "provider": {
     "@type": "Organization",
     "name": "Planexus GmbH",
-    "url": "https://www.planexus.de"
+    "url": "https://www.planexus.de",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Wesemann Holding GmbH"
+    }
   },
+  "serviceType": ["Laborcontainer", "Mobile Labore", "BSL-2 Labor", "BSL-3 Labor", "Reinraumlabor", "Containerlabor"],
   "areaServed": [
     { "@type": "City", "name": "Linz" },
     { "@type": "AdministrativeArea", "name": "Oberösterreich" }
@@ -23,7 +29,8 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
-    { "@type": "ListItem", "position": 2, "name": "Laborcontainer Linz", "item": "https://www.planexus.de/laborcontainer-linz" }
+    { "@type": "ListItem", "position": 2, "name": "Standorte", "item": "https://www.planexus.de/#standorte" },
+    { "@type": "ListItem", "position": 3, "name": "Laborcontainer Linz", "item": "https://www.planexus.de/laborcontainer-linz" }
   ]
 };
 
@@ -41,18 +48,18 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Brauche ich in Linz eine Baubewilligung für einen Laborcontainer?",
+      "name": "Wie schnell kann ein Laborcontainer nach Linz geliefert werden?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In der Regel ja. Nach der Oö. BauO 1994 gelten Container als Gebäude (§24, bestätigt durch VwGH). Je nach Größe kommen Baubewilligung (§24) oder Bauanzeige (§25, ≤35 m²) infrage. Wir übernehmen die Abstimmung mit der Baubehörde."
+        "text": "8 bis 12 Wochen von der Auftragserteilung bis zur schlüsselfertigen Übergabe. Der Transport von Albstadt nach Linz erfolgt per Tieflader über die A8 – rund 4,5 Stunden Fahrzeit."
       }
     },
     {
       "@type": "Question",
-      "name": "Wie schnell kann ein Laborcontainer nach Linz geliefert werden?",
+      "name": "Brauche ich in Linz eine Baugenehmigung für einen Laborcontainer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Von der Auftragserteilung bis zur schlüsselfertigen Übergabe vergehen 8 bis 12 Wochen. Der Transport von unserem Werk in Albstadt nach Linz erfolgt per Tieflader über die A8 – rund 4,5 Stunden Fahrzeit."
+        "text": "In der Regel ja. Nach der Oö. BauO 1994 gelten Container als Gebäude (§24, bestätigt durch VwGH). Je nach Größe kommen Baubewilligung (§24) oder Bauanzeige (§25, ≤35 m²) infrage. Wir übernehmen die Abstimmung mit der Baubehörde."
       }
     },
     {
@@ -61,14 +68,6 @@ const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Ja. Miete, Kauf oder Mietkauf – wir bieten flexible Modelle. Besonders sinnvoll für befristete Forschungsprojekte an der JKU, industrielle Pilotprojekte oder temporäre Kapazitätserweiterungen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Erfüllen Ihre Container österreichische Industrienormen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. ÖNORM-Standards, ArbeitnehmerInnenschutzgesetz (ASchG), Arbeitsstättenverordnung (AStV). Auf Wunsch BSL-2/BSL-3 oder GMP-konform. Wir arbeiten eng mit den Sicherheitsbeauftragten der jeweiligen Einrichtung zusammen."
       }
     },
     {
@@ -85,8 +84,8 @@ const faqSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Planexus GmbH",
-  "description": "Laborcontainer für Linz und Oberösterreich",
+  "name": "Planexus GmbH – Laborcontainer Linz",
+  "description": "Schlüsselfertige Laborcontainer für Linz und Oberösterreich",
   "url": "https://www.planexus.de",
   "telephone": "+49 7435 7519 700",
   "email": "info@planexus.de",
@@ -105,11 +104,11 @@ const localBusinessSchema = {
 ---
 
 <Layout
-  title="Laborcontainer Linz – Planung & Bau"
-  description="Laborcontainer für Linz: Mobile Labore für Industrie, Biotech und Forschung. BSL-2/BSL-3, schlüsselfertig. Jetzt beraten lassen."
+  title="Laborcontainer Linz – schlüsselfertig in 12 Wochen | Planexus"
+  description="Laborcontainer für Linz: BSL-2/BSL-3, Reinraum & Analytik für Industrie und Forschung. Schlüsselfertig geliefert in 8–12 Wochen. Jetzt anfragen."
   canonical="/laborcontainer-linz"
   schema={serviceSchema}
-  ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
+  ogImage="/attached_assets/Laborcontainer_001_1769688326918.jpg"
 >
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
@@ -117,341 +116,76 @@ const localBusinessSchema = {
 
   <div class="pt-20 min-h-screen bg-white">
 
-    <section class="relative py-28 bg-slate-900 text-white overflow-hidden">
-      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1609952048180-7b35ea6b083b?q=80&w=2070')] bg-cover bg-center opacity-15"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
+    <section class="relative py-24 md:py-32 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="/attached_assets/Laborcontainer_001_1769688326918.jpg" alt="Laborcontainer von Planexus – schlüsselfertig für Linz" class="w-full h-full object-cover opacity-20" loading="eager" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
 
       <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-4xl">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Linz & Oberösterreich</span>
-          </div>
-          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+        <div class="max-w-3xl">
+          <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+            <a href="/" class="hover:text-primary transition-colors">Start</a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span>Standorte</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span class="text-primary">Linz</span>
+          </nav>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
             Laborcontainer für Linz – <span class="text-primary">330 km ab Werk, schlüsselfertig übergeben</span>
           </h1>
-          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mb-8">
-            Industriestandort mit wachsender Life-Sciences-Kompetenz – Johannes Kepler Universität, Linz Institute of Technology und Oberösterreichs Innovationscluster. Wir planen, bauen und liefern schlüsselfertige Containerlabore für Linz und ganz Oberösterreich.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/kontakt" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
-              Projekt besprechen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="bg-slate-50 border-b border-gray-100 py-4">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center gap-2 text-sm text-gray-500">
-          <a href="/" class="hover:text-primary">Start</a>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          <span class="text-primary font-medium">Laborcontainer Linz</span>
-        </div>
-      </div>
-    </div>
-
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
-            Laborcontainer für Industrie, Biotech und Forschung in Linz
-          </h2>
-          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-            <p>
-              Linz ist Oberösterreichs Wirtschafts- und Industriezentrum – und ein aufstrebender Life-Sciences-Standort. Die Johannes Kepler Universität (JKU) mit rund 27.000 Studierenden vereint Medizin, Technik und Naturwissenschaften unter einem Dach. Das Linz Institute of Technology (LIT) fördert interdisziplinäre Forschung, die Medizinische Fakultät treibt seit 2014 biomedizinische Innovation voran. Mit voestalpine, Lenzing und einem dichten Netzwerk aus Industrieunternehmen verbindet Linz klassische Stärke in Werkstoffen und Chemie mit moderner Bio- und Medizintechnik.
-            </p>
-            <p>
-              Die Herausforderung: Neue Forschungsprojekte, industrielle Analytik und Qualitätskontrolle schaffen permanenten Bedarf an zusätzlicher Laborkapazität. Aber konventionelle Laborbauten dauern Jahre – gerade für befristete Projekte oder Pilotanlagen ist das zu langsam.
-            </p>
-            <p>
-              Planexus löst dieses Problem. Wir planen und bauen voll ausgestattete, normkonforme <strong>Containerlabore</strong> – maßgeschneidert für Ihren Standort in Linz. Von der ersten Skizze bis zur schlüsselfertigen Übergabe alles aus einer Hand. <a href="/leistungen" class="text-primary font-medium hover:underline">Unsere Leistungen im Überblick →</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 bg-slate-50 border-y border-gray-100">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
-            Wo Laborcontainer in Linz gebraucht werden
-          </h2>
-          <p class="text-gray-600 text-lg mb-12">
-            Linz verbindet industrielle Stärke mit wachsender Forschungskompetenz – ideale Voraussetzungen für flexible Laborlösungen.
+          <p class="text-xl text-gray-300 leading-relaxed mb-8">
+            Industriestandort mit wachsender Life-Sciences-Kompetenz – Johannes Kepler Universität, Linz Institute of Technology und Oberösterreichs Innovationscluster. Wir liefern schlüsselfertige Containerlabore.
           </p>
 
-          <div class="space-y-8">
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">Biomedizinische Forschung an der JKU</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    Die Medizinische Fakultät der JKU (seit 2014) kooperiert eng mit der Med Uni Graz und betreibt u. a. das FWF-Doktoratsprogramm Molekularer Transport. Die Analytics Core Facility (ACF) am ZONA liefert Nanoanalytik für Physik, Chemie und Medizin. BSL-2-Container für Mikrobiologie und Molekularbiologie ergänzen die bestehende Infrastruktur in Wochen statt Jahren. <a href="/magazin/bsl-2-bsl-3-container-labor" class="text-primary font-medium hover:underline">Mehr zu BSL-2/BSL-3 im Container →</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">Industrielle Analytik und Qualitätskontrolle</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    voestalpine hat ihren Hauptsitz in Linz und fertigt mit High-Precision Components Bauteile für die Medizintechnik. Die Lenzing AG produziert biobasierte Materialien und Medizinprodukte. Labore für Materialprüfung, Prozessanalytik und Qualitätssicherung direkt am Produktionsstandort – ein Containerlabor liefert die Kapazität ohne Eingriff in den laufenden Betrieb. <a href="/leistungen/ausstattung" class="text-primary font-medium hover:underline">Mehr zur Laborausstattung →</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">Interdisziplinäre Forschung am LIT</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    Das Linz Institute of Technology (LIT) förderte 2024 elf Projekte mit 1,5 Mio. Euro – darunter vier mit MED-Beteiligung. Die FWF Clusters of Excellence (Microbiomes Drive Planetary Health) bringen internationale Forschungsteams nach Linz. Pilotlabore für neue Technologien sind in 8–12 Wochen einsatzbereit. <a href="/leistungen/beratung" class="text-primary font-medium hover:underline">Mehr zur Beratung →</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <div class="flex items-start gap-5">
-                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-3 text-slate-900">Pharma und Medizintechnik in Oberösterreich</h3>
-                  <p class="text-gray-600 leading-relaxed">
-                    Der Pharma- und Medtech-Sektor in Oberösterreich wächst stetig. GMP-konforme Containerlösungen für Batchfreigabe, Analytik und Qualitätskontrolle ermöglichen schnelle Kapazitätserweiterungen – ohne jahrelange Bauplanung. <a href="/magazin/gmp-reinraum-container-pharma-produktion" class="text-primary font-medium hover:underline">Mehr zu GMP-Reinraum im Container →</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Was wir für Linz übernehmen</h2>
-          <p class="text-gray-600 text-lg">
-            Von der ersten Idee bis zum betriebsfertigen Labor – als Hersteller mit eigener Fertigung, nicht als Vermittler.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Technische Fachplanung</h3>
-            <p class="text-gray-600 text-sm mb-4">CAD-Entwürfe, 3D-Visualisierungen und TGA-Konzepte – abgestimmt auf die Anforderungen der Linzer Industrie- und Forschungsstandorte und österreichische ÖNORM-Standards.</p>
-            <a href="/leistungen/planung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
+              Kostenlos anfragen
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +49 7435 7519 700
             </a>
           </div>
 
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Modulbau & Fertigung</h3>
-            <p class="text-gray-600 text-sm mb-4">Maßanfertigung in unserem Werk in Albstadt (DE). Linz liegt rund 4,5 Stunden entfernt – eingespielter Transport über die A8.</p>
-            <a href="/leistungen/modulbau" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 13h8"/><path d="M13 17h8"/><path d="M13 9h8"/><path d="M1 5h4l2 10h10l2-8H5"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Logistik & Montage</h3>
-            <p class="text-gray-600 text-sm mb-4">Transport per Tieflader über die A8 direkt nach Linz. Aufstellung per Kran – auch auf Industriegeländen, Universitäts-Campus und Forschungsarealen.</p>
-            <a href="/leistungen/logistik" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Laborausstattung</h3>
-            <p class="text-gray-600 text-sm mb-4">Abzüge, Sicherheitswerkbänke, Labormöbel, Kühlsysteme, Lüftungstechnik – eingebaut und betriebsfertig. Auf Wunsch GMP-konform.</p>
-            <a href="/leistungen/ausstattung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Beratung & Genehmigung</h3>
-            <p class="text-gray-600 text-sm mb-4">Wir beraten zur Oö. Bauordnung 1994, österreichischen Normen (ÖNORM, ASchG) und übernehmen die Abstimmung mit der Baubehörde.</p>
-            <a href="/leistungen/beratung" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="bg-white border border-gray-100 p-6 rounded-xl hover:shadow-xl hover:shadow-gray-200/50 transition-all group relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-slate-900 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-            </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900">Smart Lab Integration</h3>
-            <p class="text-gray-600 text-sm mb-4">Fernüberwachung, automatisierte Klimasteuerung, Zutrittskontrolle und Datenlogging – ideal für Industrie- und Forschungsstandorte mit hohen Qualitätsanforderungen.</p>
-            <a href="/leistungen/smart-lab" class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
+          <div class="flex flex-wrap items-center gap-6 text-sm text-gray-400">
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>Teil der Wesemann Holding</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>Eigene Fertigung in Deutschland</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>Schlüsselfertig inkl. Qualifizierung</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-20 bg-slate-50 border-y border-gray-100">
+    <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
-            Linz als Laborstandort – Branchen und Forschung
-          </h2>
-          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-            <p>
-              Oberösterreichs Landeshauptstadt verbindet industrielle Tradition mit wachsender Life-Sciences- und Forschungskompetenz.
-            </p>
-            <h3 class="text-xl font-bold text-slate-900">Universitäten und Forschung</h3>
-            <p>
-              Die <strong>Johannes Kepler Universität (JKU)</strong> zählt rund 27.000 Studierende. Die Medizinische Fakultät bietet seit 2014 das Humanmedizin-Studium in Kooperation mit der Med Uni Graz an. Das <strong>LIT Linz Institute of Technology</strong> förderte 2024 elf Projekte mit 1,5 Mio. Euro – vier davon mit MED-Beteiligung. Die JKU ist Konsortialführerin im <strong>FWF Cluster of Excellence „Bilateral Artificial Intelligence"</strong> und beteiligt sich an „Quantum Science Austria" und „Microbiomes Drive Planetary Health". Die <strong>ZONA/Analytics Core Facility</strong> bietet Nanoanalytik für Physik, Chemie und Medizin.
-            </p>
-            <h3 class="text-xl font-bold text-slate-900">Industrie und Materialforschung</h3>
-            <p>
-              <strong>voestalpine</strong> hat ihren Hauptsitz in Linz und ist über die Division High-Precision Components Zulieferer für die Medizintechnik. Die <strong>Lenzing AG</strong> produziert biobasierte Zellulosefasern (TENCEL, ECOVERO) und medizinische Wundverbände – in enger Kooperation mit der JKU. <strong>Borealis</strong> (Polymere, Kunststofftechnik) und <strong>AMAG Austria Metall</strong> ergänzen das industrielle Spektrum.
-            </p>
-            <h3 class="text-xl font-bold text-slate-900">Innovation und Cluster</h3>
-            <p>
-              Das <strong>UAR Innovation Network</strong> (Upper Austrian Research) vernetzt Forschung und Wirtschaft in Oberösterreich. Der <strong>Softwarepark Hagenberg</strong>, der <strong>Mechatronik-Cluster OÖ</strong> und eine wachsende Medtech- und Digital-Health-Szene schaffen Nachfrage nach flexibler Laborinfrastruktur. Der <strong>tech2b Inkubator</strong> fördert technologieorientierte Startups – auch im Life-Sciences-Bereich. <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="text-primary font-medium hover:underline">Mehr zur Klimatisierung im Container →</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
-            Baurecht und Baubewilligung in Linz
-          </h2>
-          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-            <p>
-              In Oberösterreich gilt die <strong>Oö. Bauordnung 1994 (Oö. BauO 1994)</strong>. Der VwGH hat Stahlblechcontainer als Gebäude qualifiziert – damit sind Laborcontainer grundsätzlich bewilligungspflichtig.
-            </p>
-            <p>
-              <strong>§24 Oö. BauO</strong>: Baubewilligung erforderlich – das ist der Regelfall für Laborcontainer. Das Verfahren läuft über die zuständige Baubehörde der Stadt Linz.
-            </p>
-            <p>
-              <strong>§25 Oö. BauO</strong>: Anzeigepflichtig für kleinere Containeranlagen bis 35 m² – mit einer 8-Wochen-Frist. <strong>§26 Oö. BauO</strong>: Bewilligungs- und anzeigefreie Vorhaben, darunter Baustellencontainer während aktiver Bauphase sowie Gebäude bis 15 m² (nicht Wohnzwecke, ebenerdig, freistehend). <strong>§1 Abs. 3 Z 10</strong> sieht eine Ausnahme für vorübergehende Dauer von maximal 4 Wochen vor – allerdings nur, wenn der Container nicht Aufenthaltszwecken dient.
-            </p>
-            <p>
-              ÖNORM-Standards und das <strong>ArbeitnehmerInnenschutzgesetz (ASchG)</strong> gelten zusätzlich für Laborcontainer in Oberösterreich. Wir übernehmen die gesamte Abstimmung mit der Baubehörde. <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="text-primary font-medium hover:underline">Alles zum Thema Genehmigung im Detail →</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-[#7a9900] font-medium text-sm mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-            <span>Transparent & nachvollziehbar</span>
-          </div>
-          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
-            Ihr Laborcontainer für Linz – so läuft es ab
-          </h2>
-          <p class="text-gray-600 text-lg mb-12">
-            Von der ersten Anfrage bis zur schlüsselfertigen Übergabe – ein strukturierter Prozess, der nichts dem Zufall überlässt.
-          </p>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">01</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Anfrage & Erstgespräch</h3>
-                <p class="text-gray-600 text-sm">Kennenlernen per Telko oder Video-Call, Anforderungen klären, Rahmenbedingungen für Ihren Standort in Linz oder Oberösterreich besprechen.</p>
-              </div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Laborkapazität in Linz? Industrie und Forschung wachsen gleichzeitig.</h2>
+          <div class="grid md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-red-50 border border-red-100 rounded-xl p-6">
+              <div class="text-red-600 font-bold text-lg mb-2">Industrie braucht QC</div>
+              <p class="text-gray-600 text-sm">voestalpine, Lenzing und der wachsende Pharma-Sektor brauchen Analytik- und QC-Labore direkt am Produktionsstandort.</p>
             </div>
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">02</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Standortprüfung</h3>
-                <p class="text-gray-600 text-sm">Zufahrt, Stellfläche und Kranposition prüfen – auch auf Industriegeländen, Universitäts-Campus oder Produktionsarealen.</p>
-              </div>
+            <div class="bg-red-50 border border-red-100 rounded-xl p-6">
+              <div class="text-red-600 font-bold text-lg mb-2">JKU expandiert</div>
+              <p class="text-gray-600 text-sm">Die Medizinische Fakultät (seit 2014), LIT und FWF-Cluster schaffen permanenten Bedarf an neuen Laborflächen – schneller als Gebäude gebaut werden.</p>
             </div>
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">03</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Planung & Fertigung</h3>
-                <p class="text-gray-600 text-sm">Maßanfertigung in unserem Werk in Albstadt (DE). Österreichische Normen (ÖNORM, ASchG) werden von Anfang an berücksichtigt.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">04</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Transport über A8</h3>
-                <p class="text-gray-600 text-sm">Per Tieflader von Albstadt über die A8 direkt nach Linz – rund 4,5 Stunden Fahrzeit.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">05</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Aufstellung & Montage</h3>
-                <p class="text-gray-600 text-sm">Kranaufstellung durch lokale Partner in Linz, Montage auch auf Industriegeländen mit strengen Sicherheitsanforderungen.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-gray-100">
-              <div class="w-10 h-10 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-xs shrink-0">06</div>
-              <div>
-                <h3 class="font-bold text-sm text-slate-900 mb-1">Übergabe & Service</h3>
-                <p class="text-gray-600 text-sm">Finale Prüfung, schlüsselfertige Übergabe, laufende Wartung und Remote-Überwachung – auch grenzüberschreitend.</p>
-              </div>
+            <div class="bg-red-50 border border-red-100 rounded-xl p-6">
+              <div class="text-red-600 font-bold text-lg mb-2">Pilotanlagen fehlen</div>
+              <p class="text-gray-600 text-sm">Neue Technologien brauchen Pilotlabore – zum Testen, Validieren und Skalieren. Konventionelle Bauten sind dafür zu langsam.</p>
             </div>
           </div>
 
-          <div class="bg-slate-900 text-white p-8 rounded-2xl">
-            <div class="flex items-start gap-5">
-              <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <div class="bg-slate-900 text-white rounded-2xl p-8 md:p-10">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
               </div>
               <div>
-                <h3 class="text-xl font-bold mb-2">Dezentrale Leitwarte – Ihre Anlage im Blick</h3>
-                <p class="text-gray-300 leading-relaxed">
-                  Auch nach der Übergabe überwachen wir Ihre Containereinheit remote – egal ob auf dem JKU-Campus, bei voestalpine oder auf einem Industriegelände in Oberösterreich. Unsere dezentrale Leitwarte prüft Funktionstüchtigkeit, Klimadaten und Sicherheitssysteme in Echtzeit. Bei Störungen werden wir automatisch kontaktiert und reagieren – auch grenzüberschreitend. <a href="/leistungen" class="text-primary font-medium hover:underline">Mehr zu unserem Prozess →</a>
-                </p>
+                <div class="text-xl font-bold mb-2">Die Lösung: Schlüsselfertige Containerlabore</div>
+                <p class="text-gray-300">Planexus plant, baut und liefert normkonforme Laborcontainer – maßgeschneidert für Ihren Standort in Linz. Von der ersten Skizze bis zur Übergabe in 8 bis 12 Wochen. Nur 330 km ab Werk.</p>
               </div>
             </div>
           </div>
@@ -459,189 +193,154 @@ const localBusinessSchema = {
       </div>
     </section>
 
-    <section class="py-20 bg-slate-900 text-white">
+    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-4">Gut zu wissen</h2>
-          <p class="text-gray-400 text-lg mb-12">Fakten zu Laborcontainern in Linz, die bei der Entscheidung helfen.</p>
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Warum Planexus für Linz?</h2>
+          <p class="text-gray-600 text-lg">Alles aus einer Hand – vom Engineering bis zur Qualifizierung nach ÖNORM-Standards.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="font-bold text-slate-900 text-lg mb-2">8–12 Wochen</div>
+            <p class="text-gray-600 text-sm">Von Auftragserteilung bis schlüsselfertige Übergabe – statt 2–3 Jahre Neubau.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="font-bold text-slate-900 text-lg mb-2">330 km Entfernung</div>
+            <p class="text-gray-600 text-sm">Transport über die A8 – rund 4,5 Stunden ab Werk in Albstadt. Kurze Wege, schnelle Lieferung.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <div class="font-bold text-slate-900 text-lg mb-2">ÖNORM-konform</div>
+            <p class="text-gray-600 text-sm">BSL-2/BSL-3, GMP-Reinräume, Oö. BauO – vollständig qualifiziert und dokumentiert.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="font-bold text-slate-900 text-lg mb-2">Kauf, Miete, Leasing</div>
+            <p class="text-gray-600 text-sm">Flexibel finanziert – ob Pilotprojekt oder dauerhafte Laborerweiterung.</p>
+          </div>
+        </div>
+        <div class="text-center mt-10"><a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(132,189,0,0.3)]">Jetzt unverbindlich beraten lassen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+      </div>
+    </section>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">8–12 Wochen statt 24 Monate</h3>
-                <p class="text-gray-400 text-sm">Planung, Fertigung und Aufstellung in Linz – während ein Laborneubau noch im Bewilligungsverfahren steckt.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Oö. BauO – wir kennen das Verfahren</h3>
-                <p class="text-gray-400 text-sm">§24 Baubewilligung, §25 Bauanzeige, §26 Befreiungen – wir navigieren die oberösterreichische Bauordnung für Sie.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">BSL-2, BSL-3, GMP-Reinraum</h3>
-                <p class="text-gray-400 text-sm">Alle gängigen Sicherheitsstufen und Reinraumklassen im Container – relevant für Forschung und Industrie in Linz.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Lieferung über die A8</h3>
-                <p class="text-gray-400 text-sm">Von Albstadt nach Linz per Tieflader – rund 4,5 Stunden Fahrzeit. Aufstellung und Inbetriebnahme planen wir gemeinsam.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 17 3.5s1.5 2.5-.8 6.5C20.7 11.5 21 14 21 14s-1.5-.5-2.5-.5c-.5 2-2 3.5-2 3.5s-.5-1-1-2.5c-1.5 1-4.5 2.5-4.5 5.5"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Grenzüberschreitender Service</h3>
-                <p class="text-gray-400 text-sm">Wartung, Remote-Monitoring und Vor-Ort-Service in Österreich – auch nach der Übergabe sind wir Ihr Ansprechpartner.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-lg mb-1">Schlüsselfertig und normgerecht</h3>
-                <p class="text-gray-400 text-sm">Komplett ausgestattet und betriebsbereit übergeben – nach ÖNORM, GLP, GMP oder ASchG-Anforderungen.</p>
-              </div>
-            </div>
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Laborcontainer-Typen für Linz</h2>
+          <p class="text-gray-600 text-lg mb-10">Jeder Container wird individuell geplant und in unserem Werk gefertigt – kein Standard von der Stange.</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Analytiklabor</h3><p class="text-gray-600 text-sm">HPLC, GC, Spektroskopie – mit Abzügen, Medienversorgung und klimatisierten Geräteräumen. Ideal für industrielle Analytik.</p></a>
+            <a href="/magazin/bsl-2-bsl-3-container-labor" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="font-bold text-slate-900 mb-2">BSL-2 / BSL-3 Sicherheitslabor</h3><p class="text-gray-600 text-sm">Unterdrucksysteme, HEPA-Filtration, Schleusen – für Mikrobiologie und Molekularbiologie an der JKU.</p></a>
+            <a href="/magazin/gmp-reinraum-container-pharma-produktion" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div><h3 class="font-bold text-slate-900 mb-2">GMP-Reinraumlabor</h3><p class="text-gray-600 text-sm">Reinraumklassen nach ISO 14644. Für Pharma-Produktion, Qualitätskontrolle und Medizintechnik.</p></a>
+            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0-6 0"/><path d="M12.5 2a9.5 9.5 0 0 0-7.14 15.73L12 22l6.64-4.27A9.5 9.5 0 0 0 12.5 2Z"/></svg></div><h3 class="font-bold text-slate-900 mb-2">QC-Labor</h3><p class="text-gray-600 text-sm">Materialprüfung, Prozessanalytik und Qualitätssicherung – direkt am Produktionsstandort bei voestalpine oder Lenzing.</p></a>
+            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Wägelabor</h3><p class="text-gray-600 text-sm">Vibrationsarme Wägetische, kontrollierte Temperatur und Luftfeuchtigkeit für Präzisionswägungen.</p></a>
+            <a href="/leistungen" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Containeranlage / Mehrstöckig</h3><p class="text-gray-600 text-sm">Mehrere Container zu einer Laboranlage verbunden – skalierbar auf Industrie- und Forschungsgeländen.</p></a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-20">
+    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">
-            Warum Planexus für Linz
-          </h2>
-          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-            <p>
-              Planexus ist Teil der <a href="/ueber-uns" class="text-primary font-medium hover:underline">Wesemann Holding</a> – einem Unternehmen, das seit Jahrzehnten Laborausstattung, Labormöbel und technische Infrastruktur für Forschung und Industrie liefert. Labor-DNA steckt in jedem Containermodul, das unser Werk in Albstadt verlässt.
-            </p>
-            <p>
-              Für Linz und Oberösterreich bringen wir umfassende Erfahrung mit industriellen Anforderungen mit. Ob Materialprüfung für die Stahlindustrie, Analytik für die chemische Industrie oder Forschungslabore für die Universität – wir kennen die Anforderungen und planen entsprechend.
-            </p>
-            <p>
-              Österreichische Normen (ÖNORM, ASchG, Oö. Bauordnung 1994) berücksichtigen wir von Anfang an in der Planung. Zollformalitäten, Transport über die A8 und die Abstimmung mit der Baubehörde sind für uns Routine.
-            </p>
-            <p>
-              International haben wir Projekte für Universitäten, Kliniken, Pharmaunternehmen und Industriebetriebe realisiert. <a href="/projekte" class="text-primary font-medium hover:underline">Unsere bisherigen Projekte →</a> | <a href="/team" class="text-primary font-medium hover:underline">Unser Team kennenlernen →</a>
-            </p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Lieferung nach Linz – direkt ab Werk</h2>
+          <div class="grid md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-white rounded-xl p-6 border border-gray-100 text-center"><div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">~330 km</div><p class="text-gray-600 text-sm">Albstadt → Linz</p></div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100 text-center"><div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">4,5 Std.</div><p class="text-gray-600 text-sm">Transport über A8</p></div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100 text-center"><div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">8–12 Wo.</div><p class="text-gray-600 text-sm">Bis zur schlüsselfertigen Übergabe</p></div>
+          </div>
+          <div class="bg-white rounded-xl p-8 border border-gray-100 space-y-6">
+            <div><h3 class="font-bold text-slate-900 mb-2">Wo in Linz aufstellen?</h3><p class="text-gray-600">Auf dem JKU-Campus, Industriegeländen (voestalpine, Lenzing), Forschungsarealen und Krankenhausgeländen. Aufstellung per Kran – auch auf engen Flächen.</p></div>
+            <div><h3 class="font-bold text-slate-900 mb-2">Baugenehmigung in Oberösterreich</h3><p class="text-gray-600">Nach der Oö. Bauordnung 1994 gelten Container als Gebäude (§24). Je nach Größe kommen Baubewilligung (§24) oder Bauanzeige (§25, ≤35 m²) infrage. Wir übernehmen die Abstimmung mit der Baubehörde.</p></div>
+            <div><h3 class="font-bold text-slate-900 mb-2">Industrie- und Forschungsstandort Linz</h3><p class="text-gray-600">JKU (27.000 Studierende, Medizinische Fakultät seit 2014), LIT (11 Projekte mit 1,5 Mio. € in 2024), voestalpine (HQ, Medizintechnik-Bauteile), Lenzing (biobasierte Materialien), FWF Clusters of Excellence. Der Bedarf an flexibler Laborinfrastruktur wächst stetig.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-20 bg-slate-50 border-y border-gray-100">
+    <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">
-            Häufige Fragen zu Laborcontainern in Linz
-          </h2>
-          <p class="text-gray-600 text-lg mb-12">
-            Die wichtigsten Fragen, die uns zu Laborprojekten in Linz und Oberösterreich gestellt werden.
-          </p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">So entsteht Ihr Containerlabor in Linz</h2>
+          <p class="text-gray-600 text-lg mb-12">Von der Idee bis zum betriebsbereiten Labor – in 5 klaren Schritten.</p>
+          <div class="space-y-0">
+            <div class="flex gap-6"><div class="flex flex-col items-center"><div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">1</div><div class="w-0.5 bg-gray-200 flex-grow mt-2"></div></div><div class="pb-10"><h3 class="font-bold text-slate-900 text-lg mb-1">Erstberatung & Anforderungsanalyse</h3><p class="text-gray-600">Wir klären gemeinsam: Welcher Labortyp? Welche Ausstattung? Welcher Standort in Linz? Welche Normen gelten?</p></div></div>
+            <div class="flex gap-6"><div class="flex flex-col items-center"><div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">2</div><div class="w-0.5 bg-gray-200 flex-grow mt-2"></div></div><div class="pb-10"><h3 class="font-bold text-slate-900 text-lg mb-1">Planung & Engineering</h3><p class="text-gray-600">CAD-Entwurf, TGA-Planung, Raumlayout – abgestimmt auf ÖNORM und Ihre Prozesse. Freigabe vor Fertigungsstart.</p></div></div>
+            <div class="flex gap-6"><div class="flex flex-col items-center"><div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">3</div><div class="w-0.5 bg-gray-200 flex-grow mt-2"></div></div><div class="pb-10"><h3 class="font-bold text-slate-900 text-lg mb-1">Fertigung im Werk</h3><p class="text-gray-600">Produktion in unserem Werk in Albstadt – wetterunabhängig, qualitätsgeprüft. Factory Acceptance Test (FAT) inklusive.</p></div></div>
+            <div class="flex gap-6"><div class="flex flex-col items-center"><div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">4</div><div class="w-0.5 bg-gray-200 flex-grow mt-2"></div></div><div class="pb-10"><h3 class="font-bold text-slate-900 text-lg mb-1">Transport & Aufstellung</h3><p class="text-gray-600">Per Tieflader über die A8 direkt nach Linz. Aufstellung per Kran, Anschluss an Medienversorgung.</p></div></div>
+            <div class="flex gap-6"><div class="flex flex-col items-center"><div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">5</div></div><div class="pb-2"><h3 class="font-bold text-slate-900 text-lg mb-1">Qualifizierung & Übergabe</h3><p class="text-gray-600">IQ/OQ/PQ-Dokumentation, Einweisung Ihres Teams, Übergabe eines betriebsbereiten Labors. Fertig.</p></div></div>
+          </div>
+          <div class="text-center mt-10"><a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(132,189,0,0.3)]">Starten Sie bei Schritt 1 – kostenlose Erstberatung <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+        </div>
+      </div>
+    </section>
 
+    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">Häufige Fragen zu Laborcontainern in Linz</h2>
           <div class="space-y-4">
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Was kostet ein Laborcontainer in Linz?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Die Kosten richten sich nach Größe, Ausstattung und Sicherheitsstufe. Transport DE→AT und alle Formalitäten werden inklusive kalkuliert. Sprechen Sie mit uns über Ihr konkretes Projekt – nach einem ersten Gespräch nennen wir Ihnen eine realistische Einschätzung.
-              </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Brauche ich in Linz eine Baubewilligung für einen Laborcontainer?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                In der Regel ja. Nach der Oö. BauO 1994 gelten Container als Gebäude (§24, bestätigt durch VwGH). Je nach Größe kommen Baubewilligung (§24) oder Bauanzeige (§25, ≤35 m²) infrage. Wir übernehmen die Abstimmung mit der Baubehörde.
-              </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Wie schnell kann ein Laborcontainer nach Linz geliefert werden?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Von der Auftragserteilung bis zur schlüsselfertigen Übergabe vergehen 8 bis 12 Wochen. Der Transport von unserem Werk in Albstadt nach Linz erfolgt per Tieflader über die A8 – rund 4,5 Stunden Fahrzeit. Aufstellung und Inbetriebnahme planen wir gemeinsam mit Ihnen.
-              </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Kann ich einen Laborcontainer in Linz auch mieten?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Ja. Miete, Kauf oder Mietkauf – wir bieten flexible Modelle. Besonders sinnvoll für befristete Forschungsprojekte an der JKU, industrielle Pilotprojekte oder temporäre Kapazitätserweiterungen. <a href="/magazin/laborcontainer-mieten-oder-kaufen" class="text-primary font-medium hover:underline">Mehr zum Thema Mieten vs. Kaufen →</a>
-              </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Erfüllen Ihre Container österreichische Industrienormen?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Ja. ÖNORM-Standards, ArbeitnehmerInnenschutzgesetz (ASchG), Arbeitsstättenverordnung (AStV). Auf Wunsch BSL-2/BSL-3 oder GMP-konform. Wir arbeiten eng mit den Sicherheitsbeauftragten der jeweiligen Einrichtung zusammen.
-              </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary class="p-6 cursor-pointer flex items-center justify-between font-bold text-slate-900 hover:text-primary transition-colors">
-                Eignet sich ein Containerlabor für industrielle Analytik?
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                Ideal. Ob Materialprüfung bei voestalpine, Faseranalytik bei Lenzing oder Prozessüberwachung – ein Containerlabor steht direkt am Produktionsstandort und ist in 8–12 Wochen einsatzbereit.
-              </div>
-            </details>
+            <details class="bg-white border border-gray-100 rounded-xl group" open><summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-bold text-slate-900 pr-4">Was kostet ein Laborcontainer in Linz?</span><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">Die Kosten richten sich nach Größe, Ausstattung und Sicherheitsstufe. <a href="#anfrage" class="text-primary font-medium hover:underline">Sprechen Sie uns an</a> – nach einem ersten Gespräch nennen wir Ihnen eine realistische Einschätzung.</div></details>
+            <details class="bg-white border border-gray-100 rounded-xl group"><summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-bold text-slate-900 pr-4">Wie schnell kann ein Laborcontainer nach Linz geliefert werden?</span><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">8 bis 12 Wochen von der Auftragserteilung bis zur schlüsselfertigen Übergabe. Der Transport über die A8 dauert rund 4,5 Stunden.</div></details>
+            <details class="bg-white border border-gray-100 rounded-xl group"><summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-bold text-slate-900 pr-4">Brauche ich eine Baugenehmigung in Linz?</span><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">In der Regel ja. Nach der Oö. BauO 1994 gelten Container als Gebäude (§24). Je nach Größe kommen Baubewilligung oder Bauanzeige (§25, ≤35 m²) infrage. Wir übernehmen die Abstimmung mit der Baubehörde.</div></details>
+            <details class="bg-white border border-gray-100 rounded-xl group"><summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-bold text-slate-900 pr-4">Kann ich einen Laborcontainer mieten statt kaufen?</span><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">Ja. Miete, Kauf oder Mietkauf – besonders sinnvoll für befristete Forschungsprojekte an der JKU, industrielle Pilotprojekte oder temporäre Kapazitätserweiterungen.</div></details>
+            <details class="bg-white border border-gray-100 rounded-xl group"><summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-bold text-slate-900 pr-4">Eignet sich ein Containerlabor für industrielle Analytik?</span><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">Ideal. Ob Materialprüfung bei voestalpine, Faseranalytik bei Lenzing oder Prozessüberwachung – ein Containerlabor steht direkt am Produktionsstandort und ist in 8–12 Wochen einsatzbereit.</div></details>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-24 bg-primary text-slate-900">
-      <div class="container mx-auto px-4 text-center max-w-3xl">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Laborprojekt in Linz? Sprechen Sie mit uns.</h2>
-        <p class="text-slate-700 text-lg mb-8">
-          Erzählen Sie uns von Ihrem Vorhaben. Wir melden uns in der Regel am gleichen Tag mit einer ersten Einschätzung – auch nach Österreich.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/kontakt" class="bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors inline-flex items-center gap-2">
-            Projekt anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-          <a href="tel:+4974357519700" class="bg-white text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-white/90 transition-colors inline-flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
-          </a>
+    <section id="anfrage" class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid lg:grid-cols-5 gap-10">
+            <div class="lg:col-span-2">
+              <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">Laborcontainer für Linz anfragen</h2>
+              <p class="text-gray-600 mb-8">Beschreiben Sie kurz Ihr Projekt – wir melden uns innerhalb von 24 Stunden mit einer ersten Einschätzung.</p>
+              <div class="space-y-6">
+                <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="font-bold text-slate-900 text-sm">Telefon</div><a href="tel:+4974357519700" class="text-[#7a9900] font-medium hover:underline">+49 7435 7519 700</a></div></div>
+                <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="font-bold text-slate-900 text-sm">E-Mail</div><a href="mailto:info@planexus.de" class="text-[#7a9900] font-medium hover:underline">info@planexus.de</a></div></div>
+                <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="font-bold text-slate-900 text-sm">Werk & Zentrale</div><p class="text-gray-600 text-sm">Am Steinbach 8, 72459 Albstadt</p></div></div>
+              </div>
+            </div>
+            <div class="lg:col-span-3"><ContactForm client:load /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Bereit für Ihr Containerlabor in Linz?</h2>
+          <p class="text-gray-400 mb-6">Wir beraten Sie persönlich – unverbindlich und kostenlos.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Jetzt anrufen</a>
+            <a href="#anfrage" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Anfrage senden</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-lg font-bold text-slate-900 mb-4">Weitere Standorte</h2>
+          <div class="flex flex-wrap gap-3">
+            <a href="/laborcontainer-hamburg" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Hamburg</a>
+            <a href="/laborcontainer-berlin" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Berlin</a>
+            <a href="/laborcontainer-muenchen" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">München</a>
+            <a href="/laborcontainer-stuttgart" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Stuttgart</a>
+            <a href="/laborcontainer-duesseldorf" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Düsseldorf</a>
+            <a href="/laborcontainer-frankfurt" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Frankfurt</a>
+            <a href="/laborcontainer-zuerich" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Zürich</a>
+            <a href="/laborcontainer-basel" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Basel</a>
+            <a href="/laborcontainer-bern" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Bern</a>
+            <a href="/laborcontainer-wien" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Wien</a>
+            <a href="/laborcontainer-graz" class="text-sm text-gray-600 hover:text-primary hover:underline transition-colors">Graz</a>
+          </div>
         </div>
       </div>
     </section>
