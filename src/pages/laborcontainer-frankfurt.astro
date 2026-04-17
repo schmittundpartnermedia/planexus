@@ -140,6 +140,24 @@ const localBusinessSchema = { "@context": "https://schema.org", "@type": "LocalB
       <div class="lg:col-span-3"><ContactForm client:load /></div>
     </div></div></div></section>
 
+    <!-- FAQ -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — Laborcontainer für Frankfurt</h2>
+          <p class="text-gray-600 text-lg mb-10">Fünf Fragen, fünf Antworten. Direkt und ohne Marketing-Sprech.</p>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <article class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="py-12 bg-slate-900 text-white"><div class="container mx-auto px-4"><div class="max-w-3xl mx-auto text-center">
       <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Bereit für Ihr Containerlabor in Frankfurt?</h2>
       <p class="text-gray-400 mb-6">Wir beraten Sie persönlich – unverbindlich und kostenlos.</p>

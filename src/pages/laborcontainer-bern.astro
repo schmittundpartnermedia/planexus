@@ -546,6 +546,24 @@ const localBusinessSchema = {
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — Laborcontainer für Bern</h2>
+          <p class="text-gray-600 text-lg mb-10">Fünf Fragen, fünf Antworten. Direkt und ohne Marketing-Sprech.</p>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <article class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="py-12 bg-slate-900 text-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center">
