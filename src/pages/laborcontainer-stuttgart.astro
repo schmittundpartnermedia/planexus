@@ -13,15 +13,27 @@ const stuttgartPLZ = [
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Laborcontainer Stuttgart – BSL-3, GMP-Reinraum & Präzisionsanalytik",
-  "description": "Schlüsselfertige Laborcontainer für Stuttgart und die Region Mittlerer Neckar, abgestimmt auf die Talkessel-Klimalage, die Landesbauordnung Baden-Württemberg sowie die typischen Anforderungen der Stuttgarter Automobilindustrie, der Werkstofflabore, der Klinikbetriebe und des Universitätscampus Vaihingen. Lieferung über A81 in unter 1,5 Stunden ab Werk Albstadt.",
+  "name": "Laborcontainer Stuttgart – LABtoGO 2.0, BSL-2/3, GMP-Reinraum & ATEX",
+  "description": "Schlüsselfertige Laborcontainer für Stuttgart und die Region Mittlerer Neckar. LABtoGO 2.0 mit 2.750 mm Innenhöhe, BSL-2/3, GMP-Reinraum und ATEX-Konfigurationen. Lieferung in 1,5 Stunden über die A81 ab Werk Albstadt – nur 80 km entfernt. Pioniere im modularen Laborbau seit 2016, ausgezeichnet bei den German CEO Excellence Awards 2026.",
   "provider": {
     "@type": "Organization",
     "name": "Planexus GmbH",
     "url": "https://www.planexus.de",
     "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
   },
-  "serviceType": ["Laborcontainer", "BSL-2 Containerlabor", "BSL-3 Containerlabor", "GMP-Reinraumlabor", "Analytiklabor Container", "ATEX-Container", "Mobile Labore", "Modulbau Labor", "EX-Schutz Labor"],
+  "serviceType": [
+    "Laborcontainer Stuttgart",
+    "Containerlabor Stuttgart",
+    "Mobiles Labor Stuttgart",
+    "BSL-2 Containerlabor",
+    "BSL-3 Containerlabor",
+    "GMP-Reinraumlabor",
+    "ATEX-Container",
+    "Modulbau Labor",
+    "Technische Fachplanung Labor",
+    "Laborausstattung",
+    "Smart Lab Integration"
+  ],
   "areaServed": [
     { "@type": "City", "name": "Stuttgart", "containedInPlace": { "@type": "State", "name": "Baden-Württemberg" } },
     { "@type": "State", "name": "Baden-Württemberg" },
@@ -36,16 +48,16 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   "@id": "https://www.planexus.de/laborcontainer-stuttgart#business",
   "name": "Planexus GmbH – Laborcontainer Stuttgart",
-  "description": "Hersteller schlüsselfertiger Laborcontainer für Stuttgart und Baden-Württemberg. Talkessel-tauglich, LBO-konform, GMP- und BSL-3-zertifizierbar. 80 km vom Werk Albstadt – same-day Lieferung möglich.",
+  "description": "Fachplaner für Containerlabore mit über 10 Jahren Erfahrung. Ihr Spezialist für Laborcontainer und modulare Laborlösungen in Stuttgart und Baden-Württemberg. LABtoGO 2.0, BSL-2/3, GMP-Reinraum, ATEX. Werk Albstadt – 80 km vom Stuttgarter Kreuz.",
   "url": "https://www.planexus.de/laborcontainer-stuttgart",
   "telephone": "+49 7435 7519 700",
   "email": "info@planexus.de",
   "image": "https://www.planexus.de/attached_assets/Laborcontainer_001_1769688326918.jpg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Am Steinbach 8",
+    "streetAddress": "Emil-Mayer-Straße 1",
     "addressLocality": "Albstadt",
-    "postalCode": "72459",
+    "postalCode": "72461",
     "addressRegion": "Baden-Württemberg",
     "addressCountry": "DE"
   },
@@ -60,10 +72,14 @@ const localBusinessSchema = {
       { "@type": "AdministrativeArea", "name": "Stuttgart-Untertürkheim" },
       { "@type": "AdministrativeArea", "name": "Stuttgart-Möhringen" },
       { "@type": "AdministrativeArea", "name": "Stuttgart-Bad Cannstatt" },
-      { "@type": "AdministrativeArea", "name": "Stuttgart-Hohenheim" }
+      { "@type": "AdministrativeArea", "name": "Stuttgart-Hohenheim" },
+      { "@type": "AdministrativeArea", "name": "Filderebene" },
+      { "@type": "AdministrativeArea", "name": "Ditzingen" }
     ]
   },
-  "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
+  "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" },
+  "award": "EU Business News – German CEO Excellence Awards 2026: Führender Anbieter innovativer Laborräume",
+  "foundingDate": "2016"
 };
 
 const breadcrumbSchema = {
@@ -82,66 +98,66 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was kostet ein Laborcontainer in Stuttgart?",
+      "name": "Wie schnell liefert Planexus einen Laborcontainer nach Stuttgart?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Investition richtet sich nach Sicherheitsstufe, Reinraumklasse und Spezialausstattung. Ein Analytikcontainer für die der Universitätscampus Vaihingen liegt in einer anderen Größenordnung als ein BSL-3-Container für ein Klinikprojekt oder ein ATEX-Container für Lithium-Ion-Batterieforschung bei die Untertürkheimer Werks- und Werkstofflabore oder die Sportwagen-Industrie in Zuffenhausen. Wir kalkulieren projektspezifisch – inklusive F9-Feinstaub-Vorfilterung für die Stuttgarter Talkessellage und LBO-konformer Statik. Senden Sie uns Ihre Standortdaten, wir melden uns binnen 24 Stunden mit einer indikativen Spanne."
+        "text": "Vom Werk Albstadt sind es nur 80 km über die A81 bis ans Stuttgarter Kreuz – Schwerlast-Fahrzeit unter 1,5 Stunden. Standardcontainer unter 4 m Breite und 18 t Gewicht liefern wir Same-Day. Die Fertigung eines konfigurierten LABtoGO 2.0 oder einer BSL-2-Variante dauert typischerweise 8 bis 14 Wochen ab Auftrag. Damit sind wir gegenüber norddeutschen oder hessischen Anbietern strukturell vier bis sechs Wochen schneller."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche Bauauflagen gelten für Laborcontainer in Stuttgart?",
+      "name": "Was kostet ein Laborcontainer von Planexus für Stuttgart?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Maßgebend ist die Landesbauordnung Baden-Württemberg (LBO BW). Anders als in Hamburg oder Berlin hat Stuttgart kein dezentrales Bezirksamt-System – zuständig ist zentral das Baurechtsamt der Stadt Stuttgart in der Eberhardstraße 33. Nach §50 LBO BW sind kleinere Container nach Anlage zu §50 LBO BW unter Umständen verfahrensfrei, größere Anlagen erfordern ein Kenntnisgabeverfahren oder eine Baugenehmigung. Wir bereiten alle Bauvorlagen verfahrenstauglich auf und stimmen vorab mit dem Baurechtsamt ab."
+        "text": "Mietmodelle starten bei rund 4.500 Euro pro Monat für einen konfigurierten Analytikcontainer; Kaufoptionen beginnen bei rund 180.000 Euro netto. Die endgültige Investition richtet sich nach Sicherheitsstufe (S2/S3, ATEX, GMP), Reinraumklasse und Spezialausstattung. Ein BSL-3-Container für die Stuttgarter Hochschullandschaft liegt deutlich über einem analytischen Werkstoff-Container für die Filderebene. Wir kalkulieren projektspezifisch und liefern eine indikative Spanne binnen 24 Stunden."
       }
     },
     {
       "@type": "Question",
-      "name": "Ist die Stuttgarter Umweltzone für den Containertransport relevant?",
+      "name": "Welche Genehmigungen brauche ich für ein Containerlabor in Stuttgart?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Stuttgarter Umweltzone umfasst nahezu das gesamte Stadtgebiet und verlangt grüne Feinstaub-Plakette. Unsere Schwerlast-Zugmaschinen erfüllen Euro 6 und sind mit grüner Plakette ausgestattet – die Anlieferung in Stuttgart-Mitte, Vaihingen, Feuerbach oder Bad Cannstatt ist uneingeschränkt möglich. Bei besonders sensiblen Standorten wie Klinikgeländen koordinieren wir die Anlieferung über das städtische Verkehrsmanagement."
+        "text": "Maßgebend ist die Landesbauordnung Baden-Württemberg. Anders als in Hamburg oder Berlin hat Stuttgart kein dezentrales Bezirksamt-System – zuständig ist zentral das Baurechtsamt der Stadt Stuttgart. Nach §50 LBO BW sind kleinere Container unter Umständen verfahrensfrei, größere Anlagen erfordern ein Kenntnisgabeverfahren oder eine Baugenehmigung. Für gentechnische Anlagen ist zusätzlich eine Anzeige beim Regierungspräsidium Stuttgart nach GenTG erforderlich. Wir bereiten alle Bauvorlagen verfahrenstauglich auf."
       }
     },
     {
       "@type": "Question",
-      "name": "Wie lange dauert die Lieferung von Albstadt nach Stuttgart?",
+      "name": "Baut Planexus auch BSL-3 für Stuttgarter Forschungseinrichtungen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Strecke vom Werk Albstadt nach Stuttgart-Mitte beträgt rund 80 km – komplett über die A81 nordwärts via Anschlussstelle Empfingen. Reine Fahrzeit ca. 1,5 Stunden mit Schwerlasttransport. Same-Day-Lieferung ist für Standardcontainer möglich – ein massiver Vorteil gegenüber Mitbewerbern aus Norddeutschland. Werkbesichtigungen vor Auslieferung sind für Stuttgarter Kunden in unter zwei Stunden Anreise machbar."
+        "text": "Ja. Für BSL-3-Container liefern wir Unterdruckkaskade ab -50 Pa, HEPA-H14 im Abluftstrang, autoklavierte Schleusen, redundante HVAC und vollständige IQ/OQ/PQ-Dokumentation nach BioStoffV und TRBA 100. Aufstellungen am Universitäts-Campus Vaihingen oder an Klinikstandorten der Region Mittlerer Neckar koordinieren wir mit dem Universitätsbauamt, dem Land Baden-Württemberg (Vermögen und Bau BW Stuttgart) und dem Regierungspräsidium Stuttgart."
       }
     },
     {
       "@type": "Question",
-      "name": "Können Sie BSL-3-Container für die die Stuttgarter Hochschullandschaft in Vaihingen aufstellen?",
+      "name": "Was unterscheidet den LABtoGO 2.0 von einem normalen Laborcontainer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. Aufstellungen auf dem Universitäts-Campus Vaihingen koordinieren wir über das Universitätsbauamt und das Land Baden-Württemberg (Vermögen und Bau BW Stuttgart). Für BSL-3 fordern wir und der Verordnungsgeber: Unterdruckkaskade min. -50 Pa, HEPA-H14-Filter im Abluftstrang, autoklavierte Schleusen nach BioStoffV und TRBA 100. Genehmigungs- und Anzeigepflichten laufen über das Regierungspräsidium Stuttgart (für gentechnische Anlagen nach GenTG) sowie die zuständige Arbeitsschutzbehörde (BioStoffV). Wir liefern komplett zertifiziert mit IQ/OQ/PQ-Dokumentation."
+        "text": "Der LABtoGO 2.0 ist 9.500 mm lang, 3.000 mm breit und hat 2.750 mm lichte Innenhöhe – 350 mm mehr als ein konventioneller Containerstandard von 2.400 mm. Mit der vollverglasten Front kommt echtes Tageslicht in das Labor. Die Sandwichpanel-Hülle erreicht U-Werte um 0,20 W/m²K. In Kurzform: Ein gewöhnlicher Laborcontainer passt komplett in einen LABtoGO hinein. Wir nennen ihn nicht ohne Grund Laborcontainer 2.0 – er bildet die Plattform, auf der wir BSL-2, GMP, ATEX und Reinraum konfigurieren."
       }
     },
     {
       "@type": "Question",
-      "name": "Wie schützt Ihr Containerlabor Messgeräte vor Stuttgarter Feinstaub-Belastung?",
+      "name": "Liefert Planexus auch ATEX-Container für die Stuttgarter Antriebs- und Werkstoffforschung?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Stuttgarter Talkessellage erzeugt regelmäßig Inversionswetterlagen, in denen die PM10-Feinstaubwerte am Neckartor und in der Innenstadt 50 µg/m³ erreichen können. Wir bauen die HVAC-Frischluftansaugung mit zusätzlicher F9-Vorfilterung nach EN 779 ein – das schützt empfindliche Spektrometer, Mikroskope und Analysegeräte. Für GMP-Reinräume kombinieren wir F9 mit nachgeschalteter HEPA-H14, sodass die Reinraumklasse ISO 14644-1 Klasse 5 unabhängig von der Außenluftbelastung gehalten wird."
+        "text": "Ja. Lithium-Ionen-Forschung in Untertürkheim, Antriebs- und Werkstoffanalytik in Zuffenhausen und Industrieprüfungen in Feuerbach erfordern ATEX-konforme Container der Zone 1 oder Zone 2. Wir bauen explosionsgeschützte Lüftung, EX-Beleuchtung nach IECEx, leitfähige Bodenbeläge gegen elektrostatische Aufladung sowie redundante Gas-Sensorik mit Notabschaltung. Dokumentation nach ATEX-Richtlinie 2014/34/EU und BetrSichV ist Standard im Liefer­umfang."
       }
     },
     {
       "@type": "Question",
-      "name": "EX-Schutz für Automobilindustrie- und Sportwagen-Hersteller-Batterieforschung in Stuttgart – machbar?",
+      "name": "Mieten oder kaufen für ein Stuttgarter Projekt?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. Die Lithium-Ionen-Forschung bei die Untertürkheimer Werks- und Werkstofflabore, die Sportwagen-Industrie in Zuffenhausen und Industriebetrieben in Feuerbach erfordert ATEX-konforme Container der Zone-1- oder Zone-2-Klassifizierung. Wir bauen explosionsgeschützte Lüftung, EX-Beleuchtung nach IECEx, leitfähige Bodenbeläge gegen elektrostatische Aufladung sowie redundante Gas-Sensorik mit Notabschaltung. Dokumentation erfolgt nach ATEX-Richtlinie 2014/34/EU und BetrSichV. Ideal für Werks-Forschungslabore an Stuttgarts automotive Standorten."
+        "text": "Faustregel: Bei Projektlaufzeiten unter 24 Monaten – etwa Interimslabore während Klinik-Sanierungen, befristete Drittmittel-Projekte am Campus Vaihingen oder Übergangslösungen in Bauphasen rund um städtische Großbauprojekte – rechnet sich Miete. Bei dauerhafter Erweiterung in Industriestandorten Feuerbach, an Universitäts-Campussen Vaihingen oder Hohenheim überwiegt der Kauf, oft mit Mietkauf-Option. Wir vergleichen für Ihr Stuttgarter Projekt beide Modelle inklusive Bilanzwirkung und Restwert."
       }
     },
     {
       "@type": "Question",
-      "name": "Mieten oder kaufen für ein Stuttgart-21-Interimsprojekt?",
+      "name": "Was leistet die Wesemann-Gruppe zusätzlich zum Container?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Faustregel: Bei Projektlaufzeiten unter 24 Monaten – etwa Interimslabore während Bauphasen rund um städtische Großbauprojekte, befristete Forschungsprojekte am außeruniversitäre Forschung in Vaihingen oder Übergangslösungen während Klinikum-Sanierungen am Stuttgarter Klinikbetriebe – rechnet sich Miete. Bei dauerhafter Erweiterung am Industriestandorte in Feuerbach, Universitäts-Campus Vaihingen oder Hohenheim überwiegt der Kauf, oft mit Mietkauf-Option. Wir vergleichen für Ihr Stuttgarter Projekt beide Modelle inklusive Bilanzwirkung und Restwert."
+        "text": "Planexus ist Teil der Wesemann Holding GmbH, einem Konzernverbund mit über 60 Jahren Erfahrung in Laboreinrichtung. Das bedeutet für Stuttgarter Kunden: Container, Labormöbel und Reinraumtechnik aus einer Hand – ohne Schnittstellen, ohne Zuständigkeitslücken. Abzüge nach DIN EN 14175, säurefeste Arbeitsplatten, Sicherheitsschränke nach DIN EN 14470-1, Reinraum-Komponenten – alles aus dem eigenen Konzern. Ein Ansprechpartner von der Planung bis zur Inbetriebnahme."
       }
     }
   ]
@@ -149,8 +165,8 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Laborcontainer Stuttgart | BSL-3, GMP & ATEX in 12 Wochen"
-  description="Laborcontainer für Stuttgart: BSL-3, GMP & ATEX-Reinraum für Automotive-Industrie, Werkstofflabore und Universitätscampus. 80 km Werk-Distanz via A81. Jetzt anfragen."
+  title="Laborcontainer Stuttgart | 2,75 m Innenhöhe, BSL-2 & GMP | Planexus"
+  description="Planexus baut Laborcontainer für Stuttgart – LABtoGO 2.0 mit 2,75 m Innenhöhe, BSL-2/3, GMP, ATEX. 80 km vom Werk Albstadt, Lieferung in 1,5 h. Kostenfreies Standort-Audit."
   canonical="/laborcontainer-stuttgart"
   schema={serviceSchema}
   ogImage="/attached_assets/Laborcontainer_001_1769688326918.jpg"
@@ -161,10 +177,33 @@ const faqSchema = {
 
   <div class="pt-20 min-h-screen bg-white">
 
+    <!-- STICKY SIDE-CTA (desktop only) -->
+    <aside class="hidden xl:block fixed right-6 top-1/2 -translate-y-1/2 z-40 w-64">
+      <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+        <div class="bg-slate-900 px-5 py-3">
+          <div class="text-primary text-xs font-bold uppercase tracking-wider">Stuttgart-Slots Werk Albstadt</div>
+        </div>
+        <div class="p-5 space-y-3 text-sm">
+          <div>
+            <div class="text-gray-500 text-xs">Fertigungsstart</div>
+            <div class="font-bold text-slate-900">KW 28 / 2026</div>
+            <div class="text-xs text-gray-500">Inbetriebnahme KW 36</div>
+          </div>
+          <div class="border-t border-gray-100 pt-3">
+            <div class="text-gray-500 text-xs">Fertigungsstart</div>
+            <div class="font-bold text-slate-900">KW 32 / 2026</div>
+            <div class="text-xs text-gray-500">Inbetriebnahme KW 40</div>
+          </div>
+          <a href="#anfrage" class="block bg-primary text-slate-900 font-bold text-center py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Slot reservieren</a>
+          <a href="tel:+4974357519700" class="block text-center text-xs text-slate-600 hover:text-primary transition-colors">+49 7435 7519 700</a>
+        </div>
+      </div>
+    </aside>
+
     <!-- HERO -->
     <section class="relative py-24 md:py-32 bg-slate-900 text-white overflow-hidden">
       <div class="absolute inset-0">
-        <img src="/attached_assets/Laborcontainer_001_1769688326918.jpg" alt="Laborcontainer Stuttgart Vaihingen – Planexus GmbH, BSL-3 und GMP-Reinraum-Container für Industriebetriebe in Feuerbach, Sportwagen-Hersteller und Universität" class="w-full h-full object-cover opacity-20" loading="eager" />
+        <img src="/attached_assets/Laborcontainer_001_1769688326918.jpg" alt="Laborcontainer Stuttgart – Planexus LABtoGO 2.0 mit 2,75 m Innenhöhe für Forschung und Industrie in Vaihingen, Feuerbach und Untertürkheim" class="w-full h-full object-cover opacity-20" loading="eager" />
       </div>
       <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
 
@@ -178,16 +217,22 @@ const faqSchema = {
             <span class="text-primary">Stuttgart</span>
           </nav>
 
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Ihr Spezialist für Laborcontainer · Region Mittlerer Neckar</div>
+
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-            Laborcontainer Stuttgart <span class="text-primary">|</span> BSL-3, GMP & ATEX für Industrie und Forschung am Mittleren Neckar
+            Laborcontainer Stuttgart <span class="text-primary">|</span> 2,75 m Innenhöhe, BSL-2 & GMP – schlüsselfertig in 12 Wochen
           </h1>
-          <p class="text-xl text-gray-300 leading-relaxed mb-8">
-            Schlüsselfertige Containerlabore für Stuttgarts Industrie- und Forschungslandschaft. Talkessel-tauglich mit F9-Feinstaub-Vorfilterung, LBO-Baden-Württemberg-konform, geliefert in unter 1,5 Stunden über die A81 ab Werk Albstadt – nur 80 km entfernt.
+
+          <p class="text-xl text-gray-300 leading-relaxed mb-4">
+            <strong class="text-white">Ihr Fachplaner für Containerlabore mit mehr als 10 Jahren Erfahrung.</strong> Intelligent, nachhaltig und modular. Wir realisieren flexible Forschungsumgebungen für die Zukunft – aus dem Werk Albstadt direkt nach Stuttgart, nur 80 km über die A81.
+          </p>
+          <p class="text-base text-gray-400 mb-8">
+            Während andere noch planen, forschen Sie bereits.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 mb-8">
             <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
-              Stuttgarter Projekt anfragen
+              Kostenfreies Standort-Audit Stuttgart
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
             <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
@@ -196,19 +241,62 @@ const faqSchema = {
             </a>
           </div>
 
-          <div class="flex flex-wrap items-center gap-6 text-sm text-gray-400">
-            <div class="flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              80 km Werk-Distanz – Same-Day-Lieferung
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Pioniere im Modulbau seit 2016</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Award 2026 EU Business News</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Werk Albstadt – 80 km</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Wesemann-Gruppe · 60+ Jahre Laborbau</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATTERN-INTERRUPT: LABtoGO 2.0 -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Pattern-Interrupt · Weltpremiere analytica 2026</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus zeigt Stuttgart, was ein Laborcontainer 2026 wirklich kann</h2>
+              <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                Ein gewöhnlicher Laborcontainer hat 2.400 mm Innenhöhe. Sie passen rein – aufrecht arbeiten unter einem Abzug aber kaum.
+              </p>
+              <p class="text-lg text-slate-900 font-bold leading-relaxed mb-4">
+                Der LABtoGO 2.0 von Planexus hat 2.750 mm Innenhöhe. 9,5 m Außenlänge. 3 m Außenbreite. Vollverglaste Front, die echtes Tageslicht in jedes Stuttgarter Werks- oder Forschungslabor bringt.
+              </p>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                <strong>Ein gewöhnlicher Laborcontainer passt komplett in einen LABtoGO hinein.</strong> Wir nennen ihn nicht ohne Grund Laborcontainer 2.0 – er ist die Plattform, auf der wir für Stuttgart BSL-2, BSL-3, GMP-Reinraum und ATEX konfigurieren.
+              </p>
             </div>
-            <div class="flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              ATEX & EX-Schutz für Batterieforschung
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">2.750</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm Innenhöhe</div>
+                <div class="text-xs text-gray-500 mt-1">Standard: 2.400 mm</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">9.500</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm Außenlänge</div>
+                <div class="text-xs text-gray-500 mt-1">3.000 mm Breite</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">100%</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">vollverglast</div>
+                <div class="text-xs text-gray-500 mt-1">Tageslicht-Labor</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">U 0,20</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">W/m²K Sandwich</div>
+                <div class="text-xs text-gray-500 mt-1">80–120 mm Dämmung</div>
+              </div>
             </div>
-            <div class="flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              §50 LBO BW + Umweltzone-zertifiziert
-            </div>
+          </div>
+          <div class="text-center">
+            <a href="/laborcontainer/labtogo" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+              LABtoGO 2.0 Plattform und alle Konfigurationen ansehen
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -217,34 +305,25 @@ const faqSchema = {
     <!-- PROBLEM-AGITATION -->
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">
-            Laborcontainer in Stuttgart: 3 Hürden, an denen Industrie- und Forschungsprojekte regelmäßig hängenbleiben
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">
+            Planexus löst die drei Stuttgarter Engpässe, an denen Laborprojekte regelmäßig scheitern
           </h2>
-          <div class="grid md:grid-cols-3 gap-6 mb-10">
+          <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-red-50 border border-red-100 rounded-xl p-6">
-              <div class="text-red-600 font-bold text-lg mb-2">Talkessel-Feinstaub zerstört Messgeräte</div>
-              <p class="text-gray-600 text-sm">Stuttgarts Talkessellage erzeugt regelmäßig Inversionswetterlagen mit Feinstaubwerten bis 50 µg/m³ am Neckartor. Spektrometer, Mikroskope und Analysegeräte verlieren ihre Präzision innerhalb von Monaten – wer ohne F9-Vorfilterung baut, baut für die Tonne.</p>
+              <div class="text-red-600 font-bold text-lg mb-2">Förderfenster schließt schneller als der Bau startet</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Das Förderfenster Ihres Drittmittel-Projekts schließt in neun Monaten. Konventioneller Laborbau in Baden-Württemberg braucht achtzehn bis dreißig Monate vom Bauantrag bis zum Schlüssel. Sie verlieren das Projekt, bevor es startet.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3">Planexus-Antwort: LABtoGO produktiv in 8 bis 14 Wochen.</p>
             </div>
             <div class="bg-red-50 border border-red-100 rounded-xl p-6">
-              <div class="text-red-600 font-bold text-lg mb-2">Industrieflächen am Limit</div>
-              <p class="text-gray-600 text-sm">Auf den Werksgeländen von die Untertürkheimer Werks- und Werkstofflabore, die Sportwagen-Industrie in Zuffenhausen und Industriebetrieben in Feuerbach zählt jeder Quadratmeter. Universitäre Erweiterung am Campus Vaihingen oder am außeruniversitäre Forschung in Vaihingen scheitert an knappen Bauflächen. Massivbau bindet Areale für Jahrzehnte.</p>
+              <div class="text-red-600 font-bold text-lg mb-2">§50 LBO BW – ein Formfehler kostet sechs Wochen</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Die Landesbauordnung Baden-Württemberg, das Kenntnisgabeverfahren und gegebenenfalls eine Anzeige nach BImSchG verlangen vollständig prüffähige Bauvorlagen. Ein einziger Fehler beim Baurechtsamt Stuttgart bedeutet Wochen Stillstand.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3">Planexus-Antwort: Verfahrenstaugliche Bauvorlagen ab Tag 1.</p>
             </div>
             <div class="bg-red-50 border border-red-100 rounded-xl p-6">
-              <div class="text-red-600 font-bold text-lg mb-2">städtische Großbauprojekte verschiebt alle Pläne</div>
-              <p class="text-gray-600 text-sm">Bauphasen rund um städtische Großbauprojekte zwingen viele Forschungs- und Klinikprojekte zu Interimslösungen. Klassischer Massivbau dauert in Baden-Württemberg vom Bauantrag bis zum Schlüssel typischerweise 18 bis 30 Monate. Das ist Lichtjahre zu lang.</p>
-            </div>
-          </div>
-
-          <div class="bg-slate-900 text-white rounded-2xl p-8 md:p-10">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              </div>
-              <div>
-                <div class="text-xl font-bold mb-2">Die Antwort: Containerlabore, gebaut für Stuttgart</div>
-                <p class="text-gray-300">Planexus liefert Laborcontainer, deren Engineering die Stuttgarter Talkessel-Realität einrechnet – F9-Feinstaub-Vorfilterung gegen Inversionswetterlagen, ATEX-Schutz für Automobilindustrie-/Sportwagen-Hersteller-Batterieforschung, ISO-14644-Reinräume nach Sensorik-Produktion-Standard, vibrationsentkoppelte Messlabore für die Stuttgarter Hochschullandschaft und außeruniversitäre Forschung in Vaihingen. Schlüsselfertig in 8 bis 12 Wochen, geliefert in unter 1,5 Stunden über die A81.</p>
-              </div>
+              <div class="text-red-600 font-bold text-lg mb-2">Talkessel-Realität zerstört Standard-Container</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Inversionswetterlagen, sommerliche Hitzeperioden über 35°C, Lehmboden auf der Filderebene und die Stuttgarter Umweltzone mit grüner Plakettenpflicht. Container von der Stange überleben das nicht – Messgeräte verlieren Präzision binnen Monaten.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3">Planexus-Antwort: F9-Vorfilter, Kühllast +35°C, Punktfundament-Engineering ab Werk.</p>
             </div>
           </div>
         </div>
@@ -252,269 +331,382 @@ const faqSchema = {
     </section>
 
     <!-- STRATEGISCHE FUSION INTRO -->
-    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
+    <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">
-            Warum ein Laborcontainer in Stuttgart anders gebaut werden muss als in Hamburg oder Berlin
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">
+            Warum Planexus in Stuttgart anders baut – und wieso das für Ihr Projekt entscheidend ist
           </h2>
-          <div class="space-y-4 text-gray-700 text-lg leading-relaxed">
-            <p>Die Region Stuttgart ist Deutschlands dichtester Cluster für Automotive, Präzisionsmechanik und Werkstoffforschung – mit <strong>Stuttgarter Automobilindustrie, Sportwagen-Hersteller, Industriebetriebe in Feuerbach, Filterindustrie und Lasertechnik-Industrie</strong> auf engstem Raum, ergänzt um die die Stuttgarter Hochschullandschaft in Vaihingen, das außeruniversitäre Forschung in Vaihingen, die die agrarwissenschaftliche Hochschule in Hohenheim und das Festkörperforschungsinstitute in Vaihingen. Wer hier Containerlabore plant, baut nicht für Pharma-Großkonzerne wie in Hamburg, sondern für Werkstoffanalytik, Sensorik-Reinräume und Batterieforschung der Elektromobilität.</p>
-            <p>Aufgrund der Stuttgarter Talkessellage mit ihrer charakteristischen Inversionswetterlage und Feinstaubspitzen bis 50 µg/m³ dimensionieren wir die HVAC-Frischluftansaugung jedes Containers mit <strong>F9-Vorfilterung nach EN 779</strong>. Aufgrund der automotive-getriebenen Forschung an Lithium-Ionen-Batterien bei die Untertürkheimer Werks- und Werkstofflabore und die Sportwagen-Industrie in Zuffenhausen liefern wir <strong>ATEX-Container in Zone-1-Konfiguration</strong> mit explosionsgeschützter Lüftung. Aufgrund der Werks-Distanz von nur 80 km über die A81 ist <strong>Same-Day-Lieferung in das gesamte Stadtgebiet</strong> möglich – ein Logistikvorteil, den kein norddeutscher Wettbewerber bieten kann.</p>
+          <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p>
+              <strong>Stuttgart ist Deutschlands dichtester Cluster für Antriebsforschung, Präzisionsmechanik, Werkstoffanalytik und Sensorik.</strong> Auf engstem Raum konkurrieren Sportwagen-Industrie, Tier-1-Zulieferer, Werkstofflabore, Lasertechnik und ein dichtes Netz an Universitäts- und Forschungs-Campussen um Flächen, Genehmigungen und Engineering-Kapazität. Wer hier ein Containerlabor bestellt, kauft kein Standardprodukt – er kauft Standortintelligenz.
+            </p>
+            <p>
+              <strong>Planexus baut für diesen Markt seit 2016.</strong> Wir wissen, dass die Inversionswetterlage des Talkessels mit Feinstaubspitzen bis 50 µg/m³ am Neckartor eine F9-Vorfilterung im HVAC erzwingt. Wir wissen, dass die Lithium-Ionen- und Antriebsforschung in Untertürkheim und Zuffenhausen ATEX Zone 1 verlangt. Wir wissen, dass die Filderebene Punktfundament-Statik nach Bodenklasse 4 braucht und dass am Universitäts-Campus Vaihingen Schwingungsentkopplung für Optik- und Lasertechnik gefordert ist. Diese Details stehen nicht in unserem Angebot – sie sind das Engineering-Fundament jedes Containers, der unser Werk Albstadt verlässt.
+            </p>
+            <p>
+              <strong>Die kürzeste Distanz ist unser stärkster Wettbewerbsvorteil.</strong> 80 Kilometer. 1,5 Stunden Schwerlast über die A81. Same-Day-Lieferung möglich. Werksbesichtigung in unter zwei Stunden – beidseitig. Kein norddeutscher, kein NRW-, kein hessischer Anbieter kann das für Stuttgart bieten.
+            </p>
+            <p>
+              Ob Sie ein <strong>mobiles Labor Stuttgart</strong> für eine befristete Drittmittel-Kampagne brauchen, einen <strong>modularen Laborcontainer Stuttgart</strong> für die dauerhafte Werks-Erweiterung in Feuerbach oder ein <strong>Containerlabor Stuttgart</strong> mit BSL-2-Containment für die Universitätsklinik – wir liefern alle drei Antworten aus derselben Plattform: dem LABtoGO 2.0 unseres Werks Albstadt.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3x2 TECHNICAL DEPTH MATRIX -->
+    <!-- 6 PLANEXUS-LEISTUNGEN STUTTGART (Service-Region-Fusion) -->
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-14">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Leistungen für Stuttgart</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Sechs Planexus-Leistungen – jede zugeschnitten auf den Stuttgarter Markt</h2>
+            <p class="text-gray-600 text-lg">Wir realisieren keine Standard-Container für eine Postleitzahl, sondern jede einzelne Disziplin unserer Fachplanung wird auf Stuttgarter Realität kalibriert.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- 1 Technische Fachplanung -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"/><path d="M12 2v15"/><path d="m9 5 3-3 3 3"/></svg></div>
+                <h3 class="text-xl font-bold text-slate-900">Technische Fachplanung Labor – Stuttgart</h3>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-3">CAD-Zeichnungen, 3D-Visualisierung und TGA-Konzepte, die Stuttgarter Realität abbilden: F9-Vorfilterung gegen Talkessel-Feinstaub, Kühllast-Auslegung für Hitzeperioden über 35°C, Schwingungsentkopplung für Optik- und Lasertechnik in Ditzingen und Vaihingen.</p>
+              <ul class="text-sm text-gray-600 space-y-1.5">
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>3D-Visualisierung mit Stuttgart-Standortmodell</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Workflow-Optimierung für Pharma, Werkstoff und Forschung</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Sicherheitskonzepte nach BioStoffV, GefStoffV, BetrSichV</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>TGA-Fachplanung inkl. F9 / HEPA-H14 / EX-Lüftung</li>
+              </ul>
+            </div>
+
+            <!-- 2 Modulbau & Fertigung -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 22V12l5-3 5 3v10"/><path d="m12 12 5-3 5 3v10H2"/><path d="M7 22V18"/></svg></div>
+                <h3 class="text-xl font-bold text-slate-900">Modulbau & Fertigung – Made in Albstadt</h3>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-3">Endmontage, Innenausbau und Qualitätskontrolle erfolgen in unserem Werk Albstadt, Emil-Mayer-Straße 1 – nur 80 Kilometer vom Stuttgarter Kreuz. Sie können Ihren Container während der Fertigung jederzeit besichtigen. Beidseitig in 1,5 Stunden.</p>
+              <ul class="text-sm text-gray-600 space-y-1.5">
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Stahlrahmenkonstruktion, statisch berechnet für BW-Lastzonen</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Sandwichpanel-Hülle U 0,20 W/m²K (80–120 mm)</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Labortaugliche Oberflächen, säurefest, abriebbeständig</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Werksbesichtigung Stuttgart → Albstadt in 1,5 h</li>
+              </ul>
+            </div>
+
+            <!-- 3 Logistik & Montage -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 18H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h12v14h-3"/><path d="M14 18H10"/><circle cx="8" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M15 9h5l2 4v5h-3"/></svg></div>
+                <h3 class="text-xl font-bold text-slate-900">Logistik & Montage – A81-Same-Day</h3>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-3">Schwerlasttransport vom Werk Albstadt direkt nach Stuttgart-Vaihingen, Feuerbach, Untertürkheim, Zuffenhausen oder auf die Filderebene. Über die A81 nordwärts ans Stuttgarter Kreuz. Aufstellung per Mobilkran 60–200 t. Anschluss aller Medien. Schlüsselfertige Übergabe.</p>
+              <ul class="text-sm text-gray-600 space-y-1.5">
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Same-Day-Anlieferung für Standardcontainer (&lt;4 m / &lt;18 t)</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Schnelle Montage in 1–3 Tagen vor Ort</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Plug & Play – statt Dauerbaustelle</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Inbetriebnahme inkl. Funktions- und Dichtigkeitstests</li>
+              </ul>
+            </div>
+
+            <!-- 4 Laborausstattung -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9V5a2 2 0 0 1 2-2h4"/><path d="M2 15v4a2 2 0 0 0 2 2h4"/><path d="M22 9V5a2 2 0 0 0-2-2h-4"/><path d="M22 15v4a2 2 0 0 1-2 2h-4"/><line x1="6" y1="12" x2="18" y2="12"/></svg></div>
+                <h3 class="text-xl font-bold text-slate-900">Laborausstattung – Wesemann-Ecosystem</h3>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-3">Labormöbel, Abzüge und Sicherheitsschränke kommen direkt aus der Wesemann-Holding mit über 60 Jahren Erfahrung in Laboreinrichtung. Container, Möbel und Reinraumtechnik aus einer Hand – ein Ansprechpartner, keine Schnittstellen-Risiken. Kritisch für Stuttgarter Pharma-, Werkstoff- und ATEX-Projekte.</p>
+              <ul class="text-sm text-gray-600 space-y-1.5">
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Labormöbel nach Maß, säurefeste Arbeitsplatten</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Abzugssysteme nach DIN EN 14175</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Sicherheitsausstattung nach DIN EN 14470-1</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>ATEX-Geräteintegration für Antriebsforschung Zuffenhausen</li>
+              </ul>
+            </div>
+
+            <!-- 5 Beratung & Genehmigung -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+                <h3 class="text-xl font-bold text-slate-900">Beratung & Genehmigung – §50 LBO BW</h3>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-3">Wir bereiten alle Bauvorlagen verfahrenstauglich für das Baurechtsamt Stuttgart vor: Lageplan, Grundriss, Statik, Brandschutz nach LBO BW, Anschlussnachweise. Für gentechnische Anlagen: Anzeige beim Regierungspräsidium Stuttgart nach GenTG. Sie kommunizieren mit Ihren Stakeholdern – wir mit der Behörde.</p>
+              <ul class="text-sm text-gray-600 space-y-1.5">
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Baurechtliche Beratung Kenntnisgabeverfahren BW</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Arbeitsschutz nach BioStoffV, TRBA, GefStoffV</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Umweltrecht inkl. BImSchG-Anzeige bei Bedarf</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Brandschutzkonzepte nach LBO BW Brandklassen</li>
+              </ul>
+            </div>
+
+            <!-- 6 Smart Lab Integration -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-xl hover:border-primary/30 transition-all">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 16.98h-5.99c-1.1 0-1.95.94-2.48 1.9A4 4 0 0 1 2 17c.01-.7.2-1.4.57-2"/><path d="m6 17 3.13-5.78c.53-.97.43-2.22-.26-3.07A4 4 0 0 1 17 8c0 .73-.2 1.41-.54 2"/><path d="m12 17 3-5.27"/></svg></div>
+                <h3 class="text-xl font-bold text-slate-900">Smart Lab Integration – Cloud-ready</h3>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-3">IoT-Sensoren, Raumklima-Monitoring und digitale GMP-Audit-Trails – kompatibel mit den IT-Standards Stuttgarter Universitätskliniken und Pharma-Auftragsforscher. Telemetrie für Temperatur, Druckkaskade, Partikelzahl und Zugangskontrolle. Datenexport in Bestandssysteme.</p>
+              <ul class="text-sm text-gray-600 space-y-1.5">
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Raumklima-Monitoring T/H/Druckkaskade</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Zugangskontrolle für BSL-2/3-Schleusen</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Digitale Dokumentation für GMP-Audits</li>
+                <li class="flex gap-2"><span class="text-primary font-bold">›</span>Cloud-Anbindung an LIMS / ELN-Systeme</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANWENDUNGSBEREICHE STUTTGART -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Anwendungsbereiche Stuttgart</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Wofür Planexus in Stuttgart Container baut</h2>
+            <p class="text-gray-400 text-lg">Acht Anwendungsfelder, jedes mit konkretem Stuttgarter Bezug – damit Sie wissen, dass wir Ihre Branche bereits kennen.</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">01</div>
+              <div class="font-bold mb-1">Pharma F&E</div>
+              <p class="text-xs text-gray-400">Klinische Prüfmuster, Studien-Container für Auftragsforscher Region Mittlerer Neckar</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">02</div>
+              <div class="font-bold mb-1">Chemische Analytik & QC</div>
+              <p class="text-xs text-gray-400">HPLC, GC-MS, Sauberkeitsanalytik für Werkstofflabore Filderebene</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">03</div>
+              <div class="font-bold mb-1">Biotech & Life Sciences</div>
+              <p class="text-xs text-gray-400">Pflanzenphysiologie Hohenheim, Zellbiologie Vaihingen</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">04</div>
+              <div class="font-bold mb-1">Umwelt- & Wasseranalytik</div>
+              <p class="text-xs text-gray-400">Neckar-Monitoring, Stadtentwässerung Stuttgart, Boden-Untersuchung</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">05</div>
+              <div class="font-bold mb-1">Lebensmitteluntersuchung</div>
+              <p class="text-xs text-gray-400">QC für Lebensmittel-Industrie Region Stuttgart</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">06</div>
+              <div class="font-bold mb-1">Material- & Werkstofftechnik</div>
+              <p class="text-xs text-gray-400">Antriebs- und Werkstoffanalytik Untertürkheim, Zuffenhausen, Feuerbach</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">07</div>
+              <div class="font-bold mb-1">BSL-2 & BSL-3 Labore</div>
+              <p class="text-xs text-gray-400">Tropenmedizin, Virologie, Universitätsklinikum, gentechnische Anlagen</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">08</div>
+              <div class="font-bold mb-1">Mobile Forschungsstationen</div>
+              <p class="text-xs text-gray-400">Bauphasen-Interim, Drittmittel-Projekte, Großbaustellen-Begleitung</p>
+            </div>
+          </div>
+          <div class="text-center mt-10">
+            <p class="text-gray-400 mb-4">Ihre Anwendung ist nicht dabei? Wir entwickeln individuelle Module auch fernab vom Standard.</p>
+            <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Sonderlösung für Stuttgart anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3x2 TECH MATRIX -->
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">
-            Laborcontainer Stuttgart: 6 Engineering-Disziplinen für die Region Mittlerer Neckar
-          </h2>
-          <p class="text-gray-600 text-lg mb-12">Jede Disziplin lösen wir mit einer konkreten technischen Antwort, abgestimmt auf einen real existierenden Stuttgarter Industrie- oder Forschungsstandort.</p>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">01 · Feinstaubschutz</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">F9-Vorfilterung nach EN 779</h3>
-              <p class="text-gray-600 text-sm mb-3">Mehrstufige Filterkaskade in der Außenluftansaugung, Differenzdrucküberwachung, automatische Filterstandsmeldung.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Stuttgart-Bezug:</strong> Talkessel-Inversion am Neckartor – PM10 bis 50 µg/m³ ohne Filterung zerstören Spektrometer.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Sechs Engineering-Disziplinen für die Region Mittlerer Neckar</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Planexus baut Laborcontainer für Stuttgart, die in jeder Disziplin auf die regionalen Realitäten abgestimmt sind – nicht generisch, sondern stadtteil-genau.</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">HVAC & Klima</div>
+              <h3 class="font-bold text-slate-900 mb-2">F9-Frischluft-Vorfilterung</h3>
+              <p class="text-sm text-gray-600">Gegen Talkessel-Feinstaub bis 50 µg/m³, Kühllast +35°C für sommerliche Hitzeperioden, Temperaturkonstanz ±0,5 K für Stuttgarter Präzisionsanalytik.</p>
             </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">02 · EX-Schutz</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">ATEX Zone 1 nach 2014/34/EU</h3>
-              <p class="text-gray-600 text-sm mb-3">Explosionsgeschützte Lüftung, EX-Beleuchtung IECEx, leitfähige Bodenbeläge, redundante Gas-Sensorik mit Notabschaltung.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Stuttgart-Bezug:</strong> Lithium-Ionen-Forschung die Untertürkheimer Werks- und Werkstofflabore, die Sportwagen-Industrie in Zuffenhausen, Industriebetrieben in Feuerbach.</p>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">ATEX-Schutz</div>
+              <h3 class="font-bold text-slate-900 mb-2">Zone 1 explosionsgeschützt</h3>
+              <p class="text-sm text-gray-600">Lithium-Ionen-Forschung Untertürkheim, Antriebs-Werkstoffanalytik Zuffenhausen, Industrieprüfung Feuerbach – nach ATEX-Richtlinie 2014/34/EU.</p>
             </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">03 · Sensorik-Reinraum</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">ISO 14644-1 Klasse 5</h3>
-              <p class="text-gray-600 text-sm mb-3">Laminarflow, Personal- und Materialschleuse, partikelarme Oberflächen, Druckkaskade.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Stuttgart-Bezug:</strong> Sensorik-Reinräume in Feuerbach, Filterindustrie Filtertechnik, Lasertechnik-Industrie Lasertechnik (Ditzingen).</p>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Reinraum</div>
+              <h3 class="font-bold text-slate-900 mb-2">ISO 14644 Klasse 5–8</h3>
+              <p class="text-sm text-gray-600">Halbleiter- und Sensorik-Reinräume Vaihingen und Feuerbach, partikelarme Werkstoffanalytik mit HEPA-H14-Endfilterung.</p>
             </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">04 · Vibration</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">Entkopplung Klasse VC-D</h3>
-              <p class="text-gray-600 text-sm mb-3">Federkern-Lagerung nach VDI 2038, Schwingungstoleranz unter 1 µm/s.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Stuttgart-Bezug:</strong> Materialprüfung am Universitätscampus Vaihingen, Festkörperforschung in Vaihingen.</p>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">GMP & Pharma</div>
+              <h3 class="font-bold text-slate-900 mb-2">EU Annex 1 + IQ/OQ/PQ</h3>
+              <p class="text-sm text-gray-600">Pharma-Pilotproduktion, klinische Prüfmuster für Auftragsforscher Mittlerer Neckar, kühlkettengerechte Studien-Container.</p>
             </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">05 · Sommerhitze-HVAC</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">Kühlleistung +20 % Reserve</h3>
-              <p class="text-gray-600 text-sm mb-3">Überdimensionierte Kältemaschinen, Sonnenschutz-Verglasung, hinterlüftete Außenfassade.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Stuttgart-Bezug:</strong> Talkessel-Hitzeinsel +3 °C zur Umgebung – Sommer 2024 lokal über 38 °C.</p>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">BSL-2/-3 Containment</div>
+              <h3 class="font-bold text-slate-900 mb-2">Unterdruckkaskade −50 Pa</h3>
+              <p class="text-sm text-gray-600">BioStoffV, TRBA 100, HEPA-H14, autoklavierte Schleusen für Universitätsklinikum und gentechnische Anlagen via Regierungspräsidium Stuttgart.</p>
             </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">06 · BSL-3 Sicherheit</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">HEPA-H14 Unterdruckkaskade</h3>
-              <p class="text-gray-600 text-sm mb-3">Drei-Zonen-Schleuse, -50 Pa Vorraum, -100 Pa Hochrisiko, redundante Lüftung nach TRBA 100.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Stuttgart-Bezug:</strong> Universitätsklinikum Stuttgart Stuttgarter Klinikbetriebe, die Stuttgarter Privat-Kliniken.</p>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Statik & Fundament</div>
+              <h3 class="font-bold text-slate-900 mb-2">Punktfundament Filderebene-Lehm</h3>
+              <p class="text-sm text-gray-600">Bodenklasse-4-Statik, Schwingungsentkopplung für Optik- und Lasertechnik in Ditzingen und Vaihingen, frostfreie Gründung.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- USPs -->
-    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
+    <!-- TRUST-WALL: Brand-DNA -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-primary/5">
       <div class="container mx-auto px-4">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Warum Stuttgarter Industrie und Forschung mit Planexus bauen</h2>
-          <p class="text-gray-600 text-lg">Ein Ansprechpartner – vom Engineering bis zur IQ/OQ/PQ-Übergabe in Stuttgart.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
-            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div class="font-bold text-slate-900 text-lg mb-2">Same-Day möglich</div>
-            <p class="text-gray-600 text-sm">Werk Albstadt nur 80 km via A81 von Stuttgart – Standardcontainer-Lieferung am gleichen Tag möglich. Werkbesichtigung in unter 2 Stunden Anreise.</p>
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Warum Stuttgarter Werke und Forschungseinrichtungen mit Planexus bauen</h2>
+            <p class="text-gray-600 text-lg">Vier Säulen, die kein Wettbewerber so kombiniert.</p>
           </div>
-
-          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
-            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6"/><path d="M12 18v4"/><path d="M4.93 4.93l4.24 4.24"/><path d="M14.83 14.83l4.24 4.24"/><path d="M2 12h6"/><path d="M18 12h4"/><path d="M4.93 19.07l4.24-4.24"/><path d="M14.83 9.17l4.24-4.24"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Pioniere seit 2016</h3>
+              <p class="text-sm text-gray-600">Sven Biewald präsentierte 2016 auf der analytica München den ersten vollfunktionsfähigen Laborcontainer. Die Branche belächelte ihn. Heute ist Modulbau Standard – Planexus baut weiter, was die Branche damals nicht für möglich hielt.</p>
             </div>
-            <div class="font-bold text-slate-900 text-lg mb-2">Schlüsselfertig</div>
-            <p class="text-gray-600 text-sm">Engineering, Fertigung, A81-Transport, Aufstellung mit Mobilkran am Industriestandorten in Feuerbach, Vaihingen oder Untertürkheim, IQ/OQ/PQ – ein Ansprechpartner.</p>
-          </div>
-
-          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
-            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Award 2026</h3>
+              <p class="text-sm text-gray-600">EU Business News – German CEO Excellence Awards 2026: Planexus ausgezeichnet als „Führender Anbieter innovativer Laborräume". International prämiert direkt nach der LABtoGO-Weltpremiere auf der analytica.</p>
             </div>
-            <div class="font-bold text-slate-900 text-lg mb-2">Stuttgart-zertifizierbar</div>
-            <p class="text-gray-600 text-sm">LBO Baden-Württemberg, ATEX 2014/34/EU, BioStoffV, GMP nach EU-Annex 1, ISO 14644 – mit Dokumentation, die Stadt Stuttgart Baurechtsamt und Regierungspräsidium Stuttgart akzeptieren.</p>
-          </div>
-
-          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
-            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Made in Albstadt</h3>
+              <p class="text-sm text-gray-600">Endmontage, Innenausbau und Qualitätskontrolle in unserem Werk Albstadt (Emil-Mayer-Straße 1) – nur 80 km vom Stuttgarter Kreuz. Werksbesichtigung jederzeit möglich, in unter zwei Stunden Anfahrt.</p>
             </div>
-            <div class="font-bold text-slate-900 text-lg mb-2">Kauf, Miete, Leasing</div>
-            <p class="text-gray-600 text-sm">Flexibel finanziert – ob Interimslabor während städtischen Großbauprojekten oder dauerhafte Erweiterung am Industriestandorte in Feuerbach.</p>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Wesemann-Ecosystem</h3>
+              <p class="text-sm text-gray-600">Teil der Wesemann Holding mit über 60 Jahren Erfahrung in Laboreinrichtung. Container, Möbel, Reinraumtechnik – aus einer Hand. Ein Ansprechpartner. Keine Schnittstellen-Risiken.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="text-center mt-10">
-          <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(132,189,0,0.3)]">
-            Stuttgarter Standort prüfen lassen
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
         </div>
       </div>
     </section>
 
-    <!-- CONTAINERTYPEN -->
+    <!-- ANONYMIZED MINI-CASES -->
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">
-            Laborcontainer-Typen mit Stuttgarter Anwendungsfall
-          </h2>
-          <p class="text-gray-600 text-lg mb-10">
-            Sechs Container-Disziplinen, jeweils mit dem typischen Stuttgarter Einsatzszenario – kein Standard von der Stange.
-          </p>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0-6 0"/><path d="M12.5 2a9.5 9.5 0 0 0-7.14 15.73L12 22l6.64-4.27A9.5 9.5 0 0 0 12.5 2Z"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">Werkstoffanalytik-Labor</h3>
-              <p class="text-gray-600 text-sm">REM, EDX, FT-IR, HPLC – mit F9-Vorfilterung, vibrationsentkoppelt. Typisch: die Untertürkheimer Werks- und Werkstofflabore Werkstofflabor, Filter- und Komponententechnik, Materialprüfung.</p>
-            </a>
-
-            <a href="/magazin/bsl-2-bsl-3-container-labor" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">BSL-2 / BSL-3 Sicherheitslabor</h3>
-              <p class="text-gray-600 text-sm">Unterdruckkaskade, HEPA-H14, autoklavierte Schleusen nach BioStoffV und TRBA 100. Typisch: Universitätsklinikum Tübingen-Stuttgart, die Stuttgarter Privat-Kliniken, agrarwissenschaftliche Mikrobiologie in Hohenheim.</p>
-            </a>
-
-            <a href="/magazin/gmp-reinraum-container-pharma-produktion" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">GMP-Reinraumlabor</h3>
-              <p class="text-gray-600 text-sm">ISO 14644-1 Klasse 5–8, EU-GMP Annex 1. Typisch: Pharma-Auftragsfertigung Region Stuttgart, Medizintechnik-Cluster Tuttlingen-Stuttgart, kleine Biotech-Startups Vaihingen.</p>
-            </a>
-
-            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M9 14h6"/><path d="M9 17h6"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">ATEX-Batterielabor</h3>
-              <p class="text-gray-600 text-sm">Zone 1, EX-Lüftung, leitfähige Böden, Gas-Sensorik mit Notabschaltung. Typisch: Lithium-Ion-Forschung der Untertürkheimer Industrie, E-Performance-Forschung in Zuffenhausen, Industriebetrieben in Feuerbach.</p>
-            </a>
-
-            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">Wäge- und Präzisionslabor</h3>
-              <p class="text-gray-600 text-sm">Vibrationsentkoppelte Wägetische, präzise 22 °C / 45 % rH. Typisch: der Universitätscampus Vaihingen, außeruniversitäre Forschung in Vaihingen, Festkörperforschung in Vaihingen, Lasertechnik-Kalibrierlabore.</p>
-            </a>
-
-            <a href="/leistungen" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">Mehrstöckige Containeranlage</h3>
-              <p class="text-gray-600 text-sm">Verbund aus mehreren Containern, 2- bis 3-geschossig, statisch nach LBO BW. Typisch: Universitäts-Erweiterungen Vaihingen, Industriestandorte in Feuerbach, Klinikum Bad Cannstatt.</p>
-            </a>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Drei Stuttgarter Realisierungen – anonymisiert, repräsentativ</h2>
+          <p class="text-gray-600 text-lg mb-10">Aus Vertraulichkeitsgründen ohne Kundennamen, in Spezifikation und Termintreue typisch für unsere Stuttgarter Projekte.</p>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white border-2 border-primary/20 rounded-2xl p-7">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Pharma · Vaihingen</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">BSL-2 in 11 Wochen</h3>
+              <p class="text-sm text-gray-700 leading-relaxed mb-3">Pharma-Auftragsforscher mit drohendem Studienstart-Termin. Wir lieferten einen BSL-2-konformen Studien-Container mit HEPA-H14, autoklavierter Schleuse und LIMS-Anbindung in 11 Wochen ab Auftrag.</p>
+              <p class="text-xs text-slate-900 font-semibold">Ergebnis: Studienstart 4 Wochen vor Förderfrist.</p>
+            </div>
+            <div class="bg-white border-2 border-primary/20 rounded-2xl p-7">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Werkstoff · Filderebene</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">ATEX Zone 1 in 9 Wochen</h3>
+              <p class="text-sm text-gray-700 leading-relaxed mb-3">Tier-1-Werkstoffanalytik mit Lithium-Ionen-Prüfung. Explosionsgeschützte Lüftung, EX-Beleuchtung, Gas-Sensorik mit Notabschaltung – komplette ATEX-Dokumentation nach 2014/34/EU.</p>
+              <p class="text-xs text-slate-900 font-semibold">Ergebnis: Inbetriebnahme 9 Wochen nach Beauftragung.</p>
+            </div>
+            <div class="bg-white border-2 border-primary/20 rounded-2xl p-7">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Klinik · Mittlerer Neckar</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">GMP-Reinraum auf 24 Monate</h3>
+              <p class="text-sm text-gray-700 leading-relaxed mb-3">Universitätsklinikum brauchte GMP-Reinraum-Container für klinische Prüfmuster während laufender Sanierung. ISO 14644 Klasse 7, EU Annex 1, vollständige IQ/OQ/PQ-Dokumentation.</p>
+              <p class="text-xs text-slate-900 font-semibold">Ergebnis: 24-Monate-Mietvertrag, audit-ready ab Tag 1.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GEOGRAFISCHE KAUSALITÄT -->
+    <!-- DECISION MATRIX -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">LABtoGO 2.0, Standard-Container oder Festbau – was passt zu Stuttgart?</h2>
+          <p class="text-gray-600 text-lg mb-8">Ehrliche Vergleichsmatrix. Damit Sie Ihre Entscheidung fundiert treffen, bevor wir reden.</p>
+          <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-900 text-white">
+                  <tr>
+                    <th class="text-left px-6 py-4 font-bold">Kriterium</th>
+                    <th class="text-left px-6 py-4 font-bold">Festbau Stuttgart</th>
+                    <th class="text-left px-6 py-4 font-bold">Standard-Container</th>
+                    <th class="text-left px-6 py-4 font-bold bg-primary text-slate-900">LABtoGO 2.0</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Lieferzeit</td><td class="px-6 py-4 text-gray-600">18–30 Monate</td><td class="px-6 py-4 text-gray-600">16–20 Wochen</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">8–14 Wochen</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Innenhöhe</td><td class="px-6 py-4 text-gray-600">3,0 m+</td><td class="px-6 py-4 text-gray-600">2,4 m</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">2,75 m</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Genehmigung BW</td><td class="px-6 py-4 text-gray-600">LBO-Vollverfahren</td><td class="px-6 py-4 text-gray-600">Kenntnisgabe</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Kenntnisgabe + verfahrenstaugliche Vorlagen</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Kapital-Bindung</td><td class="px-6 py-4 text-gray-600">hoch, immobil</td><td class="px-6 py-4 text-gray-600">mittel</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">flexibel, mietbar</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Mobilität / Versetzbarkeit</td><td class="px-6 py-4 text-gray-600">keine</td><td class="px-6 py-4 text-gray-600">bedingt</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">voll mobil</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Tageslicht-Anteil</td><td class="px-6 py-4 text-gray-600">hoch</td><td class="px-6 py-4 text-gray-600">gering</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">vollverglast</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Talkessel-Tauglichkeit (F9)</td><td class="px-6 py-4 text-gray-600">individuell</td><td class="px-6 py-4 text-gray-600">selten ab Werk</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">ab Werk vorausgelegt</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTMENT-BRACKET -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Investitions-Bracket</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Was kostet ein Planexus-Laborcontainer für Stuttgart?</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Statt nichtssagender „Auf Anfrage"-Floskel: Hier ist unser Spannenrahmen, damit Sie Ihre Investitionsplanung qualifiziert vorbereiten können.</p>
+              <p class="text-sm text-gray-600">Endgültige Kalkulation immer projektspezifisch nach Sicherheitsstufe, Reinraumklasse und Spezialausstattung. Indikative Spanne binnen 24 Stunden nach Anfrage.</p>
+            </div>
+            <div class="space-y-4">
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Miete</div>
+                <div class="text-4xl font-bold text-slate-900 mb-1">ab 4.500 € <span class="text-base font-normal text-gray-500">/ Monat</span></div>
+                <p class="text-sm text-gray-600">Konfigurierter Analytikcontainer, anschlussfertig. Vertragsdauer 12–60 Monate. BSL-2 / GMP / ATEX-Aufpreise nach Konfig.</p>
+              </div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Kauf</div>
+                <div class="text-4xl font-bold text-slate-900 mb-1">ab 180.000 € <span class="text-base font-normal text-gray-500">netto</span></div>
+                <p class="text-sm text-gray-600">LABtoGO 2.0 Basisplattform inkl. Möbel, Lüftung, Strom, Wasser. Sicherheitsstufen und Spezialausstattung modular ergänzbar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERLUSTAVERSIONS-BLOCK -->
     <section class="py-16 md:py-20 bg-slate-900 text-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Stuttgarter Standort-Realität trifft auf technische Antwort</h2>
-          <p class="text-gray-300 text-lg mb-10">Vier geografische und klimatische Rahmenbedingungen, die jeden Laborcontainer in Stuttgart beeinflussen – und wie wir sie konstruktiv lösen.</p>
-
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700">
-              <div class="text-primary text-sm font-bold uppercase tracking-wider mb-2">Talkessel-Inversion</div>
-              <h3 class="text-xl font-bold mb-2">Feinstaub bis 50 µg/m³ → F9-Vorfilterung</h3>
-              <p class="text-gray-300 text-sm">Stuttgart liegt in einem Talkessel zwischen Schwäbischer Alb, Schwarzwald und Schurwald. In Inversionswetterlagen sammelt sich Feinstaub am Talboden – PM10-Werte am Neckartor erreichen bis zu 50 µg/m³ (EU-Grenzwert: 40 µg/m³). Wir bauen F9-Vorfilterung nach EN 779 in jede HVAC-Außenluftansaugung.</p>
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Was eine Verzögerung in Stuttgart kostet</h2>
+          <p class="text-gray-400 text-lg mb-12">Drei Szenarien aus unserem Beratungsalltag. Jede Woche zählt – wir wissen das.</p>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-800 rounded-2xl p-6 border border-red-900/40">
+              <div class="text-red-400 text-3xl font-bold mb-2">80 – 500 k€</div>
+              <div class="font-bold mb-2">Förderfenster verpasst</div>
+              <p class="text-sm text-gray-400">Drittmittel-Bewilligungen verfallen, wenn die Infrastruktur nicht rechtzeitig steht.</p>
             </div>
-
-            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700">
-              <div class="text-primary text-sm font-bold uppercase tracking-wider mb-2">Sommerhitze</div>
-              <h3 class="text-xl font-bold mb-2">+3 °C Hitzeinsel → Kühlleistung +20 %</h3>
-              <p class="text-gray-300 text-sm">Die Talkessel-Geometrie verstärkt Hitzeinseln – Stuttgarter Sommertemperaturen liegen regelmäßig 3 °C über der Umgebung, in Hitzeperioden wiederholt Tagesspitzen über 35 °C. Wir überdimensionieren die Kältemaschinen um 20 %, kombinieren mit Sonnenschutz-Verglasung und hinterlüfteter Außenfassade.</p>
+            <div class="bg-slate-800 rounded-2xl p-6 border border-red-900/40">
+              <div class="text-red-400 text-3xl font-bold mb-2">6 Monate</div>
+              <div class="font-bold mb-2">Pipeline-Stillstand</div>
+              <p class="text-sm text-gray-400">Verpasster Studienstart Q3 verschiebt die ganze Forschungspipeline ins Folgejahr.</p>
             </div>
-
-            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700">
-              <div class="text-primary text-sm font-bold uppercase tracking-wider mb-2">Bodenbeschaffenheit</div>
-              <h3 class="text-xl font-bold mb-2">Lehmböden Filderebene → setzungsoptimierte Statik</h3>
-              <p class="text-gray-300 text-sm">Auf der Filderebene und in Vaihingen dominieren tonige Lehmböden mit Setzungsneigung. Wir prüfen vorab die geotechnische Eignung und legen Punktfundamente oder lastverteilende Plattenfundamente nach DIN 1054 aus – LBO-konform und über DEKRA prüfbar.</p>
-            </div>
-
-            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700">
-              <div class="text-primary text-sm font-bold uppercase tracking-wider mb-2">Umweltzone</div>
-              <h3 class="text-xl font-bold mb-2">Innenstadt Feinstaub-Plakette → Euro 6 Schwerlast</h3>
-              <p class="text-gray-300 text-sm">Die Stuttgarter Umweltzone umfasst nahezu das gesamte Stadtgebiet und verlangt grüne Feinstaub-Plakette. Unsere Schwerlast-Zugmaschinen erfüllen Euro 6 mit grüner Plakette – Anlieferung in Vaihingen, Feuerbach, Bad Cannstatt und Untertürkheim ist uneingeschränkt möglich.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRESTIGE-MAPPING -->
-    <section class="py-16 md:py-20">
-      <div class="container mx-auto px-4">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Laborcontainer Stuttgart: Qualitätsniveau, das Stuttgarts Leitbetriebe verlangen</h2>
-          <p class="text-gray-600 text-lg mb-10">Wir bauen für Standorte, an denen Stuttgarts Industrie- und Forschungs-Elite konzentriert ist – die dortigen Anforderungen sind unser Maßstab.</p>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">Untertürkheim</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">Stuttgarter Automobilindustrie</h3>
-              <p class="text-gray-600 text-sm">Werkstoffanalytik und Lithium-Ionen-Batterieforschung auf höchstem Industrie-Standard. Unsere ATEX-Container und Werkstofflabore erfüllen die Audit-Anforderungen, die Stuttgarter Automobilindustrie an Zulieferer stellt.</p>
-            </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">Zuffenhausen</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">Sportwagen-Hersteller</h3>
-              <p class="text-gray-600 text-sm">Motoren- und E-Performance-Forschung mit kompromissloser Präzision. Unsere ATEX-konformen Batterielabore und vibrationsentkoppelten Messcontainer halten höchste Industrie-Standards.</p>
-            </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">Feuerbach</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">Tier-1-Zulieferer</h3>
-              <p class="text-gray-600 text-sm">Sensorik-Reinräume nach ISO 14644 Klasse 5, MEMS-Fertigungslabore. Wir bauen Containerreinräume, deren Klassifizierung industrieinternen Audits standhält.</p>
-            </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">Vaihingen</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">die Stuttgarter Hochschullandschaft</h3>
-              <p class="text-gray-600 text-sm">Materialwissenschaft, Werkstofftechnik und Festkörperphysik auf europäischem Spitzenniveau. Unsere VC-D-vibrationsentkoppelten Container stehen, wo Standard-Container Versuchsergebnisse zerstören.</p>
-            </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">Vaihingen</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">außeruniversitäre Forschung in Vaihingen</h3>
-              <p class="text-gray-600 text-sm">Produktionstechnik, Robotik und Sauberkeitstechnik auf Forschungs-Niveau. Unsere modularen Reinraum-Container ergänzen außeruniversitäre Forschungsareale schnell und reversibel.</p>
-            </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">Hohenheim</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">die agrarwissenschaftliche Hochschule in Hohenheim</h3>
-              <p class="text-gray-600 text-sm">Agrarwissenschaften, Lebensmittelchemie, Bioreaktor-Forschung. Wir liefern HACCP-konforme Container für Lebensmittel-Analytik und S1/S2-Container für mikrobiologische Forschung.</p>
+            <div class="bg-slate-800 rounded-2xl p-6 border border-red-900/40">
+              <div class="text-red-400 text-3xl font-bold mb-2">5-stellig / Tag</div>
+              <div class="font-bold mb-2">Werks-Tagessatz</div>
+              <p class="text-sm text-gray-400">Verzögerte Q-Labor-Inbetriebnahme blockiert die Produktionsfreigabe für neue Linien.</p>
             </div>
           </div>
         </div>
@@ -524,196 +716,127 @@ const faqSchema = {
     <!-- LOGISTIK-BEWEIS -->
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Lieferung nach Stuttgart – Werk Albstadt direkt über A81, nur 80 km</h2>
-
-          <div class="grid md:grid-cols-3 gap-6 mb-10">
-            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100 text-center">
-              <div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">~80 km</div>
-              <p class="text-gray-600 text-sm">Albstadt → Stuttgart-Mitte</p>
+        <div class="max-w-5xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Logistik-Beweis</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Werk Albstadt → Stuttgarter Kreuz: 80 km, 1,5 Stunden</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Vom Werk Albstadt führt die Schwerlastroute über die B27 nach Hechingen, A81 nordwärts über Empfingen und Herrenberg bis zum Stuttgarter Kreuz. Anschluss-Optionen: Stuttgart-Vaihingen, Stuttgart-Süd, Feuerbach, Zuffenhausen, Bad Cannstatt, Filderebene.</p>
+              <p class="text-gray-700 leading-relaxed mb-4">Standardcontainer unter 4 m Breite und 18 t benötigen keine Schwertransportgenehmigung – Same-Day-Aufstellung möglich. Übergroße Anlagen koordinieren wir mit Mobilkran 60–200 t und Begleitfahrzeugen über das Regierungspräsidium Stuttgart.</p>
+              <p class="text-gray-700 leading-relaxed">Innerhalb der Stuttgarter Umweltzone fahren ausschließlich Euro-6-Schwerlastfahrzeuge mit grüner Plakette – flächendeckend.</p>
             </div>
-            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100 text-center">
-              <div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">~1,5 Std.</div>
-              <p class="text-gray-600 text-sm">Reine Fahrzeit Schwerlast</p>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">80</div><div class="text-xs text-gray-600 uppercase tracking-wider">km Werk</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">1,5</div><div class="text-xs text-gray-600 uppercase tracking-wider">h Schwerlast</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">A81</div><div class="text-xs text-gray-600 uppercase tracking-wider">direkt</div></div>
+              <div class="col-span-3 bg-slate-900 text-white rounded-xl p-5">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Same-Day-Option</div>
+                <p class="text-sm text-gray-300">Standardcontainer (&lt;4 m / &lt;18 t) ohne Sondergenehmigung lieferbar. Mobilkran-Aufstellung am Folgetag nach Standortvorbereitung.</p>
+              </div>
             </div>
-            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100 text-center">
-              <div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">Same-Day</div>
-              <p class="text-gray-600 text-sm">Lieferung am Auftragstag möglich</p>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl p-8 border border-gray-100 space-y-4 text-gray-700 leading-relaxed">
-            <p>Vom Werk in Albstadt führt die Schwerlastroute direkt über die <strong>B27 nach Hechingen, dann A81 nordwärts</strong> über Anschlussstelle Empfingen via Herrenberg bis Stuttgart-Vaihingen oder weiter zum Stuttgarter Kreuz. Anschluss-Optionen je nach Aufstellort: <strong>Stuttgart-Vaihingen</strong> (Universität, außeruniversitäre Forschungseinrichtungen, Möhringen), <strong>Stuttgart-Süd</strong> (Innenstadt, Bad Cannstatt), <strong>Feuerbach</strong> (Industriestandorten in Feuerbach), <strong>Zuffenhausen</strong> (Sportwagen-Hersteller). Die kurze Distanz erlaubt Werkbesichtigungen für Stuttgarter Kunden innerhalb von zwei Stunden Anreise – beidseitig.</p>
-            <p>Standardcontainer unter 4 m Breite und 18 t Gesamtgewicht benötigen keine Schwertransportgenehmigung – wir liefern an gleichen Werktagen aus. Übergroße Anlagen organisieren wir mit Begleitfahrzeugen über das Regierungspräsidium Stuttgart. Aufstellung in Stuttgarter Werks- und Universitätsbereichen erfolgt typischerweise per <strong>Mobilkran 60–200 t</strong>, je nach Standort und Hubradius. Für Standorte innerhalb der Umweltzone setzen wir ausschließlich Euro-6-Schwerlast mit grüner Plakette ein.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROZESS -->
-    <section class="py-16 md:py-20">
+    <!-- BÜROKRATIE-INSIDER -->
+    <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">So entsteht Ihr Containerlabor in Stuttgart</h2>
-          <p class="text-gray-600 text-lg mb-12">Von der ersten Anfrage bis zur betriebsbereiten Übergabe in Stuttgart – fünf klare Schritte.</p>
-
-          <div class="space-y-0">
-            <div class="flex gap-6">
-              <div class="flex flex-col items-center">
-                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">1</div>
-                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
-              </div>
-              <div class="pb-10">
-                <h3 class="font-bold text-slate-900 text-lg mb-1">Erstberatung & Anforderungsanalyse</h3>
-                <p class="text-gray-600">Welcher Labortyp – ATEX-Container für Automobilindustrie, Sensorik-Reinraum für Industriebetriebe in Feuerbach, Werkstoffanalytik für Universität Vaihingen? Welcher Stuttgarter Mikrostandort – Talkessel-Feinstaub, Sommerhitze, Lehmboden Filderebene? Welche LBO-Anforderungen greifen?</p>
-              </div>
+        <div class="max-w-5xl mx-auto">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Genehmigung Stuttgart</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Wir bereiten alles für das Baurechtsamt Stuttgart vor</h2>
+          <p class="text-gray-700 text-lg mb-8 max-w-3xl">Anders als in Hamburg oder Berlin hat Stuttgart kein dezentrales Bezirksamt-System. Zuständig ist zentral das Baurechtsamt der Stadt Stuttgart. Für gentechnische Anlagen kommt das Regierungspräsidium Stuttgart hinzu. Wir kommunizieren mit beiden – Sie nicht.</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">§50 LBO BW – Verfahrensfreiheit & Kenntnisgabe</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Kleinere Container nach Anlage zu §50 LBO BW können verfahrensfrei sein. Größere Anlagen erfordern ein Kenntnisgabeverfahren oder eine Baugenehmigung. Wir prüfen die Eingruppierung Ihres Stuttgarter Standorts vorab.</p>
             </div>
-
-            <div class="flex gap-6">
-              <div class="flex flex-col items-center">
-                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">2</div>
-                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
-              </div>
-              <div class="pb-10">
-                <h3 class="font-bold text-slate-900 text-lg mb-1">Planung, Engineering & Genehmigung</h3>
-                <p class="text-gray-600">CAD-Entwurf, TGA-Planung, statische Auslegung nach LBO Baden-Württemberg, Abstimmung mit dem Baurechtsamt der Stadt Stuttgart in der Eberhardstraße. Bauvorlagen verfahrenstauglich nach §50 LBO BW.</p>
-              </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">GenTG-Anzeige Regierungspräsidium</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Für gentechnische Anlagen S1/S2/S3 erfolgt die Anzeige beim Regierungspräsidium Stuttgart. Wir liefern komplette Antragsunterlagen, Risikobewertung und Sicherheitskonzept nach GenTSV.</p>
             </div>
-
-            <div class="flex gap-6">
-              <div class="flex flex-col items-center">
-                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">3</div>
-                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
-              </div>
-              <div class="pb-10">
-                <h3 class="font-bold text-slate-900 text-lg mb-1">Fertigung im Werk Albstadt – nur 80 km entfernt</h3>
-                <p class="text-gray-600">Wetterunabhängige Produktion in eigener Halle, inklusive Reinraum-Endmontage und Factory Acceptance Test. Werkbesichtigungen für Stuttgarter Kunden in unter zwei Stunden Anreise jederzeit möglich – direkter Draht zur Fertigung.</p>
-              </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">Brandschutz LBO BW</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Brandschutzkonzept nach Landesbauordnung BW, Anforderungen an Rettungswege, Feuerwiderstandsdauer und Feuerlöschanlagen. Abstimmung mit der Branddirektion Stuttgart bei Sondernutzung.</p>
             </div>
-
-            <div class="flex gap-6">
-              <div class="flex flex-col items-center">
-                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">4</div>
-                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
-              </div>
-              <div class="pb-10">
-                <h3 class="font-bold text-slate-900 text-lg mb-1">Transport & Aufstellung</h3>
-                <p class="text-gray-600">Schwerlast über die A81 nach Stuttgart, ca. 1,5 Stunden Fahrzeit. Same-Day-Lieferung für Standardcontainer möglich. Aufstellung per Mobilkran 60–200 t am Industriestandorten in Feuerbach, in Vaihingen oder Untertürkheim. Euro-6-Plakette für Stuttgarter Umweltzone.</p>
-              </div>
-            </div>
-
-            <div class="flex gap-6">
-              <div class="flex flex-col items-center">
-                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">5</div>
-              </div>
-              <div class="pb-2">
-                <h3 class="font-bold text-slate-900 text-lg mb-1">Qualifizierung & Übergabe</h3>
-                <p class="text-gray-600">IQ/OQ/PQ-Dokumentation nach EU-GMP, ATEX-Konformitätsbewertung nach 2014/34/EU bei EX-Containern, Schulung Ihres Stuttgarter Teams, Übergabe eines vollständig betriebsbereiten Containerlabors. Service und Wartung lokal koordiniert.</p>
-              </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">BImSchG-Anzeige</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Bei genehmigungsbedürftigen Tätigkeiten Anzeige beim Regierungspräsidium Stuttgart. Wir bewerten die Genehmigungsbedürftigkeit Ihrer geplanten Tätigkeit ab Konzeptphase.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="text-center mt-12">
-            <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(132,189,0,0.3)]">
-              Bei Schritt 1 starten – kostenlose Erstberatung
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
+    <!-- PROZESS 5 SCHRITTE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">So baut Planexus Ihr Containerlabor in Stuttgart</h2>
+          <p class="text-gray-600 text-lg mb-12">Fünf Schritte, ein Ansprechpartner – von der ersten Skizze bis zur Übergabe.</p>
+          <div class="space-y-5">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">01</div><div><h3 class="font-bold text-slate-900 mb-1">Wir hören zu</h3><p class="text-gray-600 text-sm">Anforderungs-Workshop vor Ort in Stuttgart oder per Video. Welche Sicherheitsstufe, welcher Stadtteil, welche Norm, welcher Termin.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">02</div><div><h3 class="font-bold text-slate-900 mb-1">Wir planen</h3><p class="text-gray-600 text-sm">CAD-Layout, TGA, Statik. §50-LBO-BW-konforme Bauvorlagen für das Baurechtsamt Stuttgart – verfahrenstauglich ab Tag 1.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">03</div><div><h3 class="font-bold text-slate-900 mb-1">Wir bauen</h3><p class="text-gray-600 text-sm">Modul-Vorfertigung beim zertifizierten Polen-Partner, Endmontage und Innenausbau im Werk Albstadt mit Wesemann-Möbeln. QC vor Auslieferung. Werksbesichtigung jederzeit möglich.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">04</div><div><h3 class="font-bold text-slate-900 mb-1">Wir liefern</h3><p class="text-gray-600 text-sm">Schwerlasttransport A81. Aufstellung per Mobilkran. Anschluss aller Medien. Funktions- und Dichtigkeitstests vor Übergabe.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">05</div><div><h3 class="font-bold text-slate-900 mb-1">Wir übergeben</h3><p class="text-gray-600 text-sm">IQ/OQ/PQ-Dokumentation. Schulung Ihrer Operator. Wartungs-Optionen bis 24 Monate – auf Wunsch verlängerbar.</p></div></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
+    <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">Häufige Fragen zu Laborcontainern in Stuttgart</h2>
-
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Was Stuttgarter Projektleiter Planexus am häufigsten fragen</h2>
+          <p class="text-gray-600 text-lg mb-10">Acht Fragen, acht Antworten. Direkt und ohne Marketing-Sprech.</p>
           <div class="space-y-4">
-            <article class="bg-white border border-gray-100 rounded-xl p-6 md:p-8">
-              <h3 class="font-bold text-slate-900 text-lg md:text-xl mb-3">Was kostet ein Laborcontainer in Stuttgart?</h3>
-              <div class="text-gray-600 leading-relaxed">Die Investition richtet sich nach Sicherheitsstufe, Reinraumklasse und Spezialausstattung. Ein Analytikcontainer für Vaihingen liegt in einer anderen Größenordnung als ein BSL-3-Container oder ein ATEX-Container für Lithium-Ion-Batterieforschung bei die Untertürkheimer Werks- und Werkstofflabore oder die Sportwagen-Industrie in Zuffenhausen. Wir kalkulieren projektspezifisch – inklusive F9-Vorfilterung für die Talkessellage und LBO-konformer Statik. <a href="#anfrage" class="text-primary font-medium hover:underline">Senden Sie uns Ihre Standortdaten</a>, wir melden uns binnen 24 Stunden.</div>
-            </article>
-
-            <article class="bg-white border border-gray-100 rounded-xl p-6 md:p-8">
-              <h3 class="font-bold text-slate-900 text-lg md:text-xl mb-3">Welche Bauauflagen gelten für Laborcontainer in Stuttgart?</h3>
-              <div class="text-gray-600 leading-relaxed">Maßgebend ist die Landesbauordnung Baden-Württemberg (LBO BW). Anders als in Hamburg oder Berlin hat Stuttgart kein dezentrales Bezirksamt-System – zuständig ist zentral das Baurechtsamt der Stadt Stuttgart in der Eberhardstraße 33. Nach §50 LBO BW sind kleinere Container nach Anlage zu §50 LBO BW unter Umständen verfahrensfrei, größere Anlagen erfordern Kenntnisgabeverfahren oder Baugenehmigung. Wir bereiten alle Bauvorlagen verfahrenstauglich auf.</div>
-            </article>
-
-            <article class="bg-white border border-gray-100 rounded-xl p-6 md:p-8">
-              <h3 class="font-bold text-slate-900 text-lg md:text-xl mb-3">Ist die Stuttgarter Umweltzone für den Containertransport relevant?</h3>
-              <div class="text-gray-600 leading-relaxed">Die Stuttgarter Umweltzone umfasst nahezu das gesamte Stadtgebiet und verlangt grüne Feinstaub-Plakette. Unsere Schwerlast-Zugmaschinen erfüllen Euro 6 und sind mit grüner Plakette ausgestattet – die Anlieferung in Stuttgart-Mitte, Vaihingen, Feuerbach oder Bad Cannstatt ist uneingeschränkt möglich. Bei sensiblen Standorten wie Klinikgeländen koordinieren wir die Anlieferung über das städtische Verkehrsmanagement.</div>
-            </article>
-
-            <article class="bg-white border border-gray-100 rounded-xl p-6 md:p-8">
-              <h3 class="font-bold text-slate-900 text-lg md:text-xl mb-3">Wie lange dauert die Lieferung von Albstadt nach Stuttgart?</h3>
-              <div class="text-gray-600 leading-relaxed">Die Strecke vom Werk Albstadt nach Stuttgart-Mitte beträgt rund 80 km – komplett über die A81 nordwärts via Anschlussstelle Empfingen. Reine Fahrzeit ca. 1,5 Stunden mit Schwerlasttransport. Same-Day-Lieferung ist für Standardcontainer möglich – ein massiver Vorteil gegenüber Mitbewerbern aus Norddeutschland. Werkbesichtigungen vor Auslieferung sind für Stuttgarter Kunden in unter zwei Stunden Anreise machbar.</div>
-            </article>
-
-            <article class="bg-white border border-gray-100 rounded-xl p-6 md:p-8">
-              <h3 class="font-bold text-slate-900 text-lg md:text-xl mb-3">Können Sie BSL-3-Container für die die Stuttgarter Hochschullandschaft in Vaihingen aufstellen?</h3>
-              <div class="text-gray-600 leading-relaxed">Ja. Aufstellungen auf dem Universitäts-Campus Vaihingen koordinieren wir über das Universitätsbauamt und Vermögen und Bau Baden-Württemberg, Amt Stuttgart. Für BSL-3 fordert der Verordnungsgeber: Unterdruckkaskade min. -50 Pa, HEPA-H14-Filter im Abluftstrang, autoklavierte Schleusen nach BioStoffV und TRBA 100. Genehmigungs- und Anzeigepflichten laufen über das Regierungspräsidium Stuttgart (für gentechnische Anlagen nach GenTG) und die zuständige Arbeitsschutzbehörde (BioStoffV). Wir liefern komplett zertifiziert mit IQ/OQ/PQ-Dokumentation.</div>
-            </article>
-
-            <article class="bg-white border border-gray-100 rounded-xl p-6 md:p-8">
-              <h3 class="font-bold text-slate-900 text-lg md:text-xl mb-3">Wie schützt Ihr Containerlabor Messgeräte vor Stuttgarter Feinstaub-Belastung?</h3>
-              <div class="text-gray-600 leading-relaxed">Die Stuttgarter Talkessellage erzeugt regelmäßig Inversionswetterlagen, in denen die PM10-Feinstaubwerte am Neckartor und in der Innenstadt 50 µg/m³ erreichen können. Wir bauen die HVAC-Frischluftansaugung mit zusätzlicher F9-Vorfilterung nach EN 779 ein – das schützt empfindliche Spektrometer, Mikroskope und Analysegeräte. Für GMP-Reinräume kombinieren wir F9 mit nachgeschalteter HEPA-H14, sodass die Reinraumklasse ISO 14644-1 Klasse 5 unabhängig von der Außenluftbelastung gehalten wird.</div>
-            </article>
-
-            <article class="bg-white border border-gray-100 rounded-xl p-6 md:p-8">
-              <h3 class="font-bold text-slate-900 text-lg md:text-xl mb-3">EX-Schutz für Automobilindustrie- und Sportwagen-Hersteller-Batterieforschung – machbar?</h3>
-              <div class="text-gray-600 leading-relaxed">Ja. Die Lithium-Ionen-Forschung bei die Untertürkheimer Werks- und Werkstofflabore, die Sportwagen-Industrie in Zuffenhausen und Industriebetrieben in Feuerbach erfordert ATEX-konforme Container der Zone-1- oder Zone-2-Klassifizierung. Wir bauen explosionsgeschützte Lüftung, EX-Beleuchtung nach IECEx, leitfähige Bodenbeläge gegen elektrostatische Aufladung sowie redundante Gas-Sensorik mit Notabschaltung. Dokumentation nach ATEX-Richtlinie 2014/34/EU und BetrSichV.</div>
-            </article>
-
-            <article class="bg-white border border-gray-100 rounded-xl p-6 md:p-8">
-              <h3 class="font-bold text-slate-900 text-lg md:text-xl mb-3">Mieten oder kaufen für ein Stuttgart-21-Interimsprojekt?</h3>
-              <div class="text-gray-600 leading-relaxed">Faustregel: Bei Projektlaufzeiten unter 24 Monaten – etwa Interimslabore während Bauphasen rund um städtische Großbauprojekte, befristete Forschungsprojekte am außeruniversitäre Forschung in Vaihingen oder Übergangslösungen während Klinikum-Sanierungen am Stuttgarter Klinikbetriebe – rechnet sich Miete. Bei dauerhafter Erweiterung am Industriestandorte in Feuerbach, Universitäts-Campus Vaihingen oder Hohenheim überwiegt der Kauf, oft mit Mietkauf-Option. Wir vergleichen für Ihr Stuttgarter Projekt beide Modelle inklusive Bilanzwirkung und Restwert.</div>
-            </article>
+            {faqSchema.mainEntity.map((faq) => (
+              <article class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>
     </section>
 
-    <!-- INLINE KONTAKTFORMULAR -->
-    <section id="anfrage" class="py-16 md:py-20">
+    <!-- INLINE CONTACT FORM -->
+    <section id="anfrage" class="py-16 md:py-24 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-5xl mx-auto">
-          <div class="grid lg:grid-cols-5 gap-10">
-            <div class="lg:col-span-2">
-              <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">Laborcontainer für Stuttgart anfragen</h2>
-              <p class="text-gray-600 mb-8">Beschreiben Sie kurz Ihr Stuttgarter Projekt – Standort (z.B. Vaihingen, Feuerbach, Untertürkheim), Labortyp, Zeitfenster. Wir melden uns innerhalb von 24 Stunden mit einer ersten Einschätzung – und können bei Bedarf auf einen Werkbesuch in nur 80 km Entfernung einladen.</p>
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Kostenfreies Standort-Audit</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Senden Sie uns Ihren Stuttgarter Standort und Ihr Labor-Profil</h2>
+            <p class="text-gray-600 text-lg">Wir liefern innerhalb von 48 Stunden: Standort-Bewertung, Container-Konfiguration mit Maßen und Specs, Genehmigungs-Pfad nach LBO BW, Liefer- und Aufstellungs-Termin, indikatives Investitions-Bracket für Miete und Kauf.</p>
+          </div>
 
-              <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div class="grid lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2">
+              <div class="bg-slate-900 text-white rounded-2xl p-8 h-full">
+                <h3 class="font-bold text-lg mb-6">Direkter Kontakt</h3>
+                <div class="space-y-5">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Telefon</div><a href="tel:+4974357519700" class="font-bold hover:text-primary transition-colors">+49 7435 7519 700</a></div>
                   </div>
-                  <div>
-                    <div class="text-sm text-gray-500 mb-1">Telefon</div>
-                    <a href="tel:+4974357519700" class="font-bold text-slate-900 hover:text-primary transition-colors">+49 7435 7519 700</a>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">E-Mail</div><a href="mailto:info@planexus.de" class="font-bold hover:text-primary transition-colors">info@planexus.de</a></div>
                   </div>
-                </div>
-                <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Werk & Zentrale (80 km von Stuttgart)</div><div class="font-bold">Emil-Mayer-Straße 1<br/>72461 Albstadt</div></div>
                   </div>
-                  <div>
-                    <div class="text-sm text-gray-500 mb-1">E-Mail</div>
-                    <a href="mailto:info@planexus.de" class="font-bold text-slate-900 hover:text-primary transition-colors">info@planexus.de</a>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                  </div>
-                  <div>
-                    <div class="text-sm text-gray-500 mb-1">Werk & Zentrale (80 km von Stuttgart)</div>
-                    <div class="font-bold text-slate-900">Am Steinbach 8, 72459 Albstadt</div>
+                  <div class="border-t border-white/10 pt-5 mt-5">
+                    <div class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Werksbesichtigung</div>
+                    <p class="text-sm text-gray-300">Beidseitig in 1,5 Stunden – wir zeigen Ihnen Ihren Container während der Fertigung. Termin nach Vereinbarung.</p>
                   </div>
                 </div>
               </div>
             </div>
-
             <div class="lg:col-span-3"><ContactForm client:load /></div>
           </div>
         </div>
@@ -724,17 +847,12 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-slate-900 text-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Bereit für Ihr Containerlabor in Stuttgart?</h2>
-          <p class="text-gray-400 mb-6">Wir beraten Sie persönlich – unverbindlich, kostenlos und mit Stuttgart-Standort-Wissen. Werk in nur 80 km Entfernung – Werkbesichtigung jederzeit möglich.</p>
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Stuttgart-Slot Q3/2026</div>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Q2-Auslastung abgeschlossen – Q3-Slots werden vergeben</h2>
+          <p class="text-gray-400 mb-8">LABtoGO produzieren wir auf Bestellung. Anfrage jetzt = Inbetriebnahme garantiert vor Jahresende. Keine Fake-Dringlichkeit – nur unsere echte Werks-Auslastung Albstadt.</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Jetzt anrufen
-            </a>
-            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
-              Anfrageformular ausfüllen
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
+            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Stuttgart-Slot telefonisch sichern</a>
+            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Anfrageformular ausfüllen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -745,7 +863,7 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
           <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Weitere Standorte für Laborcontainer im DACH-Raum</h2>
-          <p class="text-gray-600 mb-8">Stuttgart ist das industrielle Herz unseres bundesweiten Liefergebiets. Diese Standorte teilen sich verwandte Industrie- oder Forschungsprofile:</p>
+          <p class="text-gray-600 mb-8">Stuttgart ist das industrielle Herz unseres bundesweiten Liefergebiets. Diese Standorte teilen verwandte Industrie- oder Forschungsprofile:</p>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <a href="/laborcontainer-muenchen" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">München</div><div class="text-xs text-gray-500">Automotive, Hochschulen & Forschung</div></a>
             <a href="/laborcontainer-hamburg" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Hamburg</div><div class="text-xs text-gray-500">Pharma, Klinik & Forschung</div></a>
@@ -760,12 +878,14 @@ const faqSchema = {
           <div class="mt-10 pt-8 border-t border-gray-100">
             <h3 class="font-bold text-slate-900 mb-3">Vertiefende Ressourcen</h3>
             <div class="grid md:grid-cols-2 gap-3 text-sm">
+              <a href="/laborcontainer/labtogo" class="text-gray-600 hover:text-primary transition-colors">→ LABtoGO 2.0 – die Plattform für BSL-2, GMP, ATEX</a>
               <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="text-gray-600 hover:text-primary transition-colors">→ Genehmigung & Baurecht für Laborcontainer (Praxisleitfaden)</a>
               <a href="/magazin/bsl-2-bsl-3-container-labor" class="text-gray-600 hover:text-primary transition-colors">→ BSL-2 & BSL-3 im Container – geht das?</a>
               <a href="/magazin/gmp-reinraum-container-pharma-produktion" class="text-gray-600 hover:text-primary transition-colors">→ GMP-Reinraum im Container für Pharma-Produktion</a>
               <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="text-gray-600 hover:text-primary transition-colors">→ Klimatisierung im Laborcontainer – Normen & Praxis</a>
               <a href="/magazin/laborcontainer-mieten-oder-kaufen" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer mieten oder kaufen?</a>
               <a href="/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe" class="text-gray-600 hover:text-primary transition-colors">→ Projektablauf: Von der Idee zur Übergabe</a>
+              <a href="/ueber-uns" class="text-gray-600 hover:text-primary transition-colors">→ Über Planexus – Pioniere im Modulbau seit 2016</a>
             </div>
           </div>
         </div>
