@@ -20,7 +20,8 @@ This project is the corporate website for Planexus GmbH, a German company specia
   - Dieser Workflow gilt IMMER und für ALLES. Keine Ausnahme. Nie blind Content erstellen.
 - REIHENFOLGE: 1) Städteseiten (13 DE + 3 CH + 3 AT) → 2) Branchenseiten (6 Branchen) → 3) Blog-Beiträge (nach Recherche)
 - QUALITÄTSSTANDARD: Diese Website ist das Paradebeispiel einer Marketing-Maschine. Höchstes Level ist Standard. Jede Seite muss Top-3-Ranking-würdig sein.
-- STÄDTESEITEN STATUS (12 von 19 NEU GEBAUT): DE: Hamburg, Berlin, München, Stuttgart, Düsseldorf, Frankfurt (6/13) | CH: Zürich, Basel, Bern (3/3 ✓) | AT: Wien, Graz, Linz (3/3 ✓) — Alle 12 komplett neu gebaut mit 80-90% Content-Uniqueness, recherchierte Fakten, individuelle Narrative pro Stadt
+- STÄDTESEITEN MONEY-PAGE V4 STATUS: Stuttgart (Master), Hamburg (V4 komplett, 18 Sections, 7 FAQ, Sturmflut/C5-M/VC-D-Hyper-Local). Verbleibend für V4-Rebuild: Berlin, München, Düsseldorf, Frankfurt, Zürich, Basel, Bern, Wien, Graz, Linz.
+- STÄDTESEITEN BASIS-STATUS (12 von 19 NEU GEBAUT): DE: Hamburg, Berlin, München, Stuttgart, Düsseldorf, Frankfurt (6/13) | CH: Zürich, Basel, Bern (3/3 ✓) | AT: Wien, Graz, Linz (3/3 ✓) — Alle 12 komplett neu gebaut mit 80-90% Content-Uniqueness, recherchierte Fakten, individuelle Narrative pro Stadt
 - SEO-SANIERUNG ABGESCHLOSSEN: Doorway-Page-Pattern aufgelöst (Leistungen-Grid + Projektablauf entfernt, alle H2s individualisiert, "Gut zu wissen" → unique Fakten pro Stadt), Navbar mit Standorte-Dropdown (DE/CH/AT), Startseite Regionen-Block, Schema areaServed DACH, Hero-Bild-Duplikate (Berlin/München/Stuttgart) behoben, Title-Duplikation behoben
 
 ## System Architecture

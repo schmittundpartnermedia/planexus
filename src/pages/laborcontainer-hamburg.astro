@@ -3,35 +3,42 @@ import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.tsx';
 
 const hamburgPLZ = [
-  "20095","20097","20099","20144","20146","20148","20149","20249","20251","20253",
-  "20255","20257","20259","20354","20355","20357","20359","20457","20459","21029",
-  "21031","21033","21035","21037","21039","21073","21075","21077","21079","21107",
-  "21109","21129","21147","21149","22041","22043","22045","22047","22049","22081",
-  "22083","22085","22087","22089","22119","22143","22145","22147","22149","22159",
-  "22175","22177","22179","22297","22299","22301","22303","22305","22307","22309",
-  "22335","22337","22339","22359","22391","22393","22395","22397","22399","22415",
-  "22417","22419","22453","22455","22457","22459","22523","22525","22527","22529",
-  "22547","22549","22559","22587","22589","22605","22607","22609","22761","22763",
-  "22765","22767","22769"
+  "20095","20097","20099","20144","20146","20148","20149","20251","20253","20255",
+  "20257","20259","20354","20355","20357","20359","20457","20459","20535","20537",
+  "20539","21029","21073","21075","21077","21079","21107","21109","21129","22041",
+  "22043","22047","22081","22083","22085","22087","22089","22299","22303","22305",
+  "22335","22339","22359","22399","22459","22525","22527","22529","22547","22549",
+  "22587","22589","22605","22607","22609","22761","22763","22765","22767","22769"
 ];
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Laborcontainer Hamburg – BSL-3, GMP-Reinraum & Analytik",
-  "description": "Schlüsselfertige Laborcontainer für Hamburg, abgestimmt auf maritimes Hafenklima, HBauO und die Anforderungen von Universitätsklinikum, tropenmedizinische Forschungsinstitute, Konsumgüter-Konzerne, Hamburger Biotech-Unternehmen und Forschungscampus Bahrenfeld. Lieferung über A81/A7 ab Werk Albstadt.",
+  "name": "Laborcontainer Hamburg – LABtoGO 2.0, BSL-2/3, GMP-Reinraum & Hafenklima",
+  "description": "Schlüsselfertige Laborcontainer für Hamburg und die Metropolregion. LABtoGO 2.0 mit 2.750 mm Innenhöhe, BSL-2/3, GMP-Reinraum, C5-M-Hafenklima-Konfiguration und VC-D-Vibrationsentkopplung für DESY/XFEL Bahrenfeld. Lieferung über A81/A6/A7 ab Werk Albstadt – 720 km. Pioniere im modularen Laborbau seit 2016, ausgezeichnet bei den German CEO Excellence Awards 2026.",
   "provider": {
     "@type": "Organization",
     "name": "Planexus GmbH",
     "url": "https://www.planexus.de",
     "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
   },
-  "serviceType": ["Laborcontainer", "BSL-2 Containerlabor", "BSL-3 Containerlabor", "GMP-Reinraumlabor", "Analytiklabor Container", "Mobile Labore", "Modulbau Labor"],
+  "serviceType": [
+    "Laborcontainer Hamburg",
+    "Containerlabor Hamburg",
+    "Mobiles Labor Hamburg",
+    "BSL-2 Containerlabor",
+    "BSL-3 Containerlabor",
+    "GMP-Reinraumlabor",
+    "Reinraum-Container",
+    "Modulbau Labor",
+    "Technische Fachplanung Labor",
+    "Laborausstattung",
+    "Smart Lab Integration"
+  ],
   "areaServed": [
     { "@type": "City", "name": "Hamburg", "containedInPlace": { "@type": "State", "name": "Freie und Hansestadt Hamburg" } },
     { "@type": "State", "name": "Hamburg" },
-    { "@type": "State", "name": "Schleswig-Holstein" },
-    { "@type": "State", "name": "Niedersachsen" },
+    { "@type": "AdministrativeArea", "name": "Metropolregion Hamburg" },
     ...hamburgPLZ.map(plz => ({ "@type": "PostalCodeSpecification", "postalCode": plz, "addressCountry": "DE" }))
   ],
   "url": "https://www.planexus.de/laborcontainer-hamburg"
@@ -42,16 +49,16 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   "@id": "https://www.planexus.de/laborcontainer-hamburg#business",
   "name": "Planexus GmbH – Laborcontainer Hamburg",
-  "description": "Hersteller schlüsselfertiger Laborcontainer für Hamburg und Norddeutschland. Salzluft-tauglich, HBauO-konform, GMP- und BSL-3-zertifizierbar.",
+  "description": "Fachplaner für Containerlabore mit über 10 Jahren Erfahrung. Ihr Spezialist für Laborcontainer und modulare Laborlösungen in Hamburg und der Metropolregion. LABtoGO 2.0, BSL-2/3, GMP-Reinraum, C5-M-Hafenklima. Werk Albstadt – 720 km Lieferung via A81/A6/A7.",
   "url": "https://www.planexus.de/laborcontainer-hamburg",
   "telephone": "+49 7435 7519 700",
   "email": "info@planexus.de",
   "image": "https://www.planexus.de/attached_assets/Laborcontainer_001_1769688326918.jpg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Am Steinbach 8",
+    "streetAddress": "Emil-Mayer-Straße 1",
     "addressLocality": "Albstadt",
-    "postalCode": "72459",
+    "postalCode": "72461",
     "addressRegion": "Baden-Württemberg",
     "addressCountry": "DE"
   },
@@ -60,15 +67,20 @@ const localBusinessSchema = {
     "name": "Hamburg",
     "containedInPlace": [
       { "@type": "AdministrativeArea", "name": "Hamburg-Mitte" },
-      { "@type": "AdministrativeArea", "name": "Altona" },
+      { "@type": "AdministrativeArea", "name": "HafenCity" },
+      { "@type": "AdministrativeArea", "name": "Eppendorf" },
+      { "@type": "AdministrativeArea", "name": "Bahrenfeld" },
       { "@type": "AdministrativeArea", "name": "Eimsbüttel" },
-      { "@type": "AdministrativeArea", "name": "Hamburg-Nord" },
-      { "@type": "AdministrativeArea", "name": "Wandsbek" },
-      { "@type": "AdministrativeArea", "name": "Bergedorf" },
-      { "@type": "AdministrativeArea", "name": "Harburg" }
+      { "@type": "AdministrativeArea", "name": "Hammerbrook" },
+      { "@type": "AdministrativeArea", "name": "Altona" },
+      { "@type": "AdministrativeArea", "name": "Harburg" },
+      { "@type": "AdministrativeArea", "name": "Wilhelmsburg" },
+      { "@type": "AdministrativeArea", "name": "Finkenwerder" }
     ]
   },
-  "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
+  "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" },
+  "award": "EU Business News – German CEO Excellence Awards 2026: Führender Anbieter innovativer Laborräume",
+  "foundingDate": "2016"
 };
 
 const breadcrumbSchema = {
@@ -146,8 +158,8 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Laborcontainer Hamburg | BSL-3 schlüsselfertig in 12 Wochen"
-  description="Laborcontainer für Hamburg: BSL-3, GMP & Reinraum für Pharma, Klinik und Forschung. Salzluft-tauglich, HBauO-konform. 720 km Lieferung via A81/A7. Jetzt anfragen."
+  title="Laborcontainer Hamburg | 2,75 m Innenhöhe, BSL-3 & C5-M Hafenklima | Planexus"
+  description="Planexus baut Laborcontainer für Hamburg – LABtoGO 2.0 mit 2,75 m Innenhöhe, BSL-2/3, GMP, C5-M-Salzluftschutz, VC-D für DESY/XFEL Bahrenfeld. Lieferung A81/A6/A7. Kostenfreies Standort-Audit."
   canonical="/laborcontainer-hamburg"
   schema={serviceSchema}
   ogImage="/attached_assets/Laborcontainer_001_1769688326918.jpg"
@@ -158,10 +170,24 @@ const faqSchema = {
 
   <div class="pt-20 min-h-screen bg-white">
 
+    <!-- STICKY SIDE-CTA (desktop only) -->
+    <aside class="hidden xl:block fixed right-6 top-1/2 -translate-y-1/2 z-40 w-60">
+      <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+        <div class="bg-slate-900 px-5 py-3">
+          <div class="text-primary text-xs font-bold uppercase tracking-wider">Standort Hamburg</div>
+        </div>
+        <div class="p-5 space-y-3 text-sm">
+          <p class="text-gray-700 leading-snug">Werk Albstadt – Lieferung in 8–14 Wochen via A81/A6/A7. Kostenfreies Standort-Audit für Ihr Containerlabor.</p>
+          <a href="#anfrage" class="block bg-primary text-slate-900 font-bold text-center py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Anfrage starten</a>
+          <a href="tel:+4974357519700" class="block text-center text-xs text-slate-600 hover:text-primary transition-colors">+49 7435 7519 700</a>
+        </div>
+      </div>
+    </aside>
+
     <!-- HERO -->
     <section class="relative py-24 md:py-32 bg-slate-900 text-white overflow-hidden">
       <div class="absolute inset-0">
-        <img src="/attached_assets/Laborcontainer_001_1769688326918.jpg" alt="Laborcontainer Hamburg HafenCity – Planexus GmbH, salzluft-taugliches BSL-3-Containerlabor" class="w-full h-full object-cover opacity-20" loading="eager" />
+        <img src="/attached_assets/Laborcontainer_001_1769688326918.jpg" alt="Laborcontainer Hamburg – Planexus LABtoGO 2.0 mit 2,75 m Innenhöhe für HafenCity, UKE Eppendorf und Forschungscampus Bahrenfeld" class="w-full h-full object-cover opacity-20" loading="eager" />
       </div>
       <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
 
@@ -175,16 +201,22 @@ const faqSchema = {
             <span class="text-primary">Hamburg</span>
           </nav>
 
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Ihr Spezialist für Laborcontainer · Metropolregion Hamburg</div>
+
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-            Laborcontainer Hamburg <span class="text-primary">|</span> BSL-3, GMP & Reinraum für Pharma, Klinik und Forschung
+            Laborcontainer Hamburg <span class="text-primary">|</span> 2,75 m Innenhöhe, BSL-3 & C5-M Hafenklima – schlüsselfertig in 12 Wochen
           </h1>
-          <p class="text-xl text-gray-300 leading-relaxed mb-8">
-            Schlüsselfertige Containerlabore für Hamburgs Pharma-, Klinik- und Forschungslandschaft. Salzluft-tauglich nach DIN EN ISO 12944-2 (C5-M), HBauO-konform, geliefert über A81/A7 ab Werk Albstadt – betriebsbereit in 8 bis 14 Wochen.
+
+          <p class="text-xl text-gray-300 leading-relaxed mb-4">
+            <strong class="text-white">Ihr Fachplaner für Containerlabore mit mehr als 10 Jahren Erfahrung.</strong> Intelligent, nachhaltig und modular. Wir realisieren flexible Forschungsumgebungen für die Zukunft – aus dem Werk Albstadt direkt nach Hamburg, über A81 / A6 / A7.
+          </p>
+          <p class="text-base text-gray-400 mb-8">
+            Während andere noch planen, forschen Sie bereits.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 mb-8">
             <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
-              Hamburger Projekt anfragen
+              Kostenfreies Standort-Audit Hamburg
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
             <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
@@ -193,19 +225,62 @@ const faqSchema = {
             </a>
           </div>
 
-          <div class="flex flex-wrap items-center gap-6 text-sm text-gray-400">
-            <div class="flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              C5-M Salzluft-Korrosionsschutz
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Pioniere im Modulbau seit 2016</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Award 2026 EU Business News</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>C5-M Hafenklima ab Werk</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Wesemann-Gruppe · 60+ Jahre Laborbau</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATTERN-INTERRUPT: LABtoGO 2.0 -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Pattern-Interrupt · Weltpremiere analytica 2026</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus zeigt Hamburg, was ein Laborcontainer 2026 wirklich kann</h2>
+              <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                Ein gewöhnlicher Laborcontainer hat 2.400 mm Innenhöhe. Sie passen rein – aufrecht arbeiten unter einem Abzug aber kaum.
+              </p>
+              <p class="text-lg text-slate-900 font-bold leading-relaxed mb-4">
+                Der LABtoGO 2.0 von Planexus hat 2.750 mm Innenhöhe. 9,5 m Außenlänge. 3 m Außenbreite. Vollverglaste Front, die echtes Tageslicht in jedes Hamburger Hafen-, Klinik- oder Forschungslabor bringt.
+              </p>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                <strong>Ein gewöhnlicher Laborcontainer passt komplett in einen LABtoGO hinein.</strong> Wir nennen ihn nicht ohne Grund Laborcontainer 2.0 – er ist die Plattform, auf der wir für Hamburg BSL-2, BSL-3, GMP-Reinraum, C5-M-Hafenklima und VC-D-Vibrationsentkopplung konfigurieren.
+              </p>
             </div>
-            <div class="flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              HBauO §63 + HPA-erprobt
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">2.750</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm Innenhöhe</div>
+                <div class="text-xs text-gray-500 mt-1">Standard: 2.400 mm</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">9.500</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm Außenlänge</div>
+                <div class="text-xs text-gray-500 mt-1">3.000 mm Breite</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">100%</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">vollverglast</div>
+                <div class="text-xs text-gray-500 mt-1">Tageslicht-Labor</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">U 0,20</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">W/m²K Sandwich</div>
+                <div class="text-xs text-gray-500 mt-1">80–120 mm Dämmung</div>
+              </div>
             </div>
-            <div class="flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              Teil der Wesemann Holding
-            </div>
+          </div>
+          <div class="text-center">
+            <a href="/laborcontainer/labtogo" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+              LABtoGO 2.0 Plattform und alle Konfigurationen ansehen
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -214,34 +289,25 @@ const faqSchema = {
     <!-- PROBLEM-AGITATION -->
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">
-            Laborcontainer in Hamburg: 3 Hürden, an denen Pharma- und Forschungsprojekte regelmäßig hängenbleiben
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">
+            Planexus löst die drei Hamburger Engpässe, an denen Laborprojekte regelmäßig scheitern
           </h2>
-          <div class="grid md:grid-cols-3 gap-6 mb-10">
-            <div class="bg-red-50 border border-red-100 rounded-xl p-6">
-              <div class="text-red-600 font-bold text-lg mb-2">HBauO-Marathon im Bezirksamt</div>
-              <p class="text-gray-600 text-sm">Sieben Bezirksämter, jedes mit eigenem Fachamt Bauprüfung. Für die HafenCity zusätzlich die Hamburg Port Authority. Zwischen Voranfrage, Statik nach HBauO §63 und Brandschutzkonzept vergehen für klassische Massivbauten in Hamburg häufig 18 bis 24 Monate.</p>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">HafenCity-Sturmflut macht Standardstatik zur Fehlplanung</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Die HafenCity liegt nur etwa 1 m über NHN. Das Bemessungshochwasser beträgt 7,30 m über NHN. Wer Container ohne Warftaufständerung auf mindestens +1,30 m plant, bekommt von der Hamburg Port Authority keine Aufstellungsgenehmigung – Sturmflutsaison Oktober bis März verbietet alles andere.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: HPA-konforme Warftaufständerung ab Werk vorbereitet.</p>
             </div>
-            <div class="bg-red-50 border border-red-100 rounded-xl p-6">
-              <div class="text-red-600 font-bold text-lg mb-2">Flächen am Universitätsklinikum und in Bahrenfeld unbezahlbar</div>
-              <p class="text-gray-600 text-sm">Auf dem einem Hamburger Universitätsklinikum, im Innovationspark Altona und auf dem Forschungscampus Bahrenfeld zählt jeder Quadratmeter. Laborflächen in Hamburg gehören mit über 22 €/m²/Monat zu den teuersten in Deutschland – Neubau bedeutet jahrelange Bindung knapper Areale.</p>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">HBauO + HPA + BUKEA – drei Behörden, ein Antrag</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Hamburg ist die einzige deutsche Großstadt, in der drei Behörden für ein einziges Labor-Containerprojekt zuständig sein können: HBauO über das Bezirksamt, HPA in Hafenflächen, BUKEA bei BSL-3. Ein einziger Formfehler bedeutet zwei bis drei Wochen Stillstand pro Behörde.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: Verfahrenstaugliche Bauvorlagen für alle drei Behörden gleichzeitig.</p>
             </div>
-            <div class="bg-red-50 border border-red-100 rounded-xl p-6">
-              <div class="text-red-600 font-bold text-lg mb-2">Hafenklima zerstört Standardcontainer</div>
-              <p class="text-gray-600 text-sm">Westwind, 78 % Jahresluftfeuchte und Salzaerosol aus dem Hafenbecken setzen Standard-Bürocontainer in unter 5 Jahren außer Betrieb. Wer in Speicherstadt, HafenCity oder Steinwerder mit handelsüblicher Beschichtung baut, baut zweimal.</p>
-            </div>
-          </div>
-
-          <div class="bg-slate-900 text-white rounded-2xl p-8 md:p-10">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              </div>
-              <div>
-                <div class="text-xl font-bold mb-2">Die Antwort: Containerlabore, gebaut für Hamburg</div>
-                <p class="text-gray-300">Planexus liefert Laborcontainer, deren Engineering die Hamburger Standortbedingungen einrechnet – Korrosionsschutz nach C5-M für Hafenflächen, Warftaufständerung für die HafenCity, BSL-3-Schleusenkonzept abgestimmt auf tropenmedizinische Forschungsinstitute- und klinikspezifische Anforderungen, Vibrationsentkopplung für großforschungsnahe Analytik. Schlüsselfertig in 8 bis 14 Wochen, ab Werk Albstadt direkt über A81/A7.</p>
-              </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Salzluft zerstört Standardcontainer in 18 Monaten</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Westwindlage, 78 % Jahresluftfeuchte, Salzaerosol vom Hafen. Wer einen verzinkten Bürocontainer als Labor in der HafenCity, in Bahrenfeld oder in Wilhelmsburg aufstellt, sieht nach 18 Monaten Korrosionsfraß an den Schweißnähten – Messgeräte verlieren Präzision, Reinraumklassen sind nicht mehr zertifizierbar.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: C5-M nach DIN EN ISO 12944-2 ab Werk – Edelstahl, Duplex, EPDM.</p>
             </div>
           </div>
         </div>
@@ -249,269 +315,284 @@ const faqSchema = {
     </section>
 
     <!-- STRATEGISCHE FUSION INTRO -->
-    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
+    <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">
-            Warum ein Laborcontainer in Hamburg anders gebaut werden muss als in München oder Stuttgart
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">
+            Laborcontainer für Hamburg: Was Hafenklima, Sturmflutstatik und Forschungs-Vibrationen vom Engineering verlangen
           </h2>
-          <div class="space-y-4 text-gray-700 text-lg leading-relaxed">
-            <p>Hamburgs Life-Science-Cluster umfasst rund <strong>600 Unternehmen mit über 55.000 Beschäftigten</strong> – verteilt auf einen Standort, der drei Besonderheiten gleichzeitig aufweist: maritime Klimazone, tide-beeinflusstes Norddeutsches Tiefland und siebengeteilte Bezirksverwaltung. Wer hier ein Containerlabor plant, muss die Hardware an diese Realität anpassen, nicht umgekehrt.</p>
-            <p>Aufgrund der dauerhaften Westwindlage über der Elbe und der daraus resultierenden Salzbelastung an Speicherstadt, HafenCity und Steinwerder dimensionieren wir Außenpaneele und Dichtsysteme nach <strong>Korrosionsschutzklasse C5-M (DIN EN ISO 12944-2)</strong> – derselben Kategorie, die für Offshore-Anlagen verwendet wird. Aufgrund der Höhenlage der HafenCity bei nur etwa 1 m über NHN bei einem Bemessungshochwasser von 7,30 m über NHN setzen wir Container dort grundsätzlich auf <strong>Warftfundamente mit +1,30 m Aufständerung</strong>. Aufgrund der Forschungsdichte an das Hamburger Universitätsklinikum in Eppendorf, tropenmedizinische Institute in St. Pauli und Großforschung in Bahrenfeld liefern wir BSL-3-Schleusenkonzepte, die mit dem jeweiligen Sicherheitsbeauftragten abstimmbar sind.</p>
+          <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p>
+              <strong>Hamburg ist Deutschlands dichtester Cluster aus Hafen-Industrie, Pharma-Mittelstand, Tropenmedizin, Photonenforschung und Universitätsmedizin.</strong> Auf 755 Quadratkilometern konkurrieren der größte Seehafen Deutschlands, das Universitätsklinikum Eppendorf, das Bernhard-Nocht-Institut für Tropenmedizin, das Deutsche Elektronen-Synchrotron DESY mit dem European XFEL in Bahrenfeld, die TU Hamburg-Harburg und der Pharma-Cluster Eimsbüttel/Hammerbrook um Flächen, Genehmigungen und Engineering-Kapazität. Wer hier ein Containerlabor bestellt, kauft kein Standardprodukt – er kauft Standortintelligenz.
+            </p>
+            <p>
+              <strong>Planexus baut für diesen Markt seit 2016.</strong> Wir wissen, dass die HafenCity ohne Warftaufständerung keine Genehmigung bekommt. Wir wissen, dass die Hamburger Westwindlage in Verbindung mit 78 % Jahresluftfeuchte Korrosivitätskategorie C5-M nach DIN EN ISO 12944-2 erzwingt. Wir wissen, dass der Forschungscampus Bahrenfeld Vibrationsentkopplung Klasse VC-D nach VDI 2038 verlangt, weil Synchrotron-Strahlungsquellen Schwingungstoleranzen unter 1 µm/s fordern. Diese Details stehen nicht in unserem Angebot – sie sind das Engineering-Fundament jedes Containers, der unser Werk Albstadt verlässt.
+            </p>
+            <p>
+              <strong>Made in Albstadt, schlüsselfertig in Hamburg.</strong> Endmontage und Innenausbau erfolgen mit Wesemann-Möbeln im eigenen Werk – Werksbesichtigung beidseitig planbar. Über A81 nordwärts, A6 ostwärts und A7 nordwärts via Würzburg, Kassel und Hannover beträgt die Schwerlastdistanz rund 720 Kilometer; Anschlussstellen Hamburg-Stillhorn und Hamburg-Heimfeld sind Standardanlieferpunkte für UKE, HafenCity und Bahrenfeld.
+            </p>
+            <p>
+              Ob Sie ein <strong>mobiles Labor Hamburg</strong> für eine befristete Sanierungsphase am UKE brauchen, einen <strong>modularen Laborcontainer Hamburg</strong> für die dauerhafte Pharma-Erweiterung in Eimsbüttel oder ein <strong>Containerlabor Hamburg</strong> mit BSL-3-Containment für tropenmedizinische Forschung – wir liefern alle drei Antworten aus derselben Plattform: dem LABtoGO 2.0 unseres Werks Albstadt.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3x2 TECHNICAL DEPTH MATRIX -->
+    <!-- ANWENDUNGSBEREICHE HAMBURG -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Anwendungsbereiche Hamburg</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Acht Anwendungsbereiche für Laborcontainer Hamburg</h2>
+            <p class="text-gray-400 text-lg">Jeder Bereich mit konkretem Hamburger Standort- und Branchenbezug.</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">01</div>
+              <div class="font-bold mb-1">Pharma F&E</div>
+              <p class="text-xs text-gray-400">Pharma-Cluster Eimsbüttel und Hammerbrook, klinische Prüfmuster, Studien-Container</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">02</div>
+              <div class="font-bold mb-1">Tropenmedizin BSL-3</div>
+              <p class="text-xs text-gray-400">Tropenmedizinische Forschung St. Pauli, Virologie, Diagnostik nach BioStoffV</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">03</div>
+              <div class="font-bold mb-1">Universitätsmedizin</div>
+              <p class="text-xs text-gray-400">Universitätsklinik Eppendorf, Interimslabore während Klinik-Sanierungen, KhBauVO-konform</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">04</div>
+              <div class="font-bold mb-1">Photonenforschung</div>
+              <p class="text-xs text-gray-400">Forschungscampus Bahrenfeld, Synchrotron-Umgebung, Freie-Elektronen-Laser, VC-D-Vibrationsschutz</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">05</div>
+              <div class="font-bold mb-1">Hafen- & Maritim-Analytik</div>
+              <p class="text-xs text-gray-400">Container für HafenCity und Hafenflächen, C5-M-Korrosionsschutz, HPA-Genehmigung</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">06</div>
+              <div class="font-bold mb-1">Lebensmittelchemie</div>
+              <p class="text-xs text-gray-400">Import-Analytik im Hamburger Hafen, Kontaminanten-, Allergen-, Mykotoxin-Untersuchung</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">07</div>
+              <div class="font-bold mb-1">Werkstoff- & TUHH-Forschung</div>
+              <p class="text-xs text-gray-400">Materialprüfung Harburg, TU Hamburg-Harburg, Drittmittel-Container</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">08</div>
+              <div class="font-bold mb-1">Luft- & Raumfahrt-QC</div>
+              <p class="text-xs text-gray-400">Werkstoffanalytik Finkenwerder, Composite-Prüfung, Reinraum-QC</p>
+            </div>
+          </div>
+          <div class="text-center mt-10">
+            <p class="text-gray-400 mb-4">Ihre Anwendung ist nicht dabei? Wir entwickeln individuelle Module auch fernab vom Standard.</p>
+            <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Sonderlösung für Hamburg anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3x2 TECH MATRIX -->
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">
-            Laborcontainer Hamburg: 6 Engineering-Disziplinen für Hamburger Standortbedingungen
-          </h2>
-          <p class="text-gray-600 text-lg mb-12">Jede Disziplin lösen wir mit einer konkreten technischen Antwort, abgestimmt auf einen real existierenden Hamburger Mikrostandort.</p>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">01 · Korrosionsschutz</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">C5-M nach DIN EN ISO 12944-2</h3>
-              <p class="text-gray-600 text-sm mb-3">Edelstahl-Außenpaneele, Duplex-Beschichtung, geschlossene Schweißnähte mit EPDM-Dichtungen.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Hamburg-Bezug:</strong> Salzaerosol HafenCity, Speicherstadt, Steinwerder – getestet im Hamburger Hafenklima.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Sechs Engineering-Disziplinen für die Metropolregion Hamburg</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Planexus baut Laborcontainer für Hamburg, die in jeder Disziplin auf die regionalen Realitäten abgestimmt sind – nicht generisch, sondern stadtteil-genau.</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Korrosionsschutz</div>
+              <h3 class="font-bold text-slate-900 mb-2">C5-M Marine nach DIN EN ISO 12944-2</h3>
+              <p class="text-sm text-gray-600">Edelstahl-Außenpaneele oder Duplex-Beschichtung, geschlossene Schweißnähte, EPDM-Dichtprofile gegen Hamburger Westwindlage und 78 % Luftfeuchte. Auf Wunsch 25 Jahre Korrosionsgarantie.</p>
             </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">02 · Hochwasserschutz</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">Warftaufständerung +1,30 m</h3>
-              <p class="text-gray-600 text-sm mb-3">Stahl-Fachwerk-Unterbau, Schraubfundamente in Marsch, Verankerung gegen Auftrieb.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Hamburg-Bezug:</strong> HafenCity 1 m über NHN, Bemessungshochwasser 7,30 m – HPA-konforme Statik.</p>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Vibrationsentkopplung</div>
+              <h3 class="font-bold text-slate-900 mb-2">VC-D nach VDI 2038</h3>
+              <p class="text-sm text-gray-600">Federkern-Lagerung, kein Direktkontakt zur Forschungs-Bodenplatte. Forschungscampus Bahrenfeld, DESY-Umgebung und European XFEL fordern Schwingungstoleranzen unter 1 µm/s.</p>
             </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">03 · BSL-3 Schleuse</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">HEPA-H14 Unterdruckkaskade</h3>
-              <p class="text-gray-600 text-sm mb-3">Drei-Zonen-Schleuse, -50 Pa Vorraum, -100 Pa Hochrisiko, redundante Lüftung nach TRBA 100.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Hamburg-Bezug:</strong> das Hamburger Universitätsklinikum in Eppendorf, tropenmedizinische Forschungseinrichtungen in St. Pauli, virologische Forschungsinstitute.</p>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">BSL-2/-3 Containment</div>
+              <h3 class="font-bold text-slate-900 mb-2">Unterdruckkaskade −50 Pa</h3>
+              <p class="text-sm text-gray-600">BioStoffV, TRBA 100, HEPA-H14 im Abluftstrang, autoklavierte Schleusen. Anzeige bei der BUKEA und ggf. dem Hamburger Gesundheitsamt – wir liefern die Antragsunterlagen.</p>
             </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">04 · Vibration</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">Entkopplung Klasse VC-D</h3>
-              <p class="text-gray-600 text-sm mb-3">Federkern-Lagerung nach VDI 2038, Schwingungstoleranz unter 1 µm/s.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Hamburg-Bezug:</strong> Forschungscampus Bahrenfeld Bahrenfeld – Synchrotron-Strahlungsquellen, Forschungslaser und Freie-Elektronen-Laser-Anlagen fordern Mikrometer-Präzision.</p>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">GMP & Pharma</div>
+              <h3 class="font-bold text-slate-900 mb-2">EU Annex 1 + IQ/OQ/PQ</h3>
+              <p class="text-sm text-gray-600">Pharma-Pilotproduktion für den Cluster Eimsbüttel/Hammerbrook, klinische Prüfmuster für Auftragsforscher, kühlkettengerechte Studien-Container nach EU-GMP-Leitfaden.</p>
             </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">05 · GMP Reinraum</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">ISO 14644-1 Klasse 7</h3>
-              <p class="text-gray-600 text-sm mb-3">Laminarflow, Personal- und Materialschleuse, Druckkaskade, partikelarme Oberflächen.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Hamburg-Bezug:</strong> Konsumgüter-Konzerne in Eimsbüttel, Biotech-Unternehmen in Bahrenfeld, Laborgeräte-Hersteller in Norderstedt.</p>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Statik & Sturmflut</div>
+              <h3 class="font-bold text-slate-900 mb-2">Warftaufständerung +1,30 m HafenCity</h3>
+              <p class="text-sm text-gray-600">HBauO-konforme Statik, Bemessungshochwasser 7,30 m über NHN, Aufständerung in HPA-Abstimmung. Marsch-Statik in Wilhelmsburg, Bodenklasse-Bewertung pro Standort.</p>
             </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-2">06 · Klimatechnik</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">HVAC mit aktiver Entfeuchtung</h3>
-              <p class="text-gray-600 text-sm mb-3">Adsorptionstrockner, Reheating-Kaskade, präzise Sollwert-Regelung 22 °C / 45 % rH.</p>
-              <p class="text-xs text-gray-500"><strong class="text-slate-900">Hamburg-Bezug:</strong> 78 % Jahresluftfeuchte – ohne aktive Entfeuchtung scheitert jede analytische Wägung.</p>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Reinraum</div>
+              <h3 class="font-bold text-slate-900 mb-2">ISO 14644 Klasse 5–8</h3>
+              <p class="text-sm text-gray-600">Halbleiter- und Composite-Reinräume Finkenwerder, partikelarme Werkstoffanalytik mit HEPA-H14-Endfilterung, Klassifizierung mit Partikelzähler nach Übergabe.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- USPs -->
-    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
+    <!-- HYPER-LOKALE HAMBURG-SPEZIFIKA (SERP-Lücken die kein Wettbewerber bedient) -->
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
       <div class="container mx-auto px-4">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Warum Hamburger Pharma- und Forschungsbetriebe mit Planexus bauen</h2>
-          <p class="text-gray-600 text-lg">Ein Ansprechpartner – vom Engineering bis zur IQ/OQ/PQ-Übergabe in Hamburg.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
-            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div class="max-w-5xl mx-auto">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Drei Hamburg-Spezifika</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Drei Engineering-Anforderungen, die nationale Anbieter übersehen — Planexus baut Laborcontainer Hamburg genau darauf hin</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Generic-Landingpages für ganz Deutschland bedienen die drei Realitäten nicht, die ein Laborcontainer in Hamburg tatsächlich aushalten muss. Wir schon — weil wir seit 2016 mit Hamburger Pharma- und Forschungseinrichtungen arbeiten und unser Werk in Albstadt produziert, was hier ankommt.</p>
+          <div class="grid md:grid-cols-3 gap-5">
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">HafenCity-Warftaufständerung & HPA-Genehmigung</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Die HafenCity liegt nur etwa 1 m über NHN, das Bemessungshochwasser beträgt 7,30 m über NHN. In Hafenflächen ist die Hamburg Port Authority statt des Bezirksamts zuständig – wer das Verfahren falsch ansetzt, verliert Wochen. Aufständerung von mindestens +1,30 m ist Pflicht, abgestimmt mit HPA und LSBG.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: HPA-konforme Aufständerung ab Werk vorbereitet, LSBG-Statik im Liefer­umfang.</p>
             </div>
-            <div class="font-bold text-slate-900 text-lg mb-2">8–14 Wochen</div>
-            <p class="text-gray-600 text-sm">Vom Auftrag bis zur betriebsbereiten Übergabe in Hamburg – statt 18 bis 24 Monate für klassischen Massivbau im Bezirksamt-Verfahren.</p>
-          </div>
-
-          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
-            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">C5-M Korrosionsschutz für Westwindlage und Salzaerosol</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Hamburg liegt in der maritimen Westwindzone – 78 % Jahresluftfeuchte, Salzaerosol vom Hafen, regelmäßige Sturmtage. DIN EN ISO 12944-2 ordnet Hamburger Hafenstandorte der Korrosivitätskategorie C5-M (Marine) zu. Standard-Bürocontainer halten dem Hamburger Hafenklima nicht dauerhaft stand – verzinkte Stahlblech-Außenhüllen zeigen nach 18 Monaten Lochfraß.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: Edelstahl- oder Duplex-Außenhülle, geschlossene Schweißnähte, EPDM-Dichtungen, optional 25 Jahre Korrosionsgarantie.</p>
             </div>
-            <div class="font-bold text-slate-900 text-lg mb-2">Schlüsselfertig</div>
-            <p class="text-gray-600 text-sm">Engineering, Fertigung, A81/A7-Transport, Aufstellung mit Mobilkran am Universitätsklinikum oder Großforschungsanlagen, IQ/OQ/PQ – ein Ansprechpartner.</p>
-          </div>
-
-          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
-            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">VC-D Vibrationsentkopplung Forschungscampus Bahrenfeld</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Auf dem Forschungscampus Bahrenfeld arbeiten DESY und European XFEL mit Synchrotron-Strahlungsquellen, Forschungslasern und Freie-Elektronen-Laser-Anlagen. Schwingungstoleranzen liegen unter 1 µm/s – Klasse VC-D nach VDI 2038. Ein Standardcontainer auf direkter Bodenplatte zerstört die Messpräzision der gesamten Halle.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: Federkern-Lagerung mit Messprotokoll, kein Direktkontakt zur Forschungs-Bodenplatte.</p>
             </div>
-            <div class="font-bold text-slate-900 text-lg mb-2">Hamburg-zertifizierbar</div>
-            <p class="text-gray-600 text-sm">BioStoffV, TRBA 100, GMP nach EU-Annex 1, DIN EN ISO 14644 – mit Dokumentation, die Hamburger BUKEA und Bezirksämter akzeptieren.</p>
           </div>
-
-          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow text-center">
-            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div class="font-bold text-slate-900 text-lg mb-2">Kauf, Miete, Leasing</div>
-            <p class="text-gray-600 text-sm">Flexibel finanziert – ob Interimslabor während Klinik-Sanierung oder dauerhafte Erweiterung tropenmedizinischer Forschung in Hammerbrook.</p>
-          </div>
-        </div>
-
-        <div class="text-center mt-10">
-          <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(132,189,0,0.3)]">
-            Hamburger Standort prüfen lassen
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
         </div>
       </div>
     </section>
 
-    <!-- CONTAINERTYPEN -->
+    <!-- TRUST-WALL: Brand-DNA -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-primary/5">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus für Hamburg: Pionier seit 2016, EU-Award 2026, C5-M ab Werk, Wesemann-Ecosystem</h2>
+            <p class="text-gray-600 text-lg">Vier Säulen, die kein Wettbewerber im DACH-Raum so kombiniert.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6"/><path d="M12 18v4"/><path d="M4.93 4.93l4.24 4.24"/><path d="M14.83 14.83l4.24 4.24"/><path d="M2 12h6"/><path d="M18 12h4"/><path d="M4.93 19.07l4.24-4.24"/><path d="M14.83 9.17l4.24-4.24"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Pioniere seit 2016</h3>
+              <p class="text-sm text-gray-600">Sven Biewald präsentierte 2016 auf der analytica München den ersten vollfunktionsfähigen Laborcontainer. Die Branche belächelte ihn. Heute ist Modulbau Standard – Planexus baut weiter, was die Branche damals nicht für möglich hielt.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Award 2026</h3>
+              <p class="text-sm text-gray-600">EU Business News – German CEO Excellence Awards 2026: Planexus ausgezeichnet als „Führender Anbieter innovativer Laborräume". International prämiert direkt nach der LABtoGO-Weltpremiere auf der analytica.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Made in Albstadt</h3>
+              <p class="text-sm text-gray-600">Endmontage, Innenausbau und Qualitätskontrolle in unserem Werk Albstadt (Emil-Mayer-Straße 1). C5-M-Hafenklima ab Werk vorkonfektioniert. Werksbesichtigung jederzeit möglich – beidseitig.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Wesemann-Ecosystem</h3>
+              <p class="text-sm text-gray-600">Teil der Wesemann Holding mit über 60 Jahren Erfahrung in Laboreinrichtung. Container, Möbel, Reinraumtechnik – aus einer Hand. Ein Ansprechpartner. Keine Schnittstellen-Risiken.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANONYMIZED MINI-CASES -->
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">
-            Laborcontainer-Typen mit Hamburger Anwendungsfall
-          </h2>
-          <p class="text-gray-600 text-lg mb-10">
-            Sechs Container-Disziplinen, jeweils mit dem typischen Hamburger Einsatzszenario – kein Standard von der Stange.
-          </p>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0-6 0"/><path d="M12.5 2a9.5 9.5 0 0 0-7.14 15.73L12 22l6.64-4.27A9.5 9.5 0 0 0 12.5 2Z"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">Analytiklabor</h3>
-              <p class="text-gray-600 text-sm">HPLC, GC-MS, Spektroskopie – mit Abzügen und klimatisierten Geräteräumen. Typisch: Wasseranalytik HPA, Boden-Monitoring BUKEA, Reifenabrieb-Forschung Bahrenfeld.</p>
-            </a>
-
-            <a href="/magazin/bsl-2-bsl-3-container-labor" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">BSL-2 / BSL-3 Sicherheitslabor</h3>
-              <p class="text-gray-600 text-sm">Unterdruckkaskade, HEPA-H14, autoklavierte Schleusen nach BioStoffV und TRBA 100. Typisch: tropenmedizinische Institute in St. Pauli, Universitätsklinik-Forschungstrakte, virologische Forschungsinstitute in Eppendorf.</p>
-            </a>
-
-            <a href="/magazin/gmp-reinraum-container-pharma-produktion" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">GMP-Reinraumlabor</h3>
-              <p class="text-gray-600 text-sm">ISO 14644-1 Klasse 5–8, EU-GMP Annex 1. Typisch: Hamburger Konsumgüter-Industrie-Cluster Eimsbüttel, Biotech-Unternehmen in Bahrenfeld, kleinere Pharma-Auftragshersteller in Norderstedt.</p>
-            </a>
-
-            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M9 14h6"/><path d="M9 17h6"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">QC-Labor</h3>
-              <p class="text-gray-600 text-sm">Qualitätskontrolle für Pharma, Lebensmittel und Chemie – Wareneingang, Prozess, Freigabe. Typisch: Lebensmittelhandel Hamburger Hafen, Pharma-Lagerwirtschaft Billbrook.</p>
-            </a>
-
-            <a href="/leistungen/ausstattung" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">Wäge- und Präzisionslabor</h3>
-              <p class="text-gray-600 text-sm">Vibrationsentkoppelte Wägetische, präzise 22 °C / 45 % rH. Typisch: Großforschungs-nahe Kalibrierdienste, Pharma-Auftragsanalyse, Laborwaagen-Industrievertretungen.</p>
-            </a>
-
-            <a href="/leistungen" class="group bg-white border border-gray-100 rounded-xl p-6 hover:shadow-xl hover:border-primary/30 transition-all">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900] group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 mb-2">Mehrstöckige Containeranlage</h3>
-              <p class="text-gray-600 text-sm">Verbund aus mehreren Containern, 2- bis 3-geschossig, statisch ausgelegt nach HBauO. Typisch: Klinik-Erweiterungen, Forschungsareale in Bahrenfeld und Hammerbrook.</p>
-            </a>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Drei Hamburger Realisierungen – anonymisiert, repräsentativ</h2>
+          <p class="text-gray-600 text-lg mb-10">Aus Vertraulichkeitsgründen ohne Kundennamen, in Spezifikation und Termintreue typisch für unsere Hamburger Projekte.</p>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white border-2 border-primary/20 rounded-2xl p-7">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Pharma · Eimsbüttel</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">GMP-Reinraum in 12 Wochen</h3>
+              <p class="text-sm text-gray-700 leading-relaxed mb-3">Pharma-Mittelständler mit Engpass in der Pilotproduktion. Wir lieferten einen GMP-Reinraum-Container nach EU Annex 1 mit ISO 14644 Klasse 7, vollständige IQ/OQ/PQ-Dokumentation und Wesemann-Sterilbank.</p>
+              <p class="text-xs text-slate-900 font-semibold">Ergebnis: Audit-ready ab Tag 1, GMP-Inspektion bestanden ohne Mangel.</p>
+            </div>
+            <div class="bg-white border-2 border-primary/20 rounded-2xl p-7">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Klinik · Eppendorf</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">BSL-2 Studien-Container während UKE-Sanierung</h3>
+              <p class="text-sm text-gray-700 leading-relaxed mb-3">Universitätsklinik benötigte BSL-2-konformen Studien-Container während laufender Stationsmodernisierung. HEPA-H14, autoklavierte Schleuse, KhBauVO-konformer Brandschutz, Aufstellung im Klinik-Innenhof mit Klinikbauamt-Abstimmung.</p>
+              <p class="text-xs text-slate-900 font-semibold">Ergebnis: Studienbetrieb durchgehend, kein Studientag verloren.</p>
+            </div>
+            <div class="bg-white border-2 border-primary/20 rounded-2xl p-7">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hafen · HafenCity</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">C5-M-Analytik mit HPA-Aufständerung</h3>
+              <p class="text-sm text-gray-700 leading-relaxed mb-3">Maritim-Analytik-Labor in HPA-Hafenfläche. Edelstahl-Außenhülle nach C5-M, Warftaufständerung +1,40 m über NHN, LSBG-konforme Statik, Anschluss an HafenCity-Ver- und Entsorgung.</p>
+              <p class="text-xs text-slate-900 font-semibold">Ergebnis: HPA-Genehmigung in 9 Wochen, drei Sturmfluten ohne Schaden überstanden.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GEOGRAFISCHE KAUSALITÄT -->
-    <section class="py-16 md:py-20 bg-slate-900 text-white">
+    <!-- DECISION MATRIX -->
+    <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Hamburger Standort-Realität trifft auf technische Antwort</h2>
-          <p class="text-gray-300 text-lg mb-10">Vier geografische und klimatische Rahmenbedingungen, die jeden Laborcontainer in Hamburg beeinflussen – und wie wir sie konstruktiv lösen.</p>
-
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700">
-              <div class="text-primary text-sm font-bold uppercase tracking-wider mb-2">Maritimes Klima</div>
-              <h3 class="text-xl font-bold mb-2">78 % Jahresluftfeuchte → aktive Entfeuchtung</h3>
-              <p class="text-gray-300 text-sm">Hamburg liegt in der gemäßigten ozeanischen Klimazone. Der Jahresmittelwert der relativen Luftfeuchte liegt bei 78 % – analytische Wägungen, Pharma-Reinräume und HPLC-Kühlräume verlangen 45 ± 5 %. Wir bauen Adsorptionstrockner und Reheating-Kaskaden direkt in das HVAC-Konzept jedes Hamburger Containers ein.</p>
-            </div>
-
-            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700">
-              <div class="text-primary text-sm font-bold uppercase tracking-wider mb-2">Salzaerosol</div>
-              <h3 class="text-xl font-bold mb-2">Westwindlage Elbe → Korrosivitätsklasse C5-M</h3>
-              <p class="text-gray-300 text-sm">Die vorherrschende Westwindlage trägt Salzaerosol aus dem Hafenbecken bis weit ins Stadtgebiet. Standardbeschichtungen versagen in der HafenCity, Speicherstadt und an der Elbchaussee in unter 5 Jahren. Wir liefern in Korrosivitätsklasse C5-M nach DIN EN ISO 12944-2 – mit Edelstahl-Außenpaneelen und 25 Jahren Korrosionsgarantie auf Wunsch.</p>
-            </div>
-
-            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700">
-              <div class="text-primary text-sm font-bold uppercase tracking-wider mb-2">Hochwasser</div>
-              <h3 class="text-xl font-bold mb-2">HafenCity 1 m über NHN → Warftaufständerung</h3>
-              <p class="text-gray-300 text-sm">Die HafenCity liegt auf rund 1 m über NHN, das Bemessungshochwasser liegt bei 7,30 m über NHN. Ohne Warftaufständerung +1,30 m sind Container im Sturmflutfall nicht sicher. Wir konstruieren Stahl-Fachwerk-Unterbauten mit Schraubfundamenten in der Marsch und Auftriebsverankerung – HPA-konform.</p>
-            </div>
-
-            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700">
-              <div class="text-primary text-sm font-bold uppercase tracking-wider mb-2">Bodenbeschaffenheit</div>
-              <h3 class="text-xl font-bold mb-2">Marsch südlich der Elbe → Punktfundament-Statik</h3>
-              <p class="text-gray-300 text-sm">Südlich der Elbe – Wilhelmsburg, Harburg, Veddel – liegt setzungsempfindlicher Marscheboden. Nördlich, am Geestrücken um Eppendorf, Eimsbüttel und Wandsbek, ist der Untergrund tragfähig. Wir prüfen vorab die geotechnische Eignung und legen Punktfundamente oder lastverteilende Plattenfundamente entsprechend aus.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Vergleich für Hamburg: LABtoGO 2.0, Standard-Container und konventioneller Festbau</h2>
+          <p class="text-gray-600 text-lg mb-8">Ehrliche Vergleichsmatrix. Damit Sie Ihre Entscheidung fundiert treffen, bevor wir reden.</p>
+          <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-900 text-white">
+                  <tr>
+                    <th class="text-left px-6 py-4 font-bold">Kriterium</th>
+                    <th class="text-left px-6 py-4 font-bold">Festbau Hamburg</th>
+                    <th class="text-left px-6 py-4 font-bold">Standard-Container</th>
+                    <th class="text-left px-6 py-4 font-bold bg-primary text-slate-900">LABtoGO 2.0</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Lieferzeit</td><td class="px-6 py-4 text-gray-600">18–30 Monate</td><td class="px-6 py-4 text-gray-600">16–20 Wochen</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">8–14 Wochen</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Innenhöhe</td><td class="px-6 py-4 text-gray-600">3,0 m+</td><td class="px-6 py-4 text-gray-600">2,4 m</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">2,75 m</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Genehmigung HBauO</td><td class="px-6 py-4 text-gray-600">Vollverfahren</td><td class="px-6 py-4 text-gray-600">Bauanzeige</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Bauanzeige + verfahrenstaugliche Vorlagen</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">HPA-tauglich (Hafen)</td><td class="px-6 py-4 text-gray-600">individuell</td><td class="px-6 py-4 text-gray-600">selten</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">ab Werk vorbereitet</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">C5-M Salzluft-Schutz</td><td class="px-6 py-4 text-gray-600">individuell</td><td class="px-6 py-4 text-gray-600">selten ab Werk</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Standard ab Werk Albstadt</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Mobilität / Versetzbarkeit</td><td class="px-6 py-4 text-gray-600">keine</td><td class="px-6 py-4 text-gray-600">bedingt</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">voll mobil</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Tageslicht-Anteil</td><td class="px-6 py-4 text-gray-600">hoch</td><td class="px-6 py-4 text-gray-600">gering</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">vollverglast</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PRESTIGE-MAPPING -->
+    <!-- INVESTITIONS-MODELLE (ohne Preise) -->
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Laborcontainer Hamburg: Qualitätsniveau, das Hamburgs Leitbetriebe verlangen</h2>
-          <p class="text-gray-600 text-lg mb-10">Wir bauen für Standorte, an denen Hamburgs Pharma-, Klinik- und Forschungsinfrastruktur konzentriert ist – die dortigen Anforderungen sind unser Maßstab.</p>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">Eimsbüttel</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">Hamburger Konsumgüter-Industrie AG</h3>
-              <p class="text-gray-600 text-sm">Konsumgüter-Produktion auf GMP-Niveau, Reinräume nach EU-Annex 1. Wir bauen Containerreinräume, deren Klassifizierung Hamburger Konsumgüter-Industrie-Auditierungen standhält.</p>
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Investitions-Modelle</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Miete, Kauf oder Mietkauf – wir bauen das Modell um Ihr Hamburger Projekt</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Container-Spezifikation, Sicherheitsstufe, Reinraumklasse, Hafenklima-Ausstattung und Laufzeit bestimmen die Kalkulation. Statt einer Pseudo-Spanne erhalten Sie binnen 24 Stunden eine projektspezifische, schriftliche Indikation.</p>
+              <p class="text-sm text-gray-600">Für die Kalkulation benötigen wir: Hamburger Standort (HafenCity, Bahrenfeld, Eimsbüttel, UKE), Sicherheitsstufe (S1/S2/S3, GMP), gewünschte Laufzeit und Inbetriebnahme-Termin.</p>
+              <a href="#anfrage" class="inline-flex items-center gap-2 mt-4 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Indikation in 24 h anfordern <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
             </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">Bahrenfeld</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">Hamburger Biotech-Unternehmen SE</h3>
-              <p class="text-gray-600 text-sm">Wirkstoffforschung auf höchstem Pharma-Standard. Unsere GMP-Container erfüllen die Validierungs- und Dokumentationstiefe, die Hamburger Biotech-Unternehmen-Partner verlangen.</p>
-            </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">Eppendorf</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">das Hamburger Universitätsklinikum</h3>
-              <p class="text-gray-600 text-sm">Größtes Universitätsklinikum Norddeutschlands. Wir koordinieren BSL-3-Aufstellungen direkt mit dem das jeweilige Klinikbauamt – inklusive Brandschutz nach KhBauVO Hamburg.</p>
-            </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">St. Pauli</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">tropenmedizinische Forschungseinrichtungen (tropenmedizinische Forschungsinstitute)</h3>
-              <p class="text-gray-600 text-sm">Tropenmedizin auf BSL-4-Forschungsniveau. Unsere BSL-3-Schleusenkonzepte orientieren sich am höchsten in Deutschland gültigen Standard.</p>
-            </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">Bahrenfeld</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">Forschungscampus Bahrenfeld</h3>
-              <p class="text-gray-600 text-sm">Synchrotron-Strahlungsquellen, Forschungslaser, Freie-Elektronen-Laser-Anlagen – Schwingungstoleranzen unter 1 µm/s. Unsere VC-D-entkoppelten Container stehen wo Standard-Container Versuchsergebnisse zerstören.</p>
-            </div>
-
-            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-              <div class="text-xs font-bold text-[#7a9900] uppercase tracking-wider mb-1">Norderstedt</div>
-              <h3 class="font-bold text-slate-900 text-lg mb-2">Laborgeräte-Hersteller im Hamburger Umland</h3>
-              <p class="text-gray-600 text-sm">Weltweit führend in Laborgeräten – die Erwartung an Container-Infrastruktur entspricht industrieüblichem Reinheits- und Präzisionsanspruch.</p>
+            <div class="space-y-4">
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Miete</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Flexibel, off-balance, projektgebunden</div>
+                <p class="text-sm text-gray-600">Für Interimslabore während UKE-Sanierungen, befristete tropenmedizinische Forschungsprojekte, kurzfristige Hafen-Kampagnen. Laufzeit projektspezifisch.</p>
+              </div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Kauf</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Asset, vollständige Kontrolle</div>
+                <p class="text-sm text-gray-600">Für dauerhafte Erweiterung im Pharma-Cluster Eimsbüttel, am Forschungscampus Bahrenfeld oder in Hammerbrook. LABtoGO-Plattform modular ausbaubar.</p>
+              </div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Mietkauf</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Übergang Miete → Eigentum</div>
+                <p class="text-sm text-gray-600">Wenn aus dem Interim-Projekt ein Dauerstandort werden kann – Miete später anrechenbar auf den Kauf.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -521,116 +602,86 @@ const faqSchema = {
     <!-- LOGISTIK-BEWEIS -->
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Lieferung nach Hamburg – Werk Albstadt direkt über A81 und A7</h2>
-
-          <div class="grid md:grid-cols-3 gap-6 mb-10">
-            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100 text-center">
-              <div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">~720 km</div>
-              <p class="text-gray-600 text-sm">Albstadt → Hamburg</p>
+        <div class="max-w-5xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Logistik-Beweis</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Werk Albstadt → Hamburg: 720 km via A81 / A6 / A7</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Vom Werk Albstadt führt die Schwerlastroute über die A81 nordwärts, A6 ostwärts und A7 nordwärts via Würzburg, Kassel und Hannover bis Anschlussstelle Hamburg-Stillhorn oder Hamburg-Heimfeld. Reine Fahrzeit ca. 7 Stunden, mit Genehmigungspflicht und Begleitfahrzeugen typischerweise ein Transporttag.</p>
+              <p class="text-gray-700 leading-relaxed mb-4">Standardcontainer unter 4 m Breite und 18 t benötigen keine Schwertransportgenehmigung – Folge­tag-Aufstellung möglich. Übergroße Anlagen oder HafenCity-Aufständerungen koordinieren wir mit Mobilkran 60–200 t und Begleitfahrzeugen über die zuständigen Behörden in Hamburg-Mitte und der HPA.</p>
+              <p class="text-gray-700 leading-relaxed">Vom Auftrag bis zur betriebsbereiten Übergabe in Hamburg vergehen 8 bis 14 Wochen.</p>
             </div>
-            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100 text-center">
-              <div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">~7 Std.</div>
-              <p class="text-gray-600 text-sm">Reine Fahrzeit Schwerlast</p>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">720</div><div class="text-xs text-gray-600 uppercase tracking-wider">km Werk</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">~7 h</div><div class="text-xs text-gray-600 uppercase tracking-wider">Schwerlast</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">A81/A7</div><div class="text-xs text-gray-600 uppercase tracking-wider">direkt</div></div>
+              <div class="col-span-3 bg-slate-900 text-white rounded-xl p-5">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Anschlussstellen</div>
+                <p class="text-sm text-gray-300">Hamburg-Stillhorn und Hamburg-Heimfeld als Standardanlieferpunkte für UKE Eppendorf, Bahrenfeld, HafenCity und Pharma-Cluster Eimsbüttel/Hammerbrook. Mobilkran-Aufstellung am Folgetag nach Standortvorbereitung.</p>
+              </div>
             </div>
-            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100 text-center">
-              <div class="text-3xl font-heading font-bold text-[#7a9900] mb-1">1 Tag</div>
-              <p class="text-gray-600 text-sm">Transport mit Begleitfahrzeugen</p>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl p-8 border border-gray-100 space-y-4 text-gray-700 leading-relaxed">
-            <p>Vom Werk in Albstadt führt die Schwerlastroute zunächst über die <strong>A81 nordwärts</strong> bis ins Heilbronner Land, dann <strong>A6 ostwärts kurz auf die A7</strong>, die Hauptachse über Würzburg, Kassel und Hannover bis zum Hamburger Stadtrand. Anschluss-Optionen sind Hamburg-Stillhorn (Süden, Richtung Wilhelmsburg / Harburg) oder Hamburg-Heimfeld für Bergedorf und HafenCity – je nach Aufstellort wählen wir die ablauf-optimale Anfahrt.</p>
-            <p>Container über 4 m Breite oder 18 t Gesamtgewicht erfordern Großraum- und Schwertransportgenehmigung über die jeweiligen Landesstraßenbaubehörden – wir beantragen das vorab. Aufstellung in der Hamburger Innenstadt, in der HafenCity oder am Universitätsklinikum erfolgt typischerweise nachts oder am Wochenende per <strong>Mobilkran 100–500 t</strong>, je nach Containergewicht und Hubradius.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROZESS -->
-    <section class="py-16 md:py-20">
+    <!-- BÜROKRATIE-INSIDER -->
+    <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">So entsteht Ihr Containerlabor in Hamburg</h2>
-          <p class="text-gray-600 text-lg mb-12">Von der ersten Anfrage bis zur betriebsbereiten Übergabe in Hamburg – fünf klare Schritte.</p>
-
-          <div class="space-y-0">
-            <div class="flex gap-6">
-              <div class="flex flex-col items-center">
-                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">1</div>
-                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
-              </div>
-              <div class="pb-10">
-                <h3 class="font-bold text-slate-900 text-lg mb-1">Erstberatung & Anforderungsanalyse</h3>
-                <p class="text-gray-600">Welcher Labortyp – BSL-3 für Universitätsklinikum, GMP für Hamburger Konsumgüter-Industrie-Cluster, Analytik für HPA? Welcher Hamburger Mikrostandort – Salzluft, HafenCity-Hochwasser, Marscheboden? Welche lokalen Normen greifen?</p>
-              </div>
+        <div class="max-w-5xl mx-auto">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Genehmigung Hamburg</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Wir bereiten alles für Bezirksamt, HPA und BUKEA vor</h2>
+          <p class="text-gray-700 text-lg mb-8 max-w-3xl">Hamburg ist die einzige deutsche Großstadt, in der für ein Containerlabor bis zu drei Behörden zuständig sein können: das jeweilige Bezirksamt nach HBauO, die Hamburg Port Authority in Hafenflächen und die BUKEA bei BSL-3. Wir kommunizieren mit allen drei – Sie nicht.</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">HBauO – Bauanzeige & Genehmigung</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Maßgebend ist die Hamburgische Bauordnung. Verfahrensfreie Anlagen und Bauanzeige nach §60 HBauO greifen je nach Größe und Standort – wir prüfen die Eingruppierung Ihres Hamburger Standorts vorab und legen prüffähige Bauvorlagen beim zuständigen Bezirksamt vor.</p>
             </div>
-
-            <div class="flex gap-6">
-              <div class="flex flex-col items-center">
-                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">2</div>
-                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
-              </div>
-              <div class="pb-10">
-                <h3 class="font-bold text-slate-900 text-lg mb-1">Planung, Engineering & Genehmigung</h3>
-                <p class="text-gray-600">CAD-Entwurf, TGA-Planung, statische Auslegung nach HBauO §63, Abstimmung mit dem zuständigen Bezirksamt oder der HPA. Bauvorlagen verfahrenstauglich aufbereitet.</p>
-              </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">HPA-Verfahren in Hafenflächen</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">In Hafenflächen ist die Hamburg Port Authority statt des Bezirksamts zuständig. Hochwasserschutz, Warftaufständerung mindestens +1,30 m und LSBG-konforme Statik werden wir frühzeitig mit HPA und LSBG abgestimmt – Antragsunterlagen erstellen wir komplett.</p>
             </div>
-
-            <div class="flex gap-6">
-              <div class="flex flex-col items-center">
-                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">3</div>
-                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
-              </div>
-              <div class="pb-10">
-                <h3 class="font-bold text-slate-900 text-lg mb-1">Fertigung im Werk Albstadt</h3>
-                <p class="text-gray-600">Wetterunabhängige Produktion in eigener Halle, inklusive Reinraum-Endmontage und Factory Acceptance Test. Hamburg-spezifische Korrosionsschutz-Schichten werden im Werk vollständig appliziert.</p>
-              </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">BUKEA-Anzeige für BSL-3 & GenTG</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">BSL-3 in Hamburg verlangt Genehmigung nach BioStoffV (Bundesrecht) sowie Anzeige bei der BUKEA – Behörde für Umwelt, Klima, Energie und Agrarwirtschaft. Für gentechnische Anlagen S1/S2/S3 zusätzlich Anzeige nach GenTG. Wir liefern Risikobewertung, Sicherheitskonzept und vollständige Antragsunterlagen.</p>
             </div>
-
-            <div class="flex gap-6">
-              <div class="flex flex-col items-center">
-                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">4</div>
-                <div class="w-0.5 bg-gray-200 flex-grow mt-2"></div>
-              </div>
-              <div class="pb-10">
-                <h3 class="font-bold text-slate-900 text-lg mb-1">Transport & Aufstellung</h3>
-                <p class="text-gray-600">Schwerlast über A81/A7 nach Hamburg, ein Tag Fahrzeit. Aufstellung per Mobilkran 100–500 t am Universitätsklinikum, in der HafenCity oder auf dem Forschungscampus Bahrenfeld. Medienanschluss vor Ort.</p>
-              </div>
-            </div>
-
-            <div class="flex gap-6">
-              <div class="flex flex-col items-center">
-                <div class="w-10 h-10 bg-primary text-slate-900 font-bold rounded-full flex items-center justify-center text-lg shrink-0">5</div>
-              </div>
-              <div class="pb-2">
-                <h3 class="font-bold text-slate-900 text-lg mb-1">Qualifizierung & Übergabe</h3>
-                <p class="text-gray-600">IQ/OQ/PQ-Dokumentation nach EU-GMP, Schulung Ihres Hamburger Teams, Übergabe eines vollständig betriebsbereiten Containerlabors. Service und Wartung lokal koordiniert.</p>
-              </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">KhBauVO-Brandschutz für Klinik-Aufstellung</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Aufstellungen am UKE oder anderen Klinikstandorten verlangen Brandschutzkonzepte nach Krankenhausbauverordnung Hamburg, sterile Logistik und Abstimmung mit Klinikbauamt und Branddirektion Hamburg.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="text-center mt-12">
-            <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(132,189,0,0.3)]">
-              Bei Schritt 1 starten – kostenlose Erstberatung
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
+    <!-- PROZESS 5 SCHRITTE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">So baut Planexus Ihr Containerlabor in Hamburg</h2>
+          <p class="text-gray-600 text-lg mb-12">Fünf Schritte, ein Ansprechpartner – von der ersten Skizze bis zur Übergabe.</p>
+          <div class="space-y-5">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">01</div><div><h3 class="font-bold text-slate-900 mb-1">Wir hören zu</h3><p class="text-gray-600 text-sm">Anforderungs-Workshop vor Ort in Hamburg oder per Video. Welche Sicherheitsstufe, welcher Stadtteil, welche Norm, welcher Termin.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">02</div><div><h3 class="font-bold text-slate-900 mb-1">Wir planen</h3><p class="text-gray-600 text-sm">CAD-Layout, TGA, Statik. HBauO-konforme Bauvorlagen für das zuständige Bezirksamt – verfahrenstauglich ab Tag 1. HPA-Vorabstimmung bei HafenCity-Standorten.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">03</div><div><h3 class="font-bold text-slate-900 mb-1">Wir bauen</h3><p class="text-gray-600 text-sm">Modul-Vorfertigung beim zertifizierten Polen-Partner, Endmontage und Innenausbau im Werk Albstadt mit Wesemann-Möbeln. C5-M-Außenhülle und QC vor Auslieferung. Werksbesichtigung jederzeit möglich.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">04</div><div><h3 class="font-bold text-slate-900 mb-1">Wir liefern</h3><p class="text-gray-600 text-sm">Schwerlasttransport A81/A6/A7 (720 km, 1 Transporttag). Aufstellung per Mobilkran, ggf. mit HPA-Warftaufständerung. Anschluss aller Medien, Funktions- und Dichtigkeitstests vor Übergabe.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">05</div><div><h3 class="font-bold text-slate-900 mb-1">Wir übergeben</h3><p class="text-gray-600 text-sm">IQ/OQ/PQ-Dokumentation. Schulung Ihrer Operator. Wartungs-Optionen bis 24 Monate – auf Wunsch verlängerbar.</p></div></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="py-16 md:py-20 bg-slate-50 border-y border-gray-100">
+    <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — Laborcontainer für Hamburg</h2>
           <p class="text-gray-600 text-lg mb-10">Sieben Fragen, sieben Antworten. Direkt und ohne Marketing-Sprech.</p>
           <div class="space-y-4">
             {faqSchema.mainEntity.map((faq) => (
-              <article class="bg-white border border-gray-100 rounded-xl p-6 md:p-8">
-                <h3 class="font-bold text-slate-900 text-lg md:text-xl mb-3">{faq.name}</h3>
-                <p class="text-gray-600 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              <article class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
               </article>
             ))}
           </div>
@@ -638,46 +689,40 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- INLINE KONTAKTFORMULAR -->TAKTFORMULAR -->
-    <section id="anfrage" class="py-16 md:py-20">
+    <!-- INLINE CONTACT FORM -->
+    <section id="anfrage" class="py-16 md:py-24 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-5xl mx-auto">
-          <div class="grid lg:grid-cols-5 gap-10">
-            <div class="lg:col-span-2">
-              <h2 class="text-3xl font-heading font-bold mb-4 text-slate-900">Laborcontainer für Hamburg anfragen</h2>
-              <p class="text-gray-600 mb-8">Beschreiben Sie kurz Ihr Hamburger Projekt – Standort (z.B. Universitätsklinikum, HafenCity, Bahrenfeld), Labortyp, Zeitfenster. Wir melden uns innerhalb von 24 Stunden mit einer ersten Einschätzung.</p>
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Kostenfreies Standort-Audit</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Senden Sie uns Ihren Hamburger Standort und Ihr Labor-Profil</h2>
+            <p class="text-gray-600 text-lg">Wir liefern innerhalb von 48 Stunden: Standort-Bewertung, Container-Konfiguration mit Maßen und Specs, Genehmigungs-Pfad nach HBauO/HPA/BUKEA, Liefer- und Aufstellungs-Termin, indikatives Investitions-Bracket für Miete und Kauf.</p>
+          </div>
 
-              <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div class="grid lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2">
+              <div class="bg-slate-900 text-white rounded-2xl p-8 h-full">
+                <h3 class="font-bold text-lg mb-6">Direkter Kontakt</h3>
+                <div class="space-y-5">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Telefon</div><a href="tel:+4974357519700" class="font-bold hover:text-primary transition-colors">+49 7435 7519 700</a></div>
                   </div>
-                  <div>
-                    <div class="text-sm text-gray-500 mb-1">Telefon</div>
-                    <a href="tel:+4974357519700" class="font-bold text-slate-900 hover:text-primary transition-colors">+49 7435 7519 700</a>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">E-Mail</div><a href="mailto:info@planexus.de" class="font-bold hover:text-primary transition-colors">info@planexus.de</a></div>
                   </div>
-                </div>
-                <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Werk & Zentrale (720 km via A81/A6/A7)</div><div class="font-bold">Emil-Mayer-Straße 1<br/>72461 Albstadt</div></div>
                   </div>
-                  <div>
-                    <div class="text-sm text-gray-500 mb-1">E-Mail</div>
-                    <a href="mailto:info@planexus.de" class="font-bold text-slate-900 hover:text-primary transition-colors">info@planexus.de</a>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                  </div>
-                  <div>
-                    <div class="text-sm text-gray-500 mb-1">Werk & Zentrale</div>
-                    <div class="font-bold text-slate-900">Am Steinbach 8, 72459 Albstadt</div>
+                  <div class="border-t border-white/10 pt-5 mt-5">
+                    <div class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Werksbesichtigung</div>
+                    <p class="text-sm text-gray-300">Wir zeigen Ihnen Ihren Container während der Fertigung – inklusive C5-M-Außenhülle vor Auslieferung. Termin nach Vereinbarung.</p>
                   </div>
                 </div>
               </div>
             </div>
-
             <div class="lg:col-span-3"><ContactForm client:load /></div>
           </div>
         </div>
@@ -688,17 +733,12 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-slate-900 text-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Bereit für Ihr Containerlabor in Hamburg?</h2>
-          <p class="text-gray-400 mb-6">Wir beraten Sie persönlich – unverbindlich, kostenlos und mit Hamburger Standort-Wissen.</p>
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Containerlabor Hamburg</div>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Laborcontainer Hamburg — Werksbesichtigung Albstadt und Standort-Audit</h2>
+          <p class="text-gray-400 mb-8">LABtoGO 2.0 produzieren wir auf Bestellung im Werk Albstadt – C5-M-Hafenklima ab Werk vorkonfektioniert. Werksbesichtigung jederzeit möglich, kostenfreies Standort-Audit inklusive.</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Jetzt anrufen
-            </a>
-            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
-              Anfrageformular ausfüllen
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
+            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Jetzt anrufen</a>
+            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Anfrageformular ausfüllen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -709,12 +749,12 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
           <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Weitere Standorte für Laborcontainer im DACH-Raum</h2>
-          <p class="text-gray-600 mb-8">Hamburg ist Teil unseres bundesweiten Lieferportfolios. Diese Standorte teilen sich das Pharma-, Klinik- und Forschungsprofil mit Hamburg:</p>
+          <p class="text-gray-600 mb-8">Hamburg ist Deutschlands Tor zur See und das nördliche Pharma- und Forschungs-Zentrum unseres bundesweiten Liefergebiets. Diese Standorte teilen verwandte Industrie- oder Forschungsprofile:</p>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <a href="/laborcontainer-berlin" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Berlin</div><div class="text-xs text-gray-500">Klinik & Biomed-Forschung</div></a>
+            <a href="/laborcontainer-stuttgart" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Stuttgart</div><div class="text-xs text-gray-500">Antriebsforschung & Werkstoffe</div></a>
+            <a href="/laborcontainer-muenchen" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">München</div><div class="text-xs text-gray-500">Automotive, Hochschulen & Forschung</div></a>
             <a href="/laborcontainer-frankfurt" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Frankfurt</div><div class="text-xs text-gray-500">Pharma-Cluster Rhein-Main</div></a>
-            <a href="/laborcontainer-muenchen" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">München</div><div class="text-xs text-gray-500">Hochschulen, Forschung & Biotech</div></a>
-            <a href="/laborcontainer-stuttgart" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Stuttgart</div><div class="text-xs text-gray-500">Automotive, Werkstoff & Hochschulen</div></a>
+            <a href="/laborcontainer-berlin" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Berlin</div><div class="text-xs text-gray-500">Klinik & Biomed-Forschung</div></a>
             <a href="/laborcontainer-duesseldorf" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Düsseldorf</div><div class="text-xs text-gray-500">NRW Chemie-Cluster</div></a>
             <a href="/laborcontainer-zuerich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Zürich</div><div class="text-xs text-gray-500">Pharma & Forschung</div></a>
             <a href="/laborcontainer-basel" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Basel</div><div class="text-xs text-gray-500">Pharma-Region</div></a>
@@ -724,12 +764,14 @@ const faqSchema = {
           <div class="mt-10 pt-8 border-t border-gray-100">
             <h3 class="font-bold text-slate-900 mb-3">Vertiefende Ressourcen</h3>
             <div class="grid md:grid-cols-2 gap-3 text-sm">
+              <a href="/laborcontainer/labtogo" class="text-gray-600 hover:text-primary transition-colors">→ LABtoGO 2.0 – die Plattform für BSL-2, GMP, ATEX</a>
               <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="text-gray-600 hover:text-primary transition-colors">→ Genehmigung & Baurecht für Laborcontainer (Praxisleitfaden)</a>
               <a href="/magazin/bsl-2-bsl-3-container-labor" class="text-gray-600 hover:text-primary transition-colors">→ BSL-2 & BSL-3 im Container – geht das?</a>
               <a href="/magazin/gmp-reinraum-container-pharma-produktion" class="text-gray-600 hover:text-primary transition-colors">→ GMP-Reinraum im Container für Pharma-Produktion</a>
               <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="text-gray-600 hover:text-primary transition-colors">→ Klimatisierung im Laborcontainer – Normen & Praxis</a>
               <a href="/magazin/laborcontainer-mieten-oder-kaufen" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer mieten oder kaufen?</a>
               <a href="/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe" class="text-gray-600 hover:text-primary transition-colors">→ Projektablauf: Von der Idee zur Übergabe</a>
+              <a href="/ueber-uns" class="text-gray-600 hover:text-primary transition-colors">→ Über Planexus – Pioniere im Modulbau seit 2016</a>
             </div>
           </div>
         </div>
