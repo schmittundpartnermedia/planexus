@@ -157,6 +157,67 @@ Informational Keywords abdecken, die kaufbereite Zielgruppen in der Recherche-Ph
 
 ---
 
+## Regional Authority Architecture (RAA) – Masterplan V2 [VERBINDLICH AB 17.04.2026]
+
+Dieser Masterplan ergänzt und verschärft alle bisherigen Regeln. Er gilt für **jede Städteseite und Branchenseite**. Hamburg ist das Gold-Template, an dem sich alle anderen Seiten orientieren.
+
+### 1. Strategische Fusion (Der Kern)
+**Jede Seite muss beweisen, dass die Fachleistung durch die Region beeinflusst wird.**
+- Kein isolierter Text über die Stadt, kein isolierter Text über das Produkt.
+- In jedem Absatz muss eine **Verzahnung** stattfinden, z.B. „Aufgrund der [Regionale Gegebenheit] implementieren wir [Technische Fachleistung]".
+- Beispiel: „Wegen der Salzluft im Hamburger Hafen liefern wir BSL-3-Container in Korrosionsschutzklasse C5-M nach DIN EN ISO 12944-2."
+
+### 2. SEO-Goldstandard (Maschinen-Ebene)
+- **H1-Hierarchie:** [Haupt-Fokus-Keyword] [Stadt] | [Technische Kern-Leistung] & [USP]
+- **H2 & H3 Struktur:** Fokus-Keyword in mindestens **1 H2** und **2 H3**, gekoppelt mit regionalen Longtails.
+- **Keyword-Cluster:** Integration semantisch verwandter LSI-Begriffe.
+- **Keyword-Dichte:** Zielwert **1,8 % bis 2,2 %**.
+- **Title:** Keyword + Stadt + stärkster USP (max. 60 Zeichen).
+- **Description:** Lokale Problemlösung + CTA (max. 155 Zeichen).
+
+### 3. Gatran-Blaupause (Experten-Ebene)
+- **Entitäten-Netzwerk:** Zwingende Nennung von **5–8 lokalen Ankern** (Stadtteile, Industriegebiete, Autobahnen, ansässige Weltkonzerne).
+- **Technical Depth (3x2 Matrix):** **6 Kacheln** mit Fachbegriff + regionalem Anwendungs-Bezug.
+- **Logistik-Beweis:** Exakte Distanz (km), Fahrzeit und Anfahrtsroute ab Werk Albstadt.
+- **Regionale Schmerzpunkte:** Lokale Probleme (Bauordnung, Stau, Klima, Flächenmangel) als spezifische Lösungs-Trigger.
+
+### 4. Lokale Insider-Ebene (KI-Autorität & Vertrauen)
+- **Geografische & Klimatische Kausalität:** Erdbebenzonen, Luftfeuchtigkeit, Bodenbeschaffenheit, Hochwasser, Wind-Hauptrichtung – und deren konkreter Einfluss auf die technische Umsetzung.
+- **Bürokratie-Insider:** Konkret zuständige lokale Behörden, Ämter, Versorgungsunternehmen (z.B. „Bezirksamt Hamburg-Mitte, Fachamt Bauprüfung"), und die exakten lokalen Normen/Satzungen.
+- **Prestige-Mapping:** Direkter Vergleich der eigenen Qualitätsstandards mit den Anforderungen ansässiger Leitbetriebe oder Weltkonzerne (z.B. „GMP-Standard wie für Beiersdorf-Region", „Präzision für DESY-Campus").
+
+### 5. Technische Code-Vorgaben (KI-Standard)
+- **JSON-LD:** Individuelles **LocalBusiness + Service Schema** pro Seite.
+- **areaServed:** Exakte **Postleitzahlen-Liste** oder kantonale/regionale Abdeckung.
+- **Internal Linking:** Geografisch sinnvolle Vernetzung der Stadtseiten untereinander (Sister-Cities, Cluster).
+- **Bild-SEO:** Dateinamen und Alt-Tags spiegeln die Fusion wider: `[leistung]-[stadtteil].jpg`.
+
+### Pflicht-Sektionen für jede Städteseite (in dieser Reihenfolge)
+1. **Hero** – H1 nach Masterplan-Schema, Trust-Signale, 2 CTAs
+2. **Problem-Agitation** – 3 stadtspezifische Schmerzpunkte + Lösungs-Box
+3. **Strategische Fusion Intro** – Verzahnung Region + Service in 1-2 Absätzen
+4. **3x2 Technical Depth Matrix** – 6 Kacheln Fachbegriff + Stadt-Bezug
+5. **USPs** – 4 Karten
+6. **Container-Typen** – 6 Karten mit Stadt-Anwendungsfall
+7. **Geografische Kausalität** – Klima/Boden/Wasser → Technische Antwort
+8. **Prestige-Mapping** – Lokale Leitbetriebe als Qualitätsmaßstab
+9. **Bürokratie-Insider** – Konkrete Bezirksämter + Normen
+10. **Logistik-Beweis** – km, Fahrzeit, Route, Umfahrungen
+11. **Lokale Anker** – Stadtteile, Industriegebiete, PLZ-Liste
+12. **Prozess** – 5 Schritte mit Stadt-Bezug
+13. **FAQ** – 6-8 stadtspezifische Fragen mit FAQPage-Schema
+14. **Inline ContactForm** – `id="anfrage"`
+15. **Footer CTA**
+16. **Sister-Cities & weitere Standorte**
+
+### Pflicht-Schemas (JSON-LD)
+- `Service` mit `areaServed` als PLZ-Array
+- `LocalBusiness` mit korrekten Adressdaten
+- `BreadcrumbList`
+- `FAQPage` mit allen FAQ-Antworten
+
+---
+
 ## Qualitäts-Checkliste (vor Veröffentlichung jeder Seite)
 
 - [ ] Konkurrenzanalyse durchgeführt (Top 3 analysiert)
@@ -175,3 +236,16 @@ Informational Keywords abdecken, die kaufbereite Zielgruppen in der Recherche-Ph
 - [ ] In Sitemap eingetragen
 - [ ] Build erfolgreich, HTTP 200
 - [ ] Marken-konsistent (Design, Ton, Fakten)
+
+### RAA-Masterplan-Checkliste (Zusatz für Städteseiten)
+- [ ] H1 nach Schema „Laborcontainer [Stadt] | [Tech] & [USP]"
+- [ ] Keyword-Dichte 1,8–2,2 % (gemessen, nicht geschätzt)
+- [ ] Strategische Fusion: jeder Absatz verzahnt Region + Service
+- [ ] 5–8 lokale Anker (Stadtteile, Industriegebiete, Konzerne)
+- [ ] 3x2 Technical Depth Matrix vorhanden
+- [ ] Geografische Kausalität explizit benannt (Klima/Boden/Wasser)
+- [ ] Bürokratie-Insider: konkrete Bezirksämter + Normen
+- [ ] Prestige-Mapping: 3+ lokale Leitbetriebe als Qualitätsmaßstab
+- [ ] LocalBusiness-Schema mit `areaServed` als PLZ-Liste
+- [ ] Bild-Dateinamen + Alt-Tags nach Schema `[leistung]-[stadtteil].jpg`
+- [ ] Sister-City-Verlinkung (geografisch oder thematisch sinnvoll)
