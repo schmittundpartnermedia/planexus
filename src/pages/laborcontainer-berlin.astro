@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AuthorBio from '../components/AuthorBio.astro';
+import CityCrossLinks from '../components/CityCrossLinks.astro';
 import ContactForm from '../components/ContactForm.tsx';
 
 const berlinPLZ = [
@@ -234,6 +236,9 @@ const faqSchema = {
         </div>
       </div>
     </section>
+
+    <AuthorBio city="Berlin" />
+
 
     <!-- PATTERN-INTERRUPT: LABtoGO 2.0 -->
     <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
@@ -777,6 +782,8 @@ const faqSchema = {
         </div>
       </div>
     </section>
+    <CityCrossLinks current="berlin" />
+
 
   </div>
 </Layout>

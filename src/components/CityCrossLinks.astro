@@ -1,0 +1,75 @@
+---
+export interface Props {
+  current: string;
+}
+const { current } = Astro.props;
+
+const allCities = [
+  { slug: 'stuttgart', name: 'Stuttgart', region: 'DE' },
+  { slug: 'hamburg', name: 'Hamburg', region: 'DE' },
+  { slug: 'berlin', name: 'Berlin', region: 'DE' },
+  { slug: 'muenchen', name: 'München', region: 'DE' },
+  { slug: 'duesseldorf', name: 'Düsseldorf', region: 'DE' },
+  { slug: 'frankfurt', name: 'Frankfurt', region: 'DE' },
+  { slug: 'zuerich', name: 'Zürich', region: 'CH' },
+  { slug: 'basel', name: 'Basel', region: 'CH' },
+  { slug: 'bern', name: 'Bern', region: 'CH' },
+  { slug: 'wien', name: 'Wien', region: 'AT' },
+  { slug: 'graz', name: 'Graz', region: 'AT' },
+  { slug: 'linz', name: 'Linz', region: 'AT' },
+];
+
+const others = allCities.filter(c => c.slug !== current);
+const de = others.filter(c => c.region === 'DE');
+const ch = others.filter(c => c.region === 'CH');
+const at = others.filter(c => c.region === 'AT');
+---
+<section class="py-16 md:py-20 bg-white border-t border-gray-100">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-10">
+        <div class="text-xs uppercase tracking-wider text-[#7a9900] font-bold mb-3">Planexus liefert in ganz DACH</div>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-3">Laborcontainer auch an Ihrem Standort</h2>
+        <p class="text-gray-600 text-lg">Wir bauen für Sie in Deutschland, der Schweiz und Österreich – mit denselben hohen Standards, abgestimmt auf das jeweilige Baurecht und die regionalen Normen.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-2xl">🇩🇪</span>
+            <h3 class="font-bold text-slate-900">Deutschland</h3>
+          </div>
+          <ul class="space-y-2">
+            {de.map(c => (
+              <li><a href={`/laborcontainer-${c.slug}`} class="text-gray-700 hover:text-[#7a9900] hover:underline text-sm font-medium">Laborcontainer {c.name}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-2xl">🇨🇭</span>
+            <h3 class="font-bold text-slate-900">Schweiz</h3>
+          </div>
+          <ul class="space-y-2">
+            {ch.map(c => (
+              <li><a href={`/laborcontainer-${c.slug}`} class="text-gray-700 hover:text-[#7a9900] hover:underline text-sm font-medium">Laborcontainer {c.name}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-2xl">🇦🇹</span>
+            <h3 class="font-bold text-slate-900">Österreich</h3>
+          </div>
+          <ul class="space-y-2">
+            {at.map(c => (
+              <li><a href={`/laborcontainer-${c.slug}`} class="text-gray-700 hover:text-[#7a9900] hover:underline text-sm font-medium">Laborcontainer {c.name}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

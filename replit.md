@@ -23,6 +23,7 @@ This project is the corporate website for Planexus GmbH, a German company specia
 - STÄDTESEITEN MONEY-PAGE V4 STATUS: Stuttgart (Master), Hamburg (V4: Sturmflut/C5-M/VC-D), Berlin (V4: 12-Bezirksämter/Spree-Sand/Charité-RKI-MDC-Adlershof), München (V4: Föhn-HVAC/Schotterebene/TUM-Garching-FRM-II-MLZ/Martinsried, 3.105 W, 7 FAQ, 84% unique vs Stuttgart, 80%+ vs Hamburg/Berlin). Verbleibend für V4-Rebuild: Düsseldorf, Frankfurt, Zürich, Basel, Bern, Wien, Graz, Linz.
 - STÄDTESEITEN BASIS-STATUS (12 von 19 NEU GEBAUT): DE: Hamburg, Berlin, München, Stuttgart, Düsseldorf, Frankfurt (6/13) | CH: Zürich, Basel, Bern (3/3 ✓) | AT: Wien, Graz, Linz (3/3 ✓) — Alle 12 komplett neu gebaut mit 80-90% Content-Uniqueness, recherchierte Fakten, individuelle Narrative pro Stadt
 - SEO-SANIERUNG ABGESCHLOSSEN: Doorway-Page-Pattern aufgelöst (Leistungen-Grid + Projektablauf entfernt, alle H2s individualisiert, "Gut zu wissen" → unique Fakten pro Stadt), Navbar mit Standorte-Dropdown (DE/CH/AT), Startseite Regionen-Block, Schema areaServed DACH, Hero-Bild-Duplikate (Berlin/München/Stuttgart) behoben, Title-Duplikation behoben
+- SEO-AUDIT-FIXES (April 2026): Sitemap mit lastmod (alle 41 URLs), AuthorBio-Komponente (E-E-A-T) auf alle 12 Stadtseiten, CityCrossLinks-Komponente (DE/CH/AT-Cross-Linking) auf alle 12 Stadtseiten, Homepage erweitert von 505 auf ~1.400 Wörter mit Standorte-Hub + Leistungen-Hub + Magazin-Hub (interne Verlinkung)
 
 ## System Architecture
 
