@@ -1,0 +1,456 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Laborcontainer für H₂-Forschung & Batterietests – Ex-Schutz, Gasdetektion und Förderung",
+  "description": "Praxis-Leitfaden für Wasserstoff- und Batterielabore im Container: ATEX-Zonen, H₂-Gasdetektion, Lüftung, Brandschutz beim Thermal-Runaway-Test und IPCEI/BMBF-Förderung – für Forschungsinstitute, Automobilzulieferer und Startups.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-04-20",
+  "dateModified": "2026-04-20",
+  "image": "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?q=80&w=2070",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://www.planexus.de/Planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.planexus.de/magazin/laborcontainer-energiewende-h2-batterie-ex-schutz" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://www.planexus.de/magazin" },
+    { "@type": "ListItem", "position": 3, "name": "Laborcontainer für H₂-Forschung & Batterietests", "item": "https://www.planexus.de/magazin/laborcontainer-energiewende-h2-batterie-ex-schutz" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welche ATEX-Zone gilt in einem Wasserstoff-Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Im Normalbetrieb mit dichten H₂-Anlagen liegt typischerweise Zone 2 vor – eine explosionsfähige Atmosphäre tritt nur selten und kurzzeitig auf. Direkt an Ablassleitungen oder im Inneren von Prüfkammern kann lokal Zone 1 entstehen. Die Zonenfestlegung erfolgt im Explosionsschutzdokument nach BetrSichV §6 unter Beachtung von TRBS 2152 und DGUV Information 213-053." } },
+    { "@type": "Question", "name": "Wie funktioniert die H₂-Gasdetektion im Container?", "acceptedAnswer": { "@type": "Answer", "text": "Festverdrahtete Sensoren (katalytische Wärmetönung, MEMS oder Halbleiter) überwachen kontinuierlich die UEG (untere Explosionsgrenze 4 vol% in Luft). Voralarm bei 20–25 % UEG, Hauptalarm bei 50 % UEG mit automatischer Abschaltung der Versuchsanlage und Erhöhung der Lüftung. Geräte nach EN 60079-29-1 zertifiziert, Aufstellung deckennah – Wasserstoff steigt mit 0,0899 kg/m³ schnell auf." } },
+    { "@type": "Question", "name": "Wieviel Luftwechsel braucht ein H₂-Labor?", "acceptedAnswer": { "@type": "Answer", "text": "DGUV Information 213-053 nennt für Wasserstofflabore einen Luftwechsel von mindestens 8 h⁻¹ in der Standardlüftung. Bei Versuchen mit erhöhtem Freisetzungsrisiko oder im Alarmfall wird auf 15–25 h⁻¹ hochgefahren. Die Abluftführung muss am höchsten Punkt der Decke ansetzen, weil H₂ rund 14× leichter als Luft ist." } },
+    { "@type": "Question", "name": "Welche Norm gilt für Batterie-Misuse-Tests?", "acceptedAnswer": { "@type": "Answer", "text": "Für Lithium-Industriezellen IEC 62619 und IEC 62620, für stationäre Speicher UL 9540A (Thermal-Runaway-Charakterisierung), für Traktionsbatterien ECE R100 und UN 38.3 (Transportprüfung). Bei Crash-, Nagel- und Überladetests fordern alle Normen ein abgeschlossenes Prüfvolumen mit definierter Belüftung und Brandbekämpfung – ein Container mit Druckentlastungsfläche erfüllt das ohne aufwendige Sondergenehmigung im Hauptgebäude." } },
+    { "@type": "Question", "name": "Welche Förderung gibt es für H₂- und Batterielabore in Deutschland?", "acceptedAnswer": { "@type": "Answer", "text": "Auf EU-Ebene IPCEI Hy2Tech, Hy2Use, Hy2Infra und Hy2Move (Beihilfegenehmigung der EU-Kommission). National BMBF-Leitprojekte H2Giga, H2Mare und TransHyDE, das BMWK-Programm 'Forschung und Entwicklung im Bereich der Elektromobilität', KfW 295 Klimaschutzoffensive Mittelstand, ZIM für KMU sowie EXIST-Forschungstransfer für Startups aus Hochschulen. Förderquoten reichen von 25 % (große Unternehmen) bis 80 % (KMU bei Grundlagenforschung)." } },
+    { "@type": "Question", "name": "Warum Container statt Hauptgebäude für Ex-Versuche?", "acceptedAnswer": { "@type": "Answer", "text": "Sicherheitsabstand: Ein freistehender Container hält die TRBS-2152-Mindestabstände zu Nachbargebäuden und Verkehrswegen leichter ein. Druckentlastung: Wand- oder Dachflächen lassen sich als Berstflächen ausführen. Genehmigung: Die Ex-Zone bleibt räumlich begrenzt, der Rest des Standortes ist nicht betroffen. Modulare Erweiterung: Wenn die Forschung wächst, kommt der nächste Container daneben." } },
+    { "@type": "Question", "name": "Können Container ATEX-Zone 1 und Zone 2 in einem Modul kombinieren?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, durch räumliche Trennung mit Schleusen und unterschiedlichen Druckkaskaden. Der Versuchsraum ist Zone 1 oder Zone 2, der angrenzende Mess- und Auswerteraum ist Ex-frei. Schalt- und Steuerschränke werden überdruckgekapselt nach EN 60079-2 oder in den Ex-freien Bereich verlegt. Diese räumliche Trennung ist in einem Containerlabor architektonisch leichter umzusetzen als im Bestandsgebäude." } }
+  ]
+};
+---
+
+<Layout
+  title="Laborcontainer für H₂-Forschung & Batterietests – Ex-Schutz, Gasdetektion, Förderung"
+  description="Wasserstoff- und Batterielabore im Container: ATEX-Zonen, H₂-Gasdetektion nach EN 60079-29-1, Lüftung nach DGUV 213-053, Brandschutz für Thermal-Runaway-Tests und IPCEI/BMBF-Förderung. Praxisleitfaden für Forschungsinstitute, Automobilzulieferer und Startups."
+  canonical="/magazin/laborcontainer-energiewende-h2-batterie-ex-schutz"
+  ogImage="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?q=80&w=1200"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?q=80&w=2070')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+              Energiewende & Ex-Schutz
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              16 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Laborcontainer für H₂-Forschung &amp; Batterietests – Ex-Schutz, Gasdetektion und Förderung
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Wasserstoff, Brennstoffzelle, Festkörperbatterie, Recycling von Lithium-Ionen-Zellen – die Energiewende erzeugt einen massiven Bedarf an Spezial-Laboren mit Ex-Schutz, Gasdetektion und Brandschutzkonzept. Was im Bestandsgebäude oft unmöglich ist, lässt sich im Container in 8 bis 14 Wochen normkonform realisieren.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              20. April 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald, Geschäftsführer Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/magazin" class="hover:text-primary">Magazin</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">H₂- &amp; Batterielabore im Container</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                Die Energiewende ist der größte industrielle Umbau Deutschlands seit der Wiedervereinigung. Drei Felder treiben den Bedarf an Spezial-Laboren besonders hart: <strong>grüner Wasserstoff</strong> (Elektrolyse, Brennstoffzelle, Speicher), <strong>Batteriezellfertigung</strong> (Forschung, Misuse-Test, Recycling) und <strong>Power-to-X</strong>. Alle drei haben eines gemeinsam: Sie arbeiten mit brennbaren Stoffen, hohen Energiedichten oder beidem – und brauchen Labore mit Ex-Schutz, Gasdetektion und Sonder-Brandschutz, die in normalen Bürogebäuden schlicht nicht genehmigungsfähig sind.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Genau hier ist der modulare Laborcontainer die schnellste Lösung. Statt einen Anbau zum Bestand zu planen, der zwei Jahre braucht und am Brandschutzkonzept des Hauptgebäudes scheitert, stellen wir einen freistehenden Containerlabor-Block auf den Hof – mit eigener ATEX-Zonenfestlegung, eigener Druckentlastung, eigener Brandwand. In acht bis vierzehn Wochen, schlüsselfertig.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Mega-Trend Energiewende: Warum gerade jetzt der Bedarf explodiert</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die fortgeschriebene <strong>Nationale Wasserstoffstrategie</strong> der Bundesregierung (Juli 2023) hebt die heimische Elektrolyseleistung von 5 GW (2030, alte Strategie) auf <strong>10 GW bis 2030</strong> an. Parallel hat die EU die <strong>IPCEI-Wasserstoffwellen Hy2Tech, Hy2Use, Hy2Infra und Hy2Move</strong> beihilferechtlich genehmigt – allein in Deutschland fließen daraus rund 5,4 Mrd EUR in 28 Hy2Tech-Projekte. Jedes dieser Projekte – von der Membran-Elektroden-Einheit bis zum Tankstelleninfrastruktur-Bauteil – braucht eine Versuchsumgebung mit ATEX-Zone und Wasserstoff-Detektion.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Auf der Batterieseite läuft die Industrialisierung parallel: <strong>Northvolt Heide</strong> (Schleswig-Holstein, im Bau), <strong>CATL Erfurt-Arnstadt</strong> (in Betrieb), <strong>VW PowerCo Salzgitter</strong> (Hochlauf), <strong>ACC Kaiserslautern</strong> (Stellantis-Mercedes-TotalEnergies, Hochlauf) und <strong>Tesla Grünheide</strong>. Jeder Standort braucht ein angegliedertes <strong>Cell Engineering Lab</strong> – für eingehende Materialqualifizierung, Misuse-Tests nach IEC 62619 und Thermal-Runaway-Charakterisierung nach UL 9540A. Genau dort, wo wir tagtäglich Containerlabore liefern.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Hinzu kommen die Forschungseinrichtungen: <strong>Fraunhofer ISE</strong> (Freiburg) und <strong>FCBAT</strong>, <strong>ZSW Ulm</strong>, <strong>Helmholtz-Institut Münster (HIMS)</strong>, <strong>KIT Karlsruhe</strong> mit dem <strong>HIU</strong>, das <strong>Forschungszentrum Jülich (IEK-9)</strong> und die universitären Lehrstühle für Elektrochemie an TU München, RWTH Aachen, TU Berlin. Alle erweitern – und die Bestandsgebäude geben es nicht her.
+              </p>
+
+              <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Praxisbeobachtung</h4>
+                    <p class="text-gray-600 text-sm">In den letzten zwölf Monaten ist bei Planexus jede zweite Anfrage aus dem H₂- oder Batterieumfeld gekommen. Der typische Auslöser: Eine Förderzusage liegt vor, das Forschungsteam steht – aber es gibt keinen Raum, in dem unter ATEX-Bedingungen gearbeitet werden darf. Wir liefern dann den Container auf das Werksgelände, mit eigenständigem Ex-Konzept und integrierter Gasdetektion – betriebsbereit, bevor der Bauantrag für den Anbau überhaupt gestellt wäre.</p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Ex-Schutz im Containerlabor: ATEX 2014/34/EU und BetrSichV in der Praxis</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der gesetzliche Rahmen besteht aus zwei Säulen. Die <strong>ATEX-Produktrichtlinie 2014/34/EU</strong> regelt die Geräte – jeder Sensor, Schalter, Lüftermotor und jede Leuchte in der Ex-Zone muss eine entsprechende Kennzeichnung tragen (z. B. „II 2 G Ex db IIC T4 Gb"). Die <strong>ATEX-Betriebsrichtlinie 1999/92/EG</strong>, in Deutschland umgesetzt durch die <strong>BetrSichV § 6</strong> und die <strong>TRBS 2152 / TRGS 720–722</strong>, regelt den Betrieb – also wer welche Zone festlegt, dokumentiert, überwacht.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In einem typischen H₂-Forschungscontainer entsteht folgendes Bild:
+              </p>
+
+              <ul class="space-y-3 mb-6 text-gray-600">
+                <li><strong>Zone 0:</strong> Innerhalb der Versuchsapparatur (z. B. im Inneren eines Brennstoffzellen-Teststandes oder einer Druckgasflasche). Hier ist eine explosionsfähige Atmosphäre ständig oder langzeitig vorhanden.</li>
+                <li><strong>Zone 1:</strong> Direkt an Ablassleitungen, Probenahmestellen oder Schweißverbindungen, an denen im Normalbetrieb gelegentlich Wasserstoff austreten kann.</li>
+                <li><strong>Zone 2:</strong> Der gesamte Versuchsraum, sofern dichte Apparaturen verwendet werden. Eine explosionsfähige Atmosphäre tritt nur bei Störung oder Wartung auf, kurz und selten.</li>
+                <li><strong>Ex-frei:</strong> Mess- und Auswerteraum mit Bürorechnern, Labor-PCs und Standard-Steuertechnik – durch Schleuse und Überdruck vom Versuchsraum getrennt.</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Diese räumliche Trennung ist im Containerlabor architektonisch leicht umzusetzen: Wir teilen das Modul mit einer feuerwiderstandsfähigen Innenwand (REI 90) und einer Personenschleuse mit zwei selbstschließenden Türen. Steuerschränke kommen in den Ex-freien Bereich oder werden nach EN 60079-2 überdruckgekapselt. Verkabelungen werden ATEX-konform über Sandwichdurchführungen geführt. Das Explosionsschutzdokument schreiben wir mit – nicht aus dem Lehrbuch, sondern aus der Praxis von 15 Jahren.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Gasdetektion: Wasserstoff sehen, bevor er gefährlich wird</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Wasserstoff ist physikalisch ein anspruchsvoller Gast: Mit einer Dichte von <strong>0,0899 kg/m³</strong> ist er rund 14× leichter als Luft, sein <strong>Flammbarkeitsbereich liegt zwischen 4 und 77 vol%</strong> in Luft, die <strong>Mindestzündenergie beträgt nur 0,019 mJ</strong> – das entspricht der elektrostatischen Aufladung eines Kunststoffstuhls. Die Konsequenz: Detektion muss kontinuierlich laufen, an der richtigen Stelle und mit kalibrierter Sensorik.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Drei Sensorprinzipien sind im Einsatz: <strong>Katalytische Wärmetönung</strong> (klassisch, robust, Standzeit ca. 3–5 Jahre), <strong>Halbleiter-Sensoren</strong> (preisgünstig, querempfindlich) und <strong>MEMS-Wärmeleitungssensoren</strong> (modern, weniger Querempfindlichkeit, gut für hohe H₂-Konzentrationen). Für Forschungslabore empfehlen wir die katalytische Variante im unteren Messbereich (0–100 % UEG) plus einen Wärmeleitungssensor für Konzentrationen darüber – falls einmal eine ungeplante Freisetzung auftritt, weiß die Steuerung exakt, wie viel Wasserstoff im Raum ist.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Schaltschwellen sind Standard: <strong>Voralarm bei 20 % UEG</strong> (entspricht 0,8 vol% H₂ in Luft, optisch + akustisch, Lüftungserhöhung), <strong>Hauptalarm bei 50 % UEG</strong> (2 vol% H₂, automatische Abschaltung der Versuchsanlage, Notlüftung, Zugangsverbot). Die Geräte werden nach <strong>EN 60079-29-1</strong> zertifiziert eingesetzt. Sensoren werden deckennah montiert, mindestens einer pro 25 m² Grundfläche, plus jeweils ein Sensor direkt über jedem Versuchsstand. Die Anbindung an die Gebäudeleittechnik (oder eine eigene Modbus-Schnittstelle) macht den Container zu einem überwachten Sicherheitsbereich – auch wenn niemand vor Ort ist.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Lüftung im H₂-Container: Wenn 8-fach nicht reicht</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die <strong>DGUV Information 213-053 „Sicheres Arbeiten in Wasserstoff-Laboratorien"</strong> gibt den Richtwert vor: mindestens <strong>8-facher Luftwechsel pro Stunde</strong> in der Standardlüftung. Bei Versuchen mit erhöhtem Freisetzungsrisiko wird auf 15 bis 25 h⁻¹ hochgefahren. Im Hauptalarm-Fall springt eine Notlüftung an, die das gesamte Modul innerhalb weniger Minuten ausspült.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Drei Punkte sind dabei entscheidend, an denen wir uns von Standard-HVAC-Planung unterscheiden:
+              </p>
+
+              <ol class="space-y-3 mb-6 text-gray-600 list-decimal pl-6">
+                <li><strong>Abluft am höchsten Punkt:</strong> Da H₂ aufsteigt, muss die Absaugung deckenbündig erfolgen. Wir setzen Dachhauben mit Wetterschutzgitter, niemals Wandauslässe.</li>
+                <li><strong>Explosionsgeschützte Ventilatoren:</strong> Im Abluftstrom kann theoretisch eine zündfähige Atmosphäre durchgehen – also Ventilatoren nach <strong>EN 14986</strong> in Ex-Ausführung, mit Funkenflugschutz und ATEX-Motor.</li>
+                <li><strong>Druckkaskade:</strong> Versuchsraum leichter Unterdruck (–10 bis –20 Pa) gegen Mess- und Auswerteraum, dieser leichter Überdruck gegen die Außenluft. So strömt im Notfall Luft aus dem sauberen Bereich in den belasteten – nie umgekehrt.</li>
+              </ol>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Wärmerückgewinnung erfolgt – anders als im normalen Labor – nicht über Plattenwärmetauscher mit direktem Luftkontakt, sondern über getrennte Kreisläufe (KVS-Systeme) oder Wärmerohre, damit kein H₂ in den Zuluftpfad gelangen kann. Wir veröffentlichen die Berechnung der Luftbilanz im Explosionsschutzdokument – das ist Pflicht, und es ist auch der Punkt, an dem schlechte Planungsbüros oft scheitern.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Batterietests im Container: Thermal Runaway, Misuse, Recycling</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für Lithium-Ionen- und Festkörperbatterien gelten andere Normen, aber die räumlichen Anforderungen ähneln dem H₂-Labor. Die wichtigsten Testkategorien:
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-4 my-8 not-prose">
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Misuse-Tests nach IEC 62619 / 62620</h4>
+                  <p class="text-sm text-gray-600">Überladen, Tiefentladen, Kurzschluss, Nageltest, Quetschtest, externes Feuer. Energiefreisetzung pro Zelle bis 100 kJ. Anforderung: abgeschlossenes Prüfvolumen, Druckentlastung, automatische Brandbekämpfung.</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Thermal Runaway nach UL 9540A</h4>
+                  <p class="text-sm text-gray-600">Charakterisierung der Vent-Gas-Zusammensetzung, Druckverlauf, Cell-to-Cell-Propagation. Standard für stationäre Speicher in den USA, zunehmend auch in EU-Genehmigungen verlangt.</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Klimatests / Lebensdauer</h4>
+                  <p class="text-sm text-gray-600">Klimaschränke –40 °C bis +85 °C (Materialqualifikation bis +180 °C), Zyklenfestigkeit nach UN 38.3, IEC 62660 für Automotive. Normalbetrieb, kein Ex-Schutz nötig – aber thermische Runaway-Reserve.</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Recycling / Demontage</h4>
+                  <p class="text-sm text-gray-600">Manuelles Öffnen gealterter Module – brand- und gasrisikobehaftet. Inertisierte Glovebox, CO/HF-Detektion, lokal abgesaugter Werkbankplatz. Hier wachsende Nachfrage durch EU-Batterieverordnung 2023/1542.</p>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Misuse-Container besteht typischerweise aus drei Zonen: <strong>Prüfkammer</strong> (mit Druckentlastung in Form einer Berstfläche an der Decke, Wassernebel-Sprinkler oder Aerosol-Brandbekämpfung), <strong>Beobachtungsraum</strong> (mit Hochgeschwindigkeitskameras, Thermografie, Druckaufzeichnung – elektrisch sauber getrennt) und <strong>Vorbereitungsraum</strong> (Lade-/Konditioniergerät, Probenhandhabung). Die HVAC ist auf 10–15-fachen Luftwechsel ausgelegt, mit Aktivkohle-Filterung der Abluft, falls fluorhaltige Vent-Gase entstehen (HF, POF₃ – charakteristisch für LiPF₆-Elektrolyte).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der Vorteil des Containers ist hier besonders deutlich: Eine explosive Berstfläche im Dach eines Standalone-Moduls ist genehmigungsfähig. Im dritten Stock eines Forschungsgebäudes ist sie es schlicht nicht.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Brandschutz: Mehr als ein Sprinkler</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein H₂- oder Batteriecontainer hat ein eigenes Brandschutzkonzept, das von einem zugelassenen Sachverständigen erstellt wird. Die wichtigsten Bausteine:
+              </p>
+
+              <ul class="space-y-3 mb-6 text-gray-600">
+                <li><strong>Tragwerk:</strong> Stahlrahmenkonstruktion mit Brandschutzbeschichtung, Innenverkleidung F90 / REI 90 nach DIN EN 13501.</li>
+                <li><strong>Brandfrüherkennung:</strong> VdS-zugelassene Rauchmelder plus Wärmemelder – bei Batterietests ergänzt durch Off-Gas-Detektion (CO, H₂, VOC), die einen Thermal-Runaway 10–15 Minuten vor dem ersten sichtbaren Rauch detektiert.</li>
+                <li><strong>Löschtechnik:</strong> Für H₂ keine Wasserlöschung in der Ex-Zone (Folgereaktion möglich), stattdessen Inertisierung mit Stickstoff oder Argon. Für Batterietests Wassernebel mit Additiv oder Aerosol-Generatoren (FK-5-1-12), die das Sauerstoffangebot kurzzeitig reduzieren.</li>
+                <li><strong>Brandabschnitte:</strong> Container räumlich getrennt vom Hauptgebäude, Mindestabstand 5–10 m je nach Brandschutzkonzept.</li>
+                <li><strong>Druckentlastung:</strong> Berstflächen in Wand oder Dach, ausgelegt auf den maximalen Innenüberdruck der Versuchsapparatur (typisch 100–500 mbar Auslösedruck).</li>
+              </ul>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Förderlandschaft 2026: Was ist abrufbar?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Förderlandschaft für Energiewende-Forschung ist 2026 dichter als je zuvor – aber auch unübersichtlicher. Hier die wichtigsten Programme, die für Forschungsinstitute, Automobilzulieferer und Startups infrage kommen:
+              </p>
+
+              <div class="space-y-4 my-8 not-prose">
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">IPCEI Hy2Tech, Hy2Use, Hy2Infra, Hy2Move</h4>
+                  <p class="text-sm text-gray-600 mb-2">Important Projects of Common European Interest. Beihilferechtliche Genehmigung der EU-Kommission, in DE umgesetzt durch BMWK. Förderung großtechnischer F&amp;E-Vorhaben entlang der Wasserstoff-Wertschöpfungskette. In Hy2Tech allein 28 deutsche Projekte mit ca. 5,4 Mrd EUR Bundes- und Landesmitteln.</p>
+                  <p class="text-xs text-gray-500">Zielgruppe: Industriekonsortien mit grenzüberschreitender Wirkung.</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">BMBF-Leitprojekte H2Giga, H2Mare, TransHyDE</h4>
+                  <p class="text-sm text-gray-600 mb-2">H2Giga: Serienfertigung von Elektrolyseuren. H2Mare: Offshore-Wasserstoff. TransHyDE: Transportinfrastruktur. Insgesamt rund 740 Mio EUR für die erste Förderphase, Verlängerung in Planung.</p>
+                  <p class="text-xs text-gray-500">Zielgruppe: Forschungsverbünde aus Hochschulen, Fraunhofer-Instituten und Industrie.</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">BMWK „Forschung und Entwicklung im Bereich Elektromobilität"</h4>
+                  <p class="text-sm text-gray-600 mb-2">Förderaufruf für Batteriezellfertigung, Recycling, Ladeinfrastruktur. Förderquote 25–50 % für Industrie, bis 80 % für KMU bei Grundlagenforschung. Antragsstellung über den Projektträger Jülich.</p>
+                  <p class="text-xs text-gray-500">Zielgruppe: Automotive-Zulieferer, Batteriehersteller, Recycler.</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">KfW 295 – Klimaschutzoffensive für Unternehmen</h4>
+                  <p class="text-sm text-gray-600 mb-2">Zinsverbilligter Kredit für Investitionen in Klimaschutz, einschließlich F&amp;E-Infrastruktur. Bis 25 Mio EUR pro Vorhaben, Tilgungszuschuss bis 30 %.</p>
+                  <p class="text-xs text-gray-500">Zielgruppe: KMU und Mid-Caps mit konkreter Klimaschutzwirkung.</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">ZIM – Zentrales Innovationsprogramm Mittelstand</h4>
+                  <p class="text-sm text-gray-600 mb-2">Themenoffene F&amp;E-Förderung für KMU. Förderquote bis 45 % je nach Unternehmensgröße und Region. Schnelles, schlankes Antragsverfahren.</p>
+                  <p class="text-xs text-gray-500">Zielgruppe: Mittelständische Komponenten- und Anlagenhersteller.</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">EXIST-Forschungstransfer</h4>
+                  <p class="text-sm text-gray-600 mb-2">Förderung von Hochschulausgründungen mit Forschungsbedarf. Bis zu 250 Tsd EUR Sachmittel über 18 Monate für die Vorbereitungsphase. Zweite Phase kombinierbar mit Risikokapital.</p>
+                  <p class="text-xs text-gray-500">Zielgruppe: Wissenschaftler:innen aus Hochschulen, die ein H₂- oder Batterie-Startup gründen.</p>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Praxis-Tipp: Containerlabore sind in fast allen Förderprogrammen als <strong>förderfähige Investition</strong> einstufbar – sowohl bei Kauf (aktivierte Anlage, lineare Abschreibung über 10–15 Jahre) als auch bei Miete (laufender Sachmittelaufwand). Die Vorlaufzeit von 8 bis 14 Wochen passt zu fast jedem Projektzeitplan, wo ein Massivbau Monate über die Förderlaufzeit hinausschießt.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Drei Zielgruppen, drei Container-Konzepte</h2>
+
+              <div class="space-y-6 my-8 not-prose">
+                <div class="bg-slate-900 text-white rounded-2xl p-6">
+                  <h4 class="font-bold text-primary mb-2">1. Forschungsinstitute &amp; Hochschulen</h4>
+                  <p class="text-gray-300 text-sm">Bedarf: Modulare Versuchsumgebung für wechselnde Drittmittelprojekte, oft 1–3 Jahre Laufzeit. Anforderung: schneller Aufbau, schneller Rückbau, Wiederverwendbarkeit. Lösung: Containerlabor zur Miete oder Mietkauf, mit Rahmen-Ex-Konzept und austauschbaren Versuchsmodulen.</p>
+                </div>
+                <div class="bg-slate-900 text-white rounded-2xl p-6">
+                  <h4 class="font-bold text-primary mb-2">2. Automobilzulieferer &amp; OEM</h4>
+                  <p class="text-gray-300 text-sm">Bedarf: Permanente Erweiterung des Cell Engineering Lab oder der Brennstoffzellen-Entwicklung am Hauptstandort. Anforderung: industrielle Verfügbarkeit, GMP- bis ISO 14644-Klassen für Reinraumarbeit, Anbindung an SAP / Werks-LIMS. Lösung: schlüsselfertiger Container mit kompletter Qualifizierung (IQ/OQ/PQ), 24/7-Service.</p>
+                </div>
+                <div class="bg-slate-900 text-white rounded-2xl p-6">
+                  <h4 class="font-bold text-primary mb-2">3. Startups &amp; Spin-offs</h4>
+                  <p class="text-gray-300 text-sm">Bedarf: Erstes eigenes Labor nach EXIST- oder Seed-Finanzierung. Anforderung: niedrige Anfangsinvestition, kein langfristiger Mietvertrag im Inkubator. Lösung: Mietcontainer mit Option auf Kauf, Aufstellung im Technologiepark oder am Hochschulcampus.</p>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Was ein H₂- oder Batteriecontainer von Planexus mitbringt</h2>
+
+              <ul class="space-y-3 mb-6 text-gray-600">
+                <li>✔ Explosionsschutzdokument nach BetrSichV §6 mit Zonenplan, Sensorik-Layout, Abschaltkonzept</li>
+                <li>✔ ATEX-zertifizierte Geräte vom Schaltschrank bis zur Notbeleuchtung</li>
+                <li>✔ H₂-Detektion nach EN 60079-29-1 mit Voralarm/Hauptalarm und Steuerung</li>
+                <li>✔ Lüftung 8–25 h⁻¹, redundant, mit Wärmerückgewinnung über getrennte Kreisläufe</li>
+                <li>✔ Druckentlastungsfläche in Wand oder Dach, ausgelegt nach VDI 2263</li>
+                <li>✔ Brandschutzkonzept mit Sachverständigen-Stempel, Off-Gas-Detektion für Batterien</li>
+                <li>✔ Leitfähige Bodenbeläge (ESD), Erdung jeder leitfähigen Komponente</li>
+                <li>✔ FAT im Werk Albstadt vor Auslieferung, IQ/OQ/PQ am Aufstellort</li>
+                <li>✔ Dokumentation nach EU-Maschinenrichtlinie und CE-Konformitätserklärung für das Gesamtmodul</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein typisches Projekt – sagen wir ein Brennstoffzellen-Teststand für einen Automobilzulieferer in Stuttgart oder ein Batterie-Misuse-Container für ein Forschungsinstitut in <a href="/laborcontainer-muenchen" class="text-primary hover:underline">München</a> – startet mit einem zweistündigen Anforderungs-Workshop. Sechs Wochen später liegt das Explosionsschutzdokument zur Freigabe vor, weitere acht bis zehn Wochen später steht das Modul betriebsbereit auf dem Werksgelände.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Energiewende wartet nicht auf Bauanträge. Wer 2026 in H₂- oder Batterieforschung investiert, hat keine Zeit für eine zwei Jahre lange Genehmigungsschleife. Der modulare Laborcontainer ist die schnellste, normkonforme und förderfähige Antwort.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Ihr H₂- oder Batterielabor in 8–14 Wochen?</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Unsere Engineers haben in den letzten zwölf Monaten Container für Brennstoffzellen-Teststände, Elektrolyse-Forschung und Misuse-Tests realisiert. Erzählen Sie uns, was Sie planen – wir antworten mit einem konkreten Konzept inklusive Ex-Konzept-Skizze.</p>
+                <a href="/kontakt" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Kostenlose Erstberatung anfragen
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">Auf einen Blick</h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> ATEX 2014/34/EU + BetrSichV §6 + TRBS 2152</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> H₂-Detektion EN 60079-29-1, Schwellen 20 % / 50 % UEG</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Lüftung min. 8 h⁻¹ (DGUV 213-053)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Batterie-Misuse: IEC 62619, UL 9540A, ECE R100</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> IPCEI, BMBF, BMWK, KfW 295, ZIM, EXIST</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> 8–14 Wochen schlüsselfertig ab Werk Albstadt</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <h4 class="font-bold text-slate-900 mb-4">Weiterführende Inhalte</h4>
+                <ul class="space-y-3">
+                  <li><a href="/leistungen/modulbau" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Modulbau &amp; Container</a></li>
+                  <li><a href="/leistungen/planung" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Laborplanung &amp; Engineering</a></li>
+                  <li><a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Lüftung &amp; Klimatisierung</a></li>
+                  <li><a href="/magazin/bsl-2-bsl-3-container-labor" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>BSL-2 &amp; BSL-3 im Container</a></li>
+                  <li><a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Genehmigung &amp; Baurecht</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <h4 class="font-bold mb-3">H₂- oder Batterielabor planen?</h4>
+                <p class="text-gray-400 text-sm mb-4">Wir liefern das Explosionsschutzkonzept gleich mit – ohne Doppelhonorar für externe Sachverständige.</p>
+                <a href="/kontakt" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Kontakt aufnehmen</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Häufig gestellte Fragen zu H₂- und Batterielaboren im Container</h2>
+          <div class="space-y-4">
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche ATEX-Zone gilt in einem Wasserstoff-Laborcontainer?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Im Normalbetrieb mit dichten H₂-Anlagen typischerweise <strong>Zone 2</strong>. Direkt an Ablassleitungen oder in Prüfkammern lokal Zone 1. Die Festlegung erfolgt im Explosionsschutzdokument nach BetrSichV §6 unter Beachtung von TRBS 2152 und DGUV Information 213-053.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wie funktioniert die H₂-Gasdetektion im Container?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Festverdrahtete Sensoren (katalytisch / MEMS / Halbleiter) überwachen kontinuierlich die UEG. Voralarm bei 20–25 % UEG, Hauptalarm bei 50 % UEG mit Anlagenabschaltung und Notlüftung. Aufstellung deckennah, Geräte nach EN 60079-29-1.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wieviel Luftwechsel braucht ein H₂-Labor?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">DGUV Information 213-053 nennt mindestens <strong>8 h⁻¹</strong> in der Standardlüftung. Bei erhöhtem Risiko oder im Alarmfall 15–25 h⁻¹. Abluft am höchsten Punkt – H₂ ist 14× leichter als Luft.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Norm gilt für Batterie-Misuse-Tests?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed"><strong>IEC 62619</strong> und IEC 62620 für Lithium-Industriezellen, <strong>UL 9540A</strong> für stationäre Speicher (Thermal-Runaway-Charakterisierung), <strong>ECE R100</strong> und <strong>UN 38.3</strong> für Traktionsbatterien. Alle fordern abgeschlossenes Prüfvolumen mit definierter Belüftung und Brandbekämpfung.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Förderung gibt es für H₂- und Batterielabore in Deutschland?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">EU-Ebene: <strong>IPCEI Hy2Tech / Hy2Use / Hy2Infra / Hy2Move</strong>. National: BMBF-Leitprojekte <strong>H2Giga, H2Mare, TransHyDE</strong>; BMWK „F&amp;E Elektromobilität"; <strong>KfW 295</strong> Klimaschutzoffensive; <strong>ZIM</strong> für KMU; <strong>EXIST-Forschungstransfer</strong> für Startups. Förderquoten 25–80 % je nach Programm und Unternehmensgröße.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Warum Container statt Hauptgebäude für Ex-Versuche?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Sicherheitsabstand nach TRBS 2152 leicht einhaltbar. Druckentlastungsflächen in Wand/Dach genehmigungsfähig. Ex-Zone räumlich begrenzt – das Hauptgebäude bleibt unbeeinträchtigt. Modulare Erweiterung möglich, ohne in den Bestand einzugreifen.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Können Container ATEX-Zone 1 und Zone 2 in einem Modul kombinieren?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Ja, durch räumliche Trennung mit Schleusen und Druckkaskaden. Versuchsraum Zone 1/2, Mess- und Auswerteraum Ex-frei. Schaltschränke nach EN 60079-2 überdruckgekapselt oder im Ex-freien Bereich.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Weitere Artikel</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a href="/magazin/bsl-2-bsl-3-container-labor" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
+            <div class="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=400" alt="BSL-2 und BSL-3 Sicherheitslabor im Container" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <p class="text-xs text-primary font-medium mb-2">Sicherheit</p>
+              <h3 class="font-bold text-slate-900 group-hover:text-primary transition-colors">BSL-2 und BSL-3 im Container: Geht das?</h3>
+            </div>
+          </a>
+          <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
+            <div class="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=400" alt="Lüftungstechnik und Klimatisierung im Laborcontainer" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <p class="text-xs text-primary font-medium mb-2">Technik &amp; Normen</p>
+              <h3 class="font-bold text-slate-900 group-hover:text-primary transition-colors">Klimatisierung im Laborcontainer – Lüftung &amp; Normen</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/magazin" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Zurück zum Magazin
+      </a>
+    </div>
+  </div>
+</Layout>
