@@ -25,6 +25,41 @@ This project is the corporate website for Planexus GmbH, a German company specia
 - SEO-SANIERUNG ABGESCHLOSSEN: Doorway-Page-Pattern aufgelöst (Leistungen-Grid + Projektablauf entfernt, alle H2s individualisiert, "Gut zu wissen" → unique Fakten pro Stadt), Navbar mit Standorte-Dropdown (DE/CH/AT), Startseite Regionen-Block, Schema areaServed DACH, Hero-Bild-Duplikate (Berlin/München/Stuttgart) behoben, Title-Duplikation behoben
 - SEO-AUDIT-FIXES (April 2026): Sitemap mit lastmod (alle 41 URLs), AuthorBio-Komponente (E-E-A-T) auf alle 12 Stadtseiten, CityCrossLinks-Komponente (DE/CH/AT-Cross-Linking) auf alle 12 Stadtseiten, Homepage erweitert von 505 auf ~1.400 Wörter mit Standorte-Hub + Leistungen-Hub + Magazin-Hub (interne Verlinkung)
 
+## AKTUELLER STATUS (30.04.2026) — SMTP Microsoft 365 Setup
+
+**Was läuft:**
+- `server/email.ts` auf STARTTLS-Logik umgestellt (Port-abhängig, requireTLS bei 587, AUTH LOGIN, TLS≥1.2, escapeHtml, verifySmtp). Signatur sendContactEmail unverändert.
+- Diagnose-Script `scripts/smtp-test.mjs` verfügbar (.env-Selbstparser, verify() + Test-Mail mit voller Microsoft-Antwort).
+- Commits a620de3 + 183256a auf GitHub origin/main, Server-Deploy via `git pull && npm install && npm run build && pm2 restart all --update-env` durchgeführt, PM2 online.
+- Kontaktformular speichert weiterhin in PostgreSQL ✓ — keine Anfragen gehen verloren, nur Mail-Benachrichtigung fehlt aktuell.
+
+**Diagnose-Ergebnis (vom Server 82.165.27.244):**
+- TCP+STARTTLS+EHLO zu smtp.office365.com:587 → ✅ ok
+- Microsoft bietet `AUTH LOGIN XOAUTH2` an → ✅ SMTP-AUTH grundsätzlich erlaubt
+- Login fehlgeschlagen mit: `535 5.7.139 Authentication unsuccessful, the user credentials were incorrect.`
+
+**Microsoft-Konfiguration (von Thomas geprüft & Screenshots vorgelegt):**
+- ✅ Authentifiziertes SMTP postfachseitig aktiv
+- ✅ SMTP-AUTH tenant-weit NICHT deaktiviert (Nachrichtenflusseinstellungen)
+- ✅ MFA für `server@planexus.de` in Entra entfernt
+- ✅ Lizenz Exchange Online Plan 1 (vollwertig, kein Shared Mailbox)
+
+**Ursache identifiziert:**
+Das aktuell auf dem Server hinterlegte Passwort hat 12 Zeichen → mit hoher Wahrscheinlichkeit ein altes App-Passwort aus der Zeit, als MFA noch aktiv war. App-Passwörter sind technisch an MFA gekoppelt: sobald MFA abgeschaltet wird, werden sie automatisch ungültig. Genau das ist hier passiert.
+
+**Nächster Schritt (wartet auf Thomas):**
+Mail an Thomas wurde finalisiert und vom User abgesegnet. Inhalt: Thomas soll im Microsoft 365 Admin Center für `server@planexus.de` ein **neues normales Passwort** vergeben (mind. 16 Zeichen, gemischt), Häkchen „Erfordert Kennwortänderung beim ersten Anmelden" RAUS, einmal manuell unter login.microsoftonline.com einloggen, dann Passwort sicher an uns. Wir tragen es im `.env` ein, PM2-Restart, Test → fertig.
+
+**Wenn Thomas das Passwort schickt:**
+1. SSH auf IONOS-Server, in `/var/www/app/.env` `SMTP_PASS=<neues_passwort>` setzen
+2. `pm2 restart all --update-env`
+3. `node scripts/smtp-test.mjs` ausführen → muss „✅ OK" zeigen
+4. Test über Kontaktformular auf der Website
+
+**Wichtig — User-Stimmung:** User ist genervt von Konjunktiv und „vielleicht"-Formulierungen. Bei jeder Kommunikation klare Diagnose → klare Ursache → klare Lösung in einem Schritt. Keine Plan-A/B/C-Listen wenn nicht nötig.
+
+**Pipeline danach (User-Versprechen offen):** Nächster Magazin-Artikel „Aufstellung/Bodenplatte/Statik" (DIN 1054, EC 7, LBO-Statik, DIN 18300) — Faktentabelle vorab Pflicht.
+
 ## System Architecture
 
 The website is built on **Astro 5.17.1** configured as a Static Site Generator (SSG) with a Node adapter for server-side functionalities. **React** is used for interactive components ("islands") to ensure a fast, lightweight core with dynamic elements where needed. **Tailwind CSS v4** provides a utility-first CSS framework for rapid and consistent styling, and **TypeScript** is employed throughout the codebase for improved maintainability and type safety.
