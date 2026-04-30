@@ -1,0 +1,66 @@
+root@ubuntu:/var/www/app# pm2 restart all --update-env
+cd /var/www/app && node scripts/smtp-test.mjs
+[PM2] Applying action restartProcessId on app [all](ids: [ 0 ])
+[PM2] [planexus](0) ✓
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ planexus           │ fork     │ 54   │ online    │ 0%       │ 18.4mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+--- SMTP-Diagnose ---
+Host:         smtp.office365.com
+Port:         587
+User:         server@planexus.de
+Pass gesetzt: ja (Länge 16)
+From:         server@planexus.de
+To:           server@planexus.de
+---------------------
+
+[2026-04-30 13:25:57] DEBUG Creating transport: nodemailer (7.0.13; +https://nodemailer.com/; SMTP/7.0.13[client:7.0.13])
+
+[1/2] verify() – prüft Verbindung + Login...
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] Resolved smtp.office365.com as 52.98.241.178 [cache miss]
+[2026-04-30 13:25:57] INFO  [ebHTJ1ASGQ] Connection established to 52.98.241.178:587
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 220 FR0P281CA0217.outlook.office365.com Microsoft ESMTP MAIL Service ready at Thu, 30 Apr 2026 13:25:57 +0000 [08DEA638F40FB708]
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] C: EHLO [127.0.0.1]
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-FR0P281CA0217.outlook.office365.com Hello [82.165.27.244]
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-SIZE 157286400
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-PIPELINING
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-DSN
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-ENHANCEDSTATUSCODES
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-STARTTLS
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-8BITMIME
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-BINARYMIME
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-CHUNKING
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250 SMTPUTF8
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] C: STARTTLS
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 220 2.0.0 SMTP server ready
+[2026-04-30 13:25:57] INFO  [ebHTJ1ASGQ] Connection upgraded with STARTTLS
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] C: EHLO [127.0.0.1]
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-FR0P281CA0217.outlook.office365.com Hello [82.165.27.244]
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-SIZE 157286400
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-PIPELINING
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-DSN
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-ENHANCEDSTATUSCODES
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-AUTH LOGIN XOAUTH2
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-8BITMIME
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-BINARYMIME
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250-CHUNKING
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 250 SMTPUTF8
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] SMTP handshake finished
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] C: AUTH LOGIN
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 334 VXNlcm5hbWU6
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] C: c2VydmVyQHBsYW5leHVzLmRl
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] S: 334 UGFzc3dvcmQ6
+[2026-04-30 13:25:57] DEBUG [ebHTJ1ASGQ] C: Lyogc2VjcmV0ICov
+[2026-04-30 13:26:03] DEBUG [ebHTJ1ASGQ] S: 535 5.7.139 Authentication unsuccessful, user is locked by your organization's security defaults policy. Contact your administrator. [FR0P281CA0217.DEUP281.PROD.OUTLOOK.COM 2026-04-30T13:26:03.289Z 08DEA638F40FB708]
+[2026-04-30 13:26:03] INFO  [ebHTJ1ASGQ] User "server@planexus.de" failed to authenticate
+[2026-04-30 13:26:03] DEBUG [ebHTJ1ASGQ] Closing connection to the server using "end"
+
+❌ FEHLER:
+   message: Invalid login: 535 5.7.139 Authentication unsuccessful, user is locked by your organization's security defaults policy. Contact your administrator. [FR0P281CA0217.DEUP281.PROD.OUTLOOK.COM 2026-04-30T13:26:03.289Z 08DEA638F40FB708]
+   code:    EAUTH
+   command: AUTH LOGIN
+   response: 535 5.7.139 Authentication unsuccessful, user is locked by your organization's security defaults policy. Contact your administrator. [FR0P281CA0217.DEUP281.PROD.OUTLOOK.COM 2026-04-30T13:26:03.289Z 08DEA638F40FB708]
+   responseCode: 535
+root@ubuntu:/var/www/app# 
