@@ -1,0 +1,35 @@
+Hi Thomas
+
+danke für die Zugangsdaten 👍 – Passwort, User und SMTP-Server stehen jetzt korrekt auf dem Webserver. Aber Microsoft 365 lehnt den Login ab mit folgendem Fehler:
+
+535 5.7.139 Authentication unsuccessful, the user credentials were incorrect.
+
+Wichtig: Das Passwort selbst stimmt. Microsoft sagt nicht „Passwort falsch", sondern „Login generell nicht erlaubt". Das passiert immer dann, wenn auf eurer Microsoft-365-Seite eine Schutzeinstellung den Anmeldeweg blockiert.
+
+Bitte prüf einmal kurz diese drei Punkte im Microsoft-365-Admin-Center – einer davon ist garantiert die Ursache:
+
+1. Tenant-weite SMTP-Einstellung (häufigster Grund)
+Microsoft hat 2022 SMTP-Auth standardmäßig auf Tenant-Ebene deaktiviert. Auch wenn am einzelnen Postfach „aktiv" steht, blockt die globale Einstellung.
+
+→ Admin-Center → Einstellungen → Org-Einstellungen → Moderne Authentifizierung
+→ Häkchen bei „Authentifiziertes SMTP" muss gesetzt sein
+
+2. MFA / Zwei-Faktor-Auth
+Falls auf dem Postfach server@planexus.de Zwei-Faktor-Authentifizierung aktiv ist, funktioniert das normale Passwort niemals für SMTP. Wir bräuchten dann ein App-Kennwort.
+
+→ In den Konto-Einstellungen → Sicherheit → Erweiterte Sicherheitsoptionen → App-Kennwörter
+→ Neues App-Kennwort erstellen und mir zukommen lassen (kann ich später jederzeit widerrufen)
+
+3. Lizenz
+Stell bitte sicher, dass server@planexus.de eine vollwertige Exchange-Online-Lizenz hat. Der „Email Plan 1"-Tarif erlaubt z. B. kein SMTP-AUTH.
+
+Was du tun musst:
+
+Punkt 1 prüfen und ggf. einschalten
+Mir kurz Bescheid geben, was du gemacht hast bzw. ob ein App-Kennwort nötig ist
+Falls App-Kennwort: das Passwort an mich schicken
+Sobald du mir Rückmeldung gibst, mache ich auf dem Server einen Test und dann läuft der Mailversand vom Kontaktformular.
+
+Gut zu wissen: In der Zwischenzeit gehen keine Anfragen verloren, sie werden alle sicher in der Datenbank der Webseite gespeichert und sind im Admin-Bereich einsehbar. Wir verlieren also nichts, es geht nur erstmal noch keine automatische Mail-Benachrichtigung raus.
+
+Vielen Dank dir!
