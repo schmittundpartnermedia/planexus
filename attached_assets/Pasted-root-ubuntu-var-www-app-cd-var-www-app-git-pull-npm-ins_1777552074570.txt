@@ -1,0 +1,169 @@
+root@ubuntu:/var/www/app# cd /var/www/app && git pull && npm install && npm run build && pm2 restart all --update-env
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 2), reused 4 (delta 2), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 2.76 KiB | 1.38 MiB/s, done.
+From https://github.com/schmittundpartnermedia/planexus
+   4d26c02..a620de3  main       -> origin/main
+Updating 4d26c02..a620de3
+Fast-forward
+ ...oot-ubuntu-var-www-app-cd-var-www-app-git-pull-npm-ins_1777551913994.txt | 158 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 158 insertions(+)
+ create mode 100644 attached_assets/Pasted-root-ubuntu-var-www-app-cd-var-www-app-git-pull-npm-ins_1777551913994.txt
+
+up to date, audited 802 packages in 2s
+
+209 packages are looking for funding
+  run `npm fund` for details
+
+27 vulnerabilities (3 low, 12 moderate, 12 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> rest-express@1.0.0 build
+> astro build
+
+12:27:28 [@astrojs/node] Enabling sessions with filesystem storage
+12:27:28 [content] Syncing content
+12:27:28 [content] Synced content
+12:27:28 [types] Generated 61ms
+12:27:28 [build] output: "static"
+12:27:28 [build] mode: "server"
+12:27:28 [build] directory: /var/www/app/dist/
+12:27:28 [build] adapter: @astrojs/node
+12:27:28 [build] Collecting build info...
+12:27:28 [build] ✓ Completed in 126ms.
+12:27:28 [build] Building server entrypoints...
+12:27:33 [WARN] [vite] "gt" is imported from external module "drizzle-orm" but never used in "src/pages/api/admin/messages.ts" and "src/pages/api/admin/login.ts".
+12:27:33 [vite] ✓ built in 4.80s
+12:27:33 [build] ✓ Completed in 4.86s.
+
+ building client (vite) 
+12:27:37 [vite] ✓ 2184 modules transformed.
+12:27:38 [vite] dist/client/_astro/Map.CIGW-MKW.css               15.61 kB │ gzip:  6.46 kB
+12:27:38 [vite] dist/client/_astro/ContactForm.bjTCsgVU.js         0.14 kB │ gzip:  0.13 kB
+12:27:38 [vite] dist/client/_astro/jsx-runtime.D_zvdyIk.js         0.73 kB │ gzip:  0.46 kB
+12:27:38 [vite] dist/client/_astro/index.BL2HOGcR.js               3.89 kB │ gzip:  1.52 kB
+12:27:38 [vite] dist/client/_astro/ContactForm.9qwyERSt.js         4.91 kB │ gzip:  1.77 kB
+12:27:38 [vite] dist/client/_astro/AnimatedGlobe.Bb2O237y.js       7.63 kB │ gzip:  2.62 kB
+12:27:38 [vite] dist/client/_astro/index.7in8nkh5.js               7.98 kB │ gzip:  3.10 kB
+12:27:38 [vite] dist/client/_astro/ProjekteGallery.cf_-xv8Z.js     8.14 kB │ gzip:  2.46 kB
+12:27:38 [vite] dist/client/_astro/AdminPanel.jfDTtBxI.js          9.00 kB │ gzip:  2.89 kB
+12:27:38 [vite] dist/client/_astro/Navbar.Bo-OxGM9.js             14.01 kB │ gzip:  4.41 kB
+12:27:38 [vite] dist/client/_astro/LiquidDistortion.CWfs0-j3.js   60.33 kB │ gzip: 17.12 kB
+12:27:38 [vite] dist/client/_astro/proxy.DTdvDQjZ.js             112.15 kB │ gzip: 36.88 kB
+12:27:38 [vite] dist/client/_astro/Map.Dukma8Qt.js               154.96 kB │ gzip: 45.38 kB
+12:27:38 [vite] dist/client/_astro/client.qQeDOstP.js            182.74 kB │ gzip: 57.61 kB
+12:27:38 [vite] ✓ built in 4.47s
+
+ prerendering static routes 
+12:27:38 ▶ src/pages/404.astro
+12:27:38   └─ /404.html (+25ms) 
+12:27:38 ▶ src/pages/datenschutz.astro
+12:27:38   └─ /datenschutz/index.html (+5ms) 
+12:27:38 ▶ src/pages/impressum.astro
+12:27:38   └─ /impressum/index.html (+5ms) 
+12:27:38 ▶ src/pages/kontakt.astro
+12:27:38   └─ /kontakt/index.html (+6ms) 
+12:27:38 ▶ src/pages/laborcontainer/labtogo.astro
+12:27:38   └─ /laborcontainer/labtogo/index.html (+14ms) 
+12:27:38 ▶ src/pages/laborcontainer/index.astro
+12:27:38   └─ /laborcontainer/index.html (+6ms) 
+12:27:38 ▶ src/pages/laborcontainer-basel.astro
+12:27:38   └─ /laborcontainer-basel/index.html (+7ms) 
+12:27:38 ▶ src/pages/laborcontainer-berlin.astro
+12:27:38   └─ /laborcontainer-berlin/index.html (+6ms) 
+12:27:38 ▶ src/pages/laborcontainer-bern.astro
+12:27:38   └─ /laborcontainer-bern/index.html (+5ms) 
+12:27:38 ▶ src/pages/laborcontainer-duesseldorf.astro
+12:27:38   └─ /laborcontainer-duesseldorf/index.html (+5ms) 
+12:27:38 ▶ src/pages/laborcontainer-frankfurt.astro
+12:27:38   └─ /laborcontainer-frankfurt/index.html (+8ms) 
+12:27:38 ▶ src/pages/laborcontainer-graz.astro
+12:27:38   └─ /laborcontainer-graz/index.html (+5ms) 
+12:27:38 ▶ src/pages/laborcontainer-hamburg.astro
+12:27:38   └─ /laborcontainer-hamburg/index.html (+6ms) 
+12:27:38 ▶ src/pages/laborcontainer-linz.astro
+12:27:38   └─ /laborcontainer-linz/index.html (+5ms) 
+12:27:38 ▶ src/pages/laborcontainer-muenchen.astro
+12:27:38   └─ /laborcontainer-muenchen/index.html (+6ms) 
+12:27:38 ▶ src/pages/laborcontainer-stuttgart.astro
+12:27:38   └─ /laborcontainer-stuttgart/index.html (+6ms) 
+12:27:38 ▶ src/pages/laborcontainer-wien.astro
+12:27:38   └─ /laborcontainer-wien/index.html (+4ms) 
+12:27:38 ▶ src/pages/laborcontainer-zuerich.astro
+12:27:38   └─ /laborcontainer-zuerich/index.html (+4ms) 
+12:27:38 ▶ src/pages/leistungen/ausstattung.astro
+12:27:38   └─ /leistungen/ausstattung/index.html (+5ms) 
+12:27:38 ▶ src/pages/leistungen/beratung.astro
+12:27:38   └─ /leistungen/beratung/index.html (+3ms) 
+12:27:38 ▶ src/pages/leistungen/logistik.astro
+12:27:38   └─ /leistungen/logistik/index.html (+3ms) 
+12:27:38 ▶ src/pages/leistungen/modulbau.astro
+12:27:38   └─ /leistungen/modulbau/index.html (+3ms) 
+12:27:38 ▶ src/pages/leistungen/planung.astro
+12:27:38   └─ /leistungen/planung/index.html (+3ms) 
+12:27:38 ▶ src/pages/leistungen/smart-lab.astro
+12:27:38   └─ /leistungen/smart-lab/index.html (+3ms) 
+12:27:38 ▶ src/pages/leistungen/index.astro
+12:27:38   └─ /leistungen/index.html (+3ms) 
+12:27:38 ▶ src/pages/magazin/analytica-2026-rueckblick-labtogo-premiere.astro
+12:27:38   └─ /magazin/analytica-2026-rueckblick-labtogo-premiere/index.html (+3ms) 
+12:27:38 ▶ src/pages/magazin/bsl-2-bsl-3-container-labor.astro
+12:27:38   └─ /magazin/bsl-2-bsl-3-container-labor/index.html (+3ms) 
+12:27:38 ▶ src/pages/magazin/gmp-reinraum-container-pharma-produktion.astro
+12:27:38   └─ /magazin/gmp-reinraum-container-pharma-produktion/index.html (+10ms) 
+12:27:39 ▶ src/pages/magazin/innovation-modulbau-zukunft-mobiles-labor.astro
+12:27:39   └─ /magazin/innovation-modulbau-zukunft-mobiles-labor/index.html (+5ms) 
+12:27:39 ▶ src/pages/magazin/laborcontainer-ausstattung-checkliste.astro
+12:27:39   └─ /magazin/laborcontainer-ausstattung-checkliste/index.html (+4ms) 
+12:27:39 ▶ src/pages/magazin/laborcontainer-baustelle-materialpruefung.astro
+12:27:39   └─ /magazin/laborcontainer-baustelle-materialpruefung/index.html (+4ms) 
+12:27:39 ▶ src/pages/magazin/laborcontainer-energiewende-h2-batterie-ex-schutz.astro
+12:27:39   └─ /magazin/laborcontainer-energiewende-h2-batterie-ex-schutz/index.html (+4ms) 
+12:27:39 ▶ src/pages/magazin/laborcontainer-genehmigung-baurecht-vorschriften.astro
+12:27:39   └─ /magazin/laborcontainer-genehmigung-baurecht-vorschriften/index.html (+5ms) 
+12:27:39 ▶ src/pages/magazin/laborcontainer-katastropheneinsatz-krisenreaktion.astro
+12:27:39   └─ /magazin/laborcontainer-katastropheneinsatz-krisenreaktion/index.html (+5ms) 
+12:27:39 ▶ src/pages/magazin/laborcontainer-klimatisierung-lueftung-normen.astro
+12:27:39   └─ /magazin/laborcontainer-klimatisierung-lueftung-normen/index.html (+5ms) 
+12:27:39 ▶ src/pages/magazin/laborcontainer-mieten-oder-kaufen.astro
+12:27:39   └─ /magazin/laborcontainer-mieten-oder-kaufen/index.html (+3ms) 
+12:27:39 ▶ src/pages/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe.astro
+12:27:39   └─ /magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe/index.html (+5ms) 
+12:27:39 ▶ src/pages/magazin/nachhaltigkeit-laborbau-energieeffizienz.astro
+12:27:39   └─ /magazin/nachhaltigkeit-laborbau-energieeffizienz/index.html (+3ms) 
+12:27:39 ▶ src/pages/magazin/planexus-analytica-2026-muenchen.astro
+12:27:39   └─ /magazin/planexus-analytica-2026-muenchen/index.html (+3ms) 
+12:27:39 ▶ src/pages/magazin.astro
+12:27:39   └─ /magazin/index.html (+3ms) 
+12:27:39 ▶ src/pages/partner.astro
+12:27:39   └─ /partner/index.html (+9ms) 
+12:27:39 ▶ src/pages/projekte.astro
+12:27:39   └─ /projekte/index.html (+5ms) 
+12:27:39 ▶ src/pages/team.astro
+12:27:39   └─ /team/index.html (+3ms) 
+12:27:39 ▶ src/pages/ueber-uns.astro
+12:27:39   └─ /ueber-uns/index.html (+3ms) 
+12:27:39 ▶ src/pages/index.astro
+12:27:39   └─ /index.html (+4ms) 
+12:27:39 ✓ Completed in 1.13s.
+
+12:27:39 [build] Rearranging server assets...
+12:27:39 [build] Server built in 10.70s
+12:27:39 [build] Complete!
+[PM2] Applying action restartProcessId on app [all](ids: [ 0 ])
+[PM2] [planexus](0) ✓
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ planexus           │ fork     │ 53   │ online    │ 0%       │ 19.5mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+root@ubuntu:/var/www/app# 

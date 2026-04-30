@@ -1,0 +1,58 @@
+root@ubuntu:/var/www/app# cd /var/www/app && node scripts/smtp-test.mjs
+--- SMTP-Diagnose ---
+Host:         smtp.office365.com
+Port:         587
+User:         server@planexus.de
+Pass gesetzt: ja (Länge 12)
+From:         server@planexus.de
+To:           server@planexus.de
+---------------------
+
+[2026-04-30 12:28:03] DEBUG Creating transport: nodemailer (7.0.13; +https://nodemailer.com/; SMTP/7.0.13[client:7.0.13])
+
+[1/2] verify() – prüft Verbindung + Login...
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] Resolved smtp.office365.com as 52.98.179.194 [cache miss]
+[2026-04-30 12:28:03] INFO  [ndjLpXyDPKc] Connection established to 52.98.179.194:587
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 220 FR4P281CA0242.outlook.office365.com Microsoft ESMTP MAIL Service ready at Thu, 30 Apr 2026 12:28:02 +0000 [08DEA6343876DF80]
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] C: EHLO [127.0.0.1]
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-FR4P281CA0242.outlook.office365.com Hello [82.165.27.244]
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-SIZE 157286400
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-PIPELINING
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-DSN
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-ENHANCEDSTATUSCODES
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-STARTTLS
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-8BITMIME
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-BINARYMIME
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-CHUNKING
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250 SMTPUTF8
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] C: STARTTLS
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 220 2.0.0 SMTP server ready
+[2026-04-30 12:28:03] INFO  [ndjLpXyDPKc] Connection upgraded with STARTTLS
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] C: EHLO [127.0.0.1]
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-FR4P281CA0242.outlook.office365.com Hello [82.165.27.244]
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-SIZE 157286400
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-PIPELINING
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-DSN
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-ENHANCEDSTATUSCODES
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-AUTH LOGIN XOAUTH2
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-8BITMIME
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-BINARYMIME
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250-CHUNKING
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 250 SMTPUTF8
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] SMTP handshake finished
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] C: AUTH LOGIN
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 334 VXNlcm5hbWU6
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] C: c2VydmVyQHBsYW5leHVzLmRl
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] S: 334 UGFzc3dvcmQ6
+[2026-04-30 12:28:03] DEBUG [ndjLpXyDPKc] C: Lyogc2VjcmV0ICov
+[2026-04-30 12:28:08] DEBUG [ndjLpXyDPKc] S: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [FR4P281CA0242.DEUP281.PROD.OUTLOOK.COM 2026-04-30T12:28:08.731Z 08DEA6343876DF80]
+[2026-04-30 12:28:08] INFO  [ndjLpXyDPKc] User "server@planexus.de" failed to authenticate
+[2026-04-30 12:28:08] DEBUG [ndjLpXyDPKc] Closing connection to the server using "end"
+
+❌ FEHLER:
+   message: Invalid login: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [FR4P281CA0242.DEUP281.PROD.OUTLOOK.COM 2026-04-30T12:28:08.731Z 08DEA6343876DF80]
+   code:    EAUTH
+   command: AUTH LOGIN
+   response: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [FR4P281CA0242.DEUP281.PROD.OUTLOOK.COM 2026-04-30T12:28:08.731Z 08DEA6343876DF80]
+   responseCode: 535
+root@ubuntu:/var/www/app# 
