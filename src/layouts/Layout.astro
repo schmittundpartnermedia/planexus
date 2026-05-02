@@ -21,12 +21,15 @@ const ogImageUrl = ogImage
   : `${siteUrl}/opengraph.jpg`;
 
 // Hreflang-Mapping: DACH-Strategie. Eine Sprachversion (Deutsch),
-// regionale Targeting-Signale für CH- und AT-spezifische Stadt-Seiten.
+// regionale Targeting-Signale für DE/CH/AT.
+// Standard ist DE — explizites de-DE für deutsche Stadtseiten und alle generischen Seiten,
+// de-CH/de-AT nur für die spezifischen Stadtseiten in CH/AT.
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const chPaths = ['/laborcontainer-zuerich', '/laborcontainer-basel', '/laborcontainer-bern'];
 const atPaths = ['/laborcontainer-wien', '/laborcontainer-graz', '/laborcontainer-linz'];
 const isCH = chPaths.includes(pathname);
 const isAT = atPaths.includes(pathname);
+const isDE = !isCH && !isAT;
 ---
 
 <!DOCTYPE html>
@@ -37,7 +40,6 @@ const isAT = atPaths.includes(pathname);
 
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="Laborcontainer, Modulbau Labor, Mobiles Labor, Containerlabor kaufen, Laborplanung, Laborcontainer mieten, BSL-2 Labor, BSL-3 Labor, Reinraum Container, Smart Lab, Laborausstattung, Planexus" />
     <meta name="author" content="Planexus GmbH" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
@@ -45,7 +47,6 @@ const isAT = atPaths.includes(pathname);
     <meta name="geo.region" content="DE" />
     <meta name="geo.placename" content="Deutschland" />
     <meta name="language" content="German" />
-    <meta name="revisit-after" content="7 days" />
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -71,6 +72,7 @@ const isAT = atPaths.includes(pathname);
     <link rel="canonical" href={canonicalUrl} />
 
     <link rel="alternate" hreflang="de" href={canonicalUrl} />
+    {isDE && <link rel="alternate" hreflang="de-DE" href={canonicalUrl} />}
     {isCH && <link rel="alternate" hreflang="de-CH" href={canonicalUrl} />}
     {isAT && <link rel="alternate" hreflang="de-AT" href={canonicalUrl} />}
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
