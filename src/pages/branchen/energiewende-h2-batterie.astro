@@ -1,0 +1,184 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.tsx';
+import Picture from '../../components/Picture.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import BranchenCrossLinks from '../../components/BranchenCrossLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = "Laborcontainer Energiewende H₂ & Batterie | ATEX, EN 60079, Thermal-Runaway – IPCEI-tauglich";
+const description = "Laborcontainer für Wasserstoff- und Batterietechnik: ATEX 2014/34/EU, EN 60079, Thermal-Runaway-Schutz, IPCEI-Wasserstoff/Batterie förderfähig, KIT/ZSW/Fraunhofer-Standard.";
+const canonical = "/branchen/energiewende-h2-batterie";
+const ogImage = "/attached_assets/generated_images/high-tech_lab_interior.png";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Laborcontainer für Wasserstoff- und Batterieforschung",
+  "provider": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://www.planexus.de", "telephone": "+49 7435 7519 700", "email": "info@planexus.de", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt", "postalCode": "72459", "addressCountry": "DE" }, "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" } },
+  "areaServed": [{ "@type": "Country", "name": "Germany" }, { "@type": "Country", "name": "Switzerland" }, { "@type": "Country", "name": "Austria" }],
+  "audience": { "@type": "BusinessAudience", "audienceType": "H2-Hersteller, Brennstoffzellen-Entwickler, Batterietest-Labore, Cell-Manufacturing, Forschungsverbünde KIT, ZSW, Fraunhofer ISE, AVL, Voestalpine H2-Stahl" },
+  "description": "ATEX-Zone-1/2 für H2-Test, EN-60079-konforme Brennstoffzellen-Pilotierung, Battery-Abuse-Container mit Thermal-Runaway-Schutz und Brand-Begrenzung, IPCEI-H2/IPCEI-Batterie-Förderfähigkeit, BMBF-/BMWK-tauglich."
+};
+const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+  { "@type": "ListItem", "position": 2, "name": "Branchen", "item": "https://www.planexus.de/branchen" },
+  { "@type": "ListItem", "position": 3, "name": "Energiewende H₂ & Batterie", "item": "https://www.planexus.de/branchen/energiewende-h2-batterie" }
+]};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welche ATEX-Zone gilt für Wasserstoff-Test-Container?", "acceptedAnswer": { "@type": "Answer", "text": "Wasserstoff hat eine untere Explosionsgrenze (UEG) von 4 Vol-% in Luft und eine sehr niedrige Mindestzündenergie von 0,019 mJ. Ein H2-Test-Container fällt – je nach Auslegung – in ATEX-Zone 1 (regelmäßig oder kurzzeitig explosionsfähige Atmosphäre) oder Zone 2 (gelegentlich, nur ausnahmsweise). Standard für Brennstoffzellen-Test-Stände: Zone 2 mit kontrollierter Lüftung ≥10-fach, H2-Detektor mit SIL-2-Aufschaltung und Notabschaltung bei 25 % UEG (=1 Vol-% H2), explosionsgeschützte Beleuchtung 2G EEx d/e, Erdung <1 Ω, antistatischer Bodenbelag DIN EN 1081. Für Elektrolyseur-Pilotanlagen oder undichte Speicher-Tests Zone 1 mit verschärfter Lüftung ≥30-fach, intrinsisch sicherer Mess-Technik (Ex-i) und Druckentlastung über Berstscheibe. Wir bauen beide Zonen, ATEX-Zertifizierung erfolgt über Notified Body." } },
+    { "@type": "Question", "name": "Was ist Thermal-Runaway und wie schützt der Container davor?", "acceptedAnswer": { "@type": "Answer", "text": "Thermal-Runaway ist die exotherme Selbstzersetzung einer Lithium-Ionen-Batteriezelle bei thermischer, mechanischer oder elektrischer Misshandlung. Eine einzelne 18650-Zelle (3 Ah) setzt im Runaway 30-50 kJ Wärme frei und gibt giftige Gase (HF, CO, Olefine, Lithium-Salze) ab. Bei Batteriepacks mit hunderten Zellen ist die Brand- und Druckentwicklung dramatisch. Ein Battery-Abuse-Container muss deshalb: (1) eine Brand-Wand-Klassifizierung F90/F120 zwischen Test-Kammer und Steuerstand haben, (2) eine Druckentlastung mit definierter Berst-Schwelle 5-50 mbar haben, (3) eine Inertgas-Flutung mit N2 oder CO2 binnen Sekunden auslösen können, (4) eine Abluft mit Aktivkohle- + HEPA-Stufe für die toxischen Gase haben, (5) eine externe Brandbekämpfungs-Möglichkeit (Feuerlösch-Hydrant, Wasservorhang) bieten. Wir bauen Battery-Abuse-Container nach ISO 6469 und UN-ECE R100 / R136." } },
+    { "@type": "Question", "name": "Sind unsere H₂-/Batterie-Container IPCEI-förderfähig?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. IPCEI (Important Project of Common European Interest) ist die EU-Beihilfe-Form für strategische Großvorhaben. Die deutschen IPCEI-Hy2-Linien (IPCEI Hy2Tech, Hy2Use, Hy2Infra) und der IPCEI-EuBatIn (Batterie) fördern unter anderem F&E-Infrastruktur in Form von Test-Anlagen und Pilotierungs-Container. Bewilligungsstellen sind je nach Bundesland VDI/VDE-IT, Projektträger Jülich oder ähnliche. Container-Lösungen sind förderfähig, sofern sie einer Forschungs- oder Pilotierungs-Phase zugeordnet sind und nicht der reinen Serienproduktion dienen. Wir liefern die Förder-relevanten Belege als Anlage: technische Spezifikation, Wirtschaftlichkeitsvergleich, Anlagenbuch-Vorlage, Eigentums-/Mietkonstrukt. Auch BMBF (Forschung), BMWK (Wirtschaft) und Länder-Programme (z.B. Bayern Hightech-Agenda H2, Baden-Württemberg Wasserstoff-Roadmap) akzeptieren Container-Konstrukte." } },
+    { "@type": "Question", "name": "Wie sind die Container an die F&E-Anwender KIT, ZSW, Fraunhofer ISE angepasst?", "acceptedAnswer": { "@type": "Answer", "text": "Die deutschen Forschungs-Schwergewichte für H2 und Batterie haben standardisierte Schnittstellen-Erwartungen: KIT (Karlsruhe) prüft seit 30 Jahren Brennstoffzellen-Stacks und Elektrolyseur-Komponenten – Container müssen IK10-Stack-Test-Spannungs-Profile und H2-Mass-Flow-Controller-Schnittstellen abbilden. ZSW Ulm (Zentrum für Sonnenenergie- und Wasserstoff-Forschung) ist europaweit führend in Batterie-Cell-Manufacturing und Cell-Test – Container brauchen klimatisierte Form-Ation-/Aging-Räume ±0,5 °C, Cycler-Kanäle 64-256 parallel, Gasspül-Glove-Box-Schnittstellen, Trockenraum mit Taupunkt -40 °C. Fraunhofer ISE (Freiburg) macht PV+H2-Hybrid-Forschung – Container brauchen DC-Hochstrom-Anschluss bis 1.500 V/300 A für Elektrolyseur-Pilotierung. AVL Graz prüft Powertrain mit H2 für Mobilität – ATEX-Test-Stand mit Abgas-Analytik. Wir bauen für all diese Profile spezifisch." } },
+    { "@type": "Question", "name": "Welche Notbelüftung und Sicherheitstechnik ist Standard?", "acceptedAnswer": { "@type": "Answer", "text": "Standard für H2-Test-Container Zone 2: Mechanische Lüftung ≥10-facher Luftwechsel im Normalbetrieb, automatischer Hochlauf auf ≥30-fach bei H2-Detektion >10 % UEG, Notabschaltung der H2-Versorgung bei 25 % UEG mit Magnetventil-Schließung, Notdrucklüftung über Berstscheibe oder Druckentlastungs-Klappe, akustischer und optischer Alarm innen + außen, Zugang gesperrt während Alarm. H2-Detektor redundant ausgelegt (zwei unabhängige Sensor-Pfade, Wartung jährlich nach DIN EN 60079-29-2). Zusätzlich Brand-Detektion mit IR-Sensoren (H2-Flamme ist nahezu unsichtbar), Notruftaste mit BOS-Aufschaltung, automatische Übergabe an Werks-/Anlagen-Sicherheits-Stelle." } },
+    { "@type": "Question", "name": "Wie kann eine Pilotanlage nach Versuchsende rückgebaut werden?", "acceptedAnswer": { "@type": "Answer", "text": "Container-Pilotanlagen sind genau für die Versuchs-Lebenszyklen ausgelegt: Aufbau für 24-60 Monate Forschungs-/Pilotierungs-Phase, danach Rückbau ohne Bauwerks-Reste. Wir liefern den Container im Rückbau-Konzept: Demontage der Versuchs-Aufbauten durch Auftraggeber oder Planexus, Inertisierung der H2-/Gas-Leitungen mit N2-Spülung, Entsorgung der Verbrauchsmaterialien (Aktivkohle-Filter, HEPA-Filter, Anodenmaterialien) durch zertifizierten Entsorger nach AbfRRL und KrWG, Reinigung des Container-Innenraums, Demobilisierung der Aufstellfläche (Punktauflager entfernen, Bodenversiegelung wiederherstellen). Für IPCEI- oder BMBF-finanzierte Container ist der Rückbau projekttechnisch in der Bewilligungsstellungnahme zu berücksichtigen – wir liefern die Stilllegungs-Doku." } },
+    { "@type": "Question", "name": "Welchen Cluster-Anschluss bieten wir für H₂-Wertschöpfungsketten?", "acceptedAnswer": { "@type": "Answer", "text": "Die deutsche H2-Wertschöpfung wird über regionale H2-Cluster organisiert: Norddeutschland (NWHy, Bremen-Hamburg-Niedersachsen, Off-Shore-Wind-H2), Ruhrgebiet (HyDrogen-Hub Rhein-Ruhr mit RWE, Evonik, Siemens-Energy), Mitteldeutschland (Leuna-Refinery-Region mit Linde, Total, Shell), Süddeutschland (BW-Wasserstoff-Roadmap mit ZSW, Bosch, Daimler-Trucks; Bayern Hy-Agenda mit MAN, Linde Pullach), Sachsen (Smart Hydrogen Region mit Sunfire Dresden). In Österreich: H2-Initiative Steiermark (AVL, Magna, voestalpine H2-Stahl), H2-Cluster Linz (Voestalpine H2-Direktreduktion). In Schweiz: Hydrospider (Alpiq), Mobility-Wasserstoff-Initiative St. Gallen. Wir bauen Container, die diese Cluster-Architektur kennen – Schnittstellen, Sicherheits-Anforderungen und IPCEI-Förderlogik dokumentiert." } }
+  ]
+};
+---
+<Layout title={title} description={description} canonical={canonical} ogImage={ogImage} schema={serviceSchema}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <div class="bg-white">
+    <section class="relative bg-slate-900 text-white overflow-hidden pt-20">
+      <div class="absolute inset-0 z-0">
+        <Picture src="/attached_assets/generated_images/high-tech_lab_interior.png" alt="Laborcontainer Energiewende Wasserstoff Batterie – ATEX EN 60079 IPCEI-tauglich" class="w-full h-full object-cover opacity-25" loading="eager" fetchpriority="high" />
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
+      </div>
+      <div class="relative z-10 container mx-auto px-4 py-16 md:py-24">
+        <div class="max-w-4xl">
+          <Breadcrumbs variant="dark" items={[{ name: 'Start', href: '/' }, { name: 'Branchen', href: '/branchen' }, { name: 'Energiewende H₂ & Batterie' }]} />
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mt-6 mb-4">Branche · Wasserstoff · Brennstoffzelle · Batterietest · Cell-Manufacturing · IPCEI</div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">H₂- & Batterie-Test-Container – ATEX-Zone 1/2, Thermal-Runaway-fest, IPCEI-förderfähig</h1>
+          <p class="text-xl text-gray-300 leading-relaxed mb-4"><strong class="text-white">Wasserstoff-Test nach ATEX 2014/34/EU + EN 60079, Battery-Abuse-Container mit Thermal-Runaway-Schutz nach ISO 6469 und UN-ECE R100/R136, Cell-Manufacturing-Klimaräume ±0,5 °C, Trockenraum -40 °C Taupunkt, IPCEI-Hy2 + IPCEI-EuBatIn förderfähig.</strong> Für KIT, ZSW Ulm, Fraunhofer ISE, AVL Graz, Voestalpine H2-Stahl.</p>
+          <p class="text-base text-gray-400 mb-8">Pilotanlagen-Container statt Bauantrag für Forschungshallen.</p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">H₂-/Batterie-Container anfragen</a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">+49 7435 7519 700</a>
+          </div>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div>✓ ATEX Zone 1/2 für H₂</div>
+            <div>✓ Thermal-Runaway-Schutz F90/F120</div>
+            <div>✓ IPCEI Hy2 + EuBatIn förderfähig</div>
+            <div>✓ Trockenraum -40 °C Taupunkt</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <AuthorBio />
+
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-10">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Energiewende-Forschung am Limit</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Warum H₂- und Batterie-Forschung modulare Container braucht</h2>
+            <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">H2-Tests und Battery-Abuse sind hochgefährlich und verlangen separierte, explosionsgeschützte Umgebungen. Konventionelle Forschungs-Hallen dafür umzubauen kostet 18-36 Monate und 3-8 Mio Euro. Container-Pilotanlagen liefern dasselbe sicher, schnell und förder-fähig.</p>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">Zone 1/2</div><div class="text-xs text-gray-400 uppercase tracking-wider">ATEX H₂-Test-Stände</div><div class="text-xs text-gray-500 mt-1">EN 60079, Notified Body</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">F120</div><div class="text-xs text-gray-400 uppercase tracking-wider">Brand-Wand Battery-Abuse</div><div class="text-xs text-gray-500 mt-1">N₂-Flutung + Berstscheibe</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">-40 °C</div><div class="text-xs text-gray-400 uppercase tracking-wider">Trockenraum-Taupunkt</div><div class="text-xs text-gray-500 mt-1">für Cell-Manufacturing</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">IPCEI</div><div class="text-xs text-gray-400 uppercase tracking-wider">Hy2 + EuBatIn förderfähig</div><div class="text-xs text-gray-500 mt-1">BMWK / BMBF / Länder</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Normen, Richtlinien und Förderprogramme</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+              <thead class="bg-slate-900 text-white"><tr><th class="text-left p-4 font-bold">Norm / Programm</th><th class="text-left p-4 font-bold">Anwendung</th><th class="text-left p-4 font-bold">Lieferung</th></tr></thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr><td class="p-4 font-semibold text-slate-900">ATEX 2014/34/EU + EN 60079</td><td class="p-4 text-gray-700">Ex-Schutz Zone 1/2 für H₂</td><td class="p-4 text-gray-700">EX-Beleuchtung, Erdung, H₂-Detektor</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN EN 60079-29-2</td><td class="p-4 text-gray-700">Gas-Detektor-Wartung</td><td class="p-4 text-gray-700">Jährliche Funktionsprüfung</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">ISO 6469</td><td class="p-4 text-gray-700">Sicherheits-Anforderungen Batterien</td><td class="p-4 text-gray-700">Brand-Wand, Berstscheibe, N₂-Flutung</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">UN-ECE R100 / R136</td><td class="p-4 text-gray-700">Battery-Abuse-Test PKW/L-Kategorie</td><td class="p-4 text-gray-700">Test-Container nach Pflichten-Profil</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">SIL-2 nach IEC 61508</td><td class="p-4 text-gray-700">Sicherheitskette H₂-Notabschaltung</td><td class="p-4 text-gray-700">Redundante Sensorik, Magnetventil</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DGUV V3 + DIN VDE 0100-720</td><td class="p-4 text-gray-700">Hochstrom-DC bis 1.500 V</td><td class="p-4 text-gray-700">Lichtbogen-Schutz, FI Typ B</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DGUV-Information 213-093</td><td class="p-4 text-gray-700">Wasserstoff-Sichere Arbeitsweise</td><td class="p-4 text-gray-700">Doku-Vorlage, Schulung</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">IPCEI Hy2 (Tech / Use / Infra)</td><td class="p-4 text-gray-700">EU-Beihilfe für H₂-Wertschöpfung</td><td class="p-4 text-gray-700">Förderung-relevante Doku-Anlage</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">IPCEI EuBatIn</td><td class="p-4 text-gray-700">EU-Beihilfe Batterie-Wertschöpfung</td><td class="p-4 text-gray-700">Cell-Manufacturing-Container förderfähig</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900 text-center">Acht Anwendungs-Container für Wasserstoff & Batterie</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { title: 'Brennstoffzellen-Test-Stand', desc: 'Stack-Test bis 100 kW, ATEX Zone 2, H₂-MFC, O₂-/Luft-Versorgung, Klimaregelung ±2 K.' },
+              { title: 'Elektrolyseur-Pilotanlage', desc: 'PEM- oder Alkali-Elektrolyse 5-100 kW, DC bis 1.500 V, ATEX Zone 1, Berstscheibe.' },
+              { title: 'H₂-Materialprüfung', desc: 'Wasserstoff-Versprödung, Permeations-Messung, Druck-Wasserstoff-Tests bis 700 bar.' },
+              { title: 'Battery-Abuse-Container', desc: 'Thermal Runaway, Nail-Penetration, Crush-Test, F90 Brand-Wand, N₂-Flutung, Aktivkohle-Abluft.' },
+              { title: 'Cell-Cycling-Container', desc: '64-256 Cycler-Kanäle parallel, klimatisiert ±0,5 °C, Klimaschrank-Anschluss, MES-Anbindung.' },
+              { title: 'Trockenraum für Zellfertigung', desc: 'Taupunkt -40 °C, Reinraum ISO 8, Cell-Assembly-Glove-Box, Inertgas-Schleuse.' },
+              { title: 'BMS-/Battery-Pack-Test', desc: 'Kontaktiergerät, Hochstrom-Cycler, Klima-Stress -30 / +60 °C, EMV-fähige Mess-Box.' },
+              { title: 'PV-/H₂-Hybrid-Pilot', desc: 'PV-Generator, Power-Conditioning, Elektrolyseur, Speicher, Brennstoffzelle, Lastprofil-Simulation.' }
+            ].map(item => (
+              <div class="bg-slate-50 rounded-xl p-5 border-l-2 border-primary">
+                <div class="font-bold text-slate-900 mb-2">{item.title}</div>
+                <p class="text-sm text-gray-700 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10">Sechs Engineering-Details für H₂- und Batterie-Container</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">1. H₂-Sicherheits-Kette</div><h3 class="text-xl font-bold mb-3">SIL-2 nach IEC 61508</h3><p class="text-gray-300 text-sm">Redundante H₂-Detektoren mit Voting 2-aus-3, Magnetventil-Notabschaltung bei 25 % UEG, Sicherheits-Lüftungs-Hochlauf, akustischer + optischer Alarm, Notruf-Aufschaltung.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">2. Battery-Abuse-Kammer</div><h3 class="text-xl font-bold mb-3">F90/F120-Brand-Wand mit N₂-Flutung</h3><p class="text-gray-300 text-sm">Trennung Test-Kammer / Steuerstand mit F120-Wand, Sichtfenster aus mehrlagig verbundsicherem Glas, automatische N₂-Flutung mit 30 kg/min, Aktivkohle-Abluft für HF/CO/Olefine.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">3. Trockenraum für Cell-Manufacturing</div><h3 class="text-xl font-bold mb-3">Taupunkt -40 °C reproduzierbar</h3><p class="text-gray-300 text-sm">Adsorptionstrocknung mit Doppelturm-Regeneration, 24/7-Betrieb, Reinraum ISO 8, Personalschleuse mit Trockenanzug, Material-Schleuse mit Schleusenklima.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">4. Hochstrom-DC-Anschluss</div><h3 class="text-xl font-bold mb-3">Bis 1.500 V / 300 A für Elektrolyseur</h3><p class="text-gray-300 text-sm">Lichtbogen-geprüfte Schaltanlage, FI Typ B universalstromsensitiv, isolationsüberwacht, Erdschluss-Detektion, separate Trafostation oder Werks-Anschluss.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">5. Klima-Stress -30 / +60 °C</div><h3 class="text-xl font-bold mb-3">Kombi-Klima- und Vibrations-Schrank</h3><p class="text-gray-300 text-sm">Klimakammer mit Temperatur- und Feuchte-Programmierung, Vibrationsschwingtisch, Schock-Profile nach UN 38.3 und IEC 62133, programmierbare Profile in 1-K-Schritten.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">6. Mess- und Daten-Erfassung</div><h3 class="text-xl font-bold mb-3">Hochfrequenz-DAQ mit MES-Anbindung</h3><p class="text-gray-300 text-sm">Mess-Karten 100 kS/s pro Kanal, parallele Erfassung Spannung/Strom/Temperatur/Druck/Gas, Anbindung an MES via OPC UA, Audit-Trail nach FDA 21 CFR Part 11 für GMP-fähige Test-Daten.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900 text-center">Weiterführende Fachartikel</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <a href="/magazin/laborcontainer-energiewende-h2-batterie-ex-schutz" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Ex-Schutz</div><h3 class="font-bold text-slate-900 mb-2">Energiewende H₂ und Batterie</h3><p class="text-sm text-gray-600">ATEX, EN 60079 und Thermal-Runaway-Schutz im Detail.</p></a>
+            <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">HVAC</div><h3 class="font-bold text-slate-900 mb-2">Klima, Lüftung, Normen</h3><p class="text-sm text-gray-600">Notlüftung ≥30-fach, Trockenraum -40 °C.</p></a>
+            <a href="/magazin/laborcontainer-mieten-vs-kaufen" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Förderung</div><h3 class="font-bold text-slate-900 mb-2">Mieten vs. Kaufen</h3><p class="text-sm text-gray-600">IPCEI- und BMBF-tauglicher Wirtschaftlichkeitsvergleich.</p></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="anfrage" class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">H₂- und Batterie-Container für Ihre Pilotanlage</h2>
+            <p class="text-gray-700 text-lg">Skizzieren Sie Versuchsziel, Leistung, Sicherheits-Klasse und Förder-Programm. Wir antworten innerhalb eines Werktags mit ATEX-Zoning-Konzept und IPCEI-tauglichem Investitionsmodell.</p>
+          </div>
+          <ContactForm client:load />
+        </div>
+      </div>
+    </section>
+
+    <BranchenCrossLinks current="energiewende-h2-batterie" />
+  </div>
+</Layout>
