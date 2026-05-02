@@ -59,10 +59,12 @@ const faqSchema = {
     { "@type": "Question", "name": "Funktionieren Container-Reinräume auch für CDMO und Lohnherstellung?", "acceptedAnswer": { "@type": "Answer", "text": "Insbesondere für CDMO sind modulare Container-Reinräume optimal. Ein CDMO braucht produktspezifische Reinraum-Konfigurationen für jeden Auftrag – mal sterile Abfüllung, mal Lyophilisation, mal HPAPI-Handling, mal Zell- und Gentherapie. Container ermöglichen, dieselbe Werksfläche flexibel zu nutzen: Sie tauschen das Container-Modul aus und haben in 2-3 Wochen eine neue Reinraum-Konfiguration mit erneuter Qualifizierung. Konventioneller Reinraum-Umbau dauert für denselben Effekt 3-6 Monate. Wir bauen CDMO-spezifische Plattformen mit Standard-Schnittstellen (Strom, Druckluft, WFI, gereinigtes Wasser, Stickstoff, Abluft) – jeder neue Container dockt am gleichen Versorgungspunkt an. Diese Plattform-Strategie ist für CDMO der konkrete Wettbewerbsvorteil." } }
   ]
 };
+const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Laborcontainer Pharma & Biotech – GMP, Annex 1, BSL-3", "description": "GMP-konforme Laborcontainer für Pharma- und Biotech-Unternehmen. Annex 1, ISO 14644 Reinraum, BSL-3 BioSafety, qualifizierte Werksabnahme.", "image": "https://www.planexus.de/opengraph.jpg", "datePublished": "2026-05-02", "dateModified": "2026-05-02", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer Planexus GmbH", "url": "https://www.planexus.de/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://www.planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.planexus.de/branchen/pharma-biotech"}, "about": "Pharma- und Biotech-Laborcontainer", "inLanguage": "de-DE"};
 ---
 <Layout title={title} description={description} canonical={canonical} ogImage={ogImage} schema={serviceSchema}>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <div class="bg-white">
     <!-- HERO -->

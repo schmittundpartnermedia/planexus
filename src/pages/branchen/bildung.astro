@@ -38,10 +38,12 @@ const faqSchema = {
     { "@type": "Question", "name": "Wie sind Schul-Container gegen Vandalismus und Einbruch geschützt?", "acceptedAnswer": { "@type": "Answer", "text": "Standard-Schulcontainer haben einbruchhemmende Türen RC2 nach DIN EN 1627, vergitterte Fenster RC2 oder mit einbruchhemmender Verbund-Verglasung P4A, Bewegungsmelder und Aufschaltung an die Schul-Alarmanlage oder Wachfirma. Die kommunale Sachversicherung verlangt typischerweise mindestens RC2 für Schul-Räume mit Wertgegenständen (Mikroskope, Notebooks). Für Standorte mit erhöhtem Vandalismus-Risiko (Brennpunkt-Schulen, freie Flächen mit Nachtaufenthalt) liefern wir RC3-Türen, beschichtete Verbund-Glaser P5A, Außenleuchten mit Bewegungsmelder und Video-Überwachung mit DSGVO-konformer Aufzeichnung. Pro Container etwa 2.000-4.000 Euro Mehraufpreis – wirtschaftlich, weil ein einziger Einbruch die Mehrkosten um Faktor 5-10 übersteigt." } }
   ]
 };
+const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Laborcontainer Bildung & Schulen – RiSU, GUV-SR 2003", "description": "Schul- und Bildungs-Laborcontainer für Chemie, Biologie, Physik. RiSU-konform, DGUV 202-058, BTA/CTA-Praktikum, MINT-Module für 12-36 Monate.", "image": "https://www.planexus.de/opengraph.jpg", "datePublished": "2026-05-02", "dateModified": "2026-05-02", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer Planexus GmbH", "url": "https://www.planexus.de/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://www.planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.planexus.de/branchen/bildung"}, "about": "Schul- und Bildungs-Laborcontainer", "inLanguage": "de-DE"};
 ---
 <Layout title={title} description={description} canonical={canonical} ogImage={ogImage} schema={serviceSchema}>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <div class="bg-white">
     <section class="relative bg-slate-900 text-white overflow-hidden pt-20">
       <div class="absolute inset-0 z-0">

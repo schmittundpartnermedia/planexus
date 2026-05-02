@@ -42,10 +42,12 @@ const faqSchema = {
     { "@type": "Question", "name": "Wie ist die rechtliche Situation für Container auf Hochschul-Liegenschaften?", "acceptedAnswer": { "@type": "Answer", "text": "Hochschulen sind Bauherren im Sinne der Landesbauordnung. Ein Container >75 m³ Brutto-Rauminhalt oder mit dauerhafter Verbindung zum Boden ist baugenehmigungspflichtig nach LBO § 60ff. Verfahrensfreie Anlagen (LBO § 61, je Bundesland leicht unterschiedlich) gelten meist nicht für Labor-Container, weil sie GenTSV/BioStoffV-relevant sind. Wir liefern den Bauantrag mit: Lageplan, Statik nach DIN EN 1991/1992/1993, Brandschutznachweis nach LBO + MBO + ASR A2.2, Lärm- und Lüftungsnachweis, GenTSV/BioStoffV-Erklärung. Auf bestandsgeschützten Liegenschaften (z.B. denkmalgeschützte Hochschul-Areale wie Humboldt-Uni Mitte, TU München Innenstadt, Uni Heidelberg Altstadt) klären wir vorab mit der Denkmalbehörde." } }
   ]
 };
+const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Laborcontainer für Forschung & Hochschule – DFG, GenTSV, S2", "description": "Modulare Forschungs-Laborcontainer für Universitäten, Max-Planck, Helmholtz, Leibniz, Fraunhofer. DFG-förderfähig, GenTSV-konform, S1/S2/S3.", "image": "https://www.planexus.de/opengraph.jpg", "datePublished": "2026-05-02", "dateModified": "2026-05-02", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer Planexus GmbH", "url": "https://www.planexus.de/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://www.planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.planexus.de/branchen/forschung-hochschule"}, "about": "Forschungs- und Hochschul-Laborcontainer", "inLanguage": "de-DE"};
 ---
 <Layout title={title} description={description} canonical={canonical} ogImage={ogImage} schema={serviceSchema}>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <div class="bg-white">
     <section class="relative bg-slate-900 text-white overflow-hidden pt-20">
