@@ -8,7 +8,6 @@ import CityCrossLinks from '../components/CityCrossLinks.astro';
 const title = "Laborcontainer Zürich | BSL-3, SIA, ETH/UZH | Planexus";
 const description = "Laborcontainer Zürich: LABtoGO 2.0, 2,75 m Innenhöhe, BSL-3, SIA 261, Energie SIA 380/1. Werk Albstadt via A81 + Grenze Thayngen in 8–14 Wochen.";
 const canonical = "/laborcontainer-zuerich";
-const ogImage = "https://www.planexus.de/assets/laborcontainer-modulbau.jpg";
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -140,7 +139,7 @@ const faqSchema = {
 };
 ---
 
-<Layout title={title} description={description} canonical={canonical} ogImage={ogImage}>
+<Layout title={title} description={description} canonical={canonical}>
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

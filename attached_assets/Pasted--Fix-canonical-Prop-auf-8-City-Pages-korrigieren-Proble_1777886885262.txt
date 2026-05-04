@@ -1,0 +1,73 @@
+# Fix: canonical-Prop auf 8 City-Pages korrigieren
+
+## Problem
+
+Auf 8 City-Pages wird ein falscher Prop-Name an Layout.astro übergeben (`canonicalUrl=` statt `canonical=`) UND der Wert nutzt die falsche Domain (`https://planexus.de/...` ohne www). Layout.astro erwartet einen Pfad-Only-Wert über den Prop `canonical` und ergänzt die Domain selbst.
+
+Live-Beispiel (verifiziert per curl gegen Production):
+- `/laborcontainer-basel` liefert `canonical="https://www.planexus.de"` (ohne Pfad → falsch)
+- `/laborcontainer-muenchen` liefert `canonical="https://www.planexus.de/laborcontainer-muenchen"` (korrekt)
+
+## Referenz: München macht es richtig
+
+`src/pages/laborcontainer-muenchen.astro` Zeile 165–170:
+```astro
+<Layout
+  title="..."
+  description="..."
+  canonical="/laborcontainer-muenchen"
+  schema={serviceSchema}
+  ogImage="/attached_assets/Laborcontainer_006_1769688326917.jpg"
+```
+
+Prop-Name: `canonical` (nicht `canonicalUrl`)
+Wert: Pfad-Only (`/laborcontainer-muenchen`), keine Domain
+
+## Betroffene Dateien (8)
+
+- `src/pages/laborcontainer-basel.astro`
+- `src/pages/laborcontainer-bern.astro`
+- `src/pages/laborcontainer-duesseldorf.astro`
+- `src/pages/laborcontainer-frankfurt.astro`
+- `src/pages/laborcontainer-graz.astro`
+- `src/pages/laborcontainer-linz.astro`
+- `src/pages/laborcontainer-wien.astro`
+- `src/pages/laborcontainer-zuerich.astro`
+
+## Aufgabe
+
+In jeder der 8 Dateien:
+
+1. **Konstante umbenennen und Wert ändern (Zeile 10):**
+   - Vorher: `const canonicalUrl = "https://planexus.de/laborcontainer-[stadt]";`
+   - Nachher: `const canonical = "/laborcontainer-[stadt]";`
+
+2. **Layout-Aufruf-Prop umbenennen:**
+   - Vorher: `<Layout title={title} description={description} canonicalUrl={canonicalUrl} ogImage={ogImage}>`
+   - Nachher: `<Layout title={title} description={description} canonical={canonical} ogImage={ogImage}>`
+
+3. **ogImage-Konstante ebenfalls prüfen:** Falls in der gleichen Datei auf Zeile 11 `const ogImage = "https://planexus.de/assets/laborcontainer-modulbau.jpg";` steht, dieses Asset existiert nicht im Repo. Konstante und Prop-Übergabe **entfernen**, damit Layout.astro den Default `/opengraph.jpg` greift.
+
+## Akzeptanzkriterien
+
+- [ ] In allen 8 Dateien: keine Konstante `canonicalUrl` mehr
+- [ ] In allen 8 Dateien: keine Layout-Prop `canonicalUrl=` mehr
+- [ ] Verifikation per `grep -rn "canonicalUrl" src/pages/` → leeres Ergebnis
+- [ ] In allen 8 Dateien: `canonical` als Pfad-Only-String (z.B. `/laborcontainer-basel`), nicht als volle URL
+- [ ] ogImage-Referenzen auf nicht-existierendes `laborcontainer-modulbau.jpg` entfernt
+- [ ] Build läuft fehlerfrei durch (`npm run build`)
+
+## Nicht ändern
+
+- München-Page (funktioniert bereits korrekt)
+- Layout.astro (zentrale Logik ist korrekt)
+- JSON-LD-Schema-URLs in den City-Pages (nicht Teil dieses Fixes)
+- Sonstige Page-Inhalte
+
+## Bericht nach Abschluss
+
+1. Diff der ersten Datei (basel.astro) als Beispiel
+2. Output von `grep -rn "canonicalUrl" src/pages/` (sollte leer sein)
+3. Build-Status
+
+**Alle betroffenen Dateien vollständig anpassen.**
