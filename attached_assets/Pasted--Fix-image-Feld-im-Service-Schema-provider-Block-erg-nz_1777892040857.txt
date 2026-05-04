@@ -1,0 +1,109 @@
+# Fix: image-Feld im Service-Schema provider-Block ergänzen
+
+## Hintergrund
+
+Google Rich Results Test zeigt für `https://www.planexus.de/laborcontainer-basel` noch einen Hinweis:
+> "Feld 'image' fehlt (optional)" — beim Organization-Objekt mit Adresse Emil-Mayer-Straße 1, Albstadt
+
+Diese Organization ist **eingebettet als `provider` im Service-Schema** auf den City-Pages (Zeile ~13–34 in basel.astro). Sie wurde im letzten Pass nicht angefasst, weil dort nur LocalBusiness-Schemas behandelt wurden.
+
+## Beispiel-Stelle (basel.astro)
+
+Aktueller Code (Zeile ~13–22):
+```astro
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Laborcontainer Basel",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "url": "https://www.planexus.de",
+    "telephone": "+49 7435 7519 700",
+    "email": "info@planexus.de",
+    "address": { "@type": "PostalAddress", "streetAddress": "Emil-Mayer-Straße 1", "addressLocality": "Albstadt", "postalCode": "72461", "addressCountry": "DE" },
+    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
+  },
+  ...
+};
+```
+
+## Aufgabe
+
+Im `provider`-Block des Service-Schemas auf allen betroffenen Pages ein `image`-Feld ergänzen, direkt nach dem `name`-Feld:
+
+```json
+"image": "https://www.planexus.de/android-chrome-512x512.png"
+```
+
+**Begründung für Logo (nicht Container-Foto):** Der `provider` ist ein Organization-Type (Brand-Identity), kein LocalBusiness-Type. Konsistent zur bereits etablierten Trennung: Organization = Logo, LocalBusiness = Container-Foto.
+
+## Betroffene Dateien
+
+Alle Pages, die ein Service-Schema mit eingebettetem Organization-`provider` haben. Nach der bisherigen Analyse:
+
+### City-Pages (8 V4-Städte)
+- `src/pages/laborcontainer-basel.astro`
+- `src/pages/laborcontainer-bern.astro`
+- `src/pages/laborcontainer-duesseldorf.astro`
+- `src/pages/laborcontainer-frankfurt.astro`
+- `src/pages/laborcontainer-graz.astro`
+- `src/pages/laborcontainer-linz.astro`
+- `src/pages/laborcontainer-wien.astro`
+- `src/pages/laborcontainer-zuerich.astro`
+
+### Branchen-Pages (haben ebenfalls Service-Schema mit Organization-provider)
+- `src/pages/branchen/pharma-biotech.astro`
+- `src/pages/branchen/energiewende-h2-batterie.astro`
+- `src/pages/branchen/bildung.astro`
+- `src/pages/branchen/forschung-hochschule.astro`
+- `src/pages/branchen/industrie-werkstoffpruefung.astro`
+- `src/pages/branchen/public-health-krisenvorsorge.astro`
+
+### Grep-Verifikation der Stellen vorab
+
+Bevor du die Änderungen durchführst, prüfe per grep, welche Dateien tatsächlich ein Service-Schema mit eingebettetem `provider: { "@type": "Organization", ... }` haben:
+
+```bash
+grep -rln '"provider".*"@type": "Organization"\|"provider": {' src/pages/
+```
+
+Falls einzelne der oben aufgeführten Pages kein solches Schema haben → nicht anfassen, im Bericht erwähnen.
+
+Falls weitere Pages außerhalb der Liste betroffen sind → mit demselben Fix einbeziehen.
+
+## Wichtig: NICHT anfassen
+
+- LocalBusiness-Schemas (haben bereits image, sind grün im Test)
+- Article-Schemas (Magazin) (haben bereits eigenes image-Feld)
+- BreadcrumbList, FAQPage, AggregateOffer, etc.
+- Service-Schemas, die KEIN provider-Organization-Objekt enthalten
+
+## Akzeptanzkriterien
+
+- [ ] In allen betroffenen Dateien hat der `provider`-Block des Service-Schemas ein `image`-Feld
+- [ ] Wert ist überall identisch: `https://www.planexus.de/android-chrome-512x512.png`
+- [ ] Build läuft fehlerfrei durch (`npm run build`)
+- [ ] Auf einer Beispiel-City-Page (basel) liefert das HTML jetzt:
+  - 2× `android-chrome-512x512.png` (Layout Organization + Service provider Organization)
+  - 2× `labtogo-industrie.webp` (Layout LocalBusiness + City LocalBusiness)
+
+## Verifikations-Befehle (nach Build, vor Deploy)
+
+```bash
+# Erwartung: 2 Treffer (Logo)
+curl -s https://www.planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*android-chrome[^"]*"' | wc -l
+
+# Erwartung: 2 Treffer (Container-Foto, unverändert)
+curl -s https://www.planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*labtogo-industrie[^"]*"' | wc -l
+```
+
+## Bericht nach Abschluss
+
+1. Output von `grep -rln '"provider".*"@type": "Organization"' src/pages/` (zeigt alle gefundenen Dateien)
+2. Diff von basel.astro als Beispiel
+3. Liste aller geänderten Dateien
+4. Build-Status
+5. Hinweis falls bestimmte erwartete Pages kein passendes Schema-Muster hatten
+
+**Alle betroffenen Dateien vollständig anpassen.**
