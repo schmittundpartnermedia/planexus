@@ -12,23 +12,33 @@ interface Props {
   ogImage?: string;
 }
 
-const { title, description, canonical = '', type = 'website', schema, ogImage } = Astro.props;
+const { title, description, canonical, type = 'website', schema, ogImage } = Astro.props;
 const fullTitle = title.includes('Planexus') ? title : `${title} | Planexus GmbH`;
 const siteUrl = 'https://www.planexus.de';
-const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
-const ogImageUrl = ogImage
-  ? (ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`)
-  : `${siteUrl}/opengraph.jpg`;
+
+// Selbst-referenzierender Canonical: Wenn keine canonical-Prop übergeben wurde,
+// Pfad aus Astro.url.pathname ableiten. Trailing-Slash-Normalisierung
+// (Root bleibt "/", alles andere ohne Trailing Slash).
+const rawPath = (canonical && canonical.length > 0) ? canonical : Astro.url.pathname;
+const normalizedPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
+const canonicalUrl = `${siteUrl}${normalizedPath}`;
+
+// ogImage-Normalisierung: erzwingt www-Domain (auch wenn Autor planexus.de ohne www schrieb).
+let ogImageUrl: string;
+if (!ogImage) {
+  ogImageUrl = `${siteUrl}/opengraph.jpg`;
+} else if (ogImage.startsWith('http')) {
+  ogImageUrl = ogImage.replace(/^https?:\/\/(www\.)?planexus\.de/, siteUrl);
+} else {
+  ogImageUrl = `${siteUrl}${ogImage}`;
+}
 
 // Hreflang-Mapping: DACH-Strategie. Eine Sprachversion (Deutsch),
 // regionale Targeting-Signale für DE/CH/AT.
-// Standard ist DE — explizites de-DE für deutsche Stadtseiten und alle generischen Seiten,
-// de-CH/de-AT nur für die spezifischen Stadtseiten in CH/AT.
-const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const chPaths = ['/laborcontainer-zuerich', '/laborcontainer-basel', '/laborcontainer-bern'];
 const atPaths = ['/laborcontainer-wien', '/laborcontainer-graz', '/laborcontainer-linz'];
-const isCH = chPaths.includes(pathname);
-const isAT = atPaths.includes(pathname);
+const isCH = chPaths.includes(normalizedPath);
+const isAT = atPaths.includes(normalizedPath);
 const isDE = !isCH && !isAT;
 ---
 

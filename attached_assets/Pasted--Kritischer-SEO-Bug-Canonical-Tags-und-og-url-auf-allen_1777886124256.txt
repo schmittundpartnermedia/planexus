@@ -1,0 +1,126 @@
+# Kritischer SEO-Bug: Canonical-Tags und og:url auf allen Unterseiten falsch
+
+## Problem (verifiziert per curl)
+
+Die Webseite hat einen kritischen SEO-Bug: Auf allen Unterseiten zeigen `<link rel="canonical">`, `<meta property="og:url">` und `<link rel="alternate" hreflang="...">` auf die Homepage statt auf die jeweilige Seite selbst.
+
+### Beispiel: `https://www.planexus.de/laborcontainer-basel`
+
+Tatsächlicher HTML-Output (per `curl -s` verifiziert):
+```html
+<link rel="canonical" href="https://www.planexus.de">
+<meta property="og:url" content="https://www.planexus.de">
+<link rel="alternate" hreflang="de" href="https://www.planexus.de">
+<link rel="alternate" hreflang="de-CH" href="https://www.planexus.de">
+<link rel="alternate" hreflang="x-default" href="https://www.planexus.de">
+<meta property="og:image" content="https://planexus.de/assets/laborcontainer-modulbau.jpg">
+<meta name="twitter:image" content="https://planexus.de/assets/laborcontainer-modulbau.jpg">
+```
+
+Korrekt wäre:
+```html
+<link rel="canonical" href="https://www.planexus.de/laborcontainer-basel">
+<meta property="og:url" content="https://www.planexus.de/laborcontainer-basel">
+<link rel="alternate" hreflang="de" href="https://www.planexus.de/laborcontainer-basel">
+<link rel="alternate" hreflang="de-CH" href="https://www.planexus.de/laborcontainer-basel">
+<link rel="alternate" hreflang="x-default" href="https://www.planexus.de/laborcontainer-basel">
+<meta property="og:image" content="https://www.planexus.de/assets/laborcontainer-modulbau.jpg">
+<meta name="twitter:image" content="https://www.planexus.de/assets/laborcontainer-modulbau.jpg">
+```
+
+Die Homepage selbst (`https://www.planexus.de/`) hat ein korrektes Canonical. Der Bug betrifft alle anderen Seiten.
+
+## Vermutete Ursache
+
+Im SEO-Meta-Template wird vermutlich nur eine statische Domain-Variable verwendet, ohne den aktuellen Pfad anzuhängen. Zu prüfen sind: SEO-Komponenten, Layout-Komponenten, Helmet/Head-Setups, Page-Templates, alle Stellen, an denen `canonical`, `og:url` oder `hreflang` gesetzt werden.
+
+## Kanonische Form (verbindlich)
+
+- Domain: `https://www.planexus.de` (mit www)
+- Trailing Slash: ohne (Ausnahme: Homepage `/` selbst)
+- Asset-URLs: ebenfalls `https://www.planexus.de/...` (mit www)
+
+## Aufgaben
+
+### 1. Canonical-Logik selbst-referenzierend machen
+Auf jeder Seite muss `<link rel="canonical">` exakt auf die aufgerufene URL zeigen, nicht auf die Domain-Root.
+
+- Root → `https://www.planexus.de/`
+- Unterseite → `https://www.planexus.de/[pfad]` (ohne Trailing Slash)
+- Verschachtelte Seite → `https://www.planexus.de/[parent]/[child]` (ohne Trailing Slash)
+
+Implementierung: Den aktuellen Request-Pfad dynamisch an die kanonische Domain hängen. Trailing-Slash-Normalisierung (außer bei Root) anwenden.
+
+### 2. og:url selbst-referenzierend machen
+Identische Logik wie Canonical. `og:url` muss exakt der Canonical-URL entsprechen.
+
+### 3. hreflang korrekt setzen
+Jeder hreflang-Eintrag muss auf die jeweils äquivalente Seite zeigen, nicht auf die Homepage. Da aktuell keine echten Sprach-/Länderversionen existieren, sollten alle hreflang-Einträge auf die kanonische URL der aktuellen Seite zeigen:
+- `hreflang="de"` → kanonische URL der aktuellen Seite
+- `hreflang="de-DE"` oder `hreflang="de-CH"` (je nach Seite) → kanonische URL der aktuellen Seite
+- `hreflang="x-default"` → kanonische URL der aktuellen Seite
+
+Falls keine echten Länderversionen existieren, kann hreflang auch komplett entfernt werden (saubere Lösung). Empfehlung im Bericht angeben.
+
+### 4. og:image und twitter:image auf www korrigieren
+Aktuell zeigen einige Image-URLs auf `https://planexus.de/...` (ohne www). Das wird zwar serverseitig per 301 umgeleitet, aber Social-Crawler sollten direkt die kanonische Form bekommen. Alle Asset-URLs in Meta-Tags auf `https://www.planexus.de/...` umstellen.
+
+### 5. Globaler Sweep
+Den Code-Pass auf alle Seiten anwenden, nicht nur auf einzelne Beispiele. Dazu zählen mindestens:
+- Alle City-Pages (`/laborcontainer-[stadt]`)
+- Alle Magazin-Artikel (`/magazin/...`)
+- Alle Service-Seiten (`/leistungen/...`)
+- Statische Pages (`/team`, `/kontakt`, `/ueber-uns`, `/projekte`, `/partner`, `/impressum`, `/datenschutz`)
+- Hub-Seiten (`/laborcontainer`, `/laborcontainer/labtogo`)
+
+## Akzeptanzkriterien (alle müssen erfüllt sein)
+
+Nach dem Fix müssen folgende `curl`-Tests die jeweilige Seite als Canonical zeigen:
+
+```bash
+# Homepage
+curl -s https://www.planexus.de/ | grep -E 'canonical|og:url'
+# Erwartung: href="https://www.planexus.de/"
+
+# City-Page Basel
+curl -s https://www.planexus.de/laborcontainer-basel | grep -E 'canonical|og:url'
+# Erwartung: href="https://www.planexus.de/laborcontainer-basel"
+
+# City-Page Frankfurt
+curl -s https://www.planexus.de/laborcontainer-frankfurt | grep -E 'canonical|og:url'
+# Erwartung: href="https://www.planexus.de/laborcontainer-frankfurt"
+
+# Magazin-Artikel
+curl -s https://www.planexus.de/magazin/bsl-2-bsl-3-container-labor | grep -E 'canonical|og:url'
+# Erwartung: href="https://www.planexus.de/magazin/bsl-2-bsl-3-container-labor"
+
+# Service-Seite
+curl -s https://www.planexus.de/leistungen/modulbau | grep -E 'canonical|og:url'
+# Erwartung: href="https://www.planexus.de/leistungen/modulbau"
+
+# Statische Page
+curl -s https://www.planexus.de/team | grep -E 'canonical|og:url'
+# Erwartung: href="https://www.planexus.de/team"
+```
+
+Zusätzlich:
+- [ ] Auf jeder Seite sind `canonical` und `og:url` identisch
+- [ ] Auf jeder Seite zeigen `canonical`, `og:url` und alle `hreflang`-Einträge auf die aktuelle URL (selbstreferenzierend)
+- [ ] Keine Asset-URL in Meta-Tags zeigt mehr auf `https://planexus.de/...` (alle auf `https://www.planexus.de/...`)
+- [ ] Keine doppelten Canonicals pro Seite
+- [ ] Keine doppelten og:url-Tags pro Seite
+
+## Nicht ändern
+- HTML-Content, Texte, Bilder, Komponenten-Logik
+- URL-Struktur, Routes, Slugs
+- Server-Konfiguration (Nginx-Redirects sind bereits korrekt)
+- Sitemap.xml (bereits korrekt)
+
+## Bericht nach Abschluss
+1. Liste aller geänderten Dateien
+2. Auszug der zentralen SEO-Komponente vor/nach dem Fix
+3. `curl`-Outputs der 6 Test-URLs aus den Akzeptanzkriterien
+4. Empfehlung zu hreflang: behalten (selbstreferenzierend) oder entfernen?
+5. Falls weitere Bugs entdeckt: kurze Beschreibung, aber **nicht ungefragt mitfixen**
+
+**Alle betroffenen Dateien vollständig anpassen.**
