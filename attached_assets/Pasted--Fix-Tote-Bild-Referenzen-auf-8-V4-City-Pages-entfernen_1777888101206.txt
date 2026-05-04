@@ -1,0 +1,79 @@
+# Fix: Tote Bild-Referenzen auf 8 V4-City-Pages entfernen
+
+## Problem
+
+Auf 8 V4-City-Pages werden Referenzen auf ein nicht-existentes Asset gerendert: `/assets/laborcontainer-modulbau.jpg` (HTTP 404 verifiziert). Das führt zu zwei Bugs:
+
+1. JSON-LD-Schema enthält ein `"image"`-Feld mit broken URL → Schema-Validation broken
+2. `<Picture>`-Element rendert ein kaputtes Hero-Bild auf Production → sichtbarer UX-Bug für Besucher
+
+## Kontext
+
+Hero-Bilder auf Landing-Pages sind aktuell **nicht gewünscht**. Die Lösung ist daher: Tote Referenzen ersatzlos entfernen, keine Fallback-Bilder einsetzen.
+
+## Beispiel: src/pages/laborcontainer-basel.astro
+
+Aktueller Zustand (verifiziert per grep):
+```
+Zeile 39:  "image": "https://www.planexus.de/assets/laborcontainer-modulbau.jpg",
+Zeile 113: <Picture src="/assets/laborcontainer-modulbau.jpg" alt="..." class="..." loading="eager" fetchpriority="high" />
+```
+
+## Betroffene Dateien (8)
+
+- `src/pages/laborcontainer-basel.astro`
+- `src/pages/laborcontainer-bern.astro`
+- `src/pages/laborcontainer-duesseldorf.astro`
+- `src/pages/laborcontainer-frankfurt.astro`
+- `src/pages/laborcontainer-graz.astro`
+- `src/pages/laborcontainer-linz.astro`
+- `src/pages/laborcontainer-wien.astro`
+- `src/pages/laborcontainer-zuerich.astro`
+
+## Aufgaben
+
+### 1. JSON-LD `"image"`-Feld entfernen
+In jeder der 8 Dateien das Feld `"image": "https://www.planexus.de/assets/laborcontainer-modulbau.jpg",` aus dem Schema-Objekt **vollständig entfernen** (Zeile inkl. Komma).
+
+Falls das gleiche `"image"`-Feld in mehreren Schemas pro Datei vorkommt (z.B. Service-Schema UND LocalBusiness-Schema): alle entfernen.
+
+Falls das Feld auf andere existierende Bilder zeigt (nicht `laborcontainer-modulbau.jpg`): NICHT anfassen, nur die toten Referenzen entfernen.
+
+### 2. `<Picture>`-Element entfernen
+In jeder der 8 Dateien das `<Picture>`-Element mit `src="/assets/laborcontainer-modulbau.jpg"` **vollständig entfernen**.
+
+**Wichtig zur Layout-Integrität:**
+- Falls das `<Picture>` in einem Wrapper-Container sitzt (div, section etc.), der ohne Bild kein Layout-Problem erzeugt → nur das Picture-Element entfernen
+- Falls der Wrapper-Container nach Entfernung leer ist und visuell stört (z.B. einen Hero-Bereich mit Hintergrundfarbe ohne Inhalt) → den ganzen Wrapper-Block entfernen
+- Falls Text/Headlines IM Wrapper sind und visuell vom Bild abhängig waren (z.B. weißer Text auf dunklem Bild) → kurz im Bericht erwähnen, NICHT eigenmächtig fixen
+
+### 3. Verifikation
+- `grep -rn "laborcontainer-modulbau" src/pages/laborcontainer-*.astro` muss nach dem Fix leer sein
+- `npm run build` muss fehlerfrei durchlaufen
+- Build-Output sollte keine Warnings zu fehlenden Assets enthalten
+
+## Akzeptanzkriterien
+
+- [ ] In allen 8 Dateien: kein `"image"`-Feld mehr mit `laborcontainer-modulbau.jpg`
+- [ ] In allen 8 Dateien: kein `<Picture>` mehr mit `laborcontainer-modulbau.jpg`
+- [ ] `grep -rn "laborcontainer-modulbau" src/pages/laborcontainer-*.astro` → leer
+- [ ] Build läuft fehlerfrei durch
+- [ ] Layout der Pages bricht nicht (kurze visuelle Plausibilitätsprüfung im Bericht beschreiben: was steht jetzt anstelle des Hero-Bildes?)
+
+## Nicht ändern
+
+- Andere Bilder, die existieren und korrekt referenziert sind
+- Andere Pages außer den 8 City-Pages
+- `og:image` (das ist bereits gefixt und greift auf Layout-Default `/opengraph.jpg`)
+- Sonstige Schema-Felder im LocalBusiness/Service-Schema
+- Sonstige Page-Inhalte, Texte, Logik
+
+## Bericht nach Abschluss
+
+1. Diff von basel.astro als Referenzbeispiel (vorher/nachher um Zeile 39 und 113)
+2. Output von `grep -rn "laborcontainer-modulbau" src/pages/laborcontainer-*.astro` (sollte leer sein)
+3. Build-Status
+4. Kurze visuelle Beschreibung: Was rendert die Hero-Section jetzt? (z.B. „nur noch Headline + Subline, kein Hintergrundbild" oder „leerer Hero-Bereich, sieht okay aus")
+5. Falls Layout-Probleme auftreten: beschreiben, NICHT eigenmächtig fixen
+
+**Alle betroffenen Dateien vollständig anpassen.**

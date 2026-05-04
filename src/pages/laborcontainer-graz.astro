@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.tsx';
-import Picture from '../components/Picture.astro';
 import AuthorBio from '../components/AuthorBio.astro';
 import CityCrossLinks from '../components/CityCrossLinks.astro';
 
@@ -35,7 +34,6 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Planexus GmbH – Laborcontainer Graz",
-  "image": "https://www.planexus.de/assets/laborcontainer-modulbau.jpg",
   "url": "https://www.planexus.de/laborcontainer-graz",
   "telephone": "+49 7435 7519 700",
   "email": "info@planexus.de",
@@ -108,11 +106,6 @@ const faqSchema = {
 
     <!-- HERO -->
     <section class="relative bg-slate-900 text-white overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <Picture src="/assets/laborcontainer-modulbau.jpg" alt="Laborcontainer Graz – modulare Containerlabore für AVL List, Magna Steyr, BioTechMed-Graz, JOANNEUM RESEARCH, ACIB, Med-Uni Graz und LKH-Univ. Klinikum" class="w-full h-full object-cover opacity-30" loading="eager" fetchpriority="high" />
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
-      </div>
-
       <div class="relative z-10 container mx-auto px-4 py-20 md:py-28">
         <div class="max-w-4xl">
           <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
