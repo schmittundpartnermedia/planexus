@@ -1,0 +1,144 @@
+# Fix: image-Feld im Service-Schema provider-Block (zweiter Versuch)
+
+## Wichtiger Hinweis vorab
+
+Im vorherigen Versuch hast du gemeldet "26/26 Pages sauber gepatched", aber bei der Live-Verifikation auf dem Server war **NICHTS** in den 12 City-Pages und 6 Leistungs-Pages gepatched. Was du als "Treffer" gezählt hast, war der bereits existierende `logo`-Eintrag im publisher-Block der Article-Schemas — also nicht der neue Patch im provider-Block.
+
+**Diese Aufgabe ist also noch nicht erledigt.**
+
+## Verbindliche Arbeitsweise
+
+1. **KEIN Regex-Skript, KEIN sed/awk-One-Liner mit Lookaheads.** Solche Skripte haben beim letzten Versuch fälschlich behauptet zu funktionieren. Du arbeitest dieses Mal mit einzelnen, gezielten str_replace-Edits pro Datei.
+
+2. **Nach JEDER einzelnen Datei-Änderung: selbst per `grep` verifizieren**, dass der Patch tatsächlich angekommen ist, BEVOR du zur nächsten Datei gehst.
+
+3. **Im Bericht nur Pages als "erledigt" listen, die durch eigenständige grep-Verifikation bestätigt wurden.** Falls eine Datei das erwartete Pattern nicht enthält, im Bericht ausdrücklich als "übersprungen, Grund:" listen — nicht stillschweigend mitzählen.
+
+## Was zu tun ist
+
+In jeder unten gelisteten Datei den **Service-Schema provider-Block** finden und ein `image`-Feld direkt nach dem `name`-Feld einfügen.
+
+### Aktueller Zustand (Beispiel basel.astro)
+
+```javascript
+"provider": {
+  "@type": "Organization",
+  "name": "Planexus GmbH",
+  "url": "https://www.planexus.de",
+  "telephone": "+49 7435 7519 700",
+  ...
+}
+```
+
+### Gewünschter Zustand
+
+```javascript
+"provider": {
+  "@type": "Organization",
+  "name": "Planexus GmbH",
+  "image": "https://www.planexus.de/android-chrome-512x512.png",
+  "url": "https://www.planexus.de",
+  "telephone": "+49 7435 7519 700",
+  ...
+}
+```
+
+**Formatierung:** `image`-Feld auf einer EIGENEN Zeile mit gleicher Einrückung wie `name`. KEIN Inline-Format wie `"name": "...", "image": "..."` auf einer Zeile.
+
+## Betroffene Dateien (24)
+
+### City-Pages (12)
+- `src/pages/laborcontainer-basel.astro`
+- `src/pages/laborcontainer-bern.astro`
+- `src/pages/laborcontainer-berlin.astro`
+- `src/pages/laborcontainer-duesseldorf.astro`
+- `src/pages/laborcontainer-frankfurt.astro`
+- `src/pages/laborcontainer-graz.astro`
+- `src/pages/laborcontainer-hamburg.astro`
+- `src/pages/laborcontainer-linz.astro`
+- `src/pages/laborcontainer-muenchen.astro`
+- `src/pages/laborcontainer-stuttgart.astro`
+- `src/pages/laborcontainer-wien.astro`
+- `src/pages/laborcontainer-zuerich.astro`
+
+### Leistungs-Pages (6)
+- `src/pages/leistungen/ausstattung.astro`
+- `src/pages/leistungen/beratung.astro`
+- `src/pages/leistungen/logistik.astro`
+- `src/pages/leistungen/modulbau.astro`
+- `src/pages/leistungen/planung.astro`
+- `src/pages/leistungen/smart-lab.astro`
+
+### Laborcontainer-Hub-Pages (2)
+- `src/pages/laborcontainer/index.astro`
+- `src/pages/laborcontainer/labtogo.astro`
+
+### Branchen-Pages (4 — unbestätigt)
+Im letzten Versuch behauptet, aber im echten Code nicht verifiziert. Bitte trotzdem prüfen ob `image` im provider-Block vorhanden ist:
+- `src/pages/branchen/bildung.astro`
+- `src/pages/branchen/energiewende-h2-batterie.astro`
+- `src/pages/branchen/forschung-hochschule.astro`
+- `src/pages/branchen/industrie-werkstoffpruefung.astro`
+- `src/pages/branchen/pharma-biotech.astro`
+- `src/pages/branchen/public-health-krisenvorsorge.astro`
+
+## Was NICHT anzufassen ist
+
+- `parentOrganization`-Sub-Blöcke (Wesemann Holding GmbH) — die brauchen kein image
+- `publisher`-Blöcke in Article-Schemas (haben bereits ein `logo`-Feld, das wirkt wie image)
+- `address`-Sub-Blöcke
+- `LocalBusiness`-Schemas (haben bereits image=labtogo-industrie.webp)
+- `Article`-, `BreadcrumbList`-, `FAQPage`-, `AggregateOffer`-Schemas
+
+## Verbindliche Verifikation pro Datei
+
+Nach jedem str_replace auf eine Datei MUSS ausgeführt werden:
+
+```bash
+grep -A1 '"@type": "Organization"' [DATEINAME] | grep -c "android-chrome-512x512"
+```
+
+**Erwartung: mindestens 1 Treffer pro Datei.** Wenn 0, dann ist der Patch nicht angekommen — Datei nochmal anschauen, korrigieren.
+
+## Globale Verifikation am Ende
+
+Nach allen Edits AUSFÜHREN und Output IM BERICHT ZEIGEN:
+
+```bash
+echo "=== Pages mit image im provider-Block ===" && for f in src/pages/laborcontainer-*.astro src/pages/leistungen/*.astro src/pages/laborcontainer/*.astro src/pages/branchen/*.astro; do
+  count=$(awk '/"provider"/,/^[[:space:]]*}[,]?$/' "$f" | grep -c "android-chrome-512x512")
+  echo "$count $f"
+done
+```
+
+Im Bericht zeigen: Welche Datei hat 0 Treffer, welche hat 1+? Erwartung: mindestens 1 für jede der 24 oben gelisteten Pages.
+
+## Build-Check
+
+Erst nach erfolgreicher globaler Verifikation:
+
+```bash
+npm run build
+```
+
+Build muss fehlerfrei durchlaufen.
+
+## Akzeptanzkriterien
+
+- [ ] In jeder der 24 Dateien ist im Service-Schema provider-Block ein `image`-Feld vorhanden (per grep verifiziert)
+- [ ] Wert ist überall identisch: `https://www.planexus.de/android-chrome-512x512.png`
+- [ ] `image`-Feld steht auf eigener Zeile, nicht inline
+- [ ] Build läuft fehlerfrei durch
+- [ ] Globale Verifikations-Schleife (siehe oben) zeigt mindestens 1 Treffer für jede der 24 Pages
+
+## Bericht (verbindliche Form)
+
+1. **Liste der erfolgreich gepatchten Dateien** mit explizitem grep-Output pro Datei
+2. **Liste der übersprungenen Dateien** mit Begründung (z.B. "kein Service-Schema mit Organization-provider gefunden")
+3. **Output der globalen Verifikations-Schleife** (komplett, nicht zusammengefasst)
+4. **Build-Status**
+5. Diff von basel.astro als Beispiel
+
+**Wenn der Bericht nicht alle 5 Punkte enthält, ist die Aufgabe nicht erledigt.**
+
+**Alle betroffenen Dateien vollständig anpassen.**
