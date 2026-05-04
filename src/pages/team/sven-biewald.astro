@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articles = [
+  { slug: 'bsl-2-bsl-3-container-labor', title: 'BSL-2 und BSL-3 im Container: Geht das?' },
+  { slug: 'laborcontainer-genehmigung-baurecht-vorschriften', title: 'Laborcontainer Genehmigung und Baurecht' },
+  { slug: 'laborcontainer-klimatisierung-lueftung-normen', title: 'Laborcontainer Klimatisierung und Lüftung' },
+  { slug: 'laborcontainer-ausstattung-checkliste', title: 'Laborcontainer Ausstattung – Checkliste A–Z' },
+  { slug: 'laborcontainer-mieten-oder-kaufen', title: 'Laborcontainer mieten oder kaufen? Ratgeber' },
+  { slug: 'laborcontainer-projektablauf-von-idee-bis-uebergabe', title: 'Laborcontainer-Projekt: Idee bis Übergabe' },
+  { slug: 'laborcontainer-baustelle-materialpruefung', title: 'Laborcontainer Baustelle – Materialprüfung im Container' },
+  { slug: 'laborcontainer-energiewende-h2-batterie-ex-schutz', title: 'H₂- & Batterielabor im Container — ATEX & Ex-Schutz' },
+  { slug: 'innovation-modulbau-zukunft-mobiles-labor', title: 'Innovation im Modulbau: Mobiles Labor' },
+  { slug: 'planexus-analytica-2026-muenchen', title: 'Planexus auf der Analytica 2026 München' },
+  { slug: 'analytica-2026-rueckblick-labtogo-premiere', title: 'analytica 2026 – LABtoGO Premiere' },
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sven Biewald",
+  "url": "https://www.planexus.de/team/sven-biewald",
+  "image": "https://www.planexus.de/attached_assets/Kopf_green-scaled_1768306688943.jpg",
+  "jobTitle": "Geschäftsführer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "url": "https://www.planexus.de",
+    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
+  },
+  "knowsAbout": [
+    "Laborcontainer", "Modularer Laborbau", "BSL-2", "BSL-3", "GMP-Reinraum",
+    "ATEX / Ex-Schutz", "GenTG / GenTSV", "Biostoffverordnung",
+    "Laborplanung", "Laborlüftung", "Laborgenehmigung"
+  ],
+  "knowsLanguage": ["de", "en"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Am Steinbach 8",
+    "postalCode": "72459",
+    "addressLocality": "Albstadt",
+    "addressCountry": "DE"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Team", "item": "https://www.planexus.de/team" },
+    { "@type": "ListItem", "position": 3, "name": "Sven Biewald", "item": "https://www.planexus.de/team/sven-biewald" }
+  ]
+};
+---
+
+<Layout
+  title="Sven Biewald – Geschäftsführer Planexus GmbH"
+  description="Sven Biewald, Geschäftsführer der Planexus GmbH, verantwortet seit 2015 modulare Laborcontainer für BSL-2, BSL-3, GMP und ATEX in DACH."
+  canonical="/team/sven-biewald"
+  ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <nav class="text-sm text-gray-400 mb-6" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-primary">Start</a>
+          <span class="mx-2">/</span>
+          <a href="/team" class="hover:text-primary">Team</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-200">Sven Biewald</span>
+        </nav>
+        <div class="grid md:grid-cols-3 gap-10 items-start max-w-5xl">
+          <div class="md:col-span-1">
+            <div class="aspect-square rounded-2xl overflow-hidden border-2 border-primary/40 bg-gradient-to-br from-primary/30 to-primary/5">
+              <img
+                src="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
+                alt="Sven Biewald, Geschäftsführer der Planexus GmbH"
+                width="400"
+                height="400"
+                loading="eager"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <div class="text-xs uppercase tracking-wider text-[#bbd700] font-bold mb-2">Geschäftsführung</div>
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Sven Biewald</h1>
+            <p class="text-xl text-gray-300 mb-6">Geschäftsführer der Planexus GmbH, Albstadt</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">BSL-2 / BSL-3</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">GMP-Reinraum</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">ATEX / Ex-Schutz</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">Genehmigung &amp; Baurecht</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">Modularer Laborbau</span>
+            </div>
+            <p class="text-gray-300 leading-relaxed">
+              Verantwortet die Planexus GmbH seit Gründung. Schwerpunkt: schlüsselfertige Laborcontainer
+              für Pharma, Biotech, Forschung, Klinik und Krisenstäbe in Deutschland, Schweiz und Österreich.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6">Zur Person</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
+            <p>
+              Sven Biewald ist Geschäftsführer der <strong>Planexus GmbH</strong> mit Sitz in Albstadt
+              (Baden-Württemberg). Planexus ist Teil der <strong>Wesemann Holding GmbH</strong>, einem
+              traditionsreichen Laborbauunternehmen mit Wurzeln im modularen Innenausbau seit 1949.
+              Innerhalb der Holding verantwortet Planexus den Bereich modulare Laborcontainer und
+              schlüsselfertige mobile Laborinfrastruktur für Pharma, Biotech, Forschung, Klinik und
+              Public-Health-Anwendungen.
+            </p>
+            <p>
+              Inhaltlicher Schwerpunkt der fachlichen Arbeit von Sven Biewald sind regulatorisch
+              anspruchsvolle Container-Ausführungen — insbesondere <strong>BSL-2- und BSL-3-Labore</strong>
+              nach <abbr title="Biostoffverordnung">BioStoffV</abbr> und <abbr title="Gentechnik-Sicherheitsverordnung">GenTSV</abbr>,
+              <strong>GMP-Reinräume</strong> nach EU-GMP Annex 1, sowie ATEX/Ex-Schutz-Container nach
+              EN 60079 für Wasserstoff-, Batterie- und Energiewende-Forschung. Dazu kommen Bauantrag,
+              Statik und behördliche Begleitung in 16 deutschen Bundesländern, in der Schweiz
+              (kantonales Baurecht, SIA, BAG, Swissmedic) sowie in Österreich
+              (OIB-Richtlinien, BASG, AGES).
+            </p>
+            <p>
+              Sven Biewald veröffentlicht regelmäßig Fachbeiträge im Planexus-Magazin zu Genehmigung,
+              Lüftung, Aufstellung, Statik, Sicherheitsstufen und realen Projekt-Erfahrungen.
+              Ziel: belastbare Praxis-Information für Bauherren, Forschungs-Einrichtungen,
+              Pharma-Werkleitungen, Krisenstäbe und Hochschul-Bauämter — frei von Marketing-Phrasen,
+              mit nachvollziehbaren Normen-Referenzen.
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6 mt-12">Verantwortung &amp; Rolle</h2>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>Geschäftsführung Planexus GmbH</strong> — Strategie, Kunden­beziehungen, Projekt­freigaben, Werks­steuerung Albstadt.</span></li>
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>Fachliche Endverantwortung</strong> für alle veröffentlichten Magazin-Inhalte, Stadt-Seiten und technischen Datenblätter auf planexus.de.</span></li>
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>Behördliche Schnittstelle</strong> zu Bauaufsichten, Gewerbeaufsichts­ämtern, BAG/Swissmedic, BASG/AGES, BfArM und PEI.</span></li>
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>DACH-Marktverantwortung</strong> für Standorte in Deutschland, Schweiz und Österreich, inkl. Verzollungs- und Logistik-Routen ab Werk Albstadt.</span></li>
+          </ul>
+
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6 mt-12">Auszeichnungen</h2>
+          <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+            <div class="text-sm uppercase tracking-wider text-[#7a9900] font-bold mb-1">2026</div>
+            <div class="font-heading font-bold text-lg text-slate-900">German CEO Excellence Award 2026</div>
+            <p class="text-gray-600 text-sm mt-2">Auszeichnung für die Geschäftsführung der Planexus GmbH im Bereich modulare Laborinfrastruktur.</p>
+          </div>
+
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6 mt-12">Veröffentlichungen im Planexus-Magazin</h2>
+          <p class="text-gray-700 mb-6">
+            Fachbeiträge mit inhaltlicher Verantwortung von Sven Biewald — sortiert nach Themenschwerpunkt:
+          </p>
+          <ul class="space-y-3" data-testid="list-articles">
+            {articles.map((a) => (
+              <li>
+                <a
+                  href={`/magazin/${a.slug}`}
+                  class="block p-4 rounded-lg border border-gray-100 hover:border-primary hover:bg-slate-50 transition-colors"
+                  data-testid={`link-article-${a.slug}`}
+                >
+                  <div class="font-medium text-slate-900">{a.title}</div>
+                  <div class="text-xs text-gray-500 mt-1">/magazin/{a.slug}</div>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-12 p-6 rounded-xl bg-slate-900 text-white">
+            <h2 class="text-2xl font-heading font-bold mb-3">Direkt anfragen</h2>
+            <p class="text-gray-300 mb-4">
+              Konkretes Container-Projekt? Genehmigungs-Frage? Standort-spezifische Klärung?
+              Über das Kontakt-Formular landet die Anfrage direkt bei der Planexus-Geschäftsführung.
+            </p>
+            <a
+              href="/kontakt"
+              class="inline-block px-6 py-3 bg-[#bbd700] text-slate-900 font-bold rounded-lg hover:bg-[#a3bd00] transition-colors"
+              data-testid="link-kontakt"
+            >Kontakt aufnehmen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
