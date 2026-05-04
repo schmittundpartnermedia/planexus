@@ -1,0 +1,89 @@
+# Refinement: image-Feld in LocalBusiness Schemas auf Container-Foto umstellen
+
+## Hintergrund
+
+Im vorherigen Pass wurde an allen Schema-image-Feldern das Logo (`android-chrome-512x512.png`) gesetzt — strikt nach Spec "überall identisch". Strategisch ist das suboptimal: Das `image`-Feld im LocalBusiness-Schema wird von Google für Knowledge Panel, Local Pack und Maps verwendet. Ein echtes Geschäftsobjekt-Foto wirkt dort stärker als ein Logo.
+
+Saubere Trennung: 
+- **Organization Schema** = Brand-Identity → Logo bleibt richtig
+- **LocalBusiness Schema** = Geschäftsobjekt → Container-Foto
+
+## Änderung
+
+### 1. Layout.astro — Organization Schema (Zeile ~105)
+
+**KEINE Änderung.** Das image-Feld bleibt:
+```json
+"image": "https://www.planexus.de/android-chrome-512x512.png"
+```
+
+### 2. Layout.astro — LocalBusiness Schema (Zeile ~132)
+
+image-Feld umstellen auf:
+```json
+"image": "https://www.planexus.de/images/labtogo-industrie.webp"
+```
+
+### 3. Alle 12 City-Page LocalBusiness Schemas
+
+In jeder dieser Dateien das image-Feld im LocalBusiness-Schema auf den Container-Foto-Wert ändern:
+
+- `src/pages/laborcontainer-basel.astro`
+- `src/pages/laborcontainer-bern.astro`
+- `src/pages/laborcontainer-duesseldorf.astro`
+- `src/pages/laborcontainer-frankfurt.astro`
+- `src/pages/laborcontainer-graz.astro`
+- `src/pages/laborcontainer-linz.astro`
+- `src/pages/laborcontainer-wien.astro`
+- `src/pages/laborcontainer-zuerich.astro`
+- `src/pages/laborcontainer-berlin.astro`
+- `src/pages/laborcontainer-hamburg.astro`
+- `src/pages/laborcontainer-muenchen.astro`
+- `src/pages/laborcontainer-stuttgart.astro`
+
+Neuer Wert (überall identisch):
+```json
+"image": "https://www.planexus.de/images/labtogo-industrie.webp"
+```
+
+## Verifikation des Source-Bildes (bereits geprüft)
+
+`https://www.planexus.de/images/labtogo-industrie.webp` liefert HTTP 200 (per curl bestätigt). Datei existiert und ist im webp-Format, das Google für Schema-image-Felder akzeptiert.
+
+## Akzeptanzkriterien
+
+- [ ] Layout.astro Organization Schema: image-Feld unverändert (`android-chrome-512x512.png`)
+- [ ] Layout.astro LocalBusiness Schema: image auf `labtogo-industrie.webp` umgestellt
+- [ ] Alle 12 City-Pages LocalBusiness Schemas: image auf `labtogo-industrie.webp` umgestellt
+- [ ] Build läuft fehlerfrei durch
+- [ ] Auf jeder City-Page liefert das HTML genau 1× `android-chrome-512x512.png` (Organization) und 2× `labtogo-industrie.webp` (Layout LocalBusiness + City LocalBusiness) im image-Feld
+
+## Verifikations-Befehle (nach Build, vor Deploy)
+
+```bash
+# Erwartung: 1 Treffer
+curl -s https://www.planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*android-chrome[^"]*"' | wc -l
+
+# Erwartung: 2 Treffer
+curl -s https://www.planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*labtogo-industrie[^"]*"' | wc -l
+```
+
+## Nicht ändern
+
+- Organization Schema in Layout.astro (Logo bleibt)
+- Article Schemas (Branchen, Magazin) — haben eigene image-Felder, bleiben unangetastet
+- Service Schemas — haben kein image-Feld, brauchen keins
+- Sonstige Page-Inhalte, Logik, Routing
+
+## Bericht nach Abschluss
+
+1. Diff von Layout.astro (zeigt: Organization unverändert, LocalBusiness geändert)
+2. Diff von basel.astro als Beispiel-City-Page
+3. Liste aller 13 geänderten Dateien
+4. Build-Status
+5. Output von:
+```bash
+   grep -rn "labtogo-industrie\|android-chrome-512x512" src/pages/ src/layouts/
+```
+
+**Alle betroffenen Dateien vollständig anpassen.**
