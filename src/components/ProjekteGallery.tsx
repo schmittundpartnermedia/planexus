@@ -178,7 +178,7 @@ export default function ProjekteGallery() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">analytica 2026 — LABtoGO Premiere</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Weltpremiere des LABtoGO auf der analytica 2026 in München. Begehbarer Laborcontainer 2.0 mit vollständiger Ausstattung live am Messestand — Halle B2, Stand 322.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">Weltpremiere des LABtoGO auf der analytica 2026 in München. Begehbarer LABtoGO mit vollständiger Ausstattung live am Messestand — Halle B2, Stand 322.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {analyticaImages.map((img, index) => (

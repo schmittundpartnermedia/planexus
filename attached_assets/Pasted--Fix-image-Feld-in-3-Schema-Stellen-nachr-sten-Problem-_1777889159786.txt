@@ -1,0 +1,99 @@
+# Fix: image-Feld in 3 Schema-Stellen nachrüsten
+
+## Problem
+
+Google Rich Results Test zeigt für alle 3 Organization/LocalBusiness-Schemas auf den City-Pages den Hinweis:
+> "Feld 'image' fehlt (optional) — 1 nicht kritisches Problem"
+
+Schemas sind valide, Rich Results funktionieren, aber das optionale `image`-Feld fehlt überall. Soll ergänzt werden für vollständige Schema-Validität und besseres Knowledge-Panel-Rendering.
+
+## Betroffene Schemas (verifiziert per grep)
+
+### 1. Layout.astro — Organization Schema (zentral, auf jeder Page)
+`src/layouts/Layout.astro` Zeile 98–123 (ungefähr): Organization Schema mit name, url, telephone, email, address, parentOrganization, areaServed, contactPoint.
+
+### 2. Layout.astro — LocalBusiness Schema (zentral, auf jeder Page)
+`src/layouts/Layout.astro` Zeile 124–152 (ungefähr): LocalBusiness Schema mit name, description, url, priceRange, address, geo, openingHoursSpecification.
+
+### 3. City-Pages — LocalBusiness Schema (pro Stadt)
+Auf den 8 V4-City-Pages und ggf. weiteren City-Pages: jeweils ein eigenes LocalBusiness Schema mit Stadt-spezifischem Namen ("Planexus GmbH – Laborcontainer Basel") und areaServed.
+
+Konkret in:
+- `src/pages/laborcontainer-basel.astro`
+- `src/pages/laborcontainer-bern.astro`
+- `src/pages/laborcontainer-duesseldorf.astro`
+- `src/pages/laborcontainer-frankfurt.astro`
+- `src/pages/laborcontainer-graz.astro`
+- `src/pages/laborcontainer-linz.astro`
+- `src/pages/laborcontainer-wien.astro`
+- `src/pages/laborcontainer-zuerich.astro`
+
+Plus die 4 nicht-V4-Stadt-Pages, falls sie ebenfalls ein eigenes LocalBusiness-Schema haben:
+- `src/pages/laborcontainer-muenchen.astro`
+- `src/pages/laborcontainer-berlin.astro`
+- `src/pages/laborcontainer-hamburg.astro`
+- `src/pages/laborcontainer-stuttgart.astro`
+
+## Aufgaben
+
+### 1. Image-Wert festlegen (für alle 3 Schema-Typen)
+
+Verwende: `https://www.planexus.de/android-chrome-512x512.png`
+
+Begründung: Diese Datei existiert bereits in `public/`, ist quadratisch, hat 512×512 Pixel und eignet sich als Logo-Bild im Schema (Google empfiehlt mindestens 112×112 Pixel, idealerweise quadratisch).
+
+### 2. image-Feld in Layout.astro Organization-Schema ergänzen
+
+Im Organization-Schema-Objekt (Zeile ~98–123) nach dem `name`-Feld ein `image`-Feld einfügen:
+```json
+"image": "https://www.planexus.de/android-chrome-512x512.png"
+```
+
+### 3. image-Feld in Layout.astro LocalBusiness-Schema ergänzen
+
+Im LocalBusiness-Schema-Objekt (Zeile ~124–152) ebenfalls nach dem `name`-Feld ein `image`-Feld einfügen mit demselben Wert.
+
+### 4. image-Feld in allen City-Page LocalBusiness-Schemas ergänzen
+
+In jeder der oben gelisteten City-Page-Dateien das LocalBusiness-Schema-Objekt finden (typischerweise erkennbar an `"@type": "LocalBusiness"` mit Stadt-Namen) und nach `name` ein `image`-Feld ergänzen mit demselben Wert.
+
+**Wichtig:** Falls auf einer City-Page mehrere Schemas existieren (z.B. zusätzlich Service Schema, BreadcrumbList, FAQPage), nur das LocalBusiness-Schema anfassen. Die anderen Schema-Typen brauchen kein image hier.
+
+### 5. Konsistenz prüfen
+
+Falls eine City-Page-Datei kein eigenes LocalBusiness-Schema enthält (z.B. weil sie es zentral aus Layout vererbt): nicht eigenmächtig hinzufügen, nur im Bericht erwähnen.
+
+## Akzeptanzkriterien
+
+- [ ] Layout.astro Organization-Schema enthält `image`-Feld
+- [ ] Layout.astro LocalBusiness-Schema enthält `image`-Feld
+- [ ] Alle 8 V4-City-Pages haben image-Feld in ihrem LocalBusiness-Schema
+- [ ] Bei den 4 nicht-V4-City-Pages (München/Berlin/Hamburg/Stuttgart): falls eigenes LocalBusiness-Schema vorhanden → image ergänzt; falls nicht → im Bericht erwähnt
+- [ ] Image-URL ist überall identisch: `https://www.planexus.de/android-chrome-512x512.png`
+- [ ] Build läuft fehlerfrei durch (`npm run build`)
+- [ ] Verifikation per Live-Curl nach Build (Befehl s.u.) zeigt `image`-Feld im HTML
+
+## Verifikations-Befehl (nach Build, vor Deploy)
+
+```bash
+curl -s https://www.planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]+"' | head -5
+```
+
+Erwartung: mindestens 3 Treffer mit `https://www.planexus.de/android-chrome-512x512.png`
+
+## Nicht ändern
+
+- Andere Schema-Felder
+- Branchen-Pages (haben bereits eigene image-Felder im Article-Schema)
+- Magazin-Pages (haben bereits eigene image-Felder im Article-Schema)
+- Sonstige Page-Inhalte, Logik, Routing
+
+## Bericht nach Abschluss
+
+1. Diff von Layout.astro (vorher/nachher um die zwei betroffenen Stellen)
+2. Diff von basel.astro als Beispiel-City-Page
+3. Liste aller geänderten Dateien
+4. Build-Status
+5. Output von `grep -rn '"image":"https://www.planexus.de/android-chrome' src/`
+
+**Alle betroffenen Dateien vollständig anpassen.**
