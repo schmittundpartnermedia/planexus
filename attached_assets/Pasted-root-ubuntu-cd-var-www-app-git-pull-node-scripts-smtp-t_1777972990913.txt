@@ -1,0 +1,123 @@
+root@ubuntu:~# cd /var/www/app
+git pull
+node scripts/smtp-test.mjs
+Already up to date.
+--- SMTP-Diagnose ---
+Host:         smtp.office365.com
+Port:         587
+User:         server@planexus.de
+Pass gesetzt: ja (Länge 16)
+From:         server@planexus.de
+To:           server@planexus.de
+---------------------
+
+[2026-05-05 09:22:53] DEBUG Creating transport: nodemailer (7.0.13; +https://nodemailer.com/; SMTP/7.0.13[client:7.0.13])
+
+[1/2] verify() – prüft Verbindung + Login...
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] Resolved smtp.office365.com as 52.98.178.226 [cache miss]
+[2026-05-05 09:22:53] INFO  [voGqxt2l5JY] Connection established to 52.98.178.226:587
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 220 FR4P281CA0231.outlook.office365.com Microsoft ESMTP MAIL Service ready at Tue, 5 May 2026 09:22:53 +0000 [08DEAA0BF3772353]
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] C: EHLO [127.0.0.1]
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 250-FR4P281CA0231.outlook.office365.com Hello [82.165.27.244]
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 250-SIZE 157286400
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 250-PIPELINING
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 250-DSN
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 250-ENHANCEDSTATUSCODES
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 250-STARTTLS
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 250-8BITMIME
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 250-BINARYMIME
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 250-CHUNKING
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 250 SMTPUTF8
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] C: STARTTLS
+[2026-05-05 09:22:53] DEBUG [voGqxt2l5JY] S: 220 2.0.0 SMTP server ready
+[2026-05-05 09:22:54] INFO  [voGqxt2l5JY] Connection upgraded with STARTTLS
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] C: EHLO [127.0.0.1]
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 250-FR4P281CA0231.outlook.office365.com Hello [82.165.27.244]
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 250-SIZE 157286400
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 250-PIPELINING
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 250-DSN
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 250-ENHANCEDSTATUSCODES
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 250-AUTH LOGIN XOAUTH2
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 250-8BITMIME
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 250-BINARYMIME
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 250-CHUNKING
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 250 SMTPUTF8
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] SMTP handshake finished
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] C: AUTH LOGIN
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 334 VXNlcm5hbWU6
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] C: c2VydmVyQHBsYW5leHVzLmRl
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 334 UGFzc3dvcmQ6
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] C: Lyogc2VjcmV0ICov
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 235 2.7.0 Authentication successful
+[2026-05-05 09:22:54] INFO  [voGqxt2l5JY] User "server@planexus.de" authenticated
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] C: QUIT
+✅ verify() erfolgreich – Login akzeptiert.
+
+[2/2] Test-Mail senden...
+[2026-05-05 09:22:54] DEBUG Sending mail using SMTP/7.0.13[client:7.0.13]
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] Resolved smtp.office365.com as 52.98.252.130 [cache hit]
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] S: 221 2.0.0 Service closing transmission channel
+[2026-05-05 09:22:54] DEBUG [voGqxt2l5JY] Closing connection to the server using "end"
+[2026-05-05 09:22:54] INFO  [zcsKYjdCr9g] Connection established to 52.98.252.130:587
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 220 FR4P281CA0117.outlook.office365.com Microsoft ESMTP MAIL Service ready at Tue, 5 May 2026 09:22:54 +0000 [08DEAA02AFA1B8C2]
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] C: EHLO [127.0.0.1]
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-FR4P281CA0117.outlook.office365.com Hello [82.165.27.244]
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-SIZE 157286400
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-PIPELINING
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-DSN
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-ENHANCEDSTATUSCODES
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-STARTTLS
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-8BITMIME
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-BINARYMIME
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-CHUNKING
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250 SMTPUTF8
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] C: STARTTLS
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 220 2.0.0 SMTP server ready
+[2026-05-05 09:22:54] INFO  [zcsKYjdCr9g] Connection upgraded with STARTTLS
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] C: EHLO [127.0.0.1]
+[2026-05-05 09:22:54] INFO  [voGqxt2l5JY] Connection closed
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-FR4P281CA0117.outlook.office365.com Hello [82.165.27.244]
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-SIZE 157286400
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-PIPELINING
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-DSN
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-ENHANCEDSTATUSCODES
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-AUTH LOGIN XOAUTH2
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-8BITMIME
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-BINARYMIME
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250-CHUNKING
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250 SMTPUTF8
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] SMTP handshake finished
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] C: AUTH LOGIN
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 334 VXNlcm5hbWU6
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] C: c2VydmVyQHBsYW5leHVzLmRl
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 334 UGFzc3dvcmQ6
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] C: Lyogc2VjcmV0ICov
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 235 2.7.0 Authentication successful
+[2026-05-05 09:22:54] INFO  [zcsKYjdCr9g] User "server@planexus.de" authenticated
+[2026-05-05 09:22:54] INFO  Sending message <178d0453-2516-9ef3-786d-b392b6ebbbbe@planexus.de> to <server@planexus.de>
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] C: MAIL FROM:<server@planexus.de>
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250 2.1.0 Sender OK
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] C: RCPT TO:<server@planexus.de>
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 250 2.1.5 Recipient OK
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] C: DATA
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] S: 354 Start mail input; end with <CRLF>.<CRLF>
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] From: server@planexus.de
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] Sender: server@planexus.de
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] To: server@planexus.de
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] Subject: SMTP-Test Planexus 2026-05-05T09:22:54.474Z
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] Message-ID: <178d0453-2516-9ef3-786d-b392b6ebbbbe@planexus.de>
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] Content-Transfer-Encoding: 7bit
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] Date: Tue, 05 May 2026 09:22:54 +0000
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] MIME-Version: 1.0
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] Content-Type: text/plain; charset=utf-8
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] 
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] Dies ist ein automatischer Test der SMTP-Konfiguration.
+[2026-05-05 09:22:54] DEBUG [zcsKYjdCr9g] .
+[2026-05-05 09:22:54] INFO  [zcsKYjdCr9g] <390 bytes encoded mime message (source size 387 bytes)>
+[2026-05-05 09:22:55] DEBUG [zcsKYjdCr9g] S: 250 2.0.0 OK <178d0453-2516-9ef3-786d-b392b6ebbbbe@planexus.de> [Hostname=FR6P281MB5900.DEUP281.PROD.OUTLOOK.COM]
+[2026-05-05 09:22:55] DEBUG [zcsKYjdCr9g] Closing connection to the server using "end"
+✅ Mail gesendet. messageId: <178d0453-2516-9ef3-786d-b392b6ebbbbe@planexus.de>
+   accepted: [ 'server@planexus.de' ]
+   rejected: []
+   response: 250 2.0.0 OK <178d0453-2516-9ef3-786d-b392b6ebbbbe@planexus.de> [Hostname=FR6P281MB5900.DEUP281.PROD.OUTLOOK.COM]
+root@ubuntu:/var/www/app# 
