@@ -1,0 +1,527 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Aufstellung, Bodenplatte und Statik für Laborcontainer – der Praxisleitfaden",
+  "description": "Baugrund, Lastannahmen, Gründungsvarianten und Kran-Logistik für Laborcontainer: DIN EN 1997, Eurocode 1, DIN 1054, Schneelastzonen, Windzonen, Frosttiefe, Punkt-/Streifen-/Plattengründung, Schraubfundamente und Schwerlast-Logistik – mit verifizierten Normen.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://www.planexus.de/team/sven-biewald", "jobTitle": "Geschäftsführer", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-05-14",
+  "dateModified": "2026-05-14",
+  "image": "https://www.planexus.de/attached_assets/Kopf_green-scaled_1768306688943.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://www.planexus.de/Planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.planexus.de/magazin/laborcontainer-aufstellung-bodenplatte-statik" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://www.planexus.de/magazin" },
+    { "@type": "ListItem", "position": 3, "name": "Aufstellung, Bodenplatte und Statik", "item": "https://www.planexus.de/magazin/laborcontainer-aufstellung-bodenplatte-statik" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Braucht ein Laborcontainer immer eine Bodenplatte?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Eine durchgehende Stahlbeton-Bodenplatte ist nur eine von vier üblichen Gründungsvarianten. Für die meisten Laborcontainer bis zwei Module reichen Punktfundamente unter den Containerecken (vier bis acht Punkte je Modul, Beton C25/30, frostfrei nach DIN EN ISO 13793). Streifenfundamente unter den Längsträgern sind die nächste Stufe. Eine Bodenplatte wird Pflicht bei sehr weichem oder inhomogenem Baugrund, bei Reinraum- oder GMP-Anwendungen mit hoher Setzungsempfindlichkeit, bei großen Modulverbünden oder wenn der Container über dem Erdreich auch noch eine durchgehende Lastverteilung braucht. Welche Variante passt, entscheidet das Baugrundgutachten nach DIN EN ISO 14688 und die Lastannahme nach Eurocode 1 (DIN EN 1991)." } },
+    { "@type": "Question", "name": "Welche Normen gelten für die Statik eines Laborcontainers?", "acceptedAnswer": { "@type": "Answer", "text": "Der Standsicherheitsnachweis stützt sich auf vier Hauptnormen. Eurocode 0 (DIN EN 1990) liefert die Grundlagen der Tragwerksplanung und definiert die Bemessungssituationen. Eurocode 1 (DIN EN 1991) regelt die Einwirkungen – Eigengewicht, Nutzlasten, Schnee nach DIN EN 1991-1-3 mit den fünf deutschen Schneelastzonen (1, 1a, 2, 2a, 3), Wind nach DIN EN 1991-1-4 mit den vier Windzonen. Eurocode 7 (DIN EN 1997-1) regelt die geotechnische Bemessung. Ergänzend gilt in Deutschland DIN 1054:2021-04 als Nationaler Anhang mit den ergänzenden Regelungen zur EC-7-Anwendung. Für die Bauvorlage prüft der Statiker zusätzlich die Landesbauordnung – wer die Standsicherheit unterschreiben darf, ist je Bundesland geregelt (Bauvorlageberechtigung)." } },
+    { "@type": "Question", "name": "Wie tief muss ein Containerfundament wegen Frost gegründet werden?", "acceptedAnswer": { "@type": "Answer", "text": "In Deutschland in der Regel 80 Zentimeter, in Mittelgebirgs- und Hochlagen (Schwarzwald, Bayerischer Wald, Erzgebirge oberhalb 600 m) 100 bis 150 Zentimeter. Maßgeblich sind die regionalen Frostkarten der Landesbauaufsichten; DIN EN ISO 13793 liefert die wärmetechnische Bemessung des Frostschutzes im Gründungsbereich. Wer die Frosttiefe unterschreitet, riskiert Frosthebung – gefrierendes Bodenwasser dehnt sich um etwa 9 Prozent aus und verursacht ungleichmäßige Anhebung. Bei Schraubfundamenten ist Frostfreiheit konstruktiv durch die Schraubenlänge gegeben." } },
+    { "@type": "Question", "name": "Welche Schnee- und Windlasten muss der Containerstatiker ansetzen?", "acceptedAnswer": { "@type": "Answer", "text": "Die Schneelast bemisst sich nach DIN EN 1991-1-3 inklusive Nationalem Anhang. Deutschland ist in fünf Zonen eingeteilt: Zone 1 (Norddeutsche Tiefebene), 1a (West/Süd-Übergangsbereiche), 2 (Mittelgebirgsvorland), 2a (Ostbayern, Sachsen) und 3 (Hochlagen, Alpenvorland). Charakteristische Schneelast auf Bodenniveau (sk) variiert von rund 0,65 kN/m² in Zone 1 (auf Höhen unter 400 m) bis über 4,0 kN/m² in Hochlagen der Zone 3. Für ein Containerdach werden zusätzlich Form- und Expositionsbeiwerte angesetzt. Die Windlast nach DIN EN 1991-1-4 nutzt die vier deutschen Windzonen (1 bis 4) mit charakteristischer Basisgeschwindigkeit vb,0 von 22,5 m/s in Zone 1 bis 30 m/s in Zone 4 (Nord- und Ostsee-Küste). Für die Standsicherheit ist die Windsogkomponente am Dach und die Anhebekraft an Ecken besonders relevant – bei Leichtcontainern entscheidet sie über die Verankerung." } },
+    { "@type": "Question", "name": "Schraubfundament oder Betonfundament – wann was?", "acceptedAnswer": { "@type": "Answer", "text": "Schraubfundamente (Helical Piles, Bauart Krinner, Sun Tower oder vergleichbar) sind die schnelle Variante: Eindrehen mit hydraulischem Drehkopf in zwei bis drei Stunden je Container, kein Aushub, kein Abbinden, sofort belastbar, rückbaubar ohne Bauschutt. Sinnvoll für temporäre Aufstellungen, eilige Projekte (Pandemie-Labore, Baustellen-Einsatz), Naturschutzgebiete und Standorte mit Altlasten, an denen Aushub vermieden werden soll. Voraussetzung: ausreichende Tragfähigkeit des Bodens nach Probebohrung, kein Fels in geringer Tiefe. Betonfundamente (Punkt, Streifen, Platte) sind die dauerhafte und für GMP-/Reinraum-Anwendungen meist alternativlose Variante: höhere Steifigkeit, geringere Setzungen, längere Lebensdauer (typischerweise 50+ Jahre statt 25 Jahre bei Schrauben), uneingeschränkte Lastreserven für spätere Aufstockung. Aufpreis Beton gegenüber Schraube: typisch Faktor 2 bis 4 bei Material und Bauzeit." } },
+    { "@type": "Question", "name": "Welcher Kran wird zum Aufstellen eines Laborcontainers gebraucht?", "acceptedAnswer": { "@type": "Answer", "text": "Das hängt vom Containergewicht und vom benötigten Auslegerradius ab. Ein voll ausgebauter 20-Fuß-Laborcontainer wiegt zwischen acht und zwölf Tonnen, ein 40-Fuß-Container oder ein Doppelmodul zwischen 14 und 24 Tonnen. Für die meisten Aufstellungen reicht ein Mobilkran der Klasse 50 bis 100 Tonnen Hublast (Liebherr LTM 1050, LTM 1070, LTM 1090) bei einem Auslegerradius von 8 bis 16 Metern. Bei beengten Verhältnissen oder weiten Wegen kommen größere Krane (LTM 1200, LTM 1300, gelegentlich LTM 1500) zum Einsatz. Maßgeblich ist die DGUV Vorschrift 52 (Krane) und DGUV Regel 100-500 Kapitel 2.8. Vor jeder Aufstellung erstellen wir gemeinsam mit der Krandienstleistung einen Hub- und Stellplan, prüfen die Kranstellfläche auf Tragfähigkeit (in der Regel 150 bis 250 kN/m² unter den Stützen) und sichern den Verkehr nach RSA 21." } },
+    { "@type": "Question", "name": "Wie läuft die Anlieferung – Schwerlasttransport oder normaler LKW?", "acceptedAnswer": { "@type": "Answer", "text": "Bis zu einer Außenbreite von 2,55 Metern, Außenhöhe 4,00 Metern und einem zulässigen Gesamtgewicht des Sattelzugs von 40 Tonnen ist die Anlieferung mit normalem Sattelauflieger ohne Sondergenehmigung möglich – das deckt Standard-Laborcontainer in 20-Fuß-Bauweise ab. Sobald ein Container breiter (über 3,00 Meter), höher (über 4,00 Meter) oder schwerer wird (zum Beispiel mit eingebauter Schwerlast-Klimaanlage oder mit großzügigem Innenausbau über 25 Tonnen Komplettgewicht), greift §29 Absatz 3 StVZO und es wird ein Großraum- und Schwertransport (GST) mit Sondergenehmigung notwendig – häufig mit Begleitfahrzeugen (BF3 oder Polizei) und nächtlichem Routing. Wir koordinieren das Transportkonzept inklusive Genehmigung, Begleitung und Anlieferzeitfenster mit Ihnen vor der Produktionsfreigabe." } }
+  ]
+};
+---
+
+<Layout
+  title="Laborcontainer aufstellen – Bodenplatte, Statik, Kran | Planexus"
+  description="Baugrund, Lastannahmen, Bodenplatte, Streifen-, Punkt- und Schraubfundament für Laborcontainer: Eurocode 0/1/7, DIN 1054, Frosttiefe, Schneelast- und Windzonen, Kran-Logistik."
+  canonical="/magazin/laborcontainer-aufstellung-bodenplatte-statik"
+  ogImage="https://www.planexus.de/attached_assets/Kopf_green-scaled_1768306688943.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/attached_assets/Kopf_green-scaled_1768306688943.jpg')] bg-cover bg-center opacity-25"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+              Bau &amp; Gründung
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              16 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Aufstellung, Bodenplatte und Statik für Laborcontainer – der Praxisleitfaden
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Bevor der erste Container per Mobilkran auf das Grundstück gehoben wird, sind drei Fragen entschieden: Trägt der Boden die Last? Welche Gründung ist die richtige? Und wer schreibt die Statik? Dieser Leitfaden beantwortet alle drei – mit verifizierten Normen, klaren Entscheidungsmatrizen und realistischen Zeit- und Kostenfenstern.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              14. Mai 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald, Geschäftsführer Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/magazin" class="hover:text-primary">Magazin</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Aufstellung, Bodenplatte und Statik</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                Die teuerste Stelle eines Laborcontainerprojekts ist nicht der Container selbst, sondern eine falsch gewählte Gründung. Wer eine Bodenplatte gießt, wo Punktfundamente gereicht hätten, verbrennt vier- bis fünfstellige Beträge. Wer Punktfundamente setzt, wo der Boden eine Platte gefordert hätte, riskiert Setzungen, Risse und im schlimmsten Fall die Standsicherheit. Die Entscheidung fällt zwischen Baugrundgutachten und Bauantrag – und sie ist eine reine Ingenieurfrage, keine Geschmacksfrage.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Dieser Beitrag zeigt die komplette Kette: Baugrunderkundung, Lastannahmen nach Eurocode, Auswahl der Gründungsvariante, Frostfreiheit, Statik-Nachweis je Bundesland, Kran- und Schwerlastlogistik. Mit verifizierten Normen, konkreten Beispielzahlen und einem ehrlichen Blick darauf, wo wir als Containerbauer enden und der Statiker, der Geotechniker und der Krandienstleister beginnen.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Faktentabelle: Die Normen, die jede Aufstellung trägt</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Wer in Deutschland einen Laborcontainer fundamentiert und aufstellt, arbeitet in einem Normenrahmen aus Eurocode-Familie, DIN-Restnormen, Landesbauordnung und Unfallverhütungsvorschriften. Die folgende Übersicht ist die Pflichtlektüre für jeden Bauantrag.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Bereich</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Norm / Vorgabe</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Was sie regelt</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Tragwerksgrundlagen</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 1990 (Eurocode 0)</td>
+                      <td class="border border-gray-200 px-4 py-3">Bemessungssituationen, Sicherheitsbeiwerte, Grenzzustände</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Einwirkungen allgemein</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 1991-1-1 (Eurocode 1)</td>
+                      <td class="border border-gray-200 px-4 py-3">Eigengewicht, Nutzlasten im Hochbau</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Schneelast</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 1991-1-3 + Nationaler Anhang DE</td>
+                      <td class="border border-gray-200 px-4 py-3">Fünf Schneelastzonen DE (1, 1a, 2, 2a, 3), Höhenkorrektur</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Windlast</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 1991-1-4 + Nationaler Anhang DE</td>
+                      <td class="border border-gray-200 px-4 py-3">Vier Windzonen DE (1 bis 4), Geländekategorien I bis IV</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Geotechnische Bemessung</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 1997-1 (Eurocode 7)</td>
+                      <td class="border border-gray-200 px-4 py-3">Grundbruch, Setzung, Gleitsicherheit, Pfähle</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Geotechnik DE-Anhang</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 1054:2021-04</td>
+                      <td class="border border-gray-200 px-4 py-3">Ergänzende Regelungen zu EC 7, Geotechnische Kategorien GK 1–3</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Baugrunderkundung</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN ISO 14688-1/-2, DIN EN ISO 22475-1</td>
+                      <td class="border border-gray-200 px-4 py-3">Benennung und Klassifikation, Probengewinnung</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Bodenklassifikation Bautechnik</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 18196:2011-05</td>
+                      <td class="border border-gray-200 px-4 py-3">Klassifikation für bautechnische Zwecke (Sand, Kies, Schluff, Ton)</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Erdarbeiten</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 18300 (VOB Teil C, Ausgabe 2019)</td>
+                      <td class="border border-gray-200 px-4 py-3">Homogenbereiche (löste die früheren Bodenklassen 1–7 ab VOB/C 2015 ab)</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Frostschutz (thermisch)</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN ISO 13793 + regionale Frostkarten der Landesbauaufsichten</td>
+                      <td class="border border-gray-200 px-4 py-3">Wärmetechnische Auslegung im Gründungsbereich, regional gültige Frosttiefe</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Bauwerksabdichtung</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 18533-1 bis -3</td>
+                      <td class="border border-gray-200 px-4 py-3">Abdichtung erdberührter Bauteile (Bodenplatte, Streifenfundament)</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Krane betreiben</td>
+                      <td class="border border-gray-200 px-4 py-3">DGUV Vorschrift 52 + DGUV Regel 100-500 Kap. 2.8</td>
+                      <td class="border border-gray-200 px-4 py-3">Aufstellung, Prüfung, qualifizierter Bediener, Stellfläche</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Schwerlasttransport</td>
+                      <td class="border border-gray-200 px-4 py-3">§29 Abs. 3 StVZO + RGST 1992</td>
+                      <td class="border border-gray-200 px-4 py-3">Großraum- und Schwertransport (GST), Begleitung BF3/Polizei</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Bauvorlageberechtigung</td>
+                      <td class="border border-gray-200 px-4 py-3">Landesbauordnung (LBO/MBO §65 ff.)</td>
+                      <td class="border border-gray-200 px-4 py-3">Wer den Standsicherheitsnachweis unterschreibt (variiert je Bundesland)</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Bodenschutz / Altlasten</td>
+                      <td class="border border-gray-200 px-4 py-3">BBodSchG + BBodSchV</td>
+                      <td class="border border-gray-200 px-4 py-3">Vorsorgepflichten, Aushubentsorgung, Altlastenverdacht</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Schritt 1 – Baugrunderkundung: Was unter dem Container liegt</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Jede seriöse Gründungsplanung beginnt mit einem <strong>Baugrundgutachten</strong>. Maßgeblich ist DIN EN 1997-2 (Eurocode 7 Teil 2 – Erkundung und Untersuchung) in Verbindung mit DIN EN ISO 22475-1 (Probengewinnung) und DIN EN ISO 14688-1/-2 (Benennung und Klassifizierung). Das Gutachten klärt drei Fragen: Welcher Boden steht an? Wie tragfähig ist er? Wo steht das Grundwasser?
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für einen Standard-Laborcontainer reicht in der Regel die <strong>Geotechnische Kategorie GK 1</strong> nach DIN 1054 – einfache Verhältnisse, geringe Risiken, eine bis zwei Bohrungen oder Rammsondierungen bis 4 bis 6 Meter Tiefe. Bei mehrgeschossigen Modulverbünden, Reinraum-Containern auf setzungsempfindlichem Untergrund oder bei bekannten Altlasten geht es in <strong>GK 2</strong>: mehrere Aufschlusspunkte, Labor-Kennwerte (Korngrößenverteilung nach DIN 18123, Atterberg-Grenzen nach DIN 18122-1, Wassergehalt, Lagerungsdichte), und ein vollständiger Geotechnischer Bericht nach EC 7.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Klassifikation des Bodens nach <strong>DIN 18196</strong> liefert die Schlüssel: Sand und Kies (G, GW, GE, S, SW, SE) sind in der Regel tragfähig und setzungsarm. Schluff (U, UL, UM, UA) und Ton (T, TL, TM, TA) sind setzungsempfindlich und verlangen größere Gründungstiefen oder einen Bodenaustausch. Organische Böden (HN, HZ, F) und Auffüllungen (A) sind ohne Sondermaßnahmen nicht tragfähig. Mit dem Befund entscheidet der Geotechniker über die Gründungsvariante und liefert dem Statiker die zulässige Sohlspannung.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 rounded-r-xl">
+                <p class="font-bold text-slate-900 mb-2">Praxis-Hinweis: Kein Container ohne Gutachten</p>
+                <p class="text-gray-700 text-sm">Wir setzen seit Jahren keinen Container mehr ohne Baugrundgutachten – auch nicht bei vermeintlich „normalen" Innenstadtgrundstücken. Die Mehrkosten für eine GK-1-Erkundung liegen typisch zwischen 1.500 und 3.500 Euro. Eine nicht erkannte Auffüllung oder Setzung kann ein Vielfaches kosten – plus Stillstand. Der Geotechniker ist die billigste Versicherung im ganzen Projekt.</p>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Schritt 2 – Lastannahmen: Was der Container und die Umwelt einbringen</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der Statiker rechnet vier Lastgruppen: <strong>ständige Lasten</strong> (Eigengewicht des Containers samt Ausbau und festem Inventar), <strong>veränderliche Lasten</strong> (Personen, mobile Geräte, Lager), <strong>Klimalasten</strong> (Schnee, Wind, Temperatur) und <strong>außergewöhnliche Lasten</strong> (Anprall, Erdbeben in Erdbebenzonen 2–3).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Beim Eigengewicht hilft konkrete Erfahrung. Ein leerer 20-Fuß-Standardcontainer wiegt rund 2,2 Tonnen, ein vollwertig ausgebauter Laborcontainer in 20-Fuß-Bauweise mit Möblierung, Lüftung, Sanitär und Medienführung kommt auf 8 bis 12 Tonnen. Ein 40-Fuß-Container oder ein verbundenes Doppelmodul liegt zwischen 14 und 24 Tonnen. Diese Werte gehen als Eigengewicht in die statische Berechnung ein und sind die Basis für die Sohlspannung.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die <strong>Schneelast</strong> nach <a href="https://www.dibt.de/" target="_blank" rel="noopener noreferrer" class="text-primary font-medium hover:underline">DIN EN 1991-1-3</a> mit deutschem Nationalanhang teilt das Bundesgebiet in fünf Zonen: Zone 1 (norddeutsche Tiefebene und Teile NRWs), 1a (kleinere Übergangsbereiche), Zone 2 (Mittelgebirgsvorland), 2a (Ostbayern und Sachsen) und Zone 3 (Hochlagen, Alpenraum). Die charakteristische Schneelast auf Bodenniveau (sk) beginnt bei rund 0,65 kN/m² in Zone 1 unter 400 Meter Geländehöhe und steigt höhenabhängig deutlich an – im Alpenvorland und in den deutschen Mittelgebirgen sind 2 bis 4 kN/m² keine Seltenheit. Für ein Containerflachdach werden Form- und Expositionsbeiwerte angesetzt; bei aufgesetzten Aggregaten (Lüftungsgerät, Kühlmaschine) entstehen lokale Schneeansammlungen, die separat zu betrachten sind.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die <strong>Windlast</strong> nach DIN EN 1991-1-4 nutzt vier deutsche Windzonen: Zone 1 (Binnenland Süd) mit charakteristischer Basisgeschwindigkeit vb,0 = 22,5 m/s, Zone 2 (Binnenland Mitte und Nord), Zone 3 (Küstennähe Norddeutschland) und Zone 4 (Inseln und unmittelbare Küste Nord- und Ostsee) mit vb,0 = 30,0 m/s. Für die Standsicherheit eines Containers sind drei Windkomponenten relevant: die <strong>Druckkomponente</strong> auf die Wetterseite (vor allem für die Verankerung der Wandelemente), die <strong>Sogkomponente</strong> am Dach (Hauptlast für die Dachhaut und die Dachverankerung), und die <strong>Anhebekraft</strong> an Container-Ecken (entscheidend für die Bodenanker oder die Eigengewichtsbilanz).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der praxisrelevante Punkt: ein leichter Bürocontainer kann in Windzone 4 ohne Verankerung kippen oder verschoben werden. Ein vollausgebauter Laborcontainer mit 10 Tonnen Eigengewicht ist in der Regel kippsicher, muss aber gegen horizontale Verschiebung verankert werden. Wir verwenden je nach Standortsituation Verschraubung am Fundament (M16/M20-Schwerlastanker), Verschweißung mit eingegossenen Stahlplatten oder bei Schraubfundamenten direkte Schraubverbindung mit dem Fundamentkopf.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Schritt 3 – Gründungsvarianten: Vier Möglichkeiten, eine Entscheidung</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Aus Baugrund und Last leitet sich die Gründungsvariante ab. In der Praxis konkurrieren vier Lösungen.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Variante</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Wann sinnvoll</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Bauzeit</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Lebensdauer</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Punktfundamente</td>
+                      <td class="border border-gray-200 px-4 py-3">Einfache 1- bis 2-Modul-Container, tragfähiger Boden (S, G, GW), keine Setzungsanfälligkeit</td>
+                      <td class="border border-gray-200 px-4 py-3">2–4 Tage inkl. Aushub und Aushärten</td>
+                      <td class="border border-gray-200 px-4 py-3">50+ Jahre</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Streifenfundamente</td>
+                      <td class="border border-gray-200 px-4 py-3">Standardlösung für Modulverbünde, mittlere Tragfähigkeit, durchgehende Lastverteilung unter Container-Längsträgern</td>
+                      <td class="border border-gray-200 px-4 py-3">3–6 Tage</td>
+                      <td class="border border-gray-200 px-4 py-3">50+ Jahre</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Bodenplatte (Stahlbeton)</td>
+                      <td class="border border-gray-200 px-4 py-3">Reinraum-/GMP-Anwendungen, große Modulverbünde, sehr setzungsempfindlicher Boden, hohe Lastreserven für spätere Aufstockung</td>
+                      <td class="border border-gray-200 px-4 py-3">5–10 Tage inkl. Bewehrung und Aushärten</td>
+                      <td class="border border-gray-200 px-4 py-3">50+ Jahre</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Schraubfundamente</td>
+                      <td class="border border-gray-200 px-4 py-3">Temporäre Aufstellung, eilige Projekte, Naturschutz, Altlastenstandorte (kein Aushub), rückbaubare Lösungen</td>
+                      <td class="border border-gray-200 px-4 py-3">1 Tag (Eindrehen, sofort belastbar)</td>
+                      <td class="border border-gray-200 px-4 py-3">25–30 Jahre</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Punktfundamente</strong> sind der Klassiker für leichtere Aufstellungen. Vier bis acht Punkte je Container, jeweils etwa 60 × 60 × 80 cm aus Beton C25/30 nach DIN EN 206-1, frostfrei gegründet, mit Auflagerplatte oder Verankerungsanker für die Containerecken. Vorteil: schneller, materialsparender und für viele Standardanwendungen ausreichend. Nachteil: konzentrierte Punktlasten brauchen tragfähigen Boden – auf Schluff oder Ton kann das nicht reichen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Streifenfundamente</strong> sind unsere Standardempfehlung für Modulverbünde aus zwei oder mehr Containern. Zwei durchgehende Streifen aus C25/30 unter den Container-Längsträgern, Breite typisch 30 bis 50 cm, Tiefe 80 cm (frostfrei). Vorteil: gleichmäßige Lastverteilung, höhere Steifigkeit gegen Differenzsetzungen, gute Verbindung mit Erdung und Blitzschutz. Nachteil: mehr Material und Aushub als Punktfundamente.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Bodenplatten</strong> aus bewehrtem Stahlbeton (typisch C25/30 oder C30/37, Bewehrung B500B nach DIN 488, Plattendicke 20–25 cm, Frostschürze umlaufend) sind die Premium-Lösung. Pflicht bei Reinraum-Containern wegen Vibrationsisolation, bei GMP-Anwendungen wegen Setzungsempfindlichkeit der HVAC-Kaskade, und bei Modulverbünden ab vier Modulen. Bonus: die Platte trägt später auch eine Aufstockung oder eine Erweiterung. Nachteil: höchste Kosten, längste Bauzeit, größter Eingriff in den Boden.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Schraubfundamente</strong> – verzinkte Stahlschrauben mit Wendelkörper, eingedreht mit hydraulischem Drehkopf – sind die schnellste Option. Zwei bis drei Stunden je Container, kein Aushub, kein Beton, kein Aushärten. Sinnvoll für temporäre Aufstellungen (Pandemie-Labore, Baustellen-Container, Veranstaltungslabore), für Naturschutzgebiete (kein Eingriff in den Bodenkörper) und für Altlastenstandorte (kein Aushub kontaminierter Erde, keine Entsorgung nach LAGA M20 oder Ersatzbaustoffverordnung). Tragfähigkeit prüft eine Probebohrung vorab. Nachteil: deutlich kürzere Lebensdauer als Beton, eingeschränkt für Reinraum/GMP wegen geringerer Steifigkeit.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Schritt 4 – Frostfreie Gründung: Die unsichtbare Pflicht</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Eine Gründung gilt als frostfrei, wenn sie tiefer als die örtliche Frosteindringtiefe gegründet ist. Maßgeblich für die regional gültigen Mindestgründungstiefen sind die <strong>Frostkarten der Landesbauaufsichten</strong>. Die thermische Auslegung des Frostschutzes im Gründungsbereich regelt <strong>DIN EN ISO 13793</strong>. In Deutschland gilt als Faustwert eine Mindestgründungstiefe von 80 Zentimetern für Außenbauteile. In den Mittelgebirgslagen oberhalb 600 Meter (Schwarzwald, Bayerischer Wald, Erzgebirge, Harz) und im Alpenvorland steigt die Anforderung auf 100 bis 150 Zentimeter.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Wer die Frosttiefe unterschreitet, riskiert <strong>Frosthebung</strong>: gefrierendes Bodenwasser dehnt sich um etwa 9 % aus, hebt das Fundament ungleichmäßig an und führt nach wenigen Wintern zu Rissen, schiefen Türen und im Extremfall zu Setzungsschäden am Container. Frosthebung ist besonders bei bindigen Böden (Schluff, Ton) ein Risiko – sandige und kiesige Böden sind weniger anfällig. Bei Schraubfundamenten ist Frostfreiheit konstruktiv inhärent, weil die Lastübertragungsebene durch die Schraubenlänge automatisch unter die Frostlinie gelegt wird.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Schritt 5 – Statik und Bauvorlage: Wer unterschreibt</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der <strong>Standsicherheitsnachweis</strong> – umgangssprachlich „die Statik" – ist Pflichtbestandteil jeder Bauvorlage, sobald ein Laborcontainer dauerhaft aufgestellt wird (in der Regel ab 3 Monaten Standzeit, abhängig von der Landesbauordnung). Wer den Nachweis erstellen und unterschreiben darf, regeln die Landesbauordnungen über die <strong>Bauvorlageberechtigung</strong>: in den meisten Bundesländern Bauingenieure, Architekten mit entsprechender Zusatzqualifikation und Tragwerksplaner mit Eintrag in die Liste der Bauvorlageberechtigten der Ingenieurkammer.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In Bayern, Baden-Württemberg, Hessen und einigen weiteren Ländern ist bei größeren oder komplexeren Bauvorhaben zusätzlich eine <strong>Prüfstatik</strong> erforderlich – ein zweiter, unabhängiger Tragwerksplaner prüft die Berechnung des ersten. Ob Prüfstatik nötig ist, ergibt sich aus den Prüfverordnungen der Länder und wird im Bauantrag von der Bauaufsicht festgelegt. Für Standard-Laborcontainer in einfachen Verhältnissen ist sie meist entbehrlich, für mehrgeschossige Modulverbünde, BSL-3-Container oder Sonderbauten in der Regel Pflicht.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Wir liefern aus Albstadt zu jedem Containerprojekt die <strong>Typenstatik des Containerkörpers</strong> mit – also den Nachweis, dass der Container selbst alle Lasten aus seinem Eigengewicht, Wind und Schnee aufnimmt. Was wir nicht liefern können, ist die <strong>standortbezogene Statik</strong> der Gründung, weil die abhängig vom konkreten Baugrund, der Aufstellsituation und den Anschlüssen ist. Diese erstellt der lokale Tragwerksplaner – wir empfehlen gerne ein Büro aus unserem Netzwerk.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Schritt 6 – Kran und Schwerlast: Wie der Container auf den Platz kommt</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein voll ausgebauter 20-Fuß-Laborcontainer wiegt 8 bis 12 Tonnen, ein 40-Fuß-Container oder ein Doppelmodul 14 bis 24 Tonnen. Für die Aufstellung wird ein <strong>Mobilkran</strong> benötigt, dimensioniert nach Hublast und Auslegerradius. Faustregel: bei kurzem Auslegerradius (8 m) reicht oft ein 50- bis 70-Tonner (Liebherr LTM 1050-3.1 oder LTM 1070-4.2), bei mittlerem Radius (12–16 m) ein 90- bis 120-Tonner (LTM 1090-4.2, LTM 1100-4.2). Bei großen Auslegern, hohen Hubhöhen oder über Hindernisse hinweg geht die Klasse schnell auf 200 bis 300 Tonnen (LTM 1200-5.1, LTM 1300-6.2).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Maßgeblich für den Kranbetrieb sind die <strong>DGUV Vorschrift 52</strong> (Krane) und <strong>DGUV Regel 100-500 Kapitel 2.8</strong>. Vor der Aufstellung muss ein qualifizierter Aufsteller einen Hub- und Stellplan erstellen, die Standfläche der Kranabstützung prüfen (typisch 150 bis 250 kN/m² unter den Stützen, bei sehr großen Kranen über 400 kN/m²) und die Verkehrssicherung nach RSA 21 organisieren. Auf Asphalt mit gewachsenem Untergrund reichen meistens Kranmatten unter den Stützen. Auf weichem Boden, frischem Pflaster oder über Tiefgaragen sind Sonderkonstruktionen (zusätzliche Lastverteilungsplatten, Statiknachweis der Tiefgarage) Pflicht.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die <strong>Anlieferung</strong> erfolgt per Sattelauflieger – bis 2,55 m Außenbreite, 4,00 m Außenhöhe und 40 t Sattelzug-Gesamtgewicht ohne Sondergenehmigung. Sobald ein Container breiter als 3,00 m, höher als 4,00 m oder ein Sattelzug schwerer als 40 t wird, greift <strong>§29 Absatz 3 StVZO</strong> und der Transport ist ein Großraum- und Schwertransport (GST). Dann werden Sondergenehmigung der Straßenverkehrsbehörde, Begleitfahrzeuge nach BF3 (Bundesfernstraßen) oder Polizeibegleitung, definiertes Routing und meist nächtliches Anlieferzeitfenster Pflicht. Vorlauf für die Genehmigung: 4 bis 8 Wochen je nach Bundesland.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Sondersituationen: Hanglage, Altlasten, Hochwasser, Denkmalschutz</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Hanglage.</strong> Bei Geländeneigungen über 5 % wird die Gründung kippsicher gegen die Hangabtriebskraft auszubilden. Das geht mit Hangabschalung, Stützmauern oder mit gestaffelten Streifenfundamenten. Statiker prüft Standsicherheit gegen Gleiten nach EC 7. Praxisempfehlung: über 10 % Hang grundsätzlich Bodenplatte mit Frostschürze und Hanganker.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Altlasten.</strong> Bei Verdachtsstandorten greift das <strong>Bundes-Bodenschutzgesetz (BBodSchG)</strong> und die <strong>Bundes-Bodenschutz- und Altlastenverordnung (BBodSchV)</strong>. Aushub muss vor dem Bau auf Schadstoffe untersucht werden (Eluat- und Feststoffanalytik nach LAGA M20 / Ersatzbaustoffverordnung 2023), die Entsorgung erfolgt klassifikationsabhängig in Z0 bis Z2 oder als Deponieabfall. Schraubfundamente sind hier oft die wirtschaftlichere Lösung, weil sie keinen Aushub verlangen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Hochwasserschutz.</strong> In ausgewiesenen Überschwemmungsgebieten (HQ100) gelten die Vorgaben des <strong>Wasserhaushaltsgesetzes §78</strong> – Bauten sind dort nur ausnahmsweise zulässig, in der Regel mit Auflagen zu Sockelhöhe, Auftriebssicherung, Verankerung und elektrotechnischer Hochlage. Wir setzen Container in HQ100-Bereichen grundsätzlich auf eine erhöhte Bodenplatte mit Frostschürze und definieren die Auftriebssicherung in Abstimmung mit dem Statiker und der unteren Wasserbehörde.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Denkmalschutz.</strong> Auf denkmalgeschützten Liegenschaften (Klinikum, Universitätsareal, historische Werksgelände) ist die untere Denkmalschutzbehörde frühzeitig einzubinden. Häufige Auflagen: minimaler Eingriff in den Bodenkörper (Schraubfundamente bevorzugt), reversible Aufstellung, optische Anpassung der Containerverkleidung. Vorlauf für denkmalrechtliche Erlaubnis: 6 bis 12 Wochen.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Praxisempfehlung: Welche Gründung für welches Projekt</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Aus rund 100 Aufstellungen über die letzten Jahre destillieren wir vier Standardpfade, die in 80 % der Projekte tragen:
+              </p>
+
+              <ul class="list-disc pl-6 space-y-3 text-gray-600 leading-relaxed mb-6">
+                <li><strong>1 bis 2 Container, tragfähiger Boden (Sand, Kies), Standardlabor:</strong> Punktfundamente C25/30, 60 × 60 × 80 cm, vier Punkte je Container. Bauzeit 2 bis 4 Tage. Wirtschaftlichste Lösung.</li>
+                <li><strong>2 bis 4 Container im Verbund, mittlerer Boden, Standardanwendung:</strong> Streifenfundamente unter den Längsträgern, durchgehend, 30 bis 50 cm breit, 80 cm tief. Bauzeit 3 bis 6 Tage. Beste Balance zwischen Kosten und Sicherheit.</li>
+                <li><strong>Reinraum, GMP, BSL-3 oder ab 4 Modulen Verbund:</strong> Stahlbeton-Bodenplatte 20 bis 25 cm, bewehrt nach DIN 488, mit umlaufender Frostschürze. Bauzeit 5 bis 10 Tage inkl. Aushärten. Pflichtlösung für regulierte Anwendungen.</li>
+                <li><strong>Temporär, eilig, Naturschutz oder Altlasten:</strong> Schraubfundamente, je nach Containergröße 6 bis 12 Schrauben. Aufstellung am gleichen Tag. Lebensdauer ausreichend für 25 bis 30 Jahre.</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In allen vier Fällen gilt: das Baugrundgutachten geht der Entscheidung voraus, der Statiker rechnet die Lasten gegen die zulässige Sohlspannung, und der Krandienstleister prüft die Stellfläche. Wer diese drei Schritte überspringt, baut entweder zu groß (Geld weg) oder zu klein (Risiko übernommen). Beides ist im professionellen Containerbau keine Option.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fazit: Die Gründung ist die Hälfte des Projekterfolgs</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Laborcontainer steht nur so gut, wie sein Untergrund ihn trägt. Die Reihenfolge ist klar: Baugrundgutachten, Lastannahme, Gründungsentscheidung, Statiknachweis, Bauantrag, Krankonzept, Aufstellung. Wer eine dieser Stufen überspringt oder verkürzt, kauft Risiko – Setzungen, Risse, Standsicherheitsprobleme, im schlimmsten Fall Stilllegungen durch die Bauaufsicht.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die gute Nachricht: weil unser Container ab Werk Albstadt mit Typenstatik, definierten Anschlusspunkten und vorbereiteten Verankerungen geliefert wird, lässt sich der Aufwand vor Ort planbar machen. Unsere <a href="/leistungen/planung" class="text-primary font-medium hover:underline">Planungs- und Engineering-Leistung</a> umfasst die komplette Gründungsplanung in Abstimmung mit Geotechniker, Tragwerksplaner und Krandienstleister – aus einer Hand, schlüsselfertig, mit definierter Verantwortungskette.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Aufstellung professionell planen?</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Wir koordinieren Baugrundgutachten, Statik, Gründungsbau und Kranlogistik aus einer Hand. Vom Bauantrag bis zur Übergabe – mit verifizierten Normen und realistischen Zeitfenstern.</p>
+                <a href="/kontakt" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Kostenlose Erstberatung anfragen
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">Auf einen Blick</h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Eurocode 0/1/7 (DIN EN 1990/1991/1997)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> DIN 1054:2021-04 (DE-Anhang Geotechnik)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Schneelastzonen 1, 1a, 2, 2a, 3</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Windzonen 1 bis 4 (vb,0 22,5–30 m/s)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Frosttiefe 80–150 cm (DIN EN ISO 13793)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Punkt-, Streifen-, Platten-, Schraubgründung</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> DGUV V 52 + Regel 100-500 Kap. 2.8 (Krane)</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <h4 class="font-bold text-slate-900 mb-4">Weiterführende Inhalte</h4>
+                <ul class="space-y-3">
+                  <li><a href="/leistungen/planung" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Laborplanung &amp; Engineering</a></li>
+                  <li><a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Genehmigung &amp; Baurecht</a></li>
+                  <li><a href="/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Projektablauf von Idee bis Übergabe</a></li>
+                  <li><a href="/magazin/laborcontainer-baustelle-materialpruefung" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Laborcontainer auf der Baustelle</a></li>
+                  <li><a href="/magazin/laborcontainer-digitalisierung-lims-iot-remote-monitoring" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Digitalisierung im Laborcontainer</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <h4 class="font-bold mb-3">Bauen Sie auf festem Grund?</h4>
+                <p class="text-gray-400 text-sm mb-4">Wir koordinieren Baugrundgutachten, Statik und Kran-Logistik. Sprechen Sie mit uns, bevor der Bauantrag rausgeht.</p>
+                <a href="/kontakt" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Kontakt aufnehmen</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Häufig gestellte Fragen zur Aufstellung und Statik</h2>
+          <div class="space-y-4">
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Braucht ein Laborcontainer immer eine Bodenplatte?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Nein. Eine Bodenplatte ist nur eine von vier Gründungsvarianten. Für die meisten Container reichen <strong>Punktfundamente</strong> unter den Containerecken (vier bis acht Punkte je Modul, Beton C25/30, frostfrei nach DIN EN ISO 13793) oder <strong>Streifenfundamente</strong> unter den Längsträgern. Eine durchgehende Stahlbeton-Bodenplatte wird Pflicht bei Reinraum-/GMP-Anwendungen, bei sehr setzungsempfindlichem Boden und bei großen Modulverbünden. Welche Variante passt, entscheidet das Baugrundgutachten nach DIN EN ISO 14688 und die Lastannahme nach Eurocode 1.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Normen gelten für die Statik eines Laborcontainers?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Vier Hauptnormen: <strong>DIN EN 1990</strong> (Eurocode 0, Tragwerksgrundlagen), <strong>DIN EN 1991</strong> (Eurocode 1, Einwirkungen – inkl. 1991-1-3 Schnee und 1991-1-4 Wind), <strong>DIN EN 1997-1</strong> (Eurocode 7, Geotechnik) und <strong>DIN 1054:2021-04</strong> als deutscher Nationalanhang. Für die Bauvorlage prüft der Statiker zusätzlich die Landesbauordnung – wer den Standsicherheitsnachweis unterschreiben darf, ist je Bundesland in der Bauvorlageberechtigung geregelt.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wie tief muss ein Containerfundament wegen Frost gegründet werden?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">In Deutschland in der Regel <strong>80 cm</strong>, in Mittelgebirgs- und Hochlagen (Schwarzwald, Bayerischer Wald, Erzgebirge oberhalb 600 m) <strong>100 bis 150 cm</strong>. Maßgeblich ist <strong>DIN EN ISO 13793</strong> sowie die regionalen Frostkarten. Wer die Frosttiefe unterschreitet, riskiert <strong>Frosthebung</strong> – gefrierendes Bodenwasser dehnt sich um etwa 9 % aus und verursacht ungleichmäßige Anhebung. Bei Schraubfundamenten ist Frostfreiheit konstruktiv durch die Schraubenlänge gegeben.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Schnee- und Windlasten muss der Containerstatiker ansetzen?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Schnee nach <strong>DIN EN 1991-1-3</strong>: Deutschland in fünf Zonen (1, 1a, 2, 2a, 3), charakteristische Bodenschneelast sk von rund 0,65 kN/m² (Zone 1, &lt;400 m) bis &gt;4,0 kN/m² (Zone 3 Hochlagen). Wind nach <strong>DIN EN 1991-1-4</strong>: vier Windzonen, vb,0 von 22,5 m/s (Zone 1) bis 30,0 m/s (Zone 4, Nord-/Ostsee). Praxisrelevant ist neben der Druckkomponente vor allem die Sogkomponente am Dach und die Anhebekraft an den Container-Ecken – sie entscheidet über die Verankerung.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Schraubfundament oder Betonfundament – wann was?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed"><strong>Schraubfundamente</strong>: schnell (Aufstellung am gleichen Tag), kein Aushub, rückbaubar – ideal für temporäre Aufstellungen, eilige Projekte, Naturschutz, Altlastenstandorte. Lebensdauer 25–30 Jahre. <strong>Betonfundamente</strong> (Punkt, Streifen, Platte): höhere Steifigkeit, geringere Setzungen, 50+ Jahre Lebensdauer, Pflicht für Reinraum/GMP. Aufpreis Beton gegenüber Schraube: typisch Faktor 2 bis 4 in Material und Bauzeit.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welcher Kran wird zum Aufstellen eines Laborcontainers gebraucht?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Hängt von Containergewicht und Auslegerradius ab. 20-Fuß-Laborcontainer: 8–12 t. 40-Fuß-Container/Doppelmodul: 14–24 t. Standardlösung: <strong>Mobilkran 50 bis 100 t</strong> (Liebherr LTM 1050, LTM 1070, LTM 1090) bei 8–16 m Radius. Bei beengten Verhältnissen oder weitem Auslegerradius bis 200–300 t (LTM 1200, LTM 1300). Maßgeblich: <strong>DGUV Vorschrift 52</strong> und <strong>DGUV Regel 100-500 Kapitel 2.8</strong>. Vorab Hub- und Stellplan, Tragfähigkeitsprüfung der Stützflächen (typisch 150–250 kN/m²), Verkehrssicherung nach RSA 21.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wie läuft die Anlieferung – Schwerlasttransport oder normaler LKW?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Bis 2,55 m Außenbreite, 4,00 m Außenhöhe und 40 t Sattelzug-Gesamtgewicht: normaler Sattelauflieger ohne Sondergenehmigung. Darüber: <strong>Großraum- und Schwertransport (GST)</strong> nach <strong>§29 Abs. 3 StVZO</strong> mit Sondergenehmigung der Straßenverkehrsbehörde, Begleitfahrzeugen (BF3 oder Polizei), definiertem Routing und meist nächtlichem Anlieferzeitfenster. Vorlauf für Genehmigung: 4 bis 8 Wochen je Bundesland.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Weitere Artikel</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
+            <div class="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div>
+              <p class="text-xs text-primary font-medium mb-2">Recht &amp; Genehmigung</p>
+              <h3 class="font-bold text-slate-900 group-hover:text-primary transition-colors">Genehmigung &amp; Baurecht für Laborcontainer</h3>
+            </div>
+          </a>
+          <a href="/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
+            <div class="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <div>
+              <p class="text-xs text-primary font-medium mb-2">Projektablauf</p>
+              <h3 class="font-bold text-slate-900 group-hover:text-primary transition-colors">Von der Idee bis zur Übergabe</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/magazin" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Zurück zum Magazin
+      </a>
+    </div>
+  </div>
+</Layout>
