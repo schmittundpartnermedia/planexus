@@ -51,13 +51,7 @@ const breadcrumbSchema = {
       <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 20% 50%, #bbd700 0%, transparent 50%), radial-gradient(circle at 80% 20%, #bbd700 0%, transparent 40%);"></div>
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl mx-auto">
-          <Breadcrumbs variant="dark" items={[
-            { name: 'Start', href: '/' },
-            { name: 'Über uns', href: '/ueber-uns' },
-            { name: 'Auszeichnungen' }
-          ]} />
-
-          <div class="flex items-center gap-3 mb-6 mt-6">
+          <div class="flex items-center gap-3 mb-6">
             <span class="px-3 py-1 bg-primary/20 text-primary text-sm font-semibold rounded-full uppercase tracking-wider">
               Auszeichnungen 2026
             </span>
@@ -72,6 +66,8 @@ const breadcrumbSchema = {
         </div>
       </div>
     </section>
+
+    <Breadcrumbs bar items={[{ name: 'Start', href: '/' }, { name: 'Über uns', href: '/ueber-uns' }, { name: 'Auszeichnungen' }]} />
 
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">

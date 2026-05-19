@@ -76,12 +76,7 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
       </div>
       <div class="relative z-10 container mx-auto px-4 py-16 md:py-24">
         <div class="max-w-4xl">
-          <Breadcrumbs variant="dark" items={[
-            { name: 'Start', href: '/' },
-            { name: 'Branchen', href: '/branchen' },
-            { name: 'Pharma & Biotech' }
-          ]} />
-          <div class="text-primary font-medium text-sm uppercase tracking-wider mt-6 mb-4">Branche · Pharma · Biotech · CDMO · klinische Forschung</div>
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Branche · Pharma · Biotech · CDMO · klinische Forschung</div>
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
             Laborcontainer für Pharma & Biotech <span class="text-primary">|</span> GMP, Annex 1, BSL-3 – Annex-1-konform in 18 Wochen
           </h1>
@@ -102,6 +97,8 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
         </div>
       </div>
     </section>
+
+    <Breadcrumbs bar items={[{ name: 'Start', href: '/' }, { name: 'Branchen', href: '/branchen' }, { name: 'Pharma & Biotech' }]} />
 
     <AuthorBio />
 
