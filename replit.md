@@ -32,6 +32,12 @@ A secure `/admin` section is included for managing contact inquiries, featuring 
 
 Deployment occurs on an IONOS VPS running Ubuntu, Nginx, and PM2. Nginx acts as a reverse proxy to the Astro application on port 5000. Environment variables are managed through `.env` files.
 
+**Server-Deploy (verbindlich):**
+- Server-Pfad: `/var/www/app`
+- PM2-Prozess-Name: `planexus` (ID 0, Script `server-start.mjs`)
+- Domain/IP: `planexus.de` / `82.165.27.244`
+- Deploy-Befehl (direkt auf dem Server ausführen, KEIN zweites SSH): `cd /var/www/app && git pull && npm run build && pm2 restart planexus --update-env`
+
 A critical design focus is SEO, incorporating comprehensive Schema.org JSON-LD (Organization, LocalBusiness, FAQPage, Article, BreadcrumbList), optimized meta tags, and an automatically generated `sitemap.xml`. Image optimization, including compression, lazy loading, and alt-texts, is systematically applied.
 
 ## External Dependencies
