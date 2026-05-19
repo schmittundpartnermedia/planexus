@@ -32,6 +32,7 @@ export default function Navbar() {
   const aboutLinks = [
     { href: "/ueber-uns", label: "Über uns" },
     { href: "/team", label: "Team" },
+    { href: "/ueber-uns/auszeichnungen", label: "Auszeichnungen" },
   ];
 
   const serviceLinks = [
@@ -91,13 +92,13 @@ export default function Navbar() {
               onKeyDown={(e) => { if (e.key === 'Escape') setAboutOpen(false); }}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 uppercase tracking-wide",
-                (location === "/ueber-uns" || location === "/team") ? "text-primary" : "text-white/80 hover:text-white"
+                (location === "/ueber-uns" || location === "/team" || location.startsWith("/ueber-uns/")) ? "text-primary" : "text-white/80 hover:text-white"
               )}
             >
               Über uns
               <ChevronDown className={cn("w-4 h-4 transition-transform", aboutOpen && "rotate-180")} />
             </button>
-            {(location === "/ueber-uns" || location === "/team") && (
+            {(location === "/ueber-uns" || location === "/team" || location.startsWith("/ueber-uns/")) && (
               <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary" />
             )}
             

@@ -1,0 +1,202 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Planexus GmbH",
+  "url": "https://www.planexus.de/",
+  "logo": "https://www.planexus.de/Planexus-logo.png",
+  "award": [
+    "Leading Modular Laboratory Containers Provider 2026 – German CEO Excellence Awards, EU Business News",
+    "Most Innovative Laboratory Spaces Leader 2026 (Sven Biewald) – German CEO Excellence Awards, EU Business News"
+  ]
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sven Biewald",
+  "jobTitle": "Geschäftsführer",
+  "worksFor": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://www.planexus.de/" },
+  "url": "https://www.planexus.de/team/sven-biewald",
+  "award": "Most Innovative Laboratory Spaces Leader 2026 – German CEO Excellence Awards, EU Business News"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Über uns", "item": "https://www.planexus.de/ueber-uns" },
+    { "@type": "ListItem", "position": 3, "name": "Auszeichnungen", "item": "https://www.planexus.de/ueber-uns/auszeichnungen" }
+  ]
+};
+---
+
+<Layout
+  title="Auszeichnungen – German CEO Excellence Awards 2026 | Planexus"
+  description="Planexus GmbH und Sven Biewald sind Preisträger der German CEO Excellence Awards 2026 von EU Business News – als führender Anbieter modularer Laborcontainer."
+  canonical="/ueber-uns/auszeichnungen"
+  ogImage="/attached_assets/generated_images/laborcontainer-aufstellung-kran-bodenplatte.png"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800"></div>
+      <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 20% 50%, #bbd700 0%, transparent 50%), radial-gradient(circle at 80% 20%, #bbd700 0%, transparent 40%);"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <Breadcrumbs variant="dark" items={[
+            { name: 'Start', href: '/' },
+            { name: 'Über uns', href: '/ueber-uns' },
+            { name: 'Auszeichnungen' }
+          ]} />
+
+          <div class="flex items-center gap-3 mb-6 mt-6">
+            <span class="px-3 py-1 bg-primary/20 text-primary text-sm font-semibold rounded-full uppercase tracking-wider">
+              Auszeichnungen 2026
+            </span>
+          </div>
+
+          <h1 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+            German CEO Excellence Awards 2026
+          </h1>
+          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl">
+            Planexus GmbH und Geschäftsführer Sven Biewald wurden 2026 von <strong class="text-white">EU Business News</strong> in zwei Kategorien der German CEO Excellence Awards ausgezeichnet – als führender Anbieter modularer Laborcontainer und als innovativster Vordenker im Bereich Laborraumlösungen.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+
+          <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/30 rounded-2xl p-8">
+              <div class="flex items-start gap-3 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                <div>
+                  <p class="text-xs uppercase tracking-wider text-primary font-bold mb-1">Unternehmens-Award</p>
+                  <h2 class="text-xl font-heading font-bold text-slate-900 leading-tight">
+                    Leading Modular Laboratory Containers Provider 2026
+                  </h2>
+                </div>
+              </div>
+              <p class="text-slate-700 leading-relaxed">
+                Auszeichnung für die Planexus GmbH als führender Anbieter modularer Laborcontainer im deutschsprachigen Raum – für schlüsselfertige, normkonforme Containerlabore in BSL-2- und BSL-3-Ausführung mit der Plattform LABtoGO 2.0.
+              </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-8">
+              <div class="flex items-start gap-3 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg>
+                <div>
+                  <p class="text-xs uppercase tracking-wider text-primary font-bold mb-1">CEO-Award</p>
+                  <h2 class="text-xl font-heading font-bold leading-tight">
+                    Most Innovative Laboratory Spaces Leader 2026
+                  </h2>
+                  <p class="text-sm text-slate-300 mt-1">Sven Biewald, Geschäftsführer</p>
+                </div>
+              </div>
+              <p class="text-slate-300 leading-relaxed">
+                Persönliche Auszeichnung für Sven Biewald – für die Pionierarbeit beim ersten vollfunktionsfähigen Laborcontainer 2016 und die kontinuierliche Weiterentwicklung modularer Laborräume vom Forschungscontainer bis zur BSL-3-Hochsicherheitsanlage.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4 mt-12">
+            Was sind die German CEO Excellence Awards?
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Die German CEO Excellence Awards werden jährlich von <strong>EU Business News</strong> verliehen – einer Publikation der britischen <a href="https://www.aiglobalmedialtd.com/" target="_blank" rel="noopener" class="text-primary hover:underline font-medium">AI Global Media Ltd.</a>, die mit Marken wie Corporate Vision, Acquisition International, BUILD Magazine und CEO Monthly seit über einem Jahrzehnt unabhängige Wirtschaftspreise in Europa und international vergibt.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Die Auszeichnungen würdigen Führungspersönlichkeiten und Unternehmen in Deutschland, die in ihrem jeweiligen Sektor durch Innovationskraft, Marktposition, Kundenorientierung und nachhaltiges Wachstum hervorstechen. Die Auswahl erfolgt durch ein redaktionelles Recherche-Team auf Basis von Nominierungen, öffentlich verfügbaren Daten, Kunden- und Partnerstimmen sowie Marktanalysen – nicht durch Selbstbewerbung mit Gebühren oder Pay-to-Win-Modell.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-8">
+            Die Verleihung 2026 umfasste Preisträger aus den Bereichen Industrie, Life Sciences, Technologie, Finanzen und Bauwesen. Planexus ist in der Schnittmenge aus modularem Bauwesen und Life-Science-Infrastruktur einer von wenigen deutschen Spezialisten, die in beiden Welten zuhause sind – und wurde dafür gleich zweifach prämiert.
+          </p>
+
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4 mt-12">
+            Was die Auszeichnung für unsere Kunden bedeutet
+          </h2>
+          <ul class="space-y-3 mb-12">
+            <li class="flex items-start gap-3 text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span><strong>Externe Validierung:</strong> Eine unabhängige Fachredaktion bestätigt, was unsere Kunden seit zehn Jahren erleben – Planexus liefert verlässlich Top-Qualität im modularen Laborbau.</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span><strong>Marktführerschaft im DACH-Raum:</strong> Bestätigung der Position als führender Anbieter modularer Laborcontainer für Pharma, Biotech, Forschung und Public Health.</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span><strong>Innovationskompetenz:</strong> Anerkennung für die kontinuierliche Weiterentwicklung – von LABtoGO 2.0 über BSL-3-Containment bis zu H₂- und Battery-Test-Containern mit ATEX-Schutz.</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span><strong>Verbindlichkeit:</strong> Ein ausgezeichneter Geschäftsführer steht persönlich für die Qualität jedes einzelnen Projekts – kein anonymes Konzernhandeln.</span>
+            </li>
+          </ul>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 mb-12">
+            <h3 class="text-xl font-heading font-bold text-slate-900 mb-6">Originalquellen bei EU Business News</h3>
+            <div class="space-y-4">
+              <a
+                href="https://www.eubusinessnews.com/winners/planexus-gmbh/"
+                target="_blank"
+                rel="noopener"
+                class="flex items-start gap-4 p-4 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-md transition-all group"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                <div class="flex-1">
+                  <p class="font-semibold text-slate-900 group-hover:text-primary transition-colors">Profil Planexus GmbH bei EU Business News</p>
+                  <p class="text-sm text-slate-600 mt-1">Offizielle Preisträger-Seite mit beiden Auszeichnungen.</p>
+                  <p class="text-xs text-slate-400 mt-2 font-mono break-all">eubusinessnews.com/winners/planexus-gmbh/</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.eubusinessnews.com/eu-business-news-unveils-the-winners-of-the-german-ceo-excellence-awards-2026/"
+                target="_blank"
+                rel="noopener"
+                class="flex items-start gap-4 p-4 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-md transition-all group"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                <div class="flex-1">
+                  <p class="font-semibold text-slate-900 group-hover:text-primary transition-colors">Offizielle Pressemitteilung: German CEO Excellence Awards 2026</p>
+                  <p class="text-sm text-slate-600 mt-1">Bekanntgabe aller Preisträger der diesjährigen Verleihung.</p>
+                  <p class="text-xs text-slate-400 mt-2 font-mono break-all">eubusinessnews.com/eu-business-news-unveils-the-winners-of-the-german-ceo-excellence-awards-2026/</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-primary/10 border border-primary/30 rounded-2xl p-8 text-center">
+            <h3 class="text-2xl font-heading font-bold text-slate-900 mb-3">
+              Planexus für Ihr nächstes Laborprojekt
+            </h3>
+            <p class="text-slate-700 mb-6 max-w-2xl mx-auto">
+              Profitieren Sie von ausgezeichneter Ingenieurskunst im modularen Laborbau – schlüsselfertig, normkonform und planbar.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+              <a href="/kontakt" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800 transition-colors">
+                Beratung anfragen
+              </a>
+              <a href="/laborcontainer" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 font-semibold rounded-lg border border-slate-200 hover:border-primary transition-colors">
+                Laborcontainer entdecken
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
