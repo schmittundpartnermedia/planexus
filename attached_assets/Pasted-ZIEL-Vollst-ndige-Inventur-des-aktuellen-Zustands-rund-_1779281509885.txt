@@ -1,0 +1,102 @@
+ZIEL: Vollständige Inventur des aktuellen Zustands rund um Domain-/URL-Behandlung dieses Projekts. NICHTS ÄNDERN, NICHTS DEPLOYEN, KEINE EMPFEHLUNGEN UMSETZEN. Nur lesen und berichten.
+
+HINTERGRUND: Google Search Console zeigt für planexus.de massive Duplicate-Content-Probleme:
+- www-Variante und non-www-Variante beide indexiert
+- Trailing-Slash und Non-Trailing-Slash beide indexiert
+- Die "falsche" Variante rankt teils besser als die kanonische
+Bevor irgendetwas gefixt wird, muss klar sein WAS der Code aktuell tut.
+
+VORGEHEN: Erst Architektur ermitteln, dann fallabhängig prüfen.
+
+═══════════════════════════════════════════════
+TEIL A – ARCHITEKTUR & STACK ERMITTELN
+═══════════════════════════════════════════════
+
+A1. PROJEKT-GRUNDLAGEN
+   - Welches Framework? (Astro, Next.js, Nuxt, SvelteKit, plain Node, anderes?)
+   - package.json: relevante Dependencies (Framework, Adapter, Sitemap-Plugin, SEO-Plugins)
+   - Welche Version des Frameworks?
+   - Welcher Adapter/Modus? (SSR, SSG/Static, Hybrid?)
+   - Hosting-Hinweise in den Configs (Vercel, Netlify, Node-Server, sonstiges)?
+
+A2. BUILD & DEPLOY
+   - build-Script in package.json
+   - Output-Verzeichnis (dist/, .output/, build/, .next/, public/)
+   - Gibt es Hinweise auf einen vorgelagerten Reverse Proxy (z.B. Nginx-Configs im Repo, Hinweise in README)?
+
+A3. REPO-STRUKTUR
+   - Top-Level-Verzeichnisstruktur (max. 2 Ebenen tief)
+   - Welche Config-Dateien existieren im Root (alle *.config.*, *.json, *.toml)?
+
+═══════════════════════════════════════════════
+TEIL B – URL- & DOMAIN-BEHANDLUNG IM CODE
+═══════════════════════════════════════════════
+
+B1. SITE-KONFIGURATION
+   - In der Haupt-Config des Frameworks: Welcher Wert steht für die Basis-URL/Site? (z.B. `site` in astro.config, `url` in next.config etc.)
+   - Mit www oder ohne? Mit Trailing Slash oder ohne?
+   - Falls vorhanden: Welcher Wert für trailingSlash-Verhalten?
+
+B2. CANONICAL-TAG-GENERIERUNG
+   - Wo im Code wird `<link rel="canonical">` ausgegeben? (Layout, SEO-Komponente, Helper, Head-Component)
+   - Wie wird die Canonical-URL zusammengebaut – aus einer Site-Konstante, aus dem aktuellen Request, hardcodiert?
+   - Gibt es eine Normalisierungs-Logik für Trailing Slash oder www?
+   - Falls mehrere Stellen Canonical setzen: alle auflisten
+
+B3. SITEMAP
+   - Wird Sitemap generiert? Wie? (Plugin wie @astrojs/sitemap, next-sitemap, eigener Endpoint, statische Datei?)
+   - Mit welcher Basis-URL?
+   - Wie wird Trailing-Slash dort gehandhabt?
+   - Anzahl URLs in der aktuell erzeugten Sitemap (falls Build-Output verfügbar oder Generator-Logik lesbar)
+
+B4. HREFLANG
+   - Wo werden Hreflang-Tags generiert (sollten DE/AT/CH-Pages betreffen, z.B. /laborcontainer-zuerich, /laborcontainer-wien)?
+   - Welche URL-Form verwenden sie aktuell?
+
+B5. INTERNE LINKS – HARDCODE-SCAN
+   Codebase nach folgenden Mustern durchsuchen und ALLE Treffer mit Dateipfad listen (nicht ändern):
+   - "https://planexus.de"   (non-www absolute)
+   - "http://planexus.de"
+   - "http://www.planexus.de"
+   - "https://www.planexus.de"  (absolute www – sollte intern relativ sein)
+   - href-Strings auf interne Pfade, die mit Trailing Slash enden (z.B. "/leistungen/")
+
+B6. ROUTING & TRAILING-SLASH-VERHALTEN
+   - Existiert Framework-Middleware (z.B. src/middleware.ts, middleware.js)? Was tut sie bezüglich URL-Normalisierung oder Redirects?
+   - Gibt es Redirect-Regeln in der Framework-Config?
+   - Liegen im pages/routes-Verzeichnis parallel Strukturen wie `[city].astro` UND `[city]/index.astro`? Bitte alle solchen Doppelungen auflisten.
+   - Gibt es Catch-all- oder 404-Handler die Redirect-Logik enthalten?
+
+B7. ROBOTS.TXT
+   - Wo liegt sie? (statisch unter public/, generiert via Endpoint?)
+   - Welche Sitemap-URL referenziert sie?
+   - Welche Direktiven sind gesetzt?
+
+B8. BUILD-OUTPUT-PATTERN (falls letzter Build verfügbar)
+   - Welches Pattern erzeugt der Build: `seite/index.html` oder `seite.html`? Beides?
+   - Gibt es im Build doppelte Outputs für dieselbe Route?
+
+═══════════════════════════════════════════════
+TEIL C – ZUSÄTZLICHE INDIKATOREN
+═══════════════════════════════════════════════
+
+C1. ENV / DEPLOYMENT-HINWEISE
+   - .env-Variablen die auf Domain/URL verweisen (Werte zensieren, nur Existenz und Schlüssel-Namen melden)
+   - Hinweise im Repo auf VPS-/Server-Konfiguration (Nginx-Configs, deploy-Scripts, README, docs/)
+
+C2. SEO-RELATED CODE
+   - Gibt es eine zentrale SEO-Komponente oder einen SEO-Helper? Pfad nennen.
+   - Welche Felder werden dort verwaltet (title, description, canonical, og:url, hreflang)?
+
+═══════════════════════════════════════════════
+LIEFERN
+═══════════════════════════════════════════════
+
+Strukturierter Bericht je Punkt A1–C2 mit:
+- Bei Code-Auszügen: Dateipfad + relevante Zeilen (max. 15 Zeilen pro Auszug)
+- Liste aller gefundenen Hardcoded-Links mit Dateipfad
+- Bei jedem Punkt: explizit "unklar" markieren falls nicht eindeutig zu bestimmen, statt zu raten
+- KEINE Änderungen am Code
+- KEINE Empfehlungen umsetzen
+- KEIN Deploy
+- KEINE neuen Dateien anlegen außer der Bericht selbst
