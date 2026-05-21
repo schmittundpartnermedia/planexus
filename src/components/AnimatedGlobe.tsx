@@ -25,9 +25,14 @@ const companyNodes = [
   { name: "Wesemann Middle East", logo: "/attached_assets/Wesemann_Middle_East_Logo_1770839042055.png", x: 86, y: 40, region: "NAHER OSTEN" },
 ];
 
+const satelliteNodes = [
+  { name: "Mein Lagerraum³", logo: "/partner-logos/m3-logo.svg", x: 8, y: 82, parent: "Planexus" },
+];
+
 const allLogosForMobile = [
   { name: "Wesemann", logo: "/attached_assets/Wesemann_Logo_1770839062818.png" },
   ...companyNodes.map(c => ({ name: c.name, logo: c.logo })),
+  ...satelliteNodes.map(s => ({ name: s.name, logo: s.logo })),
 ];
 
 export function AnimatedGlobe() {
@@ -198,6 +203,38 @@ export function AnimatedGlobe() {
         pulseIdx++;
       });
 
+      satelliteNodes.forEach((sat, si) => {
+        const parent = companyNodes.find(c => c.name === sat.parent);
+        if (!parent) return;
+        const pX = (parent.x / 100) * w;
+        const pY = (parent.y / 100) * h;
+        const sX = (sat.x / 100) * w;
+        const sY = (sat.y / 100) * h;
+
+        ctx.beginPath();
+        ctx.moveTo(pX, pY);
+        ctx.lineTo(sX, sY);
+        ctx.strokeStyle = "rgba(187, 215, 0, 0.25)";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        const sp = ((time * 0.0008 + si * 0.3) % 1);
+        const spX = pX + (sX - pX) * sp;
+        const spY = pY + (sY - pY) * sp;
+        ctx.beginPath();
+        ctx.arc(spX, spY, 3 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(187, 215, 0, ${0.9 - sp * 0.6})`;
+        ctx.fill();
+
+        const srp = ((time * 0.0007 + si * 0.4 + 0.5) % 1);
+        const srpX = sX + (pX - sX) * srp;
+        const srpY = sY + (pY - sY) * srp;
+        ctx.beginPath();
+        ctx.arc(srpX, srpY, 2.5 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.6 - srp * 0.4})`;
+        ctx.fill();
+      });
+
       const centerGlow = 55 * scale;
       ctx.beginPath();
       ctx.arc(cX, cY, centerGlow + 8, 0, Math.PI * 2);
@@ -266,6 +303,32 @@ export function AnimatedGlobe() {
               <img
                 src={company.logo}
                 alt={company.name}
+                className="h-7 lg:h-9 w-auto max-w-[90px] lg:max-w-[110px] object-contain"
+                loading="eager"
+              />
+            </motion.div>
+          </div>
+        ))}
+
+        {satelliteNodes.map((sat, i) => (
+          <div
+            key={sat.name}
+            className="absolute"
+            style={{
+              left: `${sat.x}%`,
+              top: `${sat.y}%`,
+              transform: 'translate(-50%, -50%)',
+            }}
+          >
+            <motion.div
+              className="bg-white/95 backdrop-blur-sm rounded-xl shadow-md border border-white/60 flex items-center justify-center p-2.5 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300 cursor-default"
+              initial={{ opacity: 0, scale: 0.3 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.15 + 0.06 * (companyNodes.length + i), duration: 0.4, ease: "easeOut" }}
+            >
+              <img
+                src={sat.logo}
+                alt={sat.name}
                 className="h-7 lg:h-9 w-auto max-w-[90px] lg:max-w-[110px] object-contain"
                 loading="eager"
               />
