@@ -1,0 +1,449 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Was kostet ein Laborcontainer? Preise, Kostenfaktoren und Beispielrechnungen 2026",
+  "description": "Vollständige Preisübersicht für Laborcontainer 2026: acht Kostenblöcke, drei Beispielrechnungen (Standard, BSL-2, GMP-Reinraum), Miete vs. Kauf vs. Mietkauf, versteckte Kosten und die 14-Punkte-Angebotsvergleichscheckliste.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/team/sven-biewald", "jobTitle": "Geschäftsführer", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-05-28",
+  "dateModified": "2026-05-28",
+  "image": "https://planexus.de/magazin/laborcontainer-kosten-preise-hero.png",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/Planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/magazin/laborcontainer-kosten-preise-2026" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/magazin" },
+    { "@type": "ListItem", "position": 3, "name": "Laborcontainer Kosten & Preise 2026", "item": "https://planexus.de/magazin/laborcontainer-kosten-preise-2026" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Was kostet ein Laborcontainer pro Monat zur Miete?", "acceptedAnswer": { "@type": "Answer", "text": "Die Monatsmiete für ein 20-Fuß-Standard-Laborcontainermodul (rund 14 m²) liegt 2026 im Bereich von 750 bis 1.400 Euro netto bei einer Mindestmietdauer von zwölf Monaten. Ein 30-m²-Standardlabor kostet 1.300 bis 2.200 Euro pro Monat. Ein BSL-2-Modul liegt bei 2.200 bis 3.800 Euro pro Monat, ein GMP-Reinraum nach ISO 14644 Klasse 7 bei 4.500 bis 7.500 Euro pro Monat. Die Spannen erklären sich durch Mietdauer, Ausstattungsklasse, HLK-Auslegung und regionale Logistikkosten. Einmalkosten für An- und Abtransport, Aufstellung per Mobilkran, Bodenplatte und Anschlüsse kommen separat hinzu und liegen typischerweise zwischen 8.000 und 35.000 Euro je nach Aufstellsituation." } },
+    { "@type": "Question", "name": "Was kostet ein Laborcontainer zum Kauf?", "acceptedAnswer": { "@type": "Answer", "text": "Kaufpreise für Laborcontainer 2026: Ein 20-Fuß-Standard-Laborcontainer kostet zwischen 38.000 und 65.000 Euro netto in der Grundausstattung. Ein 30-m²-Standardlabor mit zwei gekoppelten Modulen liegt bei 72.000 bis 110.000 Euro. Ein BSL-2-Modul mit HLK-Filterstufen H13, Schleuse und Notentlüftung kostet 95.000 bis 165.000 Euro. Ein GMP-Reinraum-Modul ISO 7 mit Bauteilen nach EU-GMP-Annex 1 liegt bei 180.000 bis 320.000 Euro pro 30-m²-Einheit. Hinzu kommen Logistik, Aufstellung, Fundament und Anschlüsse als Einmalkosten zwischen 15.000 und 45.000 Euro – diese fallen beim Kauf identisch an wie bei der Miete." } },
+    { "@type": "Question", "name": "Lohnt sich Miete oder Kauf bei einem Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Die wirtschaftliche Faustregel: Bis 24 Monate Nutzungsdauer ist Miete fast immer günstiger, ab 48 Monaten dauerhafter Nutzung rechnet sich der Kauf, dazwischen liegt die Entscheidungszone in der Mietkauf eine valide Alternative ist. Konkret: Ein BSL-2-Modul mit 36 Monatsmieten zu 2.800 Euro kostet kumuliert 100.800 Euro – damit liegen Sie unter dem Kaufpreis von 130.000 Euro, behalten aber alle Flexibilitätsvorteile (Rückgabe, Skalierung, kein Restwertrisiko). Über 60 Monate kehrt sich das Verhältnis um. Entscheidend sind nicht nur die Mietraten, sondern auch Kapitalbindung, Abschreibungsdauer nach AfA-Tabelle (10–15 Jahre für betriebliche Bauten) und der voraussichtliche Wiederverkaufswert bei Kauf." } },
+    { "@type": "Question", "name": "Welche Einmalkosten kommen zur Containermiete oder zum Kauf hinzu?", "acceptedAnswer": { "@type": "Answer", "text": "Fünf Einmalkostenblöcke fallen bei jedem Laborcontainer-Projekt zusätzlich an: Erstens An- und Abtransport per Tieflader, abhängig von Entfernung und Modulanzahl, typischerweise 1.500 bis 4.500 Euro pro Modul je Fahrt. Zweitens Aufstellung per Mobilkran (40-Tonner bis 80-Tonner), 1.800 bis 5.500 Euro pro Aufstellungstag inklusive Verkehrssicherung nach RSA 21. Drittens Fundament: Punktfundamente nach DIN 1054 ab 3.500 Euro, Bodenplatte für GMP-Aufstellung 8.000 bis 25.000 Euro je nach Größe und Baugrund. Viertens Medienanschluss: Strom bis 250 A je Modul, Trinkwasser nach DIN 1988, Abwasser nach DIN 1986-100, Datennetz – kombiniert 4.000 bis 18.000 Euro abhängig von Leitungslängen. Fünftens Genehmigungs- und Planungskosten: Statiknachweis, Bauantrag oder Anzeige, ggf. GenTG- oder Strahlenschutzgenehmigung, 2.500 bis 12.000 Euro. Summe: realistisch 13.000 bis 65.000 Euro Einmalkosten pro Projekt." } },
+    { "@type": "Question", "name": "Welche versteckten Kosten werden in günstigen Angeboten oft weggelassen?", "acceptedAnswer": { "@type": "Answer", "text": "Sieben Posten verschwinden regelmäßig aus Discount-Angeboten und tauchen erst auf der Rechnung wieder auf. Erstens Rückbaukosten am Mietende (Demontage, Abtransport, Wiederherstellung der Aufstellfläche): 3.000 bis 8.000 Euro pro Modul. Zweitens Stromverbrauch der HLK rund um die Uhr: Ein BSL-2-Modul zieht ganzjährig 8 bis 15 kW dauerlast, das sind bei 0,32 Euro/kWh rund 22.000 bis 42.000 Euro Stromkosten pro Jahr. Drittens Filterwechsel HEPA H13/H14 alle 12 bis 24 Monate, 800 bis 2.500 Euro pro Filter. Viertens Re-Qualifizierung nach Standortwechsel (IQ/OQ/PQ), 4.000 bis 18.000 Euro je Analytikgerät. Fünftens Versicherung (Allgefahrendeckung) für gemietete Container, oft 0,8 bis 1,5 Prozent des Wiederbeschaffungswertes jährlich. Sechstens Wartungspauschalen für HLK, Filter, Brandmeldeanlage – häufig nicht in der Grundmiete enthalten. Siebtens Index-Klauseln: Mietraten steigen während der Laufzeit nach VPI oder einem fest vereinbarten Eskalationssatz. Wer diese sieben Posten im Angebot nicht aufgeführt sieht, vergleicht Äpfel mit Birnen." } },
+    { "@type": "Question", "name": "Wie hoch sind die Kosten für einen GMP-Reinraum-Container nach Annex 1?", "acceptedAnswer": { "@type": "Answer", "text": "GMP-Reinraum-Container nach EU-GMP-Annex 1 (gültig seit August 2023) sind die teuerste Container-Ausstattungsklasse, weil sie Druckkaskade, HEPA-Endfilter, Schleusenkonzept, Materialschleuse, kontaminationsarme Oberflächen und vollständige Validierungsdokumentation erfordern. Konkrete Preise 2026 für eine 30-m²-Einheit ISO-Klasse 7: Kauf 180.000 bis 320.000 Euro, Miete 4.500 bis 7.500 Euro pro Monat bei 24 Monaten Mindestmietdauer. ISO-Klasse 8 liegt etwa 25 Prozent darunter, ISO-Klasse 5 (LAF-Bereich) etwa 40 bis 60 Prozent darüber. Hinzu kommen Validierungskosten nach Annex 15 (DQ/IQ/OQ/PQ-Dokumentation, Druckkaskade-Messung nach ISO 14644-3) von 18.000 bis 45.000 Euro Einmalaufwand. Ohne durchgängige GMP-Dokumentation ist der Container für die regulierte Pharma-Produktion oder Arzneimittelprüfung nicht einsatzfähig – das ist der teuerste Posten, der in vielen Angeboten unterschätzt wird." } },
+    { "@type": "Question", "name": "Welche Förderungen gibt es für Laborcontainer in Deutschland 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Vier Förderwege sind in der Praxis relevant. Erstens Forschungs- und Innovationsförderung des Bundes über BMBF, BMWK und Projektträger (DLR, Jülich, VDI/VDE-IT): Drittmittelprojekte können Containermieten und -käufe als investive Mittel oder als Mietkostenposition abrechnen – sofern projektkostenförderfähig nach Förderrichtlinie. Zweitens Landesförderbanken (NRW.Bank, L-Bank, LfA Bayern, IBB): zinsverbilligte Investitionsdarlehen für Mittelstand und Forschungseinrichtungen, oft mit Tilgungsfreijahren. Drittens EU-Programme Horizon Europe und EIC Accelerator: Forschungslabore und Pilotanlagen sind investive förderfähig, Containerlösungen werden als CAPEX oder OPEX akzeptiert. Viertens KfW-Programme: ERP-Mittelstandskredit, KfW-Klimaschutzoffensive für energieeffiziente Modullabore. Eine Investitionssumme ab 250.000 Euro lohnt fast immer eine Förderprüfung; wir empfehlen die Einbindung des hauseigenen Drittmittelreferats oder eines spezialisierten Beraters in der Vorprojektphase. Der KfW-Effektivzins liegt 2026 für förderfähige Vorhaben rund 1,5 bis 2,5 Prozentpunkte unter dem Marktzins." } },
+    { "@type": "Question", "name": "Wie mache ich Angebote verschiedener Laborcontainer-Anbieter vergleichbar?", "acceptedAnswer": { "@type": "Answer", "text": "Vergleichbarkeit entsteht nur, wenn alle Anbieter exakt die gleichen vierzehn Positionen ausweisen müssen. Diese vierzehn Punkte gehören in jedes Vergleichs-Briefing: 1) Modulanzahl, Innenmaße, Nutzfläche m². 2) Ausstattungsklasse mit Bezug zu Norm (Standard, GLP, GMP-Klasse, BSL-Stufe, ISO 14644 Klasse). 3) HLK-Auslegung kW und Luftwechselrate pro Stunde. 4) Filterstufen F7/F9/H13/H14 und Wartungsintervalle. 5) Stromanschlusswert A je Modul und maximale Dauerlast kW. 6) Wasser- und Abwasseranschluss inkl. Reinwasseraufbereitung wenn nötig. 7) Brandschutz, Sprinkler, Brandmeldeanlage. 8) Mietpreis monatlich netto. 9) Mindestmietdauer und Verlängerungsoptionen mit Preisanpassung. 10) Einmalkosten Anlieferung, Aufstellung, Rückbau. 11) Fundament- und Statikanforderungen mit Lastannahmen kN/m². 12) Validierungs- und Qualifizierungsdokumentation IQ/OQ/PQ. 13) Wartungspauschale und Reaktionszeit bei Störungen. 14) Optional: Wiederverkaufswert oder Rückkaufoption am Mietende. Mit dieser Liste werden Discountanbieter und seriöse Anbieter zum ersten Mal direkt vergleichbar – und teure Überraschungen am Projektende vermieden." } }
+  ]
+};
+---
+
+<Layout
+  title="Was kostet ein Laborcontainer? Preise & Kosten 2026"
+  description="Laborcontainer-Preise 2026 transparent: Miete, Kauf, Mietkauf nach Ausstattungsklasse, alle Einmalkosten, drei Beispielrechnungen, versteckte Kosten und 14-Punkte-Vergleichscheckliste."
+  canonical="/magazin/laborcontainer-kosten-preise-2026"
+  ogImage="/magazin/laborcontainer-kosten-preise-hero.png"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/magazin/laborcontainer-kosten-preise-hero.png')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-400">
+            <ol class="flex flex-wrap items-center gap-2">
+              <li><a href="/" class="hover:text-primary">Start</a></li>
+              <li>›</li>
+              <li><a href="/magazin" class="hover:text-primary">Magazin</a></li>
+              <li>›</li>
+              <li class="text-gray-300">Kosten & Preise 2026</li>
+            </ol>
+          </nav>
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Kosten & Preise</span>
+            <span class="text-gray-400 text-sm">16 Min. Lesezeit</span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Was kostet ein Laborcontainer? Preise, Kostenfaktoren und Beispielrechnungen 2026
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Wer Angebote für Laborcontainer einholt, bekommt selten vergleichbare Zahlen. Diese Seite zeigt die echten Preisspannen 2026 – Miete, Kauf und Mietkauf, aufgeschlüsselt nach Ausstattungsklasse, mit allen acht Kostenblöcken, drei durchgerechneten Beispielprojekten, den sieben versteckten Posten und der vierzehn Punkte umfassenden Angebotsvergleichscheckliste.
+          </p>
+          <div class="flex flex-wrap items-center gap-6 text-sm text-gray-400">
+            <span>28. Mai 2026</span>
+            <span>Sven Biewald, Geschäftsführer Planexus GmbH</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-gray-50 border-b border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-6">Inhaltsverzeichnis</h2>
+          <ol class="grid md:grid-cols-2 gap-3 text-slate-700">
+            <li><a href="#preisspannen" class="hover:text-primary">1. Preisspannen 2026 auf einen Blick</a></li>
+            <li><a href="#kostenbloecke" class="hover:text-primary">2. Die acht Kostenblöcke im Detail</a></li>
+            <li><a href="#miete-kauf-mietkauf" class="hover:text-primary">3. Miete vs. Kauf vs. Mietkauf</a></li>
+            <li><a href="#beispiel-standard" class="hover:text-primary">4. Beispielrechnung 1: Standard 30 m²</a></li>
+            <li><a href="#beispiel-bsl2" class="hover:text-primary">5. Beispielrechnung 2: BSL-2-Modul 60 m²</a></li>
+            <li><a href="#beispiel-gmp" class="hover:text-primary">6. Beispielrechnung 3: GMP-Reinraum ISO 7</a></li>
+            <li><a href="#versteckte-kosten" class="hover:text-primary">7. Die sieben versteckten Kosten</a></li>
+            <li><a href="#vergleichscheckliste" class="hover:text-primary">8. 14-Punkte-Angebotsvergleichscheckliste</a></li>
+            <li><a href="#foerderung" class="hover:text-primary">9. Förderungen und Finanzierung</a></li>
+            <li><a href="#faq" class="hover:text-primary">10. FAQ – die 8 häufigsten Preisfragen</a></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto prose prose-lg prose-slate">
+
+          <h2 id="preisspannen" class="scroll-mt-24">1. Preisspannen 2026 auf einen Blick</h2>
+          <p>
+            Die folgende Tabelle ist der schnellste ehrliche Einstieg, den wir geben können. Sie zeigt aktuelle Marktspannen für 2026 in Deutschland, Österreich und der Schweiz – netto, ohne Einmalkosten für Logistik, Aufstellung und Anschlüsse. Diese fünf Einmalpositionen werden in Kapitel 2 separat aufgeschlüsselt.
+          </p>
+
+          <div class="overflow-x-auto my-8">
+            <table class="w-full border-collapse text-sm">
+              <thead class="bg-slate-900 text-white">
+                <tr>
+                  <th class="p-3 text-left">Ausstattungsklasse</th>
+                  <th class="p-3 text-left">Nutzfläche</th>
+                  <th class="p-3 text-right">Miete pro Monat</th>
+                  <th class="p-3 text-right">Kaufpreis</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr><td class="p-3">Standard Laborcontainer (20 Fuß)</td><td class="p-3">ca. 14 m²</td><td class="p-3 text-right">750 – 1.400 €</td><td class="p-3 text-right">38.000 – 65.000 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Standard Laborcontainer 30 m² (2 Module)</td><td class="p-3">ca. 30 m²</td><td class="p-3 text-right">1.300 – 2.200 €</td><td class="p-3 text-right">72.000 – 110.000 €</td></tr>
+                <tr><td class="p-3">GLP-Labor mit Sicherheitswerkbank</td><td class="p-3">ca. 30 m²</td><td class="p-3 text-right">1.600 – 2.800 €</td><td class="p-3 text-right">85.000 – 135.000 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">BSL-2-Modul (Schleuse, H13-Filter)</td><td class="p-3">ca. 30 m²</td><td class="p-3 text-right">2.200 – 3.800 €</td><td class="p-3 text-right">95.000 – 165.000 €</td></tr>
+                <tr><td class="p-3">BSL-3-Modul (Druckkaskade, Notentlüftung)</td><td class="p-3">ca. 30 m²</td><td class="p-3 text-right">4.800 – 8.500 €</td><td class="p-3 text-right">220.000 – 380.000 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">GMP-Reinraum ISO 7 nach Annex 1</td><td class="p-3">ca. 30 m²</td><td class="p-3 text-right">4.500 – 7.500 €</td><td class="p-3 text-right">180.000 – 320.000 €</td></tr>
+                <tr><td class="p-3">GMP-Reinraum ISO 5 (LAF-Bereich)</td><td class="p-3">ca. 30 m²</td><td class="p-3 text-right">7.500 – 12.000 €</td><td class="p-3 text-right">290.000 – 510.000 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Ex-Schutz-Container ATEX Zone 1/2</td><td class="p-3">ca. 30 m²</td><td class="p-3 text-right">3.800 – 6.500 €</td><td class="p-3 text-right">155.000 – 280.000 €</td></tr>
+              </tbody>
+            </table>
+            <p class="text-xs text-gray-500 mt-2">Alle Preise netto, Stand Mai 2026, exklusive Einmalkosten für An- und Abtransport, Aufstellung, Fundament, Medienanschluss und Genehmigung. Mindestmietdauer 12 Monate, GMP- und BSL-3-Klassen 24 Monate. Quellen: eigene Marktbeobachtung im DACH-Modulbaumarkt; Preisspannen basieren auf realen Angeboten aus 2025/2026.</p>
+          </div>
+
+          <p>
+            Wer eine dieser Tabellenzahlen aus dem Kontext reißt, vergleicht falsch. Die nächste Sektion zeigt, warum die Spannen so breit sind – und welche Hebel die Endsumme tatsächlich bewegen.
+          </p>
+
+          <h2 id="kostenbloecke" class="scroll-mt-24">2. Die acht Kostenblöcke im Detail</h2>
+          <p>
+            Jedes Laborcontainer-Projekt setzt sich aus den gleichen acht Blöcken zusammen, unabhängig davon, ob es sich um ein temporäres Übergangslabor, eine dauerhafte Werkserweiterung oder ein Pilotreinraum-Projekt handelt. Wer einen Block übersieht, baut sich eine Budgetlücke.
+          </p>
+
+          <h3>Block 1 – Containerhülle und Grundausstattung</h3>
+          <p>
+            Stahlrahmenkonstruktion mit Korten- oder feuerverzinktem Stahl, isolierte Sandwich-Paneele mit U-Wert von typischerweise 0,28 bis 0,18 W/m²K, Doppelboden für Medienführung, Kunststoff- oder Linoleum-Bodenbelag mit Hohlkehlenausbildung, abwaschbare Wandverkleidung, Akustikdecke. Diese Hülle macht je nach Klasse 35 bis 55 Prozent des Containerpreises aus. Bei einem 30-m²-Standardmodul entspricht das einem Anteil von 25.000 bis 50.000 Euro am Kaufpreis.
+          </p>
+
+          <h3>Block 2 – Innenausbau und Labormöbel</h3>
+          <p>
+            Laborzeile mit Arbeitsplatte aus Keramik oder chemikalienbeständigem Verbundwerkstoff, Unterschränke mit Sicherheitsfunktion (FWF-Schränke nach DIN EN 14470-1 für brennbare Flüssigkeiten, gegebenenfalls Gasflaschenschränke nach DIN EN 14470-2), Edelstahl- oder PP-Spülbecken, Augennotdusche und Körpernotdusche nach DIN 12899, Spüle mit thermischer Desinfektion bei BSL-Bereichen. Aus dem Wesemann-Verbund liefern wir den kompletten Innenausbau – die Möbelkomponenten erfüllen DIN EN 14056 für die Konstruktion und DIN EN 13150 für die Arbeitsflächen. Anteil am Containerpreis: 15 bis 30 Prozent, also bei einem Standardmodul 12.000 bis 30.000 Euro.
+          </p>
+
+          <h3>Block 3 – HLK und Reinraumtechnik</h3>
+          <p>
+            Hier explodieren die Kosten je nach Anforderung. Standard-Labor reicht mit Split-Klimaanlage 5–8 kW Kühlleistung plus mechanischer Lüftung mit 6- bis 8-fachem Luftwechsel. Eine BSL-2-Lüftung mit H13-Endfilter, Differenzdruck-Überwachung und Luftwechselrate 15 bis 20 pro Stunde kostet 18.000 bis 35.000 Euro mehr. Ein GMP-Reinraum nach ISO 14644 Klasse 7 mit HEPA-Endfilter, Druckkaskade über drei Räume und 25- bis 40-fachem Luftwechsel kostet weitere 35.000 bis 80.000 Euro Aufschlag. Wer hier spart, scheitert an der Validierung – HLK ist der häufigste Grund für Annex-1-Befunde bei Behördenaudits.
+          </p>
+
+          <h3>Block 4 – Sicherheitstechnik</h3>
+          <p>
+            Brandmeldeanlage nach DIN 14675, Sprinklerung nach VdS CEA 4001 oder Gaslöschanlage bei sensiblen Geräten, Notduschen und Augenduschen, Gefahrstoffabsaugung an Sicherheitswerkbänken nach DIN EN 12469, Gasalarm bei brennbaren oder toxischen Gasen, Notlüftung mit redundanter Stromversorgung. Bei BSL-2 kommen Schleuse, autoklavierbare Abluft und Notstromaggregat hinzu, bei BSL-3 zusätzlich Druckwächter mit Alarm, Notabschaltung und Personenschleuse mit Dusche. Sicherheitstechnik-Aufschlag: 8.000 bis 25.000 Euro für GLP, 25.000 bis 75.000 Euro für BSL-2, 80.000 bis 180.000 Euro für BSL-3.
+          </p>
+
+          <h3>Block 5 – Statik, Fundament und Aufstellung</h3>
+          <p>
+            Lastannahmen nach DIN EN 1991 (Eurocode 1), Tragfähigkeit der Aufstellfläche nach DIN 1054 und DIN EN 1997 (Eurocode 7), Schneelastzone, Windzone, Frosttiefe nach DIN EN ISO 13793. Drei Gründungsvarianten dominieren in der Praxis: Punktfundamente aus Betonblöcken ab 3.500 Euro für ein Standardmodul, Streifenfundamente bei mehrgeschossigen Aufbauten 6.000 bis 12.000 Euro, durchgehende Stahlbetonbodenplatte für GMP- und BSL-3-Aufstellung 8.000 bis 25.000 Euro je nach Modulanzahl und Baugrund. Schraubfundamente sparen bei kurzer Mietdauer Zeit und Geld, kommen aber nicht für alle Bodenklassen in Frage. Die Aufstellung per Mobilkran (40-Tonner bei einem Modul, 80-Tonner bei größeren Bauten) kostet 1.800 bis 5.500 Euro pro Aufstellungstag inklusive Verkehrssicherung nach RSA 21 und Hebezeugführer mit Sachkundenachweis nach DGUV Vorschrift 52.
+          </p>
+
+          <h3>Block 6 – Logistik und Anlieferung</h3>
+          <p>
+            Tieflader-Transport ab Werk Albstadt zum Aufstellort. Die Frachtkosten skalieren mit Modulanzahl, Entfernung und Genehmigungspflicht – ab 3,5 m Transportbreite gilt §29 StVZO Sondergenehmigung, ab 4 m sind Begleitfahrzeuge erforderlich, ab 4,5 m oder bei Nachtfahrten polizeiliche Begleitung. Eine realistische Spanne 2026: Hamburg, Berlin oder München ab Albstadt 1.800 bis 3.200 Euro pro Modul, Zürich oder Wien 2.400 bis 4.500 Euro, abgelegene Standorte in Mecklenburg-Vorpommern oder im Hochgebirge 3.500 bis 6.000 Euro. Bei mehreren Modulen ergibt sich ein Fixkostenanteil für die Mobilkrananlieferung pro Aufstellungstag – Bündelung lohnt sich fast immer.
+          </p>
+
+          <h3>Block 7 – Genehmigung und Planung</h3>
+          <p>
+            Statischer Nachweis durch einen Prüfingenieur nach LBO 2.500 bis 6.000 Euro, Bauantrag oder Anzeige nach §63 oder §76 MBO 1.500 bis 4.000 Euro, gegebenenfalls Gen-TG-Anzeige beim Regierungspräsidium bei Sicherheitsstufe S1/S2 nach GenTSV 800 bis 2.500 Euro, Strahlenschutzgenehmigung nach StrlSchG bei radioaktiven Stoffen 1.200 bis 3.500 Euro, immissionsschutzrechtliche Anzeige nach §15 BImSchG bei lufttechnischen Abluftströmen 1.000 bis 2.500 Euro. Planungsleistungen durch Architekt oder TGA-Planer für Medien- und Lüftungsplanung 3.000 bis 12.000 Euro – wir liefern diese Leistungen integriert für jedes Planexus-Projekt.
+          </p>
+
+          <h3>Block 8 – Anschlüsse</h3>
+          <p>
+            Stromhauptanschluss bis 250 A pro Modul nach DIN VDE 0100, oft Anschluss über Baustromverteiler mit FI-Sicherung 30 mA – 1.500 bis 6.000 Euro je nach Leitungslänge und Erdkabel-Aufwand. Trinkwasser nach DIN 1988 Teil 100 mit Systemtrennung Kategorie 5 bei BSL-Bereichen, 800 bis 3.500 Euro. Abwasseranschluss nach DIN 1986-100 mit Probenahmeschacht und gegebenenfalls Neutralisationsanlage 1.200 bis 5.000 Euro. Datenanschluss Glasfaser oder LWL, oft über Mietleitung an Bestand, 500 bis 2.500 Euro Einrichtung plus monatliche Leitungsmiete. Bei längeren Strecken kommen Tiefbau und Grabenarbeiten hinzu, die schnell den Anschlusskostenposten verdoppeln können.
+          </p>
+
+          <h2 id="miete-kauf-mietkauf" class="scroll-mt-24">3. Miete vs. Kauf vs. Mietkauf – die Entscheidungsmatrix</h2>
+          <p>
+            Die häufigste Frage, die wir am Telefon hören, ist nicht „Was kostet das?", sondern „Soll ich mieten oder kaufen?". Die ehrliche Antwort hängt an genau vier Variablen: Nutzungsdauer, Kapitalverfügbarkeit, Bilanzierungsanforderung und voraussichtliche technische Halbwertszeit der Ausstattung.
+          </p>
+
+          <div class="overflow-x-auto my-8">
+            <table class="w-full border-collapse text-sm">
+              <thead class="bg-slate-900 text-white">
+                <tr>
+                  <th class="p-3 text-left">Kriterium</th>
+                  <th class="p-3 text-left">Miete</th>
+                  <th class="p-3 text-left">Mietkauf</th>
+                  <th class="p-3 text-left">Kauf</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr><td class="p-3 font-medium">Wirtschaftlich ab Dauer</td><td class="p-3">bis ca. 24 Monate</td><td class="p-3">24 – 48 Monate</td><td class="p-3">ab 48 Monate</td></tr>
+                <tr class="bg-gray-50"><td class="p-3 font-medium">Kapitalbindung</td><td class="p-3">keine</td><td class="p-3">teilweise</td><td class="p-3">voll</td></tr>
+                <tr><td class="p-3 font-medium">Bilanzwirkung</td><td class="p-3">OPEX, sofort abzugsfähig</td><td class="p-3">CAPEX teilweise</td><td class="p-3">CAPEX, AfA 10–15 Jahre</td></tr>
+                <tr class="bg-gray-50"><td class="p-3 font-medium">Skalierbarkeit</td><td class="p-3">hoch (Module zuziehen/zurückgeben)</td><td class="p-3">mittel</td><td class="p-3">niedrig</td></tr>
+                <tr><td class="p-3 font-medium">Restwertrisiko</td><td class="p-3">keines</td><td class="p-3">vertraglich geregelt</td><td class="p-3">voll beim Käufer</td></tr>
+                <tr class="bg-gray-50"><td class="p-3 font-medium">Wartung &amp; Service</td><td class="p-3">im Mietpreis enthalten</td><td class="p-3">teils enthalten</td><td class="p-3">eigene Sache</td></tr>
+                <tr><td class="p-3 font-medium">Typische Anwender</td><td class="p-3">Forschungsprojekte, Sanierungen, Kampagnen</td><td class="p-3">Pilotanlagen, mittlere Projekte</td><td class="p-3">dauerhafte Werkserweiterung</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            Die Praxis-Faustregel, die wir Bauherren seit Jahren mitgeben: Multiplizieren Sie die Monatsmiete mit der voraussichtlichen Nutzungsdauer in Monaten. Liegt das Ergebnis unter 70 Prozent des Kaufpreises, mieten Sie. Liegt es über 110 Prozent, kaufen Sie. Dazwischen lohnt das Mietkaufmodell mit verrechneten Mietraten und einem Restkaufpreis am Vertragsende – das macht den späteren Wechsel von der Brückenlösung zur Dauerausstattung ohne doppelte Investition möglich.
+          </p>
+
+          <h2 id="beispiel-standard" class="scroll-mt-24">4. Beispielrechnung 1: Standard-Labor 30 m² für 24 Monate</h2>
+          <p>
+            Ausgangssituation: Ein mittelständisches Industrieunternehmen in der Nähe von Stuttgart benötigt für eine Werkserweiterung ein Übergangs-Analytik-Labor. Anforderung: 30 m² Nutzfläche, Standard-Laborzeile, einfache Klimatisierung, normaler Stromanschluss. Mietdauer: 24 Monate. Standort: A8-Anbindung, befestigter Werkparkplatz, Anschluss an Bestandsmedien innerhalb 25 m verfügbar.
+          </p>
+
+          <div class="overflow-x-auto my-8">
+            <table class="w-full border-collapse text-sm">
+              <thead class="bg-slate-900 text-white">
+                <tr><th class="p-3 text-left">Position</th><th class="p-3 text-right">Kosten netto</th></tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr><td class="p-3">Miete 24 × 1.750 €/Monat (Standard 30 m²)</td><td class="p-3 text-right">42.000 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Anlieferung Tieflader 2 Module Albstadt → Stuttgart</td><td class="p-3 text-right">3.600 €</td></tr>
+                <tr><td class="p-3">Mobilkran 1 Aufstellungstag</td><td class="p-3 text-right">2.400 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Punktfundamente DIN 1054 (6 Punkte)</td><td class="p-3 text-right">4.200 €</td></tr>
+                <tr><td class="p-3">Strom-, Wasser-, Abwasseranschluss 25 m</td><td class="p-3 text-right">6.500 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Datenanschluss Glasfaser an Bestand</td><td class="p-3 text-right">1.200 €</td></tr>
+                <tr><td class="p-3">Statiknachweis, Anzeige §63 LBO</td><td class="p-3 text-right">4.500 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Abtransport und Rückbau am Mietende</td><td class="p-3 text-right">5.800 €</td></tr>
+                <tr class="font-bold"><td class="p-3">Gesamt 24 Monate</td><td class="p-3 text-right">70.200 €</td></tr>
+                <tr class="bg-primary/10 font-bold"><td class="p-3">Effektive Monatsbelastung</td><td class="p-3 text-right">2.925 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            Zum Vergleich: Der Kauf des gleichen Moduls läge bei 92.000 Euro plus 14.000 Euro Einmalkosten – über die 24 Monate Nutzung wäre der Mietweg um rund 36.000 Euro günstiger, selbst nach Rückbau. Erst bei einer Nutzungsdauer von 56 Monaten würde der Kauf billiger werden (ohne Berücksichtigung von Kapitalbindung und Restwert).
+          </p>
+
+          <h2 id="beispiel-bsl2" class="scroll-mt-24">5. Beispielrechnung 2: BSL-2-Modul 60 m² Kauf für Hochschule</h2>
+          <p>
+            Ausgangssituation: Eine Universitätsklinik benötigt für ein dauerhaftes Forschungsvorhaben (Förderdauer 10 Jahre) ein BSL-2-Labor mit 60 m² Nutzfläche, Schleuse, H13-Filterung, Sicherheitswerkbank, autoklavierbarer Abluft. Standort: Klinikgelände mit Bodenplatte aus laufender Sanierung verfügbar.
+          </p>
+
+          <div class="overflow-x-auto my-8">
+            <table class="w-full border-collapse text-sm">
+              <thead class="bg-slate-900 text-white">
+                <tr><th class="p-3 text-left">Position</th><th class="p-3 text-right">Investition netto</th></tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr><td class="p-3">BSL-2-Modul 60 m² (4 Module gekoppelt) Kauf</td><td class="p-3 text-right">285.000 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Anlieferung 4 Module + Mobilkran 2 Tage</td><td class="p-3 text-right">18.500 €</td></tr>
+                <tr><td class="p-3">Anschluss Strom 400 A, Wasser, Abwasser, Daten</td><td class="p-3 text-right">14.200 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Statik, Bauantrag §63 LBO, GenTG-Anzeige S1</td><td class="p-3 text-right">9.800 €</td></tr>
+                <tr><td class="p-3">IQ/OQ/PQ-Validierung BSL-2-Lüftung</td><td class="p-3 text-right">12.500 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Erstinbetriebnahme, Schulung, Dokumentation</td><td class="p-3 text-right">6.200 €</td></tr>
+                <tr class="font-bold"><td class="p-3">Investitionssumme gesamt</td><td class="p-3 text-right">346.200 €</td></tr>
+                <tr class="bg-primary/10 font-bold"><td class="p-3">AfA-Belastung pro Jahr (15 Jahre linear)</td><td class="p-3 text-right">23.080 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            Über 10 Jahre Förderdauer entspricht das einer kalkulatorischen Monatsbelastung von 1.923 Euro reinen Abschreibungen, plus rund 32.000 Euro jährliche Betriebskosten (HLK-Strom, Filterwechsel, Wartung, Versicherung) – also 4.589 Euro effektiver Monatsbelastung. Dem stünde eine 120-monatige Miete von rund 3.200 Euro × 120 = 384.000 Euro gegenüber – plus die gleichen Betriebskosten. Über diese Laufzeit ist der Kauf wirtschaftlich überlegen.
+          </p>
+
+          <h2 id="beispiel-gmp" class="scroll-mt-24">6. Beispielrechnung 3: GMP-Reinraum ISO 7 für Pharma-Pilotanlage Mietkauf</h2>
+          <p>
+            Ausgangssituation: Ein Biotech-Unternehmen benötigt für eine zweijährige klinische Pilotproduktion einen GMP-Reinraum ISO 7 mit 30 m² Nutzfläche, Druckkaskade, Schleuse, vollständiger Annex-1-Dokumentation. Nach erfolgreicher klinischer Phase soll die Anlage übernommen und am Standort dauerhaft genutzt werden – klassischer Mietkauf-Fall.
+          </p>
+
+          <div class="overflow-x-auto my-8">
+            <table class="w-full border-collapse text-sm">
+              <thead class="bg-slate-900 text-white">
+                <tr><th class="p-3 text-left">Position</th><th class="p-3 text-right">Kosten netto</th></tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr><td class="p-3">Mietkauf-Raten 24 × 5.800 €/Monat (anrechenbar 50 %)</td><td class="p-3 text-right">139.200 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Restkaufpreis nach 24 Monaten (50 % von 250.000 €)</td><td class="p-3 text-right">125.000 €</td></tr>
+                <tr><td class="p-3">Bodenplatte Stahlbeton (8 × 5 m)</td><td class="p-3 text-right">16.500 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Anlieferung, Aufstellung, Anschlüsse</td><td class="p-3 text-right">22.000 €</td></tr>
+                <tr><td class="p-3">DQ/IQ/OQ/PQ-Validierung Annex 15</td><td class="p-3 text-right">32.000 €</td></tr>
+                <tr class="bg-gray-50"><td class="p-3">Statik, Bauantrag, IMS-Konzept</td><td class="p-3 text-right">8.500 €</td></tr>
+                <tr class="font-bold"><td class="p-3">Gesamt Investition über 24 Monate + Übernahme</td><td class="p-3 text-right">343.200 €</td></tr>
+                <tr class="bg-primary/10 font-bold"><td class="p-3">Ersparnis vs. Sofortkauf</td><td class="p-3 text-right">~ 18.000 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            Der Mietkauf verschiebt 125.000 Euro Investitionssumme in die Zukunft, schafft die Liquidität für die parallel laufende klinische Phase und ermöglicht den Ausstieg bei negativer Studienlage. Genau dafür ist das Modell konstruiert.
+          </p>
+
+          <h2 id="versteckte-kosten" class="scroll-mt-24">7. Die sieben versteckten Kostenpositionen</h2>
+          <p>
+            Sieben Posten verschwinden in Discount-Angeboten regelmäßig – tauchen aber spätestens auf der Schlussrechnung wieder auf. Wer sie kennt, fragt sie aktiv ab und verhindert die böse Überraschung.
+          </p>
+
+          <ol class="list-decimal pl-6 space-y-3">
+            <li><strong>Rückbau am Mietende:</strong> Demontage, Abtransport, Wiederherstellung der Aufstellfläche – 3.000 bis 8.000 Euro pro Modul. Häufig nur als Klausel „Rückbau zu Lasten des Mieters" erwähnt, ohne Preisbenennung.</li>
+            <li><strong>HLK-Dauerstrombetrieb:</strong> Ein BSL-2-Modul mit 12 kW HLK-Dauerlast und 0,32 Euro/kWh verursacht 33.600 Euro Stromkosten pro Jahr. Im Mietangebot taucht das nicht auf, im Energieabrechnung der Hochschule schon.</li>
+            <li><strong>Filterwechsel:</strong> HEPA-Endfilter H13 bei BSL-2 wechseln alle 12 bis 24 Monate, 800 bis 2.500 Euro Materialkosten plus 1.500 Euro Service pro Wechsel. ULPA-Filter bei ISO-5-Reinraum entsprechend höher.</li>
+            <li><strong>Re-Qualifizierung nach Standortwechsel:</strong> IQ/OQ/PQ jeder Analytikgerät nach Umzug 4.000 bis 18.000 Euro. Bei akkreditierten Prüfstellen nach DIN EN ISO/IEC 17025 zusätzlich DAkkS-Anzeige.</li>
+            <li><strong>Versicherung:</strong> Allgefahrendeckung für gemietete Container 0,8 bis 1,5 Prozent des Wiederbeschaffungswertes pro Jahr. Bei einem 250.000-Euro-Modul 2.000 bis 3.750 Euro jährlich.</li>
+            <li><strong>Wartungsverträge:</strong> HLK, Filter, Brandmeldeanlage, Notduschen. Häufig nicht in der Grundmiete enthalten, sondern separat 2.000 bis 8.000 Euro pro Jahr.</li>
+            <li><strong>Index-Klauseln:</strong> Mietraten steigen mit dem Verbraucherpreisindex oder einem fest vereinbarten jährlichen Eskalationssatz von 2 bis 4 Prozent. Über 36 Monate macht das schnell 6 bis 12 Prozent Mehrkosten gegenüber dem Startangebot.</li>
+          </ol>
+
+          <h2 id="vergleichscheckliste" class="scroll-mt-24">8. Die 14-Punkte-Angebotsvergleichscheckliste</h2>
+          <p>
+            Vergleichbarkeit entsteht nur, wenn Sie jedem Anbieter die gleiche Punkteliste vorgeben. Diese vierzehn Punkte gehören in jedes Briefing:
+          </p>
+
+          <ol class="list-decimal pl-6 space-y-2">
+            <li>Modulanzahl, Innenmaße L × B × H, Nutzfläche in m²</li>
+            <li>Ausstattungsklasse mit Norm-Referenz (Standard, GLP, GMP-Klasse, BSL-Stufe, ISO 14644 Klasse)</li>
+            <li>HLK-Auslegung in kW und Luftwechselrate pro Stunde</li>
+            <li>Filterstufen F7/F9/H13/H14 und Wartungsintervalle in Monaten</li>
+            <li>Stromanschlusswert in Ampere je Modul und maximale Dauerlast in kW</li>
+            <li>Wasser- und Abwasseranschluss inklusive Reinwasseraufbereitung wenn benötigt</li>
+            <li>Brandschutzkonzept, Sprinkler oder Gaslöschanlage, Brandmeldeanlage</li>
+            <li>Mietpreis monatlich netto inklusive expliziter Auflistung enthaltener Leistungen</li>
+            <li>Mindestmietdauer und Verlängerungsoptionen mit konkreter Preisanpassungsformel</li>
+            <li>Einmalkosten Anlieferung, Aufstellung, Rückbau jeweils gesondert ausgewiesen</li>
+            <li>Fundament- und Statikanforderungen mit Lastannahmen in kN/m²</li>
+            <li>Validierungs- und Qualifizierungsdokumentation IQ/OQ/PQ inklusive Umfang</li>
+            <li>Wartungspauschale und garantierte Reaktionszeit bei Störungen</li>
+            <li>Optional: Wiederverkaufswert oder Rückkaufoption am Mietende mit konkretem Restwertfaktor</li>
+          </ol>
+
+          <p>
+            Mit dieser Liste werden Discountanbieter und seriöse Anbieter zum ersten Mal direkt vergleichbar. Wir bei Planexus liefern jedes Angebot in genau dieser Struktur aus – auf einem Blatt, ohne Sternchen, ohne „nach Aufwand" am Vertragsende.
+          </p>
+
+          <h2 id="foerderung" class="scroll-mt-24">9. Förderungen und Finanzierung 2026</h2>
+          <p>
+            Vier Förderwege sind in der Praxis relevant: Bundes-Forschungsförderung über BMBF, BMWK und Projektträger (DLR, Jülich, VDI/VDE-IT) für Drittmittelprojekte mit investiver Containerförderung. Landesförderbanken NRW.Bank, L-Bank, LfA Bayern, IBB mit zinsverbilligten Investitionsdarlehen und Tilgungsfreijahren. EU-Programme Horizon Europe und EIC Accelerator für Pilotanlagen und Forschungslabore als CAPEX-förderfähig. KfW-Programme wie ERP-Mittelstandskredit und KfW-Klimaschutzoffensive für energieeffiziente Modullabore mit Effektivzinsen rund 1,5 bis 2,5 Prozentpunkte unter dem Marktzins.
+          </p>
+          <p>
+            Eine Investitionssumme ab 250.000 Euro lohnt fast immer eine Förderprüfung – wir empfehlen die Einbindung des hauseigenen Drittmittelreferats oder eines spezialisierten Beraters in der Vorprojektphase. Die Bearbeitungszeit eines KfW-Antrags liegt typischerweise bei sechs bis zwölf Wochen, BMBF-Förderanträge brauchen sechs bis neun Monate – diese Vorlaufzeit muss in den Projektplan einkalkuliert werden.
+          </p>
+
+          <h2 id="faq" class="scroll-mt-24">10. FAQ – die 8 häufigsten Preisfragen</h2>
+
+          <div class="space-y-6 mt-6">
+            <details class="bg-gray-50 p-5 rounded-lg">
+              <summary class="font-bold cursor-pointer text-slate-900">Was kostet ein Laborcontainer pro Monat zur Miete?</summary>
+              <p class="mt-3 text-slate-700">Die Monatsmiete für ein 20-Fuß-Standard-Laborcontainermodul (rund 14 m²) liegt 2026 im Bereich von 750 bis 1.400 Euro netto bei einer Mindestmietdauer von zwölf Monaten. Ein 30-m²-Standardlabor kostet 1.300 bis 2.200 Euro pro Monat. Ein BSL-2-Modul liegt bei 2.200 bis 3.800 Euro pro Monat, ein GMP-Reinraum nach ISO 14644 Klasse 7 bei 4.500 bis 7.500 Euro pro Monat. Einmalkosten für An- und Abtransport, Aufstellung per Mobilkran, Bodenplatte und Anschlüsse kommen separat hinzu und liegen typischerweise zwischen 8.000 und 35.000 Euro je nach Aufstellsituation.</p>
+            </details>
+            <details class="bg-gray-50 p-5 rounded-lg">
+              <summary class="font-bold cursor-pointer text-slate-900">Was kostet ein Laborcontainer zum Kauf?</summary>
+              <p class="mt-3 text-slate-700">Kaufpreise für Laborcontainer 2026: 20-Fuß-Standardcontainer 38.000 bis 65.000 Euro, 30-m²-Standardlabor 72.000 bis 110.000 Euro, BSL-2-Modul 95.000 bis 165.000 Euro, GMP-Reinraum ISO 7 180.000 bis 320.000 Euro pro 30-m²-Einheit. Logistik, Aufstellung, Fundament und Anschlüsse als Einmalkosten zwischen 15.000 und 45.000 Euro kommen hinzu.</p>
+            </details>
+            <details class="bg-gray-50 p-5 rounded-lg">
+              <summary class="font-bold cursor-pointer text-slate-900">Lohnt sich Miete oder Kauf bei einem Laborcontainer?</summary>
+              <p class="mt-3 text-slate-700">Bis 24 Monate Nutzungsdauer ist Miete fast immer günstiger, ab 48 Monaten rechnet sich der Kauf, dazwischen ist Mietkauf eine valide Alternative. Konkret: Ein BSL-2-Modul mit 36 Monatsmieten zu 2.800 Euro kostet kumuliert 100.800 Euro – damit liegen Sie unter dem Kaufpreis von 130.000 Euro, behalten aber alle Flexibilitätsvorteile.</p>
+            </details>
+            <details class="bg-gray-50 p-5 rounded-lg">
+              <summary class="font-bold cursor-pointer text-slate-900">Welche Einmalkosten kommen zur Miete oder zum Kauf hinzu?</summary>
+              <p class="mt-3 text-slate-700">Fünf Einmalkostenblöcke fallen bei jedem Projekt zusätzlich an: An- und Abtransport 1.500–4.500 € pro Modul, Aufstellung per Mobilkran 1.800–5.500 € pro Tag, Fundament ab 3.500 € (Punktfundamente) bis 25.000 € (Bodenplatte GMP), Medienanschluss 4.000–18.000 €, Genehmigung und Planung 2.500–12.000 €. Summe: realistisch 13.000 bis 65.000 Euro pro Projekt.</p>
+            </details>
+            <details class="bg-gray-50 p-5 rounded-lg">
+              <summary class="font-bold cursor-pointer text-slate-900">Welche versteckten Kosten werden in günstigen Angeboten oft weggelassen?</summary>
+              <p class="mt-3 text-slate-700">Sieben Posten: Rückbau (3.000–8.000 € pro Modul), HLK-Stromverbrauch (22.000–42.000 € pro Jahr bei BSL-2), Filterwechsel (800–2.500 €), Re-Qualifizierung (4.000–18.000 € pro Gerät), Versicherung (0,8–1,5 % WBW pro Jahr), Wartungsverträge (2.000–8.000 € pro Jahr), Index-Klauseln (2–4 % jährlich). Wer diese Posten im Angebot nicht aufgeführt sieht, vergleicht Äpfel mit Birnen.</p>
+            </details>
+            <details class="bg-gray-50 p-5 rounded-lg">
+              <summary class="font-bold cursor-pointer text-slate-900">Wie hoch sind die Kosten für einen GMP-Reinraum-Container nach Annex 1?</summary>
+              <p class="mt-3 text-slate-700">GMP-Reinraum 30 m² ISO Klasse 7: Kauf 180.000–320.000 €, Miete 4.500–7.500 € pro Monat bei 24 Monaten Mindestmietdauer. ISO 8 etwa 25 % darunter, ISO 5 (LAF) 40–60 % darüber. Validierungskosten nach Annex 15 (DQ/IQ/OQ/PQ) zusätzlich 18.000–45.000 € Einmalaufwand. Ohne durchgängige GMP-Dokumentation ist der Container für regulierte Pharma-Produktion nicht einsatzfähig.</p>
+            </details>
+            <details class="bg-gray-50 p-5 rounded-lg">
+              <summary class="font-bold cursor-pointer text-slate-900">Welche Förderungen gibt es für Laborcontainer in Deutschland 2026?</summary>
+              <p class="mt-3 text-slate-700">Vier Wege: BMBF/BMWK-Forschungsförderung (Drittmittel investiv), Landesförderbanken NRW.Bank/L-Bank/LfA/IBB (zinsverbilligte Darlehen), EU Horizon Europe und EIC Accelerator (CAPEX-Förderung), KfW-Programme (Mittelstandskredit, Klimaschutzoffensive). Effektivzins bei KfW 1,5–2,5 Prozentpunkte unter Marktzins. Ab 250.000 € Investitionssumme lohnt fast immer eine Förderprüfung.</p>
+            </details>
+            <details class="bg-gray-50 p-5 rounded-lg">
+              <summary class="font-bold cursor-pointer text-slate-900">Wie mache ich Angebote verschiedener Laborcontainer-Anbieter vergleichbar?</summary>
+              <p class="mt-3 text-slate-700">Vorgabe der gleichen vierzehn Positionen an alle Anbieter: Modulanzahl + Maße + m², Ausstattungsklasse mit Norm, HLK kW + Luftwechsel, Filterstufen + Wartung, Stromanschluss A + Dauerlast kW, Wasser/Abwasser/Reinwasser, Brandschutz, Mietpreis monatlich netto, Mindestmietdauer + Verlängerung, Einmalkosten gesondert, Fundament/Statik kN/m², Validierungsdokumentation IQ/OQ/PQ, Wartung + Reaktionszeit, optional Rückkaufoption. Erst dann sind Anbieter direkt vergleichbar.</p>
+            </details>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Konkretes Preisangebot für Ihr Projekt</h2>
+          <p class="text-lg text-gray-300 mb-8">
+            Beschreiben Sie uns kurz Anwendung, Modulgröße und gewünschte Mietdauer – Sie erhalten innerhalb von 48 Stunden ein vollständig aufgeschlüsseltes Angebot in der vierzehn-Punkte-Struktur aus diesem Artikel. Keine Pauschalen. Keine Sternchen.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/kontakt" class="inline-block bg-primary text-slate-900 px-8 py-4 rounded-lg font-bold hover:bg-primary/90 transition">Angebot anfordern</a>
+            <a href="tel:+4974319379960" class="inline-block border border-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-slate-900 transition">+49 7431 9379960</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-gray-50 border-t border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="flex-shrink-0 w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center">
+              <span class="text-3xl font-bold text-primary">SB</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Sven Biewald</h3>
+              <p class="text-slate-600 mb-3">Geschäftsführer Planexus GmbH</p>
+              <p class="text-slate-700">
+                Seit über 25 Jahren im Modulbau und Laborbau aktiv. Verantwortet bei Planexus die Projektkalkulation für Forschungslabore, Pharmaproduktion und mobile Diagnostik – von der ersten Bedarfsklärung bis zum schlüsselfertigen GMP-Container. Mitglied im Wesemann-Holding-Verbund.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-6">Verwandte Fachartikel</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <a href="/magazin/laborcontainer-mieten-oder-kaufen" class="block p-5 bg-gray-50 rounded-lg hover:bg-primary/5 transition">
+              <h3 class="font-bold text-slate-900 mb-2">Mieten oder kaufen?</h3>
+              <p class="text-sm text-slate-600">Vorteile und Nachteile im qualitativen Vergleich – mit Entscheidungshilfe.</p>
+            </a>
+            <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="block p-5 bg-gray-50 rounded-lg hover:bg-primary/5 transition">
+              <h3 class="font-bold text-slate-900 mb-2">Genehmigung und Baurecht</h3>
+              <p class="text-sm text-slate-600">MBO, LBO, GenTG, BImSchG – die Genehmigungspfade im Überblick.</p>
+            </a>
+            <a href="/magazin/laborcontainer-aufstellung-bodenplatte-statik" class="block p-5 bg-gray-50 rounded-lg hover:bg-primary/5 transition">
+              <h3 class="font-bold text-slate-900 mb-2">Aufstellung, Bodenplatte, Statik</h3>
+              <p class="text-sm text-slate-600">Eurocode 0/1/7, DIN 1054, Fundamentvarianten und Kranlogistik.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
