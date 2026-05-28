@@ -4,7 +4,7 @@ import node from '@astrojs/node';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://www.planexus.de',
+  site: 'https://planexus.de',
   trailingSlash: 'never',
   adapter: node({
     mode: 'standalone',
