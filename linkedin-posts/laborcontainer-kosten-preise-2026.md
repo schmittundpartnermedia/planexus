@@ -1,40 +1,38 @@
-# LinkedIn-Post: Laborcontainer Kosten & Preise 2026
+# LinkedIn-Post: Laborcontainer-Kosten – was den Preis wirklich bestimmt
 
 **Veröffentlichungs-Setup (LinkedIn-Algorithmus 2026):**
 - Hook in Zeile 1 (max. 130 Zeichen, vor dem "…mehr anzeigen"-Cutoff)
 - Hero-Bild 16:9 aus `/public/magazin/laborcontainer-kosten-preise-hero.png` als Vorschau-Asset hochladen
-- 4 Hashtags am Ende (algo-optimal 3–5)
-- Externer Link **als ERSTER KOMMENTAR**, nicht im Post selbst (Reichweiten-Boost)
+- 4 Hashtags am Ende
+- Externer Link **als ERSTER KOMMENTAR**, nicht im Post selbst
 - Best-Zeit DACH B2B: Dienstag oder Mittwoch, 7:30 – 9:00 Uhr
 
 ---
 
-## Post-Text (für LinkedIn-Composer kopieren):
+## Post-Text:
 
-Was kostet ein Laborcontainer 2026? Die ehrliche Antwort hat 8 Kostenblöcke – nicht 1.
+Was kostet ein Laborcontainer? Die ehrliche Antwort: Es gibt keinen Listenpreis. Und das ist der Punkt.
 
-Wer Angebote vergleicht, bekommt selten vergleichbare Zahlen. Anbieter A nennt 850 € im Monat, Anbieter B 2.400 €. Beides „Laborcontainer". Beides richtig. Beides falsch verglichen.
+Zwei Projekte mit identischer Quadratmeterzahl können sich im Preis um den Faktor fünf unterscheiden – allein durch unterschiedliche HLK-Auslegung, Sicherheitsstufe und Validierungsanforderungen. Ein 30 m² Standard-Analytiklabor und ein 30 m² GMP-Reinraum nach Annex 1 tragen denselben Sammelbegriff – sind aber komplett unterschiedliche Bauwerke.
 
-Die Wahrheit:
+Wer trotzdem mit Pauschalpreisen wirbt, betrügt entweder sich selbst oder den Bauherrn.
 
-▸ Standard 30 m² Miete: 1.300 – 2.200 €/Monat
-▸ BSL-2-Modul: 2.200 – 3.800 €/Monat
-▸ GMP-Reinraum ISO 7: 4.500 – 7.500 €/Monat
-▸ BSL-3 Druckkaskade: 4.800 – 8.500 €/Monat
+Was wirklich den Preis bestimmt – die acht Kostenblöcke jedes Projekts:
 
-Das sind die Mieten. Dazu kommen 8.000 – 35.000 € einmalig für Logistik, Kran, Fundament und Anschlüsse. Und 7 versteckte Posten, die in Discount-Angeboten regelmäßig fehlen:
+▸ Containerhülle und Grundausstattung
+▸ Innenausbau und Labormöbel (DIN EN 14056, DIN EN 13150)
+▸ HLK und Reinraumtechnik (ISO 14644, Annex 1)
+▸ Sicherheitstechnik (BSL, ATEX, Brandschutz)
+▸ Statik, Fundament, Aufstellung (DIN 1054, Eurocode 7)
+▸ Logistik und Anlieferung (§29 StVZO, RSA 21)
+▸ Genehmigung und Planung (MBO, LBO, GenTG, BImSchG)
+▸ Anschlüsse Strom, Wasser, Abwasser, Daten
 
-1. Rückbau am Mietende (3.000 – 8.000 € pro Modul)
-2. HLK-Dauerstrom (BSL-2 ≈ 33.000 € pro Jahr)
-3. HEPA-Filterwechsel alle 12 – 24 Monate
-4. Re-Qualifizierung nach Standortwechsel (IQ/OQ/PQ)
-5. Allgefahren-Versicherung 0,8 – 1,5 % WBW p.a.
-6. Wartungsverträge HLK + BMA + Notdusche
-7. Index-Klauseln 2 – 4 % jährliche Mietsteigerung
+Plus sieben versteckte Posten, die in Discount-Angeboten regelmäßig fehlen: Rückbau, HLK-Dauerstrom, Filterwechsel, Re-Qualifizierung IQ/OQ/PQ nach Standortwechsel, Allgefahrenversicherung, Wartungsverträge, Index-Klauseln.
 
-Faustregel Miete vs. Kauf: Bis 24 Monate Miete, ab 48 Monaten Kauf, dazwischen Mietkauf. Über 36 Monate kostet BSL-2-Miete (100.800 €) etwa 23 % weniger als Kauf (130.000 €) – aber mit voller Flexibilität.
+Faustregel Miete vs. Kauf: Bis 24 Monate mieten, ab 48 Monaten kaufen, dazwischen Mietkauf. Entscheiden müssen vier Variablen: Nutzungsdauer, Kapitalverfügbarkeit, Bilanzierungsanforderung, technische Halbwertszeit.
 
-Die komplette Preisübersicht 2026 mit allen 8 Kostenblöcken, 3 durchgerechneten Beispielprojekten (Standard / BSL-2 / GMP) und der 14-Punkte-Vergleichscheckliste habe ich für Bauherren, Einkäufer und Forschungsleiter zusammengeschrieben.
+Vergleichbar werden Angebote nur, wenn jeder Anbieter exakt die gleichen 14 Positionen ausweisen muss. Die komplette Checkliste – plus alle acht Kostenblöcke, die Ausstattungsklassen-Matrix, die Mietkauf-Logik und den seriösen Vier-Schritt-Kalkulationsprozess – habe ich für Bauherren, Einkäufer und Forschungsleiter zusammengeschrieben.
 
 Link im ersten Kommentar 👇
 
@@ -42,7 +40,7 @@ Link im ersten Kommentar 👇
 
 ---
 
-## Erster Kommentar (direkt nach Veröffentlichung posten):
+## Erster Kommentar:
 
-Hier die Vollversion mit allen Tabellen, Beispielrechnungen und der Vergleichscheckliste:
+Hier die Vollversion mit allen acht Kostenblöcken, der Ausstattungsklassen-Matrix und der 14-Punkte-Vergleichscheckliste:
 https://planexus.de/magazin/laborcontainer-kosten-preise-2026
