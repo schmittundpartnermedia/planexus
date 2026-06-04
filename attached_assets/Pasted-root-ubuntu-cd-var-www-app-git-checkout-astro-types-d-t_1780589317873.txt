@@ -1,0 +1,174 @@
+root@ubuntu:~# cd /var/www/app && git checkout -- .astro/types.d.ts && git pull && npm run build && pm2 restart planexus --update-env
+Already up to date.
+
+> rest-express@1.0.0 build
+> astro build
+
+16:07:27 [@astrojs/node] Enabling sessions with filesystem storage
+16:07:28 [content] Syncing content
+16:07:28 [content] Synced content
+16:07:28 [types] Generated 62ms
+16:07:28 [build] output: "static"
+16:07:28 [build] mode: "server"
+16:07:28 [build] directory: /var/www/app/dist/
+16:07:28 [build] adapter: @astrojs/node
+16:07:28 [build] Collecting build info...
+16:07:28 [build] ✓ Completed in 165ms.
+16:07:28 [build] Building server entrypoints...
+16:07:34 [WARN] [vite] "gt" is imported from external module "drizzle-orm" but never used in "src/pages/api/admin/messages.ts" and "src/pages/api/admin/login.ts".
+16:07:34 [vite] ✓ built in 6.16s
+16:07:34 [build] ✓ Completed in 6.29s.
+
+ building client (vite) 
+16:07:38 [vite] ✓ 2184 modules transformed.
+16:07:39 [vite] dist/client/_astro/Map.CIGW-MKW.css               15.61 kB │ gzip:  6.46 kB
+16:07:39 [vite] dist/client/_astro/ContactForm.bjTCsgVU.js         0.14 kB │ gzip:  0.13 kB
+16:07:39 [vite] dist/client/_astro/jsx-runtime.D_zvdyIk.js         0.73 kB │ gzip:  0.46 kB
+16:07:39 [vite] dist/client/_astro/index.BL2HOGcR.js               3.89 kB │ gzip:  1.52 kB
+16:07:39 [vite] dist/client/_astro/ContactForm.9qwyERSt.js         4.91 kB │ gzip:  1.77 kB
+16:07:39 [vite] dist/client/_astro/index.7in8nkh5.js               7.98 kB │ gzip:  3.10 kB
+16:07:39 [vite] dist/client/_astro/ProjekteGallery.D0LiWdX-.js     8.13 kB │ gzip:  2.46 kB
+16:07:39 [vite] dist/client/_astro/AdminPanel.jfDTtBxI.js          9.00 kB │ gzip:  2.89 kB
+16:07:39 [vite] dist/client/_astro/AnimatedGlobe.hjyOfIfx.js       9.07 kB │ gzip:  2.88 kB
+16:07:39 [vite] dist/client/_astro/Navbar.CgGAxZ7n.js             14.49 kB │ gzip:  4.54 kB
+16:07:39 [vite] dist/client/_astro/LiquidDistortion.CWfs0-j3.js   60.33 kB │ gzip: 17.12 kB
+16:07:39 [vite] dist/client/_astro/proxy.DTdvDQjZ.js             112.15 kB │ gzip: 36.88 kB
+16:07:39 [vite] dist/client/_astro/Map.Dukma8Qt.js               154.96 kB │ gzip: 45.38 kB
+16:07:39 [vite] dist/client/_astro/client.qQeDOstP.js            182.74 kB │ gzip: 57.61 kB
+16:07:39 [vite] ✓ built in 4.55s
+
+ prerendering static routes 
+16:07:39 ▶ src/pages/404.astro
+16:07:39   └─ /404.html (+29ms) 
+16:07:39 ▶ src/pages/branchen/bildung.astro
+16:07:39   └─ /branchen/bildung/index.html (+9ms) 
+16:07:39 ▶ src/pages/branchen/energiewende-h2-batterie.astro
+16:07:39   └─ /branchen/energiewende-h2-batterie/index.html (+7ms) 
+16:07:39 ▶ src/pages/branchen/forschung-hochschule.astro
+16:07:39   └─ /branchen/forschung-hochschule/index.html (+5ms) 
+16:07:39 ▶ src/pages/branchen/industrie-werkstoffpruefung.astro
+16:07:39   └─ /branchen/industrie-werkstoffpruefung/index.html (+6ms) 
+16:07:39 ▶ src/pages/branchen/pharma-biotech.astro
+16:07:39   └─ /branchen/pharma-biotech/index.html (+6ms) 
+16:07:39 ▶ src/pages/branchen/public-health-krisenvorsorge.astro
+16:07:39   └─ /branchen/public-health-krisenvorsorge/index.html (+9ms) 
+16:07:39 ▶ src/pages/branchen/index.astro
+16:07:39   └─ /branchen/index.html (+5ms) 
+16:07:39 ▶ src/pages/datenschutz.astro
+16:07:39   └─ /datenschutz/index.html (+3ms) 
+16:07:39 ▶ src/pages/impressum.astro
+16:07:39   └─ /impressum/index.html (+3ms) 
+16:07:39 ▶ src/pages/kontakt.astro
+16:07:39   └─ /kontakt/index.html (+6ms) 
+16:07:39 ▶ src/pages/laborcontainer/labtogo.astro
+16:07:39   └─ /laborcontainer/labtogo/index.html (+6ms) 
+16:07:39 ▶ src/pages/laborcontainer/index.astro
+16:07:39   └─ /laborcontainer/index.html (+5ms) 
+16:07:39 ▶ src/pages/laborcontainer-basel.astro
+16:07:39   └─ /laborcontainer-basel/index.html (+5ms) 
+16:07:39 ▶ src/pages/laborcontainer-berlin.astro
+16:07:39   └─ /laborcontainer-berlin/index.html (+7ms) 
+16:07:39 ▶ src/pages/laborcontainer-bern.astro
+16:07:39   └─ /laborcontainer-bern/index.html (+5ms) 
+16:07:39 ▶ src/pages/laborcontainer-duesseldorf.astro
+16:07:39   └─ /laborcontainer-duesseldorf/index.html (+5ms) 
+16:07:39 ▶ src/pages/laborcontainer-frankfurt.astro
+16:07:39   └─ /laborcontainer-frankfurt/index.html (+5ms) 
+16:07:39 ▶ src/pages/laborcontainer-graz.astro
+16:07:39   └─ /laborcontainer-graz/index.html (+4ms) 
+16:07:39 ▶ src/pages/laborcontainer-hamburg.astro
+16:07:39   └─ /laborcontainer-hamburg/index.html (+5ms) 
+16:07:39 ▶ src/pages/laborcontainer-linz.astro
+16:07:39   └─ /laborcontainer-linz/index.html (+6ms) 
+16:07:39 ▶ src/pages/laborcontainer-muenchen.astro
+16:07:39   └─ /laborcontainer-muenchen/index.html (+6ms) 
+16:07:39 ▶ src/pages/laborcontainer-stuttgart.astro
+16:07:39   └─ /laborcontainer-stuttgart/index.html (+7ms) 
+16:07:39 ▶ src/pages/laborcontainer-wien.astro
+16:07:39   └─ /laborcontainer-wien/index.html (+5ms) 
+16:07:39 ▶ src/pages/laborcontainer-zuerich.astro
+16:07:39   └─ /laborcontainer-zuerich/index.html (+5ms) 
+16:07:39 ▶ src/pages/leistungen/ausstattung.astro
+16:07:39   └─ /leistungen/ausstattung/index.html (+4ms) 
+16:07:39 ▶ src/pages/leistungen/beratung.astro
+16:07:39   └─ /leistungen/beratung/index.html (+3ms) 
+16:07:39 ▶ src/pages/leistungen/logistik.astro
+16:07:39   └─ /leistungen/logistik/index.html (+4ms) 
+16:07:39 ▶ src/pages/leistungen/modulbau.astro
+16:07:39   └─ /leistungen/modulbau/index.html (+3ms) 
+16:07:39 ▶ src/pages/leistungen/planung.astro
+16:07:39   └─ /leistungen/planung/index.html (+3ms) 
+16:07:39 ▶ src/pages/leistungen/smart-lab.astro
+16:07:39   └─ /leistungen/smart-lab/index.html (+3ms) 
+16:07:39 ▶ src/pages/leistungen/index.astro
+16:07:39   └─ /leistungen/index.html (+4ms) 
+16:07:39 ▶ src/pages/magazin/analytica-2026-rueckblick-labtogo-premiere.astro
+16:07:39   └─ /magazin/analytica-2026-rueckblick-labtogo-premiere/index.html (+3ms) 
+16:07:39 ▶ src/pages/magazin/bsl-2-bsl-3-container-labor.astro
+16:07:39   └─ /magazin/bsl-2-bsl-3-container-labor/index.html (+3ms) 
+16:07:40 ▶ src/pages/magazin/gmp-reinraum-container-pharma-produktion.astro
+16:07:40   └─ /magazin/gmp-reinraum-container-pharma-produktion/index.html (+4ms) 
+16:07:40 ▶ src/pages/magazin/innovation-modulbau-zukunft-mobiles-labor.astro
+16:07:40   └─ /magazin/innovation-modulbau-zukunft-mobiles-labor/index.html (+3ms) 
+16:07:40 ▶ src/pages/magazin/laborcontainer-aufstellung-bodenplatte-statik.astro
+16:07:40   └─ /magazin/laborcontainer-aufstellung-bodenplatte-statik/index.html (+5ms) 
+16:07:40 ▶ src/pages/magazin/laborcontainer-ausstattung-checkliste.astro
+16:07:40   └─ /magazin/laborcontainer-ausstattung-checkliste/index.html (+4ms) 
+16:07:40 ▶ src/pages/magazin/laborcontainer-baustelle-materialpruefung.astro
+16:07:40   └─ /magazin/laborcontainer-baustelle-materialpruefung/index.html (+6ms) 
+16:07:40 ▶ src/pages/magazin/laborcontainer-digitalisierung-lims-iot-remote-monitoring.astro
+16:07:40   └─ /magazin/laborcontainer-digitalisierung-lims-iot-remote-monitoring/index.html (+3ms) 
+16:07:40 ▶ src/pages/magazin/laborcontainer-energiewende-h2-batterie-ex-schutz.astro
+16:07:40   └─ /magazin/laborcontainer-energiewende-h2-batterie-ex-schutz/index.html (+3ms) 
+16:07:40 ▶ src/pages/magazin/laborcontainer-genehmigung-baurecht-vorschriften.astro
+16:07:40   └─ /magazin/laborcontainer-genehmigung-baurecht-vorschriften/index.html (+4ms) 
+16:07:40 ▶ src/pages/magazin/laborcontainer-katastropheneinsatz-krisenreaktion.astro
+16:07:40   └─ /magazin/laborcontainer-katastropheneinsatz-krisenreaktion/index.html (+4ms) 
+16:07:40 ▶ src/pages/magazin/laborcontainer-klimatisierung-lueftung-normen.astro
+16:07:40   └─ /magazin/laborcontainer-klimatisierung-lueftung-normen/index.html (+4ms) 
+16:07:40 ▶ src/pages/magazin/laborcontainer-kosten-preise-2026.astro
+16:07:40   └─ /magazin/laborcontainer-kosten-preise-2026/index.html (+3ms) 
+16:07:40 ▶ src/pages/magazin/laborcontainer-mieten-oder-kaufen.astro
+16:07:40   └─ /magazin/laborcontainer-mieten-oder-kaufen/index.html (+3ms) 
+16:07:40 ▶ src/pages/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe.astro
+16:07:40   └─ /magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe/index.html (+5ms) 
+16:07:40 ▶ src/pages/magazin/nachhaltigkeit-laborbau-energieeffizienz.astro
+16:07:40   └─ /magazin/nachhaltigkeit-laborbau-energieeffizienz/index.html (+3ms) 
+16:07:40 ▶ src/pages/magazin/planexus-analytica-2026-muenchen.astro
+16:07:40   └─ /magazin/planexus-analytica-2026-muenchen/index.html (+3ms) 
+16:07:40 ▶ src/pages/magazin/uebergangslabor-sanierung-mietcontainer.astro
+16:07:40   └─ /magazin/uebergangslabor-sanierung-mietcontainer/index.html (+3ms) 
+16:07:40 ▶ src/pages/magazin.astro
+16:07:40   └─ /magazin/index.html (+3ms) 
+16:07:40 ▶ src/pages/partner.astro
+16:07:40   └─ /partner/index.html (+12ms) 
+16:07:40 ▶ src/pages/projekte.astro
+16:07:40   └─ /projekte/index.html (+6ms) 
+16:07:40 ▶ src/pages/team/sven-biewald.astro
+16:07:40   └─ /team/sven-biewald/index.html (+3ms) 
+16:07:40 ▶ src/pages/team.astro
+16:07:40   └─ /team/index.html (+5ms) 
+16:07:40 ▶ src/pages/ueber-uns/auszeichnungen.astro
+16:07:40   └─ /ueber-uns/auszeichnungen/index.html (+4ms) 
+16:07:40 ▶ src/pages/ueber-uns.astro
+16:07:40   └─ /ueber-uns/index.html (+3ms) 
+16:07:40 ▶ src/pages/index.astro
+16:07:40   └─ /index.html (+5ms) 
+16:07:40 ✓ Completed in 1.13s.
+
+16:07:40 [build] Rearranging server assets...
+16:07:40 [build] Server built in 12.27s
+16:07:40 [build] Complete!
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.16.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.16.0
+npm notice To update run: npm install -g npm@11.16.0
+npm notice
+[PM2] Applying action restartProcessId on app [planexus](ids: [ 0 ])
+[PM2] [planexus](0) ✓
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ planexus           │ fork     │ 83   │ online    │ 0%       │ 19.4mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+root@ubuntu:/var/www/app# 
