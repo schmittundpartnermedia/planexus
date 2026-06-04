@@ -15,15 +15,15 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Laborcontainer für Bildung, Schule und Berufsschule",
-  "provider": { "@type": "Organization", "name": "Planexus GmbH", "image": "https://www.planexus.de/android-chrome-512x512.png", "url": "https://www.planexus.de", "telephone": "+49 7435 7519 700", "email": "info@planexus.de", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt", "postalCode": "72459", "addressCountry": "DE" }, "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" } },
+  "provider": { "@type": "Organization", "name": "Planexus GmbH", "image": "https://planexus.de/android-chrome-512x512.png", "url": "https://planexus.de", "telephone": "+49 7435 7519 700", "email": "info@planexus.de", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt", "postalCode": "72459", "addressCountry": "DE" }, "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" } },
   "areaServed": [{ "@type": "Country", "name": "Germany" }, { "@type": "Country", "name": "Switzerland" }, { "@type": "Country", "name": "Austria" }],
   "audience": { "@type": "BusinessAudience", "audienceType": "Schulträger, Berufsschulen, Fachhochschulen, BTA-/CTA-/MTA-Schulen, MINT-Förderschulen, Schulbaubehörden" },
   "description": "GefStoffV-konforme Schul-Laborcontainer nach RiSU-Empfehlung der KMK, Übergangslabore während GEG-/Brandschutz-Sanierung, BTA/CTA/MTA-Ausbildungslabore, MINT-Lehrlabor mit DGUV V3 und Notfall-Infrastruktur."
 };
 const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-  { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
-  { "@type": "ListItem", "position": 2, "name": "Branchen", "item": "https://www.planexus.de/branchen" },
-  { "@type": "ListItem", "position": 3, "name": "Bildung", "item": "https://www.planexus.de/branchen/bildung" }
+  { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/" },
+  { "@type": "ListItem", "position": 2, "name": "Branchen", "item": "https://planexus.de/branchen" },
+  { "@type": "ListItem", "position": 3, "name": "Bildung", "item": "https://planexus.de/branchen/bildung" }
 ]};
 const faqSchema = {
   "@context": "https://schema.org",
@@ -38,7 +38,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Wie sind Schul-Container gegen Vandalismus und Einbruch geschützt?", "acceptedAnswer": { "@type": "Answer", "text": "Standard-Schulcontainer haben einbruchhemmende Türen RC2 nach DIN EN 1627, vergitterte Fenster RC2 oder mit einbruchhemmender Verbund-Verglasung P4A, Bewegungsmelder und Aufschaltung an die Schul-Alarmanlage oder Wachfirma. Die kommunale Sachversicherung verlangt typischerweise mindestens RC2 für Schul-Räume mit Wertgegenständen (Mikroskope, Notebooks). Für Standorte mit erhöhtem Vandalismus-Risiko (Brennpunkt-Schulen, freie Flächen mit Nachtaufenthalt) liefern wir RC3-Türen, beschichtete Verbund-Glaser P5A, Außenleuchten mit Bewegungsmelder und Video-Überwachung mit DSGVO-konformer Aufzeichnung. Pro Container etwa 2.000-4.000 Euro Mehraufpreis – wirtschaftlich, weil ein einziger Einbruch die Mehrkosten um Faktor 5-10 übersteigt." } }
   ]
 };
-const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Laborcontainer Bildung & Schulen – RiSU, GUV-SR 2003", "description": "Schul- und Bildungs-Laborcontainer für Chemie, Biologie, Physik. RiSU-konform, DGUV 202-058, BTA/CTA-Praktikum, MINT-Module für 12-36 Monate.", "image": "https://www.planexus.de/opengraph.jpg", "datePublished": "2026-05-02", "dateModified": "2026-05-02", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer Planexus GmbH", "url": "https://www.planexus.de/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://www.planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.planexus.de/branchen/bildung"}, "about": "Schul- und Bildungs-Laborcontainer", "inLanguage": "de-DE"};
+const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Laborcontainer Bildung & Schulen – RiSU, GUV-SR 2003", "description": "Schul- und Bildungs-Laborcontainer für Chemie, Biologie, Physik. RiSU-konform, DGUV 202-058, BTA/CTA-Praktikum, MINT-Module für 12-36 Monate.", "image": "https://planexus.de/opengraph.jpg", "datePublished": "2026-05-02", "dateModified": "2026-05-02", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer Planexus GmbH", "url": "https://planexus.de/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://planexus.de/branchen/bildung"}, "about": "Schul- und Bildungs-Laborcontainer", "inLanguage": "de-DE"};
 ---
 <Layout title={title} description={description} canonical={canonical} ogImage={ogImage} schema={serviceSchema}>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

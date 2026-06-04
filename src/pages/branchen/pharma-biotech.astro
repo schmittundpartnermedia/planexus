@@ -18,8 +18,8 @@ const serviceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Planexus GmbH",
-    "image": "https://www.planexus.de/android-chrome-512x512.png",
-    "url": "https://www.planexus.de",
+    "image": "https://planexus.de/android-chrome-512x512.png",
+    "url": "https://planexus.de",
     "telephone": "+49 7435 7519 700",
     "email": "info@planexus.de",
     "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt", "postalCode": "72459", "addressCountry": "DE" },
@@ -41,9 +41,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.planexus.de/" },
-    { "@type": "ListItem", "position": 2, "name": "Branchen", "item": "https://www.planexus.de/branchen" },
-    { "@type": "ListItem", "position": 3, "name": "Pharma & Biotech", "item": "https://www.planexus.de/branchen/pharma-biotech" }
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Branchen", "item": "https://planexus.de/branchen" },
+    { "@type": "ListItem", "position": 3, "name": "Pharma & Biotech", "item": "https://planexus.de/branchen/pharma-biotech" }
   ]
 };
 
@@ -60,7 +60,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Funktionieren Container-Reinräume auch für CDMO und Lohnherstellung?", "acceptedAnswer": { "@type": "Answer", "text": "Insbesondere für CDMO sind modulare Container-Reinräume optimal. Ein CDMO braucht produktspezifische Reinraum-Konfigurationen für jeden Auftrag – mal sterile Abfüllung, mal Lyophilisation, mal HPAPI-Handling, mal Zell- und Gentherapie. Container ermöglichen, dieselbe Werksfläche flexibel zu nutzen: Sie tauschen das Container-Modul aus und haben in 2-3 Wochen eine neue Reinraum-Konfiguration mit erneuter Qualifizierung. Konventioneller Reinraum-Umbau dauert für denselben Effekt 3-6 Monate. Wir bauen CDMO-spezifische Plattformen mit Standard-Schnittstellen (Strom, Druckluft, WFI, gereinigtes Wasser, Stickstoff, Abluft) – jeder neue Container dockt am gleichen Versorgungspunkt an. Diese Plattform-Strategie ist für CDMO der konkrete Wettbewerbsvorteil." } }
   ]
 };
-const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Laborcontainer Pharma & Biotech – GMP, Annex 1, BSL-3", "description": "GMP-konforme Laborcontainer für Pharma- und Biotech-Unternehmen. Annex 1, ISO 14644 Reinraum, BSL-3 BioSafety, qualifizierte Werksabnahme.", "image": "https://www.planexus.de/opengraph.jpg", "datePublished": "2026-05-02", "dateModified": "2026-05-02", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer Planexus GmbH", "url": "https://www.planexus.de/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://www.planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.planexus.de/branchen/pharma-biotech"}, "about": "Pharma- und Biotech-Laborcontainer", "inLanguage": "de-DE"};
+const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Laborcontainer Pharma & Biotech – GMP, Annex 1, BSL-3", "description": "GMP-konforme Laborcontainer für Pharma- und Biotech-Unternehmen. Annex 1, ISO 14644 Reinraum, BSL-3 BioSafety, qualifizierte Werksabnahme.", "image": "https://planexus.de/opengraph.jpg", "datePublished": "2026-05-02", "dateModified": "2026-05-02", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer Planexus GmbH", "url": "https://planexus.de/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://planexus.de/branchen/pharma-biotech"}, "about": "Pharma- und Biotech-Laborcontainer", "inLanguage": "de-DE"};
 ---
 <Layout title={title} description={description} canonical={canonical} ogImage={ogImage} schema={serviceSchema}>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

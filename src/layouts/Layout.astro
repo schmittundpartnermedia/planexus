@@ -14,7 +14,7 @@ interface Props {
 
 const { title, description, canonical, type = 'website', schema, ogImage } = Astro.props;
 const fullTitle = title.includes('Planexus') ? title : `${title} | Planexus GmbH`;
-const siteUrl = 'https://www.planexus.de';
+const siteUrl = 'https://planexus.de';
 
 // Selbst-referenzierender Canonical: Wenn keine canonical-Prop übergeben wurde,
 // Pfad aus Astro.url.pathname ableiten. Trailing-Slash-Normalisierung
@@ -99,7 +99,7 @@ const isDE = !isCH && !isAT;
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Planexus GmbH",
-      "image": "https://www.planexus.de/android-chrome-512x512.png",
+      "image": "https://planexus.de/android-chrome-512x512.png",
       "alternateName": "Planexus",
       "url": siteUrl,
       "logo": `${siteUrl}/android-chrome-512x512.png`,
@@ -126,7 +126,7 @@ const isDE = !isCH && !isAT;
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Planexus GmbH",
-      "image": "https://www.planexus.de/images/labtogo-industrie.webp",
+      "image": "https://planexus.de/images/labtogo-industrie.webp",
       "description": "Spezialist für Laborcontainer und Modulbau",
       "url": siteUrl,
       "priceRange": "€€€",
