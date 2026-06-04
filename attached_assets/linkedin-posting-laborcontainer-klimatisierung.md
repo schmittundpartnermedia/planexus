@@ -22,6 +22,6 @@ Dazu kommt: Die Klimatisierung macht 40 bis 60 % des gesamten Energieverbrauchs 
 
 Den kompletten Praxisleitfaden mit Planungswerten, Normenübersicht, Praxisbeispiel und Checkliste gibt es jetzt in unserem Magazin:
 
-👉 https://www.planexus.de/magazin/laborcontainer-klimatisierung-lueftung-normen
+👉 https://planexus.de/magazin/laborcontainer-klimatisierung-lueftung-normen
 
 #Laborcontainer #Klimatisierung #Lüftung #Laborplanung #DIN19467 #TRGS526 #HEPA #Reinraum #Modulbau #Planexus #Pharma #Biotech #Chemie #Laborlüftung

@@ -5,8 +5,8 @@
 Auf 8 City-Pages wird ein falscher Prop-Name an Layout.astro übergeben (`canonicalUrl=` statt `canonical=`) UND der Wert nutzt die falsche Domain (`https://planexus.de/...` ohne www). Layout.astro erwartet einen Pfad-Only-Wert über den Prop `canonical` und ergänzt die Domain selbst.
 
 Live-Beispiel (verifiziert per curl gegen Production):
-- `/laborcontainer-basel` liefert `canonical="https://www.planexus.de"` (ohne Pfad → falsch)
-- `/laborcontainer-muenchen` liefert `canonical="https://www.planexus.de/laborcontainer-muenchen"` (korrekt)
+- `/laborcontainer-basel` liefert `canonical="https://planexus.de"` (ohne Pfad → falsch)
+- `/laborcontainer-muenchen` liefert `canonical="https://planexus.de/laborcontainer-muenchen"` (korrekt)
 
 ## Referenz: München macht es richtig
 

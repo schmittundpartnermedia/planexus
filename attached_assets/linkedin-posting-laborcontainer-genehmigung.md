@@ -24,6 +24,6 @@ Deshalb haben wir den Praxisleitfaden geschrieben, den es bisher nicht gab:
 Das Fazit: Wer den Prozess kennt und die richtigen Unterlagen vorbereitet, kommt zügig durch. Wer unvorbereitet startet, verliert Monate.
 
 👉 Den kompletten Leitfaden finden Sie in unserem Magazin:
-https://www.planexus.de/magazin/laborcontainer-genehmigung-baurecht-vorschriften
+https://planexus.de/magazin/laborcontainer-genehmigung-baurecht-vorschriften
 
 #Laborcontainer #Baugenehmigung #Baurecht #Modulbau #Labor #Pharma #Biotech #Forschung #Planexus #Laborplanung #BSL2 #BSL3 #Containerlabor

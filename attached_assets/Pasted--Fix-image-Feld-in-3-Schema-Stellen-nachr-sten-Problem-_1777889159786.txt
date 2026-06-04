@@ -38,7 +38,7 @@ Plus die 4 nicht-V4-Stadt-Pages, falls sie ebenfalls ein eigenes LocalBusiness-S
 
 ### 1. Image-Wert festlegen (für alle 3 Schema-Typen)
 
-Verwende: `https://www.planexus.de/android-chrome-512x512.png`
+Verwende: `https://planexus.de/android-chrome-512x512.png`
 
 Begründung: Diese Datei existiert bereits in `public/`, ist quadratisch, hat 512×512 Pixel und eignet sich als Logo-Bild im Schema (Google empfiehlt mindestens 112×112 Pixel, idealerweise quadratisch).
 
@@ -46,7 +46,7 @@ Begründung: Diese Datei existiert bereits in `public/`, ist quadratisch, hat 51
 
 Im Organization-Schema-Objekt (Zeile ~98–123) nach dem `name`-Feld ein `image`-Feld einfügen:
 ```json
-"image": "https://www.planexus.de/android-chrome-512x512.png"
+"image": "https://planexus.de/android-chrome-512x512.png"
 ```
 
 ### 3. image-Feld in Layout.astro LocalBusiness-Schema ergänzen
@@ -69,17 +69,17 @@ Falls eine City-Page-Datei kein eigenes LocalBusiness-Schema enthält (z.B. weil
 - [ ] Layout.astro LocalBusiness-Schema enthält `image`-Feld
 - [ ] Alle 8 V4-City-Pages haben image-Feld in ihrem LocalBusiness-Schema
 - [ ] Bei den 4 nicht-V4-City-Pages (München/Berlin/Hamburg/Stuttgart): falls eigenes LocalBusiness-Schema vorhanden → image ergänzt; falls nicht → im Bericht erwähnt
-- [ ] Image-URL ist überall identisch: `https://www.planexus.de/android-chrome-512x512.png`
+- [ ] Image-URL ist überall identisch: `https://planexus.de/android-chrome-512x512.png`
 - [ ] Build läuft fehlerfrei durch (`npm run build`)
 - [ ] Verifikation per Live-Curl nach Build (Befehl s.u.) zeigt `image`-Feld im HTML
 
 ## Verifikations-Befehl (nach Build, vor Deploy)
 
 ```bash
-curl -s https://www.planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]+"' | head -5
+curl -s https://planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]+"' | head -5
 ```
 
-Erwartung: mindestens 3 Treffer mit `https://www.planexus.de/android-chrome-512x512.png`
+Erwartung: mindestens 3 Treffer mit `https://planexus.de/android-chrome-512x512.png`
 
 ## Nicht ändern
 
@@ -94,6 +94,6 @@ Erwartung: mindestens 3 Treffer mit `https://www.planexus.de/android-chrome-512x
 2. Diff von basel.astro als Beispiel-City-Page
 3. Liste aller geänderten Dateien
 4. Build-Status
-5. Output von `grep -rn '"image":"https://www.planexus.de/android-chrome' src/`
+5. Output von `grep -rn '"image":"https://planexus.de/android-chrome' src/`
 
 **Alle betroffenen Dateien vollständig anpassen.**

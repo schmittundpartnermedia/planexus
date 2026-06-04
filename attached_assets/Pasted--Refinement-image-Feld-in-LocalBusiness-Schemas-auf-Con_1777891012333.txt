@@ -14,14 +14,14 @@ Saubere Trennung:
 
 **KEINE Änderung.** Das image-Feld bleibt:
 ```json
-"image": "https://www.planexus.de/android-chrome-512x512.png"
+"image": "https://planexus.de/android-chrome-512x512.png"
 ```
 
 ### 2. Layout.astro — LocalBusiness Schema (Zeile ~132)
 
 image-Feld umstellen auf:
 ```json
-"image": "https://www.planexus.de/images/labtogo-industrie.webp"
+"image": "https://planexus.de/images/labtogo-industrie.webp"
 ```
 
 ### 3. Alle 12 City-Page LocalBusiness Schemas
@@ -43,12 +43,12 @@ In jeder dieser Dateien das image-Feld im LocalBusiness-Schema auf den Container
 
 Neuer Wert (überall identisch):
 ```json
-"image": "https://www.planexus.de/images/labtogo-industrie.webp"
+"image": "https://planexus.de/images/labtogo-industrie.webp"
 ```
 
 ## Verifikation des Source-Bildes (bereits geprüft)
 
-`https://www.planexus.de/images/labtogo-industrie.webp` liefert HTTP 200 (per curl bestätigt). Datei existiert und ist im webp-Format, das Google für Schema-image-Felder akzeptiert.
+`https://planexus.de/images/labtogo-industrie.webp` liefert HTTP 200 (per curl bestätigt). Datei existiert und ist im webp-Format, das Google für Schema-image-Felder akzeptiert.
 
 ## Akzeptanzkriterien
 
@@ -62,10 +62,10 @@ Neuer Wert (überall identisch):
 
 ```bash
 # Erwartung: 1 Treffer
-curl -s https://www.planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*android-chrome[^"]*"' | wc -l
+curl -s https://planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*android-chrome[^"]*"' | wc -l
 
 # Erwartung: 2 Treffer
-curl -s https://www.planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*labtogo-industrie[^"]*"' | wc -l
+curl -s https://planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*labtogo-industrie[^"]*"' | wc -l
 ```
 
 ## Nicht ändern

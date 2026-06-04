@@ -4,31 +4,31 @@
 
 Die Webseite hat einen kritischen SEO-Bug: Auf allen Unterseiten zeigen `<link rel="canonical">`, `<meta property="og:url">` und `<link rel="alternate" hreflang="...">` auf die Homepage statt auf die jeweilige Seite selbst.
 
-### Beispiel: `https://www.planexus.de/laborcontainer-basel`
+### Beispiel: `https://planexus.de/laborcontainer-basel`
 
 Tatsächlicher HTML-Output (per `curl -s` verifiziert):
 ```html
-<link rel="canonical" href="https://www.planexus.de">
-<meta property="og:url" content="https://www.planexus.de">
-<link rel="alternate" hreflang="de" href="https://www.planexus.de">
-<link rel="alternate" hreflang="de-CH" href="https://www.planexus.de">
-<link rel="alternate" hreflang="x-default" href="https://www.planexus.de">
+<link rel="canonical" href="https://planexus.de">
+<meta property="og:url" content="https://planexus.de">
+<link rel="alternate" hreflang="de" href="https://planexus.de">
+<link rel="alternate" hreflang="de-CH" href="https://planexus.de">
+<link rel="alternate" hreflang="x-default" href="https://planexus.de">
 <meta property="og:image" content="https://planexus.de/assets/laborcontainer-modulbau.jpg">
 <meta name="twitter:image" content="https://planexus.de/assets/laborcontainer-modulbau.jpg">
 ```
 
 Korrekt wäre:
 ```html
-<link rel="canonical" href="https://www.planexus.de/laborcontainer-basel">
-<meta property="og:url" content="https://www.planexus.de/laborcontainer-basel">
-<link rel="alternate" hreflang="de" href="https://www.planexus.de/laborcontainer-basel">
-<link rel="alternate" hreflang="de-CH" href="https://www.planexus.de/laborcontainer-basel">
-<link rel="alternate" hreflang="x-default" href="https://www.planexus.de/laborcontainer-basel">
-<meta property="og:image" content="https://www.planexus.de/assets/laborcontainer-modulbau.jpg">
-<meta name="twitter:image" content="https://www.planexus.de/assets/laborcontainer-modulbau.jpg">
+<link rel="canonical" href="https://planexus.de/laborcontainer-basel">
+<meta property="og:url" content="https://planexus.de/laborcontainer-basel">
+<link rel="alternate" hreflang="de" href="https://planexus.de/laborcontainer-basel">
+<link rel="alternate" hreflang="de-CH" href="https://planexus.de/laborcontainer-basel">
+<link rel="alternate" hreflang="x-default" href="https://planexus.de/laborcontainer-basel">
+<meta property="og:image" content="https://planexus.de/assets/laborcontainer-modulbau.jpg">
+<meta name="twitter:image" content="https://planexus.de/assets/laborcontainer-modulbau.jpg">
 ```
 
-Die Homepage selbst (`https://www.planexus.de/`) hat ein korrektes Canonical. Der Bug betrifft alle anderen Seiten.
+Die Homepage selbst (`https://planexus.de/`) hat ein korrektes Canonical. Der Bug betrifft alle anderen Seiten.
 
 ## Vermutete Ursache
 
@@ -36,18 +36,18 @@ Im SEO-Meta-Template wird vermutlich nur eine statische Domain-Variable verwende
 
 ## Kanonische Form (verbindlich)
 
-- Domain: `https://www.planexus.de` (mit www)
+- Domain: `https://planexus.de` (mit www)
 - Trailing Slash: ohne (Ausnahme: Homepage `/` selbst)
-- Asset-URLs: ebenfalls `https://www.planexus.de/...` (mit www)
+- Asset-URLs: ebenfalls `https://planexus.de/...` (mit www)
 
 ## Aufgaben
 
 ### 1. Canonical-Logik selbst-referenzierend machen
 Auf jeder Seite muss `<link rel="canonical">` exakt auf die aufgerufene URL zeigen, nicht auf die Domain-Root.
 
-- Root → `https://www.planexus.de/`
-- Unterseite → `https://www.planexus.de/[pfad]` (ohne Trailing Slash)
-- Verschachtelte Seite → `https://www.planexus.de/[parent]/[child]` (ohne Trailing Slash)
+- Root → `https://planexus.de/`
+- Unterseite → `https://planexus.de/[pfad]` (ohne Trailing Slash)
+- Verschachtelte Seite → `https://planexus.de/[parent]/[child]` (ohne Trailing Slash)
 
 Implementierung: Den aktuellen Request-Pfad dynamisch an die kanonische Domain hängen. Trailing-Slash-Normalisierung (außer bei Root) anwenden.
 
@@ -63,7 +63,7 @@ Jeder hreflang-Eintrag muss auf die jeweils äquivalente Seite zeigen, nicht auf
 Falls keine echten Länderversionen existieren, kann hreflang auch komplett entfernt werden (saubere Lösung). Empfehlung im Bericht angeben.
 
 ### 4. og:image und twitter:image auf www korrigieren
-Aktuell zeigen einige Image-URLs auf `https://planexus.de/...` (ohne www). Das wird zwar serverseitig per 301 umgeleitet, aber Social-Crawler sollten direkt die kanonische Form bekommen. Alle Asset-URLs in Meta-Tags auf `https://www.planexus.de/...` umstellen.
+Aktuell zeigen einige Image-URLs auf `https://planexus.de/...` (ohne www). Das wird zwar serverseitig per 301 umgeleitet, aber Social-Crawler sollten direkt die kanonische Form bekommen. Alle Asset-URLs in Meta-Tags auf `https://planexus.de/...` umstellen.
 
 ### 5. Globaler Sweep
 Den Code-Pass auf alle Seiten anwenden, nicht nur auf einzelne Beispiele. Dazu zählen mindestens:
@@ -79,34 +79,34 @@ Nach dem Fix müssen folgende `curl`-Tests die jeweilige Seite als Canonical zei
 
 ```bash
 # Homepage
-curl -s https://www.planexus.de/ | grep -E 'canonical|og:url'
-# Erwartung: href="https://www.planexus.de/"
+curl -s https://planexus.de/ | grep -E 'canonical|og:url'
+# Erwartung: href="https://planexus.de/"
 
 # City-Page Basel
-curl -s https://www.planexus.de/laborcontainer-basel | grep -E 'canonical|og:url'
-# Erwartung: href="https://www.planexus.de/laborcontainer-basel"
+curl -s https://planexus.de/laborcontainer-basel | grep -E 'canonical|og:url'
+# Erwartung: href="https://planexus.de/laborcontainer-basel"
 
 # City-Page Frankfurt
-curl -s https://www.planexus.de/laborcontainer-frankfurt | grep -E 'canonical|og:url'
-# Erwartung: href="https://www.planexus.de/laborcontainer-frankfurt"
+curl -s https://planexus.de/laborcontainer-frankfurt | grep -E 'canonical|og:url'
+# Erwartung: href="https://planexus.de/laborcontainer-frankfurt"
 
 # Magazin-Artikel
-curl -s https://www.planexus.de/magazin/bsl-2-bsl-3-container-labor | grep -E 'canonical|og:url'
-# Erwartung: href="https://www.planexus.de/magazin/bsl-2-bsl-3-container-labor"
+curl -s https://planexus.de/magazin/bsl-2-bsl-3-container-labor | grep -E 'canonical|og:url'
+# Erwartung: href="https://planexus.de/magazin/bsl-2-bsl-3-container-labor"
 
 # Service-Seite
-curl -s https://www.planexus.de/leistungen/modulbau | grep -E 'canonical|og:url'
-# Erwartung: href="https://www.planexus.de/leistungen/modulbau"
+curl -s https://planexus.de/leistungen/modulbau | grep -E 'canonical|og:url'
+# Erwartung: href="https://planexus.de/leistungen/modulbau"
 
 # Statische Page
-curl -s https://www.planexus.de/team | grep -E 'canonical|og:url'
-# Erwartung: href="https://www.planexus.de/team"
+curl -s https://planexus.de/team | grep -E 'canonical|og:url'
+# Erwartung: href="https://planexus.de/team"
 ```
 
 Zusätzlich:
 - [ ] Auf jeder Seite sind `canonical` und `og:url` identisch
 - [ ] Auf jeder Seite zeigen `canonical`, `og:url` und alle `hreflang`-Einträge auf die aktuelle URL (selbstreferenzierend)
-- [ ] Keine Asset-URL in Meta-Tags zeigt mehr auf `https://planexus.de/...` (alle auf `https://www.planexus.de/...`)
+- [ ] Keine Asset-URL in Meta-Tags zeigt mehr auf `https://planexus.de/...` (alle auf `https://planexus.de/...`)
 - [ ] Keine doppelten Canonicals pro Seite
 - [ ] Keine doppelten og:url-Tags pro Seite
 

@@ -2,7 +2,7 @@
 
 ## Hintergrund
 
-Google Rich Results Test zeigt für `https://www.planexus.de/laborcontainer-basel` noch einen Hinweis:
+Google Rich Results Test zeigt für `https://planexus.de/laborcontainer-basel` noch einen Hinweis:
 > "Feld 'image' fehlt (optional)" — beim Organization-Objekt mit Adresse Emil-Mayer-Straße 1, Albstadt
 
 Diese Organization ist **eingebettet als `provider` im Service-Schema** auf den City-Pages (Zeile ~13–34 in basel.astro). Sie wurde im letzten Pass nicht angefasst, weil dort nur LocalBusiness-Schemas behandelt wurden.
@@ -18,7 +18,7 @@ const serviceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Planexus GmbH",
-    "url": "https://www.planexus.de",
+    "url": "https://planexus.de",
     "telephone": "+49 7435 7519 700",
     "email": "info@planexus.de",
     "address": { "@type": "PostalAddress", "streetAddress": "Emil-Mayer-Straße 1", "addressLocality": "Albstadt", "postalCode": "72461", "addressCountry": "DE" },
@@ -33,7 +33,7 @@ const serviceSchema = {
 Im `provider`-Block des Service-Schemas auf allen betroffenen Pages ein `image`-Feld ergänzen, direkt nach dem `name`-Feld:
 
 ```json
-"image": "https://www.planexus.de/android-chrome-512x512.png"
+"image": "https://planexus.de/android-chrome-512x512.png"
 ```
 
 **Begründung für Logo (nicht Container-Foto):** Der `provider` ist ein Organization-Type (Brand-Identity), kein LocalBusiness-Type. Konsistent zur bereits etablierten Trennung: Organization = Logo, LocalBusiness = Container-Foto.
@@ -82,7 +82,7 @@ Falls weitere Pages außerhalb der Liste betroffen sind → mit demselben Fix ei
 ## Akzeptanzkriterien
 
 - [ ] In allen betroffenen Dateien hat der `provider`-Block des Service-Schemas ein `image`-Feld
-- [ ] Wert ist überall identisch: `https://www.planexus.de/android-chrome-512x512.png`
+- [ ] Wert ist überall identisch: `https://planexus.de/android-chrome-512x512.png`
 - [ ] Build läuft fehlerfrei durch (`npm run build`)
 - [ ] Auf einer Beispiel-City-Page (basel) liefert das HTML jetzt:
   - 2× `android-chrome-512x512.png` (Layout Organization + Service provider Organization)
@@ -92,10 +92,10 @@ Falls weitere Pages außerhalb der Liste betroffen sind → mit demselben Fix ei
 
 ```bash
 # Erwartung: 2 Treffer (Logo)
-curl -s https://www.planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*android-chrome[^"]*"' | wc -l
+curl -s https://planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*android-chrome[^"]*"' | wc -l
 
 # Erwartung: 2 Treffer (Container-Foto, unverändert)
-curl -s https://www.planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*labtogo-industrie[^"]*"' | wc -l
+curl -s https://planexus.de/laborcontainer-basel | grep -oE '"image":"[^"]*labtogo-industrie[^"]*"' | wc -l
 ```
 
 ## Bericht nach Abschluss

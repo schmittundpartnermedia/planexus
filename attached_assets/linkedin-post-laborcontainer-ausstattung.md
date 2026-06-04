@@ -21,7 +21,7 @@ Hier die 3 häufigsten Fehler in der Praxis:
 3. IT-Infrastruktur nachträglich einbauen – Netzwerkkabel durch fertige Wände zu ziehen ist teuer und hässlich. Leerrohre gehören in die Bauphase.
 
 Den vollständigen Leitfaden mit Planungscheckliste und Normenübersicht finden Sie hier:
-https://www.planexus.de/magazin/laborcontainer-ausstattung-checkliste
+https://planexus.de/magazin/laborcontainer-ausstattung-checkliste
 
 #Laborcontainer #Laborausstattung #Laborbau #Modulbau #Laborplanung #TRGS526 #Laborabzug #GMP #Pharma #Forschung #Planexus
 

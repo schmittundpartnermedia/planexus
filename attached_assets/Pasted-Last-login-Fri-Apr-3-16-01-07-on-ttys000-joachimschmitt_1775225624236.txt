@@ -32,7 +32,7 @@ See https://ubuntu.com/esm or run: sudo pro status
 Last login: Fri Apr  3 14:01:26 2026 from 78.42.240.116
 root@ubuntu:~# cat /etc/nginx/sites-enabled/planexus.de
 server {
-    server_name planexus.de www.planexus.de;
+    server_name planexus.de planexus.de;
     location / {
         proxy_pass http://localhost:5000;
         proxy_http_version 1.1;
@@ -51,7 +51,7 @@ server {
 
 }
 server {
-    if ($host = www.planexus.de) {
+    if ($host = planexus.de) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
@@ -62,7 +62,7 @@ server {
 
 
     listen 80;
-    server_name planexus.de www.planexus.de;
+    server_name planexus.de planexus.de;
     return 404; # managed by Certbot
 
 
