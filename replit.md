@@ -36,7 +36,8 @@ Deployment occurs on an IONOS VPS running Ubuntu, Nginx, and PM2. Nginx acts as 
 - Server-Pfad: `/var/www/app`
 - PM2-Prozess-Name: `planexus` (ID 0, Script `server-start.mjs`)
 - Domain/IP: `planexus.de` / `82.165.27.244`
-- Deploy-Befehl (direkt auf dem Server ausführen, KEIN zweites SSH): `cd /var/www/app && git pull && npm run build && pm2 restart planexus --update-env`
+- Deploy-Befehl (direkt auf dem Server ausführen, KEIN zweites SSH): `cd /var/www/app && git checkout -- .astro && git pull && npm run build && pm2 restart planexus --update-env`
+- WICHTIG: `git checkout -- .astro` MUSS vor jedem `git pull` stehen. Astro generiert beim Build die Dateien in `.astro/` (u. a. `types.d.ts`) neu. Diese Dateien sind versehentlich in Git getrackt → ohne das Verwerfen blockiert der Build-Output den nächsten `git pull` ("local changes would be overwritten"). Das Verwerfen ist gefahrlos, da die Dateien im Build neu erzeugt werden.
 
 **Nginx-Aufgaben (einmalig auf dem Server, nicht im Repo):**
 Diese Einstellungen werden direkt in der nginx-Config gepflegt (`/etc/nginx/sites-enabled/<datei>`), nicht im Projektcode.
