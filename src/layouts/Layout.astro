@@ -13,7 +13,7 @@ interface Props {
 }
 
 const { title, description, canonical, type = 'website', schema, ogImage } = Astro.props;
-const fullTitle = title.includes('Planexus') ? title : `${title} | Planexus GmbH`;
+const fullTitle = title.includes('Planexus') ? title : `${title} | Planexus`;
 const siteUrl = 'https://planexus.de';
 
 // Selbst-referenzierender Canonical: Wenn keine canonical-Prop übergeben wurde,
@@ -23,7 +23,7 @@ const rawPath = (canonical && canonical.length > 0) ? canonical : Astro.url.path
 const normalizedPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
 const canonicalUrl = `${siteUrl}${normalizedPath}`;
 
-// ogImage-Normalisierung: erzwingt www-Domain (auch wenn Autor planexus.de ohne www schrieb).
+// ogImage-Normalisierung: erzwingt die non-www-Domain (planexus.de) und absolute URL.
 let ogImageUrl: string;
 if (!ogImage) {
   ogImageUrl = `${siteUrl}/opengraph.jpg`;

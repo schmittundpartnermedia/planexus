@@ -1,29 +1,63 @@
 ---
 import Layout from '../layouts/Layout.astro';
 Astro.response.status = 404;
+
+const topLinks = [
+  { href: '/', label: 'Startseite' },
+  { href: '/laborcontainer', label: 'Laborcontainer' },
+  { href: '/leistungen', label: 'Leistungen' },
+  { href: '/branchen', label: 'Branchen' },
+  { href: '/projekte', label: 'Projekte' },
+  { href: '/magazin', label: 'Magazin' },
+  { href: '/team', label: 'Team' },
+  { href: '/ueber-uns', label: 'Über uns' },
+  { href: '/kontakt', label: 'Kontakt' },
+  { href: '/laborcontainer-berlin', label: 'Laborcontainer Berlin' },
+  { href: '/laborcontainer-muenchen', label: 'Laborcontainer München' },
+  { href: '/laborcontainer-hamburg', label: 'Laborcontainer Hamburg' },
+];
 ---
 
 <Layout
   title="Seite nicht gefunden"
-  description="Die angeforderte Seite konnte leider nicht gefunden werden."
+  description="Die angeforderte Seite konnte leider nicht gefunden werden. Hier finden Sie die wichtigsten Seiten von Planexus."
 >
   <div class="pt-20 min-h-screen bg-white flex items-center justify-center">
-    <div class="container mx-auto px-4">
-      <div class="max-w-lg mx-auto text-center">
+    <div class="container mx-auto px-4 py-16">
+      <div class="max-w-2xl mx-auto text-center">
         <div class="text-8xl font-heading font-bold text-primary mb-4">404</div>
         <h1 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Seite nicht gefunden
         </h1>
         <p class="text-gray-600 text-lg mb-8">
-          Die angeforderte Seite existiert leider nicht oder wurde verschoben. Bitte überprüfen Sie die URL oder kehren Sie zur Startseite zurück.
+          Die angeforderte Seite existiert leider nicht oder wurde verschoben. Bitte überprüfen Sie die URL oder nutzen Sie einen der folgenden Links zu unseren wichtigsten Seiten.
         </p>
         <a
           href="/"
           class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-md shadow-primary/20"
+          data-testid="link-home"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           Zur Startseite
         </a>
+
+        <div class="mt-12 pt-10 border-t border-gray-200">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-gray-500 mb-6">
+            Beliebte Seiten
+          </h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-left">
+            {topLinks.map((link) => (
+              <a
+                href={link.href}
+                class="flex items-center gap-2 px-4 py-3 rounded-lg border border-gray-200 text-slate-700 hover:border-primary hover:text-slate-900 hover:bg-primary/5 transition-colors text-sm font-medium"
+                data-testid={`link-404-${link.href === '/' ? 'home' : link.href.replace(/\//g, '')}`}
+              >
+                <span class="text-primary">→</span>
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </div>
