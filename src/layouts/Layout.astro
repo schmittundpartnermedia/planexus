@@ -18,9 +18,9 @@ const siteUrl = 'https://planexus.de';
 
 // Selbst-referenzierender Canonical: Wenn keine canonical-Prop übergeben wurde,
 // Pfad aus Astro.url.pathname ableiten. Trailing-Slash-Normalisierung
-// (Root bleibt "/", alles andere ohne Trailing Slash).
+// (Root wird zu "" → https://planexus.de ohne Slash, alles andere ohne Trailing Slash).
 const rawPath = (canonical && canonical.length > 0) ? canonical : Astro.url.pathname;
-const normalizedPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
+const normalizedPath = rawPath === '/' ? '' : rawPath.replace(/\/+$/, '');
 const canonicalUrl = `${siteUrl}${normalizedPath}`;
 
 // ogImage-Normalisierung: erzwingt die non-www-Domain (planexus.de) und absolute URL.
