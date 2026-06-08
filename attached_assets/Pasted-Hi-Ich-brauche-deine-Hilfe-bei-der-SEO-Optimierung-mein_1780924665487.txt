@@ -1,0 +1,32 @@
+Hi! Ich brauche deine Hilfe bei der SEO-Optimierung meiner Astro / Tailwind-Webseite (planexus.de). Die Seite läuft komplett OHNE Trailing-Slashs (also ohne Schrägstrich am Ende der URLs). Wir müssen widersprüchliche Signale im Code beheben und die B2B-Themenstruktur für Google optimieren.
+
+Bitte setze folgende Änderungen Schritt für Schritt um:
+
+1. META-TAGS & CANONICALS KORRIGIEREN:
+Suche im Layout oder in der Haupt-Index-Datei (<head>-Bereich) nach den Canonical- und hreflang-Tags. Entferne dort den abschließenden Schrägstrich (Trailing-Slash) bei der Hauptdomain, sodass sie exakt mit der echten URL-Struktur übereinstimmen:
+- Ändere <link rel="canonical" href="https://planexus.de/"> zu <link rel="canonical" href="https://planexus.de">
+- Ändere <link rel="alternate" hreflang="de" href="https://planexus.de/"> zu <link rel="alternate" href="https://planexus.de">
+- Prüfe alle weiteren hreflang- und og:url-Tags auf der Startseite und stelle sicher, dass KEIN Link auf der Domain mit einem "/" endet.
+
+2. TECHNISCHE STRUKTURBILDUNG (HAUPTMENÜ ERWEITERN):
+Aktuell sind extrem wichtige B2B-Themen wie "BSL-2 / BSL-3 Labore", "GMP-Reinraum" und "ATEX-Explosionsschutz" tief im Text oder im Magazin versteckt. Google braucht diese als direkte Signale in der Hauptnavigation.
+- Öffne die Navbar-Komponente (Navbar.jsx / Navbar.astro oder ähnlich).
+- Erweitere das Dropdown-Menü "Leistungen" um direkte, saubere Links zu diesen technischen Fachseiten (z.B. /leistungen/bsl-2-bsl-3, /leistungen/gmp-reinraum, /leistungen/atex-schutz – falls die Routen existieren, ansonsten erstelle Platzhalter-Routen oder verlinke auf die entsprechenden Magazin-Beiträge). Die Link-Ziele müssen zwingend OHNE Trailing-Slash eingetragen werden.
+
+3. TECHNISCHE DATEN-TABELLE AUF DER STARTSEITE INTEGRIEREN:
+B2B-Einkäufer und Google-Bots suchen nach harten Fakten, nicht nach reinen Marketing-Floskeln.
+- Suche auf der Startseite (src/pages/index.astro oder der entsprechenden Landingpage-Datei) den Bereich "DEEP CONTENT: Was ist Planexus".
+- Füge unterhalb des Einleitungstextes eine übersichtliche, responsive HTML-Tabelle mit Tailwind-Styling ein, die die technischen Key-Facts unseres "LABtoGO"-Modulsystems prominent darstellt.
+
+Verwende für die Tabelle diese Daten:
+| Technische Eigenschaft | Spezifikation / Wert |
+| :--- | :--- |
+| Innenhöhe | 2.750 mm (statt 2.400 mm Industrie-Standard) |
+| Außenlänge | 9.550 mm |
+| Wärmedurchgangskoeffizient (U-Wert) | 0,20 W/m²K (Hochisolierte Sandwich-Bauweise) |
+| Sicherheitsstufen | Konform nach TRBA 100/250 (BSL-2 & BSL-3) |
+| Reinraum-Klassifizierung | EU-GMP Annex 1 / ISO 5 bis ISO 8 |
+| Explosionsschutz | ATEX-konform nach Richtlinie 2014/34/EU |
+| Fassadengestaltung | Optionen für Vollverglasung oder nachhaltige Holzfassade |
+
+Bitte zeige mir die geänderten Dateien oder führe die Anpassungen direkt aus. Achte penibel darauf, dass kein Trailing-Slash in die Links rutscht!
