@@ -38,6 +38,42 @@ Deployment occurs on an IONOS VPS running Ubuntu, Nginx, and PM2. Nginx acts as 
 - Domain/IP: `planexus.de` / `82.165.27.244`
 - Deploy-Befehl (direkt auf dem Server ausführen, KEIN zweites SSH): `cd /var/www/app && git pull && npm run build && pm2 restart planexus --update-env`
 
+**Nginx-Aufgaben (einmalig auf dem Server, nicht im Repo):**
+Diese Einstellungen werden direkt in der nginx-Config gepflegt (`/etc/nginx/sites-enabled/<datei>`), nicht im Projektcode.
+
+1. Sicherheits-Header in `/etc/nginx/snippets/planexus-headers.conf` auslagern:
+   ```nginx
+   add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+   add_header X-Content-Type-Options "nosniff" always;
+   add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+   add_header X-Frame-Options "SAMEORIGIN" always;
+   ```
+2. Im `server`-Block (443) zwei `location`-Blöcke pflegen. Wichtig: nginx vererbt `add_header` NICHT in einen `location` mit eigenen Headern → `include` in beiden wiederholen.
+   ```nginx
+   # Fingerprinted Astro-Assets: 1 Jahr cachen
+   location /_astro/ {
+       proxy_pass http://127.0.0.1:5000;
+       proxy_set_header Host $host;
+       proxy_set_header X-Real-IP $remote_addr;
+       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+       proxy_set_header X-Forwarded-Proto $scheme;
+       include snippets/planexus-headers.conf;
+       add_header Cache-Control "public, max-age=31536000, immutable" always;
+   }
+   # HTML: kurz cachen, im Hintergrund aktualisieren
+   location / {
+       proxy_pass http://127.0.0.1:5000;
+       proxy_set_header Host $host;
+       proxy_set_header X-Real-IP $remote_addr;
+       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+       proxy_set_header X-Forwarded-Proto $scheme;
+       include snippets/planexus-headers.conf;
+       add_header Cache-Control "public, max-age=0, s-maxage=300, stale-while-revalidate=86400" always;
+   }
+   ```
+3. Komprimierung in `nginx.conf` (`http`-Block): `gzip on;` + `gzip_types` für text/css, application/javascript, application/json, image/svg+xml. Brotli optional via `apt install libnginx-mod-http-brotli` (wenn verfügbar), sonst gzip.
+4. Aktivieren: `nginx -t` (muss „successful" melden) → `systemctl reload nginx`. Bei Fehler NICHT reloaden.
+
 A critical design focus is SEO, incorporating comprehensive Schema.org JSON-LD (Organization, LocalBusiness, FAQPage, Article, BreadcrumbList), optimized meta tags, and an automatically generated `sitemap.xml`. Image optimization, including compression, lazy loading, and alt-texts, is systematically applied.
 
 ## External Dependencies
