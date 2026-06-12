@@ -30,7 +30,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Planexus GmbH | Laborcontainer & Modulbau Labor Spezialist",
     description: "Planexus ist Ihr Experte für Laborcontainer, mobile Labore und Modulbau. Über 10 Jahre Erfahrung in Laborplanung, BSL-2/BSL-3 Labore und Containerbau.",
     keywords: "Laborcontainer, Modulbau Labor, Mobiles Labor, Containerlabor, Laborplanung, BSL-2 Labor, BSL-3 Labor",
-    canonical: "https://www.planexus.de/",
+    canonical: "https://planexus.de/",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -58,7 +58,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Über Planexus - Ihre Laborcontainer Experten | Planexus GmbH",
     description: "Lernen Sie Planexus kennen: Pioniere im modularen Laborbau seit 2016. Erfahrung, Innovation und Qualität für Ihre Laborprojekte.",
     keywords: "Planexus, Laborcontainer Hersteller, Modulbau Experten, Sven Biewald, Thomas Boss",
-    canonical: "https://www.planexus.de/about",
+    canonical: "https://planexus.de/about",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -76,7 +76,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Leistungen - Laborcontainer Komplettservice | Planexus GmbH",
     description: "Alle Leistungen von Planexus: Technische Fachplanung, Modulbau, Logistik, Laborausstattung, Beratung und Smart Lab Integration.",
     keywords: "Laborcontainer Leistungen, Laborplanung, Modulbau, Laborausstattung, Smart Lab",
-    canonical: "https://www.planexus.de/services",
+    canonical: "https://planexus.de/services",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -97,7 +97,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Technische Fachplanung Labor | Planexus GmbH",
     description: "Professionelle Laborplanung für Ihren Laborcontainer. CAD-Zeichnungen, 3D-Visualisierung, TGA-Konzepte und Workflow-Optimierung.",
     keywords: "Laborplanung, CAD Planung Labor, TGA Planung, 3D Visualisierung Labor",
-    canonical: "https://www.planexus.de/services/planning",
+    canonical: "https://planexus.de/services/planning",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -119,7 +119,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Modulbau & Fertigung | Planexus GmbH",
     description: "Hochwertige Laborcontainer Made in Germany. Präzise Fertigung, robuste Stahlrahmenkonstruktion und labortaugliche Oberflächen.",
     keywords: "Modulbau Labor, Laborcontainer Fertigung, Containerbau, Made in Germany",
-    canonical: "https://www.planexus.de/services/construction",
+    canonical: "https://planexus.de/services/construction",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -137,7 +137,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Logistik & Montage | Planexus GmbH",
     description: "Weltweiter Transport und fachgerechte Montage Ihres Laborcontainers. Schlüsselfertige Übergabe und Inbetriebnahme.",
     keywords: "Laborcontainer Transport, Container Montage, Plug and Play Labor",
-    canonical: "https://www.planexus.de/services/logistics",
+    canonical: "https://planexus.de/services/logistics",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -155,7 +155,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Laborausstattung | Planexus GmbH",
     description: "Komplette Laborausstattung für Ihren Container. Labormöbel, Abzüge, Sicherheitseinrichtungen und Geräteintegration.",
     keywords: "Laborausstattung, Labormöbel, Laborabzug, Sicherheitseinrichtungen Labor",
-    canonical: "https://www.planexus.de/services/equipment",
+    canonical: "https://planexus.de/services/equipment",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -173,7 +173,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Beratung & Genehmigung | Planexus GmbH",
     description: "Expertenberatung für Laborcontainer-Projekte. Unterstützung bei Genehmigungsverfahren, Baurecht und Arbeitsschutz.",
     keywords: "Laborcontainer Beratung, Baugenehmigung Labor, Arbeitsschutz Labor",
-    canonical: "https://www.planexus.de/services/consulting",
+    canonical: "https://planexus.de/services/consulting",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -191,7 +191,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Smart Lab Integration | Planexus GmbH",
     description: "Intelligente Laborvernetzung mit IoT-Sensoren, Raumklima-Monitoring, Zugangskontrolle und Cloud-Anbindung.",
     keywords: "Smart Lab, IoT Labor, Labormonitoring, Digitales Labor",
-    canonical: "https://www.planexus.de/services/smart-lab",
+    canonical: "https://planexus.de/services/smart-lab",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -213,7 +213,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Team - Experten für Laborcontainer | Planexus GmbH",
     description: "Das Planexus Team: Sven Biewald und Thomas Boss - Experten für Laborcontainer und Modulbau mit über 10 Jahren Erfahrung.",
     keywords: "Planexus Team, Sven Biewald, Thomas Boss, Laborcontainer Experten",
-    canonical: "https://www.planexus.de/team",
+    canonical: "https://planexus.de/team",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -230,7 +230,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Kontakt - Laborcontainer Anfrage | Planexus GmbH",
     description: "Kontaktieren Sie Planexus für Ihr Laborcontainer-Projekt. Beratung, Angebote und Projektstart.",
     keywords: "Planexus Kontakt, Laborcontainer Anfrage, Angebot anfordern",
-    canonical: "https://www.planexus.de/contact",
+    canonical: "https://planexus.de/contact",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -252,7 +252,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Magazin - Fachwissen Laborcontainer & Modulbau | Planexus GmbH",
     description: "Das Planexus Magazin: Aktuelle Artikel, Fachwissen und Trends zu Laborcontainern, Modulbau und nachhaltiger Laborplanung.",
     keywords: "Laborcontainer Magazin, Fachwissen Modulbau, Labortrends",
-    canonical: "https://www.planexus.de/magazine",
+    canonical: "https://planexus.de/magazine",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -270,7 +270,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Innovation im Modulbau: Die Zukunft des mobilen Labors | Planexus",
     description: "Wie modulare Bauweisen die Flexibilität in der Forschung erhöhen und warum Containerlabore eine echte Alternative zum Massivbau sind.",
     keywords: "Modulbau Labor, mobiles Labor, Containerlabor, Laborinnovation",
-    canonical: "https://www.planexus.de/magazine/1",
+    canonical: "https://planexus.de/magazine/1",
     ogType: "article",
     robots: "index, follow",
     ssrContent: {
@@ -287,7 +287,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Nachhaltigkeit im Laborbau: Energieeffizienz trifft High-Tech | Planexus",
     description: "Moderne Laborcontainer setzen neue Maßstäbe in Sachen Energieeffizienz. Nachhaltige Materialien und smarte Klimatechnik senken den CO2-Fußabdruck.",
     keywords: "Nachhaltigkeit Labor, Energieeffizienz Laborcontainer, grünes Labor",
-    canonical: "https://www.planexus.de/magazine/2",
+    canonical: "https://planexus.de/magazine/2",
     ogType: "article",
     robots: "index, follow",
     ssrContent: {
@@ -304,7 +304,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "BSL-2 und BSL-3 im Container: Geht das? | Planexus",
     description: "Sicherheitsstufen im Containerbau sind kein Problem mehr. Erfahren Sie, wie höchste Sicherheitsanforderungen in mobilen Einheiten realisiert werden.",
     keywords: "BSL-2 Labor, BSL-3 Labor, Sicherheitslabor Container, Biosafety",
-    canonical: "https://www.planexus.de/magazine/3",
+    canonical: "https://planexus.de/magazine/3",
     ogType: "article",
     robots: "index, follow",
     ssrContent: {
@@ -321,7 +321,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Impressum | Planexus GmbH",
     description: "Impressum der Planexus GmbH - Angaben gemäß § 5 TMG. Laborcontainer und Modulbau Spezialist aus Albstadt.",
     keywords: "Impressum Planexus, Kontaktdaten, Handelsregister",
-    canonical: "https://www.planexus.de/impressum",
+    canonical: "https://planexus.de/impressum",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {
@@ -334,7 +334,7 @@ export const metaRegistry: Record<string, PageMeta> = {
     title: "Datenschutzerklärung | Planexus GmbH",
     description: "Datenschutzerklärung der Planexus GmbH - Informationen zum Umgang mit Ihren personenbezogenen Daten gemäß DSGVO.",
     keywords: "Datenschutz Planexus, DSGVO, Datenschutzerklärung",
-    canonical: "https://www.planexus.de/datenschutz",
+    canonical: "https://planexus.de/datenschutz",
     ogType: "website",
     robots: "index, follow",
     ssrContent: {

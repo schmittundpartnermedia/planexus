@@ -220,7 +220,7 @@ Letzte Zeile vor dem Footer:
 - [ ] Title: `Laborcontainer [Stadt] – schlüsselfertig | Planexus` (≤60 Zeichen)
 - [ ] Meta Description: CTA + USP + Stadt (≤155 Zeichen)
 - [ ] H1: Nur 1x, enthält Focus Keyword
-- [ ] Canonical: `https://www.planexus.de/laborcontainer-[stadt]`
+- [ ] Canonical: `https://planexus.de/laborcontainer-[stadt]`
 - [ ] Schema.org: LocalBusiness + Service + FAQPage + BreadcrumbList
 - [ ] Open Graph: Title, Description, Image
 - [ ] Bilder: Alt-Texte, lazy loading, komprimiert

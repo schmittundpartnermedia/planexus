@@ -49,12 +49,12 @@ export function SEO({ title, description, canonical, type = "website", article }
     if (canonical) {
       let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
       if (canonicalLink) {
-        canonicalLink.href = `https://www.planexus.de${canonical}`;
+        canonicalLink.href = `https://planexus.de${canonical}`;
       }
       
       const ogUrl = document.querySelector('meta[property="og:url"]');
       if (ogUrl) {
-        ogUrl.setAttribute("content", `https://www.planexus.de${canonical}`);
+        ogUrl.setAttribute("content", `https://planexus.de${canonical}`);
       }
     }
     
@@ -83,7 +83,7 @@ export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": `https://www.planexus.de${item.url}`
+      "item": `https://planexus.de${item.url}`
     }))
   };
 
@@ -119,7 +119,7 @@ export function ArticleSchema({ headline, description, author, datePublished, im
       "name": "Planexus GmbH",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.planexus.de/favicon.png"
+        "url": "https://planexus.de/favicon.png"
       }
     },
     "datePublished": datePublished,
@@ -127,7 +127,7 @@ export function ArticleSchema({ headline, description, author, datePublished, im
     "image": image,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.planexus.de${url}`
+      "@id": `https://planexus.de${url}`
     }
   };
 
@@ -159,7 +159,7 @@ export function ServiceSchema({ name, description, url }: ServiceSchemaProps) {
       "@type": "Country",
       "name": "Germany"
     },
-    "url": `https://www.planexus.de${url}`
+    "url": `https://planexus.de${url}`
   };
 
   return (

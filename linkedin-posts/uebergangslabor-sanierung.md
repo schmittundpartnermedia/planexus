@@ -36,7 +36,7 @@ Link im ersten Kommentar.
 ## Erster Kommentar (sofort selbst posten)
 
 Hier der vollständige Artikel:
-👉 https://www.planexus.de/magazin/uebergangslabor-sanierung-mietcontainer
+👉 https://planexus.de/magazin/uebergangslabor-sanierung-mietcontainer
 
 Bei konkretem Bedarf jederzeit direkt: planexus.de/kontakt
 
