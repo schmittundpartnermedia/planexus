@@ -1,0 +1,39 @@
+ZIEL: Spamschutz für das Anfrage-/Kontaktformular. Bots/Spam-Submissions 
+sollen abgefangen werden, BEVOR eine Mail versendet wird – ohne jede Reibung 
+für echte Nutzer (kein CAPTCHA, kein zusätzliches sichtbares Feld, keine Klick-Challenge).
+
+Hintergrund: Über das Formular kommen aktuell Spam-Mails durch, weil es keinerlei 
+Bot-Schutz hat. Real-Nutzer dürfen von der Lösung nichts merken.
+
+Umzusetzen, alle betroffenen Dateien vollständig anpassen:
+
+1. Honeypot-Feld: ein zusätzliches Eingabefeld, das im DOM existiert (damit Bots 
+   es ausfüllen), aber für echte Menschen unsichtbar UND unerreichbar ist – auch 
+   per Tastatur und Screenreader (also off-screen/aria-hidden, tabindex -1, 
+   autocomplete off; NICHT nur display:none). Wird dieses Feld ausgefüllt 
+   abgeschickt, wird die Submission serverseitig still verworfen: dem Absender 
+   wird Erfolg vorgegaukelt, aber es wird KEINE Mail versendet und nichts gespeichert.
+
+2. Zeit-Falle: Beim Laden des Formulars wird ein Zeitstempel gesetzt. Wird das 
+   Formular unrealistisch schnell nach dem Laden abgeschickt (Bot-typisch, 
+   Richtwert unter ~3 Sekunden), wird die Submission serverseitig verworfen.
+
+3. Serverseitige Validierung vor dem Mailversand: Pflichtfelder vorhanden, 
+   gültiges E-Mail-Format, vernünftige Maximallängen pro Feld, und Begrenzung 
+   der Anzahl Links/URLs im Nachrichtentext (viele Links = typisches Spam-Signal).
+
+4. WICHTIG: Alle drei Prüfungen müssen SERVERSEITIG greifen, bevor die Mail rausgeht. 
+   Clientseitige Prüfung allein ist wertlos gegen Bots.
+
+NICHT anpassen: Layout, Design, sichtbare Formularfelder, der bestehende 
+Mailversand bei gültigen Anfragen, andere Seiten.
+
+SELF-VERIFY (Pflicht, mit konkretem Beweis pro Zeile):
+- npm run build → Exit 0, Server startet ohne Crash.
+- Beweis: Submission mit ausgefülltem Honeypot → serverseitig verworfen, keine Mail.
+- Beweis: Submission unter ~3 Sek. → verworfen, keine Mail.
+- Beweis: Submission mit ungültiger E-Mail / zu vielen Links → abgewiesen.
+- Beweis: normale, korrekt ausgefüllte Anfrage → geht weiterhin durch, Mail kommt an.
+- Bestätigung: kein sichtbares Feld und kein CAPTCHA hinzugefügt, Layout unverändert.
+- Done-Tabelle: je Mechanismus (Honeypot / Zeit-Falle / Validierung) eine Zeile 
+  mit dem konkreten Testergebnis.

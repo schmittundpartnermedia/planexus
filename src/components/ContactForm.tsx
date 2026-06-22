@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface FormData {
   name: string;
@@ -24,6 +24,12 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [website, setWebsite] = useState('');
+  const renderedAtRef = useRef<number>(0);
+
+  useEffect(() => {
+    renderedAtRef.current = Date.now();
+  }, []);
 
   function validate(): boolean {
     const newErrors: FormErrors = {};
@@ -46,12 +52,17 @@ export default function ContactForm() {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          website,
+          elapsedMs: Date.now() - renderedAtRef.current,
+        }),
       });
 
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
+        setWebsite('');
         setErrors({});
       } else {
         throw new Error('Fehler beim Senden');
@@ -87,6 +98,29 @@ export default function ContactForm() {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            left: '-9999px',
+            top: 'auto',
+            width: '1px',
+            height: '1px',
+            overflow: 'hidden',
+          }}
+        >
+          <label htmlFor="contact-website">Website (bitte freilassen)</label>
+          <input
+            type="text"
+            id="contact-website"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-2">Ihr Name *</label>

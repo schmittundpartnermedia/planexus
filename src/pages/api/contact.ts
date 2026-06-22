@@ -5,24 +5,73 @@ import { contactMessages } from '../../lib/schema';
 
 export const prerender = false;
 
+const MIN_ELAPSED_MS = 3000;
+const MAX_LINKS = 5;
+const MAX_LENGTH = {
+  name: 100,
+  email: 254,
+  subject: 200,
+  message: 5000,
+} as const;
+
+const jsonResponse = (body: object, status: number) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: { 'Content-Type': 'application/json' },
+  });
+
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data = await request.json();
-    const { name, email, subject, message } = data;
+    const { name, email, subject, message, website, elapsedMs } = data;
 
+    // 1. Honeypot: nur Bots füllen das unsichtbare Feld aus.
+    //    Erfolg vorgaukeln, aber WEDER Mail versenden NOCH in der DB speichern.
+    if (typeof website === 'string' && website.trim() !== '') {
+      return jsonResponse({ success: true, message: 'Nachricht erfolgreich gesendet.' }, 200);
+    }
+
+    // 2. Zeit-Falle: unrealistisch schnell nach dem Laden abgeschickt (Bot-typisch).
+    //    Erfolg vorgaukeln, aber WEDER Mail versenden NOCH speichern.
+    if (
+      typeof elapsedMs !== 'number' ||
+      !Number.isFinite(elapsedMs) ||
+      elapsedMs < MIN_ELAPSED_MS
+    ) {
+      return jsonResponse({ success: true, message: 'Nachricht erfolgreich gesendet.' }, 200);
+    }
+
+    // 3. Serverseitige Validierung vor Mailversand und DB-Insert.
     if (!name || !email || !subject || !message) {
-      return new Response(JSON.stringify({ error: 'Alle Felder sind erforderlich.' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return jsonResponse({ error: 'Alle Felder sind erforderlich.' }, 400);
+    }
+
+    if (
+      typeof name !== 'string' ||
+      typeof email !== 'string' ||
+      typeof subject !== 'string' ||
+      typeof message !== 'string'
+    ) {
+      return jsonResponse({ error: 'Ungültige Eingabe.' }, 400);
+    }
+
+    if (
+      name.length > MAX_LENGTH.name ||
+      email.length > MAX_LENGTH.email ||
+      subject.length > MAX_LENGTH.subject ||
+      message.length > MAX_LENGTH.message
+    ) {
+      return jsonResponse({ error: 'Eingabe zu lang.' }, 400);
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return new Response(JSON.stringify({ error: 'Ungültige E-Mail-Adresse.' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return jsonResponse({ error: 'Ungültige E-Mail-Adresse.' }, 400);
+    }
+
+    const linkCount = (message.match(/https?:\/\/|www\./gi) || []).length;
+    if (linkCount > MAX_LINKS) {
+      return jsonResponse({ error: 'Zu viele Links in der Nachricht.' }, 400);
     }
 
     let emailSent = false;
