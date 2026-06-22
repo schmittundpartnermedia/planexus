@@ -1,0 +1,60 @@
+ZIEL: Auf allen Standort-/Städte-Seiten alle erfundenen Projekt- und 
+Referenz-Behauptungen entfernen bzw. auf belegbare Aussagen zurückführen.
+
+Hintergrund: Die Städte-Seiten zeigen erfundene Fallstudien und implizieren 
+bestehende Kundenbeziehungen zu real existierenden, namentlich genannten 
+Institutionen, die es nicht gibt. Das ist rechtlich (UWG) und für die 
+Glaubwürdigkeit ein Problem und muss raus.
+
+Umzusetzen, alle betroffenen Dateien vollständig anpassen:
+
+1. Erfundene Fallstudien/„Realisierungen": Jeder Abschnitt, der konkrete, bereits 
+   umgesetzte Projekte darstellt (z. B. eine Sektion mit mehreren 
+   „Realisierungen – anonymisiert/repräsentativ" samt „Ergebnis: …"), wird 
+   vollständig entfernt. Diese suggerieren reale Referenzen, die nicht existieren.
+
+2. Implizierte bestehende Beziehungen zu namentlich genannten Institutionen: 
+   Jede Aussage, die behauptet oder nahelegt, dass bereits ein Projekt für eine 
+   konkret benannte Institution umgesetzt wurde ODER eine laufende 
+   Abstimmung/Koordination mit ihr besteht (z. B. „für … koordinieren wir mit 
+   der … direkt", „unser Projekt bei …"), wird auf reine Fähigkeits- und 
+   Angebotssprache umgestellt: konditional/Möglichkeitsform („Wir können … bauen", 
+   „geeignet für …", „für Anforderungen an einem Standort wie …"), niemals als 
+   bereits erfolgte Tätigkeit oder bestehende Geschäftsbeziehung.
+
+3. WICHTIG – nicht übersteuern: Das bloße Nennen öffentlich bekannter 
+   Institutionen oder Behörden als Markt-/Standortkontext (z. B. „In Bern sitzen 
+   BAG und Swissmedic", „für Standorte wie das Inselareal gelten folgende 
+   Anforderungen") ist erlaubt und bleibt erhalten, solange daraus KEINE 
+   Kundenbeziehung und KEIN umgesetztes Projekt abgeleitet wird. Es geht 
+   ausschließlich darum, falsche Referenz- und Beziehungs-Behauptungen zu 
+   entfernen – nicht die fachliche Standort-, Normen- oder Behördeninformation.
+
+4. Strukturierte Daten mitkorrigieren: Dieselben Behauptungen stehen teilweise 
+   auch im JSON-LD (Service-Description, FAQPage-Antworten). Überall dort, wo eine 
+   Institution als bediente/Kunden-Entität oder ein umgesetztes Projekt behauptet 
+   wird, ist es ebenso zu entfernen/umzustellen – nicht nur im sichtbaren Text.
+
+5. Keine neuen Behauptungen erfinden: Wo ein Abschnitt ersatzlos entfällt, wird er 
+   entfernt, nicht durch neue erfundene Inhalte ersetzt. Reframing nur von 
+   vorhandenem Text in zulässige Fähigkeitssprache.
+
+Gilt für ALLE Standort-/Städte-Seiten (Bern, Zürich, Basel, Stuttgart, Berlin, 
+Hamburg, München, Düsseldorf, Frankfurt, Wien, Graz, Linz).
+
+NICHT anpassen: Layout, Design, Reihenfolge der übrigen Sektionen, fachliche 
+Standort-/Normen-/Behörden-Infos (SIA, Verzollung, Baurecht), Canonical, 
+hreflang und das Schema-Grundgerüst.
+
+SELF-VERIFY (Pflicht, mit konkretem Beweis):
+- npm run check → keine Fehler; npm run build → Exit 0, Server startet ohne Crash.
+- Done-Tabelle: pro Standort-Seite je entfernter/umgeschriebener Passage eine 
+  Zeile mit Vorher → Nachher (bzw. „entfernt").
+- Bestätigung: auf KEINER Standort-Seite verbleibt eine als „Realisierung/Projekt 
+  mit Ergebnis" dargestellte Fallstudie.
+- Bestätigung: KEINE Aussage stellt eine namentlich genannte Institution als 
+  Kunde oder als umgesetztes Projekt dar; alle entsprechenden Stellen stehen in 
+  Fähigkeits-/Möglichkeitssprache.
+- Bestätigung: dieselben Korrekturen sind auch in den JSON-LD-Blöcken 
+  (Service, FAQPage) umgesetzt.
+- Bestätigung: fachliche Standort-/Normen-Infos, Layout und Struktur unverändert.
