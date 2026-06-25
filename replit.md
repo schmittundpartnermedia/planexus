@@ -9,6 +9,7 @@ The Planexus GmbH website is a corporate online platform designed to market and 
 - Preferred communication style: Simple, everyday language (German)
 - Green accent color: #bbd700
 - No company names on Projekte page
+- KEINE konkreten Preise/€-Beträge im Content (Blog, Seiten). Wirtschaftlichkeit nur als Logik/Faustformel, Prozentangaben und technische Werte sind erlaubt. Konkrete Zahlen nur im individuellen Angebot.
 - Part of Wesemann Holding GmbH
 - WICHTIG: Gründlich arbeiten! Alles komplett durchdenken bevor etwas vorgeschlagen wird. Keine halben Sachen, keine oberflächlichen Fixes. Immer das Gesamtbild berücksichtigen (Server, Ports, Umgebungsvariablen, Dependencies, Nginx-Config). Jede Änderung muss vollständig und getestet sein – keine inkrementellen Debugging-Schleifen. User ist frustriert von Stückwerk und Korrekturschleifen.
 - BLAUPAUSE: Alle Content-Standards, SEO-Regeln und Qualitätschecklisten sind in `Blaupause.md` dokumentiert. Dieses Dokument ist verbindlich für jede neue Seite. Vor jeder Content-Erstellung: Konkurrenzanalyse → Top-3 analysieren → besser bauen. Kein Wort ohne Berechtigung, keine Lügen, alles belegbar.
