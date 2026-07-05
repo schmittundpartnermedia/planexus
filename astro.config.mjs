@@ -32,6 +32,12 @@ function gitLastmod(pathname) {
 export default defineConfig({
   site: 'https://planexus.de',
   trailingSlash: 'never',
+  redirects: {
+    '/about': '/ueber-uns',
+    '/services': '/leistungen',
+    '/contact': '/kontakt',
+    '/products': '/laborcontainer',
+  },
   adapter: node({
     mode: 'standalone',
   }),

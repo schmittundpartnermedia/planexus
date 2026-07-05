@@ -13,7 +13,7 @@ export default function Magazine() {
       date: "12. Januar 2026",
       author: "Sven Biewald",
       category: "Technologie",
-      image: "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop"
+      image: "/images/backgrounds/magazin-innovation-modulbau.webp"
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ export default function Magazine() {
       date: "05. Januar 2026",
       author: "Thomas Boss",
       category: "Nachhaltigkeit",
-      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop"
+      image: "/images/backgrounds/lab-ausstattung.webp"
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ export default function Magazine() {
       date: "20. Dezember 2025",
       author: "Redaktion Planexus",
       category: "Sicherheit",
-      image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2070&auto=format&fit=crop"
+      image: "/images/backgrounds/magazin-bsl-labor.webp"
     }
   ];
 
@@ -45,7 +45,7 @@ export default function Magazine() {
         canonical="/magazin"
       />
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/images/backgrounds/magazin-bg.webp')] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">Planexus Magazin</h1>

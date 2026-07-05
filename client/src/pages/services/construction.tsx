@@ -23,7 +23,7 @@ export default function ConstructionService() {
       ]} />
       {/* Hero Section */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/images/backgrounds/lab-modulbau.webp')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
         
         <div className="container mx-auto px-4 relative z-10">

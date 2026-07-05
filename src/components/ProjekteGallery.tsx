@@ -1,5 +1,51 @@
 import { useState } from 'react';
 
+const IMAGE_DIMS: Record<string, { w: number; h: number }> = {
+  "/attached_assets/IMG_20210520_184046_1769690502588.jpg": { w: 3648, h: 2736 },
+  "/attached_assets/Laborcontainer_010_1769690502589.jpg": { w: 1980, h: 1485 },
+  "/attached_assets/IMG_9073_1769690513473.jpg": { w: 4032, h: 3024 },
+  "/attached_assets/IMG_20210624_091412_1769690513473.jpg": { w: 2736, h: 3299 },
+  "/attached_assets/IMG_20210624_091424_1769690513473.jpg": { w: 3648, h: 2736 },
+  "/attached_assets/IMG_20210624_102201_1769690513474.jpg": { w: 3170, h: 2576 },
+  "/attached_assets/IMG_20210511_065709_1769690531799.jpg": { w: 3648, h: 2736 },
+  "/attached_assets/IMG_20210520_093550_1769690531799.jpg": { w: 3648, h: 2736 },
+  "/attached_assets/IMG-20210211-WA0011_1769690531799.jpg": { w: 768, h: 1024 },
+  "/attached_assets/IMG-20210511-WA0009_1769690531799.jpg": { w: 1600, h: 901 },
+  "/attached_assets/20231109_090436_1769690552935.jpg": { w: 3722, h: 1750 },
+  "/attached_assets/20240731_121741_1769690552935.jpg": { w: 3456, h: 3456 },
+  "/attached_assets/Laborcontainer_013_1769690552935.jpg": { w: 1471, h: 703 },
+  "/attached_assets/Laborcontainer_014_1769690552936.jpg": { w: 1980, h: 925 },
+  "/attached_assets/IMG-20230628-WA0037_1769690564537.jpg": { w: 844, h: 768 },
+  "/attached_assets/IMG-20230628-WA0039_1769690564538.jpg": { w: 1024, h: 768 },
+  "/attached_assets/Labor_1_1769690564538.jpg": { w: 1600, h: 1200 },
+  "/attached_assets/Labor_2_1769690564538.jpg": { w: 1600, h: 1200 },
+  "/attached_assets/IMG-20230901-WA0003_1769690590110.jpg": { w: 2000, h: 1126 },
+  "/attached_assets/IMG-20230901-WA0007_1769690590110.jpg": { w: 1600, h: 900 },
+  "/attached_assets/IMG-20230901-WA0008_1769690590111.jpg": { w: 1600, h: 900 },
+  "/attached_assets/IMG-20230901-WA0009_1769690590111.jpg": { w: 1600, h: 900 },
+  "/attached_assets/IMG_1616_1769690606130.jpg": { w: 4032, h: 3024 },
+  "/attached_assets/IMG_1618_1769690606130.jpg": { w: 4032, h: 3024 },
+  "/attached_assets/IMG_1621_1769690606130.jpg": { w: 4032, h: 3024 },
+  "/attached_assets/IMG_5781_1769690606130.jpg": { w: 3541, h: 2306 },
+  "/attached_assets/IMG_20160509_190630_1769690631269.jpg": { w: 3264, h: 2448 },
+  "/attached_assets/IMG_20160509_190722_1769690631269.jpg": { w: 3264, h: 2448 },
+  "/attached_assets/IMG_20160509_190912_1769690631269.jpg": { w: 3264, h: 2448 },
+  "/images/analytica-2026/stand-uebersicht.jpg": { w: 1600, h: 900 },
+  "/images/analytica-2026/stand-front.jpg": { w: 1600, h: 900 },
+  "/images/analytica-2026/fachgespraeche.jpg": { w: 1600, h: 903 },
+  "/images/analytica-2026/innenansicht.jpg": { w: 1600, h: 900 },
+  "/images/analytica-2026/arbeitsflaeche.jpg": { w: 1600, h: 900 },
+  "/images/analytica-2026/detail.jpg": { w: 1600, h: 900 },
+  "/images/analytica-2026/wandorganizer.jpg": { w: 1600, h: 900 },
+  "/images/analytica-2026/rueckseite.jpg": { w: 675, h: 1200 },
+  "/images/analytica-2026/infowand.jpg": { w: 1600, h: 899 },
+};
+
+function imgDims(src: string) {
+  return IMAGE_DIMS[src] ?? { w: 1600, h: 1200 };
+}
+
+
 interface Project {
   name: string;
   description: string;
@@ -154,6 +200,8 @@ export default function ProjekteGallery() {
                   <img
                     src={project.images[0]}
                     alt={project.name}
+                    width={imgDims(project.images[0]).w}
+                    height={imgDims(project.images[0]).h}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
@@ -189,6 +237,8 @@ export default function ProjekteGallery() {
                 <img
                   src={img}
                   alt={`analytica 2026 LABtoGO Premiere - Bild ${index + 1}`}
+                  width={imgDims(img).w}
+                  height={imgDims(img).h}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -213,6 +263,8 @@ export default function ProjekteGallery() {
                 <img
                   src={img}
                   alt={`Messe MC Labor 2016 - Bild ${index + 1}`}
+                  width={imgDims(img).w}
+                  height={imgDims(img).h}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -248,6 +300,8 @@ export default function ProjekteGallery() {
               <img
                 src={selectedProject.images[selectedImageIndex]}
                 alt={`${selectedProject.name} - Bild ${selectedImageIndex + 1}`}
+                width={imgDims(selectedProject.images[selectedImageIndex]).w}
+                height={imgDims(selectedProject.images[selectedImageIndex]).h}
                 className="w-full h-full object-contain bg-black"
               />
             </div>
@@ -267,6 +321,8 @@ export default function ProjekteGallery() {
                   <img
                     src={img}
                     alt={`Thumbnail ${index + 1}`}
+                    width={imgDims(img).w}
+                    height={imgDims(img).h}
                     className="w-full h-full object-cover"
                   />
                 </button>

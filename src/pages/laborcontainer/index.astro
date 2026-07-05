@@ -97,10 +97,10 @@ const features = [
 ];
 
 const branchen = [
-  { title: "Pharma & Diagnostik", text: "GMP-Reinräume nach ISO 14644 und EU-GMP-Annex 1 für Pilotproduktionen, klinische Studien und Diagnostik. Schleusenkonzepte, Material-/Personenfluss-Trennung und IQ/OQ/PQ-fähige Dokumentation.", img: "/attached_assets/Laborcontainer_001_1769688326918.jpg" },
-  { title: "Biotech & Virologie", text: "Sicherheitslabore der Stufen BSL-2 und BSL-3 mit Unterdruckkaskaden, redundanter HEPA-Filtration, Schleuse, Autoklav und Notabsaugung. Konform mit BioStoffV, GenTG, TRBA 100.", img: "/attached_assets/Laborcontainer_007_1769688326918.jpg" },
-  { title: "Qualitätskontrolle & Analytik", text: "Analytiklabore mit HPLC-, GC- und Spektrometrie-Arbeitsplätzen, vibrationsentkoppelten Wägetischen, schwingungsisolierten Aufstellungen und unterbrechungsfreier Stromversorgung.", img: "/attached_assets/Laborcontainer_008_1769688326918.jpg" },
-  { title: "Interimslösungen", text: "Vollwertiger Laborersatz während Klinik-Sanierungen, Universitäts-Umbauten oder Industrie-Stillständen. Aufstellung in 48 Stunden, Rücknahme oder Mietkauf am Projektende.", img: "/attached_assets/Laborcontainer_010_1769690502589.jpg" }
+  { title: "Pharma & Diagnostik", text: "GMP-Reinräume nach ISO 14644 und EU-GMP-Annex 1 für Pilotproduktionen, klinische Studien und Diagnostik. Schleusenkonzepte, Material-/Personenfluss-Trennung und IQ/OQ/PQ-fähige Dokumentation.", img: "/attached_assets/Laborcontainer_001_1769688326918.jpg", imgW: 1980, imgH: 1980 },
+  { title: "Biotech & Virologie", text: "Sicherheitslabore der Stufen BSL-2 und BSL-3 mit Unterdruckkaskaden, redundanter HEPA-Filtration, Schleuse, Autoklav und Notabsaugung. Konform mit BioStoffV, GenTG, TRBA 100.", img: "/attached_assets/Laborcontainer_007_1769688326918.jpg", imgW: 1980, imgH: 1485 },
+  { title: "Qualitätskontrolle & Analytik", text: "Analytiklabore mit HPLC-, GC- und Spektrometrie-Arbeitsplätzen, vibrationsentkoppelten Wägetischen, schwingungsisolierten Aufstellungen und unterbrechungsfreier Stromversorgung.", img: "/attached_assets/Laborcontainer_008_1769688326918.jpg", imgW: 1980, imgH: 1485 },
+  { title: "Interimslösungen", text: "Vollwertiger Laborersatz während Klinik-Sanierungen, Universitäts-Umbauten oder Industrie-Stillständen. Aufstellung in 48 Stunden, Rücknahme oder Mietkauf am Projektende.", img: "/attached_assets/Laborcontainer_010_1769690502589.jpg", imgW: 1980, imgH: 1485 }
 ];
 
 const regionen = [
@@ -262,7 +262,7 @@ const regionen = [
         {branchen.map(b => (
           <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-200 group">
             <div class="aspect-[16/9] overflow-hidden">
-              <img src={b.img} alt={b.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src={b.img} alt={b.title} width={b.imgW} height={b.imgH} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-slate-900 mb-3">{b.title}</h3>

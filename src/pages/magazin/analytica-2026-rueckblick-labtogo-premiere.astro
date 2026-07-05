@@ -4,6 +4,7 @@ import Picture from '../../components/Picture.astro';
 ---
 
 <Layout
+  type="article"
   title="analytica 2026 – LABtoGO Premiere"
   description="analytica 2026 Rückblick: Planexus zeigt den LABtoGO live in München. Begehbarer LABtoGO und Auszeichnung als führender Anbieter."
   canonical="/magazin/analytica-2026-rueckblick-labtogo-premiere"
@@ -17,8 +18,9 @@ import Picture from '../../components/Picture.astro';
       "description": "Rückblick auf die analytica 2026: Planexus stellt den LABtoGO erstmals vor. Begehbarer LABtoGO, überwältigende Resonanz und Auszeichnung als führender Anbieter innovativer Laborräume.",
       "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/team/sven-biewald", "jobTitle": "Geschäftsführer", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
       "datePublished": "2026-04-02",
+      "dateModified": "2026-04-02",
       "image": "https://planexus.de/images/analytica-2026/hero.jpg",
-      "publisher": { "@type": "Organization", "name": "Planexus GmbH" }
+      "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } }
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -59,7 +61,9 @@ import Picture from '../../components/Picture.astro';
           class="w-full h-auto"
           loading="eager"
           fetchpriority="high"
-        />
+                          width={1600}
+                  height={900}
+                />
         <figcaption class="text-sm text-slate-500 mt-3 text-center">Planexus & Wesemann Messestand — analytica 2026, Halle B2, Stand 322</figcaption>
       </figure>
 
@@ -77,10 +81,10 @@ import Picture from '../../components/Picture.astro';
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
           <div class="rounded-xl overflow-hidden">
-            <Picture src="/images/analytica-2026/stand-uebersicht.jpg" alt="LABtoGO Laborcontainer auf der analytica 2026 — Gesamtansicht des Messestands mit Besuchern" class="w-full h-full object-cover" loading="lazy" />
+            <Picture src="/images/analytica-2026/stand-uebersicht.jpg" alt="LABtoGO Laborcontainer auf der analytica 2026 — Gesamtansicht des Messestands mit Besuchern" class="w-full h-full object-cover" loading="lazy" width={1600} height={900} />
           </div>
           <div class="rounded-xl overflow-hidden">
-            <Picture src="/images/analytica-2026/fachgespraeche.jpg" alt="Fachgespräche am Planexus Stand auf der analytica 2026 — Besucher informieren sich über den LABtoGO" class="w-full h-full object-cover" loading="lazy" />
+            <Picture src="/images/analytica-2026/fachgespraeche.jpg" alt="Fachgespräche am Planexus Stand auf der analytica 2026 — Besucher informieren sich über den LABtoGO" class="w-full h-full object-cover" loading="lazy" width={1600} height={903} />
           </div>
         </div>
 
@@ -91,13 +95,13 @@ import Picture from '../../components/Picture.astro';
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-10">
           <div class="rounded-xl overflow-hidden">
-            <Picture src="/images/analytica-2026/innenansicht.jpg" alt="LABtoGO Innenansicht — beidseitige Arbeitsflächen mit vollständiger Laborausstattung" class="w-full h-full object-cover" loading="lazy" />
+            <Picture src="/images/analytica-2026/innenansicht.jpg" alt="LABtoGO Innenansicht — beidseitige Arbeitsflächen mit vollständiger Laborausstattung" class="w-full h-full object-cover" loading="lazy" width={1600} height={900} />
           </div>
           <div class="rounded-xl overflow-hidden">
-            <Picture src="/images/analytica-2026/arbeitsflaeche.jpg" alt="Laborarbeitsfläche im LABtoGO mit Medienversorgung, Reagenzgläsern und Laborgeräten" class="w-full h-full object-cover" loading="lazy" />
+            <Picture src="/images/analytica-2026/arbeitsflaeche.jpg" alt="Laborarbeitsfläche im LABtoGO mit Medienversorgung, Reagenzgläsern und Laborgeräten" class="w-full h-full object-cover" loading="lazy" width={1600} height={900} />
           </div>
           <div class="rounded-xl overflow-hidden">
-            <Picture src="/images/analytica-2026/wandorganizer.jpg" alt="Better Basics Labororganisation im LABtoGO — Wandorganizer mit Laborutensilien" class="w-full h-full object-cover" loading="lazy" />
+            <Picture src="/images/analytica-2026/wandorganizer.jpg" alt="Better Basics Labororganisation im LABtoGO — Wandorganizer mit Laborutensilien" class="w-full h-full object-cover" loading="lazy" width={1600} height={900} />
           </div>
         </div>
 
@@ -123,10 +127,10 @@ import Picture from '../../components/Picture.astro';
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
           <div class="rounded-xl overflow-hidden">
-            <Picture src="/images/analytica-2026/rueckseite.jpg" alt="LABtoGO Rückseite auf der analytica 2026 — RAL 7016 Anthrazit mit integrierter Klimaanlage" class="w-full h-full object-cover" loading="lazy" />
+            <Picture src="/images/analytica-2026/rueckseite.jpg" alt="LABtoGO Rückseite auf der analytica 2026 — RAL 7016 Anthrazit mit integrierter Klimaanlage" class="w-full h-full object-cover" loading="lazy" width={675} height={1200} />
           </div>
           <div class="rounded-xl overflow-hidden">
-            <Picture src="/images/analytica-2026/infowand.jpg" alt="LABtoGO Infowand auf der analytica 2026 — modulare Container und innovative Laborlösungen" class="w-full h-full object-cover" loading="lazy" />
+            <Picture src="/images/analytica-2026/infowand.jpg" alt="LABtoGO Infowand auf der analytica 2026 — modulare Container und innovative Laborlösungen" class="w-full h-full object-cover" loading="lazy" width={1600} height={899} />
           </div>
         </div>
 

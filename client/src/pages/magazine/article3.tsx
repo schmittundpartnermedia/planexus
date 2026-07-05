@@ -17,7 +17,7 @@ export default function Article3() {
         description="Sicherheitsstufen im Containerbau sind kein Problem mehr. Erfahren Sie, wie wir höchste Sicherheitsanforderungen in mobilen Einheiten realisieren."
         author="Redaktion Planexus"
         datePublished="2025-12-20"
-        image="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2070"
+        image="/images/backgrounds/magazin-bsl-labor.webp"
         url="/magazin/bsl-2-bsl-3-container-labor"
       />
       <BreadcrumbSchema items={[
@@ -27,7 +27,7 @@ export default function Article3() {
       ]} />
       {/* Hero */}
       <section className="relative py-20 bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2070')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/images/backgrounds/magazin-bsl-labor.webp')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -448,7 +448,7 @@ export default function Article3() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link href="/magazin/1" className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
                 <div className="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1581093588401-fbb07aa5cd12?q=80&w=400" alt="" className="w-full h-full object-cover" />
+                  <img src="/images/backgrounds/lab-planung.webp" alt="" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <p className="text-xs text-primary font-medium mb-2">Technologie</p>
@@ -457,7 +457,7 @@ export default function Article3() {
             </Link>
             <Link href="/magazin/2" className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
                 <div className="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=400" alt="" className="w-full h-full object-cover" />
+                  <img src="/images/backgrounds/lab-ausstattung.webp" alt="" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <p className="text-xs text-primary font-medium mb-2">Nachhaltigkeit</p>

@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.tsx';
+
+const title = "Laborcontainer-Standorte in Deutschland – DACH-Übersicht";
+const description = "Planexus liefert Laborcontainer in 12 Städte: Berlin, Hamburg, München, Stuttgart, Frankfurt, Düsseldorf sowie Zürich, Basel, Bern, Wien, Graz und Linz. Standortübersicht mit Direktlinks.";
+const canonical = "/standorte";
+
+const cities = [
+  { slug: 'berlin', name: 'Berlin', region: 'DE', hint: 'Hauptstadtregion, Adlershof, Charité' },
+  { slug: 'hamburg', name: 'Hamburg', region: 'DE', hint: 'Hafen, DESY, Life Science Nord' },
+  { slug: 'muenchen', name: 'München', region: 'DE', hint: 'Biotech-Cluster Martinsried, TUM' },
+  { slug: 'stuttgart', name: 'Stuttgart', region: 'DE', hint: 'Automotive, Fraunhofer, Filderebene' },
+  { slug: 'frankfurt', name: 'Frankfurt', region: 'DE', hint: 'Industriepark Höchst, Riedberg, UKF' },
+  { slug: 'duesseldorf', name: 'Düsseldorf', region: 'DE', hint: 'Henkel, Qiagen, NRW-Pharma' },
+  { slug: 'zuerich', name: 'Zürich', region: 'CH', hint: 'ETH, USZ, Pharma-Cluster' },
+  { slug: 'basel', name: 'Basel', region: 'CH', hint: 'Roche, Novartis, Life-Science-Dreiländereck' },
+  { slug: 'bern', name: 'Bern', region: 'CH', hint: 'Inselspital, BAG, Swissmedic' },
+  { slug: 'wien', name: 'Wien', region: 'AT', hint: 'Vienna BioCenter, AKH, ISTA' },
+  { slug: 'graz', name: 'Graz', region: 'AT', hint: 'AVL, BioTechMed, TU Graz' },
+  { slug: 'linz', name: 'Linz', region: 'AT', hint: 'Voestalpine, Chemiepark, JKU' },
+];
+
+const de = cities.filter(c => c.region === 'DE');
+const ch = cities.filter(c => c.region === 'CH');
+const at = cities.filter(c => c.region === 'AT');
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Standorte", "item": "https://planexus.de/standorte" }
+  ]
+};
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Laborcontainer-Standorte in Deutschland und DACH",
+  "description": description,
+  "url": "https://planexus.de/standorte",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de" }
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} schema={collectionSchema}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+      <div class="container mx-auto px-4 text-center relative z-10">
+        <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">Laborcontainer-Standorte in Deutschland</h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Planexus liefert schlüsselfertige Laborcontainer ab Werk Albstadt in zwölf Metropolregionen – sechs deutsche Wirtschaftsstandorte plus Schweiz und Österreich. Wählen Sie Ihre Stadt für standortspezifische Engineering-Details, Genehmigungspfade und Logistik.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto text-center mb-12">
+          <p class="text-gray-600 text-lg leading-relaxed">
+            Jede Stadtseite enthält lokale Besonderheiten zu Baurecht, Anfahrt vom Werk und typischen Einsatzfeldern – von BSL-2/3 über GMP-Reinraum bis ATEX. Alle Container werden in Albstadt gefertigt und mit standortgerechter Dokumentation ausgeliefert.
+          </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="text-2xl" aria-hidden="true">🇩🇪</span>
+              <h2 class="font-bold text-slate-900 text-lg">Deutschland</h2>
+            </div>
+            <ul class="space-y-3">
+              {de.map(c => (
+                <li>
+                  <a href={`/laborcontainer-${c.slug}`} class="group block">
+                    <span class="text-slate-900 font-medium group-hover:text-[#7a9900] transition-colors">Laborcontainer {c.name}</span>
+                    <span class="block text-sm text-gray-500">{c.hint}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="text-2xl" aria-hidden="true">🇨🇭</span>
+              <h2 class="font-bold text-slate-900 text-lg">Schweiz</h2>
+            </div>
+            <ul class="space-y-3">
+              {ch.map(c => (
+                <li>
+                  <a href={`/laborcontainer-${c.slug}`} class="group block">
+                    <span class="text-slate-900 font-medium group-hover:text-[#7a9900] transition-colors">Laborcontainer {c.name}</span>
+                    <span class="block text-sm text-gray-500">{c.hint}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="text-2xl" aria-hidden="true">🇦🇹</span>
+              <h2 class="font-bold text-slate-900 text-lg">Österreich</h2>
+            </div>
+            <ul class="space-y-3">
+              {at.map(c => (
+                <li>
+                  <a href={`/laborcontainer-${c.slug}`} class="group block">
+                    <span class="text-slate-900 font-medium group-hover:text-[#7a9900] transition-colors">Laborcontainer {c.name}</span>
+                    <span class="block text-sm text-gray-500">{c.hint}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4">Ihr Standort nicht dabei?</h2>
+          <p class="text-gray-600 mb-8">Wir liefern in ganz Deutschland, der Schweiz und Österreich – auch außerhalb der zwölf Metropolregionen. Sprechen Sie uns an.</p>
+          <a href="/kontakt" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">
+            Projekt anfragen
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

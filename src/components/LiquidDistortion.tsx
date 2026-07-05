@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Renderer, Program, Texture, Mesh, Vec2, Flowmap, Triangle } from "ogl";
 
-export function LiquidDistortion({ imageSrc, className = "" }: { imageSrc: string; className?: string }) {
+export function LiquidDistortion({ imageSrc, className = "", width = 2560, height = 1280 }: { imageSrc: string; className?: string; width?: number; height?: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [webglFailed, setWebglFailed] = useState(false);
 
@@ -133,6 +133,8 @@ export function LiquidDistortion({ imageSrc, className = "" }: { imageSrc: strin
           src={imageSrc} 
           alt="Planexus GmbH — Laborcontainer und Modulbau Spezialist" 
           className="w-full h-full object-cover"
+          width={width}
+          height={height}
         />
       </div>
     );

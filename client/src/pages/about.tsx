@@ -13,7 +13,7 @@ export default function About() {
       />
       {/* Header */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/images/backgrounds/ueber-uns-bg.webp')] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 

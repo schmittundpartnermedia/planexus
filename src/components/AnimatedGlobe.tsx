@@ -280,6 +280,8 @@ export function AnimatedGlobe() {
               src="/attached_assets/Wesemann_Logo_1770839062818.png"
               alt="Wesemann Laboreinrichtungen"
               className="w-[80px] h-auto object-contain"
+              width={2548}
+              height={492}
             />
           </motion.div>
         </div>
@@ -304,6 +306,8 @@ export function AnimatedGlobe() {
                 src={company.logo}
                 alt={company.name}
                 className="h-7 lg:h-9 w-auto max-w-[90px] lg:max-w-[110px] object-contain"
+                width={120}
+                height={48}
                 loading="eager"
               />
             </motion.div>
@@ -330,6 +334,8 @@ export function AnimatedGlobe() {
                 src={sat.logo}
                 alt={sat.name}
                 className="h-7 lg:h-9 w-auto max-w-[90px] lg:max-w-[110px] object-contain"
+                width={120}
+                height={48}
                 loading="eager"
               />
             </motion.div>
@@ -356,6 +362,8 @@ export function AnimatedGlobe() {
                 src={company.logo}
                 alt={company.name}
                 className="h-7 w-auto max-w-[100px] object-contain"
+                width={120}
+                height={48}
                 loading="eager"
               />
             </motion.div>

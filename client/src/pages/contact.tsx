@@ -71,7 +71,7 @@ export default function Contact() {
         canonical="/kontakt"
       />
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/images/backgrounds/kontakt-bg.webp')] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">Kontaktieren Sie uns</h1>

@@ -10,9 +10,19 @@ interface Props {
   type?: string;
   schema?: object;
   ogImage?: string;
+  robots?: string;
 }
 
-const { title, description, canonical, type = 'website', schema, ogImage } = Astro.props;
+const {
+  title,
+  description,
+  canonical,
+  type = 'website',
+  schema,
+  ogImage,
+  robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+} = Astro.props;
+const isNoindex = robots.startsWith('noindex');
 const fullTitle = title.includes('Planexus') ? title : `${title} | Planexus`;
 const siteUrl = 'https://planexus.de';
 
@@ -39,7 +49,6 @@ const chPaths = ['/laborcontainer-zuerich', '/laborcontainer-basel', '/laborcont
 const atPaths = ['/laborcontainer-wien', '/laborcontainer-graz', '/laborcontainer-linz'];
 const isCH = chPaths.includes(normalizedPath);
 const isAT = atPaths.includes(normalizedPath);
-const isDE = !isCH && !isAT;
 ---
 
 <!DOCTYPE html>
@@ -51,9 +60,9 @@ const isDE = !isCH && !isAT;
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Planexus GmbH" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="bingbot" content="index, follow" />
+    <meta name="robots" content={robots} />
+    <meta name="googlebot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
+    <meta name="bingbot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
     <meta name="geo.region" content={isCH ? "CH" : isAT ? "AT" : "DE"} />
     <meta name="geo.placename" content={isCH ? "Schweiz" : isAT ? "Österreich" : "Deutschland"} />
     <meta name="language" content="German" />
@@ -82,9 +91,6 @@ const isDE = !isCH && !isAT;
     <link rel="canonical" href={canonicalUrl} />
 
     <link rel="alternate" hreflang="de" href={canonicalUrl} />
-    {isDE && <link rel="alternate" hreflang="de-DE" href={canonicalUrl} />}
-    {isCH && <link rel="alternate" hreflang="de-CH" href={canonicalUrl} />}
-    {isAT && <link rel="alternate" hreflang="de-AT" href={canonicalUrl} />}
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ9YKTCQFJ"></script>
@@ -124,47 +130,9 @@ const isDE = !isCH && !isAT;
 
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Planexus GmbH",
-      "image": "https://planexus.de/images/labtogo-industrie.webp",
-      "description": "Spezialist für Laborcontainer und Modulbau",
-      "url": siteUrl,
-      "priceRange": "€€€",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Am Steinbach 8",
-        "addressLocality": "Albstadt",
-        "postalCode": "72459",
-        "addressCountry": "DE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 48.2180461,
-        "longitude": 8.9140541
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "17:00"
-      },
-      "telephone": "+49 7435 7519 700",
-      "email": "info@planexus.de"
-    })} />
-
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Planexus GmbH",
       "url": siteUrl,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": `${siteUrl}/magazin?q={search_term_string}`
-        },
-        "query-input": "required name=search_term_string"
-      }
     })} />
 
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}

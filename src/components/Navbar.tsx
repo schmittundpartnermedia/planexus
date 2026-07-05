@@ -56,11 +56,9 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         <a href="/" className="flex items-center gap-2">
-          <img 
-            src="/images/planexus-logo.png" 
+          <img src="/images/planexus-logo.png" 
             alt="Planexus Logo" 
-            className="h-8 lg:h-10 w-auto" 
-          />
+            className="h-8 lg:h-10 w-auto" width={800} height={169} />
         </a>
 
         <div className="hidden lg:flex items-center gap-8">
