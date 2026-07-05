@@ -18,10 +18,23 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 3, "name": "Beratung & Genehmigung", "item": "https://planexus.de/leistungen/beratung" }
   ]
 };
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Braucht ein Laborcontainer eine Baugenehmigung?", "acceptedAnswer": { "@type": "Answer", "text": "Das hängt von Aufstellungsdauer, Landesbauordnung (LBO) und Nutzungsart ab. Temporäre Aufstellung bis 3–6 Monate ist in vielen Bundesländern genehmigungsfrei, wenn der Container als bewegliche Sache gilt. Dauerhafte Aufstellung oder BSL-3-Nutzung erfordert in der Regel einen Bauantrag mit Lageplan, Standsicherheitsnachweis, Brandschutzkonzept und ggf. Abweichungsantrag. Wir prüfen für jeden Standort in DE, AT und CH die landesspezifische LBO und bereiten die Unterlagen vor." } },
+    { "@type": "Question", "name": "Wann greift das BImSchG bei Laborcontainern?", "acceptedAnswer": { "@type": "Answer", "text": "Das Bundes-Immissionsschutzgesetz (BImSchG) wird relevant, wenn der Container Emissionen erzeugt, die über Anlage IV des BImSchG hinausgehen – z. B. Abluft aus Abzügen mit organischen Lösungsmitteln, Verbrennungsanlagen oder größere Kälteanlagen. Für Standard-Labore mit DIN-EN-14175-Abzügen und Abluftführung ins Freie reicht oft eine Anzeige nach § 15 BImSchG. Bei BSL-3-Laboren mit HEPA-gefilterter Abluft prüfen wir, ob eine 4. BImSchV-Genehmigung erforderlich ist." } },
+    { "@type": "Question", "name": "Welche Anforderungen stellt die BioStoffV an Container-Labore?", "acceptedAnswer": { "@type": "Answer", "text": "Für Arbeiten mit biologischen Arbeitsstoffen der Schutzstufen 2 und 3 gelten BioStoffV §§ 14–15. BSL-2 erfordert eine Anzeige beim zuständigen Arbeitsschutzamt mit baulichem und organisatorischem Sicherheitskonzept. BSL-3 erfordert eine Erlaubnis nach § 15 BioStoffV mit Nachweis gerichteter Luftströmung, Personalschleuse, Autoklav, Notdusche und HEPA-Doppelfilterung. Wir erstellen die vollständigen Anzeige- bzw. Erlaubnisunterlagen inklusive Gefährdungsbeurteilung nach ArbSchG." } },
+    { "@type": "Question", "name": "Wie läuft ein Genehmigungsverfahren für GMP-Container ab?", "acceptedAnswer": { "@type": "Answer", "text": "GMP-Container benötigen keine separate Baugenehmigung für die GMP-Konformität – diese wird durch die zuständige Behörde (BfArM, Swissmedic, BASG) im Rahmen der Herstellungserlaubnis oder klinischen Prüfung geprüft. Unsere Beratung umfasst die Vorbereitung der Annex-1-Dokumentation, CCS-Konzept, Reinraumqualifizierung (IQ/OQ/PQ) und Behördenkommunikation. Parallel klären wir baurechtliche Fragen (LBO) und immissionsschutzrechtliche Anforderungen (BImSchG)." } },
+    { "@type": "Question", "name": "Berät Planexus auch bei ATEX-Genehmigungen für Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. ATEX-Bereiche nach EN 60079 erfordern eine Explosionsschutzdokumentation nach BetrSichV und ATEX-Richtlinie 1999/92/EG. Wir erstellen Zoneneinteilungen (Zone 0/1/2), dokumentieren Zündquellen, planen Ex-geschützte Geräte und Lüftungskonzepte für brennbare Gase oder Dämpfe. Die Dokumentation wird in die Gefährdungsbeurteilung nach ArbSchG integriert und bei Bedarf mit dem zuständigen Arbeitsschutzamt abgestimmt." } },
+    { "@type": "Question", "name": "Wie lange dauert ein BSL-3-Genehmigungsverfahren in Deutschland?", "acceptedAnswer": { "@type": "Answer", "text": "BSL-3 nach BioStoffV §15 erfordert eine Erlaubnis beim zuständigen Arbeitsschutzamt. Mit vollständiger Unterlage (Gefährdungsbeurteilung, bauliches Konzept, Sicherheitskonzept, Organisationsplan) dauert das Verfahren 8–12 Wochen. Parallel läuft die ZKBS-Anzeige beim Robert Koch-Institut. Wir bereiten alle Unterlagen vor und begleiten Behörden-Gespräche. Fehlende Dokumente verlängern das Verfahren um 4–8 Wochen – deshalb starten wir die Behördenkoordination parallel zur Werksplanung." } }
+  ]
+};
 ---
 
-<Layout title="Genehmigung & Baurecht für Laborcontainer | Planexus" description="Genehmigungsberatung für Laborcontainer in DACH: LBO der 16 Bundesländer, BImSchG, GenTG, BSL-2/3, Arbeits- und Brandschutz – Behördenpfad aus einer Hand." canonical="/leistungen/beratung" schema={serviceSchema} ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg">
+<Layout title="Laborcontainer Beratung – Analyse, Konzept, Umsetzung" description="Laborcontainer Beratung: Bedarfsanalyse, Genehmigung LBO/BImSchG/GenTG, BSL-2/3, Brandschutz in DACH. Behördenpfad aus einer Hand. Kostenlose Beratung." canonical="/leistungen/beratung" schema={serviceSchema} ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg">
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
 
   <div class="pt-20 min-h-screen bg-white">
     <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
@@ -33,7 +46,7 @@ const breadcrumbSchema = {
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
             <span>Leistungen</span>
           </div>
-          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">Beratung &amp; Genehmigung <span class="text-primary">für Laborcontainer</span></h1>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">Laborcontainer Beratung – Bedarfsanalyse, Konzept, Umsetzung</h1>
           <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4">LBO der 16 Bundesländer, BImSchG, GenTG, Biostoffverordnung, ArbSchG und Brandschutzkonzepte – wir führen Sie durch jeden Behördenpfad in Deutschland, Österreich und der Schweiz.</p>
           <p class="text-base text-gray-400 leading-relaxed max-w-3xl mb-8">Spezialisiert auf <strong class="text-white">Genehmigungsfragen rund um modulare Laborcontainer</strong>: BSL-2/3, GMP, ATEX, Brandschutzkonzept, RP-/Bauamts-Pfad. Keine allgemeine Bauberatung, keine Wohn- oder Gewerbebau-Themen.</p>
           <div class="flex flex-col sm:flex-row gap-4">
@@ -61,11 +74,11 @@ const breadcrumbSchema = {
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div class="lg:col-span-2 space-y-12">
             <div>
-              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">Kompetente Unterstützung bei allen Formalitäten</h2>
+              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">Genehmigungen für Laborcontainer: LBO, BImSchG und BioStoffV</h2>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Die Errichtung eines Laborcontainers ist mit zahlreichen rechtlichen und behördlichen Anforderungen verbunden. Von der Baugenehmigung über Arbeitsschutzvorschriften bis hin zu speziellen Auflagen für Laboratorien – der Weg durch die Bürokratie kann lang und steinig sein. Doch Sie müssen diesen Weg nicht alleine gehen.</p>
-                <p>Bei Planexus verstehen wir nicht nur, wie man Labore baut, sondern auch, welche rechtlichen Rahmenbedingungen dabei zu beachten sind. Unsere Experten kennen die relevanten Vorschriften und haben langjährige Erfahrung im Umgang mit Behörden und Genehmigungsverfahren.</p>
-                <p>Wir begleiten Sie durch den gesamten Prozess – von der ersten Beratung über die Antragstellung bis zur erfolgreichen Genehmigung. So können Sie sich auf das konzentrieren, was Sie am besten können: Ihre Forschung und Entwicklung.</p>
+                <p>Die Errichtung eines Laborcontainers erfordert die Abstimmung mehrerer Rechtsgebiete: Baurecht (LBO der 16 Bundesländer), Immissionsschutz (BImSchG), Biostoffrecht (BioStoffV), Gentechnikrecht (GenTG), Arbeitsschutz (ArbStättV, GefStoffV) und Brandschutz (MBO/LBO). Jeder Pfad hat eigene Fristen, Unterlagen und Zuständigkeiten.</p>
+                <p>Planexus erstellt für jedes Projekt eine Genehmigungs-Roadmap mit Meilensteinen: Welche Genehmigungen sind erforderlich, welche Unterlagen werden benötigt, welche Behörde ist zuständig, welche Fristen gelten? Die Roadmap wird mit dem Bauherrn abgestimmt und als Projektmanagement-Grundlage verwendet.</p>
+                <p>Bei BSL-3-Projekten koordinieren wir parallel den BioStoffV-Erlaubnisprozess (§ 15) mit dem ZKBS-Sekretariat, den baurechtlichen Genehmigungsprozess und die Gefährdungsbeurteilung nach ArbSchG. Bei GMP-Projekten begleiten wir die Behördenkommunikation mit BfArM, Swissmedic oder BASG parallel zur baurechtlichen Klärung.</p>
               </div>
             </div>
 
@@ -149,7 +162,22 @@ const breadcrumbSchema = {
               <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Brandschutz</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
                 <p>Der Brandschutz ist ein zentrales Thema bei der Planung und Genehmigung von Laborcontainern. Wir erstellen Brandschutzkonzepte, die den Anforderungen der Bauordnung und der Industriebaurichtlinie entsprechen.</p>
-                <p>Unsere Brandschutzkonzepte umfassen baulichen, anlagentechnischen und organisatorischen Brandschutz. Von der feuerwiderstandsfähigen Konstruktion über Brandmeldeanlagen bis hin zu Flucht- und Rettungswegeplänen – wir denken an alles und stimmen das Konzept mit den zuständigen Brandschutzdienststellen ab.</p>
+                <p>Unsere Brandschutzkonzepte umfassen baulichen, anlagentechnischen und organisatorischen Brandschutz. Von der feuerwiderstandsfähigen Konstruktion über Brandmeldeanlagen bis hin zu Flucht- und Rettungswegeplänen – wir stimmen das Konzept mit den zuständigen Brandschutzdienststellen ab.</p>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-heading font-bold mb-6 text-slate-900">Behördenpfade nach Branche und Sicherheitsstufe</h2>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>
+                  Die Genehmigungsstrategie hängt vom Einsatzzweck ab. Für <a href="/branchen/pharma-biotech" class="text-primary font-medium hover:underline">Laborcontainer Pharma &amp; Biotech</a> koordinieren wir BfArM-/Swissmedic-Anforderungen parallel zur LBO-Prüfung. <a href="/branchen/public-health-krisenvorsorge" class="text-primary font-medium hover:underline">Public-Health- und Krisenvorsorge-Labore</a> benötigen zusätzlich BioStoffV-Anzeigen und ggf. BSL-3-Erlaubnisse nach § 15 BioStoffV mit ZKBS-Abstimmung.
+                </p>
+                <p>
+                  Jeder Behördenpfad wird mit einer Checkliste dokumentiert: LBO-Bauantrag, BImSchG-Anzeige, BioStoffV-Anzeige/Erlaubnis, GenTG-S1–S4-Erlaubnis, Brandschutzkonzept nach MBO/LAR und Gefährdungsbeurteilung nach ArbSchG. ATEX-Projekte nach EN 60079 erhalten ein separates Explosionsschutzdokument. GMP-Container referenzieren EU-GMP Annex 1 und Annex 15 für die Qualifizierungsdokumentation.
+                </p>
+                <p>
+                  In Österreich gelten analoge Pfade über OIB-Richtlinien und BMSGPK; in der Schweiz über kantonale Bauordnungen, ESV (Gentechnik) und Swissmedic (GMP). Wir kennen die landesspezifischen Besonderheiten aller 16 deutschen LBO, der 9 österreichischen Landesbauordnungen und der 26 kantonalen Bauvorschriften in der Schweiz.
+                </p>
               </div>
             </div>
           </div>
@@ -184,6 +212,22 @@ const breadcrumbSchema = {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">Häufige Fragen zur Beratung &amp; Genehmigung</h2>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <div class="bg-white rounded-xl p-6 border border-gray-100">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

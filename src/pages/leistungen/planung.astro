@@ -18,16 +18,29 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 3, "name": "Technische Fachplanung", "item": "https://planexus.de/leistungen/planung" }
   ]
 };
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welche Normen fließen in die Laborcontainer-Planung ein?", "acceptedAnswer": { "@type": "Answer", "text": "Die technische Fachplanung berücksichtigt ISO 14644-1/-2 für Reinraumklassen, DIN 1946-7 für Lüftung in Laborräumen, DIN EN 12128 für Laborgebäude, ASR A3.6 für Lüftung am Arbeitsplatz, TRBA 100/120 für BSL-2/3, EU-GMP Annex 1 für sterile Bereiche, ISO 17025 für Prüflabor-Anforderungen und EN 60079 für ATEX-Zonen. Jede Norm wird im Planungsdokument mit konkreten Sollwerten hinterlegt – Luftwechselrate, Differenzdruck, Partikelgrenzwerte, Medienversorgung und Sicherheitszonen." } },
+    { "@type": "Question", "name": "Was liefert die Planungsphase als Ergebnis?", "acceptedAnswer": { "@type": "Answer", "text": "Sie erhalten CAD-Grundrisse und Schnitte, ein TGA-Konzept mit Lüftungs-, Elektro- und Medienplanung, 3D-Visualisierungen, Raumbuch mit Flächen und Lasten, Ausführungspläne für die Werksfertigung, Leistungsverzeichnisse und eine Normenmatrix. Bei GMP- oder BSL-Projekten zusätzlich URS-Dokument, Containment-Konzept und Schnittstellenliste für IQ/OQ/PQ." } },
+    { "@type": "Question", "name": "Wie lange dauert die Laborplanung für einen Container?", "acceptedAnswer": { "@type": "Answer", "text": "Ein Standard-Laborcontainer (20-Fuß, BSL-2 oder analytisches Labor) benötigt 3–4 Wochen von Kickoff bis ausführungsreifer Planung. BSL-3- oder GMP-Reinraum-Container mit Annex-1-Anforderungen dauern 6–8 Wochen wegen zusätzlicher HVAC-Berechnungen, Druckkaskaden-Simulation und Behördenabstimmung. Serienprojekte wie LABtoGO nutzen vorgefertigte Planungsmodule und verkürzen die Phase auf 1–2 Wochen." } },
+    { "@type": "Question", "name": "Plant Planexus auch Reinräume nach ISO 14644 im Container?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Wir planen Reinraumzonen von ISO Klasse 8 (GMP D) bis ISO Klasse 5 (GMP A) im Container. Die Planung umfasst HEPA-Filterkonzept (H13/H14), Luftwechselberechnung nach DIN 1946-7, Druckkaskaden zwischen Reinraum, Schleuse und Umgebung, Material- und Personalschleusen, Partikelmonitoring-Punkte und Recovery-Time-Nachweis nach ISO 14644-3. Die Reinraumqualifizierung (IQ/OQ/PQ) wird parallel zur Planung vorbereitet." } },
+    { "@type": "Question", "name": "Warum modulare Planung statt konventionellem Stick-Build?", "acceptedAnswer": { "@type": "Answer", "text": "Modulare Laborplanung erzwingt frühe Festlegung aller Schnittstellen – Medien, Lüftung, Geräte, Transportmaße – weil der Container als geschlossenes System im Werk fertiggestellt wird. Das eliminiert Gewerkekollisionen, die bei Stick-Build erst auf der Baustelle sichtbar werden. Zudem ist die Planung transportoptimiert: Jedes Bauteil muss durch Containertüren passen und Straßenverkehrsvorschriften erfüllen. Ergebnis: kürzere Gesamtprojektzeit (8–12 Wochen statt 12–18 Monate) bei gleicher Normkonformität." } },
+    { "@type": "Question", "name": "Welche Unterlagen brauche ich für die Laborplanung?", "acceptedAnswer": { "@type": "Answer", "text": "Für den Planungsstart: Projektsteckbrief mit Laborart und Schutzstufe, Geräteliste mit Abmessungen und Anschlusswerten, gewünschte Reinraumklassen oder GMP-Stufe, Standortdaten (Grundstücksplan, Medienanschlüsse), Nutzeranforderungen (Arbeitsplätze, Schichtmodell) und Bestandspläne bei Erweiterung. Für GMP-Projekte zusätzlich URS-Vorlage, CCS-Entwurf und QP-Anforderungen. Wir stellen Checklisten bereit und führen den Kickoff-Workshop remote oder vor Ort durch." } }
+  ]
+};
 ---
 
 <Layout
-  title="Laborplanung für Container & Module | Planexus"
-  description="Technische Fachplanung für Laborcontainer und Modulbau: CAD-Layouts, 3D, TGA, Reinraum ISO 14644, BSL-2/3 und GMP – schlüsselfertig ab Werk Albstadt."
+  title="Laborplanung für Container – Grundriss, Reinraum, Konzept"
+  description="Laborplanung für Container: CAD-Grundrisse, 3D, TGA, Reinraum ISO 14644, BSL-2/3 & GMP-Konformität. Schlüsselfertig ab Werk Albstadt. Kostenlose Beratung."
   canonical="/leistungen/planung"
   schema={serviceSchema}
   ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
 >
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
 
   <div class="pt-20 min-h-screen bg-white">
     <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
@@ -41,7 +54,7 @@ const breadcrumbSchema = {
             <span>Leistungen</span>
           </div>
           <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-            Technische Fachplanung <span class="text-primary">für Laborcontainer &amp; Module</span>
+            Laborplanung für Container – Grundriss, Reinraum, GMP-Konform
           </h1>
           <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4">
             CAD-Layouts, 3D-Visualisierung, TGA-Konzepte, Reinraum-Klassen ISO 14644 und BSL-/GMP-Containment – maßgeschneidert für jedes Containerlabor.
@@ -79,17 +92,17 @@ const breadcrumbSchema = {
           <div class="lg:col-span-2 space-y-12">
             <div>
               <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">
-                Professionelle Laborplanung für maximale Effizienz
+                Laborplanung für Container: CAD, TGA und Reinraum ISO 14644
               </h2>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
                 <p>
-                  Die technische Fachplanung eines Labors ist weit mehr als nur die Anordnung von Arbeitstischen und Geräten. Sie ist das Fundament für effiziente Arbeitsabläufe, sichere Arbeitsbedingungen und die langfristige Zufriedenheit Ihrer Mitarbeiter. Bei Planexus verstehen wir die komplexen Anforderungen moderner Laborumgebungen und entwickeln Konzepte, die sowohl funktional als auch zukunftssicher sind.
+                  Die technische Fachplanung eines Laborcontainers beginnt mit der Normenmatrix: Welche ISO-Klasse (14644-1), welche Lüftungsstufe (DIN 1946-7), welche Containment-Stufe (TRBA 100, BioStoffV) und welche Prüfnorm (ISO 17025) gilt für das Projekt? Diese Festlegung bestimmt Grundriss, HVAC-Dimensionierung, Medienführung und Transportmaße.
                 </p>
                 <p>
-                  Unser Planungsprozess beginnt mit einer umfassenden Bedarfsanalyse. Wir nehmen uns die Zeit, Ihre spezifischen Anforderungen zu verstehen – von den wissenschaftlichen Methoden, die Sie anwenden, über die Geräte, die Sie einsetzen, bis hin zu den Sicherheitsvorschriften, die für Ihre Arbeit gelten. Auf Basis dieser Analyse entwickeln wir ein maßgeschneidertes Konzept, das perfekt auf Ihre Bedürfnisse abgestimmt ist.
+                  Unser Planungsprozess startet mit einer strukturierten Bedarfsanalyse: Arbeitsabläufe, Geräteliste, Sicherheitsstufe, Medienbedarf und Standortbedingungen. Auf dieser Basis entstehen CAD-Grundrisse mit Zonenplanung (Reinraum, Schleuse, Technikraum, Gefahrstofflager), TGA-Konzept mit Luftwechselberechnung und 3D-Visualisierung zur Kollisionsprüfung. Jede Planungsentsscheidung wird in einem Planungsbericht mit Normreferenz dokumentiert.
                 </p>
                 <p>
-                  Dabei berücksichtigen wir nicht nur die aktuellen Anforderungen, sondern denken auch an die Zukunft. Labore müssen flexibel sein, um sich an neue Forschungsschwerpunkte, veränderte Arbeitsweisen oder neue gesetzliche Vorschriften anpassen zu können. Unsere modularen Planungskonzepte ermöglichen genau diese Flexibilität – ohne kostspielige Umbaumaßnahmen.
+                  Containerplanung unterscheidet sich von Gebäudeplanung durch Transportrestriktionen: Maximale Modulbreite 2,55 m (Standard) oder 3,0 m (Schwertransport), maximale Länge 12 m pro Modul, maximale Höhe 3,0 m für Straßentransport. Alle Bauteile – HVAC-Geräte, Abzüge, Sicherheitsschränke – müssen durch Containertüren passieren oder werden als Einzelkomponenten nachgerüstet.
                 </p>
               </div>
             </div>
@@ -202,15 +215,38 @@ const breadcrumbSchema = {
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">
-                Warum Planexus für Ihre Laborplanung?
-              </h3>
+              <h2 class="text-2xl font-heading font-bold mb-6 text-slate-900">
+                Warum modulare Laborplanung statt Stick-Build?
+              </h2>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
                 <p>
-                  Mit über 10 Jahren Erfahrung in der Planung von Containerlaboren und mehr als 50 erfolgreich realisierten Projekten sind wir Ihr kompetenter Partner für alle Fragen rund um die Laborplanung. Unser interdisziplinäres Team aus Ingenieuren, Technikern und Laborexperten bringt das Know-how mit, um auch anspruchsvollste Projekte erfolgreich umzusetzen.
+                  Stick-Build-Projekte binden Planungskapazität über Monate an Baustellenkoordination, Nachtragsmanagement und Gewerkekollisionen. Modulare Laborplanung definiert alle Schnittstellen – Lüftung nach DIN 1946-7, Reinraum nach ISO 14644, Containment nach TRBA 100, ATEX nach EN 60079 – bereits in der Entwurfsphase, weil der Container als geschlossenes System im Werk fertiggestellt und transportiert wird.
                 </p>
                 <p>
-                  Wir verstehen uns nicht nur als Planer, sondern als Partner, der Sie während des gesamten Projekts begleitet. Von der ersten Idee bis zur Inbetriebnahme – und darüber hinaus. Denn ein gut geplantes Labor ist die Basis für erfolgreiche Forschung und Entwicklung.
+                  Für <a href="/branchen/pharma-biotech" class="text-primary font-medium hover:underline">Laborcontainer Pharma &amp; Biotech</a> planen wir GMP-konforme Druckkaskaden und Annex-1-Containment; für <a href="/branchen/forschung-hochschule" class="text-primary font-medium hover:underline">Forschungs- und Hochschullabore</a> flexible Grundrisse mit erweiterbaren Modulanschlüssen. ISO-17025-Prüflabore erhalten dokumentierte Messketten und kalibrierbare Umgebungsbedingungen ab Planungsstart.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-heading font-bold mb-6 text-slate-900">
+                Normen und technische Planungsgrundlagen im Überblick
+              </h2>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>
+                  Jede Planungsleistung wird anhand einer Normenmatrix dokumentiert. Für BSL-3-Labore gelten TRBA 100, BioStoffV und kontrollierte Unterdruckzonen (typisch −25 Pa zur Schleuse, −50 Pa zum Außenbereich). GMP-Projekte referenzieren EU-GMP Annex 1 (Stand 22.08.2022) mit Contamination Control Strategy. ATEX-Zonen nach EN 60079 erfordern separate Planung von Zündquellen, Lüftung und Ex-Schutz.
+                </p>
+                <p>
+                  Die TGA-Planung umfasst Luftwechselberechnung nach DIN 1946-7, Medienversorgung (Prozesswasser, VE-Wasser, technische Gase), Abwasserführung mit Gefahrstofftrennung und elektrische Lastberechnung nach VDE. Alle Werte fließen in Ausführungspläne für die Werksfertigung in Albstadt – ohne Nachplanung auf der Baustelle.
+                </p>
+                <p>
+                  Für Reinraumplanung nach ISO 14644 berechnen wir Partikelgrenzwerte (Klasse 5–8), Recovery Time nach ISO 14644-3, Druckkaskaden zwischen Zonen und HEPA-Filterkonzept (H13/H14). Für BSL-3 planen wir gerichtete Luftströmung mit Unterdruckzonen, Personalschleuse und Bag-In-Bag-Out-Filterwechsel. Jede Berechnung wird mit Eingangsparametern, Annahmen und Ergebnis im Planungsbericht festgehalten.
+                </p>
+                <p>
+                  ATEX-Zonenplanung nach EN 60079 umfasst Zoneneinteilung (Zone 0/1/2), Zündquellenanalyse, Ex-geschützte Geräteauswahl und Lüftungskonzept für brennbare Gase. Die Zoneneinteilung wird in den CAD-Grundrissen farblich markiert und in der Elektroplanung berücksichtigt.
+                </p>
+                <p>
+                  ISO-17025-Planung umfasst Messplatzdefinition mit Umgebungstoleranzen, Rückverfolgbarkeit der Kalibrierkette und Dokumentation der Einflussgrößen auf die Messunsicherheit. Jeder Arbeitsplatz erhält eine eindeutige Messplatz-ID im Raumbuch.
                 </p>
               </div>
             </div>
@@ -252,6 +288,22 @@ const breadcrumbSchema = {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">Häufige Fragen zur Laborplanung</h2>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <div class="bg-white rounded-xl p-6 border border-gray-100">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

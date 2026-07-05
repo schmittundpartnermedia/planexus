@@ -18,10 +18,23 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 3, "name": "Smart Lab Integration", "item": "https://planexus.de/leistungen/smart-lab" }
   ]
 };
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welche Parameter überwacht ein Smart-Lab-Container?", "acceptedAnswer": { "@type": "Answer", "text": "Standard-Monitoring umfasst Temperatur (±0,1 K), relative Luftfeuchtigkeit, Raumdruck und Differenzdruck zwischen Zonen, CO2-Konzentration, Partikelzahl (optional), Türstatus, Lüftungsleistung und Medienversorgung (Druckluft, Gas, Wasser). Bei GMP-Containern zusätzlich Reinraumklassen-Nachweis nach ISO 14644-2 und kontinuierliche Druckkaskaden-Überwachung. Alle Werte werden minütlich erfasst und bei Grenzwertüberschreitung alarmiert." } },
+    { "@type": "Question", "name": "Ist die Datenerfassung GMP- und Annex-11-konform?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Die Smart-Lab-Architektur erfüllt EU-GMP Annex 11 (computerisierte Systeme) und Annex 15 (Qualifizierung). Das System umfasst Audit-Trail (wer/wann/was), elektronische Signaturen nach 21 CFR Part 11, Zugriffskontrolle mit Rollenmodell, Datenintegrität (ALCOA+), Backup und Disaster Recovery. IQ/OQ/PQ-Dokumentation für das Monitoring-System wird parallel zur Container-Qualifizierung erstellt." } },
+    { "@type": "Question", "name": "Welche Schnittstellen bietet das Smart-Lab-System?", "acceptedAnswer": { "@type": "Answer", "text": "Standardprotokolle: OPC-UA, MQTT, REST-API, BACnet für Gebäudeleittechnik. Integration in LIMS, ELN, CMMS und ERP-Systeme. Für Gebäudeautomation setzen wir auf Loxone mit Echtzeit-Dashboard. Cloud-Anbindung über verschlüsselte VPN-Tunnel (AES-256). On-Premise-Betrieb ohne Cloud-Anbindung ist für BSL-3- und Hochsicherheitslabore möglich." } },
+    { "@type": "Question", "name": "Kann Smart Lab in bestehende Container nachgerüstet werden?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Nachrüstung umfasst Sensorinstallation, Verkabelung, Gateway-Integration und Konfiguration der Steuerung. Bei Planexus-Neubauten wird Smart Lab ab Werk integriert – Sensoren, Verkabelung und Software sind im Ausführungsplan vorgesehen. Nachrüstung dauert 3–5 Tage vor Ort, Werkintegration spart diese Zeit und ermöglicht vollständige FAT-Dokumentation." } },
+    { "@type": "Question", "name": "Wie unterstützt Smart Lab ISO-17025- und BSL-3-Anforderungen?", "acceptedAnswer": { "@type": "Answer", "text": "ISO 17025: Automatische Protokollierung von Umgebungsbedingungen als Teil der Messunsicherheitsbilanz, kalibrierbare Sensoren mit rückverfolgbarem Kalibrierschein, Alarm bei Abweichung von Spezifikation. BSL-3: Kontinuierliche Differenzdrucküberwachung mit Alarm bei Druckverlust, Protokollierung aller Schleusenvorgänge, Integration mit Zugangskontrolle. Alle Daten sind auditierbar und exportierbar für Behörden und Akkreditierungsstellen." } },
+    { "@type": "Question", "name": "Welche Kosten entstehen für Smart-Lab-Integration ab Werk?", "acceptedAnswer": { "@type": "Answer", "text": "Basis-Monitoring (Temperatur, Feuchte, Druck, Türen) ab Werk: 8.000–15.000 Euro je Container. GMP-Paket mit Annex-11-Audit-Trail, elektronischer Signatur und Reinraum-Monitoring: 25.000–45.000 Euro. BSL-3-Erweiterung mit Schleusenprotokollierung und redundanter Drucküberwachung: 15.000–25.000 Euro zusätzlich. Nachrüstung kostet typisch 20–30 % mehr wegen Vor-Ort-Verkabelung und erneuter Qualifizierung am Einsatzort." } }
+  ]
+};
 ---
 
-<Layout title="Smart-Lab-Integration für Laborcontainer | Planexus" description="Smart-Lab-Integration im Laborcontainer: IoT-Sensorik, Raumklima- und Differenzdruck-Monitoring, Zugang, GMP-Datenerfassung und Cloud – ab Werk." canonical="/leistungen/smart-lab" schema={serviceSchema} ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg">
+<Layout title="Smart Lab Container – Digitale Labore, IoT, Automation" description="Smart Lab Container: IoT-Sensorik, Raumklima- & Differenzdruck-Monitoring, GMP-Datenerfassung, Cloud-Anbindung. Ab Werk integrierbar. Jetzt Smart Lab planen." canonical="/leistungen/smart-lab" schema={serviceSchema} ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg">
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
 
   <div class="pt-20 min-h-screen bg-white">
     <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
@@ -33,7 +46,7 @@ const breadcrumbSchema = {
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
             <span>Leistungen</span>
           </div>
-          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">Smart-Lab-Integration <span class="text-primary">für Laborcontainer</span></h1>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">Smart Lab Container – Digitale Labore, IoT, Automation</h1>
           <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4">IoT-Sensorik, Raumklima- und Differenzdruck-Monitoring, Zugangskontrolle, GMP-konforme Datenerfassung und Cloud-Anbindung – ab Werk im Container integriert.</p>
           <p class="text-base text-gray-400 leading-relaxed max-w-3xl mb-8">Spezialisiert auf <strong class="text-white">vernetzte BSL-, GMP- und ATEX-Container</strong> mit auditierbarer Datenerfassung. Keine generische Smart-Building-Lösung, keine Office-IoT – ausschließlich Smart-Lab-Stack für modulare Laborumgebungen.</p>
           <div class="flex flex-col sm:flex-row gap-4">
@@ -61,11 +74,11 @@ const breadcrumbSchema = {
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div class="lg:col-span-2 space-y-12">
             <div>
-              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">Das vernetzte Labor der Zukunft</h2>
+              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">IoT und GMP-Datenerfassung im Smart-Lab-Container</h2>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Die Digitalisierung macht auch vor dem Labor nicht halt. Intelligente Sensoren, vernetzte Geräte und automatisierte Prozesse verändern die Art, wie wir forschen und arbeiten. Bei Planexus integrieren wir modernste Smart-Lab-Technologien in Ihre Laborcontainer und schaffen so eine Arbeitsumgebung, die effizienter, sicherer und komfortabler ist als je zuvor.</p>
-                <p>Ein Smart Lab ist mehr als nur ein Labor mit Sensoren. Es ist ein intelligentes System, das Daten sammelt, analysiert und daraus Erkenntnisse gewinnt. Es überwacht automatisch kritische Parameter, warnt bei Abweichungen und dokumentiert alle relevanten Vorgänge lückenlos. So haben Sie jederzeit die volle Kontrolle über Ihr Labor – auch wenn Sie nicht vor Ort sind.</p>
-                <p>Unsere Smart-Lab-Lösungen sind modular aufgebaut und können exakt auf Ihre Bedürfnisse zugeschnitten werden. Ob Sie nur einzelne Parameter überwachen möchten oder ein vollständig automatisiertes Labor anstreben – wir finden die richtige Lösung für Sie.</p>
+                <p>Smart Lab im Laborcontainer bedeutet: Sensoren, Steuerung und Datenerfassung werden ab Werk in die Container-Architektur integriert – nicht als Nachrüstung. Temperatur, Luftfeuchtigkeit, Differenzdruck, CO2, Türstatus und Medienversorgung werden minütlich erfasst und bei Grenzwertüberschreitung automatisch alarmiert.</p>
+                <p>Die Steuerung basiert auf Loxone-Gebäudeautomation mit Labor-spezifischen Erweiterungen: GMP-konforme Datenerfassung nach Annex 11, Audit-Trail, Zugriffskontrolle und Integration in LIMS/ELN. Für BSL-3-Container überwachen wir Differenzdruck und Schleusenstatus in Echtzeit – ein Druckverlust löst sofort Alarm und dokumentiert den Vorfall.</p>
+                <p>Die Smart-Lab-Architektur ist modular: Basis-Paket (Umgebungsmonitoring + Alarmierung), Standard-Paket (+ Zugangskontrolle + LIMS-Anbindung), GMP-Paket (+ Annex-11-Datenerfassung + elektronische Signaturen + IQ/OQ/PQ). Jedes Paket wird im Ausführungsplan festgelegt und im FAT protokolliert.</p>
               </div>
             </div>
 
@@ -169,7 +182,19 @@ const breadcrumbSchema = {
                   <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>CMMS für Wartungsmanagement</span></li>
                   <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Cloud-Dienste und Fernzugriff</span></li>
                 </ul>
-                <p>Standardprotokolle wie OPC-UA, MQTT oder REST-APIs ermöglichen die nahtlose Integration. Auf Wunsch entwickeln wir auch kundenspezifische Schnittstellen. Für die Gebäudeautomation setzen wir unter anderem auf bewährte Systeme wie <a href="https://www.loxone.com/dede/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Loxone</a>, die eine intuitive Steuerung und Visualisierung aller Smart-Lab-Funktionen ermöglichen.</p>
+                <p>Standardprotokolle wie OPC-UA, MQTT oder REST-APIs ermöglichen die nahtlose Integration. Für die Gebäudeautomation setzen wir auf <a href="https://www.loxone.com/dede/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Loxone</a> mit Echtzeit-Dashboard und Visualisierung aller Smart-Lab-Funktionen.</p>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-heading font-bold mb-6 text-slate-900">Smart Lab nach Branche und Compliance-Anforderung</h2>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>
+                  Die IoT-Konfiguration folgt dem Einsatzzweck. Für <a href="/branchen/pharma-biotech" class="text-primary font-medium hover:underline">Laborcontainer Pharma &amp; Biotech</a> implementieren wir Annex-11-konforme Datenerfassung mit Audit-Trail und elektronischen Signaturen. <a href="/branchen/forschung-hochschule" class="text-primary font-medium hover:underline">Forschungs- und Hochschullabore</a> erhalten flexibles Sensor-Monitoring mit LIMS-Anbindung und ELN-Integration.
+                </p>
+                <p>
+                  BSL-3-Container überwachen Differenzdruck, Schleusenstatus und Filterzustand in Echtzeit. ATEX-Zonen nach EN 60079 erhalten Ex-geschützte Sensoren und separate Alarmkette. ISO-17025-Prüflabore dokumentieren Umgebungsbedingungen automatisch als Teil der Messunsicherheitsbilanz. Alle Systeme werden in IQ/OQ/PQ eingebunden.
+                </p>
               </div>
             </div>
           </div>
@@ -204,6 +229,22 @@ const breadcrumbSchema = {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">Häufige Fragen zur Smart Lab Integration</h2>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <div class="bg-white rounded-xl p-6 border border-gray-100">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
