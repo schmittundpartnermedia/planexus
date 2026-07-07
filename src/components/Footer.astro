@@ -127,7 +127,20 @@ import Picture from './Picture.astro';
       <div class="flex gap-6">
         <a href="/impressum" class="hover:text-white">Impressum</a>
         <a href="/datenschutz" class="hover:text-white">Datenschutz</a>
+        <button
+          type="button"
+          id="cookie-settings-trigger"
+          class="hover:text-white cursor-pointer"
+        >
+          Cookie-Einstellungen
+        </button>
       </div>
     </div>
   </div>
 </footer>
+
+<script is:inline>
+  document.getElementById('cookie-settings-trigger')?.addEventListener('click', function () {
+    window.dispatchEvent(new CustomEvent('planexus:open-cookie-settings'));
+  });
+</script>

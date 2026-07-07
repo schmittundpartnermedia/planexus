@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent';
 
 interface Props {
   title: string;
@@ -93,12 +94,51 @@ const isAT = atPaths.includes(normalizedPath);
     <link rel="alternate" hreflang="de" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ9YKTCQFJ"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-FZ9YKTCQFJ');
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'denied',
+        'personalization_storage': 'denied',
+        'security_storage': 'granted',
+        'wait_for_update': 500
+      });
+      gtag('set', 'ads_data_redaction', true);
+      gtag('set', 'url_passthrough', true);
+
+      try {
+        var savedConsent = localStorage.getItem('planexus_consent');
+        if (savedConsent) {
+          var consent = JSON.parse(savedConsent);
+          var analytics = consent.analytics ? 'granted' : 'denied';
+          var marketing = consent.marketing ? 'granted' : 'denied';
+          gtag('consent', 'update', {
+            'analytics_storage': analytics,
+            'ad_storage': marketing,
+            'ad_user_data': marketing,
+            'ad_personalization': marketing
+          });
+          dataLayer.push({
+            'event': 'consent_update',
+            'analytics_storage': analytics,
+            'ad_storage': marketing,
+            'ad_user_data': marketing,
+            'ad_personalization': marketing
+          });
+        }
+      } catch (e) {}
+    </script>
+
+    <script is:inline>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PDDSZ44P');
     </script>
 
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -143,10 +183,19 @@ const isAT = atPaths.includes(normalizedPath);
     <link rel="preload" href="/fonts/SpaceGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body class="min-h-screen bg-background text-foreground flex flex-col font-sans">
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PDDSZ44P"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
     <Navbar client:load />
     <main class="flex-grow">
       <slot />
     </main>
     <Footer />
+    <CookieConsent client:load />
   </body>
 </html>
