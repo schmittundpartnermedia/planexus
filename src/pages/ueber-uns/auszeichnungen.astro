@@ -14,16 +14,6 @@ const orgSchema = {
   ]
 };
 
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Sven Biewald",
-  "jobTitle": "Geschäftsführer",
-  "worksFor": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de/" },
-  "url": "https://planexus.de/team/sven-biewald",
-  "award": "Most Innovative Laboratory Spaces Leader 2026 – German CEO Excellence Awards, EU Business News"
-};
-
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -43,7 +33,6 @@ const breadcrumbSchema = {
 >
   <div class="pt-20 min-h-screen bg-white">
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
     <section class="relative py-20 bg-slate-900 text-white overflow-hidden">

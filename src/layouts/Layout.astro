@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent';
+import { planexusPostalAddress, planexusGeo, planexusContact } from '../lib/planexus-address';
 
 interface Props {
   title: string;
@@ -158,14 +159,35 @@ const isAT = atPaths.includes(normalizedPath);
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+49 7435 7519 700",
+        "telephone": planexusContact.telephone,
+        "email": planexusContact.email,
         "contactType": "customer service",
         "availableLanguage": ["German", "English"]
       },
+      "address": planexusPostalAddress,
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61578221935839",
         "https://www.linkedin.com/company/planexus-gmbh"
       ]
+    })} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Planexus GmbH",
+      "image": `${siteUrl}/images/labtogo-industrie.webp`,
+      "description": "Spezialist für Laborcontainer und Modulbau",
+      "url": siteUrl,
+      "priceRange": "€€€",
+      "address": planexusPostalAddress,
+      "geo": planexusGeo,
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      ...planexusContact,
     })} />
 
     <script type="application/ld+json" set:html={JSON.stringify({
