@@ -251,7 +251,7 @@ export default function ProjekteGallery() {
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">Messe MC Labor 2016</h2>
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">Messeauftritt 2016 – erster vollfunktionsfähiger Laborcontainer</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Unser erster Messeauftritt mit begehbarem Laborcontainer-Exponat.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -262,7 +262,7 @@ export default function ProjekteGallery() {
               >
                 <img
                   src={img}
-                  alt={`Messe MC Labor 2016 - Bild ${index + 1}`}
+                  alt={`Messeauftritt 2016 – erster vollfunktionsfähiger Laborcontainer - Bild ${index + 1}`}
                   width={imgDims(img).w}
                   height={imgDims(img).h}
                   className="w-full h-full object-cover"

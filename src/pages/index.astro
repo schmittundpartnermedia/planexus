@@ -1,6 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { LiquidDistortion } from '../components/LiquidDistortion';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Was kostet ein Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Der Preis hängt von Sicherheitsstufe, Reinraumklasse, Ausstattung und Standort ab. Ein einfaches BSL-2-Analytiklabor startet ab etwa 80.000 €, GMP-Reinraum-Container liegen bei 250.000–500.000 €, BSL-3-Projekte darüber. Konkrete Kalkulation erst nach Bedarfsanalyse – Pauschalpreise sind bei Laborcontainern nicht sinnvoll." } },
+    { "@type": "Question", "name": "Wie lange dauert die Lieferung eines Laborcontainers?", "acceptedAnswer": { "@type": "Answer", "text": "Standard-Laborcontainer (BSL-2, analytisch): 8–12 Wochen Werksfertigung plus 2–5 Werktage Aufstellung vor Ort. GMP-Reinraum oder BSL-3: 16–24 Wochen inklusive Qualifizierung. Serienprojekte wie LABtoGO sind oft schneller verfügbar." } },
+    { "@type": "Question", "name": "Braucht ein Laborcontainer eine Baugenehmigung?", "acceptedAnswer": { "@type": "Answer", "text": "In den meisten Fällen ja – abhängig von Aufstellungsdauer, Bundesland und Nutzungsart. Container über 75 m³ Brutto-Rauminhalt sind in Deutschland baugenehmigungspflichtig. Planexus liefert baurechtliche Unterlagen und begleitet den Genehmigungsprozess in DACH." } },
+    { "@type": "Question", "name": "Kann man einen Laborcontainer mieten oder nur kaufen?", "acceptedAnswer": { "@type": "Answer", "text": "Beides. Miete eignet sich für befristete Projekte (12–24 Monate), z. B. während Klinik-Sanierungen oder Studienphasen. Kauf ist wirtschaftlicher bei dauerhafter Kapazitätserweiterung. Mietkauf ist als Zwischenlösung möglich." } },
+    { "@type": "Question", "name": "Welche Sicherheitsstufen und Reinraumklassen sind möglich?", "acceptedAnswer": { "@type": "Answer", "text": "Planexus realisiert BSL-2, BSL-3, GMP-Reinraum (ISO 5–8 nach ISO 14644-1), ATEX-Container für H₂- und Batterietests sowie analytische Standardlabore. Alle Konfigurationen werden werksseitig in Albstadt gefertigt und schlüsselfertig geliefert." } },
+    { "@type": "Question", "name": "Wohin liefert Planexus Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Deutschlandweit und in die Schweiz sowie Österreich. Fertigung im Werk Albstadt (Baden-Württemberg), Transport per Tieflader. Standortspezifische Informationen zu 12 DACH-Metropolregionen finden Sie unter /standorte." } }
+  ]
+};
 ---
 
 <Layout
@@ -8,6 +21,7 @@ import { LiquidDistortion } from '../components/LiquidDistortion';
   description="Laborcontainer mieten oder kaufen – GMP, Reinraum, BSL-3. Schlüsselfertige Containerlabore aus Albstadt in 8–14 Wochen. Kostenlose Beratung anfordern."
   canonical="/"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
   <div class="min-h-screen bg-background text-foreground">
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 text-white">
@@ -109,7 +123,7 @@ import { LiquidDistortion } from '../components/LiquidDistortion';
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
           <div class="p-4">
             <div class="text-5xl font-heading font-bold text-primary mb-2">10+</div>
-            <p class="text-gray-600 font-medium">Jahre Erfahrung im Laborbau</p>
+            <p class="text-gray-600 font-medium">Jahre Erfahrung der Geschäftsführung</p>
           </div>
           <div class="p-4">
             <div class="text-5xl font-heading font-bold text-primary mb-2">50+</div>
@@ -384,7 +398,7 @@ import { LiquidDistortion } from '../components/LiquidDistortion';
             <div class="text-xs uppercase tracking-wider text-[#7a9900] font-bold mb-3">Über Planexus</div>
             <h2 class="text-3xl md:text-5xl font-heading font-bold text-slate-900 mb-5">Laborcontainer und Modulbau Labor – aus einer Hand</h2>
             <p class="text-lg text-gray-700 leading-relaxed">
-              Planexus GmbH ist Spezialist für schlüsselfertige <strong>Laborcontainer</strong>, <strong>mobile Labore</strong> und <strong>modulare Laborgebäude</strong>. Wir planen, bauen und liefern in ganz DACH – von der ersten Skizze bis zur IQ/OQ/PQ-qualifizierten Übergabe. Als Teil der <strong>Wesemann Holding GmbH</strong> (Laborbau seit 1949) verbinden wir 75 Jahre Möbelbau-Expertise mit moderner Container-Vorfertigung im eigenen Werk in Albstadt.
+              Planexus GmbH ist Spezialist für schlüsselfertige <strong>Laborcontainer</strong>, <strong>mobile Labore</strong> und <strong>modulare Laborgebäude</strong>. Wir planen, bauen und liefern in ganz DACH – von der ersten Skizze bis zur IQ/OQ/PQ-qualifizierten Übergabe. Als Teil der <strong>Wesemann Holding GmbH</strong> verbinden wir Möbelbau-Expertise mit moderner Container-Vorfertigung im eigenen Werk in Albstadt.
             </p>
           </div>
 
@@ -509,7 +523,7 @@ import { LiquidDistortion } from '../components/LiquidDistortion';
             </a>
             <a href="/leistungen" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100 group">
               <h3 class="font-bold text-slate-900 text-lg mb-2 group-hover:text-[#7a9900]">Laboreinrichtung</h3>
-              <p class="text-gray-600 text-sm">Labormöbel von Wesemann (75 Jahre Erfahrung), chemikalienbeständige Arbeitsplatten, integrierte Medienführung.</p>
+              <p class="text-gray-600 text-sm">Labormöbel von Wesemann, chemikalienbeständige Arbeitsplatten, integrierte Medienführung.</p>
             </a>
             <a href="/leistungen" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100 group">
               <h3 class="font-bold text-slate-900 text-lg mb-2 group-hover:text-[#7a9900]">Reinraum &amp; GMP</h3>
@@ -562,6 +576,24 @@ import { LiquidDistortion } from '../components/LiquidDistortion';
               <h3 class="font-bold text-slate-900 mb-2 group-hover:text-[#7a9900]">Krisenreaktion &amp; Katastropheneinsatz</h3>
               <p class="text-gray-600 text-sm">Mobile Labore für Pandemien, Hochwasser und CBRN-Lagen – in 48 h einsatzbereit.</p>
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 md:py-20 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Häufige Fragen zu Laborcontainern</h2>
+          <p class="text-gray-600 text-lg mb-10">Sechs Fragen, die uns Kunden vor jedem Projekt stellen – mit konkreten Antworten.</p>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <article class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>
