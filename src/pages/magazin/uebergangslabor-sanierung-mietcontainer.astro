@@ -34,15 +34,16 @@ const faqSchema = {
     { "@type": "Question", "name": "Wo stelle ich das Übergangslabor während der Sanierung auf?", "acceptedAnswer": { "@type": "Answer", "text": "Drei Standortklassen funktionieren in der Praxis. Erstens: Innenhof oder Hofbereich des bestehenden Gebäudes – kurze Wege für Personal und Probenübergabe, oft schon mit Medienanschluss in der Nähe, allerdings begrenzte Aufstellfläche und Anlieferungslogistik per Mobilkran über Dach oder durch Toreinfahrt zu prüfen. Zweitens: angrenzender Parkplatz oder Außenanlage – mehr Platz, einfache Anlieferung, längere Versorgungsleitungen erforderlich. Drittens: Liegenschaft im näheren Umkreis – nur bei Großsanierungen sinnvoll, weil Personaltransporte und Probenlogistik anfallen. Die Entscheidung fällt in der Vorprojektphase mit Statik (Tragfähigkeit der Aufstellfläche nach DIN 1054), Kranlogistik (Hubradius, Auslegerstellung, Verkehrssicherung nach RSA 21) und Medienführung (Trinkwasser DIN 1988, Abwasser DIN 1986-100, Stromanschluss bis 250 A je Modul)." } },
     { "@type": "Question", "name": "Wie laufen Geräteumzug und Re-Qualifizierung der Analytik-Instrumente?", "acceptedAnswer": { "@type": "Answer", "text": "Der Geräteumzug ist der unterschätzte Engpass jeder Laborsanierung. Sensible Instrumente – HPLC, GC-MS, ICP-MS, NMR, Durchflusszytometer, PCR-Cycler, Klimaschränke – brauchen vor dem Transport eine kontrollierte Außerbetriebnahme nach Herstellerprotokoll, eine schwingungsarme Verpackung und am neuen Standort eine vollständige Re-Qualifizierung: IQ (Installation Qualification) prüft den korrekten Aufbau, OQ (Operational Qualification) die Funktionalität in den vorgesehenen Betriebsbereichen, PQ (Performance Qualification) die anwendungsbezogene Leistungsfähigkeit. Für akkreditierte Labore nach DIN EN ISO/IEC 17025 muss jede Re-Qualifizierung dokumentiert und die DAkkS informiert werden; für GMP-Bereiche gilt analog die Wiederholung der Validierung nach EU-GMP-Leitfaden Annex 15. Wir koordinieren das gemeinsam mit dem Hersteller-Service und dem Qualitätsmanagement des Bauherrn – das gehört bei jedem Übergangslabor-Projekt in den Terminplan." } },
     { "@type": "Question", "name": "Welche Sanierungsanlässe lösen typischerweise einen Übergangscontainer-Bedarf aus?", "acceptedAnswer": { "@type": "Answer", "text": "Sechs Anlassgruppen dominieren in der Praxis. Erstens energetische Generalsanierung nach Gebäudeenergiegesetz (GEG 2024): Hüllflächendämmung, Fensteraustausch, Heizungstausch – läuft selten ohne mehrere Etagen Vollräumung. Zweitens Brandschutz-Ertüchtigung nach Musterbauordnung und Landesbauordnungen: Brandabschnittsteilung, Fluchtwege, Sprinklerertüchtigung. Drittens HVAC- und Reinraumertüchtigung nach DIN 1946-7, oft im Zusammenhang mit GMP-Annex-1-Update (gültig seit August 2023). Viertens Schadstoffsanierung: Asbest nach TRGS 519, KMF nach TRGS 521, PCB nach PCB-Richtlinie, Schimmel nach UBA-Schimmelleitfaden. Fünftens statische Ertüchtigung bei Nutzungsänderung oder Lasterhöhung. Sechstens Hochwasser- oder Brandschaden mit anschließender Wiederherstellung. In allen sechs Fällen ist die Forschung, Diagnostik oder Produktion mit dem Sanierungsbeginn akut bedroht – Übergangscontainer sind die einzige praktikable Brücke." } },
-    { "@type": "Question", "name": "Was passiert mit den Daten und der Akkreditierung während der Übergangszeit?", "acceptedAnswer": { "@type": "Answer", "text": "Datenintegrität und Akkreditierung laufen kontinuierlich weiter – das ist gerade der Sinn der Übergangslösung. LIMS-Systeme (LabWare, SampleManager, STARLIMS) lassen sich am neuen Standort über VPN oder direkte Glasfaser-Anbindung im laufenden Betrieb weiterführen; eine Datenmigration findet nicht statt, nur die Hardware-Standorte ändern sich. Für akkreditierte Prüfstellen nach DIN EN ISO/IEC 17025 ist die Standortänderung der DAkkS gemäß Akkreditierungsstellengesetz (AkkStelleG) anzuzeigen; bei wesentlichen Änderungen kann eine Vor-Ort-Begutachtung am neuen Standort fällig werden. Für GMP-Bereiche gelten EU-GMP-Annex 11 (computergestützte Systeme) und 21 CFR Part 11 (FDA) unverändert – die ALCOA+-Kriterien für Datenintegrität (Attributable, Legible, Contemporaneous, Original, Accurate, Complete, Consistent, Enduring, Available) sind im Übergangscontainer genauso einzuhalten wie im Hauptgebäude." } }
+    { "@type": "Question", "name": "Was passiert mit den Daten und der Akkreditierung während der Übergangszeit?", "acceptedAnswer": { "@type": "Answer", "text": "Datenintegrität und Akkreditierung laufen kontinuierlich weiter – das ist gerade der Sinn der Übergangslösung. Gängige LIMS-Systeme lassen sich am neuen Standort über VPN oder direkte Glasfaser-Anbindung im laufenden Betrieb weiterführen; eine Datenmigration findet nicht statt, nur die Hardware-Standorte ändern sich. Für akkreditierte Prüfstellen nach DIN EN ISO/IEC 17025 ist die Standortänderung der DAkkS gemäß Akkreditierungsstellengesetz (AkkStelleG) anzuzeigen; bei wesentlichen Änderungen kann eine Vor-Ort-Begutachtung am neuen Standort fällig werden. Für GMP-Bereiche gelten EU-GMP-Annex 11 (computergestützte Systeme) und 21 CFR Part 11 (FDA) unverändert – die ALCOA+-Kriterien für Datenintegrität (Attributable, Legible, Contemporaneous, Original, Accurate, Complete, Consistent, Enduring, Available) sind im Übergangscontainer genauso einzuhalten wie im Hauptgebäude." } }
   ]
 };
+import RelatedArticles from '../../components/RelatedArticles.astro';
 ---
 
 <Layout
   type="article"
   title="Übergangslabor bei Sanierung – Mietcontainer | Planexus"
-  description="Generalsanierung ohne Forschungsstillstand: Mietcontainer als vollwertiges Übergangslabor für Hochschulen, Kliniken und Industrie – Genehmigung, Geräteumzug, IQ/OQ/PQ-Re-Qualifizierung."
+  description="Generalsanierung ohne Stillstand: Mietcontainer als Übergangslabor für Hochschule, Klinik und Industrie – Genehmigung, Geräteumzug, IQ/OQ/PQ. Jetzt lesen."
   canonical="/magazin/uebergangslabor-sanierung-mietcontainer"
   ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
 >
@@ -220,7 +221,7 @@ const faqSchema = {
               <h2 id="anlaesse" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Die sechs typischen Sanierungsanlässe</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Aus zehn Jahren Projekterfahrung im DACH-Raum kennen wir sechs Anlassgruppen, die fast immer einen Übergangscontainer-Bedarf auslösen.
+                Aus unserer Projekterfahrung im DACH-Raum kennen wir sechs Anlassgruppen, die fast immer einen Übergangscontainer-Bedarf auslösen.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
@@ -352,7 +353,7 @@ const faqSchema = {
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>LIMS-Anbindung:</strong> Moderne Laborinformationssysteme (LabWare, SampleManager, STARLIMS, LabVantage) laufen auf zentralen Servern und sind über VPN, MPLS oder direkte Glasfaser-Anbindung am neuen Standort identisch nutzbar. Die Hardware-Standorte ändern sich, die Datenbestände nicht. Empfehlenswert ist eine redundante Anbindung (Glasfaser + LTE/5G-Backup), weil ein Netzwerkausfall im Übergangscontainer den Laborbetrieb sofort stoppt.
+                <strong>LIMS-Anbindung:</strong> Moderne Laborinformationssysteme laufen auf zentralen Servern und sind über VPN, MPLS oder direkte Glasfaser-Anbindung am neuen Standort identisch nutzbar. Die Hardware-Standorte ändern sich, die Datenbestände nicht. Empfehlenswert ist eine redundante Anbindung (Glasfaser + LTE/5G-Backup), weil ein Netzwerkausfall im Übergangscontainer den Laborbetrieb sofort stoppt.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
@@ -478,7 +479,7 @@ const faqSchema = {
                     Was passiert mit den Daten und der Akkreditierung während der Übergangszeit?
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
                   </summary>
-                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Datenintegrität und Akkreditierung laufen kontinuierlich weiter – das ist gerade der Sinn der Übergangslösung. LIMS-Systeme (LabWare, SampleManager, STARLIMS) lassen sich am neuen Standort über VPN oder direkte Glasfaser-Anbindung im laufenden Betrieb weiterführen; eine Datenmigration findet nicht statt, nur die Hardware-Standorte ändern sich. Für akkreditierte Prüfstellen nach DIN EN ISO/IEC 17025 ist die Standortänderung der DAkkS gemäß Akkreditierungsstellengesetz (AkkStelleG) anzuzeigen; bei wesentlichen Änderungen kann eine Vor-Ort-Begutachtung am neuen Standort fällig werden. Für GMP-Bereiche gelten EU-GMP-Annex 11 (computergestützte Systeme) und 21 CFR Part 11 (FDA) unverändert – die ALCOA+-Kriterien für Datenintegrität (Attributable, Legible, Contemporaneous, Original, Accurate, Complete, Consistent, Enduring, Available) sind im Übergangscontainer genauso einzuhalten wie im Hauptgebäude.</p>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Datenintegrität und Akkreditierung laufen kontinuierlich weiter – das ist gerade der Sinn der Übergangslösung. Gängige LIMS-Systeme lassen sich am neuen Standort über VPN oder direkte Glasfaser-Anbindung im laufenden Betrieb weiterführen; eine Datenmigration findet nicht statt, nur die Hardware-Standorte ändern sich. Für akkreditierte Prüfstellen nach DIN EN ISO/IEC 17025 ist die Standortänderung der DAkkS gemäß Akkreditierungsstellengesetz (AkkStelleG) anzuzeigen; bei wesentlichen Änderungen kann eine Vor-Ort-Begutachtung am neuen Standort fällig werden. Für GMP-Bereiche gelten EU-GMP-Annex 11 (computergestützte Systeme) und 21 CFR Part 11 (FDA) unverändert – die ALCOA+-Kriterien für Datenintegrität (Attributable, Legible, Contemporaneous, Original, Accurate, Complete, Consistent, Enduring, Available) sind im Übergangscontainer genauso einzuhalten wie im Hauptgebäude.</p>
                 </details>
               </div>
 
@@ -565,5 +566,7 @@ const faqSchema = {
         </div>
       </div>
     </article>
+
+    <RelatedArticles slug="uebergangslabor-sanierung-mietcontainer" />
   </div>
 </Layout>

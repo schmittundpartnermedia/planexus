@@ -37,6 +37,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Brauche ich für ein Baustellenlabor eine Akkreditierung nach DIN EN ISO/IEC 17025?", "acceptedAnswer": { "@type": "Answer", "text": "Für die Eigenüberwachung der Werkseigenen Produktionskontrolle (WPK) der Betonherstellung nach DIN EN 206 / DIN 1045-2 ist eine DAkkS-Akkreditierung in der Regel nicht zwingend; ausreichend ist die qualifizierte Durchführung durch geschulte Prüftechniker. Für die Fremdüberwachung der Bauausführung nach DIN 1045-3 (Überwachungsklassen ÜK 2 und ÜK 3) sowie für von der Bauaufsicht beauftragte Prüflaboratorien wird je nach Anerkennungs- bzw. Auftraggeberanforderung regelmäßig eine Akkreditierung verlangt. RAP-Stra-15-Prüfstellen für den Bundesfernstraßenbau benötigen die formale BASt-Anerkennung inkl. akkreditierter Prüfbereiche. Für Asphalt-Prüflaboratorien gelten die Anforderungen der DIN EN 13108-Reihe sowie der TL/TP/ZTV Asphalt-StB; auch hier ist je nach Auftraggeber eine Akkreditierung üblich. Wir liefern Container in beiden Konfigurationen – die Akkreditierungsfähigkeit wird durch Validierungsdokumentation, Geräteverwaltung und Klimatisierung von Anfang an mitgeplant." } }
   ]
 };
+import RelatedArticles from '../../components/RelatedArticles.astro';
 ---
 
 <Layout
@@ -67,7 +68,7 @@ const faqSchema = {
             </span>
           </div>
           <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-            Laborcontainer auf der Baustelle – Mobile Materialprüfung &amp; Qualitätssicherung
+            Laborcontainer auf der Baustelle – Mobile Materialprüfung & QS
           </h1>
           <p class="text-xl text-slate-300 mb-8 leading-relaxed">
             Frischbeton verändert seine Eigenschaften unmittelbar nach dem Mischen, PFAS-belasteter Aushub kann erhebliche Logistik- und Entsorgungsfolgen auslösen, ein Asbest-Verdacht bei einer Sanierung kann die Baustelle stoppen. Wer auf Großprojekten Materialprüfung ausschließlich über Probentransport ins Stationärlabor abwickelt, verliert pro Charge oft Stunden bis Tage – Zeit, die in eng getakteten Bauabläufen fehlt. Ein Containerlabor direkt auf der Baustelle kann hier einen erheblichen Unterschied machen.
@@ -440,27 +441,6 @@ const faqSchema = {
       </div>
     </section>
 
-    <section class="py-16 bg-slate-50 border-t border-slate-200">
-      <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Weitere Artikel</h2>
-        <div class="grid md:grid-cols-3 gap-6 max-w-6xl">
-          <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="bg-white p-6 rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all group">
-            <span class="text-xs uppercase tracking-wider text-primary font-bold">Recht & Bau</span>
-            <h3 class="font-bold text-slate-900 mt-2 group-hover:text-primary transition-colors">Laborcontainer Genehmigung und Baurecht</h3>
-            <p class="text-sm text-slate-600 mt-2">Welche Genehmigungen wirklich nötig sind – pro Bundesland.</p>
-          </a>
-          <a href="/magazin/laborcontainer-katastropheneinsatz-krisenreaktion" class="bg-white p-6 rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all group">
-            <span class="text-xs uppercase tracking-wider text-primary font-bold">Einsatz</span>
-            <h3 class="font-bold text-slate-900 mt-2 group-hover:text-primary transition-colors">Laborcontainer im Katastropheneinsatz</h3>
-            <p class="text-sm text-slate-600 mt-2">Asbest-Screening, Trinkwasseranalytik in Krisenlagen.</p>
-          </a>
-          <a href="/magazin/laborcontainer-energiewende-h2-batterie-ex-schutz" class="bg-white p-6 rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all group">
-            <span class="text-xs uppercase tracking-wider text-primary font-bold">Energiewende</span>
-            <h3 class="font-bold text-slate-900 mt-2 group-hover:text-primary transition-colors">H₂- &amp; Batterietests im Container</h3>
-            <p class="text-sm text-slate-600 mt-2">Ex-Schutz, Gasdetektion, Förderung 2026.</p>
-          </a>
-        </div>
-      </div>
-    </section>
+    <RelatedArticles slug="laborcontainer-baustelle-materialpruefung" />
   </div>
 </Layout>

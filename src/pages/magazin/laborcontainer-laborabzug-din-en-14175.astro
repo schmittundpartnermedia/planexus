@@ -37,12 +37,13 @@ const faqSchema = {
     { "@type": "Question", "name": "Wie senkt man den Energieverbrauch eines Laborabzugs?", "acceptedAnswer": { "@type": "Answer", "text": "Laborabzüge sind die größten Energieverbraucher im Labor – ein einzelner Abzug kann bis zum 3,5-Fachen eines durchschnittlichen Einfamilienhauses verbrauchen, weil ständig Luft abgeführt und die nachströmende Zuluft konditioniert (geheizt, gekühlt) werden muss. Der wirksamste Hebel ist ein VAV-Abzug (Variable Air Volume) nach DIN EN 14175-6: Er regelt den Abluftvolumenstrom in Abhängigkeit von der Frontschieberstellung. Bei geschlossenem Frontschieber lässt sich der Volumenstrom um etwa 50 % gegenüber dem geöffneten Zustand reduzieren; gegenüber einem konstant laufenden CAV-Abzug sind so bis zu 40 % Energieeinsparung möglich, zusätzlich sinkt der Geräuschpegel. Ergänzend wirken Wärmerückgewinnung in der zentralen Lüftung und die einfachste Maßnahme von allen: den Frontschieber konsequent schließen, wenn nicht am Abzug gearbeitet wird. Im kompakten Containerlabor mit begrenzter Technikfläche ist VAV besonders sinnvoll." } }
   ]
 };
+import RelatedArticles from '../../components/RelatedArticles.astro';
 ---
 
 <Layout
   type="article"
   title="Laborabzüge im Container – DIN EN 14175 & Abzugstechnik | Planexus"
-  description="Laborabzüge nach DIN EN 14175: Rückhaltevermögen, SF₆-Typprüfung, Einströmgeschwindigkeit 0,7 m/s, Abzugstypen, VAV-Energie, Abluft über Dach (DIN 1946-7), Prüfung nach TRGS 526."
+  description="Laborabzüge nach DIN EN 14175: Rückhaltevermögen, SF₆-Typprüfung, Einströmgeschwindigkeit, VAV und TRGS-526-Prüfung. Jetzt lesen."
   canonical="/magazin/laborcontainer-laborabzug-din-en-14175"
   ogImage="https://planexus.de/attached_assets/generated_images/laborcontainer-laborabzug-din-en-14175.png"
 >
@@ -67,7 +68,7 @@ const faqSchema = {
             </span>
           </div>
           <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-            Laborabzüge im Container – Abzugstechnik, Rückhaltevermögen und DIN EN 14175
+            Laborabzüge im Container – Rückhaltevermögen & DIN EN 14175
           </h1>
           <p class="text-xl text-gray-300 mb-8 leading-relaxed">
             Der Laborabzug ist die wichtigste Schutzeinrichtung im Labor – und im Container zugleich der größte Energieverbraucher und der anspruchsvollste Lüftungspunkt. Dieser Leitfaden erklärt, wie ein Abzug funktioniert, was die DIN EN 14175 wirklich fordert, welche Typen es gibt und wie Abluft und Energie im Containerlabor sauber gelöst werden – mit verifizierten Normen.
@@ -430,6 +431,8 @@ const faqSchema = {
         </div>
       </div>
     </article>
+
+    <RelatedArticles slug="laborcontainer-laborabzug-din-en-14175" />
 
     <section class="py-16 border-t border-gray-100">
       <div class="container mx-auto px-4">

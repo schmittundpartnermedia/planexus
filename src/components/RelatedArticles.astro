@@ -1,0 +1,42 @@
+---
+import { getRelatedArticles } from '../data/magazin';
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const related = getRelatedArticles(slug, 3);
+---
+
+{related.length > 0 && (
+  <section class="py-16 bg-slate-50 border-t border-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Verwandte Artikel</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl">
+        {related.map((post) => (
+          <a
+            href={`/magazin/${post.slug}`}
+            class="bg-white p-6 rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all group"
+          >
+            <div class="h-36 mb-4 rounded-lg overflow-hidden bg-slate-100">
+              <img
+                src={post.image}
+                alt={post.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width="640"
+                height="360"
+              />
+            </div>
+            <span class="text-xs uppercase tracking-wider text-primary font-bold">{post.category}</span>
+            <h3 class="font-bold text-slate-900 mt-2 group-hover:text-primary transition-colors line-clamp-2">
+              {post.title}
+            </h3>
+            <p class="text-sm text-slate-600 mt-2 line-clamp-2">{post.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

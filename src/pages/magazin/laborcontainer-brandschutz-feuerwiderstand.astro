@@ -37,12 +37,13 @@ const faqSchema = {
     { "@type": "Question", "name": "Braucht ein Laborcontainer eine Brandmeldeanlage?", "acceptedAnswer": { "@type": "Answer", "text": "Nicht jeder Container, aber viele Anwendungen profitieren oder erfordern es. Eine automatische Brandmeldeanlage nach DIN 14675 in Verbindung mit DIN VDE 0833-1/-2 wird dann verlangt, wenn das Brandschutzkonzept oder die Baugenehmigung sie vorschreibt – etwa bei höheren Gebäudeklassen, Sonderbauten, unbeaufsichtigten Nachtbetrieben mit Probenlagerung oder hoher Brandlast durch Lösungsmittel und Lithium-Ionen-Akkus. Für viele Standard-Laborcontainer reicht eine normgerechte Ausstattung mit Rauchwarnmeldern, kombiniert mit den nötigen Feuerlöschern und einer klaren Alarmierungsregelung. Wo eine vollwertige BMA mit Aufschaltung zur Feuerwehr verlangt ist, planen und integrieren wir sie inklusive der erforderlichen Feuerwehrperipherie. Welche Stufe nötig ist, klären wir im Brandschutzkonzept mit Sachverständigem und Bauaufsicht." } }
   ]
 };
+import RelatedArticles from '../../components/RelatedArticles.astro';
 ---
 
 <Layout
   type="article"
   title="Brandschutz im Laborcontainer – Feuerwiderstand & Normen | Planexus"
-  description="Brandschutz im Laborcontainer: DIN 4102/EN 13501, F30–F90 bzw. EI 90, Baustoffklasse A1/A2, Sicherheitsschrank Typ 90, TRGS 510/526, DGUV 213-850, ASR A2.2/A2.3."
+  description="Brandschutz im Laborcontainer: DIN 4102/EN 13501, F30–F90, Baustoff A1/A2, Sicherheitsschrank Typ 90, TRGS 510/526. Jetzt lesen."
   canonical="/magazin/laborcontainer-brandschutz-feuerwiderstand"
   ogImage="https://planexus.de/attached_assets/generated_images/laborcontainer-brandschutz-feuerwiderstand.png"
 >
@@ -67,7 +68,7 @@ const faqSchema = {
             </span>
           </div>
           <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-            Brandschutz im Laborcontainer – Feuerwiderstand, Gefahrstofflager und Rettungswege
+            Brandschutz im Laborcontainer – Feuerwiderstand & Rettungswege
           </h1>
           <p class="text-xl text-gray-300 mb-8 leading-relaxed">
             Im Labor treffen brennbare Lösungsmittel, Druckgase, elektrische Geräte und teils Lithium-Ionen-Akkus auf engem Raum zusammen. Brandschutz ist hier keine Formalie, sondern die Voraussetzung für Genehmigung und Betrieb. Dieser Leitfaden zeigt die drei Säulen – baulich, anlagentechnisch, organisatorisch – mit verifizierten Normen und klaren Entscheidungen.
@@ -450,32 +451,8 @@ const faqSchema = {
         </div>
       </div>
     </section>
+    <RelatedArticles slug="laborcontainer-brandschutz-feuerwiderstand" />
 
-    <section class="py-16 bg-slate-50 border-t border-gray-100">
-      <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Weitere Artikel</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <a href="/magazin/bsl-2-bsl-3-container-labor" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
-            <div class="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><path d="M10 2v8.5a2.5 2.5 0 0 1-5 0V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Z"/></svg>
-            </div>
-            <div>
-              <p class="text-xs text-primary font-medium mb-2">Sicherheitsstufen</p>
-              <h3 class="font-bold text-slate-900 group-hover:text-primary transition-colors">BSL-2 &amp; BSL-3 Containerlabor</h3>
-            </div>
-          </a>
-          <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
-            <div class="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <div>
-              <p class="text-xs text-primary font-medium mb-2">Recht &amp; Genehmigung</p>
-              <h3 class="font-bold text-slate-900 group-hover:text-primary transition-colors">Genehmigung &amp; Baurecht für Laborcontainer</h3>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
 
     <div class="container mx-auto px-4 py-8">
       <a href="/magazin" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">

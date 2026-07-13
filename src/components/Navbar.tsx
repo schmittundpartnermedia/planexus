@@ -37,6 +37,9 @@ export default function Navbar() {
 
   const serviceLinks = [
     { href: "/leistungen", label: "Leistungsübersicht" },
+    { href: "/laborcontainer", label: "Laborcontainer" },
+    { href: "/laborcontainer-mieten", label: "Laborcontainer mieten" },
+    { href: "/laborcontainer-kaufen", label: "Laborcontainer kaufen" },
     { href: "/leistungen/planung", label: "Technische Fachplanung" },
     { href: "/leistungen/modulbau", label: "Modulbau & Fertigung" },
     { href: "/leistungen/logistik", label: "Logistik & Montage" },

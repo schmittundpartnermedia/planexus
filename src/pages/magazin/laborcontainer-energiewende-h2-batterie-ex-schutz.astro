@@ -37,6 +37,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Können Container ATEX-Zone 1 und Zone 2 in einem Modul kombinieren?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, durch räumliche Trennung mit Schleusen und unterschiedlichen Druckkaskaden. Der Versuchsraum ist Zone 1 oder Zone 2, der angrenzende Mess- und Auswerteraum ist Ex-frei. Schalt- und Steuerschränke werden überdruckgekapselt nach EN 60079-2 oder in den Ex-freien Bereich verlegt. Diese räumliche Trennung ist in einem Containerlabor architektonisch leichter umzusetzen als im Bestandsgebäude." } }
   ]
 };
+import RelatedArticles from '../../components/RelatedArticles.astro';
 ---
 
 <Layout
@@ -67,7 +68,7 @@ const faqSchema = {
             </span>
           </div>
           <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-            Laborcontainer für H₂-Forschung &amp; Batterietests – Ex-Schutz, Gasdetektion und Förderung
+            Laborcontainer H₂ & Batterie – Ex-Schutz, Gasdetektion und Förderung
           </h1>
           <p class="text-xl text-gray-300 mb-8 leading-relaxed">
             Wasserstoff, Brennstoffzelle, Festkörperbatterie, Recycling von Lithium-Ionen-Zellen – die Energiewende erzeugt einen massiven Bedarf an Spezial-Laboren mit Ex-Schutz, Gasdetektion und Brandschutzkonzept. Was im Bestandsgebäude oft unmöglich ist, lässt sich im Container in 8 bis 14 Wochen normkonform realisieren.
@@ -119,11 +120,11 @@ const faqSchema = {
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Auf der Batterieseite läuft die Industrialisierung parallel: <strong>Northvolt Heide</strong> (Schleswig-Holstein, im Bau), <strong>CATL Erfurt-Arnstadt</strong> (in Betrieb), <strong>VW PowerCo Salzgitter</strong> (Hochlauf), <strong>ACC Kaiserslautern</strong> (Stellantis-Mercedes-TotalEnergies, Hochlauf) und <strong>Tesla Grünheide</strong>. Jeder Standort braucht ein angegliedertes <strong>Cell Engineering Lab</strong> – für eingehende Materialqualifizierung, Misuse-Tests nach IEC 62619 und Thermal-Runaway-Charakterisierung nach UL 9540A. Genau dort, wo wir tagtäglich Containerlabore liefern.
+                Auf der Batterieseite läuft die Industrialisierung parallel: An mehreren deutschen Standorten entstehen oder laufen bereits Batteriezellfabriken – unter anderem in Schleswig-Holstein, Thüringen, Niedersachsen, Rheinland-Pfalz und Brandenburg. Jeder Standort braucht ein angegliedertes <strong>Cell Engineering Lab</strong> – für eingehende Materialqualifizierung, Misuse-Tests nach IEC 62619 und Thermal-Runaway-Charakterisierung nach UL 9540A. Genau dort, wo wir tagtäglich Containerlabore liefern.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Hinzu kommen die Forschungseinrichtungen: <strong>Fraunhofer ISE</strong> (Freiburg) und <strong>FCBAT</strong>, <strong>ZSW Ulm</strong>, <strong>Helmholtz-Institut Münster (HIMS)</strong>, <strong>KIT Karlsruhe</strong> mit dem <strong>HIU</strong>, das <strong>Forschungszentrum Jülich (IEK-9)</strong> und die universitären Lehrstühle für Elektrochemie an TU München, RWTH Aachen, TU Berlin. Alle erweitern – und die Bestandsgebäude geben es nicht her.
+                Hinzu kommen die Forschungseinrichtungen: außeruniversitäre Forschungsinstitute, Landesforschungszentren und universitäre Lehrstühle für Elektrochemie an mehreren technischen Universitäten in Deutschland. Alle erweitern – und die Bestandsgebäude geben es nicht her.
               </p>
 
               <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8">
@@ -156,7 +157,7 @@ const faqSchema = {
               </ul>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Diese räumliche Trennung ist im Containerlabor architektonisch leicht umzusetzen: Wir teilen das Modul mit einer feuerwiderstandsfähigen Innenwand (REI 90) und einer Personenschleuse mit zwei selbstschließenden Türen. Steuerschränke kommen in den Ex-freien Bereich oder werden nach EN 60079-2 überdruckgekapselt. Verkabelungen werden ATEX-konform über Sandwichdurchführungen geführt. Das Explosionsschutzdokument schreiben wir mit – nicht aus dem Lehrbuch, sondern aus der Praxis von 15 Jahren.
+                Diese räumliche Trennung ist im Containerlabor architektonisch leicht umzusetzen: Wir teilen das Modul mit einer feuerwiderstandsfähigen Innenwand (REI 90) und einer Personenschleuse mit zwei selbstschließenden Türen. Steuerschränke kommen in den Ex-freien Bereich oder werden nach EN 60079-2 überdruckgekapselt. Verkabelungen werden ATEX-konform über Sandwichdurchführungen geführt. Das Explosionsschutzdokument schreiben wir mit – nicht aus dem Lehrbuch, sondern aus gelebter Projektpraxis.
               </p>
 
               <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Gasdetektion: Wasserstoff sehen, bevor er gefährlich wird</h2>
@@ -255,11 +256,11 @@ const faqSchema = {
                 <div class="bg-white border border-gray-100 rounded-xl p-5">
                   <h4 class="font-bold text-slate-900 mb-1">BMBF-Leitprojekte H2Giga, H2Mare, TransHyDE</h4>
                   <p class="text-sm text-gray-600 mb-2">H2Giga: Serienfertigung von Elektrolyseuren. H2Mare: Offshore-Wasserstoff. TransHyDE: Transportinfrastruktur. Insgesamt rund 740 Mio EUR für die erste Förderphase, Verlängerung in Planung.</p>
-                  <p class="text-xs text-gray-500">Zielgruppe: Forschungsverbünde aus Hochschulen, Fraunhofer-Instituten und Industrie.</p>
+                  <p class="text-xs text-gray-500">Zielgruppe: Forschungsverbünde aus Hochschulen, außeruniversitären Forschungsinstituten und Industrie.</p>
                 </div>
                 <div class="bg-white border border-gray-100 rounded-xl p-5">
                   <h4 class="font-bold text-slate-900 mb-1">BMWK „Forschung und Entwicklung im Bereich Elektromobilität"</h4>
-                  <p class="text-sm text-gray-600 mb-2">Förderaufruf für Batteriezellfertigung, Recycling, Ladeinfrastruktur. Förderquote 25–50 % für Industrie, bis 80 % für KMU bei Grundlagenforschung. Antragsstellung über den Projektträger Jülich.</p>
+                  <p class="text-sm text-gray-600 mb-2">Förderaufruf für Batteriezellfertigung, Recycling, Ladeinfrastruktur. Förderquote 25–50 % für Industrie, bis 80 % für KMU bei Grundlagenforschung. Antragsstellung über den zuständigen Projektträger.</p>
                   <p class="text-xs text-gray-500">Zielgruppe: Automotive-Zulieferer, Batteriehersteller, Recycler.</p>
                 </div>
                 <div class="bg-white border border-gray-100 rounded-xl p-5">
@@ -420,32 +421,8 @@ const faqSchema = {
         </div>
       </div>
     </section>
+    <RelatedArticles slug="laborcontainer-energiewende-h2-batterie-ex-schutz" />
 
-    <section class="py-16 bg-slate-50 border-t border-gray-100">
-      <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Weitere Artikel</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <a href="/magazin/bsl-2-bsl-3-container-labor" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
-            <div class="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
-              <img src="/images/backgrounds/magazin-bsl-labor.webp" alt="BSL-2 und BSL-3 Sicherheitslabor im Container" class="w-full h-full object-cover" loading="lazy" width="400" height="267" />
-            </div>
-            <div>
-              <p class="text-xs text-primary font-medium mb-2">Sicherheit</p>
-              <h3 class="font-bold text-slate-900 group-hover:text-primary transition-colors">BSL-2 und BSL-3 im Container: Geht das?</h3>
-            </div>
-          </a>
-          <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
-            <div class="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden">
-              <img src="/images/backgrounds/lab-ausstattung.webp" alt="Lüftungstechnik und Klimatisierung im Laborcontainer" class="w-full h-full object-cover" loading="lazy" width="400" height="267" />
-            </div>
-            <div>
-              <p class="text-xs text-primary font-medium mb-2">Technik &amp; Normen</p>
-              <h3 class="font-bold text-slate-900 group-hover:text-primary transition-colors">Klimatisierung im Laborcontainer – Lüftung &amp; Normen</h3>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
 
     <div class="container mx-auto px-4 py-8">
       <a href="/magazin" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">

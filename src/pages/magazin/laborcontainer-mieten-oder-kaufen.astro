@@ -36,6 +36,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Welche Anforderungen gelten für den Aufstellort eines Laborcontainers?", "acceptedAnswer": { "@type": "Answer", "text": "Sie benötigen tragfähigen Untergrund (mindestens etwa 200 kg/m²), Strom- und Wasseranschluss sowie eine Abwasserentsorgung. Der Abstand zu Gebäuden muss die Brandschutzauflagen erfüllen – meist mindestens fünf Meter. Bestandsbauten können Sonderregelungen unterliegen." } }
   ]
 };
+import RelatedArticles from '../../components/RelatedArticles.astro';
 ---
 
 <Layout
@@ -66,7 +67,7 @@ const faqSchema = {
             </span>
           </div>
           <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-            Laborcontainer mieten vs. kaufen: Der Entscheidungsguide für Forschungsleiter
+            Laborcontainer mieten vs. kaufen – Guide für Forschungsleiter
           </h1>
           <p class="text-xl text-gray-300 mb-8 leading-relaxed">
             Mieten oder kaufen? Die Antwort hängt von Budget, Projektdauer und langfristigen Zielen ab. Wer falsch entscheidet, bindet Kapital unnötig oder verliert Flexibilität. Dieser Guide zeigt, welche Faktoren wirklich zählen – mit klarer Faustformel, Entscheidungsmatrix und Praxis-Checkliste.
@@ -108,8 +109,22 @@ const faqSchema = {
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Bei Planexus begleiten wir seit über zehn Jahren Forschungseinrichtungen bei genau dieser Abwägung. Unsere Erfahrung: Die beste Wahl ist nicht immer die offensichtliche. Ein mobiles Labor muss zu Ihrem Forschungsrhythmus passen – nicht umgekehrt.
+                Bei Planexus begleiten wir Forschungseinrichtungen bei genau dieser Abwägung. Unsere Erfahrung: Die beste Wahl ist nicht immer die offensichtliche. Ein mobiles Labor muss zu Ihrem Forschungsrhythmus passen – nicht umgekehrt.
               </p>
+
+              <div class="not-prose bg-slate-50 border border-gray-200 rounded-2xl p-6 my-8">
+                <p class="text-sm font-bold text-slate-900 mb-4">Sie haben bereits entschieden? Direkt zu den passenden Seiten:</p>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <a href="/laborcontainer-mieten" class="flex items-center justify-between gap-3 bg-white border border-gray-200 rounded-xl px-5 py-4 hover:border-primary hover:shadow-md transition-all group">
+                    <span class="font-bold text-slate-900 group-hover:text-primary transition-colors">Laborcontainer mieten</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary shrink-0"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                  <a href="/laborcontainer-kaufen" class="flex items-center justify-between gap-3 bg-white border border-gray-200 rounded-xl px-5 py-4 hover:border-primary hover:shadow-md transition-all group">
+                    <span class="font-bold text-slate-900 group-hover:text-primary transition-colors">Laborcontainer kaufen</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary shrink-0"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
 
               <figure class="my-10">
                 <Picture
@@ -274,6 +289,21 @@ const faqSchema = {
                 Planexus plant mobile Laboreinrichtungen mit Fokus auf Langlebigkeit. Unsere Containerausstattung berücksichtigt den Verschleiß an den neuralgischen Punkten: Türscharniere, Dichtungen und Durchführungen sind die typischen Schwachstellen, die wir verstärkt ausführen.
               </p>
 
+              <div class="not-prose bg-primary/10 border border-primary/30 rounded-2xl p-6 my-10">
+                <p class="font-bold text-slate-900 mb-2">Entscheidung getroffen?</p>
+                <p class="text-gray-700 text-sm mb-4">Auf unseren kommerziellen Seiten finden Sie Mietdauer, Lieferzeit, Ausstattung und den Ablauf bis zur Übergabe – und fordern direkt Ihr Angebot an.</p>
+                <div class="flex flex-wrap gap-3">
+                  <a href="/laborcontainer-mieten" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">
+                    Laborcontainer mieten
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                  <a href="/laborcontainer-kaufen" class="inline-flex items-center gap-2 bg-white text-slate-900 font-bold px-6 py-3 rounded-lg border border-gray-200 hover:border-primary transition-colors text-sm">
+                    Laborcontainer kaufen
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
+
               <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center">
                 <h3 class="text-2xl font-bold mb-4 text-primary">Mieten oder kaufen – wir rechnen es durch</h3>
                 <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Die Entscheidung zwischen Miete und Kauf bestimmt Ihre finanzielle Beweglichkeit für Jahre. Wir ermitteln gemeinsam mit Ihnen den wirtschaftlich optimalen Weg – transparent und auf Ihre Forschungsziele abgestimmt. Erste Einschätzung zu Ihrem Projekt binnen 48 Stunden.</p>
@@ -361,32 +391,8 @@ const faqSchema = {
         </div>
       </div>
     </section>
+    <RelatedArticles slug="laborcontainer-mieten-oder-kaufen" />
 
-    <section class="py-16 bg-slate-50 border-t border-gray-100">
-      <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Weitere Artikel</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <a href="/magazin/laborcontainer-kosten-preise-2026" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
-            <div class="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <div>
-              <p class="text-xs text-primary font-medium mb-2">Ratgeber</p>
-              <h3 class="font-bold text-slate-900 group-hover:text-primary transition-colors">Laborcontainer Kosten &amp; Preise 2026</h3>
-            </div>
-          </a>
-          <a href="/magazin/uebergangslabor-sanierung-mietcontainer" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all flex gap-4 group">
-            <div class="w-24 h-24 bg-slate-100 rounded-lg shrink-0 overflow-hidden flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <div>
-              <p class="text-xs text-primary font-medium mb-2">Praxis</p>
-              <h3 class="font-bold text-slate-900 group-hover:text-primary transition-colors">Übergangslabor bei Sanierung</h3>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
 
     <div class="container mx-auto px-4 py-8">
       <a href="/magazin" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
