@@ -19,8 +19,8 @@ const muenchenPLZ = [
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Laborcontainer München – LABtoGO, BSL-2/3, GMP-Reinraum & Vibrationsschutz für die Großforschung",
-  "description": "Schlüsselfertige Laborcontainer für München, Garching, Martinsried und das gesamte Münchner Forschungs- und Pharma-Umfeld. LABtoGO mit 2.750 mm Innenhöhe, BSL-2/3, GMP-Reinraum, Pfahlgründung für die Münchner Schotterebene, Föhn-stabile HVAC-Regelung, Vibrationsentkopplung VC-D für die Großforschung in Garching. Ausgezeichnet bei den German CEO Excellence Awards 2026.",
+  "name": "Lab containers Munich – LABtoGO, BSL-2/3, GMP cleanroom and vibration protection for large-scale research",
+  "description": "Turnkey lab containers for Munich, Garching, Martinsried and the wider Munich research and pharma environment. LABtoGO with 2,750 mm internal height, BSL-2/3, GMP cleanroom, pile foundation for the Munich gravel plain, föhn-stable HVAC control, VC-D vibration isolation for large-scale research in Garching. Awarded at the German CEO Excellence Awards 2026.",
   "provider": {
     "@type": "Organization",
     "name": "Planexus GmbH",
@@ -29,22 +29,22 @@ const serviceSchema = {
     "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
   },
   "serviceType": [
-    "Laborcontainer München",
-    "Containerlabor München",
-    "Mobiles Labor München",
-    "BSL-2 Containerlabor",
-    "BSL-3 Containerlabor",
-    "GMP-Reinraumlabor",
-    "Reinraum-Container",
-    "Modulbau Labor",
-    "Technische Fachplanung Labor",
-    "Laborausstattung",
-    "Smart Lab Integration"
+    "Lab containers Munich",
+    "Container laboratory Munich",
+    "Mobile laboratory Munich",
+    "BSL-2 container laboratory",
+    "BSL-3 container laboratory",
+    "GMP cleanroom laboratory",
+    "Cleanroom container",
+    "Modular laboratory construction",
+    "Technical laboratory planning",
+    "Laboratory equipment",
+    "Smart Lab integration"
   ],
   "areaServed": [
-    { "@type": "City", "name": "München", "containedInPlace": { "@type": "State", "name": "Bayern" } },
-    { "@type": "State", "name": "Bayern" },
-    { "@type": "AdministrativeArea", "name": "Metropolregion München" },
+    { "@type": "City", "name": "Munich", "containedInPlace": { "@type": "State", "name": "Bavaria" } },
+    { "@type": "State", "name": "Bavaria" },
+    { "@type": "AdministrativeArea", "name": "Munich metropolitan region" },
     ...muenchenPLZ.map(plz => ({ "@type": "PostalCodeSpecification", "postalCode": plz, "addressCountry": "DE" }))
   ],
   "url": "https://planexus.de/en/lab-containers-munich"
@@ -54,8 +54,8 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://planexus.de/en/lab-containers-munich#business",
-  "name": "Planexus GmbH – Laborcontainer München",
-  "description": "Fachplaner für Containerlabore. Ihr Spezialist für Laborcontainer und modulare Laborlösungen in München, Garching und Martinsried. LABtoGO, BSL-2/3, GMP, Föhn-stabile HVAC, Vibrationsentkopplung für die Großforschung. Werk Albstadt – Lieferung in 1 Transporttag via A8.",
+  "name": "Planexus GmbH – Lab containers Munich",
+  "description": "Specialist planner for container laboratories. Your specialist for lab containers and modular laboratory solutions in Munich, Garching and Martinsried. LABtoGO, BSL-2/3, GMP, föhn-stable HVAC, vibration isolation for large-scale research. Albstadt works – delivery in one transport day via the A8.",
   "url": "https://planexus.de/en/lab-containers-munich",
   "telephone": "+49 7435 7519 700",
   "email": "info@planexus.de",
@@ -70,9 +70,9 @@ const localBusinessSchema = {
   },
   "areaServed": {
     "@type": "City",
-    "name": "München",
+    "name": "Munich",
     "containedInPlace": [
-      { "@type": "AdministrativeArea", "name": "Garching bei München" },
+      { "@type": "AdministrativeArea", "name": "Garching near Munich" },
       { "@type": "AdministrativeArea", "name": "Martinsried-Planegg" },
       { "@type": "AdministrativeArea", "name": "Großhadern" },
       { "@type": "AdministrativeArea", "name": "Schwabing" },
@@ -92,9 +92,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
-    { "@type": "ListItem", "position": 2, "name": "Standorte", "item": "https://planexus.de/en/lab-containers" },
-    { "@type": "ListItem", "position": 3, "name": "Laborcontainer München", "item": "https://planexus.de/en/lab-containers-munich" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Lab containers", "item": "https://planexus.de/en/lab-containers" },
+    { "@type": "ListItem", "position": 3, "name": "Lab containers Munich", "item": "https://planexus.de/en/lab-containers-munich" }
   ]
 };
 
@@ -104,58 +104,58 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was kostet ein Laborcontainer in München?",
+      "name": "What does a lab container in Munich cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Investition richtet sich nach Sicherheitsstufe, Reinraumklasse, Gründungsart und Standortlage. Ein Analytikcontainer im Biotech-Cluster Martinsried liegt in einer anderen Größenordnung als ein BSL-3-Container für ein Forschungszentrum in Neuherberg oder ein vibrationsentkoppelter Strahlnachweis-Container für die Großforschung in Garching. Wir kalkulieren projektspezifisch – inklusive Pfahlgründung in der Münchner Schotterebene, Föhn-stabiler HVAC-Regelung und VC-D-Vibrationsentkopplung für die Großforschung. Senden Sie uns Ihre Standortdaten, wir melden uns binnen 24 Stunden mit einer indikativen Spanne."
+        "text": "The investment depends on biosafety level, cleanroom class, foundation type and site location. An analytics container in the Martinsried biotech cluster sits in a different order of magnitude from a BSL-3 container for a research centre in Neuherberg or a vibration-isolated beam-diagnostics container for large-scale research in Garching. We calculate project by project — including pile foundations on the Munich gravel plain, föhn-stable HVAC control and VC-D vibration isolation for large-scale research. Send us your site data and we will respond within 24 hours with an indicative range."
       }
     },
     {
       "@type": "Question",
-      "name": "Wer ist in München für die Genehmigung eines Laborcontainers zuständig?",
+      "name": "Who is responsible for permitting a lab container in Munich?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Innerhalb der Stadtgrenzen ist die Lokalbaukommission München (LBK) zentrale Bauaufsichtsbehörde – einheitlich für alle 25 Stadtbezirke, anders als in Berlin. Außerhalb (Garching, Martinsried, Planegg, Unterschleißheim, Ismaning, Penzberg, Ottobrunn) sind die jeweiligen Landratsämter und Gemeinden zuständig. Maßgebend ist immer die Bayerische Bauordnung (BayBO). Wir reichen prüffähige Bauvorlagen entweder bei der LBK oder beim zuständigen Landratsamt ein – inklusive Statiknachweis für die Münchner Schotterebene und Föhn-Lastfall im HVAC-Konzept."
+        "text": "Inside the city boundary the Munich Local Building Commission (Lokalbaukommission München, LBK) is the central building-control authority — uniform for all 25 city districts, unlike Berlin. Outside (Garching, Martinsried, Planegg, Unterschleißheim, Ismaning, Penzberg, Ottobrunn) the relevant rural district offices (Landratsämter) and municipalities are competent. The Bavarian Building Code (Bayerische Bauordnung, BayBO) always applies. We submit review-ready building documents either to the LBK or to the competent Landratsamt — including the structural proof for the Munich gravel plain and the föhn load case in the HVAC concept."
       }
     },
     {
       "@type": "Question",
-      "name": "Wie lange dauert die Lieferung eines Laborcontainers von Albstadt nach München?",
+      "name": "How long does delivery of a lab container from Albstadt to Munich take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Strecke beträgt rund 280 km – per Schwerlasttransport direkt über die A8 nach München, Anschluss A99 Münchner Autobahnring zu Garching (A9-Nord), Martinsried (A96), Großhadern (A95), Penzberg (A95) oder Ottobrunn (A8-Süd). Reine Fahrzeit ca. 3,5 Stunden, mit Genehmigung und Begleitfahrzeugen ein Transporttag. Vom Auftrag bis zur betriebsbereiten Übergabe in München vergehen 8 bis 14 Wochen – das ist eine der schnellsten Anlieferungen im DACH-Raum, weil unser Werk Albstadt geographisch deutlich näher an München liegt als an Berlin oder Hamburg."
+        "text": "The distance is around 280 km — by heavy-goods transport directly via the A8 to Munich, then the A99 Munich orbital to Garching (A9 north), Martinsried (A96), Großhadern (A95), Penzberg (A95) or Ottobrunn (A8 south). Pure driving time is about 3.5 hours; with the required permits and escort vehicles it is typically one transport day. From order to operational handover in Munich takes 8 to 14 weeks — one of the fastest deliveries in the DACH region, because our Albstadt works is geographically much closer to Munich than to Berlin or Hamburg."
       }
     },
     {
       "@type": "Question",
-      "name": "Wie geht ein Laborcontainer mit der Münchner Föhnlage um?",
+      "name": "How does a lab container cope with Munich’s föhn conditions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Föhn am Alpenrand bringt plötzliche Druckabfälle von 10 bis 20 hPa und Temperatursprünge bis +15 °C in wenigen Stunden. Eine Standard-HVAC-Regelung verliert dabei kurzzeitig die Druckkaskade – für GMP-Reinraum und BSL-2/-3-Container ein Klassifizierungs-Risiko. Wir konfigurieren bei Münchner Standorten Föhn-Lastfälle in der HVAC-Auslegung: erweiterter Regelhub, Druckkaskaden-Stabilisierung über Frequenzumrichter, Pufferalarm bei plötzlichen Außendruck-Änderungen. So bleiben Reinraumklasse und BSL-Druckkaskade auch bei Föhndurchgang stabil."
+        "text": "Föhn at the Alpine fringe brings sudden pressure drops of 10 to 20 hPa and temperature jumps of up to +15 °C within a few hours. Standard HVAC control briefly loses the pressure cascade — a classification risk for GMP cleanrooms and BSL-2/-3 containers. For Munich sites we configure föhn load cases in the HVAC design: extended control range, pressure-cascade stabilisation via frequency inverters, and a buffer alarm on sudden outdoor-pressure changes. Cleanroom class and the BSL pressure cascade therefore remain stable even during a föhn passage."
       }
     },
     {
       "@type": "Question",
-      "name": "Hält ein Standard-Container der Münchner Schotterebene und dem Grundwasser stand?",
+      "name": "Will a standard container withstand the Munich gravel plain and the water table?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Münchner Schotterebene besteht aus würmzeitlichem Kies und Schotter mit Bodenklasse 4 bis 5 nach DIN 18196 – sehr tragfähig, aber bohrintensiv. Der Grundwasserspiegel liegt je nach Stadtteil 3 bis 15 m unter Gelände, in Isar-Nähe und in Garching tendenziell höher. Standardfundamente bleiben hier zwar weitgehend setzungsstabil, eine fachgerechte Plattengründung mit Auftriebsschutz ist trotzdem Pflicht – sonst hebt das Grundwasser bei Schneeschmelze einseitig an. Wir kalkulieren für Ihren konkreten Standort Platten- oder Pfahlgründung nach DIN 4017/4020."
+        "text": "The Munich gravel plain consists of Würm-period gravel and shingle of soil class 4 to 5 to DIN 18196 — highly bearing, but drilling-intensive. The water table sits 3 to 15 m below ground depending on the district, and tends to be higher near the Isar and in Garching. Standard foundations remain largely settlement-stable here, but a proper raft foundation with uplift protection is still mandatory — otherwise groundwater lifts one side during snowmelt. We calculate a raft or pile foundation to DIN 4017/4020 for your specific site."
       }
     },
     {
       "@type": "Question",
-      "name": "Kann Planexus in Garching, Großhadern oder im Biotech-Cluster Martinsried aufstellen?",
+      "name": "Can Planexus install in Garching, Großhadern or the Martinsried biotech cluster?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, das ist technisch möglich. Für eine Aufstellung auf einem Forschungscampus in Garching – inklusive Forschungsreaktor und Neutronenquelle – wäre die Abstimmung mit der jeweiligen Bauverwaltung, ggf. dem Bayerischen Staatsministerium für Wissenschaft und der Strahlenschutzaufsicht erforderlich. Für vibrationsempfindliche Aufstellungen können wir VC-D-Entkopplung nach VDI 2038 liefern. Für Aufstellungen an Universitätskliniken in Großhadern oder an der Isar ist das Bayerische Staatliche Bauamt München zuständig. Im Biotech-Cluster Martinsried-Planegg mit über 50 Biotech-Unternehmen würde die Aufstellung in Abstimmung mit der Gemeinde Planegg und der Bayerischen Bauaufsicht erfolgen."
+        "text": "Yes, that is technically possible. Siting on a research campus in Garching — including the research reactor and neutron source — would require coordination with the relevant building administration, and where applicable the Bavarian State Ministry of Science and the radiation-protection authority. For vibration-sensitive installations we can supply VC-D isolation to VDI 2038. For siting at university hospitals in Großhadern or on the Isar, the Bavarian State Building Office Munich is competent. In the Martinsried-Planegg biotech cluster with more than 50 biotech companies, siting would be coordinated with the municipality of Planegg and Bavarian building control."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche Auflagen gelten für BSL-3-Container in Bayern?",
+      "name": "What requirements apply to BSL-3 containers in Bavaria?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BSL-3 in Bayern verlangt Genehmigung nach BioStoffV (Bundesrecht) und Anzeige beim LGL Bayern – Landesamt für Gesundheit und Lebensmittelsicherheit, Sachgebiet Biologische Sicherheit. Für gentechnische Anlagen S1/S2/S3 zusätzlich Anzeige beim LGL nach GenTG. Technisch fordert der Verordnungsgeber: Unterdruckkaskade min. -50 Pa, HEPA-H14 im Abluftstrang, autoklavierte Schleusen, redundante Lüftung – auf Münchner Standorten zusätzlich Föhn-stabile Auslegung. Wir liefern Risikobewertung, Sicherheitskonzept und vollständige Antragsunterlagen für LGL und Lokalbaukommission. Container werden nach TRBA 100 geprüft und mit IQ/OQ/PQ übergeben."
+        "text": "BSL-3 in Bavaria requires a permit under the German Biological Agents Ordinance (BioStoffV) — federal law — plus a notification to LGL Bayern, the Bavarian State Office for Health and Food Safety, Biological Safety unit. For genetic-engineering facilities S1/S2/S3 an additional notification to LGL under the German Genetic Engineering Act (GenTG) is required. Technically the ordinance requires a negative-pressure cascade of at least −50 Pa, HEPA H14 on the extract-air path, autoclaved airlocks and redundant ventilation — on Munich sites with föhn-stable design in addition. We supply the risk assessment, safety concept and complete application documents for LGL and the Local Building Commission. Containers are tested to TRBA 100 and handed over with IQ/OQ/PQ."
       }
     }
   ]
@@ -163,8 +163,8 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Laborcontainer München mieten – ATEX, Reinraum, BSL-3"
-  description="Laborcontainer München mieten: BSL-3, Föhn-stabile HVAC, Pfahlgründung Schotter, FRM-II-Schutz Garching. 12 Wochen Lieferzeit. Jetzt Angebot anfordern."
+  title="Lab containers Munich – rent cleanroom, GMP and BSL-3 laboratory"
+  description="Rent lab containers in Munich: BSL-3, föhn-stable HVAC, gravel-plain foundation, FRM II protection in Garching. 12-week lead time. Request a quotation."
   canonical="/en/lab-containers-munich"
   schema={serviceSchema}
   ogImage="/attached_assets/Laborcontainer_006_1769688326917.jpg"
@@ -179,11 +179,11 @@ const faqSchema = {
     <aside class="hidden xl:block fixed right-6 top-1/2 -translate-y-1/2 z-40 w-60">
       <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
         <div class="bg-slate-900 px-5 py-3">
-          <div class="text-primary text-xs font-bold uppercase tracking-wider">Standort München</div>
+          <div class="text-primary text-xs font-bold uppercase tracking-wider">Munich location</div>
         </div>
         <div class="p-5 space-y-3 text-sm">
-          <p class="text-gray-700 leading-snug">Werk Albstadt – Lieferung in 8–14 Wochen via A8 (nur 280 km / 1 Transporttag). Kostenfreies Standort-Audit.</p>
-          <a href="#anfrage" class="block bg-primary text-slate-900 font-bold text-center py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Anfrage starten</a>
+          <p class="text-gray-700 leading-snug">Albstadt works – delivery in 8–14 weeks via the A8 (only 280 km / 1 transport day). Complimentary site audit.</p>
+          <a href="#anfrage" class="block bg-primary text-slate-900 font-bold text-center py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Start an enquiry</a>
           <a href="tel:+4974357519700" class="block text-center text-xs text-slate-600 hover:text-primary transition-colors">+49 7435 7519 700</a>
         </div>
       </div>
@@ -192,36 +192,36 @@ const faqSchema = {
     <!-- HERO -->
     <section class="relative py-24 md:py-32 bg-slate-900 text-white overflow-hidden">
       <div class="absolute inset-0">
-        <Picture src="/attached_assets/Laborcontainer_006_1769688326917.jpg" alt="Laborcontainer München – Planexus LABtoGO mit 2,75 m Innenhöhe für Forschung, Hochschulen und Kliniken im Raum München" class="w-full h-full object-cover opacity-20" loading="eager" fetchpriority="high" width={1980} height={1485} />
+        <Picture src="/attached_assets/Laborcontainer_006_1769688326917.jpg" alt="Lab containers Munich – Planexus LABtoGO with 2.75 m internal height for research, universities and hospitals in the Munich area" class="w-full h-full object-cover opacity-20" loading="eager" fetchpriority="high" width={1980} height={1485} />
       </div>
       <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
 
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-3xl">
           <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
-            <a href="/" class="hover:text-primary transition-colors">Start</a>
+            <a href="/en" class="hover:text-primary transition-colors">Home</a>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-            <span>Standorte</span>
+            <span>Lab containers</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-            <span class="text-primary">München</span>
+            <span class="text-primary">Munich</span>
           </nav>
 
-          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Ihr Spezialist für Laborcontainer · Metropolregion München</div>
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Your specialist for lab containers · Munich metropolitan region</div>
 
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-            Laborcontainer München – Reinraum-Labore für Garching, Martinsried
+            Lab containers Munich – cleanroom laboratories for Garching and Martinsried
           </h1>
 
           <p class="text-xl text-gray-300 leading-relaxed mb-4">
-            <strong class="text-white">Unsere Geschäftsführer bringen über zehn Jahre Erfahrung im Laborcontainerbau mit.</strong> Intelligent, nachhaltig und modular. Wir realisieren flexible Forschungsumgebungen für die Zukunft – aus dem Werk Albstadt direkt nach München, über die A8 in nur einem Transporttag.
+            <strong class="text-white">Our managing directors bring more than ten years of experience in lab-container construction.</strong> Intelligent, sustainable and modular. We deliver flexible research environments for the future — from the Albstadt works straight to Munich, via the A8 in a single transport day.
           </p>
           <p class="text-base text-gray-400 mb-8">
-            Während andere noch planen, forschen Sie bereits.
+            While others are still planning, you are already researching.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 mb-8">
             <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
-              Kostenfreies Standort-Audit München
+              Complimentary site audit Munich
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
             <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
@@ -231,16 +231,16 @@ const faqSchema = {
           </div>
 
           <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
-            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Spezialist für modularen Laborbau</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Specialist in modular laboratory construction</div>
             <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Award 2026 EU Business News</div>
-            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Föhn-stabile HVAC für GMP / BSL-3</div>
-            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Wesemann-Gruppe · 60+ Jahre Laborbau</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Föhn-stable HVAC for GMP / BSL-3</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Wesemann Group · 60+ years of laboratory construction</div>
           </div>
         </div>
       </div>
     </section>
 
-    <AuthorBio city="München"  locale="en" />
+    <AuthorBio city="Munich"  locale="en" />
 
 
     <!-- PATTERN-INTERRUPT -->
@@ -249,44 +249,44 @@ const faqSchema = {
         <div class="max-w-5xl mx-auto">
           <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
             <div>
-              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Pattern-Interrupt · Weltpremiere analytica 2026 München</div>
-              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Auf der analytica in München zeigen wir, was ein Laborcontainer 2026 wirklich kann</h2>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Pattern interrupt · World premiere at analytica 2026 in Munich</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">At analytica in Munich we show what a lab container in 2026 can really do</h2>
               <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                Ein gewöhnlicher Laborcontainer hat 2.400 mm Innenhöhe. Sie passen rein – aufrecht arbeiten unter einem Abzug aber kaum.
+                A conventional lab container has 2,400 mm internal height. You can stand up inside — but working upright at a fume cupboard is barely possible.
               </p>
               <p class="text-lg text-slate-900 font-bold leading-relaxed mb-4">
-                Der LABtoGO von Planexus hat 2.750 mm Innenhöhe. 9,5 m Außenlänge. 3 m Außenbreite. Vollverglaste Front, die echtes Tageslicht in jedes Münchner Klinik-, Forschungs- oder Pharmalabor bringt.
+                Planexus LABtoGO has 2,750 mm internal height. 9.5 m external length. 3 m external width. A fully glazed front that brings real daylight into every Munich hospital, research or pharmaceutical laboratory.
               </p>
               <p class="text-lg text-gray-700 leading-relaxed">
-                <strong>Ein gewöhnlicher Laborcontainer passt komplett in einen LABtoGO hinein.</strong> Wir nennen ihn nicht ohne Grund LABtoGO – er ist die Plattform, auf der wir für München BSL-2, BSL-3, GMP-Reinraum, Föhn-stabile HVAC und Vibrationsentkopplung VC-D konfigurieren.
+                <strong>A conventional lab container fits entirely inside a LABtoGO.</strong> We do not call it LABtoGO without reason — it is the platform on which we configure BSL-2, BSL-3, GMP cleanroom, föhn-stable HVAC and VC-D vibration isolation for Munich.
               </p>
             </div>
             <div class="grid grid-cols-2 gap-4">
               <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
                 <div class="text-4xl font-bold text-primary mb-1">2.750</div>
-                <div class="text-xs text-gray-400 uppercase tracking-wider">mm Innenhöhe</div>
-                <div class="text-xs text-gray-500 mt-1">Standard: 2.400 mm</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm internal height</div>
+                <div class="text-xs text-gray-500 mt-1">Standard: 2,400 mm</div>
               </div>
               <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
                 <div class="text-4xl font-bold text-primary mb-1">9.500</div>
-                <div class="text-xs text-gray-400 uppercase tracking-wider">mm Außenlänge</div>
-                <div class="text-xs text-gray-500 mt-1">3.000 mm Breite</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm external length</div>
+                <div class="text-xs text-gray-500 mt-1">3,000 mm width</div>
               </div>
               <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
                 <div class="text-4xl font-bold text-primary mb-1">100%</div>
-                <div class="text-xs text-gray-400 uppercase tracking-wider">vollverglast</div>
-                <div class="text-xs text-gray-500 mt-1">Tageslicht-Labor</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">fully glazed</div>
+                <div class="text-xs text-gray-500 mt-1">daylight laboratory</div>
               </div>
               <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
-                <div class="text-4xl font-bold text-primary mb-1">U 0,20</div>
+                <div class="text-4xl font-bold text-primary mb-1">U 0.20</div>
                 <div class="text-xs text-gray-400 uppercase tracking-wider">W/m²K Sandwich</div>
-                <div class="text-xs text-gray-500 mt-1">80–120 mm Dämmung</div>
+                <div class="text-xs text-gray-500 mt-1">80–120 mm insulation</div>
               </div>
             </div>
           </div>
           <div class="text-center">
             <a href="/en/lab-containers/labtogo" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
-              LABtoGO Plattform und alle Konfigurationen ansehen
+              View the LABtoGO platform and all configurations
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
           </div>
@@ -299,23 +299,23 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">
-            Planexus löst die drei Münchner Engpässe, an denen Laborprojekte regelmäßig scheitern
+            Planexus solves the three Munich bottlenecks at which laboratory projects regularly fail
           </h2>
           <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
-              <div class="text-slate-900 font-bold text-lg mb-2">Föhn destabilisiert die Druckkaskade</div>
-              <p class="text-gray-700 text-sm leading-relaxed">München liegt im Föhneinflussbereich des Alpenrands. Plötzliche Druckabfälle von 10 bis 20 hPa und Temperatursprünge bis +15 °C in 6 Stunden sind normal. Standard-HVAC verliert dabei kurzzeitig die Druckkaskade – für GMP-Reinraum nach EU Annex 1 und BSL-2/-3 ein Klassifizierungs-Risiko, das die Inspektion bemerkt.</p>
-              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: Föhn-Lastfälle in der HVAC-Auslegung ab Werk.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Föhn destabilises the pressure cascade</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Munich lies in the föhn-influence zone of the Alpine fringe. Sudden pressure drops of 10 to 20 hPa and temperature jumps of up to +15 °C in 6 hours are normal. Standard HVAC briefly loses the pressure cascade — a classification risk for GMP cleanrooms to EU Annex 1 and for BSL-2/-3 that an inspection will notice.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus response: Föhn load cases in the HVAC design from the factory.</p>
             </div>
             <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
-              <div class="text-slate-900 font-bold text-lg mb-2">Großforschung verlangt Vibrationsklassen unter 1 µm/s</div>
-              <p class="text-gray-700 text-sm leading-relaxed">Die Großforschung in Garching mit Forschungsreaktor und Neutronenquelle, die biomedizinischen Forschungsinstitute in Martinsried und Forschungszentren in Neuherberg fordern für Strahlnachweis, Cryo-EM und Hochpräzisionsanalytik Schwingungstoleranzen unter 1 µm/s. Standardcontainer ohne Federentkopplung erreichen diese Klasse nicht.</p>
-              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: VC-D-Lagerung nach VDI 2038 ab Werk konfiguriert.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Large-scale research demands vibration classes below 1 µm/s</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Large-scale research in Garching with a research reactor and neutron source, the biomedical research institutes in Martinsried and research centres in Neuherberg demand vibration tolerances below 1 µm/s for beam diagnostics, cryo-EM and high-precision analytics. Standard containers without spring isolation do not reach this class.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus response: VC-D bearing to VDI 2038 configured at the factory.</p>
             </div>
             <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
-              <div class="text-slate-900 font-bold text-lg mb-2">LBK München prüft anders als 25 Stadtbezirks-Praktiken intern</div>
-              <p class="text-gray-700 text-sm leading-relaxed">Innerhalb der Stadtgrenzen ist die Lokalbaukommission München zentrale Behörde – aber ihre 25 Stadtbezirks-Sachgebiete prüfen unterschiedlich strikt. Außerhalb (Garching, Martinsried, Penzberg, Ottobrunn) sind Landratsämter zuständig. Wer mit einer Standardvorlage durchläuft, fängt sich Nachbesserungen.</p>
-              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: Standortbezogene Bauvorlagen für LBK oder Landratsamt vor Antrag.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">LBK Munich reviews differently from 25 internal city-district practices</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Inside the city boundary the Munich Local Building Commission is the central authority — but its 25 city-district units review with different stringency. Outside (Garching, Martinsried, Penzberg, Ottobrunn) rural district offices are competent. Anyone who submits a generic template collects revision requests.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus response: Site-related building documents for LBK or Landratsamt before application.</p>
             </div>
           </div>
         </div>
@@ -327,20 +327,20 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">
-            Laborcontainer für München: Was Föhn, Schotterebene und der dichteste Forschungs-Cluster Süddeutschlands vom Engineering verlangen
+            Lab containers for Munich: what föhn, the gravel plain and southern Germany’s densest research cluster demand of the engineering
           </h2>
           <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
             <p>
-              <strong>München und sein Speckgürtel sind Süddeutschlands dichtester Forschungs- und Pharma-Cluster.</strong> Auf engem Raum konkurrieren Universitäten mit ihren Universitätskliniken an der Isar und in Großhadern, Forschungszentren in Neuherberg, biomedizinische Forschungsinstitute in Martinsried, ein Forschungsreaktor mit Neutronenquelle in Garching, der Biotech-Cluster Martinsried-Planegg mit über 50 Unternehmen, der Pharma-Standort Penzberg, dazu Luft- und Raumfahrt sowie Verteidigungstechnik in Ottobrunn und ein Automobil-Forschungs- und Innovationszentrum. Wer hier ein Containerlabor bestellt, bestellt kein Standardprodukt – er bestellt Standortintelligenz für eine Region mit eigenen Naturgesetzen.
+              <strong>Munich and its hinterland are southern Germany’s densest research and pharma cluster.</strong> In a tight space, universities with their university hospitals on the Isar and in Großhadern, research centres in Neuherberg, biomedical research institutes in Martinsried, a research reactor with neutron source in Garching, the Martinsried-Planegg biotech cluster with more than 50 companies, the Penzberg pharma site, plus aerospace and defence technology in Ottobrunn and an automotive research and innovation centre all compete. Anyone ordering a container laboratory here is not ordering a standard product — they are ordering site intelligence for a region with its own laws of nature.
             </p>
             <p>
-              <strong>Wir kennen diesen Markt genau.</strong> Wir wissen, dass die Föhnlage am Alpenrand HVAC-Regelungen herausfordert, die in Hamburg oder Berlin nie getestet werden. Wir wissen, dass die Münchner Schotterebene aus würmzeitlichem Kies mit Bodenklasse 4 bis 5 nach DIN 18196 zwar tragfähig ist, aber Plattengründung mit Auftriebsschutz wegen Grundwasserschwankungen verlangt. Wir wissen, dass die Großforschung in Garching Vibrationstoleranzen unter 1 µm/s fordert und dass der Biotech-Cluster Martinsried mit Sicherheitsstandards rechnet, die im Bauantrag andere Sicherheitskonzepte verlangen als ein normales S2-Labor. Diese Details stehen nicht im Angebot – sie sind das Engineering-Fundament jedes Containers, der unser Werk Albstadt verlässt.
+              <strong>We know this market in detail.</strong> We know that föhn at the Alpine fringe challenges HVAC controls that are never tested in Hamburg or Berlin. We know that the Munich gravel plain of Würm-period gravel, soil class 4 to 5 to DIN 18196, is bearing but still demands a raft foundation with uplift protection because of groundwater fluctuation. We know that large-scale research in Garching requires vibration tolerances below 1 µm/s, and that the Martinsried biotech cluster expects safety standards that, in a building application, demand different safety concepts from a normal S2 laboratory. These details are not in the quotation — they are the engineering foundation of every container that leaves our Albstadt works.
             </p>
             <p>
-              <strong>Made in Albstadt, schlüsselfertig in München.</strong> Endmontage und Innenausbau erfolgen mit Wesemann-Möbeln im eigenen Werk – Werksbesichtigung jederzeit planbar. Über die A8 beträgt die Schwerlastdistanz nur rund 280 Kilometer; über den A99-Münchner-Autobahnring sind alle Münchner Forschungs-, Klinik- und Pharma-Standorte direkt erreichbar. Das ist die kürzeste Lieferdistanz aus unserem Werk in den DACH-Metropolen – ein Transporttag, kein Wochenprojekt.
+              <strong>Made in Albstadt, turnkey in Munich.</strong> Final assembly and interior fit-out are carried out with Wesemann furniture at our own works — a factory visit can be planned at any time. Via the A8 the heavy-goods distance is only around 280 kilometres; via the A99 Munich orbital all Munich research, hospital and pharma sites are directly reachable. That is the shortest delivery distance from our works into the DACH metropolises — one transport day, not a week-long project.
             </p>
             <p>
-              Ob Sie ein <strong>mobiles Labor München</strong> für ein befristetes Projekt am Universitätsklinikum Großhadern brauchen, einen <strong>modularen Laborcontainer München</strong> für die dauerhafte Erweiterung im Biotech-Cluster Martinsried oder ein <strong>Containerlabor München</strong> mit BSL-3 für die Infektionsforschung – wir liefern alle drei Antworten aus derselben Plattform: dem LABtoGO unseres Werks Albstadt.
+              Whether you need a <strong>mobile laboratory Munich</strong> for a time-limited project at the Großhadern university hospital, a <strong>modular lab container Munich</strong> for a permanent expansion in the Martinsried biotech cluster, or a <strong>container laboratory Munich</strong> with BSL-3 for infection research — we deliver all three answers from the same platform: the LABtoGO from our Albstadt works.
             </p>
           </div>
         </div>
@@ -352,55 +352,55 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <div class="text-center max-w-3xl mx-auto mb-12">
-            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Anwendungsbereiche München</div>
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Acht Anwendungsbereiche für Laborcontainer München</h2>
-            <p class="text-gray-400 text-lg">Jeder Bereich mit konkretem Münchner Standort- und Branchenbezug.</p>
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Munich applications</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Eight applications for lab containers in Munich</h2>
+            <p class="text-gray-400 text-lg">Each area with a concrete Munich site and industry reference.</p>
           </div>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">01</div>
-              <div class="font-bold mb-1">Universitätsmedizin</div>
-              <p class="text-xs text-gray-400">Universitätskliniken an der Isar und in Großhadern – Interimslabore während Sanierung</p>
+              <div class="font-bold mb-1">University medicine</div>
+              <p class="text-xs text-gray-400">University hospitals on the Isar and in Großhadern – interim laboratories during refurbishment</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">02</div>
-              <div class="font-bold mb-1">Großforschung Garching</div>
-              <p class="text-xs text-gray-400">Forschungsreaktor und Neutronenquelle, vibrationsentkoppelte Strahlnachweis-Container</p>
+              <div class="font-bold mb-1">Large-scale research Garching</div>
+              <p class="text-xs text-gray-400">Research reactor and neutron source, vibration-isolated beam-diagnostics containers</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">03</div>
-              <div class="font-bold mb-1">Biotech-Cluster Martinsried</div>
-              <p class="text-xs text-gray-400">Biomedizinische Forschungsinstitute und über 50 Biotech-Unternehmen mit S1/S2-Anforderungen</p>
+              <div class="font-bold mb-1">Martinsried biotech cluster</div>
+              <p class="text-xs text-gray-400">Biomedical research institutes and more than 50 biotech companies with S1/S2 requirements</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">04</div>
-              <div class="font-bold mb-1">Pharma München-Süd</div>
-              <p class="text-xs text-gray-400">Pharma- und Biotech-Standorte rund um Penzberg – GMP-Reinraum nach EU Annex 1</p>
+              <div class="font-bold mb-1">Pharma Munich South</div>
+              <p class="text-xs text-gray-400">Pharma and biotech sites around Penzberg – GMP cleanroom to EU Annex 1</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">05</div>
-              <div class="font-bold mb-1">Forschung Neuherberg</div>
-              <p class="text-xs text-gray-400">Forschungszentrum in Neuherberg – Diabetes-, Lungen- und Umweltforschung mit BSL-2/-3</p>
+              <div class="font-bold mb-1">Research Neuherberg</div>
+              <p class="text-xs text-gray-400">Research centre in Neuherberg – diabetes, lung and environmental research with BSL-2/-3</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">06</div>
-              <div class="font-bold mb-1">Aerospace & Verteidigung</div>
-              <p class="text-xs text-gray-400">Luft- und Raumfahrt sowie Verteidigungstechnik in Ottobrunn – Werkstoffanalytik und ESD-konforme Mess-Container</p>
+              <div class="font-bold mb-1">Aerospace and defence</div>
+              <p class="text-xs text-gray-400">Aerospace and defence technology in Ottobrunn – materials analytics and ESD-compliant measurement containers</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">07</div>
-              <div class="font-bold mb-1">Automotive-Forschung</div>
-              <p class="text-xs text-gray-400">Automobil-Forschungs- und Innovationszentrum, Werkstoff- und Antriebsanalytik, ATEX-Bereiche</p>
+              <div class="font-bold mb-1">Automotive research</div>
+              <p class="text-xs text-gray-400">Automotive research and innovation centre, materials and powertrain analytics, ATEX areas</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">08</div>
-              <div class="font-bold mb-1">Life Sciences Weihenstephan / Freising</div>
-              <p class="text-xs text-gray-400">Life Sciences, Brauwesen, Lebensmitteltechnologie – Reinraum- und Analytik-Container</p>
+              <div class="font-bold mb-1">Life sciences Weihenstephan / Freising</div>
+              <p class="text-xs text-gray-400">Life sciences, brewing science, food technology – cleanroom and analytics containers</p>
             </div>
           </div>
           <div class="text-center mt-10">
-            <p class="text-gray-400 mb-4">Ihre Anwendung ist nicht dabei? Wir entwickeln individuelle Module auch fernab vom Standard.</p>
-            <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Sonderlösung für München anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <p class="text-gray-400 mb-4">Is your application not listed? We also develop custom modules well beyond the standard.</p>
+            <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Request a custom solution for Munich <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -410,38 +410,38 @@ const faqSchema = {
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Sechs Engineering-Disziplinen für die Metropolregion München</h2>
-          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Planexus baut Laborcontainer für München, die in jeder Disziplin auf die regionalen Realitäten abgestimmt sind – nicht generisch, sondern campus- und standortgenau.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Six engineering disciplines for the Munich metropolitan region</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Planexus builds lab containers for Munich that are tuned in every discipline to regional realities — not generic, but campus- and site-specific.</p>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Statik & Gründung</div>
-              <h3 class="font-bold text-slate-900 mb-2">Plattengründung Münchner Schotterebene</h3>
-              <p class="text-sm text-gray-600">Würmzeitlicher Kies, Bodenklasse 4–5 nach DIN 18196, Grundwasser 3–15 m unter GOK. Plattengründung mit Auftriebsschutz nach DIN 4017/4020 – setzungsstabil über 25 Jahre, auch bei Schneeschmelze.</p>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Structural design and foundation</div>
+              <h3 class="font-bold text-slate-900 mb-2">Raft foundation on the Munich gravel plain</h3>
+              <p class="text-sm text-gray-600">Würm-period gravel, soil class 4–5 to DIN 18196, groundwater 3–15 m below ground level. Raft foundation with uplift protection to DIN 4017/4020 — settlement-stable over 25 years, including during snowmelt.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Föhn-stabile HVAC</div>
-              <h3 class="font-bold text-slate-900 mb-2">Druckkaskaden-Stabilisierung</h3>
-              <p class="text-sm text-gray-600">Föhn bringt 10–20 hPa Druckabfall in Stunden. Erweiterter Regelhub, Frequenzumrichter-Stabilisierung, Pufferalarm bei Außendrucksprüngen – Reinraumklasse und BSL-Druckkaskade bleiben stabil.</p>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Föhn-stable HVAC</div>
+              <h3 class="font-bold text-slate-900 mb-2">Pressure-cascade stabilisation</h3>
+              <p class="text-sm text-gray-600">Föhn brings a 10–20 hPa pressure drop within hours. Extended control range, frequency-inverter stabilisation, buffer alarm on outdoor-pressure jumps — cleanroom class and the BSL pressure cascade remain stable.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Vibrationsentkopplung</div>
-              <h3 class="font-bold text-slate-900 mb-2">VC-D nach VDI 2038 für Garching</h3>
-              <p class="text-sm text-gray-600">Federkern-Lagerung, kein Direktkontakt zur Forschungs-Bodenplatte. Die Großforschung in Garching, die Cryo-EM in Martinsried und Forschungszentren in Neuherberg fordern Schwingungstoleranzen unter 1 µm/s.</p>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Vibration isolation</div>
+              <h3 class="font-bold text-slate-900 mb-2">VC-D to VDI 2038 for Garching</h3>
+              <p class="text-sm text-gray-600">Spring-core bearing, no direct contact with the research floor slab. Large-scale research in Garching, cryo-EM in Martinsried and research centres in Neuherberg demand vibration tolerances below 1 µm/s.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">BSL-2/-3 Containment</div>
-              <h3 class="font-bold text-slate-900 mb-2">BioStoffV + LGL Bayern</h3>
-              <p class="text-sm text-gray-600">Unterdruckkaskade −50 Pa, HEPA-H14, autoklavierte Schleusen, redundante Lüftung. Anzeige beim LGL Bayern – wir liefern Antragsunterlagen für Forschungs-, Instituts- und Klinik-Standards.</p>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">BSL-2/-3 containment</div>
+              <h3 class="font-bold text-slate-900 mb-2">BioStoffV + LGL Bavaria</h3>
+              <p class="text-sm text-gray-600">Negative-pressure cascade −50 Pa, HEPA H14, autoclaved airlocks, redundant ventilation. Notification to LGL Bayern — we supply application documents for research, institute and hospital standards.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">GMP & Pharma</div>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">GMP and pharma</div>
               <h3 class="font-bold text-slate-900 mb-2">EU Annex 1 + IQ/OQ/PQ</h3>
-              <p class="text-sm text-gray-600">Pharma-Pilotproduktion für Penzberg und Martinsried; klinische Prüfmuster für Auftragsforscher. Föhn-stabile Druckkaskade ist Pflicht-Bestandteil jedes Münchner GMP-Containers.</p>
+              <p class="text-sm text-gray-600">Pharma pilot production for Penzberg and Martinsried; clinical trial samples for contract researchers. A föhn-stable pressure cascade is a mandatory part of every Munich GMP container.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Reinraum & Strahlenschutz</div>
-              <h3 class="font-bold text-slate-900 mb-2">ISO 14644 + Strahlnachweis-Module</h3>
-              <p class="text-sm text-gray-600">Reinräume Klasse 5–8 für Halbleiter, Diagnostik und Optik; Bleiummantelte Module für Strahlnachweis-Aufstellungen in Garching nach Strahlenschutzverordnung.</p>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Cleanroom and radiation protection</div>
+              <h3 class="font-bold text-slate-900 mb-2">ISO 14644 + beam-diagnostics modules</h3>
+              <p class="text-sm text-gray-600">Class 5–8 cleanrooms for semiconductors, diagnostics and optics; lead-lined modules for beam-diagnostics siting in Garching under the Radiation Protection Ordinance (Strahlenschutzverordnung).</p>
             </div>
           </div>
         </div>
@@ -452,24 +452,24 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-white border-t border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Drei München-Spezifika</div>
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Drei Engineering-Anforderungen, die nationale Anbieter übersehen — Planexus baut Laborcontainer München genau darauf hin</h2>
-          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Generic-Landingpages für ganz Deutschland bedienen die drei Realitäten nicht, die ein Laborcontainer in München tatsächlich aushalten muss. Wir schon — weil wir den bayerischen Forschungs-, Klinik- und Pharma-Markt kennen und unser Werk in Albstadt nur 280 km entfernt produziert.</p>
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Three Munich specifics</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Three engineering requirements that national suppliers overlook — Planexus builds lab containers Munich precisely for them</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Generic landing pages for the whole of Germany do not address the three realities a lab container in Munich actually has to withstand. We do — because we know the Bavarian research, hospital and pharma market, and our works in Albstadt produces only 280 km away.</p>
           <div class="grid md:grid-cols-3 gap-5">
             <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
-              <div class="text-slate-900 font-bold text-lg mb-2">Föhn am Alpenrand: HVAC mit Druckkaskaden-Stabilisierung</div>
-              <p class="text-gray-700 text-sm leading-relaxed mb-3">Föhndurchgang bringt Druckabfälle von 10 bis 20 hPa und Temperatursprünge bis +15 °C in 6 Stunden. Standard-HVAC verliert dabei kurzzeitig die Druckkaskade – für GMP-Reinraum nach EU Annex 1 und für BSL-2/-3-Container ist das ein Klassifizierungs-Risiko, das die Inspektion bemerkt und protokolliert.</p>
-              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: Föhn-Lastfälle in der HVAC-Auslegung, Frequenzumrichter-Stabilisierung, Pufferalarm bei Außendrucksprüngen.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Föhn at the Alpine fringe: HVAC with pressure-cascade stabilisation</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">A föhn passage brings pressure drops of 10 to 20 hPa and temperature jumps of up to +15 °C in 6 hours. Standard HVAC briefly loses the pressure cascade — for GMP cleanrooms to EU Annex 1 and for BSL-2/-3 containers that is a classification risk an inspection will notice and record.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus standard: Föhn load cases in the HVAC design, frequency-inverter stabilisation, buffer alarm on outdoor-pressure jumps.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
-              <div class="text-slate-900 font-bold text-lg mb-2">Münchner Schotterebene & würmzeitlicher Kies</div>
-              <p class="text-gray-700 text-sm leading-relaxed mb-3">München liegt auf würmzeitlichem Kies und Schotter mit Bodenklasse 4 bis 5 nach DIN 18196 – sehr tragfähig, aber bohrintensiv. Grundwasser 3 bis 15 m unter Gelände, in Isar-Nähe und in Garching tendenziell höher; bei Schneeschmelze hebt es einseitig an. Standard-Punktfundamente ohne Auftriebsschutz kippen langfristig aus der Waage.</p>
-              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: Plattengründung mit hydraulischem Auftriebsschutz nach DIN 4017/4020, standortbezogen kalkuliert.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Munich gravel plain and Würm-period gravel</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Munich sits on Würm-period gravel and shingle of soil class 4 to 5 to DIN 18196 — highly bearing, but drilling-intensive. Groundwater 3 to 15 m below ground, tending to be higher near the Isar and in Garching; during snowmelt it lifts one side. Standard pad foundations without uplift protection slowly go out of level.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus standard: Raft foundation with hydraulic uplift protection to DIN 4017/4020, calculated site by site.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
-              <div class="text-slate-900 font-bold text-lg mb-2">Großforschung Garching — Vibration unter 1 µm/s</div>
-              <p class="text-gray-700 text-sm leading-relaxed mb-3">Der Forschungsreaktor und die Neutronenquelle in Garching verlangen für Strahlnachweis und Streuexperimente Schwingungstoleranzen unter 1 µm/s. Die Cryo-EM in Martinsried braucht ähnliche Werte. Standardcontainer ohne Federentkopplung erreichen diese Klasse nicht – Messungen werden unbrauchbar.</p>
-              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: VC-D-Federentkopplung nach VDI 2038, kein Direktkontakt zur Forschungs-Bodenplatte.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Large-scale research Garching — vibration below 1 µm/s</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">The research reactor and neutron source in Garching demand vibration tolerances below 1 µm/s for beam diagnostics and scattering experiments. Cryo-EM in Martinsried needs similar values. Standard containers without spring isolation do not reach this class — measurements become unusable.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus standard: VC-D spring isolation to VDI 2038, no direct contact with the research floor slab.</p>
             </div>
           </div>
         </div>
@@ -481,24 +481,24 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus für München: EU-Award 2026, Föhn-stabile HVAC ab Werk, Wesemann-Ecosystem</h2>
-            <p class="text-gray-600 text-lg">Vier Säulen, die kein Wettbewerber im DACH-Raum so kombiniert.</p>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus for Munich: EU Award 2026, föhn-stable HVAC from the factory, Wesemann ecosystem</h2>
+            <p class="text-gray-600 text-lg">Four pillars that no competitor in the DACH region combines in this way.</p>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
               <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
               <h3 class="font-bold text-slate-900 mb-2">Award 2026</h3>
-              <p class="text-sm text-gray-600">EU Business News – German CEO Excellence Awards 2026: Planexus ausgezeichnet als „Führender Anbieter innovativer Laborräume". International prämiert direkt nach der LABtoGO-Weltpremiere auf der analytica.</p>
+              <p class="text-sm text-gray-600">EU Business News – German CEO Excellence Awards 2026: Planexus recognised as “Leading provider of innovative laboratory spaces”. Internationally awarded immediately after the LABtoGO world premiere at analytica.</p>
             </div>
             <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
               <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div>
               <h3 class="font-bold text-slate-900 mb-2">Made in Albstadt</h3>
-              <p class="text-sm text-gray-600">Endmontage, Innenausbau und Qualitätskontrolle in unserem Werk Albstadt (Emil-Mayer-Straße 1). Föhn-stabile HVAC und Plattengründung ab Werk vorkonfektioniert. Werksbesichtigung jederzeit möglich – nur 280 km entfernt.</p>
+              <p class="text-sm text-gray-600">Final assembly, interior fit-out and quality control at our Albstadt works (Emil-Mayer-Straße 1). Föhn-stable HVAC and raft foundation pre-configured at the factory. A factory visit is possible at any time — only 280 km away.</p>
             </div>
             <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
               <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-              <h3 class="font-bold text-slate-900 mb-2">Wesemann-Ecosystem</h3>
-              <p class="text-sm text-gray-600">Teil der Wesemann Holding mit über 60 Jahren Erfahrung in Laboreinrichtung. Container, Möbel, Reinraumtechnik – aus einer Hand. Ein Ansprechpartner. Keine Schnittstellen-Risiken.</p>
+              <h3 class="font-bold text-slate-900 mb-2">Wesemann ecosystem</h3>
+              <p class="text-sm text-gray-600">Part of Wesemann Holding, with more than 60 years of experience in laboratory fit-out. Containers, furniture and cleanroom technology — from a single source. One contact. No interface risk.</p>
             </div>
           </div>
         </div>
@@ -509,27 +509,27 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Vergleich für München: LABtoGO, Standard-Container und konventioneller Festbau</h2>
-          <p class="text-gray-600 text-lg mb-8">Ehrliche Vergleichsmatrix. Damit Sie Ihre Entscheidung fundiert treffen, bevor wir reden.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Comparison for Munich: LABtoGO, standard container and conventional construction</h2>
+          <p class="text-gray-600 text-lg mb-8">An honest comparison matrix — so you can take a well-founded decision before we talk.</p>
           <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
             <div class="overflow-x-auto">
               <table class="w-full text-sm">
                 <thead class="bg-slate-900 text-white">
                   <tr>
-                    <th class="text-left px-6 py-4 font-bold">Kriterium</th>
-                    <th class="text-left px-6 py-4 font-bold">Festbau München</th>
-                    <th class="text-left px-6 py-4 font-bold">Standard-Container</th>
+                    <th class="text-left px-6 py-4 font-bold">Criterion</th>
+                    <th class="text-left px-6 py-4 font-bold">Conventional build Munich</th>
+                    <th class="text-left px-6 py-4 font-bold">Standard container</th>
                     <th class="text-left px-6 py-4 font-bold bg-primary text-slate-900">LABtoGO</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100">
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Lieferzeit</td><td class="px-6 py-4 text-gray-600">18–30 Monate</td><td class="px-6 py-4 text-gray-600">16–20 Wochen</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">8–14 Wochen</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Innenhöhe</td><td class="px-6 py-4 text-gray-600">3,0 m+</td><td class="px-6 py-4 text-gray-600">2,4 m</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">2,75 m</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">LBK-/Landratsamt-Vorlagen</td><td class="px-6 py-4 text-gray-600">Vollverfahren BayBO</td><td class="px-6 py-4 text-gray-600">Bauanzeige</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">standortspez. ab Tag 1</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Föhn-stabile HVAC</td><td class="px-6 py-4 text-gray-600">individuell</td><td class="px-6 py-4 text-gray-600">selten</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">ab Werk Standard</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Plattengründung Schotter</td><td class="px-6 py-4 text-gray-600">individuell</td><td class="px-6 py-4 text-gray-600">selten ab Werk</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">DIN 4017/4020 ab Werk</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Vibrationsentkopplung Garching</td><td class="px-6 py-4 text-gray-600">aufwendig</td><td class="px-6 py-4 text-gray-600">selten</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">VC-D nach VDI 2038</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Lieferdistanz aus Werk</td><td class="px-6 py-4 text-gray-600">—</td><td class="px-6 py-4 text-gray-600">je Anbieter</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">280 km via A8</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Lead time</td><td class="px-6 py-4 text-gray-600">18–30 months</td><td class="px-6 py-4 text-gray-600">16–20 weeks</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">8–14 weeks</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Internal height</td><td class="px-6 py-4 text-gray-600">3.0 m+</td><td class="px-6 py-4 text-gray-600">2.4 m</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">2.75 m</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">LBK / Landratsamt documents</td><td class="px-6 py-4 text-gray-600">full BayBO procedure</td><td class="px-6 py-4 text-gray-600">building notification</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">site-specific from day 1</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Föhn-stable HVAC</td><td class="px-6 py-4 text-gray-600">bespoke</td><td class="px-6 py-4 text-gray-600">rarely</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">standard from the factory</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Raft foundation on gravel</td><td class="px-6 py-4 text-gray-600">bespoke</td><td class="px-6 py-4 text-gray-600">rarely from the factory</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">DIN 4017/4020 from the factory</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Vibration isolation Garching</td><td class="px-6 py-4 text-gray-600">aufwendig</td><td class="px-6 py-4 text-gray-600">rarely</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">VC-D to VDI 2038</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Delivery distance from works</td><td class="px-6 py-4 text-gray-600">—</td><td class="px-6 py-4 text-gray-600">depends on supplier</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">280 km via the A8</td></tr>
                 </tbody>
               </table>
             </div>
@@ -544,27 +544,27 @@ const faqSchema = {
         <div class="max-w-5xl mx-auto">
           <div class="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Investitions-Modelle</div>
-              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Miete, Kauf oder Mietkauf – wir bauen das Modell um Ihr Münchner Projekt</h2>
-              <p class="text-gray-700 leading-relaxed mb-4">Container-Spezifikation, Sicherheitsstufe, Reinraumklasse, Gründungsart und Laufzeit bestimmen die Kalkulation. Statt einer Pseudo-Spanne erhalten Sie binnen 24 Stunden eine projektspezifische, schriftliche Indikation.</p>
-              <p class="text-sm text-gray-600">Für die Kalkulation benötigen wir: Münchner Standort (Garching, Martinsried, Neuherberg, Penzberg, Ottobrunn), Sicherheitsstufe (S1/S2/S3, GMP), gewünschte Laufzeit und Inbetriebnahme-Termin.</p>
-              <a href="#anfrage" class="inline-flex items-center gap-2 mt-4 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Indikation in 24 h anfordern <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Investment models</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Hire, purchase or hire-purchase – we build the model around your Munich project</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Container specification, biosafety level, cleanroom class, foundation type and duration determine the calculation. Instead of a pseudo-range you receive a project-specific written indication within 24 hours.</p>
+              <p class="text-sm text-gray-600">For the calculation we need: Munich site (Garching, Martinsried, Neuherberg, Penzberg, Ottobrunn), biosafety level (S1/S2/S3, GMP), desired duration and commissioning date.</p>
+              <a href="#anfrage" class="inline-flex items-center gap-2 mt-4 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Request an indication within 24 hours <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
             </div>
             <div class="space-y-4">
               <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
-                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Miete</div>
-                <div class="font-bold text-slate-900 text-lg mb-2">Flexibel, off-balance, projektgebunden</div>
-                <p class="text-sm text-gray-600">Für Interimslabore während Klinik-Sanierungen an den Universitätskliniken an der Isar oder in Großhadern, befristete Drittmittel-Projekte an Forschungszentren in Neuherberg, kurzfristige Pharma-Studienkampagnen.</p>
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hire</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Flexible, off-balance-sheet, project-tied</div>
+                <p class="text-sm text-gray-600">For interim laboratories during hospital refurbishments at the university hospitals on the Isar or in Großhadern, time-limited third-party-funded projects at research centres in Neuherberg, short-term pharma study campaigns.</p>
               </div>
               <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
-                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Kauf</div>
-                <div class="font-bold text-slate-900 text-lg mb-2">Asset, vollständige Kontrolle</div>
-                <p class="text-sm text-gray-600">Für dauerhafte Erweiterung im Biotech-Cluster Martinsried-Planegg, auf einem Forschungscampus in Garching oder am Pharma-Standort Penzberg. LABtoGO-Plattform modular ausbaubar.</p>
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Purchase</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Asset, full control</div>
+                <p class="text-sm text-gray-600">For a permanent expansion in the Martinsried-Planegg biotech cluster, on a research campus in Garching or at the Penzberg pharma site. The LABtoGO platform can be expanded modularly.</p>
               </div>
               <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
-                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Mietkauf</div>
-                <div class="font-bold text-slate-900 text-lg mb-2">Übergang Miete → Eigentum</div>
-                <p class="text-sm text-gray-600">Wenn aus dem Interim-Projekt ein Dauerstandort werden kann – Miete später anrechenbar auf den Kauf.</p>
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hire-purchase</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Transition from hire to ownership</div>
+                <p class="text-sm text-gray-600">If the interim project can become a permanent site — hire payments can later be credited towards purchase.</p>
               </div>
             </div>
           </div>
@@ -578,19 +578,19 @@ const faqSchema = {
         <div class="max-w-5xl mx-auto">
           <div class="grid lg:grid-cols-2 gap-10 items-center">
             <div>
-              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Logistik-Beweis</div>
-              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Werk Albstadt → München: 280 km via A8 – kürzeste DACH-Lieferdistanz</h2>
-              <p class="text-gray-700 leading-relaxed mb-4">Vom Werk Albstadt führt die Schwerlastroute direkt über die A8 nach München – Anschluss A99 Münchner Autobahnring. Von dort sind alle Münchner Forschungs-, Klinik- und Pharma-Standorte in unter 60 Minuten erreichbar: Garching (A9-Nord), Martinsried/Planegg (A96-West), Großhadern (A95-Süd), Penzberg (A95-Süd weiter), Ottobrunn (A8-Süd), Neuherberg/Unterschleißheim (A99-Nord).</p>
-              <p class="text-gray-700 leading-relaxed mb-4">Reine Fahrzeit ca. 3,5 Stunden, mit Genehmigung und Begleitfahrzeugen ein Transporttag. Standardcontainer unter 4 m Breite und 18 t benötigen keine Schwertransportgenehmigung – Folgetag-Aufstellung möglich. Übergroße Anlagen oder vibrationsempfindliche Module für Garching koordinieren wir mit Mobilkran 60–200 t und Begleitfahrzeugen über die zuständigen bayerischen Behörden.</p>
-              <p class="text-gray-700 leading-relaxed">Vom Auftrag bis zur betriebsbereiten Übergabe in München vergehen 8 bis 14 Wochen – beste Lieferdistanz im DACH-Raum.</p>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Logistics proof</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Albstadt works → Munich: 280 km via the A8 – shortest DACH delivery distance</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">From the Albstadt works the heavy-goods route runs directly via the A8 to Munich — connecting to the A99 Munich orbital. From there all Munich research, hospital and pharma sites are reachable in under 60 minutes: Garching (A9 north), Martinsried/Planegg (A96 west), Großhadern (A95 south), Penzberg (A95 south onwards), Ottobrunn (A8 south), Neuherberg/Unterschleißheim (A99 north).</p>
+              <p class="text-gray-700 leading-relaxed mb-4">Pure driving time is about 3.5 hours; with the required permits and escort vehicles it is typically one transport day. Standard containers under 4 m width and 18 t do not require a heavy-transport permit — next-day installation is possible. Oversize units or vibration-sensitive modules for Garching are coordinated with a 60–200 t mobile crane and escort vehicles through the competent Bavarian authorities.</p>
+              <p class="text-gray-700 leading-relaxed">From order to operational handover in Munich takes 8 to 14 weeks — the best delivery distance in the DACH region.</p>
             </div>
             <div class="grid grid-cols-3 gap-4">
-              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">280</div><div class="text-xs text-gray-600 uppercase tracking-wider">km Werk</div></div>
-              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">~3,5 h</div><div class="text-xs text-gray-600 uppercase tracking-wider">Schwerlast</div></div>
-              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">A8/A99</div><div class="text-xs text-gray-600 uppercase tracking-wider">direkt</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">280</div><div class="text-xs text-gray-600 uppercase tracking-wider">km from works</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">~3.5 h</div><div class="text-xs text-gray-600 uppercase tracking-wider">heavy goods</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">A8/A99</div><div class="text-xs text-gray-600 uppercase tracking-wider">direct</div></div>
               <div class="col-span-3 bg-slate-900 text-white rounded-xl p-5">
-                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Anschlussstellen</div>
-                <p class="text-sm text-gray-300">A9 Garching, A96 Martinsried-Planegg, A95 Großhadern/Penzberg, A8 Ottobrunn, A99 Neuherberg. Mobilkran-Aufstellung am Folgetag nach Standortvorbereitung.</p>
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Motorway junctions</div>
+                <p class="text-sm text-gray-300">A9 Garching, A96 Martinsried-Planegg, A95 Großhadern/Penzberg, A8 Ottobrunn, A99 Neuherberg. Mobile-crane installation on the following day after site preparation.</p>
               </div>
             </div>
           </div>
@@ -602,25 +602,25 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Genehmigung München & Bayern</div>
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Wir bereiten alles für LBK München, Landratsämter und LGL Bayern vor</h2>
-          <p class="text-gray-700 text-lg mb-8 max-w-3xl">Innerhalb der Stadtgrenzen läuft alles über die Lokalbaukommission München. Außerhalb (Garching, Martinsried, Penzberg, Ottobrunn, Unterschleißheim) sind die jeweiligen Landratsämter zuständig. Für BSL-3 kommt das LGL Bayern dazu, für Klinik-Aufstellungen das Bayerische Staatliche Bauamt München. Wir kommunizieren mit allen – Sie nicht.</p>
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Munich and Bavaria permits</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">We prepare everything for LBK Munich, rural district offices and LGL Bayern</h2>
+          <p class="text-gray-700 text-lg mb-8 max-w-3xl">Inside the city boundary everything runs through the Munich Local Building Commission. Outside (Garching, Martinsried, Penzberg, Ottobrunn, Unterschleißheim) the relevant rural district offices (Landratsämter) are competent. For BSL-3, LGL Bayern is added; for hospital siting, the Bavarian State Building Office Munich. We communicate with all of them — you do not.</p>
           <div class="grid md:grid-cols-2 gap-6">
             <div class="bg-white rounded-xl p-6 border border-gray-100">
-              <h3 class="font-bold text-slate-900 mb-2">BayBO – LBK München & Landratsämter</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">Maßgebend ist die Bayerische Bauordnung. Innerhalb der Stadtgrenzen prüft die Lokalbaukommission München zentral – einheitlich für alle 25 Stadtbezirke. Außerhalb prüfen die Landratsämter München, Starnberg, Weilheim-Schongau, Ebersberg oder Fürstenfeldbruck nach BayBO – mit jeweils eigener Praxis. Wir reichen prüffähige Bauvorlagen passend zur Behördenpraxis ein.</p>
+              <h3 class="font-bold text-slate-900 mb-2">BayBO – LBK Munich and Landratsämter</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">The Bavarian Building Code (Bayerische Bauordnung, BayBO) is decisive. Inside the city boundary the Munich Local Building Commission reviews centrally — uniformly for all 25 city districts. Outside, the rural district offices of Munich, Starnberg, Weilheim-Schongau, Ebersberg or Fürstenfeldbruck review under BayBO — each with its own practice. We submit review-ready building documents matched to the authority’s practice.</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-gray-100">
-              <h3 class="font-bold text-slate-900 mb-2">LGL Bayern – BSL-3 & GenTG-Anzeige</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">BSL-3 in Bayern verlangt Genehmigung nach BioStoffV (Bundesrecht) und Anzeige beim LGL Bayern – Landesamt für Gesundheit und Lebensmittelsicherheit, Sachgebiet Biologische Sicherheit. Für gentechnische Anlagen S1/S2/S3 zusätzlich Anzeige nach GenTG. Wir liefern Risikobewertung, Sicherheitskonzept und vollständige Antragsunterlagen.</p>
+              <h3 class="font-bold text-slate-900 mb-2">LGL Bayern – BSL-3 and GenTG notification</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">BSL-3 in Bavaria requires a permit under BioStoffV (federal law) plus a notification to LGL Bayern — the Bavarian State Office for Health and Food Safety, Biological Safety unit. For genetic-engineering facilities S1/S2/S3 an additional notification under GenTG is required. We supply the risk assessment, safety concept and complete application documents.</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-gray-100">
-              <h3 class="font-bold text-slate-900 mb-2">Klinik-Aufstellung</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">Aufstellungen an den Universitätskliniken an der Isar oder in Großhadern werden mit dem Bayerischen Staatlichen Bauamt München und der Klinikbauleitung abgestimmt. Brandschutzkonzept nach BayBO + Krankenhaus-Bauverordnungs-Praxis, sterile Logistik und Abstimmung mit der Branddirektion München.</p>
+              <h3 class="font-bold text-slate-900 mb-2">Hospital siting</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Siting at the university hospitals on the Isar or in Großhadern is coordinated with the Bavarian State Building Office Munich and the hospital building office. Fire-protection concept under BayBO plus hospital-building-ordinance practice, sterile logistics and alignment with the Munich fire directorate (Branddirektion München).</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-gray-100">
-              <h3 class="font-bold text-slate-900 mb-2">Strahlenschutz Garching</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">Aufstellungen in Reaktor- oder Strahlnachweis-Nähe verlangen Abstimmung mit der Strahlenschutzaufsicht und ggf. zusätzliche Anzeigen nach Strahlenschutzverordnung. Wir liefern bleiummantelte Module und Strahlenschutz-Dokumentation auf Wunsch.</p>
+              <h3 class="font-bold text-slate-900 mb-2">Radiation protection Garching</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Siting near a reactor or beam-diagnostics facility requires coordination with the radiation-protection authority and, where applicable, additional notifications under the Radiation Protection Ordinance. We supply lead-lined modules and radiation-protection documentation on request.</p>
             </div>
           </div>
         </div>
@@ -631,14 +631,14 @@ const faqSchema = {
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">So baut Planexus Ihr Containerlabor in München</h2>
-          <p class="text-gray-600 text-lg mb-12">Fünf Schritte, ein Ansprechpartner – von der ersten Skizze bis zur Übergabe.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">How Planexus builds your container laboratory in Munich</h2>
+          <p class="text-gray-600 text-lg mb-12">Five steps, one contact — from the first sketch to handover.</p>
           <div class="space-y-5">
-            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">01</div><div><h3 class="font-bold text-slate-900 mb-1">Wir hören zu</h3><p class="text-gray-600 text-sm">Anforderungs-Workshop vor Ort in München oder per Video. Welche Sicherheitsstufe, welcher Campus, welche Norm, welcher Termin – Föhn-Lastfall und Vibrationsklasse explizit abfragen.</p></div></div>
-            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">02</div><div><h3 class="font-bold text-slate-900 mb-1">Wir planen</h3><p class="text-gray-600 text-sm">CAD-Layout, TGA, Statik. BayBO-konforme Bauvorlagen für LBK München oder das zuständige Landratsamt – verfahrenstauglich ab Tag 1. LGL-Vorbereitung bei BSL-3, Strahlenschutz-Konzept bei Garching.</p></div></div>
-            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">03</div><div><h3 class="font-bold text-slate-900 mb-1">Wir bauen</h3><p class="text-gray-600 text-sm">Modul-Vorfertigung beim zertifizierten Polen-Partner, Endmontage und Innenausbau im Werk Albstadt mit Wesemann-Möbeln. Föhn-stabile HVAC und Plattengründung ab Werk vorkonfektioniert. Werksbesichtigung jederzeit – nur 280 km von München.</p></div></div>
-            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">04</div><div><h3 class="font-bold text-slate-900 mb-1">Wir liefern</h3><p class="text-gray-600 text-sm">Schwerlasttransport A8 (280 km, 1 Transporttag). Aufstellung per Mobilkran auf Plattengründung. Anschluss aller Medien, Funktions- und Dichtigkeitstests vor Übergabe – Föhn-Lastfall der HVAC live geprüft.</p></div></div>
-            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">05</div><div><h3 class="font-bold text-slate-900 mb-1">Wir übergeben</h3><p class="text-gray-600 text-sm">IQ/OQ/PQ-Dokumentation. Schulung Ihrer Operator. Wartungs-Optionen bis 24 Monate – auf Wunsch verlängerbar.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">01</div><div><h3 class="font-bold text-slate-900 mb-1">We listen</h3><p class="text-gray-600 text-sm">Requirements workshop on site in Munich or by video. Which biosafety level, which campus, which standard, which date — föhn load case and vibration class asked explicitly.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">02</div><div><h3 class="font-bold text-slate-900 mb-1">We plan</h3><p class="text-gray-600 text-sm">CAD layout, building services (TGA) and structural design. BayBO-compliant building documents for LBK Munich or the competent Landratsamt — procedure-ready from day 1. LGL preparation for BSL-3, radiation-protection concept for Garching.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">03</div><div><h3 class="font-bold text-slate-900 mb-1">We build</h3><p class="text-gray-600 text-sm">Module prefabrication at the certified Polish partner; final assembly and interior fit-out at the Albstadt works with Wesemann furniture. Föhn-stable HVAC and raft foundation pre-configured at the factory. A factory visit is possible at any time — only 280 km from Munich.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">04</div><div><h3 class="font-bold text-slate-900 mb-1">We deliver</h3><p class="text-gray-600 text-sm">Heavy-goods transport A8 (280 km, 1 transport day). Installation by mobile crane onto a raft foundation. Connection of all services, functional and leak tests before handover — HVAC föhn load case tested live.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">05</div><div><h3 class="font-bold text-slate-900 mb-1">We hand over</h3><p class="text-gray-600 text-sm">IQ/OQ/PQ documentation. Training for your operators. Maintenance options for up to 24 months — extendable on request.</p></div></div>
           </div>
         </div>
       </div>
@@ -648,8 +648,8 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — Laborcontainer für München</h2>
-          <p class="text-gray-600 text-lg mb-10">Sieben Fragen, sieben Antworten. Direkt und ohne Marketing-Sprech.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — lab containers for Munich</h2>
+          <p class="text-gray-600 text-lg mb-10">Seven questions, seven answers. Direct, and without marketing speak.</p>
           <div class="space-y-4">
             {faqSchema.mainEntity.map((faq) => (
               <article class="bg-white border border-gray-200 rounded-xl p-6">
@@ -667,31 +667,31 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <div class="text-center max-w-3xl mx-auto mb-12">
-            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Kostenfreies Standort-Audit</div>
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Senden Sie uns Ihren Münchner Standort und Ihr Labor-Profil</h2>
-            <p class="text-gray-600 text-lg">Wir liefern innerhalb von 48 Stunden: Standort-Bewertung, Container-Konfiguration mit Maßen und Specs, Genehmigungs-Pfad nach BayBO / LGL Bayern, Liefer- und Aufstellungs-Termin, indikatives Investitions-Bracket für Miete und Kauf.</p>
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Complimentary site audit</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Send us your Munich site and laboratory profile</h2>
+            <p class="text-gray-600 text-lg">Within 48 hours we deliver: a site assessment, a container configuration with dimensions and specifications, the permit path under BayBO / LGL Bayern, a delivery and installation date, and an indicative investment bracket for hire and purchase.</p>
           </div>
 
           <div class="grid lg:grid-cols-5 gap-8">
             <div class="lg:col-span-2">
               <div class="bg-slate-900 text-white rounded-2xl p-8 h-full">
-                <h3 class="font-bold text-lg mb-6">Direkter Kontakt</h3>
+                <h3 class="font-bold text-lg mb-6">Direct contact</h3>
                 <div class="space-y-5">
                   <div class="flex items-start gap-4">
                     <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-                    <div><div class="text-xs text-gray-400 mb-1">Telefon</div><a href="tel:+4974357519700" class="font-bold hover:text-primary transition-colors">+49 7435 7519 700</a></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Telephone</div><a href="tel:+4974357519700" class="font-bold hover:text-primary transition-colors">+49 7435 7519 700</a></div>
                   </div>
                   <div class="flex items-start gap-4">
                     <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
-                    <div><div class="text-xs text-gray-400 mb-1">E-Mail</div><a href="mailto:info@planexus.de" class="font-bold hover:text-primary transition-colors">info@planexus.de</a></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Email</div><a href="mailto:info@planexus.de" class="font-bold hover:text-primary transition-colors">info@planexus.de</a></div>
                   </div>
                   <div class="flex items-start gap-4">
                     <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                    <div><div class="text-xs text-gray-400 mb-1">Werk & Zentrale (280 km via A8)</div><div class="font-bold">Emil-Mayer-Straße 1<br/>72461 Albstadt</div></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Works & headquarters (280 km via the A8)</div><div class="font-bold">Emil-Mayer-Straße 1<br/>72461 Albstadt</div></div>
                   </div>
                   <div class="border-t border-white/10 pt-5 mt-5">
-                    <div class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Werksbesichtigung</div>
-                    <p class="text-sm text-gray-300">Wir zeigen Ihnen Ihren Container während der Fertigung – inklusive Föhn-stabiler HVAC-Auslegung und Plattengründungs-Vorbereitung. Termin nach Vereinbarung, nur 3,5 Stunden Anfahrt aus München.</p>
+                    <div class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Factory visit</div>
+                    <p class="text-sm text-gray-300">We show you your container during manufacture — including föhn-stable HVAC design and raft-foundation preparation. Appointment by arrangement, only 3.5 hours’ travel from Munich.</p>
                   </div>
                 </div>
               </div>
@@ -706,12 +706,12 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-slate-900 text-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center">
-          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Containerlabor München</div>
-          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Laborcontainer München — Werksbesichtigung Albstadt und Standort-Audit</h2>
-          <p class="text-gray-400 mb-8">LABtoGO produzieren wir auf Bestellung im Werk Albstadt – Föhn-stabile HVAC und Plattengründung für Münchner Schotterebene ab Werk vorkonfektioniert. Werksbesichtigung jederzeit möglich, nur 280 km via A8, kostenfreies Standort-Audit inklusive.</p>
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Container laboratory Munich</div>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Lab containers Munich — Albstadt factory visit and site audit</h2>
+          <p class="text-gray-400 mb-8">We manufacture LABtoGO to order at the Albstadt works — föhn-stable HVAC and raft foundation for the Munich gravel plain pre-configured at the factory. A factory visit is possible at any time, only 280 km via the A8, complimentary site audit included.</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Jetzt anrufen</a>
-            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Anfrageformular ausfüllen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call now</a>
+            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Complete the enquiry form <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -721,32 +721,32 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-white border-t border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Weitere Standorte für Laborcontainer im DACH-Raum</h2>
-          <p class="text-gray-600 mb-8">München ist Süddeutschlands dichtester Forschungs- und Pharma-Cluster und für unser Werk Albstadt die kürzeste DACH-Lieferdistanz. Diese Standorte teilen verwandte Forschungs-, Klinik- und Industrie-Profile:</p>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Further lab-container locations in the DACH region</h2>
+          <p class="text-gray-600 mb-8">Munich is southern Germany’s densest research and pharma cluster and, for our Albstadt works, the shortest DACH delivery distance. These locations share related research, hospital and industry profiles:</p>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <a href="/en/lab-containers-stuttgart" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Stuttgart</div><div class="text-xs text-gray-500">Antriebsforschung & Werkstoffe</div></a>
-            <a href="/en/lab-containers-frankfurt" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Frankfurt</div><div class="text-xs text-gray-500">Pharma-Cluster Rhein-Main</div></a>
-            <a href="/en/lab-containers-berlin" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Berlin</div><div class="text-xs text-gray-500">Klinik & Universitätsmedizin</div></a>
-            <a href="/en/lab-containers-hamburg" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Hamburg</div><div class="text-xs text-gray-500">Pharma, Klinik & Forschung</div></a>
-            <a href="/en/lab-containers-zurich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Zürich</div><div class="text-xs text-gray-500">Pharma & Forschung</div></a>
-            <a href="/en/lab-containers-basel" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Basel</div><div class="text-xs text-gray-500">Pharma-Region</div></a>
-            <a href="/en/lab-containers-vienna" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Wien</div><div class="text-xs text-gray-500">AT-Pharma, Medizintechnik</div></a>
+            <a href="/en/lab-containers-stuttgart" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Stuttgart</div><div class="text-xs text-gray-500">Powertrain research and materials</div></a>
+            <a href="/en/lab-containers-frankfurt" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Frankfurt</div><div class="text-xs text-gray-500">Rhine-Main pharma cluster</div></a>
+            <a href="/en/lab-containers-berlin" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Berlin</div><div class="text-xs text-gray-500">Klinik & University medicine</div></a>
+            <a href="/en/lab-containers-hamburg" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Hamburg</div><div class="text-xs text-gray-500">Pharma, hospitals and research</div></a>
+            <a href="/en/lab-containers-zurich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Zurich</div><div class="text-xs text-gray-500">Pharma and research</div></a>
+            <a href="/en/lab-containers-basel" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Basel</div><div class="text-xs text-gray-500">Pharma region</div></a>
+            <a href="/en/lab-containers-vienna" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Vienna</div><div class="text-xs text-gray-500">Austrian pharma and medical technology</div></a>
             <a href="/en/lab-containers-graz" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Graz</div><div class="text-xs text-gray-500">Automotive & Forschung</div></a>
           </div>
 
           <div class="mt-10 pt-8 border-t border-gray-100">
-            <h3 class="font-bold text-slate-900 mb-3">Vertiefende Ressourcen</h3>
+            <h3 class="font-bold text-slate-900 mb-3">Further reading</h3>
             <div class="grid md:grid-cols-2 gap-3 text-sm">
-              <a href="/en/lab-containers" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer – Übersicht Produkte & Leistungen</a>
-              <a href="/en/locations" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer-Standorte im DACH-Raum</a>
-              <a href="/en/lab-containers/labtogo" class="text-gray-600 hover:text-primary transition-colors">→ LABtoGO – die Plattform für BSL-2, GMP, ATEX</a>
-              <a href="/en/magazine/lab-container-permits-building-law" class="text-gray-600 hover:text-primary transition-colors">→ Genehmigung & Baurecht für Laborcontainer (Praxisleitfaden)</a>
-              <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-gray-600 hover:text-primary transition-colors">→ BSL-2 & BSL-3 im Container – geht das?</a>
-              <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-gray-600 hover:text-primary transition-colors">→ GMP-Reinraum im Container für Pharma-Produktion</a>
-              <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-gray-600 hover:text-primary transition-colors">→ Klimatisierung im Laborcontainer – Normen & Praxis</a>
-              <a href="/en/magazine/lab-containers-rent-or-buy" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer mieten oder kaufen?</a>
-              <a href="/en/magazine/lab-container-project-process" class="text-gray-600 hover:text-primary transition-colors">→ Projektablauf: Von der Idee zur Übergabe</a>
-              <a href="/en/about" class="text-gray-600 hover:text-primary transition-colors">→ Über Planexus</a>
+              <a href="/en/lab-containers" class="text-gray-600 hover:text-primary transition-colors">→ Lab containers – product and services overview</a>
+              <a href="/en/locations" class="text-gray-600 hover:text-primary transition-colors">→ Lab-container locations in the DACH region</a>
+              <a href="/en/lab-containers/labtogo" class="text-gray-600 hover:text-primary transition-colors">→ LABtoGO – the platform for BSL-2, GMP and ATEX</a>
+              <a href="/en/magazine/lab-container-permits-building-law" class="text-gray-600 hover:text-primary transition-colors">→ Permits and building law for lab containers (practical guide)</a>
+              <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-gray-600 hover:text-primary transition-colors">→ BSL-2 and BSL-3 in a container – is it possible?</a>
+              <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-gray-600 hover:text-primary transition-colors">→ GMP cleanroom in a container for pharmaceutical production</a>
+              <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-gray-600 hover:text-primary transition-colors">→ Climate control in the lab container – standards and practice</a>
+              <a href="/en/magazine/lab-containers-rent-or-buy" class="text-gray-600 hover:text-primary transition-colors">→ Rent or buy a lab container?</a>
+              <a href="/en/magazine/lab-container-project-process" class="text-gray-600 hover:text-primary transition-colors">→ Project process: from idea to handover</a>
+              <a href="/en/about" class="text-gray-600 hover:text-primary transition-colors">→ About Planexus</a>
             </div>
           </div>
         </div>
