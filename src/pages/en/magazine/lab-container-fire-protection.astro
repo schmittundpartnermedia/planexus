@@ -1,0 +1,464 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Brandschutz im Laborcontainer – Feuerwiderstand, Gefahrstofflager und Rettungswege",
+  "description": "Baulicher, anlagentechnischer und organisatorischer Brandschutz im Laborcontainer: DIN 4102-2 und DIN EN 13501, Feuerwiderstandsklassen F30/F90 bzw. EI 90, Baustoffklassen A1/A2, Mineralwolle vs. PUR/PIR, Sicherheitsschränke Typ 90 nach DIN EN 14470-1, TRGS 510/526, DGUV 213-850, ASR A2.2/A2.3 – mit verifizierten Normen.",
+  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/en/team/thomas-boss", "jobTitle": "Gesellschafter & Technischer Leiter", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-06-11",
+  "dateModified": "2026-06-11",
+  "image": "https://planexus.de/attached_assets/generated_images/laborcontainer-brandschutz-feuerwiderstand.png",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/lab-container-fire-protection" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Brandschutz im Laborcontainer", "item": "https://planexus.de/en/magazine/lab-container-fire-protection" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welche Feuerwiderstandsklasse braucht ein Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Das hängt von der bauordnungsrechtlichen Einstufung ab. Die Anforderungen an den baulichen Brandschutz bemessen sich in der Musterbauordnung und allen Landesbauordnungen nach der Gebäudeklasse. Ein einzelner, freistehender, eingeschossiger Laborcontainer fällt in der Regel in eine niedrige Gebäudeklasse mit begrenzten Anforderungen an den Feuerwiderstand tragender Bauteile. Sobald Module aufgestockt oder zu größeren Verbünden zusammengeschlossen werden, an einen Bestandsbau anschließen oder als Sonderbau (Laboratorium) eingestuft werden, steigen die Anforderungen – dann werden feuerwiderstandsfähige Trennungen von F30 bis F90 nach DIN 4102-2 beziehungsweise EI 30 bis EI 90 nach DIN EN 13501-2 verlangt. Maßgeblich ist immer das Brandschutzkonzept im Bauantrag, abgestimmt mit der zuständigen Bauaufsicht. Wir liefern den Container mit dem dazu passenden Wandaufbau und dokumentierten Klassifizierungen." } },
+    { "@type": "Question", "name": "Was bedeutet F90 und ist es dasselbe wie EI 90?", "acceptedAnswer": { "@type": "Answer", "text": "F90 ist die nationale Feuerwiderstandsklasse nach DIN 4102-2: Das Bauteil hält im Normbrandversuch mindestens 90 Minuten stand. Die europäische DIN EN 13501-2 löst die pauschale F-Klasse in differenzierte Kriterien auf: R (Tragfähigkeit/Résistance), E (Raumabschluss/Étanchéité) und I (Wärmedämmung/Isolation), jeweils mit Minutenangabe. Eine nichttragende Brandschutzwand wird dort als EI 90 klassifiziert, eine tragende und raumabschließende Wand als REI 90. F90 und EI 90 beschreiben damit dasselbe Schutzziel von 90 Minuten – die europäische Klasse ist nur präziser, weil sie sagt, welche Funktion 90 Minuten erhalten bleibt. Beide Normsysteme gelten in Deutschland gleichberechtigt; die DIN 4102 ist in der Baupraxis nach wie vor weit verbreitet." } },
+    { "@type": "Question", "name": "Welche Baustoffe sind im Laborcontainer brandschutztechnisch entscheidend?", "acceptedAnswer": { "@type": "Answer", "text": "Der Kern der Wand- und Dachpaneele. Ein Container in Sandwichbauweise kann mit unterschiedlichen Dämmkernen gefertigt werden, und deren Brandverhalten unterscheidet sich grundlegend. Mineralwolle ist nach DIN EN 13501-1 als A1 beziehungsweise im Verbund mit Stahldeckschichten als A2 eingestuft – also nichtbrennbar. PIR-Hartschaum erreicht typisch B-s1,d0 bis B-s2,d0 (schwer entflammbar), PUR-Schaum liegt mit E bis F deutlich darunter (normal bis leicht entflammbar). Für Laboranwendungen mit erhöhter Brandlast oder Sonderbau-Einstufung setzen wir Paneele mit nichtbrennbarem Mineralwollkern (A1/A2) ein. Damit ist der tragende Brandschutz nicht nur erfüllt, sondern auf dem höchsten Materialniveau – kein nennenswerter Beitrag des Wandaufbaus zur Brandlast." } },
+    { "@type": "Question", "name": "Wie müssen Gefahrstoffe und Lösungsmittel im Laborcontainer gelagert werden?", "acceptedAnswer": { "@type": "Answer", "text": "Nach TRGS 510 (Lagerung von Gefahrstoffen in ortsbeweglichen Behältern, Fassung seit 16.02.2021). Entzündbare Flüssigkeiten gehören in einen brandgeschützten Sicherheitsschrank nach DIN EN 14470-1. Der gebräuchliche Typ 90 garantiert, dass sich der Schrankinnenraum im Brandfall 90 Minuten lang um nicht mehr als 180 Kelvin erwärmt – damit bleibt der Inhalt deutlich unter der Selbstentzündungstemperatur und Mitarbeiter haben Zeit zur Flucht und die Feuerwehr Zeit zum Eingreifen. Die Norm kennt außerdem die Typen 15, 30 und 60 mit entsprechend kürzerer Schutzdauer. Druckgasflaschen werden in Schränken nach DIN EN 14470-2 gelagert. Ergänzend regeln Zusammenlagerungsverbote, technische Lüftung, Auffangwannen und Mengenschwellen die sichere Lagerorganisation im Container." } },
+    { "@type": "Question", "name": "Welche Feuerlöscher sind im Laborcontainer Pflicht?", "acceptedAnswer": { "@type": "Answer", "text": "Art, Löschmittel und Anzahl richten sich nach ASR A2.2 (Maßnahmen gegen Brände) und der Brandgefährdung im Labor. Feuerlöscher werden den Brandklassen zugeordnet: A (feste glutbildende Stoffe), B (flüssige und flüssig werdende Stoffe wie Lösungsmittel, Öle, Alkohole), C (Gase), D (Metallbrände, etwa Alkalimetalle oder Magnesium) und F (Speisefette und -öle). Im Labor ist Brandklasse B fast immer relevant, bei reaktiven Metallen zusätzlich D mit speziellem Metallbrandpulver. CO₂-Löscher sind in Laboren mit empfindlichen Geräten verbreitet, weil sie rückstandsfrei löschen. Die erforderliche Zahl der Löscheinheiten (LE) ergibt sich aus Grundfläche und Brandgefährdung nach ASR A2.2. Die TRGS 526 und die DGUV Information 213-850 konkretisieren den Brandschutz im Laborbetrieb zusätzlich." } },
+    { "@type": "Question", "name": "Welche Anforderungen gelten für Flucht- und Rettungswege im Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Maßgeblich sind die ASR A2.3 (Flucht- und Rettungswege, Neufassung März 2022, zuletzt geändert November 2024) und Kapitel 6.2 der DGUV Information 213-850. In Laboratorien müssen Rettungswege und Ausgänge in ausreichender Zahl vorhanden sein, abhängig von den verwendeten Stoffen und Arbeitsverfahren. Bei erhöhter Gefährdung wird ein zweiter, unabhängiger Fluchtweg gefordert – im Container also eine zweite Tür oder ein Notausstieg, nicht nur der Haupteingang. Hinzu kommen lichte Mindestbreiten der Verkehrs- und Fluchtwege, Türen, die in Fluchtrichtung aufschlagen, eine Sicherheitsbeleuchtung sowie beleuchtete Rettungszeichen nach ASR A1.3 (DIN EN ISO 7010). Wir planen die Türöffnungen, Notausstiege und die Sicherheitskennzeichnung passend zur Laborgröße und Personenzahl direkt in den Grundriss." } },
+    { "@type": "Question", "name": "Braucht ein Laborcontainer eine Brandmeldeanlage?", "acceptedAnswer": { "@type": "Answer", "text": "Nicht jeder Container, aber viele Anwendungen profitieren oder erfordern es. Eine automatische Brandmeldeanlage nach DIN 14675 in Verbindung mit DIN VDE 0833-1/-2 wird dann verlangt, wenn das Brandschutzkonzept oder die Baugenehmigung sie vorschreibt – etwa bei höheren Gebäudeklassen, Sonderbauten, unbeaufsichtigten Nachtbetrieben mit Probenlagerung oder hoher Brandlast durch Lösungsmittel und Lithium-Ionen-Akkus. Für viele Standard-Laborcontainer reicht eine normgerechte Ausstattung mit Rauchwarnmeldern, kombiniert mit den nötigen Feuerlöschern und einer klaren Alarmierungsregelung. Wo eine vollwertige BMA mit Aufschaltung zur Feuerwehr verlangt ist, planen und integrieren wir sie inklusive der erforderlichen Feuerwehrperipherie. Welche Stufe nötig ist, klären wir im Brandschutzkonzept mit Sachverständigem und Bauaufsicht." } }
+  ]
+};
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Brandschutz im Laborcontainer – Feuerwiderstand & Normen | Planexus"
+  description="Brandschutz im Laborcontainer: DIN 4102/EN 13501, F30–F90, Baustoff A1/A2, Sicherheitsschrank Typ 90, TRGS 510/526. Jetzt lesen."
+  canonical="/en/magazine/lab-container-fire-protection"
+  ogImage="https://planexus.de/attached_assets/generated_images/laborcontainer-brandschutz-feuerwiderstand.png"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/attached_assets/generated_images/laborcontainer-brandschutz-feuerwiderstand.png')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3 3 4 3 7a3 3 0 0 1-6 0c0-1 .5-2 1-3"/><path d="M12 22a7 7 0 0 0 7-7c0-3-2-5-3-7-1 2-2 3-4 4-2 1-3 3-3 5a3 3 0 0 0 3 5Z"/></svg>
+              Sicherheit &amp; Brandschutz
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              17 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Brandschutz im Laborcontainer – Feuerwiderstand & Rettungswege
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Im Labor treffen brennbare Lösungsmittel, Druckgase, elektrische Geräte und teils Lithium-Ionen-Akkus auf engem Raum zusammen. Brandschutz ist hier keine Formalie, sondern die Voraussetzung für Genehmigung und Betrieb. Dieser Leitfaden zeigt die drei Säulen – baulich, anlagentechnisch, organisatorisch – mit verifizierten Normen und klaren Entscheidungen.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              11. Juni 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Thomas Boss, Technischer Leiter Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazin</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Brandschutz im Laborcontainer</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                Ein Laborbrand entsteht selten dramatisch. Ein umgestoßenes Becherglas mit Aceton, ein überhitzter Heizpilz, ein Kurzschluss im Trockenschrank, ein defekter Akku im Ladegerät – und innerhalb von Sekunden brennt eine Brandlast, die ein normaler Büroraum nie sieht. Im Laborcontainer kommt erschwerend hinzu, dass alles dichter beieinander steht. Genau deshalb ist Brandschutz im Laborcontainer kein Anhängsel der Planung, sondern ihr Fundament.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Brandschutz besteht aus drei Säulen, die ineinandergreifen: <strong>baulicher Brandschutz</strong> (Feuerwiderstand der Bauteile, nichtbrennbare Baustoffe, Brandabschnitte), <strong>anlagentechnischer Brandschutz</strong> (Brandmelder, Löschmittel, Sicherheitsbeleuchtung, Lüftung) und <strong>organisatorischer Brandschutz</strong> (Rettungswege, Kennzeichnung, Unterweisung, Gefahrstofflagerung). Dieser Beitrag geht alle drei durch – mit den Normen, die im deutschsprachigen Raum tatsächlich gelten, und mit der klaren Trennlinie, wo wir als Containerbauer enden und Brandschutzsachverständiger, Bauaufsicht und Betreiber beginnen.
+              </p>
+
+              <figure class="my-10">
+                <img
+                  src="/attached_assets/generated_images/laborcontainer-brandschutz-feuerwiderstand.png"
+                  alt="Moderner Laborcontainer in der Dämmerung mit beleuchtetem Notausgangsschild über der Eingangstür – baulicher und organisatorischer Brandschutz nach DIN 4102, DIN EN 13501 und ASR A2.3"
+                  width="1920"
+                  height="1080"
+                  loading="lazy"
+                  class="w-full rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Brandschutz beginnt am Wandaufbau und endet am Rettungsweg: nichtbrennbarer Paneelkern, feuerwiderstandsfähige Trennungen, beleuchtete Rettungszeichen und ein zweiter Fluchtweg sind im Laborcontainer Standard, nicht Sonderwunsch.
+                </figcaption>
+              </figure>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Faktentabelle: Die Normen des Brandschutzes im Laborcontainer</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Brandschutz im Laborcontainer arbeitet in einem Regelwerk aus Bauordnungsrecht, Brandschutznormen, Gefahrstoffrecht und Arbeitsstättenregeln. Die folgende Übersicht ist die Pflichtlektüre für jedes Brandschutzkonzept.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Bereich</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Norm / Vorgabe</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Was sie regelt</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Bauordnungsrecht</td>
+                      <td class="border border-gray-200 px-4 py-3">Musterbauordnung (MBO) / Landesbauordnungen</td>
+                      <td class="border border-gray-200 px-4 py-3">Brandschutzanforderungen nach Gebäudeklasse, Sonderbau Laboratorium</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Feuerwiderstand Bauteile (national)</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 4102-2</td>
+                      <td class="border border-gray-200 px-4 py-3">Feuerwiderstandsklassen F30 / F60 / F90 / F120</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Feuerwiderstand Bauteile (europäisch)</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 13501-2</td>
+                      <td class="border border-gray-200 px-4 py-3">Klassifizierung R / E / I (z. B. EI 90, REI 90)</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Brandverhalten Baustoffe (national)</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 4102-1</td>
+                      <td class="border border-gray-200 px-4 py-3">Baustoffklassen A (nichtbrennbar) und B (brennbar)</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Brandverhalten Baustoffe (europäisch)</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 13501-1</td>
+                      <td class="border border-gray-200 px-4 py-3">Euroklassen A1–F, Rauch s1–s3, brennendes Abtropfen d0–d2</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Sicherheitsschränke brennbare Flüssigkeiten</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 14470-1</td>
+                      <td class="border border-gray-200 px-4 py-3">Brandgeschützte Schränke Typ 15 / 30 / 60 / 90</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Sicherheitsschränke Druckgasflaschen</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 14470-2</td>
+                      <td class="border border-gray-200 px-4 py-3">Brandgeschützte Lagerung von Druckgasflaschen</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Gefahrstofflagerung</td>
+                      <td class="border border-gray-200 px-4 py-3">TRGS 510 (Fassung seit 16.02.2021)</td>
+                      <td class="border border-gray-200 px-4 py-3">Lagerung in ortsbeweglichen Behältern, Zusammenlagerung, Lüftung</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Laborbetrieb (Gefahrstoffrecht)</td>
+                      <td class="border border-gray-200 px-4 py-3">TRGS 526</td>
+                      <td class="border border-gray-200 px-4 py-3">Sicheres Arbeiten in Laboratorien, Brandschutz (Abschnitt 4.8)</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Laborbetrieb (Arbeitsschutz)</td>
+                      <td class="border border-gray-200 px-4 py-3">DGUV Information 213-850 (Mai 2020)</td>
+                      <td class="border border-gray-200 px-4 py-3">Grundlagen Laborsicherheit, Brandschutz und Rettungswege (Kap. 6.2)</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Feuerlöscheinrichtungen</td>
+                      <td class="border border-gray-200 px-4 py-3">ASR A2.2</td>
+                      <td class="border border-gray-200 px-4 py-3">Maßnahmen gegen Brände, Löscheinheiten, Brandklassen A–F</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Flucht- und Rettungswege</td>
+                      <td class="border border-gray-200 px-4 py-3">ASR A2.3 (Neufassung 2022, geänd. 11/2024)</td>
+                      <td class="border border-gray-200 px-4 py-3">Mindestbreiten, Fluchtweglängen, Türen, Sicherheitsbeleuchtung</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Brandmeldeanlagen</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 14675 + DIN VDE 0833-1/-2</td>
+                      <td class="border border-gray-200 px-4 py-3">Aufbau, Betrieb und Feuerwehrperipherie von BMA</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Sicherheitskennzeichnung</td>
+                      <td class="border border-gray-200 px-4 py-3">ASR A1.3 (DIN EN ISO 7010)</td>
+                      <td class="border border-gray-200 px-4 py-3">Rettungs-, Brandschutz- und Warnzeichen</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Sicherheits- / Notbeleuchtung</td>
+                      <td class="border border-gray-200 px-4 py-3">ASR A3.4/3 + DIN EN 1838</td>
+                      <td class="border border-gray-200 px-4 py-3">Sicherheitsbeleuchtung und Rettungszeichenleuchten</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Baulicher Brandschutz: Feuerwiderstand und Baustoffklassen</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der bauliche Brandschutz beantwortet zwei Fragen: Wie lange hält ein Bauteil dem Feuer stand? Und wie viel trägt der Baustoff selbst zum Brand bei? Die erste Frage beantwortet die <strong>Feuerwiderstandsklasse</strong>, die zweite die <strong>Baustoffklasse</strong>. Beide sind in Deutschland in zwei parallel gültigen Normsystemen geregelt: national in der DIN 4102 und europäisch in der DIN EN 13501. Die DIN 4102 ist in der Baupraxis nach wie vor das vertraute Arbeitspferd, die europäische Klassifizierung ist die präzisere und im CE-Kontext maßgebliche.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die <strong>Feuerwiderstandsklasse</strong> nach DIN 4102-2 wird mit dem Buchstaben F und der Standzeit in Minuten angegeben: F30, F60, F90, F120. Ein F90-Bauteil widersteht dem genormten Brandverlauf mindestens 90 Minuten. Die DIN EN 13501-2 zerlegt diese pauschale Aussage in einzelne Leistungskriterien – <strong>R</strong> für die Tragfähigkeit, <strong>E</strong> für den Raumabschluss (kein Durchtritt von Flammen und Heißgasen) und <strong>I</strong> für die Wärmedämmung (begrenzte Temperatur auf der brandabgewandten Seite). Eine nichttragende Trennwand mit 90 Minuten Schutz heißt dort EI 90, eine tragende und raumabschließende Wand REI 90. F90 und EI 90 beschreiben dasselbe Schutzziel – die europäische Klasse sagt nur genauer, welche Funktion erhalten bleibt.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die <strong>Baustoffklasse</strong> nach DIN 4102-1 teilt grob in Klasse A (nichtbrennbar) und Klasse B (brennbar). Klasse A untergliedert sich in A1 (ohne brennbare Bestandteile) und A2 (praktisch nichtbrennbar), Klasse B in B1 (schwer entflammbar), B2 (normal entflammbar) und B3 (leicht entflammbar). Die europäische DIN EN 13501-1 nutzt die Euroklassen A1, A2, B, C, D, E und F und ergänzt sie um zwei Zusatzkriterien, die im realen Brand über Leben und Tod entscheiden: die <strong>Rauchentwicklung</strong> (s1 = sehr gering bis s3 = stark) und das <strong>brennende Abtropfen</strong> (d0 = kein Abtropfen bis d2 = starkes Abtropfen). Gerade in einem geschlossenen Laborcontainer ist die Rauchentwicklung kritisch, weil sie die Flucht binnen Sekunden unmöglich machen kann.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Der Sandwichpaneel-Kern entscheidet: Mineralwolle statt Schaum</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Laborcontainer wird in Sandwichbauweise gefertigt: zwei Stahldeckschichten, dazwischen ein Dämmkern. Genau dieser Kern ist der Punkt, an dem der bauliche Brandschutz steht oder fällt – und an dem im Markt am meisten getrickst wird, weil der Kern von außen unsichtbar ist. Das Brandverhalten der drei gängigen Kernmaterialien unterscheidet sich grundlegend:
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Kernmaterial</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Klasse (DIN EN 13501-1)</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Brandverhalten</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Mineralwolle</td>
+                      <td class="border border-gray-200 px-4 py-3">A1 / A2 (im Verbund mit Stahl)</td>
+                      <td class="border border-gray-200 px-4 py-3">Nichtbrennbar, kein Beitrag zur Brandlast, keine Rauchgase</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">PIR (Polyisocyanurat)</td>
+                      <td class="border border-gray-200 px-4 py-3">B-s1,d0 bis B-s2,d0</td>
+                      <td class="border border-gray-200 px-4 py-3">Brennbar, schwer entflammbar, geringe bis mittlere Rauchgase</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">PUR (Polyurethan)</td>
+                      <td class="border border-gray-200 px-4 py-3">E bis F</td>
+                      <td class="border border-gray-200 px-4 py-3">Brennbar, normal bis leicht entflammbar, starke Rauchentwicklung</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für ein Bürocontainer-Provisorium mag ein PUR- oder PIR-Kern ausreichen. In einem Laborcontainer mit erhöhter Brandlast aus Lösungsmitteln, Gasen und Elektrik ist ein <strong>nichtbrennbarer Mineralwollkern (A1/A2)</strong> die einzige Wahl, die brandschutztechnisch sauber ist. Mineralwolle trägt nichts zur Brandlast bei, schmilzt nicht in brennenden Tropfen und entwickelt keine giftigen Rauchgase. Sie ist außerdem die Voraussetzung dafür, dass Wände überhaupt höhere Feuerwiderstandsklassen erreichen können. Wir liefern unsere Laborcontainer mit Mineralwoll-Paneelen und dokumentieren die Klassifizierung – damit der Brandschutzsachverständige im Bauantrag eine belastbare Grundlage hat statt eines Versprechens.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 rounded-r-xl">
+                <p class="font-bold text-slate-900 mb-2">Aus der Praxis: Worauf ich als ausgebildeter Brandmeister achte</p>
+                <p class="text-gray-700 text-sm">Vor der Planexus-Zeit war ich bei der Berufsfeuerwehr. Was man dort lernt: Im Ernstfall zählen Minuten, und die meisten Menschen sterben nicht an der Flamme, sondern am Rauch. Deshalb ist für mich die Rauchklasse (s-Kriterium) mindestens so wichtig wie die Feuerwiderstandsklasse. Ein Wandaufbau, der 90 Minuten hält, aber bei dem es im Brandfall stark qualmt, schützt das Bauwerk und nicht den Menschen. Im Laborcontainer ziehen wir deshalb beides hoch: nichtbrennbarer Kern <em>und</em> geringe Rauchentwicklung, plus einen zweiten Fluchtweg, der auch dann erreichbar ist, wenn der Haupteingang verraucht ist. — Thomas Boss</p>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Brandabschnitte und feuerwiderstandsfähige Trennungen im Modulverbund</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Solange ein einzelner Laborcontainer freistehend und eingeschossig betrieben wird, ist die brandschutztechnische Lage überschaubar. Sobald aber Module aufgestockt, zu größeren Einheiten zusammengeschlossen oder an einen Bestandsbau angeschlossen werden, kommt die Frage der <strong>Brandabschnitte</strong> ins Spiel. Bauordnungsrechtlich sollen Brandabschnitte verhindern, dass sich ein Feuer ungehindert über das gesamte Bauwerk ausbreitet. Die trennenden Bauteile zwischen den Abschnitten müssen dann eine definierte Feuerwiderstandsklasse erreichen – je nach Gebäudeklasse und Konzept typisch F30 bis F90 beziehungsweise EI 30 bis EI 90.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Im Laborcontainer betrifft das nicht nur die Wand selbst, sondern jede Durchdringung: Lüftungskanäle, Medienleitungen, Kabeltrassen und Türen. Eine F90-Wand ist wertlos, wenn der Lüftungskanal ungeschottet hindurchläuft. Deshalb gehören in feuerwiderstandsfähige Trennungen <strong>Brandschutzklappen</strong> in den Lüftungskanälen, geprüfte <strong>Abschottungen</strong> (Kabel- und Rohrschotts) und <strong>Feuerschutztüren</strong> der passenden Klasse (z. B. T30/T90 nach DIN 4102-5 bzw. EI₂ 30-C/EI₂ 90-C nach DIN EN 13501-2). Diese Bauteile müssen aufeinander abgestimmt und im Brandschutzkonzept dokumentiert sein. Wir planen die Durchführungen so, dass jede Durchdringung einer Brandschutzwand mit einem geprüften System geschlossen wird – kein Loch ohne Nachweis.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Gefahrstofflagerung: TRGS 510 und der Sicherheitsschrank Typ 90</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die größte vermeidbare Brandlast im Labor sind die Gefahrstoffe selbst – allen voran entzündbare Lösungsmittel. Ihre Lagerung regelt die <strong>TRGS 510</strong> „Lagerung von Gefahrstoffen in ortsbeweglichen Behältern" (Fassung seit dem 16.02.2021). Sie konkretisiert die Gefahrstoffverordnung und beschreibt den anerkannten Stand der Technik: Wer sie einhält, kann von der Erfüllung der gesetzlichen Pflichten ausgehen (Vermutungswirkung). Die TRGS 510 regelt Mengenschwellen, Zusammenlagerungsverbote, technische Lüftung, Auffangwannen und die Anforderungen an Lagereinrichtungen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Das zentrale Bauteil ist der <strong>brandgeschützte Sicherheitsschrank nach DIN EN 14470-1</strong>. Die Norm kennt vier Typen, benannt nach ihrer Feuerwiderstandsdauer: Typ 15, Typ 30, Typ 60 und Typ 90. Der gebräuchliche <strong>Typ 90</strong> garantiert, dass sich der Schrankinnenraum im genormten Brandversuch <strong>90 Minuten lang um nicht mehr als 180 Kelvin erwärmt</strong>. Damit bleibt der Inhalt deutlich unter der Selbstentzündungstemperatur gängiger Lösungsmittel – die 90 Minuten sind die Zeit, in der Menschen flüchten und die Feuerwehr eingreifen kann. Druckgasflaschen werden analog in Schränken nach <strong>DIN EN 14470-2</strong> gelagert. Lithium-Ionen-Akkus, die in der Energieforschung eine wachsende Brandlast darstellen, gehören in dafür ausgelegte Lager- und Ladeschränke.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Im Laborcontainer planen wir die Stellplätze für Sicherheitsschränke von Anfang an mit: tragfähiger Untergrund, Anschluss an die technische Abluft des Schranks, ausreichende Verkehrs- und Fluchtwegbreite davor. Ein nachträglich „irgendwo hingestellter" Typ-90-Schrank, dessen Abluft nicht angeschlossen ist und der einen Fluchtweg verengt, erfüllt seinen Zweck nur halb.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Anlagentechnischer Brandschutz: Melden, löschen, sehen</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der anlagentechnische Brandschutz sorgt dafür, dass ein Brand früh erkannt, schnell bekämpft und der Fluchtweg sichtbar bleibt. Drei Komponenten gehören in jeden ernsthaft genutzten Laborcontainer:
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Branderkennung.</strong> Für viele Standard-Laborcontainer genügen normgerechte Rauchwarnmelder. Wo das Brandschutzkonzept oder die Baugenehmigung mehr verlangt – höhere Gebäudeklasse, Sonderbau, unbeaufsichtigter Nachtbetrieb, hohe Brandlast –, wird eine automatische <strong>Brandmeldeanlage (BMA) nach DIN 14675</strong> in Verbindung mit DIN VDE 0833-1/-2 erforderlich, gegebenenfalls mit Aufschaltung zur Feuerwehr samt Feuerwehr-Bedienfeld und -Anzeigetableau.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Löschmittel.</strong> Art und Anzahl der Feuerlöscher richten sich nach <strong>ASR A2.2</strong> und der Brandgefährdung. Feuerlöscher sind den Brandklassen zugeordnet: A (feste, glutbildende Stoffe), B (flüssige Stoffe wie Lösungsmittel und Öle), C (Gase), D (Metallbrände, etwa Alkalimetalle) und F (Speisefette und -öle). Im Labor ist die Brandklasse B fast immer relevant; bei reaktiven Metallen kommt D mit speziellem Metallbrandpulver dazu. CO₂-Löscher sind beliebt, weil sie elektrische Geräte rückstandsfrei löschen. Die erforderliche Zahl der Löscheinheiten ergibt sich rechnerisch aus Grundfläche und Gefährdung.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Sicht im Ernstfall.</strong> Eine <strong>Sicherheitsbeleuchtung</strong> nach ASR A3.4/3 und DIN EN 1838 sowie beleuchtete <strong>Rettungszeichen</strong> nach ASR A1.3 (DIN EN ISO 7010) sorgen dafür, dass der Fluchtweg auch bei Stromausfall und Verrauchung erkennbar bleibt. In einem fensterarmen Laborcontainer ist das kein Komfort, sondern überlebenswichtig.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Organisatorischer Brandschutz und Rettungswege</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die beste Bautechnik nützt nichts ohne einen funktionierenden Fluchtweg. Maßgeblich sind die <strong>ASR A2.3</strong> „Flucht- und Rettungswege" (Neufassung März 2022, zuletzt geändert November 2024) und Kapitel 6.2 der <strong>DGUV Information 213-850</strong> „Sicheres Arbeiten in Laboratorien". Der Grundsatz: In Laboratorien müssen Rettungswege und Ausgänge in ausreichender Zahl vorhanden sein, abhängig von den verwendeten Stoffen und Arbeitsverfahren. Bei erhöhter Gefährdung ist ein <strong>zweiter, unabhängiger Fluchtweg</strong> gefordert – im Container also nicht nur der Haupteingang, sondern eine zweite Tür oder ein Notausstieg.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Dazu kommen konkrete bauliche Anforderungen: lichte Mindestbreiten und -höhen der Verkehrs- und Fluchtwege, Türen, die in Fluchtrichtung aufschlagen und ohne fremde Hilfsmittel zu öffnen sind, sowie begrenzte Fluchtweglängen bis zum nächsten gesicherten Bereich. Organisatorisch ergänzen Flucht- und Rettungspläne, eine regelmäßige Brandschutzunterweisung und – je nach Betrieb – Evakuierungsübungen das Bild. Die <strong>TRGS 526</strong> „Laboratorien" konkretisiert in Abschnitt 4.8 zusätzlich die Brandschutzpflichten im laufenden Laborbetrieb. Wir berücksichtigen Türöffnungen, Notausstiege und die Kennzeichnung bereits im Grundriss, passend zur geplanten Personenzahl und Laborgröße.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Brandschutz nach Anwendung: BSL, GMP, ATEX</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Brandschutz ist kein einheitliches Paket – er skaliert mit der Anwendung. In einem <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-primary font-medium hover:underline">BSL-2-/BSL-3-Containerlabor</a> kollidiert der Brandschutz mit dem Containment: Eine Tür, die im Brandfall aufschlagen muss, darf die biologische Sicherheitsstufe nicht aushebeln – das löst man über Schleusen, definierte Druckstufen und abgestimmte Notfallkonzepte. Im <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-primary font-medium hover:underline">GMP- und Reinraum-Container</a> müssen Brandschutzklappen und Abschottungen mit der Reinraumqualifizierung vereinbar sein. Und in Laboren für die <a href="/en/magazine/lab-container-energy-transition-h2-battery-ex-protection" class="text-primary font-medium hover:underline">Wasserstoff- und Batterieforschung</a> verbindet sich der Brandschutz mit dem Explosionsschutz nach ATEX – hier verschiebt sich der Fokus von „Brand verhindern" zu „zündfähige Atmosphäre verhindern".
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Diese Wechselwirkungen sind der Grund, warum Brandschutz kein Nachgedanke sein darf. Er gehört in die erste Planungsphase, gemeinsam mit dem Genehmigungspfad. Wie der gesamte Weg von der Idee bis zur Übergabe abläuft, zeigt unser Beitrag zum <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">Projektablauf</a>; die rechtliche Seite vertieft der Beitrag zu <a href="/en/magazine/lab-container-permits-building-law" class="text-primary font-medium hover:underline">Genehmigung und Baurecht</a>.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fazit: Brandschutz ist Planung, nicht Ausstattung</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Brandschutz im Laborcontainer entsteht nicht durch ein paar Feuerlöscher an der Wand. Er entsteht aus dem Zusammenspiel von nichtbrennbarem Wandaufbau, abgestimmten Brandabschnitten, normgerechter Gefahrstofflagerung, früher Branderkennung, sichtbaren Rettungswegen und einem klaren organisatorischen Konzept. Jede Säule ist verzichtbar gemacht worden – und genau dort entstehen die gefährlichen Lücken.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Weil unsere Laborcontainer ab Werk Albstadt mit Mineralwoll-Paneelen, dokumentierten Klassifizierungen und vorbereiteten Anschlüssen für Sicherheitsschränke und Brandschutztechnik geliefert werden, lässt sich das Brandschutzkonzept von Beginn an sauber aufsetzen. Unsere <a href="/en/services/planning" class="text-primary font-medium hover:underline">Planungs- und Engineering-Leistung</a> umfasst die Abstimmung mit Brandschutzsachverständigem und Bauaufsicht – aus einer Hand, mit einer klaren Verantwortungskette.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Brandschutzkonzept von Anfang an mitdenken?</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Wir planen Wandaufbau, Brandabschnitte, Gefahrstofflagerung und Rettungswege gemeinsam mit Sachverständigem und Bauaufsicht – mit verifizierten Normen und ohne Lücken.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Kostenlose Erstberatung anfragen
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">Auf einen Blick</h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Feuerwiderstand: DIN 4102-2 (F30–F120) / DIN EN 13501-2 (EI, REI)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Baustoffe: A1/A2 nichtbrennbar, Rauch s1–s3, Abtropfen d0–d2</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Paneelkern: Mineralwolle (A1/A2) statt PUR/PIR</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Gefahrstoffe: TRGS 510 + Sicherheitsschrank Typ 90 (DIN EN 14470-1)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Löscher: ASR A2.2, Brandklassen A–F, Löscheinheiten</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Rettungswege: ASR A2.3 + DGUV 213-850, zweiter Fluchtweg</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Melder: DIN 14675 (BMA) bzw. Rauchwarnmelder</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <h4 class="font-bold text-slate-900 mb-4">Weiterführende Inhalte</h4>
+                <ul class="space-y-3">
+                  <li><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>BSL-2 &amp; BSL-3 Containerlabor</a></li>
+                  <li><a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>GMP- &amp; Reinraum-Container</a></li>
+                  <li><a href="/en/magazine/lab-container-energy-transition-h2-battery-ex-protection" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>H₂- &amp; Batterietests, Ex-Schutz</a></li>
+                  <li><a href="/en/magazine/lab-container-permits-building-law" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Genehmigung &amp; Baurecht</a></li>
+                  <li><a href="/en/magazine/lab-container-hvac-ventilation-standards" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Klimatisierung &amp; Lüftung</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <h4 class="font-bold mb-3">Brandschutz von Anfang an?</h4>
+                <p class="text-gray-400 text-sm mb-4">Wir denken Wandaufbau, Gefahrstofflager und Rettungswege zusammen – bevor der Bauantrag rausgeht.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Kontakt aufnehmen</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Häufig gestellte Fragen zum Brandschutz im Laborcontainer</h2>
+          <div class="space-y-4">
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Feuerwiderstandsklasse braucht ein Laborcontainer?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Das hängt von der bauordnungsrechtlichen Einstufung ab. Die Anforderungen bemessen sich in der Musterbauordnung und allen Landesbauordnungen nach der <strong>Gebäudeklasse</strong>. Ein einzelner, freistehender, eingeschossiger Laborcontainer fällt meist in eine niedrige Gebäudeklasse mit begrenzten Anforderungen. Sobald Module aufgestockt, zu Verbünden zusammengeschlossen, an einen Bestandsbau angeschlossen oder als Sonderbau (Laboratorium) eingestuft werden, steigen die Anforderungen – dann werden Trennungen von <strong>F30 bis F90</strong> (DIN 4102-2) bzw. <strong>EI 30 bis EI 90</strong> (DIN EN 13501-2) verlangt. Maßgeblich ist immer das Brandschutzkonzept im Bauantrag.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Was bedeutet F90 und ist es dasselbe wie EI 90?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed"><strong>F90</strong> ist die nationale Klasse nach DIN 4102-2: mindestens 90 Minuten Standzeit im Normbrand. Die DIN EN 13501-2 löst das in <strong>R</strong> (Tragfähigkeit), <strong>E</strong> (Raumabschluss) und <strong>I</strong> (Wärmedämmung) auf. Eine nichttragende Brandwand heißt dort <strong>EI 90</strong>, eine tragende und raumabschließende <strong>REI 90</strong>. F90 und EI 90 beschreiben dasselbe Schutzziel von 90 Minuten – die europäische Klasse ist nur präziser. Beide Normsysteme gelten in Deutschland gleichberechtigt.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Baustoffe sind brandschutztechnisch entscheidend?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Der <strong>Kern der Sandwichpaneele</strong>. <strong>Mineralwolle</strong> ist nach DIN EN 13501-1 als A1 (bzw. A2 im Stahlverbund) eingestuft – nichtbrennbar. <strong>PIR</strong> erreicht B-s1,d0 bis B-s2,d0 (schwer entflammbar), <strong>PUR</strong> nur E bis F (normal bis leicht entflammbar). Für Laboranwendungen mit erhöhter Brandlast setzen wir Paneele mit nichtbrennbarem <strong>Mineralwollkern (A1/A2)</strong> ein – kein Beitrag zur Brandlast, keine giftigen Rauchgase, kein brennendes Abtropfen.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wie müssen Lösungsmittel und Gefahrstoffe gelagert werden?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Nach <strong>TRGS 510</strong> (Fassung seit 16.02.2021). Entzündbare Flüssigkeiten gehören in einen brandgeschützten Sicherheitsschrank nach <strong>DIN EN 14470-1</strong>. Der gebräuchliche <strong>Typ 90</strong> hält den Innenraum im Brandfall 90 Minuten lang unter +180 K Temperaturanstieg – damit bleibt der Inhalt unter der Selbstentzündungstemperatur. Die Norm kennt zudem Typ 15, 30 und 60. Druckgasflaschen werden nach <strong>DIN EN 14470-2</strong> gelagert. Dazu kommen Zusammenlagerungsverbote, technische Lüftung, Auffangwannen und Mengenschwellen.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Feuerlöscher sind im Laborcontainer Pflicht?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Art, Löschmittel und Anzahl richten sich nach <strong>ASR A2.2</strong> und der Brandgefährdung. Brandklassen: <strong>A</strong> (feste glutbildende Stoffe), <strong>B</strong> (flüssige Stoffe wie Lösungsmittel, Öle, Alkohole), <strong>C</strong> (Gase), <strong>D</strong> (Metallbrände, z. B. Alkalimetalle) und <strong>F</strong> (Speisefette/-öle). Im Labor ist B fast immer relevant, bei reaktiven Metallen zusätzlich D mit Metallbrandpulver. CO₂-Löscher löschen Geräte rückstandsfrei. Die Zahl der Löscheinheiten ergibt sich aus Grundfläche und Gefährdung. TRGS 526 und DGUV 213-850 konkretisieren den Laborbetrieb.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Anforderungen gelten für Flucht- und Rettungswege?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Maßgeblich sind <strong>ASR A2.3</strong> (Neufassung 2022, geändert 11/2024) und Kapitel 6.2 der <strong>DGUV Information 213-850</strong>. Rettungswege und Ausgänge müssen in ausreichender Zahl vorhanden sein. Bei erhöhter Gefährdung wird ein <strong>zweiter, unabhängiger Fluchtweg</strong> gefordert – also eine zweite Tür oder ein Notausstieg, nicht nur der Haupteingang. Hinzu kommen lichte Mindestbreiten, in Fluchtrichtung aufschlagende Türen, eine <strong>Sicherheitsbeleuchtung</strong> und beleuchtete Rettungszeichen nach ASR A1.3 (DIN EN ISO 7010).</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Braucht ein Laborcontainer eine Brandmeldeanlage?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Nicht jeder, aber viele. Eine automatische BMA nach <strong>DIN 14675</strong> (mit DIN VDE 0833-1/-2) wird verlangt, wenn Brandschutzkonzept oder Baugenehmigung sie vorschreiben – etwa bei höheren Gebäudeklassen, Sonderbauten, unbeaufsichtigtem Nachtbetrieb oder hoher Brandlast durch Lösungsmittel und Lithium-Ionen-Akkus. Für viele Standard-Laborcontainer reichen normgerechte <strong>Rauchwarnmelder</strong> in Kombination mit Feuerlöschern und klarer Alarmierung. Wo eine vollwertige BMA mit Feuerwehraufschaltung nötig ist, planen und integrieren wir sie. Welche Stufe gilt, klärt das Brandschutzkonzept mit Sachverständigem und Bauaufsicht.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+    <RelatedArticles slug="laborcontainer-brandschutz-feuerwiderstand" locale="en" />
+
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/en/magazine" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Zurück zum Magazin
+      </a>
+    </div>
+  </div>
+</Layout>

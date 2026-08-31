@@ -1,0 +1,446 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Laborcontainer auf der Baustelle – Mobile Materialprüfung & Qualitätssicherung",
+  "description": "Praxis-Leitfaden für Baustellenlabore im Container: Frischbeton- und Festbetonprüfung nach DIN EN 12350/12390, Bodenuntersuchungen nach DIN 18130/18134, Asbest-Analytik nach TRGS 519, PFAS-Voranalytik im Rahmen der EU-Trinkwasserrichtlinie 2020/2184 und PFHxA-Beschränkung (REACH-VO 2024/2462) sowie regelmäßig verfahrensfreie Aufstellung nach LBO. Für Bauunternehmen, Prüfingenieure und Umweltgutachter.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Geschäftsführer", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-04-30",
+  "dateModified": "2026-04-30",
+  "image": "https://planexus.de/images/magazin/baustellenlabor-materialpruefung.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/lab-container-construction-site-materials-testing" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Laborcontainer auf der Baustelle", "item": "https://planexus.de/en/magazine/lab-container-construction-site-materials-testing" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Braucht ein Baustellenlabor eine Baugenehmigung?", "acceptedAnswer": { "@type": "Answer", "text": "In vielen Fällen nein. Container, die ausschließlich der Bauausführung dienen und nur für die Dauer der Baumaßnahme aufgestellt werden, sind in den Landesbauordnungen regelmäßig als verfahrensfreie Vorhaben aufgeführt – etwa über §50 LBO BW i.V.m. Anhang, Art. 57 BayBO, §62 BauO NRW oder §63 HBO. Voraussetzung in allen Ländern: keine dauerhafte Nutzung, keine Wohnnutzung, räumlicher Bezug zur Baustelle. Sobald der Container nach Bauende stehen bleibt oder als Dauerlabor genutzt wird, greift in der Regel die Bauantragspflicht. Wir prüfen pro Bundesland und Standort und unterstützen bei der Abstimmung mit der Bauaufsicht." } },
+    { "@type": "Question", "name": "Welche Normen gelten für die Frischbetonprüfung im Baustellencontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Die Normenreihe DIN EN 12350 regelt die Frischbetonprüfungen, u. a.: Probenahme (Teil 1), Setzmaß (Teil 2), Vebezeit (Teil 3), Verdichtungsmaß (Teil 4), Ausbreitmaß (Teil 5), Frischbetonrohdichte (Teil 6), Luftgehalt mit Druckausgleichsverfahren (Teil 7). Für selbstverdichtenden Beton: Setzfließmaß / Slump-flow (Teil 8), V-Trichter (Teil 9), L-Box (Teil 10), Siebsegregationsversuch / Segregationsbeständigkeit (Teil 11), J-Ring (Teil 12). Festbetonprüfungen folgen DIN EN 12390 mit u. a. Druckfestigkeit (Teil 3), Wassereindringtiefe unter Druck (Teil 8) sowie Frost- und Frost-Tausalz-Widerstand (Teil 9). Probekörperlagerung nach DIN EN 12390-2 unter Wasser oder im Feuchtraum bei 20 ± 2 °C." } },
+    { "@type": "Question", "name": "Wie funktioniert Asbestanalytik vor Ort im Containerlabor?", "acceptedAnswer": { "@type": "Answer", "text": "Probenahme und Probenvorbereitung erfolgen im Container, optisch-mikroskopische Sichtungen von Materialproben (Stereo- und Polarisationsmikroskop) sind als Voranalyse möglich. Die belastbare Materialprüfung auf Asbest in technischen Produkten und Bauteilen erfolgt nach der Reihe VDI 3866 (insbesondere Blatt 5 für REM/EDX an Materialproben), die quantitative Faserzählung in Luftproben nach VDI 3492 (REM/EDX) – beides in akkreditierten Stationärlaboren. Welche Schutzmaßnahmen nach TRGS 519 im Einzelfall greifen – Schwarz-/Weißbereich, Schleuse, H-Klasse-Sauger, Unterdruckhaltung – hängt von Tätigkeit, Verfahren und Expositionserwartung ab. Wir konfigurieren den Container nach den konkret geplanten Tätigkeiten." } },
+    { "@type": "Question", "name": "Ist PFAS-Screening direkt auf der Baustelle möglich?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, im Sinne einer Voranalytik. Die quantitative Bestimmung der nach EU-Trinkwasserrichtlinie 2020/2184 relevanten 20 PFAS-Einzelstoffe sowie der unter REACH-Beschränkung Eintrag 79 (eingeführt durch VO (EU) 2024/2462 für PFHxA und Vorläufer) fallenden Stoffe erfolgt per LC-MS/MS in akkreditierten Stationärlaboren. Ein Containerlabor kann jedoch Probenvorbereitung, Festphasenextraktion (SPE) und Begleitparameter (TOC, AOX, pH, Leitfähigkeit) vor Ort abwickeln. Vorteil: schnelle Vorab-Indikation am Aushubort, gezielter Versand nur konzentrierter Eluate an das Stationärlabor." } },
+    { "@type": "Question", "name": "Welche Geräteausstattung gehört in ein vollwertiges Baustellenlabor?", "acceptedAnswer": { "@type": "Answer", "text": "Für Beton/Asphalt: Druckfestigkeitspresse 3.000 kN, Ausbreittisch nach DIN EN 12350-5, Luftgehaltsprüfer, Würfel- und Zylinderformen, Schleifmaschine, vibrationsarmer Wägetisch (1 mg). Für Boden: Statisches Plattendruckgerät PDG nach DIN 18134, leichtes Fallgewichtsgerät LFG, Proctorgerät DIN 18127, Siebsätze, Trockenschrank 105 °C, Wasserbad. Für Schadstoffanalytik: Stereomikroskop, Polarisationsmikroskop, H-Klasse-Sauger, portable XRF, Probenahmeausrüstung. Probekörperlagerung nach DIN EN 12390-2 unter Wasser oder im Feuchtraum bei 20 ± 2 °C. Stromversorgung (typischerweise 63 A CEE) und Wasserzulauf sind je nach Ausstattung regelmäßig erforderlich." } },
+    { "@type": "Question", "name": "Wie schnell ist ein Baustellenlabor lieferbar und einsatzbereit?", "acceptedAnswer": { "@type": "Answer", "text": "Bei verfügbarer Lagerware liefern wir in der Regel innerhalb von 2 bis 4 Tagen. Standard-Container ohne Spezialausstattung liefern wir typischerweise in 5 bis 8 Wochen, vollausgestattete Geräte-Container je nach Konfiguration in 8 bis 14 Wochen. Die Aufstellung vor Ort einschließlich Anschluss an Strom (in der Regel 63 A CEE) und Wasser dauert üblicherweise einen Arbeitstag. Bei Großbaustellen mit mehreren Bauabschnitten – etwa Tunnel-, Bahn- oder Autobahnprojekten – sind Mietkauf-Modelle und Versetzung zwischen Standorten möglich." } },
+    { "@type": "Question", "name": "Brauche ich für ein Baustellenlabor eine Akkreditierung nach DIN EN ISO/IEC 17025?", "acceptedAnswer": { "@type": "Answer", "text": "Für die Eigenüberwachung der Werkseigenen Produktionskontrolle (WPK) der Betonherstellung nach DIN EN 206 / DIN 1045-2 ist eine DAkkS-Akkreditierung in der Regel nicht zwingend; ausreichend ist die qualifizierte Durchführung durch geschulte Prüftechniker. Für die Fremdüberwachung der Bauausführung nach DIN 1045-3 (Überwachungsklassen ÜK 2 und ÜK 3) sowie für von der Bauaufsicht beauftragte Prüflaboratorien wird je nach Anerkennungs- bzw. Auftraggeberanforderung regelmäßig eine Akkreditierung verlangt. RAP-Stra-15-Prüfstellen für den Bundesfernstraßenbau benötigen die formale BASt-Anerkennung inkl. akkreditierter Prüfbereiche. Für Asphalt-Prüflaboratorien gelten die Anforderungen der DIN EN 13108-Reihe sowie der TL/TP/ZTV Asphalt-StB; auch hier ist je nach Auftraggeber eine Akkreditierung üblich. Wir liefern Container in beiden Konfigurationen – die Akkreditierungsfähigkeit wird durch Validierungsdokumentation, Geräteverwaltung und Klimatisierung von Anfang an mitgeplant." } }
+  ]
+};
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Laborcontainer Baustelle: Materialprüfung | Planexus"
+  description="Baustellenlabor im Container: Frischbeton (DIN EN 12350), Festbeton, Boden (DIN 18130), Asbest (TRGS 519), PFAS. Leitfaden für Bauunternehmen & Prüfer."
+  canonical="/en/magazine/lab-container-construction-site-materials-testing"
+  ogImage="https://planexus.de/images/magazin/baustellenlabor-materialpruefung.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/magazin/baustellenlabor-materialpruefung.jpg')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6 flex-wrap">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21V12h6v9"/></svg>
+              Bau & Materialprüfung
+            </span>
+            <span class="text-slate-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              17 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Laborcontainer auf der Baustelle – Mobile Materialprüfung & QS
+          </h1>
+          <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+            Frischbeton verändert seine Eigenschaften unmittelbar nach dem Mischen, PFAS-belasteter Aushub kann erhebliche Logistik- und Entsorgungsfolgen auslösen, ein Asbest-Verdacht bei einer Sanierung kann die Baustelle stoppen. Wer auf Großprojekten Materialprüfung ausschließlich über Probentransport ins Stationärlabor abwickelt, verliert pro Charge oft Stunden bis Tage – Zeit, die in eng getakteten Bauabläufen fehlt. Ein Containerlabor direkt auf der Baustelle kann hier einen erheblichen Unterschied machen.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-slate-400 flex-wrap">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              30. April 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald, Geschäftsführer Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-slate-200 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-slate-500 flex-wrap">
+          <a href="/" class="hover:text-primary">Start</a>
+          <span>/</span>
+          <a href="/en/magazine" class="hover:text-primary">Magazin</a>
+          <span>/</span>
+          <span class="text-primary font-medium">Laborcontainer auf der Baustelle</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="prose prose-lg max-w-none">
+
+            <p class="text-xl text-slate-700 leading-relaxed mb-12 font-medium">
+              Vier Entwicklungen treffen die deutsche Bauwirtschaft 2026 gleichzeitig und erhöhen den Probenahme- und Analytikaufwand auf den Baustellen spürbar: die <strong>schrittweise PFAS-Beschränkung</strong> in REACH (für PFHxA und Vorläufer durch VO (EU) 2024/2462) sowie die zugehörigen Trinkwasserwerte aus der EU-Trinkwasserrichtlinie 2020/2184, die seit August 2023 in Kraft befindliche <strong>Mantelverordnung mit Ersatzbaustoffverordnung (EBV)</strong>, die durch die <strong>Gefahrstoffverordnungs-Novelle 2024</strong> verschärfte Asbest-Erkundung im Bestand sowie der politische Druck zur <strong>Beschleunigung großer Infrastrukturprojekte</strong>. Wer Boden- und Materialprüfung ausschließlich per Kurier in ein Stationärlabor verlagert, kommt in dieser Situation logistisch und planerisch unter Druck.
+            </p>
+
+            <!-- 1. WARUM JETZT -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Warum sich Baustellenlabore 2026 für viele Projekte rechnen</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Die Bauwirtschaft steht vor vier Verschärfungen, die in Summe den Probenahme- und Analytikbedarf auf vielen Baustellen deutlich erhöhen.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 my-10">
+              <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-primary">
+                <h3 class="font-bold text-slate-900 mb-2">1. PFAS in REACH und Trinkwasser</h3>
+                <p class="text-slate-600 text-sm">Mit VO (EU) 2024/2462 wurde die Beschränkung von PFHxA und Vorläufern in REACH-Anhang XVII (Eintrag 79) aufgenommen, parallel gelten die PFAS-Anforderungen der EU-Trinkwasserrichtlinie 2020/2184. Auf Standorten mit historischer Schaumlöschmittel-, Galvanik- oder Papier-/Textilindustrie-Nutzung steigt damit der Untersuchungsbedarf an Aushub und Sickerwasser deutlich.</p>
+              </div>
+              <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-primary">
+                <h3 class="font-bold text-slate-900 mb-2">2. Ersatzbaustoffverordnung (EBV)</h3>
+                <p class="text-slate-600 text-sm">Seit 1. August 2023 in Kraft. Vor Einbau mineralischer Ersatzbaustoffe ist materialklassenspezifische Untersuchung Pflicht – etwa für Bodenmaterial (BM), Recyclingbaustoffe (RC-1/2/3), Gleisschotter (GS), Stahlwerksschlacke (SWS) sowie Hausmüllverbrennungsasche (HMVA). Eluat- und Feststoff-Analytik werden zum Standardprozess auf jeder größeren Erdbau-Baustelle.</p>
+              </div>
+              <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-primary">
+                <h3 class="font-bold text-slate-900 mb-2">3. Asbest-Erkundung im Bestand</h3>
+                <p class="text-slate-600 text-sm">Mit der Novelle der GefStoffV 2024 wurden Informations- und Mitwirkungspflichten des Veranlassers sowie Ermittlungspflichten des Arbeitgebers bei Tätigkeiten an älteren baulichen Anlagen konkretisiert. Welche Schutzmaßnahmen nach TRGS 519 im Einzelfall greifen – Schwarz-/Weißbereich, Schleuse, H-Klasse-Sauger – hängt von Tätigkeit und Expositionserwartung ab; Container-Konzepte können diese Anforderungen baulich abbilden.</p>
+              </div>
+              <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-primary">
+                <h3 class="font-bold text-slate-900 mb-2">4. Infrastruktur-Beschleunigung</h3>
+                <p class="text-slate-600 text-sm">Maßnahmengesetzvorbereitungsgesetz, LNG-Beschleunigungsgesetz, EnWG-Novelle: Bahn-, Brücken- und Stromtrassen-Projekte stehen unter erheblichem Zeitdruck. Lange Wartezeiten auf externe Stationärlabor-Ergebnisse sind in eng getakteten Bauabläufen kaum noch verkraftbar.</p>
+              </div>
+            </div>
+
+            <!-- 2. WAS DAS BAUSTELLENLABOR LEISTEN MUSS -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Was ein modernes Baustellenlabor abdecken muss</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Ein professionelles Baustellenlabor bedient drei Prüfdomänen parallel: <strong>Beton- und Asphaltprüfung</strong> (laufende Bauausführung), <strong>Boden- und Geotechnik</strong> (Erdbau, Verfüllung, Tragschicht) sowie <strong>Schadstoffanalytik</strong> (Asbest, PFAS, Kohlenwasserstoffe, Schwermetalle). Welche Konfiguration sinnvoll ist, hängt vom Projekttyp ab.
+            </p>
+
+            <div class="overflow-x-auto my-8 rounded-xl border border-slate-200 shadow-sm">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-900 text-white">
+                  <tr>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Projekttyp</th>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Beton/Asphalt</th>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Boden/Geotechnik</th>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Schadstoff</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white">
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Hochbau Wohnen</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Industriebau</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Tunnel & Tiefbau</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Straßenbau</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Brückenbau</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Sanierung Bestand</td><td class="px-4 py-3 text-slate-600">●</td><td class="px-4 py-3 text-slate-600">●</td><td class="px-4 py-3 text-slate-600">●●●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Altlast-Sanierung</td><td class="px-4 py-3 text-slate-600">–</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●●●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Flughafen / Militär</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●●●</td></tr>
+                </tbody>
+              </table>
+              <p class="text-xs text-slate-500 px-4 py-2 bg-slate-50 italic">● = gelegentlich · ●● = regelmäßig · ●●● = täglicher Kernprozess</p>
+            </div>
+
+            <!-- 3. BETON UND ASPHALT -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Beton- und Asphaltprüfung: Zeitnah am Einbringort</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Frischbeton verändert seine Eigenschaften ab dem Moment des Mischens. Probenahme und Prüfung folgen der Normenreihe DIN EN 12350 mit präzisen Vorgaben für den zeitlichen Ablauf zwischen Probenahme und Prüfung. Der Transport zu einem entfernten Stationärlabor verkürzt das verfügbare Prüffenster und ist einer der Hauptgründe, warum Bauunternehmen seit Jahrzehnten auf Vor-Ort-Prüfung setzen.
+            </p>
+
+            <div class="bg-slate-900 text-white p-8 rounded-xl my-8">
+              <h3 class="text-xl font-bold text-primary mb-4">Frischbetonprüfungen im Container (DIN EN 12350)</h3>
+              <ul class="space-y-2 text-slate-200">
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Teil 1</span><span><strong>Probenahme</strong> – einheitliche Vorgaben für die Entnahme aus Mischer, Transportfahrzeug oder Pumpe</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Teil 2</span><span><strong>Setzmaß</strong> mit Setztrichter nach Abrams – Konsistenzklassen S1 bis S5</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Teil 3</span><span><strong>Vebezeit</strong> – Konsistenzprüfung für sehr steife Betone</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Teil 4</span><span><strong>Verdichtungsmaß</strong> nach Walz – Klassen C0 bis C3</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Teil 5</span><span><strong>Ausbreitmaß</strong> – Klassen F1 bis F6, typisch für Pumpenbetone</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Teil 6</span><span><strong>Frischbetonrohdichte</strong> mit kalibriertem Behälter und Präzisionswaage</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Teil 7</span><span><strong>Luftgehalt</strong> mit Druckausgleichsverfahren</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Teil 8–12</span><span><strong>Selbstverdichtender Beton</strong>: Setzfließmaß / Slump-flow (Teil 8), V-Trichter (Teil 9), L-Box (Teil 10), Siebsegregationsversuch / Segregationsbeständigkeit (Teil 11), J-Ring (Teil 12)</span></li>
+              </ul>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Festbetonprüfungen nach <strong>DIN EN 12390</strong> erfolgen nach normgerechter Probekörper-Lagerung – die Druckfestigkeit nach Teil 3 ist dabei der häufigste Auftrag. Bauunternehmen brauchen die 7-Tage- und 28-Tage-Werte rechtzeitig für die Bauablaufplanung. Ein Containerlabor mit Druckpresse 3.000 kN, Lagerung nach DIN EN 12390-2 (unter Wasser oder im Feuchtraum bei 20 ± 2 °C) und Würfelformen 150 × 150 × 150 mm liefert diese Werte ohne Logistikbruch.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Für die <strong>Werkseigene Produktionskontrolle (WPK)</strong> der Betonherstellung nach DIN EN 206 / DIN 1045-2 sowie die <strong>Bauausführung</strong> nach DIN 1045-3 in den Überwachungsklassen ÜK 1 bis ÜK 3 ist eine entsprechende Prüfdichte ohnehin Pflicht. Bei Großbaustellen mit eigener Mischanlage wird der Container zur permanenten Mess- und Dokumentationszentrale.
+            </p>
+
+            <!-- 4. BODEN UND GEOTECHNIK -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Boden- und Geotechnik: DIN 18130 und 18134 vor Ort</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Erdbau ist die zweite große Anwendungsdomäne. <strong>Plattendruckversuche nach DIN 18134</strong> liefern den Verformungsmodul Ev1 und Ev2 – die wichtigsten Kennwerte für Tragfähigkeit von Planum und Tragschichten. Statisches Plattendruckgerät (PDG) und leichtes Fallgewichtsgerät (LFG nach TP BF-StB B 8.3) gehören in jedes ernsthafte Baustellenlabor.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              <strong>DIN 18130 Teil 1</strong> regelt die Bestimmung des Wasserdurchlässigkeitsbeiwerts (k-Wert) im Labor – relevant für Sickerwassersysteme, Deponieabdichtungen und Versickerungsanlagen. Ergänzend: <strong>DIN 18127</strong> Proctorversuch für die Bestimmung der optimalen Verdichtung, <strong>DIN 18121</strong> Wassergehalt, <strong>DIN 18123</strong> Korngrößenverteilung mit Trocken- und Nasssiebung. Alle Verfahren sind im Container darstellbar – Standard-Geräteausstattung deckt sie ab.
+            </p>
+
+            <div class="border border-slate-200 rounded-xl p-6 my-8 bg-white">
+              <h3 class="font-bold text-slate-900 mb-4">Geotechnik-Standardgeräte im Container</h3>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-2">Feldversuche</h4>
+                  <ul class="space-y-1 text-slate-600">
+                    <li>• Statisches Plattendruckgerät PDG ø 300 mm</li>
+                    <li>• Leichtes Fallgewichtsgerät LFG 10 kg</li>
+                    <li>• Densitometer / Sandersatzgerät DIN 18125-2</li>
+                    <li>• Kernbohrgerät</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-2">Laborversuche im Container</h4>
+                  <ul class="space-y-1 text-slate-600">
+                    <li>• Proctorgerät A und C nach DIN 18127</li>
+                    <li>• Siebsatz 0,063 bis 63 mm</li>
+                    <li>• Trockenschrank 105 °C</li>
+                    <li>• Casagrande-Apparat (Konsistenzgrenzen DIN 18122)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. ASBEST -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Asbest-Analytik: TRGS 519 differenziert anwenden</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Mit der Novelle der Gefahrstoffverordnung 2024 und der <strong>TRGS 519 „Asbest – Abbruch-, Sanierungs- und Instandhaltungsarbeiten"</strong> wurden die Informations- und Mitwirkungspflichten des Veranlassers und die Ermittlungspflichten des Arbeitgebers bei Tätigkeiten an älteren baulichen Anlagen konkretisiert. Vor Sanierungs- und Abrissarbeiten an Bestandsgebäuden ist eine an Vorhaben und Risiko angepasste Bestandserkundung vorgesehen – Art und Tiefe der Untersuchungen (Putze, Spachtelmassen, Fliesenkleber, Bodenbeläge etc.) hängen vom konkreten Vorhaben und der Expositionserwartung ab.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Die TRGS 519 regelt die Schutzmaßnahmen für Tätigkeiten mit Asbest abgestuft je nach Tätigkeit und Expositionserwartung. Welche konkreten Maßnahmen – abgegrenzter Schwarz-/Weißbereich, Personenschleuse, H-Klasse-Sauger nach EN 60335-2-69 Anhang AA, Unterdruckhaltung, Schutzanzug Kategorie III Typ 5/6 – im Einzelfall greifen, hängt von Verfahren und Expositionserwartung ab. Container-Labore lassen sich für die jeweils geplanten Tätigkeiten passend konfigurieren – Schleuse, Schwarzbereich, Weißbereich und Probenausgabe können baulich klar getrennt werden.
+            </p>
+
+            <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8">
+              <h3 class="font-bold text-slate-900 mb-3">Mikroskopische Voranalyse vor Ort</h3>
+              <p class="text-slate-700 text-sm mb-3">
+                Im Containerbetrieb ist eine optisch-mikroskopische Sichtung von Materialproben mit <strong>Stereo- und Polarisationsmikroskop</strong> möglich – häufig innerhalb weniger Stunden statt mehrerer Tage Versandzeit. Damit liegt eine erste Indikation oft am Probenahmetag selbst vor. Die belastbare Materialprüfung auf Asbest in technischen Produkten und Bauteilen erfolgt nach der Reihe <strong>VDI 3866</strong> (insbesondere Blatt 5 für REM/EDX an Materialproben).
+              </p>
+              <p class="text-slate-700 text-sm">
+                Die quantitative Faserzählung erfolgt anschließend per <strong>REM/EDX</strong> – etwa nach VDI 3492 für Luftproben – im akkreditierten Stationärlabor. Sinnvoll ist, gezielt nur die als verdächtig eingestuften Proben dorthin zu schicken; das kann den Stationärlabor-Durchsatz spürbar entlasten.
+              </p>
+            </div>
+
+            <!-- 6. PFAS -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">PFAS-Screening: Voranalytik vor dem Aushub-Transport</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              PFAS (per- und polyfluorierte Alkylsubstanzen) sind regulatorisch durch mehrere EU-Rechtsakte adressiert: die <strong>EU-Trinkwasserrichtlinie 2020/2184</strong> mit Parametern für 20 PFAS-Einzelstoffe und PFAS-gesamt sowie die schrittweise Aufnahme einzelner PFAS-Stoffe in <strong>REACH-Anhang XVII</strong> – etwa über VO (EU) 2024/2462 für PFHxA und Vorläufer (Eintrag 79). Im Bauwesen relevant sind vor allem Standorte mit historischer Schaumlöschmittel-Anwendung (Flughäfen, Militärgelände, Feuerwehrübungsplätze), Galvanik- sowie Papier- und Textilindustrie-Altstandorte. Bei begründetem Verdacht ist Aushub vor Verwertung oder Entsorgung im Sinne der einschlägigen abfall- und bodenschutzrechtlichen Regelungen zu untersuchen.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Die quantitative Bestimmung erfolgt in der Regel per <strong>LC-MS/MS</strong> in akkreditierten Stationärlaboren – diese Geräteklasse ist im Container in der Regel nicht abbildbar. Im Containerlabor sinnvoll abbildbar sind dagegen die <strong>Probenvorbereitung</strong> (Festphasenextraktion SPE), eine <strong>Voranalytik</strong> mit geeigneten Schnelltests sowie <strong>Begleitparameter</strong> wie TOC, AOX, pH und Leitfähigkeit. Damit kann eine erste Risiko-Indikation häufig zeitnah am Aushubort erfolgen, bevor anschließend gezielt Bestätigungsanalytik beauftragt wird.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Für Rückbau- und Sanierungsbaustellen mit PFAS-Verdacht kann ein solcher Voranalytik-Schritt vor Ort die Logistik vereinfachen: Verdachtsboden bleibt zunächst vor Ort, der Versand ans Stationärlabor wird auf belastbare Verdachtsfälle konzentriert.
+            </p>
+
+            <!-- 7. AUSSTATTUNG -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Standardausstattung eines vollwertigen Baustellenlabors</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Die folgende Liste fasst die Geräteausstattung zusammen, die ein universelles Baustellenlabor abdeckt. Der LABtoGO bietet mit 9.500 × 3.000 mm Grundfläche und 2.750 mm Innenhöhe ausreichend Platz für alle Stationen, ohne dass Geräte gestapelt oder ausgelagert werden müssen.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4 my-8">
+              <div class="bg-slate-50 p-5 rounded-xl">
+                <h3 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider">Beton & Mörtel</h3>
+                <ul class="space-y-1 text-sm text-slate-700">
+                  <li>Druckpresse 3.000 kN</li>
+                  <li>Ausbreittisch DIN EN 12350-5</li>
+                  <li>Setztrichter Abrams</li>
+                  <li>Luftgehaltsprüfer 8 L</li>
+                  <li>Würfelformen 150 mm</li>
+                  <li>Zylinderformen ø 150/300</li>
+                  <li>Schleifmaschine</li>
+                  <li>Probekörperlagerung nach DIN EN 12390-2 (Wasser- oder Feuchtraumlagerung 20 ± 2 °C)</li>
+                </ul>
+              </div>
+              <div class="bg-slate-50 p-5 rounded-xl">
+                <h3 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider">Boden & Erdbau</h3>
+                <ul class="space-y-1 text-sm text-slate-700">
+                  <li>Plattendruckgerät PDG</li>
+                  <li>Leichtes Fallgewichtsgerät</li>
+                  <li>Proctorgerät A + C</li>
+                  <li>Siebsatz 0,063–63 mm</li>
+                  <li>Casagrande-Apparat</li>
+                  <li>Trockenschrank 105 °C</li>
+                  <li>Wasserbad</li>
+                  <li>Densitometer</li>
+                </ul>
+              </div>
+              <div class="bg-slate-50 p-5 rounded-xl">
+                <h3 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider">Schadstoff & Umwelt</h3>
+                <ul class="space-y-1 text-sm text-slate-700">
+                  <li>Polarisationsmikroskop</li>
+                  <li>Stereomikroskop</li>
+                  <li>H-Klasse-Sauger</li>
+                  <li>Personenschleuse</li>
+                  <li>Portable XRF</li>
+                  <li>SPE-Anlage PFAS</li>
+                  <li>pH/LF/TOC-Messplatz</li>
+                  <li>Dichtgehäuse Asbest</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 8. GENEHMIGUNG -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Genehmigungsrechtlicher Rahmen: Baustelleneinrichtungen in den LBO</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Container, die <strong>ausschließlich der Bauausführung dienen und nur für die Dauer der Baumaßnahme aufgestellt sind</strong>, sind in den Landesbauordnungen regelmäßig als verfahrensfreie Vorhaben aufgeführt – häufig zusammen mit Bauwagen, Bauhütten und Sanitärcontainern. Die genaue Fundstelle (Paragraph, Anhang, Tatbestandsnummer) variiert von Land zu Land und ändert sich mit jeder LBO-Novelle. Die folgende Übersicht zeigt typische Verortungen, ersetzt aber keine Einzelfallprüfung.
+            </p>
+
+            <div class="overflow-x-auto my-8 rounded-xl border border-slate-200 shadow-sm">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-900 text-white">
+                  <tr>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Bundesland</th>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Typische Verortung</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white">
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Baden-Württemberg</td><td class="px-4 py-3 text-slate-600">§50 LBO i.V.m. Anhang (verfahrensfreie Vorhaben)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Bayern</td><td class="px-4 py-3 text-slate-600">Art. 57 BayBO (verfahrensfreie Bauvorhaben)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Berlin</td><td class="px-4 py-3 text-slate-600">§61 BauO Bln (verfahrensfreie Bauvorhaben / Baustelleneinrichtungen)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Hamburg</td><td class="px-4 py-3 text-slate-600">§60 HBauO (verfahrensfreie Vorhaben)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Hessen</td><td class="px-4 py-3 text-slate-600">§63 HBO (verfahrensfreie Vorhaben)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Niedersachsen</td><td class="px-4 py-3 text-slate-600">§60 NBauO i.V.m. Anhang</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Nordrhein-Westfalen</td><td class="px-4 py-3 text-slate-600">§62 BauO NRW (genehmigungsfreie Vorhaben)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Rheinland-Pfalz</td><td class="px-4 py-3 text-slate-600">§62 LBauO RP (verfahrensfreie Vorhaben)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Sachsen</td><td class="px-4 py-3 text-slate-600">§61 SächsBO (verfahrensfreie Vorhaben)</td></tr>
+                </tbody>
+              </table>
+              <p class="text-xs text-slate-500 px-4 py-2 bg-slate-50 italic">Übersicht zur Orientierung. Maßgeblich ist die jeweils geltende Fassung der LBO einschließlich Anhang. Voraussetzung in allen Ländern: räumlicher Bezug zur Baustelle, keine Wohnnutzung, keine dauerhafte Aufstellung über die Bauzeit hinaus.</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              <strong>Wichtig:</strong> Sobald der Container nach Bauende stehen bleiben oder als dauerhaftes Prüflabor genutzt werden soll, greift in der Regel die Bauantragspflicht. Wir prüfen pro Bundesland und Standort vorab, in welcher Konstellation Verfahrensfreiheit anzunehmen ist – und unterstützen bei der Abstimmung mit der zuständigen Bauaufsicht.
+            </p>
+
+            <!-- 9. LOGISTIK -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Logistik: Aufstellung, Versorgung, Versetzen zwischen Bauabschnitten</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Ein Standard-LABtoGO wiegt fertig ausgestattet typischerweise 8 bis 10 Tonnen. Anlieferung erfolgt mit Standard-Tiefbett-LKW, Aufstellung mit Mobilkran (Größe abhängig von Containergewicht und Ausladung). Vor Ort wird auf einer tragfähigen, ebenen Aufstellfläche – Bodenplatte oder fundierte, verdichtete Schotterfläche – aufgesetzt. Tragfähigkeit und Schichtaufbau sind projektabhängig statisch nachzuweisen; Punktlasten und Hebelmomente fließen in die Bemessung ein.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Versorgung: <strong>Stromanschluss 63 A CEE</strong> (für Druckpresse, klimatisierte Probekörperlagerung, Mikroskope), <strong>Wasseranschluss</strong> (für Wasserbad, Probekörperlagerung, Sanitär), <strong>Abwasseranschluss oder Sammeltank</strong>. Bei großen Bauprojekten mit mehreren aufeinanderfolgenden Bauabschnitten – etwa Tunnelbau der Deutschen Bahn oder Autobahn-Sanierung über mehrere Abschnitte – ist <strong>Versetzen während der Mietzeit</strong> häufig möglich. Der Container kann mit dem Bauabschnitt mitziehen.
+            </p>
+
+            <!-- 10. WIRTSCHAFTLICHKEIT -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Drei Konfigurationen, drei Käufergruppen</h2>
+
+            <div class="space-y-6 my-10">
+              <div class="bg-slate-50 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-2">Bauunternehmen mit eigener Mischanlage oder Recyclinganlage</h3>
+                <p class="text-slate-700">Permanente WPK-Station, Beton- und Geotechnik-Standardausstattung. Mietkauf 24–60 Monate, am Projektende Übernahme oder Versetzung an Folgestandort.</p>
+              </div>
+              <div class="bg-slate-50 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-2">Prüfingenieure und akkreditierte Prüflaboratorien</h3>
+                <p class="text-slate-700">Container in 17025-/RAP-Stra-orientierter, akkreditierungsfähiger Konfiguration mit dokumentierter Klimatisierung, Geräte-Stammdaten und Validierungs-Setup. Tatsächliche Eignung für ÜK-2/3-Fremdüberwachung oder RAP-Stra-15-Prüfstellen hängt von Betreiberakkreditierung, Anerkennungsumfang, Personal und Prüfbereich ab.</p>
+              </div>
+              <div class="bg-slate-50 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-2">Umweltgutachter und Sanierungsplaner</h3>
+                <p class="text-slate-700">Fokus auf Schadstoffanalytik (Asbest TRGS 519, PFAS-Voranalyse, Schwermetall-XRF, KW-Voruntersuchung). Schleusenkonzept, Schwarzbereich, H-Klasse-Sauger als Hardware-Standard.</p>
+              </div>
+            </div>
+
+            <!-- 11. PLANEXUS -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Was ein Baustellenlabor von Planexus leistet</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Planexus plant und liefert Containerlabore im deutschsprachigen Raum und versteht die Baustelle nicht als Hindernis, sondern als Standardszenario. Für Baustellenlabore haben wir folgende Konfigurationsbausteine entwickelt:
+            </p>
+
+            <ul class="space-y-3 text-slate-700 leading-relaxed mb-8">
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Robuste Außenhaut</strong> in RAL 7016 Anthrazit mit Stahlblech-Verkleidung – baustellen- und vandalismustauglich.</span></li>
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Vibrationsentkoppelter Wägetisch</strong> mit eigenem Beton-Sockel für Frischbetonrohdichte und Geotechnik-Wägungen mit 1-mg-Präzision.</span></li>
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Klimatisierte Probekörper-Lagerung</strong> nach DIN EN 12390-2: unter Wasser oder im Feuchtraum bei 20 ± 2 °C – gemessen und dokumentiert.</span></li>
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Schleuse und Schwarzbereich-Modul</strong> für TRGS 519 Asbest-Probenahme – inklusive Unterdruck-Lüftung und H-Klasse-Sauger.</span></li>
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Versetzbar auf Folgebaustellen</strong> – inklusive Mietkauf-Modell und logistischer Begleitung von Bauabschnitt zu Bauabschnitt.</span></li>
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Lieferung bei Lagerware in der Regel innerhalb von 2 bis 4 Tagen, Standard-Container in 5 bis 8 Wochen, vollausgestattete Geräte-Container in 8 bis 14 Wochen</strong> ab Auftrag, Aufstellung in der Regel innerhalb eines Arbeitstages. Bei verfahrensfreier Aufstellung nach LBO entfällt das förmliche Bauantragsverfahren – die Voraussetzungen prüfen wir je Standort.</span></li>
+            </ul>
+
+            <div class="bg-slate-900 text-white p-8 md:p-10 rounded-xl my-12">
+              <h3 class="text-2xl font-bold mb-4 text-primary">Ihr Baustellenlabor in 8–14 Wochen?</h3>
+              <p class="text-slate-300 mb-6 leading-relaxed">
+                Beschreiben Sie uns Ihr Bauprojekt – Größenordnung, Bauphase, geforderte Prüfungen (Beton/Boden/Schadstoff) und Standort. Wir prüfen die Verfahrensfreiheit nach der jeweiligen LBO und schlagen Ihnen die passende Geräte-Konfiguration sowie Aufstellung und Versorgung vor.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="/en/contact" class="bg-primary hover:bg-primary/90 text-slate-900 font-bold px-8 py-4 rounded-lg transition-colors inline-flex items-center gap-2">
+                  Projekt anfragen
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="/en/lab-containers" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold px-8 py-4 rounded-lg transition-colors inline-flex items-center gap-2">
+                  Laborcontainer-Übersicht
+                </a>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fazit: Vom Logistik-Engpass zur Routine vor Ort</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Die Entwicklungen 2024–2026 – PFAS in REACH und Trinkwasserrichtlinie, Ersatzbaustoffverordnung, Asbest-Erkundung im Bestand und Infrastrukturbeschleunigung – machen das Baustellenlabor für viele Bauunternehmen, Prüfingenieure und Umweltgutachter zum strategisch sinnvollen Werkzeug. Wer Frischbetonprüfung, Bodenmechanik und Schadstoff-Voranalytik vor Ort hat, kann das Prüffenster der DIN-Reihen einhalten, Bestätigungsanalytik gezielter beauftragen und schneller auf Befunde reagieren. In vielen Bundesländern ist eine Aufstellung als verfahrensfreie Baustelleneinrichtung möglich, die Lieferzeit liegt bei verfügbarer Lagerware in der Regel bei 2 bis 4 Tagen, für Standard-Container bei 5 bis 8 Wochen und für vollausgestattete Geräte-Container typischerweise zwischen 8 und 14 Wochen, das Versetzen zwischen Bauabschnitten ist je nach Vertragsmodell häufig vorgesehen.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-slate-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Häufig gestellte Fragen zum Baustellenlabor</h2>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((q, i) => (
+              <details class="bg-slate-50 rounded-xl border border-slate-200 group" open={i === 0}>
+                <summary class="cursor-pointer p-6 font-bold text-slate-900 flex items-center justify-between gap-4 list-none">
+                  <span class="flex-1">{q.name}</span>
+                  <svg class="w-5 h-5 text-primary group-open:rotate-180 transition-transform flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </summary>
+                <div class="px-6 pb-6 text-slate-700 leading-relaxed">
+                  {q.acceptedAnswer.text}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedArticles slug="laborcontainer-baustelle-materialpruefung" locale="en" />
+  </div>
+</Layout>

@@ -1,0 +1,889 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Laborcontainer Genehmigung und Baurecht"
+  description="Laborcontainer Genehmigung: Baurecht, Landesbauordnungen und Sonderfälle für Labore. Checkliste, Zeitplan und häufige Fehler im Überblick."
+  canonical="/en/magazine/lab-container-permits-building-law"
+  ogImage="/images/blog-laborcontainer-genehmigung.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Laborcontainer Genehmigung – Baurecht, Vorschriften & Praxisleitfaden",
+      "description": "Alles zur Genehmigung von Laborcontainern: Baurecht, Landesbauordnungen, Sonderfälle für Labore, Checkliste und Zeitplan.",
+      "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Geschäftsführer", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+      "datePublished": "2026-02-26",
+      "dateModified": "2026-02-26",
+      "image": "https://planexus.de/images/blog-laborcontainer-genehmigung.jpg",
+      "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+        { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/en/magazine" },
+        { "@type": "ListItem", "position": 3, "name": "Laborcontainer Genehmigung", "item": "https://planexus.de/en/magazine/lab-container-permits-building-law" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Braucht ein Laborcontainer immer eine Baugenehmigung?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nicht immer. In vielen Bundesländern sind temporäre Aufstellungen bis zu 3 Monaten genehmigungsfrei. Bei dauerhafter Nutzung über 3 Monate ist in der Regel eine Baugenehmigung oder zumindest eine Bauanzeige erforderlich. Entscheidend sind Landesbauordnung, Nutzungsart und Standort." }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Sondergenehmigungen braucht ein Laborcontainer mit Gefahrstoffen?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Neben der Baugenehmigung können zusätzliche Genehmigungen erforderlich sein: eine immissionsschutzrechtliche Genehmigung nach BImSchG bei bestimmten Stoffmengen, eine wasserrechtliche Erlaubnis bei Laborabwasser mit Gefahrstoffen sowie eine Anzeige nach Biostoffverordnung bei BSL-2- oder BSL-3-Laboren." }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie lange dauert die Baugenehmigung für einen Laborcontainer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Im vereinfachten Verfahren 4 bis 8 Wochen, im regulären Baugenehmigungsverfahren 8 bis 16 Wochen. Bei Sondergenehmigungen (Immissionsschutz, Wasserrecht) können zusätzlich 4 bis 12 Wochen hinzukommen. Eine Bauvoranfrage vorab kann den Prozess beschleunigen." }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist der Unterschied zwischen Bauvoranfrage und Bauantrag?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Die Bauvoranfrage klärt vorab, ob ein Vorhaben grundsätzlich genehmigungsfähig ist – etwa hinsichtlich Standort, Nutzungsart und Bebauungsplan. Sie ist rechtlich bindend, aber kein Ersatz für den Bauantrag. Der Bauantrag ist der formelle Genehmigungsantrag mit vollständigen Unterlagen." }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Unterlagen brauche ich für den Bauantrag eines Laborcontainers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Typische Unterlagen: Bauantragsformular, Lageplan (1:500), Grundrisse und Schnitte, Baubeschreibung mit Nutzungsangabe, statischer Nachweis, Brandschutzkonzept, Entwässerungsplan und ggf. Gefahrstoffkonzept. Bei Laboren kommen oft ein Lüftungskonzept und ein Hygieneplan hinzu." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann Planexus bei der Genehmigung eines Laborcontainers unterstützen?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Planexus begleitet den gesamten Genehmigungsprozess: von der Prüfung der baurechtlichen Situation über die Erstellung der Antragsunterlagen bis zur Abstimmung mit Behörden. Als Spezialist für Laborcontainer kennen wir die typischen Stolpersteine und können den Prozess deutlich beschleunigen." }
+        }
+      ]
+    })} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-laborcontainer-genehmigung.jpg')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+              Ratgeber
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              20 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Laborcontainer Genehmigung – Baurecht, Vorschriften & Praxisleitfaden
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            16 Landesbauordnungen, Sonderfälle für Labore, Bauvoranfrage vs. Bauantrag – und die häufigsten Fehler, die Projekte um Monate verzögern.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              26. Februar 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazin</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Laborcontainer Genehmigung</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                „Brauchen wir dafür eine Genehmigung?" – diese Frage stellen uns Auftraggeber in fast jedem Erstgespräch. Die Antwort ist fast immer dieselbe: Ja, in den meisten Fällen schon. Aber die gute Nachricht vorweg: Eine Baugenehmigung für einen Laborcontainer ist kein unüberwindbares Hindernis. Wer den Prozess kennt, die richtigen Unterlagen vorbereitet und typische Fehler vermeidet, kommt in der Regel zügig durch das Verfahren.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Das Problem: Die meisten Informationen im Netz beziehen sich auf Wohncontainer oder Bürocontainer. Für Laborcontainer gelten aber zusätzliche Vorschriften – insbesondere wenn Gefahrstoffe gelagert, biologische Arbeitsstoffe verarbeitet oder Laborabwässer eingeleitet werden. Genau diese Lücke schließen wir mit diesem Artikel.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In diesem Praxisleitfaden erfahren Sie alles, was Sie über die Genehmigung eines Laborcontainers wissen müssen: von den Grundlagen des Baurechts über die 16 Landesbauordnungen bis hin zu den Sonderfällen, die speziell für Labore relevant sind. Mit konkretem Zeitplan, vollständiger Checkliste und den häufigsten Fehlern, die Projekte um Monate verzögern.
+              </p>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  Auf einen Blick: Genehmigung in 5 Schritten
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">1</div>
+                    <div class="text-xs font-medium text-slate-900">Standort prüfen</div>
+                    <div class="text-xs text-gray-500 mt-1">B-Plan & Baurecht</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">2</div>
+                    <div class="text-xs font-medium text-slate-900">Bauvoranfrage</div>
+                    <div class="text-xs text-gray-500 mt-1">Optional, aber klug</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">3</div>
+                    <div class="text-xs font-medium text-slate-900">Unterlagen</div>
+                    <div class="text-xs text-gray-500 mt-1">Vollständig einreichen</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">4</div>
+                    <div class="text-xs font-medium text-slate-900">Sondergenehmigung</div>
+                    <div class="text-xs text-gray-500 mt-1">Labor-spezifisch</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">5</div>
+                    <div class="text-xs font-medium text-slate-900">Genehmigung</div>
+                    <div class="text-xs text-gray-500 mt-1">4–16 Wochen</div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="grundlagen">
+                Baurecht-Grundlagen: Wann ist ein Laborcontainer genehmigungspflichtig?
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Laborcontainer ist baurechtlich gesehen eine „bauliche Anlage" – unabhängig davon, ob er mobil oder stationär aufgestellt wird. Das Bauordnungsrecht gilt grundsätzlich für jede Errichtung, Änderung oder Nutzungsänderung einer baulichen Anlage. Die zentrale Frage ist daher nicht, ob das Baurecht greift, sondern ob Ihr konkretes Vorhaben genehmigungsfrei ist oder ob ein Genehmigungsverfahren durchlaufen werden muss.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Genehmigungsfreie Aufstellung – die Ausnahmen
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In einigen Bundesländern gibt es Ausnahmen von der Genehmigungspflicht. Diese gelten typischerweise für:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Temporäre Aufstellungen</strong> unter 3 Monaten auf demselben Grundstück (variiert je nach Landesbauordnung zwischen 2 und 6 Monaten)</li>
+                <li><strong>Untergeordnete Nebengebäude</strong> bis zu einer bestimmten Grundfläche (meist 30–75 m²), sofern sie nicht dem dauerhaften Aufenthalt von Personen dienen</li>
+                <li><strong>Baustellen-Container</strong> für die Dauer einer Baumaßnahme</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Aber Achtung:</strong> Diese Ausnahmen gelten für einfache Container – nicht automatisch für Laborcontainer. Sobald in einem Container mit Gefahrstoffen gearbeitet wird, Laborabwasser anfällt oder spezielle Lüftungsanlagen betrieben werden, greifen in der Regel zusätzliche Vorschriften, die eine Genehmigung erfordern – unabhängig von der Aufstelldauer.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                  Häufiger Irrtum
+                </h4>
+                <p class="text-gray-700 text-sm">
+                  „Ein Container steht auf Rädern, also ist er kein Gebäude und braucht keine Genehmigung." – Das ist falsch. Entscheidend ist nicht die Mobilität, sondern die tatsächliche Nutzung. Sobald ein Container an einem festen Standort aufgestellt und an Medien angeschlossen wird, ist er baurechtlich eine bauliche Anlage. Ob er Räder hat oder nicht, spielt keine Rolle.
+                </p>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="landesbauordnungen">
+                16 Landesbauordnungen: Was in welchem Bundesland gilt
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Das Bauordnungsrecht ist in Deutschland Ländersache. Jedes der 16 Bundesländer hat eine eigene Landesbauordnung (LBO) mit teilweise unterschiedlichen Regelungen. Für Laborcontainer sind vor allem zwei Aspekte relevant: die Verfahrensfreiheit bei temporärer Nutzung und die Einstufung in Gebäudeklassen.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse">
+                  <thead>
+                    <tr class="bg-slate-900 text-white">
+                      <th class="text-left p-3 rounded-tl-lg">Bundesland</th>
+                      <th class="text-left p-3">LBO</th>
+                      <th class="text-left p-3">Verfahrensfrei bis</th>
+                      <th class="text-left p-3 rounded-tr-lg">Besonderheit Labor</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Baden-Württemberg</td>
+                      <td class="p-3 text-gray-600">LBO BW</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Sonderbau ab 1.600 m² BGF</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Bayern</td>
+                      <td class="p-3 text-gray-600">BayBO</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Gefahrstofflager ab 200 kg genehmigungspflichtig</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Berlin</td>
+                      <td class="p-3 text-gray-600">BauO Bln</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Nutzungsänderung immer genehmigungspflichtig</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Brandenburg</td>
+                      <td class="p-3 text-gray-600">BbgBO</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Anzeigeverfahren für Sonderbauten</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Bremen</td>
+                      <td class="p-3 text-gray-600">BremLBO</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Enge Abstimmung Hafenbehörde bei Hafenstandorten</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Hamburg</td>
+                      <td class="p-3 text-gray-600">HBauO</td>
+                      <td class="p-3 text-gray-600">6 Monate</td>
+                      <td class="p-3 text-gray-600">Längste verfahrensfreie Frist in DE</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Hessen</td>
+                      <td class="p-3 text-gray-600">HBO</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Pharma-Cluster Rhein-Main: behördliche Erfahrung vorhanden</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Mecklenburg-Vorpommern</td>
+                      <td class="p-3 text-gray-600">LBauO M-V</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Vereinfachtes Verfahren bei GK 1–3</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Niedersachsen</td>
+                      <td class="p-3 text-gray-600">NBauO</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Baugenehmigungsfreistellung bei B-Plan-Konformität</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Nordrhein-Westfalen</td>
+                      <td class="p-3 text-gray-600">BauO NRW</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Chemie-Cluster Rheinland: strenge Immissionsschutzauflagen</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Rheinland-Pfalz</td>
+                      <td class="p-3 text-gray-600">LBauO RP</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Life-Science-Standort Mainz: Erfahrung mit BSL-Genehmigungen</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Saarland</td>
+                      <td class="p-3 text-gray-600">LBO SL</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Kompakte Behördenstruktur: kurze Wege</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Sachsen</td>
+                      <td class="p-3 text-gray-600">SächsBO</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Mikroelektronik-Cluster Dresden: Reinraum-Erfahrung</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Sachsen-Anhalt</td>
+                      <td class="p-3 text-gray-600">BauO LSA</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Chemiepark Leuna: etablierte Genehmigungsprozesse</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Schleswig-Holstein</td>
+                      <td class="p-3 text-gray-600">LBO SH</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Maritime Forschung: Sonderregelungen Küstengebiete</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Thüringen</td>
+                      <td class="p-3 text-gray-600">ThürBO</td>
+                      <td class="p-3 text-gray-600">3 Monate</td>
+                      <td class="p-3 text-gray-600">Optik/Photonik-Cluster Jena: spezialisierte Behörden</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Tabelle zeigt: In den meisten Bundesländern liegt die Grenze für verfahrensfreie Aufstellungen bei 3 Monaten. Hamburg bildet mit 6 Monaten die Ausnahme. Aber – und das ist der entscheidende Punkt – diese Fristen gelten nur für die reine Aufstellung. Sobald ein Container als Labor genutzt wird und damit eine Nutzungsänderung darstellt, ist in der Regel ein Genehmigungsverfahren erforderlich.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Wenn Sie wissen möchten, welche regionalen Besonderheiten an Ihrem Standort gelten, helfen unsere Städteseiten weiter – etwa für <a href="/en/lab-containers-berlin" class="text-primary font-medium hover:underline">Berlin</a>, <a href="/en/lab-containers-munich" class="text-primary font-medium hover:underline">München</a> oder <a href="/en/lab-containers-stuttgart" class="text-primary font-medium hover:underline">Stuttgart</a>.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="sonderfaelle">
+                Sonderfälle Labor: Was Container-Labore von normalen Containern unterscheidet
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Laborcontainer ist kein Bürocontainer. Und genau das macht das Genehmigungsverfahren komplexer. Denn neben dem allgemeinen Baurecht können weitere Genehmigungen und Anzeigepflichten hinzukommen. Die wichtigsten Sonderfälle:
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Gefahrstoffe: Lagerung und Umgang
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Wenn im Laborcontainer mit Gefahrstoffen gearbeitet wird – und das ist in den meisten Laboren der Fall – greifen zusätzlich die Gefahrstoffverordnung (GefStoffV) und die Technischen Regeln für Gefahrstoffe (TRGS). Besonders relevant sind:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>TRGS 510</strong> – Lagerung von Gefahrstoffen in ortsbeweglichen Behältern: Regelt Lagersmengen, Zusammenlagerungsverbote und bauliche Anforderungen</li>
+                <li><strong>TRGS 526</strong> – Laboratorien: Spezifische Anforderungen an die Raumluft, Abzüge und persönliche Schutzausrüstung im Labor</li>
+                <li><strong>TRGS 800</strong> – Brandschutzmaßnahmen: Anforderungen an Brandschutz bei Gefahrstofflagerung und -umgang</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ab bestimmten Lagemengen (diese variieren je nach Gefahrstoffklasse) ist eine immissionsschutzrechtliche Genehmigung nach dem Bundes-Immissionsschutzgesetz (BImSchG) erforderlich. In der Praxis betrifft das vor allem größere Laboreinheiten mit Chemikalienlager.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die gute Nachricht: Die <a href="/en/services/equipment" class="text-primary font-medium hover:underline">Laborausstattung</a> eines professionell geplanten Containers berücksichtigt all diese Anforderungen bereits in der Planungsphase. Abzüge nach DIN EN 14175, Auffangwannen und Sicherheitsschränke sind Standard.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Biologische Arbeitsstoffe: BSL-2 und BSL-3
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Labore, die mit biologischen Arbeitsstoffen der Risikogruppe 2 oder höher arbeiten, unterliegen der Biostoffverordnung (BioStoffV) und den Technischen Regeln für biologische Arbeitsstoffe (TRBA). Für <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-primary font-medium hover:underline">BSL-2- und BSL-3-Labore</a> im Container sind folgende zusätzliche Genehmigungen bzw. Anzeigepflichten relevant:
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
+                      <span class="w-6 h-6 bg-amber-100 text-amber-700 rounded flex items-center justify-center text-xs font-bold">S2</span>
+                      BSL-2 Labor
+                    </h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Anzeige bei zuständiger Behörde (30 Tage vor Inbetriebnahme)
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Gefährdungsbeurteilung nach BioStoffV
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Hygieneplan und Betriebsanweisung
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Autoklav oder validiertes Inaktivierungsverfahren
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
+                      <span class="w-6 h-6 bg-red-100 text-red-700 rounded flex items-center justify-center text-xs font-bold">S3</span>
+                      BSL-3 Labor
+                    </h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Erlaubnis der zuständigen Landesbehörde (vorab!)
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        HEPA-gefilterte Abluft (H14-Filter)
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Unterdruckhaltung mit Druckkaskade
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Abwasserdesinfektion vor Einleitung
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Beim BSL-3-Labor ist die Genehmigung besonders aufwändig, weil die zuständige Landesbehörde das Labor vor Inbetriebnahme inspizieren und freigeben muss. Erfahrungsgemäß dauert dieser Prozess 8 bis 16 Wochen. Wer das erst nach der Fertigung anstößt, verliert wertvolle Zeit.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Laborabwasser: Wasserrechtliche Erlaubnis
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Laborabwasser enthält in vielen Fällen Stoffe, die nicht einfach in die Kanalisation eingeleitet werden dürfen. Dazu zählen Lösungsmittel, Schwermetalle, Säuren, Laugen und biologisch kontaminiertes Abwasser. Die Einleitung von Laborabwasser unterliegt dem Wasserhaushaltsgesetz (WHG) und der Abwasserverordnung (AbwV).
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In der Praxis bedeutet das: Bevor ein Laborcontainer mit Abwasseranschluss in Betrieb geht, muss eine wasserrechtliche Erlaubnis bei der unteren Wasserbehörde beantragt werden. Der Antrag muss das erwartete Abwasserprofil beschreiben – welche Stoffe in welchen Konzentrationen anfallen und wie sie vorbehandelt werden.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In einem gut geplanten Laborcontainer sind Neutralisationsanlagen, Sammelbehälter oder sogar Abwasserdesinfektionssysteme bereits integriert. Die <a href="/en/services/planning" class="text-primary font-medium hover:underline">Fachplanung</a> berücksichtigt diese Anforderungen von Anfang an.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Reinraum-Labore: GMP-Anforderungen
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-primary font-medium hover:underline">GMP-konforme Reinraumlabore</a> im Container kommen neben dem Baurecht pharmazeutische Regelwerke hinzu. Der EU-GMP-Leitfaden (Annex 1) und die ISO 14644-Serie definieren Anforderungen an Partikelfreiheit, Luftwechselraten und Qualifizierung. Diese sind zwar keine baurechtlichen Genehmigungen im engeren Sinne, beeinflussen aber die Planung und Dokumentation erheblich – und werden von Auditoren geprüft.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="bauvoranfrage">
+                Bauvoranfrage vs. Bauantrag: Strategie für Ihr Projekt
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Viele Auftraggeber kennen den Unterschied zwischen Bauvoranfrage und Bauantrag nicht – dabei ist die Bauvoranfrage eines der wirkungsvollsten Instrumente, um Zeit und Geld zu sparen.
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8 not-prose">
+                <div class="bg-white border-2 border-primary/30 rounded-xl p-6">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                  </div>
+                  <h4 class="font-bold text-slate-900 mb-3 text-lg">Bauvoranfrage</h4>
+                  <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Klärt vorab die grundsätzliche Genehmigungsfähigkeit
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Geringere Kosten als ein vollständiger Bauantrag
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Rechtlich bindender Bescheid (3 Jahre gültig)
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Weniger Unterlagen erforderlich
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gray-400 font-bold">–</span>
+                      Kein Ersatz für den Bauantrag
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gray-400 font-bold">–</span>
+                      Bearbeitungszeit: 4–8 Wochen
+                    </li>
+                  </ul>
+                </div>
+                <div class="bg-white border-2 border-slate-200 rounded-xl p-6">
+                  <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                  </div>
+                  <h4 class="font-bold text-slate-900 mb-3 text-lg">Bauantrag</h4>
+                  <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Formeller Genehmigungsantrag für die Ausführung
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Nach Genehmigung darf sofort gebaut werden
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Umfasst alle baurechtlichen Aspekte
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gray-400 font-bold">–</span>
+                      Vollständige Planunterlagen erforderlich
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gray-400 font-bold">–</span>
+                      Höhere Kosten (Gebühren + Planung)
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gray-400 font-bold">–</span>
+                      Bearbeitungszeit: 8–16 Wochen
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Empfehlung von Planexus</h4>
+                    <p class="text-gray-600 text-sm">
+                      Wir empfehlen bei jedem Laborcontainer-Projekt eine Bauvoranfrage als ersten Schritt. Sie kostet wenig, klärt aber die entscheidenden Fragen: Darf am gewünschten Standort ein Labor betrieben werden? Ist die geplante Nutzung mit dem Bebauungsplan vereinbar? Welche Auflagen sind zu erwarten? So starten Sie die Detailplanung auf einer soliden Grundlage – und nicht auf Hoffnung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein wichtiger Aspekt wird oft übersehen: Auch wenn ein Grundstück im Gewerbegebiet liegt, heißt das nicht automatisch, dass dort ein Labor betrieben werden darf. Bebauungspläne können bestimmte Nutzungsarten einschränken oder ausschließen. Ein S2-Labor mit Gefahrstoffumgang kann beispielsweise als „störender Gewerbebetrieb" eingestuft werden und ist dann in bestimmten Gewerbegebieten nicht zulässig.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="zeitplan">
+                Zeitplan: Wie lange dauert der Genehmigungsprozess?
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Genehmigungsdauer hängt von mehreren Faktoren ab: der Komplexität des Vorhabens, dem Bundesland, der Auslastung der Behörde und der Vollständigkeit Ihrer Unterlagen. Hier eine realistische Übersicht, basierend auf unserer Projekterfahrung:
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-4">Typischer Zeitplan für die Genehmigung eines Laborcontainers</h4>
+                <div class="space-y-4">
+                  <div class="flex items-start gap-4">
+                    <div class="w-24 shrink-0">
+                      <span class="inline-block bg-primary/10 text-primary font-bold text-sm px-3 py-1 rounded-full">Woche 1–2</span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-slate-900">Standortanalyse und Bauvoranfrage vorbereiten</p>
+                      <p class="text-sm text-gray-600">B-Plan prüfen, Nutzungsart klären, erste Abstimmung mit Bauordnungsamt</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-24 shrink-0">
+                      <span class="inline-block bg-primary/10 text-primary font-bold text-sm px-3 py-1 rounded-full">Woche 3–6</span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-slate-900">Bauvoranfrage läuft</p>
+                      <p class="text-sm text-gray-600">Behörde prüft grundsätzliche Genehmigungsfähigkeit. Parallel: Detailplanung starten</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-24 shrink-0">
+                      <span class="inline-block bg-primary/10 text-primary font-bold text-sm px-3 py-1 rounded-full">Woche 4–8</span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-slate-900">Bauantrag vorbereiten und einreichen</p>
+                      <p class="text-sm text-gray-600">Alle Unterlagen zusammenstellen, Fachplaner einbinden, Brandschutznachweis erstellen</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-24 shrink-0">
+                      <span class="inline-block bg-primary/10 text-primary font-bold text-sm px-3 py-1 rounded-full">Woche 8–16</span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-slate-900">Genehmigungsverfahren</p>
+                      <p class="text-sm text-gray-600">Behördliche Prüfung, ggf. Nachforderungen, Beteiligung anderer Fachbehörden</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-24 shrink-0">
+                      <span class="inline-block bg-primary/10 text-primary font-bold text-sm px-3 py-1 rounded-full">Woche 12–20</span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-slate-900">Sondergenehmigungen (falls erforderlich)</p>
+                      <p class="text-sm text-gray-600">Immissionsschutz, Wasserrecht, BioStoffV-Anzeige – laufen teilweise parallel</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Gesamtdauer:</strong> Für ein Standard-S1-Labor rechnen Sie mit 8 bis 12 Wochen für die Genehmigung. Bei einem BSL-2-Labor mit Gefahrstoffumgang sind es 12 bis 16 Wochen. Ein BSL-3-Labor kann 16 bis 24 Wochen in Anspruch nehmen. Diese Zeiten laufen parallel zur <a href="/en/services/modular-construction" class="text-primary font-medium hover:underline">Fertigung</a> – vorausgesetzt, die Genehmigung wird frühzeitig beantragt.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Im <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">Projektablauf-Artikel</a> haben wir die Genehmigungsphase im Gesamtkontext des Projekts dargestellt. Dort sehen Sie, wie Genehmigung und Fertigung ineinandergreifen.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="checkliste">
+                Checkliste: Alle Unterlagen für den Bauantrag
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Unvollständige Unterlagen sind der häufigste Grund für Verzögerungen im Genehmigungsverfahren. Mit dieser Checkliste stellen Sie sicher, dass Ihr Bauantrag beim ersten Mal vollständig ist:
+              </p>
+
+              <div class="bg-white border-2 border-gray-100 rounded-xl p-8 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-6 flex items-center gap-2 text-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  Checkliste Bauantrag Laborcontainer
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                  <div class="space-y-2">
+                    <h5 class="font-bold text-slate-900 text-sm uppercase tracking-wider mt-4 mb-3">Allgemeine Unterlagen</h5>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Bauantragsformular (landesspezifisch)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Amtlicher Lageplan (Maßstab 1:500)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Grundrisse, Schnitte, Ansichten (1:100)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Baubeschreibung mit Nutzungsangabe</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Statischer Nachweis / Standsicherheitsnachweis</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Wärmeschutznachweis (EnEV / GEG)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Schallschutznachweis</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Entwässerungsplan</span>
+                    </label>
+                  </div>
+                  <div class="space-y-2">
+                    <h5 class="font-bold text-slate-900 text-sm uppercase tracking-wider mt-4 mb-3">Labor-spezifisch</h5>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Brandschutzkonzept (mit Labornutzung)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Lüftungskonzept (DIN 1946-7, TRGS 526)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Gefahrstoffverzeichnis und Lagemengen</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Abwasservorbehandlungskonzept</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Gefährdungsbeurteilung (bei BSL-2/3)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Flucht- und Rettungswegeplan</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Nachweis der Medienversorgung (Strom, Wasser, Gas)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Stellplatznachweis (je nach Gemeinde)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Diese Checkliste deckt die gängigsten Anforderungen ab. Je nach Bundesland, Gemeinde und Labortyp können weitere Unterlagen erforderlich sein. Unsere <a href="/en/services/consulting" class="text-primary font-medium hover:underline">Beratung</a> klärt im Einzelfall, welche Dokumente konkret benötigt werden.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="fehler">
+                Die 7 häufigsten Fehler bei der Genehmigung von Laborcontainern
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In zahlreichen Laborcontainer-Projekten haben wir die typischen Stolpersteine kennengelernt. Diese Fehler kosten am meisten Zeit und Geld:
+              </p>
+
+              <div class="space-y-4 my-8 not-prose">
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Fehler 1: Genehmigungsprozess zu spät starten</h4>
+                  <p class="text-gray-600 text-sm">Die Genehmigung wird erst beantragt, wenn der Container schon in der Fertigung ist. Wird sie dann verzögert oder abgelehnt, steht ein fertiger Container ohne Aufstellgenehmigung. Richtig: Genehmigungsprozess parallel zur <a href="/en/services/planning" class="text-primary hover:underline">Fachplanung</a> starten.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Fehler 2: Labornutzung im Bauantrag verschweigen</h4>
+                  <p class="text-gray-600 text-sm">Manche Antragsteller geben die Nutzung als „Büro" oder „Lager" an, um das Verfahren zu vereinfachen. Das ist nicht nur rechtlich problematisch – es kann bei einer Nutzungsänderung zur nachträglichen Stilllegung des Labors führen.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Fehler 3: Sondergenehmigungen vergessen</h4>
+                  <p class="text-gray-600 text-sm">Der Bauantrag wird genehmigt, aber die wasserrechtliche Erlaubnis oder die BioStoffV-Anzeige fehlt. Das Labor darf dann trotz Baugenehmigung nicht in Betrieb genommen werden. Richtig: Alle erforderlichen Genehmigungen parallel beantragen.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Fehler 4: Unvollständige Unterlagen einreichen</h4>
+                  <p class="text-gray-600 text-sm">Fehlende Dokumente führen zu Nachforderungen, die den Prozess um 4 bis 8 Wochen verzögern können. Jede Nachforderung setzt die behördliche Bearbeitungsfrist neu. Unsere Checkliste oben hilft, das zu vermeiden.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Fehler 5: Brandschutz unterschätzen</h4>
+                  <p class="text-gray-600 text-sm">Ein Laborcontainer mit Gefahrstoffen hat andere Brandschutzanforderungen als ein Bürocontainer. Ohne ein Labor-spezifisches Brandschutzkonzept – erstellt von einem zugelassenen Brandschutzplaner – wird kein Bauantrag genehmigt.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Fehler 6: Nachbarrecht ignorieren</h4>
+                  <p class="text-gray-600 text-sm">Abstandsflächen zu Nachbargrundstücken, Emissionen (Lärm durch Lüftungsanlagen, Gerüche) und Nutzungskonflikte mit der Nachbarschaft können den Genehmigungsprozess erheblich behindern. Eine frühzeitige Abstimmung mit Nachbarn kann Einsprüche verhindern.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Fehler 7: Keinen erfahrenen Partner einbinden</h4>
+                  <p class="text-gray-600 text-sm">Wer den Genehmigungsprozess ohne Erfahrung mit Laborcontainern durchläuft, macht fast immer vermeidbare Fehler. Ein spezialisierter Anbieter wie Planexus kennt die Anforderungen und kann den Prozess deutlich beschleunigen.</p>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="schweiz-oesterreich">
+                Sonderfall DACH: Schweiz und Österreich
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für Laborcontainer in der Schweiz und in Österreich gelten abweichende Regelungen. In der <strong>Schweiz</strong> ist das Baurecht kantonal geregelt. Die SIA-Normen (insbesondere SIA 180, SIA 382/1 für Lüftung) ersetzen die deutschen DIN-Normen. Eine Baubewilligung ist grundsätzlich erforderlich, das Verfahren ist je nach Kanton unterschiedlich aufwändig.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In <strong>Österreich</strong> liegt die Bauordnung bei den Bundesländern. Die ÖNORMEN (z.B. ÖNORM B 8110) und das Arbeitnehmerschutzgesetz (ASchG) sind die maßgeblichen Regelwerke. Für Labore mit Gefahrstoffen ist zusätzlich die Giftverordnung und die ChemG-V relevant.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Planexus realisiert Projekte im gesamten DACH-Raum. Die <a href="/en/services/logistics" class="text-primary font-medium hover:underline">Logistik und Lieferung</a> in die Schweiz und nach Österreich ist etabliert. Bei den landesspezifischen Genehmigungsverfahren unterstützen wir Sie mit Partnern vor Ort.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="smart-lab">
+                Digitale Genehmigungsunterlagen und Smart Lab
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein zunehmend wichtiger Aspekt bei Laborcontainer-Genehmigungen: die digitale Dokumentation. Immer mehr Behörden akzeptieren oder fordern digitale Bauanträge. Gleichzeitig setzen Betreiber auf <a href="/en/services/smart-lab" class="text-primary font-medium hover:underline">Smart Lab Integration</a> – IoT-Sensoren, digitale Raumklima-Überwachung und automatisierte Protokollierung.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für die Genehmigung kann das ein Vorteil sein: Automatische Temperatur- und Druckprotokolle, nachvollziehbare Zugangskontrolle und lückenlose Wartungsdokumentation erleichtern die Abnahme durch Behörden und vereinfachen spätere Audits – besonders relevant bei <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-primary font-medium hover:underline">GMP-pflichtigen Reinraumlaboren</a>.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="nachhaltigkeit">
+                Genehmigung und Nachhaltigkeit
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Das Gebäudeenergiegesetz (GEG) gilt auch für Laborcontainer – zumindest wenn sie länger als zwei Jahre genutzt werden. Die Nachweispflicht für den Wärmeschutz ist Teil des Bauantrags. Gut gedämmte Laborcontainer erfüllen diese Anforderungen in der Regel problemlos. Mehr dazu in unserem Artikel über <a href="/en/magazine/sustainability-lab-construction-energy-efficiency" class="text-primary font-medium hover:underline">Nachhaltigkeit im Laborbau</a>.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein weiterer Aspekt: Modulare Laborcontainer haben den Vorteil, dass sie rückgebaut und an einem anderen Standort wiederaufgestellt werden können. Das kann bei der Genehmigung ein Argument sein, wenn die Behörde Bedenken hinsichtlich einer dauerhaften baulichen Veränderung des Grundstücks hat. Die Reversibilität eines Containerlabors ist ein echtes Alleinstellungsmerkmal gegenüber dem Massivbau.
+              </p>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-8 my-8 not-prose text-center">
+                <h4 class="font-bold text-slate-900 mb-3 text-lg">Genehmigung für Ihr Laborcontainer-Projekt?</h4>
+                <p class="text-gray-600 mb-6">
+                  Wir prüfen die baurechtliche Situation an Ihrem Standort, beraten Sie zu den erforderlichen Genehmigungen und übernehmen auf Wunsch die komplette Antragstellung – von der Bauvoranfrage bis zur Betriebsgenehmigung.
+                </p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 px-6 py-3 rounded-lg font-bold hover:bg-primary/90 transition-colors">
+                  Kostenlose Erstberatung anfragen
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="faq">
+                Häufig gestellte Fragen zur Laborcontainer-Genehmigung
+              </h2>
+
+              <div class="space-y-6 my-8">
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Braucht ein Laborcontainer immer eine Baugenehmigung?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Nicht immer. In vielen Bundesländern sind temporäre Aufstellungen bis zu 3 Monaten genehmigungsfrei. Bei dauerhafter Nutzung über 3 Monate ist in der Regel eine Baugenehmigung oder zumindest eine Bauanzeige erforderlich. Entscheidend sind Landesbauordnung, Nutzungsart und Standort. Bei Laboren mit Gefahrstoffumgang greifen oft zusätzliche Genehmigungspflichten unabhängig von der Dauer.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Welche Sondergenehmigungen braucht ein Laborcontainer mit Gefahrstoffen?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Neben der Baugenehmigung können zusätzliche Genehmigungen erforderlich sein: eine immissionsschutzrechtliche Genehmigung nach BImSchG bei bestimmten Stoffmengen, eine wasserrechtliche Erlaubnis bei Laborabwasser mit Gefahrstoffen sowie eine Anzeige nach Biostoffverordnung bei BSL-2- oder BSL-3-Laboren. Die genauen Anforderungen hängen von den eingesetzten Stoffen und Mengen ab.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Wie lange dauert die Baugenehmigung für einen Laborcontainer?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Im vereinfachten Verfahren 4 bis 8 Wochen, im regulären Baugenehmigungsverfahren 8 bis 16 Wochen. Bei Sondergenehmigungen (Immissionsschutz, Wasserrecht) können zusätzlich 4 bis 12 Wochen hinzukommen. Eine Bauvoranfrage vorab kann den Prozess beschleunigen, weil die grundsätzlichen Fragen bereits geklärt sind.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Was ist der Unterschied zwischen Bauvoranfrage und Bauantrag?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Die Bauvoranfrage klärt vorab, ob ein Vorhaben grundsätzlich genehmigungsfähig ist – etwa hinsichtlich Standort, Nutzungsart und Bebauungsplan. Sie ist kostengünstiger und erfordert weniger Unterlagen. Der Bescheid ist 3 Jahre gültig und rechtlich bindend. Der Bauantrag ist der formelle Genehmigungsantrag mit vollständigen Planunterlagen und führt zur eigentlichen Baugenehmigung.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Welche Unterlagen brauche ich für den Bauantrag eines Laborcontainers?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Typische Unterlagen: Bauantragsformular, amtlicher Lageplan (1:500), Grundrisse und Schnitte, Baubeschreibung mit Nutzungsangabe, statischer Nachweis, Brandschutzkonzept, Entwässerungsplan und ggf. Gefahrstoffkonzept. Bei Laboren kommen oft ein Lüftungskonzept nach DIN 1946-7, ein Abwasservorbehandlungskonzept und eine Gefährdungsbeurteilung hinzu. Die vollständige Liste finden Sie in unserer Checkliste oben.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Kann Planexus bei der Genehmigung eines Laborcontainers unterstützen?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Ja. Planexus begleitet den gesamten Genehmigungsprozess: von der Prüfung der baurechtlichen Situation über die Erstellung der Antragsunterlagen bis zur Abstimmung mit Behörden. Als Spezialist für Laborcontainer kennen wir die typischen Stolpersteine – insbesondere bei der Labornutzung – und können den Prozess deutlich beschleunigen. <a href="/en/contact" class="text-primary font-medium hover:underline">Sprechen Sie uns an.</a>
+                  </div>
+                </details>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-24 space-y-8">
+              <div class="bg-slate-50 rounded-xl p-6">
+                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                  Inhaltsverzeichnis
+                </h4>
+                <nav class="space-y-2">
+                  <a href="#grundlagen" class="block text-sm text-gray-600 hover:text-primary transition-colors">Baurecht-Grundlagen</a>
+                  <a href="#landesbauordnungen" class="block text-sm text-gray-600 hover:text-primary transition-colors">16 Landesbauordnungen</a>
+                  <a href="#sonderfaelle" class="block text-sm text-gray-600 hover:text-primary transition-colors">Sonderfälle Labor</a>
+                  <a href="#bauvoranfrage" class="block text-sm text-gray-600 hover:text-primary transition-colors">Bauvoranfrage vs. Bauantrag</a>
+                  <a href="#zeitplan" class="block text-sm text-gray-600 hover:text-primary transition-colors">Zeitplan Genehmigung</a>
+                  <a href="#checkliste" class="block text-sm text-gray-600 hover:text-primary transition-colors">Checkliste Bauantrag</a>
+                  <a href="#fehler" class="block text-sm text-gray-600 hover:text-primary transition-colors">7 häufigste Fehler</a>
+                  <a href="#schweiz-oesterreich" class="block text-sm text-gray-600 hover:text-primary transition-colors">Schweiz & Österreich</a>
+                  <a href="#smart-lab" class="block text-sm text-gray-600 hover:text-primary transition-colors">Digitale Genehmigung</a>
+                  <a href="#nachhaltigkeit" class="block text-sm text-gray-600 hover:text-primary transition-colors">Nachhaltigkeit & GEG</a>
+                  <a href="#faq" class="block text-sm text-gray-600 hover:text-primary transition-colors">FAQ</a>
+                </nav>
+              </div>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                <h4 class="font-bold text-slate-900 mb-3">Genehmigung sichern</h4>
+                <p class="text-sm text-gray-600 mb-4">
+                  Wir prüfen kostenlos, ob Ihr Laborcontainer-Vorhaben genehmigungsfähig ist – bevor Sie Zeit und Geld investieren.
+                </p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 px-4 py-2 rounded-lg font-bold text-sm hover:bg-primary/90 transition-colors w-full justify-center">
+                  Jetzt anfragen
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <div class="bg-white border border-gray-100 rounded-xl p-6">
+                <h4 class="font-bold text-slate-900 mb-4">Verwandte Artikel</h4>
+                <div class="space-y-4">
+                  <a href="/en/magazine/lab-container-project-process" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">Von der Idee bis zur Übergabe</p>
+                    <p class="text-xs text-gray-500">Der komplette Projektablauf</p>
+                  </a>
+                  <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">BSL-2 und BSL-3 im Container</p>
+                    <p class="text-xs text-gray-500">Sicherheitsstufen im Containerbau</p>
+                  </a>
+                  <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">GMP-Reinraum im Container</p>
+                    <p class="text-xs text-gray-500">Pharmazeutische Produktion</p>
+                  </a>
+                  <a href="/en/magazine/lab-containers-rent-or-buy" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">Mieten oder Kaufen?</p>
+                    <p class="text-xs text-gray-500">Der Entscheidungsleitfaden</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <RelatedArticles slug="laborcontainer-genehmigung-baurecht-vorschriften" locale="en" />
+  </div>
+</Layout>

@@ -1,0 +1,865 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Laborcontainer Ausstattung – Checkliste A–Z"
+  description="Laborcontainer Ausstattung komplett: Labormöbel, Medienversorgung, Sicherheit, Bodenbeläge und Normen. Mit Planungscheckliste. Jetzt lesen."
+  canonical="/en/magazine/lab-container-equipment-checklist"
+  ogImage="/images/blog-laborcontainer-ausstattung.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Laborcontainer Ausstattung – Die komplette Checkliste von A bis Z",
+      "description": "Alles zur Ausstattung von Laborcontainern: Labormöbel, Medienversorgung, Sicherheitseinrichtungen, Bodenbeläge, Beleuchtung und relevante Normen.",
+      "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Geschäftsführer", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+      "datePublished": "2026-03-12",
+      "dateModified": "2026-03-12",
+      "image": "https://planexus.de/images/blog-laborcontainer-ausstattung.jpg",
+      "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+        { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/en/magazine" },
+        { "@type": "ListItem", "position": 3, "name": "Laborcontainer Ausstattung", "item": "https://planexus.de/en/magazine/lab-container-equipment-checklist" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Welche Grundausstattung braucht ein Laborcontainer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zur Grundausstattung gehören: chemikalienbeständige Arbeitstische, mindestens ein Laborabzug (je nach Gefahrstoffklasse), Laborspüle mit Kalt-/Warmwasser, Sicherheitseinrichtungen (Notdusche, Augendusche, Feuerlöscher), chemikalienbeständiger Bodenbelag (z. B. Epoxidharz oder Vinyl), normgerechte Beleuchtung (500 Lux nach DIN EN 12464-1), ausreichend Steckdosen und Datenanschlüsse sowie Schranksysteme für Chemikalien und Geräte." }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Normen gelten für die Ausstattung von Laborcontainern?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Die wichtigsten Normen sind: DIN EN 14175 (Laborabzüge), DIN EN 12464-1 (Beleuchtung), DIN EN 14470-1 (Sicherheitsschränke für brennbare Flüssigkeiten), DIN EN 14470-2 (Druckgasflaschen-Schränke), TRGS 526 (Laboratorien), ASR A4.3 (Erste-Hilfe-Räume und -Einrichtungen), GUV-I 8553 (Sicherheit im Labor) und die jeweilige Landesbauordnung." }
+        },
+        {
+          "@type": "Question",
+          "name": "Welcher Bodenbelag eignet sich für einen Laborcontainer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Für Standardlabore empfiehlt sich Epoxidharzbeschichtung (fugenlos, chemikalienbeständig, leicht zu reinigen). In GMP-Bereichen und Reinräumen ist PU-Beschichtung (Polyurethan) Standard, da sie zusätzlich partikelarm und autoklavierbar ist. Vinylböden (PVC) eignen sich für leichte Laboranwendungen. Wichtig: Der Bodenbelag muss zur Chemikalienklasse passen und ESD-fähig sein, wenn mit elektrostatisch empfindlichen Bauteilen gearbeitet wird." }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie viele Laborabzüge braucht ein Laborcontainer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Die Anzahl richtet sich nach der Nutzungsart: In einem Chemielabor-Container (20 bis 40 Fuß) ist in der Regel mindestens ein Laborabzug nach DIN EN 14175 erforderlich. Bei intensiver Gefahrstoffarbeit werden zwei Abzüge empfohlen, um die Arbeitsplatzgrenzwerte sicher einzuhalten. Die Dimensionierung erfolgt über die Luftbilanz: Jeder Abzug benötigt einen definierten Volumenstrom (in der Regel 400 bis 700 m³/h), der in der Lüftungsplanung berücksichtigt werden muss." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ein Laborcontainer mit Gas und Druckluft versorgt werden?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Laborcontainer werden standardmäßig mit Anschlüssen für technische Gase (Stickstoff, Argon, Helium), Druckluft und bei Bedarf Vakuum ausgestattet. Die Gasversorgung erfolgt über externe Flaschenbündel oder eine zentrale Gasversorgung mit Leitungen in den Container. Alle Installationen müssen den DVGW-Regelwerken entsprechen. Schnellkupplungen an den Arbeitsplätzen ermöglichen ein flexibles Anschließen von Geräten." }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie plant Planexus die Ausstattung eines Laborcontainers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Planexus erstellt zunächst eine detaillierte Bedarfsanalyse: Welche Analysen werden durchgeführt? Welche Geräte werden betrieben? Welche Gefahrstoffe kommen zum Einsatz? Daraus ergibt sich das Ausstattungskonzept inklusive Möblierung, Medienversorgung, Sicherheitseinrichtungen und TGA-Planung. Die Planung erfolgt nach den einschlägigen Normen und in enger Abstimmung mit dem Auftraggeber. Von der Bedarfsanalyse bis zum fertig ausgestatteten Laborcontainer begleiten wir den gesamten Prozess." }
+        }
+      ]
+    })} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-laborcontainer-ausstattung.jpg')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+              Ratgeber
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              20 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Laborcontainer Ausstattung – Die komplette Checkliste von A bis Z
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Labormöbel, Medienversorgung, Sicherheitseinrichtungen, Bodenbeläge, Beleuchtung und IT-Infrastruktur – was ein Laborcontainer wirklich braucht und welche Normen dahinterstehen.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              12. März 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazin</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Laborcontainer Ausstattung</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Ausstattung entscheidet darüber, ob ein Laborcontainer ein funktionsfähiger Arbeitsplatz wird – oder ein teurer Metallkasten mit Fenstern bleibt. Wer glaubt, dass ein Laborcontainer einfach ein Bürocontainer mit einer Spüle ist, wird spätestens bei der ersten Begehung durch die Arbeitsschutzbehörde eines Besseren belehrt.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In diesem Leitfaden gehen wir jede Ausstattungskategorie einzeln durch: von Labormöbeln über Medienversorgung und Sicherheitseinrichtungen bis hin zu Bodenbelägen, Beleuchtung und IT-Infrastruktur. Jeder Abschnitt enthält die relevanten Normen, konkrete Spezifikationen und Planungshinweise. Am Ende steht eine praxiserprobte Checkliste, die Sie direkt für Ihr Projekt verwenden können.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Grundlage für jede Ausstattungsplanung ist eine sorgfältige <a href="/en/services/consulting" class="text-primary font-medium hover:underline">Bedarfsanalyse</a>: Welche Analysen werden durchgeführt? Welche Geräte kommen zum Einsatz? Welche Gefahrstoffe sind involviert? Erst wenn diese Fragen beantwortet sind, kann die <a href="/en/services/planning" class="text-primary font-medium hover:underline">technische Fachplanung</a> beginnen.
+              </p>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  Die 7 Ausstattungsbereiche im Überblick
+                </h4>
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">1</div>
+                    <div class="text-xs font-medium text-slate-900">Labormöbel</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">2</div>
+                    <div class="text-xs font-medium text-slate-900">Medien</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">3</div>
+                    <div class="text-xs font-medium text-slate-900">Sicherheit</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">4</div>
+                    <div class="text-xs font-medium text-slate-900">Böden & Wände</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">5</div>
+                    <div class="text-xs font-medium text-slate-900">Beleuchtung</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">6</div>
+                    <div class="text-xs font-medium text-slate-900">Elektro & IT</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">7</div>
+                    <div class="text-xs font-medium text-slate-900">Klima & TGA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- KAPITEL 1: LABORMÖBEL -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="labormoebel">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">1</span>
+                Labormöbel – Das Fundament jedes Arbeitsplatzes
+              </h2>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Laborarbeitstische</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der Laborarbeitstisch ist das zentrale Möbelstück. In einem Laborcontainer gelten dieselben Anforderungen wie im stationären Laborbau – mit dem Unterschied, dass der verfügbare Platz deutlich begrenzter ist. Das macht die Möblierungsplanung umso wichtiger.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                  <thead class="bg-slate-900 text-white">
+                    <tr>
+                      <th class="px-4 py-3 text-left font-bold">Kriterium</th>
+                      <th class="px-4 py-3 text-left font-bold">Standardlabor</th>
+                      <th class="px-4 py-3 text-left font-bold">Chemielabor</th>
+                      <th class="px-4 py-3 text-left font-bold">Reinraum / GMP</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200">
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Tischplatte</td><td class="px-4 py-3">HPL (Hochdruck-Laminat)</td><td class="px-4 py-3">Epoxidharz oder Keramik</td><td class="px-4 py-3">Edelstahl V2A / Corian</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Chemikalienbeständigkeit</td><td class="px-4 py-3">Klasse A (leicht)</td><td class="px-4 py-3">Klasse C (konzentrierte Säuren)</td><td class="px-4 py-3">Klasse B–C</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Tragfähigkeit</td><td class="px-4 py-3">50 kg/m²</td><td class="px-4 py-3">75–100 kg/m²</td><td class="px-4 py-3">75 kg/m²</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Kantenschutz</td><td class="px-4 py-3">ABS-Kante</td><td class="px-4 py-3">Chemikalienbeständige Kante</td><td class="px-4 py-3">Fugenlose Kante</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Untergestell</td><td class="px-4 py-3">C-Gestell Stahl</td><td class="px-4 py-3">C-Gestell beschichtet</td><td class="px-4 py-3">Edelstahl / pulverbeschichtet</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In einem 20-Fuß-Laborcontainer (ca. 14 m² Nutzfläche) passen in der Regel 3 bis 4 laufende Meter Arbeitstisch an einer Wand und 2 bis 3 laufende Meter auf der gegenüberliegenden Seite. In einem 40-Fuß-Container verdoppelt sich die verfügbare Arbeitsfläche auf bis zu 12 laufende Meter. Die Planung muss dabei immer Flucht- und Rettungswege nach <strong>ASR A2.3</strong> berücksichtigen – insbesondere eine Mindestgangbreite von 1,00 m.
+              </p>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Laborabzüge (Digestorien)</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Laborabzüge nach <strong>DIN EN 14175</strong> sind Pflicht, sobald mit flüchtigen Gefahrstoffen gearbeitet wird. Im Laborcontainer stellt der Abzug besondere Anforderungen an die <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-primary font-medium hover:underline">Klimatisierung und Lüftung</a>, weil er einen erheblichen Luftvolumenstrom benötigt (400 bis 700 m³/h pro Abzug), der durch die Zuluftanlage nachgeführt werden muss.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                  <thead class="bg-slate-900 text-white">
+                    <tr>
+                      <th class="px-4 py-3 text-left font-bold">Abzugstyp</th>
+                      <th class="px-4 py-3 text-left font-bold">Breite</th>
+                      <th class="px-4 py-3 text-left font-bold">Volumenstrom</th>
+                      <th class="px-4 py-3 text-left font-bold">Einsatzbereich</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200">
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Tischabzug Standard</td><td class="px-4 py-3">1.200 mm</td><td class="px-4 py-3">400–500 m³/h</td><td class="px-4 py-3">Allgemeine Chemie</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Tischabzug breit</td><td class="px-4 py-3">1.500–1.800 mm</td><td class="px-4 py-3">500–700 m³/h</td><td class="px-4 py-3">Intensivchemie, Synthese</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Unterbauabzug</td><td class="px-4 py-3">800–1.200 mm</td><td class="px-4 py-3">300–400 m³/h</td><td class="px-4 py-3">Platzsparend, leichte Arbeiten</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Säureabzug (PP)</td><td class="px-4 py-3">1.200–1.500 mm</td><td class="px-4 py-3">400–600 m³/h</td><td class="px-4 py-3">Konzentrierte Säuren/Laugen</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Schranksysteme</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Im Laborcontainer wird Stauraum zum limitierenden Faktor. Die Lösung: Hängeschränke über den Arbeitstischen, Unterbauschränke und bei Bedarf Sicherheitsschränke nach <strong>DIN EN 14470-1</strong> (für brennbare Flüssigkeiten) oder <strong>DIN EN 14470-2</strong> (für Druckgasflaschen). Ein 90-Minuten-Sicherheitsschrank (F90) benötigt eine Stellfläche von ca. 600 × 600 mm und wiegt leer bereits 150 bis 200 kg – das muss in die Statik des Containers eingeplant werden.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Säure-Laugen-Schränke aus Polypropylen (PP) schützen zusätzlich vor Korrosion und sind in Chemielaboren unverzichtbar. Für Labore mit <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-primary font-medium hover:underline">BSL-2- oder BSL-3-Einstufung</a> gelten weitere Auflagen für die Lagerung von Biostoffen.
+              </p>
+
+              <!-- KAPITEL 2: MEDIENVERSORGUNG -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="medienversorgung">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">2</span>
+                Medienversorgung – Wasser, Gas, Druckluft, Vakuum
+              </h2>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Wasserversorgung und Abwasser</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Jeder Laborcontainer braucht mindestens einen Laborwasseranschluss mit Kalt- und Warmwasser. Die Besonderheit: Laborabwasser ist nicht gleich häuslichem Abwasser. Je nach Gefahrstoffklasse muss das Abwasser über eine <strong>Neutralisationsanlage</strong> geführt werden, bevor es in die Kanalisation eingeleitet werden darf. Das regelt die <strong>Indirekteinleiterverordnung</strong> des jeweiligen Bundeslandes.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                  <thead class="bg-slate-900 text-white">
+                    <tr>
+                      <th class="px-4 py-3 text-left font-bold">Wasserart</th>
+                      <th class="px-4 py-3 text-left font-bold">Qualität</th>
+                      <th class="px-4 py-3 text-left font-bold">Typischer Einsatz</th>
+                      <th class="px-4 py-3 text-left font-bold">Aufbereitung</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200">
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Trinkwasser</td><td class="px-4 py-3">TrinkwV</td><td class="px-4 py-3">Spülen, Reinigung</td><td class="px-4 py-3">Keine</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">VE-Wasser</td><td class="px-4 py-3">&lt; 1 µS/cm</td><td class="px-4 py-3">Analysen, Spülprozesse</td><td class="px-4 py-3">Ionenaustauscher</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Reinstwasser (Typ I)</td><td class="px-4 py-3">18,2 MΩ·cm</td><td class="px-4 py-3">HPLC, ICP-MS</td><td class="px-4 py-3">Umkehrosmose + Polisher</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Kühlwasser</td><td class="px-4 py-3">Variabel</td><td class="px-4 py-3">Rotationsverdampfer, Kühler</td><td class="px-4 py-3">Kreislauf / Rückkühler</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für analytische Labore, die <strong>HPLC</strong>, <strong>ICP-MS</strong> oder <strong>GC-MS</strong> betreiben, ist Reinstwasser unverzichtbar. Eine kompakte Reinstwasseranlage lässt sich in den Container integrieren und benötigt nur einen Trinkwasseranschluss als Vorstufe. Der Platzbedarf: ca. 400 × 500 mm Stellfläche.
+              </p>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Gasversorgung</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Technische Gase gehören zur Standardausstattung vieler Labore. Die gängigsten:
+              </p>
+              <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-6">
+                <li><strong>Stickstoff (N₂):</strong> Inertisierung, Verdampfung, Probenvorbereitung</li>
+                <li><strong>Argon (Ar):</strong> ICP-Analytik, Schweißarbeiten im Labor</li>
+                <li><strong>Helium (He):</strong> GC-Trägergas</li>
+                <li><strong>Druckluft:</strong> Pneumatische Geräte, Trocknungsprozesse</li>
+                <li><strong>Synthetische Luft:</strong> FID-Brenngas (Flammenionisationsdetektor)</li>
+                <li><strong>Wasserstoff (H₂):</strong> GC-Brenngas, Brennstoffzellen-Forschung</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Gasflaschen werden in der Regel <strong>außerhalb des Containers</strong> in einem belüfteten Gasflaschenschrank oder einer Gasflaschenwanne aufgestellt. Die Leitungen werden durch die Containerwand geführt und über Schnellkupplungen an den Arbeitsplätzen verteilt. Alle Installationen müssen den <strong>DVGW-Regelwerken</strong> und den <strong>TRBS 3145</strong> (Druckbehälter) entsprechen.
+              </p>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Druckluft und Vakuum</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Druckluft wird über einen externen oder integrierten Kompressor mit nachgeschaltetem Trockner und Ölabscheider erzeugt. Labordruckluft muss ölfrei sein (Klasse 0 nach <strong>ISO 8573-1</strong>). Die typische Betriebsdruckstufe liegt bei 6 bar.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für Vakuumanwendungen (Filtration, Rotationsverdampfer, Exsikkatoren) kann eine zentrale Vakuumpumpe installiert werden. Alternativ kommen dezentrale Membranpumpen an den einzelnen Arbeitsplätzen zum Einsatz – platzsparender und wartungsärmer.
+              </p>
+
+              <!-- KAPITEL 3: SICHERHEITSEINRICHTUNGEN -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="sicherheit">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">3</span>
+                Sicherheitseinrichtungen – Pflicht und Schutz
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Sicherheit im Laborcontainer ist kein optionales Extra, sondern normative Pflicht. Die <strong>TRGS 526</strong> (Laboratorien) definiert zusammen mit der <strong>DGUV Information 213-850</strong> (ehemals GUV-I 8553) die Mindestanforderungen. Dazu kommen branchenspezifische Regeln: <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-primary font-medium hover:underline">GMP-Reinräume</a> haben andere Anforderungen als ein analytisches Routinelabor.
+              </p>
+
+              <div class="bg-red-50 border border-red-200 rounded-xl p-6 my-8 not-prose">
+                <h4 class="font-bold text-red-900 mb-3 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                  Pflicht-Sicherheitseinrichtungen nach TRGS 526
+                </h4>
+                <ul class="space-y-2 text-sm text-red-900">
+                  <li class="flex items-start gap-2"><span class="text-red-600 font-bold mt-0.5">•</span> Notdusche (Ganzkörper) – max. 10 m Entfernung vom Arbeitsplatz, DIN EN 15154-1</li>
+                  <li class="flex items-start gap-2"><span class="text-red-600 font-bold mt-0.5">•</span> Augendusche – an jedem Laborspülbecken oder als separate Wandstation, DIN EN 15154-2</li>
+                  <li class="flex items-start gap-2"><span class="text-red-600 font-bold mt-0.5">•</span> Feuerlöscher – CO₂ oder ABC-Pulver, je nach Brandklasse, max. 20 m Entfernung</li>
+                  <li class="flex items-start gap-2"><span class="text-red-600 font-bold mt-0.5">•</span> Erste-Hilfe-Ausstattung – Verbandkasten nach DIN 13169 (Typ C)</li>
+                  <li class="flex items-start gap-2"><span class="text-red-600 font-bold mt-0.5">•</span> Löschdecke – bei Arbeiten mit brennbaren Flüssigkeiten</li>
+                  <li class="flex items-start gap-2"><span class="text-red-600 font-bold mt-0.5">•</span> Not-Aus-Schalter – für elektrische Anlagen und Gasversorgung, gut sichtbar und zugänglich</li>
+                  <li class="flex items-start gap-2"><span class="text-red-600 font-bold mt-0.5">•</span> Sicherheitsdatenblatt-Ordner – physisch oder digital zugänglich für alle Gefahrstoffe</li>
+                </ul>
+              </div>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Sicherheitsschränke</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Lagerung von Gefahrstoffen im Laborcontainer erfordert normkonforme Sicherheitsschränke. Die wichtigsten Typen:
+              </p>
+              <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-6">
+                <li><strong>F90 Sicherheitsschrank (DIN EN 14470-1):</strong> 90 Minuten Feuerwiderstand für brennbare Flüssigkeiten. Pflicht ab 20 Litern im Labor.</li>
+                <li><strong>Druckgasflaschen-Schrank (DIN EN 14470-2):</strong> G30 oder G90-Ausführung für Gasflaschen, die im Gebäude/Container gelagert werden müssen.</li>
+                <li><strong>Säure-Laugen-Schrank (PP):</strong> Polypropylen-Korpus, säurebeständig, mit Auffangwanne und Absaugstutzen.</li>
+                <li><strong>Giftstoffschrank:</strong> Abschließbar, mit Auffangwanne, für Stoffe nach ChemVerbotsV.</li>
+              </ul>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Persönliche Schutzausrüstung (PSA)</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Im Container muss Aufbewahrungsplatz für PSA eingeplant werden: Laborkittel, Schutzbrillen, Handschuhe (verschiedene Chemikalienklassen), Gehörschutz (bei lauten Geräten wie Ultraschallbädern) und bei Bedarf Atemschutz. Ein kleiner Garderobenschrank oder ein Wandhaken-System neben dem Eingang ist Pflicht.
+              </p>
+
+              <!-- KAPITEL 4: BÖDEN & WÄNDE -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="boeden-waende">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">4</span>
+                Bodenbeläge und Wandverkleidungen
+              </h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der Bodenbelag in einem Laborcontainer ist weit mehr als eine Frage der Optik. Er muss chemikalienbeständig, rutschfest, fugenlos (bei Nassreinigung) und bei Bedarf ESD-fähig sein. Im <a href="/en/services/modular-construction" class="text-primary font-medium hover:underline">Modulbau</a> wird der Bodenbelag direkt auf die Containerbodenplatte aufgebracht – eine Unterbodenheizung ist bei Bedarf integrierbar.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                  <thead class="bg-slate-900 text-white">
+                    <tr>
+                      <th class="px-4 py-3 text-left font-bold">Bodentyp</th>
+                      <th class="px-4 py-3 text-left font-bold">Chemikalienbeständigkeit</th>
+                      <th class="px-4 py-3 text-left font-bold">Fugenlos</th>
+                      <th class="px-4 py-3 text-left font-bold">ESD-fähig</th>
+                      <th class="px-4 py-3 text-left font-bold">Einsatzbereich</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200">
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Epoxidharz</td><td class="px-4 py-3">Hoch</td><td class="px-4 py-3">Ja</td><td class="px-4 py-3">Optional</td><td class="px-4 py-3">Chemielabor, Pharma</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Polyurethan (PU)</td><td class="px-4 py-3">Sehr hoch</td><td class="px-4 py-3">Ja</td><td class="px-4 py-3">Optional</td><td class="px-4 py-3">GMP, Reinraum</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Vinyl (PVC)</td><td class="px-4 py-3">Mittel</td><td class="px-4 py-3">Verschweißbar</td><td class="px-4 py-3">Ja (leitfähig)</td><td class="px-4 py-3">Leichte Labore, Elektronik</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Fliesen (Keramik)</td><td class="px-4 py-3">Sehr hoch</td><td class="px-4 py-3">Nein (Fugen)</td><td class="px-4 py-3">Nein</td><td class="px-4 py-3">Nasslabore, Aufstellflächen</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Wandverkleidungen</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Containerwände werden standardmäßig mit <strong>pulverbeschichteten Stahlpaneelen</strong> oder <strong>HPL-Platten</strong> verkleidet. In GMP-Bereichen kommen fugenlose Wandbeschichtungen oder <strong>PharmaWall-Systeme</strong> zum Einsatz, die bis zur Decke glatt und abwaschbar sind. Im Spritzbereich hinter Spülen empfiehlt sich ein Spritzschutz aus Glas oder Edelstahl. Alle Wandverkleidungen müssen der <strong>DIN EN 13501-1</strong> (Brandverhalten) entsprechen – mindestens Klasse B-s1, d0 (schwerentflammbar, kein brennendes Abtropfen).
+              </p>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Hohlkehlen und Decken</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In Reinräumen und GMP-Laboren sind <strong>Hohlkehlen</strong> (gerundete Übergänge zwischen Boden und Wand) Pflicht – sie verhindern Schmutz- und Keimablagerungen. Die Deckenverkleidung sollte glatt, abwaschbar und für den Einbau von Deckenleuchten und Lüftungsauslässen vorbereitet sein. Die lichte Raumhöhe in einem Laborcontainer beträgt typischerweise 2,50 bis 2,70 m – nach <strong>ASR A1.2</strong> sind mindestens 2,50 m für Arbeitsräume vorgeschrieben.
+              </p>
+
+              <!-- KAPITEL 5: BELEUCHTUNG -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="beleuchtung">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">5</span>
+                Beleuchtung – Mehr als nur hell genug
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Beleuchtung im Labor ist normativ geregelt durch die <strong>DIN EN 12464-1</strong> (Beleuchtung von Arbeitsstätten in Innenräumen). Die Mindestanforderungen:
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                  <thead class="bg-slate-900 text-white">
+                    <tr>
+                      <th class="px-4 py-3 text-left font-bold">Bereich</th>
+                      <th class="px-4 py-3 text-left font-bold">Beleuchtungsstärke</th>
+                      <th class="px-4 py-3 text-left font-bold">Farbwiedergabe (Ra)</th>
+                      <th class="px-4 py-3 text-left font-bold">Blendungsbegrenzung (UGR)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200">
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Allgemeine Laborfläche</td><td class="px-4 py-3">500 Lux</td><td class="px-4 py-3">≥ 80</td><td class="px-4 py-3">≤ 19</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Feinarbeiten / Mikroskopie</td><td class="px-4 py-3">750–1.000 Lux</td><td class="px-4 py-3">≥ 90</td><td class="px-4 py-3">≤ 16</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Farbbeurteilung</td><td class="px-4 py-3">1.000 Lux</td><td class="px-4 py-3">≥ 90</td><td class="px-4 py-3">≤ 16</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Lagerräume / Nebenräume</td><td class="px-4 py-3">200 Lux</td><td class="px-4 py-3">≥ 60</td><td class="px-4 py-3">≤ 25</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Im Laborcontainer werden ausschließlich <strong>LED-Panels</strong> eingesetzt: energieeffizient (Lebensdauer > 50.000 Stunden), flimmerfrei, dimmbar und mit hoher Farbwiedergabe. In Reinräumen müssen die Leuchten bündig in die Decke eingelassen und IP54 geschützt sein (Schutz gegen Staub und Spritzwasser). Notbeleuchtung nach <strong>DIN EN 1838</strong> ist in jedem Labor Pflicht: mindestens 1 Lux auf Flucht- und Rettungswegen, mit Batteriepuffer für mindestens 1 Stunde.
+              </p>
+
+              <!-- KAPITEL 6: ELEKTRO & IT -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="elektro-it">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">6</span>
+                Elektroinstallation und IT-Infrastruktur
+              </h2>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Elektrische Versorgung</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Laborcontainer hat einen deutlich höheren Strombedarf als ein Bürocontainer. Typische Anschlusswerte:
+              </p>
+              <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-6">
+                <li><strong>20-Fuß-Container:</strong> 32–63 A (Drehstrom, 400 V) – ca. 20–40 kW</li>
+                <li><strong>40-Fuß-Container:</strong> 63–125 A (Drehstrom, 400 V) – ca. 40–80 kW</li>
+                <li><strong>Steckdosen:</strong> Mindestens 2 Doppelsteckdosen pro laufendem Meter Arbeitstisch</li>
+                <li><strong>CEE-Steckdosen:</strong> Für Großgeräte (Autoklaven, Trockenschränke, Rotationsverdampfer)</li>
+                <li><strong>USV (unterbrechungsfreie Stromversorgung):</strong> Für empfindliche Analytikgeräte (HPLC, GC-MS, Waagen)</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die gesamte Elektroinstallation muss nach <strong>DIN VDE 0100</strong> ausgeführt werden. In explosionsgefährdeten Bereichen (ATEX-Zonen) gelten zusätzlich die <strong>DGUV Vorschrift 3</strong> und die <strong>Betriebssicherheitsverordnung</strong>. Ein <strong>FI-Schutzschalter</strong> (RCD, 30 mA) ist an jedem Stromkreis Pflicht.
+              </p>
+
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">IT und Dateninfrastruktur</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Moderne Labore sind datengetrieben. Die IT-Infrastruktur im Laborcontainer muss von Anfang an mitgeplant werden:
+              </p>
+              <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-6">
+                <li><strong>Cat 6a oder Cat 7 Netzwerkdosen:</strong> Mindestens 2 pro Arbeitsplatz für LAN und Geräteanbindung</li>
+                <li><strong>WLAN-Access-Point:</strong> Für mobile Endgeräte und Tablets im Labor</li>
+                <li><strong>Netzwerkschrank (6–10 HE):</strong> Für Switch, Patchpanel und ggf. Mini-Server</li>
+                <li><strong>LIMS-Anbindung:</strong> Laborinformationsmanagementsystem braucht stabile, redundante Netzanbindung</li>
+                <li><strong>Glasfaseranschluss:</strong> Bei großen Datenmengen (Bildgebung, Spektroskopie)</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In einem <a href="/en/services/smart-lab" class="text-primary font-medium hover:underline">Smart Lab</a> kommen zusätzlich IoT-Sensoren für Temperatur, Feuchte, Differenzdruck und Türkontakte hinzu. Diese benötigen eigene Netzwerkanschlüsse oder ein separates LoRaWAN/Modbus-Netzwerk.
+              </p>
+
+              <!-- KAPITEL 7: KLIMA & TGA -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="klima-tga">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">7</span>
+                Klima und technische Gebäudeausrüstung (TGA)
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-primary font-medium hover:underline">Klimatisierung und Lüftung</a> ist das technisch anspruchsvollste Ausstattungselement eines Laborcontainers. Die Anforderungen gehen weit über eine einfache Klimaanlage hinaus. Hier ein Überblick über die TGA-Komponenten, die in die Ausstattungsplanung einfließen:
+              </p>
+              <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-6">
+                <li><strong>Lüftungsgerät:</strong> Zuluft- und Abluftanlage mit Wärmerückgewinnung, Filter und Schalldämpfer</li>
+                <li><strong>Kälteanlage:</strong> Split- oder VRF-System, dimensioniert auf die inneren Wärmelasten</li>
+                <li><strong>Heizung:</strong> In der Regel elektrisch (Direktheizregister) oder über die Lüftungsanlage</li>
+                <li><strong>Unterdruckhaltung:</strong> Bei Gefahrstoff- und BSL-Laboren, mit automatischer Regelung und Alarmierung</li>
+                <li><strong>Laborabzugs-Abluft:</strong> Separate Abluftleitung über Dach mit Höhenauswurf</li>
+                <li><strong>Gebäudeleittechnik (GLT):</strong> Zentrale Überwachung und Steuerung aller TGA-Komponenten</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die TGA-Planung ist integrativer Bestandteil der <a href="/en/services/planning" class="text-primary font-medium hover:underline">technischen Fachplanung</a> und wird bei Planexus bereits in der Konzeptphase berücksichtigt. Lesen Sie dazu auch unseren Artikel über den <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">kompletten Projektablauf</a>.
+              </p>
+
+              <!-- KAPITEL 8: NORMENÜBERSICHT -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="normen">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">8</span>
+                Normenübersicht – Alle relevanten Regelwerke
+              </h2>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                  <thead class="bg-slate-900 text-white">
+                    <tr>
+                      <th class="px-4 py-3 text-left font-bold">Norm / Regelwerk</th>
+                      <th class="px-4 py-3 text-left font-bold">Thema</th>
+                      <th class="px-4 py-3 text-left font-bold">Relevant für</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200">
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">DIN EN 14175</td><td class="px-4 py-3">Laborabzüge (Digestorien)</td><td class="px-4 py-3">Alle Labore mit Gefahrstoffen</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">DIN EN 14470-1</td><td class="px-4 py-3">Sicherheitsschränke brennbare Flüssigkeiten</td><td class="px-4 py-3">Chemielabore</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">DIN EN 14470-2</td><td class="px-4 py-3">Druckgasflaschen-Schränke</td><td class="px-4 py-3">Labore mit Gasversorgung</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">DIN EN 12464-1</td><td class="px-4 py-3">Beleuchtung Arbeitsstätten</td><td class="px-4 py-3">Alle Labore</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">DIN EN 15154-1/2</td><td class="px-4 py-3">Notduschen und Augenduschen</td><td class="px-4 py-3">Alle Labore</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">DIN EN 13501-1</td><td class="px-4 py-3">Brandverhalten von Baustoffen</td><td class="px-4 py-3">Wände, Böden, Decken</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">TRGS 526</td><td class="px-4 py-3">Laboratorien</td><td class="px-4 py-3">Alle Labore mit Gefahrstoffen</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">DGUV Info 213-850</td><td class="px-4 py-3">Sicheres Arbeiten in Laboratorien</td><td class="px-4 py-3">Alle Labore</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">ASR A2.3</td><td class="px-4 py-3">Fluchtwege und Notausgänge</td><td class="px-4 py-3">Grundrissplanung</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">ASR A1.2</td><td class="px-4 py-3">Raumabmessungen und Bewegungsflächen</td><td class="px-4 py-3">Grundrissplanung</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">DIN VDE 0100</td><td class="px-4 py-3">Elektroinstallation</td><td class="px-4 py-3">Alle Labore</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">ISO 8573-1</td><td class="px-4 py-3">Druckluftqualität</td><td class="px-4 py-3">Labore mit Druckluftversorgung</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für die Schweiz gelten ergänzend die <strong>SIA-Normen</strong> (insbesondere SIA 382/1 für Lüftung und SIA 385 für Warmwasser), in Österreich die <strong>ÖNORM-Reihe</strong>. Bei Projekten im DACH-Raum berücksichtigt Planexus alle landesspezifischen Regelwerke – auch für <a href="/en/magazine/lab-container-permits-building-law" class="text-primary font-medium hover:underline">Baugenehmigungen und Baurecht</a>.
+              </p>
+
+              <!-- KAPITEL 9: CONTAINERGRÖSSENVERGLEICH -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="containergroessen">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">9</span>
+                Containergröße und Ausstattungsgrenzen
+              </h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Nicht jede Ausstattung passt in jede Containergröße. Die folgende Übersicht zeigt, was realistisch ist:
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                  <thead class="bg-slate-900 text-white">
+                    <tr>
+                      <th class="px-4 py-3 text-left font-bold">Ausstattung</th>
+                      <th class="px-4 py-3 text-left font-bold">10 Fuß (~7 m²)</th>
+                      <th class="px-4 py-3 text-left font-bold">20 Fuß (~14 m²)</th>
+                      <th class="px-4 py-3 text-left font-bold">40 Fuß (~28 m²)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200">
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Arbeitsplätze</td><td class="px-4 py-3">1</td><td class="px-4 py-3">2–3</td><td class="px-4 py-3">4–6</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Laborabzüge</td><td class="px-4 py-3">0–1 (klein)</td><td class="px-4 py-3">1–2</td><td class="px-4 py-3">2–3</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Laborspüle</td><td class="px-4 py-3">1</td><td class="px-4 py-3">1–2</td><td class="px-4 py-3">2–3</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Sicherheitsschrank F90</td><td class="px-4 py-3">Nur bedingt</td><td class="px-4 py-3">1</td><td class="px-4 py-3">1–2</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Notdusche</td><td class="px-4 py-3">Extern</td><td class="px-4 py-3">Intern möglich</td><td class="px-4 py-3">Intern</td></tr>
+                    <tr class="bg-gray-50"><td class="px-4 py-3 font-medium">Schleuse / Umkleide</td><td class="px-4 py-3">Nein</td><td class="px-4 py-3">Bedingt</td><td class="px-4 py-3">Ja</td></tr>
+                    <tr class="bg-white"><td class="px-4 py-3 font-medium">Reinstwasseranlage</td><td class="px-4 py-3">Nein</td><td class="px-4 py-3">Ja (kompakt)</td><td class="px-4 py-3">Ja</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Bei besonders komplexen Anforderungen setzen wir auf <strong>Multi-Container-Lösungen</strong>: Zwei oder mehr Container werden seitlich oder stirnseitig verbunden, sodass getrennte Zonen (z. B. Labor + Schleuse + Lager) entstehen. Das ist besonders für <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-primary font-medium hover:underline">BSL-Labore</a> und <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-primary font-medium hover:underline">GMP-Reinräume</a> relevant.
+              </p>
+
+              <!-- KAPITEL 10: DACH-BESONDERHEITEN -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="dach">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">10</span>
+                DACH-Besonderheiten: Schweiz und Österreich
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Bei Projekten in der Schweiz und Österreich gelten teilweise andere Normen und Vorschriften:
+              </p>
+              <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-6">
+                <li><strong>Schweiz:</strong> SIA 382/1 (Lüftungs- und Klimaanlagen), EKAS-Richtlinien für Arbeitssicherheit, ChemRRV (Chemikalien-Risikoreduktions-Verordnung) statt TRGS. Laborabzüge müssen nach SUVA-Vorgaben geprüft werden.</li>
+                <li><strong>Österreich:</strong> ÖNORM H 6020 (Lüftung), ASchG (ArbeitnehmerInnenschutzgesetz), ChemG 1996 (Chemikaliengesetz). Sicherheitsschränke nach ÖNORM EN 14470.</li>
+                <li><strong>Gemeinsam:</strong> Die europäischen EN-Normen (z. B. DIN EN 14175 für Laborabzüge) gelten in allen drei Ländern, werden aber national unterschiedlich ergänzt.</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Planexus plant und liefert Laborcontainer für alle drei Märkte und berücksichtigt die jeweiligen landesspezifischen Anforderungen bereits in der Konzeptphase. Mehr dazu auf unseren Städteseiten: <a href="/en/lab-containers-berlin" class="text-primary font-medium hover:underline">Berlin</a>, <a href="/en/lab-containers-munich" class="text-primary font-medium hover:underline">München</a>, <a href="/en/lab-containers-stuttgart" class="text-primary font-medium hover:underline">Stuttgart</a>.
+              </p>
+
+              <!-- KAPITEL 11: PRAXISBEISPIEL -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="praxisbeispiel">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">11</span>
+                Praxisbeispiel: Ausstattung eines 40-Fuß-Chemielabor-Containers
+              </h2>
+
+              <div class="bg-slate-900 text-white rounded-xl p-8 my-8 not-prose">
+                <h4 class="font-bold text-primary text-lg mb-4">Projektsteckbrief</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                  <div>
+                    <div class="text-gray-400 mb-1">Containertyp</div>
+                    <div class="font-bold">40 Fuß HC (High Cube), ca. 28 m²</div>
+                  </div>
+                  <div>
+                    <div class="text-gray-400 mb-1">Nutzung</div>
+                    <div class="font-bold">Analytisches Chemielabor (HPLC, GC-MS, ICP)</div>
+                  </div>
+                  <div>
+                    <div class="text-gray-400 mb-1">Arbeitsplätze</div>
+                    <div class="font-bold">4 Arbeitsplätze + 1 Wägebereich</div>
+                  </div>
+                  <div>
+                    <div class="text-gray-400 mb-1">Laborabzüge</div>
+                    <div class="font-bold">2 × Tischabzug 1.500 mm (DIN EN 14175)</div>
+                  </div>
+                  <div>
+                    <div class="text-gray-400 mb-1">Boden</div>
+                    <div class="font-bold">Epoxidharz, ESD-fähig, mit Hohlkehle</div>
+                  </div>
+                  <div>
+                    <div class="text-gray-400 mb-1">Wände</div>
+                    <div class="font-bold">HPL-Verkleidung, Spritzschutz Edelstahl</div>
+                  </div>
+                  <div>
+                    <div class="text-gray-400 mb-1">Beleuchtung</div>
+                    <div class="font-bold">LED-Panel 500 Lux, Ra ≥ 80, dimmbar</div>
+                  </div>
+                  <div>
+                    <div class="text-gray-400 mb-1">Elektro</div>
+                    <div class="font-bold">63 A Drehstrom, USV für Analytikgeräte</div>
+                  </div>
+                  <div>
+                    <div class="text-gray-400 mb-1">Gase</div>
+                    <div class="font-bold">N₂, He, Druckluft – extern mit Durchführung</div>
+                  </div>
+                  <div>
+                    <div class="text-gray-400 mb-1">Wasser</div>
+                    <div class="font-bold">VE-Wasser + Reinstwasser (Milli-Q), Neutralisation</div>
+                  </div>
+                  <div>
+                    <div class="text-gray-400 mb-1">Sicherheit</div>
+                    <div class="font-bold">Notdusche, Augendusche, F90-Schrank, CO₂-Löscher</div>
+                  </div>
+                  <div>
+                    <div class="text-gray-400 mb-1">IT</div>
+                    <div class="font-bold">8 × Cat 6a, WLAN-AP, LIMS-Anbindung, 10 HE Rack</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- KAPITEL 12: CHECKLISTE -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="checkliste">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">12</span>
+                Die komplette Ausstattungs-Checkliste
+              </h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Diese Checkliste können Sie direkt für die Planung Ihres Laborcontainer-Projekts verwenden. Sie deckt alle sieben Ausstattungsbereiche ab:
+              </p>
+
+              <div class="bg-slate-50 border border-gray-200 rounded-xl p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-4 text-lg">Planungscheckliste Laborcontainer-Ausstattung</h4>
+                <div class="space-y-6">
+                  <div>
+                    <h5 class="font-bold text-primary mb-2 text-sm uppercase tracking-wide">Labormöbel</h5>
+                    <div class="space-y-2 text-sm text-gray-700">
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Arbeitstische: Anzahl, Länge und Tischplattenmaterial festgelegt</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Laborabzüge: Anzahl, Typ und Abmessungen bestimmt</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Schranksysteme: Hänge-, Unter- und Sicherheitsschränke geplant</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Tragfähigkeit der Arbeitstische für geplante Geräte geprüft</span></label>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="font-bold text-primary mb-2 text-sm uppercase tracking-wide">Medienversorgung</h5>
+                    <div class="space-y-2 text-sm text-gray-700">
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Wasserqualität definiert (Trinkwasser, VE, Reinstwasser)</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Abwasserbehandlung geklärt (Neutralisation, Indirekteinleitung)</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Gasarten und Anschlusszahl definiert (N₂, He, Ar, Druckluft)</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Vakuumversorgung: zentral oder dezentral?</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Gasflaschenlagerung außerhalb des Containers geplant</span></label>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="font-bold text-primary mb-2 text-sm uppercase tracking-wide">Sicherheit</h5>
+                    <div class="space-y-2 text-sm text-gray-700">
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Notdusche (DIN EN 15154-1) – Standort festgelegt</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Augendusche (DIN EN 15154-2) – an jedem Spülbecken</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Feuerlöscher – Typ und Standort bestimmt</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Not-Aus-Schalter für Strom und Gas eingeplant</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Sicherheitsschränke: F90, Säure-Laugen, Druckgas – Anzahl festgelegt</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>PSA-Aufbewahrung eingeplant</span></label>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="font-bold text-primary mb-2 text-sm uppercase tracking-wide">Böden & Wände</h5>
+                    <div class="space-y-2 text-sm text-gray-700">
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Bodenbelag passend zur Chemikalienklasse gewählt</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>ESD-Fähigkeit geprüft (bei Elektronikarbeiten)</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Wandverkleidung: Brandklasse B-s1, d0 eingehalten</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Hohlkehlen bei Reinraum/GMP eingeplant</span></label>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="font-bold text-primary mb-2 text-sm uppercase tracking-wide">Beleuchtung</h5>
+                    <div class="space-y-2 text-sm text-gray-700">
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>500 Lux auf Arbeitsflächen sichergestellt (DIN EN 12464-1)</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Farbwiedergabe Ra ≥ 80 (bei Farbbeurteilung: Ra ≥ 90)</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Notbeleuchtung nach DIN EN 1838 eingeplant</span></label>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="font-bold text-primary mb-2 text-sm uppercase tracking-wide">Elektro & IT</h5>
+                    <div class="space-y-2 text-sm text-gray-700">
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Elektrischer Anschlusswert berechnet (kW / Ampere)</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Steckdosenanzahl und -verteilung geplant</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>USV für empfindliche Geräte vorgesehen</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Netzwerkdosen (Cat 6a/7) pro Arbeitsplatz eingeplant</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>LIMS-Anbindung und WLAN berücksichtigt</span></label>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="font-bold text-primary mb-2 text-sm uppercase tracking-wide">Klima & TGA</h5>
+                    <div class="space-y-2 text-sm text-gray-700">
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Lüftungskonzept mit Luftwechselrate definiert</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Kälte-/Wärmelastberechnung durchgeführt</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Unterdruck erforderlich? Druckkaskade geplant?</span></label>
+                      <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Laborabzugs-Abluft über Dach geführt</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- KAPITEL 13: HÄUFIGE FEHLER -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="fehler">
+                <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">13</span>
+                Die 7 häufigsten Fehler bei der Laborcontainer-Ausstattung
+              </h2>
+
+              <div class="space-y-4 my-8 not-prose">
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                  <div class="flex items-start gap-3">
+                    <span class="bg-red-100 text-red-700 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold shrink-0">1</span>
+                    <div><strong class="text-slate-900">Lüftung zu spät planen.</strong> <span class="text-gray-600">Laborabzüge bestimmen den gesamten Lüftungsquerschnitt. Wer zuerst möbliert und dann lüftet, muss nachträglich Kanäle verlegen – teuer und platzraubend.</span></div>
+                  </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                  <div class="flex items-start gap-3">
+                    <span class="bg-red-100 text-red-700 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold shrink-0">2</span>
+                    <div><strong class="text-slate-900">Bodenstatik ignorieren.</strong> <span class="text-gray-600">Ein F90-Sicherheitsschrank wiegt leer 200 kg. Dazu kommen Geräte (HPLC-System: 80–120 kg, Autoklav: 100–300 kg). Die Containerbodenplatte muss verstärkt werden, wenn schwere Punktlasten auftreten.</span></div>
+                  </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                  <div class="flex items-start gap-3">
+                    <span class="bg-red-100 text-red-700 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold shrink-0">3</span>
+                    <div><strong class="text-slate-900">Zu wenige Steckdosen.</strong> <span class="text-gray-600">Im Labor gibt es nie genug Steckdosen. Faustregel: Mindestens 2 Doppelsteckdosen pro laufendem Meter – und keine Verlängerungskabel als Dauerlösung.</span></div>
+                  </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                  <div class="flex items-start gap-3">
+                    <span class="bg-red-100 text-red-700 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold shrink-0">4</span>
+                    <div><strong class="text-slate-900">Fluchtwege vergessen.</strong> <span class="text-gray-600">1,00 m Mindestbreite nach ASR A2.3. Im engsten Container kann ein Arbeitstisch zu viel den Fluchtweg blockieren. Grundriss immer mit Fluchtwegeplan erstellen.</span></div>
+                  </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                  <div class="flex items-start gap-3">
+                    <span class="bg-red-100 text-red-700 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold shrink-0">5</span>
+                    <div><strong class="text-slate-900">Abwasserentsorgung nicht klären.</strong> <span class="text-gray-600">Laborabwasser darf nicht ungeklärt in die Kanalisation. Neutralisationsanlage und Genehmigung der Unteren Wasserbehörde müssen vor Inbetriebnahme stehen.</span></div>
+                  </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                  <div class="flex items-start gap-3">
+                    <span class="bg-red-100 text-red-700 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold shrink-0">6</span>
+                    <div><strong class="text-slate-900">IT-Infrastruktur nachträglich einbauen.</strong> <span class="text-gray-600">Netzwerkkabel nachträglich durch fertige Wände zu ziehen ist aufwendig und hässlich. Kabelschächte und Leerrohre gehören in die Bauphase.</span></div>
+                  </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                  <div class="flex items-start gap-3">
+                    <span class="bg-red-100 text-red-700 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold shrink-0">7</span>
+                    <div><strong class="text-slate-900">Wartungszugänge nicht einplanen.</strong> <span class="text-gray-600">Lüftungsfilter, Sicherheitsschrank-Inspektionen, Notduschentests – all das braucht Zugang. Wer den Laborabzug direkt vor den Wartungsschacht baut, hat ein Problem.</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ SECTION -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="faq">Häufig gestellte Fragen (FAQ)</h2>
+
+              <div class="space-y-4 my-8 not-prose">
+                <details class="bg-white border border-gray-200 rounded-lg group">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                    Welche Grundausstattung braucht ein Laborcontainer?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Zur Grundausstattung gehören: chemikalienbeständige Arbeitstische, mindestens ein Laborabzug (je nach Gefahrstoffklasse), Laborspüle mit Kalt-/Warmwasser, Sicherheitseinrichtungen (Notdusche, Augendusche, Feuerlöscher), chemikalienbeständiger Bodenbelag, normgerechte Beleuchtung (500 Lux nach DIN EN 12464-1), ausreichend Steckdosen und Datenanschlüsse sowie Schranksysteme für Chemikalien und Geräte.</div>
+                </details>
+                <details class="bg-white border border-gray-200 rounded-lg group">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                    Welche Normen gelten für die Ausstattung von Laborcontainern?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Die wichtigsten: DIN EN 14175 (Laborabzüge), DIN EN 12464-1 (Beleuchtung), DIN EN 14470-1/-2 (Sicherheitsschränke), TRGS 526 (Laboratorien), DGUV Info 213-850 (Sicherheit im Labor), ASR A2.3 (Fluchtwege), DIN VDE 0100 (Elektroinstallation) und ISO 8573-1 (Druckluftqualität). In der Schweiz und Österreich gelten ergänzend SIA- bzw. ÖNORM-Regelwerke.</div>
+                </details>
+                <details class="bg-white border border-gray-200 rounded-lg group">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                    Welcher Bodenbelag eignet sich für einen Laborcontainer?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Für Standardlabore empfiehlt sich Epoxidharzbeschichtung (fugenlos, chemikalienbeständig). In GMP-Bereichen ist PU-Beschichtung Standard. Vinylböden eignen sich für leichte Laboranwendungen und können ESD-leitfähig ausgeführt werden. Der Bodenbelag muss immer zur Chemikalienklasse passen.</div>
+                </details>
+                <details class="bg-white border border-gray-200 rounded-lg group">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                    Wie viele Laborabzüge braucht ein Laborcontainer?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">In einem 20- bis 40-Fuß-Container ist mindestens ein Laborabzug nach DIN EN 14175 erforderlich, sobald mit flüchtigen Gefahrstoffen gearbeitet wird. Bei intensiver Gefahrstoffarbeit empfehlen sich zwei Abzüge. Jeder Abzug benötigt 400 bis 700 m³/h Volumenstrom, der in der Lüftungsplanung berücksichtigt werden muss.</div>
+                </details>
+                <details class="bg-white border border-gray-200 rounded-lg group">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                    Kann ein Laborcontainer mit Gas und Druckluft versorgt werden?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Ja. Laborcontainer werden mit Anschlüssen für Stickstoff, Argon, Helium, Druckluft und Vakuum ausgestattet. Die Gasflaschen stehen außerhalb in belüfteten Schränken, die Leitungen werden durch die Containerwand geführt. Alle Installationen entsprechen den DVGW-Regelwerken.</div>
+                </details>
+                <details class="bg-white border border-gray-200 rounded-lg group">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                    Wie plant Planexus die Ausstattung eines Laborcontainers?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Planexus erstellt eine detaillierte Bedarfsanalyse: Welche Analysen? Welche Geräte? Welche Gefahrstoffe? Daraus ergibt sich das komplette Ausstattungskonzept. Die <a href="/en/services/planning" class="text-primary hover:underline">Fachplanung</a> erfolgt nach einschlägigen Normen – von der <a href="/en/services/consulting" class="text-primary hover:underline">Beratung</a> bis zum fertig ausgestatteten Container.</div>
+                </details>
+              </div>
+
+              <!-- CTA -->
+              <div class="bg-gradient-to-r from-primary to-primary/80 text-slate-900 rounded-xl p-8 my-12 not-prose">
+                <h3 class="text-2xl font-heading font-bold mb-4">Laborcontainer-Ausstattung planen lassen</h3>
+                <p class="text-slate-700 mb-6 leading-relaxed">
+                  Von der Bedarfsanalyse über die Möblierungsplanung bis zur schlüsselfertigen Übergabe – Planexus übernimmt die komplette <a href="/en/services/equipment" class="font-bold text-slate-900 hover:underline">Laborausstattung</a> Ihres Containers. Sprechen Sie mit unserem <a href="/en/team" class="font-bold text-slate-900 hover:underline">Expertenteam</a>.
+                </p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-slate-900 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors shadow-xl">
+                  Jetzt Beratungsgespräch vereinbaren
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- SIDEBAR -->
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>
+                  Inhaltsverzeichnis
+                </h4>
+                <nav class="space-y-2 text-sm">
+                  <a href="#labormoebel" class="block text-gray-600 hover:text-primary transition-colors">1. Labormöbel</a>
+                  <a href="#medienversorgung" class="block text-gray-600 hover:text-primary transition-colors">2. Medienversorgung</a>
+                  <a href="#sicherheit" class="block text-gray-600 hover:text-primary transition-colors">3. Sicherheitseinrichtungen</a>
+                  <a href="#boeden-waende" class="block text-gray-600 hover:text-primary transition-colors">4. Böden & Wände</a>
+                  <a href="#beleuchtung" class="block text-gray-600 hover:text-primary transition-colors">5. Beleuchtung</a>
+                  <a href="#elektro-it" class="block text-gray-600 hover:text-primary transition-colors">6. Elektro & IT</a>
+                  <a href="#klima-tga" class="block text-gray-600 hover:text-primary transition-colors">7. Klima & TGA</a>
+                  <a href="#normen" class="block text-gray-600 hover:text-primary transition-colors">8. Normenübersicht</a>
+                  <a href="#containergroessen" class="block text-gray-600 hover:text-primary transition-colors">9. Containergrößen</a>
+                  <a href="#dach" class="block text-gray-600 hover:text-primary transition-colors">10. DACH-Besonderheiten</a>
+                  <a href="#praxisbeispiel" class="block text-gray-600 hover:text-primary transition-colors">11. Praxisbeispiel</a>
+                  <a href="#checkliste" class="block text-gray-600 hover:text-primary transition-colors">12. Checkliste</a>
+                  <a href="#fehler" class="block text-gray-600 hover:text-primary transition-colors">13. Häufige Fehler</a>
+                  <a href="#faq" class="block text-gray-600 hover:text-primary transition-colors">FAQ</a>
+                </nav>
+              </div>
+
+              <div class="bg-slate-900 rounded-xl p-6 text-white">
+                <h4 class="font-bold text-primary mb-3">Ausstattung aus einer Hand</h4>
+                <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                  Planexus plant und liefert Ihren Laborcontainer schlüsselfertig – inklusive Labormöbel, Medienversorgung und Sicherheitseinrichtungen.
+                </p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm w-full justify-center">
+                  Jetzt anfragen
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">Verwandte Artikel</h4>
+                <div class="space-y-4 text-sm">
+                  <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="block text-gray-600 hover:text-primary transition-colors">Klimatisierung im Laborcontainer – Temperatur, Lüftung & Normen</a>
+                  <a href="/en/magazine/lab-container-permits-building-law" class="block text-gray-600 hover:text-primary transition-colors">Laborcontainer Genehmigung – Baurecht & Vorschriften</a>
+                  <a href="/en/magazine/lab-container-project-process" class="block text-gray-600 hover:text-primary transition-colors">Von der Idee bis zur Übergabe – So läuft ein Projekt ab</a>
+                  <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="block text-gray-600 hover:text-primary transition-colors">BSL-2 und BSL-3 im Container: Geht das?</a>
+                  <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="block text-gray-600 hover:text-primary transition-colors">GMP-Reinraum im Container: Pharma & Biotech</a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <RelatedArticles slug="laborcontainer-ausstattung-checkliste" locale="en" />
+  </div>
+</Layout>

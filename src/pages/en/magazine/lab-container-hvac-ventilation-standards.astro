@@ -1,0 +1,1056 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Laborcontainer Klimatisierung und Lüftung"
+  description="Laborcontainer Klimatisierung: DIN 1946-7, TRGS 526, HEPA-Filtration und Energieeffizienz. Mit Checkliste und Praxisbeispiel. Jetzt Leitfaden lesen."
+  canonical="/en/magazine/lab-container-hvac-ventilation-standards"
+  ogImage="/images/blog-laborcontainer-klimatisierung.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Klimatisierung im Laborcontainer – Temperatur, Lüftung & Normen",
+      "description": "Alles zur Klimatisierung von Laborcontainern: DIN 1946-7, TRGS 526, Luftwechselraten, HEPA-Filtration, Unterdruckkonzepte und Energieeffizienz.",
+      "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Geschäftsführer", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+      "datePublished": "2026-03-05",
+      "dateModified": "2026-03-05",
+      "image": "https://planexus.de/images/blog-laborcontainer-klimatisierung.jpg",
+      "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+        { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/en/magazine" },
+        { "@type": "ListItem", "position": 3, "name": "Laborcontainer Klimatisierung", "item": "https://planexus.de/en/magazine/lab-container-hvac-ventilation-standards" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Welche Luftwechselrate braucht ein Laborcontainer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Die DIN 1946-7 fordert mindestens 25 m³/h pro Person und zusätzlich 8-fachen Luftwechsel pro Stunde für Laborräume. Bei Arbeiten mit Gefahrstoffen unter TRGS 526 kann die Anforderung auf 10- bis 15-fachen Luftwechsel steigen. In Reinräumen gelten noch höhere Werte je nach ISO-Klasse." }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Temperatur muss in einem Laborcontainer eingehalten werden?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In Standardlaboren 20 bis 25 °C bei maximal ±2 K Schwankung. Für analytische Labore, die nach DIN EN ISO 17025 akkreditiert sind, gelten oft engere Toleranzen von ±1 K oder ±0,5 K. In Reinräumen und GMP-Bereichen werden Temperatur und Feuchte zusätzlich dokumentiert und überwacht." }
+        },
+        {
+          "@type": "Question",
+          "name": "Braucht ein Laborcontainer eine Unterdruckhaltung?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nicht immer, aber in vielen Fällen ja. Bei Arbeiten mit Gefahrstoffen, Biostoffen (BSL-2/3) oder geruchsintensiven Substanzen ist Unterdruck vorgeschrieben, um eine Ausbreitung kontaminierter Luft zu verhindern. Der typische Differenzdruck liegt bei -10 bis -30 Pa gegenüber angrenzenden Bereichen." }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie hoch ist der Energieverbrauch der Klimatisierung in einem Laborcontainer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Die Klimatisierung macht 40 bis 60 Prozent des gesamten Energieverbrauchs eines Laborcontainers aus. Ein typischer 30 m² Laborcontainer benötigt eine Kälteleistung von 5 bis 15 kW, abhängig von inneren Lasten und Außentemperatur. Durch Wärmerückgewinnung lässt sich der Verbrauch um 30 bis 50 Prozent senken." }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Filter werden in der Laborcontainer-Lüftung eingesetzt?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zuluft: mindestens F7-Filter (ISO ePM1 60%), in Reinräumen HEPA H13 oder H14. Abluft: Aktivkohlefilter bei Lösemitteln, HEPA-Filter bei Biostoffen (BSL-2/3). Die Filterklasse richtet sich nach Nutzungsart, Gefahrstoffklasse und Schutzziel (Personenschutz, Produktschutz oder Umgebungsschutz)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann Planexus die Klimatisierung eines Laborcontainers planen?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Planexus übernimmt die komplette TGA-Fachplanung inklusive Lüftungs- und Klimakonzept, Kältelastberechnung, Unterdruckkonzept und Filterauswahl. Wir planen nach DIN 1946-7, TRGS 526 und den jeweils relevanten Branchennormen – von der Bedarfsanalyse bis zur Inbetriebnahme." }
+        }
+      ]
+    })} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-laborcontainer-klimatisierung.jpg')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+              Technik & Normen
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              22 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Klimatisierung im Laborcontainer – Temperatur, Lüftung & Normen
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            DIN 1946-7, TRGS 526, Luftwechselraten, Unterdruckkonzepte und HEPA-Filtration – der komplette Praxisleitfaden für Planer, Qualitätsmanager und technische Leiter.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              5. März 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazin</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Laborcontainer Klimatisierung</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Klimatisierung ist die unsichtbare Lebensversicherung eines jeden Laborcontainers. Sie entscheidet darüber, ob Analysen reproduzierbar sind, ob Mitarbeiter sicher arbeiten können und ob empfindliche Geräte zuverlässig funktionieren. Trotzdem wird das Thema in der Planungsphase häufig unterschätzt – mit Folgen, die von ungenauen Messergebnissen bis hin zu behördlichen Auflagen reichen.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Herausforderung: Ein Laborcontainer ist kein Bürocontainer. Die thermischen Lasten durch Laborgeräte, die Anforderungen an Luftreinheit und Luftwechsel, die normativen Vorgaben für Gefahrstoffarbeitsplätze – all das macht die <a href="/en/services/planning" class="text-primary font-medium hover:underline">technische Fachplanung</a> der Raumlufttechnik zu einer der anspruchsvollsten Aufgaben im gesamten Projektablauf.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Dieser Leitfaden richtet sich an technische Leiter, Qualitätsmanager und Planer, die ein Laborcontainer-Projekt vorbereiten. Er fasst die relevanten Normen zusammen, erklärt die technischen Zusammenhänge und gibt konkrete Planungswerte an die Hand – von der <a href="/en/services/equipment" class="text-primary font-medium hover:underline">Laborausstattung</a> bis zur Wartungsstrategie.
+              </p>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  Die 5 Säulen der Laborcontainer-Klimatisierung
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">1</div>
+                    <div class="text-xs font-medium text-slate-900">Temperatur</div>
+                    <div class="text-xs text-gray-500 mt-1">20–25 °C ± 1–2 K</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">2</div>
+                    <div class="text-xs font-medium text-slate-900">Luftwechsel</div>
+                    <div class="text-xs text-gray-500 mt-1">8–15× pro Stunde</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">3</div>
+                    <div class="text-xs font-medium text-slate-900">Filtration</div>
+                    <div class="text-xs text-gray-500 mt-1">F7 bis HEPA H14</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">4</div>
+                    <div class="text-xs font-medium text-slate-900">Druckhaltung</div>
+                    <div class="text-xs text-gray-500 mt-1">-10 bis -30 Pa</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">5</div>
+                    <div class="text-xs font-medium text-slate-900">Feuchte</div>
+                    <div class="text-xs text-gray-500 mt-1">40–60 % r. F.</div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="normen">
+                Normative Grundlagen: DIN 1946-7, TRGS 526 und weitere Regelwerke
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Planung der Raumlufttechnik in Laborcontainern folgt einem Geflecht aus Normen, technischen Regeln und Branchenstandards. Die beiden zentralen Dokumente sind die DIN 1946-7 und die TRGS 526 – aber sie sind bei weitem nicht die einzigen.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                DIN 1946-7: Raumlufttechnik in Laboratorien
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die DIN 1946-7 ist die maßgebliche Norm für die raumlufttechnische Planung von Laborräumen in Deutschland. Sie definiert Mindestanforderungen an Luftvolumenströme, Temperatur, Feuchte und Raumdruckverhältnisse. Zentrale Vorgaben:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Mindest-Außenluftrate:</strong> 25 m³/h pro Person, zusätzlich prozessbedingte Volumenströme für Abzüge und Absaugungen</li>
+                <li><strong>Luftwechselrate:</strong> Mindestens 8-facher Luftwechsel pro Stunde in Laborräumen, bei geschlossenen Abzügen auch weniger möglich</li>
+                <li><strong>Temperaturbereich:</strong> 20 bis 26 °C, abhängig von der Raumnutzung und der Jahreszeit</li>
+                <li><strong>Relative Feuchte:</strong> 30 bis 65 % – mit engeren Bereichen je nach Labortyp</li>
+                <li><strong>Raumdruck:</strong> Labor grundsätzlich im Unterdruck gegenüber Verkehrsflächen (Flure, Treppenhäuser)</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für Laborcontainer ist die Norm besonders relevant, weil die kompakte Bauweise die Einhaltung der Luftwechselraten erschwert. Auf 20 bis 60 m² Grundfläche müssen Zuluft, Abluft und Umluft so verteilt werden, dass keine Kurzschlussströmungen entstehen und alle Arbeitsplätze gleichmäßig belüftet werden. Hier zeigt sich der Unterschied zwischen einer Standard-Klimaanlage und einem durchdachten <a href="/en/services/smart-lab" class="text-primary font-medium hover:underline">TGA-Konzept</a>.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                TRGS 526: Laboratorien – Technische Regel für Gefahrstoffe
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die TRGS 526 konkretisiert die Anforderungen der Gefahrstoffverordnung für Laboratorien. Sie ist kein optionaler Ratgeber, sondern eine verbindliche technische Regel. Für die Klimatisierung von Laborcontainern sind folgende Punkte entscheidend:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Absaugung an der Entstehungsstelle:</strong> Gefahrstoffe müssen dort erfasst werden, wo sie freigesetzt werden – typischerweise am Laborabzug oder an der Punktabsaugung</li>
+                <li><strong>Technische Lüftung als Grundanforderung:</strong> Natürliche Lüftung (Fenster) reicht für Laborcontainer mit Gefahrstoffarbeitsplätzen nicht aus</li>
+                <li><strong>Rückhaltesichere Abluftführung:</strong> Die Abluft aus Gefahrstoffbereichen darf nicht in die Zuluft anderer Räume gelangen</li>
+                <li><strong>Überwachung:</strong> Permanente Überwachung des Volumenstroms an Abzügen, mit optischer und akustischer Alarmmeldung bei Unterschreitung</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In einem Laborcontainer bedeutet das: Die Lüftungsanlage muss so ausgelegt sein, dass die Abzüge bei voller Frontschieber-Öffnung den geforderten Frontalgeschwindigkeitsbereich von 0,3 bis 0,5 m/s einhalten – bei gleichzeitiger Einhaltung der Raumluftbedingungen. Das ist auf engem Raum eine echte Planungsherausforderung, die erfahrene <a href="/en/services/consulting" class="text-primary font-medium hover:underline">Fachberater</a> erfordert.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Weitere relevante Regelwerke
+              </h3>
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse">
+                  <thead>
+                    <tr class="bg-slate-900 text-white">
+                      <th class="text-left p-3 rounded-tl-lg">Regelwerk</th>
+                      <th class="text-left p-3">Anwendungsbereich</th>
+                      <th class="text-left p-3 rounded-tr-lg">Relevanz für Laborcontainer</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">DIN EN ISO 14644</td>
+                      <td class="p-3 text-gray-600">Reinräume und Reinraumbereiche</td>
+                      <td class="p-3 text-gray-600">Pflicht bei GMP-, Pharma- und Halbleiter-Laboren</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">VDI 2083</td>
+                      <td class="p-3 text-gray-600">Reinraumtechnik</td>
+                      <td class="p-3 text-gray-600">Ergänzt ISO 14644 mit deutschen Spezifikationen</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">ASR A3.6</td>
+                      <td class="p-3 text-gray-600">Lüftung in Arbeitsstätten</td>
+                      <td class="p-3 text-gray-600">Grundanforderung für jeden Arbeitsplatz</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">DIN EN 14175</td>
+                      <td class="p-3 text-gray-600">Laborabzüge</td>
+                      <td class="p-3 text-gray-600">Dimensionierung und Prüfung der Abzugsleistung</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">TRBA 100</td>
+                      <td class="p-3 text-gray-600">Biologische Arbeitsstoffe</td>
+                      <td class="p-3 text-gray-600">Lüftungsanforderungen für BSL-2/BSL-3-Labore</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">EU-GMP Annex 1</td>
+                      <td class="p-3 text-gray-600">Sterile Arzneimittelherstellung</td>
+                      <td class="p-3 text-gray-600">Reinraumklassen A–D mit Partikelgrenzwerten</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">SIA 382/1 (Schweiz)</td>
+                      <td class="p-3 text-gray-600">Lüftungs- und Klimaanlagen</td>
+                      <td class="p-3 text-gray-600">Schweizer Pendant zu DIN 1946-7</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">ÖNORM H 6020 (Österreich)</td>
+                      <td class="p-3 text-gray-600">Lüftungstechnische Anlagen</td>
+                      <td class="p-3 text-gray-600">Österreichische Anforderungen an Laborlüftung</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="temperatur">
+                Temperaturkontrolle: Mehr als nur „angenehm warm"
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In einem Büro ist die Temperatur eine Komfortfrage. In einem Labor ist sie ein Qualitätsparameter. Viele analytische Methoden – von der HPLC über die Titration bis zur Waage – liefern nur dann reproduzierbare Ergebnisse, wenn die Umgebungstemperatur stabil bleibt. Die <a href="/en/services" class="text-primary font-medium hover:underline">Leistungsfähigkeit eines Laborcontainers</a> steht und fällt mit der Temperaturkonstanz.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Anforderungen nach Labortyp
+              </h3>
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse">
+                  <thead>
+                    <tr class="bg-slate-900 text-white">
+                      <th class="text-left p-3 rounded-tl-lg">Labortyp</th>
+                      <th class="text-left p-3">Temperatur</th>
+                      <th class="text-left p-3">Toleranz</th>
+                      <th class="text-left p-3 rounded-tr-lg">Typischer Einsatz</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Standardlabor</td>
+                      <td class="p-3 text-gray-600">20–25 °C</td>
+                      <td class="p-3 text-gray-600">± 2 K</td>
+                      <td class="p-3 text-gray-600">Routineanalytik, Probenvorbereitung</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Analytiklabor (akkreditiert)</td>
+                      <td class="p-3 text-gray-600">20–23 °C</td>
+                      <td class="p-3 text-gray-600">± 1 K</td>
+                      <td class="p-3 text-gray-600">HPLC, GC-MS, Spektroskopie</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Wägeraum</td>
+                      <td class="p-3 text-gray-600">20–22 °C</td>
+                      <td class="p-3 text-gray-600">± 0,5 K</td>
+                      <td class="p-3 text-gray-600">Mikro-/Analysenwaagen</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Reinraum (GMP)</td>
+                      <td class="p-3 text-gray-600">18–22 °C</td>
+                      <td class="p-3 text-gray-600">± 1 K</td>
+                      <td class="p-3 text-gray-600">Pharma, Sterilitätsprüfung</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">BSL-2/BSL-3 Labor</td>
+                      <td class="p-3 text-gray-600">20–24 °C</td>
+                      <td class="p-3 text-gray-600">± 2 K</td>
+                      <td class="p-3 text-gray-600">Mikrobiologie, Virologie</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Kühlraum / Kaltraum</td>
+                      <td class="p-3 text-gray-600">2–8 °C</td>
+                      <td class="p-3 text-gray-600">± 2 K</td>
+                      <td class="p-3 text-gray-600">Probenlagerung, Bioproben</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Thermische Lasten im Laborcontainer
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Kühllastberechnung für einen Laborcontainer unterscheidet sich grundlegend von der für ein konventionelles Laborgebäude. Die kompakte Bauweise und die im Verhältnis zur Grundfläche großen Außenwandflächen führen zu hohen spezifischen Wärmelasten. Typische Wärmequellen:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Laborgeräte:</strong> Ein Trockenschrank bringt 500 bis 2.000 W, eine HPLC-Anlage 300 bis 800 W, ein Autoklav bis zu 3.000 W innere Wärmelast</li>
+                <li><strong>Beleuchtung:</strong> 15 bis 25 W/m² bei LED, bis 50 W/m² bei Leuchtstoffröhren</li>
+                <li><strong>Personen:</strong> 80 bis 120 W pro Person (sensibel) bei leichter Labortätigkeit</li>
+                <li><strong>Solarstrahlung:</strong> Bis zu 200 W/m² auf die Containeraußenhaut – besonders kritisch bei südexponierten Flächen und dunkler Außenfarbe</li>
+                <li><strong>Transmissionswärme:</strong> Trotz Isolierung (typisch 60–100 mm PU-Schaum) erheblich, da Containermodule ein ungünstiges Oberflächen-Volumen-Verhältnis haben</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In Summe ergeben sich für einen typischen 30-m²-Laborcontainer Kälteleistungen zwischen 5 und 15 kW – ein Vielfaches dessen, was ein Bürocontainer gleicher Größe benötigt. Die <a href="/en/services/modular-construction" class="text-primary font-medium hover:underline">Modulbau-Fertigung</a> muss diese Leistung bereits in der Konstruktionsphase berücksichtigen.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                  Planungsfehler Nr. 1: Kälteleistung unterschätzt
+                </h4>
+                <p class="text-gray-700 text-sm">
+                  Der häufigste Fehler in der Klimaplanung: Die Kühllast wird anhand von Büro-Richtwerten (50–80 W/m²) kalkuliert. In einem Labor mit Gerätebestückung liegen die inneren Lasten bei 150 bis 400 W/m². Wer hier zu knapp plant, bekommt im Sommer Temperaturdrift – und damit ungenaue Messergebnisse.
+                </p>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="luftwechsel">
+                Luftwechselraten: Was die Normen fordern – und was die Praxis braucht
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der Luftwechsel ist das Herzstück der Laborlüftung. Er sorgt für Frischluft, transportiert Schadstoffe ab und hält die Raumtemperatur stabil. Die Anforderungen variieren stark nach Nutzungsart – von 4-fachem Luftwechsel in einem einfachen Prüflabor bis zum 40-fachen in einem Reinraum der ISO-Klasse 5.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse">
+                  <thead>
+                    <tr class="bg-slate-900 text-white">
+                      <th class="text-left p-3 rounded-tl-lg">Raumtyp</th>
+                      <th class="text-left p-3">Luftwechsel / Stunde</th>
+                      <th class="text-left p-3">Grundlage</th>
+                      <th class="text-left p-3 rounded-tr-lg">Bemerkung</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Büro (Vergleich)</td>
+                      <td class="p-3 text-gray-600">2–4×</td>
+                      <td class="p-3 text-gray-600">ASR A3.6</td>
+                      <td class="p-3 text-gray-600">Nur Personenbelüftung</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Standardlabor</td>
+                      <td class="p-3 text-gray-600">8×</td>
+                      <td class="p-3 text-gray-600">DIN 1946-7</td>
+                      <td class="p-3 text-gray-600">Grundanforderung ohne Abzüge</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Labor mit Gefahrstoffen</td>
+                      <td class="p-3 text-gray-600">10–15×</td>
+                      <td class="p-3 text-gray-600">TRGS 526</td>
+                      <td class="p-3 text-gray-600">Abhängig von Abzugsbetrieb</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">BSL-2 Labor</td>
+                      <td class="p-3 text-gray-600">10–12×</td>
+                      <td class="p-3 text-gray-600">TRBA 100</td>
+                      <td class="p-3 text-gray-600">Unterdruck -15 Pa</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">BSL-3 Labor</td>
+                      <td class="p-3 text-gray-600">12–15×</td>
+                      <td class="p-3 text-gray-600">TRBA 100</td>
+                      <td class="p-3 text-gray-600">HEPA-Abluft, Unterdruck -30 Pa</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Reinraum ISO 7 (GMP C)</td>
+                      <td class="p-3 text-gray-600">20–40×</td>
+                      <td class="p-3 text-gray-600">ISO 14644 / EU-GMP</td>
+                      <td class="p-3 text-gray-600">Turbulente Mischströmung</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Reinraum ISO 5 (GMP A/B)</td>
+                      <td class="p-3 text-gray-600">300–600×</td>
+                      <td class="p-3 text-gray-600">ISO 14644 / EU-GMP</td>
+                      <td class="p-3 text-gray-600">Laminare Verdrängungsströmung</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für einen Laborcontainer mit 30 m² Grundfläche und 2,7 m Raumhöhe (Raumvolumen ca. 81 m³) bedeutet ein 10-facher Luftwechsel einen Volumenstrom von 810 m³/h. Bei einem 15-fachen Luftwechsel sind es bereits 1.215 m³/h. Diese Volumenströme müssen leise, zugfrei und energieeffizient verteilt werden – eine Aufgabe, die bei der <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">Projektplanung</a> frühzeitig berücksichtigt werden muss.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="unterdruck">
+                Unterdruckkonzepte: Wann, warum und wie
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Raumdruckhaltung ist eines der am häufigsten missverstandenen Themen in der Laborplanung. Das Prinzip ist einfach: Ein Raum wird auf leichtem Unterdruck gehalten, damit Luft immer von „sauberen" in „kontaminierte" Bereiche strömt – nie umgekehrt. In der Praxis bedeutet das, dass bei geöffneter Tür Luft in den Laborraum hineinströmt statt heraus.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Druckkaskaden im Laborcontainer
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein durchdachtes Unterdruckkonzept arbeitet mit einer Druckkaskade. Jeder Bereich hat einen definierten Differenzdruck zum Nachbarbereich. In einem Laborcontainer mit Schleuse sieht das typischerweise so aus:
+              </p>
+              <div class="bg-slate-50 rounded-xl p-6 my-8 not-prose">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+                  <div class="bg-white rounded-lg p-4 border border-gray-200 min-w-[120px]">
+                    <div class="text-sm font-bold text-slate-900">Außenbereich</div>
+                    <div class="text-xs text-gray-500 mt-1">Referenz: 0 Pa</div>
+                  </div>
+                  <div class="text-primary font-bold text-lg">→</div>
+                  <div class="bg-white rounded-lg p-4 border border-gray-200 min-w-[120px]">
+                    <div class="text-sm font-bold text-slate-900">Schleuse</div>
+                    <div class="text-xs text-gray-500 mt-1">-5 bis -10 Pa</div>
+                  </div>
+                  <div class="text-primary font-bold text-lg">→</div>
+                  <div class="bg-white rounded-lg p-4 border border-primary/30 border-2 min-w-[120px]">
+                    <div class="text-sm font-bold text-primary">Laborraum</div>
+                    <div class="text-xs text-gray-500 mt-1">-15 bis -30 Pa</div>
+                  </div>
+                  <div class="text-primary font-bold text-lg">→</div>
+                  <div class="bg-white rounded-lg p-4 border border-red-200 min-w-[120px]">
+                    <div class="text-sm font-bold text-slate-900">Sicherheitswerkbank</div>
+                    <div class="text-xs text-gray-500 mt-1">-50 bis -80 Pa</div>
+                  </div>
+                </div>
+                <p class="text-xs text-gray-500 text-center mt-4">Luftstrom folgt dem Druckgefälle: von hohem zu niedrigem Druck</p>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Herausforderung in einem Laborcontainer: Die Druckkaskade muss auch bei geöffneter Tür und bei wechselnden Abzugsbetriebszuständen aufrechterhalten werden. Dafür werden Regelklappen, drehzahlgeregelte Ventilatoren und Differenzdrucksensoren eingesetzt. In <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-primary font-medium hover:underline">BSL-2- und BSL-3-Containern</a> ist die automatische Druckregelung sogar Pflicht.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                  Praxis-Hinweis: Undichtigkeiten
+                </h4>
+                <p class="text-gray-700 text-sm">
+                  Ein Laborcontainer hat konstruktionsbedingt mehr potenzielle Undichtigkeiten als ein massiv gebautes Labor: Kabeldurchführungen, Medienanschlüsse, Containerverbindungen bei Doppelanlagen. Jede Undichtigkeit gefährdet die Druckhaltung. Deshalb gehört ein Blower-Door-Test zur Qualitätssicherung – idealerweise schon im Werk, nicht erst auf der Baustelle.
+                </p>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="filtration">
+                Filtertechnik: Von F7 bis HEPA H14
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Luftfiltration bestimmt, was in den Laborraum hineingelangt und was ihn verlässt. Das Filtersystem gliedert sich in Zuluftfiltration (Schutz des Labors vor Außenluftverunreinigungen) und Abluftfiltration (Schutz der Umgebung vor Laborkontaminanten).
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Zuluftfiltration
+              </h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Vorstufe G4 (ISO coarse):</strong> Grobstaubfilter, schützt die Lüftungsanlage und verlängert die Standzeit der Feinstaubfilter</li>
+                <li><strong>Hauptstufe F7 (ISO ePM1 60%):</strong> Standard-Zuluftfilter für chemische Labore, filtert Feinstaub und Pollen</li>
+                <li><strong>Feinstaubstufe F9 (ISO ePM1 80%):</strong> Für analytische Labore mit erhöhten Reinheitsanforderungen</li>
+                <li><strong>HEPA H13 (ISO 35 H):</strong> Pflicht in Reinräumen ab ISO-Klasse 7, Abscheidegrad 99,95 %</li>
+                <li><strong>HEPA H14 (ISO 45 H):</strong> Für Reinräume ISO-Klasse 5 und GMP-Bereiche Klasse A/B, Abscheidegrad 99,995 %</li>
+              </ul>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Abluftfiltration
+              </h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Aktivkohlefilter:</strong> Bei Arbeiten mit Lösemitteln, organischen Verbindungen und geruchsintensiven Substanzen – Standzeit typisch 6 bis 12 Monate je nach Belastung</li>
+                <li><strong>HEPA H13/H14 in der Abluft:</strong> Pflicht bei BSL-3-Laboren (Biostoffverordnung), empfohlen bei BSL-2 je nach Gefährdungsbeurteilung</li>
+                <li><strong>Kombination Aktivkohle + HEPA:</strong> Bei Laboren, die sowohl mit Gefahrstoffen als auch mit Biostoffen arbeiten</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In einem <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-primary font-medium hover:underline">GMP-Reinraum-Container</a> kommen alle drei Stufen zum Einsatz: Vorstufe, Hauptstufe und endständiger HEPA-Filter direkt am Deckenauslass. Die endständige Filtration ist entscheidend, weil sie Kontaminationen aus dem Kanalnetz ausschließt.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="klimatisierung-vs-reinraum">
+                Klimatisierung vs. Reinraum: Wo liegt die Grenze?
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Nicht jeder klimatisierte Laborcontainer ist ein Reinraum – aber jeder Reinraum ist klimatisiert. Die Unterscheidung ist wichtig, weil sie erhebliche Auswirkungen auf Investition, Betriebskosten und Qualifizierungsaufwand hat.
+              </p>
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse">
+                  <thead>
+                    <tr class="bg-slate-900 text-white">
+                      <th class="text-left p-3 rounded-tl-lg">Kriterium</th>
+                      <th class="text-left p-3">Klimatisiertes Labor</th>
+                      <th class="text-left p-3 rounded-tr-lg">Reinraum-Labor</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Partikelkontrolle</td>
+                      <td class="p-3 text-gray-600">Nicht spezifiziert</td>
+                      <td class="p-3 text-gray-600">ISO-Klasse 5 bis 8</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Zuluftfilter</td>
+                      <td class="p-3 text-gray-600">F7 bis F9</td>
+                      <td class="p-3 text-gray-600">HEPA H13 / H14</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Luftwechsel</td>
+                      <td class="p-3 text-gray-600">8–15×</td>
+                      <td class="p-3 text-gray-600">20–600×</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Druckhaltung</td>
+                      <td class="p-3 text-gray-600">Unterdruck (optional)</td>
+                      <td class="p-3 text-gray-600">Überdruck (Produktschutz) oder Unterdruck (Personenschutz)</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Qualifizierung</td>
+                      <td class="p-3 text-gray-600">Nicht erforderlich</td>
+                      <td class="p-3 text-gray-600">IQ/OQ/PQ nach GMP</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Monitoring</td>
+                      <td class="p-3 text-gray-600">Temperatur, ggf. Feuchte</td>
+                      <td class="p-3 text-gray-600">Partikel, Temperatur, Feuchte, Druck – kontinuierlich</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Energieverbrauch</td>
+                      <td class="p-3 text-gray-600">Mittel</td>
+                      <td class="p-3 text-gray-600">Hoch bis sehr hoch</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Entscheidung, ob ein klimatisierter Laborcontainer ausreicht oder ob ein Reinraum-Container benötigt wird, hängt von der Anwendung ab. Für chemische Routineanalytik genügt ein klimatisiertes Labor. Für pharmazeutische Produktion, Zellkulturarbeit oder Sterilitätsprüfungen ist ein Reinraum erforderlich. Die <a href="/en/services/consulting" class="text-primary font-medium hover:underline">Beratung durch Planexus</a> klärt diese Frage in der Bedarfsanalyse – bevor investiert wird.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="energieeffizienz">
+                Energieeffizienz: 40–60 % des Stromverbrauchs optimieren
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Klimatisierung ist der größte Einzelverbraucher im Laborcontainer. In konventionell geplanten Laboren entfallen 40 bis 60 % des gesamten Energieverbrauchs auf Lüftung, Kühlung und Heizung. Das hat direkte Auswirkungen auf Betriebskosten und CO₂-Bilanz. Für Unternehmen mit <a href="/en/magazine/sustainability-lab-construction-energy-efficiency" class="text-primary font-medium hover:underline">Nachhaltigkeitszielen</a> ist die Energieeffizienz der Lüftungsanlage deshalb ein zentraler Hebel.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Maßnahmen zur Energieoptimierung
+              </h3>
+
+              <div class="space-y-4 my-8 not-prose">
+                <div class="bg-white border border-gray-200 rounded-xl p-6">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                      <span class="text-primary font-bold">1</span>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-slate-900 mb-1">Wärmerückgewinnung (WRG)</h4>
+                      <p class="text-sm text-gray-600">Kreuzstrom- oder Rotationswärmetauscher gewinnen 60 bis 80 % der Abluft-Wärme zurück. Bei einem Laborcontainer mit 1.000 m³/h Volumenstrom spart eine WRG im Winter 5 bis 10 kW Heizleistung. Wichtig: Bei Gefahrstoff-Abluft ist nur ein Kreuzstromtauscher zulässig (keine Rückmischung).</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-6">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                      <span class="text-primary font-bold">2</span>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-slate-900 mb-1">Bedarfsgeregelte Lüftung (VAV)</h4>
+                      <p class="text-sm text-gray-600">Variable Air Volume Systeme passen den Luftvolumenstrom an die tatsächliche Nutzung an. Wenn kein Abzug geöffnet ist, fährt die Lüftung auf Mindest-Luftwechsel herunter. Energieeinsparung gegenüber Konstantvolumen: 30 bis 50 %. Besonders effektiv bei Laboren mit wechselnder Belegung.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-6">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                      <span class="text-primary font-bold">3</span>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-slate-900 mb-1">EC-Ventilatoren</h4>
+                      <p class="text-sm text-gray-600">Elektronisch kommutierte Motoren (EC) sind 20 bis 30 % effizienter als konventionelle AC-Motoren und stufenlos drehzahlregelbar. In Kombination mit VAV-Regelung ergibt sich ein deutlicher Einspareffekt – der Energieverbrauch sinkt mit der dritten Potenz der Drehzahl.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-6">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                      <span class="text-primary font-bold">4</span>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-slate-900 mb-1">Nachtabsenkung und Standby-Betrieb</h4>
+                      <p class="text-sm text-gray-600">Außerhalb der Arbeitszeiten kann der Luftwechsel auf das hygienische Minimum reduziert werden. Die Temperatur darf in einem Standby-Korridor (z. B. 16–28 °C) schwanken. Voraussetzung: keine temperaturempfindlichen Proben im Raum und keine Gefahrstofflagerung.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-6">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                      <span class="text-primary font-bold">5</span>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-slate-900 mb-1">Containerdämmung optimieren</h4>
+                      <p class="text-sm text-gray-600">Standard-Container haben 60 mm PU-Schaum-Isolierung. Für Labore empfehlen wir 80 bis 100 mm mit Wärmebrückenminimierung an Bolzen, Rahmen und Durchführungen. Die Mehrinvestition amortisiert sich über geringere Kälteleistung und niedrigere Betriebskosten.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="abzuege">
+                Laborabzüge im Container: Dimensionierung und Integration
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Laborabzüge sind die primären Schutzeinrichtungen für Arbeiten mit Gefahrstoffen. In einem Laborcontainer stellen sie besondere Anforderungen an die Lüftungsplanung, weil sie den größten Einzelverbraucher an Abluft darstellen. Ein einziger Abzug mit 1,20 m Breite benötigt bei geöffnetem Frontschieber einen Volumenstrom von 600 bis 900 m³/h – bei einem Containerraumvolumen von etwa 80 m³ bedeutet das einen 8- bis 11-fachen Luftwechsel allein durch den Abzug.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Frontalgeschwindigkeit nach DIN EN 14175
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Frontalgeschwindigkeit am Abzugsfrontschieber ist der zentrale Leistungsparameter. Die DIN EN 14175 und die TRGS 526 fordern:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Normalbetrieb:</strong> 0,3 bis 0,5 m/s bei maximaler Öffnungshöhe (typisch 500 mm)</li>
+                <li><strong>Reduzierter Betrieb:</strong> Mindestens 0,2 m/s bei geschlossenem Frontschieber (Spülluft)</li>
+                <li><strong>Alarm:</strong> Optischer und akustischer Alarm bei Unterschreitung des Mindestvolumenstroms</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Bei der Integration in einen Laborcontainer muss die Zuluftführung so geplant werden, dass keine Querströmungen die Abzugsleistung beeinträchtigen. Die Zuluftauslässe sollten hinter dem Arbeitsplatz liegen, sodass die Raumluft an der Person vorbei zum Abzug strömt. Details zur Integration finden Sie in unserem <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">Projektablauf-Leitfaden</a>.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="feuchte">
+                Luftfeuchte: Unterschätzter Faktor in der Laborplanung
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die relative Luftfeuchte beeinflusst Analysen, Materialien und den Korrosionsschutz im Labor. Die DIN 1946-7 gibt einen Rahmen von 30 bis 65 % r. F. vor. In der Praxis sind die Anforderungen je nach Anwendung deutlich enger:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Standardlabor:</strong> 40–60 % r. F. – ein Bereich, der mit einer guten Klimaanlage in den meisten Fällen eingehalten werden kann</li>
+                <li><strong>Wägeraum:</strong> 45–55 % r. F. – für Analysenwägungen mit Auflösungen unter 0,1 mg kritisch, da hygroskopische Proben bei Feuchteschwankungen Massedrift zeigen</li>
+                <li><strong>Zellkulturlabor:</strong> 50–60 % r. F. – zur Vermeidung elektrostatischer Aufladung und Austrocknung</li>
+                <li><strong>Elektronik-Labor:</strong> 30–50 % r. F. – ESD-Schutz bei gleichzeitiger Korrosionsvermeidung</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In einem Laborcontainer ist die Feuchteregelung anspruchsvoller als in einem Massivbau, weil die Speichermasse fehlt. Die Metallstruktur des Containers puffert keine Feuchte. Das bedeutet: Jede Feuchteänderung wirkt sofort auf das Raumklima. Für enge Toleranzen sind aktive Befeuchtungs- und Entfeuchtungssysteme erforderlich.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="wartung">
+                Wartung und Instandhaltung: Intervalle, Pflichten, Dokumentation
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Eine Lüftungsanlage im Laborcontainer ist kein „Set-and-forget"-System. Sie erfordert regelmäßige Wartung, Filterwechsel und Leistungsüberprüfungen. Vernachlässigte Wartung führt zu sinkender Luftleistung, steigenden Energiekosten und – im schlimmsten Fall – zu Verstößen gegen Arbeitsschutzvorschriften.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse">
+                  <thead>
+                    <tr class="bg-slate-900 text-white">
+                      <th class="text-left p-3 rounded-tl-lg">Maßnahme</th>
+                      <th class="text-left p-3">Intervall</th>
+                      <th class="text-left p-3">Grundlage</th>
+                      <th class="text-left p-3 rounded-tr-lg">Durchführung</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Sichtkontrolle Filter</td>
+                      <td class="p-3 text-gray-600">Monatlich</td>
+                      <td class="p-3 text-gray-600">VDI 6022</td>
+                      <td class="p-3 text-gray-600">Betreiber / Haustechnik</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Filterwechsel Vorstufe (G4)</td>
+                      <td class="p-3 text-gray-600">3–6 Monate</td>
+                      <td class="p-3 text-gray-600">Differenzdruck</td>
+                      <td class="p-3 text-gray-600">Haustechnik / Fachfirma</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Filterwechsel Hauptstufe (F7/F9)</td>
+                      <td class="p-3 text-gray-600">6–12 Monate</td>
+                      <td class="p-3 text-gray-600">Differenzdruck</td>
+                      <td class="p-3 text-gray-600">Fachfirma</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">HEPA-Filtertest (Lecktest)</td>
+                      <td class="p-3 text-gray-600">12 Monate</td>
+                      <td class="p-3 text-gray-600">ISO 14644-3</td>
+                      <td class="p-3 text-gray-600">Zertifizierter Prüfer</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Aktivkohle-Filterwechsel</td>
+                      <td class="p-3 text-gray-600">6–12 Monate</td>
+                      <td class="p-3 text-gray-600">Breakthrough-Test</td>
+                      <td class="p-3 text-gray-600">Fachfirma</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Abzugsüberprüfung</td>
+                      <td class="p-3 text-gray-600">12 Monate</td>
+                      <td class="p-3 text-gray-600">DGUV-I 213-850</td>
+                      <td class="p-3 text-gray-600">Sachkundiger / Prüfer</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Kältemittel-Kontrolle</td>
+                      <td class="p-3 text-gray-600">12 Monate</td>
+                      <td class="p-3 text-gray-600">F-Gase-Verordnung</td>
+                      <td class="p-3 text-gray-600">Zertifizierter Kältetechniker</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Hygiene-Inspektion RLT</td>
+                      <td class="p-3 text-gray-600">24 Monate</td>
+                      <td class="p-3 text-gray-600">VDI 6022</td>
+                      <td class="p-3 text-gray-600">Hygiene-Sachkundiger</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die <a href="/en/services/logistics" class="text-primary font-medium hover:underline">Logistik und Montage</a> bei Planexus beinhaltet die Erstellung eines Wartungsplans, der exakt auf die verbauten Komponenten abgestimmt ist. So wissen Betreiber von Anfang an, welche Intervalle gelten und wer zuständig ist.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="schweiz-oesterreich">
+                Besonderheiten in der Schweiz und Österreich
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für Projekte in der Schweiz und Österreich gelten teilweise andere Normen und Regelwerke. Die technischen Anforderungen sind vergleichbar, aber die Bezugsnormen unterscheiden sich:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Schweiz:</strong> SIA 382/1 ersetzt DIN 1946-7 als Lüftungsnorm. Die SUVA-Richtlinien ergänzen den Arbeitnehmerschutz. EKAS-Richtlinien regeln den Umgang mit Gefahrstoffen. Für GMP-Anwendungen gelten die gleichen EU-Vorgaben (Annex 1), da die Schweiz den Mutual Recognition Agreement (MRA) mit der EU hat.</li>
+                <li><strong>Österreich:</strong> Die ÖNORM H 6020 regelt lüftungstechnische Anlagen. Das ArbeitnehmerInnenschutzgesetz (ASchG) und die Grenzwerteverordnung (GKV) ersetzen TRGS 526. Die OIB-Richtlinien definieren Brandschutzanforderungen an die Lüftung. Für akkreditierte Labore gilt die ÖNORM EN ISO 17025.</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Planexus plant und liefert Laborcontainer für den gesamten DACH-Raum. Wir kennen die lokalen Normunterschiede und berücksichtigen sie bereits in der <a href="/en/services/planning" class="text-primary font-medium hover:underline">Fachplanungsphase</a>. So vermeiden Sie Überraschungen bei der Abnahme.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="praxisbeispiel">
+                Praxisbeispiel: Klimakonzept für einen 40-Fuß-Chemielabor-Container
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Um die Theorie greifbar zu machen, durchlaufen wir die Klimaplanung für einen typischen Laborcontainer: Ein 40-Fuß-Modul (ca. 30 m²) für chemische Analytik mit einem Laborabzug, einer HPLC-Anlage und einem Trockenschrank.
+              </p>
+
+              <div class="bg-slate-50 rounded-xl p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-4">Planungsdaten</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <p class="text-gray-500 mb-1">Grundfläche</p>
+                    <p class="font-medium text-slate-900">30 m² (12,0 × 2,5 m netto)</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 mb-1">Raumhöhe</p>
+                    <p class="font-medium text-slate-900">2,7 m licht</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 mb-1">Raumvolumen</p>
+                    <p class="font-medium text-slate-900">81 m³</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 mb-1">Arbeitsplätze</p>
+                    <p class="font-medium text-slate-900">2 Personen</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 mb-1">Innere Wärmelast (Geräte)</p>
+                    <p class="font-medium text-slate-900">ca. 3.500 W</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 mb-1">Abzug 1,20 m Breite</p>
+                    <p class="font-medium text-slate-900">750 m³/h Abluft</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 mb-1">Gesamtluftmenge (10× LW)</p>
+                    <p class="font-medium text-slate-900">810 m³/h</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 mb-1">Kälteleistung (berechnet)</p>
+                    <p class="font-medium text-slate-900">8,5 kW</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 mb-1">Heizleistung</p>
+                    <p class="font-medium text-slate-900">4 kW (elektrisch)</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 mb-1">Druckhaltung</p>
+                    <p class="font-medium text-slate-900">-15 Pa (Unterdruck)</p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In diesem Beispiel dominiert der Abzug die Luftmenge: 750 von 810 m³/h entfallen auf den Abzug allein. Die restlichen 60 m³/h decken die Personenbelüftung. Die Zuluft wird über Deckenauslässe im hinteren Bereich des Containers eingeblasen, strömt an den Arbeitsplätzen vorbei und wird am Abzug und über eine Überströmung zur Abluft abgesaugt. Die Kälteanlage – ein Split-Klimagerät mit 10 kW Kälteleistung – kühlt die Zuluft auf 16 °C vor, bevor sie in den Raum gelangt.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="smart-lab">
+                Smart Lab: Digitale Überwachung der Klimatisierung
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Moderne Laborcontainer setzen auf digitale Überwachungs- und Steuerungssysteme, die alle klimarelevanten Parameter in Echtzeit erfassen. Eine <a href="/en/services/smart-lab" class="text-primary font-medium hover:underline">Smart Lab Integration</a> ermöglicht:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Echtzeit-Monitoring:</strong> Temperatur, Feuchte, Druck und Volumenstrom auf einem Dashboard – lokal und remote</li>
+                <li><strong>Automatische Alarmierung:</strong> Grenzwertüberschreitungen werden sofort per E-Mail oder SMS gemeldet</li>
+                <li><strong>Historische Daten:</strong> Trenddarstellung und Auswertung für Qualitätsmanagement und Audits</li>
+                <li><strong>Predictive Maintenance:</strong> Filterstandzeit-Vorhersage anhand von Differenzdruck-Trends – Filterwechsel bevor die Leistung nachlässt</li>
+                <li><strong>GMP-konformes Datenlogging:</strong> Manipulationssichere Aufzeichnung nach 21 CFR Part 11 / EU-GMP Annex 11</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Gerade in Laborcontainern, die oft dezentral oder an wechselnden Standorten betrieben werden, ist die Fernüberwachung ein entscheidender Vorteil. Betreiber können die Klimawerte jederzeit prüfen, ohne vor Ort sein zu müssen – und bei <a href="/en/magazine/innovation-modular-construction-mobile-lab" class="text-primary font-medium hover:underline">mobilen Laborlösungen</a> ist das besonders wichtig.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="checkliste">
+                Checkliste: Klimatisierung richtig planen
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die folgende Checkliste fasst zusammen, welche Punkte in der Planungsphase geklärt werden müssen. Sie dient als Gesprächsgrundlage für das Erstgespräch mit dem TGA-Planer.
+              </p>
+
+              <div class="bg-white border border-gray-200 rounded-xl p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-4">Planungs-Checkliste Klimatisierung</h4>
+                <div class="space-y-3">
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Nutzungsart definiert (Chemie, Pharma, Biologie, Analytik)?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Gefahrstoffe, Biostoffe oder beides?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Temperaturanforderungen mit Toleranzen definiert?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Feuchteanforderungen definiert (aktive Regelung nötig)?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Anzahl und Typ der Laborabzüge festgelegt?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Geräteliste mit Wärmeabgabe (Watt) erstellt?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Personenanzahl und Arbeitszeiten definiert?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Unterdruckkonzept erforderlich (BSL, Gefahrstoffe)?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Reinraumanforderungen definiert (ISO-Klasse)?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Abluftfilterung geklärt (Aktivkohle, HEPA)?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Energieeffizienz-Ziele definiert (WRG, VAV)?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Monitoring-Anforderungen geklärt (GMP, Fernzugriff)?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Aufstellort und Klimazone bekannt (Außentemperaturen)?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700">Wartungszugang für RLT-Komponenten eingeplant?</span>
+                  </label>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="fazit">
+                Fazit: Klimatisierung ist kein Komfort – sie ist die Grundlage
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Klimatisierung eines Laborcontainers ist keine Komfortfrage. Sie ist eine technische Grundanforderung, die über die Nutzbarkeit des gesamten Labors entscheidet. Wer hier spart, spart an der falschen Stelle – denn ungenaue Messergebnisse, Mitarbeitergesundheit und behördliche Auflagen kosten im Nachhinein ein Vielfaches der eingesparten Planungsleistung.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die gute Nachricht: Mit der richtigen Planung ist ein Laborcontainer in der Lage, die gleichen klimatechnischen Standards zu erreichen wie ein konventionelles Laborgebäude – bei deutlich kürzerer Realisierungszeit und höherer Flexibilität. Entscheidend ist, dass die <a href="/en/services/planning" class="text-primary font-medium hover:underline">TGA-Fachplanung</a> von Anfang an in den <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">Projektablauf</a> integriert wird – nicht als nachträglicher Anhang, sondern als paralleler Planungsstrang.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Planexus übernimmt die komplette Klimaplanung für Laborcontainer: von der Bedarfsanalyse über die Kältelastberechnung bis zur Inbetriebnahme und Dokumentation. Wir planen nach DIN 1946-7, TRGS 526 und den jeweils relevanten Branchennormen – für den gesamten DACH-Raum.
+              </p>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-8 my-12 not-prose text-center">
+                <h3 class="text-2xl font-heading font-bold text-slate-900 mb-3">Klimakonzept für Ihren Laborcontainer?</h3>
+                <p class="text-gray-600 mb-6 max-w-xl mx-auto">
+                  Wir erstellen ein individuelles Lüftungs- und Klimakonzept für Ihr Laborcontainer-Projekt – inklusive Kältelastberechnung, Filterauswahl und Wartungsplan.
+                </p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 px-8 py-3 rounded-lg font-bold hover:bg-primary/90 transition-colors">
+                  Jetzt Beratungsgespräch vereinbaren
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="faq">
+                Häufig gestellte Fragen (FAQ)
+              </h2>
+
+              <div class="space-y-4 my-8 not-prose">
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Welche Luftwechselrate braucht ein Laborcontainer?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Die DIN 1946-7 fordert mindestens 25 m³/h pro Person und zusätzlich 8-fachen Luftwechsel pro Stunde für Laborräume. Bei Arbeiten mit Gefahrstoffen unter TRGS 526 kann die Anforderung auf 10- bis 15-fachen Luftwechsel steigen. In <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-primary font-medium hover:underline">Reinräumen</a> gelten noch höhere Werte je nach ISO-Klasse – bis hin zu 600-fachem Luftwechsel in ISO-Klasse 5.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Welche Temperatur muss in einem Laborcontainer eingehalten werden?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    In Standardlaboren 20 bis 25 °C bei maximal ±2 K Schwankung. Für analytische Labore, die nach DIN EN ISO 17025 akkreditiert sind, gelten oft engere Toleranzen von ±1 K oder ±0,5 K. In GMP-Bereichen werden Temperatur und Feuchte zusätzlich dokumentiert und überwacht. Die exakte Anforderung hängt von der Nutzungsart und den eingesetzten Analysenmethoden ab.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Braucht ein Laborcontainer eine Unterdruckhaltung?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Nicht immer, aber in vielen Fällen ja. Bei Arbeiten mit Gefahrstoffen, Biostoffen (<a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-primary font-medium hover:underline">BSL-2/BSL-3</a>) oder geruchsintensiven Substanzen ist Unterdruck vorgeschrieben, um eine Ausbreitung kontaminierter Luft zu verhindern. Der typische Differenzdruck liegt bei -10 bis -30 Pa gegenüber angrenzenden Bereichen. Für Reinräume mit Produktschutz wird dagegen Überdruck eingesetzt.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Wie hoch ist der Energieverbrauch der Klimatisierung?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Die Klimatisierung macht 40 bis 60 % des gesamten Energieverbrauchs eines Laborcontainers aus. Durch <a href="/en/magazine/sustainability-lab-construction-energy-efficiency" class="text-primary font-medium hover:underline">Maßnahmen wie Wärmerückgewinnung, bedarfsgeregelte Lüftung und EC-Ventilatoren</a> lässt sich der Verbrauch um 30 bis 50 % senken. Die Investition in energieeffiziente Technik amortisiert sich typischerweise innerhalb von 2 bis 4 Jahren.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Welche Filter werden in der Laborcontainer-Lüftung eingesetzt?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    In der Zuluft mindestens F7-Filter (ISO ePM1 60 %), in Reinräumen HEPA H13 oder H14. In der Abluft Aktivkohlefilter bei Lösemitteln und HEPA-Filter bei Biostoffen. Die Filterklasse richtet sich nach Nutzungsart, Gefahrstoffklasse und Schutzziel – Personenschutz, Produktschutz oder Umgebungsschutz.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Kann Planexus die Klimatisierung eines Laborcontainers planen?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Ja. Planexus übernimmt die komplette TGA-Fachplanung inklusive Lüftungs- und Klimakonzept, Kältelastberechnung, Unterdruckkonzept und Filterauswahl. Wir planen nach DIN 1946-7, TRGS 526 und den jeweils relevanten Branchennormen – von der Bedarfsanalyse bis zur Inbetriebnahme. <a href="/en/contact" class="text-primary font-medium hover:underline">Sprechen Sie uns an.</a>
+                  </div>
+                </details>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-24 space-y-8">
+              <div class="bg-slate-50 rounded-xl p-6">
+                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                  Inhaltsverzeichnis
+                </h4>
+                <nav class="space-y-2">
+                  <a href="#normen" class="block text-sm text-gray-600 hover:text-primary transition-colors">Normative Grundlagen</a>
+                  <a href="#temperatur" class="block text-sm text-gray-600 hover:text-primary transition-colors">Temperaturkontrolle</a>
+                  <a href="#luftwechsel" class="block text-sm text-gray-600 hover:text-primary transition-colors">Luftwechselraten</a>
+                  <a href="#unterdruck" class="block text-sm text-gray-600 hover:text-primary transition-colors">Unterdruckkonzepte</a>
+                  <a href="#filtration" class="block text-sm text-gray-600 hover:text-primary transition-colors">Filtertechnik</a>
+                  <a href="#klimatisierung-vs-reinraum" class="block text-sm text-gray-600 hover:text-primary transition-colors">Klimatisierung vs. Reinraum</a>
+                  <a href="#energieeffizienz" class="block text-sm text-gray-600 hover:text-primary transition-colors">Energieeffizienz</a>
+                  <a href="#abzuege" class="block text-sm text-gray-600 hover:text-primary transition-colors">Laborabzüge</a>
+                  <a href="#feuchte" class="block text-sm text-gray-600 hover:text-primary transition-colors">Luftfeuchte</a>
+                  <a href="#wartung" class="block text-sm text-gray-600 hover:text-primary transition-colors">Wartung & Intervalle</a>
+                  <a href="#schweiz-oesterreich" class="block text-sm text-gray-600 hover:text-primary transition-colors">Schweiz & Österreich</a>
+                  <a href="#praxisbeispiel" class="block text-sm text-gray-600 hover:text-primary transition-colors">Praxisbeispiel</a>
+                  <a href="#smart-lab" class="block text-sm text-gray-600 hover:text-primary transition-colors">Smart Lab Monitoring</a>
+                  <a href="#checkliste" class="block text-sm text-gray-600 hover:text-primary transition-colors">Checkliste</a>
+                  <a href="#faq" class="block text-sm text-gray-600 hover:text-primary transition-colors">FAQ</a>
+                </nav>
+              </div>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                <h4 class="font-bold text-slate-900 mb-3">Klimakonzept anfragen</h4>
+                <p class="text-sm text-gray-600 mb-4">
+                  Wir erstellen ein individuelles Lüftungs- und Klimakonzept für Ihren Laborcontainer – normgerecht und energieeffizient.
+                </p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 px-4 py-2 rounded-lg font-bold text-sm hover:bg-primary/90 transition-colors w-full justify-center">
+                  Jetzt anfragen
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <div class="bg-white border border-gray-100 rounded-xl p-6">
+                <h4 class="font-bold text-slate-900 mb-4">Verwandte Artikel</h4>
+                <div class="space-y-4">
+                  <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">GMP-Reinraum im Container</p>
+                    <p class="text-xs text-gray-500">Pharmazeutische Produktion</p>
+                  </a>
+                  <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">BSL-2 und BSL-3 im Container</p>
+                    <p class="text-xs text-gray-500">Sicherheitsstufen im Containerbau</p>
+                  </a>
+                  <a href="/en/magazine/sustainability-lab-construction-energy-efficiency" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">Nachhaltigkeit im Laborbau</p>
+                    <p class="text-xs text-gray-500">Energieeffizienz trifft High-Tech</p>
+                  </a>
+                  <a href="/en/magazine/lab-container-permits-building-law" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">Laborcontainer Genehmigung</p>
+                    <p class="text-xs text-gray-500">Baurecht & Vorschriften</p>
+                  </a>
+                  <a href="/en/magazine/lab-container-project-process" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">Von der Idee bis zur Übergabe</p>
+                    <p class="text-xs text-gray-500">Der komplette Projektablauf</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <RelatedArticles slug="laborcontainer-klimatisierung-lueftung-normen" locale="en" />
+  </div>
+</Layout>

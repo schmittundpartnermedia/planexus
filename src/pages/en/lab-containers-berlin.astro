@@ -1,0 +1,757 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import CityCrossLinks from '../../components/CityCrossLinks.astro';
+import ContactForm from '../../components/ContactForm.tsx';
+import Picture from '../../components/Picture.astro';
+
+const berlinPLZ = [
+  "10115","10117","10119","10178","10179","10243","10245","10247","10405","10407",
+  "10409","10435","10437","10439","10551","10553","10555","10557","10585","10587",
+  "10623","10625","10627","10629","10707","10709","10713","10715","10717","10719",
+  "10785","10787","10789","10823","10827","10961","10963","10965","10967","10969",
+  "12099","12103","12105","12109","12435","12437","12439","12489","12555","12587",
+  "13125","13347","13353","13355","13357","13359"
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Laborcontainer Berlin – LABtoGO, BSL-2/3, GMP-Reinraum & Adlershof-Vibrationsschutz",
+  "description": "Schlüsselfertige Laborcontainer für Berlin und die Hauptstadtregion. LABtoGO mit 2.750 mm Innenhöhe, BSL-2/3, GMP-Reinraum, Pfahlgründung für Sandboden und Spree-Grundwasser, Vibrationsschutz für Adlershof. Ausgezeichnet bei den German CEO Excellence Awards 2026.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "image": "https://planexus.de/android-chrome-512x512.png",
+    "url": "https://planexus.de",
+    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
+  },
+  "serviceType": [
+    "Laborcontainer Berlin",
+    "Containerlabor Berlin",
+    "Mobiles Labor Berlin",
+    "BSL-2 Containerlabor",
+    "BSL-3 Containerlabor",
+    "GMP-Reinraumlabor",
+    "Reinraum-Container",
+    "Modulbau Labor",
+    "Technische Fachplanung Labor",
+    "Laborausstattung",
+    "Smart Lab Integration"
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Berlin", "containedInPlace": { "@type": "State", "name": "Berlin" } },
+    { "@type": "State", "name": "Berlin" },
+    { "@type": "AdministrativeArea", "name": "Hauptstadtregion Berlin-Brandenburg" },
+    ...berlinPLZ.map(plz => ({ "@type": "PostalCodeSpecification", "postalCode": plz, "addressCountry": "DE" }))
+  ],
+  "url": "https://planexus.de/en/lab-containers-berlin"
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://planexus.de/en/lab-containers-berlin#business",
+  "name": "Planexus GmbH – Laborcontainer Berlin",
+  "description": "Ihr Spezialist für Laborcontainer und modulare Laborlösungen in Berlin und der Hauptstadtregion. LABtoGO, BSL-2/3, GMP-Reinraum, Pfahlgründung für Spree-Grundwasser. Werk Albstadt – Lieferung via A81/A6/A9.",
+  "url": "https://planexus.de/en/lab-containers-berlin",
+  "telephone": "+49 7435 7519 700",
+  "email": "info@planexus.de",
+  "image": "https://planexus.de/images/labtogo-industrie.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Am Steinbach 8",
+    "addressLocality": "Albstadt-Laufen",
+    "postalCode": "72459",
+    "addressRegion": "Baden-Württemberg",
+    "addressCountry": "DE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Berlin",
+    "containedInPlace": [
+      { "@type": "AdministrativeArea", "name": "Berlin-Mitte" },
+      { "@type": "AdministrativeArea", "name": "Wedding" },
+      { "@type": "AdministrativeArea", "name": "Charlottenburg-Wilmersdorf" },
+      { "@type": "AdministrativeArea", "name": "Steglitz-Zehlendorf" },
+      { "@type": "AdministrativeArea", "name": "Pankow" },
+      { "@type": "AdministrativeArea", "name": "Berlin-Buch" },
+      { "@type": "AdministrativeArea", "name": "Treptow-Köpenick" },
+      { "@type": "AdministrativeArea", "name": "Adlershof" },
+      { "@type": "AdministrativeArea", "name": "Tempelhof-Schöneberg" },
+      { "@type": "AdministrativeArea", "name": "Friedrichshain-Kreuzberg" }
+    ]
+  },
+  "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" },
+  "foundingDate": "2025-04-01"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Standorte", "item": "https://planexus.de/en/lab-containers" },
+    { "@type": "ListItem", "position": 3, "name": "Laborcontainer Berlin", "item": "https://planexus.de/en/lab-containers-berlin" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet ein Laborcontainer in Berlin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Investition richtet sich nach Sicherheitsstufe, Reinraumklasse, Gründungsart und Standortlage. Ein Analytikcontainer in Adlershof liegt in einer anderen Größenordnung als ein BSL-3-Container mit HEPA-H14-Schleuse für ein Universitätsklinikum oder ein Infektionsforschungsinstitut. Wir kalkulieren projektspezifisch – inklusive Pfahlgründung bei hohem Spree-Grundwasserspiegel, Vibrationsentkopplung am Adlershofer Forschungscampus und KhBauVO-Brandschutz auf Klinikgelände. Senden Sie uns Ihre Standortdaten, wir melden uns binnen 24 Stunden mit einer indikativen Spanne."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welches Berliner Bezirksamt ist für mein Containerlabor zuständig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Berlin hat keine zentrale Bauaufsicht – jedes der 12 Bezirksämter führt eine eigene Bauaufsicht mit eigener Praxis. Mitte prüft anders als Treptow-Köpenick (Adlershof) oder Pankow (Buch). Maßgeblich ist immer die Bauordnung Berlin (BauO Bln). Wir identifizieren das zuständige Bezirksamt anhand Ihrer Adresse und reichen prüffähige Bauvorlagen passend zur Bezirkspraxis ein – das spart Wochen gegenüber einem Standard-Bauantrag, der dreimal nachgebessert werden muss."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert die Lieferung eines Laborcontainers von Albstadt nach Berlin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Strecke beträgt rund 720 km – per Schwerlasttransport über A81 nordwärts, A6 ostwärts, A9 nordwärts via Würzburg und Nürnberg bis Berliner Ring (A10) und Anschlussstellen Berlin-Schönefeld, Berlin-Süd oder Berlin-Spandau. Reine Fahrzeit ca. 7,5 Stunden, mit Genehmigungspflicht und Begleitfahrzeugen typischerweise ein Transporttag. Vom Auftrag bis zur betriebsbereiten Übergabe in Berlin vergehen 8 bis 14 Wochen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hält ein Standard-Container dem Berliner Sandboden und Spree-Grundwasser stand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Berlin liegt im Berlin-Warschauer Urstromtal auf Sandboden mit Bodenklasse 3 nach DIN 18196. Innerstädtisch liegt der Grundwasserspiegel oft 2 bis 4 m unter Gelände – in Spreenähe phasenweise höher. Standard-Punktfundamente setzen sich auf solchem Untergrund nach 18 bis 36 Monaten erkennbar. Wir kalkulieren standortbezogen Pfahlgründung oder Plattengründung nach DIN 4017/4020 mit hydraulischem Auftriebsschutz – Messgeräte behalten ihre Justage, Reinraumklassen ihre Zertifizierbarkeit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann Planexus einen Laborcontainer auf einem Klinik-Campus oder Forschungscampus in Berlin aufstellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, das ist technisch möglich. Für eine Aufstellung auf einem Klinik-Campus in Mitte oder am Berlin-Buch-Campus wäre die Abstimmung mit dem jeweiligen Klinikbauamt und der Berliner Hochschulbauverwaltung erforderlich. Brandschutz nach KhBauVO Berlin, sterile Anlieferung über vorgesehene Logistik-Achsen und Abstimmung mit der Branddirektion sind dabei Standard. An Klinik- und Forschungscampussen in Berlin-Buch oder anderen Berliner Standorten kann die Aufstellung kranbasiert und campus-konform erfolgen – ohne Beeinträchtigung des laufenden Klinikbetriebs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Auflagen gelten für BSL-3-Container in Berlin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BSL-3 in Berlin verlangt Genehmigung nach BioStoffV (Bundesrecht), Anzeige beim LAGeSo (Landesamt für Gesundheit und Soziales Berlin) sowie ggf. dem zuständigen Bezirks-Gesundheitsamt. Für gentechnische Anlagen S1/S2/S3 zusätzlich Anzeige nach GenTG. Technisch fordert der Verordnungsgeber: Unterdruckkaskade min. -50 Pa, HEPA-H14 im Abluftstrang, autoklavierte Schleusen, redundante Lüftung. Wir liefern Risikobewertung, Sicherheitskonzept und vollständige Antragsunterlagen – Container werden nach TRBA 100 geprüft und mit IQ/OQ/PQ übergeben."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mieten oder kaufen – was lohnt sich für Berliner Pharma- oder Forschungsprojekte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Faustregel: Bei Projektlaufzeiten unter 24 Monaten – etwa Interimslabore während Klinik-Sanierungen, befristete Drittmittel-Projekte oder kurzfristige Pharma-Studienkampagnen – rechnet sich Miete. Bei dauerhafter Erweiterung am Forschungscampus Adlershof, im Pharma-Cluster Berlin-Brandenburg oder am Berlin-Buch-Campus überwiegt der Kauf, oft mit Mietkauf-Option. Wir vergleichen für Ihr Berliner Projekt beide Modelle inklusive Bilanzwirkung und Restwert."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Laborcontainer Berlin mieten – GMP, Reinraum & BSL-3"
+  description="Laborcontainer Berlin mieten: GMP-Reinraum, BSL-3, Pfahlgründung Spree-Sand, Vibrationsschutz Adlershof. Schlüsselfertig in 12 Wochen. Jetzt Angebot anfordern."
+  canonical="/en/lab-containers-berlin"
+  schema={serviceSchema}
+  ogImage="/attached_assets/Laborcontainer_007_1769688326918.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+  <div class="pt-20 min-h-screen bg-white">
+
+    <!-- STICKY SIDE-CTA (desktop only) -->
+    <aside class="hidden xl:block fixed right-6 top-1/2 -translate-y-1/2 z-40 w-60">
+      <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+        <div class="bg-slate-900 px-5 py-3">
+          <div class="text-primary text-xs font-bold uppercase tracking-wider">Standort Berlin</div>
+        </div>
+        <div class="p-5 space-y-3 text-sm">
+          <p class="text-gray-700 leading-snug">Werk Albstadt – Lieferung in 8–14 Wochen via A81/A6/A9. Kostenfreies Standort-Audit für Ihr Containerlabor.</p>
+          <a href="#anfrage" class="block bg-primary text-slate-900 font-bold text-center py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Anfrage starten</a>
+          <a href="tel:+4974357519700" class="block text-center text-xs text-slate-600 hover:text-primary transition-colors">+49 7435 7519 700</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- HERO -->
+    <section class="relative py-24 md:py-32 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0">
+        <Picture src="/attached_assets/Laborcontainer_007_1769688326918.jpg" alt="Laborcontainer Berlin – Planexus LABtoGO mit 2,75 m Innenhöhe für Kliniken, Forschungsinstitute und den Forschungscampus Adlershof" class="w-full h-full object-cover opacity-20" loading="eager" fetchpriority="high" width={1980} height={1485} />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl">
+          <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
+            <a href="/" class="hover:text-primary transition-colors">Start</a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span>Standorte</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span class="text-primary">Berlin</span>
+          </nav>
+
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Ihr Spezialist für Laborcontainer · Hauptstadtregion Berlin-Brandenburg</div>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+            Laborcontainer Berlin – BSL-3-Labore für Kliniken, Forschung und Hauptstadtregion
+          </h1>
+
+          <p class="text-xl text-gray-300 leading-relaxed mb-4">
+            <strong class="text-white">Unsere Geschäftsführer bringen über zehn Jahre Erfahrung im Laborcontainerbau mit.</strong> Intelligent, nachhaltig und modular. Wir realisieren flexible Forschungsumgebungen für die Zukunft – aus dem Werk Albstadt direkt nach Berlin, über A81 / A6 / A9.
+          </p>
+          <p class="text-base text-gray-400 mb-8">
+            Während andere noch planen, forschen Sie bereits.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
+              Kostenfreies Standort-Audit Berlin
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +49 7435 7519 700
+            </a>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Spezialist für modularen Laborbau</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Award 2026 EU Business News</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Pfahlgründung für Spree-Grundwasser</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Wesemann-Gruppe · 60+ Jahre Laborbau</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <AuthorBio city="Berlin"  locale="en" />
+
+
+    <!-- PATTERN-INTERRUPT: LABtoGO -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Pattern-Interrupt · Weltpremiere analytica 2026</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus zeigt Berlin, was ein Laborcontainer 2026 wirklich kann</h2>
+              <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                Ein gewöhnlicher Laborcontainer hat 2.400 mm Innenhöhe. Sie passen rein – aufrecht arbeiten unter einem Abzug aber kaum.
+              </p>
+              <p class="text-lg text-slate-900 font-bold leading-relaxed mb-4">
+                Der LABtoGO von Planexus hat 2.750 mm Innenhöhe. 9,5 m Außenlänge. 3 m Außenbreite. Vollverglaste Front, die echtes Tageslicht in jedes Berliner Klinik-, Forschungs- oder Pharmalabor bringt.
+              </p>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                <strong>Ein gewöhnlicher Laborcontainer passt komplett in einen LABtoGO hinein.</strong> Wir nennen ihn nicht ohne Grund LABtoGO – er ist die Plattform, auf der wir für Berlin BSL-2, BSL-3, GMP-Reinraum, Pfahlgründung und Vibrationsentkopplung konfigurieren.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">2.750</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm Innenhöhe</div>
+                <div class="text-xs text-gray-500 mt-1">Standard: 2.400 mm</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">9.500</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm Außenlänge</div>
+                <div class="text-xs text-gray-500 mt-1">3.000 mm Breite</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">100%</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">vollverglast</div>
+                <div class="text-xs text-gray-500 mt-1">Tageslicht-Labor</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">U 0,20</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">W/m²K Sandwich</div>
+                <div class="text-xs text-gray-500 mt-1">80–120 mm Dämmung</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <a href="/en/lab-containers/labtogo" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+              LABtoGO Plattform und alle Konfigurationen ansehen
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM-AGITATION -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">
+            Planexus löst die drei Berliner Engpässe, an denen Laborprojekte regelmäßig scheitern
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">12 Bezirksämter, 12 verschiedene Bauaufsichten</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Berlin hat keine zentrale Bauaufsicht. Mitte prüft anders als Treptow-Köpenick (Adlershof) oder Pankow (Buch). Wer den falschen Antragsweg wählt oder mit Standardvorlagen arbeitet, verliert pro Bezirk zwei bis sechs Wochen in der Nachbesserung – und sieht das Förderfenster schließen.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: Bezirksspezifische Bauvorlagen ab Tag 1.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Spree-Grundwasser & Berliner Sand machen Standardstatik wertlos</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Berlin liegt im Berlin-Warschauer Urstromtal. Sandboden Bodenklasse 3 nach DIN 18196, innerstädtischer Grundwasserspiegel oft 2 bis 4 m unter Gelände. Standard-Punktfundament setzt sich nach 18 bis 36 Monaten erkennbar – HPLC-Justage, GMP-Toleranzen und ISO-14644-Klassen sind nicht mehr garantierbar.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: Pfahlgründung oder Plattengründung nach DIN 4017/4020 ab Werk vorbereitet.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Klinik-Campus, Forschungsinstitute, Adlershof – jeder Standort eigene Logistik</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Sterile Anlieferung an einem Klinik-Campus in Mitte ist nicht dasselbe wie BSL-Logistik an einem Forschungsinstitut in Wedding oder vibrationsempfindliche Aufstellung am Forschungscampus Adlershof. Wer mit einem Standard-Logistikplan ankommt, wird abgewiesen oder bekommt Auflagen, die das Projekt verzögern.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: Standortspezifischer Aufstellungs- und Logistikplan vor jeder Anlieferung.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRATEGISCHE FUSION INTRO -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">
+            Laborcontainer für Berlin: Was 12-Bezirksämter-Föderalismus, Spree-Grundwasser und Klinik-Campusse vom Engineering verlangen
+          </h2>
+          <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p>
+              <strong>Berlin ist Deutschlands dichtester Cluster aus Universitätsmedizin, Infektionsforschung, Photonik, Biomedizin und Pharma-Mittelstand.</strong> Auf 892 Quadratkilometern konkurrieren mehrere universitätsmedizinische Klinik-Campusse, Infektions- und Biomedizinforschung, Photonik- und Materialforschungsinstitute in Adlershof, die Metrologie in Charlottenburg, der Pharma-Cluster Berlin-Brandenburg sowie mehrere Universitäten um Flächen, Genehmigungen und Engineering-Kapazität. Wer hier ein Containerlabor bestellt, kauft kein Standardprodukt – er kauft Standortintelligenz.
+            </p>
+            <p>
+              <strong>Wir kennen diesen Markt genau.</strong> Wir wissen, dass jedes der 12 Bezirksämter Bauanträge nach eigener Praxis prüft – wer das ignoriert, scheitert in der Nachbesserung. Wir wissen, dass der Berliner Sandboden Bodenklasse 3 nach DIN 18196 und der Grundwasserspiegel innerstädtisch 2 bis 4 m unter Gelände eine Pfahlgründung oder Plattengründung nach DIN 4017/4020 verlangen. Wir wissen, dass der Forschungscampus Adlershof Vibrationsentkopplung für Photonik- und Lasertechnik fordert und dass ein Klinik-Campus in Mitte sterile Logistik nach KhBauVO Berlin verlangt. Diese Details stehen nicht in unserem Angebot – sie sind das Engineering-Fundament jedes Containers, der unser Werk Albstadt verlässt.
+            </p>
+            <p>
+              <strong>Made in Albstadt, schlüsselfertig in Berlin.</strong> Endmontage und Innenausbau erfolgen mit Wesemann-Möbeln im eigenen Werk – Werksbesichtigung beidseitig planbar. Über A81 nordwärts, A6 ostwärts und A9 nordwärts via Würzburg und Nürnberg beträgt die Schwerlastdistanz rund 720 Kilometer; über den Berliner Ring (A10) und die Anschlussstellen Berlin-Süd, Berlin-Schönefeld oder Berlin-Spandau sind alle Berliner Forschungs- und Klinik-Standorte direkt erreichbar.
+            </p>
+            <p>
+              Ob Sie ein <strong>mobiles Labor Berlin</strong> für ein befristetes Projekt während einer Klinik-Sanierung brauchen, einen <strong>modularen Laborcontainer Berlin</strong> für die dauerhafte Erweiterung am Berlin-Buch-Campus oder ein <strong>Containerlabor Berlin</strong> mit BSL-3-Containment für die Infektionsforschung – wir liefern alle drei Antworten aus derselben Plattform: dem LABtoGO unseres Werks Albstadt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANWENDUNGSBEREICHE BERLIN -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Anwendungsbereiche Berlin</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Acht Anwendungsbereiche für Laborcontainer Berlin</h2>
+            <p class="text-gray-400 text-lg">Jeder Bereich mit konkretem Berliner Standort- und Branchenbezug.</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">01</div>
+              <div class="font-bold mb-1">Universitätsmedizin</div>
+              <p class="text-xs text-gray-400">Klinik-Campusse in Mitte und Buch – Interimslabore während Sanierung</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">02</div>
+              <div class="font-bold mb-1">Infektionsforschung BSL-3</div>
+              <p class="text-xs text-gray-400">Infektionsforschung in Wedding, Virologie, Diagnostik, Tropenmedizin nach BioStoffV und LAGeSo-Anzeige</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">03</div>
+              <div class="font-bold mb-1">Biomedizin & molekulare Medizin</div>
+              <p class="text-xs text-gray-400">Forschungscampus Berlin-Buch, molekulare Medizin, Genom-Editierung, Translational Research</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">04</div>
+              <div class="font-bold mb-1">Photonik & Lasertechnik</div>
+              <p class="text-xs text-gray-400">Forschungscampus Adlershof, Photonik- und Materialforschungsinstitute, vibrationsentkoppelte Aufstellung</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">05</div>
+              <div class="font-bold mb-1">Pharma-Cluster Berlin-Brandenburg</div>
+              <p class="text-xs text-gray-400">Pharma-Mittelstand Berlin-Brandenburg, Pilotproduktion, klinische Prüfmuster, GMP-Reinraum</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">06</div>
+              <div class="font-bold mb-1">Metrologie</div>
+              <p class="text-xs text-gray-400">Metrologie-Einrichtungen in Charlottenburg, Präzisions-Analytik, Temperatur- und Vibrationskonstanz</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">07</div>
+              <div class="font-bold mb-1">Universitätsforschung</div>
+              <p class="text-xs text-gray-400">Berliner Universitäten – Drittmittel-Container, Werkstoff-, Bio- und Chemielabore</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">08</div>
+              <div class="font-bold mb-1">Klinik-Sanierungs-Interim</div>
+              <p class="text-xs text-gray-400">Klinik-Campusse und Krankenhaus-Standorte, Bauphasen-Begleitung mit KhBauVO-Brandschutz</p>
+            </div>
+          </div>
+          <div class="text-center mt-10">
+            <p class="text-gray-400 mb-4">Ihre Anwendung ist nicht dabei? Wir entwickeln individuelle Module auch fernab vom Standard.</p>
+            <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Sonderlösung für Berlin anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3x2 TECH MATRIX -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Sechs Engineering-Disziplinen für die Hauptstadtregion</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Planexus baut Laborcontainer für Berlin, die in jeder Disziplin auf die regionalen Realitäten abgestimmt sind – nicht generisch, sondern bezirks- und campus-genau.</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Statik & Gründung</div>
+              <h3 class="font-bold text-slate-900 mb-2">Pfahlgründung Berliner Sand</h3>
+              <p class="text-sm text-gray-600">Bodenklasse 3 nach DIN 18196, Spree-Grundwasser 2–4 m unter GOK, Pfahl- oder Plattengründung nach DIN 4017/4020 mit hydraulischem Auftriebsschutz – setzungssicher über 25 Jahre.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">BSL-2/-3 Containment</div>
+              <h3 class="font-bold text-slate-900 mb-2">Unterdruckkaskade −50 Pa</h3>
+              <p class="text-sm text-gray-600">BioStoffV, TRBA 100, HEPA-H14 im Abluftstrang, autoklavierte Schleusen. Anzeige beim LAGeSo Berlin und ggf. Bezirks-Gesundheitsamt – wir liefern die Antragsunterlagen für Klinik- und Forschungsstandards.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Vibrationsentkopplung</div>
+              <h3 class="font-bold text-slate-900 mb-2">VC-D nach VDI 2038 für Adlershof</h3>
+              <p class="text-sm text-gray-600">Federkern-Lagerung, kein Direktkontakt zur Forschungs-Bodenplatte. Synchrotron-, Lasertechnik- und Photonik-Forschung fordern Schwingungstoleranzen unter 1 µm/s.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Klinik-Brandschutz</div>
+              <h3 class="font-bold text-slate-900 mb-2">KhBauVO Berlin</h3>
+              <p class="text-sm text-gray-600">Brandschutzkonzept nach Krankenhausbauverordnung Berlin, sterile Logistik auf Klinik-Campussen, Abstimmung mit Klinikbauamt und Berliner Branddirektion.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">GMP & Pharma</div>
+              <h3 class="font-bold text-slate-900 mb-2">EU Annex 1 + IQ/OQ/PQ</h3>
+              <p class="text-sm text-gray-600">Pharma-Pilotproduktion für den Cluster Berlin-Brandenburg, klinische Prüfmuster für Auftragsforscher, kühlkettengerechte Studien-Container nach EU-GMP-Leitfaden.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Reinraum</div>
+              <h3 class="font-bold text-slate-900 mb-2">ISO 14644 Klasse 5–8</h3>
+              <p class="text-sm text-gray-600">Halbleiter- und Photonik-Reinräume Adlershof, partikelarme Werkstoffanalytik mit HEPA-H14-Endfilterung, Klassifizierung mit Partikelzähler nach Übergabe.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HYPER-LOKALE BERLIN-SPEZIFIKA (SERP-Lücken die kein Wettbewerber bedient) -->
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Drei Berlin-Spezifika</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Drei Engineering-Anforderungen, die nationale Anbieter übersehen — Planexus baut Laborcontainer Berlin genau darauf hin</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Generic-Landingpages für ganz Deutschland bedienen die drei Realitäten nicht, die ein Laborcontainer in Berlin tatsächlich aushalten muss. Wir schon — weil wir den Berliner Forschungs- und Klinikmarkt genau kennen und unser Werk in Albstadt produziert, was hier ankommt.</p>
+          <div class="grid md:grid-cols-3 gap-5">
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">12 Bezirksämter, 12 Bauaufsichten – ein Verfahren</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Berlin hat keine zentrale Bauaufsicht. Mitte, Pankow (Buch), Treptow-Köpenick (Adlershof), Charlottenburg-Wilmersdorf – jede Bezirksbehörde prüft Bauvorlagen nach eigener Praxis. Wer mit einer Standardvorlage durch alle 12 Bezirke marschiert, fängt sich pro Bezirk Nachbesserungen ein und verliert das Förderfenster.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: Bezirksspezifische Bauvorlagen, abgestimmt mit dem zuständigen Stadtteil-Bauamt vor Antrag.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">Berliner Sand & Spree-Grundwasser – Pfahlgründung statt Punktfundament</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Berlin liegt im Berlin-Warschauer Urstromtal auf Sandboden mit Bodenklasse 3 nach DIN 18196. Innerstädtisch liegt der Grundwasserspiegel oft 2 bis 4 m unter Gelände – in Spreenähe phasenweise höher. Standard-Punktfundamente setzen sich auf solchem Untergrund nach 18 bis 36 Monaten erkennbar – Reinraumklassen sind nicht mehr zertifizierbar.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: Pfahl- oder Plattengründung nach DIN 4017/4020 mit hydraulischem Auftriebsschutz, standortbezogen kalkuliert.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">Kliniken, Forschungsinstitute, Adlershof – jeder Campus eigener Logistik- und Auflagenkanon</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Sterile Anlieferung an einem Klinik-Campus in Mitte folgt anderen Achsen als BSL-Logistik an einem Forschungsinstitut in Wedding. Vibrationsentkopplung am Forschungscampus Adlershof verlangt anderes Setup als KhBauVO-konformer Brandschutz am Berlin-Buch-Campus. Wer mit Standard-Logistik anfährt, wird abgewiesen – oder bekommt Auflagen, die das Projekt um Wochen verzögern.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: Standortspezifischer Aufstellungs- und Logistikplan vor jeder Anlieferung – mit Klinikbauamt, Sicherheitsbeauftragten und Branddirektion abgestimmt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST-WALL: Brand-DNA -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-primary/5">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus für Berlin: EU-Award 2026, Pfahlgründung ab Werk, Wesemann-Ecosystem</h2>
+            <p class="text-gray-600 text-lg">Vier Säulen, die kein Wettbewerber im DACH-Raum so kombiniert.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Award 2026</h3>
+              <p class="text-sm text-gray-600">EU Business News – German CEO Excellence Awards 2026: Planexus ausgezeichnet als „Führender Anbieter innovativer Laborräume". International prämiert direkt nach der LABtoGO-Weltpremiere auf der analytica.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Made in Albstadt</h3>
+              <p class="text-sm text-gray-600">Endmontage, Innenausbau und Qualitätskontrolle in unserem Werk Albstadt (Emil-Mayer-Straße 1). Pfahlgründung und Spree-Grundwasser-Schutz ab Werk vorkonfektioniert. Werksbesichtigung jederzeit möglich.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Wesemann-Ecosystem</h3>
+              <p class="text-sm text-gray-600">Teil der Wesemann Holding mit über 60 Jahren Erfahrung in Laboreinrichtung. Container, Möbel, Reinraumtechnik – aus einer Hand. Ein Ansprechpartner. Keine Schnittstellen-Risiken.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECISION MATRIX -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Vergleich für Berlin: LABtoGO, Standard-Container und konventioneller Festbau</h2>
+          <p class="text-gray-600 text-lg mb-8">Ehrliche Vergleichsmatrix. Damit Sie Ihre Entscheidung fundiert treffen, bevor wir reden.</p>
+          <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-900 text-white">
+                  <tr>
+                    <th class="text-left px-6 py-4 font-bold">Kriterium</th>
+                    <th class="text-left px-6 py-4 font-bold">Festbau Berlin</th>
+                    <th class="text-left px-6 py-4 font-bold">Standard-Container</th>
+                    <th class="text-left px-6 py-4 font-bold bg-primary text-slate-900">LABtoGO</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Lieferzeit</td><td class="px-6 py-4 text-gray-600">18–30 Monate</td><td class="px-6 py-4 text-gray-600">16–20 Wochen</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">8–14 Wochen</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Innenhöhe</td><td class="px-6 py-4 text-gray-600">3,0 m+</td><td class="px-6 py-4 text-gray-600">2,4 m</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">2,75 m</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">12-Bezirksamt-Verfahren</td><td class="px-6 py-4 text-gray-600">Vollverfahren</td><td class="px-6 py-4 text-gray-600">Bauanzeige</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Bezirksspez. Vorlagen ab Tag 1</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Pfahlgründung Sand/Grundwasser</td><td class="px-6 py-4 text-gray-600">individuell</td><td class="px-6 py-4 text-gray-600">selten ab Werk</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">DIN 4017/4020 ab Werk</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Vibrationsentkopplung Adlershof</td><td class="px-6 py-4 text-gray-600">aufwendig</td><td class="px-6 py-4 text-gray-600">selten</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">VC-D nach VDI 2038</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Mobilität / Versetzbarkeit</td><td class="px-6 py-4 text-gray-600">keine</td><td class="px-6 py-4 text-gray-600">bedingt</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">voll mobil</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Tageslicht-Anteil</td><td class="px-6 py-4 text-gray-600">hoch</td><td class="px-6 py-4 text-gray-600">gering</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">vollverglast</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTITIONS-MODELLE (ohne Preise) -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Investitions-Modelle</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Miete, Kauf oder Mietkauf – wir bauen das Modell um Ihr Berliner Projekt</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Container-Spezifikation, Sicherheitsstufe, Reinraumklasse, Gründungsart und Laufzeit bestimmen die Kalkulation. Statt einer Pseudo-Spanne erhalten Sie binnen 24 Stunden eine projektspezifische, schriftliche Indikation.</p>
+              <p class="text-sm text-gray-600">Für die Kalkulation benötigen wir: Berliner Standort (Klinik-Campus, Forschungsinstitut, Berlin-Buch, Adlershof, Pharma-Cluster), Sicherheitsstufe (S1/S2/S3, GMP), gewünschte Laufzeit und Inbetriebnahme-Termin.</p>
+              <a href="#anfrage" class="inline-flex items-center gap-2 mt-4 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Indikation in 24 h anfordern <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            </div>
+            <div class="space-y-4">
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Miete</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Flexibel, off-balance, projektgebunden</div>
+                <p class="text-sm text-gray-600">Für Interimslabore während Klinik-Sanierungen, befristete Drittmittel-Projekte in Berlin-Buch, kurzfristige Pharma-Studienkampagnen. Laufzeit projektspezifisch.</p>
+              </div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Kauf</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Asset, vollständige Kontrolle</div>
+                <p class="text-sm text-gray-600">Für dauerhafte Erweiterung am Forschungscampus Adlershof, im Pharma-Cluster Berlin-Brandenburg oder am Berlin-Buch-Campus. LABtoGO-Plattform modular ausbaubar.</p>
+              </div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Mietkauf</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Übergang Miete → Eigentum</div>
+                <p class="text-sm text-gray-600">Wenn aus dem Interim-Projekt ein Dauerstandort werden kann – Miete später anrechenbar auf den Kauf.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGISTIK-BEWEIS -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Logistik-Beweis</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Werk Albstadt → Berlin: 720 km via A81 / A6 / A9 / A10</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Vom Werk Albstadt führt die Schwerlastroute über die A81 nordwärts, A6 ostwärts und A9 nordwärts via Würzburg und Nürnberg bis zum Berliner Ring (A10). Anschluss-Optionen: Berlin-Süd, Berlin-Schönefeld, Berlin-Spandau – je nach Zielcampus. Reine Fahrzeit ca. 7,5 Stunden, mit Genehmigungspflicht und Begleitfahrzeugen typischerweise ein Transporttag.</p>
+              <p class="text-gray-700 leading-relaxed mb-4">Standardcontainer unter 4 m Breite und 18 t benötigen keine Schwertransportgenehmigung – Folgetag-Aufstellung möglich. Übergroße Anlagen oder vibrationsempfindliche Module für Adlershof koordinieren wir mit Mobilkran 60–200 t und Begleitfahrzeugen über die zuständigen Berliner Behörden.</p>
+              <p class="text-gray-700 leading-relaxed">Vom Auftrag bis zur betriebsbereiten Übergabe in Berlin vergehen 8 bis 14 Wochen.</p>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">720</div><div class="text-xs text-gray-600 uppercase tracking-wider">km Werk</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">~7,5 h</div><div class="text-xs text-gray-600 uppercase tracking-wider">Schwerlast</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">A9/A10</div><div class="text-xs text-gray-600 uppercase tracking-wider">direkt</div></div>
+              <div class="col-span-3 bg-slate-900 text-white rounded-xl p-5">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Anschlussstellen</div>
+                <p class="text-sm text-gray-300">Berlin-Süd, Berlin-Schönefeld und Berlin-Spandau als Standardanlieferpunkte für Klinik-Campusse, den Berlin-Buch-Campus, Forschungscampus Adlershof und den Pharma-Cluster Berlin-Brandenburg. Mobilkran-Aufstellung am Folgetag nach Standortvorbereitung.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BÜROKRATIE-INSIDER -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Genehmigung Berlin</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Wir bereiten alles für Bezirksamt, LAGeSo und Klinikbauamt vor</h2>
+          <p class="text-gray-700 text-lg mb-8 max-w-3xl">Berlin ist die einzige deutsche Großstadt mit 12 eigenständigen Bezirksbauämtern. Für ein Containerlabor können je nach Standort zusätzlich LAGeSo (BSL-3), das Klinikbauamt und die Berliner Branddirektion zuständig sein. Wir kommunizieren mit allen – Sie nicht.</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">BauO Bln – Bauanzeige & Bezirksverfahren</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Maßgebend ist die Bauordnung Berlin. Verfahrensfreie Anlagen und Bauanzeige greifen je nach Größe – wir prüfen die Eingruppierung Ihres Standorts vorab und legen prüffähige Bauvorlagen beim zuständigen Bezirksamt vor. Mitte, Pankow, Treptow-Köpenick und Charlottenburg-Wilmersdorf prüfen jeweils nach eigener Praxis.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">LAGeSo-Anzeige für BSL-3 & GenTG</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">BSL-3 in Berlin verlangt Genehmigung nach BioStoffV (Bundesrecht) sowie Anzeige beim LAGeSo – Landesamt für Gesundheit und Soziales Berlin. Für gentechnische Anlagen S1/S2/S3 zusätzlich Anzeige nach GenTG. Wir liefern Risikobewertung, Sicherheitskonzept und vollständige Antragsunterlagen.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">KhBauVO-Brandschutz für Klinik-Aufstellung</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Aufstellungen auf Klinik-Campussen und an Krankenhaus-Standorten verlangen Brandschutzkonzepte nach Krankenhausbauverordnung Berlin, sterile Logistik und Abstimmung mit Klinikbauamt und Berliner Branddirektion.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">Hochschulbau Berlin</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Aufstellungen am Berlin-Buch-Campus, an Forschungsinstituten in Adlershof oder an Berliner Universitäten werden mit der Berliner Hochschulbauverwaltung und der jeweiligen Forschungs-Infrastrukturplanung abgestimmt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROZESS 5 SCHRITTE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">So baut Planexus Ihr Containerlabor in Berlin</h2>
+          <p class="text-gray-600 text-lg mb-12">Fünf Schritte, ein Ansprechpartner – von der ersten Skizze bis zur Übergabe.</p>
+          <div class="space-y-5">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">01</div><div><h3 class="font-bold text-slate-900 mb-1">Wir hören zu</h3><p class="text-gray-600 text-sm">Anforderungs-Workshop vor Ort in Berlin oder per Video. Welche Sicherheitsstufe, welcher Bezirk, welcher Campus, welche Norm, welcher Termin.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">02</div><div><h3 class="font-bold text-slate-900 mb-1">Wir planen</h3><p class="text-gray-600 text-sm">CAD-Layout, TGA, Statik. BauO-Bln-konforme Bauvorlagen für das zuständige Bezirksamt – verfahrenstauglich ab Tag 1. LAGeSo-Vorbereitung bei BSL-3.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">03</div><div><h3 class="font-bold text-slate-900 mb-1">Wir bauen</h3><p class="text-gray-600 text-sm">Modul-Vorfertigung beim zertifizierten Polen-Partner, Endmontage und Innenausbau im Werk Albstadt mit Wesemann-Möbeln. Pfahlgründungs-Vorbereitung und QC vor Auslieferung. Werksbesichtigung jederzeit möglich.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">04</div><div><h3 class="font-bold text-slate-900 mb-1">Wir liefern</h3><p class="text-gray-600 text-sm">Schwerlasttransport A81/A6/A9 (720 km, 1 Transporttag). Aufstellung per Mobilkran auf Pfahl- oder Plattengründung. Anschluss aller Medien, Funktions- und Dichtigkeitstests vor Übergabe.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">05</div><div><h3 class="font-bold text-slate-900 mb-1">Wir übergeben</h3><p class="text-gray-600 text-sm">IQ/OQ/PQ-Dokumentation. Schulung Ihrer Operator. Wartungs-Optionen bis 24 Monate – auf Wunsch verlängerbar.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — Laborcontainer für Berlin</h2>
+          <p class="text-gray-600 text-lg mb-10">Sieben Fragen, sieben Antworten. Direkt und ohne Marketing-Sprech.</p>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <article class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INLINE CONTACT FORM -->
+    <section id="anfrage" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Kostenfreies Standort-Audit</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Senden Sie uns Ihren Berliner Standort und Ihr Labor-Profil</h2>
+            <p class="text-gray-600 text-lg">Wir liefern innerhalb von 48 Stunden: Standort-Bewertung, Container-Konfiguration mit Maßen und Specs, Genehmigungs-Pfad nach BauO Bln / LAGeSo / KhBauVO, Liefer- und Aufstellungs-Termin, indikatives Investitions-Bracket für Miete und Kauf.</p>
+          </div>
+
+          <div class="grid lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2">
+              <div class="bg-slate-900 text-white rounded-2xl p-8 h-full">
+                <h3 class="font-bold text-lg mb-6">Direkter Kontakt</h3>
+                <div class="space-y-5">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Telefon</div><a href="tel:+4974357519700" class="font-bold hover:text-primary transition-colors">+49 7435 7519 700</a></div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">E-Mail</div><a href="mailto:info@planexus.de" class="font-bold hover:text-primary transition-colors">info@planexus.de</a></div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Werk & Zentrale (720 km via A81/A6/A9)</div><div class="font-bold">Emil-Mayer-Straße 1<br/>72461 Albstadt</div></div>
+                  </div>
+                  <div class="border-t border-white/10 pt-5 mt-5">
+                    <div class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Werksbesichtigung</div>
+                    <p class="text-sm text-gray-300">Wir zeigen Ihnen Ihren Container während der Fertigung – inklusive Pfahlgründungs-Vorbereitung vor Auslieferung. Termin nach Vereinbarung.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-3"><ContactForm client:visible locale="en" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Containerlabor Berlin</div>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Laborcontainer Berlin — Werksbesichtigung Albstadt und Standort-Audit</h2>
+          <p class="text-gray-400 mb-8">LABtoGO produzieren wir auf Bestellung im Werk Albstadt – Pfahlgründung für Berliner Sand und Spree-Grundwasser ab Werk vorkonfektioniert. Werksbesichtigung jederzeit möglich, kostenfreies Standort-Audit inklusive.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Jetzt anrufen</a>
+            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Anfrageformular ausfüllen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEITERE STANDORTE -->
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Weitere Standorte für Laborcontainer im DACH-Raum</h2>
+          <p class="text-gray-600 mb-8">Berlin ist Deutschlands wissenschaftliche Hauptstadt mit höchster BSL-Dichte und der größten Universitätsmedizin Europas. Diese Standorte teilen verwandte Forschungs- und Klinik-Profile:</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="/en/lab-containers-stuttgart" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Stuttgart</div><div class="text-xs text-gray-500">Antriebsforschung & Werkstoffe</div></a>
+            <a href="/en/lab-containers-hamburg" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Hamburg</div><div class="text-xs text-gray-500">Pharma, Klinik & Forschung</div></a>
+            <a href="/en/lab-containers-munich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">München</div><div class="text-xs text-gray-500">Automotive, Hochschulen & Forschung</div></a>
+            <a href="/en/lab-containers-frankfurt" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Frankfurt</div><div class="text-xs text-gray-500">Pharma-Cluster Rhein-Main</div></a>
+            <a href="/en/lab-containers-dusseldorf" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Düsseldorf</div><div class="text-xs text-gray-500">NRW Chemie-Cluster</div></a>
+            <a href="/en/lab-containers-zurich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Zürich</div><div class="text-xs text-gray-500">Pharma & Forschung</div></a>
+            <a href="/en/lab-containers-basel" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Basel</div><div class="text-xs text-gray-500">Pharma-Region</div></a>
+            <a href="/en/lab-containers-vienna" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Wien</div><div class="text-xs text-gray-500">AT-Pharma, Medizintechnik</div></a>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-gray-100">
+            <h3 class="font-bold text-slate-900 mb-3">Vertiefende Ressourcen</h3>
+            <div class="grid md:grid-cols-2 gap-3 text-sm">
+              <a href="/en/lab-containers" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer – Übersicht Produkte & Leistungen</a>
+              <a href="/en/locations" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer-Standorte im DACH-Raum</a>
+              <a href="/en/lab-containers/labtogo" class="text-gray-600 hover:text-primary transition-colors">→ LABtoGO – die Plattform für BSL-2, GMP, ATEX</a>
+              <a href="/en/magazine/lab-container-permits-building-law" class="text-gray-600 hover:text-primary transition-colors">→ Genehmigung & Baurecht für Laborcontainer (Praxisleitfaden)</a>
+              <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-gray-600 hover:text-primary transition-colors">→ BSL-2 & BSL-3 im Container – geht das?</a>
+              <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-gray-600 hover:text-primary transition-colors">→ GMP-Reinraum im Container für Pharma-Produktion</a>
+              <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-gray-600 hover:text-primary transition-colors">→ Klimatisierung im Laborcontainer – Normen & Praxis</a>
+              <a href="/en/magazine/lab-containers-rent-or-buy" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer mieten oder kaufen?</a>
+              <a href="/en/magazine/lab-container-project-process" class="text-gray-600 hover:text-primary transition-colors">→ Projektablauf: Von der Idee zur Übergabe</a>
+              <a href="/en/about" class="text-gray-600 hover:text-primary transition-colors">→ Über Planexus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <CityCrossLinks current="berlin" locale="en" />
+
+
+  </div>
+</Layout>

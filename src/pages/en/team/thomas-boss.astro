@@ -1,0 +1,188 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Thomas Boss",
+  "url": "https://planexus.de/en/team/thomas-boss",
+  "image": "https://planexus.de/en/team/thomas-boss.jpg",
+  "jobTitle": "Gesellschafter & Technischer Leiter",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "url": "https://planexus.de",
+    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
+  },
+  "knowsAbout": [
+    "Laborcontainer", "Modularer Laborbau", "Technische Projektleitung",
+    "Anlagentechnik", "Laborlüftung", "Laborausstattung",
+    "Projektsteuerung", "Brandschutz", "IT- und Softwareentwicklung",
+    "Photovoltaik-Monitoring"
+  ],
+  "knowsLanguage": ["de", "en"],
+  "sameAs": [
+    "https://www.linkedin.com/in/thomas-boss-690091352",
+    "https://www.facebook.com/thomas.boss.9"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Am Steinbach 8",
+    "postalCode": "72459",
+    "addressLocality": "Albstadt-Laufen",
+    "addressRegion": "Baden-Württemberg",
+    "addressCountry": "DE"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Team", "item": "https://planexus.de/en/team" },
+    { "@type": "ListItem", "position": 3, "name": "Thomas Boss", "item": "https://planexus.de/en/team/thomas-boss" }
+  ]
+};
+---
+
+<Layout
+  title="Thomas Boss – Technischer Leiter Planexus GmbH"
+  description="Thomas Boss, Gesellschafter und Technischer Leiter der Planexus GmbH. Technik, Projektsteuerung und Laborbau für BSL-, GMP- und ATEX-Container im DACH-Raum."
+  canonical="/en/team/thomas-boss"
+  ogImage="/team/thomas-boss.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <nav class="text-sm text-gray-400 mb-6" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-primary">Start</a>
+          <span class="mx-2">/</span>
+          <a href="/en/team" class="hover:text-primary">Team</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-200">Thomas Boss</span>
+        </nav>
+        <div class="grid md:grid-cols-3 gap-10 items-start max-w-5xl">
+          <div class="md:col-span-1">
+            <div class="aspect-square rounded-2xl overflow-hidden border-2 border-primary/40 bg-gradient-to-br from-primary/30 to-primary/5">
+              <img
+                src="/team/thomas-boss.jpg"
+                alt="Thomas Boss, Gesellschafter und Technischer Leiter der Planexus GmbH"
+                width="400"
+                height="400"
+                loading="eager"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <div class="text-xs uppercase tracking-wider text-[#bbd700] font-bold mb-2">Technik &amp; Projektleitung</div>
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Thomas Boss</h1>
+            <p class="text-xl text-gray-300 mb-6">Gesellschafter &amp; Technischer Leiter der Planexus GmbH, Albstadt</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">Technische Projektleitung</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">Laborbau &amp; Container</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">Anlagentechnik &amp; HVAC</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">IT &amp; Softwareentwicklung</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">Brandschutz &amp; Sicherheit</span>
+            </div>
+            <p class="text-gray-300 leading-relaxed">
+              Der technische Kopf der Planexus GmbH. Schwerpunkt: Planung, Anlagentechnik und
+              schlüsselfertige Umsetzung von Laborcontainern für Pharma, Biotech, Forschung,
+              Klinik und Krisenstäbe in Deutschland, Schweiz und Österreich.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6">Zur Person</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
+            <p>
+              Thomas Boss ist Gesellschafter und Technischer Leiter der <strong>Planexus GmbH</strong>
+              mit Sitz in Albstadt (Baden-Württemberg). Planexus gehört zur <strong>Wesemann-Gruppe</strong>
+              und verantwortet den Bereich modulare Laborcontainer und schlüsselfertige mobile
+              Laborinfrastruktur für Pharma, Biotech, Forschung, Klinik und Public-Health-Anwendungen.
+            </p>
+            <p>
+              Sein fachlicher Schwerpunkt liegt auf der technischen Umsetzung anspruchsvoller
+              Container-Projekte: <strong>Anlagentechnik, Lüftung und Medienversorgung</strong>,
+              Laborausstattung sowie die Projektsteuerung von der Planung bis zur schlüsselfertigen
+              Übergabe. Dabei verbindet er handwerklich-technische Erfahrung, IT-Expertise und
+              langjähriges Laborbau-Know-how zu einer ganzheitlichen Sicht auf jedes Projekt.
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6 mt-12">Werdegang</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
+            <p>
+              Thomas Boss wurde 1971 in Hechingen geboren. Nach seiner schulischen Ausbildung
+              absolvierte er eine Ausbildung zum <strong>Industriemechaniker</strong> und war
+              anschließend mehrere Jahre in diesem Beruf tätig. In dieser Zeit erwarb er fundierte
+              technische Kenntnisse, ein ausgeprägtes Verständnis für industrielle Abläufe sowie
+              praktische Erfahrung im Umgang mit komplexen technischen Systemen.
+            </p>
+            <p>
+              Im weiteren Verlauf seiner beruflichen Entwicklung wechselte er zur Berufsfeuerwehr
+              und absolvierte dort die Ausbildung zum <strong>Brandmeister</strong>. Diese Tätigkeit
+              prägte insbesondere sein Verantwortungsbewusstsein, seine Entscheidungsstärke sowie
+              seine Fähigkeit, auch unter Druck strukturiert und lösungsorientiert zu handeln.
+            </p>
+            <p>
+              Nach einigen Jahren bei der Feuerwehr machte sich Thomas Boss in der IT-Branche
+              selbständig. Über einen Zeitraum von rund <strong>20 Jahren</strong> beriet er namhafte
+              Unternehmen bei technischen und softwarebezogenen Fragestellungen und entwickelte
+              vollständige Softwarelösungen eigenständig. Gemeinsam mit einem Kollegen entstand unter
+              anderem eine <strong>Überwachungssoftware für PV-Großanlagen</strong>, mit der sich
+              komplexe Photovoltaik-Anlagen effizient kontrollieren und auswerten ließen.
+            </p>
+            <p>
+              Nach zwei Jahrzehnten unternehmerischer Tätigkeit wechselte er in den Laborbereich und
+              übernahm bei der Firma <strong>Mc Labor</strong> die Position des Technischen Leiters.
+              Dort verantwortete er zahlreiche Laborbauprojekte mit Laborcontainern und leitete
+              anspruchsvolle Vorhaben von der Planung bis zur Umsetzung — eine Funktion, in der er
+              seine Erfahrungen aus Technik, IT, Projektsteuerung und Laborbau erstmals vollständig
+              miteinander verband.
+            </p>
+            <p>
+              Gemeinsam mit <strong>Sven Biewald</strong> gründete Thomas Boss die
+              <strong>Planexus GmbH</strong>, die heute zur Wesemann-Gruppe gehört. Bei Planexus
+              plant und baut er Laborcontainer der nächsten Generation — mit dem Anspruch, moderne,
+              flexible und zukunftsorientierte Laborlösungen für unterschiedlichste Anforderungen
+              zu entwickeln.
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6 mt-12">Verantwortung &amp; Rolle</h2>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>Technische Projektleitung</strong> — Planung, Konstruktion und schlüsselfertige Umsetzung der Laborcontainer von der Idee bis zur Übergabe.</span></li>
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>Anlagen- &amp; Gebäudetechnik</strong> — Lüftung, Klimatisierung, Medienversorgung und sicherheitsrelevante Technik für BSL-, GMP- und ATEX-Ausführungen.</span></li>
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>Qualität &amp; Sicherheit</strong> — normgerechte, robuste Ausführung mit dem Blick für praktische Betriebssicherheit im Laboralltag.</span></li>
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>Werks-Schnittstelle Albstadt</strong> — Steuerung von Fertigung, Lieferanten und Montage entlang der Projektrealisierung im DACH-Raum.</span></li>
+          </ul>
+
+          <div class="mt-12 p-6 rounded-xl bg-slate-900 text-white">
+            <h2 class="text-2xl font-heading font-bold mb-3">Direkt anfragen</h2>
+            <p class="text-gray-300 mb-4">
+              Konkretes Container-Projekt? Technische Frage zu Anlagentechnik, Ausstattung oder
+              Umsetzung? Über das Kontakt-Formular landet die Anfrage direkt bei der technischen
+              Leitung von Planexus.
+            </p>
+            <a
+              href="/en/contact"
+              class="inline-block px-6 py-3 bg-[#bbd700] text-slate-900 font-bold rounded-lg hover:bg-[#a3bd00] transition-colors"
+              data-testid="link-kontakt"
+            >Kontakt aufnehmen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,633 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="GMP-Reinraum im Container: Pharma und Biotech"
+  description="GMP-konforme Reinräume im Container: Modulare Lösungen für Pharma und Biotech. Klassen, Normen und Praxisbeispiele. Jetzt lesen."
+  canonical="/en/magazine/gmp-cleanroom-container-pharma-production"
+  ogImage="/images/backgrounds/magazin-gmp-reinraum.webp"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "GMP-Reinraum im Container: Pharmazeutische Produktion auf kleinstem Raum",
+      "description": "GMP-konforme Reinräume im Containerformat: Wie modulare Reinraumlösungen die Pharma- und Biotech-Branche verändern.",
+      "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/en/team/thomas-boss", "jobTitle": "Gesellschafter & Technischer Leiter", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+      "datePublished": "2026-02-10",
+      "dateModified": "2026-02-10",
+      "image": "/images/backgrounds/magazin-gmp-reinraum.webp",
+      "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+        { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/en/magazine" },
+        { "@type": "ListItem", "position": 3, "name": "GMP-Reinraum im Container", "item": "https://planexus.de/en/magazine/gmp-cleanroom-container-pharma-production" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was bedeutet GMP im Zusammenhang mit Reinräumen?",
+          "acceptedAnswer": { "@type": "Answer", "text": "GMP steht für Good Manufacturing Practice und bezeichnet die Richtlinien für die gute Herstellungspraxis in der Pharma- und Lebensmittelindustrie. GMP-Reinräume erfüllen definierte Anforderungen an Partikelkonzentration, Temperatur, Luftfeuchtigkeit und Hygiene." }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche GMP-Klassen können in einem Container realisiert werden?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In Containermodulen lassen sich GMP-Reinräume der Klassen D (ISO 8), C (ISO 7) und B (ISO 5) realisieren. Klasse-A-Zonen werden als Laminar-Flow-Einheiten innerhalb eines Klasse-B-Umfelds umgesetzt." }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie lange dauert die Realisierung eines GMP-Reinraumcontainers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Von der Planung bis zur Qualifizierung vergehen typischerweise 16 bis 24 Wochen. Das ist 50 bis 70 Prozent schneller als ein vergleichbarer konventioneller Reinraumbau." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist ein Container-Reinraum genauso sicher wie ein fest gebauter?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Ein korrekt geplanter und qualifizierter Container-Reinraum erfüllt dieselben GMP-Anforderungen wie ein konventioneller Reinraum. Die Qualifizierung erfolgt nach identischen Protokollen (IQ, OQ, PQ)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet ein GMP-Reinraumcontainer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Die Kosten variieren stark je nach Reinraumklasse, Ausstattung und Projektumfang. Jede Konfiguration wird individuell kalkuliert. Fordern Sie ein unverbindliches Angebot an, um eine transparente Kostenübersicht für Ihr Projekt zu erhalten." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ein GMP-Reinraumcontainer den Standort wechseln?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja, das ist einer der größten Vorteile. Der Container kann demontiert, transportiert und am neuen Standort re-qualifiziert werden. Die Re-Qualifizierung ist deutlich weniger aufwendig als eine komplette Neuqualifizierung." }
+        }
+      ]
+    })} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/backgrounds/magazin-gmp-reinraum.webp')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+              Pharma & Biotech
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              18 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            GMP-Reinraum im Container – Pharma-Produktion auf kleinstem Raum
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Die Pharmabranche denkt um. Modulare Reinraumlösungen im Containerformat erobern die Produktion – schneller, flexibler und oft günstiger als der klassische Weg. Wir zeigen, was geht und wo die Grenzen liegen.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              10. Februar 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Thomas Boss
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazin</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">GMP-Reinraum im Container</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Wenn ein Pharmaunternehmen neue Produktionskapazitäten braucht, stehen klassischerweise Jahre der Planung und des Baus bevor. Reinräume nach GMP-Standards zu errichten ist komplex, teuer und zeitintensiv. Doch es gibt eine Alternative, die in den letzten Jahren vom Nischenprodukt zum ernsthaften Gamechanger geworden ist: der modulare GMP-Reinraum im Containerformat. Keine Behelfslösung, sondern voll qualifizierte Produktionsumgebung.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
+                GMP-Reinraum: Was steckt dahinter?
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                GMP – Good Manufacturing Practice – ist kein optionaler Qualitätsstandard, sondern gesetzliche Pflicht für jeden, der Arzneimittel, Wirkstoffe oder bestimmte Medizinprodukte herstellt. In der EU regelt der Annex 1 des GMP-Leitfadens die Anforderungen an die Herstellung steriler Produkte. Und der wurde 2023 grundlegend überarbeitet – mit deutlich verschärften Anforderungen an Monitoring, Kontaminationskontrolle und Prozessvalidierung.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der Reinraum ist dabei das Herzstück. In ihm wird die Partikelkonzentration in der Luft kontrolliert, die Temperatur und Luftfeuchtigkeit geregelt und der Zugang streng reglementiert. Je nach Anwendung gelten unterschiedliche Reinraumklassen – von D (geringste Anforderungen) bis A (höchste Reinheit für aseptische Prozesse).
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full border-collapse text-sm">
+                  <thead>
+                    <tr class="bg-slate-900 text-white">
+                      <th class="text-left p-4 rounded-tl-xl">GMP-Klasse</th>
+                      <th class="text-center p-4">ISO-Äquivalent</th>
+                      <th class="text-center p-4">Max. Partikel ≥0,5µm/m³</th>
+                      <th class="text-left p-4 rounded-tr-xl">Typische Anwendung</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-gray-100">
+                      <td class="p-4 font-bold text-slate-900">Klasse A</td>
+                      <td class="p-4 text-center text-gray-700">ISO 5</td>
+                      <td class="p-4 text-center text-gray-700">3.520</td>
+                      <td class="p-4 text-gray-700">Aseptische Abfüllung, sterile Manipulation</td>
+                    </tr>
+                    <tr class="border-b border-gray-100 bg-slate-50">
+                      <td class="p-4 font-bold text-slate-900">Klasse B</td>
+                      <td class="p-4 text-center text-gray-700">ISO 5</td>
+                      <td class="p-4 text-center text-gray-700">3.520</td>
+                      <td class="p-4 text-gray-700">Hintergrundumgebung für Klasse A</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                      <td class="p-4 font-bold text-slate-900">Klasse C</td>
+                      <td class="p-4 text-center text-gray-700">ISO 7</td>
+                      <td class="p-4 text-center text-gray-700">352.000</td>
+                      <td class="p-4 text-gray-700">Weniger kritische Prozessschritte</td>
+                    </tr>
+                    <tr>
+                      <td class="p-4 font-bold text-slate-900">Klasse D</td>
+                      <td class="p-4 text-center text-gray-700">ISO 8</td>
+                      <td class="p-4 text-center text-gray-700">3.520.000</td>
+                      <td class="p-4 text-gray-700">Primärverpackung, nicht-sterile Herstellung</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
+                Warum Container? Die Treiber hinter dem Trend
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der Trend zum modularen GMP-Reinraum hat handfeste Gründe. Es geht nicht um Kosteneinsparungen allein – auch wenn die beachtlich sind. Es geht um Geschwindigkeit, Flexibilität und eine veränderte Marktdynamik, die klassische Bauansätze an ihre Grenzen bringt.
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 not-prose">
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <h4 class="font-bold text-slate-900 mb-1">50–70 % schneller</h4>
+                  <p class="text-gray-600 text-sm">16 bis 24 Wochen statt 18 bis 36 Monate für einen konventionellen Reinraum</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                  </div>
+                  <h4 class="font-bold text-slate-900 mb-1">20–40 % günstiger</h4>
+                  <p class="text-gray-600 text-sm">Durch Vorfertigung, weniger Baustellenkosten und kürzere Projektlaufzeiten</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                  </div>
+                  <h4 class="font-bold text-slate-900 mb-1">Modular skalierbar</h4>
+                  <p class="text-gray-600 text-sm">Kapazitäten erweitern durch Aneinanderreihen weiterer Module</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </div>
+                  <h4 class="font-bold text-slate-900 mb-1">Voll qualifizierbar</h4>
+                  <p class="text-gray-600 text-sm">IQ, OQ, PQ in der Fabrik – Validierungsaufwand vor Ort sinkt drastisch</p>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Besonders in der Zell- und Gentherapie – einem der am schnellsten wachsenden Segmente der Pharmabranche – sind modulare Reinräume auf dem Vormarsch. Die Herstellung personalisierter Therapien erfordert kleine, hochflexible Produktionseinheiten, die schnell an wechselnden Standorten verfügbar sein müssen. Der klassische Reinraumbau ist für dieses Geschäftsmodell schlicht zu langsam.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
+                Aufbau eines GMP-Reinraumcontainers: So funktioniert es
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein GMP-Reinraumcontainer ist kein umgebauter Seecontainer mit einer Klimaanlage. Es ist ein hochpräzises Produktionssystem, das in einer kontrollierten Fertigungsumgebung gebaut wird. Der grundsätzliche Aufbau folgt dabei den gleichen Prinzipien wie im stationären Reinraumbau – nur dass alles in ein transportables Format gebracht wird.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Die Raumhülle: Mehr als nur Wände
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Basis bildet eine gasdichte Stahlkonstruktion mit innen liegenden Reinraum-Wandpaneelen. Diese Paneele haben glatte, fugenlose Oberflächen, die leicht zu reinigen und zu desinfizieren sind. Alle Ecken und Übergänge werden mit Hohlkehlen ausgeführt – scharfe Kanten, in denen sich Partikel oder Keime sammeln könnten, gibt es nicht. Die <a href="/en/services/equipment" class="text-primary font-medium hover:underline">Materialauswahl</a> erfolgt nach pharmazeutischen Kriterien: chemikalienbeständig, abriebfest und FDA-konform.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                HVAC: Das Herzstück der Partikelkontrolle
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Das Lüftungs- und Klimasystem (HVAC – Heating, Ventilation, Air Conditioning) entscheidet über die Reinraumklasse. In einem GMP-Reinraumcontainer wird die Zuluft über HEPA-Filter der Klasse H14 (Abscheidegrad ≥ 99,995 %) geführt. Je nach Klasse erfolgt die Zuführung als turbulente Mischströmung (Klasse C/D) oder als laminare Verdrängungsströmung (Klasse A/B).
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Luftwechselrate ist dabei entscheidend: Klasse-D-Räume arbeiten mit 15 bis 20 Luftwechseln pro Stunde, Klasse-C-Räume mit 20 bis 40, und Klasse-B-Räume können 40 bis 60 Luftwechsel erfordern. Das HVAC-System muss nicht nur die richtige Menge sauberer Luft liefern, sondern auch definierte Druckkaskaden zwischen den verschiedenen Reinraumzonen aufrechterhalten.
+              </p>
+
+              <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Profi-Tipp: Druckkaskade richtig planen</h4>
+                    <p class="text-gray-600 text-sm">
+                      Die Druckkaskade muss so ausgelegt sein, dass der höchste Druck im saubersten Bereich herrscht. Typisch sind 15 Pascal Differenz zwischen den Zonen. Bei unserer <a href="/en/services/planning" class="text-primary font-medium hover:underline">Fachplanung</a> simulieren wir die Druckverhältnisse vorab – das spart teure Korrekturen in der Qualifizierung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Material- und Personalschleusen
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Kein Reinraum ohne Schleusenkonzept. Der kontrollierte Zugang von Personal und Material ist essentiell, um Kontaminationen zu verhindern. In einem Containermodul wird das Schleusenkonzept besonders clever gelöst: Personalschleusen mit Interlock-Verriegelung, Umkleidezonen und ggf. Luftduschen werden in separaten Vorschaltmodulen oder im gleichen Container realisiert.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Materialschleusen mit Durchreichen, UV-Dekontamination oder Materialschleusen mit kontrollierter Luftführung sorgen dafür, dass nur gereinigtes Material in den Reinraum gelangt. Bei der Planung von <a href="/en/services/modular-construction" class="text-primary font-medium hover:underline">Mehrmodul-Anlagen</a> können diese Schleusen nahtlos zwischen den Modulen integriert werden.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
+                Die Qualifizierung: Von DQ bis PQ
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein GMP-Reinraum ist erst dann ein GMP-Reinraum, wenn er qualifiziert ist. Die Qualifizierung folgt einem standardisierten Prozess in vier Stufen – und hier liegt ein großer Vorteil des modularen Ansatzes.
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-4">Die vier Qualifizierungsstufen:</h4>
+                <div class="space-y-4">
+                  <div class="flex items-start gap-4">
+                    <span class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold shrink-0">DQ</span>
+                    <div>
+                      <p class="text-gray-700 font-medium">Design Qualification</p>
+                      <p class="text-gray-500 text-sm">Dokumentierter Nachweis, dass das Design alle GMP-Anforderungen erfüllt. Wird vor der Fertigung abgeschlossen.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <span class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold shrink-0">IQ</span>
+                    <div>
+                      <p class="text-gray-700 font-medium">Installation Qualification</p>
+                      <p class="text-gray-500 text-sm">Prüfung, ob alle Komponenten korrekt installiert sind und den Spezifikationen entsprechen. Kann bereits in der Fabrik erfolgen.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <span class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold shrink-0">OQ</span>
+                    <div>
+                      <p class="text-gray-700 font-medium">Operational Qualification</p>
+                      <p class="text-gray-500 text-sm">Funktionstest aller Systeme unter definierten Bedingungen. Partikelzählung, Druckdifferenzen, Temperatur, Luftfeuchtigkeit.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <span class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold shrink-0">PQ</span>
+                    <div>
+                      <p class="text-gray-700 font-medium">Performance Qualification</p>
+                      <p class="text-gray-500 text-sm">Nachweis, dass der Reinraum unter realen Produktionsbedingungen die Spezifikationen einhält.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der entscheidende Vorteil des Containeransatzes: DQ, IQ und große Teile der OQ können bereits in der Fertigungshalle durchgeführt werden – unter kontrollierten Bedingungen, ohne Zeitdruck durch parallele Baustellenarbeiten. Am Einsatzort muss dann nur noch die standortspezifische OQ und die PQ durchgeführt werden. Das reduziert den Validierungsaufwand vor Ort erheblich.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl my-8">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Wichtig: EU GMP Annex 1 beachten</h4>
+                    <p class="text-gray-600 text-sm">
+                      Seit August 2023 gilt der überarbeitete Annex 1 mit deutlich verschärften Anforderungen an die Contamination Control Strategy (CCS). Diese muss bereits in der Designphase dokumentiert werden – egal ob konventioneller oder modularer Reinraum. Unsere <a href="/en/services/consulting" class="text-primary font-medium hover:underline">Beratung</a> unterstützt Sie bei der GMP-konformen Umsetzung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
+                Anwendungsbereiche: Wo Container-Reinräume eingesetzt werden
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Einsatzgebiete für modulare GMP-Reinräume sind vielfältiger als viele denken. Hier die wichtigsten Anwendungsbereiche, die wir aktuell im Markt sehen:
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Zell- und Gentherapie
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die personalisierte Medizin erfordert dezentrale Produktionskapazitäten. CAR-T-Zelltherapien müssen oft patientennah hergestellt werden – in Reinräumen der Klasse B mit Klasse-A-Zonen für die aseptische Verarbeitung. Modulare Container können innerhalb von Wochen an Kliniken oder Forschungszentren bereitgestellt werden und sind nach Projektende wieder verlegbar.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Sterile Abfüllung (Fill & Finish)
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die sterile Abfüllung von Arzneimitteln – insbesondere Injektionslösungen und Impfstoffe – erfordert Klasse-A-Bedingungen in einer Klasse-B-Umgebung. Container-Reinräume mit integrierten Isolatoren oder RABS (Restricted Access Barrier Systems) erfüllen diese Anforderungen und können als eigenständige Fill-&-Finish-Linien betrieben werden.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Zytostatika-Herstellung
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Herstellung von Zytostatika (Krebsmedikamenten) erfordert nicht nur Reinraumbedingungen, sondern auch Containment – also den Schutz des Personals vor den hochtoxischen Wirkstoffen. Container-Reinräume können mit Unterdruck betrieben werden und verfügen über geschlossene Handhabungssysteme, die den Anforderungen der AMWHV und der Zytostatika-Richtlinien entsprechen.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Qualitätskontrolle und Analytik
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                QC-Labore in der Pharmabranche benötigen häufig Klasse-C- oder Klasse-D-Reinraumbedingungen – etwa für Sterilitätstests oder mikrobielle Grenzprüfungen. Container-Reinräume sind hier eine ideale Lösung: Sie können parallel zum laufenden Betrieb aufgestellt werden, ohne bestehende Produktionsflächen zu beeinträchtigen.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
+                Kosten: Was Sie realistisch einplanen sollten
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Über Kosten wird in der Reinraumbranche ungern gesprochen. Wir tun es trotzdem – weil Transparenz der erste Schritt zu einer guten Entscheidung ist. Die Kosten für einen GMP-Reinraumcontainer hängen primär von drei Faktoren ab: Reinraumklasse, Größe und Ausstattungsgrad.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full border-collapse text-sm">
+                  <thead>
+                    <tr class="bg-slate-900 text-white">
+                      <th class="text-left p-4 rounded-tl-xl">Konfiguration</th>
+                      <th class="text-center p-4">Investition</th>
+                      <th class="text-left p-4 rounded-tr-xl">Typische Nutzung</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-gray-100">
+                      <td class="p-4 text-gray-700">Klasse D (ISO 8), 30 m²</td>
+                      <td class="p-4 text-center text-gray-700">Individuelles Angebot</td>
+                      <td class="p-4 text-gray-700">Primärverpackung, nicht-sterile Herstellung</td>
+                    </tr>
+                    <tr class="border-b border-gray-100 bg-slate-50">
+                      <td class="p-4 text-gray-700">Klasse C (ISO 7), 30 m²</td>
+                      <td class="p-4 text-center text-gray-700">Individuelles Angebot</td>
+                      <td class="p-4 text-gray-700">Lösungsansatz, Probenvorbereitung</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                      <td class="p-4 text-gray-700">Klasse B (ISO 5), 30 m²</td>
+                      <td class="p-4 text-center text-gray-700">Individuelles Angebot</td>
+                      <td class="p-4 text-gray-700">Hintergrund für aseptische Prozesse</td>
+                    </tr>
+                    <tr>
+                      <td class="p-4 text-gray-700">Klasse B/A Kombination, 50 m²</td>
+                      <td class="p-4 text-center text-gray-700">Individuelles Angebot</td>
+                      <td class="p-4 text-gray-700">Vollständige Fill-&-Finish-Linie</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Hinzu kommen Kosten für Qualifizierung, Transport und Aufstellung sowie die jährlichen Betriebskosten für Monitoring, Wartung und Re-Qualifizierung. Jedes Projekt wird individuell kalkuliert – <a href="/en/contact" class="text-primary font-medium hover:underline">fordern Sie ein unverbindliches Angebot an</a>.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Im Vergleich zum konventionellen Weg bietet der Container-Reinraum erhebliche Kostenvorteile. Ein fest gebauter Reinraum gleicher Spezifikation ist in der Regel deutlich teurer – plus die Kosten für das Gebäude selbst. Und die Bauzeit ist drei- bis fünfmal so lang. Über die Gesamtwirtschaftlichkeit haben wir einen <a href="/en/magazine/lab-containers-rent-or-buy" class="text-primary font-medium hover:underline">separaten Vergleichsartikel</a> geschrieben.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
+                Monitoring: Der neue Annex 1 und seine Konsequenzen
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der überarbeitete EU GMP Annex 1 hat das Thema Monitoring auf ein neues Level gehoben. Kontinuierliche Partikelüberwachung in Klasse A und B ist jetzt Pflicht – nicht nur während der Produktion, sondern auch im Ruhezustand. Und die Contamination Control Strategy (CCS) muss als lebendiges Dokument geführt werden, das regelmäßig aktualisiert wird.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für Container-Reinräume ist das eine Stärke: Da die gesamte Gebäudetechnik von Grund auf digital geplant wird, lassen sich <a href="/en/services/smart-lab" class="text-primary font-medium hover:underline">Smart-Lab-Systeme</a> mit IoT-Sensoren nahtlos integrieren. Partikelzähler, Differenzdrucksensoren, Temperatur- und Feuchtefühler – alles wird zentral erfasst, in Echtzeit überwacht und automatisch protokolliert. Das erleichtert nicht nur den täglichen Betrieb, sondern auch Audits und Inspektionen.
+              </p>
+
+              <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Profi-Tipp: Digitale Dokumentation von Anfang an</h4>
+                    <p class="text-gray-600 text-sm">
+                      Planen Sie das Monitoring-System nicht als Nachrüstung, sondern als integralen Bestandteil des Reinraums. Wenn Sensoren, Datenlogger und Alarmsysteme von Anfang an mitgeplant werden, sinken die Kosten und die Qualifizierung wird einfacher. Unsere Fachplanung berücksichtigt das automatisch.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
+                Regulatorische Landschaft: Was Sie wissen müssen
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die regulatorischen Anforderungen an GMP-Reinräume sind umfangreich – und unterscheiden sich je nach Anwendung. Hier die wichtigsten Regelwerke, die bei der Planung eines Container-Reinraums relevant sind:
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-4">Relevante Normen und Richtlinien:</h4>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>EU GMP Annex 1:</strong> Anforderungen an die Herstellung steriler Arzneimittel (überarbeitet 2023)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>ISO 14644:</strong> Internationaler Standard für Reinraumklassifizierung und -monitoring</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>VDI 2083:</strong> Deutsche Richtlinie mit praktischen Aspekten zu Reinraumtechnik</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>AMWHV:</strong> Arzneimittel- und Wirkstoffherstellungsverordnung (Deutschland)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>VDI 6022:</strong> Hygieneanforderungen an raumlufttechnische Anlagen</span>
+                  </li>
+                </ul>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Behörden – in Deutschland die zuständigen Landesbehörden und das PEI (Paul-Ehrlich-Institut) – bewerten modulare Reinräume nach exakt denselben Kriterien wie fest installierte. Es gibt keinen regulatorischen Unterschied. Was zählt, ist die Qualifizierung und die laufende Compliance – nicht die Bauweise.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
+                Grenzen ehrlich benennen
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                So überzeugend die Vorteile modularer GMP-Reinräume sind – es gibt Grenzen, die man kennen sollte:
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                    <span class="text-gray-700"><strong>Raumgröße:</strong> Einzelne Container sind auf ca. 30–45 m² begrenzt. Größere Produktionslinien erfordern Mehrmodul-Konfigurationen.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                    <span class="text-gray-700"><strong>Schwere Maschinen:</strong> Für Produktionsanlagen mit hoher Traglasten (> 500 kg/m²) müssen Böden und Struktur verstärkt werden.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                    <span class="text-gray-700"><strong>Extreme Klimazonen:</strong> In Regionen mit extremen Temperaturen kann die Energieversorgung herausfordernd werden.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                    <span class="text-gray-700"><strong>Akzeptanz:</strong> Manche Auftraggeber und Behörden stehen modularen Lösungen noch skeptisch gegenüber. Gute Dokumentation und eine saubere Qualifizierung räumen diese Bedenken aus.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Diese Grenzen sind real, aber in den meisten Fällen lösbar. Der Schlüssel liegt in einer sorgfältigen <a href="/en/services/planning" class="text-primary font-medium hover:underline">Fachplanung</a>, die alle Anforderungen von Anfang an berücksichtigt – und nicht erst, wenn der Container schon gebaut wird.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
+                Die Zukunft: Dezentrale Produktion wird Standard
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Pharmabranche befindet sich in einem fundamentalen Wandel. Personalisierte Therapien, dezentrale klinische Studien und der Druck auf kürzere Time-to-Market verschieben die Anforderungen an Produktionsinfrastruktur. Die Ära der Mega-Fabriken ist nicht vorbei – aber sie wird ergänzt durch ein Netzwerk kleinerer, flexibler Produktionseinheiten.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Container-Reinräume sind für dieses Szenario wie geschaffen. Sie ermöglichen Point-of-Care-Produktion, temporäre Kapazitätserweiterungen und schnelle Reaktionen auf Marktveränderungen. Unternehmen, die heute in modulare GMP-Infrastruktur investieren, bauen einen strategischen Vorteil auf, der sich in den kommenden Jahren auszahlen wird.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Technologie ist reif, die regulatorische Akzeptanz wächst, und die wirtschaftlichen Vorteile sind überzeugend. Die Frage ist nicht mehr ob, sondern wie schnell sich modulare Reinraumlösungen im Pharma- und Biotech-Bereich durchsetzen.
+              </p>
+
+              <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Nächster Schritt: Machbarkeitsstudie</h4>
+                    <p class="text-gray-600 text-sm">
+                      Sie planen einen GMP-Reinraum und möchten wissen, ob die modulare Variante für Ihr Projekt in Frage kommt? <a href="/en/contact" class="text-primary font-medium hover:underline">Kontaktieren Sie uns</a> für eine kostenlose Machbarkeitseinschätzung. Wir prüfen Ihre Anforderungen und zeigen Ihnen realistische Optionen – ohne Verpflichtung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
+                Häufig gestellte Fragen
+              </h2>
+
+              <div class="space-y-6 my-8 not-prose">
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-2">Was bedeutet GMP im Zusammenhang mit Reinräumen?</h3>
+                  <p class="text-gray-600 text-sm">GMP steht für Good Manufacturing Practice und bezeichnet die Richtlinien für die gute Herstellungspraxis. GMP-Reinräume erfüllen definierte Anforderungen an Partikelkonzentration, Temperatur, Luftfeuchtigkeit und Hygiene gemäß EU GMP Annex 1.</p>
+                </div>
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-2">Welche GMP-Klassen sind im Container realisierbar?</h3>
+                  <p class="text-gray-600 text-sm">In Containermodulen lassen sich GMP-Reinräume der Klassen D (ISO 8), C (ISO 7) und B (ISO 5) realisieren. Klasse-A-Zonen werden als Laminar-Flow-Einheiten innerhalb eines Klasse-B-Umfelds umgesetzt.</p>
+                </div>
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-2">Wie lange dauert die Realisierung?</h3>
+                  <p class="text-gray-600 text-sm">Von der <a href="/en/services/planning" class="text-primary hover:underline">Planung</a> bis zur Qualifizierung vergehen typischerweise 16 bis 24 Wochen. Das ist 50 bis 70 Prozent schneller als ein vergleichbarer konventioneller Reinraumbau.</p>
+                </div>
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-2">Ist ein Container-Reinraum genauso sicher wie ein fest gebauter?</h3>
+                  <p class="text-gray-600 text-sm">Ja. Ein korrekt geplanter und qualifizierter Container-Reinraum erfüllt dieselben GMP-Anforderungen wie ein konventioneller Reinraum. Die Qualifizierung erfolgt nach identischen Protokollen (IQ, OQ, PQ). Mehr über Sicherheit im Containerbau lesen Sie in unserem Artikel über <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-primary hover:underline">BSL-2 und BSL-3 Labore</a>.</p>
+                </div>
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-2">Kann ein GMP-Reinraumcontainer den Standort wechseln?</h3>
+                  <p class="text-gray-600 text-sm">Ja, das ist einer der größten Vorteile. Der Container kann transportiert und am neuen Standort re-qualifiziert werden. Die Re-Qualifizierung ist deutlich weniger aufwendig als eine komplette Neuqualifizierung. Mehr über Transport und Aufstellung erfahren Sie bei unserer <a href="/en/services/logistics" class="text-primary hover:underline">Logistik</a>.</p>
+                </div>
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-2">Was kostet ein GMP-Reinraumcontainer?</h3>
+                  <p class="text-gray-600 text-sm">Die Kosten variieren stark je nach Reinraumklasse, Ausstattung und Projektumfang. Im Vergleich zum konventionellen Bau sparen Sie erfahrungsgemäß erheblich – bei deutlich kürzerer Realisierungszeit. <a href="/en/contact" class="text-primary hover:underline">Fordern Sie ein individuelles Angebot an</a>.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-6">
+              <div class="bg-slate-50 rounded-2xl p-6 border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider">Inhaltsverzeichnis</h4>
+                <nav class="space-y-2">
+                  <a href="#" class="block text-sm text-gray-600 hover:text-primary transition-colors">GMP-Reinraum: Was steckt dahinter?</a>
+                  <a href="#" class="block text-sm text-gray-600 hover:text-primary transition-colors">Warum Container?</a>
+                  <a href="#" class="block text-sm text-gray-600 hover:text-primary transition-colors">Aufbau eines Reinraumcontainers</a>
+                  <a href="#" class="block text-sm text-gray-600 hover:text-primary transition-colors">Qualifizierung: DQ bis PQ</a>
+                  <a href="#" class="block text-sm text-gray-600 hover:text-primary transition-colors">Anwendungsbereiche</a>
+                  <a href="#" class="block text-sm text-gray-600 hover:text-primary transition-colors">Kosten</a>
+                  <a href="#" class="block text-sm text-gray-600 hover:text-primary transition-colors">Monitoring & Annex 1</a>
+                  <a href="#" class="block text-sm text-gray-600 hover:text-primary transition-colors">Regulatorische Landschaft</a>
+                  <a href="#" class="block text-sm text-gray-600 hover:text-primary transition-colors">Grenzen ehrlich benennen</a>
+                  <a href="#" class="block text-sm text-gray-600 hover:text-primary transition-colors">Die Zukunft & FAQ</a>
+                </nav>
+              </div>
+
+              <div class="bg-primary/5 rounded-2xl p-6 border border-primary/10">
+                <h4 class="font-bold text-slate-900 mb-3">Machbarkeitseinschätzung</h4>
+                <p class="text-sm text-gray-600 mb-4">
+                  Passt ein modularer GMP-Reinraum zu Ihrem Projekt? Wir prüfen es – kostenlos und unverbindlich.
+                </p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 px-4 rounded-lg text-center text-sm hover:bg-primary/90 transition-colors">
+                  Jetzt anfragen
+                </a>
+              </div>
+
+              <div class="bg-slate-50 rounded-2xl p-6 border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider">Weitere Artikel</h4>
+                <div class="space-y-4">
+                  <a href="/en/magazine/lab-containers-rent-or-buy" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">Laborcontainer mieten oder kaufen?</p>
+                    <p class="text-xs text-gray-500">Der komplette Entscheidungsleitfaden</p>
+                  </a>
+                  <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">BSL-2 und BSL-3 im Container</p>
+                    <p class="text-xs text-gray-500">Sicherheitsstufen im Containerbau</p>
+                  </a>
+                  <a href="/en/magazine/sustainability-lab-construction-energy-efficiency" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">Nachhaltigkeit im Laborbau</p>
+                    <p class="text-xs text-gray-500">Energieeffizienz trifft High-Tech</p>
+                  </a>
+                  <a href="/en/magazine/innovation-modular-construction-mobile-lab" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">Innovation im Modulbau</p>
+                    <p class="text-xs text-gray-500">Die Zukunft des mobilen Labors</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <RelatedArticles slug="gmp-reinraum-container-pharma-produktion" locale="en" />
+
+    <section class="py-16 bg-slate-900 text-white">
+      <div class="container mx-auto px-4 text-center max-w-3xl">
+        <h2 class="text-3xl font-heading font-bold mb-4">GMP-Reinraum im Container planen?</h2>
+        <p class="text-gray-300 mb-8">
+          Von der ersten Idee bis zur qualifizierten Produktionsumgebung – wir begleiten Sie durch den gesamten Prozess. Sprechen Sie mit unseren Reinraum-Experten.
+        </p>
+        <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">
+          Kostenlose Erstberatung anfragen
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

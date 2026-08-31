@@ -1,0 +1,385 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ContactForm from '../../../components/ContactForm.tsx';
+import Picture from '../../../components/Picture.astro';
+import AuthorBio from '../../../components/AuthorBio.astro';
+import BranchenCrossLinks from '../../../components/BranchenCrossLinks.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const title = "Laborcontainer Pharma & Biotech – GMP, Reinraum, ISO";
+const description = "Laborcontainer Pharma & Biotech: GMP Annex 1, ISO 14644 Klasse 7/8, BSL-2/3, IQ/OQ/PQ-Validierung. BfArM/Swissmedic-konform ab Werk. Jetzt Angebot anfordern.";
+const canonical = "/branchen/pharma-biotech";
+const ogImage = "/attached_assets/generated_images/high-tech_lab_interior.png";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Laborcontainer und Modulbau für Pharma und Biotech",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "image": "https://planexus.de/android-chrome-512x512.png",
+    "url": "https://planexus.de",
+    "telephone": "+49 7435 7519 700",
+    "email": "info@planexus.de",
+    "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" },
+    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Germany" },
+    { "@type": "Country", "name": "Switzerland" },
+    { "@type": "Country", "name": "Austria" }
+  ],
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Pharmazeutische Industrie, Biotech-Unternehmen, CDMO, GMP-Hersteller, klinische Forschung"
+  },
+  "description": "GMP-Reinraum-Container nach ISO 14644 Klasse 7/8, BSL-2/3-Container nach TRBA 100/120, Annex-1-konforme Sterilbereiche, Validierungsdokumentation IQ/OQ/PQ, BfArM-, Swissmedic- und BASG-Inspektionsbereitschaft."
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Branchen", "item": "https://planexus.de/en/industries" },
+    { "@type": "ListItem", "position": 3, "name": "Pharma & Biotech", "item": "https://planexus.de/en/industries/pharma-biotech" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Sind GMP-Reinraum-Container überhaupt zulässig nach EU-GMP Annex 1?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Die EU-GMP Annex 1 in der überarbeiteten Fassung vom 22.08.2022 (in Kraft seit 25.08.2023) fordert kein bestimmtes Bauverfahren, sondern ein wirksames Contamination Control Strategy (CCS). Modulare Container-Reinräume erfüllen die Annex-1-Anforderungen, sofern Reinraumklassen nach ISO 14644-1 (Klasse A/B/C/D entsprechend ISO 5/7/8/9), Druckkaskaden, HEPA-Filterung H14, Materialschleusen, Personalschleusen, Monitoring nach ISO 14644-2 und vollständige Qualifizierungsdokumentation (URS, FAT, SAT, IQ, OQ, PQ) vorliegen. Die deutsche Bundesoberbehörde BfArM, das Schweizer Swissmedic und das österreichische BASG akzeptieren modulare Reinraum-Container regelmäßig im Rahmen von Erlaubnisverfahren nach AMG § 13 (DE), HMG (CH) bzw. AMG (AT). Wir liefern komplette Annex-1-Dokumentationspakete inklusive CCS-Vorlage." } },
+    { "@type": "Question", "name": "Welche Reinraumklassen sind in Container-Bauweise umsetzbar?", "acceptedAnswer": { "@type": "Answer", "text": "Standard sind ISO 14644-1 Klasse 8 (entspricht GMP D, ≤3.520.000 Partikel ≥0,5 µm/m³ at rest) und Klasse 7 (entspricht GMP C, ≤352.000 Partikel ≥0,5 µm/m³). Für aseptische Abfüllung nach Annex 1 brauchen Sie zusätzlich lokal Klasse 5 (entspricht GMP A, ≤3.520 Partikel ≥0,5 µm/m³) – das wird typischerweise über Laminar-Flow-Bench, Isolatoren oder RABS realisiert, im Container-Hintergrund Klasse 7 oder 8. Klasse 6 ist mit Doppelfilter-Decken (H13 + H14) und Luftwechseln ≥60/h erreichbar. Wir bauen für Klassen 5/6/7/8 ab Werk Albstadt mit zertifizierter Partikelmessung nach ISO 14644-1, dokumentierter Recovery-Time nach ISO 14644-3 und kompletter Reinraum-Qualifizierung." } },
+    { "@type": "Question", "name": "Wie lange dauert die GMP-Qualifizierung eines Container-Reinraums?", "acceptedAnswer": { "@type": "Answer", "text": "Der Qualifizierungs-Workflow folgt dem V-Modell URS → DQ → FAT → SAT → IQ → OQ → PQ. Bei Planexus laufen URS bis FAT parallel zur Werksfertigung in Albstadt – das spart 4-6 Wochen gegenüber einem konventionellen Stick-Build. Konkrete Zeitachse: URS-Workshop 1 Woche, Design Qualification 2 Wochen, Werksfertigung mit FAT 8-10 Wochen, Logistik 1 Woche, SAT vor Ort 1 Woche, IQ 1-2 Wochen, OQ 2-3 Wochen, PQ 3-4 Wochen. Gesamtdauer von Kickoff bis GMP-Freigabe: 18-24 Wochen. Konventioneller Stick-Build dauert für vergleichbaren Umfang 36-48 Wochen. Die Zeitersparnis ist der Hauptgrund, warum Pharma- und Biotech-Kunden modulare Container wählen – nicht der Preis." } },
+    { "@type": "Question", "name": "Container für BSL-2 und BSL-3 in der Biotech-Forschung – geht das?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, mit Einschränkungen je Schutzstufe. BSL-2 nach TRBA 100/120 ist standardmäßig in Container-Bauweise umsetzbar – Sicherheitswerkbank Klasse II (DIN EN 12469), Autoklav, Personalschleuse, Notdusche, Augenspülstation, separate Gefahrstoff- und Abfallströme. BSL-3 ist anspruchsvoller: gerichtete Luftströmung mit kontrolliertem Unterdruck (typisch -25 Pa zur Schleuse, -50 Pa zum Außenbereich), HEPA-H14-Doppelfilterung in Zu- und Abluft mit Bag-In-Bag-Out, autoklavierte Material- und Personalschleuse, Notstrom-Backup für Lüftung und Lichtschleusen, redundante Sicherheitskette, jährliche Filter-Integritätsprüfung. BSL-3 ist genehmigungspflichtig nach BioStoffV § 15 in DE, ESV in CH und GTG/BBG in AT – die Anzeige läuft beim ZKBS-Sekretariat (DE), BAFU (CH) oder BMSGPK (AT). Wir bauen BSL-3-Container mit kompletter Behörden-Dokumentation." } },
+    { "@type": "Question", "name": "Was kostet ein GMP-Reinraum-Container im Vergleich zum konventionellen Reinraum-Bau?", "acceptedAnswer": { "@type": "Answer", "text": "GMP-Reinraum-Container nach ISO 14644 Klasse 8 (GMP D) liegen zwischen 4.500 und 7.500 Euro pro Quadratmeter Reinraumfläche, inklusive HVAC, Filter, Druckkaskade und Standard-Qualifizierung. ISO Klasse 7 (GMP C) liegt zwischen 6.500 und 9.500 Euro pro Quadratmeter. Konventioneller Stick-Build im Bestandsgebäude liegt typischerweise zwischen 8.000 und 15.000 Euro pro Quadratmeter, plus Bauzeit von 12-18 Monaten und temporärer Produktionsausfall. Die Container-Lösung ist also nicht zwingend günstiger im Quadratmeterpreis – sie ist dramatisch schneller. Zeit ist in der Pharma-Branche meist der entscheidende Hebel: jede Woche schnellere Marktzulassung oder jede Woche frühere klinische Charge zählt direkt im Business Case." } },
+    { "@type": "Question", "name": "Welche Branchen-Standards muss ein Pharma-Container erfüllen?", "acceptedAnswer": { "@type": "Answer", "text": "Pflicht für GMP-Pharma: EU-GMP Leitfaden Teil I (Arzneimittel) und Teil II (Wirkstoffe), EU-GMP Annex 1 (sterile Arzneimittel, Stand 22.08.2022), EU-GMP Annex 11 (computerisierte Systeme), EU-GMP Annex 15 (Qualifizierung und Validierung), ISO 14644-1/-2/-3/-4 (Reinraumklassen), ISO 14698 (mikrobielle Reinheit), DIN EN 16798 (Lüftungstechnik), DIN 1946-4 (RLT für medizinisch genutzte Räume), VDI 2167 (Krankenhaus-Lüftung) und ICH Q9/Q10 (Qualitätsmanagement). Für GxP-Computersysteme zusätzlich GAMP 5 und CFR 21 Part 11. Für Biotech mit gentechnisch veränderten Organismen: GenTG/GenTSV (DE), ESV (CH), GTG (AT). Für klinische Prüfware ergänzend GCP-V und EU-Verordnung 536/2014. Wir liefern für jede Norm eine Konformitätserklärung und eine vollständige Qualifizierungsdokumentation." } },
+    { "@type": "Question", "name": "Funktionieren Container-Reinräume auch für CDMO und Lohnherstellung?", "acceptedAnswer": { "@type": "Answer", "text": "Insbesondere für CDMO sind modulare Container-Reinräume optimal. Ein CDMO braucht produktspezifische Reinraum-Konfigurationen für jeden Auftrag – mal sterile Abfüllung, mal Lyophilisation, mal HPAPI-Handling, mal Zell- und Gentherapie. Container ermöglichen, dieselbe Werksfläche flexibel zu nutzen: Sie tauschen das Container-Modul aus und haben in 2-3 Wochen eine neue Reinraum-Konfiguration mit erneuter Qualifizierung. Konventioneller Reinraum-Umbau dauert für denselben Effekt 3-6 Monate. Wir bauen CDMO-spezifische Plattformen mit Standard-Schnittstellen (Strom, Druckluft, WFI, gereinigtes Wasser, Stickstoff, Abluft) – jeder neue Container dockt am gleichen Versorgungspunkt an. Diese Plattform-Strategie ist für CDMO der konkrete Wettbewerbsvorteil." } }
+  ]
+};
+const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Laborcontainer Pharma & Biotech – GMP, Annex 1, BSL-3", "description": "GMP-konforme Laborcontainer für Pharma- und Biotech-Unternehmen. Annex 1, ISO 14644 Reinraum, BSL-3 BioSafety, qualifizierte Werksabnahme.", "image": "https://planexus.de/opengraph.jpg", "datePublished": "2026-05-02", "dateModified": "2026-05-02", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer Planexus GmbH", "url": "https://planexus.de/en/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://planexus.de/en/industries/pharma-biotech"}, "about": "Pharma- und Biotech-Laborcontainer", "inLanguage": "en"};
+---
+<Layout title={title} description={description} canonical={canonical} ogImage={ogImage} schema={serviceSchema}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <div class="bg-white">
+    <!-- HERO -->
+    <section class="relative bg-slate-900 text-white overflow-hidden pt-20">
+      <div class="absolute inset-0 z-0">
+        <Picture src="/attached_assets/generated_images/high-tech_lab_interior.png" alt="Laborcontainer Pharma und Biotech – GMP-Reinraum nach Annex 1 und ISO 14644 Klasse 7/8" class="w-full h-full object-cover opacity-25" loading="eager" fetchpriority="high" width={1024} height={1024} />
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
+      </div>
+      <div class="relative z-10 container mx-auto px-4 py-16 md:py-24">
+        <div class="max-w-4xl">
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Branche · Pharma · Biotech · CDMO · klinische Forschung</div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+            Laborcontainer für Pharma & Biotech – GMP, Reinraum, ISO
+          </h1>
+          <p class="text-xl text-gray-300 leading-relaxed mb-4">
+            <strong class="text-white">Reinraum-Container Klasse 8/7/6 (GMP D/C/B-Hintergrund), BSL-2/3-Container nach TRBA 100/120, GMP-Qualifizierungsdokumentation IQ/OQ/PQ vollständig, Annex-1-konforme Druckkaskaden mit HEPA-H14-Doppelfilterung.</strong> Wir bauen für die deutsche, schweizerische und österreichische Pharma- und Biotech-Industrie – BfArM-, Swissmedic- und BASG-inspektionsbereit ab Werk Albstadt.
+          </p>
+          <p class="text-base text-gray-400 mb-8">Während Sie den konventionellen Reinraum noch planen, läuft bei uns die Qualifizierung.</p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">GMP-Reinraum-Audit anfragen<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+49 7435 7519 700</a>
+          </div>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div class="flex items-center gap-2"><svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Annex 1 Stand 22.08.2022 umgesetzt</div>
+            <div class="flex items-center gap-2"><svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>ISO 14644 Klasse 5–8</div>
+            <div class="flex items-center gap-2"><svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>BSL-2/3 nach TRBA 100/120</div>
+            <div class="flex items-center gap-2"><svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>BfArM, Swissmedic, BASG inspektionsbereit</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Breadcrumbs bar items={[{ name: 'Start', href: '/' }, { name: 'Branchen', href: '/branchen' }, { name: 'Pharma & Biotech' }]} />
+
+    <AuthorBio  locale="en" />
+
+    <!-- WARUM CONTAINER FÜR PHARMA -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-10">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Time-to-GMP statt Time-to-Building</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Warum Pharma- und Biotech-Unternehmen modulare Container statt Stick-Build wählen</h2>
+            <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">Im Pharma- und Biotech-Geschäft entscheidet die Geschwindigkeit von der Idee bis zur ersten validierten Charge über den Wert eines Projekts. Konventioneller Reinraum-Bau dauert 12-18 Monate. Modulare GMP-Container von Planexus liefern denselben validierten Reinraum in 18-24 Wochen.</p>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">18 W.</div><div class="text-xs text-gray-400 uppercase tracking-wider">URS bis GMP-Freigabe</div><div class="text-xs text-gray-500 mt-1">vs. 36-48 W. Stick-Build</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">ISO 5</div><div class="text-xs text-gray-400 uppercase tracking-wider">bis GMP A umsetzbar</div><div class="text-xs text-gray-500 mt-1">über RABS / Isolator</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">H14</div><div class="text-xs text-gray-400 uppercase tracking-wider">HEPA Doppelfilterung</div><div class="text-xs text-gray-500 mt-1">≥99,995 % @ MPPS</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">IQ/OQ/PQ</div><div class="text-xs text-gray-400 uppercase tracking-wider">Komplettdokumentation</div><div class="text-xs text-gray-500 mt-1">EU-GMP Annex 15</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 PROBLEM-AGITATION -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">Die drei Engpässe, an denen Pharma-Container-Projekte regelmäßig scheitern</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Annex 1 wird unterschätzt</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Die überarbeitete Annex 1 vom 22.08.2022 verlangt eine ausformulierte Contamination Control Strategy (CCS), Pre-Use Post-Sterilization Integrity Test (PUPSIT) für Sterilfilter, dokumentierte aerodynamische Strömungsvisualisierung in Class A und kontinuierliches Partikel- und Mikrobien-Monitoring nach ISO 14644-2. Ein Container, der nur „Reinraum Klasse 8" liefert, fällt in der Inspektion durch.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: CCS-Vorlage und PUPSIT-Konzept ab Werk.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Validierungslücke nach Anlieferung</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Viele Container-Anbieter liefern „GMP-fähig", aber ohne IQ/OQ/PQ-Dokumentation. Vor Ort muss dann ein externer Validierungsdienstleister 12-16 Wochen lang die komplette Qualifizierung nachholen – ohne Zugriff auf die Werksdaten. Das verzögert die GMP-Freigabe um ein halbes Jahr.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: FAT mit kompletter IQ/OQ-Vordokumentation, PQ on-site mit Übergabe.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Behördenpfad nicht koordiniert</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Eine GMP-Erlaubnis nach AMG § 13 in DE braucht eine Anzeige bei der zuständigen Landesbehörde (z.B. Regierungspräsidium, Bezirksregierung), die wiederum BfArM-Inspektoren anfordert. In CH läuft das über Swissmedic, in AT über das BASG. Wer das parallel zur Bauleistung organisiert, spart 8-12 Wochen.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: Behörden-Vor-Audit gemeinsam mit Ihrem QP.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NORMEN-TABELLE -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Welche Normen und Regularien wir für Pharma- und Biotech-Container umsetzen</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+              <thead class="bg-slate-900 text-white">
+                <tr><th class="text-left p-4 font-bold">Norm / Regelwerk</th><th class="text-left p-4 font-bold">Anwendung</th><th class="text-left p-4 font-bold">Planexus-Lieferung</th></tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr><td class="p-4 font-semibold text-slate-900">EU-GMP Annex 1 (22.08.2022)</td><td class="p-4 text-gray-700">Sterile Arzneimittel, Contamination Control Strategy</td><td class="p-4 text-gray-700">CCS-Vorlage, PUPSIT-Konzept, Strömungsvisualisierung</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">EU-GMP Annex 11</td><td class="p-4 text-gray-700">Computerisierte Systeme, Audit-Trail</td><td class="p-4 text-gray-700">GAMP-5-konforme MSR mit elektronischer Signatur</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">EU-GMP Annex 15</td><td class="p-4 text-gray-700">Qualifizierung und Validierung</td><td class="p-4 text-gray-700">URS, DQ, FAT, SAT, IQ, OQ, PQ vollständig</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">ISO 14644-1/-2/-3</td><td class="p-4 text-gray-700">Reinraumklassen 1-9, Monitoring, Testverfahren</td><td class="p-4 text-gray-700">Klasse 5–8 mit Partikelmessung und Recovery-Time</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">ISO 14698-1/-2</td><td class="p-4 text-gray-700">Mikrobielle Reinheit, Active/Settle Plates</td><td class="p-4 text-gray-700">Mikrobien-Monitoring-Konzept inkl. Schwellenwerte</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN EN ISO 14644-4</td><td class="p-4 text-gray-700">Auslegung, Bau, Inbetriebnahme</td><td class="p-4 text-gray-700">Druckkaskade, Luftwechsel ≥20-60/h, HEPA H14</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN 1946-4</td><td class="p-4 text-gray-700">RLT für medizinisch genutzte Räume</td><td class="p-4 text-gray-700">Ia/Ib/II-Auslegung mit Hygienezertifikat</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">TRBA 100 / TRBA 120</td><td class="p-4 text-gray-700">Schutzmaßnahmen Schutzstufe 2/3</td><td class="p-4 text-gray-700">BSL-2/3-Container mit Schleuse und Autoklav</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">BioStoffV § 15</td><td class="p-4 text-gray-700">Gefährdungsbeurteilung biologische Stoffe</td><td class="p-4 text-gray-700">Zonierung und Genehmigungsdokumentation</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">GenTG / GenTSV</td><td class="p-4 text-gray-700">Gentechnik-Anlagen S1/S2/S3</td><td class="p-4 text-gray-700">ZKBS-Anzeige, GenTAufzV-Dokumentation</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">ICH Q9 / Q10</td><td class="p-4 text-gray-700">Quality Risk Management, PQS</td><td class="p-4 text-gray-700">Risikoanalyse FMEA und Quality-by-Design</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">CFR 21 Part 11</td><td class="p-4 text-gray-700">FDA: elektronische Aufzeichnungen / Signaturen</td><td class="p-4 text-gray-700">Audit-Trail, Zugriffsrechte, Datenintegrität</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-gray-500 mt-4">Die Tabelle zeigt nur die zentralen Regelwerke. Für jede Anwendung – z.B. Zell- und Gentherapie nach ATMP-Richtlinie, HPAPI-Handling nach ISPE Risk-MaPP, oder Medizinprodukte-Lohnherstellung nach ISO 13485 – ergänzen wir produktspezifische Normen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 ANWENDUNGSBEREICHE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900 text-center">Acht typische Pharma- und Biotech-Container-Anwendungen, die Planexus liefert</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { title: 'GMP-Sterilfüll-Linie', desc: 'Klasse C-Hintergrund mit Klasse-A-Isolator, lyophilisierbare Vials, PUPSIT-Filter, Annex-1-konforme Strömungsvisualisierung.' },
+              { title: 'HPAPI-Handling', desc: 'High-Potency-API mit OEB-4/5-Containment, Isolator mit Ausschleus-Konzept, dezidierte Abluft mit Aktivkohle-Stufe.' },
+              { title: 'Zell- und Gentherapie ATMP', desc: 'Klasse-A-Werkbank in Klasse-B-Hintergrund, Single-Use-Bioreaktor, Closed-System-Workflow, EU-Verordnung 1394/2007.' },
+              { title: 'BSL-3-Forschung', desc: 'Pathogene Risikogruppe 3 mit Unterdruck-Kaskade -25 / -50 Pa, HEPA-H14-Doppelfilterung, autoklavierte Schleuse.' },
+              { title: 'QC-Mikrobiologie', desc: 'Sterilitätsprüfung, Bioburden, Endotoxin-LAL-Test, Mykoplasmen-Nachweis, ISO Klasse 7 mit lokalem Klasse 5.' },
+              { title: 'GMP-QC-Analytik', desc: 'HPLC, GC, IR/UV/Vis, IPC-Labor mit GMP-relevanter Datenintegrität nach CFR 21 Part 11 und Annex 11.' },
+              { title: 'Klinische Prüfware', desc: 'Phase-I/II/III-Lohnherstellung nach EU-VO 536/2014 mit GMP-Erlaubnis und QP-Freigabe pro Charge.' },
+              { title: 'CDMO-Plattform', desc: 'Standardisierte Versorgungsschnittstellen mit produktspezifisch tauschbaren Container-Modulen für flexible Auftragsfertigung.' }
+            ].map(item => (
+              <div class="bg-slate-50 rounded-xl p-5 border-l-2 border-primary">
+                <div class="font-bold text-slate-900 mb-2">{item.title}</div>
+                <p class="text-sm text-gray-700 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGINEERING DEEP-DIVE -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10">Sechs Engineering-Details, an denen Pharma-Container im Inspektor-Audit erkannt werden</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-slate-800 rounded-xl p-6">
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">1. Druckkaskade</div>
+              <h3 class="text-xl font-bold mb-3">Reproduzierbare Differenzdrücke nach DIN EN ISO 14644-4</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">Klasse-D-Schleuse +5 Pa zur Außenwelt, Klasse-C-Raum +15 Pa zur Schleuse, Klasse-B-Raum +30 Pa zur Klasse-C-Schleuse. Bei BSL-3 invertierter Druck mit -25 / -50 Pa. Manometer dauerhaft installiert, Trend-Aufzeichnung im BMS.</p>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-6">
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">2. HEPA-Doppelfilterung</div>
+              <h3 class="text-xl font-bold mb-3">H14 nach EN 1822-1, ≥99,995 % @ MPPS</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">Vorfilter F7/F9 in der Lüftungseinheit, terminale H14 in der Reinraum-Decke. Bag-In-Bag-Out für BSL-3-Filterwechsel ohne Kontaminationsexposition. DEHS-Test nach ISO 14644-3 für Filter-Integritätsprüfung jährlich.</p>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-6">
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">3. Strömungsvisualisierung</div>
+              <h3 class="text-xl font-bold mb-3">Smoke-Test nach Annex 1 §4.30</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">Fog-Test mit Theaternebel oder DEHS-Aerosol, Video-Aufzeichnung der Class-A-Zone in dynamischer Operation, dokumentierter Beleg für laminare Strömung an kritischen Stellen. Wir liefern den Smoke-Test als Teil der OQ.</p>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-6">
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">4. Materialien und Oberflächen</div>
+              <h3 class="text-xl font-bold mb-3">Reinraum-Wandsysteme, Coving, GMP-Bodenbelag</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">Glatte, abriebbeständige, gegen H₂O₂- und PAA-Dekontamination resistente Oberflächen, Coving-Hohlkehlen Wand/Boden und Wand/Decke, fugenlose Kautschuk- oder Epoxidböden mit nachgewiesener chemischer Beständigkeit nach DIN EN ISO 175.</p>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-6">
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">5. Dekontamination</div>
+              <h3 class="text-xl font-bold mb-3">VHP / H₂O₂-Begasung integriert</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">Vorbereitete Andockpunkte für VHP-Generatoren, geschlossene Lüftungs-Bypass-Klappen, Bio-Indikator-Halter an reproduzierbaren Positionen, Cycle-Development für Sporen-Inaktivierung 6-log nach ISO 22441.</p>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-6">
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">6. Datenintegrität (ALCOA+)</div>
+              <h3 class="text-xl font-bold mb-3">CFR 21 Part 11 und Annex 11 umgesetzt</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">Audit-Trail in allen GxP-relevanten Systemen, elektronische Signaturen mit Zwei-Faktor, Backup auf separatem Server mit täglicher Spiegelung, Datenträgerverschlüsselung, Zugriffsrechte rollenbasiert nach ISO 27001.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST WALL: STANDORTE -->
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900 text-center">Wo Planexus Pharma- und Biotech-Container in DACH liefert</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-50 rounded-xl p-6">
+              <div class="text-2xl mb-3">🇩🇪 Deutschland</div>
+              <p class="text-sm text-gray-700 leading-relaxed mb-4">Industriepark Höchst, Pharma-Korridor Rheinland, Berlin-Buch Campus, München-Martinsried Biotech-Cluster, Hamburg Pharma- und Diagnostik-Standorte.</p>
+              <ul class="space-y-1 text-sm">
+                <li><a href="/en/lab-containers-frankfurt" class="text-[#7a9900] hover:underline">Laborcontainer Frankfurt</a></li>
+                <li><a href="/en/lab-containers-dusseldorf" class="text-[#7a9900] hover:underline">Laborcontainer Düsseldorf</a></li>
+                <li><a href="/en/lab-containers-berlin" class="text-[#7a9900] hover:underline">Laborcontainer Berlin</a></li>
+                <li><a href="/en/lab-containers-munich" class="text-[#7a9900] hover:underline">Laborcontainer München</a></li>
+                <li><a href="/en/lab-containers-hamburg" class="text-[#7a9900] hover:underline">Laborcontainer Hamburg</a></li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6">
+              <div class="text-2xl mb-3">🇨🇭 Schweiz</div>
+              <p class="text-sm text-gray-700 leading-relaxed mb-4">Pharma-Hauptstadt Basel, Diagnostik-Standort Rotkreuz nahe Zürich, Bern mit BAG und Swissmedic vor Ort.</p>
+              <ul class="space-y-1 text-sm">
+                <li><a href="/en/lab-containers-basel" class="text-[#7a9900] hover:underline">Laborcontainer Basel</a></li>
+                <li><a href="/en/lab-containers-zurich" class="text-[#7a9900] hover:underline">Laborcontainer Zürich</a></li>
+                <li><a href="/en/lab-containers-bern" class="text-[#7a9900] hover:underline">Laborcontainer Bern</a></li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6">
+              <div class="text-2xl mb-3">🇦🇹 Österreich</div>
+              <p class="text-sm text-gray-700 leading-relaxed mb-4">Biotech-Standort Wien mit AGES und BASG, Chemiepark Linz.</p>
+              <ul class="space-y-1 text-sm">
+                <li><a href="/en/lab-containers-vienna" class="text-[#7a9900] hover:underline">Laborcontainer Wien</a></li>
+                <li><a href="/en/lab-containers-graz" class="text-[#7a9900] hover:underline">Laborcontainer Graz</a></li>
+                <li><a href="/en/lab-containers-linz" class="text-[#7a9900] hover:underline">Laborcontainer Linz</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </section>
+
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">Welche Reinraum-Klasse braucht mein Pharma-Labor?</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">Die Reinraumklasse folgt aus dem Prozess, nicht aus dem Budget. EU-GMP Annex 1 (Stand 22.08.2022) ordnet ISO 14644-1-Klassen den GMP-Graden zu: ISO Klasse 8 = GMP D (≤3.520.000 Partikel ≥0,5 µm/m³ at rest) für nicht-kritische Bereiche, Verpackung, Lager. ISO Klasse 7 = GMP C (≤352.000 Partikel ≥0,5 µm/m³) für Formulierung, Vorbereitung, Hintergrund aseptischer Bereiche. ISO Klasse 5 = GMP A (≤3.520 Partikel ≥0,5 µm/m³) für aseptische Abfüllung, Isolator, RABS – im Container typisch über Laminar-Flow-Bench oder Isolator in Klasse-7-Hintergrund.</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Entscheidungsmatrix: QC-Mikrobiologie (Sterilität, Bioburden) → Klasse 7 mit lokalem Klasse 5 an Werkbank. Sterile Abfüllung Vials → Klasse 7 Hintergrund + Klasse 5 Isolator/RABS. HPAPI-Handling OEB-4/5 → Klasse 8 mit Isolator-Containment, separate Abluft Aktivkohle. Wirkstoff-Synthese nicht-steril → Klasse 8 oder 7 je nach Endotoxin-Anforderung. ATMP Zell- und Gentherapie → Klasse 7 Hintergrund + Klasse 5 Werkbank nach EU-Verordnung 1394/2007. BSL-2 Biotech-Forschung → kein GMP-Reinraum, aber TRBA 100/120 mit Sicherheitswerkbank Klasse II.</p>
+          <p class="text-gray-700 leading-relaxed mb-8">Luftwechsel: Klasse 8 ≥20/h, Klasse 7 ≥40/h, Klasse 5/6 ≥60/h. Druckkaskade: Schleuse +5 Pa, Produktion +15 Pa, aseptische Zone +30 Pa (positiv) bzw. BSL-3 invertiert -25/-50 Pa. Planexus dimensioniert die Klasse aus Ihrer CCS (Contamination Control Strategy) – nicht umgekehrt.</p>
+
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">Kosten für einen Reinraum-Container: Preisspannen und Faktoren</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">Preisspannen ab Werk Albstadt (2026, inkl. HVAC, HEPA H14, Standard-Qualifizierung IQ/OQ): ISO Klasse 8 (GMP D): 4.500-7.500 Euro/m² Reinraumfläche. ISO Klasse 7 (GMP C): 6.500-9.500 Euro/m². ISO Klasse 5/6 lokal (Isolator/RABS in Klasse-7-Hintergrund): 8.000-12.000 Euro/m² inkl. Isolator-Schnittstelle. BSL-3-Container zusätzlich: +30-50 % für Unterdruck-Kaskade, Bag-In-Bag-Out, autoklavierte Schleuse. Stick-Build-Vergleich: 8.000-15.000 Euro/m², Bauzeit 12-18 Monate.</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Kosten-Treiber: Reinraumklasse (jede Stufe +25-40 %), Fläche (Skaleneffekt ab 40 m²), Validierungsumfang (IQ/OQ/PQ vollständig vs. IQ/OQ only), Isolator/RABS-Integration (+80.000-250.000 Euro), VHP-Dekontamination (+25.000-60.000 Euro), BSL-3-Engineering (+150.000-400.000 Euro). Mietmodell: 6.500-14.000 Euro/Monat für Klasse-8-Container 30 m², 12.000-22.000 Euro/Monat Klasse 7. CDMO-Plattform mit Standard-Schnittstellen: Amortisation ab 3 tauschbaren Modulen gegenüber Stick-Build-Umbauten.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Planexus Leistungen für Pharma & Biotech</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <a href="/en/services/planning" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Technische Laborplanung</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">CCS-Vorlage Annex 1, Reinraumklassen-Dimensionierung ISO 14644, Druckkaskade, BSL-2/3-Zonierung, URS bis DQ nach Annex 15.</p>
+            </a>
+            <a href="/en/services/modular-construction" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Modulbau & Fertigung</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">GMP-Reinraum-Container Klasse 5-8, HEPA H14-Doppelfilterung, VHP-Andockpunkte, BfArM-/Swissmedic-inspektionsbereit ab Werk Albstadt.</p>
+            </a>
+            <a href="/en/services/equipment" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Laborausstattung</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">Isolator-/RABS-Schnittstellen, Laminar-Flow-Benches, Autoklav EN 285, Partikel-Monitoring ISO 14644-2, GAMP-5-konforme MSR.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEITERFÜHRENDE ARTIKEL -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900 text-center">Weiterführende Fachartikel zu Pharma- und Biotech-Containern</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100">
+              <div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">GMP-Reinraum</div>
+              <h3 class="font-bold text-slate-900 mb-2">GMP-Reinraum im Container: Pharma-Produktion auf kleinstem Raum</h3>
+              <p class="text-sm text-gray-600">Was GMP-konforme Container-Reinräume leisten, was sie kosten und wo die Grenzen liegen.</p>
+            </a>
+            <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100">
+              <div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Sicherheit</div>
+              <h3 class="font-bold text-slate-900 mb-2">BSL-2 und BSL-3 im Container: Geht das?</h3>
+              <p class="text-sm text-gray-600">Sicherheitsstufen im Containerbau – wie höchste Sicherheitsanforderungen umgesetzt werden.</p>
+            </a>
+            <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100">
+              <div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Technik & Normen</div>
+              <h3 class="font-bold text-slate-900 mb-2">Klimatisierung, Lüftung & Normen</h3>
+              <p class="text-sm text-gray-600">DIN 1946-7, TRGS 526, Luftwechselraten, HEPA-Filtration und Energieeffizienz im Detail.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Häufige Fragen zu Pharma & Biotech</h2>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed text-sm">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="anfrage" class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">GMP-Reinraum-Container für Ihr Pharma- oder Biotech-Projekt</h2>
+            <p class="text-gray-700 text-lg">Skizzieren Sie Anwendung, Reinraumklasse und Standort. Wir antworten innerhalb eines Werktags mit einem konkreten Konzept-Vorschlag inkl. Zeitplan und Investitionsmodell.</p>
+          </div>
+          <ContactForm client:visible locale="en" />
+        </div>
+      </div>
+    </section>
+
+    <BranchenCrossLinks current="pharma-biotech" locale="en" />
+
+  </div>
+</Layout>

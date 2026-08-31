@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
+import { t } from '../i18n/ui';
+import type { Locale } from '../i18n/routes';
 
 interface FormData {
   name: string;
@@ -14,7 +16,8 @@ interface FormErrors {
   message?: string;
 }
 
-export default function ContactForm() {
+export default function ContactForm({ locale = 'de' }: { locale?: Locale }) {
+  const copy = t(locale);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -33,10 +36,10 @@ export default function ContactForm() {
 
   function validate(): boolean {
     const newErrors: FormErrors = {};
-    if (formData.name.length < 2) newErrors.name = 'Name muss mindestens 2 Zeichen lang sein';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Ungültige Email-Adresse';
-    if (formData.subject.length < 5) newErrors.subject = 'Betreff muss mindestens 5 Zeichen lang sein';
-    if (formData.message.length < 10) newErrors.message = 'Nachricht muss mindestens 10 Zeichen lang sein';
+    if (formData.name.length < 2) newErrors.name = copy.form.nameError;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = copy.form.emailError;
+    if (formData.subject.length < 5) newErrors.subject = copy.form.subjectError;
+    if (formData.message.length < 10) newErrors.message = copy.form.messageError;
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   }
@@ -65,7 +68,7 @@ export default function ContactForm() {
         setWebsite('');
         setErrors({});
       } else {
-        throw new Error('Fehler beim Senden');
+        throw new Error('send-failed');
       }
     } catch {
       setSubmitStatus('error');
@@ -83,17 +86,17 @@ export default function ContactForm() {
 
   return (
     <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg shadow-gray-100">
-      <h3 className="text-2xl font-bold mb-8 text-slate-900">Schreiben Sie uns</h3>
+      <h3 className="text-2xl font-bold mb-8 text-slate-900">{copy.form.title}</h3>
 
       {submitStatus === 'success' && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-          Nachricht erfolgreich gesendet! Wir werden uns schnellstmöglich bei Ihnen melden.
+          {copy.form.success}
         </div>
       )}
 
       {submitStatus === 'error' && (
         <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
-          Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.
+          {copy.form.error}
         </div>
       )}
 
@@ -109,7 +112,7 @@ export default function ContactForm() {
             overflow: 'hidden',
           }}
         >
-          <label htmlFor="contact-website">Website (bitte freilassen)</label>
+          <label htmlFor="contact-website">{copy.form.honeypot}</label>
           <input
             type="text"
             id="contact-website"
@@ -123,10 +126,10 @@ export default function ContactForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">Ihr Name *</label>
+            <label className="block text-sm font-medium text-slate-700 mb-2">{copy.form.name}</label>
             <input
               type="text"
-              placeholder="Max Mustermann"
+              placeholder={copy.form.namePlaceholder}
               value={formData.name}
               onChange={(e) => handleChange('name', e.target.value)}
               className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
@@ -135,10 +138,10 @@ export default function ContactForm() {
             {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
           </div>
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">Email Adresse *</label>
+            <label className="block text-sm font-medium text-slate-700 mb-2">{copy.form.email}</label>
             <input
               type="email"
-              placeholder="max@beispiel.de"
+              placeholder={copy.form.emailPlaceholder}
               value={formData.email}
               onChange={(e) => handleChange('email', e.target.value)}
               className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
@@ -149,10 +152,10 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-2">Betreff *</label>
+          <label className="block text-sm font-medium text-slate-700 mb-2">{copy.form.subject}</label>
           <input
             type="text"
-            placeholder="Anfrage Laborcontainer..."
+            placeholder={copy.form.subjectPlaceholder}
             value={formData.subject}
             onChange={(e) => handleChange('subject', e.target.value)}
             className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
@@ -162,9 +165,9 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-2">Nachricht *</label>
+          <label className="block text-sm font-medium text-slate-700 mb-2">{copy.form.message}</label>
           <textarea
-            placeholder="Ihre Nachricht an uns..."
+            placeholder={copy.form.messagePlaceholder}
             value={formData.message}
             onChange={(e) => handleChange('message', e.target.value)}
             rows={6}
@@ -186,12 +189,12 @@ export default function ContactForm() {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              Wird gesendet...
+              {copy.form.sending}
             </>
           ) : (
             <>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Nachricht senden
+              {copy.form.send}
             </>
           )}
         </button>

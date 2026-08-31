@@ -1,36 +1,43 @@
 ---
 import Picture from './Picture.astro';
+import { detectLocale, localizeHref, cityHref, CITY_SLUGS } from '../i18n/routes';
+import { t } from '../i18n/ui';
+
+const locale = detectLocale(Astro.url.pathname);
+const copy = t(locale);
+const href = (path: string) => localizeHref(path, locale);
+const homeHref = locale === 'en' ? '/en' : '/';
+const cities = Object.values(CITY_SLUGS);
 ---
 
 <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8 text-slate-300">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
       <div class="space-y-6">
-        <a href="/" class="flex items-center gap-2">
+        <a href={homeHref} class="flex items-center gap-2">
           <Picture src="/images/planexus-logo.png" alt="Planexus" class="h-10 w-auto" width={800} height={169} />
         </a>
         <p class="text-slate-400 text-sm leading-relaxed">
-          Ihr Fachplaner für <strong class="text-white">Containerlabore</strong>.
-          Intelligent, nachhaltig und modular.
+          {copy.footer.tagline}
         </p>
       </div>
 
       <div>
-        <h4 class="font-heading font-bold text-lg mb-6 text-white">Navigation</h4>
+        <h4 class="font-heading font-bold text-lg mb-6 text-white">{copy.footer.navigation}</h4>
         <ul class="space-y-3">
-          <li><a href="/ueber-uns" class="text-slate-400 hover:text-primary transition-colors">Über uns</a></li>
-          <li><a href="/ueber-uns/auszeichnungen" class="text-slate-400 hover:text-primary transition-colors">Auszeichnungen</a></li>
-          <li><a href="/leistungen" class="text-slate-400 hover:text-primary transition-colors">Leistungen</a></li>
-          <li><a href="/projekte" class="text-slate-400 hover:text-primary transition-colors">Projekte</a></li>
-          <li><a href="/magazin" class="text-slate-400 hover:text-primary transition-colors">Magazin</a></li>
-          <li><a href="/team" class="text-slate-400 hover:text-primary transition-colors">Team</a></li>
-          <li><a href="/partner" class="text-slate-400 hover:text-primary transition-colors">Partner</a></li>
-          <li><a href="/kontakt" class="text-slate-400 hover:text-primary transition-colors">Kontakt</a></li>
+          <li><a href={href('/ueber-uns')} class="text-slate-400 hover:text-primary transition-colors">{copy.nav.aboutCompany}</a></li>
+          <li><a href={href('/ueber-uns/auszeichnungen')} class="text-slate-400 hover:text-primary transition-colors">{copy.nav.awards}</a></li>
+          <li><a href={href('/leistungen')} class="text-slate-400 hover:text-primary transition-colors">{copy.nav.services}</a></li>
+          <li><a href={href('/projekte')} class="text-slate-400 hover:text-primary transition-colors">{copy.nav.projects}</a></li>
+          <li><a href={href('/magazin')} class="text-slate-400 hover:text-primary transition-colors">{copy.nav.magazine}</a></li>
+          <li><a href={href('/team')} class="text-slate-400 hover:text-primary transition-colors">{copy.nav.team}</a></li>
+          <li><a href={href('/partner')} class="text-slate-400 hover:text-primary transition-colors">{copy.nav.partners}</a></li>
+          <li><a href={href('/kontakt')} class="text-slate-400 hover:text-primary transition-colors">{copy.nav.contact}</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="font-heading font-bold text-lg mb-6 text-white">Büro</h4>
+        <h4 class="font-heading font-bold text-lg mb-6 text-white">{copy.footer.office}</h4>
         <ul class="space-y-4">
           <li class="flex items-start gap-3 text-slate-400">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
@@ -48,7 +55,7 @@ import Picture from './Picture.astro';
       </div>
 
       <div>
-        <h4 class="font-heading font-bold text-lg mb-6 text-white">Fertigung</h4>
+        <h4 class="font-heading font-bold text-lg mb-6 text-white">{copy.footer.production}</h4>
         <div class="flex items-start gap-3 text-slate-400">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Emil-Mayer-Straße 1<br />72461 Albstadt</span>
@@ -58,58 +65,55 @@ import Picture from './Picture.astro';
     </div>
 
     <div class="border-t border-slate-800 pt-8 mb-8">
-      <h4 class="font-heading font-bold text-lg mb-6 text-white">Branchen</h4>
+      <h4 class="font-heading font-bold text-lg mb-6 text-white">{copy.footer.industries}</h4>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-2">
-        <a href="/branchen" class="text-slate-300 hover:text-primary transition-colors text-sm font-medium">Branchen-Übersicht</a>
-        <a href="/branchen/pharma-biotech" class="text-slate-400 hover:text-primary transition-colors text-sm">Pharma &amp; Biotech</a>
-        <a href="/branchen/forschung-hochschule" class="text-slate-400 hover:text-primary transition-colors text-sm">Forschung &amp; Hochschule</a>
-        <a href="/branchen/industrie-werkstoffpruefung" class="text-slate-400 hover:text-primary transition-colors text-sm">Industrie &amp; Werkstoffprüfung</a>
-        <a href="/branchen/bildung" class="text-slate-400 hover:text-primary transition-colors text-sm">Bildung &amp; Schulen</a>
-        <a href="/branchen/public-health-krisenvorsorge" class="text-slate-400 hover:text-primary transition-colors text-sm">Public Health &amp; Krisenvorsorge</a>
-        <a href="/branchen/energiewende-h2-batterie" class="text-slate-400 hover:text-primary transition-colors text-sm">Energiewende H₂ &amp; Batterie</a>
-        <a href="/branchen/oel-gas" class="text-slate-400 hover:text-primary transition-colors text-sm">Öl, Gas &amp; Raffinerie</a>
+        <a href={href('/branchen')} class="text-slate-300 hover:text-primary transition-colors text-sm font-medium">{copy.footer.industriesOverview}</a>
+        <a href={href('/branchen/pharma-biotech')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.footer.pharma}</a>
+        <a href={href('/branchen/forschung-hochschule')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.footer.research}</a>
+        <a href={href('/branchen/industrie-werkstoffpruefung')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.footer.industry}</a>
+        <a href={href('/branchen/bildung')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.footer.education}</a>
+        <a href={href('/branchen/public-health-krisenvorsorge')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.footer.publicHealth}</a>
+        <a href={href('/branchen/energiewende-h2-batterie')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.footer.energy}</a>
+        <a href={href('/branchen/oel-gas')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.footer.oilGas}</a>
       </div>
     </div>
 
     <div class="border-t border-slate-800 pt-8 mb-12">
-      <h4 class="font-heading font-bold text-lg mb-6 text-white">Standorte</h4>
+      <h4 class="font-heading font-bold text-lg mb-6 text-white">{copy.footer.locations}</h4>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <h5 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">Deutschland</h5>
+          <h5 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">{copy.footer.germany}</h5>
           <ul class="space-y-2">
-            <li><a href="/laborcontainer-hamburg" class="text-slate-400 hover:text-primary transition-colors text-sm">Hamburg</a></li>
-            <li><a href="/laborcontainer-berlin" class="text-slate-400 hover:text-primary transition-colors text-sm">Berlin</a></li>
-            <li><a href="/laborcontainer-muenchen" class="text-slate-400 hover:text-primary transition-colors text-sm">München</a></li>
-            <li><a href="/laborcontainer-stuttgart" class="text-slate-400 hover:text-primary transition-colors text-sm">Stuttgart</a></li>
-            <li><a href="/laborcontainer-duesseldorf" class="text-slate-400 hover:text-primary transition-colors text-sm">Düsseldorf</a></li>
-            <li><a href="/laborcontainer-frankfurt" class="text-slate-400 hover:text-primary transition-colors text-sm">Frankfurt</a></li>
+            {cities.filter(c => c.region === 'DE').map(c => (
+              <li><a href={cityHref(c.de, locale)} class="text-slate-400 hover:text-primary transition-colors text-sm">{locale === 'en' ? c.nameEn : c.nameDe}</a></li>
+            ))}
           </ul>
         </div>
         <div>
-          <h5 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">Schweiz</h5>
+          <h5 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">{copy.footer.switzerland}</h5>
           <ul class="space-y-2">
-            <li><a href="/laborcontainer-zuerich" class="text-slate-400 hover:text-primary transition-colors text-sm">Zürich</a></li>
-            <li><a href="/laborcontainer-basel" class="text-slate-400 hover:text-primary transition-colors text-sm">Basel</a></li>
-            <li><a href="/laborcontainer-bern" class="text-slate-400 hover:text-primary transition-colors text-sm">Bern</a></li>
+            {cities.filter(c => c.region === 'CH').map(c => (
+              <li><a href={cityHref(c.de, locale)} class="text-slate-400 hover:text-primary transition-colors text-sm">{locale === 'en' ? c.nameEn : c.nameDe}</a></li>
+            ))}
           </ul>
         </div>
         <div>
-          <h5 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">Österreich</h5>
+          <h5 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">{copy.footer.austria}</h5>
           <ul class="space-y-2">
-            <li><a href="/laborcontainer-wien" class="text-slate-400 hover:text-primary transition-colors text-sm">Wien</a></li>
-            <li><a href="/laborcontainer-graz" class="text-slate-400 hover:text-primary transition-colors text-sm">Graz</a></li>
-            <li><a href="/laborcontainer-linz" class="text-slate-400 hover:text-primary transition-colors text-sm">Linz</a></li>
+            {cities.filter(c => c.region === 'AT').map(c => (
+              <li><a href={cityHref(c.de, locale)} class="text-slate-400 hover:text-primary transition-colors text-sm">{locale === 'en' ? c.nameEn : c.nameDe}</a></li>
+            ))}
           </ul>
         </div>
         <div>
-          <h5 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">Service</h5>
+          <h5 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">{copy.footer.service}</h5>
           <ul class="space-y-2">
-            <li><a href="/laborcontainer" class="text-slate-400 hover:text-primary transition-colors text-sm">Laborcontainer Übersicht</a></li>
-            <li><a href="/laborcontainer-mieten" class="text-slate-400 hover:text-primary transition-colors text-sm">Laborcontainer mieten</a></li>
-            <li><a href="/laborcontainer-kaufen" class="text-slate-400 hover:text-primary transition-colors text-sm">Laborcontainer kaufen</a></li>
-            <li><a href="/laborcontainer/labtogo" class="text-slate-400 hover:text-primary transition-colors text-sm">LABtoGO</a></li>
-            <li><a href="/leistungen" class="text-slate-400 hover:text-primary transition-colors text-sm">Alle Leistungen</a></li>
-            <li><a href="/kontakt" class="text-slate-400 hover:text-primary transition-colors text-sm">Beratung anfragen</a></li>
+            <li><a href={href('/laborcontainer')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.footer.overview}</a></li>
+            <li><a href={href('/laborcontainer-mieten')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.nav.rent}</a></li>
+            <li><a href={href('/laborcontainer-kaufen')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.nav.buy}</a></li>
+            <li><a href={href('/laborcontainer/labtogo')} class="text-slate-400 hover:text-primary transition-colors text-sm">LABtoGO</a></li>
+            <li><a href={href('/leistungen')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.footer.allServices}</a></li>
+            <li><a href={href('/kontakt')} class="text-slate-400 hover:text-primary transition-colors text-sm">{copy.footer.requestConsulting}</a></li>
           </ul>
         </div>
       </div>
@@ -117,7 +121,7 @@ import Picture from './Picture.astro';
 
     <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
       <div class="flex items-center gap-6">
-        <p>&copy; 2026 Planexus GmbH. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2026 Planexus GmbH. {copy.footer.rights}</p>
         <div class="flex gap-4">
           <a href="https://www.facebook.com/profile.php?id=61578221935839" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-slate-900 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -128,14 +132,14 @@ import Picture from './Picture.astro';
         </div>
       </div>
       <div class="flex gap-6">
-        <a href="/impressum" class="hover:text-white">Impressum</a>
-        <a href="/datenschutz" class="hover:text-white">Datenschutz</a>
+        <a href={href('/impressum')} class="hover:text-white">{copy.footer.imprint}</a>
+        <a href={href('/datenschutz')} class="hover:text-white">{copy.footer.privacy}</a>
         <button
           type="button"
           id="cookie-settings-trigger"
           class="hover:text-white cursor-pointer"
         >
-          Cookie-Einstellungen
+          {copy.footer.cookieSettings}
         </button>
       </div>
     </div>

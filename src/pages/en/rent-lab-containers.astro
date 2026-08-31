@@ -1,0 +1,346 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ContactForm from '../../components/ContactForm.tsx';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Laborcontainer mieten",
+  "serviceType": "Vermietung von Laborcontainern",
+  "description": "Laborcontainer mieten – schlüsselfertige Mietlabore vom Analytiklabor bis BSL-3 und GMP-Reinraum. Standardmodelle in 2 bis 3 Wochen einsatzbereit, betriebsbereite Übergabe in 8 bis 14 Wochen. Angebot individuell nach Bedarfsklärung.",
+  "url": "https://planexus.de/en/rent-lab-containers",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "image": "https://planexus.de/android-chrome-512x512.png",
+    "url": "https://planexus.de",
+    "logo": "https://planexus.de/images/planexus-logo.png",
+    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Am Steinbach 8",
+      "addressLocality": "Albstadt-Laufen",
+      "addressRegion": "Baden-Württemberg",
+      "postalCode": "72459",
+      "addressCountry": "DE"
+    },
+    "telephone": "+49 7435 7519 700",
+    "email": "info@planexus.de"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Deutschland" },
+    { "@type": "Country", "name": "Österreich" },
+    { "@type": "Country", "name": "Schweiz" }
+  ]
+};
+
+const breadcrumbItems = [
+  { name: "Start", href: "https://planexus.de/" },
+  { name: "Laborcontainer", href: "https://planexus.de/en/lab-containers" },
+  { name: "Laborcontainer mieten" }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    ...(item.href ? { "item": item.href } : {})
+  }))
+};
+
+const faqs = [
+  {
+    q: "Was kostet es, einen Laborcontainer zu mieten?",
+    a: "Wir kommunizieren keine Standardpreise, weil jedes Projekt individuell bewertet wird. Sicherheitsstufe (BSL-2/3, GMP, ATEX), Reinraumklasse, Lüftungstechnik, Spezialausstattung, Laufzeit und Standortgegebenheiten bestimmen die Miete. Auf Basis Ihres Lastenhefts oder einer kurzen Beratung liefern wir innerhalb von 48 Stunden eine schriftliche Indikation."
+  },
+  {
+    q: "Wie lange kann ich einen Laborcontainer mieten?",
+    a: "Miete eignet sich für zeitlich befristete Vorhaben mit 12 bis 24 Monaten Nutzungsdauer, etwa während Klinik-Sanierungen, Studien oder Drittmittelphasen. Bis rund 24 Monate Nutzungsdauer ist Miete meist wirtschaftlich überlegen; darüber lohnen sich Mietkauf oder Kauf."
+  },
+  {
+    q: "Laborcontainer mieten oder kaufen – was lohnt sich?",
+    a: "Die Faustformel: Kaufpreis geteilt durch die monatliche Miete ergibt die Break-Even-Nutzungsdauer in Monaten. In der Praxis liegt dieser Break-Even meist bei rund vier Jahren. Projektlaufzeiten unter drei Jahren sprechen für die Miete, über fünf Jahre für den Kauf. Details im Ratgeber Laborcontainer mieten oder kaufen."
+  },
+  {
+    q: "Gibt es Mietkauf für einen Laborcontainer?",
+    a: "Ja. Mietkauf ist zwischen rund 24 und 48 Monaten Nutzungsdauer die wirtschaftlich sinnvolle Zwischenlösung. Ein Teil der Mieten wird auf einen späteren Restkaufpreis verrechnet – so lässt sich eine Brückenlösung ohne doppelte Investition in die Dauerausstattung überführen."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+
+<Layout
+  title="Laborcontainer mieten – schlüsselfertig ab Werk | Planexus"
+  description="Laborcontainer mieten: schlüsselfertige Mietlabore vom Analytiklabor bis BSL-3 und GMP. Standardmodelle in 2–3 Wochen einsatzbereit. Jetzt Mietangebot anfordern."
+  canonical="/en/rent-lab-containers"
+  ogImage="https://planexus.de/attached_assets/Laborcontainer_001_1769688326918.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- HERO -->
+  <section class="relative pt-32 pb-20 bg-slate-900 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/attached_assets/Laborcontainer_001_1769688326918.jpg')] bg-cover bg-center opacity-30"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/85 to-slate-900/40"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 bg-primary/15 border border-primary/40 text-primary px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Miete · Mietkauf · DACH-weit
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          Laborcontainer mieten – schlüsselfertig statt jahrelang bauen
+        </h1>
+        <p class="text-xl text-slate-200 leading-relaxed mb-8 max-w-3xl">
+          Sie mieten einen schlüsselfertigen Laborcontainer – vom Analytiklabor bis BSL-3. Standardmodelle sind in zwei bis drei Wochen einsatzbereit, komplexe Sicherheitslabore in sechs bis acht Wochen. Typische Mietdauern liegen bei 12 bis 24 Monaten.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-all flex items-center gap-2 shadow-[0_0_24px_rgba(187,215,0,0.35)] group">
+            Mietangebot anfordern
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="/en/buy-lab-containers" class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white font-bold px-8 py-4 rounded-lg transition-all flex items-center gap-2">
+            Lieber kaufen?
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+        <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
+          <div><div class="text-3xl font-bold text-primary">2–3</div><div class="text-sm text-slate-400">Wochen (Standardmodell)</div></div>
+          <div><div class="text-3xl font-bold text-primary">8–14</div><div class="text-sm text-slate-400">Wochen bis Übergabe</div></div>
+          <div><div class="text-3xl font-bold text-primary">12–24</div><div class="text-sm text-slate-400">Monate typ. Mietdauer</div></div>
+          <div><div class="text-3xl font-bold text-primary">BSL-3</div><div class="text-sm text-slate-400">bis Sicherheitsstufe</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Breadcrumbs items={breadcrumbItems.map(i => ({ name: i.name, href: i.href ? i.href.replace('https://planexus.de', '') : undefined }))} bar={true} />
+
+  <!-- ANTWORT + TIEFE -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Was Sie bekommen, wenn Sie einen Laborcontainer mieten</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          Sie mieten ein betriebsbereites Labor, kein leeres Modul. Standardmodelle sind in der Regel binnen zwei bis drei Wochen einsatzbereit, komplexe Qualitätskontroll- oder Sicherheitslabore mit Spezialausstattung benötigen sechs bis acht Wochen Vorlauf – dazu rund eine Woche für Abnahme und Inbetriebnahme. Für schlüsselfertige Projekte vom Auftrag bis zur betriebsbereiten Übergabe rechnen wir mit 8 bis 14 Wochen.
+        </p>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Während der Mietzeit übernimmt in der Regel der Anbieter die Positionen, die beim Kauf bei Ihnen liegen – Wartung, Versicherung und Vorabklärung mit den Behörden. Das schont Liquidität und Kapital: Ihr Budget fließt in die Forschung, nicht in Infrastruktur.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIETDAUER & LIEFERZEIT -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8">Mietdauer und Lieferzeit</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-8 border-l-4 border-primary shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Mietdauer</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Miete eignet sich für zeitlich befristete Vorhaben mit 12 bis 24 Monaten Nutzungsdauer – etwa während Klinik-Sanierungen, Studien oder Drittmittelphasen. Bis rund 24 Monate Nutzungsdauer ist Miete meist wirtschaftlich überlegen. Zwischen rund 24 und 48 Monaten wird der Mietkauf interessant, ab rund 48 Monaten rechnet sich in der Regel der Kauf.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-8 border-l-4 border-primary shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Lieferzeit</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Standardmodelle sind in zwei bis drei Wochen einsatzbereit, komplexe Sicherheitslabore in sechs bis acht Wochen. Ein Interimslabor lässt sich vor Ort in 48 Stunden aufstellen. Zum Vergleich: Ein klassischer Labor-Festbau benötigt bis zur Inbetriebnahme oft 24 Monate und länger.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUSSTATTUNGSOPTIONEN -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Ausstattungsoptionen</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          Jeder Mietcontainer wird auf Ihre Anwendung geplant. Der <a href="/en/lab-containers/labtogo" class="text-primary font-medium hover:underline">Planexus LABtoGO</a> bietet dabei 2.750 mm Raumhöhe – Platz für volle Abzugshauben und große HPLC-Systeme, wo Standard-Bürocontainer mit rund 2,40 m an ihre Grenzen stoßen. Die High-End-Isolierung erreicht einen U-Wert von 0,20 W/m²K für stabile Klimazonen.
+        </p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="flex gap-3 bg-slate-50 rounded-lg p-5">
+            <span class="text-primary font-bold text-xl shrink-0">→</span>
+            <p class="text-slate-600"><strong class="text-slate-900">Klimatisierung:</strong> Temperaturkonstanz ±2 °C mit Luftfeuchteregelung. Bei hohen Sicherheitsstufen macht die Klimatisierung 30 bis 40 Prozent der Gesamtkosten aus.</p>
+          </div>
+          <div class="flex gap-3 bg-slate-50 rounded-lg p-5">
+            <span class="text-primary font-bold text-xl shrink-0">→</span>
+            <p class="text-slate-600"><strong class="text-slate-900">Abzug &amp; Filtration:</strong> Unterdruck bei BSL-2, HEPA-Filter bei BSL-3. Filterwechsel erfolgt alle 12 bis 24 Monate.</p>
+          </div>
+          <div class="flex gap-3 bg-slate-50 rounded-lg p-5">
+            <span class="text-primary font-bold text-xl shrink-0">→</span>
+            <p class="text-slate-600"><strong class="text-slate-900">Arbeitsflächen:</strong> chemikalienbeständig, elektrostatisch ableitfähig.</p>
+          </div>
+          <div class="flex gap-3 bg-slate-50 rounded-lg p-5">
+            <span class="text-primary font-bold text-xl shrink-0">→</span>
+            <p class="text-slate-600"><strong class="text-slate-900">Elektrik:</strong> 400-V-Anschluss, Notbeleuchtung, FI-Schutzschalter.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SICHERHEITSSTUFEN -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Sicherheitsstufen</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          Wir realisieren Mietlabore über das komplette Spektrum – von der einfachen Analytik bis zum Hochsicherheitslabor. Die passende Stufe klären wir in der Bedarfsanalyse.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-2">Analytik &amp; Qualitätskontrolle</h3>
+            <p class="text-slate-600 text-sm">HPLC-, GC- und Spektrometrie-Arbeitsplätze, vibrationsentkoppelte Wägetische, unterbrechungsfreie Stromversorgung.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-2">BSL-2 &amp; BSL-3</h3>
+            <p class="text-slate-600 text-sm">Sicherheitslabore mit Unterdruckkaskaden, redundanter HEPA-Filtration, Schleuse und Autoklav. Konform mit BioStoffV, GenTG, TRBA 100.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-2">GMP-Reinraum</h3>
+            <p class="text-slate-600 text-sm">Reinräume bis Klasse C und D nach EU-GMP-Annex 1, optional ISO-Klassen 5 bis 8 nach ISO 14644-1, mit IQ/OQ/PQ-fähiger Dokumentation.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-2">ATEX &amp; Interimslösungen</h3>
+            <p class="text-slate-600 text-sm">Ex-geschützte Ausführungen sowie vollwertiger Laborersatz während Sanierungen, Umbauten oder Stillständen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-10">Ablauf bis zur Übergabe</h2>
+        <div class="space-y-6">
+          <div class="flex gap-5 items-start">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center">1</div>
+            <div class="bg-slate-50 rounded-xl p-5 flex-1">
+              <h3 class="font-bold text-slate-900 mb-1">Bedarfsklärung</h3>
+              <p class="text-slate-600 text-sm">In einem Telefonat von 30 bis 60 Minuten klären wir Anwendung, Sicherheitsstufe, Modulgröße, Nutzungsdauer, Aufstellort und Anschlussbedingungen.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center">2</div>
+            <div class="bg-slate-50 rounded-xl p-5 flex-1">
+              <h3 class="font-bold text-slate-900 mb-1">Standortanalyse (optional)</h3>
+              <p class="text-slate-600 text-sm">Bei komplexen Aufstellorten sehen wir uns die Situation an – per Foto und Lageplan oft auch remote.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center">3</div>
+            <div class="bg-slate-50 rounded-xl p-5 flex-1">
+              <h3 class="font-bold text-slate-900 mb-1">Angebot &amp; Kalkulation</h3>
+              <p class="text-slate-600 text-sm">Eine erste schriftliche Indikation liegt innerhalb von 48 Stunden vor; das ausgearbeitete Angebot innerhalb von 3 bis 7 Arbeitstagen nach der Bedarfsklärung.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center">4</div>
+            <div class="bg-slate-50 rounded-xl p-5 flex-1">
+              <h3 class="font-bold text-slate-900 mb-1">Fertigung, Lieferung &amp; Übergabe</h3>
+              <p class="text-slate-600 text-sm">Standardmodelle sind in 2 bis 3 Wochen einsatzbereit, schlüsselfertige Projekte in 8 bis 14 Wochen betriebsbereit übergeben. Aufstellung per Mobilkran, danach Abnahme und Inbetriebnahme.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNE LINKS -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+        <a href="/en/buy-lab-containers" class="block bg-white rounded-xl p-8 border border-slate-200 hover:border-primary hover:shadow-lg transition-all group">
+          <p class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Alternative</p>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">Laborcontainer kaufen</h3>
+          <p class="text-slate-600 text-sm">Bei dauerhaftem Bedarf ab rund 48 Monaten ist der Kauf die wirtschaftlichere Wahl. Zur Kaufseite.</p>
+        </a>
+        <a href="/en/magazine/lab-containers-rent-or-buy" class="block bg-white rounded-xl p-8 border border-slate-200 hover:border-primary hover:shadow-lg transition-all group">
+          <p class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Ratgeber</p>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">Laborcontainer mieten oder kaufen?</h3>
+          <p class="text-slate-600 text-sm">Entscheidungsleitfaden mit Break-Even-Faustformel und Praxis-Checkliste für Forschungsleiter.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-10">Häufige Fragen zum Laborcontainer mieten</h2>
+        <div class="space-y-4">
+          {faqs.map((f, i) => (
+            <details class="bg-slate-50 rounded-xl border border-slate-200 group" open={i === 0}>
+              <summary class="cursor-pointer p-6 font-bold text-slate-900 flex items-center justify-between gap-4 list-none">
+                <span class="flex-1">{f.q}</span>
+                <svg class="w-5 h-5 text-primary group-open:rotate-180 transition-transform flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-slate-600 leading-relaxed">{f.a}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + KONTAKT -->
+  <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/attached_assets/Laborcontainer_017_1769688326919.jpg')] bg-cover bg-center opacity-15"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Mietangebot für Ihr <span class="text-primary">Laborcontainer-Projekt</span>
+          </h2>
+          <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+            Senden Sie uns Ihr Lastenheft oder beschreiben Sie Ihre Anforderungen. Wir erstellen Ihnen eine erste schriftliche Indikation innerhalb von 48 Stunden – ohne Verpflichtung, ohne versteckte Kosten.
+          </p>
+          <div class="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl font-bold">SB</div>
+              <div>
+                <div class="font-bold text-white">Sven Biewald</div>
+                <div class="text-sm text-slate-400">Geschäftsführer · Ihr Ansprechpartner</div>
+              </div>
+            </div>
+            <a href="tel:+4974357519700" class="flex items-center gap-3 text-primary font-bold text-lg hover:underline">
+              <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +49 7435 7519 700
+            </a>
+            <a href="mailto:info@planexus.de" class="flex items-center gap-3 text-slate-300 hover:text-primary mt-3">
+              <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+              info@planexus.de
+            </a>
+          </div>
+        </div>
+        <div class="bg-white text-slate-900 rounded-2xl p-8 shadow-2xl">
+          <h3 class="text-2xl font-bold mb-6">Mietanfrage senden</h3>
+          <ContactForm client:visible locale="en" />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

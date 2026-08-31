@@ -32,6 +32,13 @@ function gitLastmod(pathname) {
 export default defineConfig({
   site: 'https://planexus.de',
   trailingSlash: 'never',
+  i18n: {
+    defaultLocale: 'de',
+    locales: ['de', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   redirects: {
     '/about': '/ueber-uns',
     '/services': '/leistungen',
@@ -44,6 +51,13 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
+      i18n: {
+        defaultLocale: 'de',
+        locales: {
+          de: 'de-DE',
+          en: 'en',
+        },
+      },
       filter: (page) => !/\/(admin|api)(\/|$)/.test(page),
       serialize(item) {
         const lastmod = gitLastmod(new URL(item.url).pathname);

@@ -1,0 +1,577 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.tsx';
+import AuthorBio from '../../components/AuthorBio.astro';
+import CityCrossLinks from '../../components/CityCrossLinks.astro';
+
+const title = "Laborcontainer Zürich mieten – Reinraum, GMP, Swissmedic";
+const description = "Laborcontainer Zürich mieten: BSL-3, SIA 261, GMP-Reinraum, 2,75 m LABtoGO. Lieferung ab Albstadt via A81 und Grenze Thayngen. Kostenlose Beratung anfordern.";
+const canonical = "/laborcontainer-zuerich";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Laborcontainer und modularer Laborbau Zürich",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "image": "https://planexus.de/android-chrome-512x512.png",
+    "url": "https://planexus.de",
+    "telephone": "+49 7435 7519 700",
+    "email": "info@planexus.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Am Steinbach 8",
+      "addressLocality": "Albstadt-Laufen",
+      "addressRegion": "Baden-Württemberg",
+      "postalCode": "72459",
+      "addressCountry": "DE"
+    },
+    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Zürich" },
+    { "@type": "AdministrativeArea", "name": "Kanton Zürich" },
+    { "@type": "Country", "name": "Schweiz" }
+  ],
+  "description": "Containerlabore, mobile Labore und modulare Laborgebäude für Hochschulen, Universitätsspitäler, Pharma, Biotech und das Pharma-Biotech-Cluster der Deutschschweiz – ab Werk Albstadt verzollt nach Zürich.",
+  "offers": { "@type": "AggregateOffer", "priceCurrency": "CHF", "availability": "https://schema.org/InStock" }
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Planexus GmbH – Laborcontainer Zürich",
+      "image": "https://planexus.de/images/labtogo-industrie.webp",
+  "url": "https://planexus.de/en/lab-containers-zurich",
+  "telephone": "+49 7435 7519 700",
+  "email": "info@planexus.de",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Am Steinbach 8",
+    "addressLocality": "Albstadt-Laufen",
+    "addressRegion": "Baden-Württemberg",
+    "postalCode": "72459",
+    "addressCountry": "DE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Zürich",
+    "containedInPlace": { "@type": "Country", "name": "Schweiz" }
+  },
+  "priceRange": "CHF",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00","closes": "17:00"
+  }]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Standorte", "item": "https://planexus.de/en/lab-containers" },
+    { "@type": "ListItem", "position": 3, "name": "Laborcontainer Zürich", "item": "https://planexus.de/en/lab-containers-zurich" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert die Lieferung eines Laborcontainers nach Zürich vom Werk Albstadt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Schwerlastroute Werk Albstadt → Zürich führt über die A81 südwärts via Singen, den Grenzübergang Thayngen/Schaffhausen mit Zollabfertigung, dann A4 nach Winterthur und A1 nach Zürich. Reine Fahrzeit beträgt rund 2,5 Stunden bei circa 150 Kilometern Distanz. Die Zollabfertigung an der Grenze Thayngen (CH-Grenze) erfolgt über T1-Versandverfahren mit ATA-Carnet oder direkter Import-Verzollung – wir koordinieren komplett. Standardanlieferpunkte sind die Anschlussstellen Zürich-Nord (A1) für Hönggerberg und Irchel, Zürich-Brunau (A3) für den Rämistrasse-Hügel und Zürich-City für die Hardstrasse. Vom Auftrag bis zur betriebsbereiten Übergabe in Zürich vergehen 8 bis 14 Wochen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Bewilligungen brauche ich für einen Laborcontainer im Kanton Zürich?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Massgebend ist das Planungs- und Baugesetz (PBG) Kanton Zürich sowie die Allgemeine Bauverordnung (ABV) und die kommunale Bau- und Zonenordnung (BZO) der Stadt Zürich. Container gelten als Bauten und Anlagen, eine Baubewilligung ist in den meisten Fällen nötig. Zuständig für die Stadt Zürich ist das Amt für Baubewilligungen an der Lindenhofstrasse 19, 8001 Zürich. Bei temporärer Aufstellung unter 3 Monaten ist je nach Standort eine vereinfachte Anzeige möglich. Für GMP-, BSL-2- und BSL-3-Container greifen zusätzlich die Einschliessungsverordnung (ESV) für gentechnische Anlagen und das Heilmittelgesetz (HMG) mit Swissmedic-Zuständigkeit. Wir prüfen die Eingruppierung Ihres Standorts vorab und legen verfahrenstaugliche Bauunterlagen für Stadt und Kanton vor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Erdbeben-Anforderungen gelten für Laborcontainer in Zürich nach SIA 261?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zürich liegt nach SIA 261 in Erdbebenzone Z1a – das ist die niedrigste Erdbebenzone der Schweiz. Im Vergleich: Wallis, Basel und Engadin liegen in Z2 bis Z3b. Für Z1a beträgt die horizontale Bemessungs-Bodenbeschleunigung 0,6 m/s² (agd). Containerlabore werden meist in Bauwerksklasse I (BWK I, normale Bauwerke) eingestuft – BSL-3-Container und Pharma-Pilotanlagen können je nach Risiko in BWK II hochgestuft werden, was höhere Sicherheitsbeiwerte verlangt. Planexus liefert statisch nach SIA 261 geprüfte Container für Zürich, Verankerungskonzept nach SIA 263 (Stahlbau) ab Werk Albstadt – und nicht nur nach DIN, weil DIN-Statik allein im Schweizer Bewilligungsverfahren nicht akzeptiert wird."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie funktioniert die Verzollung und MwSt für einen Laborcontainer in die Schweiz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Schweiz ist nicht Teil der EU-Zollunion. Wir verzollen über T1-Versandverfahren ab Werk Albstadt mit Abfertigung am Zollamt Thayngen (CH) oder Schaffhausen. Bei dauerhafter Einfuhr fällt die Schweizer Mehrwertsteuer von 8,1 Prozent an (Stand 2026), bei temporärer Einfuhr (z. B. Mietcontainer für klinische Studien) ist eine Verzollung im Verfahren der vorübergehenden Verwendung (ATA-Carnet) möglich – in diesem Fall keine MwSt, aber Sicherheitsleistung beim Zoll. Wir koordinieren mit Schweizer Spediteuren und Zollagenten, alle Dokumente (Handelsrechnung, Packliste, EUR.1-Warenverkehrsbescheinigung, T1) erstellen wir komplett. Der Kunde erhält eine zollabgewickelte Lieferung frei Standort Zürich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Erfüllen die Container die Schweizer Energieanforderung SIA 380/1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SIA 380/1 (Thermische Energie im Hochbau) und MuKEn 2014/2025 (Mustervorschriften der Kantone im Energiebereich) sind in der Schweiz strenger als die deutsche GEG. Für Zürcher Aufstellungen ab 6 Monaten Dauerbetrieb dimensionieren wir die Sandwich-Aussenhülle ab Werk auf U-Werte ≤ 0,17 W/m²K (Wand und Dach), Dreifachverglasung mit U ≤ 1,0 W/m²K und Wärmerückgewinnung mit Wirkungsgrad ≥ 75 Prozent. Damit erfüllen unsere LABtoGO-Module die Mindestanforderung Kanton Zürich auch ohne nachträgliche Dämmung. Für Minergie- oder Minergie-P-Standards liefern wir auf Anfrage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welcher elektrische Anschluss ist in der Schweiz nötig (T13/T15, 230V/400V)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das Schweizer Niederspannungsnetz arbeitet wie das deutsche mit 230 V (einphasig) und 400 V (dreiphasig) bei 50 Hz – elektrisch sind die Anlagen kompatibel. Unterschiedlich sind die Steckdosen: SEV 1011 mit Steckertyp T13 (10 A, einphasig) und T15/T25 (16 A, dreiphasig). Wir bestücken Zürcher Container ab Werk mit T13/T15-Steckdosen; CEE-Industriesteckdosen 16 A und 32 A sind in der Schweiz identisch zu DE. Der Hausanschluss erfolgt über einen Schweizer Elektroinstallateur mit NIN 2020-Zulassung – wir liefern alle Schemen und Schaltpläne nach Schweizer Norm. Anschlussbescheinigung erstellt der lokale Installateur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Anwendungen sind in Zürich besonders nachgefragt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zürich ist nach Basel der zweitgrösste Pharma-Biotech-Standort der Schweiz. Typische Einsatzfelder für Laborcontainer ergeben sich rund um Hochschulen (Naturwissenschaften, Chemie, Biologie, Maschinenbau) – BSL-2-Drittmittelcontainer; naturwissenschaftlich-medizinische Campus-Standorte – Reinraum- und Studien-Container; Universitätsspitäler – BSL-2-Studienlabore während Klinik-Sanierungen; Pharma- und Diagnostikstandorte im Umland – GMP-Pilotcontainer; sowie Technologieparks und Biotech-Spinoffs – Container für Forschung und Kleinserienproduktion."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="bg-white">
+
+    <!-- HERO -->
+    <section class="relative bg-slate-900 text-white overflow-hidden">
+      <div class="relative z-10 container mx-auto px-4 py-20 md:py-28">
+        <div class="max-w-4xl">
+          <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
+            <a href="/" class="hover:text-primary transition-colors">Start</a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span>Standorte</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span class="text-primary">Zürich</span>
+          </nav>
+
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Ihr Spezialist für Laborcontainer · Deutschschweiz Pharma-Biotech-Cluster</div>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+            Laborcontainer Zürich – SIA-konforme BSL-3-Labore für Forschung, Pharma und Kliniken
+          </h1>
+
+          <p class="text-xl text-gray-300 leading-relaxed mb-4">
+            <strong class="text-white">Unsere Geschäftsführer bringen über zehn Jahre Erfahrung im Laborcontainerbau mit.</strong> Modular, SIA-261-konform, T1-verzollt. Wir realisieren flexible Forschungsumgebungen für Hochschulen, Universitätsspitäler, Pharma, Biotech und Technologieparks im Raum Zürich – aus dem Werk Albstadt direkt nach Zürich, über A81 und Grenze Thayngen.
+          </p>
+          <p class="text-base text-gray-400 mb-8">
+            Während andere noch planen, forschen Sie bereits.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" data-testid="button-cta-hero" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
+              Kostenfreies Standort-Audit Zürich
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +49 7435 7519 700
+            </a>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Spezialist für modularen Laborbau</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Award 2026 EU Business News</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Zollabwicklung Thayngen inkl.</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Wesemann-Gruppe · 60+ Jahre Laborbau</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <AuthorBio city="Zürich"  locale="en" />
+
+    <!-- LABtoGO -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Pattern-Interrupt · Weltpremiere analytica 2026</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus zeigt Zürich, was ein Laborcontainer 2026 wirklich kann</h2>
+              <p class="text-lg text-gray-700 leading-relaxed mb-4">Ein gewöhnlicher Laborcontainer hat 2.400 mm Innenhöhe. Aufrecht arbeiten unter einem Abzug ist mühsam.</p>
+              <p class="text-lg text-slate-900 font-bold leading-relaxed mb-4">Der LABtoGO von Planexus hat 2.750 mm Innenhöhe. 9,5 m Außenlänge. 3 m Außenbreite. Vollverglaste Front, die echtes Tageslicht in jedes Zürcher Forschungs-, Klinik- und Pharma-Labor bringt.</p>
+              <p class="text-lg text-gray-700 leading-relaxed"><strong>Ein gewöhnlicher Laborcontainer passt komplett in einen LABtoGO hinein.</strong> Wir konfigurieren ihn für Zürich nach SIA 261 (Erdbeben Z1a), SIA 380/1 (Energie strenger als GEG), Verzollung T1 ab Werk Albstadt und T13/T15-Schweizer-Stromanschluss.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">2.750</div><div class="text-xs text-gray-400 uppercase tracking-wider">mm Innenhöhe</div><div class="text-xs text-gray-500 mt-1">Standard: 2.400 mm</div></div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">9.500</div><div class="text-xs text-gray-400 uppercase tracking-wider">mm Außenlänge</div><div class="text-xs text-gray-500 mt-1">3.000 mm Breite</div></div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">U≤0,17</div><div class="text-xs text-gray-400 uppercase tracking-wider">W/m²K Wand</div><div class="text-xs text-gray-500 mt-1">SIA 380/1 erfüllt</div></div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">SIA 261</div><div class="text-xs text-gray-400 uppercase tracking-wider">Erdbeben Z1a</div><div class="text-xs text-gray-500 mt-1">statisch geprüft</div></div>
+            </div>
+          </div>
+          <div class="text-center">
+            <a href="/en/lab-containers/labtogo" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">LABtoGO Plattform und alle Konfigurationen ansehen
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM-AGITATION -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">Planexus löst die drei Zürcher Engpässe, an denen Laborprojekte regelmässig scheitern</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Verzollung Thayngen + 8,1 % MwSt – Bürokratie-Kostenfalle</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Die Schweiz ist kein EU-Zollgebiet. Standardspediteure rechnen Container ohne Verzollungs-Strategie ab – plötzlich landen 8,1 % MwSt auf den Endpreis, T1-Versandpapiere fehlen, an der Grenze Thayngen entstehen Tageskosten. Bei temporären Mietcontainern wäre ein ATA-Carnet sinnvoll – wer das nicht weiss, zahlt unnötig.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: T1 oder ATA-Carnet je nach Projektdauer, Verzollung Thayngen koordiniert ab Werk.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">SIA 261 statt DIN – DE-Statik allein bewilligungsfähig nicht</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Schweizer Bewilligungsbehörden akzeptieren keine reine DIN-Statik. SIA 261 (Einwirkungen, Erdbeben), SIA 263 (Stahlbau) und SIA 380/1 (Energie) sind verbindlich. Container aus DE-Werken, die nur DIN dokumentieren, fallen im Zürcher Baubewilligungsverfahren durch und müssen nachträglich ergänzt werden – das verzögert um 6–10 Wochen.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: Statik nach SIA 261/263 und Energie nach SIA 380/1 ab Werk dokumentiert.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Pharma- und Hochschul-Drittmittel – ESV statt deutsche GenTSV</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Schweizer GMP-Anlagen werden über Swissmedic genehmigt, gentechnische Anlagen S1/S2/S3 über die Einschliessungsverordnung (ESV) bei BAFU/BAG – nicht über deutsches BVL/RP. Wer GenTSV-Antragsunterlagen in Zürich einreicht, wird zurückgewiesen. Hochschul-Drittmittelprojekte verlangen die Schweizer Antragsstrecke ab Tag 1.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: ESV-konforme Risikobewertung, Swissmedic-tauglich, Antragsunterlagen schweizerisch.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRATEGISCHE FUSION -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Laborcontainer für Zürich: Was die Deutschschweiz, SIA-Normen und die Verzollung Thayngen vom Engineering verlangen</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p><strong>Zürich ist die grösste Stadt der Schweiz und nach Basel der zweitgrösste Pharma-Biotech-Standort.</strong> Auf 88 Quadratkilometern und in 12 Stadtkreisen konkurrieren Banken-City, Hochschulen (Naturwissenschaften, Chemie, Biologie, Pharmazie und Maschinenbau auf den Campus Hönggerberg und Zentrum an der Rämistrasse), naturwissenschaftlich-medizinische Universitätscampus (Campus Irchel), Universitätsspitäler (Rämistrasse), Pharma- und Diagnostikkonzerne im Umland sowie Technologieparks mit zahlreichen Biotech-Spinoffs um Flächen, Bewilligungen und Engineering-Kapazität.</p>
+            <p><strong>Wir kennen diesen Markt genau.</strong> Wir wissen, dass das Amt für Baubewilligungen Stadt Zürich an der Lindenhofstrasse 19, 8001 Zürich, nach PBG Kanton Zürich und der ABV entscheidet. Wir wissen, dass SIA 261 für Zürich Erdbebenzone Z1a definiert (agd = 0,6 m/s²) und Bauwerksklasse I bzw. II bestimmt, welche Sicherheitsbeiwerte greifen. Wir wissen, dass SIA 380/1 und MuKEn 2014/2025 strenger sind als die deutsche GEG, und dass für Container ab 6 Monaten Dauerbetrieb in Zürich U-Werte ≤ 0,17 W/m²K (Wand und Dach) und Dreifachverglasung Standard sind. Wir wissen, dass die Schweizer MwSt 8,1 Prozent beträgt (Stand 2026), dass die Verzollung über T1-Versandverfahren am Zollamt Thayngen läuft und dass Mietcontainer im Verfahren der vorübergehenden Verwendung mit ATA-Carnet ohne MwSt-Belastung möglich sind. Diese Details stehen nicht in unserem Angebot – sie sind das Engineering- und Logistik-Fundament jedes Containers, der unser Werk Albstadt verlässt.</p>
+            <p><strong>Made in Albstadt, verzollt in Thayngen, schlüsselfertig in Zürich.</strong> Endmontage und Innenausbau erfolgen mit Wesemann-Möbeln im eigenen Werk – Werksbesichtigung beidseitig planbar. Über A81 südwärts via Singen, den Grenzübergang Thayngen mit T1- oder ATA-Verzollung, A4 nach Winterthur und A1 nach Zürich beträgt die Schwerlastdistanz rund 150 Kilometer; Anschlussstellen Zürich-Nord (A1) für Hönggerberg und Irchel, Zürich-Brunau (A3) für den Rämistrasse-Hügel und Zürich-City für die Hardstrasse sind Standardanlieferpunkte.</p>
+            <p>Ob Sie ein <strong>mobiles Labor Zürich</strong> für eine befristete Klinik-Sanierungsphase brauchen, einen <strong>modularen Laborcontainer Zürich</strong> für eine dauerhafte Hochschul-Erweiterung am Hönggerberg oder ein <strong>Containerlabor Zürich</strong> mit BSL-3-Containment und Swissmedic-tauglicher GMP für ein Biotech-Spinoff im Technologiepark – wir liefern alle drei Antworten aus derselben Plattform: dem LABtoGO unseres Werks Albstadt, mit Schweizer Verzollungs-, Statik- und Energie-Dokumentation ab Werk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 ENGINEERING-DISZIPLINEN -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Sechs Engineering-Disziplinen für die Deutschschweiz</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Planexus baut Laborcontainer für Zürich, die in jeder Disziplin auf die Schweizer Realitäten abgestimmt sind – nicht generisch, sondern Norm- und Standort-genau.</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">SIA 261 Erdbeben</div><h3 class="font-bold text-slate-900 mb-2">Z1a + Bauwerksklasse</h3><p class="text-sm text-gray-600">Zürich liegt in Erdbebenzone Z1a (agd = 0,6 m/s²). Wir liefern Statik nach SIA 261 mit Verankerungskonzept SIA 263, BWK I oder II je nach Risiko – nicht nur DIN.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">SIA 380/1 Energie</div><h3 class="font-bold text-slate-900 mb-2">U ≤ 0,17 W/m²K + WRG ≥ 75 %</h3><p class="text-sm text-gray-600">SIA 380/1 und MuKEn 2014/2025 sind strenger als die deutsche GEG. Sandwich-Aussenhülle, Dreifachverglasung, WRG ab Werk dimensioniert für Schweizer Mindestanforderung.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Verzollung & MwSt</div><h3 class="font-bold text-slate-900 mb-2">T1 oder ATA-Carnet</h3><p class="text-sm text-gray-600">Für dauerhafte Einfuhr T1-Versandverfahren mit Verzollung Thayngen (8,1 % MwSt). Für temporäre Mietcontainer ATA-Carnet (vorübergehende Verwendung, keine MwSt) – wir koordinieren komplett.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">ESV & Swissmedic</div><h3 class="font-bold text-slate-900 mb-2">CH-Behördenpfad statt DE</h3><p class="text-sm text-gray-600">Gentechnische Anlagen S1/S2/S3 nach Einschliessungsverordnung (ESV) bei BAFU/BAG, GMP über Swissmedic – nicht GenTSV/BVL. Antragsunterlagen schweizerisch.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Stromnetz CH</div><h3 class="font-bold text-slate-900 mb-2">T13/T15 + NIN 2020</h3><p class="text-sm text-gray-600">Steckdosen SEV 1011 (T13/T15), CEE-Industrie wie DE. Schaltpläne nach NIN 2020. Hausanschluss durch Schweizer Installateur mit NIV-Zulassung.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">VKF-Brandschutz</div><h3 class="font-bold text-slate-900 mb-2">Schweizer Brandschutznorm 2015</h3><p class="text-sm text-gray-600">Zürcher Aufstellungen folgen den VKF-Brandschutzvorschriften (Vereinigung Kantonaler Feuerversicherungen) statt MBO/LBauO. Für Kliniken zusätzlich Krankenhaus-Brandschutz.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HYPER-LOKALE ZÜRICH-SPEZIFIKA -->
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Drei Zürich-Spezifika</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Drei Schweizer Anforderungen, die deutsche Anbieter regelmässig übersehen — Planexus baut Laborcontainer Zürich genau darauf hin</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Generic-Landingpages für ganz Deutschland bedienen die drei Realitäten nicht, die ein Laborcontainer in Zürich tatsächlich erfüllen muss. Wir schon — weil wir den Schweizer Pharma-, Forschungs- und Klinik-Markt genau kennen und unser Werk in Albstadt produziert, was hier mit Schweizer Papieren ankommt.</p>
+          <div class="grid md:grid-cols-3 gap-5">
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">SIA-Statik statt DIN: Erdbeben Z1a + BWK</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Schweizer Bewilligungsbehörden akzeptieren keine reine DIN-Statik. SIA 261 mit Erdbebenzone Z1a (agd = 0,6 m/s²) und Bauwerksklasse I/II ist verbindlich. Container aus DE-Werken, die nur DIN dokumentieren, fallen im Zürcher Verfahren durch und müssen nachträglich ergänzt werden.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: SIA 261/263 ab Werk dokumentiert.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">Verzollung Thayngen: T1 vs. ATA-Carnet</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Die Schweiz ist nicht Teil der EU-Zollunion. Für dauerhafte Einfuhr T1-Versandverfahren mit Verzollung am Zollamt Thayngen und 8,1 Prozent Schweizer MwSt. Für temporäre Mietcontainer (z. B. klinische Studien) ATA-Carnet im Verfahren der vorübergehenden Verwendung – ohne MwSt, mit Sicherheitsleistung. Standardspediteure rechnen das nicht.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: T1 oder ATA-Carnet je nach Projektdauer, Verzollung Thayngen koordiniert.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">SIA 380/1 strenger als GEG</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">SIA 380/1 (Thermische Energie im Hochbau) und MuKEn 2014/2025 fordern für Schweizer Container ab 6 Monaten Dauerbetrieb U-Werte ≤ 0,17 W/m²K (Wand und Dach), Dreifachverglasung mit U ≤ 1,0 W/m²K und Wärmerückgewinnung mit Wirkungsgrad ≥ 75 Prozent – strenger als die deutsche GEG.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: Sandwich-Hülle + Dreifachverglasung + WRG ab Werk Albstadt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST-WALL -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-primary/5">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus für Zürich: EU-Award 2026, SIA-konform, Wesemann-Ecosystem</h2>
+            <p class="text-gray-600 text-lg">Drei Säulen, die kein Wettbewerber im DACH-Raum so kombiniert.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Award 2026</h3>
+              <p class="text-sm text-gray-600">EU Business News – German CEO Excellence Awards 2026: Planexus ausgezeichnet als „Führender Anbieter innovativer Laborräume". International prämiert direkt nach der LABtoGO-Weltpremiere.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Made in Albstadt</h3>
+              <p class="text-sm text-gray-600">Endmontage, Innenausbau und QC im Werk Albstadt (Emil-Mayer-Strasse 1). SIA-Statik, SIA-380/1-Dämmung und T13/T15-Stromanschluss ab Werk vorkonfektioniert. Werksbesichtigung jederzeit möglich.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Wesemann-Ecosystem</h3>
+              <p class="text-sm text-gray-600">Teil der Wesemann Holding mit über 60 Jahren Erfahrung in Laboreinrichtung. Container, Möbel, Reinraumtechnik – aus einer Hand. Schweizer Verzollung inklusive.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECISION MATRIX -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Vergleich für Zürich: LABtoGO, Standard-Container und konventioneller Festbau</h2>
+          <p class="text-gray-600 text-lg mb-8">Ehrliche Vergleichsmatrix. Damit Sie Ihre Entscheidung fundiert treffen, bevor wir reden.</p>
+          <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-900 text-white">
+                  <tr><th class="text-left px-6 py-4 font-bold">Kriterium</th><th class="text-left px-6 py-4 font-bold">Festbau Zürich</th><th class="text-left px-6 py-4 font-bold">Standard-Container</th><th class="text-left px-6 py-4 font-bold bg-primary text-slate-900">LABtoGO</th></tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Lieferzeit</td><td class="px-6 py-4 text-gray-600">24–36 Monate</td><td class="px-6 py-4 text-gray-600">16–22 Wochen</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">8–14 Wochen</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Innenhöhe</td><td class="px-6 py-4 text-gray-600">3,0 m+</td><td class="px-6 py-4 text-gray-600">2,4 m</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">2,75 m</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">SIA 261 Statik</td><td class="px-6 py-4 text-gray-600">Standard</td><td class="px-6 py-4 text-gray-600">selten ab Werk</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Standard ab Werk</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">SIA 380/1 Energie</td><td class="px-6 py-4 text-gray-600">individuell</td><td class="px-6 py-4 text-gray-600">selten</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">U ≤ 0,17 W/m²K Standard</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Verzollung Thayngen</td><td class="px-6 py-4 text-gray-600">individuell</td><td class="px-6 py-4 text-gray-600">selten koordiniert</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">T1/ATA-Carnet inklusive</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Mobilität / Versetzbarkeit</td><td class="px-6 py-4 text-gray-600">keine</td><td class="px-6 py-4 text-gray-600">bedingt</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">voll mobil</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">T13/T15-Stromanschluss</td><td class="px-6 py-4 text-gray-600">Standard</td><td class="px-6 py-4 text-gray-600">selten</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">ab Werk vorkonfektioniert</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTITIONS-MODELLE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Investitions-Modelle</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Miete, Kauf oder Mietkauf – wir bauen das Modell um Ihr Zürcher Projekt</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Container-Spezifikation, Sicherheitsstufe, Reinraumklasse, SIA-Anforderungen und Laufzeit bestimmen die Kalkulation. Statt einer Pseudo-Spanne erhalten Sie binnen 24 Stunden eine projektspezifische, schriftliche Indikation in CHF.</p>
+              <p class="text-sm text-gray-600">Für die Kalkulation benötigen wir: Zürcher Standort (Hönggerberg, Irchel, Rämistrasse, Rotkreuz, Hardstrasse, Dübendorf), Sicherheitsstufe (S1/S2/S3, GMP, ATEX), gewünschte Laufzeit und Inbetriebnahme-Termin sowie ob T1-Verzollung (Kauf) oder ATA-Carnet (Miete).</p>
+              <a href="#anfrage" class="inline-flex items-center gap-2 mt-4 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Indikation in 24 h anfordern <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            </div>
+            <div class="space-y-4">
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Miete (ATA-Carnet)</div><div class="font-bold text-slate-900 text-lg mb-2">Flexibel, ohne MwSt-Belastung</div><p class="text-sm text-gray-600">Für klinische Studien, befristete SNF-Drittmittelprojekte an Hochschulen, kurzfristige kantonale Förderprojekte. Verzollung ATA-Carnet, vorübergehende Verwendung – keine Schweizer MwSt.</p></div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Kauf (T1-Verzollung)</div><div class="font-bold text-slate-900 text-lg mb-2">Asset, dauerhafte Einfuhr</div><p class="text-sm text-gray-600">Für dauerhafte Erweiterung an Hochschulcampus (Hönggerberg, Irchel), Pharma-Standorten im Umland oder Technologieparks. T1-Versandverfahren mit Verzollung Thayngen, 8,1 % CH-MwSt.</p></div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Mietkauf</div><div class="font-bold text-slate-900 text-lg mb-2">Übergang Miete → Eigentum</div><p class="text-sm text-gray-600">Wenn aus dem Studien-Interim ein Dauerstandort werden kann – ATA wird in T1 umgewandelt, Miete später anrechenbar auf den Kauf.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGISTIK-BEWEIS -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Logistik-Beweis</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Werk Albstadt → Zürich: 150 km via A81 + Grenze Thayngen</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Vom Werk Albstadt führt die Schwerlastroute über die A81 südwärts via Singen, den Grenzübergang Thayngen/Schaffhausen mit Zollabfertigung, dann A4 nach Winterthur und A1 nach Zürich. Reine Fahrzeit ca. 2,5 Stunden, mit Verzollung Thayngen typischerweise ein Transporttag.</p>
+              <p class="text-gray-700 leading-relaxed mb-4">Standardcontainer unter 4 m Breite und 18 t benötigen keine Schwertransportgenehmigung – Folgetag-Aufstellung möglich. Übergrosse Anlagen oder Innenstadt-Aufstellungen koordinieren wir mit Mobilkran 60–200 t und Begleitfahrzeugen über die Stadt Zürich und kantonale Polizei.</p>
+              <p class="text-gray-700 leading-relaxed">Vom Auftrag bis zur betriebsbereiten Übergabe in Zürich vergehen 8 bis 14 Wochen.</p>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">150</div><div class="text-xs text-gray-600 uppercase tracking-wider">km Werk</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">~2,5 h</div><div class="text-xs text-gray-600 uppercase tracking-wider">Schwerlast</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">A81/A4/A1</div><div class="text-xs text-gray-600 uppercase tracking-wider">via Thayngen</div></div>
+              <div class="col-span-3 bg-slate-900 text-white rounded-xl p-5">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Anschlussstellen</div>
+                <p class="text-sm text-gray-300">Zürich-Nord (A1) für Hönggerberg und Irchel, Zürich-Brunau (A3) für den Rämistrasse-Hügel, Zürich-City (Hardbrücke) für die Hardstrasse 219. Mobilkran-Aufstellung am Folgetag nach Zollabfertigung Thayngen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BÜROKRATIE-INSIDER -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Bewilligung Zürich</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Wir bereiten alles für Stadt Zürich, Kanton, BAFU/BAG und Swissmedic vor</h2>
+          <p class="text-gray-700 text-lg mb-8 max-w-3xl">Zürich hat klare Zuständigkeiten: Amt für Baubewilligungen Stadt Zürich (Lindenhofstrasse 19, 8001) für die Baubewilligung nach PBG/ABV, Baudirektion Kanton Zürich für übergeordnete Verfahren, BAFU/BAG für Einschliessungsverordnung ESV (gentechnische Anlagen), Swissmedic Bern für GMP- und Heilmittelgesetz. Wir kommunizieren mit allen vier – Sie nicht.</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">PBG ZH + ABV + BZO Stadt Zürich</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Massgebend ist das Planungs- und Baugesetz Kanton Zürich (PBG), die Allgemeine Bauverordnung (ABV) und die kommunale Bau- und Zonenordnung (BZO) der Stadt Zürich. Wir prüfen die Eingruppierung Ihres Standorts vorab und legen prüffähige Bauunterlagen beim Amt für Baubewilligungen Stadt Zürich, Lindenhofstrasse 19, 8001 Zürich, vor.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">SIA-Statik 261/263/380/1 ab Werk</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Schweizer Bewilligungsbehörden akzeptieren keine reine DIN-Statik. Wir liefern SIA 261 (Erdbebenzone Z1a, agd 0,6 m/s²), SIA 263 (Stahlbau-Verankerung) und SIA 380/1 (Energie U ≤ 0,17 W/m²K) ab Werk dokumentiert – verfahrenstauglich für Stadt und Kanton Zürich.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">ESV bei BAFU/BAG für GenTG-Pendant</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">BSL-3 in der Schweiz verlangt Anzeige nach Einschliessungsverordnung (ESV) bei BAFU (Bundesamt für Umwelt) und BAG (Bundesamt für Gesundheit). Wir liefern Risikobewertung, Sicherheitskonzept und vollständige Antragsunterlagen schweizerisch – nicht GenTSV/BVL.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">Swissmedic für GMP & Heilmittel</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">GMP-Pilotcontainer für Pharma-Produktion in der Schweiz werden nicht durch BfArM, sondern durch Swissmedic Bern inspiziert (Heilmittelgesetz HMG). Wir liefern IQ/OQ/PQ-Dokumentation und Reinraum-Validierung Swissmedic-tauglich – passt für Pharmakonzerne, deren Zulieferer und alle CH-Biotech-Spinoffs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROZESS 5 SCHRITTE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">So baut Planexus Ihr Containerlabor in Zürich</h2>
+          <p class="text-gray-600 text-lg mb-12">Fünf Schritte, ein Ansprechpartner – von der ersten Skizze bis zur verzollten Übergabe.</p>
+          <div class="space-y-5">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">01</div><div><h3 class="font-bold text-slate-900 mb-1">Wir hören zu</h3><p class="text-gray-600 text-sm">Anforderungs-Workshop vor Ort in Zürich oder per Video. Welche Sicherheitsstufe, welcher Standort (Hönggerberg, Irchel, Rämistrasse, Rotkreuz), welche SIA-Norm, welcher Termin, T1-Kauf oder ATA-Miete.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">02</div><div><h3 class="font-bold text-slate-900 mb-1">Wir planen</h3><p class="text-gray-600 text-sm">CAD-Layout, TGA, Statik nach SIA 261/263, Energie nach SIA 380/1. PBG-konforme Bauunterlagen für das Amt für Baubewilligungen Stadt Zürich – verfahrenstauglich ab Tag 1.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">03</div><div><h3 class="font-bold text-slate-900 mb-1">Wir bauen</h3><p class="text-gray-600 text-sm">Modul-Vorfertigung beim zertifizierten Polen-Partner, Endmontage und Innenausbau im Werk Albstadt mit Wesemann-Möbeln. SIA-380/1-Dämmung, T13/T15-Stromanschluss und QC vor Auslieferung.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">04</div><div><h3 class="font-bold text-slate-900 mb-1">Wir verzollen + liefern</h3><p class="text-gray-600 text-sm">T1-Versandverfahren oder ATA-Carnet ab Werk Albstadt, Verzollung Zollamt Thayngen. Schwerlasttransport A81 → A4 → A1 (150 km, 1 Transporttag). Aufstellung per Mobilkran. Anschluss aller Medien, Funktions- und Dichtigkeitstests vor Übergabe.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">05</div><div><h3 class="font-bold text-slate-900 mb-1">Wir übergeben</h3><p class="text-gray-600 text-sm">IQ/OQ/PQ-Dokumentation Swissmedic-tauglich. Schulung Ihrer Operator. Wartungs-Optionen bis 24 Monate – auf Wunsch verlängerbar.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — Laborcontainer für Zürich</h2>
+          <p class="text-gray-600 text-lg mb-10">Sieben Fragen, sieben Antworten. Direkt und ohne Marketing-Sprech.</p>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <article class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INLINE CONTACT FORM -->
+    <section id="anfrage" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Kostenfreies Standort-Audit</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Senden Sie uns Ihren Zürcher Standort und Ihr Labor-Profil</h2>
+            <p class="text-gray-600 text-lg">Wir liefern innerhalb von 48 Stunden: Standort-Bewertung, Container-Konfiguration mit Massen und Specs, Bewilligungs-Pfad nach PBG ZH, Verzollungs-Strategie (T1 oder ATA-Carnet), Liefer- und Aufstellungs-Termin, indikatives Investitions-Bracket in CHF.</p>
+          </div>
+
+          <div class="grid lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2">
+              <div class="bg-slate-900 text-white rounded-2xl p-8 h-full">
+                <h3 class="font-bold text-lg mb-6">Direkter Kontakt</h3>
+                <div class="space-y-5">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Telefon</div><a href="tel:+4974357519700" class="font-bold hover:text-primary transition-colors">+49 7435 7519 700</a></div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">E-Mail</div><a href="mailto:info@planexus.de" class="font-bold hover:text-primary transition-colors">info@planexus.de</a></div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Werk & Zentrale (150 km via A81 + Thayngen)</div><div class="font-bold">Emil-Mayer-Straße 1<br/>72461 Albstadt (DE)</div></div>
+                  </div>
+                  <div class="border-t border-white/10 pt-5 mt-5">
+                    <div class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Werksbesichtigung</div>
+                    <p class="text-sm text-gray-300">Wir zeigen Ihnen Ihren Container während der Fertigung – inklusive SIA-380/1-Dämmung und T13/T15-Stromanschluss vor Auslieferung. Termin nach Vereinbarung.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-3"><ContactForm client:visible locale="en" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Containerlabor Zürich</div>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Laborcontainer Zürich — Werksbesichtigung Albstadt und Standort-Audit</h2>
+          <p class="text-gray-400 mb-8">LABtoGO produzieren wir auf Bestellung im Werk Albstadt – SIA-Statik, SIA-380/1-Dämmung und T13/T15-Stromanschluss ab Werk vorkonfektioniert. Werksbesichtigung jederzeit möglich, kostenfreies Standort-Audit inklusive Verzollungs-Strategie.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Jetzt anrufen</a>
+            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Anfrageformular ausfüllen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEITERE STANDORTE -->
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Weitere Standorte für Laborcontainer im DACH-Raum</h2>
+          <p class="text-gray-600 mb-8">Zürich ist die zweitgrösste Pharma-Biotech-Stadt der Schweiz nach Basel. Diese Standorte teilen verwandte Industrie- oder Forschungsprofile:</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="/en/lab-containers-basel" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Basel</div><div class="text-xs text-gray-500">Pharma-Hauptstadt CH</div></a>
+            <a href="/en/lab-containers-bern" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Bern</div><div class="text-xs text-gray-500">BAG, Kliniken, Forschung</div></a>
+            <a href="/en/lab-containers-frankfurt" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Frankfurt</div><div class="text-xs text-gray-500">Pharma-Cluster Rhein-Main</div></a>
+            <a href="/en/lab-containers-stuttgart" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Stuttgart</div><div class="text-xs text-gray-500">Antriebsforschung & Werkstoffe</div></a>
+            <a href="/en/lab-containers-munich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">München</div><div class="text-xs text-gray-500">Automotive & Forschung</div></a>
+            <a href="/en/lab-containers-vienna" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Wien</div><div class="text-xs text-gray-500">AT-Pharma, Medizintechnik</div></a>
+            <a href="/en/lab-containers-hamburg" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Hamburg</div><div class="text-xs text-gray-500">Hafen, Pharma & Tropenmedizin</div></a>
+            <a href="/en/lab-containers-berlin" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Berlin</div><div class="text-xs text-gray-500">Klinik & Biomed-Forschung</div></a>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-gray-100">
+            <h3 class="font-bold text-slate-900 mb-3">Vertiefende Ressourcen</h3>
+            <div class="grid md:grid-cols-2 gap-3 text-sm">
+              <a href="/en/lab-containers" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer – Übersicht Produkte & Leistungen</a>
+              <a href="/en/locations" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer-Standorte im DACH-Raum</a>
+              <a href="/en/lab-containers/labtogo" class="text-gray-600 hover:text-primary transition-colors">→ LABtoGO – die Plattform für BSL-2, GMP, ATEX</a>
+              <a href="/en/magazine/lab-container-permits-building-law" class="text-gray-600 hover:text-primary transition-colors">→ Genehmigung & Baurecht für Laborcontainer (Praxisleitfaden)</a>
+              <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-gray-600 hover:text-primary transition-colors">→ BSL-2 & BSL-3 im Container – geht das?</a>
+              <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-gray-600 hover:text-primary transition-colors">→ GMP-Reinraum im Container für Pharma-Produktion</a>
+              <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-gray-600 hover:text-primary transition-colors">→ Klimatisierung im Laborcontainer – Normen & Praxis</a>
+              <a href="/en/magazine/lab-containers-rent-or-buy" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer mieten oder kaufen?</a>
+              <a href="/en/magazine/lab-container-project-process" class="text-gray-600 hover:text-primary transition-colors">→ Projektablauf: Von der Idee zur Übergabe</a>
+              <a href="/en/about" class="text-gray-600 hover:text-primary transition-colors">→ Über Planexus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <CityCrossLinks current="zuerich" locale="en" />
+
+  </div>
+</Layout>

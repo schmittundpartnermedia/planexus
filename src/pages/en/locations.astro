@@ -1,0 +1,235 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.tsx';
+
+const title = "Laborcontainer Standorte DACH – Berlin, Zürich, Wien & mehr";
+const description = "Laborcontainer in 12 DACH-Städten mieten oder kaufen. GMP-Reinraum, BSL-3, ATEX – deutschlandweit ab Albstadt lieferbar. Kostenlose Beratung anfordern.";
+const canonical = "/standorte";
+
+const cities = [
+  { slug: 'berlin', name: 'Berlin', region: 'DE', hint: 'Hauptstadtregion, Adlershof, Klinik & Forschung' },
+  { slug: 'hamburg', name: 'Hamburg', region: 'DE', hint: 'Hafen, Forschungscampus, Life Science Nord' },
+  { slug: 'muenchen', name: 'München', region: 'DE', hint: 'Biotech-Cluster Martinsried, Forschungscampus' },
+  { slug: 'stuttgart', name: 'Stuttgart', region: 'DE', hint: 'Automotive, Forschung, Filderebene' },
+  { slug: 'frankfurt', name: 'Frankfurt', region: 'DE', hint: 'Industriepark Höchst, Riedberg, Universitätsmedizin' },
+  { slug: 'duesseldorf', name: 'Düsseldorf', region: 'DE', hint: 'Chemie, Diagnostik, NRW-Pharma' },
+  { slug: 'zuerich', name: 'Zürich', region: 'CH', hint: 'Hochschulen, Kliniken, Pharma-Cluster' },
+  { slug: 'basel', name: 'Basel', region: 'CH', hint: 'Pharma, Biotech, Life-Science-Dreiländereck' },
+  { slug: 'bern', name: 'Bern', region: 'CH', hint: 'Kliniken, BAG, Swissmedic' },
+  { slug: 'wien', name: 'Wien', region: 'AT', hint: 'Life-Science, Kliniken, Forschung' },
+  { slug: 'graz', name: 'Graz', region: 'AT', hint: 'Industrie, Forschung, Hochschulen' },
+  { slug: 'linz', name: 'Linz', region: 'AT', hint: 'Stahl, Chemiepark, Hochschulen' },
+];
+
+const de = cities.filter(c => c.region === 'DE');
+const ch = cities.filter(c => c.region === 'CH');
+const at = cities.filter(c => c.region === 'AT');
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Standorte", "item": "https://planexus.de/en/locations" }
+  ]
+};
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Laborcontainer-Standorte in Deutschland und DACH",
+  "description": description,
+  "url": "https://planexus.de/en/locations",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "In welche Städte liefert Planexus Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Planexus liefert in 12 DACH-Metropolregionen: Berlin, Hamburg, München, Stuttgart, Frankfurt, Düsseldorf, Zürich, Basel, Bern, Wien, Graz und Linz. Darüber hinaus deutschlandweit, in der Schweiz und Österreich – auch außerhalb der zwölf Stadtseiten." } },
+    { "@type": "Question", "name": "Wie lange dauert der Transport ab Werk Albstadt?", "acceptedAnswer": { "@type": "Answer", "text": "DACH-Süd (München, Stuttgart): 1–4 Stunden. DACH-West (Frankfurt, Düsseldorf): 3–5 Stunden. DACH-Nord (Hamburg, Berlin): 6–10 Stunden. Schweiz (Basel, Zürich, Bern): 1–3 Stunden. Österreich (Wien, Graz, Linz): 4–8 Stunden. Gesamtprojektdauer inkl. Werksfertigung: 8–12 Wochen Standard, 16–24 Wochen GMP/BSL-3." } },
+    { "@type": "Question", "name": "Gelten in Deutschland, Schweiz und Österreich dieselben Genehmigungen?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Deutschland: Landesbauordnungen (LBO), BioStoffV/GenTSV, AMG §13 für GMP. Schweiz: kantonales Baurecht (MuKEn), Swissmedic für GMP, ESV/BAFU für Gentechnik. Österreich: OIB-Richtlinien, GTG/BBG, BASG für Arzneimittel. Planexus liefert standortgerechte Dokumentation in DE/CH/AT." } },
+    { "@type": "Question", "name": "Was unterscheidet die Stadtseiten voneinander?", "acceptedAnswer": { "@type": "Answer", "text": "Jede Stadtseite enthält lokale Besonderheiten: Schneelast- und Windzone, typische Genehmigungsbehörden, Anfahrtszeiten vom Werk Albstadt, regionale Cluster (Pharma, Automotive, Forschung) und branchenspezifische Einsatzfelder von BSL-2/3 über GMP bis ATEX." } },
+    { "@type": "Question", "name": "Kann Planexus auch außerhalb der 12 Metropolregionen liefern?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Das Werk in Albstadt beliefert ganz Deutschland, die Schweiz und Österreich. Transport erfolgt per Sattelzug mit Tieflader; bei Überbreite (40-ft-Module) sind Nachtfahrten und Sondergenehmigungen nötig, was den Transport um 1–2 Tage verlängern kann." } }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} schema={collectionSchema}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+      <div class="container mx-auto px-4 text-center relative z-10">
+        <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">
+            Laborcontainer Standorte DACH – 12 Städte, deutschlandweite Lieferung
+          </h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Planexus liefert schlüsselfertige Laborcontainer ab Werk Albstadt in zwölf Metropolregionen – sechs deutsche Wirtschaftsstandorte plus Schweiz und Österreich. Wählen Sie Ihre Stadt für standortspezifische Engineering-Details, Genehmigungspfade und Logistik.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto text-center mb-12">
+          <p class="text-gray-600 text-lg leading-relaxed">
+            Jede Stadtseite enthält lokale Besonderheiten zu Baurecht, Anfahrt vom Werk und typischen Einsatzfeldern – von BSL-2/3 über GMP-Reinraum bis ATEX. Alle Container werden in Albstadt gefertigt und mit standortgerechter Dokumentation ausgeliefert. Übersicht aller Produktvarianten: <a href="/en/lab-containers" class="text-[#7a9900] hover:underline font-medium">Laborcontainer – Produktübersicht</a>.
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto mb-16">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-6">Lieferzeiten ab Werk Albstadt nach Region</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">Planexus fertigt alle Laborcontainer am Standort Am Steinbach 8, 72459 Albstadt (Werk Wesemann Holding). Transport erfolgt per Sattelzug mit Tieflader; Montage und Inbetriebnahme vor Ort dauern typisch 2-5 Werktage je nach Modulgröße und Anschlussumfang.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+              <thead class="bg-slate-900 text-white"><tr><th class="text-left p-4 font-bold">Region</th><th class="text-left p-4 font-bold">Städte</th><th class="text-left p-4 font-bold">Transport</th><th class="text-left p-4 font-bold">Fahrzeit</th></tr></thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr><td class="p-4 font-semibold text-slate-900">DACH-Süd</td><td class="p-4 text-gray-700"><a href="/en/lab-containers-munich" class="text-[#7a9900] hover:underline">München</a>, <a href="/en/lab-containers-stuttgart" class="text-[#7a9900] hover:underline">Stuttgart</a></td><td class="p-4 text-gray-700">A8 / A81</td><td class="p-4 text-gray-700">2-4 h</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DACH-West</td><td class="p-4 text-gray-700"><a href="/en/lab-containers-frankfurt" class="text-[#7a9900] hover:underline">Frankfurt</a>, <a href="/en/lab-containers-dusseldorf" class="text-[#7a9900] hover:underline">Düsseldorf</a></td><td class="p-4 text-gray-700">A5 / A3</td><td class="p-4 text-gray-700">3-5 h</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DACH-Nord</td><td class="p-4 text-gray-700"><a href="/en/lab-containers-hamburg" class="text-[#7a9900] hover:underline">Hamburg</a>, <a href="/en/lab-containers-berlin" class="text-[#7a9900] hover:underline">Berlin</a></td><td class="p-4 text-gray-700">A7 / A81+A9</td><td class="p-4 text-gray-700">6-10 h</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">Schweiz</td><td class="p-4 text-gray-700"><a href="/en/lab-containers-basel" class="text-[#7a9900] hover:underline">Basel</a>, <a href="/en/lab-containers-zurich" class="text-[#7a9900] hover:underline">Zürich</a>, <a href="/en/lab-containers-bern" class="text-[#7a9900] hover:underline">Bern</a></td><td class="p-4 text-gray-700">A81 / A2</td><td class="p-4 text-gray-700">1-3 h</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">Österreich</td><td class="p-4 text-gray-700"><a href="/en/lab-containers-vienna" class="text-[#7a9900] hover:underline">Wien</a>, <a href="/en/lab-containers-graz" class="text-[#7a9900] hover:underline">Graz</a>, <a href="/en/lab-containers-linz" class="text-[#7a9900] hover:underline">Linz</a></td><td class="p-4 text-gray-700">A7 / A8</td><td class="p-4 text-gray-700">4-8 h</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-gray-500 mt-4">Gesamtprojektdauer ab Auftragserteilung: Standard-Container 8-12 Wochen Werksfertigung plus Transport. GMP-Reinraum oder BSL-3: 16-24 Wochen inkl. Qualifizierung. Nachtfahrten und Sondergenehmigungen bei Überbreite (40-ft-Module) verlängern Transport um 1-2 Tage. Alle Stadtseiten enthalten standortspezifische Checklisten für Bauantrag, Medienanschluss und typische Branchen – von <a href="/en/lab-containers" class="text-[#7a9900] hover:underline">Laborcontainer allgemein</a> bis GMP, BSL-3 und ATEX.</p>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-12 mb-16">
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">DACH-Nord: Hamburg und Berlin</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">Hamburg: Life Science Nord-Cluster, Forschungscampus, Universitätsmedizin, Hafen-Industrie mit ATEX-Anforderungen. Bauordnung Hamburg (BauO HB): Container &gt;75 m³ baugenehmigungspflichtig, temporäre Anlagen nach §62 befristet 2-5 Jahre. Schneelastzone 2 (0,85 kN/m²), Windzone 3. Klimatische Besonderheit: maritime Luftfeuchte 70-85 % rH – HVAC-Dimensionierung mit Entfeuchtung für GMP-Reinräume. Transport ab Albstadt: 480 km, 6-7 Stunden.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">Berlin: Klinik- und Forschungscampus, Adlershof, Life-Science in Buch und Wedding. BauO Bln: Genehmigung über Bezirksbauamt, Denkmalschutz auf historischen Campus-Flächen in Mitte. Schneelastzone 2, Frosttiefe 1,2 m – Fundament Punktauflager oder Streifenfundament nach DIN EN 1991-1-3. Typische Einsatzfelder: BSL-2/3-Forschung, Public-Health-Bevorratung, Übergangslabore während Sanierung. Transport: 620 km, 7-9 Stunden.</p>
+            <p class="text-sm"><a href="/en/lab-containers-hamburg" class="text-[#7a9900] hover:underline font-medium">Laborcontainer Hamburg</a> · <a href="/en/lab-containers-berlin" class="text-[#7a9900] hover:underline font-medium">Laborcontainer Berlin</a></p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">DACH-Süd: München und Stuttgart</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">München: Biotech-Cluster Martinsried, Forschungscampus Garching, Pharma-Standort Penzberg. BayBO: Genehmigung über Kreisverwaltungsreferat, Gentechnik-Container zusätzlich GenTSV-Anzeige beim Regierungspräsidium Oberbayern. Schneelastzone 2-3 (1,0-1,3 kN/m² in Alpennähe), Höhenlage Garching 485 m – Klimatisierung für ±0,5 K Mess-Räume projektbezogen. Transport ab Albstadt: 180 km, 2-3 Stunden – kürzeste Anbindung aller Metropolregionen.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">Stuttgart: Automotive-Cluster, Forschungsinstitute, Filderebene. LBO BW: Baugenehmigung über Stadt oder Landratsamt, ATEX-Container für Batterie- und H₂-Test nach EN 60079. Schneelastzone 2, Erdbebenzone 1 gering. Typische Container: Werks-QC ISO 17025, Battery-Abuse, Brennstoffzellen-Test Zone 2. Transport: 80 km, 1-1,5 Stunden.</p>
+            <p class="text-sm"><a href="/en/lab-containers-munich" class="text-[#7a9900] hover:underline font-medium">Laborcontainer München</a> · <a href="/en/lab-containers-stuttgart" class="text-[#7a9900] hover:underline font-medium">Laborcontainer Stuttgart</a></p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">DACH-West: Frankfurt und Düsseldorf</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">Frankfurt: Industriepark Höchst, Riedberg-Campus, Universitätsmedizin. HBO Hessen: Genehmigung über Stadt Frankfurt, GMP-Container mit AMG §13-Anzeige bei Regierungspräsidium Darmstadt. Schneelastzone 1 (0,65 kN/m²), milde Winter – geringere Heizlast, höhere Sommer-Kühllast für Reinraum-HVAC. Transport ab Albstadt: 280 km, 3-4 Stunden.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">Düsseldorf: NRW-Pharma und -Chemie, Diagnostik-Standort Hilden, Universitätsmedizin Düsseldorf. BauO NRW: Bezirksregierung Düsseldorf/Köln, BioStoffV-Container mit ZKBS-Stellungnahme. Schneelastzone 1-2. Typische Einsatzfelder: GMP-Reinraum CDMO, Pharma-QC, BSL-2 Biotech. Transport: 380 km, 4-5 Stunden.</p>
+            <p class="text-sm"><a href="/en/lab-containers-frankfurt" class="text-[#7a9900] hover:underline font-medium">Laborcontainer Frankfurt</a> · <a href="/en/lab-containers-dusseldorf" class="text-[#7a9900] hover:underline font-medium">Laborcontainer Düsseldorf</a></p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">Schweiz: Basel, Zürich und Bern</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">Basel: Pharma-Dreiländereck, kürzeste Transportzeit ab Albstadt (45 km, 45 Minuten). MuKEn (Mustervorschriften der Kantone): kantonale Baugesuche, Swissmedic-Inspektion für GMP-Container. Schneelast nach SIA 261 Zone 2-3. Abluft-Richtlinie LRV für Chemie- und Pharma-Container. Mehrwertsteuer 8,1 % bei Kauf, Miete steuerlich absetzbar.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">Zürich: Hochschulcampus Hönggerberg, Universitätsmedizin, Forschung in Dübendorf, Pharma in Rotkreuz. Kantonales Baurecht ZH, ESV für Gentechnik-Container. Höhenlage 400-500 m – Nachtfrost bis -15 °C, Container-HVAC mit Frostschutz für Medienleitungen. Bern: Kliniken, translationale Forschung, BAG/Swissmedic. Transport Basel-Zürich-Bern: 1-2,5 Stunden ab Albstadt.</p>
+            <p class="text-sm"><a href="/en/lab-containers-basel" class="text-[#7a9900] hover:underline font-medium">Laborcontainer Basel</a> · <a href="/en/lab-containers-zurich" class="text-[#7a9900] hover:underline font-medium">Laborcontainer Zürich</a> · <a href="/en/lab-containers-bern" class="text-[#7a9900] hover:underline font-medium">Laborcontainer Bern</a></p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">Österreich: Wien, Graz und Linz</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">Wien: Life-Science-Cluster, Forschung in Klosterneuburg, Universitätsmedizin und -kliniken. OIB-Richtlinie 5 (Schneelast Zone 2-3), BauTG des Landes Wien. GTG/BBG für Gentechnik- und BioStoff-Container, BASG für GMP-Erlaubnis AMG. Transport ab Albstadt: 650 km, 7-8 Stunden über A7/A8.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">Graz: Industrie, Forschung und Hochschulen. Steiermärkisches Baugesetz, H₂-Cluster Steiermark – ATEX-Container für Brennstoffzellen-Test. Linz: Stahl- und Chemieindustrie, Chemiepark, Hochschulen. OÖ Bauordnung, Stahl- und Polymer-QC-Container ISO 17025. Transport Graz: 580 km (6-7 h), Linz: 480 km (5-6 h).</p>
+            <p class="text-sm"><a href="/en/lab-containers-vienna" class="text-[#7a9900] hover:underline font-medium">Laborcontainer Wien</a> · <a href="/en/lab-containers-graz" class="text-[#7a9900] hover:underline font-medium">Laborcontainer Graz</a> · <a href="/en/lab-containers-linz" class="text-[#7a9900] hover:underline font-medium">Laborcontainer Linz</a></p>
+          </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="text-2xl" aria-hidden="true">🇩🇪</span>
+              <h2 class="font-bold text-slate-900 text-lg">Deutschland</h2>
+            </div>
+            <ul class="space-y-3">
+              {de.map(c => (
+                <li>
+                  <a href={`/en/lab-containers-${c.slug}`} class="group block">
+                    <span class="text-slate-900 font-medium group-hover:text-[#7a9900] transition-colors">Laborcontainer {c.name}</span>
+                    <span class="block text-sm text-gray-500">{c.hint}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="text-2xl" aria-hidden="true">🇨🇭</span>
+              <h2 class="font-bold text-slate-900 text-lg">Schweiz</h2>
+            </div>
+            <ul class="space-y-3">
+              {ch.map(c => (
+                <li>
+                  <a href={`/en/lab-containers-${c.slug}`} class="group block">
+                    <span class="text-slate-900 font-medium group-hover:text-[#7a9900] transition-colors">Laborcontainer {c.name}</span>
+                    <span class="block text-sm text-gray-500">{c.hint}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="text-2xl" aria-hidden="true">🇦🇹</span>
+              <h2 class="font-bold text-slate-900 text-lg">Österreich</h2>
+            </div>
+            <ul class="space-y-3">
+              {at.map(c => (
+                <li>
+                  <a href={`/en/lab-containers-${c.slug}`} class="group block">
+                    <span class="text-slate-900 font-medium group-hover:text-[#7a9900] transition-colors">Laborcontainer {c.name}</span>
+                    <span class="block text-sm text-gray-500">{c.hint}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-6">Genehmigung und klimatische Anforderungen im DACH-Vergleich</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">Deutschland: Baugenehmigung nach Landesbauordnung, Container &gt;75 m³ Brutto-Rauminhalt. BioStoffV-/GenTSV-Container zusätzlich ZKBS-Anzeige oder Genehmigung. GMP-Container: AMG §13-Anzeige bei Landesbehörde. Schweiz: kantonales Baurecht (MuKEn), Swissmedic für GMP, ESV/BAFU für Gentechnik. Österreich: OIB-Richtlinien, GTG/BBG, BASG für Arzneimittel. Planexus liefert für jeden Standort die passende Dokumentationspaket-Sprache (DE/CH/AT).</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Klimatische Besonderheiten beeinflussen HVAC-Dimensionierung: Norddeutschland hohe Luftfeuchte (Entfeuchtung für GMP), Alpennähe höhere Schneelast (Fundament nach DIN EN 1991-1-3), Donauraum Continental-Klima (Sommer-Kühllast). Container-HVAC wird werksseitig auf Zielregion ausgelegt – Heizlast, Kühllast und Feuchte-Sollwerte sind im Angebot dokumentiert. Medienanschluss vor Ort: Strom 32-63 A, Wasser, Abwasser, ggf. Druckluft und Prozessgase je nach Labor-Typ.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Häufige Fragen zu Laborcontainer-Standorten</h2>
+          <p class="text-gray-600 text-lg mb-10">Lieferzeiten, Genehmigungen und regionale Besonderheiten im DACH-Raum.</p>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <article class="bg-slate-50 border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4">Ihr Standort nicht dabei?</h2>
+          <p class="text-gray-600 mb-8">Wir liefern in ganz Deutschland, der Schweiz und Österreich – auch außerhalb der zwölf Metropolregionen. Sprechen Sie uns an.</p>
+          <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">
+            Projekt anfragen
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

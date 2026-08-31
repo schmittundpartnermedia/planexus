@@ -1,0 +1,281 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ContactForm from '../../../components/ContactForm.tsx';
+import Picture from '../../../components/Picture.astro';
+import AuthorBio from '../../../components/AuthorBio.astro';
+import BranchenCrossLinks from '../../../components/BranchenCrossLinks.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const title = "Laborcontainer Industrie Werkstoffprüfung – ISO 17025";
+const description = "Laborcontainer Industrie & Werkstoffprüfung: ISO 17025, ATEX, schwingungsisoliert, DAkkS-akkreditierungsfähig. Vor-Ort-QC im Werk. Jetzt Angebot anfordern.";
+const canonical = "/branchen/industrie-werkstoffpruefung";
+const ogImage = "/attached_assets/generated_images/high-tech_lab_interior.png";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Laborcontainer für Industrie und Werkstoffprüfung",
+  "provider": { "@type": "Organization", "name": "Planexus GmbH", "image": "https://planexus.de/android-chrome-512x512.png", "url": "https://planexus.de", "telephone": "+49 7435 7519 700", "email": "info@planexus.de", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" }, "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" } },
+  "areaServed": [{ "@type": "Country", "name": "Germany" }, { "@type": "Country", "name": "Switzerland" }, { "@type": "Country", "name": "Austria" }],
+  "audience": { "@type": "BusinessAudience", "audienceType": "Stahl, Automotive, Chemie, Bauindustrie, Maschinenbau, QC-Labore, Prüfinstitute, akkreditierte Labore" },
+  "description": "ISO/IEC 17025-akkreditierungsfähige Werks-Laborcontainer für Werkstoffprüfung, Materialqualitätssicherung, ATEX/IECEx-Zonen, schwingungsisolierte Fundamente, klimakontrollierte Mess-Räume."
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Branchen", "item": "https://planexus.de/en/industries" },
+    { "@type": "ListItem", "position": 3, "name": "Industrie & Werkstoffprüfung", "item": "https://planexus.de/en/industries/industry-materials-testing" }
+  ]
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Können wir mit einem Container die DAkkS-Akkreditierung nach ISO/IEC 17025 erlangen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Die ISO/IEC 17025:2017 stellt keine Vorgaben zur Bauweise des Labors, sondern an die technische Kompetenz, die Validierung der Methoden, die Rückführbarkeit der Messmittel auf nationale Normale (über akkreditierte DKD-Kalibrierung), die Personalqualifikation und die Unparteilichkeit. Container erfüllen all diese Anforderungen, sofern Umgebungsbedingungen (Temperatur, Luftfeuchte, Vibrationen, EMV) reproduzierbar geregelt werden. Wir bauen ISO-17025-fähige Container mit klimatisierten Wäge- und Messzellen ±0,5 °C / ±5 % rH, Vibrationsisolation für Mikrowaagen, EMV-Schirmung für hochempfindliche Messmittel und dokumentierter Qualifizierung der Umgebungsbedingungen. Die DAkkS-Begutachterin akzeptiert das ohne Einwände – wir liefern die Begutachtungs-Ready-Dokumentation als Anlage." } },
+    { "@type": "Question", "name": "Was kostet ein Werks-Labor-Container im Vergleich zum Festeinbau?", "acceptedAnswer": { "@type": "Answer", "text": "Standard-Werkscontainer für Eingangs-/Wareneingangs-QC liegen zwischen 2.800 und 4.500 Euro pro Quadratmeter. Spezialisierte Container (klimatisierte Wägezelle, schwingungsisoliertes Fundament, ATEX-Zone 2) zwischen 4.500 und 8.000 Euro pro Quadratmeter. Vergleichbarer Festeinbau in eine Industriehalle kostet im Bestand 5.000-12.000 Euro pro Quadratmeter, plus Bauzeit von 6-12 Monaten und Werks-Ausfall während der Bauphase. Die Container-Lösung wird wirtschaftlich vor allem dann, wenn der Werks-Betrieb nicht unterbrochen werden darf, oder wenn die Prüflinie modular skaliert werden soll. Mietkauf-Konstrukte (24, 36, 60 Monate) sind verbreitet, weil sie steuerlich als Operating-Lease behandelt werden." } },
+    { "@type": "Question", "name": "Sind ATEX/IECEx-Container für Ex-Zonen 1 oder 2 möglich?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, mit klar definierten Konstruktions-Maßnahmen. ATEX-Richtlinie 2014/34/EU und IECEx-Schema verlangen Geräte und Schutzsysteme, die für die jeweilige Zone (0/1/2 für Gase, 20/21/22 für Stäube) zertifiziert sind. Container-Bauweise erlaubt EX-zertifizierte Beleuchtung (Atex-Kategorie 2G EEx d/e), explosionsgeschützte Steckdosen, antistatische Bodenbeläge nach DIN EN 1081, Erdung nach DIN EN 60079-14, Lüftung mit kontrollierter Durchspülung und Gas-Detektoren mit SIL-2-Aufschaltung. Wir bauen ATEX-Container für Zone 2 (gelegentlich explosionsfähige Atmosphäre) standardmäßig, Zone 1 (regelmäßig explosionsfähig) projektbezogen mit Notified-Body-Bewertung. Die TRBS 1201 / TRGS 727 / DGUV V104 ist Pflichtlektüre vorab." } },
+    { "@type": "Question", "name": "Wie funktioniert Werks-QC im Container ohne Produktionsunterbrechung?", "acceptedAnswer": { "@type": "Answer", "text": "Wir liefern den Container in der Werks-Halle oder direkt vor der Produktionslinie. Anschluss an Werks-Versorgung (Druckluft, Wasser, Strom, Stickstoff, Daten) über Standard-Industrie-Schnittstellen. Probennahme erfolgt über kurze Wegestrecke direkt vom Prozess. Wir kennen die typischen Prüflinien für Stahl (Zugversuch nach DIN EN ISO 6892, Härte Vickers/Rockwell/Brinell nach DIN EN ISO 6507/6508/6506, Kerbschlagbiegeversuch nach DIN EN ISO 148-1, metallographische Mikroskopie), Beton (Druckfestigkeit nach DIN EN 12390-3, E-Modul nach DIN EN 12390-13), Polymere (Schmelzindex nach ISO 1133, Zugfestigkeit nach ISO 527, DSC), Lack (Schichtdickenmessung nach DIN EN ISO 2808). Container-Layout passend zur Prüfung – wir konfigurieren projektspezifisch." } },
+    { "@type": "Question", "name": "Welche Klimastabilität ist für Mess-Räume erforderlich?", "acceptedAnswer": { "@type": "Answer", "text": "Standard für Mess-Räume nach VDI/VDE 2627 ist Klima-Klasse 1 (Sollwert ±0,5 K, Toleranz Δ 1 K) bis Klasse 5 (Sollwert ±0,1 K, Toleranz Δ 0,2 K). Für die meisten industriellen Anwendungen reicht Klasse 3 (Sollwert ±0,5 K, Toleranz Δ 1 K, Lüftung ≥3-fach). Hochpräzise Wägeräume für Mikrowaagen verlangen Klasse 1 oder 2 plus Vibrationsisolation. Wir bauen klimatisierte Container mit Doppel-Klimaanlage (Hauptbetrieb + redundanter Backup), Datenlogger NTC/Pt100 mit DKD-rückgeführter Kalibrierung, Aufzeichnung 24/7 für DAkkS-Audits. Luftfeuchte typisch 40-60 % rH ±5 %. Vibrations-Isolation über Federfundament oder Gummi-Metall-Lager. EMV-Schirmung für empfindliche Messmittel (REM, NMR, Spektrometer) projektbezogen." } },
+    { "@type": "Question", "name": "Wer erstellt für Werks-Container die Gefährdungsbeurteilung?", "acceptedAnswer": { "@type": "Answer", "text": "Die Gefährdungsbeurteilung nach ArbSchG § 5 + GefStoffV § 6 ist Bauherrenpflicht – also die Werks-/Fachkraft für Arbeitssicherheit Ihres Unternehmens. Wir liefern aber alle Eingangsdaten: technische Datenblätter, Sicherheitskennzeichnung, Brandschutznachweis, Lärmprognose, Wärme-/Kältelast-Berechnung, Stoff-Verzeichnis. Für GefStoffV-relevante Container (Lösungsmittel, Säuren/Laugen, Gase) liefern wir das passende Lager nach DIN EN 14470, Sicherheitsschränke F90 nach DIN 18095 und Auffangwannen mit dem für die Lager-Mengen erforderlichen Volumen. Mit diesen Eingangsdaten reduziert sich Ihre Gefährdungsbeurteilung auf 4-8 Stunden statt mehrerer Tage." } },
+    { "@type": "Question", "name": "Wie funktioniert die Mehrjahres-Vermietung mit DAkkS-Re-Akkreditierung?", "acceptedAnswer": { "@type": "Answer", "text": "DAkkS-Akkreditierungen werden alle 5 Jahre re-zertifiziert, mit jährlichen Überwachungsbegutachtungen. Container-Mietverträge laufen typischerweise 36-60 Monate, mit Verlängerungs-Option. Die DAkkS akzeptiert Container als Prüfumgebung dauerhaft, sofern die Umgebungs-Qualifizierung dokumentiert bleibt und die Vibrations-/Klima-/EMV-Bedingungen reproduzierbar sind. Wir liefern die jährliche Re-Qualifizierung der Umgebungsbedingungen als Wartungs-Leistung im Mietkontrakt – Klima-Trend, Vibrations-Spektrum, EMV-Felder, Lüftungs-Bilanz, Reinheits-Klasse. Damit haben Sie die DAkkS-Audit-Spur lückenlos." } }
+  ]
+};
+const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Laborcontainer Industrie & Werkstoffprüfung – ISO 17025, ATEX", "description": "Industrielle Werkstoffprüf-Container nach ISO 17025. ATEX/IECEx, EN 12128 Mikrobiologie, klimatisierte Prüfzellen, mobile QS-Labore.", "image": "https://planexus.de/opengraph.jpg", "datePublished": "2026-05-02", "dateModified": "2026-05-02", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer Planexus GmbH", "url": "https://planexus.de/en/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://planexus.de/en/industries/industry-materials-testing"}, "about": "Industrie- und Werkstoffprüf-Laborcontainer", "inLanguage": "en"};
+---
+<Layout title={title} description={description} canonical={canonical} ogImage={ogImage} schema={serviceSchema}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <div class="bg-white">
+    <section class="relative bg-slate-900 text-white overflow-hidden pt-20">
+      <div class="absolute inset-0 z-0">
+        <Picture src="/attached_assets/generated_images/high-tech_lab_interior.png" alt="Werks-Laborcontainer Industrie Werkstoffprüfung – ISO 17025 DAkkS-akkreditierungsfähig" class="w-full h-full object-cover opacity-25" loading="eager" fetchpriority="high" width={1024} height={1024} />
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
+      </div>
+      <div class="relative z-10 container mx-auto px-4 py-16 md:py-24">
+        <div class="max-w-4xl">
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Branche · Stahl · Automotive · Chemie · Bauindustrie · QC-Labore</div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">Laborcontainer für Industrie & Werkstoffprüfung – ISO 17025</h1>
+          <p class="text-xl text-gray-300 leading-relaxed mb-4"><strong class="text-white">DAkkS-akkreditierungsfähige QC-Container, ATEX/IECEx-Zone-2 für Lösungsmittel- und Polymer-Pilotierung, schwingungsisoliertes Fundament für Mikrowaagen und REM, Klima-Klasse 1–5 nach VDI/VDE 2627.</strong> Direkt am Produktionsstandort, mit Werks-Versorgung verbunden, ohne Werks-Stillstand.</p>
+          <p class="text-base text-gray-400 mb-8">Statt sechs Monate Werkshallen-Umbau steht Ihre Werks-QC nach acht Wochen.</p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">Werks-Container-Audit anfragen</a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">+49 7435 7519 700</a>
+          </div>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div>✓ ISO/IEC 17025-fähig (DAkkS-ready)</div>
+            <div>✓ ATEX/IECEx Zone 2 (optional Zone 1)</div>
+            <div>✓ Klima-Klasse 1-5 nach VDI 2627</div>
+            <div>✓ Vibrationsisolation für Mikrowaagen</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <AuthorBio  locale="en" />
+
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-10">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Produktion läuft – QC zieht ein</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Warum Werks-QC in Container statt im Werkshallen-Festeinbau gehört</h2>
+            <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">Werkshallen sind für Produktion gebaut, nicht für QC. Festeinbau bedeutet Werks-Stillstand und 6-12 Monate Bauzeit. Werks-Container ziehen ein, ohne dass die Produktion auch nur eine Schicht ausfällt.</p>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">8 W.</div><div class="text-xs text-gray-400 uppercase tracking-wider">Werks-QC einsatzbereit</div><div class="text-xs text-gray-500 mt-1">vs. 6-12 Monate Festeinbau</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">±0,5 K</div><div class="text-xs text-gray-400 uppercase tracking-wider">Klima-Stabilität</div><div class="text-xs text-gray-500 mt-1">VDI 2627 Klasse 3</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">EX 2G</div><div class="text-xs text-gray-400 uppercase tracking-wider">ATEX-Zone-2</div><div class="text-xs text-gray-500 mt-1">DIN EN 60079 / IECEx</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">0 h</div><div class="text-xs text-gray-400 uppercase tracking-wider">Werks-Stillstand</div><div class="text-xs text-gray-500 mt-1">Aufstellung neben der Linie</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Normen, Akkreditierungs-Schemata und Industrie-Regelwerke</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+              <thead class="bg-slate-900 text-white"><tr><th class="text-left p-4 font-bold">Norm</th><th class="text-left p-4 font-bold">Anwendung</th><th class="text-left p-4 font-bold">Lieferung</th></tr></thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr><td class="p-4 font-semibold text-slate-900">ISO/IEC 17025:2017</td><td class="p-4 text-gray-700">Akkreditierte Prüf- und Kalibrierlabore</td><td class="p-4 text-gray-700">Umgebungs-Qualifizierung, DAkkS-ready Doku</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">VDI/VDE 2627</td><td class="p-4 text-gray-700">Klimatisierte Mess-Räume Klasse 1-5</td><td class="p-4 text-gray-700">Doppel-Klima, NTC/Pt100-Logger DKD</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">ATEX 2014/34/EU + DIN EN 60079</td><td class="p-4 text-gray-700">Ex-Zonen 0/1/2/20/21/22</td><td class="p-4 text-gray-700">EX-Beleuchtung, Steckdose, Erdung, Gasdetektor</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">TRBS 1201 / TRGS 727 / DGUV V104</td><td class="p-4 text-gray-700">Ex-Schutz-Dokument, ESD</td><td class="p-4 text-gray-700">Antistatik-Boden DIN EN 1081, Doku-Vorlage</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">GefStoffV / TRGS 526</td><td class="p-4 text-gray-700">Lösungsmittel-/Säurelagerung</td><td class="p-4 text-gray-700">DIN EN 14470 Sicherheitsschrank, Auffangwanne</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN EN 1991-1-1</td><td class="p-4 text-gray-700">Lastannahmen Werks-Aufstellung</td><td class="p-4 text-gray-700">Statik-Nachweis Bodenplatte / Streifenfundament</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DGUV V3 / DIN VDE 0100-718</td><td class="p-4 text-gray-700">Elektroinstallation Werkstatt-Labor</td><td class="p-4 text-gray-700">Jährliche Prüfung im Mietkontrakt</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN ISO 2768 / DIN EN ISO 1101</td><td class="p-4 text-gray-700">Toleranz-/Form-/Lagetoleranzen Mess-Werkstatt</td><td class="p-4 text-gray-700">Granitplatte, Schwingungsisolation</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900 text-center">Acht typische Werks- und Prüf-Container, die wir liefern</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { title: 'Stahl-Prüflabor', desc: 'Zugversuch DIN EN ISO 6892, Härte Vickers/Brinell/Rockwell, Kerbschlag, Metallographie.' },
+              { title: 'Beton-/Baustoff-Labor', desc: 'Druckfestigkeit DIN EN 12390-3, Spaltzug, Erhärtungs-Klimaschrank, Zementprüfung.' },
+              { title: 'Polymer-/Kunststoff-Labor', desc: 'Schmelzindex ISO 1133, DSC, FTIR, Zugprüfung ISO 527, Schlagzähigkeit Charpy/Izod.' },
+              { title: 'Lack- & Beschichtungs-QC', desc: 'Schichtdicke DIN EN ISO 2808, Glanzgrad, Härte Bleistift, Salzsprühnebel DIN EN ISO 9227.' },
+              { title: 'Mess-Raum / Wägezelle', desc: 'Klima Klasse 2, Granitplatte, Mikrowaage 0,01 mg, EMV-geschirmt, DKD-rückgeführt.' },
+              { title: 'ATEX Zone-2 Pilot-Lab', desc: 'Lösungsmittel-Synthese, Polymer-Pilotanlage, Gasdetektor und SIL-2. Raffinerie/Tanklager → Öl-&-Gas-Seite.' },
+              { title: 'Eingangsprüfung Wareneingang', desc: 'Direkt am Werks-Tor, Stichproben-QC, RFID-Anbindung an MES, schnelle Freigabe.' },
+              { title: 'In-Process QC', desc: 'Direkt an der Produktionslinie, kurze Probenwege, Echtzeit-Auswertung im LIMS.' }
+            ].map(item => (
+              <div class="bg-slate-50 rounded-xl p-5 border-l-2 border-primary">
+                <div class="font-bold text-slate-900 mb-2">{item.title}</div>
+                <p class="text-sm text-gray-700 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10">Sechs Engineering-Details für Werks- und Prüf-Container</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">1. Schwingungsisolation</div><h3 class="text-xl font-bold mb-3">Federfundament für Mikrowaagen und REM</h3><p class="text-gray-300 text-sm">Eigenfrequenz <2 Hz, Vibrationsspektrum nach VC-D oder VC-E, optional pneumatische Isolation, Boden-Granit-Platte 200 mm dick.</p></div>
+              <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">2. EMV-Schirmung</div><h3 class="text-xl font-bold mb-3">Faraday-Käfig für hochempfindliche Messmittel</h3><p class="text-gray-300 text-sm">Wand-Schirmblech aus Mu-Metall oder Kupfer, gefilterte Netzanschlüsse, getrennte Erdung, EMV-Vorprüfung nach EN 55011.</p></div>
+              <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">3. ATEX-Konstruktion</div><h3 class="text-xl font-bold mb-3">Zone-2-konform nach DIN EN 60079-14</h3><p class="text-gray-300 text-sm">Erdungsstrahl <1 Ω, Ex-Leuchten 2G EEx d/e, Gasdetektor SIL-2, Lüftungs-Bypass mit kontrollierter Spülung, Ex-Türverriegelung.</p></div>
+              <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">4. Werks-Versorgung</div><h3 class="text-xl font-bold mb-3">Direkter Anschluss an Werks-Schnittstellen</h3><p class="text-gray-300 text-sm">Druckluft 10 bar, Kühlwasser, Stickstoff, Argon, 400 V Drehstrom 63 A, Profibus/Profinet/Industrial Ethernet, MES/LIMS-Integration.</p></div>
+              <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">5. Klima-Doppelung</div><h3 class="text-xl font-bold mb-3">Redundante Anlage Klasse 3 oder besser</h3><p class="text-gray-300 text-sm">Hauptanlage + Backup mit automatischer Umschaltung, Pt100-Logger 24/7, NTP-Zeitsynchron, Trend-Aufschaltung MES, DKD-Kalibrierung jährlich.</p></div>
+              <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">6. Boden- und Lasttraglast</div><h3 class="text-xl font-bold mb-3">Bis 2.000 kg/m² Punktlast</h3><p class="text-gray-300 text-sm">Verstärktes Bodenrahmenwerk für Universal-Prüfmaschinen 250 kN, Pendelschlagwerk, Beton-Druckpresse, Härteprüfgerät, Granit-Mess-Maschine.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900 text-center">Industrie-Standorte in DACH, an denen wir liefern</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-50 rounded-xl p-6">
+              <div class="text-2xl mb-3">🇩🇪 Deutschland</div>
+              <p class="text-sm text-gray-700 mb-4">Stahl-Cluster Ruhrgebiet, Automotive-Region Stuttgart-Mittlerer-Neckar, Chemie-Cluster Ludwigshafen, Industriepark Frankfurt-Höchst, Forschungsstandort München-Garching, Hamburg-Hafen (Stahl-Logistik, Mineralöl).</p>
+              <ul class="space-y-1 text-sm">
+                <li><a href="/en/lab-containers-stuttgart" class="text-[#7a9900] hover:underline">Stuttgart (Automotive)</a></li>
+                <li><a href="/en/lab-containers-frankfurt" class="text-[#7a9900] hover:underline">Frankfurt (Industriepark Höchst)</a></li>
+                <li><a href="/en/lab-containers-dusseldorf" class="text-[#7a9900] hover:underline">Düsseldorf (Stahl-NRW)</a></li>
+                <li><a href="/en/lab-containers-hamburg" class="text-[#7a9900] hover:underline">Hamburg (Hafen-Industrie)</a></li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6">
+              <div class="text-2xl mb-3">🇨🇭 Schweiz</div>
+              <p class="text-sm text-gray-700 mb-4">Schaffhausen-Tuttlingen-Cluster (Medizintechnik), Materialforschung Dübendorf, Industrie-Standorte Zürich-Baden, Visp und Bussnang.</p>
+              <ul class="space-y-1 text-sm">
+                <li><a href="/en/lab-containers-zurich" class="text-[#7a9900] hover:underline">Zürich</a></li>
+                <li><a href="/en/lab-containers-basel" class="text-[#7a9900] hover:underline">Basel</a></li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6">
+              <div class="text-2xl mb-3">🇦🇹 Österreich</div>
+              <p class="text-sm text-gray-700 mb-4">Stahl- und Polyolefin-Industrie in Linz, Powertrain-Entwicklung und Fahrzeug-Auftragsfertigung in Graz.</p>
+              <ul class="space-y-1 text-sm">
+                <li><a href="/en/lab-containers-linz" class="text-[#7a9900] hover:underline">Linz</a></li>
+                <li><a href="/en/lab-containers-graz" class="text-[#7a9900] hover:underline">Graz</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">ISO 17025-Akkreditierung im Werks-Container: Checkliste für DAkkS-Begutachtung</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">Die ISO/IEC 17025:2017 stellt keine Bauweise, sondern technische Kompetenz und reproduzierbare Umgebungsbedingungen in den Mittelpunkt. DAkkS-Begutachter prüfen in Werks-Containern typisch: klimatisierte Mess-Räume mit dokumentierter Temperatur ±0,5 K und Luftfeuchte 40-60 % rH ±5 % (VDI/VDE 2627 Klasse 3), Vibrations-Spektrum am Messplatz (VC-D oder VC-E für Mikrowaagen), EMV-Feldstärke ≤3 V/m für empfindliche Messmittel, Rückführbarkeit aller Messmittel auf nationale Normale über akkreditierte DKD-Kalibrierung, Methodenvalidierung nach ISO 17025 Kap. 7.2, Unparteilichkeits-Nachweis.</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Häufige Mängel bei Erstbegutachtung: fehlende 24/7-Klima-Aufzeichnung, keine Vibrations-Messung vor Geräte-Aufstellung, EMV-Schirmung ohne Feldstärke-Nachweis, LIMS ohne Audit-Trail. Planexus liefert DAkkS-Ready-Paket: Umgebungs-Qualifizierungsprotokoll, Pt100-Logger mit DKD-Kalibrierung, Vibrations-Messprotokoll VC-Kurve, EMV-Vorprüfung nach EN 55011, Muster-Methodenvalidierung für Zugversuch DIN EN ISO 6892 und Härteprüfung DIN EN ISO 6507.</p>
+          <p class="text-gray-700 leading-relaxed mb-8">Re-Akkreditierung alle 5 Jahre, Überwachungsbegutachtung jährlich. Container-Mietverträge 36-60 Monate mit jährlicher Re-Qualifizierung der Umgebungsbedingungen im Mietkontrakt halten die Audit-Spur lückenlos – Kosten Re-Qualifizierung: 2.500-4.500 Euro/Jahr.</p>
+
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">Schwingungsisolation für Mikrowaagen im Container: Grenzwerte nach VC-Kurven</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">Mikrowaagen (Auflösung 0,01-0,1 mg) reagieren auf Bodenvibrationen ab 0,1 µm/s. VC-Kurven (Vibration Criteria) definieren Grenzwerte: VC-D für Mikrowaagen ≤3 µm/s (1/3-Oktavband 8-80 Hz), VC-E für REM ≤1,5 µm/s. Werkshallen-Boden ohne Isolation: typisch 20-100 µm/s – ungeeignet. Container-Lösung: Federfundament mit Eigenfrequenz &lt;2 Hz, optional pneumatische Isolation, Granit-Platte 200 mm auf Gummi-Metall-Lagern, separate Fundamentplatte entkoppelt vom Container-Rahmen.</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Messung vor Inbetriebnahme: Vibrations-Spektrum an 4 Ecken der Granitplatte, Vergleich mit VC-Zielkurve, Dokumentation für DAkkS-Audit. Kosten Schwingungsisolation: 15.000-45.000 Euro je nach Gewicht Universal-Prüfmaschine (250 kN) oder Mikrowaage. EMV-Schirmung (Mu-Metall-Wand, ≤3 V/m) ergänzt bei REM und NMR-Spektrometern projektbezogen um 20.000-60.000 Euro. Für Stahlwerke mit Hochofen-Vibrationen planen wir zusätzliche Entkopplung des Container-Fundaments vom Hallenboden. Die Messung wiederholen wir nach jeder DAkkS-Überwachungsbegutachtung.</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Serienprüfung an der Fertigungslinie: QC-Container mit MES/ERP-Anbindung per OPC-UA an gängige Systeme. Prüfergebnisse werden chargenbezogen gespeichert, Grenzwertüberschreitungen lösen Chargensperrung aus. Amortisation gegenüber externem Prüflabor typisch 18–24 Monate bei ≥200 Proben/Tag und drei-Schicht-Betrieb.</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Wartungsvertrag mit jährlicher DAkkS-Re-Qualifizierung der Umgebungsbedingungen ist als Option buchbar. Für Automotive-Zulieferer mit IATF 16949 liefern wir PPAP-Dokumentation und Messmittel-Listen als Anlage zum Container-Übergabeprotokoll. Werks-QC-Container lassen sich an bestehende Prüfpläne nach DIN EN ISO 6892, ISO 6507 und ISO 6508 anbinden. Typische Lieferzeit ab Werk Albstadt: 10–14 Wochen inklusive DAkkS-Ready-Qualifizierung, Werksabnahme FAT und SAT vor Ort optional buchbar.</p>
+          <p class="text-gray-700 leading-relaxed mb-8">Kraftstoffqualität, Raffinerie-Turnaround, H₂S und Tanklager-Umweltanalytik liegen auf der Seite <a href="/en/industries/oil-gas" class="text-primary font-medium hover:underline">Öl, Gas &amp; Raffinerie</a> – nicht in der Werkstoff-QC.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Planexus Leistungen für Industrie & Werkstoffprüfung</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <a href="/en/services/planning" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Technische Laborplanung</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">Werks-QC-Layout, Klima-Klasse nach VDI 2627, Schwingungsisolation VC-D/E, ATEX-Zoneneinteilung für Lösungsmittel-Pilotierung.</p>
+            </a>
+            <a href="/en/services/equipment" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Laborausstattung</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">Universal-Prüfmaschinen-Anschluss 250 kN, Härteprüfgeräte, Mikroskopie, MES/LIMS-Integration, Werks-Versorgung Druckluft/Stickstoff/400 V.</p>
+            </a>
+            <a href="/en/services/modular-construction" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Modulbau & Fertigung</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">ISO-17025-fähige Werkscontainer, ATEX Zone 2, Punktlast bis 2.000 kg/m², Aufstellung direkt an der Produktionslinie ohne Werks-Stillstand.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900 text-center">Weiterführende Fachartikel</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <a href="/en/magazine/lab-container-construction-site-materials-testing" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Werks- & Baustellen-QC</div><h3 class="font-bold text-slate-900 mb-2">Materialprüfung im Container</h3><p class="text-sm text-gray-600">QC-Container für Werk und Baustelle direkt am Prozess.</p></a>
+            <a href="/en/industries/oil-gas" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Raffinerie</div><h3 class="font-bold text-slate-900 mb-2">Öl, Gas &amp; Raffinerie</h3><p class="text-sm text-gray-600">Kraftstoff-QC, AwSV, Turnaround – nicht Werkstoffprüfung.</p></a>
+            <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">HVAC</div><h3 class="font-bold text-slate-900 mb-2">Klima, Lüftung, Normen</h3><p class="text-sm text-gray-600">VDI 2627, DIN 1946-7, Klimaklassen für Mess-Räume.</p></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Häufige Fragen zu Industrie & Werkstoffprüfung</h2>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed text-sm">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="anfrage" class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Werks-QC im Container für Ihre Produktion</h2>
+            <p class="text-gray-700 text-lg">Skizzieren Sie Werks-Standort, Prüfverfahren und ggf. Ex-Zonen-Anforderung. Wir antworten innerhalb eines Werktags mit konkretem Werks-Layout-Vorschlag inkl. Werks-Versorgungsanschluss.</p>
+          </div>
+          <ContactForm client:visible locale="en" />
+        </div>
+      </div>
+    </section>
+
+    <BranchenCrossLinks current="industrie-werkstoffpruefung" locale="en" />
+  </div>
+</Layout>
