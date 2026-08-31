@@ -136,6 +136,7 @@ export const ui = {
       orgDescription:
         'Spezialist für Laborcontainer, mobile Labore und Modulbau. Planung, Fertigung und schlüsselfertige Übergabe von Containerlaboren.',
       localDescription: 'Spezialist für Laborcontainer und Modulbau',
+      award: 'EU Business News – German CEO Excellence Awards 2026: Führender Anbieter innovativer Laborräume',
     },
     geo: {
       de: 'Deutschland',
@@ -278,6 +279,7 @@ export const ui = {
       orgDescription:
         'Specialist for laboratory containers, mobile labs and modular construction. Planning, manufacturing and turnkey handover of container laboratories.',
       localDescription: 'Specialist for laboratory containers and modular construction',
+      award: 'EU Business News – German CEO Excellence Awards 2026: Leading provider of innovative laboratory spaces',
     },
     geo: {
       de: 'Germany',
