@@ -4,9 +4,9 @@ import Layout from '../../../layouts/Layout.astro';
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Laborabzüge im Container – Abzugstechnik, Rückhaltevermögen und DIN EN 14175",
-  "description": "Laborabzüge nach DIN EN 14175 (Teile 1–7): Rückhaltevermögen und SF₆-Typprüfung, Einströmgeschwindigkeit und der Unterschied 0,7 m/s vs. Frontschieber 0,5 m, Abzugstypen, VAV-Energieeinsparung, Abluftführung über Dach nach DIN 1946-7, jährliche Vor-Ort-Prüfung nach TRGS 526 und DGUV 213-850 – mit verifizierten Normen.",
-  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/en/team/thomas-boss", "jobTitle": "Gesellschafter & Technischer Leiter", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "headline": "Fume cupboards in the container – containment, extract performance and DIN EN 14175",
+  "description": "Fume cupboards to DIN EN 14175 (Parts 1–7): containment and SF₆ type testing, face velocity and the 0.7 m/s vs. sash 0.5 m distinction, cupboard types, VAV energy saving, extract discharge over roof to DIN 1946-7, annual on-site testing to TRGS 526 and DGUV 213-850 – with verified standards.",
+  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/en/team/thomas-boss", "jobTitle": "Partner & Technical Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
   "datePublished": "2026-06-16",
   "dateModified": "2026-06-16",
   "image": "https://planexus.de/attached_assets/generated_images/laborcontainer-laborabzug-din-en-14175.png",
@@ -18,9 +18,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
-    { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/en/magazine" },
-    { "@type": "ListItem", "position": 3, "name": "Laborabzüge & DIN EN 14175", "item": "https://planexus.de/en/magazine/lab-container-fume-hood-din-en-14175" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Fume cupboards & DIN EN 14175", "item": "https://planexus.de/en/magazine/lab-container-fume-hood-din-en-14175" }
   ]
 };
 
@@ -28,13 +28,13 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Welche Norm regelt Laborabzüge?", "acceptedAnswer": { "@type": "Answer", "text": "Die maßgebliche Norm ist die Normenreihe DIN EN 14175 „Abzüge“, die die frühere DIN 12924-1 abgelöst hat. Sie besteht aus sieben Teilen: Teil 1 (Begriffe), Teil 2 (Anforderungen an Sicherheit und Leistungsvermögen), Teil 3 (Baumusterprüfverfahren mit SF₆-Spürgasmessung), Teil 4 (Vor-Ort-Prüfverfahren beim Betreiber), Teil 5 (Empfehlungen für Aufstellung und Verwendung), Teil 6 (VAV-Abzüge mit variablem Volumenstrom) und Teil 7 (nicht-konventionelle Sonderbauformen). Wichtig: Die DIN EN 14175 legt keine festen Richtwerte für Rückhaltevermögen oder Abluftvolumenstrom mehr fest – diese werden vom Betreiber im Rahmen seiner Gefährdungsbeurteilung eigenverantwortlich bestimmt. Ergänzend gelten für den Laborbetrieb die TRGS 526 „Laboratorien“ und die DGUV Information 213-850 sowie für die Raumlufttechnik die DIN 1946-7. Abzüge, die vor 2003 installiert wurden, unterliegen weiterhin der zum Installationszeitpunkt gültigen DIN 12924-1 bzw. 12924-2." } },
-    { "@type": "Question", "name": "Wie hoch muss die Einströmgeschwindigkeit sein?", "acceptedAnswer": { "@type": "Answer", "text": "Bei älteren Abzügen nach DIN 12924 (Fassung Januar 1978) muss die mittlere Einströmgeschwindigkeit bei 100 mm geöffnetem Frontschieber mindestens 0,7 m/s betragen – ein gemessener Wert von nur 0,5 m/s liegt darunter und reicht für den sicheren Betrieb nicht aus. Bei modernen Abzügen nach DIN EN 14175 gibt es keinen pauschalen Geschwindigkeitswert mehr: Maßgeblich ist das in der Baumusterprüfung nachgewiesene Rückhaltevermögen, der erforderliche Abluftvolumenstrom wird per Gefährdungsbeurteilung festgelegt. Die Messung erfolgt mit einem thermischen oder Flügelrad-Anemometer. Wichtig ist die Unterscheidung: Der häufig genannte Wert von 0,5 m bezieht sich auf die maximale Öffnungshöhe des Frontschiebers (Begrenzer nach Teil 2), nicht auf die Einströmgeschwindigkeit." } },
-    { "@type": "Question", "name": "Was ist das Rückhaltevermögen und wie wird es geprüft?", "acceptedAnswer": { "@type": "Answer", "text": "Das Rückhaltevermögen (Containment) beschreibt die Fähigkeit eines Abzugs, luftgetragene Stoffe im Innenraum zu halten und nicht in den Atembereich des Personals entweichen zu lassen. Geprüft wird es in der Baumusterprüfung nach DIN EN 14175-3 mit dem Spürgas Schwefelhexafluorid (SF₆), das ungiftig, aber stark klimaschädlich ist (Treibhauspotenzial rund 30.000-fach höher als CO₂). Teil 3 umfasst drei Messungen: die innere Messebene (Rückhaltung direkt an der Arbeitsöffnung), die äußere Messebene und den Robustheitstest. Beim Robustheitstest bewegt sich eine genormte Platte (1900 × 400 × 20 mm) mit 1 m/s am Abzug vorbei und simuliert eine zügig vorbeigehende Person – so wird geprüft, ob der Abzug auch bei Störung der Luftströmung dicht bleibt. Im Betrieb prüft die Vor-Ort-Messung nach Teil 4 die Funktion am aufgestellten Gerät." } },
-    { "@type": "Question", "name": "Wie oft muss ein Laborabzug geprüft werden?", "acceptedAnswer": { "@type": "Answer", "text": "Nach TRGS 526 (Abschnitt 7.3) und der inhaltsgleichen DGUV Information 213-850 müssen Abzüge regelmäßig gewartet, ihre Funktionsfähigkeit geprüft und das Ergebnis dokumentiert werden – mindestens einmal jährlich durch eine befähigte Person. Übergeordnet fordert die Gefahrstoffverordnung, dass der Arbeitgeber die Wirksamkeit technischer Schutzmaßnahmen mindestens jedes dritte Jahr überprüft; Art, Umfang und Prüffristen legt er auf Basis der Gefährdungsbeurteilung eigenverantwortlich fest. Geprüft werden unter anderem die Einströmgeschwindigkeit bzw. der Volumenstrom, die Funktion der Strömungsüberwachung und des Alarmgebers, die Frontschiebermechanik und der bauliche Zustand. Bei VAV-Abzügen nach Teil 6 ist zusätzlich die Funktion der Regelstrecke jährlich zu prüfen. Diese Prüfung ist eine Betreiberpflicht – wir liefern den Abzug betriebsbereit, die wiederkehrende Prüfung organisiert der Betreiber." } },
-    { "@type": "Question", "name": "Welche Abzugstypen gibt es?", "acceptedAnswer": { "@type": "Answer", "text": "Der häufigste Typ ist der Tischabzug (Standabzug) mit Arbeitsfläche auf etwa 900 mm Höhe, erhältlich in den Rastermaßen 1.200, 1.500 und 1.800 mm Breite, mit einem typischen Volumenstrom von rund 270 bis 400 m³/h pro laufendem Meter. Der Tiefabzug hat eine abgesenkte Arbeitsfläche (ca. 500 mm) und dadurch mehr Innenhöhe für hohe Apparaturen wie Destillationsaufbauten. Der begehbare Abzug hat die Arbeitsfläche auf Bodenniveau und ist für großvolumige Anlagen und Pilotaufbauten gedacht. Hinzu kommen Durchreicheabzüge sowie Sonderbauformen für aggressive Medien: Flusssäureabzüge (HF-beständige Auskleidung), waschbare Perchlorsäureabzüge mit Spüleinrichtung gegen explosive Perchlorat-Ablagerungen und Abzüge für radioaktive Stoffe. Welcher Typ passt, hängt von Stoffen, Apparaturen und Arbeitsweise ab – im Containerlabor wählen wir Typ, Maß und Anzahl passend zum Grundriss und zur verfügbaren Abluftleistung." } },
-    { "@type": "Question", "name": "Warum ist Umluftbetrieb der Laborabluft nicht zulässig?", "acceptedAnswer": { "@type": "Answer", "text": "Weil im Labor mit Gefahrstoffen gearbeitet wird, deren Konzentration in der Abluft nicht zuverlässig auf ungefährliche Werte gereinigt werden kann. Laborabluft aus Abzügen muss deshalb grundsätzlich ins Freie abgeführt werden – ein Umluftbetrieb (Rezirkulation in den Raum) ist bei Gefahrstoffen nicht zulässig. Standard ist die Ableitung über Dach (vertikaler Ausblas): Durch thermischen Auftrieb und die senkrechte Anordnung wird die Abluft ausreichend verdünnt und ein Wiedereintritt in Fenster, Türen oder Zuluftöffnungen vermieden. Die Abluft muss zudem permanent erfolgen, damit auch außerhalb der Betriebszeiten nichts entweicht. Nach DIN 1946-7 ist die Raumlufttechnik so auszulegen, dass pro Quadratmeter Laborgrundfläche ein Abluftvolumenstrom von mindestens 25 m³/h nicht unterschritten wird – bei Arbeiten mit sehr gefährlichen Substanzen entsprechend mehr." } },
-    { "@type": "Question", "name": "Wie senkt man den Energieverbrauch eines Laborabzugs?", "acceptedAnswer": { "@type": "Answer", "text": "Laborabzüge sind die größten Energieverbraucher im Labor – ein einzelner Abzug kann bis zum 3,5-Fachen eines durchschnittlichen Einfamilienhauses verbrauchen, weil ständig Luft abgeführt und die nachströmende Zuluft konditioniert (geheizt, gekühlt) werden muss. Der wirksamste Hebel ist ein VAV-Abzug (Variable Air Volume) nach DIN EN 14175-6: Er regelt den Abluftvolumenstrom in Abhängigkeit von der Frontschieberstellung. Bei geschlossenem Frontschieber lässt sich der Volumenstrom um etwa 50 % gegenüber dem geöffneten Zustand reduzieren; gegenüber einem konstant laufenden CAV-Abzug sind so bis zu 40 % Energieeinsparung möglich, zusätzlich sinkt der Geräuschpegel. Ergänzend wirken Wärmerückgewinnung in der zentralen Lüftung und die einfachste Maßnahme von allen: den Frontschieber konsequent schließen, wenn nicht am Abzug gearbeitet wird. Im kompakten Containerlabor mit begrenzter Technikfläche ist VAV besonders sinnvoll." } }
+    { "@type": "Question", "name": "Which standard governs fume cupboards?", "acceptedAnswer": { "@type": "Answer", "text": "The governing standard is the DIN EN 14175 “Fume cupboards” series, which replaced the former DIN 12924-1. It comprises seven parts: Part 1 (Terms), Part 2 (Safety and performance requirements), Part 3 (Type test methods with SF₆ tracer-gas measurement), Part 4 (On-site test methods at the operator), Part 5 (Recommendations for installation and use), Part 6 (VAV fume cupboards with variable air volume) and Part 7 (non-conventional special types). Important: DIN EN 14175 no longer sets fixed guide values for containment or extract volume flow – these are determined by the operator under their own responsibility as part of the risk assessment. In addition, TRGS 526 “Laboratories” and DGUV Information 213-850 apply to laboratory operation, and DIN 1946-7 to room-air technology. Cupboards installed before 2003 remain subject to DIN 12924-1 or 12924-2 as valid at the time of installation." } },
+    { "@type": "Question", "name": "How high must the face velocity be?", "acceptedAnswer": { "@type": "Answer", "text": "On older cupboards to DIN 12924 (January 1978 edition) the mean face velocity with the sash open 100 mm must be at least 0.7 m/s – a measured value of only 0.5 m/s is below that and is not sufficient for safe operation. On modern cupboards to DIN EN 14175 there is no blanket velocity value: what matters is the containment demonstrated in the type test; the required extract volume flow is set by the risk assessment. Measurement is made with a thermal or vane anemometer. An important distinction: the frequently cited value of 0.5 m refers to the maximum sash opening height (limiter to Part 2), not to the face velocity." } },
+    { "@type": "Question", "name": "What is containment and how is it tested?", "acceptedAnswer": { "@type": "Answer", "text": "Containment describes the ability of a fume cupboard to keep airborne substances inside the working chamber and not allow them to escape into the breathing zone of the staff. It is tested in the type test to DIN EN 14175-3 with the tracer gas sulphur hexafluoride (SF₆), which is non-toxic but strongly climate-damaging (global warming potential around 30,000 times that of CO₂). Part 3 comprises three measurements: the inner plane (containment directly at the working opening), the outer plane and the robustness test. In the robustness test a standardised plate (1900 × 400 × 20 mm) moves past the cupboard at 1 m/s and simulates a person walking briskly by – this checks whether the cupboard remains tight even when the airflow is disturbed. In operation, the on-site measurement to Part 4 checks function on the installed unit." } },
+    { "@type": "Question", "name": "How often must a fume cupboard be tested?", "acceptedAnswer": { "@type": "Answer", "text": "Under TRGS 526 (Section 7.3) and the substantively identical DGUV Information 213-850, fume cupboards must be maintained regularly, their function tested and the result documented – at least once a year by a competent person. Overarching this, the Hazardous Substances Ordinance requires the employer to check the effectiveness of technical protective measures at least every third year; type, scope and test intervals are set by the employer on the basis of the risk assessment under their own responsibility. Items tested include face velocity or volume flow, the function of the airflow monitor and alarm, the sash mechanism and the physical condition. On VAV cupboards to Part 6 the function of the control loop must also be tested annually. This test is an operator duty – we deliver the cupboard ready for use; the operator organises the recurring test." } },
+    { "@type": "Question", "name": "What types of fume cupboard are there?", "acceptedAnswer": { "@type": "Answer", "text": "The most common type is the bench-mounted (standing) cupboard with a work surface at about 900 mm height, available in the grid widths 1,200, 1,500 and 1,800 mm, with a typical volume flow of around 270 to 400 m³/h per linear metre. The low-level cupboard has a lowered work surface (approx. 500 mm) and therefore more internal height for tall apparatus such as distillation set-ups. The walk-in cupboard has the work surface at floor level and is intended for large-volume plant and pilot set-ups. In addition there are pass-through cupboards and special types for aggressive media: hydrofluoric-acid cupboards (HF-resistant lining), washable perchloric-acid cupboards with a rinse system against explosive perchlorate deposits, and cupboards for radioactive substances. Which type is appropriate depends on substances, apparatus and working method – in the container laboratory we select type, size and number to suit the layout and the available extract capacity." } },
+    { "@type": "Question", "name": "Why is recirculation of laboratory extract air not permitted?", "acceptedAnswer": { "@type": "Answer", "text": "Because the laboratory handles hazardous substances whose concentration in the extract air cannot be reliably cleaned to harmless levels. Laboratory extract from fume cupboards must therefore always be discharged to atmosphere – recirculation into the room is not permitted where hazardous substances are present. The standard is discharge over the roof (vertical discharge): thermal buoyancy and the vertical arrangement dilute the extract sufficiently and prevent re-entry into windows, doors or supply-air openings. Extract must also run continuously so that nothing escapes outside operating hours. Under DIN 1946-7 the room-air plant is to be designed so that an extract volume flow of at least 25 m³/h per square metre of laboratory floor area is not undershot – and correspondingly more when working with very hazardous substances." } },
+    { "@type": "Question", "name": "How do you reduce the energy consumption of a fume cupboard?", "acceptedAnswer": { "@type": "Answer", "text": "Fume cupboards are the largest energy consumers in the laboratory – a single cupboard can use up to 3.5 times the energy of an average detached house, because air is constantly extracted and the incoming supply air must be conditioned (heated, cooled). The most effective lever is a VAV cupboard (Variable Air Volume) to DIN EN 14175-6: it modulates the extract volume flow according to sash position. With the sash closed, volume flow can be reduced by about 50 % relative to the open state; compared with a constantly running CAV cupboard, energy savings of up to 40 % are possible, and noise levels also fall. Heat recovery in the central ventilation plant and the simplest measure of all also help: close the sash consistently when not working at the cupboard. In the compact container laboratory with limited plant space, VAV is particularly worthwhile." } }
   ]
 };
 import RelatedArticles from '../../../components/RelatedArticles.astro';
@@ -42,8 +42,8 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
 
 <Layout
   type="article"
-  title="Laborabzüge im Container – DIN EN 14175 & Abzugstechnik | Planexus"
-  description="Laborabzüge nach DIN EN 14175: Rückhaltevermögen, SF₆-Typprüfung, Einströmgeschwindigkeit, VAV und TRGS-526-Prüfung. Jetzt lesen."
+  title="Fume cupboards in the container – DIN EN 14175 & extract engineering | Planexus"
+  description="Fume cupboards to DIN EN 14175: containment, SF₆ type testing, face velocity, VAV and TRGS 526 testing. Read now."
   canonical="/en/magazine/lab-container-fume-hood-din-en-14175"
   ogImage="https://planexus.de/attached_assets/generated_images/laborcontainer-laborabzug-din-en-14175.png"
 >
@@ -60,27 +60,27 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
           <div class="flex items-center gap-4 mb-6">
             <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M9 9h6v6H9z"/></svg>
-              Technik &amp; Lüftung
+              Engineering &amp; ventilation
             </span>
             <span class="text-gray-400 text-sm flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              16 Min. Lesezeit
+              16 min read
             </span>
           </div>
           <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-            Laborabzüge im Container – Rückhaltevermögen & DIN EN 14175
+            Fume cupboards in the container – containment & DIN EN 14175
           </h1>
           <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-            Der Laborabzug ist die wichtigste Schutzeinrichtung im Labor – und im Container zugleich der größte Energieverbraucher und der anspruchsvollste Lüftungspunkt. Dieser Leitfaden erklärt, wie ein Abzug funktioniert, was die DIN EN 14175 wirklich fordert, welche Typen es gibt und wie Abluft und Energie im Containerlabor sauber gelöst werden – mit verifizierten Normen.
+            The fume cupboard is the most important protective device in the laboratory – and in the container it is at the same time the largest energy consumer and the most demanding ventilation node. This guide explains how a cupboard works, what DIN EN 14175 actually requires, which types exist and how extract and energy are solved cleanly in the container laboratory – with verified standards.
           </p>
           <div class="flex items-center gap-6 text-sm text-gray-400">
             <span class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-              16. Juni 2026
+              16 June 2026
             </span>
             <span class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              Thomas Boss, Technischer Leiter Planexus
+              Thomas Boss, Technical Director, Planexus
             </span>
           </div>
         </div>
@@ -90,11 +90,11 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
     <div class="bg-slate-50 border-b border-gray-100 py-4">
       <div class="container mx-auto px-4">
         <div class="flex items-center gap-2 text-sm text-gray-500">
-          <a href="/" class="hover:text-primary">Start</a>
+          <a href="/en" class="hover:text-primary">Home</a>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-          <a href="/en/magazine" class="hover:text-primary">Magazin</a>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-          <span class="text-primary font-medium">Laborabzüge &amp; DIN EN 14175</span>
+          <span class="text-primary font-medium">Fume cupboards &amp; DIN EN 14175</span>
         </div>
       </div>
     </div>
@@ -106,288 +106,288 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
             <div class="prose prose-lg max-w-none">
 
               <p class="text-xl text-gray-700 leading-relaxed mb-8">
-                Kaum ein Bauteil entscheidet so unmittelbar über die Gesundheit des Laborpersonals wie der Laborabzug. Er erfasst Dämpfe, Gase und Aerosole genau dort, wo sie entstehen, und führt sie kontrolliert ab, bevor sie den Atembereich erreichen. Gleichzeitig ist er der hungrigste Verbraucher im Labor und der Punkt, an dem die gesamte Lüftungsplanung steht oder fällt. Im Laborcontainer, wo Technikfläche knapp und jeder Kubikmeter Abluft teuer ist, verzeiht ein schlecht geplanter Abzug keine Fehler.
+                Few components decide so directly over the health of laboratory staff as the fume cupboard. It captures vapours, gases and aerosols exactly where they arise and extracts them in a controlled way before they reach the breathing zone. At the same time it is the hungriest consumer in the laboratory and the point at which the entire ventilation design stands or falls. In the lab container, where plant space is scarce and every cubic metre of extract air is expensive, a poorly planned cupboard forgives no errors.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Dieser Beitrag ordnet das Thema von Grund auf: Wie ein Abzug überhaupt schützt, was die <strong>DIN EN 14175</strong> in ihren sieben Teilen regelt – und was sie bewusst <em>nicht</em> mehr vorgibt –, welche <strong>Abzugstypen</strong> es gibt, wie sich der enorme <strong>Energieverbrauch</strong> über VAV-Technik senken lässt und wie die <strong>Abluftführung</strong> im Container nach DIN 1946-7 sauber gelöst wird. Dazu die klare Trennlinie: Wir liefern den betriebsbereiten Abzug samt Lüftungstechnik – die Gefährdungsbeurteilung und die wiederkehrende Prüfung bleiben Betreiberpflicht.
+                This article sets the subject out from first principles: how a cupboard protects at all, what <strong>DIN EN 14175</strong> regulates in its seven parts – and what it deliberately <em>no longer</em> prescribes –, which <strong>cupboard types</strong> exist, how the enormous <strong>energy consumption</strong> can be reduced with VAV technology, and how <strong>extract routing</strong> in the container is solved cleanly to DIN 1946-7. Plus the clear dividing line: we deliver the cupboard ready for use, complete with ventilation plant – the risk assessment and the recurring test remain operator duties.
               </p>
 
               <figure class="my-10">
                 <img
                   src="/attached_assets/generated_images/laborcontainer-laborabzug-din-en-14175.png"
-                  alt="Moderner Laborabzug mit teilgeöffnetem Frontschieber und Edelstahl-Arbeitsfläche in einem Laborcontainer – Abzugstechnik nach DIN EN 14175 mit kontrollierter Abluftführung"
+                  alt="Modern fume cupboard with partly open sash and stainless-steel work surface in a lab container – extract engineering to DIN EN 14175 with controlled discharge"
                   width="1920"
                   height="1080"
                   loading="lazy"
                   class="w-full rounded-2xl shadow-lg"
                 />
                 <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
-                  Der Laborabzug erfasst Gefahrstoffe an der Quelle: Über die Frontöffnung strömt Raumluft ein, bildet eine Luftschranke und führt Dämpfe sicher nach außen. Rückhaltevermögen, Einströmung und Abluftführung müssen exakt zusammenpassen.
+                  The fume cupboard captures hazardous substances at source: room air flows in through the front opening, forms an air barrier and takes vapours safely outside. Containment, inflow and extract routing must match exactly.
                 </figcaption>
               </figure>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Faktentabelle: Die Normen der Laborabzugstechnik</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fact table: the standards of fume-cupboard engineering</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Laborabzüge bewegen sich in einem Regelwerk aus Produktnorm, Gefahrstoffrecht, Arbeitsschutz und Raumlufttechnik. Die folgende Übersicht ist die Pflichtlektüre für jede Abzugs- und Lüftungsplanung im Labor.
+                Fume cupboards sit in a framework of product standard, hazardous-substances law, occupational safety and room-air technology. The following overview is required reading for every cupboard and ventilation design in the laboratory.
               </p>
 
               <div class="overflow-x-auto my-8">
                 <table class="w-full text-sm border-collapse border border-gray-200">
                   <thead class="bg-slate-100">
                     <tr>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Bereich</th>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Norm / Vorgabe</th>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Was sie regelt</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Area</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Standard / requirement</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">What it governs</th>
                     </tr>
                   </thead>
                   <tbody class="text-gray-700">
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Produktnorm Abzüge</td>
-                      <td class="border border-gray-200 px-4 py-3">DIN EN 14175 (Teile 1–7)</td>
-                      <td class="border border-gray-200 px-4 py-3">Begriffe, Sicherheit, Typ- und Vor-Ort-Prüfung, VAV, Sonderbauformen</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Product standard, fume cupboards</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 14175 (Parts 1–7)</td>
+                      <td class="border border-gray-200 px-4 py-3">Terms, safety, type and on-site testing, VAV, special types</td>
                     </tr>
                     <tr class="bg-slate-50">
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Alt-Abzüge (vor 2003)</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Legacy cupboards (pre-2003)</td>
                       <td class="border border-gray-200 px-4 py-3">DIN 12924-1 / 12924-2</td>
-                      <td class="border border-gray-200 px-4 py-3">Allgebrauchs- und Abrauchabzüge nach altem Stand, Einströmung ≥ 0,7 m/s</td>
+                      <td class="border border-gray-200 px-4 py-3">General-purpose and fume cupboards to the old status, face velocity ≥ 0.7 m/s</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Laborbetrieb (Gefahrstoffrecht)</td>
-                      <td class="border border-gray-200 px-4 py-3">TRGS 526 „Laboratorien“</td>
-                      <td class="border border-gray-200 px-4 py-3">Sicheres Arbeiten, Abzugsnutzung, Prüfpflichten (Abschnitt 7.3)</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Laboratory operation (hazardous substances)</td>
+                      <td class="border border-gray-200 px-4 py-3">TRGS 526 “Laboratories”</td>
+                      <td class="border border-gray-200 px-4 py-3">Safe working, cupboard use, test duties (Section 7.3)</td>
                     </tr>
                     <tr class="bg-slate-50">
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Laborbetrieb (Arbeitsschutz)</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Laboratory operation (occupational safety)</td>
                       <td class="border border-gray-200 px-4 py-3">DGUV Information 213-850</td>
-                      <td class="border border-gray-200 px-4 py-3">Regelteil inhaltsgleich mit TRGS 526, mit praktischen Erläuterungen</td>
+                      <td class="border border-gray-200 px-4 py-3">Regulatory part substantively identical to TRGS 526, with practical notes</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Gefahrstoffrecht (übergeordnet)</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Hazardous-substances law (overarching)</td>
                       <td class="border border-gray-200 px-4 py-3">GefStoffV</td>
-                      <td class="border border-gray-200 px-4 py-3">Wirksamkeitsprüfung techn. Schutzmaßnahmen mind. alle 3 Jahre</td>
+                      <td class="border border-gray-200 px-4 py-3">Effectiveness check of technical protective measures at least every 3 years</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Raumlufttechnik Labor</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Room-air technology, laboratory</td>
                       <td class="border border-gray-200 px-4 py-3">DIN 1946-7</td>
-                      <td class="border border-gray-200 px-4 py-3">RLT-Auslegung, mind. 25 m³/h je m² Laborfläche, Unterdruckhaltung</td>
+                      <td class="border border-gray-200 px-4 py-3">HVAC design, min. 25 m³/h per m² of laboratory area, negative-pressure holding</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Spürgas Typprüfung</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Tracer-gas type test</td>
                       <td class="border border-gray-200 px-4 py-3">DIN EN 14175-3 (SF₆)</td>
-                      <td class="border border-gray-200 px-4 py-3">Rückhaltevermögen: innere/äußere Messebene + Robustheitstest</td>
+                      <td class="border border-gray-200 px-4 py-3">Containment: inner/outer plane + robustness test</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">VAV-Abzüge</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">VAV fume cupboards</td>
                       <td class="border border-gray-200 px-4 py-3">DIN EN 14175-6</td>
-                      <td class="border border-gray-200 px-4 py-3">Variabler Volumenstrom, jährliche Prüfung der Regelstrecke</td>
+                      <td class="border border-gray-200 px-4 py-3">Variable air volume, annual test of the control loop</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Wie ein Laborabzug schützt: das Funktionsprinzip</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">How a fume cupboard protects: the operating principle</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Ein Laborabzug – fachsprachlich auch <strong>Digestorium</strong> – ist eine halbgeschlossene Arbeitskammer mit beweglichem Frontschieber (der vertikal verfahrbaren Scheibe). Das Schutzprinzip ist einfach und genial zugleich: Über die Frontöffnung strömt Raumluft kontrolliert in die Kammer ein und bildet eine <strong>Luftschranke</strong>. Diese einströmende Luft nimmt die im Innenraum freigesetzten Dämpfe, Gase und Aerosole mit, transportiert sie nach hinten und oben zum Abluftstutzen und führt sie über den Lüftungskanal ab. Solange die Strömung stimmt und der Frontschieber niedrig steht, gelangt nichts in den Atembereich der davorstehenden Person.
+                A fume cupboard – also known in the specialist literature as a <strong>digestorium</strong> – is a semi-enclosed working chamber with a movable sash (the vertically travelling glazed panel). The protective principle is simple and ingenious at once: room air flows in a controlled way through the front opening into the chamber and forms an <strong>air barrier</strong>. This incoming air takes with it the vapours, gases and aerosols released inside, carries them rearwards and upwards to the extract spigot and discharges them through the duct. As long as the airflow is correct and the sash is held low, nothing reaches the breathing zone of the person standing in front.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Genau deshalb hängt die Schutzwirkung an zwei Größen, die man nicht verwechseln darf: dem <strong>Rückhaltevermögen</strong> (kann der Abzug die Stoffe drinnen halten?) und der <strong>Einströmgeschwindigkeit</strong> bzw. dem <strong>Abluftvolumenstrom</strong> (wie viel Luft strömt ein und wird abgeführt?). Beim Arbeiten mit flüchtigen, giftigen oder brennbaren Stoffen ist ein normgerechter Abzug nicht optional, sondern vorgeschrieben. Und er wirkt nur, wenn die nachströmende Luft im Raum auch tatsächlich verfügbar ist – ein Abzug ist immer nur so gut wie die Lüftungsanlage hinter ihm.
+                That is why the protective effect hangs on two quantities that must not be confused: <strong>containment</strong> (can the cupboard keep the substances inside?) and <strong>face velocity</strong> or <strong>extract volume flow</strong> (how much air flows in and is extracted?). When working with volatile, toxic or flammable substances, a standards-compliant cupboard is not optional but required. And it only works if the make-up air in the room is actually available – a cupboard is only ever as good as the ventilation plant behind it.
               </p>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">DIN EN 14175: die sieben Teile und was sie regeln</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">DIN EN 14175: the seven parts and what they govern</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die Normenreihe <strong>DIN EN 14175 „Abzüge“</strong> ist die europäische Grundlage für Konstruktion, Qualifizierung und Betrieb von Laborabzügen. Sie hat die frühere nationale DIN 12924-1 abgelöst und gliedert sich in sieben Teile, die aufeinander aufbauen:
+                The <strong>DIN EN 14175 “Fume cupboards”</strong> series is the European basis for the design, qualification and operation of laboratory fume cupboards. It replaced the former national DIN 12924-1 and is organised in seven parts that build on one another:
               </p>
 
               <div class="overflow-x-auto my-8">
                 <table class="w-full text-sm border-collapse border border-gray-200">
                   <thead class="bg-slate-100">
                     <tr>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Teil</th>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Titel</th>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Regelungsgegenstand</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Part</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Title</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Subject</th>
                     </tr>
                   </thead>
                   <tbody class="text-gray-700">
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Teil 1</td>
-                      <td class="border border-gray-200 px-4 py-3">Begriffe</td>
-                      <td class="border border-gray-200 px-4 py-3">Einheitliche Terminologie für Hersteller, Planer und Betreiber</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 1</td>
+                      <td class="border border-gray-200 px-4 py-3">Terms</td>
+                      <td class="border border-gray-200 px-4 py-3">Uniform terminology for manufacturers, designers and operators</td>
                     </tr>
                     <tr class="bg-slate-50">
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Teil 2</td>
-                      <td class="border border-gray-200 px-4 py-3">Sicherheit &amp; Leistungsvermögen</td>
-                      <td class="border border-gray-200 px-4 py-3">Konstruktive Mindestanforderungen, max. Arbeitsöffnung 0,5 m, Begrenzer</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 2</td>
+                      <td class="border border-gray-200 px-4 py-3">Safety &amp; performance</td>
+                      <td class="border border-gray-200 px-4 py-3">Minimum constructional requirements, max. working opening 0.5 m, limiter</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Teil 3</td>
-                      <td class="border border-gray-200 px-4 py-3">Baumusterprüfverfahren</td>
-                      <td class="border border-gray-200 px-4 py-3">Typprüfung im Labor mit SF₆-Spürgas, Rückhaltevermögen, Robustheitstest</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 3</td>
+                      <td class="border border-gray-200 px-4 py-3">Type test methods</td>
+                      <td class="border border-gray-200 px-4 py-3">Type test in the laboratory with SF₆ tracer gas, containment, robustness test</td>
                     </tr>
                     <tr class="bg-slate-50">
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Teil 4</td>
-                      <td class="border border-gray-200 px-4 py-3">Vor-Ort-Prüfverfahren</td>
-                      <td class="border border-gray-200 px-4 py-3">Inbetriebnahme- (Kap. 5) und Wiederholungsprüfung (Kap. 6) beim Betreiber</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 4</td>
+                      <td class="border border-gray-200 px-4 py-3">On-site test methods</td>
+                      <td class="border border-gray-200 px-4 py-3">Commissioning (Ch. 5) and repeat testing (Ch. 6) at the operator</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Teil 5</td>
-                      <td class="border border-gray-200 px-4 py-3">Aufstellung &amp; Verwendung</td>
-                      <td class="border border-gray-200 px-4 py-3">Empfehlungen zu Installation, Nutzung und sicherem Betrieb</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 5</td>
+                      <td class="border border-gray-200 px-4 py-3">Installation &amp; use</td>
+                      <td class="border border-gray-200 px-4 py-3">Recommendations on installation, use and safe operation</td>
                     </tr>
                     <tr class="bg-slate-50">
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Teil 6</td>
-                      <td class="border border-gray-200 px-4 py-3">VAV-Abzüge</td>
-                      <td class="border border-gray-200 px-4 py-3">Variabler Volumenstrom abhängig von der Frontschieberstellung</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 6</td>
+                      <td class="border border-gray-200 px-4 py-3">VAV fume cupboards</td>
+                      <td class="border border-gray-200 px-4 py-3">Variable air volume depending on sash position</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Teil 7</td>
-                      <td class="border border-gray-200 px-4 py-3">Sonderbauformen</td>
-                      <td class="border border-gray-200 px-4 py-3">Nicht-konventionelle Abzüge (z. B. mit Zulufteinleitung), eigene Prüfkriterien</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 7</td>
+                      <td class="border border-gray-200 px-4 py-3">Special types</td>
+                      <td class="border border-gray-200 px-4 py-3">Non-conventional cupboards (e.g. with supply-air introduction), own test criteria</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Der entscheidende Paradigmenwechsel gegenüber der alten DIN 12924: Die DIN EN 14175 enthält <strong>keine pauschalen Richtwerte mehr</strong> für Rückhaltevermögen oder Abluftvolumenstrom. Stattdessen stellt sie ein <strong>prüfungsgestütztes System</strong> bereit – von der Baumuster- über die Vor-Ort-Prüfung bis zur wiederkehrenden Kontrolle. Der für den konkreten Einsatzfall notwendige Abluftvolumenstrom wird vom <strong>Betreiber im Rahmen seiner Gefährdungsbeurteilung eigenverantwortlich festgelegt</strong>. Das verlagert Verantwortung – und macht eine saubere Planung von Beginn an noch wichtiger.
+                The decisive paradigm shift relative to the old DIN 12924: DIN EN 14175 contains <strong>no blanket guide values</strong> for containment or extract volume flow. Instead it provides a <strong>test-based system</strong> – from type test through on-site test to recurring inspection. The extract volume flow needed for the specific application is <strong>set by the operator under their own responsibility as part of the risk assessment</strong>. That shifts responsibility – and makes clean design from the outset even more important.
               </p>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Rückhaltevermögen und die SF₆-Typprüfung nach Teil 3</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Containment and the SF₆ type test to Part 3</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Das <strong>Rückhaltevermögen (Containment)</strong> ist die Kerngröße der Abzugssicherheit: die Fähigkeit, luftgetragene Stoffe im Innenraum zu halten. Es wird in der Baumusterprüfung nach <strong>DIN EN 14175-3</strong> in einem speziellen Prüfraum ermittelt – mit dem Spürgas <strong>Schwefelhexafluorid (SF₆)</strong>. Das Gas ist ungiftig und damit messtechnisch ideal, aber stark klimaschädlich: Sein Treibhauspotenzial liegt rund 30.000-fach über dem von CO₂. Teil 3 umfasst drei Prüfungen:
+                <strong>Containment</strong> is the core quantity of cupboard safety: the ability to keep airborne substances inside the working chamber. It is determined in the type test to <strong>DIN EN 14175-3</strong> in a special test room – with the tracer gas <strong>sulphur hexafluoride (SF₆)</strong>. The gas is non-toxic and therefore ideal for measurement, but strongly climate-damaging: its global warming potential is around 30,000 times that of CO₂. Part 3 comprises three tests:
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>Innere Messebene.</strong> Hier wird die Rückhaltung direkt an der Arbeitsöffnung gemessen – tritt Spürgas durch die Frontebene aus? <strong>Äußere Messebene.</strong> Die Messung etwas vor dem Abzug zeigt, was tatsächlich in den Raum gelangt. <strong>Robustheitstest.</strong> Das ist die anspruchsvollste Prüfung: Zusätzlich zur Spürgasfreisetzung bewegt sich eine genormte Platte (1900 × 400 × 20 mm) mit <strong>1 m/s am Abzug vorbei</strong> und simuliert eine zügig vorbeigehende Person. Damit wird geprüft, ob der Abzug seine Dichtheit auch dann hält, wenn die Luftströmung von außen gestört wird. Ein gut konstruierter Abzug zeigt bei innerer und äußerer Messebene praktisch null – erst der Robustheitstest trennt die Spreu vom Weizen.
+                <strong>Inner plane.</strong> Containment is measured directly at the working opening – does tracer gas leave through the front plane? <strong>Outer plane.</strong> Measurement slightly in front of the cupboard shows what actually reaches the room. <strong>Robustness test.</strong> This is the most demanding test: in addition to tracer-gas release, a standardised plate (1900 × 400 × 20 mm) moves <strong>past the cupboard at 1 m/s</strong> and simulates a person walking briskly by. This checks whether the cupboard holds its tightness even when the airflow is disturbed from outside. A well-designed cupboard shows practically zero on the inner and outer planes – only the robustness test separates the wheat from the chaff.
               </p>
 
               <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 rounded-r-xl">
-                <p class="font-bold text-slate-900 mb-2">Aus der Praxis: Wo Abzüge im echten Betrieb scheitern</p>
-                <p class="text-gray-700 text-sm">Ein Abzug kann im Prüflabor glänzen und im Betrieb trotzdem versagen – nicht wegen des Geräts, sondern wegen der Umgebung. Die beiden häufigsten Ursachen, die ich vor Ort sehe: Erstens fehlt die <em>Nachströmung</em>. Wenn die Zuluft nicht nachkommt, weil der Raum zu dicht ist oder die Lüftung zu schwach ausgelegt wurde, bricht die Einströmgeschwindigkeit zusammen, egal wie gut der Abzug ist. Zweitens der offene Frontschieber: Je weiter er hochgezogen wird, desto schlechter werden Rückhaltevermögen und Robustheit – und im Dauerbetrieb steigt der Energieverbrauch massiv. Deshalb planen wir im Container die Zuluft-Kompensation und die Abluftleistung immer gemeinsam mit dem Abzug, statt den Abzug nur „anzuschließen“. — Thomas Boss</p>
+                <p class="font-bold text-slate-900 mb-2">From practice: where cupboards fail in real operation</p>
+                <p class="text-gray-700 text-sm">A cupboard can shine in the test laboratory and still fail in operation – not because of the unit, but because of the surroundings. The two most common causes I see on site: first, missing <em>make-up air</em>. If supply air cannot keep up because the room is too tight or the ventilation was undersized, face velocity collapses, however good the cupboard. Second, the open sash: the higher it is raised, the worse containment and robustness become – and in continuous operation energy consumption rises massively. That is why in the container we always design supply-air compensation and extract capacity together with the cupboard, rather than merely “connecting” the cupboard. — Thomas Boss</p>
               </div>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Einströmgeschwindigkeit: 0,7 m/s, 0,5 m – und warum das nicht dasselbe ist</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Face velocity: 0.7 m/s, 0.5 m – and why they are not the same thing</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Hier entstehen die meisten Missverständnisse. Bei <strong>Alt-Abzügen nach DIN 12924</strong> (Fassung Januar 1978) galt ein klarer Mindestwert: Die mittlere Einströmgeschwindigkeit muss bei <strong>100 mm geöffnetem Frontschieber mindestens 0,7 m/s</strong> betragen. Ein gemessener Wert von nur 0,5 m/s liegt darunter – der Abzug darf dann für Tätigkeiten mit Gefahrstoffen nicht weiterbetrieben werden, bis die Ursache (verstopfte Filter, schwächelnder Ventilator, zu hoher Gegendruck, Leckage) behoben ist. Gemessen wird mit einem <strong>thermischen oder Flügelrad-Anemometer</strong>.
+                This is where most misunderstandings arise. On <strong>legacy cupboards to DIN 12924</strong> (January 1978 edition) a clear minimum applied: the mean face velocity with the <strong>sash open 100 mm must be at least 0.7 m/s</strong>. A measured value of only 0.5 m/s is below that – the cupboard may then not continue in use for work with hazardous substances until the cause (blocked filters, weakening fan, excessive back-pressure, leakage) is rectified. Measurement is made with a <strong>thermal or vane anemometer</strong>.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Bei modernen Abzügen nach <strong>DIN EN 14175</strong> gibt es diesen pauschalen Geschwindigkeitswert nicht mehr – maßgeblich ist das in der Typprüfung nachgewiesene Rückhaltevermögen, der Sollwert für den Volumenstrom kommt aus der Gefährdungsbeurteilung und dem Prüfprotokoll. Und jetzt der Klassiker: Die viel zitierten <strong>0,5 m</strong> aus der Norm beziehen sich auf die <strong>maximale Öffnungshöhe des Frontschiebers</strong> (ein – oft alarmierter – Begrenzer nach Teil 2), <strong>nicht</strong> auf die Einströmgeschwindigkeit. 0,7 m/s ist eine Geschwindigkeit, 0,5 m eine Höhe – wer das verwechselt, plant falsch.
+                On modern cupboards to <strong>DIN EN 14175</strong> this blanket velocity value no longer exists – what matters is the containment demonstrated in the type test; the setpoint for volume flow comes from the risk assessment and the test report. And now the classic: the much-quoted <strong>0.5 m</strong> from the standard refers to the <strong>maximum sash opening height</strong> (an – often alarmed – limiter to Part 2), <strong>not</strong> to the face velocity. 0.7 m/s is a velocity, 0.5 m is a height – confuse the two and you design wrongly.
               </p>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Abzugstypen: vom Tischabzug bis zum Perchlorsäureabzug</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Cupboard types: from bench-mounted to perchloric-acid cupboard</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                „Der Laborabzug“ gibt es nicht – die Bauform richtet sich nach Stoffen, Apparaturen und Arbeitsweise. Die wichtigsten Typen:
+                There is no such thing as “the fume cupboard” – the type follows substances, apparatus and working method. The most important types:
               </p>
 
               <div class="overflow-x-auto my-8">
                 <table class="w-full text-sm border-collapse border border-gray-200">
                   <thead class="bg-slate-100">
                     <tr>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Typ</th>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Merkmal</th>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Typischer Einsatz</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Type</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Feature</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Typical use</th>
                     </tr>
                   </thead>
                   <tbody class="text-gray-700">
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Tischabzug (Standabzug)</td>
-                      <td class="border border-gray-200 px-4 py-3">Arbeitsfläche ~900 mm; Breiten 1.200 / 1.500 / 1.800 mm; ~270–400 m³/h pro lfm</td>
-                      <td class="border border-gray-200 px-4 py-3">Standard für Lösungsmittel, verdünnte Säuren und Laugen</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Bench-mounted (standing) cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Work surface ~900 mm; widths 1,200 / 1,500 / 1,800 mm; ~270–400 m³/h per lin. m</td>
+                      <td class="border border-gray-200 px-4 py-3">Standard for solvents, dilute acids and alkalis</td>
                     </tr>
                     <tr class="bg-slate-50">
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Tiefabzug</td>
-                      <td class="border border-gray-200 px-4 py-3">Abgesenkte Arbeitsfläche (~500 mm), mehr Innenhöhe</td>
-                      <td class="border border-gray-200 px-4 py-3">Hohe Apparaturen, Destillationsaufbauten, Abgasleitungen</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Low-level cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Lowered work surface (~500 mm), more internal height</td>
+                      <td class="border border-gray-200 px-4 py-3">Tall apparatus, distillation set-ups, exhaust lines</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Begehbarer Abzug</td>
-                      <td class="border border-gray-200 px-4 py-3">Arbeitsfläche auf Bodenniveau, Tiefe bis ~1.500 mm</td>
-                      <td class="border border-gray-200 px-4 py-3">Großvolumige Anlagen, Pilotaufbauten, Destillationskolonnen</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Walk-in cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Work surface at floor level, depth up to ~1,500 mm</td>
+                      <td class="border border-gray-200 px-4 py-3">Large-volume plant, pilot set-ups, distillation columns</td>
                     </tr>
                     <tr class="bg-slate-50">
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Durchreicheabzug</td>
-                      <td class="border border-gray-200 px-4 py-3">Beidseitig bedienbar, Frontschieber auf zwei Seiten</td>
-                      <td class="border border-gray-200 px-4 py-3">Arbeitsplätze, an denen von zwei Seiten gearbeitet wird</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Pass-through cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Operable from both sides, sashes on two faces</td>
+                      <td class="border border-gray-200 px-4 py-3">Workstations at which work is done from two sides</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Flusssäureabzug (HF)</td>
-                      <td class="border border-gray-200 px-4 py-3">HF-beständige Auskleidung (z. B. PP), korrosionsfest</td>
-                      <td class="border border-gray-200 px-4 py-3">Arbeiten mit Flusssäure und stark aggressiven Medien</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Hydrofluoric-acid cupboard (HF)</td>
+                      <td class="border border-gray-200 px-4 py-3">HF-resistant lining (e.g. PP), corrosion-proof</td>
+                      <td class="border border-gray-200 px-4 py-3">Work with hydrofluoric acid and strongly aggressive media</td>
                     </tr>
                     <tr class="bg-slate-50">
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Perchlorsäureabzug</td>
-                      <td class="border border-gray-200 px-4 py-3">Waschbar, mit Spüleinrichtung gegen explosive Perchlorat-Ablagerungen</td>
-                      <td class="border border-gray-200 px-4 py-3">Aufschlüsse mit Perchlorsäure</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Perchloric-acid cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Washable, with rinse system against explosive perchlorate deposits</td>
+                      <td class="border border-gray-200 px-4 py-3">Digestions with perchloric acid</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Radionuklidabzug</td>
-                      <td class="border border-gray-200 px-4 py-3">Dekontaminierbar, Filterstufen, strahlenschutzgerecht</td>
-                      <td class="border border-gray-200 px-4 py-3">Arbeiten mit offenen radioaktiven Stoffen</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Radionuclide cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Decontaminable, filter stages, radiation-protection compliant</td>
+                      <td class="border border-gray-200 px-4 py-3">Work with unsealed radioactive substances</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Im Containerlabor ist die Typwahl eng mit dem Grundriss verbunden: Ein begehbarer Abzug braucht Höhe und stellt hohe Anforderungen an die Abluftleistung, ein Perchlorsäureabzug braucht eine Spülwasser-Infrastruktur. Wir wählen Typ, Rastermaß und Anzahl passend zur verfügbaren Abluftleistung und zur Aufstellung – damit der Abzug nicht zum Engpass der gesamten Lüftung wird.
+                In the container laboratory the type choice is tightly bound to the layout: a walk-in cupboard needs height and places high demands on extract capacity; a perchloric-acid cupboard needs rinse-water infrastructure. We select type, grid size and number to suit the available extract capacity and the installation – so that the cupboard does not become the bottleneck of the entire ventilation system.
               </p>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Energie: warum ein Abzug ein kleines Kraftwerk verbraucht – und wie VAV hilft</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Energy: why a cupboard uses a small power station – and how VAV helps</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Laborabzüge sind die größten Energieverbraucher im Labor. Ein einzelner Abzug kann <strong>bis zum 3,5-Fachen eines durchschnittlichen Einfamilienhauses</strong> verbrauchen – nicht durch das Gerät selbst, sondern durch die Luft: Zu- und Abluftventilatoren laufen permanent, und die nachströmende Außenluft muss kontinuierlich konditioniert (geheizt oder gekühlt) werden. Untersuchungen, unter anderem der Harvard University, zeigen die Dimension: Laborflächen belegen etwa ein Fünftel der Gebäudefläche, verbrauchen aber rund die Hälfte der Energie – etwa 44 % davon entfallen auf die Lüftung, maßgeblich getrieben von den Abzügen.
-              </p>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Der wirksamste technische Hebel ist der <strong>VAV-Abzug (Variable Air Volume)</strong> nach DIN EN 14175-6. Im Gegensatz zum konstant laufenden CAV-Abzug regelt er den Abluftvolumenstrom in Abhängigkeit von der Frontschieberstellung: Wird der Schieber gesenkt, sinkt der Volumenstrom. Bei <strong>geschlossenem Frontschieber lässt sich der Volumenstrom um etwa 50 % reduzieren</strong>, gegenüber einem CAV-System sind so <strong>bis zu 40 % Energieeinsparung</strong> möglich – bei gleichzeitig deutlich geringerem Geräuschpegel. Ergänzt wird das durch Wärmerückgewinnung in der zentralen Lüftung. Und die wirksamste Maßnahme kostet gar nichts: den Frontschieber konsequent schließen, sobald nicht am Abzug gearbeitet wird – das schützt nicht nur die Energiebilanz, sondern auch das Rückhaltevermögen.
+                Fume cupboards are the largest energy consumers in the laboratory. A single cupboard can use <strong>up to 3.5 times the energy of an average detached house</strong> – not through the unit itself, but through the air: supply and extract fans run continuously, and the incoming outdoor air must be conditioned (heated or cooled) without interruption. Studies, including from Harvard University, show the scale: laboratory floor area occupies about one fifth of the building area but consumes around half the energy – some 44 % of that falls to ventilation, driven largely by the cupboards.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Im <strong>Containerlabor</strong> ist dieser Hebel besonders wertvoll: Die Technikfläche ist begrenzt, jede überdimensionierte Luftmenge belastet Ventilatoren, Heizregister und Stromanschluss. Eine VAV-Regelung hält den Container energetisch beherrschbar – und ist oft die Voraussetzung dafür, dass mehrere Abzüge überhaupt mit der verfügbaren Anschlussleistung betrieben werden können. Die Wechselwirkung mit Heizung, Kühlung und Klimakonstanz vertiefen wir im Beitrag zur <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-primary font-medium hover:underline">Klimatisierung und Lüftung im Laborcontainer</a>.
-              </p>
-
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Abluftführung im Container: über Dach, keine Umluft, DIN 1946-7</h2>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Was am Abzug erfasst wird, muss sicher nach draußen. Die eiserne Regel: <strong>Laborabluft aus Abzügen darf nicht im Umluftbetrieb geführt werden</strong>. Eine Rezirkulation in den Raum ist bei Gefahrstoffen unzulässig, weil die Schadstoffkonzentration nicht zuverlässig auf ungefährliche Werte gereinigt werden kann. Standard ist die <strong>Ableitung über Dach</strong> (senkrechter Ausblas): Durch thermischen Auftrieb und die vertikale Anordnung wird die Abluft ausreichend verdünnt, und ein Wiedereintritt in Fenster, Türen oder Zuluftöffnungen wird vermieden. Außerdem muss die Abluft <strong>permanent</strong> erfolgen – auch außerhalb der Betriebszeiten, damit nichts entweicht.
+                The most effective technical lever is the <strong>VAV cupboard (Variable Air Volume)</strong> to DIN EN 14175-6. Unlike the constantly running CAV cupboard, it modulates extract volume flow according to sash position: when the sash is lowered, volume flow falls. With the <strong>sash closed, volume flow can be reduced by about 50 %</strong>; compared with a CAV system, <strong>energy savings of up to 40 %</strong> are possible – with a markedly lower noise level at the same time. This is complemented by heat recovery in the central ventilation plant. And the most effective measure costs nothing at all: close the sash consistently as soon as work at the cupboard stops – that protects not only the energy balance but also containment.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die <strong>DIN 1946-7</strong> regelt die Raumlufttechnik für Laboratorien. Die Anlage ist so auszulegen, dass pro Quadratmeter Laborgrundfläche ein Abluftvolumenstrom von <strong>mindestens 25 m³/h</strong> nicht unterschritten wird; bei Arbeiten mit sehr gefährlichen Substanzen entsprechend mehr. Damit Gefahrstoffe nicht in benachbarte Bereiche wandern, wird das Labor zudem im <strong>Unterdruck</strong> zur Umgebung gehalten. Im Container heißt das konkret: ein Abluftsystem mit Dachaustritt, eine darauf abgestimmte Zuluft-Nachströmung, eine Unterdruckhaltung und – je nach Anforderung – ein redundanter Ventilator, damit der Schutz auch bei Ausfall nicht zusammenbricht. Brandschutzklappen in den Abluftkanälen und die Abstimmung mit dem Brandschutzkonzept gehören dazu; das vertiefen wir im Beitrag zum <a href="/en/magazine/lab-container-fire-protection" class="text-primary font-medium hover:underline">Brandschutz im Laborcontainer</a>.
+                In the <strong>container laboratory</strong> this lever is particularly valuable: plant space is limited, and every over-sized air quantity loads fans, heating coils and the electrical connection. VAV control keeps the container energetically manageable – and is often the prerequisite for operating several cupboards at all with the available connection capacity. The interaction with heating, cooling and climate constancy is covered in more depth in the article on <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-primary font-medium hover:underline">climate control and ventilation in the lab container</a>.
               </p>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Prüfung und Betrieb: TRGS 526, jährlich, befähigte Person</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Extract routing in the container: over the roof, no recirculation, DIN 1946-7</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Ein Abzug ist kein „einbauen und vergessen“-Gerät. Nach <strong>TRGS 526 (Abschnitt 7.3)</strong> und der inhaltsgleichen <strong>DGUV Information 213-850</strong> müssen Abzüge regelmäßig gewartet, ihre Funktionsfähigkeit geprüft und das Ergebnis dokumentiert werden – <strong>mindestens einmal jährlich durch eine befähigte Person</strong>. Übergeordnet verlangt die <strong>Gefahrstoffverordnung</strong>, dass der Arbeitgeber die Wirksamkeit technischer Schutzmaßnahmen mindestens jedes dritte Jahr überprüft; Art, Umfang und Fristen legt er auf Basis der Gefährdungsbeurteilung fest und dokumentiert sie.
-              </p>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Geprüft werden insbesondere die Einströmgeschwindigkeit beziehungsweise der Volumenstrom, die Funktion der <strong>Strömungsüberwachung und des Alarmgebers</strong>, die Frontschiebermechanik und der bauliche Zustand. Bei <strong>VAV-Abzügen</strong> kommt die jährliche Prüfung der Regelstrecke nach Teil 6 hinzu. Hier verläuft die klare Trennlinie: <strong>Wir liefern den Abzug betriebsbereit, inklusive Inbetriebnahmeprüfung – die wiederkehrende jährliche Prüfung und die Gefährdungsbeurteilung organisiert der Betreiber.</strong> Diese Aufgabenverteilung benennen wir von Anfang an, damit keine Lücke entsteht.
-              </p>
-
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fazit: Der Abzug ist ein Systembauteil, kein Möbelstück</h2>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Ein Laborabzug schützt nur, wenn alles zusammenpasst: ein baumustergeprüftes Gerät mit nachgewiesenem Rückhaltevermögen, eine Lüftung, die die nötige Luft auch nachliefert, eine Abluftführung über Dach ohne Umluft, eine VAV-Regelung, die den Energiehunger bändigt, und eine wiederkehrende Prüfung, die die Funktion über Jahre sichert. Der Abzug ist damit kein Möbelstück, das man irgendwo hinstellt, sondern ein Systembauteil, das von der ersten Planungsphase an mitgedacht werden muss – im Containerlabor mehr noch als im klassischen Bau, weil hier Fläche und Anschlussleistung knapp sind.
+                What is captured at the cupboard must go safely outside. The iron rule: <strong>laboratory extract from fume cupboards must not be run in recirculation</strong>. Recirculation into the room is not permitted where hazardous substances are present, because the pollutant concentration cannot be reliably cleaned to harmless levels. The standard is <strong>discharge over the roof</strong> (vertical discharge): thermal buoyancy and the vertical arrangement dilute the extract sufficiently, and re-entry into windows, doors or supply-air openings is avoided. Extract must also run <strong>continuously</strong> – including outside operating hours, so that nothing escapes.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Weil unsere Laborcontainer ab Werk Albstadt mit abgestimmter Lüftungstechnik, Dachaustritt, Zuluft-Kompensation und vorbereiteten Medienanschlüssen geliefert werden, lässt sich die Abzugstechnik sauber integrieren – mit dokumentierter Inbetriebnahme und einer klaren Verantwortungskette. Unsere <a href="/en/services/planning" class="text-primary font-medium hover:underline">Planungs- und Engineering-Leistung</a> umfasst die Auslegung von Abzügen, Abluft und Raumlufttechnik aus einer Hand. Wie der gesamte Weg von der Idee bis zur Übergabe abläuft, zeigt der Beitrag zum <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">Projektablauf</a>.
+                <strong>DIN 1946-7</strong> governs room-air technology for laboratories. The plant is to be designed so that an extract volume flow of <strong>at least 25 m³/h</strong> per square metre of laboratory floor area is not undershot; correspondingly more when working with very hazardous substances. To prevent hazardous substances migrating into neighbouring areas, the laboratory is also held at <strong>negative pressure</strong> relative to the surroundings. In the container that means in practice: an extract system with roof discharge, matching supply-air make-up, negative-pressure holding and – depending on the requirement – a redundant fan so that protection does not collapse on failure. Fire dampers in the extract ducts and alignment with the fire-safety concept belong with this; we cover that in more depth in the article on <a href="/en/magazine/lab-container-fire-protection" class="text-primary font-medium hover:underline">fire protection in the lab container</a>.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Testing and operation: TRGS 526, annually, competent person</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A fume cupboard is not a “fit and forget” device. Under <strong>TRGS 526 (Section 7.3)</strong> and the substantively identical <strong>DGUV Information 213-850</strong>, cupboards must be maintained regularly, their function tested and the result documented – <strong>at least once a year by a competent person</strong>. Overarching this, the <strong>Hazardous Substances Ordinance</strong> requires the employer to check the effectiveness of technical protective measures at least every third year; type, scope and intervals are set on the basis of the risk assessment and documented.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Items tested include in particular face velocity or volume flow, the function of the <strong>airflow monitor and alarm</strong>, the sash mechanism and the physical condition. On <strong>VAV cupboards</strong> the annual test of the control loop to Part 6 is added. Here the dividing line is clear: <strong>we deliver the cupboard ready for use, including the commissioning test – the recurring annual test and the risk assessment are organised by the operator.</strong> We name this division of duties from the outset so that no gap arises.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Conclusion: the cupboard is a system component, not a piece of furniture</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A fume cupboard only protects when everything fits together: a type-tested unit with demonstrated containment, a ventilation plant that actually supplies the air required, extract discharge over the roof without recirculation, VAV control that tames the energy appetite, and a recurring test that secures function over the years. The cupboard is therefore not a piece of furniture that you put somewhere, but a system component that must be designed in from the first planning phase – in the container laboratory even more than in conventional construction, because here floor area and connection capacity are scarce.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Because our lab containers leave the Albstadt factory with matched ventilation plant, roof discharge, supply-air compensation and prepared services connections, cupboard engineering can be integrated cleanly – with documented commissioning and a clear chain of responsibility. Our <a href="/en/services/planning" class="text-primary font-medium hover:underline">planning and engineering service</a> covers the design of cupboards, extract and room-air technology from a single source. How the entire path from idea to handover runs is shown in the article on the <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">project process</a>.
               </p>
 
               <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center">
-                <h3 class="text-2xl font-bold mb-4 text-primary">Abzüge und Laborlüftung von Anfang an richtig planen?</h3>
-                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Wir legen Abzugstyp, Rückhaltevermögen, Abluftführung über Dach und VAV-Energiekonzept gemeinsam aus – betriebsbereit geliefert, mit Inbetriebnahmeprüfung und klarer Verantwortungskette.</p>
-                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Kostenlose Erstberatung anfragen
+                <h3 class="text-2xl font-bold mb-4 text-primary">Plan cupboards and laboratory ventilation correctly from the start?</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">We design cupboard type, containment, extract discharge over the roof and the VAV energy concept together – delivered ready for use, with commissioning test and a clear chain of responsibility.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Request a free initial consultation
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
               </div>
@@ -398,33 +398,33 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
           <aside class="lg:col-span-4">
             <div class="sticky top-28 space-y-8">
               <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
-                <h4 class="font-bold text-slate-900 mb-4">Auf einen Blick</h4>
+                <h4 class="font-bold text-slate-900 mb-4">At a glance</h4>
                 <ul class="space-y-3 text-sm text-gray-700">
-                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Produktnorm: DIN EN 14175 (Teile 1–7), löst DIN 12924-1 ab</li>
-                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Schutzgröße: Rückhaltevermögen (SF₆-Typprüfung, Teil 3)</li>
-                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Einströmung Alt-Abzug: ≥ 0,7 m/s bei 100 mm Öffnung</li>
-                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> 0,5 m = max. Frontschieberhöhe, nicht Geschwindigkeit</li>
-                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Energie: VAV spart bis 40 %, Abzug schließen!</li>
-                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Abluft: über Dach, keine Umluft, DIN 1946-7 (≥ 25 m³/h·m²)</li>
-                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Prüfung: jährlich, befähigte Person (TRGS 526 / DGUV 213-850)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Product standard: DIN EN 14175 (Parts 1–7), replaces DIN 12924-1</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Protective quantity: containment (SF₆ type test, Part 3)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Face velocity, legacy cupboard: ≥ 0.7 m/s at 100 mm opening</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> 0.5 m = max. sash height, not velocity</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Energy: VAV saves up to 40 %, close the sash!</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Extract: over the roof, no recirculation, DIN 1946-7 (≥ 25 m³/h·m²)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Testing: annually, competent person (TRGS 526 / DGUV 213-850)</li>
                 </ul>
               </div>
 
               <div class="bg-white border border-gray-100 p-6 rounded-2xl">
-                <h4 class="font-bold text-slate-900 mb-4">Weiterführende Inhalte</h4>
+                <h4 class="font-bold text-slate-900 mb-4">Further reading</h4>
                 <ul class="space-y-3">
-                  <li><a href="/en/magazine/lab-container-hvac-ventilation-standards" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Klimatisierung &amp; Lüftung</a></li>
-                  <li><a href="/en/magazine/lab-container-fire-protection" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Brandschutz im Laborcontainer</a></li>
-                  <li><a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>GMP- &amp; Reinraum-Container</a></li>
-                  <li><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>BSL-2 &amp; BSL-3 Containerlabor</a></li>
-                  <li><a href="/en/magazine/lab-container-equipment-checklist" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Laborcontainer-Ausstattung</a></li>
+                  <li><a href="/en/magazine/lab-container-hvac-ventilation-standards" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Climate control &amp; ventilation</a></li>
+                  <li><a href="/en/magazine/lab-container-fire-protection" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Fire protection in the lab container</a></li>
+                  <li><a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>GMP &amp; cleanroom containers</a></li>
+                  <li><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>BSL-2 &amp; BSL-3 container laboratory</a></li>
+                  <li><a href="/en/magazine/lab-container-equipment-checklist" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Lab-container equipment</a></li>
                 </ul>
               </div>
 
               <div class="bg-slate-900 text-white p-6 rounded-2xl">
-                <h4 class="font-bold mb-3">Abzug &amp; Lüftung aus einer Hand?</h4>
-                <p class="text-gray-400 text-sm mb-4">Wir denken Abzugstyp, Abluftführung und Energie zusammen – bevor der erste Kanal verlegt wird.</p>
-                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Kontakt aufnehmen</a>
+                <h4 class="font-bold mb-3">Cupboard &amp; ventilation from a single source?</h4>
+                <p class="text-gray-400 text-sm mb-4">We think cupboard type, extract routing and energy together – before the first duct is laid.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Get in touch</a>
               </div>
             </div>
           </aside>
@@ -437,49 +437,49 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
     <section class="py-16 border-t border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Häufig gestellte Fragen zu Laborabzügen und DIN EN 14175</h2>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions on fume cupboards and DIN EN 14175</h2>
           <div class="space-y-4">
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Norm regelt Laborabzüge?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which standard governs fume cupboards?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Die maßgebliche Norm ist die Reihe <strong>DIN EN 14175 „Abzüge“</strong>, die die frühere DIN 12924-1 abgelöst hat. Sie besteht aus sieben Teilen: Begriffe (1), Sicherheit &amp; Leistungsvermögen (2), Baumusterprüfung mit SF₆ (3), Vor-Ort-Prüfung (4), Aufstellung &amp; Verwendung (5), VAV-Abzüge (6) und Sonderbauformen (7). Wichtig: Die Norm legt <strong>keine festen Richtwerte</strong> für Rückhaltevermögen oder Volumenstrom mehr fest – diese bestimmt der Betreiber per Gefährdungsbeurteilung. Ergänzend gelten <strong>TRGS 526</strong>, <strong>DGUV 213-850</strong> und für die Raumlufttechnik die <strong>DIN 1946-7</strong>. Vor 2003 installierte Abzüge unterliegen weiter der DIN 12924-1/-2.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">The governing standard is the <strong>DIN EN 14175 “Fume cupboards”</strong> series, which replaced the former DIN 12924-1. It comprises seven parts: Terms (1), Safety &amp; performance (2), Type test with SF₆ (3), On-site test (4), Installation &amp; use (5), VAV cupboards (6) and special types (7). Important: the standard <strong>no longer sets fixed guide values</strong> for containment or volume flow – the operator determines these via the risk assessment. In addition, <strong>TRGS 526</strong>, <strong>DGUV 213-850</strong> and, for room-air technology, <strong>DIN 1946-7</strong> apply. Cupboards installed before 2003 remain subject to DIN 12924-1/-2.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wie hoch muss die Einströmgeschwindigkeit sein?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How high must the face velocity be?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Bei <strong>Alt-Abzügen nach DIN 12924</strong> (Januar 1978) muss die mittlere Einströmgeschwindigkeit bei 100 mm geöffnetem Frontschieber <strong>mindestens 0,7 m/s</strong> betragen – 0,5 m/s reicht nicht. Bei modernen Abzügen nach <strong>DIN EN 14175</strong> gibt es keinen pauschalen Wert mehr; maßgeblich ist das geprüfte Rückhaltevermögen, der Volumenstrom kommt aus der Gefährdungsbeurteilung. Gemessen wird mit thermischem oder Flügelrad-Anemometer. Achtung: Die <strong>0,5 m</strong> aus der Norm sind die maximale <em>Öffnungshöhe</em> des Frontschiebers, nicht die Geschwindigkeit.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">On <strong>legacy cupboards to DIN 12924</strong> (January 1978) the mean face velocity with the sash open 100 mm must be <strong>at least 0.7 m/s</strong> – 0.5 m/s is not enough. On modern cupboards to <strong>DIN EN 14175</strong> there is no blanket value; what matters is the tested containment, and volume flow comes from the risk assessment. Measurement is with a thermal or vane anemometer. Note: the <strong>0.5 m</strong> from the standard is the maximum sash <em>opening height</em>, not the velocity.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Was ist das Rückhaltevermögen und wie wird es geprüft?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What is containment and how is it tested?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Das <strong>Rückhaltevermögen (Containment)</strong> ist die Fähigkeit, Stoffe im Abzugsinnenraum zu halten. Geprüft wird es in der Baumusterprüfung nach <strong>DIN EN 14175-3</strong> mit dem Spürgas <strong>SF₆</strong> (ungiftig, aber rund 30.000-fach klimaschädlicher als CO₂). Drei Messungen: innere Messebene (an der Arbeitsöffnung), äußere Messebene und <strong>Robustheitstest</strong> – dabei fährt eine genormte Platte (1900 × 400 × 20 mm) mit 1 m/s vorbei und simuliert eine vorbeigehende Person. Im Betrieb prüft die Vor-Ort-Messung nach Teil 4 die Funktion am aufgestellten Gerät.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed"><strong>Containment</strong> is the ability to keep substances inside the cupboard working chamber. It is tested in the type test to <strong>DIN EN 14175-3</strong> with the tracer gas <strong>SF₆</strong> (non-toxic, but around 30,000 times more climate-damaging than CO₂). Three measurements: inner plane (at the working opening), outer plane and <strong>robustness test</strong> – a standardised plate (1900 × 400 × 20 mm) passes at 1 m/s and simulates a person walking by. In operation, the on-site measurement to Part 4 checks function on the installed unit.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wie oft muss ein Laborabzug geprüft werden?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How often must a fume cupboard be tested?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Nach <strong>TRGS 526 (Abschnitt 7.3)</strong> und der inhaltsgleichen <strong>DGUV Information 213-850</strong> müssen Abzüge regelmäßig gewartet, geprüft und dokumentiert werden – <strong>mindestens jährlich durch eine befähigte Person</strong>. Übergeordnet fordert die <strong>GefStoffV</strong> die Wirksamkeitsprüfung technischer Schutzmaßnahmen mindestens alle drei Jahre. Geprüft werden u. a. Einströmung/Volumenstrom, Strömungsüberwachung, Alarmgeber und Frontschiebermechanik; bei <strong>VAV-Abzügen</strong> zusätzlich die Regelstrecke (Teil 6). Die wiederkehrende Prüfung ist Betreiberpflicht.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Under <strong>TRGS 526 (Section 7.3)</strong> and the substantively identical <strong>DGUV Information 213-850</strong>, cupboards must be maintained, tested and documented regularly – <strong>at least annually by a competent person</strong>. Overarching this, the <strong>GefStoffV</strong> requires an effectiveness check of technical protective measures at least every three years. Items tested include face velocity/volume flow, airflow monitor, alarm and sash mechanism; on <strong>VAV cupboards</strong> the control loop as well (Part 6). The recurring test is an operator duty.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Abzugstypen gibt es?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What types of fume cupboard are there?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Am häufigsten der <strong>Tischabzug</strong> (Arbeitsfläche ~900 mm, Breiten 1.200/1.500/1.800 mm, ~270–400 m³/h pro lfm). Der <strong>Tiefabzug</strong> hat eine abgesenkte Arbeitsfläche für hohe Apparaturen, der <strong>begehbare Abzug</strong> die Arbeitsfläche auf Bodenniveau für Pilotaufbauten. Dazu <strong>Durchreicheabzüge</strong> und Sonderbauformen für aggressive Medien: <strong>Flusssäureabzüge</strong> (HF-beständig), waschbare <strong>Perchlorsäureabzüge</strong> mit Spüleinrichtung und <strong>Radionuklidabzüge</strong>. Die Wahl richtet sich nach Stoffen, Apparaturen und verfügbarer Abluftleistung.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Most common is the <strong>bench-mounted cupboard</strong> (work surface ~900 mm, widths 1,200/1,500/1,800 mm, ~270–400 m³/h per lin. m). The <strong>low-level cupboard</strong> has a lowered work surface for tall apparatus; the <strong>walk-in cupboard</strong> has the work surface at floor level for pilot set-ups. In addition there are <strong>pass-through cupboards</strong> and special types for aggressive media: <strong>hydrofluoric-acid cupboards</strong> (HF-resistant), washable <strong>perchloric-acid cupboards</strong> with a rinse system, and <strong>radionuclide cupboards</strong>. The choice follows substances, apparatus and available extract capacity.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Warum ist Umluftbetrieb der Laborabluft nicht zulässig?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Why is recirculation of laboratory extract air not permitted?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Weil die Schadstoffkonzentration in der Laborabluft nicht zuverlässig auf ungefährliche Werte gereinigt werden kann. Abluft aus Abzügen muss deshalb <strong>ins Freie</strong> abgeführt werden – Rezirkulation in den Raum ist bei Gefahrstoffen unzulässig. Standard ist die <strong>Ableitung über Dach</strong>: thermischer Auftrieb und vertikaler Ausblas sorgen für Verdünnung und verhindern den Wiedereintritt in Fenster und Zuluftöffnungen. Die Abluft läuft <strong>permanent</strong>, auch außerhalb der Betriebszeit. Nach <strong>DIN 1946-7</strong> gilt ein Mindest-Abluftvolumenstrom von <strong>25 m³/h je m²</strong> Laborfläche, bei sehr gefährlichen Stoffen mehr.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Because the pollutant concentration in laboratory extract cannot be reliably cleaned to harmless levels. Extract from cupboards must therefore be discharged <strong>to atmosphere</strong> – recirculation into the room is not permitted where hazardous substances are present. The standard is <strong>discharge over the roof</strong>: thermal buoyancy and vertical discharge provide dilution and prevent re-entry into windows and supply-air openings. Extract runs <strong>continuously</strong>, including outside operating hours. Under <strong>DIN 1946-7</strong> a minimum extract volume flow of <strong>25 m³/h per m²</strong> of laboratory area applies, and more for very hazardous substances.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wie senkt man den Energieverbrauch eines Laborabzugs?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How do you reduce the energy consumption of a fume cupboard?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Ein Abzug kann bis zum <strong>3,5-Fachen eines Einfamilienhauses</strong> verbrauchen, weil ständig Luft abgeführt und die Zuluft konditioniert wird. Wirksamster Hebel: ein <strong>VAV-Abzug</strong> (DIN EN 14175-6), der den Volumenstrom nach Frontschieberstellung regelt. Bei geschlossenem Schieber sinkt der Volumenstrom um rund <strong>50 %</strong>, gegenüber CAV sind <strong>bis zu 40 % Energieeinsparung</strong> möglich. Dazu Wärmerückgewinnung in der Zentrallüftung – und die einfachste Maßnahme: den <strong>Frontschieber konsequent schließen</strong>. Im kompakten Containerlabor mit begrenzter Anschlussleistung ist VAV besonders sinnvoll.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">A cupboard can use up to <strong>3.5 times the energy of a detached house</strong> because air is constantly extracted and the supply air is conditioned. The most effective lever: a <strong>VAV cupboard</strong> (DIN EN 14175-6) that modulates volume flow to sash position. With the sash closed, volume flow falls by around <strong>50 %</strong>; compared with CAV, <strong>energy savings of up to 40 %</strong> are possible. Plus heat recovery in the central ventilation – and the simplest measure: <strong>close the sash consistently</strong>. In the compact container laboratory with limited connection capacity, VAV is particularly worthwhile.</div>
             </details>
           </div>
         </div>
