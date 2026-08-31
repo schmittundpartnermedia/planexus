@@ -1,0 +1,251 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.tsx';
+import Picture from '../../components/Picture.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import BranchenCrossLinks from '../../components/BranchenCrossLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = "Laborcontainer Öl, Gas & Raffinerie – ATEX, Turnaround";
+const description = "Laborcontainer Raffinerie & Tanklager: ATEX Zone 1/2, Kraftstoff-QC nach DIN EN 228/590, H₂S/VOC, AwSV, ISO 17025. Turnaround-Miete in Wochen. Beratung anfordern.";
+const canonical = "/branchen/oel-gas";
+const ogImage = "/attached_assets/generated_images/high-tech_lab_interior.png";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Laborcontainer für Öl, Gas, Raffinerie und Tanklager",
+  "provider": { "@type": "Organization", "name": "Planexus GmbH", "image": "https://planexus.de/android-chrome-512x512.png", "url": "https://planexus.de", "telephone": "+49 7435 7519 700", "email": "info@planexus.de", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" }, "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" } },
+  "areaServed": [{ "@type": "Country", "name": "Germany" }, { "@type": "Country", "name": "Switzerland" }, { "@type": "Country", "name": "Austria" }],
+  "audience": { "@type": "BusinessAudience", "audienceType": "Raffinerien, Tanklager, Pipeline- und Gasspeicher-Betreiber, LNG-Terminals, Kraftstoff-Prüfstellen, Umweltlabore, Turnaround-Dienstleister" },
+  "description": "ATEX-Zone-1/2-Laborcontainer für Kohlenwasserstoff-Prozessanalytik, Kraftstoffqualität nach DIN EN 228/590 und ASTM, H₂S-/VOC-Schutz, AwSV-Auffang und Turnaround-Miete ohne Hallenumbau."
+};
+const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/" },
+  { "@type": "ListItem", "position": 2, "name": "Branchen", "item": "https://planexus.de/branchen" },
+  { "@type": "ListItem", "position": 3, "name": "Öl, Gas & Raffinerie", "item": "https://planexus.de/branchen/oel-gas" }
+]};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welche ATEX-Zone gilt für ein Laborcontainer an der Raffinerie oder am Tanklager?", "acceptedAnswer": { "@type": "Answer", "text": "Das hängt vom Aufstellort und vom Explosionsschutzdokument nach BetrSichV ab – nicht vom Container allein. Steht das Labor außerhalb definierter Ex-Zonen am Werkszaun, ist oft ein Ex-freier Messraum mit Zone-2-Probenahme oder Gaswarnung ausreichend. Direkt an Tanktasse, Pumpstation oder Probenahmestelle kann Zone 2 oder lokal Zone 1 gelten. Wir planen die Zonentrennung: Ex-Labor vs. Ex-freie Messwarte, Erdung nach DIN EN 60079-14, antistatischer Boden DIN EN 1081, Ex-Beleuchtung 2G, LEL-Detektion bodennah für schwere Kohlenwasserstoffe. Zone 1 bauen wir projektbezogen mit Notified-Body-Bewertung." } },
+    { "@type": "Question", "name": "Kann man ein Raffinerie-Labor für den Turnaround mieten?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Turnaround- und Revamp-Fenster dauern typisch 4–16 Wochen. In dieser Zeit braucht die QC Kapazität neben der Anlage, ohne dass die bestehende Laborhalle umgebaut wird. Wir liefern Mietcontainer mit Kraftstoff- und Prozessanalytik, AwSV-Auffang und ATEX-konformer Elektroinstallation. Anschluss an Werksmedien (Strom, Stickstoff, Instrumentenluft, Daten). Nach dem Turnaround Rückbau ohne Hallenrest. Mietverträge 8–24 Wochen mit Verlängerungsoption; Kauf oder Mietkauf, wenn das Labor dauerhaft am Standort bleibt." } },
+    { "@type": "Question", "name": "Was bedeutet AwSV für den Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Die AwSV (Verordnung über Anlagen zum Umgang mit wassergefährdenden Stoffen) verlangt definierte Rückhaltung für Mineralöl, Lösemittel und Probenreste. Im Container: dichte Wannen unter Arbeitsplätzen und Schränken, Auffangvolumen passend zur gelagerten Menge, beständige Beschichtung gegen Kohlenwasserstoffe, dokumentierte Dichtheitsprüfung. Ergänzend WHG und betriebliches Alarmkonzept bei Leckage. Wir liefern die AwSV-relevanten Nachweise als Anlage zur Gefährdungsbeurteilung – die Beurteilung selbst bleibt Betreiberpflicht." } },
+    { "@type": "Question", "name": "Ist ein Kraftstoff-QC-Container nach ISO 17025 akkreditierungsfähig?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. ISO/IEC 17025 stellt Anforderungen an Methoden, Rückführbarkeit und Umgebung – nicht an gemauerte Wände. Für Ottokraftstoff DIN EN 228, Diesel DIN EN 590, Dichte ASTM D4052, Schwefel ASTM D4294, Flammpunkt ASTM D93 / DIN EN ISO 2719 liefern wir klimatisierte Messplätze, kalibrierbare Umgebungsaufzeichnung und DAkkS-ready Dokumentation. Unabhängige Prüfstellen (SGS, Intertek, TÜV) und Werks-QC nutzen denselben Standard. Härteprüfung, REM und VDI-2627-Wägeräume gehören auf die Industrie-Seite, nicht in dieses Kraftstoff-Layout." } },
+    { "@type": "Question", "name": "Wie schützt der Container vor H₂S und VOC?", "acceptedAnswer": { "@type": "Answer", "text": "Schwefelwasserstoff ist giftig und schwerer als Luft; viele Kohlenwasserstoffdämpfe sammeln sich bodennah – im Gegensatz zu Wasserstoff, den wir deckennah überwachen. Standard: Unterdruck im Probenahmeraum gegenüber der Messwarte, Abluft mit VOC-Erfassung, H₂S- und LEL-Detektoren in zwei Höhen, Voralarm und Notabschaltung der Probenahme, optisch-akustischer Alarm innen und außen. Abzüge nach DIN EN 14175 für offene Handproben. Keine offenen Flammen, keine ungeschützten Zündquellen. SIL-2-Kette analog zur H₂-Seite, aber mit Sensorik und Lüftungsführung für Kohlenwasserstoffe und H₂S." } },
+    { "@type": "Question", "name": "Braucht ein Laborcontainer auf dem Raffineriegelände eine eigene Genehmigung?", "acceptedAnswer": { "@type": "Answer", "text": "Meist ja, oft im Rahmen der bestehenden BImSchG-/Störfall-Anlage statt als komplett neues Gebäude. Der Container bleibt räumlich begrenzt: Ex-Zone, Immission und Abwasser bleiben im bestehenden Betriebsbereich. Wir liefern Explosionsschutzkonzept, Brandschutznachweis, AwSV-Doku, Statik und TGA als Behördenpaket. Abstimmung mit Werksfeuerwehr und Anlagensicherheit gehört zum Projektstart. Baurechtlich gelten dieselben Schwellen wie bei anderen Laborcontainern; der Unterschied ist die Einbindung ins Explosionsschutzdokument des Standorts." } },
+    { "@type": "Question", "name": "Worin unterscheidet sich dieser Container von Industrie-QC und von H₂-Testcontainern?", "acceptedAnswer": { "@type": "Answer", "text": "Industrie & Werkstoffprüfung ist Zugversuch, Härte, REM, Mikrowaage, ISO 17025 am Produktionswerk. Energiewende H₂ & Batterie ist Elektrolyseur, Brennstoffzelle, Thermal-Runaway, Trockenraum und IPCEI. Öl, Gas & Raffinerie ist Kohlenwasserstoff-Prozess, Kraftstoffnormen, Tanklager-Umweltanalytik, H₂S/VOC, AwSV und Turnaround am Bestand. Werkstoffprüfung im Chempark verlinken wir auf die Industrie-Seite. Wasserstoff-Pilot und Batterietest verlinken wir auf die H₂-Seite. H₂-Beimischung ins Gasnetz behandeln wir hier nur als Schnittstelle, nicht als Teststand." } }
+  ]
+};
+const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Laborcontainer Öl, Gas & Raffinerie – ATEX, Kraftstoff-QC, Turnaround", "description": "Laborcontainer für Raffinerie, Tanklager und Gasinfrastruktur. ATEX Zone 1/2, DIN EN 228/590, H₂S/VOC, AwSV, ISO 17025, Turnaround-Miete.", "image": "https://planexus.de/opengraph.jpg", "datePublished": "2026-08-31", "dateModified": "2026-08-31", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer Planexus GmbH", "url": "https://planexus.de/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://planexus.de/branchen/oel-gas"}, "about": "Laborcontainer für Öl, Gas, Raffinerie und Tanklager", "inLanguage": "de-DE"};
+---
+<Layout title={title} description={description} canonical={canonical} ogImage={ogImage} schema={serviceSchema}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <div class="bg-white">
+    <section class="relative bg-slate-900 text-white overflow-hidden pt-20">
+      <div class="absolute inset-0 z-0">
+        <Picture src="/attached_assets/generated_images/high-tech_lab_interior.png" alt="Laborcontainer Öl Gas Raffinerie Tanklager – ATEX Kraftstoff-QC Turnaround" class="w-full h-full object-cover opacity-25" loading="eager" fetchpriority="high" width={1024} height={1024} />
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
+      </div>
+      <div class="relative z-10 container mx-auto px-4 py-16 md:py-24">
+        <div class="max-w-4xl">
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Branche · Raffinerie · Tanklager · Pipeline · LNG · Turnaround</div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">Laborcontainer für Öl, Gas &amp; Raffinerie – ATEX, Kraftstoff-QC</h1>
+          <p class="text-xl text-gray-300 leading-relaxed mb-4"><strong class="text-white">ATEX Zone 1/2 am Werkszaun, Kraftstoff- und Prozessanalytik nach DIN EN 228/590 und ASTM, H₂S- und VOC-Schutz, AwSV-Auffang, ISO-17025-fähige Messplätze, mobil für Turnaround.</strong> Für Raffinerien, Tanklager, Pipeline- und Gasspeicher-Betreiber, LNG-Standorte und unabhängige Kraftstoff-Prüfstellen in DACH.</p>
+          <p class="text-base text-gray-400 mb-8">Ohne Hallenumbau in der Ex-Zone – das Labor steht, während die Anlage läuft oder im Turnaround ist.</p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">Raffinerie-Labor anfragen</a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">+49 7435 7519 700</a>
+          </div>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div>✓ ATEX Zone 1/2 am Bestand</div>
+            <div>✓ H₂S- und VOC-Detektion</div>
+            <div>✓ ISO 17025-fähig (Kraftstoff-QC)</div>
+            <div>✓ Turnaround in Wochen statt Monaten</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Breadcrumbs bar items={[{ name: 'Start', href: '/' }, { name: 'Branchen', href: '/branchen' }, { name: 'Öl, Gas & Raffinerie' }]} />
+
+    <AuthorBio />
+
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-10">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Prozesslabor am Bestand, nicht Bohrturm-Romantik</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Warum Raffinerie und Tanklager den Container brauchen</h2>
+            <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">Umbau in der Ex-Zone dauert, Stillstand kostet. Ein temporäres Labor während Turnaround oder Revamp muss in Wochen stehen, Abstand zu Nachbaranlagen und Umweltauflagen einhalten – und nach dem Fenster wieder weg sein. In DACH geht es um Downstream und Midstream: Raffinerie, Tanklager, Pipeline, Gasspeicher, LNG – nicht um Upstream-Mud-Logging.</p>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">Zone 1/2</div><div class="text-xs text-gray-400 uppercase tracking-wider">ATEX am Werkszaun</div><div class="text-xs text-gray-500 mt-1">EN 60079, Ex-Dokument</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">8–16 W.</div><div class="text-xs text-gray-400 uppercase tracking-wider">Turnaround-Fenster</div><div class="text-xs text-gray-500 mt-1">Miete statt Hallenumbau</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">AwSV</div><div class="text-xs text-gray-400 uppercase tracking-wider">Auffang &amp; Dichtheit</div><div class="text-xs text-gray-500 mt-1">WHG, Kohlenwasserstoffe</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">228/590</div><div class="text-xs text-gray-400 uppercase tracking-wider">Kraftstoffnormen</div><div class="text-xs text-gray-500 mt-1">DIN EN + ASTM-Methoden</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">Abgrenzung: Industrie-QC, Öl &amp; Gas, Wasserstoff</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">Drei Seiten, drei Käufer. <a href="/branchen/industrie-werkstoffpruefung" class="text-primary font-medium hover:underline">Industrie &amp; Werkstoffprüfung</a> spricht Stahl, Automotive, Bau, Härteprüfung, Mikrowaage, VDI 2627. <a href="/branchen/energiewende-h2-batterie" class="text-primary font-medium hover:underline">Energiewende H₂ &amp; Batterie</a> spricht IPCEI, Thermal-Runaway, Trockenraum −40 °C, Elektrolyseur. Diese Seite bleibt bei Kohlenwasserstoff-Prozess, Kraftstoffqualität, Ex-Zone am Bestand, Umweltanalytik am Tanklager und Turnaround.</p>
+          <p class="text-gray-700 leading-relaxed mb-0">Werkstoffprüfung im Chempark gehört auf die Industrie-Seite. Wasserstoff-Pilot und Batterietest gehören auf die H₂-Seite. H₂-Beimischung ins Erdgasnetz erwähnen wir als Schnittstelle – den Teststand selbst nicht.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Normen und Regelwerke für Raffinerie- und Tanklager-Labore</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+              <thead class="bg-slate-900 text-white"><tr><th class="text-left p-4 font-bold">Norm / Regel</th><th class="text-left p-4 font-bold">Anwendung</th><th class="text-left p-4 font-bold">Lieferung</th></tr></thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr><td class="p-4 font-semibold text-slate-900">ATEX 2014/34/EU + EN 60079</td><td class="p-4 text-gray-700">Ex-Schutz Zone 1/2 für Kohlenwasserstoffe</td><td class="p-4 text-gray-700">EX-Beleuchtung, Erdung, LEL bodennah</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">BetrSichV / Explosionsschutzdokument</td><td class="p-4 text-gray-700">Zoneneinteilung am Aufstellort</td><td class="p-4 text-gray-700">Zoning-Konzept, Zonentrennung Labor/Warte</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">TRGS 727 / TRBS 2152</td><td class="p-4 text-gray-700">Vermeidung von Zündgefahren, ESD</td><td class="p-4 text-gray-700">Antistatik-Boden DIN EN 1081</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN EN 228 / DIN EN 590</td><td class="p-4 text-gray-700">Ottokraftstoff und Dieselkraftstoff</td><td class="p-4 text-gray-700">QC-Layout, klima-stabile Messplätze</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">ASTM D-Methoden</td><td class="p-4 text-gray-700">Dichte, S, Flash, Destillation, TAN</td><td class="p-4 text-gray-700">Geräteaufstellung, Medien, Abluft</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">ISO/IEC 17025</td><td class="p-4 text-gray-700">Akkreditierte Kraftstoff- und Umwelt-QC</td><td class="p-4 text-gray-700">Umgebungs-Qualifizierung, DAkkS-ready</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">AwSV / WHG</td><td class="p-4 text-gray-700">Wassergefährdende Stoffe, Auffang</td><td class="p-4 text-gray-700">Wannen, Dichtheitsnachweis, Beschichtung</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">BImSchG / TA Luft</td><td class="p-4 text-gray-700">Immission, Abluft VOC am Standort</td><td class="p-4 text-gray-700">Abluftkonzept, Behördenanlage</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN EN 14175 + TRGS 526</td><td class="p-4 text-gray-700">Abzüge, Laboratorien</td><td class="p-4 text-gray-700">Probenahme-Abzug, Luftwechsel</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">SIL-2 nach IEC 61508</td><td class="p-4 text-gray-700">Notabschaltung Probenahme / Gaswarnung</td><td class="p-4 text-gray-700">Redundante H₂S-/LEL-Sensorik</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900 text-center">Acht Anwendungs-Container für Öl, Gas und Raffinerie</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { title: 'Kraftstoff-QC', desc: 'Dichte, Schwefel, Wasser, Flammpunkt, GC-Peripherie. Ottokraftstoff DIN EN 228, Diesel DIN EN 590, klima-stabile Messplätze.' },
+              { title: 'Rohöl- und Destillat-Assay', desc: 'Destillation, TAN, Viskosität, Wasser/Sediment. Probenwege kurz zur Anlage, Auffang nach AwSV.' },
+              { title: 'Prozessanalytik am Zaun', desc: 'Probenahme, Flash, TAN, Viskosität neben Pumpstation oder Blender – Zone-Trennung zur Messwarte.' },
+              { title: 'H₂S- und Schwefel-Labor', desc: 'Unterdruck, H₂S-Warnung, bodennah und kopfnahe Sensorik, Abluft, keine offenen Flammen.' },
+              { title: 'Umweltlabor Tanklager', desc: 'BTEX, Mineralölkohlenwasserstoffe, Boden und Grundwasser an Tasse, Altlast, Tankstelle.' },
+              { title: 'Korrosion und Integrität', desc: 'Coupons, Wasserchemie Pipeline/Tank. Tiefe Werkstoffprüfung (Zug, Härte, REM) → Industrie-Seite.' },
+              { title: 'Turnaround-Mietlabor', desc: '8–16 Wochen Kapazität neben der Anlage, Rückbau ohne Hallenrest, Verlängerung oder Mietkauf.' },
+              { title: 'LNG, Speicher, Odorierung', desc: 'Erdgasspeicher, LNG-Terminal, Odorierung. H₂-Beimischung nur als Schnittstelle zur H₂-Seite.' }
+            ].map(item => (
+              <div class="bg-slate-50 rounded-xl p-5 border-l-2 border-primary">
+                <div class="font-bold text-slate-900 mb-2">{item.title}</div>
+                <p class="text-sm text-gray-700 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10">Sechs Engineering-Details für Kohlenwasserstoff-Labore</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">1. Gasdetektion</div><h3 class="text-xl font-bold mb-3">Schwere Gase bodennah, nicht nur Decke</h3><p class="text-gray-300 text-sm">Viele KW-Dämpfe und H₂S sammeln sich unten. LEL- und H₂S-Sensoren in zwei Höhen, Voralarm, Notabschaltung der Probenahme. Wasserstoff-Detektion deckennah gehört auf die H₂-Seite – hier ist die Lüftung unten und oben gedacht.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">2. Zonentrennung</div><h3 class="text-xl font-bold mb-3">Ex-Labor und Ex-freie Messwarte</h3><p class="text-gray-300 text-sm">Probenahmeraum Zone 2 oder 1, Mess- und Auswerteraum Ex-frei, Schleuse oder Druckkaskade, Schaltschränke außerhalb oder überdruckgekapselt nach EN 60079-2.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">3. ESD und Erdung</div><h3 class="text-xl font-bold mb-3">Antistatik, &lt;1 Ω, Ex-Beleuchtung</h3><p class="text-gray-300 text-sm">Boden DIN EN 1081, Erdung DIN EN 60079-14, Beleuchtung 2G EEx d/e, keine ungeschützten Zündquellen, keine offenen Flammen am Arbeitsplatz.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">4. AwSV-Auffang</div><h3 class="text-xl font-bold mb-3">Wannen, Dichtheit, KW-beständige Beschichtung</h3><p class="text-gray-300 text-sm">Auffang unter Schränken und Arbeitsflächen, Volumen zur gelagerten Menge, Dichtheitsprüfung dokumentiert, Leckage-Alarm an die Werksleitstelle.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">5. Abluft und VOC</div><h3 class="text-xl font-bold mb-3">Abzug, Luftwechsel, Immission</h3><p class="text-gray-300 text-sm">DIN-EN-14175-Abzüge für Handproben, definierter Luftwechsel, VOC-Erfassung, Abstimmung mit TA Luft / Standort-Abluft. Unterdruck Probenraum gegenüber Warte.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">6. SIL-Kette KW/H₂S</div><h3 class="text-xl font-bold mb-3">Notabschaltung Probenahme</h3><p class="text-gray-300 text-sm">Redundante Sensorik, Magnetventil an der Probenleitung, Lüftungs-Hochlauf, akustisch-optischer Alarm, Aufschaltung Anlagensicherheit – SIL-2-Logik, Stoffprofil Kohlenwasserstoff und H₂S.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">ATEX am Raffinerie-Bestand: Container statt Hallenumbau</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">Ein Festeinbau in der Ex-Zone zieht Explosionsschutzdokument, Werksfeuerwehr, oft BImSchG-Änderung und Monate Bauzeit nach sich. Der Container hält die Zone räumlich klein: Aufstellung am Zaun oder auf definierter Freifläche, Abstand zu Nachbaranlagen nach Standortkonzept, Druckentlastung über definierte Flächen, Rückbau nach Turnaround ohne Gebäudehülle.</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Typische DACH-Standorte: Raffinerie- und Chempark-Verbünde (Rheinland, Gelsenkirchen, Leuna, Bayernoil, Burghausen, Schwechat), Tanklager an Rhein, Elbe und Donau, Erdgasspeicher, LNG-Terminals an der Nordseeküste. Unabhängige Prüfstellen brauchen dieselben Methoden wie die Werks-QC – nur mit ISO-17025-Umgebung statt Produktionshalle.</p>
+          <p class="text-gray-700 leading-relaxed mb-8">Offshore-Plattform und IEC 61892 sind hier kein Leistungsversprechen. Wer Werkstoffprüfung, REM oder klimatisierte Wägezellen braucht, geht nach <a href="/branchen/industrie-werkstoffpruefung" class="text-primary font-medium hover:underline">Industrie &amp; Werkstoffprüfung</a>. Wer Elektrolyseur, Brennstoffzelle oder Battery-Abuse braucht, geht nach <a href="/branchen/energiewende-h2-batterie" class="text-primary font-medium hover:underline">H₂ &amp; Batterie</a>.</p>
+
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">Turnaround: Mietlabor neben der Anlage</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">Im Turnaround steigen Probenaufkommen und Fremdfirmen-Verkehr, während Teile der bestehenden Laborinfrastruktur gesperrt oder umgebaut sind. Ein Mietcontainer mit Kraftstoff-QC, Prozessanalytik oder Umweltanalytik steht in Wochen, hängt an Werksmedien und verschwindet nach dem Fenster. Wirtschaftlich oft klarer als ein Hallenprovisorium in der Ex-Zone.</p>
+          <p class="text-gray-700 leading-relaxed mb-8">Laufzeiten 8–24 Wochen sind der Normalfall; bei Revamp oder dauerhafter Kapazität Mietkauf oder Kauf. Die AwSV- und ATEX-Dokumentation wandert mit – sie ist an den Container gebunden, nicht an die Halle.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Planexus Leistungen für Öl, Gas &amp; Raffinerie</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <a href="/leistungen/planung" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Technische Laborplanung</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">ATEX-Zoning am Bestand, Zonentrennung Labor/Warte, AwSV-Auffang, Abluft VOC, SIL-Kette für H₂S und LEL.</p>
+            </a>
+            <a href="/leistungen/modulbau" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Modulbau &amp; Fertigung</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">Kraftstoff-QC, Assay, H₂S-Labor, Umweltmodul Tanklager, Turnaround-Mietcontainer ab Werk Albstadt.</p>
+            </a>
+            <a href="/leistungen/beratung" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Beratung &amp; Genehmigung</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">Explosionsschutzdokument-Anlage, BImSchG/TA-Luft-Abstimmung, AwSV-Nachweise, Werksfeuerwehr-Paket.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900 text-center">Weiterführende Fachartikel</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <a href="/magazin/laborcontainer-energiewende-h2-batterie-ex-schutz" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Ex-Schutz</div><h3 class="font-bold text-slate-900 mb-2">H₂, Batterie, ATEX</h3><p class="text-sm text-gray-600">Wenn der nächste Schritt Wasserstoff-Test ist – nicht Kohlenwasserstoff-QC.</p></a>
+            <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">HVAC</div><h3 class="font-bold text-slate-900 mb-2">Klima, Lüftung, Normen</h3><p class="text-sm text-gray-600">Luftwechsel, Abzug, Unterdruck – Grundlage für VOC- und H₂S-Labore.</p></a>
+            <a href="/magazin/laborcontainer-mieten-oder-kaufen" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Turnaround</div><h3 class="font-bold text-slate-900 mb-2">Mieten oder kaufen</h3><p class="text-sm text-gray-600">Kurzes Fenster vs. dauerhafte QC am Tanklager.</p></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Häufige Fragen zu Öl, Gas &amp; Raffinerie</h2>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed text-sm">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="anfrage" class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Laborcontainer für Raffinerie, Tanklager oder Turnaround</h2>
+            <p class="text-gray-700 text-lg">Skizzieren Sie Standort (Ex-Zone ja/nein), Methoden und Zeitfenster. Wir antworten innerhalb eines Werktags mit Zoning-Konzept und Miet- oder Kaufmodell.</p>
+          </div>
+          <ContactForm client:visible />
+        </div>
+      </div>
+    </section>
+
+    <BranchenCrossLinks current="oel-gas" />
+  </div>
+</Layout>

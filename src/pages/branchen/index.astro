@@ -4,15 +4,15 @@ import ContactForm from '../../components/ContactForm.tsx';
 import AuthorBio from '../../components/AuthorBio.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
-const title = "Laborcontainer für 6 Branchen – Übersicht";
-const description = "Laborcontainer für 6 Branchen: Pharma/Biotech (GMP, Annex 1), Forschung (DFG), Industrie (ISO 17025), Bildung, Public Health (IfSG), H₂ & Batterie (ATEX).";
+const title = "Laborcontainer für 7 Branchen – Übersicht";
+const description = "Laborcontainer für 7 Branchen: Pharma/Biotech (GMP, Annex 1), Forschung (DFG), Industrie (ISO 17025), Bildung, Public Health (IfSG), H₂ & Batterie (ATEX), Öl & Gas (Raffinerie).";
 const canonical = "/branchen";
 
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Branchen-Lösungen für Laborcontainer",
-  "description": "Übersicht aller sechs Branchen-Lösungen von Planexus für Laborcontainer in DACH",
+  "description": "Übersicht aller sieben Branchen-Lösungen von Planexus für Laborcontainer in DACH",
   "url": "https://planexus.de/branchen",
   "publisher": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de" }
 };
@@ -74,6 +74,14 @@ const branchen = [
     color: 'from-cyan-500/10 to-sky-500/5',
     badge: 'ATEX · EN 60079 · IPCEI',
   },
+  {
+    slug: 'oel-gas',
+    name: 'Öl, Gas & Raffinerie',
+    tagline: 'ATEX Zone 1/2, Kraftstoff-QC, Turnaround am Bestand',
+    desc: 'Laborcontainer für Raffinerie, Tanklager, Pipeline und LNG. ATEX am Werkszaun, DIN EN 228/590 und ASTM, H₂S-/VOC-Schutz, AwSV-Auffang, ISO-17025-fähige Kraftstoff-QC. Mietlabor für Turnaround ohne Hallenumbau.',
+    color: 'from-stone-500/10 to-amber-700/5',
+    badge: 'ATEX · AwSV · DIN EN 228/590',
+  },
 ];
 ---
 <Layout title={title} description={description} canonical={canonical} schema={collectionSchema}>
@@ -87,8 +95,8 @@ const branchen = [
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
             Laborcontainer für jede Branche – Engineering, Normen, Behörden-Paket
           </h1>
-          <p class="text-xl text-gray-300 leading-relaxed mb-4">Pharma kennt Annex 1, Forschung kennt DFG, Industrie kennt ISO 17025, Bildung kennt RiSU, Public Health kennt IfSG, Energiewende kennt ATEX. Jede Branche hat eigene Pflichten – wir liefern für jede die korrekte Container-Konfiguration mit der zugehörigen Dokumentation.</p>
-          <p class="text-base text-gray-400">Sechs Branchen, ein Werk. Ab Albstadt für Deutschland, Schweiz und Österreich.</p>
+          <p class="text-xl text-gray-300 leading-relaxed mb-4">Pharma kennt Annex 1, Forschung kennt DFG, Industrie kennt ISO 17025, Bildung kennt RiSU, Public Health kennt IfSG, Energiewende kennt ATEX, Raffinerie kennt AwSV und Turnaround. Jede Branche hat eigene Pflichten – wir liefern für jede die korrekte Container-Konfiguration mit der zugehörigen Dokumentation.</p>
+          <p class="text-base text-gray-400">Sieben Branchen, ein Werk. Ab Albstadt für Deutschland, Schweiz und Österreich.</p>
         </div>
       </div>
     </section>

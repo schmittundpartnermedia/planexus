@@ -11,6 +11,7 @@ const branchen = [
   { slug: 'bildung', name: 'Bildung & Berufsschulen', icon: 'graduation' },
   { slug: 'public-health-krisenvorsorge', name: 'Public Health & Krisenvorsorge', icon: 'shield' },
   { slug: 'energiewende-h2-batterie', name: 'Energiewende H₂ & Batterie', icon: 'bolt' },
+  { slug: 'oel-gas', name: 'Öl, Gas & Raffinerie', icon: 'droplet' },
 ];
 
 const others = current ? branchen.filter(b => b.slug !== current) : branchen;
@@ -21,7 +22,7 @@ const others = current ? branchen.filter(b => b.slug !== current) : branchen;
       <div class="text-center mb-10">
         <div class="text-xs uppercase tracking-wider text-[#7a9900] font-bold mb-3">Branchen-Lösungen</div>
         <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-3">Laborcontainer für Ihre Branche</h2>
-        <p class="text-gray-600 text-lg">Wir liefern für Pharma, Forschung, Industrie, Bildung, Public Health und Energiewende – jeweils mit den branchenspezifischen Normen, Schutzklassen und Qualifizierungsdokumenten.</p>
+        <p class="text-gray-600 text-lg">Wir liefern für Pharma, Forschung, Industrie, Bildung, Public Health, Energiewende sowie Öl, Gas und Raffinerie – jeweils mit den branchenspezifischen Normen, Schutzklassen und Qualifizierungsdokumenten.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {others.map(b => (
