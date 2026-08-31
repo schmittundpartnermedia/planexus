@@ -5,9 +5,9 @@ import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Digitalisierung im Laborcontainer – LIMS, IoT-Sensoren & Remote-Monitoring",
-  "description": "Smart Lab im Container: LIMS-Integration, IoT-Sensorik (Temperatur, Feuchte, Differenzdruck), Remote-Monitoring & Predictive Maintenance, Datenintegrität nach FDA 21 CFR Part 11 und EU-GMP Annex 11, sichere Cloud-Anbindung. Praxisleitfaden für Pharma, Biotech, GxP und Industrie 4.0.",
-  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Geschäftsführer", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "headline": "Digitalisation in the lab container – LIMS, IoT sensors & remote monitoring",
+  "description": "Smart Lab in the container: LIMS integration, IoT sensing (temperature, humidity, differential pressure), remote monitoring & predictive maintenance, data integrity to FDA 21 CFR Part 11 and EU-GMP Annex 11, secure cloud connection. Practice guide for pharma, biotech, GxP and Industry 4.0.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Managing Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
   "datePublished": "2026-05-07",
   "dateModified": "2026-05-07",
   "image": "https://planexus.de/attached_assets/Kopf_green-scaled_1768306688943.jpg",
@@ -19,9 +19,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
-    { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/en/magazine" },
-    { "@type": "ListItem", "position": 3, "name": "Digitalisierung im Laborcontainer", "item": "https://planexus.de/en/magazine/lab-container-digitalization-lims-iot-remote-monitoring" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Digitalisation in the lab container", "item": "https://planexus.de/en/magazine/lab-container-digitalization-lims-iot-remote-monitoring" }
   ]
 };
 
@@ -29,13 +29,13 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Was bedeutet FDA 21 CFR Part 11 für den Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "21 CFR Part 11 ist die US-FDA-Verordnung für elektronische Aufzeichnungen und elektronische Unterschriften (in Kraft seit 1997). Für GxP-relevante Container heißt das konkret: lückenloser Audit-Trail nach §11.10(e), gesicherte Benutzerverwaltung mit eindeutiger Zuordnung jeder Eingabe zu einer Person, sichere Zeitstempel über NTP/PTP, geschützter Zugriff auf Rohdaten und validierte Backups. Das EU-Pendant ist EU-GMP Annex 11 'Computerised Systems' (revidiert 2011). In der Praxis erfüllen LIMS- und Monitoring-Systeme beide Vorgaben gleichzeitig, weil die ALCOA+-Prinzipien (Attributable, Legible, Contemporaneous, Original, Accurate plus Complete, Consistent, Enduring, Available) auf beiden Seiten des Atlantiks gelten." } },
-    { "@type": "Question", "name": "Welche IoT-Sensoren gehören in einen GMP-Container?", "acceptedAnswer": { "@type": "Answer", "text": "Pflicht sind kalibrierte Sensoren für Raumtemperatur, relative Feuchte und Differenzdruck zwischen den Kaskadenzonen. Für temperaturkontrollierte GMP-Lager fordert die EU-GDP-Leitlinie 2013/C 343/01 zusätzlich eine repräsentative Temperatur-Mapping-Studie nach anerkannten internationalen Mapping-Leitlinien vor Validierungsfreigabe – Sensorzahl, Mappingdauer und Lastzustände werden im Validierungsplan auf Raumgröße und Risiko abgestimmt. In klassifizierten Reinräumen kommt zusätzlich Partikelmessung nach DIN EN ISO 14644-1 dazu. DAkkS-Kalibrierschein und Drift unter 0,1 K/Jahr sind Standard – am Markt etablierte Hersteller bieten dafür kalibrierte Klimasensorik und Validierungs-Datenlogger. Anbindung über Modbus TCP, OPC UA (IEC 62541) oder MQTT v5.0." } },
-    { "@type": "Question", "name": "Wie funktioniert Remote-Monitoring bei Stromausfall?", "acceptedAnswer": { "@type": "Answer", "text": "Drei Schichten: Erstens läuft der Edge-Gateway batteriegestützt 8 bis 24 Stunden weiter (USV nach IEC 62040) und puffert die Messdaten lokal. Zweitens schaltet die Alarmierung auf einen redundanten Mobilfunk-Pfad um – LTE-Cat-M1 oder NB-IoT (3GPP Rel. 13) statt LAN. Drittens werden eskalierende SMS-/Push-Benachrichtigungen nach einer hinterlegten Eskalationsmatrix verschickt: erst Schichtleiter, nach 10 Minuten Bereitschaft, nach 30 Minuten Geschäftsführung. Funktional sicher nach IEC 61511 für die kritischen Pfade (Kühlung, Druckkaskade, Brand). Die Rohdaten gehen nach Wiederherstellung der Verbindung lückenlos in die Cloud nach – kein Datenverlust für den Audit-Trail." } },
-    { "@type": "Question", "name": "Was ist Predictive Maintenance konkret im Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Statt 'reagiert wenn kaputt' (korrektiv) oder 'nach Wartungsplan' (präventiv) erkennt Predictive Maintenance Verschleiß im laufenden Betrieb. Methodischer Rahmen ist ISO 13374 (Condition Monitoring and Diagnostics of Machines) und ISO 17359. Praktisch heißt das: Vibrationssensoren am Abluftventilator melden Lagerverschleiß sechs bis zwölf Wochen vor Ausfall, Stromaufnahme-Trending am HEPA-Lüfter zeigt Filterzusetzung Wochen vor dem Differenzdruck-Alarm, Temperatur-Drift in der Kühlung warnt vor Kompressor-Defekt. Die Auswertung läuft entweder regelbasiert (Schwellwert + Trendlinie) oder über ML-Modelle in der Cloud. Wirtschaftlich rechnet sich das ab dem zweiten Wartungsjahr durch verlängerte Filterlaufzeiten und vermiedene Notreparaturen." } },
-    { "@type": "Question", "name": "Welche LIMS lässt sich in einen Laborcontainer integrieren?", "acceptedAnswer": { "@type": "Answer", "text": "Technisch fast alle gängigen Systeme – vom etablierten Pharma-LIMS über ELN-Plattformen für die Forschung bis zu Open-Source-Lösungen. Entscheidend ist nicht das Produkt, sondern die Anbindung: SiLA 2 (Standards in Laboratory Automation) für Geräte, ASTM E1394 / LIS-02 für klassische Analyzer, AnIML (ASTM E1947) als herstellerneutrales XML-Datenformat. Wir liefern den Container mit vorbereitetem Server-Schrank inklusive USV, redundantem Netzwerk und VLAN-Trennung zwischen Mess-, Steuer- und Office-Netz. Die LIMS-Validierung selbst (IQ/OQ/PQ nach GAMP 5, ISPE 2022) übernimmt Ihr eigenes IT-Qualitätsmanagement oder ein spezialisiertes Validation-House – darauf hat keine Container-Hardware Einfluss." } },
-    { "@type": "Question", "name": "Ist Cloud-Anbindung DSGVO-konform und Schrems-II-sicher?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, wenn drei Punkte stimmen. Erstens: Verarbeitungsort in der EU (Rechenzentrumsregionen in Deutschland). Zweitens: Auftragsverarbeitungsvertrag nach Art. 28 DSGVO mit Standardvertragsklauseln. Drittens: für US-Anbieter gilt seit 10. Juli 2023 das EU-US Data Privacy Framework als Angemessenheitsbeschluss der Kommission – Schrems II (CJEU C-311/18, Juli 2020) ist damit für zertifizierte Anbieter abgemildert. Wer ganz auf Nummer sicher geht, betreibt den MQTT-Broker on-premise, nutzt nur die Cloud zum Reporting und verschlüsselt alle Daten Ende-zu-Ende. Zusätzliche Compliance-Anker: BSI-Kriterienkatalog C5:2020, ISO/IEC 27001:2022, ISO/IEC 27017 für Cloud-spezifische Kontrollen." } },
-    { "@type": "Question", "name": "Was ist der digitale Zwilling im Laborcontainer-Kontext?", "acceptedAnswer": { "@type": "Answer", "text": "Ein digitales Abbild des Containers inklusive aller Geräte, Sensorik und Versorgungsleitungen, das im laufenden Betrieb über IoT-Daten gespiegelt wird. Methodischer Rahmen ist DIN SPEC 91345 (Reference Architecture Model Industrie 4.0, RAMI 4.0) und die Asset Administration Shell der IDTA. Konkreter Nutzen: simulierte Lastfälle vor dem Bau (CFD-Strömungssimulation der Lüftung), virtuelle Schulungen am 3D-Modell vor Containerübergabe, Betriebsoptimierung im Live-Monitoring (Energieverbrauch, Filterstandzeiten, Kalibrierfälligkeiten), und vorausschauende Planung von Erweiterungen, weil das Modell die exakte Geometrie und Medienführung kennt. Die Kostenkurve ist klar: 5 bis 8 % Mehraufwand bei der Erstausstattung, 15 bis 25 % geringere Betriebskosten über zehn Jahre." } }
+    { "@type": "Question", "name": "What does FDA 21 CFR Part 11 mean for the lab container?", "acceptedAnswer": { "@type": "Answer", "text": "21 CFR Part 11 is the US FDA regulation for electronic records and electronic signatures (in force since 1997). For GxP-relevant containers that means concretely: a complete audit trail to §11.10(e), secured user management with unique assignment of every entry to a person, secure timestamps via NTP/PTP, protected access to raw data and validated backups. The EU counterpart is EU-GMP Annex 11 'Computerised Systems' (revised 2011). In practice, LIMS and monitoring systems meet both requirements at once, because the ALCOA+ principles (Attributable, Legible, Contemporaneous, Original, Accurate plus Complete, Consistent, Enduring, Available) apply on both sides of the Atlantic." } },
+    { "@type": "Question", "name": "Which IoT sensors belong in a GMP container?", "acceptedAnswer": { "@type": "Answer", "text": "Mandatory are calibrated sensors for room temperature, relative humidity and differential pressure between the cascade zones. For temperature-controlled GMP storage the EU-GDP guideline 2013/C 343/01 additionally requires a representative temperature-mapping study to recognised international mapping guidelines before validation release – sensor count, mapping duration and load states are matched in the validation plan to room size and risk. In classified cleanrooms, particle measurement to DIN EN ISO 14644-1 is added. A DAkkS calibration certificate and drift below 0.1 K/year are standard – established manufacturers on the market supply calibrated climate sensing and validation data loggers for this. Connection via Modbus TCP, OPC UA (IEC 62541) or MQTT v5.0." } },
+    { "@type": "Question", "name": "How does remote monitoring work during a power failure?", "acceptedAnswer": { "@type": "Answer", "text": "Three layers: first, the edge gateway continues to run on battery for 8 to 24 hours (UPS to IEC 62040) and buffers the measured data locally. Second, alarming switches to a redundant mobile-radio path – LTE-Cat-M1 or NB-IoT (3GPP Rel. 13) instead of LAN. Third, escalating SMS/push notifications are sent to a stored escalation matrix: first the shift supervisor, after 10 minutes standby, after 30 minutes management. Functionally safe to IEC 61511 for the critical paths (cooling, pressure cascade, fire). After the connection is restored the raw data catch up completely into the cloud – no data loss for the audit trail." } },
+    { "@type": "Question", "name": "What is predictive maintenance concretely in the lab container?", "acceptedAnswer": { "@type": "Answer", "text": "Instead of 'react when it breaks' (corrective) or 'to a maintenance plan' (preventive), predictive maintenance detects wear in ongoing operation. The methodological framework is ISO 13374 (Condition Monitoring and Diagnostics of Machines) and ISO 17359. Practically that means: vibration sensors on the extract fan report bearing wear six to twelve weeks before failure, current-draw trending on the HEPA fan shows filter clogging weeks before the differential-pressure alarm, temperature drift in the cooling warns of compressor failure. Evaluation runs either rule-based (threshold plus trend line) or via ML models in the cloud. Economically it pays from the second maintenance year through extended filter run times and avoided emergency repairs." } },
+    { "@type": "Question", "name": "Which LIMS can be integrated into a lab container?", "acceptedAnswer": { "@type": "Answer", "text": "Technically almost all established systems – from a proven pharma LIMS through ELN platforms for research to open-source solutions. What matters is not the product, but the connection: SiLA 2 (Standards in Laboratory Automation) for instruments, ASTM E1394 / LIS-02 for classic analysers, AnIML (ASTM E1947) as a vendor-neutral XML data format. We deliver the container with a prepared server cabinet including UPS, redundant network and VLAN separation between measurement, control and office networks. The LIMS validation itself (IQ/OQ/PQ to GAMP 5, ISPE 2022) is taken on by your own IT quality management or a specialised validation house – container hardware has no influence on that." } },
+    { "@type": "Question", "name": "Is a cloud connection GDPR-compliant and Schrems II-safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, if three points are in place. First: place of processing in the EU (data-centre regions in Germany). Second: a data-processing agreement to Art. 28 GDPR with standard contractual clauses. Third: for US providers the EU-US Data Privacy Framework has applied since 10 July 2023 as an adequacy decision of the Commission – Schrems II (CJEU C-311/18, July 2020) is thereby eased for certified providers. Anyone who wants to be entirely on the safe side operates the MQTT broker on-premise, uses the cloud only for reporting and encrypts all data end-to-end. Additional compliance anchors: BSI criteria catalogue C5:2020, ISO/IEC 27001:2022, ISO/IEC 27017 for cloud-specific controls." } },
+    { "@type": "Question", "name": "What is the digital twin in the lab-container context?", "acceptedAnswer": { "@type": "Answer", "text": "A digital image of the container including all instruments, sensing and services, mirrored in ongoing operation via IoT data. The methodological framework is DIN SPEC 91345 (Reference Architecture Model Industrie 4.0, RAMI 4.0) and the Asset Administration Shell of the IDTA. Concrete benefit: simulated load cases before construction (CFD flow simulation of the ventilation), virtual training on the 3D model before container handover, operational optimisation in live monitoring (energy consumption, filter service lives, calibration due dates), and forward-looking planning of extensions because the model knows the exact geometry and media routing. The cost curve is clear: 5 to 8 per cent extra effort at first fit-out, 15 to 25 per cent lower operating costs over ten years." } }
   ]
 };
 import RelatedArticles from '../../../components/RelatedArticles.astro';
@@ -43,8 +43,8 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
 
 <Layout
   type="article"
-  title="Digitalisierung im Laborcontainer – LIMS & IoT | Planexus"
-  description="Smart Lab im Container: LIMS, IoT-Sensorik, Remote-Monitoring, Predictive Maintenance, FDA 21 CFR Part 11, EU-GMP Annex 11 und sichere Cloud-Anbindung."
+  title="Digitalisation in the lab container – LIMS & IoT | Planexus"
+  description="Smart Lab in the container: LIMS, IoT sensing, remote monitoring, predictive maintenance, FDA 21 CFR Part 11, EU-GMP Annex 11 and a secure cloud connection."
   canonical="/en/magazine/lab-container-digitalization-lims-iot-remote-monitoring"
   ogImage="https://planexus.de/attached_assets/Kopf_green-scaled_1768306688943.jpg"
 >
@@ -61,27 +61,27 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
           <div class="flex items-center gap-4 mb-6">
             <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              Digitalisierung &amp; Smart Lab
+              Digitalisation &amp; Smart Lab
             </span>
             <span class="text-gray-400 text-sm flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              17 Min. Lesezeit
+              17 min read
             </span>
           </div>
           <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-            Digitalisierung im Laborcontainer – LIMS, IoT & Remote-Monitoring
+            Digitalisation in the lab container – LIMS, IoT & remote monitoring
           </h1>
           <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-            Industrie 4.0 endet nicht an der Containertür. Wer 2026 ein modulares Labor bestellt, bekommt ein vernetztes System mit LIMS-Anbindung, kalibrierter IoT-Sensorik, 24/7-Remote-Monitoring und einem Audit-Trail, der FDA 21 CFR Part 11 und EU-GMP Annex 11 standhält. Der komplette Praxisleitfaden für Pharma, Biotech, Forschung und GxP-Industrie.
+            Industry 4.0 does not stop at the container door. Anyone ordering a modular laboratory in 2026 receives a networked system with LIMS connection, calibrated IoT sensing, 24/7 remote monitoring and an audit trail that stands up to FDA 21 CFR Part 11 and EU-GMP Annex 11. The complete practice guide for pharma, biotech, research and GxP industry.
           </p>
           <div class="flex items-center gap-6 text-sm text-gray-400">
             <span class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-              7. Mai 2026
+              7 May 2026
             </span>
             <span class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              Sven Biewald, Geschäftsführer Planexus
+              Sven Biewald, Managing Director, Planexus
             </span>
           </div>
         </div>
@@ -91,11 +91,11 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
     <div class="bg-slate-50 border-b border-gray-100 py-4">
       <div class="container mx-auto px-4">
         <div class="flex items-center gap-2 text-sm text-gray-500">
-          <a href="/" class="hover:text-primary">Start</a>
+          <a href="/en" class="hover:text-primary">Home</a>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-          <a href="/en/magazine" class="hover:text-primary">Magazin</a>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-          <span class="text-primary font-medium">Digitalisierung im Laborcontainer</span>
+          <span class="text-primary font-medium">Digitalisation in the lab container</span>
         </div>
       </div>
     </div>
@@ -107,88 +107,88 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
             <div class="prose prose-lg max-w-none">
 
               <p class="text-xl text-gray-700 leading-relaxed mb-8">
-                Drei Entwicklungen treffen 2026 im Container aufeinander: <strong>Smart Lab</strong> als Pflichtprogramm jeder Pharma- und Biotech-Auditierung, <strong>Industrie 4.0</strong> mit dem Ziel papierloser Prozesse vom Wareneingang bis zur Chargenfreigabe und der <strong>digitale Zwilling</strong> als Brücke zwischen Engineering, Betrieb und Wartung. Was im Festbau seit Jahren diskutiert wird, lässt sich im modularen Laborcontainer schneller, sauberer und günstiger umsetzen – weil die Sensorik, das Netzwerk und die Datenpfade ab Werk geplant werden, statt im Bestand verlegt zu werden.
+                Three developments meet in the container in 2026: <strong>Smart Lab</strong> as a mandatory programme of every pharma and biotech audit, <strong>Industry 4.0</strong> with the aim of paperless processes from goods-in to batch release, and the <strong>digital twin</strong> as a bridge between engineering, operation and maintenance. What has been discussed in conventional buildings for years can be implemented faster, more cleanly and more cheaply in the modular lab container – because the sensing, the network and the data paths are planned from the factory, instead of being retrofitted in the existing building.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Dieser Beitrag zeigt die komplette Smart-Lab-Architektur eines modernen Containerlabors – von der einzelnen Sensorklemme bis zum FDA-konformen Audit-Trail in der Cloud. Mit verifizierten Normen, konkreten Protokoll- und Schnittstellennennungen und einem ehrlichen Blick auf Kosten und Risiken. Wer Smart Lab als Buzzword sucht, ist hier falsch. Wer eine umsetzbare Architektur sucht, liest weiter.
+                This article shows the complete Smart Lab architecture of a modern container laboratory – from the individual sensor terminal to the FDA-compliant audit trail in the cloud. With verified standards, concrete protocol and interface names, and an honest look at costs and risks. Anyone looking for Smart Lab as a buzzword is in the wrong place. Anyone looking for an implementable architecture should read on.
               </p>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Warum Smart Lab im Container schneller geht als im Bestand</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Why Smart Lab is faster in the container than in the existing building</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Im Bestandsgebäude ist Digitalisierung ein Brownfield-Projekt: vorhandene SPS-Welten, gewachsene Netzstruktur, geteilte Brandabschnitte, fehlende Trassen. Im Container ist es ein Greenfield-Projekt: Trasse, Patchfeld, Server-Schrank, USV und 19-Zoll-Mess-Rack werden vor dem Schweißen geplant. Das Resultat sind drei messbare Vorteile.
-              </p>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>Erstens die Topologie.</strong> Wir verlegen drei physisch getrennte Netze als Standard: ein <strong>Mess- und Steuerungsnetz</strong> (Modbus TCP, OPC UA, BACnet/IP), ein <strong>Office-Netz</strong> für LIMS-Clients und Drucker und ein <strong>Service-Netz</strong> für Fernwartung. VLAN-Trennung allein reicht GxP-Auditoren nicht – sie sehen gerne separate Switche und farblich codierte Patchkabel. Das ist im Container ab Werk machbar, im Bestand fast nie.
+                In the existing building, digitalisation is a brownfield project: existing PLC worlds, an organically grown network structure, shared fire compartments, missing cable routes. In the container it is a greenfield project: cable route, patch panel, server cabinet, UPS and 19-inch instrument rack are planned before welding. The result is three measurable advantages.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>Zweitens die Sensor-Validierung.</strong> Vor der Übergabe läuft im Container ein zentrales <strong>Temperature- und Humidity-Mapping</strong> nach anerkannten internationalen Mapping-Leitlinien – Sensorzahl, Mappingdauer und Lastzustände (leer, voll, Tür offen, Strom aus) werden im Validierungsplan auf Raumvolumen und Risikoklasse abgestimmt. Das Mapping-Protokoll geht direkt in die Validation-Akte und ersetzt im Audit die Frage „Wo haben Sie das gemessen?" durch einen vollständigen 3D-Heatmap-Bericht. Im Bestand fängt diese Übung erst nach Bezug an – und kostet sechsstellig.
+                <strong>First, the topology.</strong> We install three physically separated networks as standard: a <strong>measurement and control network</strong> (Modbus TCP, OPC UA, BACnet/IP), an <strong>office network</strong> for LIMS clients and printers, and a <strong>service network</strong> for remote maintenance. VLAN separation alone is not enough for GxP auditors – they like to see separate switches and colour-coded patch cables. That is feasible from the factory in the container, almost never in the existing building.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>Drittens die Dokumentation.</strong> Wir liefern den Container mit einer vollständigen <strong>Asset Administration Shell</strong> nach Vorgabe der IDTA (Industrial Digital Twin Association). Jedes Bauteil – Lüfter, HEPA-Filter, Differenzdruckaufnehmer, Kühlgerät – ist mit Hersteller, Typ, Seriennummer, Kalibrierdatum und Wartungsintervall hinterlegt. Diese Daten füttern später nahtlos das LIMS oder CMMS (Computerized Maintenance Management System).
-              </p>
-
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">LIMS-Integration: Was wirklich in den Container muss</h2>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Ein LIMS – Laboratory Information Management System – ist die zentrale Datenbank für Proben, Methoden, Geräte, Anwender und Ergebnisse. In Pharma, Biotech und akkreditierten Prüflaboren nach <strong>DIN EN ISO/IEC 17025:2018</strong> ist es seit Jahren der Single Point of Truth. Unsere Aufgabe als Containerbauer ist nicht, das LIMS auszuwählen – das tun Sie –, sondern den Container so vorzubereiten, dass <strong>jedes</strong> marktübliche LIMS sauber andockt.
+                <strong>Second, sensor validation.</strong> Before handover, a central <strong>temperature and humidity mapping</strong> to recognised international mapping guidelines runs in the container – sensor count, mapping duration and load states (empty, full, door open, power off) are matched in the validation plan to room volume and risk class. The mapping protocol goes directly into the validation file and, in the audit, replaces the question “Where did you measure that?” with a complete 3D heatmap report. In the existing building this exercise only starts after occupation – and costs six figures.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Konkret: Wir liefern einen verschließbaren <strong>19-Zoll-Server-Schrank</strong> mit 12 oder 24 HE, redundanter Stromversorgung über USV nach IEC 62040 (Online-Doppelwandler-Topologie), Klimatisierung im Schrank bei dauerhaft &lt;25 °C, sowie zwei unabhängigen Glasfaser- oder LWL-Anbindungen ans Hauptgebäude. Die Patchverteilung im Container endet auf Cat-6A-Doppeldosen an jedem Geräteplatz. Das ist die Hardware-Seite.
+                <strong>Third, the documentation.</strong> We deliver the container with a complete <strong>Asset Administration Shell</strong> to the specification of the IDTA (Industrial Digital Twin Association). Every component – fan, HEPA filter, differential-pressure transducer, cooling unit – is recorded with manufacturer, type, serial number, calibration date and maintenance interval. These data later feed the LIMS or CMMS (Computerised Maintenance Management System) seamlessly.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">LIMS integration: what really has to go into the container</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A LIMS – Laboratory Information Management System – is the central database for samples, methods, instruments, users and results. In pharma, biotech and accredited test laboratories to <strong>DIN EN ISO/IEC 17025:2018</strong> it has been the single point of truth for years. Our task as container builder is not to select the LIMS – you do that – but to prepare the container so that <strong>every</strong> market-standard LIMS docks cleanly.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Software-seitig sind drei Schnittstellen entscheidend. Erstens <strong>SiLA 2</strong> – Standardization in Laboratory Automation, aktuell Spezifikation 1.1, gepflegt von der SiLA Consortium e.V. – als modernes gRPC-basiertes Geräteprotokoll. Zweitens <strong>ASTM E1394 / LIS-02</strong> als klassische serielle Schnittstelle für ältere Analyzer, die in der klinischen Chemie noch dominieren. Drittens <strong>AnIML</strong> (Analytical Information Markup Language, ASTM E1947) als herstellerneutrales XML-Datenformat. Wer klassische klinisch-chemische Analyzer neben einer Liquid-Handling-Station betreiben will, braucht alle drei.
+                Concretely: we deliver a lockable <strong>19-inch server cabinet</strong> with 12 or 24 U, redundant power supply via UPS to IEC 62040 (online double-conversion topology), cabinet air-conditioning at a continuous &lt;25 °C, and two independent fibre-optic connections to the main building. The patch distribution in the container terminates in Cat-6A dual outlets at every instrument position. That is the hardware side.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Am Markt etablierte LIMS-Plattformen decken das gesamte Spektrum ab – vom Marktführer für regulierte Pharma über Systeme für große QC-Labore, klinische Labore und Public Health, den mittelständischen Pharmabereich und ELN-fokussierte Forschungssysteme bis hin zu Open-Source- und Biotech-Startup-Lösungen. Welche Lösung passt, hängt vom regulatorischen Umfeld, dem Budget und der bestehenden IT-Landschaft ab. Unser Container ist agnostisch – er muss es sein.
+                On the software side, three interfaces are decisive. First <strong>SiLA 2</strong> – Standardization in Laboratory Automation, currently specification 1.1, maintained by SiLA Consortium e.V. – as a modern gRPC-based instrument protocol. Second <strong>ASTM E1394 / LIS-02</strong> as a classic serial interface for older analysers that still dominate in clinical chemistry. Third <strong>AnIML</strong> (Analytical Information Markup Language, ASTM E1947) as a vendor-neutral XML data format. Anyone who wants to run classic clinical-chemistry analysers alongside a liquid-handling station needs all three.
               </p>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">IoT-Sensorik: Welche Messpunkte gehören in welchen Container</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Established LIMS platforms on the market cover the entire spectrum – from the market leader for regulated pharma through systems for large QC laboratories, clinical laboratories and public health, the mid-market pharma segment and ELN-focused research systems through to open-source and biotech-startup solutions. Which solution fits depends on the regulatory environment, the budget and the existing IT landscape. Our container is agnostic – it has to be.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">IoT sensing: which measuring points belong in which container</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die Standardausstattung jedes Planexus-Containers umfasst Raumtemperatur, relative Feuchte und Differenzdruck. Für GxP-, BSL- und Reinraum-Anwendungen kommen Schicht für Schicht weitere Messgrößen dazu. Die folgende Tabelle zeigt die Kaskade.
+                The standard equipment of every Planexus container comprises room temperature, relative humidity and differential pressure. For GxP, BSL and cleanroom applications, further measurands are added layer by layer. The following table shows the cascade.
               </p>
 
               <div class="overflow-x-auto my-8">
                 <table class="w-full text-sm border-collapse border border-gray-200">
                   <thead class="bg-slate-100">
                     <tr>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Anwendung</th>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Pflicht-Sensorik</th>
-                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Norm / Vorgabe</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Application</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Mandatory sensing</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Standard / requirement</th>
                     </tr>
                   </thead>
                   <tbody class="text-gray-700">
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Standardlabor</td>
-                      <td class="border border-gray-200 px-4 py-3">T, rH, dP zur Außenluft</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Standard laboratory</td>
+                      <td class="border border-gray-200 px-4 py-3">T, rH, dP to outside air</td>
                       <td class="border border-gray-200 px-4 py-3">DIN 1946-7:2009-07</td>
                     </tr>
                     <tr class="bg-slate-50">
-                      <td class="border border-gray-200 px-4 py-3 font-medium">GMP-Lager / Cold Chain (temperaturkontrolliert)</td>
-                      <td class="border border-gray-200 px-4 py-3">+ kalibrierte T-Sensoren mit DAkkS-Zertifikat, Drift &lt;0,1 K/Jahr, Temperatur-Mapping nach anerkannten internationalen Mapping-Leitlinien</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">GMP storage / cold chain (temperature-controlled)</td>
+                      <td class="border border-gray-200 px-4 py-3">+ calibrated T sensors with DAkkS certificate, drift &lt;0.1 K/year, temperature mapping to recognised international mapping guidelines</td>
                       <td class="border border-gray-200 px-4 py-3">EU-GDP 2013/C 343/01, USP &lt;1079&gt;</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">Reinraum ISO 7 / 8</td>
-                      <td class="border border-gray-200 px-4 py-3">+ Partikelzähler 0,5 µm und 5 µm, dP-Kaskade ≥10 Pa zwischen Klassen</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Cleanroom ISO 7 / 8</td>
+                      <td class="border border-gray-200 px-4 py-3">+ particle counters 0.5 µm and 5 µm, dP cascade ≥10 Pa between classes</td>
                       <td class="border border-gray-200 px-4 py-3">DIN EN ISO 14644-1/-2/-3, EU-GMP Annex 1 (2022)</td>
                     </tr>
                     <tr class="bg-slate-50">
                       <td class="border border-gray-200 px-4 py-3 font-medium">BSL-2 / BSL-3</td>
-                      <td class="border border-gray-200 px-4 py-3">+ dP -15 Pa (BSL-2) / -30 bis -50 Pa (BSL-3), HEPA-Drift, Schleusen-Interlock</td>
+                      <td class="border border-gray-200 px-4 py-3">+ dP −15 Pa (BSL-2) / −30 to −50 Pa (BSL-3), HEPA drift, airlock interlock</td>
                       <td class="border border-gray-200 px-4 py-3">TRBA 100, BioStoffV, DIN EN 12128</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-200 px-4 py-3 font-medium">ATEX / H₂ / Lithium-Test</td>
-                      <td class="border border-gray-200 px-4 py-3">+ Gasdetektion UEG, Brandfrüherkennung, Sauerstoff-Restmessung</td>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">ATEX / H₂ / lithium testing</td>
+                      <td class="border border-gray-200 px-4 py-3">+ gas detection LEL, early fire detection, residual oxygen measurement</td>
                       <td class="border border-gray-200 px-4 py-3">EN 60079-29-1, DGUV 213-053</td>
                     </tr>
                   </tbody>
@@ -196,157 +196,157 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               </div>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Am Markt etablierte Sensorhersteller bieten kalibrierte Geräte für Temperatur und Feuchte, dedizierte Drucksensoren, komplette Funkmonitoring-Systeme sowie Validierungs-Datenlogger als Goldstandard; MEMS-Sensoren decken Embedded-Anwendungen ab. Wir wählen die Sensorik je nach Auditor-Erwartung aus – im DACH-Pharma-Umfeld sind kalibrierte Klimasensoren mit DAkkS-Nachweis nahezu Pflicht.
+                Established sensor manufacturers on the market offer calibrated devices for temperature and humidity, dedicated pressure sensors, complete wireless monitoring systems and validation data loggers as the gold standard; MEMS sensors cover embedded applications. We select the sensing according to auditor expectation – in the DACH pharma environment, calibrated climate sensors with DAkkS evidence are virtually mandatory.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die Kommunikation läuft in unseren Containern primär über <strong>Modbus TCP</strong> (universell, Legacy-fähig), <strong>OPC UA</strong> nach IEC 62541 (modern, sicher, semantisch) und <strong>MQTT v5.0</strong> (publish/subscribe, ideal für Cloud). Funk wird sparsam eingesetzt – wenn doch, dann <strong>LoRaWAN</strong> für lange Reichweite und niedrige Datenraten oder <strong>NB-IoT</strong> nach 3GPP Release 13 für mobilfunkbasierte Außensensorik. WLAN für Messdaten ist in regulierten Umgebungen tabu.
+                Communication in our containers runs primarily via <strong>Modbus TCP</strong> (universal, legacy-capable), <strong>OPC UA</strong> to IEC 62541 (modern, secure, semantic) and <strong>MQTT v5.0</strong> (publish/subscribe, ideal for cloud). Wireless is used sparingly – if at all, then <strong>LoRaWAN</strong> for long range and low data rates or <strong>NB-IoT</strong> to 3GPP Release 13 for mobile-radio-based outdoor sensing. WLAN for measured data is taboo in regulated environments.
               </p>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Remote-Monitoring &amp; Alarmsysteme: 24/7 ohne Schichtdienst</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Remote monitoring &amp; alarm systems: 24/7 without shift duty</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Ein modernes Container-Monitoring liefert drei Funktionen parallel: Live-Dashboard im Browser, automatische Eskalation per SMS/E-Mail/Push und revisionssichere Langzeit-Archivierung der Rohdaten. Die Architektur ist dabei dreistufig.
-              </p>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>Stufe 1 – Edge.</strong> Im Container läuft ein Industrie-PC oder ein Edge-Gateway gängiger Industrieautomations-Plattformen, der alle Sensoren abfragt, Daten lokal puffert und Alarme regelbasiert auslöst. Diese Schicht muss <strong>autark</strong> funktionieren – auch ohne Internet, ohne LIMS, ohne Cloud. Bei Stromausfall trägt eine USV nach IEC 62040 die Edge-Hardware 8 bis 24 Stunden weiter.
+                Modern container monitoring delivers three functions in parallel: a live dashboard in the browser, automatic escalation by SMS/e-mail/push, and audit-proof long-term archiving of the raw data. The architecture is three-tier.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>Stufe 2 – Backbone.</strong> Vom Edge-Gateway gehen die Daten verschlüsselt (TLS 1.3) entweder ins lokale Rechenzentrum, in eine Hybrid-Cloud oder direkt in die Public Cloud. Sicherheit nach <strong>IEC 62443</strong> (Industrial Cybersecurity), Zugriff nach Rollenmodell, jede Aktion protokolliert. Für GxP gilt: Audit-Trail nach §11.10(e) lückenlos, NTP/PTP-synchronisierte Zeitstempel auf alle Geräte.
+                <strong>Tier 1 – Edge.</strong> In the container an industrial PC or an edge gateway of established industrial-automation platforms runs, polling all sensors, buffering data locally and triggering alarms on a rule basis. This layer must function <strong>autonomously</strong> – even without internet, without LIMS, without cloud. In a power failure a UPS to IEC 62040 carries the edge hardware for 8 to 24 hours.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>Stufe 3 – Alarmierung.</strong> Eine eskalierende Benachrichtigung nach hinterlegter Matrix. Beispiel Kühl-Container: Schwelle 1 (kalt, +5 °C statt +2 bis +8) – Push an Schichtleiter, kein Eingriff. Schwelle 2 (Drift, +9 °C) – SMS an Bereitschaft, Schichtleiter erhält Echo. Schwelle 3 (Alarm, +12 °C) – Anruf-Eskalation an Geschäftsführung und externen Service-Partner. Zeitfenster zwischen den Schwellen: 10 / 30 / 60 Minuten. Funktional sicher nach <strong>IEC 61511</strong> für die kritischen Pfade.
-              </p>
-
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Predictive Maintenance: Verschleiß sehen, bevor er Schaden anrichtet</h2>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Wartung im Labor folgt klassisch zwei Mustern: <strong>korrektiv</strong> (reagiert wenn kaputt) oder <strong>präventiv</strong> (jährlicher Wartungsvertrag). Beide Modelle sind teuer – das erste, weil ungeplante Stillstände teuer sind, das zweite, weil intakte Bauteile getauscht werden. Predictive Maintenance ist die dritte Option: Bauteile werden im laufenden Betrieb beobachtet und genau dann getauscht, wenn der Verschleiß messbar wird, aber bevor der Ausfall eintritt.
+                <strong>Tier 2 – Backbone.</strong> From the edge gateway the data go encrypted (TLS 1.3) either into the local data centre, into a hybrid cloud or directly into the public cloud. Security to <strong>IEC 62443</strong> (Industrial Cybersecurity), access by role model, every action logged. For GxP: audit trail to §11.10(e) without gaps, NTP/PTP-synchronised timestamps on all devices.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Methodischer Rahmen ist <strong>ISO 13374</strong> (Condition Monitoring and Diagnostics of Machines, 2003) und <strong>ISO 17359</strong> (General Guidelines for Condition Monitoring, 2018). Im Container sind drei Predictive-Maintenance-Anwendungen wirtschaftlich sofort sinnvoll:
+                <strong>Tier 3 – Alarming.</strong> An escalating notification to a stored matrix. Example cold container: threshold 1 (cold, +5 °C instead of +2 to +8) – push to the shift supervisor, no intervention. Threshold 2 (drift, +9 °C) – SMS to standby, shift supervisor receives an echo. Threshold 3 (alarm, +12 °C) – call escalation to management and the external service partner. Time windows between the thresholds: 10 / 30 / 60 minutes. Functionally safe to <strong>IEC 61511</strong> for the critical paths.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Predictive maintenance: seeing wear before it causes damage</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Maintenance in the laboratory classically follows two patterns: <strong>corrective</strong> (react when it breaks) or <strong>preventive</strong> (annual maintenance contract). Both models are expensive – the first because unplanned downtime is expensive, the second because intact components are replaced. Predictive maintenance is the third option: components are observed in ongoing operation and replaced exactly when the wear becomes measurable, but before failure occurs.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The methodological framework is <strong>ISO 13374</strong> (Condition Monitoring and Diagnostics of Machines, 2003) and <strong>ISO 17359</strong> (General Guidelines for Condition Monitoring, 2018). In the container three predictive-maintenance applications make economic sense immediately:
               </p>
 
               <ul class="list-disc pl-6 space-y-3 text-gray-600 leading-relaxed mb-6">
-                <li><strong>HEPA- und Vorfilter:</strong> Differenzdruck-Trending statt Wartungskalender. Filter werden getauscht, wenn der Strömungswiderstand 60 % des End-Werts erreicht – nicht wenn ein Datum im Outlook erscheint. Verlängert Filterlaufzeiten in der Praxis um 20 bis 35 %.</li>
-                <li><strong>Lüfter und Kompressoren:</strong> Vibrationssensoren erkennen Lagerverschleiß sechs bis zwölf Wochen vor Ausfall. Wartung wird planbar in Stillstandzeiten gelegt.</li>
-                <li><strong>Kühl- und Heiztechnik:</strong> Temperatur-Drift, Stromaufnahme-Trending und Ventil-Hub-Statistik zeigen Kompressor-, Sensor- oder Stellgliedfehler im Frühstadium. In GMP-Lagern ein Versicherungsbaustein gegen Chargen-Vernichtung.</li>
+                <li><strong>HEPA and pre-filters:</strong> differential-pressure trending instead of a maintenance calendar. Filters are replaced when the flow resistance reaches 60 % of the end value – not when a date appears in Outlook. In practice this extends filter run times by 20 to 35 %.</li>
+                <li><strong>Fans and compressors:</strong> vibration sensors detect bearing wear six to twelve weeks before failure. Maintenance is scheduled into planned downtime.</li>
+                <li><strong>Cooling and heating plant:</strong> temperature drift, current-draw trending and valve-stroke statistics show compressor, sensor or actuator faults at an early stage. In GMP stores a building block of insurance against batch destruction.</li>
               </ul>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die Auswertung läuft entweder regelbasiert (Schwellwert + Trendlinie) auf dem Edge oder als ML-Modell in der Cloud (spezialisierte Predictive-Maintenance-Anbieter). Wirtschaftlich rechnet sich PdM ab dem zweiten Wartungsjahr durch verlängerte Filterlaufzeiten, vermiedene Notreparaturen und planbare Stillstandzeiten. Voraussetzung ist eine ausreichende Datenhistorie – darum lohnt es sich, ab Tag 1 alle relevanten Größen mitzuschneiden, auch wenn die Auswertung erst später startet.
+                Evaluation runs either rule-based (threshold plus trend line) on the edge or as an ML model in the cloud (specialised predictive-maintenance providers). Economically, PdM pays from the second maintenance year through extended filter run times, avoided emergency repairs and plannable downtime. The prerequisite is a sufficient data history – which is why it is worth recording all relevant quantities from day 1, even if evaluation only starts later.
               </p>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Datenintegrität nach FDA 21 CFR Part 11 und EU-GMP Annex 11</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Data integrity to FDA 21 CFR Part 11 and EU-GMP Annex 11</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Wer in der pharmazeutischen Wirkstoff-Produktion, klinischen Diagnostik oder akkreditierten QC arbeitet, kommt an zwei Vorgaben nicht vorbei: <strong>FDA 21 CFR Part 11</strong> – Title 21, Part 11 des Code of Federal Regulations, in Kraft seit 1997 – regelt elektronische Aufzeichnungen und elektronische Unterschriften für FDA-regulierte Produkte. Das EU-Pendant ist <strong>EU-GMP Annex 11</strong> „Computerised Systems" (revidiert 2011, wirksam seit 30. Juni 2011). Beide Welten teilen denselben Kern: die <strong>ALCOA+-Prinzipien</strong>.
+                Anyone working in pharmaceutical active-substance production, clinical diagnostics or accredited QC cannot avoid two requirements: <strong>FDA 21 CFR Part 11</strong> – Title 21, Part 11 of the Code of Federal Regulations, in force since 1997 – governs electronic records and electronic signatures for FDA-regulated products. The EU counterpart is <strong>EU-GMP Annex 11</strong> “Computerised Systems” (revised 2011, effective since 30 June 2011). Both worlds share the same core: the <strong>ALCOA+ principles</strong>.
               </p>
 
               <div class="bg-slate-50 border-l-4 border-primary p-6 my-8 rounded-r-xl">
-                <p class="font-bold text-slate-900 mb-3">ALCOA+ – die neun Prinzipien der Datenintegrität</p>
+                <p class="font-bold text-slate-900 mb-3">ALCOA+ – the nine principles of data integrity</p>
                 <ul class="space-y-2 text-gray-700 text-sm">
-                  <li><strong>A</strong>ttributable – jeder Eintrag eindeutig einer Person zuzuordnen</li>
-                  <li><strong>L</strong>egible – dauerhaft lesbar, auch in 10 Jahren</li>
-                  <li><strong>C</strong>ontemporaneous – zum Zeitpunkt der Tätigkeit erfasst</li>
-                  <li><strong>O</strong>riginal – Rohdaten oder zertifizierte Kopie</li>
-                  <li><strong>A</strong>ccurate – sachlich richtig, kalibriert, vollständig</li>
-                  <li><strong>+ C</strong>omplete – inklusive aller Wiederholungen und Abbrüche</li>
-                  <li><strong>+ C</strong>onsistent – identisches Format und chronologische Abfolge</li>
-                  <li><strong>+ E</strong>nduring – revisionssicher archiviert über die Aufbewahrungspflicht hinaus</li>
-                  <li><strong>+ A</strong>vailable – für Audits jederzeit abrufbar</li>
+                  <li><strong>A</strong>ttributable – every entry uniquely assignable to a person</li>
+                  <li><strong>L</strong>egible – permanently readable, including in 10 years</li>
+                  <li><strong>C</strong>ontemporaneous – recorded at the time of the activity</li>
+                  <li><strong>O</strong>riginal – raw data or a certified copy</li>
+                  <li><strong>A</strong>ccurate – factually correct, calibrated, complete</li>
+                  <li><strong>+ C</strong>omplete – including all repeats and abortions</li>
+                  <li><strong>+ C</strong>onsistent – identical format and chronological sequence</li>
+                  <li><strong>+ E</strong>nduring – archived in an audit-proof manner beyond the retention obligation</li>
+                  <li><strong>+ A</strong>vailable – retrievable at any time for audits</li>
                 </ul>
-                <p class="text-xs text-gray-500 mt-4">Quelle: MHRA „GxP Data Integrity Guidance and Definitions", März 2018; FDA „Data Integrity and Compliance With Drug CGMP", Dezember 2018.</p>
+                <p class="text-xs text-gray-500 mt-4">Source: MHRA “GxP Data Integrity Guidance and Definitions”, March 2018; FDA “Data Integrity and Compliance With Drug CGMP”, December 2018.</p>
               </div>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Konkret bedeutet das für die Container-IT sechs technische Anforderungen. Erstens: <strong>eindeutige Benutzeridentifikation</strong> (kein Shared Login), idealerweise mit Zwei-Faktor-Authentifizierung. Zweitens: <strong>elektronische Signatur</strong> mit nachvollziehbarem Bezug zwischen Person und Aktion. Drittens: <strong>Audit-Trail</strong> nach §11.10(e), der jede Erstellung, Änderung und Löschung mit Wer, Was, Wann und – bei Korrekturen – Warum dokumentiert. Viertens: <strong>Zeit-Synchronisation</strong> über NTP (RFC 5905) oder PTP (IEEE 1588) zur zentralen Zeitquelle. Fünftens: <strong>Validierte Backups</strong> mit regelmäßigem Restore-Test. Sechstens: <strong>Software-Lifecycle nach GAMP 5</strong> (ISPE, 2. Auflage Juli 2022) – Risikobewertung, IQ/OQ/PQ-Validierung, Change-Control.
+                Concretely that means six technical requirements for the container IT. First: <strong>unique user identification</strong> (no shared login), ideally with two-factor authentication. Second: <strong>electronic signature</strong> with a traceable link between person and action. Third: <strong>audit trail</strong> to §11.10(e) that documents every creation, change and deletion with who, what, when and – on corrections – why. Fourth: <strong>time synchronisation</strong> via NTP (RFC 5905) or PTP (IEEE 1588) to a central time source. Fifth: <strong>validated backups</strong> with a regular restore test. Sixth: <strong>software lifecycle to GAMP 5</strong> (ISPE, 2nd edition July 2022) – risk assessment, IQ/OQ/PQ validation, change control.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die Container-Hardware spielt dabei eine unterstützende Rolle: USV für stabile Stromversorgung, redundante Netzwerkpfade gegen Datenverlust, Server-Schrank mit Schloss und Kameraüberwachung der Eingangstür. Die eigentliche Validierung der Software – ob LIMS, ELN, Monitoring-Plattform oder Cloud-Connector – liegt im Verantwortungsbereich Ihrer IT-Qualität oder eines spezialisierten Validation-Service. Wir liefern aber die Vorlagen für IQ/OQ-Protokolle der Hardware mit, damit der Validierungsprozess nicht bei null beginnt.
+                The container hardware plays a supporting role here: UPS for a stable power supply, redundant network paths against data loss, a server cabinet with a lock and camera surveillance of the entrance door. The actual validation of the software – whether LIMS, ELN, monitoring platform or cloud connector – lies in the responsibility of your IT quality or a specialised validation service. We do, however, supply the templates for IQ/OQ protocols of the hardware, so that the validation process does not start from zero.
               </p>
 
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Cloud-Anbindung: DSGVO, Schrems II und der pragmatische Mittelweg</h2>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Cloud connection: GDPR, Schrems II and the pragmatic middle way</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Cloud ist im Labor kein Selbstzweck. Sie wird gebraucht, wenn Standorte vernetzt werden, externe Auditoren Lesezugriff brauchen oder ML-Modelle für Predictive Maintenance trainiert werden sollen. Drei rechtliche Anker sind dabei zu beachten.
-              </p>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>DSGVO Art. 28 (Auftragsverarbeitung)</strong> verlangt einen schriftlichen Vertrag zwischen Verantwortlichem (Sie) und Auftragsverarbeiter (Cloud-Anbieter). Standardvertragsklauseln der EU-Kommission (Durchführungsbeschluss 2021/914) sind die übliche Vorlage. <strong>Art. 32</strong> fordert „angemessene technische und organisatorische Maßnahmen" – Verschlüsselung, Pseudonymisierung, Wiederherstellbarkeit, regelmäßige Wirksamkeitsprüfung. <strong>Art. 44 ff.</strong> regeln die Übermittlung in Drittstaaten.
+                Cloud in the laboratory is not an end in itself. It is needed when sites are networked, external auditors need read access, or ML models for predictive maintenance are to be trained. Three legal anchors must be observed.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Mit dem <strong>Schrems-II-Urteil</strong> des EuGH (C-311/18, 16. Juli 2020) kippte das vorherige EU-US-Datenschutzschild. Seit <strong>10. Juli 2023</strong> gilt das <strong>EU-US Data Privacy Framework</strong> als neuer Angemessenheitsbeschluss der Kommission – US-Anbieter, die sich nach diesem Framework zertifizieren lassen, gelten wieder als datenschutzrechtlich angemessen. Wer ganz auf Nummer sicher geht, hostet trotzdem in der EU – etwa in <strong>Rechenzentrumsregionen in Frankfurt oder an anderen deutschen Standorten</strong> oder bei <strong>europäischen Cloud-Anbietern</strong>.
+                <strong>GDPR Art. 28 (processing by a processor)</strong> requires a written contract between controller (you) and processor (cloud provider). Standard contractual clauses of the EU Commission (Implementing Decision 2021/914) are the usual template. <strong>Art. 32</strong> requires “appropriate technical and organisational measures” – encryption, pseudonymisation, recoverability, regular effectiveness testing. <strong>Art. 44 ff.</strong> govern transfers to third countries.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Compliance-seitig sind drei Frameworks der gemeinsame Nenner: <strong>BSI-Kriterienkatalog C5:2020</strong> (Cloud Computing Compliance Criteria, vom Bundesamt für Sicherheit in der Informationstechnik), <strong>ISO/IEC 27001:2022</strong> (Informationssicherheits-Managementsystem) und <strong>ISO/IEC 27017</strong> (Cloud-spezifische Sicherheitskontrollen). Wer mit einem Cloud-Anbieter spricht, der diese drei Zertifikate nicht vorlegt, sollte das Gespräch beenden.
+                With the <strong>Schrems II judgment</strong> of the CJEU (C-311/18, 16 July 2020) the previous EU-US Privacy Shield fell. Since <strong>10 July 2023</strong> the <strong>EU-US Data Privacy Framework</strong> has applied as a new adequacy decision of the Commission – US providers that certify under this framework are again regarded as adequate in data-protection law. Anyone who wants to be entirely on the safe side still hosts in the EU – for example in <strong>data-centre regions in Frankfurt or at other German sites</strong> or with <strong>European cloud providers</strong>.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Pragmatisch bewährt sich die <strong>Hybrid-Architektur</strong>: Rohdaten und Audit-Trail liegen on-premise im Container oder im Rechenzentrum des Auftraggebers, die Cloud bekommt nur aggregierte Reports und ML-Trainingsdaten. So bleibt der GxP-relevante Datenpfad in eigener Hand, gleichzeitig nutzt man die Skalierbarkeit der Cloud für Auswertung und Visualisierung.
-              </p>
-
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Industrie 4.0 und der digitale Zwilling: vom Container zum Asset</h2>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Industrie 4.0 ist mehr als IoT mit Cloud-Anbindung. Im Kern beschreibt sie das Zusammenspiel von physischem Asset, digitalem Modell und vernetzter Wertschöpfung. Der methodische Rahmen in Deutschland ist <strong>DIN SPEC 91345</strong> – das <strong>Reference Architecture Model Industrie 4.0 (RAMI 4.0)</strong> von April 2016, gemeinsam herausgegeben von Plattform Industrie 4.0, ZVEI, VDMA und BITKOM. Konkretes Werkzeug ist die <strong>Asset Administration Shell (AAS)</strong>, gepflegt von der <strong>Industrial Digital Twin Association (IDTA)</strong> seit 2020.
+                On the compliance side, three frameworks are the common denominator: <strong>BSI criteria catalogue C5:2020</strong> (Cloud Computing Compliance Criteria, from the Federal Office for Information Security), <strong>ISO/IEC 27001:2022</strong> (information security management system) and <strong>ISO/IEC 27017</strong> (cloud-specific security controls). Anyone speaking to a cloud provider that does not present these three certificates should end the conversation.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Für den Laborcontainer heißt das ganz praktisch: Wir liefern eine maschinenlesbare Asset-Administration-Shell mit, die jedes verbaute Bauteil – HEPA-Filter, Differenzdruckaufnehmer, Lüftermotor, Türkontakt, Temperaturfühler, Ventil – mit Hersteller, Typenschild, Seriennummer, Kalibrierdatum, Wartungsintervall und Ersatzteilnummer beschreibt. Diese Datei liegt in standardisiertem AASX-Format vor und kann von jedem konformen System (ERP-, IoT- und OEE-Plattformen) eingelesen werden.
+                In practice the <strong>hybrid architecture</strong> has proved itself: raw data and audit trail sit on-premise in the container or in the client’s data centre; the cloud receives only aggregated reports and ML training data. The GxP-relevant data path thus remains in your own hands, while at the same time you use the scalability of the cloud for evaluation and visualisation.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Industry 4.0 and the digital twin: from container to asset</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Industry 4.0 is more than IoT with a cloud connection. At its core it describes the interplay of physical asset, digital model and networked value creation. The methodological framework in Germany is <strong>DIN SPEC 91345</strong> – the <strong>Reference Architecture Model Industrie 4.0 (RAMI 4.0)</strong> of April 2016, jointly issued by Plattform Industrie 4.0, ZVEI, VDMA and BITKOM. The concrete tool is the <strong>Asset Administration Shell (AAS)</strong>, maintained by the <strong>Industrial Digital Twin Association (IDTA)</strong> since 2020.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Ergänzend pflegt der <strong>VDMA Einheitsblatt 2828</strong> Schnittstellen-Standards für Smart-Lab-Geräte – Stand Mai 2024 die aktuellste Fassung. Wer in einem akkreditierten Pharma-Umfeld plant, kombiniert AAS, SiLA 2 und VDMA 2828 zu einem stabilen Tech-Stack, der auch in zehn Jahren noch Andockpunkte für neue Werkzeuge bietet.
+                For the lab container that means quite practically: we supply a machine-readable Asset Administration Shell that describes every installed component – HEPA filter, differential-pressure transducer, fan motor, door contact, temperature probe, valve – with manufacturer, type plate, serial number, calibration date, maintenance interval and spare-part number. This file is available in standardised AASX format and can be read by any conforming system (ERP, IoT and OEE platforms).
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Der digitale Zwilling im engeren Sinn geht einen Schritt weiter: Er ist ein <strong>laufendes Modell</strong> des Containers, das im Betrieb über Live-Sensordaten gespiegelt wird. Anwendungsfälle: <strong>CFD-Strömungssimulation</strong> der Lüftung vor dem Bau, <strong>virtuelle Schulung</strong> am 3D-Modell vor Übergabe, <strong>Energieoptimierung</strong> über simulierte Lastfälle, <strong>Was-wäre-wenn-Analysen</strong> bei geplanten Umbauten. Die Investition in einen ausgebauten digitalen Zwilling rechnet sich nicht für jedes Projekt – aber für Reinraum-, GMP- und BSL-3-Container sehen wir 15 bis 25 % geringere Betriebskosten über zehn Jahre, gemessen an Container ohne Zwilling.
-              </p>
-
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Praxisempfehlung: Was bestellen, was später nachrüsten</h2>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Nicht jedes Containerprojekt braucht den vollen Smart-Lab-Stack ab Tag 1. Drei Stufen haben sich bewährt:
+                In addition, <strong>VDMA Einheitsblatt 2828</strong> maintains interface standards for Smart Lab instruments – as of May 2024 the most current edition. Anyone planning in an accredited pharma environment combines AAS, SiLA 2 and VDMA 2828 into a stable tech stack that still offers docking points for new tools in ten years.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>Basis-Stack (Pflicht in jedem Container):</strong> kalibrierte T/rH/dP-Sensorik, Modbus-TCP- oder OPC-UA-Anbindung, redundante Verkabelung, USV, lokales Touch-Panel mit Live-Anzeige und Alarmierung per E-Mail. Das ist im Standardumfang unserer Container enthalten und liefert die Grundlage für Audits nach DIN EN ISO/IEC 17025.
+                The digital twin in the narrower sense goes a step further: it is a <strong>running model</strong> of the container that is mirrored in operation via live sensor data. Use cases: <strong>CFD flow simulation</strong> of the ventilation before construction, <strong>virtual training</strong> on the 3D model before handover, <strong>energy optimisation</strong> via simulated load cases, <strong>what-if analyses</strong> on planned conversions. Investment in a fully developed digital twin does not pay for every project – but for cleanroom, GMP and BSL-3 containers we see 15 to 25 per cent lower operating costs over ten years, measured against a container without a twin.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Practice recommendation: what to order, what to retrofit later</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Not every container project needs the full Smart Lab stack from day 1. Three tiers have proved themselves:
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>Profi-Stack (für GxP, Pharma, Biotech):</strong> zusätzlich Edge-Gateway mit lokaler Datenbank, NTP/PTP-Zeitsynchronisation, getrennte VLANs, vorbereiteter LIMS-Anschluss, Mapping-Studie nach anerkannten internationalen Mapping-Leitlinien vor Übergabe, Asset Administration Shell, GAMP-5-IQ/OQ-Vorlagen. Das ist die typische Bestellung für regulierte Umgebungen und macht etwa 10 bis 15 % Aufpreis auf den Basis-Stack aus.
+                <strong>Basic stack (mandatory in every container):</strong> calibrated T/rH/dP sensing, Modbus TCP or OPC UA connection, redundant cabling, UPS, local touch panel with live display and alarming by e-mail. That is included in the standard scope of our containers and supplies the basis for audits to DIN EN ISO/IEC 17025.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                <strong>Premium-Stack (digitaler Zwilling, Predictive Maintenance, Cloud):</strong> zusätzlich Vibrationssensorik an Lüftern und Kompressoren, vollständige 3D-AAS, Hybrid-Cloud-Anbindung an ein Rechenzentrum in Deutschland, ML-basierte Anomalie-Erkennung. Aufpreis weitere 8 bis 12 %, Amortisation in der Regel über reduzierte Stillstandzeiten und längere Filter-/Komponentenlaufzeiten.
+                <strong>Professional stack (for GxP, pharma, biotech):</strong> additionally an edge gateway with local database, NTP/PTP time synchronisation, separated VLANs, prepared LIMS connection, mapping study to recognised international mapping guidelines before handover, Asset Administration Shell, GAMP 5 IQ/OQ templates. That is the typical order for regulated environments and makes up about 10 to 15 per cent premium on the basic stack.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Der entscheidende Hebel: <strong>alle drei Stufen werden ab Werk eingeplant</strong>, auch wenn nur Stufe 1 bestellt wird. Heißt: Trasse, Rangierschrank, Server-Schrank-Vorbereitung, Patchfeld und Stromreserven sind im Standardcontainer schon vorhanden. Wer in zwei Jahren auf Profi oder Premium hochrüstet, zahlt nur die Geräte – nicht die Bauarbeiten. Das ist der Unterschied zwischen einem Containerlabor mit Zukunft und einem Container mit Sensoren.
-              </p>
-
-              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fazit: Smart Lab ist 2026 Standard, kein Premium</h2>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Wer 2026 einen Laborcontainer ohne LIMS-Vorbereitung, ohne kalibrierte IoT-Sensorik und ohne Remote-Monitoring bestellt, kauft eine Sackgasse. Pharma- und Biotech-Audits prüfen Datenintegrität nach ALCOA+ in jedem Inspections-Zyklus, GxP-Auditoren wollen Audit-Trails nach Part 11 sehen, Versicherer fordern Predictive-Maintenance-Daten als Bonus, Förderprogramme verlangen Industrie-4.0-Reife in der Antragsskizze.
+                <strong>Premium stack (digital twin, predictive maintenance, cloud):</strong> additionally vibration sensing on fans and compressors, complete 3D AAS, hybrid-cloud connection to a data centre in Germany, ML-based anomaly detection. Further premium 8 to 12 per cent, amortisation generally via reduced downtime and longer filter/component run times.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die gute Nachricht: All das ist im Container <strong>einfacher</strong> umsetzbar als im Bestand, weil die Architektur ab Werk geplant wird. Unsere <a href="/en/services/smart-lab" class="text-primary font-medium hover:underline">Smart-Lab-Leistung</a> bündelt LIMS-Vorbereitung, IoT-Sensorik, Remote-Monitoring und Cloud-Anbindung in einem schlüsselfertigen Paket – mit kalibrierter Sensorik, OPC-UA-Backbone, GAMP-5-konformem Software-Lifecycle und einer Asset Administration Shell, die in jedes moderne ERP-, MES- oder CMMS-System andockt. Das ist 2026 Standard, kein Premium.
+                The decisive lever: <strong>all three tiers are planned in from the factory</strong>, even if only tier 1 is ordered. Meaning: cable route, marshalling cabinet, server-cabinet preparation, patch panel and power reserves are already present in the standard container. Anyone who upgrades to professional or premium in two years pays only for the devices – not for construction work. That is the difference between a container laboratory with a future and a container with sensors.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Conclusion: Smart Lab is 2026 standard, not premium</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Anyone who in 2026 orders a lab container without LIMS preparation, without calibrated IoT sensing and without remote monitoring is buying a dead end. Pharma and biotech audits examine data integrity to ALCOA+ in every inspection cycle, GxP auditors want to see audit trails to Part 11, insurers demand predictive-maintenance data as a bonus, funding programmes require Industry 4.0 maturity in the application sketch.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The good news: all of this is <strong>easier</strong> to implement in the container than in the existing building, because the architecture is planned from the factory. Our <a href="/en/services/smart-lab" class="text-primary font-medium hover:underline">Smart Lab service</a> bundles LIMS preparation, IoT sensing, remote monitoring and cloud connection in a turnkey package – with calibrated sensing, OPC UA backbone, GAMP 5-compliant software lifecycle and an Asset Administration Shell that docks into every modern ERP, MES or CMMS. That is 2026 standard, not premium.
               </p>
 
               <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center">
-                <h3 class="text-2xl font-bold mb-4 text-primary">Smart Lab im Container planen?</h3>
-                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Wir liefern den kompletten Stack: kalibrierte Sensorik, LIMS-Anbindung, Mapping-Studie nach anerkannten internationalen Mapping-Leitlinien, Asset Administration Shell und GAMP-5-IQ/OQ-Vorlagen. In acht bis vierzehn Wochen schlüsselfertig ab Werk Albstadt.</p>
-                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Kostenlose Erstberatung anfragen
+                <h3 class="text-2xl font-bold mb-4 text-primary">Planning a Smart Lab in the container?</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">We deliver the complete stack: calibrated sensing, LIMS connection, mapping study to recognised international mapping guidelines, Asset Administration Shell and GAMP 5 IQ/OQ templates. Turnkey from the Albstadt factory in eight to fourteen weeks.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Request a free initial consultation
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
               </div>
@@ -357,33 +357,33 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
           <aside class="lg:col-span-4">
             <div class="sticky top-28 space-y-8">
               <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
-                <h4 class="font-bold text-slate-900 mb-4">Auf einen Blick</h4>
+                <h4 class="font-bold text-slate-900 mb-4">At a glance</h4>
                 <ul class="space-y-3 text-sm text-gray-700">
                   <li class="flex gap-2"><span class="text-primary font-bold">→</span> FDA 21 CFR Part 11 + EU-GMP Annex 11</li>
-                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> ALCOA+ Datenintegrität (MHRA 2018)</li>
-                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Mapping nach anerkannten internationalen Leitlinien</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> ALCOA+ data integrity (MHRA 2018)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Mapping to recognised international guidelines</li>
                   <li class="flex gap-2"><span class="text-primary font-bold">→</span> SiLA 2, OPC UA (IEC 62541), MQTT v5</li>
                   <li class="flex gap-2"><span class="text-primary font-bold">→</span> RAMI 4.0 (DIN SPEC 91345) + AAS / IDTA</li>
                   <li class="flex gap-2"><span class="text-primary font-bold">→</span> BSI C5, ISO 27001, ISO 27017</li>
-                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> EU-US DPF (Juli 2023, post-Schrems-II)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> EU-US DPF (July 2023, post-Schrems II)</li>
                 </ul>
               </div>
 
               <div class="bg-white border border-gray-100 p-6 rounded-2xl">
-                <h4 class="font-bold text-slate-900 mb-4">Weiterführende Inhalte</h4>
+                <h4 class="font-bold text-slate-900 mb-4">Further reading</h4>
                 <ul class="space-y-3">
-                  <li><a href="/en/services/smart-lab" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Smart-Lab-Integration (Leistung)</a></li>
-                  <li><a href="/en/services/planning" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Laborplanung &amp; Engineering</a></li>
-                  <li><a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>GMP-Reinraum-Container Pharma</a></li>
-                  <li><a href="/en/magazine/lab-container-hvac-ventilation-standards" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Klimatisierung &amp; Lüftung</a></li>
-                  <li><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>BSL-2 &amp; BSL-3 im Container</a></li>
+                  <li><a href="/en/services/smart-lab" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Smart Lab integration (service)</a></li>
+                  <li><a href="/en/services/planning" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Laboratory planning &amp; engineering</a></li>
+                  <li><a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>GMP cleanroom container for pharma</a></li>
+                  <li><a href="/en/magazine/lab-container-hvac-ventilation-standards" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>HVAC and ventilation</a></li>
+                  <li><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>BSL-2 &amp; BSL-3 in the container</a></li>
                 </ul>
               </div>
 
               <div class="bg-slate-900 text-white p-6 rounded-2xl">
-                <h4 class="font-bold mb-3">Smart Lab im Container planen?</h4>
-                <p class="text-gray-400 text-sm mb-4">Wir liefern Sensorik, Edge-Gateway, LIMS-Anbindung und IQ/OQ-Vorlagen schlüsselfertig mit – kein Aufpreis für externe Validierungs-Häuser.</p>
-                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Kontakt aufnehmen</a>
+                <h4 class="font-bold mb-3">Planning a Smart Lab in the container?</h4>
+                <p class="text-gray-400 text-sm mb-4">We deliver sensing, edge gateway, LIMS connection and IQ/OQ templates turnkey – no premium for external validation houses.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Get in touch</a>
               </div>
             </div>
           </aside>
@@ -394,49 +394,49 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
     <section class="py-16 border-t border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Häufig gestellte Fragen zur Digitalisierung im Laborcontainer</h2>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions on digitalisation in the lab container</h2>
           <div class="space-y-4">
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Was bedeutet FDA 21 CFR Part 11 für den Laborcontainer?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What does FDA 21 CFR Part 11 mean for the lab container?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">21 CFR Part 11 ist die <strong>US-FDA-Verordnung für elektronische Aufzeichnungen und Unterschriften</strong> (in Kraft seit 1997). Konkret heißt das: lückenloser Audit-Trail nach §11.10(e), eindeutige Benutzerverwaltung, NTP/PTP-Zeitstempel, geschützter Zugriff auf Rohdaten, validierte Backups. Das EU-Pendant ist <strong>EU-GMP Annex 11</strong> (revidiert 2011). Die ALCOA+-Prinzipien gelten beidseitig.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">21 CFR Part 11 is the <strong>US FDA regulation for electronic records and signatures</strong> (in force since 1997). Concretely that means: a complete audit trail to §11.10(e), unique user management, NTP/PTP timestamps, protected access to raw data, validated backups. The EU counterpart is <strong>EU-GMP Annex 11</strong> (revised 2011). The ALCOA+ principles apply on both sides.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche IoT-Sensoren gehören in einen GMP-Container?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which IoT sensors belong in a GMP container?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Pflicht: kalibrierte T-, rH- und Differenzdruck-Sensoren. Für temperaturkontrollierte GMP-Lager fordert die <strong>EU-GDP-Leitlinie 2013/C 343/01</strong> eine repräsentative Temperatur-Mapping-Studie nach <strong>anerkannten internationalen Mapping-Leitlinien</strong>. In klassifizierten Reinräumen zusätzlich Partikelmessung nach DIN EN ISO 14644-1. DAkkS-Kalibrierschein, Drift &lt;0,1 K/Jahr. Am Markt sind mehrere etablierte Hersteller für kalibrierte Klima- und Validierungssensorik verfügbar. Anbindung über Modbus TCP, OPC UA oder MQTT v5.0.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Mandatory: calibrated T, rH and differential-pressure sensors. For temperature-controlled GMP storage the <strong>EU-GDP guideline 2013/C 343/01</strong> requires a representative temperature-mapping study to <strong>recognised international mapping guidelines</strong>. In classified cleanrooms, particle measurement to DIN EN ISO 14644-1 is added. DAkkS calibration certificate, drift &lt;0.1 K/year. Several established manufacturers for calibrated climate and validation sensing are available on the market. Connection via Modbus TCP, OPC UA or MQTT v5.0.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wie funktioniert Remote-Monitoring bei Stromausfall?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How does remote monitoring work during a power failure?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Drei Schichten: Edge-Gateway batteriegestützt 8–24 h (USV nach IEC 62040), redundanter Mobilfunk (LTE-Cat-M1 / NB-IoT), eskalierende SMS-/Push-Benachrichtigung nach hinterlegter Matrix. Funktional sicher nach <strong>IEC 61511</strong> für die kritischen Pfade. Daten gehen nach Wiederherstellung lückenlos in die Cloud nach – kein Audit-Trail-Bruch.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Three layers: edge gateway battery-backed 8–24 h (UPS to IEC 62040), redundant mobile radio (LTE-Cat-M1 / NB-IoT), escalating SMS/push notification to a stored matrix. Functionally safe to <strong>IEC 61511</strong> for the critical paths. After restoration, data catch up completely into the cloud – no audit-trail break.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Was ist Predictive Maintenance konkret im Laborcontainer?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What is predictive maintenance concretely in the lab container?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Methodischer Rahmen: <strong>ISO 13374</strong> und <strong>ISO 17359</strong>. Vibrationssensoren am Abluftventilator melden Lagerverschleiß 6–12 Wochen vor Ausfall, Stromaufnahme-Trending am HEPA-Lüfter zeigt Filterzusetzung Wochen vor dem dP-Alarm, Temperatur-Drift in der Kühlung warnt vor Kompressor-Defekt. Auswertung regelbasiert oder per ML in der Cloud.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Methodological framework: <strong>ISO 13374</strong> and <strong>ISO 17359</strong>. Vibration sensors on the extract fan report bearing wear 6–12 weeks before failure, current-draw trending on the HEPA fan shows filter clogging weeks before the dP alarm, temperature drift in the cooling warns of compressor failure. Evaluation rule-based or via ML in the cloud.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche LIMS lässt sich in einen Laborcontainer integrieren?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which LIMS can be integrated into a lab container?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Technisch fast alle gängigen LIMS- und ELN-Systeme am Markt – vom etablierten Pharma-LIMS über Lösungen für QC- und klinische Labore bis zu Open-Source-Plattformen. Schnittstellen: SiLA 2, ASTM E1394 / LIS-02, AnIML. Container kommt mit vorbereitetem Server-Schrank, USV, redundantem Netzwerk und VLAN-Trennung. LIMS-Validierung nach GAMP 5 (ISPE 2022) übernimmt das IT-QM.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Technically almost all established LIMS and ELN systems on the market – from a proven pharma LIMS through solutions for QC and clinical laboratories to open-source platforms. Interfaces: SiLA 2, ASTM E1394 / LIS-02, AnIML. The container comes with a prepared server cabinet, UPS, redundant network and VLAN separation. LIMS validation to GAMP 5 (ISPE 2022) is taken on by IT QM.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Ist Cloud-Anbindung DSGVO-konform und Schrems-II-sicher?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Is a cloud connection GDPR-compliant and Schrems II-safe?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Ja, mit drei Bedingungen: Verarbeitung in der EU (Rechenzentrumsregionen in Deutschland), Auftragsverarbeitungsvertrag nach Art. 28 DSGVO mit Standardvertragsklauseln, und für US-Anbieter Zertifizierung nach <strong>EU-US Data Privacy Framework</strong> (Angemessenheitsbeschluss seit 10. Juli 2023). Compliance-Anker: <strong>BSI C5:2020</strong>, <strong>ISO 27001:2022</strong>, <strong>ISO 27017</strong>.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Yes, with three conditions: processing in the EU (data-centre regions in Germany), a data-processing agreement to Art. 28 GDPR with standard contractual clauses, and for US providers certification to the <strong>EU-US Data Privacy Framework</strong> (adequacy decision since 10 July 2023). Compliance anchors: <strong>BSI C5:2020</strong>, <strong>ISO 27001:2022</strong>, <strong>ISO 27017</strong>.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Was ist der digitale Zwilling im Laborcontainer-Kontext?
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What is the digital twin in the lab-container context?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Ein digitales Abbild des Containers, das im Betrieb über IoT-Daten gespiegelt wird. Methodischer Rahmen: <strong>DIN SPEC 91345</strong> (RAMI 4.0) und die <strong>Asset Administration Shell</strong> der IDTA. Nutzen: CFD-Strömungssimulation vor Bau, virtuelle Schulungen, Energieoptimierung im Live-Betrieb. 5–8 % Mehraufwand bei der Erstausstattung, 15–25 % geringere Betriebskosten über 10 Jahre.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">A digital image of the container that is mirrored in operation via IoT data. Methodological framework: <strong>DIN SPEC 91345</strong> (RAMI 4.0) and the <strong>Asset Administration Shell</strong> of the IDTA. Benefit: CFD flow simulation before construction, virtual training, energy optimisation in live operation. 5–8 % extra effort at first fit-out, 15–25 % lower operating costs over 10 years.</div>
             </details>
           </div>
         </div>
@@ -448,7 +448,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
     <div class="container mx-auto px-4 py-8">
       <a href="/en/magazine" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-        Zurück zum Magazin
+        Back to the Magazine
       </a>
     </div>
   </div>
