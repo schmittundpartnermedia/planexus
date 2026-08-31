@@ -4,8 +4,8 @@ import Layout from '../../../layouts/Layout.astro';
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Beratung & Genehmigung",
-  "description": "Expertenberatung bei Genehmigungsverfahren, Baurecht und Arbeitsschutz für Laborcontainer",
+  "name": "Consulting & permits",
+  "description": "Expert advice on permit procedures, building law and occupational safety for lab containers",
   "provider": { "@type": "Organization", "name": "Planexus GmbH", "image": "https://planexus.de/android-chrome-512x512.png" },
   "url": "https://planexus.de/en/services/consulting"
 };
@@ -13,26 +13,26 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
-    { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://planexus.de/en/services" },
-    { "@type": "ListItem", "position": 3, "name": "Beratung & Genehmigung", "item": "https://planexus.de/en/services/consulting" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://planexus.de/en/services" },
+    { "@type": "ListItem", "position": 3, "name": "Consulting & permits", "item": "https://planexus.de/en/services/consulting" }
   ]
 };
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Braucht ein Laborcontainer eine Baugenehmigung?", "acceptedAnswer": { "@type": "Answer", "text": "Das hängt von Aufstellungsdauer, Landesbauordnung (LBO) und Nutzungsart ab. Temporäre Aufstellung bis 3–6 Monate ist in vielen Bundesländern genehmigungsfrei, wenn der Container als bewegliche Sache gilt. Dauerhafte Aufstellung oder BSL-3-Nutzung erfordert in der Regel einen Bauantrag mit Lageplan, Standsicherheitsnachweis, Brandschutzkonzept und ggf. Abweichungsantrag. Wir prüfen für jeden Standort in DE, AT und CH die landesspezifische LBO und bereiten die Unterlagen vor." } },
-    { "@type": "Question", "name": "Wann greift das BImSchG bei Laborcontainern?", "acceptedAnswer": { "@type": "Answer", "text": "Das Bundes-Immissionsschutzgesetz (BImSchG) wird relevant, wenn der Container Emissionen erzeugt, die über Anlage IV des BImSchG hinausgehen – z. B. Abluft aus Abzügen mit organischen Lösungsmitteln, Verbrennungsanlagen oder größere Kälteanlagen. Für Standard-Labore mit DIN-EN-14175-Abzügen und Abluftführung ins Freie reicht oft eine Anzeige nach § 15 BImSchG. Bei BSL-3-Laboren mit HEPA-gefilterter Abluft prüfen wir, ob eine 4. BImSchV-Genehmigung erforderlich ist." } },
-    { "@type": "Question", "name": "Welche Anforderungen stellt die BioStoffV an Container-Labore?", "acceptedAnswer": { "@type": "Answer", "text": "Für Arbeiten mit biologischen Arbeitsstoffen der Schutzstufen 2 und 3 gelten BioStoffV §§ 14–15. BSL-2 erfordert eine Anzeige beim zuständigen Arbeitsschutzamt mit baulichem und organisatorischem Sicherheitskonzept. BSL-3 erfordert eine Erlaubnis nach § 15 BioStoffV mit Nachweis gerichteter Luftströmung, Personalschleuse, Autoklav, Notdusche und HEPA-Doppelfilterung. Wir erstellen die vollständigen Anzeige- bzw. Erlaubnisunterlagen inklusive Gefährdungsbeurteilung nach ArbSchG." } },
-    { "@type": "Question", "name": "Wie läuft ein Genehmigungsverfahren für GMP-Container ab?", "acceptedAnswer": { "@type": "Answer", "text": "GMP-Container benötigen keine separate Baugenehmigung für die GMP-Konformität – diese wird durch die zuständige Behörde (BfArM, Swissmedic, BASG) im Rahmen der Herstellungserlaubnis oder klinischen Prüfung geprüft. Unsere Beratung umfasst die Vorbereitung der Annex-1-Dokumentation, CCS-Konzept, Reinraumqualifizierung (IQ/OQ/PQ) und Behördenkommunikation. Parallel klären wir baurechtliche Fragen (LBO) und immissionsschutzrechtliche Anforderungen (BImSchG)." } },
-    { "@type": "Question", "name": "Berät Planexus auch bei ATEX-Genehmigungen für Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. ATEX-Bereiche nach EN 60079 erfordern eine Explosionsschutzdokumentation nach BetrSichV und ATEX-Richtlinie 1999/92/EG. Wir erstellen Zoneneinteilungen (Zone 0/1/2), dokumentieren Zündquellen, planen Ex-geschützte Geräte und Lüftungskonzepte für brennbare Gase oder Dämpfe. Die Dokumentation wird in die Gefährdungsbeurteilung nach ArbSchG integriert und bei Bedarf mit dem zuständigen Arbeitsschutzamt abgestimmt." } },
-    { "@type": "Question", "name": "Wie lange dauert ein BSL-3-Genehmigungsverfahren in Deutschland?", "acceptedAnswer": { "@type": "Answer", "text": "BSL-3 nach BioStoffV §15 erfordert eine Erlaubnis beim zuständigen Arbeitsschutzamt. Mit vollständiger Unterlage (Gefährdungsbeurteilung, bauliches Konzept, Sicherheitskonzept, Organisationsplan) dauert das Verfahren 8–12 Wochen. Parallel läuft die ZKBS-Anzeige bei der zuständigen Bundesbehörde. Wir bereiten alle Unterlagen vor und begleiten Behörden-Gespräche. Fehlende Dokumente verlängern das Verfahren um 4–8 Wochen – deshalb starten wir die Behördenkoordination parallel zur Werksplanung." } }
+    { "@type": "Question", "name": "Does a lab container need a building permit?", "acceptedAnswer": { "@type": "Answer", "text": "That depends on siting duration, the state building code (LBO) and the intended use. Temporary siting of up to 3–6 months is permit-free in many federal states if the container is classed as a movable item. Permanent siting or BSL-3 use typically requires a building application with a site plan, structural-stability evidence, fire-protection concept and, where applicable, a deviation application. We check the state-specific LBO for every location in DE, AT and CH and prepare the documentation." } },
+    { "@type": "Question", "name": "When does the BImSchG apply to lab containers?", "acceptedAnswer": { "@type": "Answer", "text": "The Federal Immission Control Act (BImSchG) becomes relevant when the container generates emissions beyond Annex IV of the BImSchG — e.g. extract air from fume cupboards with organic solvents, combustion plant or larger refrigeration plant. For standard laboratories with DIN EN 14175 fume cupboards and extract to atmosphere, a notification under § 15 BImSchG is often sufficient. For BSL-3 laboratories with HEPA-filtered extract we check whether a 4th BImSchV permit is required." } },
+    { "@type": "Question", "name": "What requirements does the BioStoffV place on container laboratories?", "acceptedAnswer": { "@type": "Answer", "text": "For work with biological agents in protection classes 2 and 3, BioStoffV §§ 14–15 apply. BSL-2 requires a notification to the competent occupational safety authority with a structural and organisational safety concept. BSL-3 requires a permit under § 15 BioStoffV with evidence of directional airflow, personnel airlock, autoclave, emergency shower and dual HEPA filtration. We prepare the complete notification or permit file including the risk assessment under the ArbSchG." } },
+    { "@type": "Question", "name": "How does a permit procedure for GMP containers proceed?", "acceptedAnswer": { "@type": "Answer", "text": "GMP containers do not need a separate building permit for GMP conformity — that is assessed by the competent authority (BfArM, Swissmedic, BASG) as part of the manufacturing authorisation or clinical-trial review. Our consulting covers preparation of Annex 1 documentation, the CCS concept, cleanroom qualification (IQ/OQ/PQ) and authority communication. In parallel we clarify building-law questions (LBO) and immission-control requirements (BImSchG)." } },
+    { "@type": "Question", "name": "Does Planexus also advise on ATEX permits for lab containers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ATEX areas to EN 60079 require explosion-protection documentation under the BetrSichV and ATEX Directive 1999/92/EC. We prepare zoning (Zone 0/1/2), document ignition sources, and design explosion-protected equipment and ventilation concepts for flammable gases or vapours. The documentation is integrated into the ArbSchG risk assessment and, where required, coordinated with the competent occupational safety authority." } },
+    { "@type": "Question", "name": "How long does a BSL-3 permit procedure take in Germany?", "acceptedAnswer": { "@type": "Answer", "text": "BSL-3 under BioStoffV § 15 requires a permit from the competent occupational safety authority. With a complete file (risk assessment, structural concept, safety concept, organisation plan) the procedure takes 8–12 weeks. In parallel, the ZKBS notification is submitted to the competent federal authority. We prepare all documents and accompany authority meetings. Missing documents extend the procedure by 4–8 weeks — which is why we start authority coordination in parallel with works planning." } }
   ]
 };
 ---
 
-<Layout title="Laborcontainer Beratung – Analyse, Konzept, Umsetzung" description="Laborcontainer Beratung: Bedarfsanalyse, Genehmigung LBO/BImSchG/GenTG, BSL-2/3, Brandschutz in DACH. Behördenpfad aus einer Hand. Kostenlose Beratung." canonical="/en/services/consulting" schema={serviceSchema} ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg">
+<Layout title="Lab container consulting – analysis, concept, delivery" description="Lab container consulting: needs analysis, LBO/BImSchG/GenTG permits, BSL-2/3, fire protection in DACH. Authority path from a single source. Complimentary consultation." canonical="/en/services/consulting" schema={serviceSchema} ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg">
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
 
@@ -44,14 +44,14 @@ const faqSchema = {
         <div class="max-w-4xl">
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
-            <span>Leistungen</span>
+            <span>Services</span>
           </div>
-          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">Laborcontainer Beratung – Bedarfsanalyse, Konzept, Umsetzung</h1>
-          <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4">LBO der 16 Bundesländer, BImSchG, GenTG, Biostoffverordnung, ArbSchG und Brandschutzkonzepte – wir führen Sie durch jeden Behördenpfad in Deutschland, Österreich und der Schweiz.</p>
-          <p class="text-base text-gray-400 leading-relaxed max-w-3xl mb-8">Spezialisiert auf <strong class="text-white">Genehmigungsfragen rund um modulare Laborcontainer</strong>: BSL-2/3, GMP, ATEX, Brandschutzkonzept, RP-/Bauamts-Pfad. Keine allgemeine Bauberatung, keine Wohn- oder Gewerbebau-Themen.</p>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">Lab container consulting – needs analysis, concept, delivery</h1>
+          <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4">The LBO of Germany’s 16 federal states, BImSchG, GenTG, Biological Agents Ordinance, ArbSchG and fire-protection concepts — we guide you through every authority path in Germany, Austria and Switzerland.</p>
+          <p class="text-base text-gray-400 leading-relaxed max-w-3xl mb-8">Specialised in <strong class="text-white">permit questions around modular lab containers</strong>: BSL-2/3, GMP, ATEX, fire-protection concept, regional-planning/building-authority path. No general construction advice, no residential or commercial-building topics.</p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Beratung anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Direkt anrufen</a>
+            <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Request a consultation <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call now</a>
           </div>
         </div>
       </div>
@@ -60,11 +60,11 @@ const faqSchema = {
     <div class="bg-slate-50 border-b border-gray-100 py-4">
       <div class="container mx-auto px-4">
         <div class="flex items-center gap-2 text-sm text-gray-500">
-          <a href="/" class="hover:text-primary">Start</a>
+          <a href="/en" class="hover:text-primary">Home</a>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          <a href="/en/services" class="hover:text-primary">Leistungen</a>
+          <a href="/en/services" class="hover:text-primary">Services</a>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          <span class="text-primary font-medium">Beratung & Genehmigung</span>
+          <span class="text-primary font-medium">Consulting & permits</span>
         </div>
       </div>
     </div>
@@ -74,109 +74,109 @@ const faqSchema = {
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div class="lg:col-span-2 space-y-12">
             <div>
-              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">Genehmigungen für Laborcontainer: LBO, BImSchG und BioStoffV</h2>
+              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">Permits for lab containers: LBO, BImSchG and BioStoffV</h2>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Die Errichtung eines Laborcontainers erfordert die Abstimmung mehrerer Rechtsgebiete: Baurecht (LBO der 16 Bundesländer), Immissionsschutz (BImSchG), Biostoffrecht (BioStoffV), Gentechnikrecht (GenTG), Arbeitsschutz (ArbStättV, GefStoffV) und Brandschutz (MBO/LBO). Jeder Pfad hat eigene Fristen, Unterlagen und Zuständigkeiten.</p>
-                <p>Planexus erstellt für jedes Projekt eine Genehmigungs-Roadmap mit Meilensteinen: Welche Genehmigungen sind erforderlich, welche Unterlagen werden benötigt, welche Behörde ist zuständig, welche Fristen gelten? Die Roadmap wird mit dem Bauherrn abgestimmt und als Projektmanagement-Grundlage verwendet.</p>
-                <p>Bei BSL-3-Projekten koordinieren wir parallel den BioStoffV-Erlaubnisprozess (§ 15) mit dem ZKBS-Sekretariat, den baurechtlichen Genehmigungsprozess und die Gefährdungsbeurteilung nach ArbSchG. Bei GMP-Projekten begleiten wir die Behördenkommunikation mit BfArM, Swissmedic oder BASG parallel zur baurechtlichen Klärung.</p>
+                <p>Siting a lab container requires coordination across several areas of law: building law (LBO of the 16 federal states), immission control (BImSchG), biological-agents law (BioStoffV), genetic-engineering law (GenTG), occupational safety (ArbStättV, GefStoffV) and fire protection (MBO/LBO). Each path has its own deadlines, documents and competent authorities.</p>
+                <p>For every project Planexus prepares a permit roadmap with milestones: which permits are required, which documents are needed, which authority is competent, which deadlines apply? The roadmap is agreed with the client and used as the project-management baseline.</p>
+                <p>On BSL-3 projects we coordinate in parallel the BioStoffV permit process (§ 15) with the ZKBS secretariat, the building-law permit process and the ArbSchG risk assessment. On GMP projects we accompany authority communication with BfArM, Swissmedic or BASG in parallel with the building-law clarification.</p>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Unsere Beratungsleistungen</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Our consulting services</h3>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
                   <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></div>
-                  <h4 class="font-bold text-lg mb-2 text-slate-900">Baurecht</h4>
-                  <p class="text-gray-600 text-sm">Beratung zu baurechtlichen Anforderungen und Unterstützung bei der Baugenehmigung.</p>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Building law</h4>
+                  <p class="text-gray-600 text-sm">Advice on building-law requirements and support with the building permit.</p>
                 </div>
                 <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
                   <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg></div>
-                  <h4 class="font-bold text-lg mb-2 text-slate-900">Arbeitsschutz</h4>
-                  <p class="text-gray-600 text-sm">Einhaltung der Arbeitsstättenverordnung und Gefährdungsbeurteilung.</p>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Occupational safety</h4>
+                  <p class="text-gray-600 text-sm">Compliance with the Workplace Ordinance and risk assessment.</p>
                 </div>
                 <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
                   <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
-                  <h4 class="font-bold text-lg mb-2 text-slate-900">Genehmigungsverfahren</h4>
-                  <p class="text-gray-600 text-sm">Vorbereitung und Begleitung aller erforderlichen Genehmigungen.</p>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Permit procedures</h4>
+                  <p class="text-gray-600 text-sm">Preparation and accompaniment of all required permits.</p>
                 </div>
                 <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
                   <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></div>
-                  <h4 class="font-bold text-lg mb-2 text-slate-900">Normenkompetenz</h4>
-                  <p class="text-gray-600 text-sm">Sicherstellung der Konformität mit DIN, EN und ISO-Normen.</p>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Standards expertise</h4>
+                  <p class="text-gray-600 text-sm">Ensuring conformity with DIN, EN and ISO standards.</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Baurechtliche Beratung</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Building-law consulting</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Die baurechtliche Einordnung von Laborcontainern ist nicht immer eindeutig und hängt von verschiedenen Faktoren ab: Ist der Container dauerhaft aufgestellt oder temporär? Handelt es sich um ein Gebäude im baurechtlichen Sinne? Welche Nutzungsklasse ist anzuwenden?</p>
-                <h4 class="text-xl font-bold text-slate-900 mt-8">Genehmigungsfreie Aufstellung</h4>
-                <p>In vielen Fällen können Laborcontainer genehmigungsfrei aufgestellt werden – insbesondere bei temporärer Nutzung oder wenn sie als bewegliche Sache eingestuft werden. Wir prüfen die Voraussetzungen und beraten Sie zur optimalen Vorgehensweise.</p>
-                <h4 class="text-xl font-bold text-slate-900 mt-8">Baugenehmigung</h4>
-                <p>Wenn eine Baugenehmigung erforderlich ist, unterstützen wir Sie bei der Erstellung aller erforderlichen Unterlagen: Bauantragsformulare, Lageplan, Grundrisse, Ansichten, Baubeschreibung, statische Berechnungen und Brandschutzkonzept. Wir begleiten das Verfahren und stehen als Ansprechpartner für die Behörden zur Verfügung.</p>
-                <h4 class="text-xl font-bold text-slate-900 mt-8">Bebauungsplankonformität</h4>
-                <p>Die Aufstellung eines Laborcontainers muss mit dem Bebauungsplan vereinbar sein. Wir prüfen die planungsrechtlichen Voraussetzungen und zeigen Wege auf, wie Ihr Projekt realisiert werden kann – auch wenn der Bebauungsplan auf den ersten Blick dagegen zu sprechen scheint.</p>
+                <p>The building-law classification of lab containers is not always clear-cut and depends on several factors: is the container sited permanently or temporarily? Does it constitute a building in the legal sense? Which occupancy class applies?</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Permit-free siting</h4>
+                <p>In many cases lab containers can be sited without a permit — particularly for temporary use or when they are classed as a movable item. We check the prerequisites and advise you on the best approach.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Building permit</h4>
+                <p>Where a building permit is required, we support you in preparing all necessary documents: application forms, site plan, floor plans, elevations, building description, structural calculations and fire-protection concept. We accompany the procedure and act as the point of contact for the authorities.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Development-plan conformity</h4>
+                <p>Siting a lab container must be compatible with the development plan. We check the planning-law prerequisites and identify routes by which your project can be realised — even if the development plan appears to speak against it at first glance.</p>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Arbeitsschutz und Arbeitssicherheit</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Occupational health and safety</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Labore sind Arbeitsstätten mit besonderen Gefahren. Die Einhaltung der arbeitsschutzrechtlichen Vorschriften ist daher nicht nur gesetzliche Pflicht, sondern auch Ausdruck der Fürsorgepflicht gegenüber Ihren Mitarbeitern.</p>
-                <p>Wir beraten Sie zu allen Aspekten des Arbeitsschutzes im Labor:</p>
+                <p>Laboratories are workplaces with particular hazards. Compliance with occupational-safety regulations is therefore not only a legal duty, but also an expression of the duty of care towards your staff.</p>
+                <p>We advise you on every aspect of occupational safety in the laboratory:</p>
                 <ul class="list-none space-y-3">
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Arbeitsstättenverordnung (ArbStättV) und Technische Regeln (ASR)</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Gefahrstoffverordnung (GefStoffV) und TRGS</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Biostoffverordnung (BioStoffV) für Labore mit biologischen Arbeitsstoffen</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Strahlenschutzverordnung (StrlSchV) für Isotopenlabore</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Betriebssicherheitsverordnung (BetrSichV) für Druckgeräte und Aufzüge</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Gefährdungsbeurteilung nach Arbeitsschutzgesetz</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Workplace Ordinance (ArbStättV) and Technical Rules (ASR)</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Hazardous Substances Ordinance (GefStoffV) and TRGS</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Biological Agents Ordinance (BioStoffV) for laboratories with biological agents</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Radiation Protection Ordinance (StrlSchV) for isotope laboratories</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Industrial Safety Ordinance (BetrSichV) for pressure equipment and lifts</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Risk assessment under the Occupational Safety and Health Act</span></li>
                 </ul>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Umweltrechtliche Anforderungen</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Environmental-law requirements</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Labore können erhebliche Umweltauswirkungen haben – von der Emission gefährlicher Stoffe über das Abwasser bis hin zur Abfallentsorgung. Die Einhaltung der umweltrechtlichen Vorschriften ist daher ein wichtiger Aspekt bei der Planung und dem Betrieb eines Laborcontainers.</p>
-                <p><strong>Immissionsschutz:</strong> Wir beraten Sie zu den Anforderungen des Bundes-Immissionsschutzgesetzes (BImSchG) und prüfen, ob für Ihr Labor eine immissionsschutzrechtliche Genehmigung erforderlich ist. Unsere Lüftungs- und Abluftsysteme sind so ausgelegt, dass die Grenzwerte sicher eingehalten werden.</p>
-                <p><strong>Wasserrecht:</strong> Das Einleiten von Laborabwässern in die Kanalisation unterliegt strengen Vorschriften. Wir beraten Sie zur Abwasserbehandlung und unterstützen bei der Einholung der wasserrechtlichen Erlaubnis.</p>
-                <p><strong>Abfallrecht:</strong> Die ordnungsgemäße Entsorgung von Laborabfällen ist gesetzlich geregelt. Wir helfen Ihnen bei der Erstellung eines Abfallkonzepts und vermitteln Kontakte zu zertifizierten Entsorgungsunternehmen.</p>
+                <p>Laboratories can have significant environmental impacts — from emissions of hazardous substances to wastewater and waste disposal. Compliance with environmental-law requirements is therefore an important aspect of planning and operating a lab container.</p>
+                <p><strong>Immission control:</strong> We advise you on the requirements of the Federal Immission Control Act (BImSchG) and check whether an immission-control permit is required for your laboratory. Our ventilation and extract systems are designed so that limit values are reliably met.</p>
+                <p><strong>Water law:</strong> Discharge of laboratory wastewater into the sewer is subject to strict regulations. We advise you on wastewater treatment and support you in obtaining the water-law permit.</p>
+                <p><strong>Waste law:</strong> Proper disposal of laboratory waste is regulated by law. We help you prepare a waste concept and introduce you to certified disposal contractors.</p>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Spezielle Genehmigungen für besondere Labore</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Special permits for particular laboratories</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Je nach Art des Labors können besondere Genehmigungen erforderlich sein:</p>
-                <p><strong>S1- bis S4-Labore:</strong> Für Arbeiten mit gentechnisch veränderten Organismen benötigen Sie eine Erlaubnis nach Gentechnikgesetz. Wir beraten Sie zu den baulichen und organisatorischen Anforderungen der verschiedenen Sicherheitsstufen.</p>
-                <p><strong>BSL-2 und BSL-3 Labore:</strong> Labore für Arbeiten mit gefährlichen biologischen Arbeitsstoffen erfordern eine Anzeige oder Erlaubnis nach Biostoffverordnung. Wir unterstützen Sie bei der Erstellung der erforderlichen Unterlagen.</p>
-                <p><strong>Isotopenlabore:</strong> Für den Umgang mit radioaktiven Stoffen benötigen Sie eine Genehmigung nach Strahlenschutzverordnung. Wir beraten zur baulichen Ausführung und den erforderlichen Schutzmaßnahmen.</p>
-                <p><strong>Arzneimittelherstellung:</strong> Labore für die Herstellung von Arzneimitteln unterliegen der GMP (Good Manufacturing Practice). Wir beraten zu den baulichen Anforderungen und der Qualifizierung der Räume.</p>
+                <p>Depending on the type of laboratory, special permits may be required:</p>
+                <p><strong>S1 to S4 laboratories:</strong> For work with genetically modified organisms you need a permit under the Genetic Engineering Act. We advise you on the structural and organisational requirements of the various protection classes.</p>
+                <p><strong>BSL-2 and BSL-3 laboratories:</strong> Laboratories for work with hazardous biological agents require a notification or permit under the Biological Agents Ordinance. We support you in preparing the required documents.</p>
+                <p><strong>Isotope laboratories:</strong> Handling of radioactive substances requires a permit under the Radiation Protection Ordinance. We advise on the structural design and the required protective measures.</p>
+                <p><strong>Pharmaceutical manufacture:</strong> Laboratories for the manufacture of medicinal products are subject to GMP (Good Manufacturing Practice). We advise on the structural requirements and the qualification of the rooms.</p>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Brandschutz</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Fire protection</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Der Brandschutz ist ein zentrales Thema bei der Planung und Genehmigung von Laborcontainern. Wir erstellen Brandschutzkonzepte, die den Anforderungen der Bauordnung und der Industriebaurichtlinie entsprechen.</p>
-                <p>Unsere Brandschutzkonzepte umfassen baulichen, anlagentechnischen und organisatorischen Brandschutz. Von der feuerwiderstandsfähigen Konstruktion über Brandmeldeanlagen bis hin zu Flucht- und Rettungswegeplänen – wir stimmen das Konzept mit den zuständigen Brandschutzdienststellen ab.</p>
+                <p>Fire protection is a central topic in the planning and permitting of lab containers. We prepare fire-protection concepts that meet the requirements of the building code and the industrial-building guideline.</p>
+                <p>Our fire-protection concepts cover structural, technical and organisational fire protection. From fire-resistant construction via fire-alarm systems to escape- and rescue-route plans — we agree the concept with the competent fire-protection authorities.</p>
               </div>
             </div>
 
             <div>
-              <h2 class="text-2xl font-heading font-bold mb-6 text-slate-900">Behördenpfade nach Branche und Sicherheitsstufe</h2>
+              <h2 class="text-2xl font-heading font-bold mb-6 text-slate-900">Authority paths by sector and containment level</h2>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
                 <p>
-                  Die Genehmigungsstrategie hängt vom Einsatzzweck ab. Für <a href="/en/industries/pharma-biotech" class="text-primary font-medium hover:underline">Laborcontainer Pharma &amp; Biotech</a> koordinieren wir BfArM-/Swissmedic-Anforderungen parallel zur LBO-Prüfung. <a href="/en/industries/public-health-emergency-preparedness" class="text-primary font-medium hover:underline">Public-Health- und Krisenvorsorge-Labore</a> benötigen zusätzlich BioStoffV-Anzeigen und ggf. BSL-3-Erlaubnisse nach § 15 BioStoffV mit ZKBS-Abstimmung. <a href="/en/industries/oil-gas" class="text-primary font-medium hover:underline">Öl-, Gas- und Raffinerie-Labore</a> binden wir in Explosionsschutzdokument, AwSV und ggf. BImSchG ein.
+                  The permit strategy follows the intended use. For <a href="/en/industries/pharma-biotech" class="text-primary font-medium hover:underline">lab containers for pharma &amp; biotech</a> we coordinate BfArM/Swissmedic requirements in parallel with the LBO review. <a href="/en/industries/public-health-emergency-preparedness" class="text-primary font-medium hover:underline">Public-health and emergency-preparedness laboratories</a> additionally need BioStoffV notifications and, where applicable, BSL-3 permits under § 15 BioStoffV with ZKBS coordination. For <a href="/en/industries/oil-gas" class="text-primary font-medium hover:underline">oil, gas and refinery laboratories</a> we integrate the explosion-protection document, AwSV and, where applicable, BImSchG.
                 </p>
                 <p>
-                  Jeder Behördenpfad wird mit einer Checkliste dokumentiert: LBO-Bauantrag, BImSchG-Anzeige, BioStoffV-Anzeige/Erlaubnis, GenTG-S1–S4-Erlaubnis, Brandschutzkonzept nach MBO/LAR und Gefährdungsbeurteilung nach ArbSchG. ATEX-Projekte nach EN 60079 erhalten ein separates Explosionsschutzdokument. GMP-Container referenzieren EU-GMP Annex 1 und Annex 15 für die Qualifizierungsdokumentation.
+                  Each authority path is documented with a checklist: LBO building application, BImSchG notification, BioStoffV notification/permit, GenTG S1–S4 permit, fire-protection concept to MBO/LAR and risk assessment under ArbSchG. ATEX projects to EN 60079 receive a separate explosion-protection document. GMP containers reference EU GMP Annex 1 and Annex 15 for the qualification documentation.
                 </p>
                 <p>
-                  In Österreich gelten analoge Pfade über OIB-Richtlinien und BMSGPK; in der Schweiz über kantonale Bauordnungen, ESV (Gentechnik) und Swissmedic (GMP). Wir kennen die landesspezifischen Besonderheiten aller 16 deutschen LBO, der 9 österreichischen Landesbauordnungen und der 26 kantonalen Bauvorschriften in der Schweiz.
+                  In Austria analogous paths apply via OIB guidelines and the BMSGPK; in Switzerland via cantonal building codes, the ESV (genetic engineering) and Swissmedic (GMP). We know the country-specific features of all 16 German LBOs, the 9 Austrian state building codes and the 26 cantonal building regulations in Switzerland.
                 </p>
               </div>
             </div>
@@ -186,28 +186,28 @@ const faqSchema = {
             <div class="sticky top-24 space-y-6">
               <div class="bg-primary text-slate-900 p-8 rounded-2xl">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
-                <h3 class="text-xl font-bold mb-3">Kostenlose Erstberatung</h3>
-                <p class="text-slate-700 mb-6 text-sm">Lassen Sie uns über die rechtlichen Anforderungen für Ihr Laborprojekt sprechen. Unverbindlich und kostenlos.</p>
-                <a href="/en/contact" class="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">Beratung anfordern</a>
+                <h3 class="text-xl font-bold mb-3">Complimentary initial consultation</h3>
+                <p class="text-slate-700 mb-6 text-sm">Let us discuss the legal requirements for your laboratory project. No obligation, complimentary.</p>
+                <a href="/en/contact" class="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">Request a consultation</a>
               </div>
               <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100">
-                <h3 class="text-lg font-bold mb-6 text-slate-900">Unsere Expertise</h3>
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Our expertise</h3>
                 <ul class="space-y-4">
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Baurecht & Genehmigungen</span></li>
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Arbeitsschutz & Arbeitssicherheit</span></li>
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Umweltrecht</span></li>
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Gentechnikrecht</span></li>
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Strahlenschutz</span></li>
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Brandschutz</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Building law & permits</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Occupational health & safety</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Environmental law</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Genetic-engineering law</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Radiation protection</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Fire protection</span></li>
                 </ul>
               </div>
               <div class="bg-white p-8 rounded-2xl border border-gray-100">
-                <h3 class="text-lg font-bold mb-6 text-slate-900">Weitere Leistungen</h3>
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Further services</h3>
                 <ul class="space-y-3">
-                  <li><a href="/en/services/planning" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Technische Fachplanung</a></li>
-                  <li><a href="/en/services/modular-construction" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Modulbau & Fertigung</a></li>
-                  <li><a href="/en/services/logistics" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Logistik & Montage</a></li>
-                  <li><a href="/en/services/equipment" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Laborausstattung</a></li>
+                  <li><a href="/en/services/planning" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Specialist engineering design</a></li>
+                  <li><a href="/en/services/modular-construction" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Modular construction & manufacturing</a></li>
+                  <li><a href="/en/services/logistics" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Logistics & installation</a></li>
+                  <li><a href="/en/services/equipment" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Laboratory equipment</a></li>
                   <li><a href="/en/services/smart-lab" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Smart Lab Integration</a></li>
                 </ul>
               </div>
@@ -220,7 +220,7 @@ const faqSchema = {
     <section class="py-16 bg-slate-50 border-t border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">Häufige Fragen zur Beratung &amp; Genehmigung</h2>
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">Frequently asked questions on consulting &amp; permits</h2>
           <div class="space-y-4">
             {faqSchema.mainEntity.map((faq) => (
               <div class="bg-white rounded-xl p-6 border border-gray-100">
@@ -235,9 +235,9 @@ const faqSchema = {
 
     <section class="py-20 bg-slate-900 text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Rechtssicherheit für Ihr Laborprojekt</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Mit unserer Unterstützung meistern Sie alle behördlichen Hürden. Kontaktieren Sie uns für eine unverbindliche Erstberatung.</p>
-        <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Jetzt Kontakt aufnehmen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Legal certainty for your laboratory project</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">With our support you clear every regulatory hurdle. Contact us for a no-obligation initial consultation.</p>
+        <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Get in touch now <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
     </section>
   </div>

@@ -5,7 +5,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Smart Lab Integration",
-  "description": "Intelligente Laborvernetzung mit IoT-Sensoren und Cloud-Anbindung für digitale Workflows",
+  "description": "Intelligent laboratory networking with IoT sensors and cloud connectivity for digital workflows",
   "provider": { "@type": "Organization", "name": "Planexus GmbH", "image": "https://planexus.de/android-chrome-512x512.png" },
   "url": "https://planexus.de/en/services/smart-lab"
 };
@@ -13,8 +13,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
-    { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://planexus.de/en/services" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://planexus.de/en/services" },
     { "@type": "ListItem", "position": 3, "name": "Smart Lab Integration", "item": "https://planexus.de/en/services/smart-lab" }
   ]
 };
@@ -22,17 +22,17 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Welche Parameter überwacht ein Smart-Lab-Container?", "acceptedAnswer": { "@type": "Answer", "text": "Standard-Monitoring umfasst Temperatur (±0,1 K), relative Luftfeuchtigkeit, Raumdruck und Differenzdruck zwischen Zonen, CO2-Konzentration, Partikelzahl (optional), Türstatus, Lüftungsleistung und Medienversorgung (Druckluft, Gas, Wasser). Bei GMP-Containern zusätzlich Reinraumklassen-Nachweis nach ISO 14644-2 und kontinuierliche Druckkaskaden-Überwachung. Alle Werte werden minütlich erfasst und bei Grenzwertüberschreitung alarmiert." } },
-    { "@type": "Question", "name": "Ist die Datenerfassung GMP- und Annex-11-konform?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Die Smart-Lab-Architektur erfüllt EU-GMP Annex 11 (computerisierte Systeme) und Annex 15 (Qualifizierung). Das System umfasst Audit-Trail (wer/wann/was), elektronische Signaturen nach 21 CFR Part 11, Zugriffskontrolle mit Rollenmodell, Datenintegrität (ALCOA+), Backup und Disaster Recovery. IQ/OQ/PQ-Dokumentation für das Monitoring-System wird parallel zur Container-Qualifizierung erstellt." } },
-    { "@type": "Question", "name": "Welche Schnittstellen bietet das Smart-Lab-System?", "acceptedAnswer": { "@type": "Answer", "text": "Standardprotokolle: OPC-UA, MQTT, REST-API, BACnet für Gebäudeleittechnik. Integration in LIMS, ELN, CMMS und ERP-Systeme. Für Gebäudeautomation setzen wir auf Loxone mit Echtzeit-Dashboard. Cloud-Anbindung über verschlüsselte VPN-Tunnel (AES-256). On-Premise-Betrieb ohne Cloud-Anbindung ist für BSL-3- und Hochsicherheitslabore möglich." } },
-    { "@type": "Question", "name": "Kann Smart Lab in bestehende Container nachgerüstet werden?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Nachrüstung umfasst Sensorinstallation, Verkabelung, Gateway-Integration und Konfiguration der Steuerung. Bei Planexus-Neubauten wird Smart Lab ab Werk integriert – Sensoren, Verkabelung und Software sind im Ausführungsplan vorgesehen. Nachrüstung dauert 3–5 Tage vor Ort, Werkintegration spart diese Zeit und ermöglicht vollständige FAT-Dokumentation." } },
-    { "@type": "Question", "name": "Wie unterstützt Smart Lab ISO-17025- und BSL-3-Anforderungen?", "acceptedAnswer": { "@type": "Answer", "text": "ISO 17025: Automatische Protokollierung von Umgebungsbedingungen als Teil der Messunsicherheitsbilanz, kalibrierbare Sensoren mit rückverfolgbarem Kalibrierschein, Alarm bei Abweichung von Spezifikation. BSL-3: Kontinuierliche Differenzdrucküberwachung mit Alarm bei Druckverlust, Protokollierung aller Schleusenvorgänge, Integration mit Zugangskontrolle. Alle Daten sind auditierbar und exportierbar für Behörden und Akkreditierungsstellen." } },
-    { "@type": "Question", "name": "Welche Kosten entstehen für Smart-Lab-Integration ab Werk?", "acceptedAnswer": { "@type": "Answer", "text": "Basis-Monitoring (Temperatur, Feuchte, Druck, Türen) ab Werk: 8.000–15.000 Euro je Container. GMP-Paket mit Annex-11-Audit-Trail, elektronischer Signatur und Reinraum-Monitoring: 25.000–45.000 Euro. BSL-3-Erweiterung mit Schleusenprotokollierung und redundanter Drucküberwachung: 15.000–25.000 Euro zusätzlich. Nachrüstung kostet typisch 20–30 % mehr wegen Vor-Ort-Verkabelung und erneuter Qualifizierung am Einsatzort." } }
+    { "@type": "Question", "name": "Which parameters does a Smart Lab container monitor?", "acceptedAnswer": { "@type": "Answer", "text": "Standard monitoring covers temperature (±0.1 K), relative humidity, room pressure and differential pressure between zones, CO2 concentration, particle count (optional), door status, ventilation performance and utilities (compressed air, gas, water). For GMP containers this additionally includes cleanroom-class evidence to ISO 14644-2 and continuous pressure-cascade monitoring. All values are recorded every minute and an alarm is raised if a limit is exceeded." } },
+    { "@type": "Question", "name": "Is data capture GMP- and Annex 11-conformant?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Smart Lab architecture fulfils EU GMP Annex 11 (computerised systems) and Annex 15 (qualification). The system comprises an audit trail (who/when/what), electronic signatures to 21 CFR Part 11, access control with a role model, data integrity (ALCOA+), backup and disaster recovery. IQ/OQ/PQ documentation for the monitoring system is prepared in parallel with container qualification." } },
+    { "@type": "Question", "name": "Which interfaces does the Smart Lab system offer?", "acceptedAnswer": { "@type": "Answer", "text": "Standard protocols: OPC-UA, MQTT, REST API, BACnet for building management. Integration into LIMS, ELN, CMMS and ERP systems. For building automation we use Loxone with a real-time dashboard. Cloud connectivity via encrypted VPN tunnels (AES-256). On-premise operation without a cloud connection is possible for BSL-3 and high-security laboratories." } },
+    { "@type": "Question", "name": "Can Smart Lab be retrofitted into existing containers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Retrofit comprises sensor installation, cabling, gateway integration and controller configuration. On new Planexus builds, Smart Lab is integrated at the works — sensors, cabling and software are included in the execution plan. Retrofit takes 3–5 days on site; works integration saves this time and enables complete FAT documentation." } },
+    { "@type": "Question", "name": "How does Smart Lab support ISO 17025 and BSL-3 requirements?", "acceptedAnswer": { "@type": "Answer", "text": "ISO 17025: automatic logging of environmental conditions as part of the measurement-uncertainty budget, calibratable sensors with a traceable calibration certificate, alarm on deviation from specification. BSL-3: continuous differential-pressure monitoring with alarm on pressure loss, logging of all airlock operations, integration with access control. All data are auditable and exportable for authorities and accreditation bodies." } },
+    { "@type": "Question", "name": "What costs arise for Smart Lab integration from the works?", "acceptedAnswer": { "@type": "Answer", "text": "Basic monitoring (temperature, humidity, pressure, doors) from the works: EUR 8,000–15,000 per container. GMP package with Annex 11 audit trail, electronic signature and cleanroom monitoring: EUR 25,000–45,000. BSL-3 extension with airlock logging and redundant pressure monitoring: EUR 15,000–25,000 extra. Retrofit typically costs 20–30 % more because of on-site cabling and re-qualification at the place of use." } }
   ]
 };
 ---
 
-<Layout title="Smart Lab Container – Digitale Labore, IoT, Automation" description="Smart Lab Container: IoT-Sensorik, Raumklima- & Differenzdruck-Monitoring, GMP-Datenerfassung, Cloud-Anbindung. Ab Werk integrierbar. Jetzt Smart Lab planen." canonical="/en/services/smart-lab" schema={serviceSchema} ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg">
+<Layout title="Smart Lab containers – digital laboratories, IoT, automation" description="Smart Lab containers: IoT sensors, indoor-climate and differential-pressure monitoring, GMP data capture, cloud connectivity. Integrable from the works. Plan your Smart Lab now." canonical="/en/services/smart-lab" schema={serviceSchema} ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg">
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
 
@@ -44,14 +44,14 @@ const faqSchema = {
         <div class="max-w-4xl">
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
-            <span>Leistungen</span>
+            <span>Services</span>
           </div>
-          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">Smart Lab Container – Digitale Labore, IoT, Automation</h1>
-          <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4">IoT-Sensorik, Raumklima- und Differenzdruck-Monitoring, Zugangskontrolle, GMP-konforme Datenerfassung und Cloud-Anbindung – ab Werk im Container integriert.</p>
-          <p class="text-base text-gray-400 leading-relaxed max-w-3xl mb-8">Spezialisiert auf <strong class="text-white">vernetzte BSL-, GMP- und ATEX-Container</strong> mit auditierbarer Datenerfassung. Keine generische Smart-Building-Lösung, keine Office-IoT – ausschließlich Smart-Lab-Stack für modulare Laborumgebungen.</p>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">Smart Lab containers – digital laboratories, IoT, automation</h1>
+          <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4">IoT sensors, indoor-climate and differential-pressure monitoring, access control, GMP-conformant data capture and cloud connectivity — integrated in the container at the works.</p>
+          <p class="text-base text-gray-400 leading-relaxed max-w-3xl mb-8">Specialised in <strong class="text-white">networked BSL, GMP and ATEX containers</strong> with auditable data capture. No generic smart-building solution, no office IoT — exclusively a Smart Lab stack for modular laboratory environments.</p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Smart Lab planen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Direkt anrufen</a>
+            <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Plan a Smart Lab <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call now</a>
           </div>
         </div>
       </div>
@@ -60,9 +60,9 @@ const faqSchema = {
     <div class="bg-slate-50 border-b border-gray-100 py-4">
       <div class="container mx-auto px-4">
         <div class="flex items-center gap-2 text-sm text-gray-500">
-          <a href="/" class="hover:text-primary">Start</a>
+          <a href="/en" class="hover:text-primary">Home</a>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          <a href="/en/services" class="hover:text-primary">Leistungen</a>
+          <a href="/en/services" class="hover:text-primary">Services</a>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           <span class="text-primary font-medium">Smart Lab Integration</span>
         </div>
@@ -74,21 +74,21 @@ const faqSchema = {
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div class="lg:col-span-2 space-y-12">
             <div>
-              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">IoT und GMP-Datenerfassung im Smart-Lab-Container</h2>
+              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">IoT and GMP data capture in the Smart Lab container</h2>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Smart Lab im Laborcontainer bedeutet: Sensoren, Steuerung und Datenerfassung werden ab Werk in die Container-Architektur integriert – nicht als Nachrüstung. Temperatur, Luftfeuchtigkeit, Differenzdruck, CO2, Türstatus und Medienversorgung werden minütlich erfasst und bei Grenzwertüberschreitung automatisch alarmiert.</p>
-                <p>Die Steuerung basiert auf Loxone-Gebäudeautomation mit Labor-spezifischen Erweiterungen: GMP-konforme Datenerfassung nach Annex 11, Audit-Trail, Zugriffskontrolle und Integration in LIMS/ELN. Für BSL-3-Container überwachen wir Differenzdruck und Schleusenstatus in Echtzeit – ein Druckverlust löst sofort Alarm und dokumentiert den Vorfall.</p>
-                <p>Die Smart-Lab-Architektur ist modular: Basis-Paket (Umgebungsmonitoring + Alarmierung), Standard-Paket (+ Zugangskontrolle + LIMS-Anbindung), GMP-Paket (+ Annex-11-Datenerfassung + elektronische Signaturen + IQ/OQ/PQ). Jedes Paket wird im Ausführungsplan festgelegt und im FAT protokolliert.</p>
+                <p>Smart Lab in the lab container means: sensors, controls and data capture are integrated into the container architecture at the works — not as a retrofit. Temperature, humidity, differential pressure, CO2, door status and utilities are recorded every minute and an automatic alarm is raised if a limit is exceeded.</p>
+                <p>Control is based on Loxone building automation with laboratory-specific extensions: GMP-conformant data capture to Annex 11, audit trail, access control and integration into LIMS/ELN. For BSL-3 containers we monitor differential pressure and airlock status in real time — a pressure loss immediately raises an alarm and documents the incident.</p>
+                <p>The Smart Lab architecture is modular: basic package (environmental monitoring + alarming), standard package (+ access control + LIMS connection), GMP package (+ Annex 11 data capture + electronic signatures + IQ/OQ/PQ). Each package is defined in the execution plan and recorded in the FAT.</p>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Unsere Smart-Lab-Komponenten</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Our Smart Lab components</h3>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <a href="https://www.loxone.com/dede/" target="_blank" rel="noopener noreferrer" class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:shadow-xl hover:border-primary/50 transition-all group block">
                   <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg></div>
-                  <h4 class="font-bold text-lg mb-2 text-white">Umgebungsmonitoring</h4>
-                  <p class="text-slate-400 text-sm mb-4">Kontinuierliche Überwachung von Temperatur, Luftfeuchtigkeit, Druck und Luftqualität.</p>
+                  <h4 class="font-bold text-lg mb-2 text-white">Environmental monitoring</h4>
+                  <p class="text-slate-400 text-sm mb-4">Continuous monitoring of temperature, humidity, pressure and air quality.</p>
                   <div class="flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all">
                     <span>Powered by Loxone</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -96,104 +96,104 @@ const faqSchema = {
                 </a>
                 <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
                   <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-                  <h4 class="font-bold text-lg mb-2 text-slate-900">Zugangskontrolle</h4>
-                  <p class="text-gray-600 text-sm">Elektronische Schließsysteme mit Protokollierung aller Zutritte und Berechtigungsverwaltung.</p>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Access control</h4>
+                  <p class="text-gray-600 text-sm">Electronic locking systems with logging of all entries and permission management.</p>
                 </div>
                 <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
                   <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
-                  <h4 class="font-bold text-lg mb-2 text-slate-900">Datenanalyse</h4>
-                  <p class="text-gray-600 text-sm">Automatische Auswertung und Visualisierung aller erfassten Daten in Echtzeit.</p>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Data analysis</h4>
+                  <p class="text-gray-600 text-sm">Automatic evaluation and visualisation of all captured data in real time.</p>
                 </div>
                 <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
                   <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></div>
-                  <h4 class="font-bold text-lg mb-2 text-slate-900">Cloud-Anbindung</h4>
-                  <p class="text-gray-600 text-sm">Sichere Datenspeicherung und Fernzugriff über verschlüsselte Verbindungen.</p>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Cloud connectivity</h4>
+                  <p class="text-gray-600 text-sm">Secure data storage and remote access via encrypted connections.</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Raumklima-Monitoring und Steuerung</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Indoor-climate monitoring and control</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Das Raumklima ist in vielen Laboren ein kritischer Faktor. Temperatur und Luftfeuchtigkeit beeinflussen nicht nur das Wohlbefinden der Mitarbeiter, sondern auch die Qualität von Proben und Messungen. Unser intelligentes Klimamonitoring sorgt dafür, dass die Bedingungen immer optimal sind.</p>
-                <h4 class="text-xl font-bold text-slate-900 mt-8">Sensornetzwerk</h4>
-                <p>Hochpräzise Sensoren erfassen kontinuierlich Temperatur, relative Luftfeuchtigkeit, Luftdruck und CO2-Konzentration. Die Messwerte werden in Echtzeit an die zentrale Steuerung übermittelt und mit den Sollwerten verglichen. Bei Abweichungen wird automatisch gegengesteuert oder ein Alarm ausgelöst.</p>
-                <h4 class="text-xl font-bold text-slate-900 mt-8">Automatische Regelung</h4>
-                <p>Die intelligente Steuerung regelt Heizung, Kühlung und Lüftung automatisch so, dass die gewünschten Bedingungen eingehalten werden. Dabei berücksichtigt das System auch externe Faktoren wie Außentemperatur, Sonneneinstrahlung oder die Anzahl der anwesenden Personen.</p>
-                <h4 class="text-xl font-bold text-slate-900 mt-8">Historische Daten</h4>
-                <p>Alle Messwerte werden gespeichert und können später ausgewertet werden. Dies ist nicht nur für die Qualitätssicherung wichtig, sondern auch für die Optimierung des Energieverbrauchs. Durch die Analyse historischer Daten lassen sich Einsparpotenziale identifizieren und die Regelung weiter verbessern.</p>
+                <p>Indoor climate is a critical factor in many laboratories. Temperature and humidity affect not only staff comfort, but also the quality of samples and measurements. Our intelligent climate monitoring keeps conditions optimal at all times.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Sensor network</h4>
+                <p>High-precision sensors continuously capture temperature, relative humidity, air pressure and CO2 concentration. Measured values are transmitted in real time to the central controller and compared with setpoints. On deviation, automatic correction is applied or an alarm is raised.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Automatic control</h4>
+                <p>Intelligent control regulates heating, cooling and ventilation automatically so that the required conditions are maintained. The system also takes account of external factors such as outdoor temperature, solar gain or the number of people present.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Historical data</h4>
+                <p>All measured values are stored and can be evaluated later. This is important not only for quality assurance, but also for energy-consumption optimisation. Analysis of historical data identifies savings potential and further improves control.</p>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Zugangskontrolle und Sicherheit</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Access control and security</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Der Zugang zu Laborräumen muss kontrolliert werden – aus Sicherheitsgründen, aber auch um den Überblick zu behalten, wer wann im Labor gearbeitet hat. Unsere elektronischen Zugangskontrollsysteme bieten maximale Sicherheit bei einfacher Handhabung.</p>
-                <p><strong>Elektronische Schließsysteme:</strong> Zugang per RFID-Karte, Transponder oder Smartphone. Keine Schlüssel, die verloren gehen können, und einfache Verwaltung der Zutrittsberechtigungen.</p>
-                <p><strong>Biometrische Systeme:</strong> Für höchste Sicherheitsanforderungen bieten wir biometrische Zugangskontrollen per Fingerabdruck oder Gesichtserkennung. Diese Systeme sind nahezu fälschungssicher und erfordern keine Karten oder Codes.</p>
-                <p><strong>Protokollierung:</strong> Jeder Zutritt wird automatisch protokolliert – mit Datum, Uhrzeit und Identität der Person. Die Protokolle können für Audits oder zur Nachverfolgung von Vorfällen verwendet werden.</p>
-                <p><strong>Alarmierung:</strong> Bei unbefugten Zutrittsversuchen oder geöffneten Türen wird automatisch ein Alarm ausgelöst und die verantwortlichen Personen werden benachrichtigt.</p>
+                <p>Access to laboratory rooms must be controlled — for safety reasons, but also to keep track of who worked in the laboratory and when. Our electronic access-control systems offer maximum security with simple handling.</p>
+                <p><strong>Electronic locking systems:</strong> Access via RFID card, transponder or smartphone. No keys that can be lost, and simple management of access permissions.</p>
+                <p><strong>Biometric systems:</strong> For the highest security requirements we offer biometric access control via fingerprint or facial recognition. These systems are virtually tamper-proof and require no cards or codes.</p>
+                <p><strong>Logging:</strong> Every entry is logged automatically — with date, time and identity of the person. Logs can be used for audits or to trace incidents.</p>
+                <p><strong>Alarming:</strong> Unauthorised access attempts or open doors automatically raise an alarm and notify the responsible persons.</p>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Geräteüberwachung und Predictive Maintenance</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Equipment monitoring and predictive maintenance</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Laborgeräte sind teuer und kritisch für den Betrieb. Ein Ausfall zur falschen Zeit kann Experimente ruinieren und erhebliche Kosten verursachen. Mit unserer Geräteüberwachung behalten Sie den Zustand Ihrer Geräte im Blick und können Probleme erkennen, bevor sie zum Ausfall führen.</p>
+                <p>Laboratory instruments are expensive and critical to operations. A failure at the wrong time can ruin experiments and cause significant cost. With our equipment monitoring you keep the condition of your instruments in view and can detect problems before they lead to failure.</p>
                 <ul class="list-none space-y-3">
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Echtzeitüberwachung von Betriebsparametern (Temperatur, Druck, Stromaufnahme)</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Automatische Alarmierung bei Abweichungen von Normalwerten</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Analyse von Trends zur Früherkennung von Verschleiß</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Integration in bestehende LIMS und Wartungsmanagementsysteme</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Automatische Dokumentation für Qualitätsmanagement und Audits</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Fernzugriff auf Gerätestatus über Web-Dashboard oder App</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Real-time monitoring of operating parameters (temperature, pressure, current draw)</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Automatic alarming on deviations from normal values</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Trend analysis for early detection of wear</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Integration into existing LIMS and maintenance-management systems</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Automatic documentation for quality management and audits</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Remote access to instrument status via web dashboard or app</span></li>
                 </ul>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Energiemanagement</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Energy management</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Labore verbrauchen viel Energie – für Klimatisierung, Beleuchtung und den Betrieb zahlreicher Geräte. Mit intelligentem Energiemanagement lassen sich erhebliche Einsparungen erzielen, ohne die Funktionalität einzuschränken.</p>
-                <p>Unser Energiemanagementsystem erfasst den Verbrauch aller Geräte und Systeme und identifiziert Einsparpotenziale. Automatische Abschaltung ungenutzter Geräte, bedarfsgerechte Regelung der Klimatisierung und intelligente Beleuchtungssteuerung reduzieren den Energieverbrauch spürbar.</p>
-                <p>Durch die kontinuierliche Überwachung erkennen Sie auch ungewöhnliche Verbräuche, die auf defekte Geräte oder Leckagen hindeuten können. So sparen Sie nicht nur Energie, sondern beugen auch Schäden vor.</p>
+                <p>Laboratories consume a great deal of energy — for HVAC, lighting and the operation of numerous instruments. Intelligent energy management delivers substantial savings without restricting functionality.</p>
+                <p>Our energy-management system records the consumption of all instruments and systems and identifies savings potential. Automatic shutdown of unused equipment, demand-based HVAC control and intelligent lighting control noticeably reduce energy consumption.</p>
+                <p>Continuous monitoring also identifies unusual consumption that can indicate defective equipment or leaks. You save energy and prevent damage.</p>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Digitale Dokumentation und Compliance</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Digital documentation and compliance</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>In vielen Branchen ist eine lückenlose Dokumentation aller Laboraktivitäten vorgeschrieben. Unser Smart-Lab-System übernimmt diese Aufgabe automatisch und erstellt prüffähige Protokolle, die alle Anforderungen an GLP, GMP oder ISO erfüllen.</p>
-                <p><strong>Automatische Protokollierung:</strong> Alle relevanten Ereignisse – vom Betreten des Labors über die Nutzung von Geräten bis hin zu Umgebungsbedingungen – werden automatisch erfasst und gespeichert.</p>
-                <p><strong>Elektronische Unterschriften:</strong> Für Vorgänge, die eine Unterschrift erfordern, bieten wir elektronische Signaturen nach FDA 21 CFR Part 11 oder EU Annex 11.</p>
-                <p><strong>Audit-Trail:</strong> Alle Änderungen an Daten oder Einstellungen werden nachvollziehbar protokolliert. So können Sie jederzeit nachweisen, wer wann was getan hat.</p>
+                <p>In many sectors, complete documentation of all laboratory activities is mandatory. Our Smart Lab system takes on this task automatically and produces audit-ready records that meet all GLP, GMP or ISO requirements.</p>
+                <p><strong>Automatic logging:</strong> All relevant events — from entering the laboratory via instrument use to environmental conditions — are captured and stored automatically.</p>
+                <p><strong>Electronic signatures:</strong> For operations that require a signature we offer electronic signatures to FDA 21 CFR Part 11 or EU Annex 11.</p>
+                <p><strong>Audit trail:</strong> All changes to data or settings are logged in a traceable way. You can demonstrate at any time who did what and when.</p>
               </div>
             </div>
 
             <div>
-              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Integration und Schnittstellen</h3>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Integration and interfaces</h3>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
-                <p>Ein Smart Lab ist kein isoliertes System, sondern Teil einer vernetzten Infrastruktur. Unsere Lösungen bieten offene Schnittstellen für die Integration in bestehende Systeme:</p>
+                <p>A Smart Lab is not an isolated system, but part of a networked infrastructure. Our solutions offer open interfaces for integration into existing systems:</p>
                 <ul class="list-none space-y-3">
                   <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>LIMS (Laboratory Information Management System)</span></li>
                   <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>ELN (Electronic Laboratory Notebook)</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Gebäudeleittechnik und BMS</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>ERP-Systeme für Materialwirtschaft</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>CMMS für Wartungsmanagement</span></li>
-                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Cloud-Dienste und Fernzugriff</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Building management systems (BMS)</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>ERP systems for materials management</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>CMMS for maintenance management</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Cloud services and remote access</span></li>
                 </ul>
-                <p>Standardprotokolle wie OPC-UA, MQTT oder REST-APIs ermöglichen die nahtlose Integration. Für die Gebäudeautomation setzen wir auf <a href="https://www.loxone.com/dede/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Loxone</a> mit Echtzeit-Dashboard und Visualisierung aller Smart-Lab-Funktionen.</p>
+                <p>Standard protocols such as OPC-UA, MQTT or REST APIs enable seamless integration. For building automation we use <a href="https://www.loxone.com/dede/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Loxone</a> with a real-time dashboard and visualisation of all Smart Lab functions.</p>
               </div>
             </div>
 
             <div>
-              <h2 class="text-2xl font-heading font-bold mb-6 text-slate-900">Smart Lab nach Branche und Compliance-Anforderung</h2>
+              <h2 class="text-2xl font-heading font-bold mb-6 text-slate-900">Smart Lab by sector and compliance requirement</h2>
               <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
                 <p>
-                  Die IoT-Konfiguration folgt dem Einsatzzweck. Für <a href="/en/industries/pharma-biotech" class="text-primary font-medium hover:underline">Laborcontainer Pharma &amp; Biotech</a> implementieren wir Annex-11-konforme Datenerfassung mit Audit-Trail und elektronischen Signaturen. <a href="/en/industries/research-universities" class="text-primary font-medium hover:underline">Forschungs- und Hochschullabore</a> erhalten flexibles Sensor-Monitoring mit LIMS-Anbindung und ELN-Integration.
+                  The IoT configuration follows the intended use. For <a href="/en/industries/pharma-biotech" class="text-primary font-medium hover:underline">lab containers for pharma &amp; biotech</a> we implement Annex 11-conformant data capture with audit trail and electronic signatures. <a href="/en/industries/research-universities" class="text-primary font-medium hover:underline">Research and university laboratories</a> receive flexible sensor monitoring with LIMS connectivity and ELN integration.
                 </p>
                 <p>
-                  BSL-3-Container überwachen Differenzdruck, Schleusenstatus und Filterzustand in Echtzeit. ATEX-Zonen nach EN 60079 erhalten Ex-geschützte Sensoren und separate Alarmkette. ISO-17025-Prüflabore dokumentieren Umgebungsbedingungen automatisch als Teil der Messunsicherheitsbilanz. Alle Systeme werden in IQ/OQ/PQ eingebunden.
+                  BSL-3 containers monitor differential pressure, airlock status and filter condition in real time. ATEX zones to EN 60079 receive explosion-protected sensors and a separate alarm chain. ISO 17025 testing laboratories document environmental conditions automatically as part of the measurement-uncertainty budget. All systems are integrated into IQ/OQ/PQ.
                 </p>
               </div>
             </div>
@@ -203,29 +203,29 @@ const faqSchema = {
             <div class="sticky top-24 space-y-6">
               <div class="bg-primary text-slate-900 p-8 rounded-2xl">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
-                <h3 class="text-xl font-bold mb-3">Digitalisierung starten</h3>
-                <p class="text-slate-700 mb-6 text-sm">Machen Sie Ihr Labor zukunftsfähig. Wir beraten Sie zu den Möglichkeiten der Smart-Lab-Integration.</p>
-                <a href="/en/contact" class="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">Beratung anfordern</a>
+                <h3 class="text-xl font-bold mb-3">Start digitalisation</h3>
+                <p class="text-slate-700 mb-6 text-sm">Make your laboratory future-ready. We advise you on the options for Smart Lab integration.</p>
+                <a href="/en/contact" class="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">Request a consultation</a>
               </div>
               <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100">
-                <h3 class="text-lg font-bold mb-6 text-slate-900">Smart-Lab-Vorteile</h3>
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Smart Lab benefits</h3>
                 <ul class="space-y-4">
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Echtzeitüberwachung</span></li>
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Automatische Dokumentation</span></li>
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Erhöhte Sicherheit</span></li>
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Energieeinsparung</span></li>
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Fernzugriff</span></li>
-                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Compliance-Unterstützung</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Real-time monitoring</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Automatic documentation</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Increased security</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Energy savings</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Remote access</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Compliance support</span></li>
                 </ul>
               </div>
               <div class="bg-white p-8 rounded-2xl border border-gray-100">
-                <h3 class="text-lg font-bold mb-6 text-slate-900">Weitere Leistungen</h3>
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Further services</h3>
                 <ul class="space-y-3">
-                  <li><a href="/en/services/planning" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Technische Fachplanung</a></li>
-                  <li><a href="/en/services/modular-construction" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Modulbau & Fertigung</a></li>
-                  <li><a href="/en/services/logistics" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Logistik & Montage</a></li>
-                  <li><a href="/en/services/equipment" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Laborausstattung</a></li>
-                  <li><a href="/en/services/consulting" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Beratung & Genehmigung</a></li>
+                  <li><a href="/en/services/planning" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Specialist engineering design</a></li>
+                  <li><a href="/en/services/modular-construction" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Modular construction & manufacturing</a></li>
+                  <li><a href="/en/services/logistics" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Logistics & installation</a></li>
+                  <li><a href="/en/services/equipment" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Laboratory equipment</a></li>
+                  <li><a href="/en/services/consulting" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Consulting & permits</a></li>
                 </ul>
               </div>
             </div>
@@ -237,7 +237,7 @@ const faqSchema = {
     <section class="py-16 bg-slate-50 border-t border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">Häufige Fragen zur Smart Lab Integration</h2>
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">Frequently asked questions on Smart Lab integration</h2>
           <div class="space-y-4">
             {faqSchema.mainEntity.map((faq) => (
               <div class="bg-white rounded-xl p-6 border border-gray-100">
@@ -252,9 +252,9 @@ const faqSchema = {
 
     <section class="py-20 bg-slate-900 text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Bereit für das Labor der Zukunft?</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Lassen Sie uns gemeinsam Ihr Labor digitalisieren. Wir beraten Sie zu den Möglichkeiten und entwickeln eine Lösung, die zu Ihnen passt.</p>
-        <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Jetzt Kontakt aufnehmen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Ready for the laboratory of the future?</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Let us digitalise your laboratory together. We advise you on the options and develop a solution that fits.</p>
+        <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Get in touch now <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
     </section>
   </div>
