@@ -6,43 +6,43 @@ import AuthorBio from '../../../components/AuthorBio.astro';
 import BranchenCrossLinks from '../../../components/BranchenCrossLinks.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 
-const title = "Laborcontainer Forschung Hochschule – DFG, GenTSV, BSL";
-const description = "Laborcontainer Forschung & Hochschule: DFG-förderfähig, GenTSV S1/S2/S3, BSL-Labore für Universitäten & Forschungsinstitute. In 18 Wochen einsatzbereit. Kostenlose Beratung.";
-const canonical = "/branchen/forschung-hochschule";
+const title = "Lab containers for research & universities – DFG, GenTSV, BSL";
+const description = "Lab containers for research & universities: DFG-fundable, GenTSV S1/S2/S3, BSL laboratories for universities and research institutes. Operational in 18 weeks. Complimentary consultation.";
+const canonical = "/en/industries/research-universities";
 const ogImage = "/attached_assets/generated_images/high-tech_lab_interior.png";
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Laborcontainer für Forschung und Hochschule",
+  "serviceType": "Lab containers for research and higher education",
   "provider": { "@type": "Organization", "name": "Planexus GmbH", "image": "https://planexus.de/android-chrome-512x512.png", "url": "https://planexus.de", "telephone": "+49 7435 7519 700", "email": "info@planexus.de", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" }, "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" } },
   "areaServed": [{ "@type": "Country", "name": "Germany" }, { "@type": "Country", "name": "Switzerland" }, { "@type": "Country", "name": "Austria" }],
-  "audience": { "@type": "BusinessAudience", "audienceType": "Universitäten, Hochschulen, außeruniversitäre Forschungsinstitute" },
-  "description": "Modulare Laborcontainer für DFG-Drittmittelprojekte, BSL-1/2, GenTSV-konform, schnelle Anmietung 2-12 Monate, Mietkauf-Option, alle Bauklassen nach DIN EN 14470 und GefStoffV-konformes Gefahrstofflager."
+  "audience": { "@type": "BusinessAudience", "audienceType": "Universities, higher-education institutions, non-university research institutes" },
+  "description": "Modular lab containers for DFG third-party-funded projects, BSL-1/2, GenTSV-compliant, rapid hire for 2–12 months, hire-purchase option, all construction classes to DIN EN 14470 and hazardous-substance storage compliant with the German Hazardous Substances Ordinance (GefStoffV)."
 };
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
-    { "@type": "ListItem", "position": 2, "name": "Branchen", "item": "https://planexus.de/en/industries" },
-    { "@type": "ListItem", "position": 3, "name": "Forschung & Hochschule", "item": "https://planexus.de/en/industries/research-universities" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://planexus.de/en/industries" },
+    { "@type": "ListItem", "position": 3, "name": "Research & universities", "item": "https://planexus.de/en/industries/research-universities" }
   ]
 };
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Sind Laborcontainer DFG-förderfähig?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Die Deutsche Forschungsgemeinschaft fördert über ihre Verwendungsrichtlinien (Allgemeine Verwendungsrichtlinien für Sachbeihilfen, Stand 2024) sowohl Mietkosten als auch Investitionen in projektbezogene Forschungsinfrastruktur. Laborcontainer fallen unter Position „großgeräteähnliche Investitionen“ oder „projektbezogene Mietkosten“. Wir liefern die DFG-relevanten Belege (Angebot, Abnahmeprotokoll, Nutzungserklärung, Wirtschaftlichkeitsvergleich Miete vs. Kauf) als Anlage zum Verwendungsnachweis. Für GRK, SFB, Exzellenzcluster, Forschungsbauten nach Art. 91b GG und Großgeräte nach DFG-Großgeräteinitiative sind modulare Container etabliert. Auch BMBF-Projekte (Ramp-up, IPCEI, FONA) und EU-Horizon-Projekte akzeptieren Container-Mietkonstrukte." } },
-    { "@type": "Question", "name": "Was ist GenTSV und warum ist sie für Hochschul-Container kritisch?", "acceptedAnswer": { "@type": "Answer", "text": "Die Gentechnik-Sicherheitsverordnung (GenTSV) regelt Anlagen, in denen mit gentechnisch veränderten Organismen gearbeitet wird. Sie unterscheidet Sicherheitsstufen S1, S2, S3 und S4. S1-Anlagen sind anzeigepflichtig, S2-S4 genehmigungspflichtig nach Gentechnikgesetz § 8. Zuständig: Landesbehörden mit fachlicher Stellungnahme der ZKBS (Zentrale Kommission für die Biologische Sicherheit) am BVL Berlin. Für S2 brauchen Sie kontrollierten Zugang, separate Personal- und Materialschleusen, BGW-konforme Sicherheitswerkbank Klasse II nach DIN EN 12469, autoklavierte Abfallströme. S3 verlangt zusätzlich Unterdruck-HVAC mit HEPA-H14-Doppelfilterung und gerichteter Strömung. Wir bauen S1- und S2-Container standardmäßig, S3 mit BSL-3-Engineering. Für die GenTAufzV-Aufzeichnungen liefern wir die Räume mit MSR-Anschluss." } },
-    { "@type": "Question", "name": "Wie schnell kann ein Drittmittelprojekt mit Container starten?", "acceptedAnswer": { "@type": "Answer", "text": "Das hängt vom Konfigurationsgrad ab. Standard-Mietcontainer aus unserem Pool (BSL-1, S1, GefStoffV-konformes Gefahrstofflager, einfache Nasszelle) können wir in 4-6 Wochen anliefern. Projektspezifische Container (BSL-2, S2, dezidiertes HVAC, Reinraum-Standard) brauchen 12-16 Wochen Werksfertigung. Anlieferung 1 Woche, Inbetriebnahme 1-2 Wochen, Abnahme 1 Woche. Insgesamt: 18-22 Wochen bis projektgenehmigter Betrieb. Konventioneller Hochschul-Bauantrag dauert nach Landeshaushaltsordnung typisch 18-36 Monate – Container ist deshalb für 24- oder 36-Monats-Projekte oft die einzige realistische Option. Mietverträge mit 12, 24, 36 oder 60 Monaten sind möglich." } },
-    { "@type": "Question", "name": "Können Container während Sanierung des Bestands-Labors als Übergangsfläche dienen?", "acceptedAnswer": { "@type": "Answer", "text": "Genau das ist einer unserer häufigsten Anwendungsfälle. Hochschulen stehen regelmäßig vor dem Problem: ein Bestandsgebäude wird saniert (Asbest-Sanierung, Brandschutz-Nachrüstung, energetische Modernisierung nach GEG, statische Ertüchtigung), Forschung darf nicht 12-24 Monate stillstehen. Wir stellen während der Sanierung Container-Übergangslabore mit gleichwertiger Ausstattung (Abzug, Sicherheitswerkbank, Spülecke, Notdusche, Augenspülstation) auf das Hochschul-Gelände. Mietzeit typisch 18-36 Monate, danach Rücknahme inklusive. Bauantrag nach LBO als „temporäre bauliche Anlage“ mit befristeter Genehmigung – das beschleunigt die Behördenfreigabe drastisch gegenüber einem Neubau. Wir liefern die Bauantragsunterlagen mit." } },
-    { "@type": "Question", "name": "Welche Sicherheitswerkbanken und welche Abzüge bauen wir ein?", "acceptedAnswer": { "@type": "Answer", "text": "Standard für Hochschul-Container: Sicherheitswerkbank Klasse II nach DIN EN 12469 (Personenschutz, Produktschutz, Umweltschutz; HEPA-H14 in Zu- und Abluft, gerichtete Strömung 0,38 m/s ±20 %), wahlweise Typ A2 mit interner Rezirkulation oder Typ B2 mit Abluft ins Freie für gefährliche Chemikalien. Chemische Abzüge nach DIN EN 14175 mit dokumentierter Eintrittsgeschwindigkeit ≥0,5 m/s, ENERGY-VAV-Steuerung mit Frontschieber-Position, mechanische Bestätigung der Lüftungssituation. Sondertypen: PCR-Werkbänke mit UV-Sterilisation, Zellkultur-Bänke mit Restriktion gegen Aerosolverschleppung, Tracerstoff-Abzüge für SBF-Prüfungen. Wartungsintervall 12 Monate inklusive im Mietkontrakt. DGUV-V3-Prüfung jährlich." } },
-    { "@type": "Question", "name": "Was unterscheidet Forschungs-Container von industriellen QC-Containern?", "acceptedAnswer": { "@type": "Answer", "text": "Forschungs-Container sind flexibel und experimentell ausgelegt: vielfältige Medienanschlüsse (Druckluft, Vakuum, Stickstoff, Argon, deionisiertes Wasser, Reinstwasser nach ISO 3696 Typ 1), modulare Möblierung mit verschieblichen Tischen, Tisch-Höhenverstellung 720-1.080 mm, Strom-Schienen mit 230 V und 400 V, Daten-Mehrfach-Patchpaneele Cat 6a, viele Funktionsabzüge. Industrielle QC-Container sind methodenfest und prozessstabil ausgelegt: feste Möblierung am SOP-Standard, dedicated GMP-Datenintegrität, validierte Geräte-Anbindung, weniger Flexibilität dafür mehr Reproduzierbarkeit. Wir bauen beide Typen – Hochschulen und Forschungsinstitute bekommen meist die Forschungs-Konfiguration." } },
-    { "@type": "Question", "name": "Wie ist die rechtliche Situation für Container auf Hochschul-Liegenschaften?", "acceptedAnswer": { "@type": "Answer", "text": "Hochschulen sind Bauherren im Sinne der Landesbauordnung. Ein Container >75 m³ Brutto-Rauminhalt oder mit dauerhafter Verbindung zum Boden ist baugenehmigungspflichtig nach LBO § 60ff. Verfahrensfreie Anlagen (LBO § 61, je Bundesland leicht unterschiedlich) gelten meist nicht für Labor-Container, weil sie GenTSV/BioStoffV-relevant sind. Wir liefern den Bauantrag mit: Lageplan, Statik nach DIN EN 1991/1992/1993, Brandschutznachweis nach LBO + MBO + ASR A2.2, Lärm- und Lüftungsnachweis, GenTSV/BioStoffV-Erklärung. Auf bestandsgeschützten Liegenschaften (z.B. denkmalgeschützte Hochschul-Areale in Innenstadtlagen) klären wir vorab mit der Denkmalbehörde." } }
+    { "@type": "Question", "name": "Are lab containers eligible for DFG funding?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The German Research Foundation (DFG) funds, under its rules of use (General Guidelines for the Use of Funds for Research Grants, status 2024), both hire costs and investment in project-related research infrastructure. Lab containers fall under “major-instrument-like investment” or “project-related hire costs”. We supply the DFG-relevant evidence (quotation, acceptance protocol, declaration of use, hire-versus-purchase cost comparison) as an annex to the statement of use. Modular containers are established for Research Training Groups (GRK), Collaborative Research Centres (SFB), Clusters of Excellence, research buildings under Article 91b of the Basic Law, and major instruments under the DFG major-instrument initiative. BMBF projects (ramp-up, IPCEI, FONA) and EU Horizon projects also accept container hire structures." } },
+    { "@type": "Question", "name": "What is GenTSV and why does it matter for university containers?", "acceptedAnswer": { "@type": "Answer", "text": "The German Genetic Engineering Safety Ordinance (GenTSV) regulates facilities in which genetically modified organisms are handled. It distinguishes safety levels S1, S2, S3 and S4. S1 facilities are notifiable; S2–S4 require authorisation under the Genetic Engineering Act § 8. Competent bodies: Land authorities with a technical opinion from the ZKBS (Central Committee on Biological Safety) at the BVL in Berlin. For S2 you need controlled access, separate personnel and material airlocks, a BGW-compliant Class II microbiological safety cabinet to DIN EN 12469, and autoclaved waste streams. S3 additionally requires negative-pressure HVAC with HEPA H14 dual filtration and directional airflow. We build S1 and S2 containers as standard, S3 with BSL-3 engineering. For GenTAufzV records we supply the rooms with BMS/EMS connections." } },
+    { "@type": "Question", "name": "How quickly can a third-party-funded project start with a container?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the degree of configuration. Standard hire containers from our pool (BSL-1, S1, GefStoffV-compliant hazardous-substance store, simple wet room) can be delivered in 4–6 weeks. Project-specific containers (BSL-2, S2, dedicated HVAC, cleanroom standard) need 12–16 weeks of factory production. Delivery 1 week, commissioning 1–2 weeks, acceptance 1 week. Overall: 18–22 weeks to project-approved operation. A conventional university building application under Land budget rules typically takes 18–36 months – so for 24- or 36-month projects a container is often the only realistic option. Hire agreements of 12, 24, 36 or 60 months are available." } },
+    { "@type": "Question", "name": "Can containers serve as interim space while the existing laboratory is refurbished?", "acceptedAnswer": { "@type": "Answer", "text": "That is one of our most frequent applications. Universities regularly face the problem that an existing building is refurbished (asbestos removal, fire-protection upgrade, energy modernisation under the Buildings Energy Act (GEG), structural strengthening) while research cannot stand still for 12–24 months. During the works we place interim container laboratories of equivalent fit-out (fume cupboard, microbiological safety cabinet, sink area, emergency shower, eyewash station) on the campus. Typical hire period 18–36 months, with take-back included. Building application under the Land building code (LBO) as a “temporary structure” with a time-limited permit – that accelerates authority approval dramatically versus a new building. We supply the building-application documents." } },
+    { "@type": "Question", "name": "Which microbiological safety cabinets and fume cupboards do we install?", "acceptedAnswer": { "@type": "Answer", "text": "Standard for university containers: Class II microbiological safety cabinet to DIN EN 12469 (personnel, product and environmental protection; HEPA H14 in supply and extract, directional airflow 0.38 m/s ±20 %), optionally Type A2 with internal recirculation or Type B2 with extract to atmosphere for hazardous chemicals. Chemical fume cupboards to DIN EN 14175 with documented face velocity ≥0.5 m/s, ENERGY-VAV control with sash position, mechanical confirmation of the ventilation state. Special types: PCR cabinets with UV sterilisation, cell-culture cabinets with restriction against aerosol carry-over, tracer-gas fume cupboards for SBF tests. 12-month maintenance interval included in the hire contract. Annual DGUV V3 inspection." } },
+    { "@type": "Question", "name": "What distinguishes research containers from industrial QC containers?", "acceptedAnswer": { "@type": "Answer", "text": "Research containers are laid out for flexibility and experiment: diverse media connections (compressed air, vacuum, nitrogen, argon, deionised water, ultrapure water to ISO 3696 Type 1), modular furniture with movable benches, bench-height adjustment 720–1,080 mm, power tracks with 230 V and 400 V, multiple Cat 6a data patch panels, many functional fume cupboards. Industrial QC containers are method-fixed and process-stable: fixed furniture to SOP standard, dedicated GMP data integrity, validated instrument interfaces, less flexibility but more reproducibility. We build both types – universities and research institutes usually receive the research configuration." } },
+    { "@type": "Question", "name": "What is the legal position for containers on university premises?", "acceptedAnswer": { "@type": "Answer", "text": "Universities are building owners under the Land building code. A container >75 m³ gross volume or with a permanent connection to the ground requires a building permit under LBO §§ 60 ff. Procedure-free structures (LBO § 61, slightly different by Land) generally do not apply to laboratory containers because they are GenTSV/BioStoffV-relevant. We supply the building application: site plan, structural design to DIN EN 1991/1992/1993, fire-protection report to LBO + MBO + ASR A2.2, noise and ventilation evidence, GenTSV/BioStoffV declaration. On heritage-protected sites (for example listed university campuses in inner-city locations) we clarify in advance with the heritage authority." } }
   ]
 };
-const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Laborcontainer für Forschung & Hochschule – DFG, GenTSV, S2", "description": "Modulare Forschungs-Laborcontainer für Universitäten und Forschungsinstitute. DFG-förderfähig, GenTSV-konform, S1/S2/S3.", "image": "https://planexus.de/opengraph.jpg", "datePublished": "2026-05-02", "dateModified": "2026-05-02", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Geschäftsführer Planexus GmbH", "url": "https://planexus.de/en/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://planexus.de/en/industries/research-universities"}, "about": "Forschungs- und Hochschul-Laborcontainer", "inLanguage": "en"};
+const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Lab containers for research & universities – DFG, GenTSV, S2", "description": "Modular research lab containers for universities and research institutes. DFG-fundable, GenTSV-compliant, S1/S2/S3.", "image": "https://planexus.de/opengraph.jpg", "datePublished": "2026-05-02", "dateModified": "2026-05-02", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Managing Director, Planexus GmbH", "url": "https://planexus.de/en/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://planexus.de/en/industries/research-universities"}, "about": "Research and university lab containers", "inLanguage": "en"};
 ---
 <Layout title={title} description={description} canonical={canonical} ogImage={ogImage} schema={serviceSchema}>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
@@ -52,24 +52,24 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
   <div class="bg-white">
     <section class="relative bg-slate-900 text-white overflow-hidden pt-20">
       <div class="absolute inset-0 z-0">
-        <Picture src="/attached_assets/generated_images/high-tech_lab_interior.png" alt="Laborcontainer Forschung Hochschule – DFG-Drittmittel und GenTSV-Container" class="w-full h-full object-cover opacity-25" loading="eager" fetchpriority="high" width={1024} height={1024} />
+        <Picture src="/attached_assets/generated_images/high-tech_lab_interior.png" alt="Lab containers for research and universities – DFG third-party funding and GenTSV containers" class="w-full h-full object-cover opacity-25" loading="eager" fetchpriority="high" width={1024} height={1024} />
         <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
       </div>
       <div class="relative z-10 container mx-auto px-4 py-16 md:py-24">
         <div class="max-w-4xl">
-          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Branche · Universitäten · Hochschulen · Forschungsinstitute</div>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">Laborcontainer für Forschung & Hochschule – DFG, GenTSV, BSL</h1>
-          <p class="text-xl text-gray-300 leading-relaxed mb-4"><strong class="text-white">BSL-1, BSL-2 und S1/S2 nach GenTSV, GefStoffV-konformes Gefahrstofflager nach DIN EN 14470, Sicherheitswerkbank Klasse II nach DIN EN 12469, chemische Abzüge nach DIN EN 14175.</strong> Mietverträge ab 12 Monaten passgenau zur Drittmittelprojektlaufzeit. Bauantragsunterlagen, ZKBS-Erklärung und DGUV-Prüfprotokolle ab Werk Albstadt.</p>
-          <p class="text-base text-gray-400 mb-8">Während die Hochschul-Bauverwaltung den klassischen Antrag plant, läuft Ihr Drittmittelprojekt bei uns längst.</p>
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Industry · Universities · Higher education · Research institutes</div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">Lab containers for research & universities – DFG, GenTSV, BSL</h1>
+          <p class="text-xl text-gray-300 leading-relaxed mb-4"><strong class="text-white">BSL-1, BSL-2 and S1/S2 under GenTSV, GefStoffV-compliant hazardous-substance storage to DIN EN 14470, Class II microbiological safety cabinet to DIN EN 12469, chemical fume cupboards to DIN EN 14175.</strong> Hire agreements from 12 months, matched to the third-party-funded project term. Building-application documents, ZKBS declaration and DGUV inspection records from the Albstadt factory.</p>
+          <p class="text-base text-gray-400 mb-8">While the university estates office is still planning the conventional application, your funded project is already under way with us.</p>
           <div class="flex flex-col sm:flex-row gap-4 mb-8">
-            <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">DFG-Container-Konzept anfragen</a>
+            <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">Request a DFG container concept</a>
             <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">+49 7435 7519 700</a>
           </div>
           <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
-            <div>✓ DFG / BMBF / EU-Horizon förderfähig</div>
-            <div>✓ S1 / S2 / BSL-2 nach GenTSV</div>
-            <div>✓ Mietzeit 12 / 24 / 36 / 60 Monate</div>
-            <div>✓ Sanierungs-Übergangsfläche</div>
+            <div>✓ Eligible for DFG / BMBF / EU Horizon funding</div>
+            <div>✓ S1 / S2 / BSL-2 under GenTSV</div>
+            <div>✓ Hire term 12 / 24 / 36 / 60 months</div>
+            <div>✓ Interim space during refurbishment</div>
           </div>
         </div>
       </div>
@@ -81,15 +81,15 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
           <div class="text-center mb-10">
-            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Drittmittelprojekt-Realität</div>
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Warum Hochschulen und außeruniversitäre Institute zu Containern greifen</h2>
-            <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">Ein DFG-Sachbeihilfe-Projekt läuft typisch 36 Monate. Ein klassischer Hochschul-Laborneubau dauert von Antrag bis Inbetriebnahme nach Bauunterlagen-Erlass und HBR-Verfahren 36-72 Monate. Diese Lücke schließen modulare Forschungs-Container.</p>
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">The reality of third-party-funded projects</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Why universities and non-university institutes turn to containers</h2>
+            <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">A DFG research-grant project typically runs for 36 months. A conventional university laboratory building takes 36–72 months from application to commissioning under the construction-document decree and HBR procedure. Modular research containers close that gap.</p>
           </div>
           <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">18 W.</div><div class="text-xs text-gray-400 uppercase tracking-wider">bis projektreifer Betrieb</div><div class="text-xs text-gray-500 mt-1">vs. 36-72 Monate Hochschulbau</div></div>
-            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">S1+S2</div><div class="text-xs text-gray-400 uppercase tracking-wider">GenTSV-Sicherheitsstufen</div><div class="text-xs text-gray-500 mt-1">ZKBS-Anzeige inklusive</div></div>
-            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">12 Mo.</div><div class="text-xs text-gray-400 uppercase tracking-wider">Mindestmietzeit</div><div class="text-xs text-gray-500 mt-1">passgenau zur Projektlaufzeit</div></div>
-            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">DGUV V3</div><div class="text-xs text-gray-400 uppercase tracking-wider">jährliche Prüfung</div><div class="text-xs text-gray-500 mt-1">im Mietkontrakt enthalten</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">18 wks</div><div class="text-xs text-gray-400 uppercase tracking-wider">to project-ready operation</div><div class="text-xs text-gray-500 mt-1">vs. 36–72 months of university construction</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">S1+S2</div><div class="text-xs text-gray-400 uppercase tracking-wider">GenTSV safety levels</div><div class="text-xs text-gray-500 mt-1">ZKBS notification included</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">12 mo.</div><div class="text-xs text-gray-400 uppercase tracking-wider">Minimum hire term</div><div class="text-xs text-gray-500 mt-1">matched to the project duration</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">DGUV V3</div><div class="text-xs text-gray-400 uppercase tracking-wider">Annual inspection</div><div class="text-xs text-gray-500 mt-1">included in the hire contract</div></div>
           </div>
         </div>
       </div>
@@ -98,22 +98,22 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">Drei Engpässe in Hochschul-Forschungsprojekten, die wir mit Containern lösen</h2>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">Three bottlenecks in university research projects that we solve with containers</h2>
           <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
-              <div class="text-slate-900 font-bold text-lg mb-2">Drittmittelprojekt > Bauverwaltungs-Tempo</div>
-              <p class="text-gray-700 text-sm leading-relaxed">DFG-Mittel fließen ab Bewilligung. Bauamt-Verfahren dauert oft länger als das Projekt. Container überbrückt die Lücke.</p>
-              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus: Bauantrag und ZKBS-Anzeige im Werkspaket.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Funded project outpaces estates administration</div>
+              <p class="text-gray-700 text-sm leading-relaxed">DFG funds flow from the award. Building-authority procedures often last longer than the project. A container bridges the gap.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus: building application and ZKBS notification in the factory pack.</p>
             </div>
             <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
-              <div class="text-slate-900 font-bold text-lg mb-2">Sanierung blockiert Forschung</div>
-              <p class="text-gray-700 text-sm leading-relaxed">Asbest-, Brandschutz- oder GEG-Sanierung legt Bestandslabor 12-24 Monate lahm. Übergangs-Container hält Forschung am Laufen.</p>
-              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus: temporäre Genehmigung mit Rücknahme.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Refurbishment blocks research</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Asbestos, fire-protection or GEG refurbishment shuts the existing laboratory for 12–24 months. An interim container keeps research running.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus: temporary permit with take-back.</p>
             </div>
             <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
-              <div class="text-slate-900 font-bold text-lg mb-2">Förderträger fordert Wirtschaftlichkeit</div>
-              <p class="text-gray-700 text-sm leading-relaxed">DFG, BMBF und EU verlangen Vergleichsrechnung Miete vs. Kauf. Container-Miete passt zur Projektlaufzeit ohne Restwert-Problem.</p>
-              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus: Wirtschaftlichkeitsvergleich als Anlage.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Funders require value for money</div>
+              <p class="text-gray-700 text-sm leading-relaxed">DFG, BMBF and the EU require a hire-versus-purchase comparison. Container hire matches the project term without a residual-value problem.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus: cost-benefit comparison as an annex.</p>
             </div>
           </div>
         </div>
@@ -123,21 +123,21 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
     <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Normen und Regelwerke für Hochschul- und Forschungs-Container</h2>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Standards and regulations for university and research containers</h2>
           <div class="overflow-x-auto">
             <table class="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
-              <thead class="bg-slate-900 text-white"><tr><th class="text-left p-4 font-bold">Norm</th><th class="text-left p-4 font-bold">Anwendung</th><th class="text-left p-4 font-bold">Lieferung</th></tr></thead>
+              <thead class="bg-slate-900 text-white"><tr><th class="text-left p-4 font-bold">Standard</th><th class="text-left p-4 font-bold">Application</th><th class="text-left p-4 font-bold">Delivery</th></tr></thead>
               <tbody class="divide-y divide-gray-100">
-                <tr><td class="p-4 font-semibold text-slate-900">GenTG / GenTSV</td><td class="p-4 text-gray-700">Gentechnik-Anlagen S1/S2</td><td class="p-4 text-gray-700">ZKBS-Anzeige, GenTAufzV-Räume</td></tr>
-                <tr><td class="p-4 font-semibold text-slate-900">BioStoffV § 15</td><td class="p-4 text-gray-700">Biologische Arbeitsstoffe Schutzstufe 2</td><td class="p-4 text-gray-700">Gefährdungsbeurteilung, TRBA 100</td></tr>
-                <tr><td class="p-4 font-semibold text-slate-900">GefStoffV / TRGS 526</td><td class="p-4 text-gray-700">Gefahrstofflager und -arbeitsplätze</td><td class="p-4 text-gray-700">Sicherheitsschrank DIN EN 14470, Auffangwannen</td></tr>
-                <tr><td class="p-4 font-semibold text-slate-900">DIN EN 12469</td><td class="p-4 text-gray-700">Sicherheitswerkbank Klasse II</td><td class="p-4 text-gray-700">Typ A2 oder B2 mit DGUV-V3-Prüfung</td></tr>
-                <tr><td class="p-4 font-semibold text-slate-900">DIN EN 14175</td><td class="p-4 text-gray-700">Chemische Abzüge</td><td class="p-4 text-gray-700">VAV-Regelung, Eintritts-Validierung</td></tr>
-                <tr><td class="p-4 font-semibold text-slate-900">DIN 1946-7</td><td class="p-4 text-gray-700">RLT für Laboratorien</td><td class="p-4 text-gray-700">Luftwechsel ≥8/h, Druckkaskade</td></tr>
-                <tr><td class="p-4 font-semibold text-slate-900">DGUV V3</td><td class="p-4 text-gray-700">Elektrische Anlagen jährlich</td><td class="p-4 text-gray-700">Prüfprotokoll im Mietkontrakt</td></tr>
-                <tr><td class="p-4 font-semibold text-slate-900">DGUV Information 213-850</td><td class="p-4 text-gray-700">Sicheres Arbeiten in Laboratorien</td><td class="p-4 text-gray-700">Notdusche, Augenspüler, Erste-Hilfe-Punkt</td></tr>
-                <tr><td class="p-4 font-semibold text-slate-900">ISO 3696 Typ 1/2/3</td><td class="p-4 text-gray-700">Reinstwasser-Qualität</td><td class="p-4 text-gray-700">Anschluss für Reinstwasser-Anlagen</td></tr>
-                <tr><td class="p-4 font-semibold text-slate-900">DFG-Verwendungsrichtlinien 2024</td><td class="p-4 text-gray-700">Drittmittel-Förderfähigkeit</td><td class="p-4 text-gray-700">Wirtschaftlichkeitsvergleich, Belege</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">GenTG / GenTSV</td><td class="p-4 text-gray-700">Genetic-engineering facilities S1/S2</td><td class="p-4 text-gray-700">ZKBS notification, GenTAufzV rooms</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">BioStoffV § 15</td><td class="p-4 text-gray-700">Biological agents, containment level 2</td><td class="p-4 text-gray-700">Risk assessment, TRBA 100</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">GefStoffV / TRGS 526</td><td class="p-4 text-gray-700">Hazardous-substance stores and workplaces</td><td class="p-4 text-gray-700">Safety cabinet DIN EN 14470, bunds</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN EN 12469</td><td class="p-4 text-gray-700">Class II microbiological safety cabinet</td><td class="p-4 text-gray-700">Type A2 or B2 with DGUV V3 inspection</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN EN 14175</td><td class="p-4 text-gray-700">Chemical fume cupboards</td><td class="p-4 text-gray-700">VAV control, face-velocity validation</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN 1946-7</td><td class="p-4 text-gray-700">HVAC for laboratories</td><td class="p-4 text-gray-700">Air changes ≥8/h, pressure cascade</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DGUV V3</td><td class="p-4 text-gray-700">Electrical installations, annually</td><td class="p-4 text-gray-700">Inspection record in the hire contract</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DGUV Information 213-850</td><td class="p-4 text-gray-700">Safe working in laboratories</td><td class="p-4 text-gray-700">Emergency shower, eyewash, first-aid point</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">ISO 3696 Type 1/2/3</td><td class="p-4 text-gray-700">Ultrapure-water quality</td><td class="p-4 text-gray-700">Connection for ultrapure-water plant</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DFG rules of use 2024</td><td class="p-4 text-gray-700">Third-party-funding eligibility</td><td class="p-4 text-gray-700">Cost-benefit comparison, evidence</td></tr>
               </tbody>
             </table>
           </div>
@@ -148,17 +148,17 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900 text-center">Acht Anwendungen, die wir für Hochschulen und Forschungsinstitute liefern</h2>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900 text-center">Eight applications we supply for universities and research institutes</h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { title: 'BSL-2 / S2 Forschung', desc: 'Mikrobiologie, Virologie, Molekularbiologie mit gerichteter Strömung und HEPA-H14.' },
-              { title: 'Zellkultur-Labor', desc: 'CO₂-Inkubatoren, Klasse-II-Werkbänke, Sterilisatoren, Reinstwasser, niedrige Vibration.' },
-              { title: 'Analytik HPLC / GC / MS', desc: 'Klimastabilisiert ±0,5 °C, EMV-geschützt, Argonschrank, Stickstoff-Generator.' },
-              { title: 'Chemie-Synthese', desc: 'Mehrere Abzüge nach DIN EN 14175, Lösungsmittel-Vorratsschrank, Inertgas-Versorgung.' },
-              { title: 'Material-/Werkstoff-Prüfung', desc: 'Schwingungs-isoliertes Fundament, hohe Traglast, Druckluft 8 bar, 400 V Drehstrom.' },
-              { title: 'Tierversuchs-Begleitung', desc: 'TVT-konformer Vorbereitungsbereich, separater Material-/Personalfluss, niedriger Geräuschpegel.' },
-              { title: 'Probenlager / Kryolager', desc: 'Doppelte Kühlkette, USV-Anschluss, Alarm-Aufschaltung, Datenlogger nach GLP.' },
-              { title: 'Drittmittel-Übergangslabor', desc: 'Mietzeit 12-60 Monate, Standardisierung mit Bestandsausstattung, schneller Auf-/Abbau.' }
+              { title: 'BSL-2 / S2 research', desc: 'Microbiology, virology, molecular biology with directional airflow and HEPA H14.' },
+              { title: 'Cell-culture laboratory', desc: 'CO₂ incubators, Class II cabinets, sterilisers, ultrapure water, low vibration.' },
+              { title: 'HPLC / GC / MS analytics', desc: 'Climate-stabilised ±0.5 °C, EMC-shielded, argon cabinet, nitrogen generator.' },
+              { title: 'Chemical synthesis', desc: 'Several fume cupboards to DIN EN 14175, solvent storage cabinet, inert-gas supply.' },
+              { title: 'Materials testing', desc: 'Vibration-isolated foundation, high load capacity, 8 bar compressed air, 400 V three-phase.' },
+              { title: 'Animal-study support', desc: 'TVT-compliant preparation area, separate material/personnel flow, low noise level.' },
+              { title: 'Sample / cryo storage', desc: 'Dual cold chain, UPS connection, alarm link-out, data loggers to GLP.' },
+              { title: 'Funded interim laboratory', desc: 'Hire term 12–60 months, standardisation with existing equipment, rapid assembly/disassembly.' }
             ].map(item => (
               <div class="bg-slate-50 rounded-xl p-5 border-l-2 border-primary">
                 <div class="font-bold text-slate-900 mb-2">{item.title}</div>
@@ -173,14 +173,14 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
     <section class="py-16 md:py-20 bg-slate-900 text-white">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10">Sechs Engineering-Details, die Hochschul-Container von Bürocontainern trennen</h2>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10">Six engineering details that separate university containers from office containers</h2>
           <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">1. Lüftungs-Konzept</div><h3 class="text-xl font-bold mb-3">Min. 8-fach Luftwechsel nach DIN 1946-7</h3><p class="text-gray-300 text-sm">Quell-Zuluft mit Filter F7+F9, Abluft über Abzüge ins Freie, Druckkaskade Schleuse → Labor → Außen, Notbetrieb mit Notstrom für Lüftung 60 min.</p></div>
-            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">2. Medienversorgung</div><h3 class="text-xl font-bold mb-3">Vollausstattung Forschungs-Standard</h3><p class="text-gray-300 text-sm">Kalt- und Warmwasser, Druckluft 6/8 bar trocken/ölfrei, Vakuum, N₂, Ar, Stadtgas, Reinstwasser-Anschluss, 230/400 V mit USV-Reserve.</p></div>
-            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">3. Notfall-Infrastruktur</div><h3 class="text-xl font-bold mb-3">DGUV Information 213-850 vollständig</h3><p class="text-gray-300 text-sm">Notdusche mit beheizter Leitung, Augenspüler nach DIN EN 15154, Brandmeldeanlage Kategorie 1 mit Aufschaltung, Erste-Hilfe-Schrank, Fluchtwege beleuchtet.</p></div>
-            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">4. Datenintegrität</div><h3 class="text-xl font-bold mb-3">GLP-tauglich nach OECD</h3><p class="text-gray-300 text-sm">LIMS-Anschluss, Audit-Trail, ELN-fähige Workstations, redundante Datensicherung, Zeitsynchronisation NTP, Zugriffsrechte rollenbasiert.</p></div>
-            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">5. Möbel & Flexibilität</div><h3 class="text-xl font-bold mb-3">Tisch-Höhenverstellung 720-1.080 mm</h3><p class="text-gray-300 text-sm">C-Profil-Schienensystem, mobile Untertische, Rollwagen, Strom-Schienen oberhalb Arbeitsfläche, Daten-Mehrfach-Patch, Umbau ohne Bauleistung.</p></div>
-            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">6. Boden, Wand, Decke</div><h3 class="text-xl font-bold mb-3">Chemikalienbeständig nach DIN EN ISO 175</h3><p class="text-gray-300 text-sm">Fugenloser Kautschuk-/Linoleumboden mit Hohlkehlen, abriebbeständige Wände, abwischbare Decke, alle Materialien GISBAU-geprüft, recycelbar.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">1. Ventilation concept</div><h3 class="text-xl font-bold mb-3">Minimum 8 air changes to DIN 1946-7</h3><p class="text-gray-300 text-sm">Displacement supply with F7+F9 filters, extract via fume cupboards to atmosphere, pressure cascade airlock → laboratory → exterior, emergency operation with standby power for ventilation for 60 min.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">2. Media supply</div><h3 class="text-xl font-bold mb-3">Full research-standard fit-out</h3><p class="text-gray-300 text-sm">Hot and cold water, compressed air 6/8 bar dry/oil-free, vacuum, N₂, Ar, town gas, ultrapure-water connection, 230/400 V with UPS reserve.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">3. Emergency infrastructure</div><h3 class="text-xl font-bold mb-3">DGUV Information 213-850 in full</h3><p class="text-gray-300 text-sm">Emergency shower with heated pipework, eyewash to DIN EN 15154, Category 1 fire-alarm system with link-out, first-aid cabinet, illuminated escape routes.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">4. Data integrity</div><h3 class="text-xl font-bold mb-3">GLP-capable to OECD</h3><p class="text-gray-300 text-sm">LIMS connection, audit trail, ELN-capable workstations, redundant data backup, NTP time synchronisation, role-based access.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">5. Furniture & flexibility</div><h3 class="text-xl font-bold mb-3">Bench-height adjustment 720–1,080 mm</h3><p class="text-gray-300 text-sm">C-profile rail system, mobile under-benches, trolleys, power tracks above the work surface, multiple data patch, reconfiguration without building work.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">6. Floor, wall, ceiling</div><h3 class="text-xl font-bold mb-3">Chemically resistant to DIN EN ISO 175</h3><p class="text-gray-300 text-sm">Seamless rubber/linoleum floor with coving, abrasion-resistant walls, wipeable ceiling, all materials GISBAU-assessed, recyclable.</p></div>
           </div>
         </div>
       </div>
@@ -189,14 +189,14 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
     <section class="py-16 md:py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900 text-center">Wo wir Forschungs- und Hochschul-Container in DACH liefern</h2>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900 text-center">Where we supply research and university containers in DACH</h2>
           <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-slate-50 rounded-xl p-6">
-              <div class="text-2xl mb-3">🇩🇪 Deutschland</div>
-              <p class="text-sm text-gray-700 mb-4">Forschungsstandorte in Berlin, Heidelberg, Braunschweig, Potsdam, Jülich, München, Göttingen, Tübingen, Stuttgart, Dresden, Karlsruhe und Aachen.</p>
+              <div class="text-2xl mb-3">🇩🇪 Germany</div>
+              <p class="text-sm text-gray-700 mb-4">Research sites in Berlin, Heidelberg, Braunschweig, Potsdam, Jülich, Munich, Göttingen, Tübingen, Stuttgart, Dresden, Karlsruhe and Aachen.</p>
               <ul class="space-y-1 text-sm">
                 <li><a href="/en/lab-containers-berlin" class="text-[#7a9900] hover:underline">Berlin</a></li>
-                <li><a href="/en/lab-containers-munich" class="text-[#7a9900] hover:underline">München</a></li>
+                <li><a href="/en/lab-containers-munich" class="text-[#7a9900] hover:underline">Munich</a></li>
                 <li><a href="/en/lab-containers-hamburg" class="text-[#7a9900] hover:underline">Hamburg</a></li>
                 <li><a href="/en/lab-containers-stuttgart" class="text-[#7a9900] hover:underline">Stuttgart</a></li>
                 <li><a href="/en/lab-containers-frankfurt" class="text-[#7a9900] hover:underline">Frankfurt</a></li>
@@ -204,19 +204,19 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
               </ul>
             </div>
             <div class="bg-slate-50 rounded-xl p-6">
-              <div class="text-2xl mb-3">🇨🇭 Schweiz</div>
-              <p class="text-sm text-gray-700 mb-4">Forschungsstandorte in Zürich, Lausanne, Bern, Basel und Dübendorf.</p>
+              <div class="text-2xl mb-3">🇨🇭 Switzerland</div>
+              <p class="text-sm text-gray-700 mb-4">Research sites in Zurich, Lausanne, Bern, Basel and Dübendorf.</p>
               <ul class="space-y-1 text-sm">
-                <li><a href="/en/lab-containers-zurich" class="text-[#7a9900] hover:underline">Zürich</a></li>
+                <li><a href="/en/lab-containers-zurich" class="text-[#7a9900] hover:underline">Zurich</a></li>
                 <li><a href="/en/lab-containers-basel" class="text-[#7a9900] hover:underline">Basel</a></li>
                 <li><a href="/en/lab-containers-bern" class="text-[#7a9900] hover:underline">Bern</a></li>
               </ul>
             </div>
             <div class="bg-slate-50 rounded-xl p-6">
-              <div class="text-2xl mb-3">🇦🇹 Österreich</div>
-              <p class="text-sm text-gray-700 mb-4">Forschungsstandorte in Wien, Klosterneuburg, Linz und Graz.</p>
+              <div class="text-2xl mb-3">🇦🇹 Austria</div>
+              <p class="text-sm text-gray-700 mb-4">Research sites in Vienna, Klosterneuburg, Linz and Graz.</p>
               <ul class="space-y-1 text-sm">
-                <li><a href="/en/lab-containers-vienna" class="text-[#7a9900] hover:underline">Wien</a></li>
+                <li><a href="/en/lab-containers-vienna" class="text-[#7a9900] hover:underline">Vienna</a></li>
                 <li><a href="/en/lab-containers-graz" class="text-[#7a9900] hover:underline">Graz</a></li>
                 <li><a href="/en/lab-containers-linz" class="text-[#7a9900] hover:underline">Linz</a></li>
               </ul>
@@ -229,14 +229,14 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
     <section class="py-16 md:py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">DFG-Verwendungsnachweis für Laborcontainer-Miete: Welche Belege fehlen am häufigsten</h2>
-          <p class="text-gray-700 leading-relaxed mb-4">Die DFG-Verwendungsrichtlinien 2024 verlangen für Container-Miete: schriftliches Angebot mit Leistungsbeschreibung, Mietvertrag mit Laufzeit passend zur Projektdauer (typisch 24-36 Monate), Abnahmeprotokoll bei Inbetriebnahme, Nutzungserklärung des Projektverantwortlichen, Wirtschaftlichkeitsvergleich Miete vs. Kauf mit Restwert-Berechnung. Häufigste Mängel im Verwendungsnachweis: fehlender Wirtschaftlichkeitsvergleich (DFG lehnt 15-20 % der Nachweise zurück), Mietvertrag kürzer als Projektlaufzeit ohne Verlängerungsoption, keine Zuordnung zu Position „projektbezogene Mietkosten" oder „großgeräteähnliche Investitionen", fehlende Abnahme durch Hochschul-Bauverwaltung oder Dekanat.</p>
-          <p class="text-gray-700 leading-relaxed mb-4">Planexus liefert DFG-Ready-Paket: Angebot mit Positionsgliederung nach DFG-Kategorien, Mietvertrag mit Verlängerungsklausel, Abnahmeprotokoll mit technischer Spezifikation, Nutzungserklärungs-Vorlage, Wirtschaftlichkeitsvergleich Excel mit NPV über Projektlaufzeit. Für BMBF- und EU-Horizon-Projekte ergänzen wir Financial Statement-Vorlage und Audit-Trail-konforme Rechnungslegung. Auch die Eigenmittel- und Haushaltsregeln außeruniversitärer Forschungsinstitute akzeptieren dasselbe Belegpaket.</p>
-          <p class="text-gray-700 leading-relaxed mb-8">Kosten Container-Miete BSL-2/S2-Forschung: 4.500-8.500 Euro/Monat je nach Konfiguration (Abzüge, Sicherheitswerkbank, Medienversorgung). DFG-Sachbeihilfe-Projekt 36 Monate: 162.000-306.000 Euro Mietkosten förderfähig bei nachgewiesener Wirtschaftlichkeit gegenüber Neubau (Neubau-Kostenvergleich: 800.000-2,5 Mio. Euro, Bauzeit 36-72 Monate).</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">DFG statement of use for lab-container hire: which evidence is most often missing</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">The DFG rules of use 2024 require for container hire: a written quotation with a specification of services, a hire agreement whose term matches the project duration (typically 24–36 months), an acceptance protocol at commissioning, a declaration of use by the project lead, and a hire-versus-purchase cost comparison with residual-value calculation. The most frequent defects in the statement of use: missing cost-benefit comparison (DFG rejects 15–20 % of statements), hire agreement shorter than the project term without an extension option, no allocation to the line “project-related hire costs” or “major-instrument-like investment”, missing acceptance by the university estates office or deanery.</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Planexus supplies a DFG-ready pack: quotation structured by DFG categories, hire agreement with extension clause, acceptance protocol with technical specification, declaration-of-use template, cost-benefit comparison in Excel with NPV over the project term. For BMBF and EU Horizon projects we add a financial-statement template and audit-trail-compliant invoicing. The own-funds and budget rules of non-university research institutes also accept the same evidence pack.</p>
+          <p class="text-gray-700 leading-relaxed mb-8">Hire costs for a BSL-2/S2 research container: €4,500–8,500 per month depending on configuration (fume cupboards, microbiological safety cabinet, media supply). A 36-month DFG research-grant project: €162,000–306,000 of hire costs eligible where economy versus a new building is demonstrated (new-build comparison: €800,000–2.5 million, construction period 36–72 months).</p>
 
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">GenTSV-S2-Container: ZKBS-Anzeige Schritt für Schritt</h2>
-          <p class="text-gray-700 leading-relaxed mb-4">S2-Anlagen nach GenTSV sind genehmigungspflichtig nach GenTG §8. Ablauf: (1) Gefährdungsbeurteilung nach GenTSV Anhang 3, (2) technische Beschreibung Container mit Sicherheitswerkbank Klasse II DIN EN 12469, Personalschleuse, Autoklav, Lüftung mit gerichteter Strömung, (3) Einreichung bei Landesbehörde, (4) Stellungnahme ZKBS-Sekretariat BVL Berlin (8-12 Wochen), (5) Genehmigung oder Auflagen. Bearbeitungsdauer gesamt: 14-22 Wochen. S1-Anlagen: nur Anzeige, 4-8 Wochen.</p>
-          <p class="text-gray-700 leading-relaxed mb-4">Pflicht-Dokumentation im Betrieb: GenTAufzV-Aufzeichnungen (Zugangskontrolle, Reinigung, Wartung), jährliche DGUV-V3-Prüfung Sicherheitswerkbank, 12-monatige Filter-Integritätsprüfung HEPA H14, Autoklav-Validierung EN 285. Planexus liefert ZKBS-Anzeige-Vorlage, technische Zeichnungen, MSR-Anschluss für GenTAufzV-Räume und Schulungskonzept für S2-Personal nach TRBA 120.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">GenTSV S2 containers: ZKBS notification step by step</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">S2 facilities under GenTSV require authorisation under GenTG § 8. Sequence: (1) risk assessment to GenTSV Annex 3, (2) technical description of the container with Class II microbiological safety cabinet to DIN EN 12469, personnel airlock, autoclave, ventilation with directional airflow, (3) submission to the Land authority, (4) opinion of the ZKBS secretariat at BVL Berlin (8–12 weeks), (5) authorisation or conditions. Overall processing time: 14–22 weeks. S1 facilities: notification only, 4–8 weeks.</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Mandatory operating documentation: GenTAufzV records (access control, cleaning, maintenance), annual DGUV V3 inspection of the microbiological safety cabinet, 12-month HEPA H14 filter integrity test, autoclave validation to EN 285. Planexus supplies a ZKBS notification template, technical drawings, BMS/EMS connection for GenTAufzV rooms and a training concept for S2 staff to TRBA 120.</p>
         </div>
       </div>
     </section>
@@ -244,19 +244,19 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
     <section class="py-16 md:py-20 bg-slate-50 border-t border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Planexus Leistungen für Forschung & Hochschule</h2>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Planexus services for research & universities</h2>
           <div class="grid md:grid-cols-3 gap-6">
             <a href="/en/services/planning" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
-              <h3 class="font-bold text-slate-900 mb-2">Technische Laborplanung</h3>
-              <p class="text-sm text-gray-700 leading-relaxed">BSL-1/2 und S1/S2 nach GenTSV, Medienversorgung Forschungs-Standard, flexible Möblierung, LIMS-/ELN-Schnittstellen für Drittmittelprojekte.</p>
+              <h3 class="font-bold text-slate-900 mb-2">Technical laboratory planning</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">BSL-1/2 and S1/S2 under GenTSV, research-standard media supply, flexible furniture, LIMS/ELN interfaces for third-party-funded projects.</p>
             </a>
             <a href="/en/services/consulting" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
-              <h3 class="font-bold text-slate-900 mb-2">Beratung & Genehmigung</h3>
-              <p class="text-sm text-gray-700 leading-relaxed">ZKBS-Anzeige, Bauantrag temporäre bauliche Anlage, DFG-/BMBF-Belegpaket, Wirtschaftlichkeitsvergleich Miete vs. Neubau.</p>
+              <h3 class="font-bold text-slate-900 mb-2">Consulting & permits</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">ZKBS notification, building application as a temporary structure, DFG/BMBF evidence pack, hire-versus-new-build cost comparison.</p>
             </a>
             <a href="/en/services/modular-construction" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
-              <h3 class="font-bold text-slate-900 mb-2">Modulbau & Fertigung</h3>
-              <p class="text-sm text-gray-700 leading-relaxed">Forschungs-Container ab Werk Albstadt, Mietzeit 12-60 Monate, Übergangslabor während Sanierung, Rücknahme inklusive.</p>
+              <h3 class="font-bold text-slate-900 mb-2">Modular construction & manufacturing</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">Research containers from the Albstadt factory, hire term 12–60 months, interim laboratory during refurbishment, take-back included.</p>
             </a>
           </div>
         </div>
@@ -266,11 +266,11 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
     <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900 text-center">Weiterführende Fachartikel</h2>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900 text-center">Further reading</h2>
           <div class="grid md:grid-cols-3 gap-6">
-            <a href="/magazin/laborcontainer-mieten-vs-kaufen" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Wirtschaftlichkeit</div><h3 class="font-bold text-slate-900 mb-2">Mieten vs. Kaufen</h3><p class="text-sm text-gray-600">Wirtschaftlichkeitsvergleich für DFG-, BMBF- und EU-Projekte.</p></a>
-            <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Sicherheit</div><h3 class="font-bold text-slate-900 mb-2">BSL-2 und BSL-3 im Container</h3><p class="text-sm text-gray-600">Was geht – und was nicht.</p></a>
-            <a href="/magazin/laborcontainer-genehmigung-bauantrag" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Recht</div><h3 class="font-bold text-slate-900 mb-2">Genehmigung & Bauantrag</h3><p class="text-sm text-gray-600">Wann LBO-Anzeige, wann Vollantrag, wann temporäre Genehmigung.</p></a>
+            <a href="/en/magazine/lab-containers-rent-or-buy" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Economics</div><h3 class="font-bold text-slate-900 mb-2">Rent or buy</h3><p class="text-sm text-gray-600">Cost-benefit comparison for DFG, BMBF and EU projects.</p></a>
+            <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Biosafety</div><h3 class="font-bold text-slate-900 mb-2">BSL-2 and BSL-3 in a container</h3><p class="text-sm text-gray-600">What is possible – and what is not.</p></a>
+            <a href="/en/magazine/lab-container-permits-building-law" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Law</div><h3 class="font-bold text-slate-900 mb-2">Permits and building applications</h3><p class="text-sm text-gray-600">When an LBO notification, when a full application, when a temporary permit.</p></a>
           </div>
         </div>
       </div>
@@ -279,7 +279,7 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
     <section class="py-16 md:py-20 bg-white border-t border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Häufige Fragen zu Forschung & Hochschule</h2>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Frequently asked questions on research & universities</h2>
           <div class="space-y-4">
             {faqSchema.mainEntity.map((faq) => (
               <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
@@ -296,8 +296,8 @@ const articleSchema = {"@context": "https://schema.org", "@type": "Article", "he
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto">
           <div class="text-center mb-10">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Forschungs-Container für Ihr Drittmittelprojekt</h2>
-            <p class="text-gray-700 text-lg">Skizzieren Sie Förderträger, Projektlaufzeit und Sicherheitsstufe. Wir antworten innerhalb eines Werktags mit DFG-/BMBF-/EU-tauglichem Konzept inkl. Wirtschaftlichkeitsvergleich.</p>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Research containers for your funded project</h2>
+            <p class="text-gray-700 text-lg">Outline the funder, project term and containment level. We reply within one working day with a DFG/BMBF/EU-ready concept including a cost-benefit comparison.</p>
           </div>
           <ContactForm client:visible locale="en" />
         </div>
