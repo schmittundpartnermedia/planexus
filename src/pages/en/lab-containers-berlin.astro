@@ -17,8 +17,8 @@ const berlinPLZ = [
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Laborcontainer Berlin – LABtoGO, BSL-2/3, GMP-Reinraum & Adlershof-Vibrationsschutz",
-  "description": "Schlüsselfertige Laborcontainer für Berlin und die Hauptstadtregion. LABtoGO mit 2.750 mm Innenhöhe, BSL-2/3, GMP-Reinraum, Pfahlgründung für Sandboden und Spree-Grundwasser, Vibrationsschutz für Adlershof. Ausgezeichnet bei den German CEO Excellence Awards 2026.",
+  "name": "Lab containers Berlin – LABtoGO, BSL-2/3, GMP cleanroom and Adlershof vibration protection",
+  "description": "Turnkey lab containers for Berlin and the capital region. LABtoGO with 2,750 mm internal height, BSL-2/3, GMP cleanroom, pile foundation for sandy soil and Spree groundwater, vibration protection for Adlershof. Awarded at the German CEO Excellence Awards 2026.",
   "provider": {
     "@type": "Organization",
     "name": "Planexus GmbH",
@@ -27,22 +27,22 @@ const serviceSchema = {
     "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
   },
   "serviceType": [
-    "Laborcontainer Berlin",
-    "Containerlabor Berlin",
-    "Mobiles Labor Berlin",
-    "BSL-2 Containerlabor",
-    "BSL-3 Containerlabor",
-    "GMP-Reinraumlabor",
-    "Reinraum-Container",
-    "Modulbau Labor",
-    "Technische Fachplanung Labor",
-    "Laborausstattung",
-    "Smart Lab Integration"
+    "Lab containers Berlin",
+    "Container laboratory Berlin",
+    "Mobile laboratory Berlin",
+    "BSL-2 container laboratory",
+    "BSL-3 container laboratory",
+    "GMP cleanroom laboratory",
+    "Cleanroom container",
+    "Modular laboratory construction",
+    "Technical laboratory planning",
+    "Laboratory equipment",
+    "Smart Lab integration"
   ],
   "areaServed": [
     { "@type": "City", "name": "Berlin", "containedInPlace": { "@type": "State", "name": "Berlin" } },
     { "@type": "State", "name": "Berlin" },
-    { "@type": "AdministrativeArea", "name": "Hauptstadtregion Berlin-Brandenburg" },
+    { "@type": "AdministrativeArea", "name": "Berlin-Brandenburg capital region" },
     ...berlinPLZ.map(plz => ({ "@type": "PostalCodeSpecification", "postalCode": plz, "addressCountry": "DE" }))
   ],
   "url": "https://planexus.de/en/lab-containers-berlin"
@@ -52,8 +52,8 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://planexus.de/en/lab-containers-berlin#business",
-  "name": "Planexus GmbH – Laborcontainer Berlin",
-  "description": "Ihr Spezialist für Laborcontainer und modulare Laborlösungen in Berlin und der Hauptstadtregion. LABtoGO, BSL-2/3, GMP-Reinraum, Pfahlgründung für Spree-Grundwasser. Werk Albstadt – Lieferung via A81/A6/A9.",
+  "name": "Planexus GmbH – Lab containers Berlin",
+  "description": "Your specialist for lab containers and modular laboratory solutions in Berlin and the capital region. LABtoGO, BSL-2/3, GMP cleanroom, pile foundation for Spree groundwater. Albstadt works – delivery via the A81/A6/A9.",
   "url": "https://planexus.de/en/lab-containers-berlin",
   "telephone": "+49 7435 7519 700",
   "email": "info@planexus.de",
@@ -90,9 +90,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/en" },
-    { "@type": "ListItem", "position": 2, "name": "Standorte", "item": "https://planexus.de/en/lab-containers" },
-    { "@type": "ListItem", "position": 3, "name": "Laborcontainer Berlin", "item": "https://planexus.de/en/lab-containers-berlin" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Lab containers", "item": "https://planexus.de/en/lab-containers" },
+    { "@type": "ListItem", "position": 3, "name": "Lab containers Berlin", "item": "https://planexus.de/en/lab-containers-berlin" }
   ]
 };
 
@@ -102,58 +102,58 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was kostet ein Laborcontainer in Berlin?",
+      "name": "What does a lab container in Berlin cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Investition richtet sich nach Sicherheitsstufe, Reinraumklasse, Gründungsart und Standortlage. Ein Analytikcontainer in Adlershof liegt in einer anderen Größenordnung als ein BSL-3-Container mit HEPA-H14-Schleuse für ein Universitätsklinikum oder ein Infektionsforschungsinstitut. Wir kalkulieren projektspezifisch – inklusive Pfahlgründung bei hohem Spree-Grundwasserspiegel, Vibrationsentkopplung am Adlershofer Forschungscampus und KhBauVO-Brandschutz auf Klinikgelände. Senden Sie uns Ihre Standortdaten, wir melden uns binnen 24 Stunden mit einer indikativen Spanne."
+        "text": "The investment depends on biosafety level, cleanroom class, foundation type and site location. An analytics container in Adlershof sits in a different order of magnitude from a BSL-3 container with a HEPA H14 airlock for a university hospital or an infection-research institute. We calculate project by project — including pile foundations where the Spree water table is high, vibration isolation at the Adlershof research campus, and fire protection under the Berlin Hospital Building Ordinance (KhBauVO Berlin) on hospital grounds. Send us your site data and we will respond within 24 hours with an indicative range."
       }
     },
     {
       "@type": "Question",
-      "name": "Welches Berliner Bezirksamt ist für mein Containerlabor zuständig?",
+      "name": "Which Berlin borough office is competent for my container laboratory?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Berlin hat keine zentrale Bauaufsicht – jedes der 12 Bezirksämter führt eine eigene Bauaufsicht mit eigener Praxis. Mitte prüft anders als Treptow-Köpenick (Adlershof) oder Pankow (Buch). Maßgeblich ist immer die Bauordnung Berlin (BauO Bln). Wir identifizieren das zuständige Bezirksamt anhand Ihrer Adresse und reichen prüffähige Bauvorlagen passend zur Bezirkspraxis ein – das spart Wochen gegenüber einem Standard-Bauantrag, der dreimal nachgebessert werden muss."
+        "text": "Berlin has no central building-control authority — each of the 12 borough offices (Bezirksämter) runs its own building control with its own practice. Mitte reviews differently from Treptow-Köpenick (Adlershof) or Pankow (Buch). The Berlin Building Code (Bauordnung Berlin, BauO Bln) always applies. We identify the competent borough office from your address and submit review-ready building documents matched to that borough’s practice — saving weeks compared with a standard application that has to be revised three times."
       }
     },
     {
       "@type": "Question",
-      "name": "Wie lange dauert die Lieferung eines Laborcontainers von Albstadt nach Berlin?",
+      "name": "How long does delivery of a lab container from Albstadt to Berlin take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Strecke beträgt rund 720 km – per Schwerlasttransport über A81 nordwärts, A6 ostwärts, A9 nordwärts via Würzburg und Nürnberg bis Berliner Ring (A10) und Anschlussstellen Berlin-Schönefeld, Berlin-Süd oder Berlin-Spandau. Reine Fahrzeit ca. 7,5 Stunden, mit Genehmigungspflicht und Begleitfahrzeugen typischerweise ein Transporttag. Vom Auftrag bis zur betriebsbereiten Übergabe in Berlin vergehen 8 bis 14 Wochen."
+        "text": "The distance is around 720 km — by heavy-goods transport north on the A81, east on the A6, north on the A9 via Würzburg and Nuremberg to the Berlin Ring (A10) and the Berlin-Schönefeld, Berlin-Süd or Berlin-Spandau junctions. Pure driving time is about 7.5 hours; with the required permits and escort vehicles it is typically one transport day. From order to operational handover in Berlin takes 8 to 14 weeks."
       }
     },
     {
       "@type": "Question",
-      "name": "Hält ein Standard-Container dem Berliner Sandboden und Spree-Grundwasser stand?",
+      "name": "Will a standard container withstand Berlin’s sandy soil and Spree groundwater?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Berlin liegt im Berlin-Warschauer Urstromtal auf Sandboden mit Bodenklasse 3 nach DIN 18196. Innerstädtisch liegt der Grundwasserspiegel oft 2 bis 4 m unter Gelände – in Spreenähe phasenweise höher. Standard-Punktfundamente setzen sich auf solchem Untergrund nach 18 bis 36 Monaten erkennbar. Wir kalkulieren standortbezogen Pfahlgründung oder Plattengründung nach DIN 4017/4020 mit hydraulischem Auftriebsschutz – Messgeräte behalten ihre Justage, Reinraumklassen ihre Zertifizierbarkeit."
+        "text": "Berlin lies in the Berlin–Warsaw glacial valley on sandy soil of soil class 3 to DIN 18196. Inner-city groundwater often sits 2 to 4 m below ground level — and periodically higher near the Spree. Standard pad foundations settle visibly on such ground after 18 to 36 months. We calculate pile or raft foundations to DIN 4017/4020 with hydraulic uplift protection on a site-specific basis — instruments keep their calibration, and cleanroom classes keep their certifiability."
       }
     },
     {
       "@type": "Question",
-      "name": "Kann Planexus einen Laborcontainer auf einem Klinik-Campus oder Forschungscampus in Berlin aufstellen?",
+      "name": "Can Planexus install a lab container on a hospital or research campus in Berlin?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, das ist technisch möglich. Für eine Aufstellung auf einem Klinik-Campus in Mitte oder am Berlin-Buch-Campus wäre die Abstimmung mit dem jeweiligen Klinikbauamt und der Berliner Hochschulbauverwaltung erforderlich. Brandschutz nach KhBauVO Berlin, sterile Anlieferung über vorgesehene Logistik-Achsen und Abstimmung mit der Branddirektion sind dabei Standard. An Klinik- und Forschungscampussen in Berlin-Buch oder anderen Berliner Standorten kann die Aufstellung kranbasiert und campus-konform erfolgen – ohne Beeinträchtigung des laufenden Klinikbetriebs."
+        "text": "Yes, that is technically possible. Siting on a hospital campus in Mitte or at the Berlin-Buch campus would require coordination with the relevant hospital building office and Berlin’s university building administration. Fire protection under the Berlin Hospital Building Ordinance (KhBauVO Berlin), sterile delivery along designated logistics axes and coordination with the fire directorate are standard. On hospital and research campuses in Berlin-Buch or other Berlin sites, crane-based, campus-compliant installation is possible — without disrupting ongoing hospital operations."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche Auflagen gelten für BSL-3-Container in Berlin?",
+      "name": "What requirements apply to BSL-3 containers in Berlin?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BSL-3 in Berlin verlangt Genehmigung nach BioStoffV (Bundesrecht), Anzeige beim LAGeSo (Landesamt für Gesundheit und Soziales Berlin) sowie ggf. dem zuständigen Bezirks-Gesundheitsamt. Für gentechnische Anlagen S1/S2/S3 zusätzlich Anzeige nach GenTG. Technisch fordert der Verordnungsgeber: Unterdruckkaskade min. -50 Pa, HEPA-H14 im Abluftstrang, autoklavierte Schleusen, redundante Lüftung. Wir liefern Risikobewertung, Sicherheitskonzept und vollständige Antragsunterlagen – Container werden nach TRBA 100 geprüft und mit IQ/OQ/PQ übergeben."
+        "text": "BSL-3 in Berlin requires a permit under the German Biological Agents Ordinance (BioStoffV) — federal law — a notification to LAGeSo (Berlin’s state office for health and social affairs) and, where applicable, the competent borough public-health office. For genetic-engineering facilities S1/S2/S3 an additional notification under the German Genetic Engineering Act (GenTG) is required. Technically the ordinance requires a negative-pressure cascade of at least −50 Pa, HEPA H14 on the extract-air path, autoclaved airlocks and redundant ventilation. We supply the risk assessment, safety concept and complete application documents — containers are tested to TRBA 100 and handed over with IQ/OQ/PQ."
       }
     },
     {
       "@type": "Question",
-      "name": "Mieten oder kaufen – was lohnt sich für Berliner Pharma- oder Forschungsprojekte?",
+      "name": "Hire or buy — what makes sense for Berlin pharma or research projects?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Faustregel: Bei Projektlaufzeiten unter 24 Monaten – etwa Interimslabore während Klinik-Sanierungen, befristete Drittmittel-Projekte oder kurzfristige Pharma-Studienkampagnen – rechnet sich Miete. Bei dauerhafter Erweiterung am Forschungscampus Adlershof, im Pharma-Cluster Berlin-Brandenburg oder am Berlin-Buch-Campus überwiegt der Kauf, oft mit Mietkauf-Option. Wir vergleichen für Ihr Berliner Projekt beide Modelle inklusive Bilanzwirkung und Restwert."
+        "text": "Rule of thumb: for project durations under 24 months — for example interim laboratories during hospital refurbishments, time-limited third-party-funded projects or short-term pharma study campaigns — hire pays. For a permanent expansion at the Adlershof research campus, in the Berlin-Brandenburg pharma cluster or at the Berlin-Buch campus, purchase usually prevails, often with a hire-purchase option. We compare both models for your Berlin project, including balance-sheet impact and residual value."
       }
     }
   ]
@@ -161,8 +161,8 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Laborcontainer Berlin mieten – GMP, Reinraum & BSL-3"
-  description="Laborcontainer Berlin mieten: GMP-Reinraum, BSL-3, Pfahlgründung Spree-Sand, Vibrationsschutz Adlershof. Schlüsselfertig in 12 Wochen. Jetzt Angebot anfordern."
+  title="Lab containers Berlin – rent GMP, cleanroom and BSL-3"
+  description="Rent lab containers in Berlin: GMP cleanroom, BSL-3, pile foundation on Spree sand, vibration protection for Adlershof. Turnkey in 12 weeks. Request a quotation."
   canonical="/en/lab-containers-berlin"
   schema={serviceSchema}
   ogImage="/attached_assets/Laborcontainer_007_1769688326918.jpg"
@@ -177,11 +177,11 @@ const faqSchema = {
     <aside class="hidden xl:block fixed right-6 top-1/2 -translate-y-1/2 z-40 w-60">
       <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
         <div class="bg-slate-900 px-5 py-3">
-          <div class="text-primary text-xs font-bold uppercase tracking-wider">Standort Berlin</div>
+          <div class="text-primary text-xs font-bold uppercase tracking-wider">Berlin location</div>
         </div>
         <div class="p-5 space-y-3 text-sm">
-          <p class="text-gray-700 leading-snug">Werk Albstadt – Lieferung in 8–14 Wochen via A81/A6/A9. Kostenfreies Standort-Audit für Ihr Containerlabor.</p>
-          <a href="#anfrage" class="block bg-primary text-slate-900 font-bold text-center py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Anfrage starten</a>
+          <p class="text-gray-700 leading-snug">Albstadt works – delivery in 8–14 weeks via the A81/A6/A9. Complimentary site audit for your container laboratory.</p>
+          <a href="#anfrage" class="block bg-primary text-slate-900 font-bold text-center py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Start an enquiry</a>
           <a href="tel:+4974357519700" class="block text-center text-xs text-slate-600 hover:text-primary transition-colors">+49 7435 7519 700</a>
         </div>
       </div>
@@ -190,36 +190,36 @@ const faqSchema = {
     <!-- HERO -->
     <section class="relative py-24 md:py-32 bg-slate-900 text-white overflow-hidden">
       <div class="absolute inset-0">
-        <Picture src="/attached_assets/Laborcontainer_007_1769688326918.jpg" alt="Laborcontainer Berlin – Planexus LABtoGO mit 2,75 m Innenhöhe für Kliniken, Forschungsinstitute und den Forschungscampus Adlershof" class="w-full h-full object-cover opacity-20" loading="eager" fetchpriority="high" width={1980} height={1485} />
+        <Picture src="/attached_assets/Laborcontainer_007_1769688326918.jpg" alt="Lab containers Berlin – Planexus LABtoGO with 2.75 m internal height for hospitals, research institutes and the Adlershof research campus" class="w-full h-full object-cover opacity-20" loading="eager" fetchpriority="high" width={1980} height={1485} />
       </div>
       <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
 
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-3xl">
           <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
-            <a href="/" class="hover:text-primary transition-colors">Start</a>
+            <a href="/en" class="hover:text-primary transition-colors">Home</a>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-            <span>Standorte</span>
+            <span>Lab containers</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             <span class="text-primary">Berlin</span>
           </nav>
 
-          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Ihr Spezialist für Laborcontainer · Hauptstadtregion Berlin-Brandenburg</div>
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Your specialist for lab containers · Berlin-Brandenburg capital region</div>
 
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-            Laborcontainer Berlin – BSL-3-Labore für Kliniken, Forschung und Hauptstadtregion
+            Lab containers Berlin – BSL-3 laboratories for hospitals, research and the capital region
           </h1>
 
           <p class="text-xl text-gray-300 leading-relaxed mb-4">
-            <strong class="text-white">Unsere Geschäftsführer bringen über zehn Jahre Erfahrung im Laborcontainerbau mit.</strong> Intelligent, nachhaltig und modular. Wir realisieren flexible Forschungsumgebungen für die Zukunft – aus dem Werk Albstadt direkt nach Berlin, über A81 / A6 / A9.
+            <strong class="text-white">Our managing directors bring more than ten years of experience in lab-container construction.</strong> Intelligent, sustainable and modular. We deliver flexible research environments for the future — from the Albstadt works straight to Berlin, via the A81 / A6 / A9.
           </p>
           <p class="text-base text-gray-400 mb-8">
-            Während andere noch planen, forschen Sie bereits.
+            While others are still planning, you are already researching.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 mb-8">
             <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
-              Kostenfreies Standort-Audit Berlin
+              Complimentary site audit Berlin
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
             <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
@@ -229,10 +229,10 @@ const faqSchema = {
           </div>
 
           <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
-            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Spezialist für modularen Laborbau</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Specialist in modular laboratory construction</div>
             <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Award 2026 EU Business News</div>
-            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Pfahlgründung für Spree-Grundwasser</div>
-            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Wesemann-Gruppe · 60+ Jahre Laborbau</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Pile foundation for Spree groundwater</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Wesemann Group · 60+ years of laboratory construction</div>
           </div>
         </div>
       </div>
@@ -247,44 +247,44 @@ const faqSchema = {
         <div class="max-w-5xl mx-auto">
           <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
             <div>
-              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Pattern-Interrupt · Weltpremiere analytica 2026</div>
-              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus zeigt Berlin, was ein Laborcontainer 2026 wirklich kann</h2>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Pattern interrupt · World premiere at analytica 2026</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus shows Berlin what a lab container in 2026 can really do</h2>
               <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                Ein gewöhnlicher Laborcontainer hat 2.400 mm Innenhöhe. Sie passen rein – aufrecht arbeiten unter einem Abzug aber kaum.
+                A conventional lab container has 2,400 mm internal height. You can stand up inside — but working upright at a fume cupboard is barely possible.
               </p>
               <p class="text-lg text-slate-900 font-bold leading-relaxed mb-4">
-                Der LABtoGO von Planexus hat 2.750 mm Innenhöhe. 9,5 m Außenlänge. 3 m Außenbreite. Vollverglaste Front, die echtes Tageslicht in jedes Berliner Klinik-, Forschungs- oder Pharmalabor bringt.
+                Planexus LABtoGO has 2,750 mm internal height. 9.5 m external length. 3 m external width. A fully glazed front that brings real daylight into every Berlin hospital, research or pharma laboratory.
               </p>
               <p class="text-lg text-gray-700 leading-relaxed">
-                <strong>Ein gewöhnlicher Laborcontainer passt komplett in einen LABtoGO hinein.</strong> Wir nennen ihn nicht ohne Grund LABtoGO – er ist die Plattform, auf der wir für Berlin BSL-2, BSL-3, GMP-Reinraum, Pfahlgründung und Vibrationsentkopplung konfigurieren.
+                <strong>A conventional lab container fits entirely inside a LABtoGO.</strong> We do not call it LABtoGO without reason — it is the platform on which we configure BSL-2, BSL-3, GMP cleanroom, pile foundation and vibration isolation for Berlin.
               </p>
             </div>
             <div class="grid grid-cols-2 gap-4">
               <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
                 <div class="text-4xl font-bold text-primary mb-1">2.750</div>
-                <div class="text-xs text-gray-400 uppercase tracking-wider">mm Innenhöhe</div>
-                <div class="text-xs text-gray-500 mt-1">Standard: 2.400 mm</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm internal height</div>
+                <div class="text-xs text-gray-500 mt-1">Standard: 2,400 mm</div>
               </div>
               <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
                 <div class="text-4xl font-bold text-primary mb-1">9.500</div>
-                <div class="text-xs text-gray-400 uppercase tracking-wider">mm Außenlänge</div>
-                <div class="text-xs text-gray-500 mt-1">3.000 mm Breite</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm external length</div>
+                <div class="text-xs text-gray-500 mt-1">3.000 mm width</div>
               </div>
               <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
                 <div class="text-4xl font-bold text-primary mb-1">100%</div>
-                <div class="text-xs text-gray-400 uppercase tracking-wider">vollverglast</div>
-                <div class="text-xs text-gray-500 mt-1">Tageslicht-Labor</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">fully glazed</div>
+                <div class="text-xs text-gray-500 mt-1">daylight laboratory</div>
               </div>
               <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
-                <div class="text-4xl font-bold text-primary mb-1">U 0,20</div>
-                <div class="text-xs text-gray-400 uppercase tracking-wider">W/m²K Sandwich</div>
-                <div class="text-xs text-gray-500 mt-1">80–120 mm Dämmung</div>
+                <div class="text-4xl font-bold text-primary mb-1">U 0.20</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">W/m²K sandwich</div>
+                <div class="text-xs text-gray-500 mt-1">80–120 mm insulation</div>
               </div>
             </div>
           </div>
           <div class="text-center">
             <a href="/en/lab-containers/labtogo" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
-              LABtoGO Plattform und alle Konfigurationen ansehen
+              View the LABtoGO platform and all configurations
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
           </div>
@@ -297,23 +297,23 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">
-            Planexus löst die drei Berliner Engpässe, an denen Laborprojekte regelmäßig scheitern
+            Planexus solves the three Berlin bottlenecks at which laboratory projects regularly fail
           </h2>
           <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
-              <div class="text-slate-900 font-bold text-lg mb-2">12 Bezirksämter, 12 verschiedene Bauaufsichten</div>
-              <p class="text-gray-700 text-sm leading-relaxed">Berlin hat keine zentrale Bauaufsicht. Mitte prüft anders als Treptow-Köpenick (Adlershof) oder Pankow (Buch). Wer den falschen Antragsweg wählt oder mit Standardvorlagen arbeitet, verliert pro Bezirk zwei bis sechs Wochen in der Nachbesserung – und sieht das Förderfenster schließen.</p>
-              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: Bezirksspezifische Bauvorlagen ab Tag 1.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">12 borough offices, 12 different building-control practices</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Berlin has no central building-control authority. Mitte reviews differently from Treptow-Köpenick (Adlershof) or Pankow (Buch). Anyone choosing the wrong application route or working with standard templates loses two to six weeks per borough in revisions — and watches the funding window close.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus response: Borough-specific building documents from day 1.</p>
             </div>
             <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
-              <div class="text-slate-900 font-bold text-lg mb-2">Spree-Grundwasser & Berliner Sand machen Standardstatik wertlos</div>
-              <p class="text-gray-700 text-sm leading-relaxed">Berlin liegt im Berlin-Warschauer Urstromtal. Sandboden Bodenklasse 3 nach DIN 18196, innerstädtischer Grundwasserspiegel oft 2 bis 4 m unter Gelände. Standard-Punktfundament setzt sich nach 18 bis 36 Monaten erkennbar – HPLC-Justage, GMP-Toleranzen und ISO-14644-Klassen sind nicht mehr garantierbar.</p>
-              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: Pfahlgründung oder Plattengründung nach DIN 4017/4020 ab Werk vorbereitet.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Spree groundwater and Berlin sand make standard structural design worthless</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Berlin lies in the Berlin–Warsaw glacial valley. Sandy soil class 3 to DIN 18196, inner-city groundwater often 2 to 4 m below ground level. A standard pad foundation settles visibly after 18 to 36 months — HPLC calibration, GMP tolerances and ISO 14644 classes can no longer be guaranteed.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus response: Pile or raft foundation to DIN 4017/4020 prepared at the factory.</p>
             </div>
             <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
-              <div class="text-slate-900 font-bold text-lg mb-2">Klinik-Campus, Forschungsinstitute, Adlershof – jeder Standort eigene Logistik</div>
-              <p class="text-gray-700 text-sm leading-relaxed">Sterile Anlieferung an einem Klinik-Campus in Mitte ist nicht dasselbe wie BSL-Logistik an einem Forschungsinstitut in Wedding oder vibrationsempfindliche Aufstellung am Forschungscampus Adlershof. Wer mit einem Standard-Logistikplan ankommt, wird abgewiesen oder bekommt Auflagen, die das Projekt verzögern.</p>
-              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus-Antwort: Standortspezifischer Aufstellungs- und Logistikplan vor jeder Anlieferung.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Hospital campus, research institutes, Adlershof – each site its own logistics</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Sterile delivery on a hospital campus in Mitte is not the same as BSL logistics at a research institute in Wedding or vibration-sensitive siting at the Adlershof research campus. Anyone arriving with a standard logistics plan is turned away or given conditions that delay the project.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus response: Site-specific installation and logistics plan before every delivery.</p>
             </div>
           </div>
         </div>
@@ -325,20 +325,20 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">
-            Laborcontainer für Berlin: Was 12-Bezirksämter-Föderalismus, Spree-Grundwasser und Klinik-Campusse vom Engineering verlangen
+            Lab containers for Berlin: what 12-borough federalism, Spree groundwater and hospital campuses demand of the engineering
           </h2>
           <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
             <p>
-              <strong>Berlin ist Deutschlands dichtester Cluster aus Universitätsmedizin, Infektionsforschung, Photonik, Biomedizin und Pharma-Mittelstand.</strong> Auf 892 Quadratkilometern konkurrieren mehrere universitätsmedizinische Klinik-Campusse, Infektions- und Biomedizinforschung, Photonik- und Materialforschungsinstitute in Adlershof, die Metrologie in Charlottenburg, der Pharma-Cluster Berlin-Brandenburg sowie mehrere Universitäten um Flächen, Genehmigungen und Engineering-Kapazität. Wer hier ein Containerlabor bestellt, kauft kein Standardprodukt – er kauft Standortintelligenz.
+              <strong>Berlin is Germany’s densest cluster of university medicine, infection research, photonics, biomedicine and mid-sized pharma.</strong> Across 892 square kilometres, several university-medicine hospital campuses, infection and biomedical research, photonics and materials-research institutes in Adlershof, metrology in Charlottenburg, the Berlin-Brandenburg pharma cluster and several universities compete for land, permits and engineering capacity. Anyone ordering a container laboratory here is not buying a standard product — they are buying site intelligence.
             </p>
             <p>
-              <strong>Wir kennen diesen Markt genau.</strong> Wir wissen, dass jedes der 12 Bezirksämter Bauanträge nach eigener Praxis prüft – wer das ignoriert, scheitert in der Nachbesserung. Wir wissen, dass der Berliner Sandboden Bodenklasse 3 nach DIN 18196 und der Grundwasserspiegel innerstädtisch 2 bis 4 m unter Gelände eine Pfahlgründung oder Plattengründung nach DIN 4017/4020 verlangen. Wir wissen, dass der Forschungscampus Adlershof Vibrationsentkopplung für Photonik- und Lasertechnik fordert und dass ein Klinik-Campus in Mitte sterile Logistik nach KhBauVO Berlin verlangt. Diese Details stehen nicht in unserem Angebot – sie sind das Engineering-Fundament jedes Containers, der unser Werk Albstadt verlässt.
+              <strong>We know this market in detail.</strong> We know that each of the 12 borough offices reviews building applications according to its own practice — anyone who ignores that fails in the revision cycle. We know that Berlin’s sandy soil class 3 to DIN 18196 and an inner-city water table 2 to 4 m below ground demand a pile or raft foundation to DIN 4017/4020. We know that the Adlershof research campus requires vibration isolation for photonics and laser technology, and that a hospital campus in Mitte requires sterile logistics under KhBauVO Berlin. These details are not in our quotation — they are the engineering foundation of every container that leaves our Albstadt works.
             </p>
             <p>
-              <strong>Made in Albstadt, schlüsselfertig in Berlin.</strong> Endmontage und Innenausbau erfolgen mit Wesemann-Möbeln im eigenen Werk – Werksbesichtigung beidseitig planbar. Über A81 nordwärts, A6 ostwärts und A9 nordwärts via Würzburg und Nürnberg beträgt die Schwerlastdistanz rund 720 Kilometer; über den Berliner Ring (A10) und die Anschlussstellen Berlin-Süd, Berlin-Schönefeld oder Berlin-Spandau sind alle Berliner Forschungs- und Klinik-Standorte direkt erreichbar.
+              <strong>Made in Albstadt, turnkey in Berlin.</strong> Final assembly and interior fit-out are carried out with Wesemann furniture at our own works — a factory visit can be planned from either side. North on the A81, east on the A6 and north on the A9 via Würzburg and Nuremberg, the heavy-goods distance is around 720 kilometres; via the Berlin Ring (A10) and the Berlin-Süd, Berlin-Schönefeld or Berlin-Spandau junctions, all Berlin research and hospital sites are directly reachable.
             </p>
             <p>
-              Ob Sie ein <strong>mobiles Labor Berlin</strong> für ein befristetes Projekt während einer Klinik-Sanierung brauchen, einen <strong>modularen Laborcontainer Berlin</strong> für die dauerhafte Erweiterung am Berlin-Buch-Campus oder ein <strong>Containerlabor Berlin</strong> mit BSL-3-Containment für die Infektionsforschung – wir liefern alle drei Antworten aus derselben Plattform: dem LABtoGO unseres Werks Albstadt.
+              Whether you need a <strong>mobile laboratory Berlin</strong> for a time-limited project during a hospital refurbishment, a <strong>modular lab container Berlin</strong> for a permanent expansion at the Berlin-Buch campus, or a <strong>container laboratory Berlin</strong> with BSL-3 containment for infection research — we deliver all three answers from the same platform: the LABtoGO from our Albstadt works.
             </p>
           </div>
         </div>
@@ -350,55 +350,55 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <div class="text-center max-w-3xl mx-auto mb-12">
-            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Anwendungsbereiche Berlin</div>
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Acht Anwendungsbereiche für Laborcontainer Berlin</h2>
-            <p class="text-gray-400 text-lg">Jeder Bereich mit konkretem Berliner Standort- und Branchenbezug.</p>
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Berlin applications</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Eight applications for lab containers in Berlin</h2>
+            <p class="text-gray-400 text-lg">Each area with a concrete Berlin site and industry reference.</p>
           </div>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">01</div>
-              <div class="font-bold mb-1">Universitätsmedizin</div>
-              <p class="text-xs text-gray-400">Klinik-Campusse in Mitte und Buch – Interimslabore während Sanierung</p>
+              <div class="font-bold mb-1">University medicine</div>
+              <p class="text-xs text-gray-400">Hospital campuses in Mitte and Buch – interim laboratories during refurbishment</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">02</div>
-              <div class="font-bold mb-1">Infektionsforschung BSL-3</div>
-              <p class="text-xs text-gray-400">Infektionsforschung in Wedding, Virologie, Diagnostik, Tropenmedizin nach BioStoffV und LAGeSo-Anzeige</p>
+              <div class="font-bold mb-1">Infection research BSL-3</div>
+              <p class="text-xs text-gray-400">Infection research in Wedding, virology, diagnostics, tropical medicine under BioStoffV and LAGeSo notification</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">03</div>
-              <div class="font-bold mb-1">Biomedizin & molekulare Medizin</div>
-              <p class="text-xs text-gray-400">Forschungscampus Berlin-Buch, molekulare Medizin, Genom-Editierung, Translational Research</p>
+              <div class="font-bold mb-1">Biomedicine and molecular medicine</div>
+              <p class="text-xs text-gray-400">Berlin-Buch research campus, molecular medicine, genome editing, translational research</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">04</div>
-              <div class="font-bold mb-1">Photonik & Lasertechnik</div>
-              <p class="text-xs text-gray-400">Forschungscampus Adlershof, Photonik- und Materialforschungsinstitute, vibrationsentkoppelte Aufstellung</p>
+              <div class="font-bold mb-1">Photonics and laser technology</div>
+              <p class="text-xs text-gray-400">Adlershof research campus, photonics and materials-research institutes, vibration-isolated siting</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">05</div>
-              <div class="font-bold mb-1">Pharma-Cluster Berlin-Brandenburg</div>
-              <p class="text-xs text-gray-400">Pharma-Mittelstand Berlin-Brandenburg, Pilotproduktion, klinische Prüfmuster, GMP-Reinraum</p>
+              <div class="font-bold mb-1">Berlin-Brandenburg pharma cluster</div>
+              <p class="text-xs text-gray-400">Mid-sized pharma Berlin-Brandenburg, pilot production, clinical trial samples, GMP cleanroom</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">06</div>
-              <div class="font-bold mb-1">Metrologie</div>
-              <p class="text-xs text-gray-400">Metrologie-Einrichtungen in Charlottenburg, Präzisions-Analytik, Temperatur- und Vibrationskonstanz</p>
+              <div class="font-bold mb-1">Metrology</div>
+              <p class="text-xs text-gray-400">Metrology facilities in Charlottenburg, precision analytics, temperature and vibration stability</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">07</div>
-              <div class="font-bold mb-1">Universitätsforschung</div>
-              <p class="text-xs text-gray-400">Berliner Universitäten – Drittmittel-Container, Werkstoff-, Bio- und Chemielabore</p>
+              <div class="font-bold mb-1">University research</div>
+              <p class="text-xs text-gray-400">Berlin universities – third-party-funded containers, materials, bio and chemistry laboratories</p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">08</div>
-              <div class="font-bold mb-1">Klinik-Sanierungs-Interim</div>
-              <p class="text-xs text-gray-400">Klinik-Campusse und Krankenhaus-Standorte, Bauphasen-Begleitung mit KhBauVO-Brandschutz</p>
+              <div class="font-bold mb-1">Hospital-refurbishment interim</div>
+              <p class="text-xs text-gray-400">Hospital campuses and hospital sites, construction-phase support with KhBauVO fire protection</p>
             </div>
           </div>
           <div class="text-center mt-10">
-            <p class="text-gray-400 mb-4">Ihre Anwendung ist nicht dabei? Wir entwickeln individuelle Module auch fernab vom Standard.</p>
-            <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Sonderlösung für Berlin anfragen <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <p class="text-gray-400 mb-4">Is your application not listed? We also develop custom modules well beyond the standard.</p>
+            <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Request a custom solution for Berlin <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -408,38 +408,38 @@ const faqSchema = {
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Sechs Engineering-Disziplinen für die Hauptstadtregion</h2>
-          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Planexus baut Laborcontainer für Berlin, die in jeder Disziplin auf die regionalen Realitäten abgestimmt sind – nicht generisch, sondern bezirks- und campus-genau.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Six engineering disciplines for the capital region</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Planexus builds lab containers for Berlin that are tuned in every discipline to regional realities — not generic, but borough- and campus-specific.</p>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Statik & Gründung</div>
-              <h3 class="font-bold text-slate-900 mb-2">Pfahlgründung Berliner Sand</h3>
-              <p class="text-sm text-gray-600">Bodenklasse 3 nach DIN 18196, Spree-Grundwasser 2–4 m unter GOK, Pfahl- oder Plattengründung nach DIN 4017/4020 mit hydraulischem Auftriebsschutz – setzungssicher über 25 Jahre.</p>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Structural design and foundations</div>
+              <h3 class="font-bold text-slate-900 mb-2">Pile foundation on Berlin sand</h3>
+              <p class="text-sm text-gray-600">Soil class 3 to DIN 18196, Spree groundwater 2–4 m below ground level, pile or raft foundation to DIN 4017/4020 with hydraulic uplift protection — settlement-stable for more than 25 years.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">BSL-2/-3 Containment</div>
-              <h3 class="font-bold text-slate-900 mb-2">Unterdruckkaskade −50 Pa</h3>
-              <p class="text-sm text-gray-600">BioStoffV, TRBA 100, HEPA-H14 im Abluftstrang, autoklavierte Schleusen. Anzeige beim LAGeSo Berlin und ggf. Bezirks-Gesundheitsamt – wir liefern die Antragsunterlagen für Klinik- und Forschungsstandards.</p>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">BSL-2/-3 containment</div>
+              <h3 class="font-bold text-slate-900 mb-2">Negative-pressure cascade −50 Pa</h3>
+              <p class="text-sm text-gray-600">BioStoffV, TRBA 100, HEPA H14 on the extract-air path, autoclaved airlocks. Notification to LAGeSo Berlin and, where applicable, the borough public-health office — we supply the application documents for hospital and research standards.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Vibrationsentkopplung</div>
-              <h3 class="font-bold text-slate-900 mb-2">VC-D nach VDI 2038 für Adlershof</h3>
-              <p class="text-sm text-gray-600">Federkern-Lagerung, kein Direktkontakt zur Forschungs-Bodenplatte. Synchrotron-, Lasertechnik- und Photonik-Forschung fordern Schwingungstoleranzen unter 1 µm/s.</p>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Vibration isolation</div>
+              <h3 class="font-bold text-slate-900 mb-2">VC-D to VDI 2038 for Adlershof</h3>
+              <p class="text-sm text-gray-600">Spring-core bearing, no direct contact with the research floor slab. Synchrotron, laser and photonics research demand vibration tolerances below 1 µm/s.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Klinik-Brandschutz</div>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hospital fire protection</div>
               <h3 class="font-bold text-slate-900 mb-2">KhBauVO Berlin</h3>
-              <p class="text-sm text-gray-600">Brandschutzkonzept nach Krankenhausbauverordnung Berlin, sterile Logistik auf Klinik-Campussen, Abstimmung mit Klinikbauamt und Berliner Branddirektion.</p>
+              <p class="text-sm text-gray-600">Fire-protection concept under the Berlin Hospital Building Ordinance, sterile logistics on hospital campuses, coordination with the hospital building office and the Berlin fire directorate.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">GMP & Pharma</div>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">GMP and pharma</div>
               <h3 class="font-bold text-slate-900 mb-2">EU Annex 1 + IQ/OQ/PQ</h3>
-              <p class="text-sm text-gray-600">Pharma-Pilotproduktion für den Cluster Berlin-Brandenburg, klinische Prüfmuster für Auftragsforscher, kühlkettengerechte Studien-Container nach EU-GMP-Leitfaden.</p>
+              <p class="text-sm text-gray-600">Pharma pilot production for the Berlin-Brandenburg cluster, clinical trial samples for contract researchers, cold-chain-capable study containers to the EU GMP Guide.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
-              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Reinraum</div>
-              <h3 class="font-bold text-slate-900 mb-2">ISO 14644 Klasse 5–8</h3>
-              <p class="text-sm text-gray-600">Halbleiter- und Photonik-Reinräume Adlershof, partikelarme Werkstoffanalytik mit HEPA-H14-Endfilterung, Klassifizierung mit Partikelzähler nach Übergabe.</p>
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Cleanroom</div>
+              <h3 class="font-bold text-slate-900 mb-2">ISO 14644 class 5–8</h3>
+              <p class="text-sm text-gray-600">Semiconductor and photonics cleanrooms in Adlershof, low-particle materials analytics with HEPA H14 terminal filtration, classification with a particle counter at handover.</p>
             </div>
           </div>
         </div>
@@ -450,24 +450,24 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-white border-t border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Drei Berlin-Spezifika</div>
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Drei Engineering-Anforderungen, die nationale Anbieter übersehen — Planexus baut Laborcontainer Berlin genau darauf hin</h2>
-          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Generic-Landingpages für ganz Deutschland bedienen die drei Realitäten nicht, die ein Laborcontainer in Berlin tatsächlich aushalten muss. Wir schon — weil wir den Berliner Forschungs- und Klinikmarkt genau kennen und unser Werk in Albstadt produziert, was hier ankommt.</p>
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Three Berlin specifics</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Three engineering requirements that national suppliers overlook — Planexus builds lab containers Berlin precisely for them</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Generic landing pages for the whole of Germany do not address the three realities a lab container in Berlin actually has to withstand. We do — because we know the Berlin research and hospital market in detail, and our works in Albstadt produces what arrives here.</p>
           <div class="grid md:grid-cols-3 gap-5">
             <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
-              <div class="text-slate-900 font-bold text-lg mb-2">12 Bezirksämter, 12 Bauaufsichten – ein Verfahren</div>
-              <p class="text-gray-700 text-sm leading-relaxed mb-3">Berlin hat keine zentrale Bauaufsicht. Mitte, Pankow (Buch), Treptow-Köpenick (Adlershof), Charlottenburg-Wilmersdorf – jede Bezirksbehörde prüft Bauvorlagen nach eigener Praxis. Wer mit einer Standardvorlage durch alle 12 Bezirke marschiert, fängt sich pro Bezirk Nachbesserungen ein und verliert das Förderfenster.</p>
-              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: Bezirksspezifische Bauvorlagen, abgestimmt mit dem zuständigen Stadtteil-Bauamt vor Antrag.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">12 borough offices, 12 building-control practices – one procedure</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Berlin has no central building-control authority. Mitte, Pankow (Buch), Treptow-Köpenick (Adlershof), Charlottenburg-Wilmersdorf — each borough authority reviews building documents according to its own practice. Anyone marching a standard template through all 12 boroughs picks up revisions in each and loses the funding window.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus standard: Borough-specific building documents, aligned with the competent district building office before application.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
-              <div class="text-slate-900 font-bold text-lg mb-2">Berliner Sand & Spree-Grundwasser – Pfahlgründung statt Punktfundament</div>
-              <p class="text-gray-700 text-sm leading-relaxed mb-3">Berlin liegt im Berlin-Warschauer Urstromtal auf Sandboden mit Bodenklasse 3 nach DIN 18196. Innerstädtisch liegt der Grundwasserspiegel oft 2 bis 4 m unter Gelände – in Spreenähe phasenweise höher. Standard-Punktfundamente setzen sich auf solchem Untergrund nach 18 bis 36 Monaten erkennbar – Reinraumklassen sind nicht mehr zertifizierbar.</p>
-              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: Pfahl- oder Plattengründung nach DIN 4017/4020 mit hydraulischem Auftriebsschutz, standortbezogen kalkuliert.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Berlin sand and Spree groundwater – pile foundation instead of a pad foundation</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Berlin lies in the Berlin–Warsaw glacial valley on sandy soil of soil class 3 to DIN 18196. Inner-city groundwater often sits 2 to 4 m below ground level — and periodically higher near the Spree. Standard pad foundations settle visibly on such ground after 18 to 36 months — cleanroom classes are no longer certifiable.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus standard: Pile or raft foundation to DIN 4017/4020 with hydraulic uplift protection, calculated site by site.</p>
             </div>
             <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
-              <div class="text-slate-900 font-bold text-lg mb-2">Kliniken, Forschungsinstitute, Adlershof – jeder Campus eigener Logistik- und Auflagenkanon</div>
-              <p class="text-gray-700 text-sm leading-relaxed mb-3">Sterile Anlieferung an einem Klinik-Campus in Mitte folgt anderen Achsen als BSL-Logistik an einem Forschungsinstitut in Wedding. Vibrationsentkopplung am Forschungscampus Adlershof verlangt anderes Setup als KhBauVO-konformer Brandschutz am Berlin-Buch-Campus. Wer mit Standard-Logistik anfährt, wird abgewiesen – oder bekommt Auflagen, die das Projekt um Wochen verzögern.</p>
-              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus-Standard: Standortspezifischer Aufstellungs- und Logistikplan vor jeder Anlieferung – mit Klinikbauamt, Sicherheitsbeauftragten und Branddirektion abgestimmt.</p>
+              <div class="text-slate-900 font-bold text-lg mb-2">Hospitals, research institutes, Adlershof – each campus its own logistics and conditions</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Sterile delivery on a hospital campus in Mitte follows different axes from BSL logistics at a research institute in Wedding. Vibration isolation at the Adlershof research campus demands a different set-up from KhBauVO-compliant fire protection at the Berlin-Buch campus. Anyone arriving with standard logistics is turned away — or given conditions that delay the project by weeks.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus standard: Site-specific installation and logistics plan before every delivery — aligned with the hospital building office, safety officers and fire directorate.</p>
             </div>
           </div>
         </div>
@@ -479,24 +479,24 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus für Berlin: EU-Award 2026, Pfahlgründung ab Werk, Wesemann-Ecosystem</h2>
-            <p class="text-gray-600 text-lg">Vier Säulen, die kein Wettbewerber im DACH-Raum so kombiniert.</p>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus for Berlin: EU Award 2026, pile foundation from the factory, Wesemann ecosystem</h2>
+            <p class="text-gray-600 text-lg">Four pillars that no competitor in the DACH region combines in this way.</p>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
               <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
               <h3 class="font-bold text-slate-900 mb-2">Award 2026</h3>
-              <p class="text-sm text-gray-600">EU Business News – German CEO Excellence Awards 2026: Planexus ausgezeichnet als „Führender Anbieter innovativer Laborräume". International prämiert direkt nach der LABtoGO-Weltpremiere auf der analytica.</p>
+              <p class="text-sm text-gray-600">EU Business News – German CEO Excellence Awards 2026: Planexus recognised as “Leading provider of innovative laboratory spaces”. Internationally awarded immediately after the LABtoGO world premiere at analytica.</p>
             </div>
             <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
               <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div>
               <h3 class="font-bold text-slate-900 mb-2">Made in Albstadt</h3>
-              <p class="text-sm text-gray-600">Endmontage, Innenausbau und Qualitätskontrolle in unserem Werk Albstadt (Emil-Mayer-Straße 1). Pfahlgründung und Spree-Grundwasser-Schutz ab Werk vorkonfektioniert. Werksbesichtigung jederzeit möglich.</p>
+              <p class="text-sm text-gray-600">Final assembly, interior fit-out and quality control at our Albstadt works (Emil-Mayer-Straße 1). Pile foundation and Spree-groundwater protection pre-configured at the factory. A factory visit is possible at any time.</p>
             </div>
             <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
               <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-              <h3 class="font-bold text-slate-900 mb-2">Wesemann-Ecosystem</h3>
-              <p class="text-sm text-gray-600">Teil der Wesemann Holding mit über 60 Jahren Erfahrung in Laboreinrichtung. Container, Möbel, Reinraumtechnik – aus einer Hand. Ein Ansprechpartner. Keine Schnittstellen-Risiken.</p>
+              <h3 class="font-bold text-slate-900 mb-2">Wesemann ecosystem</h3>
+              <p class="text-sm text-gray-600">Part of Wesemann Holding, with more than 60 years of experience in laboratory fit-out. Containers, furniture and cleanroom technology — from a single source. One contact. No interface risk.</p>
             </div>
           </div>
         </div>
@@ -507,27 +507,27 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Vergleich für Berlin: LABtoGO, Standard-Container und konventioneller Festbau</h2>
-          <p class="text-gray-600 text-lg mb-8">Ehrliche Vergleichsmatrix. Damit Sie Ihre Entscheidung fundiert treffen, bevor wir reden.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Comparison for Berlin: LABtoGO, standard container and conventional construction</h2>
+          <p class="text-gray-600 text-lg mb-8">An honest comparison matrix — so you can take a well-founded decision before we talk.</p>
           <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
             <div class="overflow-x-auto">
               <table class="w-full text-sm">
                 <thead class="bg-slate-900 text-white">
                   <tr>
-                    <th class="text-left px-6 py-4 font-bold">Kriterium</th>
-                    <th class="text-left px-6 py-4 font-bold">Festbau Berlin</th>
-                    <th class="text-left px-6 py-4 font-bold">Standard-Container</th>
+                    <th class="text-left px-6 py-4 font-bold">Criterion</th>
+                    <th class="text-left px-6 py-4 font-bold">Conventional build Berlin</th>
+                    <th class="text-left px-6 py-4 font-bold">Standard container</th>
                     <th class="text-left px-6 py-4 font-bold bg-primary text-slate-900">LABtoGO</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100">
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Lieferzeit</td><td class="px-6 py-4 text-gray-600">18–30 Monate</td><td class="px-6 py-4 text-gray-600">16–20 Wochen</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">8–14 Wochen</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Innenhöhe</td><td class="px-6 py-4 text-gray-600">3,0 m+</td><td class="px-6 py-4 text-gray-600">2,4 m</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">2,75 m</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">12-Bezirksamt-Verfahren</td><td class="px-6 py-4 text-gray-600">Vollverfahren</td><td class="px-6 py-4 text-gray-600">Bauanzeige</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Bezirksspez. Vorlagen ab Tag 1</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Pfahlgründung Sand/Grundwasser</td><td class="px-6 py-4 text-gray-600">individuell</td><td class="px-6 py-4 text-gray-600">selten ab Werk</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">DIN 4017/4020 ab Werk</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Vibrationsentkopplung Adlershof</td><td class="px-6 py-4 text-gray-600">aufwendig</td><td class="px-6 py-4 text-gray-600">selten</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">VC-D nach VDI 2038</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Mobilität / Versetzbarkeit</td><td class="px-6 py-4 text-gray-600">keine</td><td class="px-6 py-4 text-gray-600">bedingt</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">voll mobil</td></tr>
-                  <tr><td class="px-6 py-4 font-medium text-slate-900">Tageslicht-Anteil</td><td class="px-6 py-4 text-gray-600">hoch</td><td class="px-6 py-4 text-gray-600">gering</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">vollverglast</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Lead time</td><td class="px-6 py-4 text-gray-600">18–30 months</td><td class="px-6 py-4 text-gray-600">16–20 weeks</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">8–14 weeks</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Internal height</td><td class="px-6 py-4 text-gray-600">3.0 m+</td><td class="px-6 py-4 text-gray-600">2.4 m</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">2.75 m</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">12-borough procedure</td><td class="px-6 py-4 text-gray-600">full procedure</td><td class="px-6 py-4 text-gray-600">building notification</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Borough-specific documents from day 1</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Pile foundation sand/groundwater</td><td class="px-6 py-4 text-gray-600">bespoke</td><td class="px-6 py-4 text-gray-600">rarely from the factory</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">DIN 4017/4020 from the factory</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Vibration isolation Adlershof</td><td class="px-6 py-4 text-gray-600">complex</td><td class="px-6 py-4 text-gray-600">rarely</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">VC-D to VDI 2038</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Mobility / relocatable</td><td class="px-6 py-4 text-gray-600">none</td><td class="px-6 py-4 text-gray-600">limited</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">fully mobile</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Daylight share</td><td class="px-6 py-4 text-gray-600">high</td><td class="px-6 py-4 text-gray-600">low</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">fully glazed</td></tr>
                 </tbody>
               </table>
             </div>
@@ -542,27 +542,27 @@ const faqSchema = {
         <div class="max-w-5xl mx-auto">
           <div class="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Investitions-Modelle</div>
-              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Miete, Kauf oder Mietkauf – wir bauen das Modell um Ihr Berliner Projekt</h2>
-              <p class="text-gray-700 leading-relaxed mb-4">Container-Spezifikation, Sicherheitsstufe, Reinraumklasse, Gründungsart und Laufzeit bestimmen die Kalkulation. Statt einer Pseudo-Spanne erhalten Sie binnen 24 Stunden eine projektspezifische, schriftliche Indikation.</p>
-              <p class="text-sm text-gray-600">Für die Kalkulation benötigen wir: Berliner Standort (Klinik-Campus, Forschungsinstitut, Berlin-Buch, Adlershof, Pharma-Cluster), Sicherheitsstufe (S1/S2/S3, GMP), gewünschte Laufzeit und Inbetriebnahme-Termin.</p>
-              <a href="#anfrage" class="inline-flex items-center gap-2 mt-4 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Indikation in 24 h anfordern <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Investment models</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Hire, purchase or hire-purchase – we build the model around your Berlin project</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Container specification, biosafety level, cleanroom class, foundation type and duration determine the calculation. Instead of a pseudo-range you receive a project-specific written indication within 24 hours.</p>
+              <p class="text-sm text-gray-600">For the calculation we need: Berlin site (hospital campus, research institute, Berlin-Buch, Adlershof, pharma cluster), biosafety level (S1/S2/S3, GMP), desired duration and commissioning date.</p>
+              <a href="#anfrage" class="inline-flex items-center gap-2 mt-4 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Request an indication within 24 hours <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
             </div>
             <div class="space-y-4">
               <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
-                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Miete</div>
-                <div class="font-bold text-slate-900 text-lg mb-2">Flexibel, off-balance, projektgebunden</div>
-                <p class="text-sm text-gray-600">Für Interimslabore während Klinik-Sanierungen, befristete Drittmittel-Projekte in Berlin-Buch, kurzfristige Pharma-Studienkampagnen. Laufzeit projektspezifisch.</p>
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hire</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Flexible, off-balance-sheet, project-tied</div>
+                <p class="text-sm text-gray-600">For interim laboratories during hospital refurbishments, time-limited third-party-funded projects in Berlin-Buch, short-term pharma study campaigns. Duration is project-specific.</p>
               </div>
               <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
-                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Kauf</div>
-                <div class="font-bold text-slate-900 text-lg mb-2">Asset, vollständige Kontrolle</div>
-                <p class="text-sm text-gray-600">Für dauerhafte Erweiterung am Forschungscampus Adlershof, im Pharma-Cluster Berlin-Brandenburg oder am Berlin-Buch-Campus. LABtoGO-Plattform modular ausbaubar.</p>
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Purchase</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Asset, full control</div>
+                <p class="text-sm text-gray-600">For a permanent expansion at the Adlershof research campus, in the Berlin-Brandenburg pharma cluster or at the Berlin-Buch campus. The LABtoGO platform can be expanded modularly.</p>
               </div>
               <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
-                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Mietkauf</div>
-                <div class="font-bold text-slate-900 text-lg mb-2">Übergang Miete → Eigentum</div>
-                <p class="text-sm text-gray-600">Wenn aus dem Interim-Projekt ein Dauerstandort werden kann – Miete später anrechenbar auf den Kauf.</p>
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hire-purchase</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Transition from hire to ownership</div>
+                <p class="text-sm text-gray-600">If the interim project can become a permanent site — hire payments can later be credited towards purchase.</p>
               </div>
             </div>
           </div>
@@ -576,19 +576,19 @@ const faqSchema = {
         <div class="max-w-5xl mx-auto">
           <div class="grid lg:grid-cols-2 gap-10 items-center">
             <div>
-              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Logistik-Beweis</div>
-              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Werk Albstadt → Berlin: 720 km via A81 / A6 / A9 / A10</h2>
-              <p class="text-gray-700 leading-relaxed mb-4">Vom Werk Albstadt führt die Schwerlastroute über die A81 nordwärts, A6 ostwärts und A9 nordwärts via Würzburg und Nürnberg bis zum Berliner Ring (A10). Anschluss-Optionen: Berlin-Süd, Berlin-Schönefeld, Berlin-Spandau – je nach Zielcampus. Reine Fahrzeit ca. 7,5 Stunden, mit Genehmigungspflicht und Begleitfahrzeugen typischerweise ein Transporttag.</p>
-              <p class="text-gray-700 leading-relaxed mb-4">Standardcontainer unter 4 m Breite und 18 t benötigen keine Schwertransportgenehmigung – Folgetag-Aufstellung möglich. Übergroße Anlagen oder vibrationsempfindliche Module für Adlershof koordinieren wir mit Mobilkran 60–200 t und Begleitfahrzeugen über die zuständigen Berliner Behörden.</p>
-              <p class="text-gray-700 leading-relaxed">Vom Auftrag bis zur betriebsbereiten Übergabe in Berlin vergehen 8 bis 14 Wochen.</p>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Logistics proof</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Albstadt works → Berlin: 720 km via the A81 / A6 / A9 / A10</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">From the Albstadt works the heavy-goods route runs north on the A81, east on the A6 and north on the A9 via Würzburg and Nuremberg to the Berlin Ring (A10). Junction options: Berlin-Süd, Berlin-Schönefeld, Berlin-Spandau — depending on the destination campus. Pure driving time is about 7.5 hours; with the required permits and escort vehicles it is typically one transport day.</p>
+              <p class="text-gray-700 leading-relaxed mb-4">Standard containers under 4 m width and 18 t do not require a heavy-transport permit — next-day installation is possible. Oversize units or vibration-sensitive modules for Adlershof are coordinated with a 60–200 t mobile crane and escort vehicles through the competent Berlin authorities.</p>
+              <p class="text-gray-700 leading-relaxed">From order to operational handover in Berlin takes 8 to 14 weeks.</p>
             </div>
             <div class="grid grid-cols-3 gap-4">
-              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">720</div><div class="text-xs text-gray-600 uppercase tracking-wider">km Werk</div></div>
-              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">~7,5 h</div><div class="text-xs text-gray-600 uppercase tracking-wider">Schwerlast</div></div>
-              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">A9/A10</div><div class="text-xs text-gray-600 uppercase tracking-wider">direkt</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">720</div><div class="text-xs text-gray-600 uppercase tracking-wider">km from works</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">~7.5 h</div><div class="text-xs text-gray-600 uppercase tracking-wider">heavy goods</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">A9/A10</div><div class="text-xs text-gray-600 uppercase tracking-wider">direct</div></div>
               <div class="col-span-3 bg-slate-900 text-white rounded-xl p-5">
-                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Anschlussstellen</div>
-                <p class="text-sm text-gray-300">Berlin-Süd, Berlin-Schönefeld und Berlin-Spandau als Standardanlieferpunkte für Klinik-Campusse, den Berlin-Buch-Campus, Forschungscampus Adlershof und den Pharma-Cluster Berlin-Brandenburg. Mobilkran-Aufstellung am Folgetag nach Standortvorbereitung.</p>
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Motorway junctions</div>
+                <p class="text-sm text-gray-300">Berlin-Süd, Berlin-Schönefeld and Berlin-Spandau as standard delivery points for hospital campuses, the Berlin-Buch campus, the Adlershof research campus and the Berlin-Brandenburg pharma cluster. Mobile-crane installation on the following day after site preparation.</p>
               </div>
             </div>
           </div>
@@ -600,25 +600,25 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Genehmigung Berlin</div>
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Wir bereiten alles für Bezirksamt, LAGeSo und Klinikbauamt vor</h2>
-          <p class="text-gray-700 text-lg mb-8 max-w-3xl">Berlin ist die einzige deutsche Großstadt mit 12 eigenständigen Bezirksbauämtern. Für ein Containerlabor können je nach Standort zusätzlich LAGeSo (BSL-3), das Klinikbauamt und die Berliner Branddirektion zuständig sein. Wir kommunizieren mit allen – Sie nicht.</p>
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Berlin permits</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">We prepare everything for the borough office, LAGeSo and the hospital building office</h2>
+          <p class="text-gray-700 text-lg mb-8 max-w-3xl">Berlin is the only major German city with 12 independent borough building offices. Depending on the site, LAGeSo (BSL-3), the hospital building office and the Berlin fire directorate can also be competent for a container laboratory. We communicate with all of them — you do not.</p>
           <div class="grid md:grid-cols-2 gap-6">
             <div class="bg-white rounded-xl p-6 border border-gray-100">
-              <h3 class="font-bold text-slate-900 mb-2">BauO Bln – Bauanzeige & Bezirksverfahren</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">Maßgebend ist die Bauordnung Berlin. Verfahrensfreie Anlagen und Bauanzeige greifen je nach Größe – wir prüfen die Eingruppierung Ihres Standorts vorab und legen prüffähige Bauvorlagen beim zuständigen Bezirksamt vor. Mitte, Pankow, Treptow-Köpenick und Charlottenburg-Wilmersdorf prüfen jeweils nach eigener Praxis.</p>
+              <h3 class="font-bold text-slate-900 mb-2">BauO Bln – building notification and borough procedure</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">The Berlin Building Code (Bauordnung Berlin, BauO Bln) is decisive. Permit-exempt works and the building notification apply depending on size — we check the classification of your site in advance and submit review-ready building documents to the competent borough office. Mitte, Pankow, Treptow-Köpenick and Charlottenburg-Wilmersdorf each review according to their own practice.</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-gray-100">
-              <h3 class="font-bold text-slate-900 mb-2">LAGeSo-Anzeige für BSL-3 & GenTG</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">BSL-3 in Berlin verlangt Genehmigung nach BioStoffV (Bundesrecht) sowie Anzeige beim LAGeSo – Landesamt für Gesundheit und Soziales Berlin. Für gentechnische Anlagen S1/S2/S3 zusätzlich Anzeige nach GenTG. Wir liefern Risikobewertung, Sicherheitskonzept und vollständige Antragsunterlagen.</p>
+              <h3 class="font-bold text-slate-900 mb-2">LAGeSo notification for BSL-3 and GenTG</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">BSL-3 in Berlin requires a permit under BioStoffV (federal law) plus a notification to LAGeSo — Berlin’s state office for health and social affairs. For genetic-engineering facilities S1/S2/S3 an additional notification under GenTG is required. We supply the risk assessment, safety concept and complete application documents.</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-gray-100">
-              <h3 class="font-bold text-slate-900 mb-2">KhBauVO-Brandschutz für Klinik-Aufstellung</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">Aufstellungen auf Klinik-Campussen und an Krankenhaus-Standorten verlangen Brandschutzkonzepte nach Krankenhausbauverordnung Berlin, sterile Logistik und Abstimmung mit Klinikbauamt und Berliner Branddirektion.</p>
+              <h3 class="font-bold text-slate-900 mb-2">KhBauVO fire protection for hospital siting</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Siting on hospital campuses and at hospital locations requires fire-protection concepts under the Berlin Hospital Building Ordinance, sterile logistics and coordination with the hospital building office and the Berlin fire directorate.</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-gray-100">
-              <h3 class="font-bold text-slate-900 mb-2">Hochschulbau Berlin</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">Aufstellungen am Berlin-Buch-Campus, an Forschungsinstituten in Adlershof oder an Berliner Universitäten werden mit der Berliner Hochschulbauverwaltung und der jeweiligen Forschungs-Infrastrukturplanung abgestimmt.</p>
+              <h3 class="font-bold text-slate-900 mb-2">University construction Berlin</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Siting at the Berlin-Buch campus, at research institutes in Adlershof or at Berlin universities is coordinated with Berlin’s university building administration and the relevant research-infrastructure planning.</p>
             </div>
           </div>
         </div>
@@ -629,14 +629,14 @@ const faqSchema = {
     <section class="py-16 md:py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">So baut Planexus Ihr Containerlabor in Berlin</h2>
-          <p class="text-gray-600 text-lg mb-12">Fünf Schritte, ein Ansprechpartner – von der ersten Skizze bis zur Übergabe.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">How Planexus builds your container laboratory in Berlin</h2>
+          <p class="text-gray-600 text-lg mb-12">Five steps, one contact — from the first sketch to handover.</p>
           <div class="space-y-5">
-            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">01</div><div><h3 class="font-bold text-slate-900 mb-1">Wir hören zu</h3><p class="text-gray-600 text-sm">Anforderungs-Workshop vor Ort in Berlin oder per Video. Welche Sicherheitsstufe, welcher Bezirk, welcher Campus, welche Norm, welcher Termin.</p></div></div>
-            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">02</div><div><h3 class="font-bold text-slate-900 mb-1">Wir planen</h3><p class="text-gray-600 text-sm">CAD-Layout, TGA, Statik. BauO-Bln-konforme Bauvorlagen für das zuständige Bezirksamt – verfahrenstauglich ab Tag 1. LAGeSo-Vorbereitung bei BSL-3.</p></div></div>
-            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">03</div><div><h3 class="font-bold text-slate-900 mb-1">Wir bauen</h3><p class="text-gray-600 text-sm">Modul-Vorfertigung beim zertifizierten Polen-Partner, Endmontage und Innenausbau im Werk Albstadt mit Wesemann-Möbeln. Pfahlgründungs-Vorbereitung und QC vor Auslieferung. Werksbesichtigung jederzeit möglich.</p></div></div>
-            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">04</div><div><h3 class="font-bold text-slate-900 mb-1">Wir liefern</h3><p class="text-gray-600 text-sm">Schwerlasttransport A81/A6/A9 (720 km, 1 Transporttag). Aufstellung per Mobilkran auf Pfahl- oder Plattengründung. Anschluss aller Medien, Funktions- und Dichtigkeitstests vor Übergabe.</p></div></div>
-            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">05</div><div><h3 class="font-bold text-slate-900 mb-1">Wir übergeben</h3><p class="text-gray-600 text-sm">IQ/OQ/PQ-Dokumentation. Schulung Ihrer Operator. Wartungs-Optionen bis 24 Monate – auf Wunsch verlängerbar.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">01</div><div><h3 class="font-bold text-slate-900 mb-1">We listen</h3><p class="text-gray-600 text-sm">Requirements workshop on site in Berlin or by video. Which biosafety level, which borough, which campus, which standard, which date.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">02</div><div><h3 class="font-bold text-slate-900 mb-1">We plan</h3><p class="text-gray-600 text-sm">CAD layout, building services (TGA) and structural design. BauO Bln-compliant building documents for the competent borough office — procedure-ready from day 1. LAGeSo preparation for BSL-3.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">03</div><div><h3 class="font-bold text-slate-900 mb-1">We build</h3><p class="text-gray-600 text-sm">Module prefabrication at the certified Polish partner; final assembly and interior fit-out at the Albstadt works with Wesemann furniture. Pile-foundation preparation and QC before dispatch. A factory visit is possible at any time.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">04</div><div><h3 class="font-bold text-slate-900 mb-1">We deliver</h3><p class="text-gray-600 text-sm">Heavy-goods transport A81/A6/A9 (720 km, 1 transport day). Installation by mobile crane on a pile or raft foundation. Connection of all services, functional and leak tests before handover.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">05</div><div><h3 class="font-bold text-slate-900 mb-1">We hand over</h3><p class="text-gray-600 text-sm">IQ/OQ/PQ documentation. Training for your operators. Maintenance options for up to 24 months — extendable on request.</p></div></div>
           </div>
         </div>
       </div>
@@ -646,8 +646,8 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — Laborcontainer für Berlin</h2>
-          <p class="text-gray-600 text-lg mb-10">Sieben Fragen, sieben Antworten. Direkt und ohne Marketing-Sprech.</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — lab containers for Berlin</h2>
+          <p class="text-gray-600 text-lg mb-10">Seven questions, seven answers. Direct, and without marketing speak.</p>
           <div class="space-y-4">
             {faqSchema.mainEntity.map((faq) => (
               <article class="bg-white border border-gray-200 rounded-xl p-6">
@@ -665,31 +665,31 @@ const faqSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <div class="text-center max-w-3xl mx-auto mb-12">
-            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Kostenfreies Standort-Audit</div>
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Senden Sie uns Ihren Berliner Standort und Ihr Labor-Profil</h2>
-            <p class="text-gray-600 text-lg">Wir liefern innerhalb von 48 Stunden: Standort-Bewertung, Container-Konfiguration mit Maßen und Specs, Genehmigungs-Pfad nach BauO Bln / LAGeSo / KhBauVO, Liefer- und Aufstellungs-Termin, indikatives Investitions-Bracket für Miete und Kauf.</p>
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Complimentary site audit</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Send us your Berlin site and laboratory profile</h2>
+            <p class="text-gray-600 text-lg">Within 48 hours we deliver: a site assessment, a container configuration with dimensions and specifications, the permit path under BauO Bln / LAGeSo / KhBauVO, a delivery and installation date, and an indicative investment bracket for hire and purchase.</p>
           </div>
 
           <div class="grid lg:grid-cols-5 gap-8">
             <div class="lg:col-span-2">
               <div class="bg-slate-900 text-white rounded-2xl p-8 h-full">
-                <h3 class="font-bold text-lg mb-6">Direkter Kontakt</h3>
+                <h3 class="font-bold text-lg mb-6">Direct contact</h3>
                 <div class="space-y-5">
                   <div class="flex items-start gap-4">
                     <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-                    <div><div class="text-xs text-gray-400 mb-1">Telefon</div><a href="tel:+4974357519700" class="font-bold hover:text-primary transition-colors">+49 7435 7519 700</a></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Telephone</div><a href="tel:+4974357519700" class="font-bold hover:text-primary transition-colors">+49 7435 7519 700</a></div>
                   </div>
                   <div class="flex items-start gap-4">
                     <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
-                    <div><div class="text-xs text-gray-400 mb-1">E-Mail</div><a href="mailto:info@planexus.de" class="font-bold hover:text-primary transition-colors">info@planexus.de</a></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Email</div><a href="mailto:info@planexus.de" class="font-bold hover:text-primary transition-colors">info@planexus.de</a></div>
                   </div>
                   <div class="flex items-start gap-4">
                     <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                    <div><div class="text-xs text-gray-400 mb-1">Werk & Zentrale (720 km via A81/A6/A9)</div><div class="font-bold">Emil-Mayer-Straße 1<br/>72461 Albstadt</div></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Works & headquarters (720 km via the A81/A6/A9)</div><div class="font-bold">Emil-Mayer-Straße 1<br/>72461 Albstadt</div></div>
                   </div>
                   <div class="border-t border-white/10 pt-5 mt-5">
-                    <div class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Werksbesichtigung</div>
-                    <p class="text-sm text-gray-300">Wir zeigen Ihnen Ihren Container während der Fertigung – inklusive Pfahlgründungs-Vorbereitung vor Auslieferung. Termin nach Vereinbarung.</p>
+                    <div class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Factory visit</div>
+                    <p class="text-sm text-gray-300">We show you your container during manufacture — including pile-foundation preparation before dispatch. Appointment by arrangement.</p>
                   </div>
                 </div>
               </div>
@@ -704,12 +704,12 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-slate-900 text-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center">
-          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Containerlabor Berlin</div>
-          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Laborcontainer Berlin — Werksbesichtigung Albstadt und Standort-Audit</h2>
-          <p class="text-gray-400 mb-8">LABtoGO produzieren wir auf Bestellung im Werk Albstadt – Pfahlgründung für Berliner Sand und Spree-Grundwasser ab Werk vorkonfektioniert. Werksbesichtigung jederzeit möglich, kostenfreies Standort-Audit inklusive.</p>
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Container laboratory Berlin</div>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Lab containers Berlin — Albstadt factory visit and site audit</h2>
+          <p class="text-gray-400 mb-8">We manufacture LABtoGO to order at the Albstadt works — pile foundation for Berlin sand and Spree groundwater pre-configured at the factory. A factory visit is possible at any time, complimentary site audit included.</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Jetzt anrufen</a>
-            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Anfrageformular ausfüllen <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call now</a>
+            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Complete the enquiry form <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -719,32 +719,32 @@ const faqSchema = {
     <section class="py-16 md:py-20 bg-white border-t border-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Weitere Standorte für Laborcontainer im DACH-Raum</h2>
-          <p class="text-gray-600 mb-8">Berlin ist Deutschlands wissenschaftliche Hauptstadt mit höchster BSL-Dichte und der größten Universitätsmedizin Europas. Diese Standorte teilen verwandte Forschungs- und Klinik-Profile:</p>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Further lab-container locations in the DACH region</h2>
+          <p class="text-gray-600 mb-8">Berlin is Germany’s scientific capital, with the highest BSL density and the largest university-medicine cluster in Europe. These locations share related research and hospital profiles:</p>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <a href="/en/lab-containers-stuttgart" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Stuttgart</div><div class="text-xs text-gray-500">Antriebsforschung & Werkstoffe</div></a>
-            <a href="/en/lab-containers-hamburg" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Hamburg</div><div class="text-xs text-gray-500">Pharma, Klinik & Forschung</div></a>
-            <a href="/en/lab-containers-munich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">München</div><div class="text-xs text-gray-500">Automotive, Hochschulen & Forschung</div></a>
-            <a href="/en/lab-containers-frankfurt" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Frankfurt</div><div class="text-xs text-gray-500">Pharma-Cluster Rhein-Main</div></a>
-            <a href="/en/lab-containers-dusseldorf" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Düsseldorf</div><div class="text-xs text-gray-500">NRW Chemie-Cluster</div></a>
-            <a href="/en/lab-containers-zurich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Zürich</div><div class="text-xs text-gray-500">Pharma & Forschung</div></a>
-            <a href="/en/lab-containers-basel" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Basel</div><div class="text-xs text-gray-500">Pharma-Region</div></a>
-            <a href="/en/lab-containers-vienna" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Wien</div><div class="text-xs text-gray-500">AT-Pharma, Medizintechnik</div></a>
+            <a href="/en/lab-containers-stuttgart" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Stuttgart</div><div class="text-xs text-gray-500">Powertrain research and materials</div></a>
+            <a href="/en/lab-containers-hamburg" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Hamburg</div><div class="text-xs text-gray-500">Pharma, hospitals and research</div></a>
+            <a href="/en/lab-containers-munich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Munich</div><div class="text-xs text-gray-500">Automotive, universities and research</div></a>
+            <a href="/en/lab-containers-frankfurt" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Frankfurt</div><div class="text-xs text-gray-500">Rhine-Main pharma cluster</div></a>
+            <a href="/en/lab-containers-dusseldorf" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Düsseldorf</div><div class="text-xs text-gray-500">NRW chemicals cluster</div></a>
+            <a href="/en/lab-containers-zurich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Zurich</div><div class="text-xs text-gray-500">Pharma and research</div></a>
+            <a href="/en/lab-containers-basel" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Basel</div><div class="text-xs text-gray-500">Pharma region</div></a>
+            <a href="/en/lab-containers-vienna" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Vienna</div><div class="text-xs text-gray-500">Austrian pharma and medical technology</div></a>
           </div>
 
           <div class="mt-10 pt-8 border-t border-gray-100">
-            <h3 class="font-bold text-slate-900 mb-3">Vertiefende Ressourcen</h3>
+            <h3 class="font-bold text-slate-900 mb-3">Further reading</h3>
             <div class="grid md:grid-cols-2 gap-3 text-sm">
-              <a href="/en/lab-containers" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer – Übersicht Produkte & Leistungen</a>
-              <a href="/en/locations" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer-Standorte im DACH-Raum</a>
-              <a href="/en/lab-containers/labtogo" class="text-gray-600 hover:text-primary transition-colors">→ LABtoGO – die Plattform für BSL-2, GMP, ATEX</a>
-              <a href="/en/magazine/lab-container-permits-building-law" class="text-gray-600 hover:text-primary transition-colors">→ Genehmigung & Baurecht für Laborcontainer (Praxisleitfaden)</a>
-              <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-gray-600 hover:text-primary transition-colors">→ BSL-2 & BSL-3 im Container – geht das?</a>
-              <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-gray-600 hover:text-primary transition-colors">→ GMP-Reinraum im Container für Pharma-Produktion</a>
-              <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-gray-600 hover:text-primary transition-colors">→ Klimatisierung im Laborcontainer – Normen & Praxis</a>
-              <a href="/en/magazine/lab-containers-rent-or-buy" class="text-gray-600 hover:text-primary transition-colors">→ Laborcontainer mieten oder kaufen?</a>
-              <a href="/en/magazine/lab-container-project-process" class="text-gray-600 hover:text-primary transition-colors">→ Projektablauf: Von der Idee zur Übergabe</a>
-              <a href="/en/about" class="text-gray-600 hover:text-primary transition-colors">→ Über Planexus</a>
+              <a href="/en/lab-containers" class="text-gray-600 hover:text-primary transition-colors">→ Lab containers – product and services overview</a>
+              <a href="/en/locations" class="text-gray-600 hover:text-primary transition-colors">→ Lab-container locations in the DACH region</a>
+              <a href="/en/lab-containers/labtogo" class="text-gray-600 hover:text-primary transition-colors">→ LABtoGO – the platform for BSL-2, GMP and ATEX</a>
+              <a href="/en/magazine/lab-container-permits-building-law" class="text-gray-600 hover:text-primary transition-colors">→ Permits and building law for lab containers (practical guide)</a>
+              <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-gray-600 hover:text-primary transition-colors">→ BSL-2 and BSL-3 in a container – is it possible?</a>
+              <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-gray-600 hover:text-primary transition-colors">→ GMP cleanroom in a container for pharmaceutical production</a>
+              <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-gray-600 hover:text-primary transition-colors">→ Climate control in the lab container – standards and practice</a>
+              <a href="/en/magazine/lab-containers-rent-or-buy" class="text-gray-600 hover:text-primary transition-colors">→ Rent or buy a lab container?</a>
+              <a href="/en/magazine/lab-container-project-process" class="text-gray-600 hover:text-primary transition-colors">→ Project process: from idea to handover</a>
+              <a href="/en/about" class="text-gray-600 hover:text-primary transition-colors">→ About Planexus</a>
             </div>
           </div>
         </div>
