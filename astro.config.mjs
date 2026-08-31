@@ -7,11 +7,12 @@ import { execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { DE_TO_EN, EN_TO_DE, normalizePath } from './src/i18n/routes.ts';
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
+const siteUrl = 'https://planexus.de';
+const SITEMAP_EXCLUDE = new Set(['/about', '/services', '/contact', '/products', '/404', '/en/404']);
 
-// Reales lastmod pro Seite aus dem letzten Git-Commit der Quelldatei.
-// So spiegelt die Sitemap echte Änderungsdaten wider statt eines erfundenen Einheitsdatums.
 function gitLastmod(pathname) {
   const rel = pathname === '/' ? 'index' : pathname.replace(/^\/+|\/+$/g, '');
   const candidates = [`src/pages/${rel}.astro`, `src/pages/${rel}/index.astro`];
@@ -29,9 +30,36 @@ function gitLastmod(pathname) {
   }
 }
 
+function sitemapLinks(pathname) {
+  const pathNorm = normalizePath(pathname);
+  let dePath;
+  let enPath;
+  if (pathNorm === '/en' || pathNorm.startsWith('/en/')) {
+    enPath = pathNorm === '' ? '/en' : pathNorm;
+    dePath = EN_TO_DE[enPath];
+  } else {
+    dePath = pathNorm === '' ? '/' : pathNorm;
+    enPath = DE_TO_EN[pathNorm];
+  }
+  if (!enPath || dePath === undefined) return undefined;
+  const deHref = dePath === '/' || dePath === '' ? siteUrl : `${siteUrl}${dePath}`;
+  return [
+    { url: deHref, lang: 'de-DE' },
+    { url: `${siteUrl}${enPath}`, lang: 'en' },
+    { url: deHref, lang: 'x-default' },
+  ];
+}
+
 export default defineConfig({
   site: 'https://planexus.de',
   trailingSlash: 'never',
+  i18n: {
+    defaultLocale: 'de',
+    locales: ['de', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   redirects: {
     '/about': '/ueber-uns',
     '/services': '/leistungen',
@@ -44,10 +72,17 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) => !/\/(admin|api)(\/|$)/.test(page),
+      filter: (page) => {
+        if (/\/(admin|api)(\/|$)/.test(page)) return false;
+        const pathname = new URL(page).pathname.replace(/\/+$/, '') || '/';
+        return !SITEMAP_EXCLUDE.has(pathname);
+      },
       serialize(item) {
-        const lastmod = gitLastmod(new URL(item.url).pathname);
+        const pathname = new URL(item.url).pathname;
+        const lastmod = gitLastmod(pathname);
         if (lastmod) item.lastmod = lastmod;
+        const links = sitemapLinks(pathname);
+        if (links) item.links = links;
         return item;
       },
     }),

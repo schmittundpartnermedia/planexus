@@ -1,0 +1,464 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Fire protection in the lab container – fire resistance, hazardous-substance storage and means of escape",
+  "description": "Structural, active and organisational fire protection in the lab container: DIN 4102-2 and DIN EN 13501, fire-resistance classes F30/F90 and EI 90, construction-product classes A1/A2, mineral wool vs. PUR/PIR, Type 90 safety cabinets to DIN EN 14470-1, TRGS 510/526, DGUV 213-850, ASR A2.2/A2.3 – with verified standards.",
+  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/en/team/thomas-boss", "jobTitle": "Partner & Technical Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-06-11",
+  "dateModified": "2026-06-11",
+  "image": "https://planexus.de/attached_assets/generated_images/laborcontainer-brandschutz-feuerwiderstand.png",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/lab-container-fire-protection" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Fire protection in the lab container", "item": "https://planexus.de/en/magazine/lab-container-fire-protection" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Which fire-resistance class does a lab container need?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the building-control classification. Requirements for structural fire protection in the Model Building Code (Musterbauordnung) and all state building codes are measured by building class. A single, free-standing, single-storey lab container generally falls into a low building class with limited requirements on the fire resistance of load-bearing elements. As soon as modules are stacked or joined into larger assemblies, connect to an existing building or are classified as a special building (laboratory), the requirements rise – then fire-resisting separations of F30 to F90 to DIN 4102-2, or EI 30 to EI 90 to DIN EN 13501-2, are required. What always governs is the fire-safety concept in the building application, agreed with the competent building-control authority. We deliver the container with the matching wall build-up and documented classifications." } },
+    { "@type": "Question", "name": "What does F90 mean, and is it the same as EI 90?", "acceptedAnswer": { "@type": "Answer", "text": "F90 is the national fire-resistance class to DIN 4102-2: the element withstands the standard fire test for at least 90 minutes. European DIN EN 13501-2 breaks the blanket F class into differentiated criteria: R (load-bearing capacity/Résistance), E (integrity/Étanchéité) and I (insulation), each with a minutes rating. A non-load-bearing fire wall is classified there as EI 90, a load-bearing and integrity-providing wall as REI 90. F90 and EI 90 therefore describe the same 90-minute protection objective – the European class is simply more precise because it states which function is maintained for 90 minutes. Both standard systems apply equally in Germany; DIN 4102 remains widely used in construction practice." } },
+    { "@type": "Question", "name": "Which construction products are decisive for fire protection in the lab container?", "acceptedAnswer": { "@type": "Answer", "text": "The core of the wall and roof panels. A sandwich-construction container can be fabricated with different insulation cores, and their reaction to fire differs fundamentally. Mineral wool is classified to DIN EN 13501-1 as A1, or in combination with steel facings as A2 – i.e. non-combustible. PIR rigid foam typically achieves B-s1,d0 to B-s2,d0 (limited combustibility), PUR foam sits markedly lower at E to F (normally to easily ignitable). For laboratory applications with elevated fire load or special-building classification we use panels with a non-combustible mineral-wool core (A1/A2). That not only meets the structural fire-protection requirement, but at the highest material level – no significant contribution of the wall build-up to the fire load." } },
+    { "@type": "Question", "name": "How must hazardous substances and solvents be stored in the lab container?", "acceptedAnswer": { "@type": "Answer", "text": "To TRGS 510 (storage of hazardous substances in portable containers, edition since 16 February 2021). Flammable liquids belong in a fire-protected safety cabinet to DIN EN 14470-1. The common Type 90 guarantees that the cabinet interior does not heat by more than 180 kelvin for 90 minutes in a fire – so the contents remain well below auto-ignition temperature and staff have time to escape and the fire service time to intervene. The standard also knows Types 15, 30 and 60 with correspondingly shorter protection times. Compressed-gas cylinders are stored in cabinets to DIN EN 14470-2. In addition, segregation prohibitions, technical ventilation, spill trays and quantity thresholds govern safe storage organisation in the container." } },
+    { "@type": "Question", "name": "Which fire extinguishers are mandatory in the lab container?", "acceptedAnswer": { "@type": "Answer", "text": "Type, extinguishing agent and number follow ASR A2.2 (measures against fires) and the fire hazard in the laboratory. Extinguishers are assigned to fire classes: A (solid, glowing substances), B (liquid and liquefying substances such as solvents, oils, alcohols), C (gases), D (metal fires, for example alkali metals or magnesium) and F (cooking fats and oils). In the laboratory fire class B is almost always relevant; with reactive metals, D with special metal-fire powder is added. CO₂ extinguishers are common in laboratories with sensitive equipment because they extinguish without residue. The required number of extinguishing units (LE) follows from floor area and fire hazard to ASR A2.2. TRGS 526 and DGUV Information 213-850 further specify fire protection in laboratory operation." } },
+    { "@type": "Question", "name": "What requirements apply to escape and rescue routes in the lab container?", "acceptedAnswer": { "@type": "Answer", "text": "ASR A2.3 (escape and rescue routes, new edition March 2022, last amended November 2024) and Chapter 6.2 of DGUV Information 213-850 govern. In laboratories, rescue routes and exits must be present in sufficient number, depending on the substances and working methods used. Where the hazard is elevated, a second, independent escape route is required – in the container therefore a second door or an emergency exit, not only the main entrance. In addition come clear minimum widths of circulation and escape routes, doors that open in the direction of escape, emergency lighting and illuminated rescue signs to ASR A1.3 (DIN EN ISO 7010). We plan door openings, emergency exits and safety signage to suit laboratory size and occupancy directly into the layout." } },
+    { "@type": "Question", "name": "Does a lab container need a fire detection and alarm system?", "acceptedAnswer": { "@type": "Answer", "text": "Not every container, but many applications benefit from it or require it. An automatic fire detection and alarm system to DIN 14675 in conjunction with DIN VDE 0833-1/-2 is required when the fire-safety concept or the building permit prescribes it – for example at higher building classes, special buildings, unattended night operation with sample storage, or high fire load from solvents and lithium-ion batteries. For many standard lab containers, standards-compliant smoke alarms combined with the necessary extinguishers and a clear alarm arrangement suffice. Where a full FDAS with connection to the fire service is required, we plan and integrate it including the necessary fire-service peripherals. Which level is needed is clarified in the fire-safety concept with the expert and building control." } }
+  ]
+};
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Fire protection in the lab container – fire resistance & standards | Planexus"
+  description="Fire protection in the lab container: DIN 4102/EN 13501, F30–F90, construction product A1/A2, Type 90 safety cabinet, TRGS 510/526. Read now."
+  canonical="/en/magazine/lab-container-fire-protection"
+  ogImage="https://planexus.de/attached_assets/generated_images/laborcontainer-brandschutz-feuerwiderstand.png"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/attached_assets/generated_images/laborcontainer-brandschutz-feuerwiderstand.png')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3 3 4 3 7a3 3 0 0 1-6 0c0-1 .5-2 1-3"/><path d="M12 22a7 7 0 0 0 7-7c0-3-2-5-3-7-1 2-2 3-4 4-2 1-3 3-3 5a3 3 0 0 0 3 5Z"/></svg>
+              Safety &amp; fire protection
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              17 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Fire protection in the lab container – fire resistance & means of escape
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            In the laboratory, flammable solvents, compressed gases, electrical equipment and in some cases lithium-ion batteries come together in a confined space. Fire protection is not a formality here, but the prerequisite for permit and operation. This guide sets out the three pillars – structural, active and organisational – with verified standards and clear decisions.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              11 June 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Thomas Boss, Technical Director, Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Fire protection in the lab container</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                A laboratory fire rarely starts dramatically. A knocked-over beaker of acetone, an overheated heating mantle, a short circuit in a drying oven, a defective battery in a charger – and within seconds a fire load burns that an ordinary office never sees. In the lab container everything stands closer together, which makes it worse. That is exactly why fire protection in the lab container is not an appendix to the design, but its foundation.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Fire protection consists of three pillars that interlock: <strong>structural fire protection</strong> (fire resistance of elements, non-combustible construction products, fire compartments), <strong>active fire protection</strong> (detectors, extinguishing agents, emergency lighting, ventilation) and <strong>organisational fire protection</strong> (means of escape, signage, instruction, hazardous-substance storage). This article walks through all three – with the standards that actually apply in the German-speaking countries, and with the clear dividing line where we as container builders end and the fire-safety expert, building control and the operator begin.
+              </p>
+
+              <figure class="my-10">
+                <img
+                  src="/attached_assets/generated_images/laborcontainer-brandschutz-feuerwiderstand.png"
+                  alt="Modern lab container at dusk with an illuminated emergency-exit sign above the entrance – structural and organisational fire protection to DIN 4102, DIN EN 13501 and ASR A2.3"
+                  width="1920"
+                  height="1080"
+                  loading="lazy"
+                  class="w-full rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Fire protection begins at the wall build-up and ends at the escape route: a non-combustible panel core, fire-resisting separations, illuminated rescue signs and a second escape route are standard in the lab container, not a special request.
+                </figcaption>
+              </figure>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fact table: the fire-protection standards in the lab container</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Fire protection in the lab container works within a framework of building-control law, fire-protection standards, hazardous-substances law and workplace rules. The following overview is required reading for every fire-safety concept.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Area</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Standard / requirement</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">What it governs</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Building-control law</td>
+                      <td class="border border-gray-200 px-4 py-3">Model Building Code (MBO) / state building codes</td>
+                      <td class="border border-gray-200 px-4 py-3">Fire-protection requirements by building class, special building laboratory</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Fire resistance of elements (national)</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 4102-2</td>
+                      <td class="border border-gray-200 px-4 py-3">Fire-resistance classes F30 / F60 / F90 / F120</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Fire resistance of elements (European)</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 13501-2</td>
+                      <td class="border border-gray-200 px-4 py-3">Classification R / E / I (e.g. EI 90, REI 90)</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Reaction to fire, products (national)</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 4102-1</td>
+                      <td class="border border-gray-200 px-4 py-3">Construction-product classes A (non-combustible) and B (combustible)</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Reaction to fire, products (European)</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 13501-1</td>
+                      <td class="border border-gray-200 px-4 py-3">Euroclasses A1–F, smoke s1–s3, flaming droplets d0–d2</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Safety cabinets, flammable liquids</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 14470-1</td>
+                      <td class="border border-gray-200 px-4 py-3">Fire-protected cabinets Type 15 / 30 / 60 / 90</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Safety cabinets, compressed-gas cylinders</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 14470-2</td>
+                      <td class="border border-gray-200 px-4 py-3">Fire-protected storage of compressed-gas cylinders</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Hazardous-substance storage</td>
+                      <td class="border border-gray-200 px-4 py-3">TRGS 510 (edition since 16 February 2021)</td>
+                      <td class="border border-gray-200 px-4 py-3">Storage in portable containers, segregation, ventilation</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Laboratory operation (hazardous substances)</td>
+                      <td class="border border-gray-200 px-4 py-3">TRGS 526</td>
+                      <td class="border border-gray-200 px-4 py-3">Safe working in laboratories, fire protection (Section 4.8)</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Laboratory operation (occupational safety)</td>
+                      <td class="border border-gray-200 px-4 py-3">DGUV Information 213-850 (May 2020)</td>
+                      <td class="border border-gray-200 px-4 py-3">Fundamentals of laboratory safety, fire protection and means of escape (Ch. 6.2)</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Fire-extinguishing equipment</td>
+                      <td class="border border-gray-200 px-4 py-3">ASR A2.2</td>
+                      <td class="border border-gray-200 px-4 py-3">Measures against fires, extinguishing units, fire classes A–F</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Escape and rescue routes</td>
+                      <td class="border border-gray-200 px-4 py-3">ASR A2.3 (new edition 2022, amended 11/2024)</td>
+                      <td class="border border-gray-200 px-4 py-3">Minimum widths, travel distances, doors, emergency lighting</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Fire detection and alarm systems</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 14675 + DIN VDE 0833-1/-2</td>
+                      <td class="border border-gray-200 px-4 py-3">Design, operation and fire-service peripherals of FDAS</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Safety signage</td>
+                      <td class="border border-gray-200 px-4 py-3">ASR A1.3 (DIN EN ISO 7010)</td>
+                      <td class="border border-gray-200 px-4 py-3">Rescue, fire-protection and warning signs</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Emergency / safety lighting</td>
+                      <td class="border border-gray-200 px-4 py-3">ASR A3.4/3 + DIN EN 1838</td>
+                      <td class="border border-gray-200 px-4 py-3">Emergency lighting and illuminated rescue signs</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Structural fire protection: fire resistance and construction-product classes</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Structural fire protection answers two questions: how long does an element withstand fire? And how much does the construction product itself contribute to the fire? The first question is answered by the <strong>fire-resistance class</strong>, the second by the <strong>construction-product class</strong>. Both are governed in Germany by two parallel standard systems: nationally in DIN 4102 and at European level in DIN EN 13501. DIN 4102 remains the familiar workhorse in construction practice; the European classification is the more precise and, in the CE context, the governing one.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The <strong>fire-resistance class</strong> to DIN 4102-2 is given with the letter F and the endurance in minutes: F30, F60, F90, F120. An F90 element withstands the standardised fire curve for at least 90 minutes. DIN EN 13501-2 breaks this blanket statement into individual performance criteria – <strong>R</strong> for load-bearing capacity, <strong>E</strong> for integrity (no passage of flames and hot gases) and <strong>I</strong> for insulation (limited temperature on the unexposed face). A non-load-bearing partition with 90 minutes of protection is called EI 90 there; a load-bearing and integrity-providing wall is REI 90. F90 and EI 90 describe the same protection objective – the European class simply states more precisely which function is maintained.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The <strong>construction-product class</strong> to DIN 4102-1 divides roughly into Class A (non-combustible) and Class B (combustible). Class A subdivides into A1 (without combustible constituents) and A2 (practically non-combustible), Class B into B1 (limited combustibility), B2 (normally ignitable) and B3 (easily ignitable). European DIN EN 13501-1 uses the Euroclasses A1, A2, B, C, D, E and F and supplements them with two additional criteria that decide life and death in a real fire: <strong>smoke production</strong> (s1 = very low to s3 = high) and <strong>flaming droplets</strong> (d0 = no droplets to d2 = heavy dripping). In a closed lab container, smoke production is especially critical because it can make escape impossible within seconds.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">The sandwich-panel core decides: mineral wool instead of foam</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A lab container is fabricated in sandwich construction: two steel facings, an insulation core between them. Exactly this core is the point at which structural fire protection stands or falls – and the point at which the market most often cuts corners, because the core is invisible from outside. The reaction to fire of the three common core materials differs fundamentally:
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Core material</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Class (DIN EN 13501-1)</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Reaction to fire</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Mineral wool</td>
+                      <td class="border border-gray-200 px-4 py-3">A1 / A2 (in combination with steel)</td>
+                      <td class="border border-gray-200 px-4 py-3">Non-combustible, no contribution to fire load, no smoke gases</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">PIR (polyisocyanurate)</td>
+                      <td class="border border-gray-200 px-4 py-3">B-s1,d0 to B-s2,d0</td>
+                      <td class="border border-gray-200 px-4 py-3">Combustible, limited combustibility, low to medium smoke gases</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">PUR (polyurethane)</td>
+                      <td class="border border-gray-200 px-4 py-3">E to F</td>
+                      <td class="border border-gray-200 px-4 py-3">Combustible, normally to easily ignitable, heavy smoke production</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For a temporary office-container scheme a PUR or PIR core may suffice. In a lab container with elevated fire load from solvents, gases and electrics, a <strong>non-combustible mineral-wool core (A1/A2)</strong> is the only choice that is clean in fire-protection terms. Mineral wool contributes nothing to the fire load, does not melt into flaming droplets and produces no toxic smoke gases. It is also the prerequisite for walls to reach higher fire-resistance classes at all. We deliver our lab containers with mineral-wool panels and document the classification – so that the fire-safety expert has a robust basis in the building application rather than a promise.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 rounded-r-xl">
+                <p class="font-bold text-slate-900 mb-2">From practice: what I watch for as a trained fire officer</p>
+                <p class="text-gray-700 text-sm">Before the Planexus years I served with the professional fire service. What you learn there: in an emergency, minutes count, and most people do not die from the flame but from the smoke. That is why for me the smoke class (s-criterion) is at least as important as the fire-resistance class. A wall build-up that holds for 90 minutes but produces heavy smoke in a fire protects the building and not the people. In the lab container we therefore raise both: a non-combustible core <em>and</em> low smoke production, plus a second escape route that remains reachable even if the main entrance is smoke-logged. — Thomas Boss</p>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fire compartments and fire-resisting separations in a modular assembly</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                As long as a single lab container is operated free-standing and single-storey, the fire-protection situation is manageable. As soon as modules are stacked, joined into larger units or connected to an existing building, the question of <strong>fire compartments</strong> comes into play. In building-control terms, fire compartments are meant to prevent a fire spreading unhindered through the entire structure. The separating elements between compartments must then achieve a defined fire-resistance class – typically F30 to F90, or EI 30 to EI 90, depending on building class and concept.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In the lab container this concerns not only the wall itself, but every penetration: ventilation ducts, services, cable trays and doors. An F90 wall is worthless if the ventilation duct runs through it unsealed. That is why fire-resisting separations need <strong>fire dampers</strong> in the ducts, tested <strong>penetrations seals</strong> (cable and pipe collars) and <strong>fire doors</strong> of the matching class (e.g. T30/T90 to DIN 4102-5 or EI₂ 30-C/EI₂ 90-C to DIN EN 13501-2). These components must be coordinated with one another and documented in the fire-safety concept. We plan the penetrations so that every opening through a fire wall is closed with a tested system – no hole without evidence.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Hazardous-substance storage: TRGS 510 and the Type 90 safety cabinet</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The largest avoidable fire load in the laboratory is the hazardous substances themselves – above all flammable solvents. Their storage is governed by <strong>TRGS 510</strong> “Storage of hazardous substances in portable containers” (edition since 16 February 2021). It specifies the Hazardous Substances Ordinance and describes the recognised state of the art: anyone who complies with it can assume fulfilment of the legal duties (presumption of conformity). TRGS 510 governs quantity thresholds, segregation prohibitions, technical ventilation, spill trays and the requirements on storage equipment.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The central component is the <strong>fire-protected safety cabinet to DIN EN 14470-1</strong>. The standard knows four types, named after their fire-resistance duration: Type 15, Type 30, Type 60 and Type 90. The common <strong>Type 90</strong> guarantees that the cabinet interior in the standardised fire test <strong>does not heat by more than 180 kelvin for 90 minutes</strong>. That keeps the contents well below the auto-ignition temperature of common solvents – the 90 minutes are the time in which people can escape and the fire service can intervene. Compressed-gas cylinders are stored analogously in cabinets to <strong>DIN EN 14470-2</strong>. Lithium-ion batteries, which represent a growing fire load in energy research, belong in storage and charging cabinets designed for that purpose.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In the lab container we plan the positions for safety cabinets from the outset: load-bearing substrate, connection to the cabinet’s technical extract, adequate circulation and escape-route width in front. A Type 90 cabinet “put somewhere” after the fact, whose extract is not connected and which narrows an escape route, only half fulfils its purpose.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Active fire protection: detect, extinguish, see</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Active fire protection ensures that a fire is detected early, fought quickly and the escape route remains visible. Three components belong in every seriously used lab container:
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Fire detection.</strong> For many standard lab containers, standards-compliant smoke alarms suffice. Where the fire-safety concept or the building permit requires more – higher building class, special building, unattended night operation, high fire load – an automatic <strong>fire detection and alarm system (FDAS) to DIN 14675</strong> in conjunction with DIN VDE 0833-1/-2 becomes necessary, possibly with connection to the fire service including fire-service control panel and indication tableau.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Extinguishing agents.</strong> Type and number of extinguishers follow <strong>ASR A2.2</strong> and the fire hazard. Extinguishers are assigned to fire classes: A (solid, glowing substances), B (liquid substances such as solvents and oils), C (gases), D (metal fires, for example alkali metals) and F (cooking fats and oils). In the laboratory fire class B is almost always relevant; with reactive metals, D with special metal-fire powder is added. CO₂ extinguishers are popular because they extinguish electrical equipment without residue. The required number of extinguishing units is calculated from floor area and hazard.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Visibility in an emergency.</strong> <strong>Emergency lighting</strong> to ASR A3.4/3 and DIN EN 1838, and illuminated <strong>rescue signs</strong> to ASR A1.3 (DIN EN ISO 7010), ensure that the escape route remains recognisable even in a power failure and smoke-logging. In a window-poor lab container that is not a comfort, but vital.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Organisational fire protection and means of escape</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The best construction technology is useless without a functioning escape route. What governs are <strong>ASR A2.3</strong> “Escape and rescue routes” (new edition March 2022, last amended November 2024) and Chapter 6.2 of <strong>DGUV Information 213-850</strong> “Safe working in laboratories”. The principle: in laboratories, rescue routes and exits must be present in sufficient number, depending on the substances and working methods used. Where the hazard is elevated, a <strong>second, independent escape route</strong> is required – in the container therefore not only the main entrance, but a second door or an emergency exit.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Concrete constructional requirements are added: clear minimum widths and heights of circulation and escape routes, doors that open in the direction of escape and can be opened without special tools, and limited travel distances to the next place of safety. Organisationally, escape and rescue plans, regular fire-protection instruction and – depending on the operation – evacuation drills complete the picture. <strong>TRGS 526</strong> “Laboratories” further specifies fire-protection duties in ongoing laboratory operation in Section 4.8. We consider door openings, emergency exits and signage already in the layout, matched to the planned occupancy and laboratory size.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fire protection by application: BSL, GMP, ATEX</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Fire protection is not a uniform package – it scales with the application. In a <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-primary font-medium hover:underline">BSL-2/BSL-3 container laboratory</a>, fire protection collides with containment: a door that must open in a fire must not override the biological safety level – that is solved via airlocks, defined pressure stages and coordinated emergency concepts. In the <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-primary font-medium hover:underline">GMP and cleanroom container</a>, fire dampers and penetration seals must be compatible with cleanroom qualification. And in laboratories for <a href="/en/magazine/lab-container-energy-transition-h2-battery-ex-protection" class="text-primary font-medium hover:underline">hydrogen and battery research</a>, fire protection joins explosion protection to ATEX – here the focus shifts from “prevent fire” to “prevent an ignitable atmosphere”.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                These interactions are the reason fire protection must not be an afterthought. It belongs in the first planning phase, together with the permitting path. How the entire route from idea to handover runs is shown in our article on the <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">project process</a>; the legal side is covered in more depth in the article on <a href="/en/magazine/lab-container-permits-building-law" class="text-primary font-medium hover:underline">permits and building law</a>.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Conclusion: fire protection is design, not equipment</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Fire protection in the lab container does not arise from a few extinguishers on the wall. It arises from the interplay of a non-combustible wall build-up, coordinated fire compartments, standards-compliant hazardous-substance storage, early fire detection, visible means of escape and a clear organisational concept. Every pillar has been treated as dispensable at some point – and that is exactly where the dangerous gaps arise.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Because our lab containers leave the Albstadt factory with mineral-wool panels, documented classifications and prepared connections for safety cabinets and fire-protection plant, the fire-safety concept can be set up cleanly from the start. Our <a href="/en/services/planning" class="text-primary font-medium hover:underline">planning and engineering service</a> covers coordination with the fire-safety expert and building control – from a single source, with a clear chain of responsibility.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Design the fire-safety concept in from the start?</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">We plan wall build-up, fire compartments, hazardous-substance storage and means of escape together with the expert and building control – with verified standards and without gaps.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Request a free initial consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">At a glance</h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Fire resistance: DIN 4102-2 (F30–F120) / DIN EN 13501-2 (EI, REI)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Construction products: A1/A2 non-combustible, smoke s1–s3, droplets d0–d2</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Panel core: mineral wool (A1/A2) instead of PUR/PIR</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Hazardous substances: TRGS 510 + Type 90 safety cabinet (DIN EN 14470-1)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Extinguishers: ASR A2.2, fire classes A–F, extinguishing units</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Means of escape: ASR A2.3 + DGUV 213-850, second escape route</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Detection: DIN 14675 (FDAS) or smoke alarms</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <h4 class="font-bold text-slate-900 mb-4">Further reading</h4>
+                <ul class="space-y-3">
+                  <li><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>BSL-2 &amp; BSL-3 container laboratory</a></li>
+                  <li><a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>GMP &amp; cleanroom containers</a></li>
+                  <li><a href="/en/magazine/lab-container-energy-transition-h2-battery-ex-protection" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>H₂ &amp; battery testing, Ex protection</a></li>
+                  <li><a href="/en/magazine/lab-container-permits-building-law" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Permits &amp; building law</a></li>
+                  <li><a href="/en/magazine/lab-container-hvac-ventilation-standards" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Climate control &amp; ventilation</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <h4 class="font-bold mb-3">Fire protection from the start?</h4>
+                <p class="text-gray-400 text-sm mb-4">We think wall build-up, hazardous-substance storage and means of escape together – before the building application goes out.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Get in touch</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions on fire protection in the lab container</h2>
+          <div class="space-y-4">
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which fire-resistance class does a lab container need?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">It depends on the building-control classification. Requirements in the Model Building Code and all state building codes are measured by <strong>building class</strong>. A single, free-standing, single-storey lab container usually falls into a low building class with limited requirements. As soon as modules are stacked, joined into assemblies, connected to an existing building or classified as a special building (laboratory), the requirements rise – then separations of <strong>F30 to F90</strong> (DIN 4102-2) or <strong>EI 30 to EI 90</strong> (DIN EN 13501-2) are required. What always governs is the fire-safety concept in the building application.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What does F90 mean, and is it the same as EI 90?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed"><strong>F90</strong> is the national class to DIN 4102-2: at least 90 minutes of endurance in the standard fire. DIN EN 13501-2 breaks this into <strong>R</strong> (load-bearing capacity), <strong>E</strong> (integrity) and <strong>I</strong> (insulation). A non-load-bearing fire wall is called <strong>EI 90</strong> there; a load-bearing and integrity-providing wall <strong>REI 90</strong>. F90 and EI 90 describe the same 90-minute protection objective – the European class is simply more precise. Both standard systems apply equally in Germany.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which construction products are decisive for fire protection?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">The <strong>core of the sandwich panels</strong>. <strong>Mineral wool</strong> is classified to DIN EN 13501-1 as A1 (or A2 in a steel composite) – non-combustible. <strong>PIR</strong> achieves B-s1,d0 to B-s2,d0 (limited combustibility), <strong>PUR</strong> only E to F (normally to easily ignitable). For laboratory applications with elevated fire load we use panels with a non-combustible <strong>mineral-wool core (A1/A2)</strong> – no contribution to fire load, no toxic smoke gases, no flaming droplets.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How must solvents and hazardous substances be stored?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">To <strong>TRGS 510</strong> (edition since 16 February 2021). Flammable liquids belong in a fire-protected safety cabinet to <strong>DIN EN 14470-1</strong>. The common <strong>Type 90</strong> holds the interior in a fire for 90 minutes under a +180 K temperature rise – so the contents remain below auto-ignition temperature. The standard also knows Types 15, 30 and 60. Compressed-gas cylinders are stored to <strong>DIN EN 14470-2</strong>. Segregation prohibitions, technical ventilation, spill trays and quantity thresholds are added.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which fire extinguishers are mandatory in the lab container?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Type, extinguishing agent and number follow <strong>ASR A2.2</strong> and the fire hazard. Fire classes: <strong>A</strong> (solid, glowing substances), <strong>B</strong> (liquid substances such as solvents, oils, alcohols), <strong>C</strong> (gases), <strong>D</strong> (metal fires, e.g. alkali metals) and <strong>F</strong> (cooking fats/oils). In the laboratory B is almost always relevant; with reactive metals, D with metal-fire powder is added. CO₂ extinguishers extinguish equipment without residue. The number of extinguishing units follows from floor area and hazard. TRGS 526 and DGUV 213-850 specify laboratory operation.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What requirements apply to escape and rescue routes?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">What governs are <strong>ASR A2.3</strong> (new edition 2022, amended 11/2024) and Chapter 6.2 of <strong>DGUV Information 213-850</strong>. Rescue routes and exits must be present in sufficient number. Where the hazard is elevated, a <strong>second, independent escape route</strong> is required – i.e. a second door or an emergency exit, not only the main entrance. In addition come clear minimum widths, doors that open in the direction of escape, <strong>emergency lighting</strong> and illuminated rescue signs to ASR A1.3 (DIN EN ISO 7010).</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Does a lab container need a fire detection and alarm system?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Not every one, but many. An automatic FDAS to <strong>DIN 14675</strong> (with DIN VDE 0833-1/-2) is required when the fire-safety concept or building permit prescribe it – for example at higher building classes, special buildings, unattended night operation or high fire load from solvents and lithium-ion batteries. For many standard lab containers, standards-compliant <strong>smoke alarms</strong> combined with extinguishers and a clear alarm arrangement suffice. Where a full FDAS with fire-service connection is needed, we plan and integrate it. Which level applies is clarified by the fire-safety concept with the expert and building control.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+    <RelatedArticles slug="laborcontainer-brandschutz-feuerwiderstand" locale="en" />
+
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/en/magazine" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to the Magazine
+      </a>
+    </div>
+  </div>
+</Layout>

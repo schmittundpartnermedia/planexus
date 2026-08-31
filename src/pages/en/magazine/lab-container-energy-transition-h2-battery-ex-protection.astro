@@ -1,0 +1,434 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Laboratory containers for H₂ research & battery testing – explosion protection, gas detection and funding",
+  "description": "Practical guide to hydrogen and battery laboratories in containers: ATEX zones, H₂ gas detection, ventilation, fire protection for thermal-runaway testing and IPCEI/BMBF funding – for research institutes, automotive suppliers and start-ups.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Managing Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-04-20",
+  "dateModified": "2026-04-20",
+  "image": "https://planexus.de/images/magazin/h2-batterie-laborcontainer.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/lab-container-energy-transition-h2-battery-ex-protection" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Laboratory containers for H₂ research & battery testing", "item": "https://planexus.de/en/magazine/lab-container-energy-transition-h2-battery-ex-protection" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Which ATEX zone applies in a hydrogen laboratory container?", "acceptedAnswer": { "@type": "Answer", "text": "In normal operation with tight H₂ plant, Zone 2 typically applies – an explosive atmosphere occurs only rarely and briefly. Directly at vent lines or inside test chambers, Zone 1 can arise locally. Zoning is set out in the explosion protection document under BetrSichV §6, taking account of TRBS 2152 and DGUV Information 213-053." } },
+    { "@type": "Question", "name": "How does H₂ gas detection work in the container?", "acceptedAnswer": { "@type": "Answer", "text": "Hard-wired sensors (catalytic pellistor, MEMS or semiconductor) continuously monitor the LEL (lower explosive limit 4 vol% in air). Pre-alarm at 20–25 % LEL, main alarm at 50 % LEL with automatic shutdown of the experimental plant and increased ventilation. Devices certified to EN 60079-29-1, mounted near the ceiling – hydrogen rises rapidly at 0.0899 kg/m³." } },
+    { "@type": "Question", "name": "How many air changes does an H₂ laboratory need?", "acceptedAnswer": { "@type": "Answer", "text": "DGUV Information 213-053 specifies for hydrogen laboratories an air-change rate of at least 8 h⁻¹ in standard ventilation. For trials with an elevated release risk or in an alarm case, this is raised to 15–25 h⁻¹. Extract must be taken at the highest point of the ceiling because H₂ is around 14× lighter than air." } },
+    { "@type": "Question", "name": "Which standard applies to battery misuse tests?", "acceptedAnswer": { "@type": "Answer", "text": "For industrial lithium cells IEC 62619 and IEC 62620, for stationary storage UL 9540A (thermal-runaway characterisation), for traction batteries ECE R100 and UN 38.3 (transport testing). For crash, nail and overcharge tests all standards require an enclosed test volume with defined ventilation and fire fighting – a container with a pressure-relief area meets this without an onerous special permit in the main building." } },
+    { "@type": "Question", "name": "What funding is available for H₂ and battery laboratories in Germany?", "acceptedAnswer": { "@type": "Answer", "text": "At EU level IPCEI Hy2Tech, Hy2Use, Hy2Infra and Hy2Move (state-aid approval by the European Commission). Nationally BMBF flagship projects H2Giga, H2Mare and TransHyDE, the BMWK programme ‘Research and development in electromobility’, KfW 295 Climate Protection Offensive for SMEs, ZIM for SMEs and EXIST research transfer for university start-ups. Funding rates range from 25 % (large companies) to 80 % (SMEs in basic research)." } },
+    { "@type": "Question", "name": "Why a container rather than the main building for explosion-protected trials?", "acceptedAnswer": { "@type": "Answer", "text": "Safety distance: a free-standing container more easily meets the TRBS 2152 minimum distances to neighbouring buildings and traffic routes. Pressure relief: wall or roof areas can be executed as bursting panels. Permitting: the Ex zone remains spatially limited; the rest of the site is unaffected. Modular expansion: when the research grows, the next container goes beside it." } },
+    { "@type": "Question", "name": "Can containers combine ATEX Zone 1 and Zone 2 in one module?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, by spatial separation with airlocks and different pressure cascades. The experimental room is Zone 1 or Zone 2; the adjacent measurement and evaluation room is Ex-free. Switchgear and control cabinets are pressurised to EN 60079-2 or relocated to the Ex-free area. This spatial separation is architecturally easier to implement in a container laboratory than in an existing building." } }
+  ]
+};
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="H₂ & battery laboratory in a container – ATEX protection | Planexus"
+  description="Hydrogen & battery laboratories in containers: ATEX zones, H₂ gas detection EN 60079-29-1, thermal-runaway fire protection, IPCEI/BMBF funding."
+  canonical="/en/magazine/lab-container-energy-transition-h2-battery-ex-protection"
+  ogImage="https://planexus.de/images/magazin/h2-batterie-og.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/magazin/h2-batterie-laborcontainer.webp')] bg-cover bg-center opacity-25"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+              Energy transition &amp; explosion protection
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              16 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Laboratory containers for H₂ &amp; batteries – explosion protection, gas detection and funding
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Hydrogen, fuel cells, solid-state batteries, recycling of lithium-ion cells – the energy transition is generating massive demand for specialist laboratories with explosion protection, gas detection and a fire-protection concept. What is often impossible in an existing building can be realised to standard in a container in 8 to 14 weeks.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              20 April 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald, Managing Director, Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">H₂ &amp; battery laboratories in containers</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                The energy transition is Germany’s largest industrial transformation since reunification. Three fields are driving demand for specialist laboratories particularly hard: <strong>green hydrogen</strong> (electrolysis, fuel cells, storage), <strong>battery-cell manufacture</strong> (research, misuse testing, recycling) and <strong>Power-to-X</strong>. All three share one thing: they work with flammable substances, high energy densities or both – and they need laboratories with explosion protection, gas detection and special fire protection that simply cannot be permitted in ordinary office buildings.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This is precisely where the modular laboratory container is the fastest solution. Instead of planning an extension to the existing building that takes two years and fails on the main building’s fire-protection concept, we place a free-standing container-laboratory block in the yard – with its own ATEX zoning, its own pressure relief, its own fire wall. In eight to fourteen weeks, turnkey.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Mega-trend energy transition: why demand is exploding now</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The German government’s updated <strong>National Hydrogen Strategy</strong> (July 2023) raises domestic electrolysis capacity from 5 GW (2030, previous strategy) to <strong>10 GW by 2030</strong>. In parallel the EU has approved state aid for the <strong>IPCEI hydrogen waves Hy2Tech, Hy2Use, Hy2Infra and Hy2Move</strong> – in Germany alone around EUR 5.4 billion flows from this into 28 Hy2Tech projects. Every one of these projects – from the membrane electrode assembly to a filling-station infrastructure component – needs a trial environment with an ATEX zone and hydrogen detection.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                On the battery side, industrialisation is running in parallel: battery cell factories are emerging or already operating at several German sites – among them Schleswig-Holstein, Thuringia, Lower Saxony, Rhineland-Palatinate and Brandenburg. Every site needs an affiliated <strong>cell engineering lab</strong> – for incoming material qualification, misuse tests to IEC 62619 and thermal-runaway characterisation to UL 9540A. Exactly where we deliver container laboratories every day.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Then there are the research organisations: non-university research institutes, state research centres and university chairs of electrochemistry at several technical universities in Germany. All of them are expanding – and the existing buildings cannot provide it.
+              </p>
+
+              <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Observation from practice</h4>
+                    <p class="text-gray-600 text-sm">In the past twelve months, every second enquiry at Planexus has come from the H₂ or battery environment. The typical trigger: a funding award is in place, the research team is ready – but there is no room in which work under ATEX conditions is permitted. We then deliver the container onto the works site, with a stand-alone Ex concept and integrated gas detection – operational before the building-permit application for the extension would even have been submitted.</p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Explosion protection in the container laboratory: ATEX 2014/34/EU and BetrSichV in practice</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The legal framework consists of two pillars. The <strong>ATEX product directive 2014/34/EU</strong> governs equipment – every sensor, switch, fan motor and luminaire in the Ex zone must carry corresponding marking (e.g. “II 2 G Ex db IIC T4 Gb”). The <strong>ATEX workplace directive 1999/92/EC</strong>, implemented in Germany by <strong>BetrSichV § 6</strong> and <strong>TRBS 2152 / TRGS 720–722</strong>, governs operation – who sets, documents and monitors which zone.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In a typical H₂ research container the picture is as follows:
+              </p>
+
+              <ul class="space-y-3 mb-6 text-gray-600">
+                <li><strong>Zone 0:</strong> inside the experimental apparatus (e.g. inside a fuel-cell test stand or a compressed-gas cylinder). An explosive atmosphere is present continuously or for long periods.</li>
+                <li><strong>Zone 1:</strong> directly at vent lines, sampling points or welded joints from which hydrogen can occasionally escape in normal operation.</li>
+                <li><strong>Zone 2:</strong> the entire experimental room, provided tight apparatus is used. An explosive atmosphere occurs only in the event of a fault or maintenance, briefly and rarely.</li>
+                <li><strong>Ex-free:</strong> measurement and evaluation room with office computers, laboratory PCs and standard control technology – separated from the experimental room by an airlock and overpressure.</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This spatial separation is architecturally easy to implement in a container laboratory: we divide the module with a fire-resistant internal wall (REI 90) and a personnel airlock with two self-closing doors. Control cabinets go in the Ex-free area or are pressurised to EN 60079-2. Cabling is routed ATEX-compliant through sandwich penetrations. We write the explosion protection document with you – not from the textbook, but from lived project practice.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Gas detection: seeing hydrogen before it becomes dangerous</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Hydrogen is a physically demanding guest: at a density of <strong>0.0899 kg/m³</strong> it is around 14× lighter than air, its <strong>flammability range lies between 4 and 77 vol%</strong> in air, and the <strong>minimum ignition energy is only 0.019 mJ</strong> – equivalent to the electrostatic charge on a plastic chair. The consequence: detection must run continuously, in the right place and with calibrated sensors.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Three sensor principles are in use: <strong>catalytic pellistors</strong> (classic, robust, service life around 3–5 years), <strong>semiconductor sensors</strong> (inexpensive, cross-sensitive) and <strong>MEMS thermal-conductivity sensors</strong> (modern, less cross-sensitivity, good for high H₂ concentrations). For research laboratories we recommend the catalytic variant in the lower measuring range (0–100 % LEL) plus a thermal-conductivity sensor for concentrations above that – if an unplanned release occurs, the control system knows exactly how much hydrogen is in the room.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The switching thresholds are standard: <strong>pre-alarm at 20 % LEL</strong> (equivalent to 0.8 vol% H₂ in air, visual + audible, increased ventilation), <strong>main alarm at 50 % LEL</strong> (2 vol% H₂, automatic shutdown of the experimental plant, emergency ventilation, no access). Devices are used certified to <strong>EN 60079-29-1</strong>. Sensors are mounted near the ceiling, at least one per 25 m² of floor area, plus a sensor directly above each test stand. Connection to the building management system (or a dedicated Modbus interface) makes the container a monitored safety area – even when nobody is on site.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Ventilation in the H₂ container: when eight air changes are not enough</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>DGUV Information 213-053 “Safe working in hydrogen laboratories”</strong> sets the guideline value: at least <strong>eight air changes per hour</strong> in standard ventilation. For trials with an elevated release risk this is raised to 15 to 25 h⁻¹. In a main-alarm case, emergency ventilation starts and flushes the entire module within a few minutes.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Three points are decisive here, and they distinguish us from standard HVAC planning:
+              </p>
+
+              <ol class="space-y-3 mb-6 text-gray-600 list-decimal pl-6">
+                <li><strong>Extract at the highest point:</strong> because H₂ rises, extraction must be flush with the ceiling. We fit roof cowls with weather louvres, never wall outlets.</li>
+                <li><strong>Explosion-protected fans:</strong> theoretically an ignitable atmosphere can pass through the extract stream – so fans to <strong>EN 14986</strong> in Ex execution, with spark protection and an ATEX motor.</li>
+                <li><strong>Pressure cascade:</strong> experimental room at a slight negative pressure (–10 to –20 Pa) relative to the measurement and evaluation room; the latter at a slight positive pressure relative to outside air. In an emergency, air therefore flows from the clean area into the contaminated area – never the reverse.</li>
+              </ol>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Heat recovery is achieved – unlike in a normal laboratory – not via plate heat exchangers with direct air contact, but via separate circuits (run-around coil systems) or heat pipes, so that no H₂ can enter the supply-air path. We publish the air-balance calculation in the explosion protection document – that is mandatory, and it is also the point at which poor planning offices often fail.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Battery testing in the container: thermal runaway, misuse, recycling</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Different standards apply to lithium-ion and solid-state batteries, but the spatial requirements resemble the H₂ laboratory. The most important test categories:
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-4 my-8 not-prose">
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Misuse tests to IEC 62619 / 62620</h4>
+                  <p class="text-sm text-gray-600">Overcharge, deep discharge, short circuit, nail test, crush test, external fire. Energy release per cell up to 100 kJ. Requirement: enclosed test volume, pressure relief, automatic fire fighting.</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Thermal runaway to UL 9540A</h4>
+                  <p class="text-sm text-gray-600">Characterisation of vent-gas composition, pressure history, cell-to-cell propagation. Standard for stationary storage in the USA, increasingly also required in EU permits.</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Climatic tests / lifetime</h4>
+                  <p class="text-sm text-gray-600">Climatic chambers –40 °C to +85 °C (material qualification up to +180 °C), cycle life to UN 38.3, IEC 62660 for automotive. Normal operation, no explosion protection needed – but a thermal-runaway reserve.</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Recycling / dismantling</h4>
+                  <p class="text-sm text-gray-600">Manual opening of aged modules – fire- and gas-risk. Inerted glovebox, CO/HF detection, locally extracted workbench. Growing demand here from EU Battery Regulation 2023/1542.</p>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A misuse container typically consists of three zones: <strong>test chamber</strong> (with pressure relief in the form of a bursting panel in the ceiling, water-mist sprinklers or aerosol fire fighting), <strong>observation room</strong> (with high-speed cameras, thermography, pressure recording – electrically cleanly separated) and <strong>preparation room</strong> (charge/condition equipment, sample handling). HVAC is designed for 10–15 air changes, with activated-carbon filtration of the extract if fluorine-containing vent gases arise (HF, POF₃ – characteristic of LiPF₆ electrolytes).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The advantage of the container is particularly clear here: an explosive bursting panel in the roof of a stand-alone module is permittable. On the third floor of a research building it simply is not.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fire protection: more than a sprinkler</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                An H₂ or battery container has its own fire-protection concept, prepared by an approved expert. The most important building blocks:
+              </p>
+
+              <ul class="space-y-3 mb-6 text-gray-600">
+                <li><strong>Structure:</strong> steel frame construction with fire-protection coating, internal lining F90 / REI 90 to DIN EN 13501.</li>
+                <li><strong>Early fire detection:</strong> VdS-approved smoke detectors plus heat detectors – for battery tests supplemented by off-gas detection (CO, H₂, VOC), which detects a thermal runaway 10–15 minutes before the first visible smoke.</li>
+                <li><strong>Extinguishing technology:</strong> for H₂ no water extinguishing in the Ex zone (follow-on reaction possible), instead inerting with nitrogen or argon. For battery tests water mist with additive or aerosol generators (FK-5-1-12), which briefly reduce the oxygen supply.</li>
+                <li><strong>Fire compartments:</strong> container spatially separated from the main building, minimum distance 5–10 m depending on the fire-protection concept.</li>
+                <li><strong>Pressure relief:</strong> bursting panels in wall or roof, designed for the maximum internal overpressure of the experimental apparatus (typically 100–500 mbar actuation pressure).</li>
+              </ul>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Funding landscape 2026: what can be drawn down?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The funding landscape for energy-transition research is denser in 2026 than ever – but also more confusing. Here are the most important programmes that come into question for research institutes, automotive suppliers and start-ups:
+              </p>
+
+              <div class="space-y-4 my-8 not-prose">
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">IPCEI Hy2Tech, Hy2Use, Hy2Infra, Hy2Move</h4>
+                  <p class="text-sm text-gray-600 mb-2">Important Projects of Common European Interest. State-aid approval by the European Commission, implemented in Germany by BMWK. Funding of large-scale R&amp;D along the hydrogen value chain. In Hy2Tech alone, 28 German projects with around EUR 5.4 billion of federal and state funds.</p>
+                  <p class="text-xs text-gray-500">Target group: industrial consortia with cross-border impact.</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">BMBF flagship projects H2Giga, H2Mare, TransHyDE</h4>
+                  <p class="text-sm text-gray-600 mb-2">H2Giga: series manufacture of electrolysers. H2Mare: offshore hydrogen. TransHyDE: transport infrastructure. Around EUR 740 million in total for the first funding phase, an extension is planned.</p>
+                  <p class="text-xs text-gray-500">Target group: research consortia of universities, non-university research institutes and industry.</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">BMWK “Research and development in electromobility”</h4>
+                  <p class="text-sm text-gray-600 mb-2">Call for battery-cell manufacture, recycling, charging infrastructure. Funding rate 25–50 % for industry, up to 80 % for SMEs in basic research. Applications via the competent project management agency.</p>
+                  <p class="text-xs text-gray-500">Target group: automotive suppliers, battery manufacturers, recyclers.</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">KfW 295 – Climate Protection Offensive for companies</h4>
+                  <p class="text-sm text-gray-600 mb-2">Interest-subsidised loan for climate-protection investments, including R&amp;D infrastructure. Up to EUR 25 million per project, repayment grant up to 30 %.</p>
+                  <p class="text-xs text-gray-500">Target group: SMEs and mid-caps with a concrete climate-protection effect.</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">ZIM – Central Innovation Programme for SMEs</h4>
+                  <p class="text-sm text-gray-600 mb-2">Theme-open R&amp;D funding for SMEs. Funding rate up to 45 % depending on company size and region. Fast, lean application procedure.</p>
+                  <p class="text-xs text-gray-500">Target group: mid-sized component and plant manufacturers.</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5">
+                  <h4 class="font-bold text-slate-900 mb-1">EXIST research transfer</h4>
+                  <p class="text-sm text-gray-600 mb-2">Funding of university spin-outs with a research need. Up to EUR 250,000 of equipment over 18 months for the preparation phase. Second phase combinable with venture capital.</p>
+                  <p class="text-xs text-gray-500">Target group: scientists from universities founding an H₂ or battery start-up.</p>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Practical tip: container laboratories are classifiable as <strong>eligible investment</strong> in almost all funding programmes – both on purchase (capitalised asset, straight-line depreciation over 10–15 years) and on hire (ongoing equipment cost). The 8- to 14-week lead time fits almost every project timetable, where conventional construction overshoots the funding period by months.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Three target groups, three container concepts</h2>
+
+              <div class="space-y-6 my-8 not-prose">
+                <div class="bg-slate-900 text-white rounded-2xl p-6">
+                  <h4 class="font-bold text-primary mb-2">1. Research institutes &amp; universities</h4>
+                  <p class="text-gray-300 text-sm">Need: modular trial environment for changing third-party-funded projects, often 1–3 years’ duration. Requirement: rapid set-up, rapid dismantling, reusability. Solution: container laboratory for hire or hire-purchase, with a framework Ex concept and interchangeable experimental modules.</p>
+                </div>
+                <div class="bg-slate-900 text-white rounded-2xl p-6">
+                  <h4 class="font-bold text-primary mb-2">2. Automotive suppliers &amp; OEMs</h4>
+                  <p class="text-gray-300 text-sm">Need: permanent expansion of the cell engineering lab or fuel-cell development at the main site. Requirement: industrial availability, GMP to ISO 14644 classes for cleanroom work, connection to SAP / works LIMS. Solution: turnkey container with complete qualification (IQ/OQ/PQ), 24/7 service.</p>
+                </div>
+                <div class="bg-slate-900 text-white rounded-2xl p-6">
+                  <h4 class="font-bold text-primary mb-2">3. Start-ups &amp; spin-offs</h4>
+                  <p class="text-gray-300 text-sm">Need: first own laboratory after EXIST or seed financing. Requirement: low initial investment, no long-term lease in the incubator. Solution: hire container with option to buy, sited in a technology park or on the university campus.</p>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">What an H₂ or battery container from Planexus brings</h2>
+
+              <ul class="space-y-3 mb-6 text-gray-600">
+                <li>✔ Explosion protection document to BetrSichV §6 with zone plan, sensor layout, shutdown concept</li>
+                <li>✔ ATEX-certified equipment from the switchgear cabinet to the emergency lighting</li>
+                <li>✔ H₂ detection to EN 60079-29-1 with pre-alarm/main alarm and control</li>
+                <li>✔ Ventilation 8–25 h⁻¹, redundant, with heat recovery via separate circuits</li>
+                <li>✔ Pressure-relief area in wall or roof, designed to VDI 2263</li>
+                <li>✔ Fire-protection concept with expert stamp, off-gas detection for batteries</li>
+                <li>✔ Conductive floor coverings (ESD), earthing of every conductive component</li>
+                <li>✔ FAT at the Albstadt works before delivery, IQ/OQ/PQ at the installation site</li>
+                <li>✔ Documentation to the EU Machinery Directive and CE declaration of conformity for the complete module</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A typical project – say a fuel-cell test stand for an automotive supplier in Stuttgart or a battery-misuse container for a research institute in <a href="/en/lab-containers-munich" class="text-primary hover:underline">Munich</a> – starts with a two-hour requirements workshop. Six weeks later the explosion protection document is ready for approval; a further eight to ten weeks later the module stands operational on the works site.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The energy transition does not wait for building-permit applications. Anyone investing in H₂ or battery research in 2026 has no time for a two-year permitting loop. The modular laboratory container is the fastest, standards-compliant and fundable answer.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Your H₂ or battery laboratory in 8–14 weeks?</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Our engineers have in the past twelve months realised containers for fuel-cell test stands, electrolysis research and misuse tests. Tell us what you are planning – we reply with a concrete concept including an Ex-concept sketch.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Request a free initial consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">At a glance</h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> ATEX 2014/34/EU + BetrSichV §6 + TRBS 2152</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> H₂ detection EN 60079-29-1, thresholds 20 % / 50 % LEL</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Ventilation min. 8 h⁻¹ (DGUV 213-053)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Battery misuse: IEC 62619, UL 9540A, ECE R100</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> IPCEI, BMBF, BMWK, KfW 295, ZIM, EXIST</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> 8–14 weeks turnkey from the Albstadt works</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <h4 class="font-bold text-slate-900 mb-4">Further reading</h4>
+                <ul class="space-y-3">
+                  <li><a href="/en/services/modular-construction" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Modular construction &amp; containers</a></li>
+                  <li><a href="/en/services/planning" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Laboratory planning &amp; engineering</a></li>
+                  <li><a href="/en/magazine/lab-container-hvac-ventilation-standards" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Ventilation &amp; HVAC</a></li>
+                  <li><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>BSL-2 &amp; BSL-3 in a container</a></li>
+                  <li><a href="/en/magazine/lab-container-permits-building-law" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Permits &amp; building law</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <h4 class="font-bold mb-3">Planning an H₂ or battery laboratory?</h4>
+                <p class="text-gray-400 text-sm mb-4">We supply the explosion-protection concept with it – without a double fee for external experts.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Get in touch</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions about H₂ and battery laboratories in containers</h2>
+          <div class="space-y-4">
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which ATEX zone applies in a hydrogen laboratory container?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">In normal operation with tight H₂ plant typically <strong>Zone 2</strong>. Directly at vent lines or in test chambers, Zone 1 locally. Zoning is set out in the explosion protection document under BetrSichV §6, taking account of TRBS 2152 and DGUV Information 213-053.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How does H₂ gas detection work in the container?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Hard-wired sensors (catalytic / MEMS / semiconductor) continuously monitor the LEL. Pre-alarm at 20–25 % LEL, main alarm at 50 % LEL with plant shutdown and emergency ventilation. Mounted near the ceiling, devices to EN 60079-29-1.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How many air changes does an H₂ laboratory need?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">DGUV Information 213-053 specifies at least <strong>8 h⁻¹</strong> in standard ventilation. At elevated risk or in an alarm case 15–25 h⁻¹. Extract at the highest point – H₂ is 14× lighter than air.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which standard applies to battery misuse tests?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed"><strong>IEC 62619</strong> and IEC 62620 for industrial lithium cells, <strong>UL 9540A</strong> for stationary storage (thermal-runaway characterisation), <strong>ECE R100</strong> and <strong>UN 38.3</strong> for traction batteries. All require an enclosed test volume with defined ventilation and fire fighting.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What funding is available for H₂ and battery laboratories in Germany?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">EU level: <strong>IPCEI Hy2Tech / Hy2Use / Hy2Infra / Hy2Move</strong>. National: BMBF flagship projects <strong>H2Giga, H2Mare, TransHyDE</strong>; BMWK “R&amp;D electromobility”; <strong>KfW 295</strong> Climate Protection Offensive; <strong>ZIM</strong> for SMEs; <strong>EXIST research transfer</strong> for start-ups. Funding rates 25–80 % depending on programme and company size.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Why a container rather than the main building for explosion-protected trials?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Safety distance to TRBS 2152 easily met. Pressure-relief areas in wall/roof permittable. Ex zone spatially limited – the main building remains unaffected. Modular expansion possible without intervening in the existing fabric.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Can containers combine ATEX Zone 1 and Zone 2 in one module?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Yes, by spatial separation with airlocks and pressure cascades. Experimental room Zone 1/2, measurement and evaluation room Ex-free. Switchgear cabinets pressurised to EN 60079-2 or in the Ex-free area.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+    <RelatedArticles slug="laborcontainer-energiewende-h2-batterie-ex-schutz" locale="en" />
+
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/en/magazine" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to the Magazine
+      </a>
+    </div>
+  </div>
+</Layout>

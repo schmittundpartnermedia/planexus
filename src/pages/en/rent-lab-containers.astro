@@ -1,0 +1,346 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ContactForm from '../../components/ContactForm.tsx';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Rent lab containers",
+  "serviceType": "Hire of lab containers",
+  "description": "Rent lab containers – turnkey hire laboratories from analytical labs to BSL-3 and GMP cleanrooms. Standard models ready in 2 to 3 weeks, operational handover in 8 to 14 weeks. Quotation tailored after needs clarification.",
+  "url": "https://planexus.de/en/rent-lab-containers",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "image": "https://planexus.de/android-chrome-512x512.png",
+    "url": "https://planexus.de",
+    "logo": "https://planexus.de/images/planexus-logo.png",
+    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Am Steinbach 8",
+      "addressLocality": "Albstadt-Laufen",
+      "addressRegion": "Baden-Württemberg",
+      "postalCode": "72459",
+      "addressCountry": "DE"
+    },
+    "telephone": "+49 7435 7519 700",
+    "email": "info@planexus.de"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Germany" },
+    { "@type": "Country", "name": "Austria" },
+    { "@type": "Country", "name": "Switzerland" }
+  ]
+};
+
+const breadcrumbItems = [
+  { name: "Home", href: "https://planexus.de/en" },
+  { name: "Lab containers", href: "https://planexus.de/en/lab-containers" },
+  { name: "Rent lab containers" }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    ...(item.href ? { "item": item.href } : {})
+  }))
+};
+
+const faqs = [
+  {
+    q: "What does it cost to rent a lab container?",
+    a: "We do not publish standard prices because every project is assessed individually. Containment level (BSL-2/3, GMP, ATEX), cleanroom class, HVAC, specialist equipment, term and site conditions determine the hire. On the basis of your specification or a short consultation we provide a written indication within 48 hours."
+  },
+  {
+    q: "How long can I rent a lab container?",
+    a: "Hire is suited to time-limited projects with a 12- to 24-month period of use, for example during hospital refurbishments, studies or grant-funded phases. Up to around 24 months of use, hire is usually more economical; beyond that, hire-purchase or purchase becomes worthwhile."
+  },
+  {
+    q: "Rent or buy a lab container – which pays off?",
+    a: "The rule of thumb: purchase price divided by monthly hire gives the break-even period of use in months. In practice this break-even typically sits at around four years. Project durations under three years favour hire; over five years favour purchase. Details in the guide on renting or buying lab containers."
+  },
+  {
+    q: "Is hire-purchase available for a lab container?",
+    a: "Yes. Hire-purchase is the economically sensible intermediate solution between around 24 and 48 months of use. Part of the hire payments is credited against a later residual purchase price — so a bridging solution can be converted into permanent equipment without a double investment."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+
+<Layout
+  title="Rent lab containers – turnkey from the works | Planexus"
+  description="Rent lab containers: turnkey hire laboratories from analytical labs to BSL-3 and GMP. Standard models ready in 2–3 weeks. Request a rental quotation now."
+  canonical="/en/rent-lab-containers"
+  ogImage="https://planexus.de/attached_assets/Laborcontainer_001_1769688326918.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- HERO -->
+  <section class="relative pt-32 pb-20 bg-slate-900 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/attached_assets/Laborcontainer_001_1769688326918.jpg')] bg-cover bg-center opacity-30"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/85 to-slate-900/40"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 bg-primary/15 border border-primary/40 text-primary px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Hire · Hire-purchase · DACH-wide
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          Rent lab containers – turnkey instead of years of construction
+        </h1>
+        <p class="text-xl text-slate-200 leading-relaxed mb-8 max-w-3xl">
+          You hire a turnkey lab container — from an analytical laboratory to BSL-3. Standard models are ready in two to three weeks, complex containment laboratories in six to eight weeks. Typical hire periods are 12 to 24 months.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-all flex items-center gap-2 shadow-[0_0_24px_rgba(187,215,0,0.35)] group">
+            Request a rental quotation
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="/en/buy-lab-containers" class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white font-bold px-8 py-4 rounded-lg transition-all flex items-center gap-2">
+            Prefer to buy?
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+        <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
+          <div><div class="text-3xl font-bold text-primary">2–3</div><div class="text-sm text-slate-400">weeks (standard model)</div></div>
+          <div><div class="text-3xl font-bold text-primary">8–14</div><div class="text-sm text-slate-400">weeks to handover</div></div>
+          <div><div class="text-3xl font-bold text-primary">12–24</div><div class="text-sm text-slate-400">months typical hire period</div></div>
+          <div><div class="text-3xl font-bold text-primary">BSL-3</div><div class="text-sm text-slate-400">up to containment level</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Breadcrumbs items={breadcrumbItems.map(i => ({ name: i.name, href: i.href ? i.href.replace('https://planexus.de', '') : undefined }))} bar={true} />
+
+  <!-- ANTWORT + TIEFE -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">What you get when you rent a lab container</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          You hire an operational laboratory, not an empty module. Standard models are typically ready within two to three weeks; complex quality-control or containment laboratories with specialist equipment need six to eight weeks’ lead time — plus around one week for acceptance and commissioning. For turnkey projects from order to operational handover we allow 8 to 14 weeks.
+        </p>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          During the hire period the provider typically takes on the items that sit with you on a purchase — maintenance, insurance and advance clarification with the authorities. That protects liquidity and capital: your budget goes into research, not infrastructure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIETDAUER & LIEFERZEIT -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8">Hire period and lead time</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-8 border-l-4 border-primary shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Hire period</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Hire is suited to time-limited projects with a 12- to 24-month period of use — for example during hospital refurbishments, studies or grant-funded phases. Up to around 24 months of use, hire is usually more economical. Between around 24 and 48 months hire-purchase becomes interesting; from around 48 months purchase typically pays off.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-8 border-l-4 border-primary shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Lead time</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Standard models are ready in two to three weeks, complex containment laboratories in six to eight weeks. An interim laboratory can be sited on site in 48 hours. By comparison: conventional laboratory new-build often needs 24 months and more until commissioning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUSSTATTUNGSOPTIONEN -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Equipment options</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          Every hire container is planned for your application. The <a href="/en/lab-containers/labtogo" class="text-primary font-medium hover:underline">Planexus LABtoGO</a> provides 2,750 mm room height — space for full fume cupboards and large HPLC systems, where standard office containers at around 2.40 m reach their limits. High-end insulation achieves a U-value of 0.20 W/m²K for stable climate zones.
+        </p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="flex gap-3 bg-slate-50 rounded-lg p-5">
+            <span class="text-primary font-bold text-xl shrink-0">→</span>
+            <p class="text-slate-600"><strong class="text-slate-900">HVAC:</strong> Temperature stability ±2 °C with humidity control. At high containment levels, HVAC accounts for 30 to 40 per cent of total cost.</p>
+          </div>
+          <div class="flex gap-3 bg-slate-50 rounded-lg p-5">
+            <span class="text-primary font-bold text-xl shrink-0">→</span>
+            <p class="text-slate-600"><strong class="text-slate-900">Fume cupboard &amp; filtration:</strong> Negative pressure at BSL-2, HEPA filters at BSL-3. Filter changes every 12 to 24 months.</p>
+          </div>
+          <div class="flex gap-3 bg-slate-50 rounded-lg p-5">
+            <span class="text-primary font-bold text-xl shrink-0">→</span>
+            <p class="text-slate-600"><strong class="text-slate-900">Work surfaces:</strong> chemical-resistant, electrostatically dissipative.</p>
+          </div>
+          <div class="flex gap-3 bg-slate-50 rounded-lg p-5">
+            <span class="text-primary font-bold text-xl shrink-0">→</span>
+            <p class="text-slate-600"><strong class="text-slate-900">Electrical:</strong> 400 V connection, emergency lighting, residual-current devices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SICHERHEITSSTUFEN -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Containment levels</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          We deliver hire laboratories across the full spectrum — from straightforward analytics to high-containment laboratories. We clarify the appropriate level in the needs analysis.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-2">Analytics &amp; quality control</h3>
+            <p class="text-slate-600 text-sm">HPLC, GC and spectrometry workstations, vibration-isolated weighing tables, uninterruptible power supply.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-2">BSL-2 &amp; BSL-3</h3>
+            <p class="text-slate-600 text-sm">Containment laboratories with negative-pressure cascades, redundant HEPA filtration, airlock and autoclave. Conformant with BioStoffV, GenTG, TRBA 100.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-2">GMP cleanroom</h3>
+            <p class="text-slate-600 text-sm">Cleanrooms up to Class C and D to EU GMP Annex 1, optionally ISO Classes 5 to 8 to ISO 14644-1, with IQ/OQ/PQ-capable documentation.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-2">ATEX &amp; interim solutions</h3>
+            <p class="text-slate-600 text-sm">Explosion-protected versions as well as a full laboratory replacement during refurbishments, conversions or shutdowns.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-10">Process through to handover</h2>
+        <div class="space-y-6">
+          <div class="flex gap-5 items-start">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center">1</div>
+            <div class="bg-slate-50 rounded-xl p-5 flex-1">
+              <h3 class="font-bold text-slate-900 mb-1">Needs clarification</h3>
+              <p class="text-slate-600 text-sm">In a 30- to 60-minute call we clarify application, containment level, module size, period of use, siting location and connection conditions.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center">2</div>
+            <div class="bg-slate-50 rounded-xl p-5 flex-1">
+              <h3 class="font-bold text-slate-900 mb-1">Site analysis (optional)</h3>
+              <p class="text-slate-600 text-sm">For complex siting locations we review the situation — often remotely via photograph and site plan.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center">3</div>
+            <div class="bg-slate-50 rounded-xl p-5 flex-1">
+              <h3 class="font-bold text-slate-900 mb-1">Quotation &amp; calculation</h3>
+              <p class="text-slate-600 text-sm">A first written indication is available within 48 hours; the fully developed quotation within 3 to 7 working days after needs clarification.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center">4</div>
+            <div class="bg-slate-50 rounded-xl p-5 flex-1">
+              <h3 class="font-bold text-slate-900 mb-1">Manufacture, delivery &amp; handover</h3>
+              <p class="text-slate-600 text-sm">Standard models are ready in 2 to 3 weeks; turnkey projects are handed over operational in 8 to 14 weeks. Siting by mobile crane, then acceptance and commissioning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNE LINKS -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+        <a href="/en/buy-lab-containers" class="block bg-white rounded-xl p-8 border border-slate-200 hover:border-primary hover:shadow-lg transition-all group">
+          <p class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Alternative</p>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">Buy lab containers</h3>
+          <p class="text-slate-600 text-sm">For permanent need from around 48 months, purchase is the more economical choice. To the purchase page.</p>
+        </a>
+        <a href="/en/magazine/lab-containers-rent-or-buy" class="block bg-white rounded-xl p-8 border border-slate-200 hover:border-primary hover:shadow-lg transition-all group">
+          <p class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Guide</p>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">Rent or buy a lab container?</h3>
+          <p class="text-slate-600 text-sm">Decision guide with break-even rule of thumb and practical checklist for research leads.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-10">Frequently asked questions on renting a lab container</h2>
+        <div class="space-y-4">
+          {faqs.map((f, i) => (
+            <details class="bg-slate-50 rounded-xl border border-slate-200 group" open={i === 0}>
+              <summary class="cursor-pointer p-6 font-bold text-slate-900 flex items-center justify-between gap-4 list-none">
+                <span class="flex-1">{f.q}</span>
+                <svg class="w-5 h-5 text-primary group-open:rotate-180 transition-transform flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-slate-600 leading-relaxed">{f.a}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + KONTAKT -->
+  <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/attached_assets/Laborcontainer_017_1769688326919.jpg')] bg-cover bg-center opacity-15"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Rental quotation for your <span class="text-primary">lab-container project</span>
+          </h2>
+          <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+            Send us your specification or describe your requirements. We prepare a first written indication within 48 hours — no obligation, no hidden costs.
+          </p>
+          <div class="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl font-bold">SB</div>
+              <div>
+                <div class="font-bold text-white">Sven Biewald</div>
+                <div class="text-sm text-slate-400">Managing Director · your contact</div>
+              </div>
+            </div>
+            <a href="tel:+4974357519700" class="flex items-center gap-3 text-primary font-bold text-lg hover:underline">
+              <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +49 7435 7519 700
+            </a>
+            <a href="mailto:info@planexus.de" class="flex items-center gap-3 text-slate-300 hover:text-primary mt-3">
+              <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+              info@planexus.de
+            </a>
+          </div>
+        </div>
+        <div class="bg-white text-slate-900 rounded-2xl p-8 shadow-2xl">
+          <h3 class="text-2xl font-bold mb-6">Send a rental enquiry</h3>
+          <ContactForm client:visible locale="en" />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,489 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Fume cupboards in the container – containment, extract performance and DIN EN 14175",
+  "description": "Fume cupboards to DIN EN 14175 (Parts 1–7): containment and SF₆ type testing, face velocity and the 0.7 m/s vs. sash 0.5 m distinction, cupboard types, VAV energy saving, extract discharge over roof to DIN 1946-7, annual on-site testing to TRGS 526 and DGUV 213-850 – with verified standards.",
+  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/en/team/thomas-boss", "jobTitle": "Partner & Technical Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-06-16",
+  "dateModified": "2026-06-16",
+  "image": "https://planexus.de/attached_assets/generated_images/laborcontainer-laborabzug-din-en-14175.png",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/lab-container-fume-hood-din-en-14175" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Fume cupboards & DIN EN 14175", "item": "https://planexus.de/en/magazine/lab-container-fume-hood-din-en-14175" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Which standard governs fume cupboards?", "acceptedAnswer": { "@type": "Answer", "text": "The governing standard is the DIN EN 14175 “Fume cupboards” series, which replaced the former DIN 12924-1. It comprises seven parts: Part 1 (Terms), Part 2 (Safety and performance requirements), Part 3 (Type test methods with SF₆ tracer-gas measurement), Part 4 (On-site test methods at the operator), Part 5 (Recommendations for installation and use), Part 6 (VAV fume cupboards with variable air volume) and Part 7 (non-conventional special types). Important: DIN EN 14175 no longer sets fixed guide values for containment or extract volume flow – these are determined by the operator under their own responsibility as part of the risk assessment. In addition, TRGS 526 “Laboratories” and DGUV Information 213-850 apply to laboratory operation, and DIN 1946-7 to room-air technology. Cupboards installed before 2003 remain subject to DIN 12924-1 or 12924-2 as valid at the time of installation." } },
+    { "@type": "Question", "name": "How high must the face velocity be?", "acceptedAnswer": { "@type": "Answer", "text": "On older cupboards to DIN 12924 (January 1978 edition) the mean face velocity with the sash open 100 mm must be at least 0.7 m/s – a measured value of only 0.5 m/s is below that and is not sufficient for safe operation. On modern cupboards to DIN EN 14175 there is no blanket velocity value: what matters is the containment demonstrated in the type test; the required extract volume flow is set by the risk assessment. Measurement is made with a thermal or vane anemometer. An important distinction: the frequently cited value of 0.5 m refers to the maximum sash opening height (limiter to Part 2), not to the face velocity." } },
+    { "@type": "Question", "name": "What is containment and how is it tested?", "acceptedAnswer": { "@type": "Answer", "text": "Containment describes the ability of a fume cupboard to keep airborne substances inside the working chamber and not allow them to escape into the breathing zone of the staff. It is tested in the type test to DIN EN 14175-3 with the tracer gas sulphur hexafluoride (SF₆), which is non-toxic but strongly climate-damaging (global warming potential around 30,000 times that of CO₂). Part 3 comprises three measurements: the inner plane (containment directly at the working opening), the outer plane and the robustness test. In the robustness test a standardised plate (1900 × 400 × 20 mm) moves past the cupboard at 1 m/s and simulates a person walking briskly by – this checks whether the cupboard remains tight even when the airflow is disturbed. In operation, the on-site measurement to Part 4 checks function on the installed unit." } },
+    { "@type": "Question", "name": "How often must a fume cupboard be tested?", "acceptedAnswer": { "@type": "Answer", "text": "Under TRGS 526 (Section 7.3) and the substantively identical DGUV Information 213-850, fume cupboards must be maintained regularly, their function tested and the result documented – at least once a year by a competent person. Overarching this, the Hazardous Substances Ordinance requires the employer to check the effectiveness of technical protective measures at least every third year; type, scope and test intervals are set by the employer on the basis of the risk assessment under their own responsibility. Items tested include face velocity or volume flow, the function of the airflow monitor and alarm, the sash mechanism and the physical condition. On VAV cupboards to Part 6 the function of the control loop must also be tested annually. This test is an operator duty – we deliver the cupboard ready for use; the operator organises the recurring test." } },
+    { "@type": "Question", "name": "What types of fume cupboard are there?", "acceptedAnswer": { "@type": "Answer", "text": "The most common type is the bench-mounted (standing) cupboard with a work surface at about 900 mm height, available in the grid widths 1,200, 1,500 and 1,800 mm, with a typical volume flow of around 270 to 400 m³/h per linear metre. The low-level cupboard has a lowered work surface (approx. 500 mm) and therefore more internal height for tall apparatus such as distillation set-ups. The walk-in cupboard has the work surface at floor level and is intended for large-volume plant and pilot set-ups. In addition there are pass-through cupboards and special types for aggressive media: hydrofluoric-acid cupboards (HF-resistant lining), washable perchloric-acid cupboards with a rinse system against explosive perchlorate deposits, and cupboards for radioactive substances. Which type is appropriate depends on substances, apparatus and working method – in the container laboratory we select type, size and number to suit the layout and the available extract capacity." } },
+    { "@type": "Question", "name": "Why is recirculation of laboratory extract air not permitted?", "acceptedAnswer": { "@type": "Answer", "text": "Because the laboratory handles hazardous substances whose concentration in the extract air cannot be reliably cleaned to harmless levels. Laboratory extract from fume cupboards must therefore always be discharged to atmosphere – recirculation into the room is not permitted where hazardous substances are present. The standard is discharge over the roof (vertical discharge): thermal buoyancy and the vertical arrangement dilute the extract sufficiently and prevent re-entry into windows, doors or supply-air openings. Extract must also run continuously so that nothing escapes outside operating hours. Under DIN 1946-7 the room-air plant is to be designed so that an extract volume flow of at least 25 m³/h per square metre of laboratory floor area is not undershot – and correspondingly more when working with very hazardous substances." } },
+    { "@type": "Question", "name": "How do you reduce the energy consumption of a fume cupboard?", "acceptedAnswer": { "@type": "Answer", "text": "Fume cupboards are the largest energy consumers in the laboratory – a single cupboard can use up to 3.5 times the energy of an average detached house, because air is constantly extracted and the incoming supply air must be conditioned (heated, cooled). The most effective lever is a VAV cupboard (Variable Air Volume) to DIN EN 14175-6: it modulates the extract volume flow according to sash position. With the sash closed, volume flow can be reduced by about 50 % relative to the open state; compared with a constantly running CAV cupboard, energy savings of up to 40 % are possible, and noise levels also fall. Heat recovery in the central ventilation plant and the simplest measure of all also help: close the sash consistently when not working at the cupboard. In the compact container laboratory with limited plant space, VAV is particularly worthwhile." } }
+  ]
+};
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Fume cupboards in the container – DIN EN 14175 & extract engineering | Planexus"
+  description="Fume cupboards to DIN EN 14175: containment, SF₆ type testing, face velocity, VAV and TRGS 526 testing. Read now."
+  canonical="/en/magazine/lab-container-fume-hood-din-en-14175"
+  ogImage="https://planexus.de/attached_assets/generated_images/laborcontainer-laborabzug-din-en-14175.png"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/attached_assets/generated_images/laborcontainer-laborabzug-din-en-14175.png')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M9 9h6v6H9z"/></svg>
+              Engineering &amp; ventilation
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              16 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Fume cupboards in the container – containment & DIN EN 14175
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            The fume cupboard is the most important protective device in the laboratory – and in the container it is at the same time the largest energy consumer and the most demanding ventilation node. This guide explains how a cupboard works, what DIN EN 14175 actually requires, which types exist and how extract and energy are solved cleanly in the container laboratory – with verified standards.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              16 June 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Thomas Boss, Technical Director, Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Fume cupboards &amp; DIN EN 14175</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                Few components decide so directly over the health of laboratory staff as the fume cupboard. It captures vapours, gases and aerosols exactly where they arise and extracts them in a controlled way before they reach the breathing zone. At the same time it is the hungriest consumer in the laboratory and the point at which the entire ventilation design stands or falls. In the lab container, where plant space is scarce and every cubic metre of extract air is expensive, a poorly planned cupboard forgives no errors.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This article sets the subject out from first principles: how a cupboard protects at all, what <strong>DIN EN 14175</strong> regulates in its seven parts – and what it deliberately <em>no longer</em> prescribes –, which <strong>cupboard types</strong> exist, how the enormous <strong>energy consumption</strong> can be reduced with VAV technology, and how <strong>extract routing</strong> in the container is solved cleanly to DIN 1946-7. Plus the clear dividing line: we deliver the cupboard ready for use, complete with ventilation plant – the risk assessment and the recurring test remain operator duties.
+              </p>
+
+              <figure class="my-10">
+                <img
+                  src="/attached_assets/generated_images/laborcontainer-laborabzug-din-en-14175.png"
+                  alt="Modern fume cupboard with partly open sash and stainless-steel work surface in a lab container – extract engineering to DIN EN 14175 with controlled discharge"
+                  width="1920"
+                  height="1080"
+                  loading="lazy"
+                  class="w-full rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  The fume cupboard captures hazardous substances at source: room air flows in through the front opening, forms an air barrier and takes vapours safely outside. Containment, inflow and extract routing must match exactly.
+                </figcaption>
+              </figure>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fact table: the standards of fume-cupboard engineering</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Fume cupboards sit in a framework of product standard, hazardous-substances law, occupational safety and room-air technology. The following overview is required reading for every cupboard and ventilation design in the laboratory.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Area</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Standard / requirement</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">What it governs</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Product standard, fume cupboards</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 14175 (Parts 1–7)</td>
+                      <td class="border border-gray-200 px-4 py-3">Terms, safety, type and on-site testing, VAV, special types</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Legacy cupboards (pre-2003)</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 12924-1 / 12924-2</td>
+                      <td class="border border-gray-200 px-4 py-3">General-purpose and fume cupboards to the old status, face velocity ≥ 0.7 m/s</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Laboratory operation (hazardous substances)</td>
+                      <td class="border border-gray-200 px-4 py-3">TRGS 526 “Laboratories”</td>
+                      <td class="border border-gray-200 px-4 py-3">Safe working, cupboard use, test duties (Section 7.3)</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Laboratory operation (occupational safety)</td>
+                      <td class="border border-gray-200 px-4 py-3">DGUV Information 213-850</td>
+                      <td class="border border-gray-200 px-4 py-3">Regulatory part substantively identical to TRGS 526, with practical notes</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Hazardous-substances law (overarching)</td>
+                      <td class="border border-gray-200 px-4 py-3">GefStoffV</td>
+                      <td class="border border-gray-200 px-4 py-3">Effectiveness check of technical protective measures at least every 3 years</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Room-air technology, laboratory</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 1946-7</td>
+                      <td class="border border-gray-200 px-4 py-3">HVAC design, min. 25 m³/h per m² of laboratory area, negative-pressure holding</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Tracer-gas type test</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 14175-3 (SF₆)</td>
+                      <td class="border border-gray-200 px-4 py-3">Containment: inner/outer plane + robustness test</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">VAV fume cupboards</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 14175-6</td>
+                      <td class="border border-gray-200 px-4 py-3">Variable air volume, annual test of the control loop</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">How a fume cupboard protects: the operating principle</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A fume cupboard – also known in the specialist literature as a <strong>digestorium</strong> – is a semi-enclosed working chamber with a movable sash (the vertically travelling glazed panel). The protective principle is simple and ingenious at once: room air flows in a controlled way through the front opening into the chamber and forms an <strong>air barrier</strong>. This incoming air takes with it the vapours, gases and aerosols released inside, carries them rearwards and upwards to the extract spigot and discharges them through the duct. As long as the airflow is correct and the sash is held low, nothing reaches the breathing zone of the person standing in front.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                That is why the protective effect hangs on two quantities that must not be confused: <strong>containment</strong> (can the cupboard keep the substances inside?) and <strong>face velocity</strong> or <strong>extract volume flow</strong> (how much air flows in and is extracted?). When working with volatile, toxic or flammable substances, a standards-compliant cupboard is not optional but required. And it only works if the make-up air in the room is actually available – a cupboard is only ever as good as the ventilation plant behind it.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">DIN EN 14175: the seven parts and what they govern</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The <strong>DIN EN 14175 “Fume cupboards”</strong> series is the European basis for the design, qualification and operation of laboratory fume cupboards. It replaced the former national DIN 12924-1 and is organised in seven parts that build on one another:
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Part</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Title</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Subject</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 1</td>
+                      <td class="border border-gray-200 px-4 py-3">Terms</td>
+                      <td class="border border-gray-200 px-4 py-3">Uniform terminology for manufacturers, designers and operators</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 2</td>
+                      <td class="border border-gray-200 px-4 py-3">Safety &amp; performance</td>
+                      <td class="border border-gray-200 px-4 py-3">Minimum constructional requirements, max. working opening 0.5 m, limiter</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 3</td>
+                      <td class="border border-gray-200 px-4 py-3">Type test methods</td>
+                      <td class="border border-gray-200 px-4 py-3">Type test in the laboratory with SF₆ tracer gas, containment, robustness test</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 4</td>
+                      <td class="border border-gray-200 px-4 py-3">On-site test methods</td>
+                      <td class="border border-gray-200 px-4 py-3">Commissioning (Ch. 5) and repeat testing (Ch. 6) at the operator</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 5</td>
+                      <td class="border border-gray-200 px-4 py-3">Installation &amp; use</td>
+                      <td class="border border-gray-200 px-4 py-3">Recommendations on installation, use and safe operation</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 6</td>
+                      <td class="border border-gray-200 px-4 py-3">VAV fume cupboards</td>
+                      <td class="border border-gray-200 px-4 py-3">Variable air volume depending on sash position</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Part 7</td>
+                      <td class="border border-gray-200 px-4 py-3">Special types</td>
+                      <td class="border border-gray-200 px-4 py-3">Non-conventional cupboards (e.g. with supply-air introduction), own test criteria</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The decisive paradigm shift relative to the old DIN 12924: DIN EN 14175 contains <strong>no blanket guide values</strong> for containment or extract volume flow. Instead it provides a <strong>test-based system</strong> – from type test through on-site test to recurring inspection. The extract volume flow needed for the specific application is <strong>set by the operator under their own responsibility as part of the risk assessment</strong>. That shifts responsibility – and makes clean design from the outset even more important.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Containment and the SF₆ type test to Part 3</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Containment</strong> is the core quantity of cupboard safety: the ability to keep airborne substances inside the working chamber. It is determined in the type test to <strong>DIN EN 14175-3</strong> in a special test room – with the tracer gas <strong>sulphur hexafluoride (SF₆)</strong>. The gas is non-toxic and therefore ideal for measurement, but strongly climate-damaging: its global warming potential is around 30,000 times that of CO₂. Part 3 comprises three tests:
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Inner plane.</strong> Containment is measured directly at the working opening – does tracer gas leave through the front plane? <strong>Outer plane.</strong> Measurement slightly in front of the cupboard shows what actually reaches the room. <strong>Robustness test.</strong> This is the most demanding test: in addition to tracer-gas release, a standardised plate (1900 × 400 × 20 mm) moves <strong>past the cupboard at 1 m/s</strong> and simulates a person walking briskly by. This checks whether the cupboard holds its tightness even when the airflow is disturbed from outside. A well-designed cupboard shows practically zero on the inner and outer planes – only the robustness test separates the wheat from the chaff.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 rounded-r-xl">
+                <p class="font-bold text-slate-900 mb-2">From practice: where cupboards fail in real operation</p>
+                <p class="text-gray-700 text-sm">A cupboard can shine in the test laboratory and still fail in operation – not because of the unit, but because of the surroundings. The two most common causes I see on site: first, missing <em>make-up air</em>. If supply air cannot keep up because the room is too tight or the ventilation was undersized, face velocity collapses, however good the cupboard. Second, the open sash: the higher it is raised, the worse containment and robustness become – and in continuous operation energy consumption rises massively. That is why in the container we always design supply-air compensation and extract capacity together with the cupboard, rather than merely “connecting” the cupboard. — Thomas Boss</p>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Face velocity: 0.7 m/s, 0.5 m – and why they are not the same thing</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This is where most misunderstandings arise. On <strong>legacy cupboards to DIN 12924</strong> (January 1978 edition) a clear minimum applied: the mean face velocity with the <strong>sash open 100 mm must be at least 0.7 m/s</strong>. A measured value of only 0.5 m/s is below that – the cupboard may then not continue in use for work with hazardous substances until the cause (blocked filters, weakening fan, excessive back-pressure, leakage) is rectified. Measurement is made with a <strong>thermal or vane anemometer</strong>.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                On modern cupboards to <strong>DIN EN 14175</strong> this blanket velocity value no longer exists – what matters is the containment demonstrated in the type test; the setpoint for volume flow comes from the risk assessment and the test report. And now the classic: the much-quoted <strong>0.5 m</strong> from the standard refers to the <strong>maximum sash opening height</strong> (an – often alarmed – limiter to Part 2), <strong>not</strong> to the face velocity. 0.7 m/s is a velocity, 0.5 m is a height – confuse the two and you design wrongly.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Cupboard types: from bench-mounted to perchloric-acid cupboard</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                There is no such thing as “the fume cupboard” – the type follows substances, apparatus and working method. The most important types:
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Type</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Feature</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Typical use</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Bench-mounted (standing) cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Work surface ~900 mm; widths 1,200 / 1,500 / 1,800 mm; ~270–400 m³/h per lin. m</td>
+                      <td class="border border-gray-200 px-4 py-3">Standard for solvents, dilute acids and alkalis</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Low-level cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Lowered work surface (~500 mm), more internal height</td>
+                      <td class="border border-gray-200 px-4 py-3">Tall apparatus, distillation set-ups, exhaust lines</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Walk-in cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Work surface at floor level, depth up to ~1,500 mm</td>
+                      <td class="border border-gray-200 px-4 py-3">Large-volume plant, pilot set-ups, distillation columns</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Pass-through cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Operable from both sides, sashes on two faces</td>
+                      <td class="border border-gray-200 px-4 py-3">Workstations at which work is done from two sides</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Hydrofluoric-acid cupboard (HF)</td>
+                      <td class="border border-gray-200 px-4 py-3">HF-resistant lining (e.g. PP), corrosion-proof</td>
+                      <td class="border border-gray-200 px-4 py-3">Work with hydrofluoric acid and strongly aggressive media</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Perchloric-acid cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Washable, with rinse system against explosive perchlorate deposits</td>
+                      <td class="border border-gray-200 px-4 py-3">Digestions with perchloric acid</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Radionuclide cupboard</td>
+                      <td class="border border-gray-200 px-4 py-3">Decontaminable, filter stages, radiation-protection compliant</td>
+                      <td class="border border-gray-200 px-4 py-3">Work with unsealed radioactive substances</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In the container laboratory the type choice is tightly bound to the layout: a walk-in cupboard needs height and places high demands on extract capacity; a perchloric-acid cupboard needs rinse-water infrastructure. We select type, grid size and number to suit the available extract capacity and the installation – so that the cupboard does not become the bottleneck of the entire ventilation system.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Energy: why a cupboard uses a small power station – and how VAV helps</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Fume cupboards are the largest energy consumers in the laboratory. A single cupboard can use <strong>up to 3.5 times the energy of an average detached house</strong> – not through the unit itself, but through the air: supply and extract fans run continuously, and the incoming outdoor air must be conditioned (heated or cooled) without interruption. Studies, including from Harvard University, show the scale: laboratory floor area occupies about one fifth of the building area but consumes around half the energy – some 44 % of that falls to ventilation, driven largely by the cupboards.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The most effective technical lever is the <strong>VAV cupboard (Variable Air Volume)</strong> to DIN EN 14175-6. Unlike the constantly running CAV cupboard, it modulates extract volume flow according to sash position: when the sash is lowered, volume flow falls. With the <strong>sash closed, volume flow can be reduced by about 50 %</strong>; compared with a CAV system, <strong>energy savings of up to 40 %</strong> are possible – with a markedly lower noise level at the same time. This is complemented by heat recovery in the central ventilation plant. And the most effective measure costs nothing at all: close the sash consistently as soon as work at the cupboard stops – that protects not only the energy balance but also containment.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In the <strong>container laboratory</strong> this lever is particularly valuable: plant space is limited, and every over-sized air quantity loads fans, heating coils and the electrical connection. VAV control keeps the container energetically manageable – and is often the prerequisite for operating several cupboards at all with the available connection capacity. The interaction with heating, cooling and climate constancy is covered in more depth in the article on <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-primary font-medium hover:underline">climate control and ventilation in the lab container</a>.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Extract routing in the container: over the roof, no recirculation, DIN 1946-7</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                What is captured at the cupboard must go safely outside. The iron rule: <strong>laboratory extract from fume cupboards must not be run in recirculation</strong>. Recirculation into the room is not permitted where hazardous substances are present, because the pollutant concentration cannot be reliably cleaned to harmless levels. The standard is <strong>discharge over the roof</strong> (vertical discharge): thermal buoyancy and the vertical arrangement dilute the extract sufficiently, and re-entry into windows, doors or supply-air openings is avoided. Extract must also run <strong>continuously</strong> – including outside operating hours, so that nothing escapes.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>DIN 1946-7</strong> governs room-air technology for laboratories. The plant is to be designed so that an extract volume flow of <strong>at least 25 m³/h</strong> per square metre of laboratory floor area is not undershot; correspondingly more when working with very hazardous substances. To prevent hazardous substances migrating into neighbouring areas, the laboratory is also held at <strong>negative pressure</strong> relative to the surroundings. In the container that means in practice: an extract system with roof discharge, matching supply-air make-up, negative-pressure holding and – depending on the requirement – a redundant fan so that protection does not collapse on failure. Fire dampers in the extract ducts and alignment with the fire-safety concept belong with this; we cover that in more depth in the article on <a href="/en/magazine/lab-container-fire-protection" class="text-primary font-medium hover:underline">fire protection in the lab container</a>.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Testing and operation: TRGS 526, annually, competent person</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A fume cupboard is not a “fit and forget” device. Under <strong>TRGS 526 (Section 7.3)</strong> and the substantively identical <strong>DGUV Information 213-850</strong>, cupboards must be maintained regularly, their function tested and the result documented – <strong>at least once a year by a competent person</strong>. Overarching this, the <strong>Hazardous Substances Ordinance</strong> requires the employer to check the effectiveness of technical protective measures at least every third year; type, scope and intervals are set on the basis of the risk assessment and documented.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Items tested include in particular face velocity or volume flow, the function of the <strong>airflow monitor and alarm</strong>, the sash mechanism and the physical condition. On <strong>VAV cupboards</strong> the annual test of the control loop to Part 6 is added. Here the dividing line is clear: <strong>we deliver the cupboard ready for use, including the commissioning test – the recurring annual test and the risk assessment are organised by the operator.</strong> We name this division of duties from the outset so that no gap arises.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Conclusion: the cupboard is a system component, not a piece of furniture</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A fume cupboard only protects when everything fits together: a type-tested unit with demonstrated containment, a ventilation plant that actually supplies the air required, extract discharge over the roof without recirculation, VAV control that tames the energy appetite, and a recurring test that secures function over the years. The cupboard is therefore not a piece of furniture that you put somewhere, but a system component that must be designed in from the first planning phase – in the container laboratory even more than in conventional construction, because here floor area and connection capacity are scarce.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Because our lab containers leave the Albstadt factory with matched ventilation plant, roof discharge, supply-air compensation and prepared services connections, cupboard engineering can be integrated cleanly – with documented commissioning and a clear chain of responsibility. Our <a href="/en/services/planning" class="text-primary font-medium hover:underline">planning and engineering service</a> covers the design of cupboards, extract and room-air technology from a single source. How the entire path from idea to handover runs is shown in the article on the <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">project process</a>.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Plan cupboards and laboratory ventilation correctly from the start?</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">We design cupboard type, containment, extract discharge over the roof and the VAV energy concept together – delivered ready for use, with commissioning test and a clear chain of responsibility.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Request a free initial consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">At a glance</h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Product standard: DIN EN 14175 (Parts 1–7), replaces DIN 12924-1</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Protective quantity: containment (SF₆ type test, Part 3)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Face velocity, legacy cupboard: ≥ 0.7 m/s at 100 mm opening</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> 0.5 m = max. sash height, not velocity</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Energy: VAV saves up to 40 %, close the sash!</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Extract: over the roof, no recirculation, DIN 1946-7 (≥ 25 m³/h·m²)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Testing: annually, competent person (TRGS 526 / DGUV 213-850)</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <h4 class="font-bold text-slate-900 mb-4">Further reading</h4>
+                <ul class="space-y-3">
+                  <li><a href="/en/magazine/lab-container-hvac-ventilation-standards" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Climate control &amp; ventilation</a></li>
+                  <li><a href="/en/magazine/lab-container-fire-protection" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Fire protection in the lab container</a></li>
+                  <li><a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>GMP &amp; cleanroom containers</a></li>
+                  <li><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>BSL-2 &amp; BSL-3 container laboratory</a></li>
+                  <li><a href="/en/magazine/lab-container-equipment-checklist" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Lab-container equipment</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <h4 class="font-bold mb-3">Cupboard &amp; ventilation from a single source?</h4>
+                <p class="text-gray-400 text-sm mb-4">We think cupboard type, extract routing and energy together – before the first duct is laid.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Get in touch</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <RelatedArticles slug="laborcontainer-laborabzug-din-en-14175" locale="en" />
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions on fume cupboards and DIN EN 14175</h2>
+          <div class="space-y-4">
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which standard governs fume cupboards?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">The governing standard is the <strong>DIN EN 14175 “Fume cupboards”</strong> series, which replaced the former DIN 12924-1. It comprises seven parts: Terms (1), Safety &amp; performance (2), Type test with SF₆ (3), On-site test (4), Installation &amp; use (5), VAV cupboards (6) and special types (7). Important: the standard <strong>no longer sets fixed guide values</strong> for containment or volume flow – the operator determines these via the risk assessment. In addition, <strong>TRGS 526</strong>, <strong>DGUV 213-850</strong> and, for room-air technology, <strong>DIN 1946-7</strong> apply. Cupboards installed before 2003 remain subject to DIN 12924-1/-2.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How high must the face velocity be?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">On <strong>legacy cupboards to DIN 12924</strong> (January 1978) the mean face velocity with the sash open 100 mm must be <strong>at least 0.7 m/s</strong> – 0.5 m/s is not enough. On modern cupboards to <strong>DIN EN 14175</strong> there is no blanket value; what matters is the tested containment, and volume flow comes from the risk assessment. Measurement is with a thermal or vane anemometer. Note: the <strong>0.5 m</strong> from the standard is the maximum sash <em>opening height</em>, not the velocity.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What is containment and how is it tested?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed"><strong>Containment</strong> is the ability to keep substances inside the cupboard working chamber. It is tested in the type test to <strong>DIN EN 14175-3</strong> with the tracer gas <strong>SF₆</strong> (non-toxic, but around 30,000 times more climate-damaging than CO₂). Three measurements: inner plane (at the working opening), outer plane and <strong>robustness test</strong> – a standardised plate (1900 × 400 × 20 mm) passes at 1 m/s and simulates a person walking by. In operation, the on-site measurement to Part 4 checks function on the installed unit.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How often must a fume cupboard be tested?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Under <strong>TRGS 526 (Section 7.3)</strong> and the substantively identical <strong>DGUV Information 213-850</strong>, cupboards must be maintained, tested and documented regularly – <strong>at least annually by a competent person</strong>. Overarching this, the <strong>GefStoffV</strong> requires an effectiveness check of technical protective measures at least every three years. Items tested include face velocity/volume flow, airflow monitor, alarm and sash mechanism; on <strong>VAV cupboards</strong> the control loop as well (Part 6). The recurring test is an operator duty.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What types of fume cupboard are there?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Most common is the <strong>bench-mounted cupboard</strong> (work surface ~900 mm, widths 1,200/1,500/1,800 mm, ~270–400 m³/h per lin. m). The <strong>low-level cupboard</strong> has a lowered work surface for tall apparatus; the <strong>walk-in cupboard</strong> has the work surface at floor level for pilot set-ups. In addition there are <strong>pass-through cupboards</strong> and special types for aggressive media: <strong>hydrofluoric-acid cupboards</strong> (HF-resistant), washable <strong>perchloric-acid cupboards</strong> with a rinse system, and <strong>radionuclide cupboards</strong>. The choice follows substances, apparatus and available extract capacity.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Why is recirculation of laboratory extract air not permitted?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Because the pollutant concentration in laboratory extract cannot be reliably cleaned to harmless levels. Extract from cupboards must therefore be discharged <strong>to atmosphere</strong> – recirculation into the room is not permitted where hazardous substances are present. The standard is <strong>discharge over the roof</strong>: thermal buoyancy and vertical discharge provide dilution and prevent re-entry into windows and supply-air openings. Extract runs <strong>continuously</strong>, including outside operating hours. Under <strong>DIN 1946-7</strong> a minimum extract volume flow of <strong>25 m³/h per m²</strong> of laboratory area applies, and more for very hazardous substances.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How do you reduce the energy consumption of a fume cupboard?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">A cupboard can use up to <strong>3.5 times the energy of a detached house</strong> because air is constantly extracted and the supply air is conditioned. The most effective lever: a <strong>VAV cupboard</strong> (DIN EN 14175-6) that modulates volume flow to sash position. With the sash closed, volume flow falls by around <strong>50 %</strong>; compared with CAV, <strong>energy savings of up to 40 %</strong> are possible. Plus heat recovery in the central ventilation – and the simplest measure: <strong>close the sash consistently</strong>. In the compact container laboratory with limited connection capacity, VAV is particularly worthwhile.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

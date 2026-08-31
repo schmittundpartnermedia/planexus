@@ -1,22 +1,26 @@
 ---
-import { getRelatedArticles } from '../data/magazin';
+import { getRelatedArticles, localizePost } from '../data/magazin';
+import { t } from '../i18n/ui';
+import type { Locale } from '../i18n/routes';
 
 interface Props {
   slug: string;
+  locale?: Locale;
 }
 
-const { slug } = Astro.props;
-const related = getRelatedArticles(slug, 3);
+const { slug, locale = 'de' } = Astro.props;
+const copy = t(locale);
+const related = getRelatedArticles(slug, 3).map((post) => localizePost(post, locale));
 ---
 
 {related.length > 0 && (
   <section class="py-16 bg-slate-50 border-t border-gray-100">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Verwandte Artikel</h2>
+      <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">{copy.related.title}</h2>
       <div class="grid md:grid-cols-3 gap-6 max-w-6xl">
         {related.map((post) => (
           <a
-            href={`/magazin/${post.slug}`}
+            href={post.href}
             class="bg-white p-6 rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all group"
           >
             <div class="h-36 mb-4 rounded-lg overflow-hidden bg-slate-100">

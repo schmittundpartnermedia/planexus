@@ -1,0 +1,520 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Installation, ground slab and structural design for lab containers – the practice guide",
+  "description": "Ground conditions, load assumptions, foundation variants and crane logistics for lab containers: DIN EN 1997, Eurocode 1, DIN 1054, snow-load zones, wind zones, frost depth, pad/strip/slab foundations, screw piles and abnormal-load logistics – with verified standards.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Managing Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-05-14",
+  "dateModified": "2026-05-14",
+  "image": "https://planexus.de/attached_assets/generated_images/laborcontainer-aufstellung-kran-bodenplatte.png",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/lab-container-installation-foundation-statics" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Installation, ground slab and structural design", "item": "https://planexus.de/en/magazine/lab-container-installation-foundation-statics" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Does a lab container always need a ground slab?", "acceptedAnswer": { "@type": "Answer", "text": "No. A continuous reinforced-concrete ground slab is only one of four common foundation variants. For most lab containers of up to two modules, pad foundations under the container corners suffice (four to eight pads per module, concrete C25/30, frost-free to DIN EN ISO 13793). Strip foundations under the longitudinal beams are the next step. A ground slab becomes mandatory on very soft or inhomogeneous ground, on cleanroom or GMP applications with high settlement sensitivity, on large modular assemblies, or when the container still needs continuous load distribution above the ground. Which variant fits is decided by the ground investigation to DIN EN ISO 14688 and the load assumption to Eurocode 1 (DIN EN 1991)." } },
+    { "@type": "Question", "name": "Which standards apply to the structural design of a lab container?", "acceptedAnswer": { "@type": "Answer", "text": "The stability proof rests on four principal standards. Eurocode 0 (DIN EN 1990) supplies the basis of structural design and defines the design situations. Eurocode 1 (DIN EN 1991) governs actions – self-weight, imposed loads, snow to DIN EN 1991-1-3 with the five German snow-load zones (1, 1a, 2, 2a, 3), wind to DIN EN 1991-1-4 with the four wind zones. Eurocode 7 (DIN EN 1997-1) governs geotechnical design. In Germany, DIN 1054:2021-04 additionally applies as the National Annex with the supplementary rules for EC 7 application. For the building submission the structural engineer additionally checks the state building code – who may sign the stability proof is regulated by federal state (authorisation to submit building documents)." } },
+    { "@type": "Question", "name": "How deep must a container foundation be taken for frost?", "acceptedAnswer": { "@type": "Answer", "text": "In Germany generally 80 centimetres, in upland and high locations (Black Forest, Bavarian Forest, Ore Mountains above 600 m) 100 to 150 centimetres. What governs are the regional frost maps of the state building-control authorities; DIN EN ISO 13793 supplies the thermal design of frost protection in the foundation zone. Anyone who undershoots the frost depth risks frost heave – freezing soil water expands by about 9 per cent and causes uneven lifting. On screw piles frost freedom is inherent in the construction through the screw length." } },
+    { "@type": "Question", "name": "Which snow and wind loads must the container structural engineer apply?", "acceptedAnswer": { "@type": "Answer", "text": "Snow load is measured to DIN EN 1991-1-3 including the National Annex. Germany is divided into five zones: Zone 1 (North German Plain), 1a (west/south transition areas), 2 (upland foothills), 2a (eastern Bavaria, Saxony) and 3 (high locations, Alpine foothills). Characteristic snow load at ground level (sk) varies from around 0.65 kN/m² in Zone 1 (at heights under 400 m) to over 4.0 kN/m² in high locations of Zone 3. For a container roof, shape and exposure coefficients are additionally applied. Wind load to DIN EN 1991-1-4 uses the four German wind zones (1 to 4) with characteristic basic velocity vb,0 of 22.5 m/s in Zone 1 to 30 m/s in Zone 4 (North Sea and Baltic coast). For stability, the suction component on the roof and the uplift force at corners are particularly relevant – on light containers they decide the anchorage." } },
+    { "@type": "Question", "name": "Screw pile or concrete foundation – when which?", "acceptedAnswer": { "@type": "Answer", "text": "Screw piles (helical piles, Krinner, Sun Tower or comparable type) are the fast variant: screwed in with a hydraulic rotary head in two to three hours per container, no excavation, no curing, immediately loadable, removable without construction waste. Worthwhile for temporary installations, urgent projects (pandemic laboratories, construction-site use), nature-conservation areas and contaminated sites where excavation is to be avoided. Prerequisite: adequate bearing capacity of the soil after a trial borehole, no rock at shallow depth. Concrete foundations (pad, strip, slab) are the permanent variant and, for GMP/cleanroom applications, usually without alternative: higher stiffness, lower settlements, longer service life (typically 50+ years versus 25 years for screws), unrestricted load reserves for later stacking. Premium of concrete versus screw: typically a factor of 2 to 4 in material and construction time." } },
+    { "@type": "Question", "name": "Which crane is needed to install a lab container?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the container weight and the required boom radius. A fully fitted-out 20-foot lab container weighs between eight and twelve tonnes, a 40-foot container or a double module between 14 and 24 tonnes. For most installations a mobile crane of the 50 to 100 tonne lifting-capacity class (Liebherr LTM 1050, LTM 1070, LTM 1090) at a boom radius of 8 to 16 metres suffices. In confined conditions or over long reaches, larger cranes (LTM 1200, LTM 1300, occasionally LTM 1500) are used. What governs is DGUV Regulation 52 (cranes) and DGUV Rule 100-500 Chapter 2.8. Before every installation we produce a lift and standing plan together with the crane contractor, check the crane pad for bearing capacity (generally 150 to 250 kN/m² under the outriggers) and secure the traffic to RSA 21." } },
+    { "@type": "Question", "name": "How does delivery run – abnormal load or ordinary HGV?", "acceptedAnswer": { "@type": "Answer", "text": "Up to an overall width of 2.55 metres, overall height 4.00 metres and a permissible total weight of the articulated combination of 40 tonnes, delivery with an ordinary articulated trailer is possible without a special permit – that covers standard lab containers in 20-foot construction. As soon as a container becomes wider (over 3.00 metres), higher (over 4.00 metres) or heavier (for example with built-in heavy-duty air-conditioning or with generous interior fit-out over 25 tonnes complete weight), §29 paragraph 3 StVZO applies and a large and heavy transport (GST) with a special permit becomes necessary – often with escort vehicles (BF3 or police) and night routing. We coordinate the transport concept including permit, escort and delivery time window with you before production release." } }
+  ]
+};
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Installing lab containers – ground slab & structural design | Planexus"
+  description="Ground conditions, load assumptions, ground slab, strip/pad/screw-pile foundation for lab containers: Eurocode 0/1/7, DIN 1054, frost depth, snow load, crane."
+  canonical="/en/magazine/lab-container-installation-foundation-statics"
+  ogImage="https://planexus.de/attached_assets/generated_images/laborcontainer-aufstellung-kran-bodenplatte.png"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/attached_assets/generated_images/laborcontainer-aufstellung-kran-bodenplatte.png')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+              Construction &amp; foundations
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              16 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Installation & structural design for lab containers – ground-slab guide
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Before the first container is lifted onto the site by mobile crane, three questions are decided: will the ground take the load? Which foundation is the right one? And who writes the structural design? This guide answers all three – with verified standards, clear decision matrices and realistic time and cost windows.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              14 May 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald, Managing Director, Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Installation, ground slab and structural design</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                The most expensive place in a lab-container project is not the container itself, but a wrongly chosen foundation. Anyone who pours a ground slab where pad foundations would have sufficed burns four- to five-figure sums. Anyone who sets pad foundations where the ground demanded a slab risks settlements, cracks and, in the worst case, stability. The decision falls between the ground investigation and the building application – and it is a pure engineering question, not a matter of taste.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This article shows the complete chain: ground investigation, load assumptions to Eurocode, selection of the foundation variant, frost freedom, structural proof by federal state, crane and abnormal-load logistics. With verified standards, concrete example figures and an honest look at where we as container builders end and the structural engineer, the geotechnical engineer and the crane contractor begin.
+              </p>
+
+              <figure class="my-10">
+                <img
+                  src="/attached_assets/generated_images/laborcontainer-aufstellung-kran-bodenplatte.png"
+                  alt="Mobile crane setting a modern lab container onto a prepared strip foundation of reinforced concrete – installation to DIN EN 1997 and DGUV Regulation 52"
+                  width="1920"
+                  height="1080"
+                  loading="lazy"
+                  class="w-full rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Installation of a lab container by mobile crane onto a prepared strip foundation. Lift and standing plan, pad bearing capacity and anchorage are documented before lift day.
+                </figcaption>
+              </figure>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fact table: the standards that every installation rests on</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Anyone who founds and installs a lab container in Germany works in a standards framework of the Eurocode family, remaining DIN standards, the state building code and accident-prevention regulations. The following overview is required reading for every building application.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Area</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Standard / requirement</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">What it governs</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Basis of structural design</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 1990 (Eurocode 0)</td>
+                      <td class="border border-gray-200 px-4 py-3">Design situations, partial factors, limit states</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Actions in general</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 1991-1-1 (Eurocode 1)</td>
+                      <td class="border border-gray-200 px-4 py-3">Self-weight, imposed loads in buildings</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Snow load</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 1991-1-3 + National Annex DE</td>
+                      <td class="border border-gray-200 px-4 py-3">Five snow-load zones DE (1, 1a, 2, 2a, 3), height correction</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Wind load</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 1991-1-4 + National Annex DE</td>
+                      <td class="border border-gray-200 px-4 py-3">Four wind zones DE (1 to 4), terrain categories I to IV</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Geotechnical design</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 1997-1 (Eurocode 7)</td>
+                      <td class="border border-gray-200 px-4 py-3">Bearing, settlement, sliding, piles</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Geotechnics, DE annex</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 1054:2021-04</td>
+                      <td class="border border-gray-200 px-4 py-3">Supplementary rules to EC 7, geotechnical categories GK 1–3</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Ground investigation</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN ISO 14688-1/-2, DIN EN ISO 22475-1</td>
+                      <td class="border border-gray-200 px-4 py-3">Identification and classification, sampling</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Soil classification, construction</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 18196:2011-05</td>
+                      <td class="border border-gray-200 px-4 py-3">Classification for construction purposes (sand, gravel, silt, clay)</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Earthworks</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 18300 (VOB Part C, 2019 edition)</td>
+                      <td class="border border-gray-200 px-4 py-3">Homogeneous zones (replaced the former soil classes 1–7 from VOB/C 2015)</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Frost protection (thermal)</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN ISO 13793 + regional frost maps of the state building-control authorities</td>
+                      <td class="border border-gray-200 px-4 py-3">Thermal design in the foundation zone, regionally valid frost depth</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Building waterproofing</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 18533-1 to -3</td>
+                      <td class="border border-gray-200 px-4 py-3">Waterproofing of ground-contacting elements (ground slab, strip foundation)</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Operating cranes</td>
+                      <td class="border border-gray-200 px-4 py-3">DGUV Regulation 52 + DGUV Rule 100-500 Ch. 2.8</td>
+                      <td class="border border-gray-200 px-4 py-3">Installation, testing, qualified operator, standing area</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Abnormal-load transport</td>
+                      <td class="border border-gray-200 px-4 py-3">§29 para. 3 StVZO + RGST 1992</td>
+                      <td class="border border-gray-200 px-4 py-3">Large and heavy transport (GST), escort BF3/police</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Authorisation to submit building documents</td>
+                      <td class="border border-gray-200 px-4 py-3">State building code (LBO/MBO §65 ff.)</td>
+                      <td class="border border-gray-200 px-4 py-3">Who signs the stability proof (varies by federal state)</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Soil protection / contaminated land</td>
+                      <td class="border border-gray-200 px-4 py-3">BBodSchG + BBodSchV</td>
+                      <td class="border border-gray-200 px-4 py-3">Precautionary duties, excavation disposal, suspected contamination</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Step 1 – Ground investigation: what lies under the container</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Every serious foundation design begins with a <strong>ground investigation</strong>. What governs is DIN EN 1997-2 (Eurocode 7 Part 2 – investigation and testing) in conjunction with DIN EN ISO 22475-1 (sampling) and DIN EN ISO 14688-1/-2 (identification and classification). The report clarifies three questions: which soil is present? How load-bearing is it? Where is the groundwater?
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For a standard lab container, <strong>geotechnical category GK 1</strong> to DIN 1054 generally suffices – simple conditions, low risks, one or two boreholes or dynamic probing to 4 to 6 metres depth. On multi-storey modular assemblies, cleanroom containers on settlement-sensitive ground or known contaminated land it goes to <strong>GK 2</strong>: several investigation points, laboratory parameters (particle-size distribution to DIN 18123, Atterberg limits to DIN 18122-1, water content, density of packing), and a complete geotechnical report to EC 7.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Classification of the soil to <strong>DIN 18196</strong> supplies the keys: sand and gravel (G, GW, GE, S, SW, SE) are generally load-bearing and low in settlement. Silt (U, UL, UM, UA) and clay (T, TL, TM, TA) are settlement-sensitive and demand greater foundation depths or a soil replacement. Organic soils (HN, HZ, F) and fill (A) are not load-bearing without special measures. With the findings the geotechnical engineer decides the foundation variant and supplies the structural engineer with the allowable bearing pressure.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 rounded-r-xl">
+                <p class="font-bold text-slate-900 mb-2">Practice note: no container without an investigation</p>
+                <p class="text-gray-700 text-sm">For years we have not set a container without a ground investigation – not even on supposedly “normal” inner-city sites. The extra cost of a GK 1 investigation typically lies between €1,500 and €3,500. Unrecognised fill or settlement can cost a multiple – plus downtime. The geotechnical engineer is the cheapest insurance in the whole project.</p>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Step 2 – Load assumptions: what the container and the environment bring</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The structural engineer calculates four load groups: <strong>permanent loads</strong> (self-weight of the container including fit-out and fixed inventory), <strong>variable loads</strong> (people, mobile equipment, storage), <strong>climatic loads</strong> (snow, wind, temperature) and <strong>accidental loads</strong> (impact, earthquake in earthquake zones 2–3).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                On self-weight, concrete experience helps. An empty 20-foot standard container weighs around 2.2 tonnes; a fully fitted-out lab container in 20-foot construction with furniture, ventilation, sanitary and services routing comes to 8 to 12 tonnes. A 40-foot container or a connected double module lies between 14 and 24 tonnes. These values go into the structural calculation as self-weight and are the basis for the bearing pressure.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The <strong>snow load</strong> to <a href="https://www.dibt.de/" target="_blank" rel="noopener noreferrer" class="text-primary font-medium hover:underline">DIN EN 1991-1-3</a> with the German National Annex divides the federal territory into five zones: Zone 1 (North German Plain and parts of NRW), 1a (smaller transition areas), Zone 2 (upland foothills), 2a (eastern Bavaria and Saxony) and Zone 3 (high locations, Alpine region). The characteristic snow load at ground level (sk) begins at around 0.65 kN/m² in Zone 1 under 400 metres site height and rises markedly with height – in the Alpine foothills and the German uplands 2 to 4 kN/m² is not unusual. For a container flat roof, shape and exposure coefficients are applied; on mounted plant (ventilation unit, chiller) local snow accumulations arise that must be considered separately.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The <strong>wind load</strong> to DIN EN 1991-1-4 uses four German wind zones: Zone 1 (inland south) with characteristic basic velocity vb,0 = 22.5 m/s, Zone 2 (inland centre and north), Zone 3 (coastal proximity, northern Germany) and Zone 4 (islands and immediate North Sea and Baltic coast) with vb,0 = 30.0 m/s. For the stability of a container three wind components are relevant: the <strong>pressure component</strong> on the weather side (above all for the anchorage of the wall elements), the <strong>suction component</strong> on the roof (principal load for the roof skin and the roof anchorage), and the <strong>uplift force</strong> at container corners (decisive for the ground anchors or the self-weight balance).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The practice-relevant point: a light office container can tip or be displaced in wind zone 4 without anchorage. A fully fitted-out lab container with 10 tonnes of self-weight is generally stable against overturning, but must be anchored against horizontal displacement. Depending on the site situation we use bolting to the foundation (M16/M20 heavy-duty anchors), welding to cast-in steel plates, or on screw piles a direct bolted connection to the pile head.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Step 3 – Foundation variants: four options, one decision</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The foundation variant follows from ground and load. In practice four solutions compete.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Variant</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">When worthwhile</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Construction time</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Service life</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Pad foundations</td>
+                      <td class="border border-gray-200 px-4 py-3">Simple 1- to 2-module containers, load-bearing soil (S, G, GW), no settlement sensitivity</td>
+                      <td class="border border-gray-200 px-4 py-3">2–4 days incl. excavation and curing</td>
+                      <td class="border border-gray-200 px-4 py-3">50+ years</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Strip foundations</td>
+                      <td class="border border-gray-200 px-4 py-3">Standard solution for modular assemblies, medium bearing capacity, continuous load distribution under container longitudinal beams</td>
+                      <td class="border border-gray-200 px-4 py-3">3–6 days</td>
+                      <td class="border border-gray-200 px-4 py-3">50+ years</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Ground slab (reinforced concrete)</td>
+                      <td class="border border-gray-200 px-4 py-3">Cleanroom/GMP applications, large modular assemblies, very settlement-sensitive soil, high load reserves for later stacking</td>
+                      <td class="border border-gray-200 px-4 py-3">5–10 days incl. reinforcement and curing</td>
+                      <td class="border border-gray-200 px-4 py-3">50+ years</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Screw piles</td>
+                      <td class="border border-gray-200 px-4 py-3">Temporary installation, urgent projects, nature conservation, contaminated sites (no excavation), removable solutions</td>
+                      <td class="border border-gray-200 px-4 py-3">1 day (screwing in, immediately loadable)</td>
+                      <td class="border border-gray-200 px-4 py-3">25–30 years</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Pad foundations</strong> are the classic for lighter installations. Four to eight pads per container, each about 60 × 60 × 80 cm of concrete C25/30 to DIN EN 206-1, founded frost-free, with a bearing plate or anchorage for the container corners. Advantage: faster, more material-efficient and sufficient for many standard applications. Disadvantage: concentrated point loads need load-bearing soil – on silt or clay that may not suffice.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Strip foundations</strong> are our standard recommendation for modular assemblies of two or more containers. Two continuous strips of C25/30 under the container longitudinal beams, width typically 30 to 50 cm, depth 80 cm (frost-free). Advantage: even load distribution, higher stiffness against differential settlement, good connection with earthing and lightning protection. Disadvantage: more material and excavation than pad foundations.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Ground slabs</strong> of reinforced concrete (typically C25/30 or C30/37, reinforcement B500B to DIN 488, slab thickness 20–25 cm, frost skirt all round) are the premium solution. Mandatory on cleanroom containers because of vibration isolation, on GMP applications because of the settlement sensitivity of the HVAC cascade, and on modular assemblies from four modules. Bonus: the slab later also carries a stacked storey or an extension. Disadvantage: highest cost, longest construction time, largest intervention in the ground.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Screw piles</strong> – galvanised steel screws with a helical body, screwed in with a hydraulic rotary head – are the fastest option. Two to three hours per container, no excavation, no concrete, no curing. Worthwhile for temporary installations (pandemic laboratories, construction-site containers, event laboratories), for nature-conservation areas (no intervention in the soil body) and for contaminated sites (no excavation of contaminated earth, no disposal to LAGA M20 or the Substitute Building Materials Ordinance). Bearing capacity is checked by a trial borehole in advance. Disadvantage: markedly shorter service life than concrete, limited for cleanroom/GMP because of lower stiffness.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Step 4 – Frost-free founding: the invisible duty</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A foundation is regarded as frost-free when it is founded deeper than the local frost-penetration depth. What governs the regionally valid minimum founding depths are the <strong>frost maps of the state building-control authorities</strong>. Thermal design of frost protection in the foundation zone is governed by <strong>DIN EN ISO 13793</strong>. In Germany a rule-of-thumb minimum founding depth of 80 centimetres applies for external elements. In the upland locations above 600 metres (Black Forest, Bavarian Forest, Ore Mountains, Harz) and in the Alpine foothills the requirement rises to 100 to 150 centimetres.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Anyone who undershoots the frost depth risks <strong>frost heave</strong>: freezing soil water expands by about 9 %, lifts the foundation unevenly and after a few winters leads to cracks, misaligned doors and, in the extreme, settlement damage to the container. Frost heave is especially a risk on cohesive soils (silt, clay) – sandy and gravelly soils are less susceptible. On screw piles frost freedom is inherent in the construction, because the load-transfer plane is automatically placed below the frost line by the screw length.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Step 5 – Structural design and building submission: who signs</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The <strong>stability proof</strong> – colloquially “the structural design” – is a mandatory part of every building submission as soon as a lab container is installed permanently (generally from 3 months of standing time, depending on the state building code). Who may prepare and sign the proof is governed by the state building codes via the <strong>authorisation to submit building documents</strong>: in most federal states civil engineers, architects with a corresponding additional qualification and structural designers entered in the list of authorised persons of the chamber of engineers.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In Bavaria, Baden-Württemberg, Hesse and some further states, a <strong>checking structural design</strong> is additionally required on larger or more complex building works – a second, independent structural designer checks the calculation of the first. Whether a checking structural design is needed follows from the checking ordinances of the states and is set in the building application by building control. For standard lab containers in simple conditions it is usually dispensable; for multi-storey modular assemblies, BSL-3 containers or special buildings it is generally mandatory.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                From Albstadt we supply with every container project the <strong>type structural design of the container body</strong> – i.e. the proof that the container itself takes all loads from its self-weight, wind and snow. What we cannot supply is the <strong>site-related structural design</strong> of the foundation, because that depends on the concrete ground, the installation situation and the connections. That is prepared by the local structural designer – we are happy to recommend a practice from our network.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Step 6 – Crane and abnormal load: how the container reaches the pad</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A fully fitted-out 20-foot lab container weighs 8 to 12 tonnes, a 40-foot container or a double module 14 to 24 tonnes. Installation needs a <strong>mobile crane</strong>, sized by lifting capacity and boom radius. Rule of thumb: at a short boom radius (8 m) a 50- to 70-tonner often suffices (Liebherr LTM 1050-3.1 or LTM 1070-4.2); at a medium radius (12–16 m) a 90- to 120-tonner (LTM 1090-4.2, LTM 1100-4.2). On large booms, high lift heights or over obstacles the class quickly goes to 200 to 300 tonnes (LTM 1200-5.1, LTM 1300-6.2).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                What governs crane operation are <strong>DGUV Regulation 52</strong> (cranes) and <strong>DGUV Rule 100-500 Chapter 2.8</strong>. Before installation a qualified installer must produce a lift and standing plan, check the standing area of the crane outriggers (typically 150 to 250 kN/m² under the outriggers, on very large cranes over 400 kN/m²) and organise traffic management to RSA 21. On asphalt with naturally occurring ground, crane mats under the outriggers usually suffice. On soft ground, fresh paving or over basement car parks, special constructions (additional load-distribution plates, structural proof of the basement car park) are mandatory.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Delivery</strong> is by articulated trailer – up to 2.55 m overall width, 4.00 m overall height and 40 t combination total weight without a special permit. As soon as a container becomes wider than 3.00 m, higher than 4.00 m or a combination heavier than 40 t, <strong>§29 paragraph 3 StVZO</strong> applies and the transport is a large and heavy transport (GST). Then a special permit from the road-traffic authority, escort vehicles to BF3 (federal trunk roads) or a police escort, defined routing and usually a night delivery time window become mandatory. Lead time for the permit: 4 to 8 weeks depending on the federal state.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Special situations: sloping ground, contaminated land, flooding, listed buildings</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Sloping ground.</strong> At ground inclinations over 5 % the foundation must be formed stable against the downslope force. That is done with hillside formwork, retaining walls or with stepped strip foundations. The structural engineer checks stability against sliding to EC 7. Practice recommendation: over 10 % slope, a ground slab with frost skirt and slope anchors as a rule.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Contaminated land.</strong> On suspected sites the <strong>Federal Soil Protection Act (BBodSchG)</strong> and the <strong>Federal Soil Protection and Contaminated Sites Ordinance (BBodSchV)</strong> apply. Excavation must be tested for contaminants before construction (eluate and solids analysis to LAGA M20 / Substitute Building Materials Ordinance 2023); disposal follows classification into Z0 to Z2 or as landfill waste. Screw piles are often the more economic solution here, because they require no excavation.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Flood protection.</strong> In designated floodplains (HQ100) the requirements of the <strong>Federal Water Act §78</strong> apply – buildings are only exceptionally permissible there, generally with conditions on plinth height, buoyancy securing, anchorage and electrical high-level installation. We set containers in HQ100 areas as a rule on a raised ground slab with frost skirt and define the buoyancy securing in coordination with the structural engineer and the lower water authority.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Listed buildings.</strong> On listed estates (hospital, university campus, historic works site) the lower listed-building authority is to be involved early. Frequent conditions: minimal intervention in the soil body (screw piles preferred), reversible installation, visual matching of the container cladding. Lead time for listed-building consent: 6 to 12 weeks.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Practice recommendation: which foundation for which project</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                From around 100 installations over recent years we distil four standard paths that carry 80 % of projects:
+              </p>
+
+              <ul class="list-disc pl-6 space-y-3 text-gray-600 leading-relaxed mb-6">
+                <li><strong>1 to 2 containers, load-bearing soil (sand, gravel), standard laboratory:</strong> pad foundations C25/30, 60 × 60 × 80 cm, four pads per container. Construction time 2 to 4 days. Most economic solution.</li>
+                <li><strong>2 to 4 containers in an assembly, medium soil, standard application:</strong> strip foundations under the longitudinal beams, continuous, 30 to 50 cm wide, 80 cm deep. Construction time 3 to 6 days. Best balance between cost and safety.</li>
+                <li><strong>Cleanroom, GMP, BSL-3 or from 4 modules in an assembly:</strong> reinforced-concrete ground slab 20 to 25 cm, reinforced to DIN 488, with a frost skirt all round. Construction time 5 to 10 days incl. curing. Mandatory solution for regulated applications.</li>
+                <li><strong>Temporary, urgent, nature conservation or contaminated land:</strong> screw piles, 6 to 12 screws depending on container size. Installation on the same day. Service life adequate for 25 to 30 years.</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In all four cases the rule is: the ground investigation precedes the decision, the structural engineer calculates the loads against the allowable bearing pressure, and the crane contractor checks the standing area. Anyone who skips these three steps builds either too large (money gone) or too small (risk taken on). Neither is an option in professional container construction.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Conclusion: the foundation is half of project success</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A lab container only stands as well as its ground carries it. The sequence is clear: ground investigation, load assumption, foundation decision, structural proof, building application, crane concept, installation. Anyone who skips or shortens one of these stages buys risk – settlements, cracks, stability problems, in the worst case shut-downs by building control.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The good news: because our container leaves the Albstadt factory with a type structural design, defined connection points and prepared anchorages, the on-site effort can be made plannable. Our <a href="/en/services/planning" class="text-primary font-medium hover:underline">planning and engineering service</a> covers the complete foundation design in coordination with geotechnical engineer, structural designer and crane contractor – from a single source, turnkey, with a defined chain of responsibility.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Plan the installation professionally?</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">We coordinate ground investigation, structural design, foundation construction and crane logistics from a single source. From the building application to handover – with verified standards and realistic time windows.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Request a free initial consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">At a glance</h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Eurocode 0/1/7 (DIN EN 1990/1991/1997)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> DIN 1054:2021-04 (DE annex, geotechnics)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Snow-load zones 1, 1a, 2, 2a, 3</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Wind zones 1 to 4 (vb,0 22.5–30 m/s)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Frost depth 80–150 cm (DIN EN ISO 13793)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Pad, strip, slab, screw-pile foundations</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> DGUV V 52 + Rule 100-500 Ch. 2.8 (cranes)</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <h4 class="font-bold text-slate-900 mb-4">Further reading</h4>
+                <ul class="space-y-3">
+                  <li><a href="/en/services/planning" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Laboratory planning &amp; engineering</a></li>
+                  <li><a href="/en/magazine/lab-container-permits-building-law" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Permits &amp; building law</a></li>
+                  <li><a href="/en/magazine/lab-container-project-process" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Project process from idea to handover</a></li>
+                  <li><a href="/en/magazine/lab-container-construction-site-materials-testing" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Lab containers on the construction site</a></li>
+                  <li><a href="/en/magazine/lab-container-digitalization-lims-iot-remote-monitoring" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Digitalisation in the lab container</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <h4 class="font-bold mb-3">Building on firm ground?</h4>
+                <p class="text-gray-400 text-sm mb-4">We coordinate ground investigation, structural design and crane logistics. Speak to us before the building application goes out.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Get in touch</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions on installation and structural design</h2>
+          <div class="space-y-4">
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Does a lab container always need a ground slab?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">No. A ground slab is only one of four foundation variants. For most containers, <strong>pad foundations</strong> under the container corners (four to eight pads per module, concrete C25/30, frost-free to DIN EN ISO 13793) or <strong>strip foundations</strong> under the longitudinal beams suffice. A continuous reinforced-concrete ground slab becomes mandatory on cleanroom/GMP applications, on very settlement-sensitive soil and on large modular assemblies. Which variant fits is decided by the ground investigation to DIN EN ISO 14688 and the load assumption to Eurocode 1.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which standards apply to the structural design of a lab container?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Four principal standards: <strong>DIN EN 1990</strong> (Eurocode 0, basis of structural design), <strong>DIN EN 1991</strong> (Eurocode 1, actions – incl. 1991-1-3 snow and 1991-1-4 wind), <strong>DIN EN 1997-1</strong> (Eurocode 7, geotechnics) and <strong>DIN 1054:2021-04</strong> as the German National Annex. For the building submission the structural engineer additionally checks the state building code – who may sign the stability proof is regulated by federal state in the authorisation to submit building documents.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How deep must a container foundation be taken for frost?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">In Germany generally <strong>80 cm</strong>, in upland and high locations (Black Forest, Bavarian Forest, Ore Mountains above 600 m) <strong>100 to 150 cm</strong>. What governs is <strong>DIN EN ISO 13793</strong> and the regional frost maps. Anyone who undershoots the frost depth risks <strong>frost heave</strong> – freezing soil water expands by about 9 % and causes uneven lifting. On screw piles frost freedom is inherent in the construction through the screw length.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which snow and wind loads must the container structural engineer apply?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Snow to <strong>DIN EN 1991-1-3</strong>: Germany in five zones (1, 1a, 2, 2a, 3), characteristic ground snow load sk from around 0.65 kN/m² (Zone 1, &lt;400 m) to &gt;4.0 kN/m² (Zone 3 high locations). Wind to <strong>DIN EN 1991-1-4</strong>: four wind zones, vb,0 from 22.5 m/s (Zone 1) to 30.0 m/s (Zone 4, North Sea/Baltic). Practice-relevant besides the pressure component is above all the suction component on the roof and the uplift force at the container corners – they decide the anchorage.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Screw pile or concrete foundation – when which?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed"><strong>Screw piles</strong>: fast (installation on the same day), no excavation, removable – ideal for temporary installations, urgent projects, nature conservation, contaminated sites. Service life 25–30 years. <strong>Concrete foundations</strong> (pad, strip, slab): higher stiffness, lower settlements, 50+ years service life, mandatory for cleanroom/GMP. Premium of concrete versus screw: typically a factor of 2 to 4 in material and construction time.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which crane is needed to install a lab container?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Depends on container weight and boom radius. 20-foot lab container: 8–12 t. 40-foot container/double module: 14–24 t. Standard solution: <strong>mobile crane 50 to 100 t</strong> (Liebherr LTM 1050, LTM 1070, LTM 1090) at 8–16 m radius. In confined conditions or a long boom radius up to 200–300 t (LTM 1200, LTM 1300). What governs: <strong>DGUV Regulation 52</strong> and <strong>DGUV Rule 100-500 Chapter 2.8</strong>. In advance: lift and standing plan, bearing-capacity check of the outrigger areas (typically 150–250 kN/m²), traffic management to RSA 21.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How does delivery run – abnormal load or ordinary HGV?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Up to 2.55 m overall width, 4.00 m overall height and 40 t combination total weight: ordinary articulated trailer without a special permit. Beyond that: <strong>large and heavy transport (GST)</strong> to <strong>§29 para. 3 StVZO</strong> with a special permit from the road-traffic authority, escort vehicles (BF3 or police), defined routing and usually a night delivery time window. Lead time for the permit: 4 to 8 weeks per federal state.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+    <RelatedArticles slug="laborcontainer-aufstellung-bodenplatte-statik" locale="en" />
+
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/en/magazine" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to the Magazine
+      </a>
+    </div>
+  </div>
+</Layout>

@@ -4,6 +4,13 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent';
 import { planexusPostalAddress, planexusGeo, planexusContact } from '../lib/planexus-address';
+import {
+  detectLocale,
+  getAlternatePath,
+  CH_PATHS,
+  AT_PATHS,
+} from '../i18n/routes';
+import { t } from '../i18n/ui';
 
 interface Props {
   title: string;
@@ -28,14 +35,16 @@ const isNoindex = robots.startsWith('noindex');
 const fullTitle = title.includes('Planexus') ? title : `${title} | Planexus`;
 const siteUrl = 'https://planexus.de';
 
-// Selbst-referenzierender Canonical: Wenn keine canonical-Prop übergeben wurde,
-// Pfad aus Astro.url.pathname ableiten. Trailing-Slash-Normalisierung
-// (Root wird zu "" → https://planexus.de ohne Slash, alles andere ohne Trailing Slash).
 const rawPath = (canonical && canonical.length > 0) ? canonical : Astro.url.pathname;
 const normalizedPath = rawPath === '/' ? '' : rawPath.replace(/\/+$/, '');
 const canonicalUrl = `${siteUrl}${normalizedPath}`;
+const locale = detectLocale(normalizedPath || '/');
+const copy = t(locale);
+const alternatePath = getAlternatePath(normalizedPath || '/', locale);
+const alternateUrl = `${siteUrl}${alternatePath === '/' ? '' : alternatePath}`;
+const deUrl = locale === 'de' ? canonicalUrl : alternateUrl;
+const enUrl = locale === 'en' ? canonicalUrl : alternateUrl;
 
-// ogImage-Normalisierung: erzwingt die non-www-Domain (planexus.de) und absolute URL.
 let ogImageUrl: string;
 if (!ogImage) {
   ogImageUrl = `${siteUrl}/opengraph.jpg`;
@@ -45,16 +54,16 @@ if (!ogImage) {
   ogImageUrl = `${siteUrl}${ogImage}`;
 }
 
-// Hreflang-Mapping: DACH-Strategie. Eine Sprachversion (Deutsch),
-// regionale Targeting-Signale für DE/CH/AT.
-const chPaths = ['/laborcontainer-zuerich', '/laborcontainer-basel', '/laborcontainer-bern'];
-const atPaths = ['/laborcontainer-wien', '/laborcontainer-graz', '/laborcontainer-linz'];
-const isCH = chPaths.includes(normalizedPath);
-const isAT = atPaths.includes(normalizedPath);
+const pathForGeo = normalizedPath || '/';
+const isCH = CH_PATHS.includes(pathForGeo);
+const isAT = AT_PATHS.includes(pathForGeo);
+const htmlLang = locale === 'en' ? 'en' : 'de';
+const ogLocale = locale === 'en' ? 'en_GB' : isCH ? 'de_CH' : isAT ? 'de_AT' : 'de_DE';
+const ogLocaleAlternate = locale === 'en' ? (isCH ? 'de_CH' : isAT ? 'de_AT' : 'de_DE') : 'en_GB';
 ---
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang={htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
@@ -66,8 +75,8 @@ const isAT = atPaths.includes(normalizedPath);
     <meta name="googlebot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
     <meta name="bingbot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
     <meta name="geo.region" content={isCH ? "CH" : isAT ? "AT" : "DE"} />
-    <meta name="geo.placename" content={isCH ? "Schweiz" : isAT ? "Österreich" : "Deutschland"} />
-    <meta name="language" content="German" />
+    <meta name="geo.placename" content={isCH ? copy.geo.ch : isAT ? copy.geo.at : copy.geo.de} />
+    <meta name="language" content={locale === 'en' ? 'English' : 'German'} />
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -76,7 +85,8 @@ const isAT = atPaths.includes(normalizedPath);
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content={isCH ? "de_CH" : isAT ? "de_AT" : "de_DE"} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlternate} />
     <meta property="og:site_name" content="Planexus GmbH" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -92,8 +102,9 @@ const isAT = atPaths.includes(normalizedPath);
     <meta name="theme-color" content="#bbd700" />
     <link rel="canonical" href={canonicalUrl} />
 
-    <link rel="alternate" hreflang="de" href={canonicalUrl} />
-    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    <link rel="alternate" hreflang="de" href={deUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={deUrl} />
 
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -150,9 +161,10 @@ const isAT = atPaths.includes(normalizedPath);
       "alternateName": "Planexus",
       "url": siteUrl,
       "logo": `${siteUrl}/android-chrome-512x512.png`,
-      "description": "Spezialist für Laborcontainer, mobile Labore und Modulbau. Planung, Fertigung und schlüsselfertige Übergabe von Containerlaboren.",
+      "description": copy.schema.orgDescription,
+      "inLanguage": locale === 'en' ? 'en' : 'de-DE',
       "foundingDate": "2025",
-      "award": "EU Business News – German CEO Excellence Awards 2026: Führender Anbieter innovativer Laborräume",
+      "award": copy.schema.award,
       "areaServed": [
         { "@type": "Country", "name": "Germany" },
         { "@type": "Country", "name": "Switzerland" },
@@ -177,7 +189,8 @@ const isAT = atPaths.includes(normalizedPath);
       "@type": "LocalBusiness",
       "name": "Planexus GmbH",
       "image": `${siteUrl}/images/labtogo-industrie.webp`,
-      "description": "Spezialist für Laborcontainer und Modulbau",
+      "description": copy.schema.localDescription,
+      "inLanguage": locale === 'en' ? 'en' : 'de-DE',
       "url": siteUrl,
       "priceRange": "€€€",
       "address": planexusPostalAddress,
@@ -196,6 +209,7 @@ const isAT = atPaths.includes(normalizedPath);
       "@type": "WebSite",
       "name": "Planexus GmbH",
       "url": siteUrl,
+      "inLanguage": locale === 'en' ? 'en' : 'de-DE',
     })} />
 
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
@@ -214,11 +228,11 @@ const isAT = atPaths.includes(normalizedPath);
         style="display:none;visibility:hidden"
       ></iframe>
     </noscript>
-    <Navbar client:load />
+    <Navbar client:load locale={locale} alternateHref={alternatePath} />
     <main class="flex-grow">
       <slot />
     </main>
     <Footer />
-    <CookieConsent client:load />
+    <CookieConsent client:load locale={locale} />
   </body>
 </html>

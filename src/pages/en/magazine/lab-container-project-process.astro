@@ -1,0 +1,841 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="From idea to handover — how a lab container project runs"
+  description="A lab container project in five phases: from needs analysis through planning and manufacture to turnkey handover. With a realistic timeline."
+  canonical="/en/magazine/lab-container-project-process"
+  ogImage="/images/blog-laborcontainer-projektablauf.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "From idea to handover — how a lab container project runs",
+      "description": "How a lab container project runs: five phases from needs analysis through planning and manufacture to turnkey handover.",
+      "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Managing Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+      "datePublished": "2026-02-18",
+      "dateModified": "2026-02-18",
+      "image": "https://planexus.de/images/blog-laborcontainer-projektablauf.jpg",
+      "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+        { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+        { "@type": "ListItem", "position": 3, "name": "Lab container project process", "item": "https://planexus.de/en/magazine/lab-container-project-process" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does a lab container project take from first enquiry to handover?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Depending on complexity and specification, a lab container project typically takes between 12 and 20 weeks. Simpler configurations can be delivered faster; highly specialised BSL-3 or GMP laboratories need more lead time for planning and permits." }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I prepare as the client for a lab container project?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ideally you will have the following to hand: intended use and laboratory type, required floor area, biosafety level, available site connections (power, water, drainage), desired timescale and whether a building permit is already in place. Everything else we clarify together during the needs analysis." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a lab container need a building permit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on the federal state, how long the unit will stand and the type of use. Temporary installations of under three months are permit-free in some German states. Permanent use generally requires a building permit or a building notification. Planexus supports you in clarifying the position and submitting the application." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I still change the lab container during manufacture?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Minor adjustments are possible in the early manufacturing phase. The further production has progressed, the more involved changes become. That is why we put so much emphasis in the planning phase on agreeing every detail — so that costly rework does not arise later." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens at the handover of a lab container?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Handover includes a full functional check of all technical systems (ventilation, electrics, media supply), a walkthrough with the client, handover of the documentation (test reports, maintenance schedules, operating manuals) and briefing of the operating staff." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the lab container transported to the installation site?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Lab containers are typically delivered by low-loader or heavy-goods transport. Depending on size and weight, special permits and a police escort may be required. Logistics planning — including access checks, crane positioning and an unloading concept — is an integral part of every project." }
+        }
+      ]
+    })} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-laborcontainer-projektablauf.jpg')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+              Guide
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              18 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            From idea to handover — how a lab container project runs
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Five phases, one goal: your operational laboratory. We walk through the complete project process — transparently, practically and with a concrete timeline.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              18 February 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Lab container project process</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                “How long does it actually take?” — we hear this in almost every first conversation. The honest answer: it depends. A standard lab container with basic equipment is ready in 12 weeks. A BSL-3 laboratory with cleanroom technology and specialist equipment needs 20 weeks or more. But the span of time alone says little. What matters is what happens in each phase — and how thoroughly you prepare.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In this article we take you through the complete process of a lab container project. From the first idea via <a href="/en/services/planning" class="text-primary font-medium hover:underline">technical planning</a> to turnkey handover. Not theory, but practice — based on the projects we actually deliver as Planexus GmbH.
+              </p>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  At a glance: the five project phases
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">1</div>
+                    <div class="text-xs font-medium text-slate-900">Needs analysis</div>
+                    <div class="text-xs text-gray-500 mt-1">1–2 weeks</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">2</div>
+                    <div class="text-xs font-medium text-slate-900">Technical planning</div>
+                    <div class="text-xs text-gray-500 mt-1">3–5 weeks</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">3</div>
+                    <div class="text-xs font-medium text-slate-900">Permits</div>
+                    <div class="text-xs text-gray-500 mt-1">2–8 weeks</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">4</div>
+                    <div class="text-xs font-medium text-slate-900">Manufacture</div>
+                    <div class="text-xs text-gray-500 mt-1">8–14 weeks</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">5</div>
+                    <div class="text-xs font-medium text-slate-900">Handover</div>
+                    <div class="text-xs text-gray-500 mt-1">1–2 weeks</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PHASE 1 -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="phase-1">
+                Phase 1: Needs analysis and initial consultation
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Every project starts with a conversation. And that conversation matters more than most people think. In the needs analysis we clarify the fundamental questions that determine the entire course of the project:
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  Core questions in the needs analysis
+                </h4>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>Intended use:</strong> What work will be carried out in the laboratory? Chemical analytics, microbiological testing, quality control?</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>Biosafety level:</strong> Is an <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-primary font-medium hover:underline">S1, S2 or BSL-3 laboratory</a> required?</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>Space requirement:</strong> How many workstations? Which instruments need to be housed?</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>Site:</strong> Where will the container stand? What are the access routes? Which utility connections (power, water, drainage, gases) are available?</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>Timescale:</strong> When must the laboratory be operational? Are there hard deadlines (project start, funding windows)?</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>Duration of use:</strong> Temporary (6–24 months) or permanent? This strongly influences the <a href="/en/magazine/lab-containers-rent-or-buy" class="text-primary font-medium hover:underline">rent or buy</a> decision.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Why is Phase 1 so decisive? Because this is where the course is set. An unclear brief leads to unclear planning — and that leads to delays and extra cost. The more precise the needs analysis, the smoother everything that follows.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                At Planexus every project begins with a <a href="/en/services/consulting" class="text-primary font-medium hover:underline">complimentary initial consultation</a>. As a rule, a thorough telephone or video call is enough to capture the key data. For more complex schemes — for example a <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-primary font-medium hover:underline">GMP cleanroom laboratory</a> — we also recommend a site visit to assess the location and the connection situation in person.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                  Practical tip
+                </h4>
+                <p class="text-gray-700 text-sm">
+                  If possible, bring a site plan of the installation location to the first meeting. Markings for existing utility connections and access routes save a great deal of time in the planning phase. If you already have a specification or an equipment list — so much the better.
+                </p>
+              </div>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Outcome of Phase 1
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                At the end of the needs analysis sits a requirements specification — a document that brings together all requirements, constraints and objectives. This specification is the foundation for all further planning. It contains:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li>Usage profile and laboratory type</li>
+                <li>Biosafety level and regulatory requirements</li>
+                <li>Area and room programme</li>
+                <li>Technical requirements (climate control, ventilation, media)</li>
+                <li>Site conditions and connection situation</li>
+                <li>Outline timeline and budget envelope</li>
+              </ul>
+
+              <!-- PHASE 2 -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="phase-2">
+                Phase 2: Technical planning and detailed concept
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                With the requirements specification in hand, the actual <a href="/en/services/planning" class="text-primary font-medium hover:underline">technical planning</a> begins. Here an idea becomes a concrete design. This phase is the most labour-intensive — and at the same time the one with the greatest influence on the end result.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Floor plan and spatial concept
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The floor plan is the heart of the design. It determines how efficiently people can work in the laboratory. This is about more than square metres: circulation routes, workstation layout, instrument positions, airlock concepts and escape routes must all be coordinated. A lab container is based on modules — typical base sizes are 6 × 3 m, 9 × 3 m or 12 × 3 m. By lining up and connecting several modules, larger laboratory areas can also be created.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The modular principle offers a decisive advantage: the room layout can be arranged flexibly. Laboratory, airlock, store and office can sit in separate modules and still be joined into a contiguous unit. You can read more in our article on <a href="/en/magazine/innovation-modular-construction-mobile-lab" class="text-primary font-medium hover:underline">innovation in modular construction</a>.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Building services (MEP)
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In parallel with the floor plan, the building-services concept is developed. This is where we plan what sits beneath the surface — and in a laboratory that is substantial:
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider">Ventilation &amp; climate control</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Room-air temperature and humidity control
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Pressure cascades for containment laboratories (positive/negative pressure)
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        HEPA filtration for cleanroom requirements
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Extract concept for fume cupboards (DIN EN 14175)
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider">Electrical &amp; media supply</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Power and extra-low-voltage distribution
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Ultrapure water (Type I/II), potable water, drainage
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Technical gases (nitrogen, compressed air, specialist gases)
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        IT infrastructure and <a href="/en/services/smart-lab" class="text-primary font-medium hover:underline">Smart Lab networking</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Laboratory equipment and furniture
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In parallel with building-services design, the <a href="/en/services/equipment" class="text-primary font-medium hover:underline">laboratory equipment</a> is configured. Benches, fume cupboards, cabinets, sinks, safety installations — every element must fit the workflow. As part of Wesemann Holding GmbH we have direct access to one of Europe’s leading laboratory furnishers. That simplifies coordination considerably and saves valuable time.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                What many clients underestimate: the choice of surface materials has a direct effect on operating costs. Acid-resistant ceramic worktops, dissipative PVC floors, melamine-resin-coated walls — the right combination depends on the substances used in the laboratory.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Standards and regulations
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A lab container must meet the same regulations as a stationary laboratory. Depending on use, various standards and codes of practice apply:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>DIN EN 14175</strong> — Fume cupboards for laboratories</li>
+                <li><strong>DIN 1946-7</strong> — Room-air technology in laboratories</li>
+                <li><strong>Laboratory guidelines</strong> (ASR A1.2/1,2) — Safety requirements</li>
+                <li><strong>TRGS 526</strong> — Laboratories: protective measures when handling hazardous substances</li>
+                <li><strong>GenTSV</strong> — Genetic Engineering Safety Ordinance (for S1–S4)</li>
+                <li><strong>EU GMP Guide</strong> — for pharmaceutical use</li>
+                <li><strong>DIN EN ISO 14644</strong> — Cleanroom classification</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Compliance with these standards is not optional; it is mandatory. An experienced planner knows the requirements and builds them into the design from the outset. Retrofit adjustments are involved and expensive.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Outcome of Phase 2
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                At the end of technical planning the following are in place: detailed design with floor plans and sections, building-services concept, equipment lists, material data sheets and a detailed cost estimate. Only once the client has approved this package does work proceed.
+              </p>
+
+              <!-- PHASE 3 -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="phase-3">
+                Phase 3: Permits and building law
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Building permits are one of the most common misunderstandings around lab containers. Many assume that a container needs no permit. That is not the case.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                When do you need a building permit?
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The permit requirement is governed by the building regulations of the relevant German federal state. In principle: as soon as a container is installed for longer than three months or exceeds a certain size, a building permit or at least a building notification is required. The details vary from state to state.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In Switzerland the cantonal building laws apply; in Austria the respective state building codes. The underlying principles are similar, but procedures and timescales can differ considerably.
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Typical permit documents
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <ul class="space-y-2">
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      Building application with site plan (1:500)
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      Floor plans, elevations, sections (1:100)
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      Building description and usage concept
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      Structural stability report
+                    </li>
+                  </ul>
+                  <ul class="space-y-2">
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      Fire-protection concept
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      Drainage application (for laboratory wastewater)
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      Sound-insulation report (for ventilation plant)
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      BImSchG notification where hazardous substances apply
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Running activities in parallel saves time
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                An experienced project partner knows that permitting and manufacture can overlap in part. While the building application sits with the authority, workshop drawings can already begin. Manufacture itself, however, starts only after the permit is granted — anything else would be a financial risk.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Planexus supports you throughout <a href="/en/services/consulting" class="text-primary font-medium hover:underline">permit planning</a>. We prepare the required documents, coordinate with specialist planners (structure, fire protection) and accompany the process through to the building permit.
+              </p>
+
+              <!-- PHASE 4 -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="phase-4">
+                Phase 4: Manufacture in the factory
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Once planning is approved and the permit granted, manufacture begins. And this is where a key advantage of <a href="/en/services/modular-construction" class="text-primary font-medium hover:underline">modular construction</a> over conventional laboratory building becomes clear: the entire production takes place under cover in the factory, under controlled conditions.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                What happens in the factory?
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Manufacture of a lab container follows a structured sequence:
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <div class="space-y-4">
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0">1</div>
+                    <div>
+                      <h5 class="font-bold text-slate-900 text-sm">Steelwork and shell</h5>
+                      <p class="text-sm text-gray-600">Load-bearing structure of steel sections, floor, wall and ceiling elements. Fire-protection coatings and corrosion protection.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0">2</div>
+                    <div>
+                      <h5 class="font-bold text-slate-900 text-sm">Insulation and envelope</h5>
+                      <p class="text-sm text-gray-600">High-performance insulation (PUR/PIR), vapour barrier, façade cladding. <a href="/en/magazine/sustainability-lab-construction-energy-efficiency" class="text-primary font-medium hover:underline">Energy-efficient materials</a> reduce later operating costs.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0">3</div>
+                    <div>
+                      <h5 class="font-bold text-slate-900 text-sm">Technical installation</h5>
+                      <p class="text-sm text-gray-600">Electrical installation, ventilation plant, sanitary, media supply. Everything is installed and tested in the factory — not on the construction site.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0">4</div>
+                    <div>
+                      <h5 class="font-bold text-slate-900 text-sm">Interior fit-out</h5>
+                      <p class="text-sm text-gray-600">Wall coatings, floor finishes, ceiling linings. Laboratory-specific requirements: acid-resistant, dissipative, disinfectable.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0">5</div>
+                    <div>
+                      <h5 class="font-bold text-slate-900 text-sm">Laboratory furniture and equipment</h5>
+                      <p class="text-sm text-gray-600">Laboratory benches, fume cupboards, cabinets, sinks, safety equipment (eyewash, emergency showers, fire extinguishers). Everything is installed and adjusted.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0">6</div>
+                    <div>
+                      <h5 class="font-bold text-slate-900 text-sm">Factory acceptance (FAT)</h5>
+                      <p class="text-sm text-gray-600">Factory Acceptance Test: functional check of all systems, leak tests, electrical testing. The client can be invited to the factory acceptance.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Quality assurance during manufacture
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A lab container is not an office container. The quality requirements are far higher. Seamless wall junctions, tight penetrations for media lines, correct pressure regimes — every detail counts. That is why inspection takes place in several stages: after the shell, after technical installation and before dispatch.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                On request we invite you to the factory acceptance. There you see your container in its finished state, can check final details and receive a comprehensive acceptance report.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                  Why factory manufacture is a quality advantage
+                </h4>
+                <p class="text-gray-700 text-sm">
+                  Unlike conventional construction, manufacture takes place under controlled conditions: consistent temperature, no weather influence, trained specialist staff. The result: higher build quality, less rework and a binding delivery date — a luxury that traditional construction rarely offers.
+                </p>
+              </div>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Site preparation in parallel with manufacture
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                While the container is being built in the factory, the installation site is prepared. This includes:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li>Foundation works (strip foundation, pad foundations or slab — depending on the ground)</li>
+                <li>Provision of utility connections (power, water, drainage, gases if required)</li>
+                <li>Preparing access routes for heavy transport</li>
+                <li>Setting up a crane pad if required</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Site preparation is generally the client’s responsibility. Planexus provides the technical specifications and can recommend civil-engineering partners if needed.
+              </p>
+
+              <!-- PHASE 5 -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="phase-5">
+                Phase 5: Delivery, installation and handover
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The day everything has been working towards: the container arrives. And compared with conventional laboratory construction, what happens now is remarkably fast.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Transport and logistics
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The <a href="/en/services/logistics" class="text-primary font-medium hover:underline">logistics</a> of a lab container are not a standard shipment. Depending on module size and weight, low-loaders, heavy-goods vehicles or even special transports are used. The route is planned in advance: bridge heights, turning radii, road widths — everything must fit. Special transports require permits and, where necessary, a police escort.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                On site the container is positioned by mobile crane. For multi-part installations the modules are connected, joints sealed and the internal links between units established.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Installation and commissioning
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                On-site installation typically takes only a few days — a fraction of what a conventional build would require. The works include:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li>Positioning and aligning the modules on the foundation</li>
+                <li>Connecting the modules to one another (mechanically and technically)</li>
+                <li>Connection to the building-side utilities (power, water, drainage, IT)</li>
+                <li>Commissioning of the ventilation plant and climate control</li>
+                <li>Functional check of all technical systems (SAT — Site Acceptance Test)</li>
+                <li>Leak testing and pressure testing for containment laboratories</li>
+              </ul>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Handover
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Formal handover is more than a handshake. It comprises:
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Handover pack
+                </h4>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>Acceptance walkthrough:</strong> Joint inspection with the client, checking all rooms and systems</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>Documentation:</strong> As-built drawings, test reports, certificates, material data sheets</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>Maintenance schedules:</strong> Intervals for ventilation filters, climate plant, fume cupboards and safety inspections</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>Operating manuals:</strong> For all technical plant and laboratory equipment</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-gray-700"><strong>Briefing:</strong> Training of operating staff in use and safety procedures</span>
+                  </li>
+                </ul>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                After handover the laboratory is ready for operation. If required we offer a maintenance contract covering regular inspections, filter changes and testing of safety-critical systems.
+              </p>
+
+              <!-- TIMELINE OVERVIEW -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="zeitplan">
+                A realistic timeline: what you can expect
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The most frequent question deserves an honest answer. Here are the typical timescales, based on our project experience:
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse">
+                  <thead>
+                    <tr class="bg-slate-900 text-white">
+                      <th class="text-left p-4 font-bold rounded-tl-lg">Phase</th>
+                      <th class="text-left p-4 font-bold">Standard laboratory</th>
+                      <th class="text-left p-4 font-bold rounded-tr-lg">Specialist laboratory (BSL/GMP)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-gray-100">
+                      <td class="p-4 font-medium text-slate-900">Needs analysis</td>
+                      <td class="p-4 text-gray-600">1–2 weeks</td>
+                      <td class="p-4 text-gray-600">2–3 weeks</td>
+                    </tr>
+                    <tr class="border-b border-gray-100 bg-slate-50">
+                      <td class="p-4 font-medium text-slate-900">Technical planning</td>
+                      <td class="p-4 text-gray-600">3–4 weeks</td>
+                      <td class="p-4 text-gray-600">4–6 weeks</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                      <td class="p-4 font-medium text-slate-900">Permits</td>
+                      <td class="p-4 text-gray-600">2–4 weeks</td>
+                      <td class="p-4 text-gray-600">4–8 weeks</td>
+                    </tr>
+                    <tr class="border-b border-gray-100 bg-slate-50">
+                      <td class="p-4 font-medium text-slate-900">Manufacture</td>
+                      <td class="p-4 text-gray-600">8–10 weeks</td>
+                      <td class="p-4 text-gray-600">12–16 weeks</td>
+                    </tr>
+                    <tr>
+                      <td class="p-4 font-medium text-slate-900 rounded-bl-lg">Installation &amp; handover</td>
+                      <td class="p-4 text-gray-600">3–5 days</td>
+                      <td class="p-4 text-gray-600 rounded-br-lg">1–2 weeks</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="bg-primary/10">
+                      <td class="p-4 font-bold text-slate-900 rounded-bl-lg">Total</td>
+                      <td class="p-4 font-bold text-slate-900">approx. 14–20 weeks</td>
+                      <td class="p-4 font-bold text-slate-900 rounded-br-lg">approx. 22–35 weeks</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Important: these timescales apply from the point of appointment. Lead time for the initial consultation and quotation phase comes on top. And: permitting is the largest uncertainty. In some municipalities a building application takes four weeks; in others, twelve. Early submission is therefore decisive.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                  Conventional construction compared
+                </h4>
+                <p class="text-gray-700 text-sm">
+                  A comparable stationary laboratory in solid construction typically takes 12 to 24 months — from planning to commissioning. The modular approach shortens that span by 50–70%. The main reason: manufacture takes place in parallel with site preparation, rather than sequentially on the construction site.
+                </p>
+              </div>
+
+              <!-- CHECKLIST -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="checkliste">
+                Your checklist: what to clarify before the project starts
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The better prepared you are, the faster and smoother the project runs. These points should be clarified — or at least thought through — before the first conversation:
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <div class="space-y-3">
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <div class="w-5 h-5 border-2 border-gray-300 rounded mt-0.5 shrink-0"></div>
+                    <span class="text-gray-700 text-sm">What work will be carried out in the laboratory? (analytics, microbiology, synthesis, QC …)</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <div class="w-5 h-5 border-2 border-gray-300 rounded mt-0.5 shrink-0"></div>
+                    <span class="text-gray-700 text-sm">Which biosafety level is required? (S1, S2, BSL-3, GMP?)</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <div class="w-5 h-5 border-2 border-gray-300 rounded mt-0.5 shrink-0"></div>
+                    <span class="text-gray-700 text-sm">How many laboratory workstations are planned?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <div class="w-5 h-5 border-2 border-gray-300 rounded mt-0.5 shrink-0"></div>
+                    <span class="text-gray-700 text-sm">Which large instruments need to be housed? (weight, dimensions, connection ratings)</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <div class="w-5 h-5 border-2 border-gray-300 rounded mt-0.5 shrink-0"></div>
+                    <span class="text-gray-700 text-sm">Is a site plan of the intended location available?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <div class="w-5 h-5 border-2 border-gray-300 rounded mt-0.5 shrink-0"></div>
+                    <span class="text-gray-700 text-sm">Which utility connections are available on site? (power, water, drainage, gas, IT)</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <div class="w-5 h-5 border-2 border-gray-300 rounded mt-0.5 shrink-0"></div>
+                    <span class="text-gray-700 text-sm">What is the access situation? (HGV-capable, crane set-up possible?)</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <div class="w-5 h-5 border-2 border-gray-300 rounded mt-0.5 shrink-0"></div>
+                    <span class="text-gray-700 text-sm">Temporary or permanent use?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <div class="w-5 h-5 border-2 border-gray-300 rounded mt-0.5 shrink-0"></div>
+                    <span class="text-gray-700 text-sm">Is there a fixed date by which the laboratory must be operational?</span>
+                  </label>
+                  <label class="flex items-start gap-3 cursor-pointer">
+                    <div class="w-5 h-5 border-2 border-gray-300 rounded mt-0.5 shrink-0"></div>
+                    <span class="text-gray-700 text-sm">Has the building authority already been consulted? Is a preliminary building enquiry in place?</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- WHY PLANEXUS -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="planexus">
+                Why Planexus as project partner?
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                There are several suppliers on the market who deliver lab containers. What sets us apart is the approach: Planexus is not a container manufacturer that builds laboratories on the side. We are <a href="/en/services" class="text-primary font-medium hover:underline">laboratory planners</a> who use the container as an intelligent construction concept.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                As part of Wesemann Holding GmbH we combine laboratory-planning expertise with direct access to one of Europe’s leading laboratory furnishers. That means: planning, equipment and furniture come from a single source. No interface problems, no coordination gaps between container supplier and laboratory fitter.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Our <a href="/en/projects" class="text-primary font-medium hover:underline">reference projects</a> show what we mean: from a mobile measuring station to a BSL-3 laboratory in a container — every project is planned individually and tailored to the client’s specific requirements.
+              </p>
+
+              <!-- FAQ -->
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-16 mb-8" id="faq">
+                Frequently asked questions about the lab container project process
+              </h2>
+
+              <div class="space-y-6 not-prose">
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-3">How long does a lab container project take from first enquiry to handover?</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">
+                    Depending on complexity and specification, a lab container project typically takes between 12 and 20 weeks. Simpler configurations can be delivered faster; highly specialised BSL-3 or GMP laboratories need more lead time for planning and permits.
+                  </p>
+                </div>
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-3">What should I prepare as the client for a lab container project?</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">
+                    Ideally you will have the following to hand: intended use and laboratory type, required floor area, biosafety level, available site connections (power, water, drainage), desired timescale and whether a building permit is already in place. Everything else we clarify together during the needs analysis.
+                  </p>
+                </div>
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-3">Does a lab container need a building permit?</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">
+                    It depends on the federal state, how long the unit will stand and the type of use. Temporary installations of under three months are permit-free in some German states. Permanent use generally requires a building permit or a building notification. Planexus supports you in clarifying the position and submitting the application.
+                  </p>
+                </div>
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-3">Can I still change the lab container during manufacture?</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">
+                    Minor adjustments are possible in the early manufacturing phase. The further production has progressed, the more involved changes become. That is why we put so much emphasis in the planning phase on agreeing every detail — so that costly rework does not arise later.
+                  </p>
+                </div>
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-3">What happens at the handover of a lab container?</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">
+                    Handover includes a full functional check of all technical systems (ventilation, electrics, media supply), a walkthrough with the client, handover of the documentation (test reports, maintenance schedules, operating manuals) and briefing of the operating staff.
+                  </p>
+                </div>
+                <div class="border border-gray-100 rounded-xl p-6">
+                  <h3 class="font-bold text-slate-900 mb-3">How is the lab container transported to the installation site?</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">
+                    Lab containers are typically delivered by low-loader or heavy-goods transport. Depending on size and weight, special permits and a police escort may be required. Logistics planning — including access checks, crane positioning and an unloading concept — is an integral part of every project.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-24 space-y-8">
+              <div class="bg-slate-50 rounded-2xl p-6 border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider">Contents</h4>
+                <nav class="space-y-3">
+                  <a href="#phase-1" class="block text-sm text-gray-600 hover:text-primary transition-colors">Phase 1: Needs analysis</a>
+                  <a href="#phase-2" class="block text-sm text-gray-600 hover:text-primary transition-colors">Phase 2: Technical planning</a>
+                  <a href="#phase-3" class="block text-sm text-gray-600 hover:text-primary transition-colors">Phase 3: Permits</a>
+                  <a href="#phase-4" class="block text-sm text-gray-600 hover:text-primary transition-colors">Phase 4: Manufacture in the factory</a>
+                  <a href="#phase-5" class="block text-sm text-gray-600 hover:text-primary transition-colors">Phase 5: Delivery &amp; handover</a>
+                  <a href="#zeitplan" class="block text-sm text-gray-600 hover:text-primary transition-colors">A realistic timeline</a>
+                  <a href="#checkliste" class="block text-sm text-gray-600 hover:text-primary transition-colors">Checklist for clients</a>
+                  <a href="#planexus" class="block text-sm text-gray-600 hover:text-primary transition-colors">Why Planexus</a>
+                  <a href="#faq" class="block text-sm text-gray-600 hover:text-primary transition-colors">FAQ</a>
+                </nav>
+              </div>
+
+              <div class="bg-primary/5 rounded-2xl p-6 border border-primary/10">
+                <h4 class="font-bold text-slate-900 mb-3">Start a project?</h4>
+                <p class="text-sm text-gray-600 mb-4">
+                  We advise you free of charge and without obligation on your lab container project — from the first idea to the finished laboratory.
+                </p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 px-4 rounded-lg text-center text-sm hover:bg-primary/90 transition-colors">
+                  Request a consultation
+                </a>
+              </div>
+
+              <div class="bg-slate-50 rounded-2xl p-6 border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider">Further articles</h4>
+                <div class="space-y-4">
+                  <a href="/en/magazine/lab-containers-rent-or-buy" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">Rent vs buy a lab container?</p>
+                    <p class="text-xs text-gray-500">The complete decision guide</p>
+                  </a>
+                  <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">BSL-2 and BSL-3 in a container</p>
+                    <p class="text-xs text-gray-500">Biosafety levels in container construction</p>
+                  </a>
+                  <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">GMP cleanroom in a container</p>
+                    <p class="text-xs text-gray-500">Pharmaceutical production, modular</p>
+                  </a>
+                  <a href="/en/magazine/sustainability-lab-construction-energy-efficiency" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">Sustainability in laboratory construction</p>
+                    <p class="text-xs text-gray-500">Energy efficiency meets high-tech</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <RelatedArticles slug="laborcontainer-projektablauf-von-idee-bis-uebergabe" locale="en" />
+
+    <section class="py-16 bg-slate-900 text-white">
+      <div class="container mx-auto px-4 text-center max-w-3xl">
+        <h2 class="text-3xl font-heading font-bold mb-4">Your lab container project starts here</h2>
+        <p class="text-gray-300 mb-8">
+          From needs analysis to turnkey handover — we accompany you through every phase. Speak to our experts about your scheme.
+        </p>
+        <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">
+          Request a complimentary initial consultation
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,889 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Laboratory container permits and building law"
+  description="Laboratory container permits: building law, Land building codes and laboratory special cases. Checklist, timetable and common mistakes at a glance."
+  canonical="/en/magazine/lab-container-permits-building-law"
+  ogImage="/images/blog-laborcontainer-genehmigung.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Laboratory container permits – building law, regulations and practical guide",
+      "description": "Everything on the permitting of laboratory containers: building law, Land building codes (Landesbauordnungen), laboratory special cases, checklist and timetable.",
+      "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Managing Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+      "datePublished": "2026-02-26",
+      "dateModified": "2026-02-26",
+      "image": "https://planexus.de/images/blog-laborcontainer-genehmigung.jpg",
+      "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+        { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+        { "@type": "ListItem", "position": 3, "name": "Laboratory container permits", "item": "https://planexus.de/en/magazine/lab-container-permits-building-law" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does a laboratory container always need a building permit (Baugenehmigung)?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not always. In many German Länder, temporary siting of up to 3 months is permit-free. For permanent use beyond 3 months a building permit (Baugenehmigung) or at least a building notification (Bauanzeige) is generally required. What is decisive are the Land building code (Landesbauordnung), the type of use and the location." }
+        },
+        {
+          "@type": "Question",
+          "name": "What additional permits does a laboratory container with hazardous substances need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In addition to the building permit, further permits may be required: an immission-control permit under the Federal Immission Control Act (BImSchG) at certain substance quantities, a water-law authorisation (wasserrechtliche Erlaubnis) for laboratory wastewater containing hazardous substances, and a notification under the Biological Agents Ordinance (BioStoffV) for BSL-2 or BSL-3 laboratories." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does the building permit for a laboratory container take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In the simplified procedure 4 to 8 weeks, in the regular building-permit procedure 8 to 16 weeks. For additional permits (immission control, water law) a further 4 to 12 weeks may be added. A preliminary building enquiry (Bauvoranfrage) in advance can accelerate the process." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a Bauvoranfrage and a Bauantrag?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The Bauvoranfrage (preliminary building enquiry) clarifies in advance whether a project is in principle capable of being permitted – for example with regard to location, type of use and development plan (Bebauungsplan). It is legally binding, but is not a substitute for the Bauantrag (building application). The Bauantrag is the formal permit application with complete documentation." }
+        },
+        {
+          "@type": "Question",
+          "name": "What documents do I need for the Bauantrag of a laboratory container?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Typical documents: Bauantrag form, site plan (1:500), floor plans and sections, building description with statement of use, structural proof, fire-protection concept, drainage plan and, where applicable, a hazardous-substances concept. For laboratories a ventilation concept and a hygiene plan are often added." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Planexus support the permitting of a laboratory container?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Planexus accompanies the entire permitting process: from review of the building-law situation via preparation of the application documents through to coordination with the authorities. As a specialist for laboratory containers we know the typical pitfalls and can accelerate the process considerably." }
+        }
+      ]
+    })} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-laborcontainer-genehmigung.jpg')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+              Guide
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              20 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Laboratory container permits – building law, regulations and practical guide
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            16 Land building codes (Landesbauordnungen), laboratory special cases, Bauvoranfrage versus Bauantrag – and the most common mistakes that delay projects by months.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              26 February 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Laboratory container permits</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                “Do we need a permit for this?” – clients ask us this question in almost every first meeting. The answer is almost always the same: yes, in most cases. But the good news first: a building permit (Baugenehmigung) for a laboratory container is not an insurmountable obstacle. Anyone who knows the process, prepares the right documents and avoids typical mistakes generally gets through the procedure promptly.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The problem: most information on the web relates to residential containers or office containers. For laboratory containers, however, additional regulations apply – particularly if hazardous substances are stored, biological agents are processed or laboratory wastewater is discharged. It is precisely this gap that we close with this article.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In this practical guide you will learn everything you need to know about permitting a laboratory container: from the foundations of German building law via the 16 Land building codes (Landesbauordnungen) through to the special cases that are relevant specifically for laboratories. With a concrete timetable, a complete checklist and the most common mistakes that delay projects by months.
+              </p>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  At a glance: permitting in 5 steps
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">1</div>
+                    <div class="text-xs font-medium text-slate-900">Check the site</div>
+                    <div class="text-xs text-gray-500 mt-1">B-Plan &amp; building law</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">2</div>
+                    <div class="text-xs font-medium text-slate-900">Bauvoranfrage</div>
+                    <div class="text-xs text-gray-500 mt-1">Optional, but wise</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">3</div>
+                    <div class="text-xs font-medium text-slate-900">Documents</div>
+                    <div class="text-xs text-gray-500 mt-1">Submit in full</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">4</div>
+                    <div class="text-xs font-medium text-slate-900">Additional permit</div>
+                    <div class="text-xs text-gray-500 mt-1">Laboratory-specific</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
+                    <div class="text-2xl font-bold text-primary mb-1">5</div>
+                    <div class="text-xs font-medium text-slate-900">Permit</div>
+                    <div class="text-xs text-gray-500 mt-1">4–16 weeks</div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="grundlagen">
+                Building-law foundations: when is a laboratory container subject to a permit?
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In German building law a laboratory container is a “structural installation” (bauliche Anlage) – regardless of whether it is sited mobile or stationary. Building-order law (Bauordnungsrecht) applies in principle to every erection, alteration or change of use of a structural installation. The central question is therefore not whether building law applies, but whether your concrete project is permit-free or whether a permit procedure must be gone through.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Permit-free siting – the exceptions
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In some Länder there are exceptions from the permit requirement. These typically apply to:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Temporary siting</strong> of under 3 months on the same plot (varies by Land building code between 2 and 6 months)</li>
+                <li><strong>Subordinate ancillary buildings</strong> up to a certain floor area (usually 30–75 m²), provided they do not serve the permanent presence of people</li>
+                <li><strong>Construction-site containers</strong> for the duration of a building measure</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>But caution:</strong> these exceptions apply to simple containers – not automatically to laboratory containers. As soon as hazardous substances are worked with in a container, laboratory wastewater arises or special ventilation plants are operated, additional regulations generally apply that require a permit – independently of the duration of siting.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                  Common misconception
+                </h4>
+                <p class="text-gray-700 text-sm">
+                  “A container stands on wheels, so it is not a building and needs no permit.” – That is wrong. What is decisive is not mobility, but actual use. As soon as a container is sited at a fixed location and connected to utilities, it is in building law a structural installation (bauliche Anlage). Whether it has wheels or not plays no role.
+                </p>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="landesbauordnungen">
+                16 Land building codes: what applies in which Land
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Building-order law in Germany is a matter for the Länder. Each of the 16 federal states (Bundesländer) has its own Land building code (Landesbauordnung, LBO) with partly different rules. For laboratory containers two aspects are particularly relevant: procedural exemption for temporary use, and classification into building classes (Gebäudeklassen).
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse">
+                  <thead>
+                    <tr class="bg-slate-900 text-white">
+                      <th class="text-left p-3 rounded-tl-lg">Land</th>
+                      <th class="text-left p-3">LBO</th>
+                      <th class="text-left p-3">Procedure-free up to</th>
+                      <th class="text-left p-3 rounded-tr-lg">Laboratory particularity</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Baden-Württemberg</td>
+                      <td class="p-3 text-gray-600">LBO BW</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Special building (Sonderbau) from 1,600 m² GFA</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Bavaria</td>
+                      <td class="p-3 text-gray-600">BayBO</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Hazardous-substance stores from 200 kg subject to permit</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Berlin</td>
+                      <td class="p-3 text-gray-600">BauO Bln</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Change of use always subject to permit</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Brandenburg</td>
+                      <td class="p-3 text-gray-600">BbgBO</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Notification procedure for special buildings</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Bremen</td>
+                      <td class="p-3 text-gray-600">BremLBO</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Close coordination with the port authority at port sites</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Hamburg</td>
+                      <td class="p-3 text-gray-600">HBauO</td>
+                      <td class="p-3 text-gray-600">6 months</td>
+                      <td class="p-3 text-gray-600">Longest procedure-free period in Germany</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Hesse</td>
+                      <td class="p-3 text-gray-600">HBO</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Rhine-Main pharma cluster: authority experience available</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Mecklenburg-Western Pomerania</td>
+                      <td class="p-3 text-gray-600">LBauO M-V</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Simplified procedure for building classes 1–3</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Lower Saxony</td>
+                      <td class="p-3 text-gray-600">NBauO</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Building-permit exemption where compliant with the B-Plan</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">North Rhine-Westphalia</td>
+                      <td class="p-3 text-gray-600">BauO NRW</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Rhineland chemicals cluster: strict immission-control conditions</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Rhineland-Palatinate</td>
+                      <td class="p-3 text-gray-600">LBauO RP</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Life-science location Mainz: experience with BSL permits</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Saarland</td>
+                      <td class="p-3 text-gray-600">LBO SL</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Compact authority structure: short paths</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Saxony</td>
+                      <td class="p-3 text-gray-600">SächsBO</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Dresden microelectronics cluster: cleanroom experience</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Saxony-Anhalt</td>
+                      <td class="p-3 text-gray-600">BauO LSA</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Leuna chemical park: established permitting processes</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="p-3 font-medium">Schleswig-Holstein</td>
+                      <td class="p-3 text-gray-600">LBO SH</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Maritime research: special rules for coastal areas</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="p-3 font-medium">Thuringia</td>
+                      <td class="p-3 text-gray-600">ThürBO</td>
+                      <td class="p-3 text-gray-600">3 months</td>
+                      <td class="p-3 text-gray-600">Optics/photonics cluster Jena: specialised authorities</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The table shows: in most Länder the limit for procedure-free siting is 3 months. Hamburg is the exception with 6 months. But – and this is the decisive point – these periods apply only to pure siting. As soon as a container is used as a laboratory and thus constitutes a change of use (Nutzungsänderung), a permit procedure is generally required.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                If you wish to know which regional particularities apply at your location, our city pages help further – for example for <a href="/en/lab-containers-berlin" class="text-primary font-medium hover:underline">Berlin</a>, <a href="/en/lab-containers-munich" class="text-primary font-medium hover:underline">Munich</a> or <a href="/en/lab-containers-stuttgart" class="text-primary font-medium hover:underline">Stuttgart</a>.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="sonderfaelle">
+                Laboratory special cases: what distinguishes container laboratories from ordinary containers
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A laboratory container is not an office container. And that is precisely what makes the permitting procedure more complex. Because in addition to general building law, further permits and notification duties may be added. The most important special cases:
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Hazardous substances: storage and handling
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                If hazardous substances are worked with in the laboratory container – and that is the case in most laboratories – the Hazardous Substances Ordinance (Gefahrstoffverordnung, GefStoffV) and the Technical Rules for Hazardous Substances (Technische Regeln für Gefahrstoffe, TRGS) apply in addition. Particularly relevant are:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>TRGS 510</strong> – storage of hazardous substances in portable containers: regulates storage quantities, co-storage prohibitions and structural requirements</li>
+                <li><strong>TRGS 526</strong> – laboratories: specific requirements for room air, fume cupboards and personal protective equipment in the laboratory</li>
+                <li><strong>TRGS 800</strong> – fire-protection measures: requirements for fire protection in the storage and handling of hazardous substances</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Above certain storage quantities (these vary by hazardous-substance class), an immission-control permit under the Federal Immission Control Act (Bundes-Immissionsschutzgesetz, BImSchG) is required. In practice this mainly affects larger laboratory units with a chemicals store.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The good news: the <a href="/en/services/equipment" class="text-primary font-medium hover:underline">laboratory equipment</a> of a professionally planned container already takes all these requirements into account in the planning phase. Fume cupboards to DIN EN 14175, drip trays and safety cabinets are standard.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Biological agents: BSL-2 and BSL-3
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Laboratories that work with biological agents of risk group 2 or higher are subject to the Biological Agents Ordinance (Biostoffverordnung, BioStoffV) and the Technical Rules for Biological Agents (Technische Regeln für biologische Arbeitsstoffe, TRBA). For <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-primary font-medium hover:underline">BSL-2 and BSL-3 laboratories</a> in a container the following additional permits or notification duties are relevant:
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
+                      <span class="w-6 h-6 bg-amber-100 text-amber-700 rounded flex items-center justify-center text-xs font-bold">S2</span>
+                      BSL-2 laboratory
+                    </h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Notification to the competent authority (30 days before commissioning)
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Risk assessment under BioStoffV
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Hygiene plan and operating instruction
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Autoclave or validated inactivation procedure
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
+                      <span class="w-6 h-6 bg-red-100 text-red-700 rounded flex items-center justify-center text-xs font-bold">S3</span>
+                      BSL-3 laboratory
+                    </h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Authorisation from the competent Land authority (in advance!)
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        HEPA-filtered extract (H14 filter)
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Negative-pressure control with pressure cascade
+                      </li>
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Wastewater disinfection before discharge
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For a BSL-3 laboratory the permit is particularly laborious, because the competent Land authority must inspect and release the laboratory before commissioning. Experience shows that this process takes 8 to 16 weeks. Anyone who only initiates it after manufacture loses valuable time.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Laboratory wastewater: water-law authorisation
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Laboratory wastewater in many cases contains substances that may not simply be discharged into the sewer. These include solvents, heavy metals, acids, alkalis and biologically contaminated wastewater. The discharge of laboratory wastewater is subject to the Federal Water Act (Wasserhaushaltsgesetz, WHG) and the Wastewater Ordinance (Abwasserverordnung, AbwV).
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In practice that means: before a laboratory container with a wastewater connection is commissioned, a water-law authorisation (wasserrechtliche Erlaubnis) must be applied for at the lower water authority (untere Wasserbehörde). The application must describe the expected wastewater profile – which substances arise in which concentrations and how they are pre-treated.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In a well-planned laboratory container, neutralisation plants, collection tanks or even wastewater disinfection systems are already integrated. <a href="/en/services/planning" class="text-primary font-medium hover:underline">Specialist planning</a> takes these requirements into account from the outset.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Cleanroom laboratories: GMP requirements
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-primary font-medium hover:underline">GMP-compliant cleanroom laboratories</a> in a container, pharmaceutical rule sets are added alongside building law. The EU-GMP Guide (Annex 1) and the ISO 14644 series define requirements for particle freedom, air-change rates and qualification. These are not building-law permits in the narrower sense, but they influence planning and documentation considerably – and are checked by auditors.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="bauvoranfrage">
+                Bauvoranfrage versus Bauantrag: strategy for your project
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Many clients do not know the difference between a Bauvoranfrage (preliminary building enquiry) and a Bauantrag (building application) – yet the Bauvoranfrage is one of the most effective instruments for saving time and money.
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8 not-prose">
+                <div class="bg-white border-2 border-primary/30 rounded-xl p-6">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                  </div>
+                  <h4 class="font-bold text-slate-900 mb-3 text-lg">Bauvoranfrage</h4>
+                  <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Clarifies in advance the fundamental capability of being permitted
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Lower costs than a complete Bauantrag
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Legally binding decision (valid for 3 years)
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Fewer documents required
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gray-400 font-bold">–</span>
+                      Not a substitute for the Bauantrag
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gray-400 font-bold">–</span>
+                      Processing time: 4–8 weeks
+                    </li>
+                  </ul>
+                </div>
+                <div class="bg-white border-2 border-slate-200 rounded-xl p-6">
+                  <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                  </div>
+                  <h4 class="font-bold text-slate-900 mb-3 text-lg">Bauantrag</h4>
+                  <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Formal permit application for execution
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      After the permit, construction may begin immediately
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary font-bold">+</span>
+                      Covers all building-law aspects
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gray-400 font-bold">–</span>
+                      Complete plan documents required
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gray-400 font-bold">–</span>
+                      Higher costs (fees + planning)
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gray-400 font-bold">–</span>
+                      Processing time: 8–16 weeks
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Recommendation from Planexus</h4>
+                    <p class="text-gray-600 text-sm">
+                      For every laboratory-container project we recommend a Bauvoranfrage as the first step. It costs little, but clarifies the decisive questions: may a laboratory be operated at the desired location? Is the planned use compatible with the development plan (Bebauungsplan)? What conditions are to be expected? That way you start detailed planning on a solid foundation – and not on hope.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                An important aspect is often overlooked: even if a plot lies in a commercial area (Gewerbegebiet), that does not automatically mean that a laboratory may be operated there. Development plans can restrict or exclude certain types of use. An S2 laboratory with hazardous-substance handling can, for example, be classified as a “disturbing commercial operation” (störender Gewerbebetrieb) and is then not permissible in certain commercial areas.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="zeitplan">
+                Timetable: how long does the permitting process take?
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Permit duration depends on several factors: the complexity of the project, the Land, the workload of the authority and the completeness of your documents. Here is a realistic overview, based on our project experience:
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-4">Typical timetable for permitting a laboratory container</h4>
+                <div class="space-y-4">
+                  <div class="flex items-start gap-4">
+                    <div class="w-24 shrink-0">
+                      <span class="inline-block bg-primary/10 text-primary font-bold text-sm px-3 py-1 rounded-full">Week 1–2</span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-slate-900">Site analysis and prepare the Bauvoranfrage</p>
+                      <p class="text-sm text-gray-600">Check the B-Plan, clarify type of use, first coordination with the building-order office (Bauordnungsamt)</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-24 shrink-0">
+                      <span class="inline-block bg-primary/10 text-primary font-bold text-sm px-3 py-1 rounded-full">Week 3–6</span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-slate-900">Bauvoranfrage in progress</p>
+                      <p class="text-sm text-gray-600">Authority examines fundamental capability of being permitted. In parallel: start detailed planning</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-24 shrink-0">
+                      <span class="inline-block bg-primary/10 text-primary font-bold text-sm px-3 py-1 rounded-full">Week 4–8</span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-slate-900">Prepare and submit the Bauantrag</p>
+                      <p class="text-sm text-gray-600">Compile all documents, involve specialist planners, prepare the fire-protection proof</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-24 shrink-0">
+                      <span class="inline-block bg-primary/10 text-primary font-bold text-sm px-3 py-1 rounded-full">Week 8–16</span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-slate-900">Permit procedure</p>
+                      <p class="text-sm text-gray-600">Authority review, further requests if applicable, involvement of other specialist authorities</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-24 shrink-0">
+                      <span class="inline-block bg-primary/10 text-primary font-bold text-sm px-3 py-1 rounded-full">Week 12–20</span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-slate-900">Additional permits (if required)</p>
+                      <p class="text-sm text-gray-600">Immission control, water law, BioStoffV notification – run partly in parallel</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Overall duration:</strong> for a standard S1 laboratory, allow 8 to 12 weeks for the permit. For a BSL-2 laboratory with hazardous-substance handling it is 12 to 16 weeks. A BSL-3 laboratory can take 16 to 24 weeks. These times run in parallel with <a href="/en/services/modular-construction" class="text-primary font-medium hover:underline">manufacture</a> – provided the permit is applied for early.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In the <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">project-process article</a> we have presented the permitting phase in the overall context of the project. There you see how permit and manufacture interlock.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="checkliste">
+                Checklist: all documents for the Bauantrag
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Incomplete documents are the most common reason for delays in the permit procedure. With this checklist you ensure that your Bauantrag is complete the first time:
+              </p>
+
+              <div class="bg-white border-2 border-gray-100 rounded-xl p-8 my-8 not-prose">
+                <h4 class="font-bold text-slate-900 mb-6 flex items-center gap-2 text-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  Checklist – Bauantrag for a laboratory container
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                  <div class="space-y-2">
+                    <h5 class="font-bold text-slate-900 text-sm uppercase tracking-wider mt-4 mb-3">General documents</h5>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Bauantrag form (Land-specific)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Official site plan (scale 1:500)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Floor plans, sections, elevations (1:100)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Building description with statement of use</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Structural proof / stability proof</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Thermal-protection proof (EnEV / GEG)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Sound-protection proof</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Drainage plan</span>
+                    </label>
+                  </div>
+                  <div class="space-y-2">
+                    <h5 class="font-bold text-slate-900 text-sm uppercase tracking-wider mt-4 mb-3">Laboratory-specific</h5>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Fire-protection concept (with laboratory use)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Ventilation concept (DIN 1946-7, TRGS 526)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Hazardous-substances inventory and storage quantities</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Wastewater pre-treatment concept</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Risk assessment (for BSL-2/3)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Escape and rescue-route plan</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Proof of media supply (power, water, gas)</span>
+                    </label>
+                    <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                      <input type="checkbox" class="mt-1 accent-primary" />
+                      <span>Parking-space proof (depending on municipality)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This checklist covers the most common requirements. Depending on Land, municipality and laboratory type, further documents may be required. Our <a href="/en/services/consulting" class="text-primary font-medium hover:underline">consulting</a> clarifies in the individual case which documents are concretely needed.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="fehler">
+                The 7 most common mistakes in permitting laboratory containers
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In numerous laboratory-container projects we have come to know the typical pitfalls. These mistakes cost the most time and money:
+              </p>
+
+              <div class="space-y-4 my-8 not-prose">
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Mistake 1: starting the permit process too late</h4>
+                  <p class="text-gray-600 text-sm">The permit is only applied for when the container is already in manufacture. If it is then delayed or refused, a finished container stands without a siting permit. Right: start the permit process in parallel with <a href="/en/services/planning" class="text-primary hover:underline">specialist planning</a>.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Mistake 2: concealing laboratory use in the Bauantrag</h4>
+                  <p class="text-gray-600 text-sm">Some applicants state the use as “office” or “store” in order to simplify the procedure. That is not only legally problematic – in the event of a change of use it can lead to subsequent shutdown of the laboratory.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Mistake 3: forgetting additional permits</h4>
+                  <p class="text-gray-600 text-sm">The Bauantrag is granted, but the water-law authorisation or the BioStoffV notification is missing. The laboratory may then not be commissioned despite a building permit. Right: apply for all required permits in parallel.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Mistake 4: submitting incomplete documents</h4>
+                  <p class="text-gray-600 text-sm">Missing documents lead to further requests that can delay the process by 4 to 8 weeks. Every further request resets the authority processing period. Our checklist above helps to avoid this.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Mistake 5: underestimating fire protection</h4>
+                  <p class="text-gray-600 text-sm">A laboratory container with hazardous substances has different fire-protection requirements from an office container. Without a laboratory-specific fire-protection concept – prepared by an approved fire-protection planner – no Bauantrag is granted.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Mistake 6: ignoring neighbour law</h4>
+                  <p class="text-gray-600 text-sm">Setback distances (Abstandsflächen) to neighbouring plots, emissions (noise from ventilation plants, odours) and use conflicts with the neighbourhood can hinder the permit process considerably. Early coordination with neighbours can prevent objections.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
+                  <h4 class="font-bold text-slate-900 text-sm mb-1">Mistake 7: not involving an experienced partner</h4>
+                  <p class="text-gray-600 text-sm">Anyone who goes through the permit process without experience of laboratory containers almost always makes avoidable mistakes. A specialised provider such as Planexus knows the requirements and can accelerate the process considerably.</p>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="schweiz-oesterreich">
+                DACH special case: Switzerland and Austria
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For laboratory containers in Switzerland and Austria, different rules apply. In <strong>Switzerland</strong>, building law is regulated at cantonal level. The SIA standards (in particular SIA 180, SIA 382/1 for ventilation) replace the German DIN standards. A building authorisation (Baubewilligung) is in principle required; the procedure is of differing effort depending on the canton.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In <strong>Austria</strong>, the building code sits with the federal states (Bundesländer). The ÖNORMEN (e.g. ÖNORM B 8110) and the Employee Protection Act (ArbeitnehmerInnenschutzgesetz, ASchG) are the governing rule sets. For laboratories with hazardous substances the Poisons Ordinance (Giftverordnung) and ChemG-V are additionally relevant.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Planexus realises projects throughout the DACH region. <a href="/en/services/logistics" class="text-primary font-medium hover:underline">Logistics and delivery</a> to Switzerland and Austria is established. For the country-specific permit procedures we support you with partners on the ground.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="smart-lab">
+                Digital permit documents and Smart Lab
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                An increasingly important aspect of laboratory-container permits: digital documentation. More and more authorities accept or require digital building applications. At the same time, operators rely on <a href="/en/services/smart-lab" class="text-primary font-medium hover:underline">Smart Lab integration</a> – IoT sensors, digital room-climate monitoring and automated logging.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For the permit this can be an advantage: automatic temperature and pressure logs, traceable access control and gap-free maintenance documentation ease acceptance by the authorities and simplify later audits – particularly relevant for <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-primary font-medium hover:underline">GMP-obligated cleanroom laboratories</a>.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="nachhaltigkeit">
+                Permits and sustainability
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The Buildings Energy Act (Gebäudeenergiegesetz, GEG) also applies to laboratory containers – at least if they are used for longer than two years. The proof duty for thermal protection is part of the Bauantrag. Well-insulated laboratory containers generally meet these requirements without difficulty. More on this in our article on <a href="/en/magazine/sustainability-lab-construction-energy-efficiency" class="text-primary font-medium hover:underline">sustainability in laboratory construction</a>.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A further aspect: modular laboratory containers have the advantage that they can be dismantled and re-sited at another location. That can be an argument in the permit if the authority has concerns regarding a permanent structural alteration of the plot. The reversibility of a container laboratory is a genuine distinguishing feature compared with solid construction.
+              </p>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-8 my-8 not-prose text-center">
+                <h4 class="font-bold text-slate-900 mb-3 text-lg">A permit for your laboratory-container project?</h4>
+                <p class="text-gray-600 mb-6">
+                  We review the building-law situation at your location, advise you on the required permits and, if you wish, take on the complete application – from the Bauvoranfrage through to the operating permit.
+                </p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 px-6 py-3 rounded-lg font-bold hover:bg-primary/90 transition-colors">
+                  Request a free initial consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="faq">
+                Frequently asked questions on laboratory-container permits
+              </h2>
+
+              <div class="space-y-6 my-8">
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Does a laboratory container always need a building permit (Baugenehmigung)?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Not always. In many Länder, temporary siting of up to 3 months is permit-free. For permanent use beyond 3 months a building permit (Baugenehmigung) or at least a building notification (Bauanzeige) is generally required. What is decisive are the Land building code (Landesbauordnung), the type of use and the location. For laboratories with hazardous-substance handling, additional permit duties often apply independently of duration.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">What additional permits does a laboratory container with hazardous substances need?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    In addition to the building permit, further permits may be required: an immission-control permit under BImSchG at certain substance quantities, a water-law authorisation (wasserrechtliche Erlaubnis) for laboratory wastewater containing hazardous substances, and a notification under the Biological Agents Ordinance (BioStoffV) for BSL-2 or BSL-3 laboratories. The exact requirements depend on the substances and quantities used.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">How long does the building permit for a laboratory container take?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    In the simplified procedure 4 to 8 weeks, in the regular building-permit procedure 8 to 16 weeks. For additional permits (immission control, water law) a further 4 to 12 weeks may be added. A Bauvoranfrage in advance can accelerate the process because the fundamental questions are already clarified.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">What is the difference between a Bauvoranfrage and a Bauantrag?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    The Bauvoranfrage clarifies in advance whether a project is in principle capable of being permitted – for example with regard to location, type of use and development plan (Bebauungsplan). It is more cost-effective and requires fewer documents. The decision is valid for 3 years and legally binding. The Bauantrag is the formal permit application with complete plan documents and leads to the actual building permit (Baugenehmigung).
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">What documents do I need for the Bauantrag of a laboratory container?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Typical documents: Bauantrag form, official site plan (1:500), floor plans and sections, building description with statement of use, structural proof, fire-protection concept, drainage plan and, where applicable, a hazardous-substances concept. For laboratories a ventilation concept to DIN 1946-7, a wastewater pre-treatment concept and a risk assessment are often added. You will find the complete list in our checklist above.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Can Planexus support the permitting of a laboratory container?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Yes. Planexus accompanies the entire permitting process: from review of the building-law situation via preparation of the application documents through to coordination with the authorities. As a specialist for laboratory containers we know the typical pitfalls – particularly with laboratory use – and can accelerate the process considerably. <a href="/en/contact" class="text-primary font-medium hover:underline">Get in touch.</a>
+                  </div>
+                </details>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-24 space-y-8">
+              <div class="bg-slate-50 rounded-xl p-6">
+                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                  Contents
+                </h4>
+                <nav class="space-y-2">
+                  <a href="#grundlagen" class="block text-sm text-gray-600 hover:text-primary transition-colors">Building-law foundations</a>
+                  <a href="#landesbauordnungen" class="block text-sm text-gray-600 hover:text-primary transition-colors">16 Land building codes</a>
+                  <a href="#sonderfaelle" class="block text-sm text-gray-600 hover:text-primary transition-colors">Laboratory special cases</a>
+                  <a href="#bauvoranfrage" class="block text-sm text-gray-600 hover:text-primary transition-colors">Bauvoranfrage vs. Bauantrag</a>
+                  <a href="#zeitplan" class="block text-sm text-gray-600 hover:text-primary transition-colors">Permit timetable</a>
+                  <a href="#checkliste" class="block text-sm text-gray-600 hover:text-primary transition-colors">Bauantrag checklist</a>
+                  <a href="#fehler" class="block text-sm text-gray-600 hover:text-primary transition-colors">7 most common mistakes</a>
+                  <a href="#schweiz-oesterreich" class="block text-sm text-gray-600 hover:text-primary transition-colors">Switzerland &amp; Austria</a>
+                  <a href="#smart-lab" class="block text-sm text-gray-600 hover:text-primary transition-colors">Digital permitting</a>
+                  <a href="#nachhaltigkeit" class="block text-sm text-gray-600 hover:text-primary transition-colors">Sustainability &amp; GEG</a>
+                  <a href="#faq" class="block text-sm text-gray-600 hover:text-primary transition-colors">FAQ</a>
+                </nav>
+              </div>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                <h4 class="font-bold text-slate-900 mb-3">Secure your permit</h4>
+                <p class="text-sm text-gray-600 mb-4">
+                  We review free of charge whether your laboratory-container project is capable of being permitted – before you invest time and money.
+                </p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 px-4 py-2 rounded-lg font-bold text-sm hover:bg-primary/90 transition-colors w-full justify-center">
+                  Enquire now
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <div class="bg-white border border-gray-100 rounded-xl p-6">
+                <h4 class="font-bold text-slate-900 mb-4">Related articles</h4>
+                <div class="space-y-4">
+                  <a href="/en/magazine/lab-container-project-process" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">From idea to handover</p>
+                    <p class="text-xs text-gray-500">The complete project process</p>
+                  </a>
+                  <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">BSL-2 and BSL-3 in a container</p>
+                    <p class="text-xs text-gray-500">Containment levels in container construction</p>
+                  </a>
+                  <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">GMP cleanroom in a container</p>
+                    <p class="text-xs text-gray-500">Pharmaceutical production</p>
+                  </a>
+                  <a href="/en/magazine/lab-containers-rent-or-buy" class="block group">
+                    <p class="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors">Rent or buy?</p>
+                    <p class="text-xs text-gray-500">The decision guide</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <RelatedArticles slug="laborcontainer-genehmigung-baurecht-vorschriften" locale="en" />
+  </div>
+</Layout>
