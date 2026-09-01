@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent';
 import { planexusPostalAddress, planexusGeo, planexusContact } from '../lib/planexus-address';
+import { SITE_ORIGIN, canonicalUrlForPath, stripTrailingSlash } from '../lib/canonical';
 
 interface Props {
   title: string;
@@ -26,14 +27,11 @@ const {
 } = Astro.props;
 const isNoindex = robots.startsWith('noindex');
 const fullTitle = title.includes('Planexus') ? title : `${title} | Planexus`;
-const siteUrl = 'https://planexus.de';
+const siteUrl = SITE_ORIGIN;
 
-// Selbst-referenzierender Canonical: Wenn keine canonical-Prop übergeben wurde,
-// Pfad aus Astro.url.pathname ableiten. Trailing-Slash-Normalisierung
-// (Root wird zu "" → https://planexus.de ohne Slash, alles andere ohne Trailing Slash).
 const rawPath = (canonical && canonical.length > 0) ? canonical : Astro.url.pathname;
-const normalizedPath = rawPath === '/' ? '' : rawPath.replace(/\/+$/, '');
-const canonicalUrl = `${siteUrl}${normalizedPath}`;
+const normalizedPath = stripTrailingSlash(rawPath);
+const canonicalUrl = canonicalUrlForPath(normalizedPath);
 
 // ogImage-Normalisierung: erzwingt die non-www-Domain (planexus.de) und absolute URL.
 let ogImageUrl: string;
@@ -148,7 +146,7 @@ const isAT = atPaths.includes(normalizedPath);
       "name": "Planexus GmbH",
       "image": "https://planexus.de/android-chrome-512x512.png",
       "alternateName": "Planexus",
-      "url": siteUrl,
+      "url": canonicalUrlForPath('/'),
       "logo": `${siteUrl}/android-chrome-512x512.png`,
       "description": "Spezialist für Laborcontainer, mobile Labore und Modulbau. Planung, Fertigung und schlüsselfertige Übergabe von Containerlaboren.",
       "foundingDate": "2025",
@@ -178,7 +176,7 @@ const isAT = atPaths.includes(normalizedPath);
       "name": "Planexus GmbH",
       "image": `${siteUrl}/images/labtogo-industrie.webp`,
       "description": "Spezialist für Laborcontainer und Modulbau",
-      "url": siteUrl,
+      "url": canonicalUrlForPath('/'),
       "priceRange": "€€€",
       "address": planexusPostalAddress,
       "geo": planexusGeo,
@@ -195,7 +193,7 @@ const isAT = atPaths.includes(normalizedPath);
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Planexus GmbH",
-      "url": siteUrl,
+      "url": canonicalUrlForPath('/'),
     })} />
 
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}

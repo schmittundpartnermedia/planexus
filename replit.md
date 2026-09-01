@@ -40,8 +40,10 @@ Deployment occurs on an IONOS VPS running Ubuntu, Nginx, and PM2. Nginx acts as 
 - Deploy-Befehl (direkt auf dem Server ausführen, KEIN zweites SSH): `cd /var/www/app && git checkout -- .astro && git pull && npm run build && pm2 restart planexus --update-env`
 - WICHTIG: `git checkout -- .astro` MUSS vor jedem `git pull` stehen. Astro generiert beim Build die Dateien in `.astro/` (u. a. `types.d.ts`) neu. Diese Dateien sind versehentlich in Git getrackt → ohne das Verwerfen blockiert der Build-Output den nächsten `git pull` ("local changes would be overwritten"). Das Verwerfen ist gefahrlos, da die Dateien im Build neu erzeugt werden.
 
-**Nginx-Aufgaben (einmalig auf dem Server, nicht im Repo):**
-Diese Einstellungen werden direkt in der nginx-Config gepflegt (`/etc/nginx/sites-enabled/<datei>`), nicht im Projektcode.
+**Nginx Canonical (www + Slash in einem 301):** Vorlagen in `docs/nginx/`. Live: `/etc/nginx/sites-available/planexus.de`, Map `/etc/nginx/conf.d/planexus-uri-map.conf`, Redirects `/etc/nginx/snippets/planexus-redirects.conf`. Nach Copy: `nginx -t && systemctl reload nginx`.
+
+**Nginx-Aufgaben (einmalig auf dem Server, nicht nur im Repo):**
+Diese Einstellungen werden in der nginx-Config gepflegt (`/etc/nginx/sites-enabled/<datei>`). Canonical-Vorlagen: `docs/nginx/`.
 
 1. Sicherheits-Header in `/etc/nginx/snippets/planexus-headers.conf` auslagern:
    ```nginx

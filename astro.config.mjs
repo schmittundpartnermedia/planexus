@@ -33,10 +33,10 @@ export default defineConfig({
   site: 'https://planexus.de',
   trailingSlash: 'never',
   redirects: {
-    '/about': '/ueber-uns',
-    '/services': '/leistungen',
-    '/contact': '/kontakt',
-    '/products': '/laborcontainer',
+    '/about': { status: 301, destination: '/ueber-uns' },
+    '/services': { status: 301, destination: '/leistungen' },
+    '/contact': { status: 301, destination: '/kontakt' },
+    '/products': { status: 301, destination: '/laborcontainer' },
   },
   adapter: node({
     mode: 'standalone',
@@ -46,7 +46,10 @@ export default defineConfig({
     sitemap({
       filter: (page) => !/\/(admin|api)(\/|$)/.test(page),
       serialize(item) {
-        const lastmod = gitLastmod(new URL(item.url).pathname);
+        const parsed = new URL(item.url);
+        const path = parsed.pathname === '/' ? '/' : parsed.pathname.replace(/\/+$/, '');
+        item.url = path === '/' ? 'https://planexus.de/' : `https://planexus.de${path}`;
+        const lastmod = gitLastmod(path);
         if (lastmod) item.lastmod = lastmod;
         return item;
       },
