@@ -8,6 +8,11 @@ function isFilePath(pathname: string): boolean {
 }
 
 export const onRequest = defineMiddleware((context, next) => {
+  // Prerender/static: kein Header-Zugriff. Slash/www macht nginx + server-start.mjs.
+  if (context.isPrerendered) {
+    return next();
+  }
+
   const method = context.request.method;
   if (method !== 'GET' && method !== 'HEAD') {
     return next();
