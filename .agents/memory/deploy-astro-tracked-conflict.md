@@ -29,4 +29,4 @@ vor dem Pull der verlässliche Workaround.
 
 **How to apply:** Immer wenn ein Server-Deploy an einem `.astro/*`-Merge-Konflikt hängt:
 `git checkout -- .astro` ausführen, dann normal pullen/builden. Der Deploy-Befehl in
-`replit.md` enthält diesen Schritt bereits.
+`replit.md` enthält den Mac-SSH-Einzeiler.

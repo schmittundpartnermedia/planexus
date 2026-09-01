@@ -22,6 +22,7 @@ The Planexus GmbH website is a corporate online platform designed to market and 
 - REIHENFOLGE: 1) Städteseiten (13 DE + 3 CH + 3 AT) → 2) Branchenseiten (6 Branchen) → 3) Blog-Beiträge (nach Recherche)
 - QUALITÄTSSTANDARD: Diese Website ist das Paradebeispiel einer Marketing-Maschine. Höchstes Level ist Standard. Jede Seite muss Top-3-Ranking-würdig sein.
 - Wichtig — User-Stimmung: User ist genervt von Konjunktiv und „vielleicht"-Formulierungen. Bei jeder Kommunikation klare Diagnose → klare Ursache → klare Lösung in einem Schritt. Keine Plan-A/B/C-Listen wenn nicht nötig.
+- Deploy immer vom **Mac Mini, neues Terminalfenster** (Home-Verzeichnis, nie schon auf dem Server). Jeder Server-Befehl MUSS komplett sein: `ssh root@82.165.27.244 '…ganzer Ablauf…'`. Nie nur `cd /var/www/app && …` ohne SSH — das schlägt lokal fehl.
 
 ## System Architecture
 
@@ -34,10 +35,12 @@ A secure `/admin` section is included for managing contact inquiries, featuring 
 Deployment occurs on an IONOS VPS running Ubuntu, Nginx, and PM2. Nginx acts as a reverse proxy to the Astro application on port 5000. Environment variables are managed through `.env` files.
 
 **Server-Deploy (verbindlich):**
+- User startet immer ein **neues Mac-Terminal** (nicht schon per SSH auf dem VPS).
 - Server-Pfad: `/var/www/app`
 - PM2-Prozess-Name: `planexus` (ID 0, Script `server-start.mjs`)
 - Domain/IP: `planexus.de` / `82.165.27.244`
-- Deploy-Befehl (direkt auf dem Server ausführen, KEIN zweites SSH): `cd /var/www/app && git checkout -- .astro && git pull && npm run build && pm2 restart planexus --update-env`
+- Deploy-Befehl (1:1 ins Mac-Terminal, Passwort kommt):  
+  `ssh root@82.165.27.244 'cd /var/www/app && git checkout -- .astro && git fetch origin && git checkout main && git pull origin main && npm run build && pm2 restart planexus --update-env'`
 - WICHTIG: `git checkout -- .astro` MUSS vor jedem `git pull` stehen. Astro generiert beim Build die Dateien in `.astro/` (u. a. `types.d.ts`) neu. Diese Dateien sind versehentlich in Git getrackt → ohne das Verwerfen blockiert der Build-Output den nächsten `git pull` ("local changes would be overwritten"). Das Verwerfen ist gefahrlos, da die Dateien im Build neu erzeugt werden.
 
 **Nginx Canonical (www + Slash in einem 301):** Vorlagen in `docs/nginx/`. Live: `/etc/nginx/sites-available/planexus.de`, Map `/etc/nginx/conf.d/planexus-uri-map.conf`, Redirects `/etc/nginx/snippets/planexus-redirects.conf`. Nach Copy: `nginx -t && systemctl reload nginx`.
