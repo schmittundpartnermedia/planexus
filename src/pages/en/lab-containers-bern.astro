@@ -1,0 +1,473 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.tsx';
+import AuthorBio from '../../components/AuthorBio.astro';
+import CityCrossLinks from '../../components/CityCrossLinks.astro';
+
+const title = "Lab containers Bern – cleanroom, GMP, BSL-3";
+const description = "Rent lab containers in Bern: BSL-3, SIA 261, GMP cleanroom for pharma, research and hospitals. Customs-cleared from the Albstadt works in 8–14 weeks. Complimentary consultation.";
+const canonical = "/en/lab-containers-bern";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Lab containers and modular laboratory construction Bern",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "image": "https://planexus.de/android-chrome-512x512.png",
+    "url": "https://planexus.de",
+    "telephone": "+49 7435 7519 700",
+    "email": "info@planexus.de",
+    "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" },
+    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Bern" },
+    { "@type": "AdministrativeArea", "name": "Canton of Bern" },
+    { "@type": "Country", "name": "Switzerland" }
+  ],
+  "description": "Container laboratories, mobile laboratories and modular laboratory buildings for pharma, biotech, universities, hospitals and public-health authorities such as the Federal Office of Public Health (FOPH/BAG) and Swissmedic — customs-cleared from the Albstadt works to Bern via Schaffhausen or Basel.",
+  "offers": { "@type": "AggregateOffer", "priceCurrency": "CHF", "availability": "https://schema.org/InStock" }
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Planexus GmbH – Lab containers Bern",
+      "image": "https://planexus.de/images/labtogo-industrie.webp",
+  "url": "https://planexus.de/en/lab-containers-bern",
+  "telephone": "+49 7435 7519 700",
+  "email": "info@planexus.de",
+  "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" },
+  "areaServed": { "@type": "City", "name": "Bern", "containedInPlace": { "@type": "Country", "name": "Switzerland" } },
+  "priceRange": "CHF",
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" }]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://planexus.de/en/lab-containers" },
+    { "@type": "ListItem", "position": 3, "name": "Lab containers Bern", "item": "https://planexus.de/en/lab-containers-bern" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to deliver a lab container from the Albstadt works to Bern?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The heavy-haulage route from the Albstadt works to Bern runs south on the A81 via Singen, clearance at the Schaffhausen-Thayngen customs office, then on the Swiss side west on the A4 → A1 via Zurich → Solothurn → Bern. Driving time is around 3.5 hours over approximately 220 kilometres; with Schaffhausen clearance typically one transport day. Alternatively, clearance at the Weil am Rhein customs office and A2 → A1 (~250 km) — we choose according to the day’s load at the customs offices. Standard delivery points: Freiburgstrasse for hospital and research sites, Liebefeld for the FOPH, Länggasse for university sites, Wankdorf for federal offices and industrial quarters. From order to operational handover in Bern takes 8 to 14 weeks." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which permits do I need for a lab container in the Canton of Bern?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In the Canton of Bern the Baugesetz Bern (BauG, Building Act of the Canton of Bern) and the Bauverordnung (BauV, Building Ordinance) apply. At city level the Bauordnung der Stadt Bern (BO Stadt Bern, City of Bern Building Code) applies. For the city the competent authority is the Building Inspectorate at Bundesgasse 38, 3011 Bern. Containers are treated as buildings and installations; a building permit is required in most cases. Temporary siting of under three months may, depending on the site, be possible under a notification procedure. Bern’s great advantage: both the Federal Office of Public Health (FOPH/BAG) and Swissmedic are based in Bern — for BSL-3 containers and GMP pilot plants the authority path is considerably shorter than from Zurich or Basel. We review your site in advance and submit procedure-ready building documents." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does proximity to the FOPH and Swissmedic mean for GMP and BSL-3 containers in Bern?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Every genetically modified containment in Switzerland requires notification under the Einschliessungsverordnung (ESV, Containment Ordinance) to FOEN and FOPH — the FOPH is at Schwarzenburgstrasse 157, 3003 Bern (Liebefeld). For every GMP cleanroom-container project with a therapeutic-products dimension, Swissmedic at Hallerstrasse 7, 3012 Bern, is the competent inspection authority. If your site is in Bern, both authorities are reachable by public transport in 15 to 30 minutes — on-site inspections can be scheduled at short notice, and written queries are generally answered in 5 to 10 working days. From Zurich or Basel those are always travel days — from Bern a tram ride. We use this proximity and file our application documents directly with the right case officers." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which seismic and energy requirements apply to lab containers in Bern under SIA 261 / SIA 380/1?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Under SIA 261, Bern lies in seismic zone Z1a with a horizontal design ground acceleration of agd = 0.6 m/s² — like Zurich, considerably lower than Basel (Z2, agd 1.0 m/s²). Structurally the requirement is therefore moderate; however, containers for safety-relevant hospital and research sites must be classified in Bauwerksklasse II, because safety-critical functions are housed here. SIA 380/1 (thermal energy in buildings) requires similarly strict U-values as in Zurich — the German GEG is not sufficient. We supply Bern with structural design to SIA 261 with the Z1a factor and an SIA 263 anchoring concept, and energetically to SIA 380/1 with U ≤ 0.17 W/m²K and heat recovery ≥ 75% — procedure-ready for the Building Inspectorate at Bundesgasse 38." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Schaffhausen-Thayngen customs clearance work for containers to Bern?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We clear goods under the T1 transit procedure, with processing at the Thayngen (German side) and Schaffhausen-Thayngen (Swiss side) customs offices. Permanent import attracts Swiss VAT of 8.1 per cent (as at 2026). Temporary import (for example a rental container for a clinical study, a time-limited teaching cleanroom at a university, or a pilot container in translational research) can be cleared under temporary admission with an ATA Carnet — no VAT, with a security deposit. Thayngen is the most direct route from Albstadt to Bern (~220 km, ~3.5 h)." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which applications are particularly in demand in Bern?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Bern is Switzerland’s public-health and translational-medicine centre. Typical uses for lab containers arise around university hospitals — BSL-2 study containers during hospital refurbishments and pandemic preparedness; translational research institutions — research containers at the interface of hospital, university, industry and start-ups; universities and biomedical research departments — BSL-2 research containers and SNSF third-party-funded projects; the Federal Office of Public Health FOPH (Schwarzenburgstrasse 157, 3003 Bern-Liebefeld) and the Federal Food Safety and Veterinary Office FSVO (Schwarzenburgstrasse 155) — public-health containers and pandemic preparedness; Swissmedic (Hallerstrasse 7, 3012 Bern) — internal teaching and inspection containers; and food and agricultural research institutions — food-safety and veterinary containers." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you supply BSL-3 containers for hospitals and translational research?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build BSL-3 containers for clinical research, infectious-disease diagnostics and translational pharmaceutical piloting at the Albstadt works — HEPA H14 dual filtration, autoclaved airlock, negative pressure with a three-stage cascade, emergency power and data loggers. Notification under the Containment Ordinance (ESV) to FOEN and FOPH — generally accelerated in Bern because of FOPH proximity. Structural design to SIA 261 Z1a + 263, energy to SIA 380/1, fire protection to VKF. For study containers at a hospital site, co-ordination with the relevant building directorate would be required; for translational research, with the competent specialist department. IQ/OQ/PQ Swissmedic-ready — the short authority distance in Bern can be an advantage." }
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="bg-white">
+
+    <!-- HERO -->
+    <section class="relative bg-slate-900 text-white overflow-hidden">
+      <div class="relative z-10 container mx-auto px-4 py-20 md:py-28">
+        <div class="max-w-4xl">
+          <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
+            <a href="/en" class="hover:text-primary transition-colors">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span>Locations</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span class="text-primary">Bern</span>
+          </nav>
+
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Your specialist for lab containers · Federal capital with FOPH + Swissmedic on site</div>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+            Lab containers Bern – BSL-3 with direct FOPH and Swissmedic access
+          </h1>
+
+          <p class="text-xl text-gray-300 leading-relaxed mb-4">
+            <strong class="text-white">Our managing directors bring more than ten years of experience in lab-container construction.</strong> Modular, SIA 261-compliant, T1 customs-cleared. We deliver flexible research, hospital and public-health environments for pharma, biotech, universities, hospitals and the Federal Office of Public Health (FOPH/BAG) and Swissmedic — from the Albstadt works directly to Bern, via the A81 and Schaffhausen-Thayngen clearance in only 220 km.
+          </p>
+          <p class="text-base text-gray-400 mb-8">While others are still planning, you are already researching.</p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" data-testid="button-cta-hero" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">Complimentary Bern site audit<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+49 7435 7519 700</a>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Specialist in modular laboratory construction</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Award 2026 EU Business News</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Schaffhausen customs clearance included</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Wesemann Group · 60+ years of laboratory construction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <AuthorBio city="Bern"  locale="en" />
+
+    <!-- LABtoGO -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Pattern interrupt · World premiere at analytica 2026</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus shows Bern what a lab container can really do in 2026</h2>
+              <p class="text-lg text-gray-700 leading-relaxed mb-4">An ordinary lab container has 2,400 mm internal height. Working upright at a fume cupboard is a struggle.</p>
+              <p class="text-lg text-slate-900 font-bold leading-relaxed mb-4">The Planexus LABtoGO has 2,750 mm internal height. 9.5 m external length. 3 m external width. A fully glazed front that brings genuine daylight into every Bern research, hospital and public-health laboratory.</p>
+              <p class="text-lg text-gray-700 leading-relaxed"><strong>An ordinary lab container fits entirely inside a LABtoGO.</strong> We configure it for Bern to SIA 261 seismic zone Z1a, SIA 380/1 energy stricter than the German GEG, T1 customs clearance from the Albstadt works via Schaffhausen-Thayngen, and a T13/T15 Swiss electrical connection to NIN 2020.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">2,750</div><div class="text-xs text-gray-400 uppercase tracking-wider">mm internal height</div><div class="text-xs text-gray-500 mt-1">Standard: 2,400 mm</div></div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">9,500</div><div class="text-xs text-gray-400 uppercase tracking-wider">mm external length</div><div class="text-xs text-gray-500 mt-1">3,000 mm width</div></div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">SIA Z1a</div><div class="text-xs text-gray-400 uppercase tracking-wider">Seismic agd 0.6 m/s²</div><div class="text-xs text-gray-500 mt-1">as Zurich</div></div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">220 km</div><div class="text-xs text-gray-400 uppercase tracking-wider">Works → Bern</div><div class="text-xs text-gray-500 mt-1">3.5 h via Thayngen</div></div>
+            </div>
+          </div>
+          <div class="text-center"><a href="/en/lab-containers/labtogo" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">View the LABtoGO platform and all configurations<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM-AGITATION -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">Planexus solves the three Bern bottlenecks at which public-health and hospital containers regularly fail</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">FOPH and Swissmedic proximity used wrongly</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Both Swiss federal health authorities — FOPH (Schwarzenburgstrasse 157, Liebefeld) and Swissmedic (Hallerstrasse 7) — sit in Bern. That is a considerable advantage for ESV notifications, GMP inspections and therapeutic-product authorisations. Anyone commissioning standard freight operators from Zurich or Basel leaves this advantage unused and turns days into weeks.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus answer: Application documents filed directly with FOPH/Swissmedic, on-site appointments in Bern.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Freiburgstrasse — hospital + translation together</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Hospital and research buildings sit directly next to each other on Freiburgstrasse — unique in Switzerland. Containers that land here must be hospital-capable (hospital hygiene, BSL-2/3) and translationally capable (pharma pilot, IP protection, ISO 14644) at the same time. Standard containers can do one or the other — never both.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus answer: Hybrid hospital + translational containers from the Albstadt works.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">SIA + Schaffhausen customs — Swiss standards from day one</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Swiss building inspectorates do not accept DIN structural calculations on their own. SIA 261 Z1a, SIA 263 anchoring, SIA 380/1 energy — and Schaffhausen-Thayngen clearance with T1 or ATA Carnet (Swiss VAT 8.1% or without VAT). Freight operators who treat Swiss customs as a flat rate are often thousands of CHF out.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus answer: SIA structural + SIA energy + transparent Schaffhausen clearance from the works.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRATEGISCHE FUSION -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Lab containers for Bern: what FOPH, Swissmedic, hospitals and research demand of the engineering</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p><strong>Bern is the federal capital of Switzerland — and the country’s public-health, therapeutic-products and translational-medicine centre.</strong> Here sits the Federal Office of Public Health FOPH (Schwarzenburgstrasse 157, 3003 Bern, in the Liebefeld district), the Swiss counterpart to the German federal authorities for medicinal products, infection control and vaccines in personal union. Here sits Swissmedic (Hallerstrasse 7, 3012 Bern), the Swiss therapeutic-products regulator. Here sits the Federal Food Safety and Veterinary Office FSVO (Schwarzenburgstrasse 155). And here university hospitals, translational research, universities, biomedical research departments and food and agricultural research institutions concentrate in a very small area.</p>
+            <p><strong>We know this market in detail.</strong> We know that the City of Bern Building Inspectorate at Bundesgasse 38, 3011 Bern, decides under the cantonal Building Act (BauG) and Building Ordinance (BauV). We know that SIA 261 defines seismic zone Z1a for Bern with agd = 0.6 m/s² — moderate, but Bauwerksklasse II for safety-relevant hospital and research sites is mandatory. We know that containers for clinical research at university hospitals must practically always be hospital-capable (hospital hygiene standards) and study-capable (IRB-compliant data integrity) at the same time. We know Bern’s decisive advantage: FOPH and Swissmedic case officers are reachable by tram in 15 minutes — on-site inspections for ESV (BSL-3) and GMP (therapeutic products) can be scheduled at short notice, and written queries are answered in 5 to 10 working days. From Zurich or Basel those are travel days — from Bern tram rides. These details are not in our quotation — they are the engineering and authority foundation of every container that leaves our Albstadt works.</p>
+            <p><strong>Made in Albstadt, customs-cleared at Schaffhausen-Thayngen, turnkey in Bern.</strong> Final assembly and interior fit-out are carried out with Wesemann furniture in our own works — factory visits can be arranged from either side. South on the A81 via Singen, clearance at the Thayngen customs office, then on the Swiss side west on the A4 → A1 via Zurich → Solothurn → Bern, the heavy-haulage distance is around 220 kilometres (~3.5 h). Standard delivery points: Freiburgstrasse for hospital and research sites, Liebefeld for the FOPH, Länggasse for universities, Murtenstrasse for biomedical research, Wankdorf for federal offices and industry.</p>
+            <p>Whether you need a <strong>mobile laboratory in Bern</strong> for a time-limited hospital refurbishment, a <strong>modular lab container in Bern</strong> for translational research, or a <strong>container laboratory in Bern</strong> with BSL-3 containment and Swissmedic-ready GMP for Bern pharmaceutical spin-offs — we deliver all three answers from the same platform: the LABtoGO from our Albstadt works, with Swiss customs, SIA structural, SIA energy and FOPH/Swissmedic authority path documented from the factory.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANWENDUNGSBEREICHE -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Applications Bern</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Application areas for lab containers in Bern</h2>
+            <p class="text-gray-400 text-lg">Each area with a concrete Bern site and authority reference.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">01</div><div class="font-bold mb-1">FOPH Liebefeld</div><p class="text-xs text-gray-400">Schwarzenburgstrasse 157, public-health containers and pandemic preparedness with direct FOPH proximity</p></div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">02</div><div class="font-bold mb-1">Swissmedic</div><p class="text-xs text-gray-400">Hallerstrasse 7, GMP and therapeutic-product inspection readiness, IQ/OQ/PQ audit-ready</p></div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">03</div><div class="font-bold mb-1">Pharma spin-offs</div><p class="text-xs text-gray-400">Bern biotech start-ups, pilot and GMP containers from translational incubation</p></div>
+          </div>
+          <div class="text-center mt-10"><p class="text-gray-400 mb-4">Your application is not listed? We also develop individual modules far from the standard.</p><a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Enquire about a special solution for Bern <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 ENGINEERING -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Six engineering disciplines for the federal capital</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Planexus builds lab containers for Bern that are aligned in every discipline with Swiss realities and federal-authority proximity — not generic, but standard- and site-specific.</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">SIA 261 Z1a seismic</div><h3 class="font-bold text-slate-900 mb-2">agd 0.6 m/s² + BWK II</h3><p class="text-sm text-gray-600">Bern lies in Z1a (like Zurich, considerably lower than Basel Z2). Structural design with SIA 263 anchoring concept, BWK II for safety-relevant hospital and research sites — not DIN alone.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">FOPH and Swissmedic path</div><h3 class="font-bold text-slate-900 mb-2">ESV + therapeutic products, direct</h3><p class="text-sm text-gray-600">ESV notification FOEN/FOPH (Schwarzenburgstrasse 157) and Swissmedic inspection (Hallerstrasse 7) — both a tram ride from the hospital and research precinct. Accelerated authority path.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Schaffhausen customs</div><h3 class="font-bold text-slate-900 mb-2">T1 or ATA Carnet</h3><p class="text-sm text-gray-600">T1 clearance at the Schaffhausen-Thayngen customs office from the Albstadt works with 8.1% Swiss VAT, or ATA Carnet for temporary import (e.g. clinical studies) without VAT.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hybrid hospital + translation</div><h3 class="font-bold text-slate-900 mb-2">Hospital + research in one</h3><p class="text-sm text-gray-600">The hospital and research precinct demands hospital hygiene and translational IP protection at the same time. Containers with both properties — a unique Bern requirement.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">SIA 380/1 energy</div><h3 class="font-bold text-slate-900 mb-2">U ≤ 0.17 + HR ≥ 75%</h3><p class="text-sm text-gray-600">SIA 380/1 and MuKEn 2014/2025 stricter than the German GEG. Sandwich envelope and triple glazing sized at the works. Bern: ~1,060 mm precipitation, continentally cool.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">VKF fire protection</div><h3 class="font-bold text-slate-900 mb-2">Swiss fire-protection standard</h3><p class="text-sm text-gray-600">Fire protection to the Association of Cantonal Fire Insurers VKF fire-protection standard 2015 (instead of the German MBO/LBO). Fire-protection concept procedure-ready from the works.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STADT-SPEZIFISCH -->
+    <section class="py-12 md:py-16 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Bern – federal city with FOPH, FOEN and Swissmedic on site</h2>
+          <p class="text-gray-700 leading-relaxed">As the Swiss federal city, Bern concentrates health and environment authorities as well as university hospitals and translational research at one location — a clear advantage for GMP and BSL-3 permits. The journey from the Albstadt works runs via Schaffhausen-Thayngen clearance and takes around 3.5 hours (220 km). Planexus supplies SIA Z1a structural design and Swissmedic-ready documentation for Liebefeld, Freiburgstrasse and Wankdorf.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST-WALL -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-primary/5">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus for Bern: EU Award 2026, SIA-compliant, Wesemann ecosystem</h2>
+            <p class="text-gray-600 text-lg">Three pillars that no competitor in the DACH region combines in this way.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100"><div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Award 2026</h3><p class="text-sm text-gray-600">EU Business News – German CEO Excellence Awards 2026: Planexus recognised as “Leading provider of innovative laboratory spaces”. Internationally awarded immediately after the LABtoGO world premiere.</p></div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100"><div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Made in Albstadt</h3><p class="text-sm text-gray-600">Final assembly, interior fit-out and QC at the Albstadt works. SIA 261 structural design, SIA 380/1 insulation and T13/T15 electrical connection pre-configured at the factory. Factory visits available.</p></div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100"><div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Wesemann ecosystem</h3><p class="text-sm text-gray-600">Part of Wesemann Holding, with more than 60 years of experience in laboratory fit-out. Containers, furniture, cleanroom technology — from a single source. Schaffhausen customs clearance included.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECISION MATRIX -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Comparison for Bern: LABtoGO, standard containers and conventional construction</h2>
+          <p class="text-gray-600 text-lg mb-8">An honest comparison matrix. So you can make an informed decision before we talk.</p>
+          <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm"><div class="overflow-x-auto"><table class="w-full text-sm">
+            <thead class="bg-slate-900 text-white"><tr><th class="text-left px-6 py-4 font-bold">Criterion</th><th class="text-left px-6 py-4 font-bold">Conventional build, Bern</th><th class="text-left px-6 py-4 font-bold">Standard container</th><th class="text-left px-6 py-4 font-bold bg-primary text-slate-900">LABtoGO</th></tr></thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr><td class="px-6 py-4 font-medium text-slate-900">Lead time</td><td class="px-6 py-4 text-gray-600">24–36 months</td><td class="px-6 py-4 text-gray-600">16–22 weeks</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">8–14 weeks</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-slate-900">SIA 261 Z1a structural</td><td class="px-6 py-4 text-gray-600">Standard</td><td class="px-6 py-4 text-gray-600">Rarely from the factory</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Standard from the factory</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-slate-900">FOPH/Swissmedic path</td><td class="px-6 py-4 text-gray-600">Case by case</td><td class="px-6 py-4 text-gray-600">Rarely local</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Co-ordinated on site</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-slate-900">Thayngen customs</td><td class="px-6 py-4 text-gray-600">Case by case</td><td class="px-6 py-4 text-gray-600">Rarely co-ordinated</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">T1/ATA Carnet included</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-slate-900">Mobility</td><td class="px-6 py-4 text-gray-600">None</td><td class="px-6 py-4 text-gray-600">Limited</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Fully mobile</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-slate-900">T13/T15 connection</td><td class="px-6 py-4 text-gray-600">Standard</td><td class="px-6 py-4 text-gray-600">Rare</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Pre-configured at the factory</td></tr>
+            </tbody></table></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTITIONS-MODELLE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Investment models</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Rent, buy or hire-purchase — we build the model around your Bern project</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Container specification, biosafety level, FOPH/Swissmedic requirement, SIA structural design and duration determine the calculation. Instead of a dummy price range, you receive a project-specific written indication in CHF within 24 hours.</p>
+              <p class="text-sm text-gray-600">For the calculation we need: Bern site (Freiburgstrasse, Liebefeld, Länggasse, Murtenstrasse, Wankdorf), biosafety level (S1/S2/S3, GMP, BSL-3), desired duration and whether T1 Schaffhausen clearance (purchase) or ATA Carnet (rental).</p>
+            </div>
+            <div class="space-y-4">
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Rental (ATA Carnet)</div><div class="font-bold text-slate-900 text-lg mb-2">Flexible, without a VAT charge</div><p class="text-sm text-gray-600">For clinical studies, time-limited SNSF third-party-funded research at universities, pandemic-preparedness containers for the FOPH. ATA Carnet, temporary admission — no Swiss VAT.</p></div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Purchase (T1 Schaffhausen)</div><div class="font-bold text-slate-900 text-lg mb-2">Asset, permanent import</div><p class="text-sm text-gray-600">For permanent expansion at translational research sites, federal-office properties and agricultural research locations. T1 clearance Schaffhausen-Thayngen, 8.1% Swiss VAT.</p></div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hire-purchase</div><div class="font-bold text-slate-900 text-lg mb-2">Transition from rental to ownership</div><p class="text-sm text-gray-600">When a study interim becomes a permanent site — the ATA Carnet is converted to T1, rental payments later credited against the purchase.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGISTIK -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Logistics evidence</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Albstadt works → Bern: 220 km via A81 + Schaffhausen clearance + A4 + A1</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">From the Albstadt works the heavy-haulage route runs south on the A81 via Singen, clearance at the Schaffhausen-Thayngen customs office, then on the Swiss side west on the A4 → A1 via Zurich → Solothurn → Bern. Driving time is about 3.5 hours; with Schaffhausen clearance typically one transport day. Alternatively via A98 → Weil am Rhein clearance → A2 → A1 (~250 km), according to the day’s load at the customs offices.</p>
+              <p class="text-gray-700 leading-relaxed mb-4">Standard containers under 4 m width and 18 t do not require an abnormal-load permit — next-day installation is possible. Oversized plants are co-ordinated with a 60–200 t mobile crane and escort vehicles. Junctions: Bern-Forsthaus for the hospital and research precinct, Bern-Bümpliz for Liebefeld (FOPH), Bern-Wankdorf for federal offices and industry.</p>
+              <p class="text-gray-700 leading-relaxed">From order to operational handover in Bern takes 8 to 14 weeks.</p>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">220</div><div class="text-xs text-gray-600 uppercase tracking-wider">km from works</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">~3.5 h</div><div class="text-xs text-gray-600 uppercase tracking-wider">Heavy haulage</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">A81/A4/A1</div><div class="text-xs text-gray-600 uppercase tracking-wider">via Thayngen</div></div>
+              <div class="col-span-3 bg-slate-900 text-white rounded-xl p-5"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Motorway junctions</div><p class="text-sm text-gray-300">Bern-Forsthaus for the hospital and research precinct (Freiburgstrasse, Murtenstrasse), Bern-Bümpliz for Liebefeld (FOPH Schwarzenburgstrasse), Bern-Wankdorf for federal offices and industrial quarters. Mobile-crane installation the following day after Schaffhausen-Thayngen clearance.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BÜROKRATIE -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Bern permits</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">We prepare everything for the City of Bern Building Inspectorate, FOPH, FOEN and Swissmedic</h2>
+          <p class="text-gray-700 text-lg mb-8 max-w-3xl">Bern has the clearest authority path in Switzerland — both federal health authorities sit in the city. We use that.</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-bold text-slate-900 mb-2">BauG Canton of Bern + BO City of Bern</h3><p class="text-sm text-gray-600 leading-relaxed">In Bern the Building Act (BauG) with the cantonal Building Ordinance (BauV) applies. The City of Bern has its own building code. The competent authority is the City of Bern Building Inspectorate at Bundesgasse 38, 3011 Bern. We classify your site and submit examinable building documents.</p></div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-bold text-slate-900 mb-2">SIA 261 Z1a structural from the works</h3><p class="text-sm text-gray-600 leading-relaxed">Swiss building inspectorates do not accept DIN structural calculations on their own. We supply SIA 261 with the Z1a factor and an SIA 263 anchoring concept, Bauwerksklasse II for safety-relevant hospital and research sites — procedure-ready for the Building Inspectorate at Bundesgasse 38.</p></div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-bold text-slate-900 mb-2">ESV at FOEN/FOPH directly on site</h3><p class="text-sm text-gray-600 leading-relaxed">BSL-3 in Switzerland requires notification under the Containment Ordinance (ESV) to FOEN and FOPH. The FOPH sits in Bern-Liebefeld. We supply a risk assessment, safety concept and complete application documents — personal filing instead of post is possible.</p></div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-bold text-slate-900 mb-2">Swissmedic — 5 tram minutes from the hospital and research precinct</h3><p class="text-sm text-gray-600 leading-relaxed">GMP and therapeutic-product inspections are carried out by Swissmedic at Hallerstrasse 7, 3012 Bern — 5 tram minutes from the hospital and research precinct. We supply IQ/OQ/PQ documentation and cleanroom validation that is Swissmedic-ready, and co-ordinate inspection dates directly.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 SCHRITTE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">How Planexus builds your container laboratory in Bern</h2>
+          <p class="text-gray-600 text-lg mb-12">Five steps, one point of contact — from the first sketch to customs-cleared handover.</p>
+          <div class="space-y-5">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">01</div><div><h3 class="font-bold text-slate-900 mb-1">We listen</h3><p class="text-gray-600 text-sm">Requirements workshop on site in Bern or by video. Which biosafety level, which site (Freiburgstrasse, Liebefeld, Länggasse, Murtenstrasse, Wankdorf), which SIA standard, which date, T1 purchase or ATA rental.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">02</div><div><h3 class="font-bold text-slate-900 mb-1">We plan</h3><p class="text-gray-600 text-sm">CAD layout, building services, structural design to SIA 261 Z1a + 263, energy to SIA 380/1. BauG-compliant building documents for the City of Bern Building Inspectorate, ESV application directly to FOPH/FOEN on site.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">03</div><div><h3 class="font-bold text-slate-900 mb-1">We build</h3><p class="text-gray-600 text-sm">Module prefabrication at our certified Polish partner, final assembly and interior fit-out at the Albstadt works with Wesemann furniture. SIA 380/1 insulation, T13/T15 connection and QC before dispatch.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">04</div><div><h3 class="font-bold text-slate-900 mb-1">We clear customs and deliver</h3><p class="text-gray-600 text-sm">T1 transit or ATA Carnet from the Albstadt works, clearance at the Schaffhausen-Thayngen customs office. Heavy haulage A81 → A4 → A1 (220 km, one transport day). Installation by mobile crane. Connection of all utilities, function and leak tests.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">05</div><div><h3 class="font-bold text-slate-900 mb-1">We hand over</h3><p class="text-gray-600 text-sm">IQ/OQ/PQ documentation, Swissmedic-ready — agreed in person in advance at Hallerstrasse. Training for your operators. Maintenance options up to 24 months — extendable on request.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — Lab containers for Bern</h2>
+          <p class="text-gray-600 text-lg mb-10">Seven questions, seven answers. Direct, without marketing speak.</p>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <article class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="anfrage" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Complimentary site audit</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Send us your Bern site and your laboratory profile</h2>
+            <p class="text-gray-600 text-lg">Within 48 hours we deliver: a site assessment (Freiburgstrasse, Liebefeld, Länggasse, Murtenstrasse, Wankdorf), a container configuration with dimensions and specifications, the permit path under BauG/BO City of Bern, the FOPH/Swissmedic authority path, a customs strategy (T1 Schaffhausen or ATA Carnet), a delivery and installation date, and an indicative investment bracket in CHF.</p>
+          </div>
+          <div class="grid lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2">
+              <div class="bg-slate-900 text-white rounded-2xl p-8 h-full">
+                <h3 class="font-bold text-lg mb-6">Direct contact</h3>
+                <div class="space-y-5">
+                  <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="text-xs text-gray-400 mb-1">Phone</div><a href="tel:+4974357519700" class="font-bold hover:text-primary transition-colors">+49 7435 7519 700</a></div></div>
+                  <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="text-xs text-gray-400 mb-1">Email</div><a href="mailto:info@planexus.de" class="font-bold hover:text-primary transition-colors">info@planexus.de</a></div></div>
+                  <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="text-xs text-gray-400 mb-1">Works &amp; headquarters (220 km via A81 + Thayngen + A1)</div><div class="font-bold">Emil-Mayer-Straße 1<br/>72461 Albstadt (DE)</div></div></div>
+                  <div class="border-t border-white/10 pt-5 mt-5"><div class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Factory visit</div><p class="text-sm text-gray-300">We show you your container during manufacture — including SIA 261 structural design and SIA 380/1 insulation before dispatch. By appointment.</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-3"><ContactForm client:visible locale="en" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Container laboratory Bern</div>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Lab containers Bern — Albstadt factory visit and site audit</h2>
+          <p class="text-gray-400 mb-8">We manufacture LABtoGO to order at the Albstadt works — SIA 261 structural design, SIA 380/1 insulation and T13/T15 electrical connection pre-configured at the factory. Factory visits available at any time; complimentary site audit including Schaffhausen-Thayngen customs strategy and FOPH/Swissmedic authority path.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call now</a>
+            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Complete the enquiry form <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEITERE STANDORTE -->
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Further locations for lab containers in the DACH region</h2>
+          <p class="text-gray-600 mb-8">Bern is the federal capital of Switzerland — the public-health and translational-medicine centre. These locations share related profiles:</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="/en/lab-containers-zurich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Zurich</div><div class="text-xs text-gray-500">Universities, hospitals, pharma</div></a>
+            <a href="/en/lab-containers-basel" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Basel</div><div class="text-xs text-gray-500">North-west Swiss pharma cluster</div></a>
+            <a href="/en/lab-containers-frankfurt" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Frankfurt</div><div class="text-xs text-gray-500">Rhine-Main pharma cluster</div></a>
+            <a href="/en/lab-containers-stuttgart" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Stuttgart</div><div class="text-xs text-gray-500">Powertrain research &amp; materials</div></a>
+            <a href="/en/lab-containers-munich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Munich</div><div class="text-xs text-gray-500">Automotive &amp; research</div></a>
+            <a href="/en/lab-containers-vienna" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Vienna</div><div class="text-xs text-gray-500">Austrian pharma, medical technology</div></a>
+            <a href="/en/lab-containers-hamburg" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Hamburg</div><div class="text-xs text-gray-500">Port, pharma &amp; tropical medicine</div></a>
+            <a href="/en/lab-containers-berlin" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Berlin</div><div class="text-xs text-gray-500">Hospitals &amp; biomedical research</div></a>
+          </div>
+          <div class="mt-10 pt-8 border-t border-gray-100">
+            <h3 class="font-bold text-slate-900 mb-3">Further resources</h3>
+            <div class="grid md:grid-cols-2 gap-3 text-sm">
+              <a href="/en/lab-containers" class="text-gray-600 hover:text-primary transition-colors">→ Lab containers – product and service overview</a>
+              <a href="/en/locations" class="text-gray-600 hover:text-primary transition-colors">→ Lab container locations in the DACH region</a>
+              <a href="/en/lab-containers/labtogo" class="text-gray-600 hover:text-primary transition-colors">→ LABtoGO – the platform for BSL-2, GMP and ATEX</a>
+              <a href="/en/magazine/lab-container-permits-building-law" class="text-gray-600 hover:text-primary transition-colors">→ Permits and building law for lab containers (practical guide)</a>
+              <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-gray-600 hover:text-primary transition-colors">→ BSL-2 &amp; BSL-3 in a container — is it possible?</a>
+              <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-gray-600 hover:text-primary transition-colors">→ GMP cleanroom in a container for pharmaceutical production</a>
+              <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-gray-600 hover:text-primary transition-colors">→ Climate control in the lab container — standards and practice</a>
+              <a href="/en/magazine/lab-containers-rent-or-buy" class="text-gray-600 hover:text-primary transition-colors">→ Rent or buy a lab container?</a>
+              <a href="/en/magazine/lab-container-project-process" class="text-gray-600 hover:text-primary transition-colors">→ Project process: from idea to handover</a>
+              <a href="/en/about" class="text-gray-600 hover:text-primary transition-colors">→ About Planexus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <CityCrossLinks current="bern" locale="en" />
+
+  </div>
+</Layout>

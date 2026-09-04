@@ -1,3 +1,5 @@
+import type { Locale } from '../i18n/routes';
+
 export interface MagazinPost {
   id: number;
   slug: string;
@@ -7,6 +9,188 @@ export interface MagazinPost {
   author: string;
   category: string;
   image: string;
+}
+
+export interface MagazinLocaleFields {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+}
+
+export const magazinEn: Record<string, MagazinLocaleFields> = {
+  "made-in-germany-qualitaet-tempo-laborbau": {
+    slug: "made-in-germany-quality-speed-lab-construction",
+    title: "Made in Germany: quality and speed in laboratory construction",
+    excerpt: "Why Made in Germany is not at odds with pace in modular lab construction: turnkey laboratories in 8–14 weeks, GMP, BSL and ATEX compliant from Albstadt-Laufen.",
+    date: "22 July 2026",
+    category: "Guide",
+  },
+  "wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler": {
+    slug: "when-the-new-lab-arrives-too-late-5-planning-mistakes",
+    title: "When the new lab arrives too late: 5 planning mistakes",
+    excerpt: "Most laboratory delays are not caused by technical failures, but by avoidable errors early on. The five most common planning mistakes — and how to avoid them.",
+    date: "25 June 2026",
+    category: "Guide",
+  },
+  "laborcontainer-laborabzug-din-en-14175": {
+    slug: "lab-container-fume-hood-din-en-14175",
+    title: "Fume hoods in lab containers — capture performance and DIN EN 14175",
+    excerpt: "The fume hood is the most important safety device in a laboratory — and in a container it is also the largest energy consumer.",
+    date: "16 June 2026",
+    category: "Technology & ventilation",
+  },
+  "laborcontainer-brandschutz-feuerwiderstand": {
+    slug: "lab-container-fire-protection",
+    title: "Fire protection in lab containers — fire resistance, hazardous storage and escape routes",
+    excerpt: "Structural, technical and organisational fire protection in laboratory containers.",
+    date: "11 June 2026",
+    category: "Safety & fire protection",
+  },
+  "laborcontainer-kosten-preise-2026": {
+    slug: "lab-container-costs-prices-2026",
+    title: "Lab container costs: what really drives the price",
+    excerpt: "The eight cost blocks that shape a project, and when renting, buying or hire-purchase makes sense.",
+    date: "28 May 2026",
+    category: "Costs & calculation",
+  },
+  "uebergangslabor-sanierung-mietcontainer": {
+    slug: "temporary-lab-renovation-rental-containers",
+    title: "Temporary labs during renovation — rental containers as a bridging solution",
+    excerpt: "Major refurbishment without a research or production shutdown, using rental containers as a temporary laboratory.",
+    date: "20 May 2026",
+    category: "Rental & renovation",
+  },
+  "laborcontainer-aufstellung-bodenplatte-statik": {
+    slug: "lab-container-installation-foundation-statics",
+    title: "Installation, foundation slab and structural design for lab containers",
+    excerpt: "Ground conditions, load assumptions, foundation options and crane logistics for laboratory containers.",
+    date: "14 May 2026",
+    category: "Construction & foundations",
+  },
+  "laborcontainer-digitalisierung-lims-iot-remote-monitoring": {
+    slug: "lab-container-digitalization-lims-iot-remote-monitoring",
+    title: "Digitalisation in lab containers — LIMS, IoT sensors and remote monitoring",
+    excerpt: "Smart lab in a container: LIMS integration, IoT sensing and 24/7 remote monitoring.",
+    date: "7 May 2026",
+    category: "Digitalisation & Smart Lab",
+  },
+  "laborcontainer-baustelle-materialpruefung": {
+    slug: "lab-container-construction-site-materials-testing",
+    title: "Lab containers on the construction site — mobile materials testing & QA",
+    excerpt: "How a container laboratory on site keeps testing windows on schedule.",
+    date: "30 April 2026",
+    category: "Construction & materials testing",
+  },
+  "laborcontainer-energiewende-h2-batterie-ex-schutz": {
+    slug: "lab-container-energy-transition-h2-battery-ex-protection",
+    title: "Lab containers for H₂ research and battery testing — explosion protection and gas detection",
+    excerpt: "Hydrogen and battery laboratories in containers: ATEX zones, H₂ gas detection and funding.",
+    date: "20 April 2026",
+    category: "Energy transition & explosion protection",
+  },
+  "laborcontainer-katastropheneinsatz-krisenreaktion": {
+    slug: "lab-container-disaster-response",
+    title: "Lab containers in disaster response — rapid laboratory capacity in crises and pandemics",
+    excerpt: "Self-sufficient laboratory containers delivering full on-site analytics within 48 hours.",
+    date: "9 April 2026",
+    category: "Disaster response",
+  },
+  "analytica-2026-rueckblick-labtogo-premiere": {
+    slug: "analytica-2026-review-labtogo-premiere",
+    title: "analytica 2026 — Planexus presents the LABtoGO",
+    excerpt: "Review of the world premiere of the LABtoGO at analytica 2026 in Munich.",
+    date: "2 April 2026",
+    category: "Trade fairs & events",
+  },
+  "laborcontainer-ausstattung-checkliste": {
+    slug: "lab-container-equipment-checklist",
+    title: "Lab container equipment — the complete A-to-Z checklist",
+    excerpt: "Laboratory furniture, media supply, safety systems — what a lab container actually needs.",
+    date: "12 March 2026",
+    category: "Guide",
+  },
+  "laborcontainer-klimatisierung-lueftung-normen": {
+    slug: "lab-container-hvac-ventilation-standards",
+    title: "Climate control in lab containers — temperature, ventilation and standards",
+    excerpt: "DIN 1946-7, TRGS 526, HEPA filtration and negative-pressure concepts in container laboratories.",
+    date: "5 March 2026",
+    category: "Technology & standards",
+  },
+  "laborcontainer-genehmigung-baurecht-vorschriften": {
+    slug: "lab-container-permits-building-law",
+    title: "Lab container permits — building law, regulations and a practical guide",
+    excerpt: "16 state building codes, special cases for laboratories and common permitting mistakes.",
+    date: "26 February 2026",
+    category: "Guide",
+  },
+  "laborcontainer-projektablauf-von-idee-bis-uebergabe": {
+    slug: "lab-container-project-process",
+    title: "From idea to handover — how a lab container project runs",
+    excerpt: "The complete project process with timeline and checklist for clients.",
+    date: "18 February 2026",
+    category: "Guide",
+  },
+  "planexus-analytica-2026-muenchen": {
+    slug: "planexus-analytica-2026-munich",
+    title: "Laboratories of the future: Planexus at Analytica 2026 in Munich",
+    excerpt: "Modular laboratories, Smart Lab integration and sustainable solutions at analytica 2026.",
+    date: "11 February 2026",
+    category: "Trade fairs & events",
+  },
+  "laborcontainer-mieten-oder-kaufen": {
+    slug: "lab-containers-rent-or-buy",
+    title: "Rent vs buy a lab container: a decision guide for research leads",
+    excerpt: "Break-even rule of thumb, decision matrix and practical checklist for rent vs buy.",
+    date: "10 February 2026",
+    category: "Guide",
+  },
+  "gmp-reinraum-container-pharma-produktion": {
+    slug: "gmp-cleanroom-container-pharma-production",
+    title: "GMP cleanroom in a container: pharmaceutical production in a compact footprint",
+    excerpt: "What GMP-compliant container cleanrooms can do, what they cost, and where the limits are.",
+    date: "10 February 2026",
+    category: "Pharma & biotech",
+  },
+  "innovation-modulbau-zukunft-mobiles-labor": {
+    slug: "innovation-modular-construction-mobile-lab",
+    title: "Innovation in modular construction: the future of the mobile laboratory",
+    excerpt: "Why container laboratories are a genuine alternative to conventional construction.",
+    date: "12 January 2026",
+    category: "Technology",
+  },
+  "nachhaltigkeit-laborbau-energieeffizienz": {
+    slug: "sustainability-lab-construction-energy-efficiency",
+    title: "Sustainability in laboratory construction: energy efficiency meets high-tech",
+    excerpt: "Sustainable materials and smart climate technology reduce the CO2 footprint.",
+    date: "5 January 2026",
+    category: "Sustainability",
+  },
+  "bsl-2-bsl-3-container-labor": {
+    slug: "bsl-2-bsl-3-container-lab",
+    title: "BSL-2 and BSL-3 in a container: is it possible?",
+    excerpt: "How the highest biosafety requirements are realised in mobile units.",
+    date: "20 December 2025",
+    category: "Safety",
+  },
+};
+
+export function localizePost(post: MagazinPost, locale: Locale = 'de') {
+  if (locale !== 'en') {
+    return { ...post, href: `/magazin/${post.slug}` };
+  }
+  const en = magazinEn[post.slug];
+  const slug = en?.slug ?? post.slug;
+  return {
+    ...post,
+    slug,
+    title: en?.title ?? post.title,
+    excerpt: en?.excerpt ?? post.excerpt,
+    date: en?.date ?? post.date,
+    category: en?.category ?? post.category,
+    href: `/en/magazine/${slug}`,
+  };
 }
 
 export const magazinPosts: MagazinPost[] = [

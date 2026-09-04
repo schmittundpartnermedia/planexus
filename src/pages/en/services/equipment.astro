@@ -1,0 +1,256 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Laboratory equipment",
+  "description": "Complete laboratory equipment with furniture, fume cupboards and safety systems",
+  "provider": { "@type": "Organization", "name": "Planexus GmbH", "image": "https://planexus.de/android-chrome-512x512.png" },
+  "url": "https://planexus.de/en/services/equipment"
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://planexus.de/en/services" },
+    { "@type": "ListItem", "position": 3, "name": "Laboratory equipment", "item": "https://planexus.de/en/services/equipment" }
+  ]
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Which standards apply to laboratory equipment in the container?", "acceptedAnswer": { "@type": "Answer", "text": "Equipment is based on DIN EN 14175 for laboratory fume cupboards, EN 14470-1/-2 for safety cabinets, DIN EN 12469 for biological safety cabinets, DIN EN 15154 for emergency showers, ISO 17025 for testing-laboratory requirements, EU-GMP Annex 1 for sterile work areas and EN 60079 for ATEX zones. Each equipment item is documented with a declaration of conformity and its installation location in the container." } },
+    { "@type": "Question", "name": "Are fume cupboards pre-assembled and tested at the works?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Laboratory fume cupboards to DIN EN 14175 are pre-assembled at the Albstadt works, connected to the container ventilation and accepted with visual inspection, leak testing and face-velocity measurement (typically 0.5 m/s ±20 %). For GMP projects an IQ documentation additionally records serial numbers, filter-change date and extract-air routing evidence." } },
+    { "@type": "Question", "name": "Can safety cabinets to EN 14470 be installed in the container?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We install EN 14470-1 cabinets for flammable liquids (90-minute fire resistance) and EN 14470-2 cabinets for compressed-gas cylinders directly in the container. Cabinet ventilation is connected to the container ventilation or a separate extract-air run. For ATEX zones to EN 60079, approved explosion-protected cabinets are used." } },
+    { "@type": "Question", "name": "How is the equipment adapted to ISO 17025?", "acceptedAnswer": { "@type": "Answer", "text": "ISO 17025 testing laboratories need calibratable environmental conditions, traceable measuring equipment and documented workstations. We plan temperature-stable work zones (±2 K), vibration-damped benches for weighing, calibrated utility connections and sufficient work area per test method. The equipment list is supplied as part of the accreditation documentation." } },
+    { "@type": "Question", "name": "Is the equipment for GMP containers Annex 1-conformant?", "acceptedAnswer": { "@type": "Answer", "text": "GMP equipment comprises stainless-steel work surfaces, washable surfaces without pores, laminar-flow benches or RABS, material airlocks and documented cleaning validation. All surfaces and furniture meet Annex 1 requirements for particle release and cleanability. The equipment is integrated into the IQ/OQ/PQ documentation." } },
+    { "@type": "Question", "name": "Can existing equipment be transferred into the container?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, provided instruments are transportable and fit the container layout. We check connection values (400 V, compressed air, drainage), vibration requirements and hazardous-substance zones. Existing fume cupboards are rarely transferred — new DIN EN 14175 fume cupboards with validated face velocity are more economical. For ISO 17025 testing laboratories we document the transfer in the IQ protocol including recalibration at the new location." } }
+  ]
+};
+---
+
+<Layout title="Lab container equipment – furniture, safety, technology" description="Lab container equipment: laboratory furniture, DIN EN 14175 fume cupboards, biological safety cabinets from the Wesemann group. Standards-compliant from the works. Plan equipment now." canonical="/en/services/equipment" schema={serviceSchema} ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/backgrounds/lab-ausstattung.webp')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+            <span>Services</span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">Lab container equipment – furniture, technology, safety</h1>
+          <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4">Laboratory furniture, fume cupboard systems to DIN EN 14175, biological safety cabinets and complete instrument integration — pre-assembled in the container at the works.</p>
+          <p class="text-base text-gray-400 leading-relaxed max-w-3xl mb-8">From the <strong class="text-white">Wesemann Holding group</strong> — one of Europe’s three leading laboratory-furniture manufacturers. No standard workshop fit-out, no office furniture — exclusively laboratory inventory for BSL, GMP and ATEX containers.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Enquire about equipment <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <a href="/en/services" class="hover:text-primary">Services</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <span class="text-primary font-medium">Laboratory equipment</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div class="lg:col-span-2 space-y-12">
+            <div>
+              <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">Equipment to ISO 17025 and GMP standard in the lab container</h2>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Laboratory equipment in the container follows the principle of works pre-assembly: furniture, fume cupboards, safety systems and utility fittings are installed, tested and documented at the Albstadt works. On site only the utilities connection to the local infrastructure takes place.</p>
+                <p>As part of Wesemann Holding GmbH we source laboratory furniture directly from the manufacturer — without intermediaries, with short lead times and the option of special manufacture. Every piece of furniture is positioned in the container layout, connected to utility lines and recorded in the equipment list with article number and position.</p>
+                <p>Equipment planning starts in parallel with container design: instrument list, workstation dimensions, fume cupboard types (DIN EN 14175), safety cabinets (EN 14470), biological safety cabinets (DIN EN 12469) and utility connections are placed in the CAD model. Collisions between furniture, services and HVAC components are thus excluded already in the design phase.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Our equipment areas</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="https://www.wesemann.com/" target="_blank" rel="noopener noreferrer" class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:shadow-lg transition-shadow group">
+                  <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-slate-900 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-white">Laboratory furniture</h4>
+                  <p class="text-gray-300 text-sm mb-4">Workbenches, underbench units, wall cupboards and shelving systems to laboratory standard.</p>
+                  <p class="text-primary text-sm font-medium group-hover:underline">Powered by Wesemann laboratory furnishings →</p>
+                </a>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Fume cupboard systems</h4>
+                  <p class="text-gray-600 text-sm">Laboratory fume cupboards, bench workstations with extraction and recirculating units.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Safety equipment</h4>
+                  <p class="text-gray-600 text-sm">Emergency showers, eye washes, fire extinguishers and first-aid facilities.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
+                  <h4 class="font-bold text-lg mb-2 text-slate-900">Utilities supply</h4>
+                  <p class="text-gray-600 text-sm">Gas fittings, water installations and compressed-air connections.</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Laboratory furniture in detail</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Choosing the right laboratory furniture is decisive for ergonomic working and efficient processes. We offer a wide selection of high-quality furniture designed specifically for laboratory use.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Workbenches and worktops</h4>
+                <p>Our laboratory benches are robust, chemically resistant and ergonomically designed. Worktops are available in various materials — from classic laboratory stone through stainless steel to specialist plastics for particular requirements. Standard widths from 600 mm to 900 mm and heights from 750 mm to 900 mm enable both sitting and standing workstations.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Cabinet systems</h4>
+                <p>Underbench units, wall cupboards and tall cabinets provide optimal storage for laboratory instruments, chemicals and consumables. For the safe storage of hazardous substances we offer approved safety cabinets to EN 14470-1 (for flammable liquids) and EN 14470-2 (for compressed-gas cylinders).</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Sinks and basins</h4>
+                <p>Laboratory sinks in PP, ceramic or stainless steel with corresponding fittings and traps. Special versions for acid-resistant applications or microbiology are of course possible.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Fume cupboards and extraction systems</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Laboratory fume cupboards are at the heart of many laboratory operations. They protect the user from hazardous vapours, gases and dusts and are legally required in many areas. We offer a comprehensive selection of fume cupboard systems for various applications.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Standard laboratory fume cupboards</h4>
+                <p>Our standard laboratory fume cupboards meet the requirements of EN 14175 and provide reliable protection during chemical work. Various widths from 1200 mm to 1800 mm and different equipment variants enable optimal adaptation to your needs.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Specialist fume cupboards</h4>
+                <p>For particular applications we offer specialist fume cupboards: acid-alkali fume cupboards with resistant surfaces, weighing fume cupboards for precise work without disturbing airflows, cytostatic fume cupboards for the safe handling of chemotherapeutics, or radioisotope fume cupboards with specialist shielding.</p>
+                <h4 class="text-xl font-bold text-slate-900 mt-8">Recirculating units</h4>
+                <p>Where extract-air routing to the outside is not possible, recirculating units offer an alternative. They clean the air through activated-carbon filters and return it to the room. Ideal for mobile applications or temporary siting.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Safety equipment</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Safety has the highest priority in the laboratory. Our lab containers are equipped with all required safety systems that comply with applicable regulations and protect your staff.</p>
+                <ul class="list-none space-y-3">
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Emergency showers to DIN EN 15154 for incidents</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Eye-wash facilities at every workstation involving hazardous substances</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Fire extinguishers corresponding to the fire classes in the laboratory</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>First-aid equipment to BGI/GUV-I 509</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Emergency exits with panic hardware and escape-route signage</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Gas-warning systems for the detection of hazardous atmospheres</span></li>
+                  <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Emergency-stop switches for rapid isolation of all utilities</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Utilities supply and fittings</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Reliable supply of utilities such as gases, water and compressed air is essential for laboratory operation. We install all required systems professionally and to the applicable standards.</p>
+                <p><strong>Gas fittings:</strong> For the supply of technical gases (nitrogen, argon, helium) or laboratory gases (propane/butane) we install corresponding offtake points with isolation valves and quick couplings. Colour coding follows DIN EN 13792.</p>
+                <p><strong>Water installations:</strong> Laboratory water, demineralised water or ultrapure water — we install the appropriate fittings and treatment systems. Specialist laboratory fittings with swivel outlet and foot operation enable hygienic working.</p>
+                <p><strong>Compressed-air supply:</strong> For applications that require oil-free compressed air, we install corresponding connections with pressure reducers and service units.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-heading font-bold mb-6 text-slate-900">Instrument integration</h3>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>Many laboratory instruments have specific requirements for power supply, cooling or extract-air routing. We plan the integration of your instruments from the outset and ensure that all connections are in place.</p>
+                <p>Whether spectrometers, chromatographs, incubators or autoclaves — we take the specific requirements of each instrument into account and ensure optimal placement. Vibration damping for sensitive measuring instruments, UPS connection for critical plant or specialist extract-air routing for heat-generating equipment is defined in the detailed design.</p>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-heading font-bold mb-6 text-slate-900">Sector-specific equipment configurations</h2>
+              <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+                <p>
+                  Equipment is configured to the intended use. For <a href="/en/industries/pharma-biotech" class="text-primary font-medium hover:underline">pharma and biotech lab containers</a> we supply Annex 1-conformant work surfaces, laminar-flow units and GMP documentation. <a href="/en/industries/industry-materials-testing" class="text-primary font-medium hover:underline">Materials-testing laboratories</a> receive vibration-damped test stations, hardness-testing equipment and ISO 17025-conformant workstation documentation. <a href="/en/industries/oil-gas" class="text-primary font-medium hover:underline">Refinery and tank-farm laboratories</a> receive AwSV containment, Ex lighting and H₂S/LEL detection at floor level.
+                </p>
+                <p>
+                  BSL-3 containers receive Class II biological safety cabinets to DIN EN 12469, autoclaves, personnel airlocks and emergency showers to DIN EN 15154. ATEX equipment to EN 60079 comprises explosion-protected socket outlets, earthing concepts and gas-warning systems. All components are pre-assembled at the works and recorded in the handover documentation with serial numbers and test evidence.
+                </p>
+                <p>
+                  Works pre-assembly includes functional testing of every equipment item: fume-cupboard face velocity to DIN EN 14175 (0.5 m/s ±20 %), safety-cabinet ventilation to EN 14470, utility-fitting pressure test and electrical continuity testing. Results feed into the IQ documentation for GMP and ISO 17025 projects.
+                </p>
+                <p>
+                  GMP equipment to Annex 1 comprises stainless-steel work surfaces (1.4301/1.4404), washable wall cladding, tight joints and documented cleaning validation. Every surface is tested for particle release and chemical resistance before it is installed in the container.
+                </p>
+                <p>
+                  Utilities supply is colour-coded to DIN EN 13792: red for fire hazard (propane/butane), blue for oxidising agents (oxygen), grey for inert gas (nitrogen, argon). Compressed-air connections receive service units with filter, pressure reducer and condensate separator to ISO 8573-1 Class 1.4.1 for oil-free laboratory air.
+                </p>
+                <p>
+                  Safety cabinets to EN 14470-1 are supplied with 90-minute fire resistance and automatic door closing. EN 14470-2 cabinets for compressed-gas cylinders receive a ventilation connection and earthing. Both types are fixed in the container and documented in the risk assessment to GefStoffV.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-1">
+            <div class="sticky top-24 space-y-6">
+              <div class="bg-primary text-slate-900 p-8 rounded-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                <h3 class="text-xl font-bold mb-3">Everything from a single source</h3>
+                <p class="text-slate-700 mb-6 text-sm">Container and equipment perfectly matched. Benefit from our complete solution.</p>
+                <a href="/en/contact" class="block w-full bg-white text-primary font-bold py-3 rounded-lg text-center hover:bg-slate-100 transition-colors">Request a consultation</a>
+              </div>
+              <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100">
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Our strengths</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Leading manufacturers</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Individual configuration</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Standards-compliant installation</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Integrated design</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>After-sales service</span></li>
+                  <li class="flex items-center gap-3 text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Spare-parts supply</span></li>
+                </ul>
+              </div>
+              <div class="bg-white p-8 rounded-2xl border border-gray-100">
+                <h3 class="text-lg font-bold mb-6 text-slate-900">Further services</h3>
+                <ul class="space-y-3">
+                  <li><a href="/en/services/planning" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Specialist engineering design</a></li>
+                  <li><a href="/en/services/modular-construction" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Modular construction & manufacturing</a></li>
+                  <li><a href="/en/services/logistics" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Logistics & installation</a></li>
+                  <li><a href="/en/services/consulting" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Consulting & permits</a></li>
+                  <li><a href="/en/services/smart-lab" class="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> Smart Lab integration</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">Frequently asked questions about laboratory equipment</h2>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <div class="bg-white rounded-xl p-6 border border-gray-100">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Optimally equipped for your research</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Let us put together the perfect equipment for your laboratory together.</p>
+        <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">Get in touch now <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </section>
+  </div>
+</Layout>

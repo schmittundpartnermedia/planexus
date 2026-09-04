@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjekteGallery from '../../components/ProjekteGallery';
+---
+
+<Layout
+  title="Projects | Laboratory container references"
+  description="Explore our successfully delivered laboratory-container projects. From mobile research laboratories to complete BSL facilities."
+  canonical="/en/projects"
+  ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
+>
+  <div class="pt-20 min-h-screen bg-background">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://planexus.de/en/projects" }
+      ]
+    })} />
+    <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(187,215,0,0.15),transparent_50%)]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">
+            Our projects
+          </h1>
+          <p class="text-xl text-gray-300 leading-relaxed mb-4">
+            From mobile research laboratories to complete BSL facilities — explore our successfully delivered laboratory-container projects for well-known clients.
+          </p>
+          <p class="text-sm text-gray-400">
+            A selection of our references
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <ProjekteGallery client:visible locale="en" />
+
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">Start your laboratory-container project</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Every project begins with a <a href="/en/services/consulting" class="font-semibold text-slate-900 hover:text-primary transition-colors">personal consultation</a>. Our <a href="/en/team" class="font-semibold text-slate-900 hover:text-primary transition-colors">expert team</a> accompanies you through every phase — from <a href="/en/services/planning" class="font-semibold text-slate-900 hover:text-primary transition-colors">specialist engineering</a> via <a href="/en/services/modular-construction" class="font-semibold text-slate-900 hover:text-primary transition-colors">modular construction</a> through to <a href="/en/services/logistics" class="font-semibold text-slate-900 hover:text-primary transition-colors">logistics and installation</a>. Our <a href="/en/magazine" class="font-semibold text-slate-900 hover:text-primary transition-colors">magazine</a> explains more about the <a href="/en/magazine/lab-container-project-process" class="font-semibold text-slate-900 hover:text-primary transition-colors">typical project process</a>.
+          </p>
+          <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-md shadow-primary/20">
+            Enquire about a project
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

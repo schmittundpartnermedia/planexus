@@ -1,0 +1,729 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.tsx';
+import AuthorBio from '../../components/AuthorBio.astro';
+import CityCrossLinks from '../../components/CityCrossLinks.astro';
+
+const title = "Lab containers Düsseldorf – GMP, cleanroom and ATEX";
+const description = "Rent lab containers in Düsseldorf: BSL-3, GMP cleanroom, Rhine flood structural design, 2.75 m internal height. From the Albstadt works via the A3. Request a complimentary consultation.";
+const canonical = "/en/lab-containers-dusseldorf";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Lab containers and modular laboratory construction Düsseldorf",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "image": "https://planexus.de/android-chrome-512x512.png",
+    "url": "https://planexus.de",
+    "telephone": "+49 7435 7519 700",
+    "email": "info@planexus.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Am Steinbach 8",
+      "addressLocality": "Albstadt-Laufen",
+      "addressRegion": "Baden-Württemberg",
+      "postalCode": "72459",
+      "addressCountry": "DE"
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Wesemann Holding GmbH"
+    }
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Düsseldorf" },
+    { "@type": "AdministrativeArea", "name": "Nordrhein-Westfalen" },
+    { "@type": "AdministrativeArea", "name": "Rheinland" }
+  ],
+  "description": "Container laboratories, mobile laboratories and modular laboratory buildings for pharma, life sciences, university medicine, universities and research institutions in the Rhineland – turnkey from the Albstadt works to Düsseldorf.",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Planexus GmbH – Lab containers Düsseldorf",
+      "image": "https://planexus.de/images/labtogo-industrie.webp",
+  "url": "https://planexus.de/en/lab-containers-dusseldorf",
+  "telephone": "+49 7435 7519 700",
+  "email": "info@planexus.de",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Am Steinbach 8",
+    "addressLocality": "Albstadt-Laufen",
+    "addressRegion": "Baden-Württemberg",
+    "postalCode": "72459",
+    "addressCountry": "DE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Düsseldorf",
+    "containedInPlace": {
+      "@type": "AdministrativeArea",
+      "name": "Nordrhein-Westfalen"
+    }
+  },
+  "priceRange": "€€€",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Lab containers", "item": "https://planexus.de/en/lab-containers" },
+    { "@type": "ListItem", "position": 3, "name": "Lab containers Düsseldorf", "item": "https://planexus.de/en/lab-containers-dusseldorf" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does delivery of a lab container to Düsseldorf from the Albstadt works take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The heavy-goods route Albstadt works → Düsseldorf runs north on the A81, north on the A8/A5 via Karlsruhe, then the A3 from the Frankfurt interchange towards Cologne and the A57 or A46 into the Düsseldorf city area. Pure driving time is around 5.5 hours; with a permit-required heavy transport it is typically one transport day. Standard delivery points are the Düsseldorf-Hafen (A52), Düsseldorf-Wersten (A46) and Düsseldorf-Mörsenbroich (A52) junctions for Bilk, Holthausen, Hilden and Düsseldorf harbour. From order to operational handover in Düsseldorf takes 8 to 14 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What permits do I need for a lab container in Düsseldorf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Building Code for the State of North Rhine-Westphalia (Bauordnung für das Land Nordrhein-Westfalen, BauO NRW 2018, synopsis 2024) is decisive. Under Section 62 BauO NRW, containers up to 75 m³ gross volume are procedure-exempt under certain conditions. For larger installations, BSL-3 or GMP pharma, the building notification to the Düsseldorf building-control office (Bauaufsichtsamt), Brinckmannstraße 5, applies. For genetic-engineering facilities S1/S2/S3 an additional notification under the Genetic Engineering Act to the Düsseldorf District Government (Bezirksregierung Düsseldorf) as the competent state authority is required. BSL-3 requires a permit under BioStoffV. We check the classification of your Düsseldorf site in advance and submit procedure-ready building documents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which corrosivity category applies to Düsseldorf under DIN EN ISO 12944-2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Düsseldorf lies in the Rhenish lowlands with about 800 mm annual precipitation, around 75% mean humidity and a westerly exposure — but without salt aerosol from the sea. DIN EN ISO 12944-2 assigns the city area predominantly to corrosivity category C3 (moderate corrosivity, urban atmosphere with moderate SO₂ load); immediately near the harbour and at chemical-industry sites C4 may apply locally. Planexus supplies C3 protection as standard, and optional C4 with duplex coating for harbour and industrial sites."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How high must a lab container stand against flooding on the Düsseldorf Rhine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Düsseldorf gauge sits at river kilometre 744.2, gauge zero +24.529 m NHN. The observation series goes back to 1816 — Germany’s longest gauge record. The highest flood since observations began was 1995 at 10.69 m on the gauge. Flood mark II sits at 8.80 m; navigation is suspended from 7.10 m. For siting in the Rhine floodplain (Hammer Deich, harbour, Niederkasseler Lände, Lörick) the Düsseldorf building-control office requires elevation above the local flood-protection line — we supply structurally checked pile foundations or steel-frame elevation with height adjustment to your Düsseldorf site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you supply BSL-3 lab containers for a university hospital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A university hospital in Bilk typically operates large hospital areas with a central laboratory, microbiological diagnostics and university research institutes. We supply BSL-2 and BSL-3 containers to BioStoffV and TRBA 100 with a negative-pressure cascade of −50 Pa, HEPA H14 on supply and extract air, autoclaved airlock, decontamination shower and Class II biosafety cabinet. For siting on the hospital campus we prepare fire-protection concepts under the NRW Hospital Building Ordinance (KhBauVO NRW) and coordinate with the relevant hospital building office."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which container specification fits consumer-goods chemistry in Holthausen or molecular diagnostics in Hilden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The consumer-goods and adhesives industry in Holthausen operates large factory sites with innovation centres for adhesive technology and personal care. Typical specifications here are GMP-compliant cleanrooms to EU Annex 1, ISO 14644 class 7 and ATEX-zoned solvent laboratories. Molecular diagnostics at the Hilden site works with BSL-2 diagnostic laboratories and cleanroom production of molecular reagents. We supply both specifications from the same LABtoGO platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which funding programmes exist in NRW for laboratory infrastructure in the life-science sector?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With more than 500 life-science companies, North Rhine-Westphalia is Germany’s most research-intensive federal state. Relevant clusters and networks include several statewide biotechnology and life-science clusters in the Rhineland. Research and pilot plants are eligible for funding via programmes such as progres.nrw, NRW innovation funding, or federal programmes such as ZIM and KMU-innovativ. Hired containers can run off-balance-sheet via operating leases — we advise on the accounting classification."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="bg-white">
+
+    <!-- HERO -->
+    <section class="relative bg-slate-900 text-white overflow-hidden">
+      <div class="relative z-10 container mx-auto px-4 py-20 md:py-28">
+        <div class="max-w-4xl">
+          <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
+            <a href="/en" class="hover:text-primary transition-colors">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span>Lab containers</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span class="text-primary">Düsseldorf</span>
+          </nav>
+
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Your specialist for lab containers · Rhineland pharma corridor</div>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+            Lab containers Düsseldorf – flood-safe pharma laboratories on the Rhine
+          </h1>
+
+          <p class="text-xl text-gray-300 leading-relaxed mb-4">
+            <strong class="text-white">Our managing directors bring more than ten years of experience in lab-container construction.</strong> Modular, BauO NRW-compliant, pharma-capable. We deliver flexible research environments for university medicine, universities, chemicals and the NRW life-science cluster — from the Albstadt works straight to Düsseldorf, via the A81 / A8 / A5 / A3.
+          </p>
+          <p class="text-base text-gray-400 mb-8">
+            While others are still planning, you are already researching.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" data-testid="button-cta-hero" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">
+              Complimentary site audit Düsseldorf
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +49 7435 7519 700
+            </a>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Specialist in modular laboratory construction</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Award 2026 EU Business News</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>BauO NRW Section 62 building notification included</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Wesemann Group · 60+ years of laboratory construction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <AuthorBio city="Düsseldorf"  locale="en" />
+
+    <!-- PATTERN-INTERRUPT: LABtoGO -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Pattern interrupt · World premiere at analytica 2026</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus shows Düsseldorf what a lab container in 2026 can really do</h2>
+              <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                A conventional lab container has 2,400 mm internal height. You can stand up inside — but working upright at a fume cupboard is barely possible.
+              </p>
+              <p class="text-lg text-slate-900 font-bold leading-relaxed mb-4">
+                Planexus LABtoGO has 2,750 mm internal height. 9.5 m external length. 3 m external width. A fully glazed front that brings real daylight into every Düsseldorf pharma, hospital or research laboratory.
+              </p>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                <strong>A conventional lab container fits entirely inside a LABtoGO.</strong> We do not call it LABtoGO without reason — it is the platform on which we configure BSL-2, BSL-3, GMP cleanroom, ATEX zoning for solvents and pile foundations for Rhine-floodplain sites for Düsseldorf.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">2.750</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm internal height</div>
+                <div class="text-xs text-gray-500 mt-1">Standard: 2,400 mm</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">9.500</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">mm external length</div>
+                <div class="text-xs text-gray-500 mt-1">3,000 mm width</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">100%</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">fully glazed</div>
+                <div class="text-xs text-gray-500 mt-1">daylight laboratory</div>
+              </div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-primary mb-1">U 0.20</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">W/m²K Sandwich</div>
+                <div class="text-xs text-gray-500 mt-1">80–120 mm insulation</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <a href="/en/lab-containers/labtogo" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+              View the LABtoGO platform and all configurations
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM-AGITATION -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">
+            Planexus solves the three Düsseldorf bottlenecks at which laboratory projects regularly fail
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Rhine flooding forces pile foundations in the floodplain</div>
+              <p class="text-gray-700 text-sm leading-relaxed">The Düsseldorf gauge at river kilometre 744.2 reached its high of 10.69 m in 1995. Anyone planning containers at Hammer Deich, the harbour, Lörick or Niederkassel without sufficient elevation will not receive a permit from the Düsseldorf building-control office — Germany’s longest gauge record since 1816 is the design basis.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus response: Pile foundation or steel-frame elevation with height adjustment prepared at the factory.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Düsseldorf building control reviews strictly – BauO NRW 2018</div>
+              <p class="text-gray-700 text-sm leading-relaxed">The City of Düsseldorf building-control office at Brinckmannstraße 5 is competent for 10 city districts and more than 40 postcodes (40210 to 40629). Section 62 BauO NRW governs procedure-exempt works, but GMP, BSL-3 or installations over 75 m³ gross volume fall outside that exemption. A single formal error in the building notification means two to three weeks of standstill.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus response: Procedure-ready building documents for Düsseldorf building control at first submission.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">The pharma corridor demands GMP, ATEX and BSL from one platform</div>
+              <p class="text-gray-700 text-sm leading-relaxed">The chemicals and consumer-goods industry in Holthausen, molecular diagnostics in Hilden, the central laboratory of a university hospital in Bilk and a large-scale research centre on the NRW border demand a single supply spectrum: GMP cleanroom to EU Annex 1, ATEX zoning 1/21 for solvents, BSL-2/-3 to BioStoffV and IQ/OQ/PQ documentation. Anyone who has to coordinate three manufacturers loses four weeks per handover.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus response: One LABtoGO platform, all four configurations, one contact.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRATEGISCHE FUSION INTRO -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">
+            Lab containers for Düsseldorf: what the NRW pharma corridor, the Rhine floodplain and university medicine demand of the engineering
+          </h2>
+          <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p>
+              <strong>Düsseldorf is the control centre of the North Rhine-Westphalian life-science corridor.</strong> Across 217 square kilometres and ten city districts, the consumer-goods and chemicals industry in Holthausen, a university hospital on a generous campus in Bilk, a research-intensive university with five faculties and the neighbouring molecular-diagnostics cluster in Hilden, the chemicals and pharma industry in the southern hinterland and a large-scale research centre some 75 km to the west compete for land, permits and engineering capacity. Anyone ordering a container laboratory here is not buying a standard product — they are buying site intelligence for Germany’s most research-intensive federal state, with more than 500 life-science companies.
+            </p>
+            <p>
+              <strong>We know this market in detail.</strong> We know that the Düsseldorf building-control office at Brinckmannstraße 5 is competent for the building notification under BauO NRW 2018, and that Section 62 defines procedure-exempt works for containers up to 75 m³ gross volume. We know that the Düsseldorf gauge at river kilometre 744.2 with gauge zero +24.529 m NHN has been observed since 1816 and reached 10.69 m in 1995 — siting in the Rhine floodplain requires a pile foundation or steel-frame elevation above the local flood-protection line. We know that under DIN EN ISO 12944-2 Düsseldorf falls into corrosivity category C3 (urban atmosphere, about 75% mean humidity) and locally C4 near the harbour — not C5-M like maritime sites. These details are not in our quotation — they are the engineering foundation of every container that leaves our Albstadt works.
+            </p>
+            <p>
+              <strong>Made in Albstadt, turnkey in Düsseldorf.</strong> Final assembly and interior fit-out are carried out with Wesemann furniture at our own works — a factory visit can be planned from either side. North on the A81, west on the A8, north on the A5 via Karlsruhe, the A3 from the Frankfurt interchange towards Cologne and the A57 or A46 into the Düsseldorf city area, the heavy-goods distance is around 480 kilometres; the Düsseldorf-Wersten (A46), Düsseldorf-Hafen (A52) and Düsseldorf-Mörsenbroich (A52) junctions are standard delivery points for Bilk, Holthausen, Hilden and Düsseldorf harbour.
+            </p>
+            <p>
+              Whether you need a <strong>mobile laboratory Düsseldorf</strong> for a time-limited refurbishment phase at a university hospital, a <strong>modular lab container Düsseldorf</strong> for a permanent pharma expansion in Holthausen or Hilden, or a <strong>container laboratory Düsseldorf</strong> with BSL-3 containment for university-medical research — we deliver all three answers from the same platform: the LABtoGO from our Albstadt works.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANWENDUNGSBEREICHE DÜSSELDORF -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Düsseldorf applications</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Eight applications for lab containers in Düsseldorf</h2>
+            <p class="text-gray-400 text-lg">Each area with a concrete Düsseldorf site and industry reference.</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">01</div>
+              <div class="font-bold mb-1">Consumer-goods chemistry</div>
+              <p class="text-xs text-gray-400">Consumer-goods and adhesives industry in Holthausen, adhesive technology, personal care – cleanroom, ATEX zoning 1/21</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">02</div>
+              <div class="font-bold mb-1">Molecular diagnostics</div>
+              <p class="text-xs text-gray-400">Molecular diagnostics in Hilden, BSL-2 diagnostic laboratories, cleanroom production of molecular reagents</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">03</div>
+              <div class="font-bold mb-1">University medicine</div>
+              <p class="text-xs text-gray-400">University hospital in Bilk, generous campus, interim laboratories during hospital refurbishments, KhBauVO NRW-compliant</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">04</div>
+              <div class="font-bold mb-1">University research</div>
+              <p class="text-xs text-gray-400">University research with five faculties, BSL-2 third-party-funded projects, S1/S2 GenTG notification to the Düsseldorf District Government</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">05</div>
+              <div class="font-bold mb-1">Harbour analytics</div>
+              <p class="text-xs text-gray-400">Düsseldorf harbour at Rhine kilometres 738–743, contaminant analytics, C4 corrosion protection, flood elevation</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">06</div>
+              <div class="font-bold mb-1">Large-scale research centre</div>
+              <p class="text-xs text-gray-400">Large-scale research centre some 75 km west, materials research, bioeconomy, third-party funding</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">07</div>
+              <div class="font-bold mb-1">Pharma corridor</div>
+              <p class="text-xs text-gray-400">Chemicals and pharma site some 30 km south, GMP pilot production, clinical trial samples, EU Annex 1</p>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">08</div>
+              <div class="font-bold mb-1">Food and consumer-chemistry QC</div>
+              <p class="text-xs text-gray-400">Municipal utilities – drinking-water, food and packaging analytics under DAkkS accreditation</p>
+            </div>
+          </div>
+          <div class="text-center mt-10">
+            <p class="text-gray-400 mb-4">Is your application not listed? We also develop custom modules well beyond the standard.</p>
+            <a href="#anfrage" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Request a custom solution for Düsseldorf <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3x2 TECH MATRIX -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Six engineering disciplines for the NRW pharma corridor Düsseldorf</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Planexus builds lab containers for Düsseldorf that are tuned in every discipline to Rhineland realities — not generic, but city-district-specific.</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Corrosion protection</div>
+              <h3 class="font-bold text-slate-900 mb-2">C3 urban, optional C4 for harbour and industry</h3>
+              <p class="text-sm text-gray-600">DIN EN ISO 12944-2 assigns Düsseldorf city districts to corrosivity category C3 (urban atmosphere, about 75% mean humidity). For harbour, industrial or solvent sites we optionally supply C4 with duplex coating.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Flood structural design</div>
+              <h3 class="font-bold text-slate-900 mb-2">Pile foundation in the Rhine floodplain</h3>
+              <p class="text-sm text-gray-600">Düsseldorf gauge km 744.2, zero +24.529 m NHN. HW1995 = 10.69 m. Elevation above the local flood-protection line as specified by Düsseldorf building control, structurally checked to DIN EN 1990 and Eurocode 7.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">BSL-2/-3 containment</div>
+              <h3 class="font-bold text-slate-900 mb-2">Negative-pressure cascade −50 Pa</h3>
+              <p class="text-sm text-gray-600">BioStoffV, TRBA 100, HEPA H14 on the extract-air path, autoclaved airlocks. For clinical research institutes and university third-party-funded projects: GenTG notification to the Düsseldorf District Government — we supply the application documents.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">GMP and pharma</div>
+              <h3 class="font-bold text-slate-900 mb-2">EU Annex 1 + IQ/OQ/PQ</h3>
+              <p class="text-sm text-gray-600">Pharma pilot production for the Rhineland chemicals and pharma corridor, clinical trial samples for contract researchers, cleanroom to ISO 14644 class 5–7 under the EU GMP Guide.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">ATEX and solvents</div>
+              <h3 class="font-bold text-slate-900 mb-2">Zone 1/21 to EN 60079</h3>
+              <p class="text-sm text-gray-600">Adhesives and chemicals industry require ATEX-zoned containers for solvent handling. Explosion-protected electrics, EX fume cupboards, earthing and equipotential-bonding concept to TRBS 2153.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+              <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Cleanroom</div>
+              <h3 class="font-bold text-slate-900 mb-2">ISO 14644 class 5–8</h3>
+              <p class="text-sm text-gray-600">Cleanrooms for molecular-reagent production, pharmaceutical pilot production and cosmetic formulation — with HEPA H14 terminal filtration, classification with a particle counter at handover.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HYPER-LOKALE DÜSSELDORF-SPEZIFIKA -->
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Three Düsseldorf specifics</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Three engineering requirements that national suppliers overlook — Planexus builds lab containers Düsseldorf precisely for them</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Generic landing pages for the whole of Germany do not address the three realities a lab container in Düsseldorf actually has to withstand. We do — because we know the Rhineland pharma and research market in detail, and our works in Albstadt produces what arrives here.</p>
+          <div class="grid md:grid-cols-3 gap-5">
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">Düsseldorf gauge 744.2 – flood structural design in the Rhine floodplain</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Düsseldorf has Germany’s longest gauge record — observation since 1816. Gauge zero sits at +24.529 m NHN; the high since observations began was 1995 at 10.69 m. Flood mark II sits at 8.80 m. Siting in the Rhine floodplain (Hammer Deich, harbour, Niederkasseler Lände, Lörick) requires elevation above the local flood-protection line — anyone who overlooks this loses the permit.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus standard: Pile foundation or steel-frame elevation with height adjustment, structurally checked to EC 7.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">BauO NRW 2018 Section 62 – procedure-exempt or building notification?</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">Building Code for the State of North Rhine-Westphalia (BauO NRW 2018, synopsis 2024). Section 62 lists procedure-exempt works — containers up to 75 m³ gross volume are procedure-exempt under certain conditions. For GMP, BSL-3 or larger installations the building notification to the Düsseldorf building-control office at Brinckmannstraße 5 applies. Generic suppliers do not check this in advance — the application fails.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus standard: Classification under Section 62 checked in advance, review-ready building documents for Düsseldorf building control.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-primary">
+              <div class="text-slate-900 font-bold text-lg mb-2">NRW life-science cluster – 500+ companies</div>
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">With more than 500 life-science companies, North Rhine-Westphalia is Germany’s most research-intensive federal state. Several statewide biotechnology and life-science clusters in the Rhineland coordinate funding and industrial projects. Funding programmes such as progres.nrw, ZIM and KMU-innovativ allow off-balance-sheet operating-lease models.</p>
+              <p class="text-xs text-slate-900 font-semibold pt-3 border-t border-gray-200">Planexus standard: Hire models calculated off-balance-sheet, indication for funded projects within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST-WALL: Brand-DNA -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-primary/5">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus for Düsseldorf: EU Award 2026, BauO NRW-compliant, Wesemann ecosystem</h2>
+            <p class="text-gray-600 text-lg">Four pillars that no competitor in the DACH region combines in this way.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Award 2026</h3>
+              <p class="text-sm text-gray-600">EU Business News – German CEO Excellence Awards 2026: Planexus recognised as “Leading provider of innovative laboratory spaces”. Internationally awarded immediately after the LABtoGO world premiere at analytica.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Made in Albstadt</h3>
+              <p class="text-sm text-gray-600">Final assembly, interior fit-out and quality control at our Albstadt works (Emil-Mayer-Straße 1). C3 standard protection for Düsseldorf, optional C4 for harbour sites pre-configured at the factory. A factory visit is possible at any time — from either side.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <h3 class="font-bold text-slate-900 mb-2">Wesemann ecosystem</h3>
+              <p class="text-sm text-gray-600">Part of Wesemann Holding, with more than 60 years of experience in laboratory fit-out. Containers, furniture and cleanroom technology — from a single source. One contact. No interface risk.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECISION MATRIX -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Comparison for Düsseldorf: LABtoGO, standard container and conventional construction</h2>
+          <p class="text-gray-600 text-lg mb-8">An honest comparison matrix — so you can take a well-founded decision before we talk.</p>
+          <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-900 text-white">
+                  <tr>
+                    <th class="text-left px-6 py-4 font-bold">Criterion</th>
+                    <th class="text-left px-6 py-4 font-bold">Conventional build Düsseldorf</th>
+                    <th class="text-left px-6 py-4 font-bold">Standard container</th>
+                    <th class="text-left px-6 py-4 font-bold bg-primary text-slate-900">LABtoGO</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Lead time</td><td class="px-6 py-4 text-gray-600">18–30 months</td><td class="px-6 py-4 text-gray-600">16–20 weeks</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">8–14 weeks</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Internal height</td><td class="px-6 py-4 text-gray-600">3.0 m+</td><td class="px-6 py-4 text-gray-600">2.4 m</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">2.75 m</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Permit BauO NRW Section 62</td><td class="px-6 py-4 text-gray-600">full procedure</td><td class="px-6 py-4 text-gray-600">building notification</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Building notification + procedure-ready documents</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Flood structural design Rhine floodplain</td><td class="px-6 py-4 text-gray-600">bespoke</td><td class="px-6 py-4 text-gray-600">rarely</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">prepared at the factory</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">C3/C4 corrosion protection</td><td class="px-6 py-4 text-gray-600">bespoke</td><td class="px-6 py-4 text-gray-600">rarely from the factory</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">standard from the Albstadt works</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Mobility / relocatable</td><td class="px-6 py-4 text-gray-600">none</td><td class="px-6 py-4 text-gray-600">limited</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">fully mobile</td></tr>
+                  <tr><td class="px-6 py-4 font-medium text-slate-900">Daylight share</td><td class="px-6 py-4 text-gray-600">high</td><td class="px-6 py-4 text-gray-600">low</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">fully glazed</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTITIONS-MODELLE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Investment models</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Hire, purchase or hire-purchase – we build the model around your Düsseldorf project</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Container specification, biosafety level, cleanroom class, ATEX zoning and duration determine the calculation. Instead of a pseudo-range you receive a project-specific written indication within 24 hours.</p>
+              <p class="text-sm text-gray-600">For the calculation we need: Düsseldorf site (Bilk, Holthausen, Hilden, harbour), biosafety level (S1/S2/S3, GMP, ATEX), desired duration and commissioning date.</p>
+              <a href="#anfrage" class="inline-flex items-center gap-2 mt-4 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Request an indication within 24 hours <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            </div>
+            <div class="space-y-4">
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hire</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Flexible, off-balance-sheet, project-tied</div>
+                <p class="text-sm text-gray-600">For interim laboratories during hospital refurbishments, time-limited university third-party-funded projects, short-term funded projects via progres.nrw. Duration is project-specific.</p>
+              </div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Purchase</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Asset, full control</div>
+                <p class="text-sm text-gray-600">For a permanent expansion in the Holthausen industrial setting, at the Hilden diagnostics site or in Düsseldorf harbour. The LABtoGO platform can be expanded modularly.</p>
+              </div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hire-purchase</div>
+                <div class="font-bold text-slate-900 text-lg mb-2">Transition from hire to ownership</div>
+                <p class="text-sm text-gray-600">If the interim project can become a permanent site — hire payments can later be credited towards purchase.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGISTIK-BEWEIS -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Logistics proof</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Albstadt works → Düsseldorf: 480 km via the A81 / A8 / A5 / A3</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">From the Albstadt works the heavy-goods route runs north on the A81, west on the A8 to Karlsruhe, north on the A5 via Heidelberg and Frankfurt, the A3 from the Frankfurt interchange towards Cologne and the A57 or A46 into the Düsseldorf city area. Pure driving time is about 5.5 hours; with permit requirements and escort vehicles it is typically one transport day.</p>
+              <p class="text-gray-700 leading-relaxed mb-4">Standard containers under 4 m width and 18 t do not require a heavy-transport permit — next-day installation is possible. Oversize units or pile foundations in the Rhine floodplain are coordinated with a 60–200 t mobile crane and escort vehicles through Düsseldorf building control and the Federal Waterways and Shipping Administration.</p>
+              <p class="text-gray-700 leading-relaxed">From order to operational handover in Düsseldorf takes 8 to 14 weeks.</p>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">480</div><div class="text-xs text-gray-600 uppercase tracking-wider">km from works</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">~5.5 h</div><div class="text-xs text-gray-600 uppercase tracking-wider">heavy goods</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">A81/A3</div><div class="text-xs text-gray-600 uppercase tracking-wider">direct</div></div>
+              <div class="col-span-3 bg-slate-900 text-white rounded-xl p-5">
+                <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Motorway junctions</div>
+                <p class="text-sm text-gray-300">Düsseldorf-Wersten (A46), Düsseldorf-Hafen (A52) and Düsseldorf-Mörsenbroich (A52) as standard delivery points for Bilk, Holthausen, Hilden and Düsseldorf harbour. Mobile-crane installation on the following day after site preparation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BÜROKRATIE-INSIDER -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Düsseldorf permits</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">We prepare everything for building control, the District Government and the hospital building office</h2>
+          <p class="text-gray-700 text-lg mb-8 max-w-3xl">Düsseldorf has clear competences: the City of Düsseldorf building-control office for the building notification under BauO NRW, the Düsseldorf District Government as state authority for GenTG notifications, the hospital building office for siting at the university hospital. We communicate with all three — you do not.</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">BauO NRW – Section 62 procedure-exempt or building notification</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">The Building Code for the State of North Rhine-Westphalia (BauO NRW 2018, synopsis 2024) is decisive. Section 62 lists procedure-exempt works — we check the classification of your Düsseldorf site in advance and submit review-ready building documents to the City of Düsseldorf building-control office, Brinckmannstraße 5.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">Flood protection under the Federal Water Act</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Siting in the Rhine floodplain (Hammer Deich, harbour, Lörick, Niederkasseler Lände) requires elevation above the local flood-protection line as specified by Düsseldorf building control. We supply a pile foundation or steel-frame elevation structurally checked to EC 7 — we prepare the application documents in full.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">Düsseldorf District Government – BSL-3 and GenTG</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">BSL-3 in Düsseldorf requires a permit under BioStoffV (federal law) plus a notification to the Düsseldorf District Government as the competent state authority. For genetic-engineering facilities S1/S2/S3 an additional notification under GenTG is required. We supply the risk assessment, safety concept and complete application documents.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100">
+              <h3 class="font-bold text-slate-900 mb-2">KhBauVO NRW fire protection for hospital siting</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Siting at the university hospital in Bilk requires fire-protection concepts under the NRW Hospital Building Ordinance, sterile logistics and coordination with the hospital building office and the Düsseldorf fire directorate (Branddirektion Düsseldorf).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROZESS 5 SCHRITTE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">How Planexus builds your container laboratory in Düsseldorf</h2>
+          <p class="text-gray-600 text-lg mb-12">Five steps, one contact — from the first sketch to handover.</p>
+          <div class="space-y-5">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">01</div><div><h3 class="font-bold text-slate-900 mb-1">We listen</h3><p class="text-gray-600 text-sm">Requirements workshop on site in Düsseldorf or by video. Which biosafety level, which city district, which standard, which date.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">02</div><div><h3 class="font-bold text-slate-900 mb-1">We plan</h3><p class="text-gray-600 text-sm">CAD layout, building services (TGA) and structural design. BauO NRW-compliant building documents for the Düsseldorf building-control office, Brinckmannstraße 5 — procedure-ready from day 1. Flood structural design for Rhine-floodplain sites.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">03</div><div><h3 class="font-bold text-slate-900 mb-1">We build</h3><p class="text-gray-600 text-sm">Module prefabrication at the certified Polish partner; final assembly and interior fit-out at the Albstadt works with Wesemann furniture. C3/C4 outer shell and QC before dispatch. A factory visit is possible at any time.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">04</div><div><h3 class="font-bold text-slate-900 mb-1">We deliver</h3><p class="text-gray-600 text-sm">Heavy-goods transport A81/A8/A5/A3 (480 km, 1 transport day). Installation by mobile crane, with pile foundation in the Rhine floodplain where required. Connection of all services, functional and leak tests before handover.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">05</div><div><h3 class="font-bold text-slate-900 mb-1">We hand over</h3><p class="text-gray-600 text-sm">IQ/OQ/PQ documentation. Training for your operators. Maintenance options for up to 24 months — extendable on request.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — lab containers for Düsseldorf</h2>
+          <p class="text-gray-600 text-lg mb-10">Seven questions, seven answers. Direct, and without marketing speak.</p>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <article class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INLINE CONTACT FORM -->
+    <section id="anfrage" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Complimentary site audit</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Send us your Düsseldorf site and laboratory profile</h2>
+            <p class="text-gray-600 text-lg">Within 48 hours we deliver: a site assessment, a container configuration with dimensions and specifications, the permit path under BauO NRW, a delivery and installation date, and an indicative investment bracket for hire and purchase.</p>
+          </div>
+
+          <div class="grid lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2">
+              <div class="bg-slate-900 text-white rounded-2xl p-8 h-full">
+                <h3 class="font-bold text-lg mb-6">Direct contact</h3>
+                <div class="space-y-5">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Telephone</div><a href="tel:+4974357519700" class="font-bold hover:text-primary transition-colors">+49 7435 7519 700</a></div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Email</div><a href="mailto:info@planexus.de" class="font-bold hover:text-primary transition-colors">info@planexus.de</a></div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <div><div class="text-xs text-gray-400 mb-1">Works & headquarters (480 km via the A81/A8/A5/A3)</div><div class="font-bold">Emil-Mayer-Straße 1<br/>72461 Albstadt</div></div>
+                  </div>
+                  <div class="border-t border-white/10 pt-5 mt-5">
+                    <div class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Factory visit</div>
+                    <p class="text-sm text-gray-300">We show you your container during manufacture — including the C3/C4 outer shell before dispatch. Appointment by arrangement.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-3"><ContactForm client:visible locale="en" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Container laboratory Düsseldorf</div>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Lab containers Düsseldorf — Albstadt factory visit and site audit</h2>
+          <p class="text-gray-400 mb-8">We manufacture LABtoGO to order at the Albstadt works — C3 standard for Düsseldorf, optional C4 for harbour and industrial sites pre-configured at the factory. A factory visit is possible at any time, complimentary site audit included.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call now</a>
+            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Complete the enquiry form <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEITERE STANDORTE -->
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Further lab-container locations in the DACH region</h2>
+          <p class="text-gray-600 mb-8">Düsseldorf is the control centre of the North Rhine-Westphalian pharma corridor. These locations share related industry or research profiles:</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="/en/lab-containers-stuttgart" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Stuttgart</div><div class="text-xs text-gray-500">Powertrain research and materials</div></a>
+            <a href="/en/lab-containers-munich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Munich</div><div class="text-xs text-gray-500">Automotive, universities and research</div></a>
+            <a href="/en/lab-containers-frankfurt" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Frankfurt</div><div class="text-xs text-gray-500">Rhine-Main pharma cluster</div></a>
+            <a href="/en/lab-containers-berlin" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Berlin</div><div class="text-xs text-gray-500">Hospital and biomedical research</div></a>
+            <a href="/en/lab-containers-hamburg" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Hamburg</div><div class="text-xs text-gray-500">Port, pharma and tropical medicine</div></a>
+            <a href="/en/lab-containers-zurich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Zurich</div><div class="text-xs text-gray-500">Pharma and research</div></a>
+            <a href="/en/lab-containers-basel" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Basel</div><div class="text-xs text-gray-500">Pharma region</div></a>
+            <a href="/en/lab-containers-vienna" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Vienna</div><div class="text-xs text-gray-500">Austrian pharma and medical technology</div></a>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-gray-100">
+            <h3 class="font-bold text-slate-900 mb-3">Further reading</h3>
+            <div class="grid md:grid-cols-2 gap-3 text-sm">
+              <a href="/en/lab-containers" class="text-gray-600 hover:text-primary transition-colors">→ Lab containers – product and services overview</a>
+              <a href="/en/locations" class="text-gray-600 hover:text-primary transition-colors">→ Lab-container locations in the DACH region</a>
+              <a href="/en/lab-containers/labtogo" class="text-gray-600 hover:text-primary transition-colors">→ LABtoGO – the platform for BSL-2, GMP and ATEX</a>
+              <a href="/en/magazine/lab-container-permits-building-law" class="text-gray-600 hover:text-primary transition-colors">→ Permits and building law for lab containers (practical guide)</a>
+              <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-gray-600 hover:text-primary transition-colors">→ BSL-2 and BSL-3 in a container – is it possible?</a>
+              <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-gray-600 hover:text-primary transition-colors">→ GMP cleanroom in a container for pharmaceutical production</a>
+              <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-gray-600 hover:text-primary transition-colors">→ Climate control in the lab container – standards and practice</a>
+              <a href="/en/magazine/lab-containers-rent-or-buy" class="text-gray-600 hover:text-primary transition-colors">→ Rent or buy a lab container?</a>
+              <a href="/en/magazine/lab-container-project-process" class="text-gray-600 hover:text-primary transition-colors">→ Project process: from idea to handover</a>
+              <a href="/en/about" class="text-gray-600 hover:text-primary transition-colors">→ About Planexus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <CityCrossLinks current="duesseldorf" locale="en" />
+
+  </div>
+</Layout>

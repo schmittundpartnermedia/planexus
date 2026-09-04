@@ -1,0 +1,446 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Laboratory containers on the construction site – mobile materials testing & quality assurance",
+  "description": "Practical guide to site laboratories in containers: fresh- and hardened-concrete testing to DIN EN 12350/12390, soil investigations to DIN 18130/18134, asbestos analysis to TRGS 519, PFAS pre-analysis under EU Drinking Water Directive 2020/2184 and the PFHxA restriction (REACH Regulation 2024/2462), and frequently procedure-exempt siting under the German state building codes (LBO). For contractors, testing engineers and environmental consultants.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Managing Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-04-30",
+  "dateModified": "2026-04-30",
+  "image": "https://planexus.de/images/magazin/baustellenlabor-materialpruefung.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/lab-container-construction-site-materials-testing" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Laboratory containers on the construction site", "item": "https://planexus.de/en/magazine/lab-container-construction-site-materials-testing" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Does a site laboratory need a building permit?", "acceptedAnswer": { "@type": "Answer", "text": "In many cases, no. Containers used solely for the execution of the works and sited only for the duration of the construction project are regularly listed in the German state building codes (Landesbauordnungen) as procedure-exempt developments – for example under §50 LBO BW in conjunction with the annex, Art. 57 BayBO, §62 BauO NRW or §63 HBO. The condition in every Land: no permanent use, no residential use, and a spatial connection to the site. As soon as the container remains after completion or is used as a permanent laboratory, a building-permit application is generally required. We check this for each federal state and location and support liaison with the building authority." } },
+    { "@type": "Question", "name": "Which standards apply to fresh-concrete testing in a site container?", "acceptedAnswer": { "@type": "Answer", "text": "The DIN EN 12350 series governs fresh-concrete tests, including: sampling (Part 1), slump (Part 2), Vebe time (Part 3), degree of compactability (Part 4), flow table / spread (Part 5), fresh-concrete density (Part 6), and air content by the pressure method (Part 7). For self-compacting concrete: slump-flow (Part 8), V-funnel (Part 9), L-box (Part 10), sieve segregation / segregation resistance (Part 11), J-ring (Part 12). Hardened-concrete tests follow DIN EN 12390, including compressive strength (Part 3), depth of penetration of water under pressure (Part 8) and freeze–thaw / de-icing-salt resistance (Part 9). Specimen curing to DIN EN 12390-2 under water or in a moist room at 20 ± 2 °C." } },
+    { "@type": "Question", "name": "How does on-site asbestos analysis work in a container laboratory?", "acceptedAnswer": { "@type": "Answer", "text": "Sampling and sample preparation take place in the container; optical-microscopic screening of material samples (stereo and polarising microscope) is possible as a pre-analysis. Definitive material testing for asbestos in technical products and building components follows the VDI 3866 series (in particular Sheet 5 for SEM/EDX on material samples); quantitative fibre counting in air samples follows VDI 3492 (SEM/EDX) – both in accredited stationary laboratories. Which protective measures under TRGS 519 apply in the individual case – dirty/clean area, airlock, H-class vacuum, negative-pressure hold – depends on the activity, method and expected exposure. We configure the container for the activities actually planned." } },
+    { "@type": "Question", "name": "Is PFAS screening possible directly on the construction site?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in the sense of a pre-analysis. Quantitative determination of the 20 PFAS individual substances relevant under EU Drinking Water Directive 2020/2184, and of the substances falling under REACH restriction entry 79 (introduced by Regulation (EU) 2024/2462 for PFHxA and precursors), is carried out by LC-MS/MS in accredited stationary laboratories. A container laboratory can, however, handle sample preparation, solid-phase extraction (SPE) and accompanying parameters (TOC, AOX, pH, conductivity) on site. The advantage: a rapid preliminary indication at the excavation, with only concentrated eluates then sent to the stationary laboratory." } },
+    { "@type": "Question", "name": "What equipment belongs in a fully equipped site laboratory?", "acceptedAnswer": { "@type": "Answer", "text": "For concrete/asphalt: 3,000 kN compressive-strength press, flow table to DIN EN 12350-5, air-content meter, cube and cylinder moulds, grinding machine, low-vibration weighing table (1 mg). For soil: static plate load tester (PDG) to DIN 18134, light falling-weight deflectometer (LFG), Proctor apparatus DIN 18127, sieve sets, drying oven 105 °C, water bath. For contaminant analysis: stereo microscope, polarising microscope, H-class vacuum, portable XRF, sampling equipment. Specimen curing to DIN EN 12390-2 under water or in a moist room at 20 ± 2 °C. Power supply (typically 63 A CEE) and a water feed are regularly required depending on the fit-out." } },
+    { "@type": "Question", "name": "How quickly can a site laboratory be delivered and made operational?", "acceptedAnswer": { "@type": "Answer", "text": "Where stock is available we typically deliver within 2 to 4 days. Standard containers without specialist equipment are typically delivered in 5 to 8 weeks; fully equipped instrument containers, depending on configuration, in 8 to 14 weeks. Installation on site, including connection to power (generally 63 A CEE) and water, usually takes one working day. On major sites with several construction phases – for example tunnel, rail or motorway projects – hire-purchase models and relocation between locations are possible." } },
+    { "@type": "Question", "name": "Do I need DIN EN ISO/IEC 17025 accreditation for a site laboratory?", "acceptedAnswer": { "@type": "Answer", "text": "For in-house factory production control (WPK) of concrete production to DIN EN 206 / DIN 1045-2, DAkkS accreditation is generally not mandatory; qualified execution by trained testing technicians is sufficient. For third-party supervision of construction to DIN 1045-3 (supervision classes ÜK 2 and ÜK 3) and for testing laboratories commissioned by the building authority, accreditation is regularly required depending on recognition or client requirements. RAP-Stra-15 testing bodies for federal trunk-road construction need formal BASt recognition including accredited test scopes. For asphalt testing laboratories the requirements of the DIN EN 13108 series and the TL/TP/ZTV Asphalt-StB apply; here too accreditation is usual depending on the client. We supply containers in both configurations – accreditation readiness is planned in from the start through validation documentation, equipment management and climate control." } }
+  ]
+};
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Site laboratory containers: materials testing | Planexus"
+  description="Site laboratory in a container: fresh concrete (DIN EN 12350), hardened concrete, soil (DIN 18130), asbestos (TRGS 519), PFAS. Guide for contractors and testers."
+  canonical="/en/magazine/lab-container-construction-site-materials-testing"
+  ogImage="https://planexus.de/images/magazin/baustellenlabor-materialpruefung.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/magazin/baustellenlabor-materialpruefung.jpg')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6 flex-wrap">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21V12h6v9"/></svg>
+              Construction &amp; materials testing
+            </span>
+            <span class="text-slate-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              17 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Laboratory containers on the construction site – mobile materials testing &amp; QA
+          </h1>
+          <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+            Fresh concrete changes its properties immediately after mixing; PFAS-contaminated excavated material can trigger substantial logistics and disposal consequences; an asbestos suspicion during refurbishment can halt the site. Anyone who handles materials testing on major projects solely by sending samples to a stationary laboratory often loses hours to days per batch – time that tightly sequenced construction programmes cannot spare. A container laboratory on the site itself can make a considerable difference.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-slate-400 flex-wrap">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              30 April 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald, Managing Director, Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-slate-200 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-slate-500 flex-wrap">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <span>/</span>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <span>/</span>
+          <span class="text-primary font-medium">Laboratory containers on the construction site</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="prose prose-lg max-w-none">
+
+            <p class="text-xl text-slate-700 leading-relaxed mb-12 font-medium">
+              Four developments are hitting the German construction industry at once in 2026 and noticeably increasing sampling and analytical demand on sites: the <strong>stepwise PFAS restriction</strong> in REACH (for PFHxA and precursors through Regulation (EU) 2024/2462) together with the related drinking-water values from EU Drinking Water Directive 2020/2184; the <strong>Mantelverordnung with Substitute Building Materials Ordinance (Ersatzbaustoffverordnung, EBV)</strong> in force since August 2023; the asbestos investigation of existing buildings tightened by the <strong>2024 Hazardous Substances Ordinance amendment</strong>; and political pressure to <strong>accelerate major infrastructure projects</strong>. Anyone who shifts soil and materials testing exclusively by courier to a stationary laboratory comes under logistical and planning pressure in this situation.
+            </p>
+
+            <!-- 1. WARUM JETZT -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Why site laboratories pay their way on many projects in 2026</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              The construction industry faces four tightenings that, taken together, markedly increase the need for sampling and analysis on many sites.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 my-10">
+              <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-primary">
+                <h3 class="font-bold text-slate-900 mb-2">1. PFAS in REACH and drinking water</h3>
+                <p class="text-slate-600 text-sm">Regulation (EU) 2024/2462 added the restriction of PFHxA and precursors to REACH Annex XVII (entry 79); in parallel, the PFAS requirements of EU Drinking Water Directive 2020/2184 apply. On sites with a history of foam extinguishing agents, electroplating or paper/textile industry use, the investigation demand for excavated material and leachate therefore rises sharply.</p>
+              </div>
+              <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-primary">
+                <h3 class="font-bold text-slate-900 mb-2">2. Substitute Building Materials Ordinance (EBV)</h3>
+                <p class="text-slate-600 text-sm">In force since 1 August 2023. Before mineral substitute building materials are placed, material-class-specific investigation is mandatory – for example for soil material (BM), recycled construction materials (RC-1/2/3), track ballast (GS), steelworks slag (SWS) and municipal solid-waste incinerator ash (HMVA). Eluate and solid-matter analysis become a standard process on every larger earthworks site.</p>
+              </div>
+              <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-primary">
+                <h3 class="font-bold text-slate-900 mb-2">3. Asbestos investigation of existing buildings</h3>
+                <p class="text-slate-600 text-sm">The 2024 GefStoffV amendment spelled out the commissioning party’s information and co-operation duties and the employer’s investigation duties for work on older building fabric. Which protective measures under TRGS 519 apply in the individual case – dirty/clean area, airlock, H-class vacuum – depends on the activity and expected exposure; container concepts can map these requirements in the building fabric.</p>
+              </div>
+              <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-primary">
+                <h3 class="font-bold text-slate-900 mb-2">4. Infrastructure acceleration</h3>
+                <p class="text-slate-600 text-sm">The Measures Act Preparation Act, LNG Acceleration Act and Energy Industry Act amendment: rail, bridge and power-line projects are under considerable time pressure. Long waits for external stationary-laboratory results are barely tolerable in tightly sequenced construction programmes.</p>
+              </div>
+            </div>
+
+            <!-- 2. WAS DAS BAUSTELLENLABOR LEISTEN MUSS -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">What a modern site laboratory must cover</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              A professional site laboratory serves three testing domains in parallel: <strong>concrete and asphalt testing</strong> (ongoing construction), <strong>soil and geotechnics</strong> (earthworks, backfill, sub-base) and <strong>contaminant analysis</strong> (asbestos, PFAS, hydrocarbons, heavy metals). Which configuration makes sense depends on the project type.
+            </p>
+
+            <div class="overflow-x-auto my-8 rounded-xl border border-slate-200 shadow-sm">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-900 text-white">
+                  <tr>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Project type</th>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Concrete/asphalt</th>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Soil/geotechnics</th>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Contaminants</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white">
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Residential building</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Industrial building</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Tunnels &amp; civil engineering</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Road construction</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Bridge construction</td><td class="px-4 py-3 text-slate-600">●●●</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Refurbishment of existing buildings</td><td class="px-4 py-3 text-slate-600">●</td><td class="px-4 py-3 text-slate-600">●</td><td class="px-4 py-3 text-slate-600">●●●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Contaminated-land remediation</td><td class="px-4 py-3 text-slate-600">–</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●●●</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Airport / military</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●●</td><td class="px-4 py-3 text-slate-600">●●●</td></tr>
+                </tbody>
+              </table>
+              <p class="text-xs text-slate-500 px-4 py-2 bg-slate-50 italic">● = occasional · ●● = regular · ●●● = daily core process</p>
+            </div>
+
+            <!-- 3. BETON UND ASPHALT -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Concrete and asphalt testing: close to the point of placing</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Fresh concrete changes its properties from the moment of mixing. Sampling and testing follow the DIN EN 12350 series, with precise rules for the time between sampling and testing. Transport to a distant stationary laboratory shortens the available testing window and is one of the main reasons contractors have relied on on-site testing for decades.
+            </p>
+
+            <div class="bg-slate-900 text-white p-8 rounded-xl my-8">
+              <h3 class="text-xl font-bold text-primary mb-4">Fresh-concrete tests in the container (DIN EN 12350)</h3>
+              <ul class="space-y-2 text-slate-200">
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Part 1</span><span><strong>Sampling</strong> – uniform rules for taking samples from mixer, delivery vehicle or pump</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Part 2</span><span><strong>Slump</strong> with Abrams cone – consistency classes S1 to S5</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Part 3</span><span><strong>Vebe time</strong> – consistency test for very stiff concretes</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Part 4</span><span><strong>Degree of compactability</strong> after Walz – classes C0 to C3</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Part 5</span><span><strong>Flow table / spread</strong> – classes F1 to F6, typical for pumped concretes</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Part 6</span><span><strong>Fresh-concrete density</strong> with calibrated container and precision balance</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Part 7</span><span><strong>Air content</strong> by the pressure method</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold whitespace-nowrap">Parts 8–12</span><span><strong>Self-compacting concrete</strong>: slump-flow (Part 8), V-funnel (Part 9), L-box (Part 10), sieve segregation / segregation resistance (Part 11), J-ring (Part 12)</span></li>
+              </ul>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Hardened-concrete tests to <strong>DIN EN 12390</strong> follow standard-compliant specimen curing – compressive strength to Part 3 is the most common commission. Contractors need the 7-day and 28-day values in time for construction-programme planning. A container laboratory with a 3,000 kN press, curing to DIN EN 12390-2 (under water or in a moist room at 20 ± 2 °C) and 150 × 150 × 150 mm cube moulds delivers these values without a logistics break.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              For <strong>factory production control (WPK)</strong> of concrete production to DIN EN 206 / DIN 1045-2 and for <strong>construction execution</strong> to DIN 1045-3 in supervision classes ÜK 1 to ÜK 3, a corresponding testing density is mandatory in any case. On major sites with their own batching plant, the container becomes a permanent measurement and documentation centre.
+            </p>
+
+            <!-- 4. BODEN UND GEOTECHNIK -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Soil and geotechnics: DIN 18130 and 18134 on site</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Earthworks is the second major application domain. <strong>Plate load tests to DIN 18134</strong> provide the deformation moduli Ev1 and Ev2 – the most important characteristic values for the bearing capacity of formation and sub-bases. A static plate load tester (PDG) and a light falling-weight deflectometer (LFG to TP BF-StB B 8.3) belong in every serious site laboratory.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              <strong>DIN 18130 Part 1</strong> governs determination of the coefficient of permeability (k-value) in the laboratory – relevant for leachate systems, landfill liners and infiltration installations. In addition: <strong>DIN 18127</strong> Proctor test for optimum compaction, <strong>DIN 18121</strong> water content, <strong>DIN 18123</strong> particle-size distribution by dry and wet sieving. All methods can be performed in the container – standard equipment covers them.
+            </p>
+
+            <div class="border border-slate-200 rounded-xl p-6 my-8 bg-white">
+              <h3 class="font-bold text-slate-900 mb-4">Standard geotechnical equipment in the container</h3>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-2">Field tests</h4>
+                  <ul class="space-y-1 text-slate-600">
+                    <li>• Static plate load tester PDG ø 300 mm</li>
+                    <li>• Light falling-weight deflectometer LFG 10 kg</li>
+                    <li>• Densimeter / sand-replacement apparatus DIN 18125-2</li>
+                    <li>• Core drill</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-2">Laboratory tests in the container</h4>
+                  <ul class="space-y-1 text-slate-600">
+                    <li>• Proctor apparatus A and C to DIN 18127</li>
+                    <li>• Sieve set 0.063 to 63 mm</li>
+                    <li>• Drying oven 105 °C</li>
+                    <li>• Casagrande apparatus (consistency limits DIN 18122)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. ASBEST -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Asbestos analysis: applying TRGS 519 with discrimination</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              With the 2024 Hazardous Substances Ordinance amendment and <strong>TRGS 519 “Asbestos – demolition, renovation and maintenance work”</strong>, the commissioning party’s information and co-operation duties and the employer’s investigation duties for work on older building fabric were spelled out. Before renovation and demolition of existing buildings, a stock investigation matched to the project and the risk is envisaged – the type and depth of investigations (renders, fillers, tile adhesives, floor coverings, etc.) depend on the specific project and the expected exposure.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              TRGS 519 regulates protective measures for work with asbestos, graded by activity and expected exposure. Which specific measures – a delimited dirty/clean area, personnel airlock, H-class vacuum to EN 60335-2-69 Annex AA, negative-pressure hold, Category III Type 5/6 protective suit – apply in the individual case depends on method and expected exposure. Container laboratories can be configured for the activities actually planned – airlock, dirty area, clean area and sample issue can be clearly separated in the building fabric.
+            </p>
+
+            <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8">
+              <h3 class="font-bold text-slate-900 mb-3">On-site microscopic pre-analysis</h3>
+              <p class="text-slate-700 text-sm mb-3">
+                In container operation, optical-microscopic screening of material samples with a <strong>stereo and polarising microscope</strong> is possible – often within a few hours rather than several days of shipping. A first indication is therefore frequently available on the sampling day itself. Definitive material testing for asbestos in technical products and building components follows the <strong>VDI 3866</strong> series (in particular Sheet 5 for SEM/EDX on material samples).
+              </p>
+              <p class="text-slate-700 text-sm">
+                Quantitative fibre counting is then carried out by <strong>SEM/EDX</strong> – for example to VDI 3492 for air samples – in the accredited stationary laboratory. It makes sense to send only samples classified as suspect; that can noticeably relieve stationary-laboratory throughput.
+              </p>
+            </div>
+
+            <!-- 6. PFAS -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">PFAS screening: pre-analysis before excavated material is moved</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              PFAS (per- and polyfluorinated alkyl substances) are addressed by several EU legal acts: the <strong>EU Drinking Water Directive 2020/2184</strong> with parameters for 20 PFAS individual substances and total PFAS, and the stepwise inclusion of individual PFAS substances in <strong>REACH Annex XVII</strong> – for example via Regulation (EU) 2024/2462 for PFHxA and precursors (entry 79). In construction, the sites of most relevance are those with a history of foam extinguishing-agent use (airports, military grounds, fire-service training areas), electroplating, and former paper and textile industry sites. Where there is a justified suspicion, excavated material must be investigated before recovery or disposal under the relevant waste and soil-protection rules.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Quantitative determination is generally by <strong>LC-MS/MS</strong> in accredited stationary laboratories – this class of instrument is not usually practicable in a container. What is practicable in a container laboratory, by contrast, is <strong>sample preparation</strong> (solid-phase extraction, SPE), a <strong>pre-analysis</strong> with suitable rapid tests, and <strong>accompanying parameters</strong> such as TOC, AOX, pH and conductivity. A first risk indication can therefore often be obtained promptly at the excavation before confirmatory analysis is commissioned in a targeted way.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              For demolition and remediation sites with a PFAS suspicion, such an on-site pre-analysis step can simplify logistics: suspect soil stays on site for the time being, and shipments to the stationary laboratory are concentrated on robust suspect cases.
+            </p>
+
+            <!-- 7. AUSSTATTUNG -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Standard equipment of a fully specified site laboratory</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              The following list summarises the equipment that a universal site laboratory covers. The LABtoGO, with a 9,500 × 3,000 mm footprint and 2,750 mm internal height, offers enough space for all stations without stacking or offloading instruments.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4 my-8">
+              <div class="bg-slate-50 p-5 rounded-xl">
+                <h3 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider">Concrete &amp; mortar</h3>
+                <ul class="space-y-1 text-sm text-slate-700">
+                  <li>3,000 kN press</li>
+                  <li>Flow table DIN EN 12350-5</li>
+                  <li>Abrams slump cone</li>
+                  <li>8 L air-content meter</li>
+                  <li>150 mm cube moulds</li>
+                  <li>Cylinder moulds ø 150/300</li>
+                  <li>Grinding machine</li>
+                  <li>Specimen curing to DIN EN 12390-2 (water or moist-room curing 20 ± 2 °C)</li>
+                </ul>
+              </div>
+              <div class="bg-slate-50 p-5 rounded-xl">
+                <h3 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider">Soil &amp; earthworks</h3>
+                <ul class="space-y-1 text-sm text-slate-700">
+                  <li>Plate load tester PDG</li>
+                  <li>Light falling-weight deflectometer</li>
+                  <li>Proctor apparatus A + C</li>
+                  <li>Sieve set 0.063–63 mm</li>
+                  <li>Casagrande apparatus</li>
+                  <li>Drying oven 105 °C</li>
+                  <li>Water bath</li>
+                  <li>Densimeter</li>
+                </ul>
+              </div>
+              <div class="bg-slate-50 p-5 rounded-xl">
+                <h3 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider">Contaminants &amp; environment</h3>
+                <ul class="space-y-1 text-sm text-slate-700">
+                  <li>Polarising microscope</li>
+                  <li>Stereo microscope</li>
+                  <li>H-class vacuum</li>
+                  <li>Personnel airlock</li>
+                  <li>Portable XRF</li>
+                  <li>SPE unit for PFAS</li>
+                  <li>pH/conductivity/TOC measuring station</li>
+                  <li>Asbestos containment housing</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 8. GENEHMIGUNG -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Permitting framework: site facilities in the state building codes (LBO)</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Containers that <strong>serve solely the execution of the works and are sited only for the duration of the construction project</strong> are regularly listed in the German state building codes (Landesbauordnungen) as procedure-exempt developments – often together with site huts, site cabins and sanitary containers. The exact citation (section, annex, item number) varies from Land to Land and changes with every LBO amendment. The following overview shows typical locations but does not replace a case-by-case check.
+            </p>
+
+            <div class="overflow-x-auto my-8 rounded-xl border border-slate-200 shadow-sm">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-900 text-white">
+                  <tr>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Federal state (Land)</th>
+                    <th scope="col" class="text-left px-4 py-3 font-bold">Typical citation</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white">
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Baden-Württemberg</td><td class="px-4 py-3 text-slate-600">§50 LBO in conjunction with the annex (procedure-exempt developments)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Bavaria</td><td class="px-4 py-3 text-slate-600">Art. 57 BayBO (procedure-exempt building projects)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Berlin</td><td class="px-4 py-3 text-slate-600">§61 BauO Bln (procedure-exempt building projects / site facilities)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Hamburg</td><td class="px-4 py-3 text-slate-600">§60 HBauO (procedure-exempt developments)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Hesse</td><td class="px-4 py-3 text-slate-600">§63 HBO (procedure-exempt developments)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Lower Saxony</td><td class="px-4 py-3 text-slate-600">§60 NBauO in conjunction with the annex</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">North Rhine-Westphalia</td><td class="px-4 py-3 text-slate-600">§62 BauO NRW (permit-exempt developments)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Rhineland-Palatinate</td><td class="px-4 py-3 text-slate-600">§62 LBauO RP (procedure-exempt developments)</td></tr>
+                  <tr><td class="px-4 py-3 font-semibold text-slate-900">Saxony</td><td class="px-4 py-3 text-slate-600">§61 SächsBO (procedure-exempt developments)</td></tr>
+                </tbody>
+              </table>
+              <p class="text-xs text-slate-500 px-4 py-2 bg-slate-50 italic">Overview for orientation. What matters is the currently applicable version of the LBO including the annex. The condition in every Land: spatial connection to the site, no residential use, no permanent siting beyond the construction period.</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              <strong>Important:</strong> as soon as the container is to remain after completion or to be used as a permanent testing laboratory, a building-permit application is generally required. We check in advance, for each federal state and location, in which constellation procedure-exemption can be assumed – and support liaison with the competent building authority.
+            </p>
+
+            <!-- 9. LOGISTIK -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Logistics: siting, services, relocation between construction phases</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              A standard LABtoGO typically weighs 8 to 10 tonnes fully equipped. Delivery is by standard low-loader lorry; installation is by mobile crane (size depending on container weight and outreach). On site it is set down on a load-bearing, level standing area – a slab or a founded, compacted gravel area. Bearing capacity and layer build-up must be demonstrated structurally for the project; point loads and lever moments feed into the design.
+            </p>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Services: <strong>63 A CEE power connection</strong> (for the press, climate-controlled specimen curing, microscopes), <strong>water connection</strong> (for water bath, specimen curing, sanitary), <strong>waste-water connection or collection tank</strong>. On large construction projects with several successive phases – for example Deutsche Bahn tunnelling or motorway refurbishment over several sections – <strong>relocation during the hire period</strong> is often possible. The container can move with the construction phase.
+            </p>
+
+            <!-- 10. WIRTSCHAFTLICHKEIT -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Three configurations, three buyer groups</h2>
+
+            <div class="space-y-6 my-10">
+              <div class="bg-slate-50 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-2">Contractors with their own batching plant or recycling plant</h3>
+                <p class="text-slate-700">Permanent WPK station, standard concrete and geotechnical equipment. Hire-purchase 24–60 months, takeover at the end of the project or relocation to a follow-on site.</p>
+              </div>
+              <div class="bg-slate-50 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-2">Testing engineers and accredited testing laboratories</h3>
+                <p class="text-slate-700">Container in a 17025-/RAP-Stra-oriented, accreditation-ready configuration with documented climate control, equipment master data and a validation set-up. Actual suitability for ÜK-2/3 third-party supervision or RAP-Stra-15 testing bodies depends on the operator’s accreditation, scope of recognition, personnel and test area.</p>
+              </div>
+              <div class="bg-slate-50 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-2">Environmental consultants and remediation planners</h3>
+                <p class="text-slate-700">Focus on contaminant analysis (asbestos TRGS 519, PFAS pre-analysis, heavy-metal XRF, hydrocarbon screening). Airlock concept, dirty area, H-class vacuum as hardware standard.</p>
+              </div>
+            </div>
+
+            <!-- 11. PLANEXUS -->
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">What a Planexus site laboratory delivers</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Planexus plans and supplies container laboratories in the German-speaking region and treats the construction site not as an obstacle but as a standard scenario. For site laboratories we have developed the following configuration building blocks:
+            </p>
+
+            <ul class="space-y-3 text-slate-700 leading-relaxed mb-8">
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Robust envelope</strong> in RAL 7016 anthracite with steel-sheet cladding – suitable for sites and vandalism.</span></li>
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Vibration-decoupled weighing table</strong> with its own concrete plinth for fresh-concrete density and geotechnical weighings at 1 mg precision.</span></li>
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Climate-controlled specimen curing</strong> to DIN EN 12390-2: under water or in a moist room at 20 ± 2 °C – measured and documented.</span></li>
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Airlock and dirty-area module</strong> for TRGS 519 asbestos sampling – including negative-pressure ventilation and H-class vacuum.</span></li>
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Relocatable to follow-on sites</strong> – including a hire-purchase model and logistical accompaniment from phase to phase.</span></li>
+              <li class="flex gap-3"><span class="text-primary font-bold flex-shrink-0">→</span><span><strong>Delivery from stock typically within 2 to 4 days, standard containers in 5 to 8 weeks, fully equipped instrument containers in 8 to 14 weeks</strong> from order, installation generally within one working day. Where siting is procedure-exempt under the LBO, the formal building-permit procedure falls away – we check the conditions for each location.</span></li>
+            </ul>
+
+            <div class="bg-slate-900 text-white p-8 md:p-10 rounded-xl my-12">
+              <h3 class="text-2xl font-bold mb-4 text-primary">Your site laboratory in 8–14 weeks?</h3>
+              <p class="text-slate-300 mb-6 leading-relaxed">
+                Describe your construction project – scale, phase, required tests (concrete/soil/contaminants) and location. We check procedure-exemption under the relevant LBO and propose the matching equipment configuration as well as siting and services.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="/en/contact" class="bg-primary hover:bg-primary/90 text-slate-900 font-bold px-8 py-4 rounded-lg transition-colors inline-flex items-center gap-2">
+                  Enquire about a project
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="/en/lab-containers" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold px-8 py-4 rounded-lg transition-colors inline-flex items-center gap-2">
+                  Laboratory container overview
+                </a>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Conclusion: from a logistics bottleneck to on-site routine</h2>
+
+            <p class="text-slate-700 leading-relaxed mb-6">
+              The developments of 2024–2026 – PFAS in REACH and the Drinking Water Directive, the Substitute Building Materials Ordinance, asbestos investigation of existing buildings and infrastructure acceleration – make the site laboratory a strategically sensible tool for many contractors, testing engineers and environmental consultants. Anyone with fresh-concrete testing, soil mechanics and contaminant pre-analysis on site can keep within the testing window of the DIN series, commission confirmatory analysis more selectively and respond faster to findings. In many federal states, siting as a procedure-exempt site facility is possible; lead time is typically 2 to 4 days where stock is available, 5 to 8 weeks for standard containers and typically 8 to 14 weeks for fully equipped instrument containers; relocation between construction phases is often provided for depending on the contract model.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-slate-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions about the site laboratory</h2>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((q, i) => (
+              <details class="bg-slate-50 rounded-xl border border-slate-200 group" open={i === 0}>
+                <summary class="cursor-pointer p-6 font-bold text-slate-900 flex items-center justify-between gap-4 list-none">
+                  <span class="flex-1">{q.name}</span>
+                  <svg class="w-5 h-5 text-primary group-open:rotate-180 transition-transform flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </summary>
+                <div class="px-6 pb-6 text-slate-700 leading-relaxed">
+                  {q.acceptedAnswer.text}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedArticles slug="laborcontainer-baustelle-materialpruefung" locale="en" />
+  </div>
+</Layout>

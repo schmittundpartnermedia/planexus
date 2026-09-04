@@ -1,0 +1,566 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://planexus.de/en/services" }
+  ]
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What services does Planexus provide for lab containers?", "acceptedAnswer": { "@type": "Answer", "text": "Planexus delivers six core services from a single source: specialist engineering design (CAD, MEP, ISO 14644 cleanrooms), modular construction and manufacturing (steel frame, BSL-3 engineering), logistics and installation (transport, siting, commissioning across DACH), laboratory equipment (ISO 17025, GMP, DIN EN 14175), consulting and permits (LBO, BImSchG, BioStoffV) and Smart Lab integration (IoT, GMP data capture, Annex 11)." } },
+    { "@type": "Question", "name": "Can I book individual services or only the complete package?", "acceptedAnswer": { "@type": "Answer", "text": "Both are possible. You can commission individual services such as design, consulting or logistics separately. For turnkey lab containers we recommend the complete package, because all interfaces — design, manufacturing, equipment, permits and transport — are coordinated in-house. That shortens overall project time and eliminates trade clashes." } },
+    { "@type": "Question", "name": "How long does a lab-container project take from enquiry to handover?", "acceptedAnswer": { "@type": "Answer", "text": "Standard lab containers (BSL-2, analytical): 8–12 weeks. GMP cleanroom or BSL-3 containers: 18–24 weeks including qualification (IQ/OQ/PQ). Series projects such as LABtoGO: 6–8 weeks. The 12-stage project process covers enquiry, needs analysis, design, permits, manufacturing in Albstadt, transport, siting, installation, testing and handover." } },
+    { "@type": "Question", "name": "Which sectors does Planexus supply lab containers to?", "acceptedAnswer": { "@type": "Answer", "text": "Pharma and biotech (GMP Annex 1, ISO 14644), research and universities, public health and emergency preparedness (BSL-2/3), industry and materials testing (ISO 17025), energy transition H2 and battery (ATEX EN 60079), oil, gas and refining (ATEX, AwSV, fuel QC), education and further sectors. Each sector receives a standards-specific configuration — from cleanroom through BSL-3 to ATEX." } },
+    { "@type": "Question", "name": "Where is the lab container manufactured and who delivers it?", "acceptedAnswer": { "@type": "Answer", "text": "Final assembly and fit-out take place at the Planexus works in Albstadt (Baden-Württemberg). Transport by low-loader throughout DACH, internationally by rail or sea freight. Siting by mobile crane, utilities connection and turnkey handover by our own installation teams. Via the A81, locations such as Stuttgart are reachable in 1.5 hours." } }
+  ]
+};
+---
+
+<Layout
+  title="Lab container services – modular construction, cleanroom & design"
+  description="Lab container services: design, modular construction, logistics, equipment, consulting and Smart Lab – full-service delivery from Albstadt. Request a project now."
+  canonical="/en/services"
+  ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/backgrounds/lab-leistungen.webp')] bg-cover bg-center opacity-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-slate-900 font-medium text-sm mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="11" height="11" x="2" y="11" rx="2" ry="2"/><path d="m12 2 4 4-4 4"/><path d="M16 6H9a3 3 0 0 0 0 6"/></svg>
+            <span>Full-service provider for lab containers</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+            Lab container services – design, modular construction & equipment
+          </h1>
+          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-8">
+            From the first idea through to turnkey handover — we guide you through every phase of your laboratory project. Benefit from our managing directors’ long-standing experience in modular laboratory construction.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/en/contact" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+              Request a project <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +49 7435 7519 700
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-white border-b border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="p-4">
+            <div class="text-3xl md:text-4xl font-heading font-bold text-primary mb-1">10+</div>
+            <p class="text-gray-600 text-sm font-medium">Years of management experience</p>
+          </div>
+          <div class="p-4">
+            <div class="text-3xl md:text-4xl font-heading font-bold text-primary mb-1">50+</div>
+            <p class="text-gray-600 text-sm font-medium">Projects delivered</p>
+          </div>
+          <div class="p-4">
+            <div class="text-3xl md:text-4xl font-heading font-bold text-primary mb-1">100%</div>
+            <p class="text-gray-600 text-sm font-medium">Customer satisfaction</p>
+          </div>
+          <div class="p-4">
+            <div class="text-3xl md:text-4xl font-heading font-bold text-primary mb-1">24/7</div>
+            <p class="text-gray-600 text-sm font-medium">Service & support</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900 text-center">
+            Everything from a single source for your laboratory project
+          </h2>
+          <div class="prose prose-lg text-gray-600 max-w-none space-y-6">
+            <p>
+              Delivering a lab container is a complex undertaking that requires expertise across many disciplines. From engineering design through manufacturing and logistics to statutory approvals — every step must be carefully coordinated to achieve an optimal result.
+            </p>
+            <p>
+              At <strong>Planexus</strong> that is exactly what we offer: a single point of contact for every aspect of your laboratory project. Our six core services interlock seamlessly and ensure that your lab container is not only technically sound, but also delivered on time and within budget.
+            </p>
+            <p>
+              What sets us apart from other providers? We do not see ourselves as mere contractors, but as partners who think with you. Our engineers and project managers bring long-standing laboratory-construction experience and know the challenges that arise when delivering a container laboratory. That allows us to identify and resolve issues early — before they become delays or extra cost.
+            </p>
+            <p>
+              Every service references concrete standards: ISO 14644 for cleanrooms, DIN 1946-7 for ventilation, ISO 17025 for testing laboratories, EU-GMP Annex 1 for pharma, TRBA 100/120 for BSL-3, EN 60079 for ATEX and BioStoffV for biological agents. For <a href="/en/industries/pharma-biotech" class="text-primary font-medium hover:underline">pharma and biotech lab containers</a> and <a href="/en/industries/research-universities" class="text-primary font-medium hover:underline">research and university laboratories</a> we deliver sector-specific configurations with complete qualification documentation.
+            </p>
+            <p>
+              Modular laboratory construction follows defined standards: Planexus documents the conformity of every service with a standards reference and test evidence — from design through manufacturing to commissioning. The decentralised control room monitors all container units remotely, regardless of location.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">
+            Our six core services
+          </h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            Each service is a building block for project success. Combine them as required or use our complete package.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white border border-gray-100 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xl hover:shadow-gray-100 group overflow-hidden">
+            <div class="p-8">
+              <div class="mb-6 bg-primary/10 text-primary w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-slate-900 transition-all duration-300 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Specialist laboratory engineering design</h3>
+              <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+                Detailed design of your lab container taking all safety and efficiency requirements into account. We produce CAD drawings, layouts and MEP concepts for optimal workflows.
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> 3D visualisation</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Workflow optimisation</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Safety concepts</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> MEP engineering design</li>
+              </ul>
+            </div>
+            <div class="px-8 pb-8">
+              <a href="/en/services/planning" class="w-full block text-center py-3 bg-slate-50 rounded-lg hover:bg-primary hover:text-slate-900 transition-all font-medium text-slate-700 group-hover:bg-primary group-hover:text-slate-900">
+                Find out more <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline-block ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-100 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xl hover:shadow-gray-100 group overflow-hidden">
+            <div class="p-8">
+              <div class="mb-6 bg-primary/10 text-primary w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-slate-900 transition-all duration-300 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Modular construction & manufacturing</h3>
+              <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+                High-quality delivery in modular construction. Our lab containers are robust, durable and meet all relevant standards. Manufactured ‘Made in Germany’ to the highest quality standards.
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Steel frame construction</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> High-grade insulation</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Laboratory-grade surfaces</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Quality control</li>
+              </ul>
+            </div>
+            <div class="px-8 pb-8">
+              <a href="/en/services/modular-construction" class="w-full block text-center py-3 bg-slate-50 rounded-lg hover:bg-primary hover:text-slate-900 transition-all font-medium text-slate-700 group-hover:bg-primary group-hover:text-slate-900">
+                Find out more <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline-block ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-100 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xl hover:shadow-gray-100 group overflow-hidden">
+            <div class="p-8">
+              <div class="mb-6 bg-primary/10 text-primary w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-slate-900 transition-all duration-300 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Logistics & installation</h3>
+              <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+                Secure transport and professional installation on site. We take care of siting, connection of all utilities and the turnkey handover of your mobile laboratory.
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Worldwide transport</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Rapid installation</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Plug & Play solutions</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Commissioning</li>
+              </ul>
+            </div>
+            <div class="px-8 pb-8">
+              <a href="/en/services/logistics" class="w-full block text-center py-3 bg-slate-50 rounded-lg hover:bg-primary hover:text-slate-900 transition-all font-medium text-slate-700 group-hover:bg-primary group-hover:text-slate-900">
+                Find out more <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline-block ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-100 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xl hover:shadow-gray-100 group overflow-hidden">
+            <div class="p-8">
+              <div class="mb-6 bg-primary/10 text-primary w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-slate-900 transition-all duration-300 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Laboratory equipment</h3>
+              <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+                Integration of modern laboratory technology and furniture. We advise on selection and integrate fume cupboards, safety systems and your instruments seamlessly into the container.
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Bespoke laboratory furniture</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Fume cupboard systems</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Safety equipment</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Instrument integration</li>
+              </ul>
+            </div>
+            <div class="px-8 pb-8">
+              <a href="/en/services/equipment" class="w-full block text-center py-3 bg-slate-50 rounded-lg hover:bg-primary hover:text-slate-900 transition-all font-medium text-slate-700 group-hover:bg-primary group-hover:text-slate-900">
+                Find out more <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline-block ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-100 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xl hover:shadow-gray-100 group overflow-hidden">
+            <div class="p-8">
+              <div class="mb-6 bg-primary/10 text-primary w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-slate-900 transition-all duration-300 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Consulting & permits</h3>
+              <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+                Support with approval procedures for lab containers. We guide you through all statutory requirements and deliver legally robust solutions.
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Building-law advice</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Occupational health and safety</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Environmental law</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Fire-protection concepts</li>
+              </ul>
+            </div>
+            <div class="px-8 pb-8">
+              <a href="/en/services/consulting" class="w-full block text-center py-3 bg-slate-50 rounded-lg hover:bg-primary hover:text-slate-900 transition-all font-medium text-slate-700 group-hover:bg-primary group-hover:text-slate-900">
+                Find out more <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline-block ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-100 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xl hover:shadow-gray-100 group overflow-hidden">
+            <div class="p-8">
+              <div class="mb-6 bg-primary/10 text-primary w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-slate-900 transition-all duration-300 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Smart Lab integration</h3>
+              <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+                Future-ready networking of your laboratory. Integration of IoT sensors, monitoring systems and digital workflows for maximum efficiency and compliance.
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Indoor-climate monitoring</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Access control</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Digital documentation</li>
+                <li class="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Cloud connectivity</li>
+              </ul>
+            </div>
+            <div class="px-8 pb-8">
+              <a href="/en/services/smart-lab" class="w-full block text-center py-3 bg-slate-50 rounded-lg hover:bg-primary hover:text-slate-900 transition-all font-medium text-slate-700 group-hover:bg-primary group-hover:text-slate-900">
+                Find out more <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline-block ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-50 border-y border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-12 text-slate-900 text-center">
+            Why Planexus?
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 text-center">
+              <div class="w-16 h-16 bg-primary/10 text-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-slate-900">Expertise</h3>
+              <p class="text-gray-600 text-sm">Long-standing experience of our managing directors in modular laboratory construction, with numerous successfully delivered projects.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 text-center">
+              <div class="w-16 h-16 bg-primary/10 text-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-slate-900">Efficiency</h3>
+              <p class="text-gray-600 text-sm">Short project durations through optimised processes and experienced teams.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 text-center">
+              <div class="w-16 h-16 bg-primary/10 text-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-slate-900">Quality</h3>
+              <p class="text-gray-600 text-sm">Manufactured ‘Made in Germany’ to the highest standards, with comprehensive quality control.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projektablauf" class="py-20 bg-white scroll-mt-24">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-[#7a9900] font-medium text-sm mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span>Transparent and traceable</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">
+              How your project proceeds — step by step
+            </h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+              From the first enquiry through to return at the end of the project — we accompany you through the entire life cycle of your lab container. No other provider shows you so openly what happens.
+            </p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/10 hidden md:block"></div>
+
+            <div class="space-y-6">
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">01</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Enquiry and initial meeting</h3>
+                  <p class="text-gray-600">Your enquiry arrives — by telephone, email or <a href="/en/contact" class="text-primary font-medium hover:underline">contact form</a>. We arrange an initial introduction by video conference promptly. In this conversation we clarify your requirements, the intended use and the framework conditions of your project.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">02</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Detailed discussion and needs analysis</h3>
+                  <p class="text-gray-600">In a thorough conference call we discuss the technical details: which laboratory processes will run? Which containment level is required? Which utilities are available on site? Where needed, we combine a site visit with other journeys in your region.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">03</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Design, quotation and order</h3>
+                  <p class="text-gray-600">On the basis of the needs analysis our <a href="/en/services/planning" class="text-primary font-medium hover:underline">engineers prepare detailed plans</a> — CAD drawings, 3D visualisations and MEP concepts. You receive a transparent quotation. Once the order is placed, implementation begins immediately.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">04</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Site assessment and permits</h3>
+                  <p class="text-gray-600">We review delivery and siting together with you: structural stability certificate, <a href="/en/magazine/lab-container-permits-building-law" class="text-primary font-medium hover:underline">building-law assessment</a>, expert reports and access conditions. If a building permit is required, we handle coordination with the authority — or inspect the site in person.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">05</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Manufacturing at our own works</h3>
+                  <p class="text-gray-600">Your lab container is built at our works in Albstadt — <a href="/en/services/modular-construction" class="text-primary font-medium hover:underline">custom-manufactured, not off the shelf</a>. Under controlled conditions and with comprehensive quality control. You receive regular updates on construction progress. Via the A81 we deliver, for example, <a href="/en/lab-containers-stuttgart" class="text-primary font-medium hover:underline">lab containers to Stuttgart</a> in 1.5 hours — without a freight-forwarding detour.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">06</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Transport by low-loader</h3>
+                  <p class="text-gray-600">The finished container is transported by low-loader directly to your site — without special permits and without time delays. For <a href="/en/services/logistics" class="text-primary font-medium hover:underline">international projects</a> we can, if required, also handle complete customs clearance.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">07</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Siting by mobile crane</h3>
+                  <p class="text-gray-600">On site the container is placed by mobile crane — by local partner companies or our established network of specialist crane contractors. We coordinate everything: crane standing area, access and time window.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">08</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Assembly and installation</h3>
+                  <p class="text-gray-600">For larger plants we handle assembly and installation — with local installation partners or our own installation crew. Utility connections, <a href="/en/services/equipment" class="text-primary font-medium hover:underline">laboratory equipment</a>, safety systems — everything is connected professionally.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">09</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Final inspection and handover</h3>
+                  <p class="text-gray-600">After installation is complete, a comprehensive functional test of all systems follows. Only when everything is running correctly do we hand the plant over to you — turnkey and ready for operation.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">10</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Ongoing service and maintenance</h3>
+                  <p class="text-gray-600">We remain available after handover. Recurring services, maintenance and inspections are carried out by local contract partners or our Europe-wide service crew — depending on location and need.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">11</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Collection and return protocol</h3>
+                  <p class="text-gray-600">When the project ends, we collect the container. Before dismantling, the plant is inspected for damage and a detailed return protocol is prepared. Return transport is by low-loader in the same way.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-6 items-start relative">
+                <div class="w-12 h-12 bg-primary text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 z-10 shadow-lg shadow-primary/20">12</div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100 flex-1">
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Cleaning, decontamination and refurbishment</h3>
+                  <p class="text-gray-600">Back at our works the container is fully cleaned, professionally decontaminated and prepared for the next deployment. <a href="/en/magazine/sustainability-lab-construction-energy-efficiency" class="text-primary font-medium hover:underline">Sustainability</a> is not a slogan — our containers have several life cycles.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+                <span>Distinguishing capability</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">
+                Decentralised control room — your plant in view, worldwide
+              </h2>
+              <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                Our most important distinguishing capability: we monitor your container units remotely — wherever in the world they stand. Via our decentralised control room we check operational status, climate data, safety systems and operating parameters in real time.
+              </p>
+              <p class="text-gray-300 text-lg leading-relaxed">
+                In the event of a fault we are contacted directly by the affected unit — automatically and immediately. That allows us to respond before a problem escalates. No other provider offers you this level of security.
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4 p-5 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-bold mb-1">Worldwide monitoring</h3>
+                  <p class="text-gray-400 text-sm">Every container unit is monitored remotely around the clock — regardless of location.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-5 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-bold mb-1">Automatic fault alerts</h3>
+                  <p class="text-gray-400 text-sm">If values deviate, the unit contacts us directly — we respond before you notice.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-5 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-bold mb-1">Proactive service</h3>
+                  <p class="text-gray-400 text-sm">Climate data, safety systems, operating parameters — everything in real time, everything documented.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-5 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><path d="M12 7v5l3 3"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-bold mb-1">Maximum operational reliability</h3>
+                  <p class="text-gray-400 text-sm">Minimise downtime, optimise maintenance intervals — your plant runs when you need it.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900 text-center">
+            Application areas for our lab containers
+          </h2>
+          <p class="text-gray-600 text-lg text-center mb-12 max-w-2xl mx-auto">
+            Our modular laboratory solutions are used across many sectors and applications — from pharmaceutical research to environmental analysis.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="text-slate-700 font-medium">Pharmaceutical research & development</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="text-slate-700 font-medium">Chemical analysis & quality control</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="text-slate-700 font-medium">Biotechnology & life sciences</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="text-slate-700 font-medium">Environmental and water analysis</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="text-slate-700 font-medium">Food testing</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="text-slate-700 font-medium">Materials testing & materials engineering</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="text-slate-700 font-medium">BSL-2 and BSL-3 laboratories</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="text-slate-700 font-medium">Mobile research stations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="py-16 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-8 text-slate-900">Frequently asked questions about our services</h2>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <div class="bg-white rounded-xl p-6 border border-gray-100">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">
+            Looking for a custom solution?
+          </h2>
+          <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+            We also develop bespoke laboratory modules well beyond the standard. Speak to us — together we will find the optimum solution for your requirements.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/en/contact" class="bg-primary text-slate-900 px-10 py-4 rounded-lg font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 inline-flex items-center gap-2">
+              Custom enquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white px-10 py-4 rounded-lg font-medium hover:bg-white/10 transition-colors inline-flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,116 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "inLanguage": "en-GB",
+  "headline": "Made in Germany: quality and speed in laboratory construction",
+  "description": "Why Made in Germany is not at odds with pace in modular lab construction: turnkey laboratories in 8–14 weeks, GMP, BSL and ATEX compliant from Albstadt-Laufen.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Managing Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-07-22",
+  "dateModified": "2026-07-22",
+  "image": "https://planexus.de/images/blog-made-in-germany-qualitaet-tempo-laborbau.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/made-in-germany-quality-speed-lab-construction" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Made in Germany: quality and speed in laboratory construction", "item": "https://planexus.de/en/magazine/made-in-germany-quality-speed-lab-construction" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    { "@type": "Question", "name": "How can a complex laboratory be ready in only 8 to 14 weeks?", "acceptedAnswer": { "@type": "Answer", "text": "The short lead time comes from parallel processes and modular prefabrication. While foundations and connections are prepared on site, the complete laboratory module is built in the factory. Quality checks run during production. The module leaves the hall around 90 percent complete — only connection work remains on site." } },
+    { "@type": "Question", "name": "Do modular laboratories meet the same standards as traditional buildings?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, without qualification. Planexus builds to the same GMP guidelines, cleanroom standards and biosafety requirements as conventional laboratories. The difference is construction method, not the requirements. Certification and documentation match regulated environments." } },
+    { "@type": "Question", "name": "What happens later with extensions or conversions?", "acceptedAnswer": { "@type": "Answer", "text": "Modules can be extended and reconfigured. Wall elements can be moved, technical systems retrofitted and layouts adapted. An organisation can start small and expand without a complete new build." } },
+    { "@type": "Question", "name": "What warranties apply to the technical systems?", "acceptedAnswer": { "@type": "Answer", "text": "Planexus provides statutory warranty under German law as standard. Maintenance contracts covering inspections, preventive servicing and spare parts are available. Critical components such as HEPA filters and controls are serviced to manufacturer specifications." } },
+    { "@type": "Question", "name": "Is Made in Germany still competitive on price?", "acceptedAnswer": { "@type": "Answer", "text": "Comparing purchase price alone is too narrow. German manufacture scores on total cost: shorter lead times, lower transport cost, lower downtime risk and longer service life. A laboratory that generates revenue sooner often pays back faster than a cheaper option with a long wait." } }
+  ]
+};
+---
+
+<Layout
+  type="article"
+  title="Made in Germany: quality and speed in laboratory construction"
+  description="Made in Germany in laboratory construction: turnkey modules in 8–14 weeks, GMP, BSL and ATEX compliant — quality and speed from Albstadt-Laufen."
+  canonical="/en/magazine/made-in-germany-quality-speed-lab-construction"
+  ogImage="https://planexus.de/images/blog-made-in-germany-qualitaet-tempo-laborbau.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-made-in-germany-qualitaet-tempo-laborbau.jpg')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Made in Germany: quality and speed in laboratory construction
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Highly complex laboratories with strict standards — and in a short time. Many assume they must choose between German engineering and rapid availability. In practice, Made in Germany now means both.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto prose prose-slate prose-lg">
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Planexus builds turnkey laboratory modules at the Albstadt-Laufen works. GMP, BSL and ATEX configurations leave the factory largely complete. On site, the remaining work is connection, commissioning and documentation — not a multi-year shell construction.
+          </p>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">German engineering meets modular efficiency</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Modular construction is not a compromise on quality. Steel frame, laboratory-grade surfaces, HVAC to DIN 1946-7 and documented factory acceptance tests happen under hall conditions, independent of weather and site delays.
+          </p>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Why 8 to 14 weeks is realistic</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Foundations and media connections can be prepared while the module is built. Standard analytical containers typically need 8–12 weeks of production plus a few days on site. GMP cleanroom or BSL-3 programmes take longer because qualification is included — still far below a conventional laboratory build.
+          </p>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">GMP and biosafety from German manufacture</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Cleanrooms follow ISO 14644 and EU GMP Annex 1 where specified. BSL-2 and BSL-3 layouts include airlocks, HEPA cascades and documented pressure regimes. The regulatory bar is the same as for a brick laboratory; only the delivery method differs.
+          </p>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">ATEX for explosive atmospheres</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Hydrogen and battery test work requires ATEX-rated zones. Those configurations are engineered in Albstadt with the same documentation pack used for German, Swiss and Austrian authorities.
+          </p>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Why clients specify German manufacture</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Shorter logistics into DACH, spare-parts access, language of documentation and auditability matter as much as the steel. A laboratory that starts generating data months earlier changes the investment case.
+          </p>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Total cost versus conventional laboratory build</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Conventional programmes often run 24 months or more. Modular delivery compresses that calendar. Hire remains available for time-limited projects; purchase for permanent capacity. The detailed decision guide is in the magazine article on renting versus buying.
+          </p>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8 mt-12">Frequently asked questions</h2>
+          <div class="space-y-6 not-prose">
+            {faqSchema.mainEntity.map((item) => (
+              <div>
+                <h3 class="font-bold text-slate-900 mb-2">{item.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{item.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+          <div class="mt-12">
+            <RelatedArticles slug="made-in-germany-qualitaet-tempo-laborbau" locale="en" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

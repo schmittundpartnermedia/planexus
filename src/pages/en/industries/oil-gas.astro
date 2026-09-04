@@ -1,0 +1,251 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ContactForm from '../../../components/ContactForm.tsx';
+import Picture from '../../../components/Picture.astro';
+import AuthorBio from '../../../components/AuthorBio.astro';
+import BranchenCrossLinks from '../../../components/BranchenCrossLinks.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const title = "Lab containers for oil, gas & refining – ATEX, turnaround";
+const description = "Lab containers for refineries and tank farms: ATEX Zone 1/2, fuel QC to DIN EN 228/590, H₂S/VOC, AwSV, ISO 17025. Turnaround hire in weeks. Request a consultation.";
+const canonical = "/en/industries/oil-gas";
+const ogImage = "/attached_assets/generated_images/high-tech_lab_interior.png";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Lab containers for oil, gas, refining and tank farms",
+  "provider": { "@type": "Organization", "name": "Planexus GmbH", "image": "https://planexus.de/android-chrome-512x512.png", "url": "https://planexus.de", "telephone": "+49 7435 7519 700", "email": "info@planexus.de", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" }, "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" } },
+  "areaServed": [{ "@type": "Country", "name": "Germany" }, { "@type": "Country", "name": "Switzerland" }, { "@type": "Country", "name": "Austria" }],
+  "audience": { "@type": "BusinessAudience", "audienceType": "Refineries, tank farms, pipeline and gas-storage operators, LNG terminals, fuel testing laboratories, environmental laboratories, turnaround contractors" },
+  "description": "ATEX Zone 1/2 lab containers for hydrocarbon process analytics, fuel quality to DIN EN 228/590 and ASTM, H₂S/VOC protection, AwSV bunding and turnaround hire without hall conversion."
+};
+const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+  { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://planexus.de/en/industries" },
+  { "@type": "ListItem", "position": 3, "name": "Oil, gas & refining", "item": "https://planexus.de/en/industries/oil-gas" }
+]};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Which ATEX zone applies to a lab container at a refinery or tank farm?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the installation site and the explosion-protection document under the German Industrial Safety Ordinance (BetrSichV) – not on the container alone. If the laboratory stands outside defined Ex zones at the site fence, an Ex-free measuring room with Zone 2 sampling or gas warning is often sufficient. Directly at a tank bund, pump station or sampling point, Zone 2 or locally Zone 1 may apply. We plan the zone separation: Ex laboratory vs Ex-free control room, earthing to DIN EN 60079-14, antistatic floor DIN EN 1081, Ex lighting 2G, LEL detection near floor level for heavy hydrocarbons. We build Zone 1 on a project basis with notified-body assessment." } },
+    { "@type": "Question", "name": "Can a refinery laboratory be hired for a turnaround?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Turnaround and revamp windows typically last 4–16 weeks. In that time QC needs capacity beside the plant without converting the existing laboratory hall. We supply hire containers with fuel and process analytics, AwSV bunding and ATEX-compliant electrical installation. Connection to works media (power, nitrogen, instrument air, data). After the turnaround, dismantling with no hall remnant. Hire agreements 8–24 weeks with an extension option; purchase or hire purchase if the laboratory stays permanently on site." } },
+    { "@type": "Question", "name": "What does AwSV mean for the lab container?", "acceptedAnswer": { "@type": "Answer", "text": "The German Ordinance on Installations for Handling Substances Hazardous to Water (AwSV) requires defined retention for mineral oil, solvents and sample residues. In the container: tight bunds under workstations and cabinets, containment volume matched to the stored quantity, coating resistant to hydrocarbons, documented leak-tightness test. In addition the Water Resources Act (WHG) and the site’s leak alarm concept. We supply the AwSV-relevant evidence as an annex to the risk assessment – the assessment itself remains the operator’s duty." } },
+    { "@type": "Question", "name": "Is a fuel QC container accreditation-ready to ISO 17025?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ISO/IEC 17025 sets requirements for methods, traceability and environment – not for masonry walls. For petrol DIN EN 228, diesel DIN EN 590, density ASTM D4052, sulphur ASTM D4294, flash point ASTM D93 / DIN EN ISO 2719 we supply climate-controlled measuring positions, calibratable environmental recording and DAkkS-ready documentation. Independent testing laboratories (SGS, Intertek, TÜV) and works QC use the same standard. Hardness testing, SEM and VDI 2627 weighing rooms belong on the industry page, not in this fuel layout." } },
+    { "@type": "Question", "name": "How does the container protect against H₂S and VOC?", "acceptedAnswer": { "@type": "Answer", "text": "Hydrogen sulphide is toxic and heavier than air; many hydrocarbon vapours collect near the floor – unlike hydrogen, which we monitor near the ceiling. Standard: negative pressure in the sampling room relative to the control room, extract with VOC capture, H₂S and LEL detectors at two heights, pre-alarm and emergency shut-off of sampling, optical-acoustic alarm inside and outside. Fume cupboards to DIN EN 14175 for open hand samples. No open flames, no unprotected ignition sources. SIL-2 chain analogous to the H₂ page, but with sensing and ventilation routing for hydrocarbons and H₂S." } },
+    { "@type": "Question", "name": "Does a lab container on a refinery site need its own permit?", "acceptedAnswer": { "@type": "Answer", "text": "Usually yes, often within the existing Federal Immission Control Act (BImSchG)/major-accident plant rather than as an entirely new building. The container remains spatially limited: Ex zone, immission and wastewater stay in the existing operating area. We supply an explosion-protection concept, fire-protection report, AwSV documentation, structural design and building services as an authority pack. Alignment with the works fire brigade and plant safety belongs at project start. Building-law thresholds are the same as for other lab containers; the difference is integration into the site’s explosion-protection document." } },
+    { "@type": "Question", "name": "How does this container differ from industrial QC and from H₂ test containers?", "acceptedAnswer": { "@type": "Answer", "text": "Industry & materials testing is tensile testing, hardness, SEM, microbalance, ISO 17025 at the production plant. Energy transition H₂ & batteries is electrolysers, fuel cells, thermal runaway, dry rooms and IPCEI. Oil, gas & refining is hydrocarbon process, fuel standards, tank-farm environmental analytics, H₂S/VOC, AwSV and turnaround at the existing plant. Materials testing in a chemical park we link to the industry page. Hydrogen piloting and battery testing we link to the H₂ page. H₂ blending into the gas grid we treat here only as an interface, not as a test stand." } }
+  ]
+};
+const articleSchema = {"@context": "https://schema.org", "@type": "Article", "headline": "Lab containers for oil, gas & refining – ATEX, fuel QC, turnaround", "description": "Lab containers for refineries, tank farms and gas infrastructure. ATEX Zone 1/2, DIN EN 228/590, H₂S/VOC, AwSV, ISO 17025, turnaround hire.", "image": "https://planexus.de/opengraph.jpg", "datePublished": "2026-08-31", "dateModified": "2026-08-31", "author": {"@type": "Person", "name": "Sven Biewald", "jobTitle": "Managing Director, Planexus GmbH", "url": "https://planexus.de/en/team"}, "publisher": {"@type": "Organization", "name": "Planexus GmbH", "logo": {"@type": "ImageObject", "url": "https://planexus.de/android-chrome-512x512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://planexus.de/en/industries/oil-gas"}, "about": "Lab containers for oil, gas, refining and tank farms", "inLanguage": "en"};
+---
+<Layout title={title} description={description} canonical={canonical} ogImage={ogImage} schema={serviceSchema}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <div class="bg-white">
+    <section class="relative bg-slate-900 text-white overflow-hidden pt-20">
+      <div class="absolute inset-0 z-0">
+        <Picture src="/attached_assets/generated_images/high-tech_lab_interior.png" alt="Lab containers for oil, gas, refining and tank farms – ATEX fuel QC turnaround" class="w-full h-full object-cover opacity-25" loading="eager" fetchpriority="high" width={1024} height={1024} />
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/70"></div>
+      </div>
+      <div class="relative z-10 container mx-auto px-4 py-16 md:py-24">
+        <div class="max-w-4xl">
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Industry · Refining · Tank farms · Pipeline · LNG · Turnaround</div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">Lab containers for oil, gas &amp; refining – ATEX, fuel QC</h1>
+          <p class="text-xl text-gray-300 leading-relaxed mb-4"><strong class="text-white">ATEX Zone 1/2 at the site fence, fuel and process analytics to DIN EN 228/590 and ASTM, H₂S and VOC protection, AwSV bunding, ISO 17025-capable measuring positions, mobile for turnaround.</strong> For refineries, tank farms, pipeline and gas-storage operators, LNG sites and independent fuel testing laboratories in DACH.</p>
+          <p class="text-base text-gray-400 mb-8">Without hall conversion in the Ex zone – the laboratory is in place while the plant is running or in turnaround.</p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">Enquire about a refinery laboratory</a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">+49 7435 7519 700</a>
+          </div>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div>✓ ATEX Zone 1/2 at the existing plant</div>
+            <div>✓ H₂S and VOC detection</div>
+            <div>✓ ISO 17025-capable (fuel QC)</div>
+            <div>✓ Turnaround in weeks, not months</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Breadcrumbs bar items={[{ name: 'Home', href: '/en' }, { name: 'Industries', href: '/en/industries' }, { name: 'Oil, gas & refining' }]} />
+
+    <AuthorBio  locale="en" />
+
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-10">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Process laboratory at the existing plant, not drilling-rig romance</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Why refineries and tank farms need the container</h2>
+            <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">Conversion in the Ex zone takes time; downtime costs money. A temporary laboratory during turnaround or revamp must be standing in weeks, keep distance to neighbouring plants and meet environmental conditions – and be gone after the window. In DACH the work is downstream and midstream: refining, tank farms, pipelines, gas storage, LNG – not upstream mud logging.</p>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">Zone 1/2</div><div class="text-xs text-gray-400 uppercase tracking-wider">ATEX at the site fence</div><div class="text-xs text-gray-500 mt-1">EN 60079, Ex document</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">8–16 wks</div><div class="text-xs text-gray-400 uppercase tracking-wider">Turnaround window</div><div class="text-xs text-gray-500 mt-1">Hire instead of hall conversion</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">AwSV</div><div class="text-xs text-gray-400 uppercase tracking-wider">Bunding &amp; tightness</div><div class="text-xs text-gray-500 mt-1">WHG, hydrocarbons</div></div>
+            <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">228/590</div><div class="text-xs text-gray-400 uppercase tracking-wider">Fuel standards</div><div class="text-xs text-gray-500 mt-1">DIN EN + ASTM methods</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">Scope: industrial QC, oil &amp; gas, hydrogen</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">Three pages, three buyers. <a href="/en/industries/industry-materials-testing" class="text-primary font-medium hover:underline">Industry &amp; materials testing</a> addresses steel, automotive, construction, hardness testing, microbalances, VDI 2627. <a href="/en/industries/energy-transition-h2-battery" class="text-primary font-medium hover:underline">Energy transition, H₂ &amp; batteries</a> addresses IPCEI, thermal runaway, dry rooms −40 °C, electrolysers. This page stays with hydrocarbon process, fuel quality, Ex zone at the existing plant, environmental analytics at the tank farm and turnaround.</p>
+          <p class="text-gray-700 leading-relaxed mb-0">Materials testing in a chemical park belongs on the industry page. Hydrogen piloting and battery testing belong on the H₂ page. We mention H₂ blending into the natural-gas grid as an interface – not the test stand itself.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Standards and regulations for refinery and tank-farm laboratories</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+              <thead class="bg-slate-900 text-white"><tr><th class="text-left p-4 font-bold">Standard / rule</th><th class="text-left p-4 font-bold">Application</th><th class="text-left p-4 font-bold">Delivery</th></tr></thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr><td class="p-4 font-semibold text-slate-900">ATEX 2014/34/EU + EN 60079</td><td class="p-4 text-gray-700">Ex protection Zone 1/2 for hydrocarbons</td><td class="p-4 text-gray-700">EX lighting, earthing, LEL near floor</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">BetrSichV / explosion-protection document</td><td class="p-4 text-gray-700">Zoning at the installation site</td><td class="p-4 text-gray-700">Zoning concept, laboratory/control-room separation</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">TRGS 727 / TRBS 2152</td><td class="p-4 text-gray-700">Avoidance of ignition hazards, ESD</td><td class="p-4 text-gray-700">Antistatic floor DIN EN 1081</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN EN 228 / DIN EN 590</td><td class="p-4 text-gray-700">Petrol and diesel fuel</td><td class="p-4 text-gray-700">QC layout, climate-stable measuring positions</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">ASTM D methods</td><td class="p-4 text-gray-700">Density, S, flash, distillation, TAN</td><td class="p-4 text-gray-700">Instrument siting, media, extract</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">ISO/IEC 17025</td><td class="p-4 text-gray-700">Accredited fuel and environmental QC</td><td class="p-4 text-gray-700">Environmental qualification, DAkkS-ready</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">AwSV / WHG</td><td class="p-4 text-gray-700">Water-hazardous substances, bunding</td><td class="p-4 text-gray-700">Bunds, leak-tightness evidence, coating</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">BImSchG / TA Luft</td><td class="p-4 text-gray-700">Immission, VOC extract at the site</td><td class="p-4 text-gray-700">Extract concept, authority annex</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DIN EN 14175 + TRGS 526</td><td class="p-4 text-gray-700">Fume cupboards, laboratories</td><td class="p-4 text-gray-700">Sampling fume cupboard, air-change rate</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">SIL-2 to IEC 61508</td><td class="p-4 text-gray-700">Emergency shut-off of sampling / gas warning</td><td class="p-4 text-gray-700">Redundant H₂S/LEL sensing</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900 text-center">Eight application containers for oil, gas and refining</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { title: 'Fuel QC', desc: 'Density, sulphur, water, flash point, GC periphery. Petrol DIN EN 228, diesel DIN EN 590, climate-stable measuring positions.' },
+              { title: 'Crude and distillate assay', desc: 'Distillation, TAN, viscosity, water/sediment. Short sample paths to the plant, bunding to AwSV.' },
+              { title: 'Process analytics at the fence', desc: 'Sampling, flash, TAN, viscosity beside pump station or blender – zone separation from the control room.' },
+              { title: 'H₂S and sulphur laboratory', desc: 'Negative pressure, H₂S warning, sensing near floor and head height, extract, no open flames.' },
+              { title: 'Tank-farm environmental laboratory', desc: 'BTEX, mineral-oil hydrocarbons, soil and groundwater at the bund, contaminated land, filling station.' },
+              { title: 'Corrosion and integrity', desc: 'Coupons, water chemistry pipeline/tank. Deep materials testing (tensile, hardness, SEM) → industry page.' },
+              { title: 'Turnaround hire laboratory', desc: '8–16 weeks of capacity beside the plant, dismantling with no hall remnant, extension or hire purchase.' },
+              { title: 'LNG, storage, odorisation', desc: 'Natural-gas storage, LNG terminal, odorisation. H₂ blending only as an interface to the H₂ page.' }
+            ].map(item => (
+              <div class="bg-slate-50 rounded-xl p-5 border-l-2 border-primary">
+                <div class="font-bold text-slate-900 mb-2">{item.title}</div>
+                <p class="text-sm text-gray-700 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10">Six engineering details for hydrocarbon laboratories</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">1. Gas detection</div><h3 class="text-xl font-bold mb-3">Heavy gases near the floor, not only the ceiling</h3><p class="text-gray-300 text-sm">Many hydrocarbon vapours and H₂S collect low down. LEL and H₂S sensors at two heights, pre-alarm, emergency shut-off of sampling. Ceiling-level hydrogen detection belongs on the H₂ page – here ventilation is thought from below and above.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">2. Zone separation</div><h3 class="text-xl font-bold mb-3">Ex laboratory and Ex-free control room</h3><p class="text-gray-300 text-sm">Sampling room Zone 2 or 1, measuring and evaluation room Ex-free, airlock or pressure cascade, switchgear outside or pressurised to EN 60079-2.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">3. ESD and earthing</div><h3 class="text-xl font-bold mb-3">Antistatic, &lt;1 Ω, Ex lighting</h3><p class="text-gray-300 text-sm">Floor DIN EN 1081, earthing DIN EN 60079-14, lighting 2G EEx d/e, no unprotected ignition sources, no open flames at the workplace.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">4. AwSV bunding</div><h3 class="text-xl font-bold mb-3">Bunds, tightness, hydrocarbon-resistant coating</h3><p class="text-gray-300 text-sm">Containment under cabinets and work surfaces, volume matched to stored quantity, leak-tightness test documented, leak alarm to the works control room.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">5. Extract and VOC</div><h3 class="text-xl font-bold mb-3">Fume cupboard, air-change rate, immission</h3><p class="text-gray-300 text-sm">DIN EN 14175 fume cupboards for hand samples, defined air-change rate, VOC capture, alignment with TA Luft / site extract. Negative pressure in the sampling room relative to the control room.</p></div>
+            <div class="bg-slate-800 rounded-xl p-6"><div class="text-primary font-bold text-sm uppercase tracking-wider mb-2">6. SIL chain HC/H₂S</div><h3 class="text-xl font-bold mb-3">Emergency shut-off of sampling</h3><p class="text-gray-300 text-sm">Redundant sensing, solenoid valve on the sample line, ventilation ramp-up, acoustic-optical alarm, plant-safety link-out – SIL-2 logic, substance profile hydrocarbon and H₂S.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">ATEX at the existing refinery: container instead of hall conversion</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">A permanent fit-out in the Ex zone pulls in the explosion-protection document, works fire brigade, often a BImSchG variation and months of construction. The container keeps the zone spatially small: installation at the fence or on a defined open area, distance to neighbouring plants per the site concept, pressure relief over defined surfaces, dismantling after turnaround without a building envelope.</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Typical DACH sites: refinery and chemical-park complexes (Rhineland, Gelsenkirchen, Leuna, Bayernoil, Burghausen, Schwechat), tank farms on the Rhine, Elbe and Danube, natural-gas storage, LNG terminals on the North Sea coast. Independent testing laboratories need the same methods as works QC – only with an ISO 17025 environment rather than a production hall.</p>
+          <p class="text-gray-700 leading-relaxed mb-8">Offshore platforms and IEC 61892 are not a performance promise here. Anyone who needs materials testing, SEM or climate-controlled weighing cells goes to <a href="/en/industries/industry-materials-testing" class="text-primary font-medium hover:underline">industry &amp; materials testing</a>. Anyone who needs electrolysers, fuel cells or battery abuse goes to <a href="/en/industries/energy-transition-h2-battery" class="text-primary font-medium hover:underline">H₂ &amp; batteries</a>.</p>
+
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900">Turnaround: hire laboratory beside the plant</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">In a turnaround, sample volumes and contractor traffic rise while parts of the existing laboratory infrastructure are locked or converted. A hire container with fuel QC, process analytics or environmental analytics stands in weeks, hangs on works media and disappears after the window. Economically often clearer than a hall makeshift in the Ex zone.</p>
+          <p class="text-gray-700 leading-relaxed mb-8">Terms of 8–24 weeks are the norm; for revamp or permanent capacity, hire purchase or purchase. The AwSV and ATEX documentation travels with the unit – it is bound to the container, not to the hall.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Planexus services for oil, gas &amp; refining</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <a href="/en/services/planning" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Technical laboratory planning</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">ATEX zoning at the existing plant, laboratory/control-room zone separation, AwSV bunding, VOC extract, SIL chain for H₂S and LEL.</p>
+            </a>
+            <a href="/en/services/modular-construction" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Modular construction &amp; manufacturing</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">Fuel QC, assay, H₂S laboratory, tank-farm environmental module, turnaround hire containers from the Albstadt factory.</p>
+            </a>
+            <a href="/en/services/consulting" class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 class="font-bold text-slate-900 mb-2">Consulting &amp; permits</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">Explosion-protection document annex, BImSchG/TA Luft alignment, AwSV evidence, works fire-brigade pack.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900 text-center">Further reading</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <a href="/en/magazine/lab-container-energy-transition-h2-battery-ex-protection" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Ex protection</div><h3 class="font-bold text-slate-900 mb-2">H₂, batteries, ATEX</h3><p class="text-sm text-gray-600">When the next step is hydrogen testing – not hydrocarbon QC.</p></a>
+            <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">HVAC</div><h3 class="font-bold text-slate-900 mb-2">Climate, ventilation, standards</h3><p class="text-sm text-gray-600">Air-change rate, fume cupboard, negative pressure – the basis for VOC and H₂S laboratories.</p></a>
+            <a href="/en/magazine/lab-containers-rent-or-buy" class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100"><div class="text-xs text-[#7a9900] font-bold uppercase tracking-wider mb-2">Turnaround</div><h3 class="font-bold text-slate-900 mb-2">Rent or buy</h3><p class="text-sm text-gray-600">Short window versus permanent QC at the tank farm.</p></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Frequently asked questions on oil, gas &amp; refining</h2>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed text-sm">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="anfrage" class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Lab containers for a refinery, tank farm or turnaround</h2>
+            <p class="text-gray-700 text-lg">Outline the site (Ex zone yes/no), methods and time window. We reply within one working day with a zoning concept and a hire or purchase model.</p>
+          </div>
+          <ContactForm client:visible locale="en" />
+        </div>
+      </div>
+    </section>
+
+    <BranchenCrossLinks current="oel-gas" locale="en" />
+  </div>
+</Layout>

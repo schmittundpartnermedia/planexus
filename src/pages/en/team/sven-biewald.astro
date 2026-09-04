@@ -1,0 +1,235 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { magazinEn } from '../../../data/magazin';
+
+const articleSlugs = [
+  'bsl-2-bsl-3-container-labor',
+  'laborcontainer-genehmigung-baurecht-vorschriften',
+  'laborcontainer-klimatisierung-lueftung-normen',
+  'laborcontainer-ausstattung-checkliste',
+  'laborcontainer-mieten-oder-kaufen',
+  'laborcontainer-projektablauf-von-idee-bis-uebergabe',
+  'laborcontainer-baustelle-materialpruefung',
+  'laborcontainer-energiewende-h2-batterie-ex-schutz',
+  'innovation-modulbau-zukunft-mobiles-labor',
+  'planexus-analytica-2026-muenchen',
+  'analytica-2026-rueckblick-labtogo-premiere',
+];
+
+const articles = articleSlugs.map((slug) => ({
+  slug,
+  title: magazinEn[slug]?.title ?? slug,
+  href: magazinEn[slug] ? `/en/magazine/${magazinEn[slug].slug}` : `/en/magazine/${slug}`,
+}));
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sven Biewald",
+  "url": "https://planexus.de/en/team/sven-biewald",
+  "image": "https://planexus.de/en/team/sven-biewald.jpg",
+  "jobTitle": "Managing Director",
+  "inLanguage": "en",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "url": "https://planexus.de",
+    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
+  },
+  "knowsAbout": [
+    "Laboratory containers", "Modular laboratory construction", "BSL-2", "BSL-3", "GMP cleanroom",
+    "ATEX / explosion protection", "GenTG / GenTSV", "Biological Agents Ordinance (BioStoffV)",
+    "Laboratory planning", "Laboratory ventilation", "Laboratory permitting"
+  ],
+  "knowsLanguage": ["de", "en"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Am Steinbach 8",
+    "postalCode": "72459",
+    "addressLocality": "Albstadt-Laufen",
+    "addressRegion": "Baden-Württemberg",
+    "addressCountry": "DE"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Team", "item": "https://planexus.de/en/team" },
+    { "@type": "ListItem", "position": 3, "name": "Sven Biewald", "item": "https://planexus.de/en/team/sven-biewald" }
+  ]
+};
+---
+
+<Layout
+  title="Sven Biewald – Managing Director, Planexus GmbH"
+  description="Sven Biewald, Managing Director of Planexus GmbH, brings more than ten years of laboratory-container construction experience and is responsible for BSL-2, BSL-3, GMP and ATEX laboratories across DACH."
+  canonical="/en/team/sven-biewald"
+  ogImage="/team/sven-biewald.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <nav class="text-sm text-gray-400 mb-6" aria-label="Breadcrumb">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <span class="mx-2">/</span>
+          <a href="/en/team" class="hover:text-primary">Team</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-200">Sven Biewald</span>
+        </nav>
+        <div class="grid md:grid-cols-3 gap-10 items-start max-w-5xl">
+          <div class="md:col-span-1">
+            <div class="aspect-square rounded-2xl overflow-hidden border-2 border-primary/40 bg-gradient-to-br from-primary/30 to-primary/5">
+              <img
+                src="/team/sven-biewald.jpg"
+                alt="Sven Biewald — shareholder and visionary of Planexus GmbH"
+                width="400"
+                height="400"
+                loading="eager"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <div class="text-xs uppercase tracking-wider text-[#bbd700] font-bold mb-2">Managing Directors</div>
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Sven Biewald</h1>
+            <p class="text-xl text-gray-300 mb-6">Managing Director of Planexus GmbH, Albstadt</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">BSL-2 / BSL-3</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">GMP cleanroom</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">ATEX / explosion protection</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">Permits &amp; building law</span>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-[#bbd700] text-sm">Modular laboratory construction</span>
+            </div>
+            <p class="text-gray-300 leading-relaxed">
+              Has led Planexus GmbH since foundation. Focus: turnkey laboratory containers
+              for pharma, biotech, research, hospitals and crisis teams in Germany, Switzerland and Austria.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6">About</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
+            <p>
+              Sven Biewald is Managing Director of <strong>Planexus GmbH</strong>, based in Albstadt
+              (Baden-Württemberg). Planexus is part of <strong>Wesemann Holding GmbH</strong>, a
+              laboratory construction company with roots in modular interior fit-out.
+              Within the holding, Planexus is responsible for modular laboratory containers and
+              turnkey mobile laboratory infrastructure for pharma, biotech, research, hospitals and
+              public-health applications.
+            </p>
+            <p>
+              The technical focus of Sven Biewald’s work is on regulatorily demanding container
+              configurations — in particular <strong>BSL-2 and BSL-3 laboratories</strong>
+              under the <abbr title="Biological Agents Ordinance">BioStoffV</abbr> and <abbr title="Genetic Engineering Safety Ordinance">GenTSV</abbr>,
+              <strong>GMP cleanrooms</strong> to EU-GMP Annex 1, and ATEX/explosion-protection containers to
+              EN 60079 for hydrogen, battery and energy-transition research. This is complemented by building applications,
+              structural design and official liaison across Germany’s 16 federal states, in Switzerland
+              (cantonal building law, SIA, BAG, Swissmedic) and in Austria
+              (OIB guidelines, BASG, AGES).
+            </p>
+            <p>
+              Sven Biewald regularly publishes technical articles in the Planexus magazine on permitting,
+              ventilation, installation, structural design, biosafety levels and real project experience.
+              The aim: reliable practical information for building owners, research organisations,
+              pharmaceutical plant management, crisis teams and university estates departments — free of marketing language,
+              with traceable standards references.
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6 mt-12">Career</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
+            <p>
+              Sven Biewald was born in Thuringia in 1985. After completing secondary school he trained
+              as a mechatronics technician at <strong>Mayer &amp; Cie.</strong> in
+              Albstadt. In subsequent years he extended his qualifications in
+              electrical engineering and metalworking and passed the
+              <strong>master craftsman examinations</strong> in both trades at the IHK Albstadt/Reutlingen.
+            </p>
+            <p>
+              In parallel with further training he spent several years in machinery and prototype construction at
+              <strong>Goldfuß Engineering</strong> in Balingen. He then made a conscious
+              move into the future-oriented, rapidly growing
+              photovoltaics sector and worked for several years at <strong>relatio PV</strong>.
+            </p>
+            <p>
+              Driven by political developments and a desire for new challenges,
+              Sven Biewald moved into an entirely new sector for him — the laboratory and
+              analytics field. At <strong>Labexchange</strong> he and a committed team
+              successfully built the service organisation for used laboratory and analysis systems
+              and established it as a competitive market segment.
+            </p>
+            <p>
+              During that period he recognised the sector’s substantial potential and developed the ambition
+              to realise his own ideas. In <strong>January 2014</strong> he co-founded
+              his first company, <strong>Mc Labor oHG</strong>, with a colleague. Out of
+              passion for the product, the company rapidly became the market leader in
+              mobile laboratory containers for interim and existing buildings. After ten successful
+              years came a strategic realignment: with the foundation of
+              <strong>Planexus GmbH</strong>, the groundwork was laid for a forward-looking
+              group of companies in modular laboratory construction.
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6 mt-12">Responsibility &amp; role</h2>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>Managing Director, Planexus GmbH</strong> — strategy, client relationships, project approvals, works management in Albstadt.</span></li>
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>Technical accountability</strong> for all published magazine content, city pages and technical data sheets on planexus.de.</span></li>
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>Official interface</strong> with building inspectorates, trade supervisory authorities, BAG/Swissmedic, BASG/AGES, BfArM and PEI.</span></li>
+            <li class="flex gap-3"><span class="text-[#7a9900] font-bold mt-1">→</span><span><strong>DACH market responsibility</strong> for locations in Germany, Switzerland and Austria, including customs and logistics routes from the Albstadt works.</span></li>
+          </ul>
+
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6 mt-12">Awards</h2>
+          <div class="bg-slate-50 rounded-xl p-6 border border-gray-100">
+            <div class="text-sm uppercase tracking-wider text-[#7a9900] font-bold mb-1">2026</div>
+            <div class="font-heading font-bold text-lg text-slate-900">German CEO Excellence Award 2026</div>
+            <p class="text-gray-600 text-sm mt-2">Award for the Managing Directors of Planexus GmbH in modular laboratory infrastructure.</p>
+          </div>
+
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6 mt-12">Publications in the Planexus magazine</h2>
+          <p class="text-gray-700 mb-6">
+            Technical articles under Sven Biewald’s editorial responsibility — grouped by topic:
+          </p>
+          <ul class="space-y-3" data-testid="list-articles">
+            {articles.map((a) => (
+              <li>
+                <a
+                  href={a.href}
+                  class="block p-4 rounded-lg border border-gray-100 hover:border-primary hover:bg-slate-50 transition-colors"
+                  data-testid={`link-article-${a.slug}`}
+                >
+                  <div class="font-medium text-slate-900">{a.title}</div>
+                  <div class="text-xs text-gray-500 mt-1">{a.href}</div>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-12 p-6 rounded-xl bg-slate-900 text-white">
+            <h2 class="text-2xl font-heading font-bold mb-3">Enquire directly</h2>
+            <p class="text-gray-300 mb-4">
+              A specific container project? A permitting question? A location-specific clarification?
+              Enquiries via the contact form go directly to the Planexus Managing Directors.
+            </p>
+            <a
+              href="/en/contact"
+              class="inline-block px-6 py-3 bg-[#bbd700] text-slate-900 font-bold rounded-lg hover:bg-[#a3bd00] transition-colors"
+              data-testid="link-kontakt"
+            >Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

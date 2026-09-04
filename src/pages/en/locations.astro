@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { cityHref } from '../../i18n/routes';
+
+const title = "Lab container locations DACH – Berlin, Zurich, Vienna and more";
+const description = "Rent or buy laboratory containers in 12 DACH cities. GMP cleanroom, BSL-3, ATEX — delivered from Albstadt across Germany. Request a complimentary consultation.";
+const canonical = "/en/locations";
+
+const cities = [
+  { slug: 'berlin', name: 'Berlin', region: 'DE', hint: 'Capital region, Adlershof, hospitals & research' },
+  { slug: 'hamburg', name: 'Hamburg', region: 'DE', hint: 'Port, research campus, Life Science Nord' },
+  { slug: 'muenchen', name: 'Munich', region: 'DE', hint: 'Martinsried biotech cluster, research campus' },
+  { slug: 'stuttgart', name: 'Stuttgart', region: 'DE', hint: 'Automotive, research, Filder plain' },
+  { slug: 'frankfurt', name: 'Frankfurt', region: 'DE', hint: 'Industriepark Höchst, Riedberg, university medicine' },
+  { slug: 'duesseldorf', name: 'Düsseldorf', region: 'DE', hint: 'Chemicals, diagnostics, NRW pharma' },
+  { slug: 'zuerich', name: 'Zurich', region: 'CH', hint: 'Universities, hospitals, pharma cluster' },
+  { slug: 'basel', name: 'Basel', region: 'CH', hint: 'Pharma, biotech, tri-border life-science region' },
+  { slug: 'bern', name: 'Bern', region: 'CH', hint: 'Hospitals, BAG, Swissmedic' },
+  { slug: 'wien', name: 'Vienna', region: 'AT', hint: 'Life science, hospitals, research' },
+  { slug: 'graz', name: 'Graz', region: 'AT', hint: 'Industry, research, universities' },
+  { slug: 'linz', name: 'Linz', region: 'AT', hint: 'Steel, chemical park, universities' },
+];
+
+const de = cities.filter(c => c.region === 'DE');
+const ch = cities.filter(c => c.region === 'CH');
+const at = cities.filter(c => c.region === 'AT');
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://planexus.de/en/locations" }
+  ]
+};
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Laboratory container locations in Germany and DACH",
+  "description": description,
+  "url": "https://planexus.de/en/locations",
+  "inLanguage": "en",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    { "@type": "Question", "name": "To which cities does Planexus deliver laboratory containers?", "acceptedAnswer": { "@type": "Answer", "text": "Planexus delivers to 12 DACH metropolitan regions: Berlin, Hamburg, Munich, Stuttgart, Frankfurt, Düsseldorf, Zurich, Basel, Bern, Vienna, Graz and Linz. Beyond that, we deliver throughout Germany, Switzerland and Austria — including outside the twelve city pages." } },
+    { "@type": "Question", "name": "How long does transport from the Albstadt works take?", "acceptedAnswer": { "@type": "Answer", "text": "DACH South (Munich, Stuttgart): 1–4 hours. DACH West (Frankfurt, Düsseldorf): 3–5 hours. DACH North (Hamburg, Berlin): 6–10 hours. Switzerland (Basel, Zurich, Bern): 1–3 hours. Austria (Vienna, Graz, Linz): 4–8 hours. Overall project duration including factory production: 8–12 weeks standard, 16–24 weeks GMP/BSL-3." } },
+    { "@type": "Question", "name": "Do the same permits apply in Germany, Switzerland and Austria?", "acceptedAnswer": { "@type": "Answer", "text": "No. Germany: state building codes (LBO), BioStoffV/GenTSV, AMG Section 13 for GMP. Switzerland: cantonal building law (MuKEn), Swissmedic for GMP, ESV/BAFU for genetic engineering. Austria: OIB guidelines, GTG/BBG, BASG for medicinal products. Planexus supplies location-appropriate documentation in DE/CH/AT." } },
+    { "@type": "Question", "name": "What distinguishes the city pages from one another?", "acceptedAnswer": { "@type": "Answer", "text": "Each city page covers local specifics: snow load and wind zone, typical permitting authorities, transit times from the Albstadt works, regional clusters (pharma, automotive, research) and sector-specific applications from BSL-2/3 through GMP to ATEX." } },
+    { "@type": "Question", "name": "Can Planexus also deliver outside the 12 metropolitan regions?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The works in Albstadt supplies the whole of Germany, Switzerland and Austria. Transport is by articulated lorry with low-loader; for overwidth (40-ft modules), night running and special permits are required, which can extend transport by 1–2 days." } }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} schema={collectionSchema}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+  <div class="pt-20 min-h-screen bg-white">
+    <section class="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+      <div class="container mx-auto px-4 text-center relative z-10">
+        <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">
+            Lab container locations DACH – 12 cities, delivery across Germany
+          </h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Planexus delivers turnkey laboratory containers from the Albstadt works to twelve metropolitan regions — six German economic centres plus Switzerland and Austria. Choose your city for location-specific engineering details, permit pathways and logistics.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto text-center mb-12">
+          <p class="text-gray-600 text-lg leading-relaxed">
+            Each city page covers local specifics on building law, access from the works and typical applications — from BSL-2/3 through GMP cleanroom to ATEX. All containers are manufactured in Albstadt and delivered with location-appropriate documentation. Overview of all product variants: <a href="/en/lab-containers" class="text-[#7a9900] hover:underline font-medium">Lab containers – product overview</a>.
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto mb-16">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-6">Delivery times from the Albstadt works by region</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">Planexus manufactures all laboratory containers at Am Steinbach 8, 72459 Albstadt (Wesemann Holding works). Transport is by articulated lorry with low-loader; on-site installation and commissioning typically take 2–5 working days depending on module size and connection scope.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+              <thead class="bg-slate-900 text-white"><tr><th class="text-left p-4 font-bold">Region</th><th class="text-left p-4 font-bold">Cities</th><th class="text-left p-4 font-bold">Route</th><th class="text-left p-4 font-bold">Transit time</th></tr></thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr><td class="p-4 font-semibold text-slate-900">DACH South</td><td class="p-4 text-gray-700"><a href="/en/lab-containers-munich" class="text-[#7a9900] hover:underline">Munich</a>, <a href="/en/lab-containers-stuttgart" class="text-[#7a9900] hover:underline">Stuttgart</a></td><td class="p-4 text-gray-700">A8 / A81</td><td class="p-4 text-gray-700">2-4 h</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DACH West</td><td class="p-4 text-gray-700"><a href="/en/lab-containers-frankfurt" class="text-[#7a9900] hover:underline">Frankfurt</a>, <a href="/en/lab-containers-dusseldorf" class="text-[#7a9900] hover:underline">Düsseldorf</a></td><td class="p-4 text-gray-700">A5 / A3</td><td class="p-4 text-gray-700">3-5 h</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">DACH North</td><td class="p-4 text-gray-700"><a href="/en/lab-containers-hamburg" class="text-[#7a9900] hover:underline">Hamburg</a>, <a href="/en/lab-containers-berlin" class="text-[#7a9900] hover:underline">Berlin</a></td><td class="p-4 text-gray-700">A7 / A81+A9</td><td class="p-4 text-gray-700">6-10 h</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">Switzerland</td><td class="p-4 text-gray-700"><a href="/en/lab-containers-basel" class="text-[#7a9900] hover:underline">Basel</a>, <a href="/en/lab-containers-zurich" class="text-[#7a9900] hover:underline">Zurich</a>, <a href="/en/lab-containers-bern" class="text-[#7a9900] hover:underline">Bern</a></td><td class="p-4 text-gray-700">A81 / A2</td><td class="p-4 text-gray-700">1-3 h</td></tr>
+                <tr><td class="p-4 font-semibold text-slate-900">Austria</td><td class="p-4 text-gray-700"><a href="/en/lab-containers-vienna" class="text-[#7a9900] hover:underline">Vienna</a>, <a href="/en/lab-containers-graz" class="text-[#7a9900] hover:underline">Graz</a>, <a href="/en/lab-containers-linz" class="text-[#7a9900] hover:underline">Linz</a></td><td class="p-4 text-gray-700">A7 / A8</td><td class="p-4 text-gray-700">4-8 h</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-gray-500 mt-4">Overall project duration from order: standard containers 8–12 weeks factory production plus transport. GMP cleanroom or BSL-3: 16–24 weeks including qualification. Night running and special permits for overwidth (40-ft modules) extend transport by 1–2 days. All city pages include location-specific checklists for building applications, media connections and typical sectors — from <a href="/en/lab-containers" class="text-[#7a9900] hover:underline">laboratory containers in general</a> to GMP, BSL-3 and ATEX.</p>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-12 mb-16">
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">DACH North: Hamburg and Berlin</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">Hamburg: Life Science Nord cluster, research campus, university medicine, port industry with ATEX requirements. Hamburg Building Code (BauO HB): containers &gt;75 m³ require a building permit; temporary installations under Section 62 are time-limited to 2–5 years. Snow-load zone 2 (0.85 kN/m²), wind zone 3. Climatic particularity: maritime humidity 70–85% rH — HVAC sizing with dehumidification for GMP cleanrooms. Transport from Albstadt: 480 km, 6–7 hours.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">Berlin: hospital and research campus, Adlershof, life science in Buch and Wedding. BauO Bln: permit via the district building office; heritage protection on historic campus sites in Mitte. Snow-load zone 2, frost depth 1.2 m — point supports or strip foundation to DIN EN 1991-1-3. Typical applications: BSL-2/3 research, public-health stockpiling, interim laboratories during refurbishment. Transport: 620 km, 7–9 hours.</p>
+            <p class="text-sm"><a href="/en/lab-containers-hamburg" class="text-[#7a9900] hover:underline font-medium">Lab containers Hamburg</a> · <a href="/en/lab-containers-berlin" class="text-[#7a9900] hover:underline font-medium">Lab containers Berlin</a></p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">DACH South: Munich and Stuttgart</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">Munich: Martinsried biotech cluster, Garching research campus, Penzberg pharma site. BayBO: permit via the district administration office; genetic-engineering containers additionally require GenTSV notification to the Government of Upper Bavaria. Snow-load zone 2–3 (1.0–1.3 kN/m² near the Alps), Garching altitude 485 m — climate control for ±0.5 K measurement rooms specified per project. Transport from Albstadt: 180 km, 2–3 hours — the shortest connection of all metropolitan regions.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">Stuttgart: automotive cluster, research institutes, Filder plain. LBO BW: building permit via the city or district office; ATEX containers for battery and H₂ testing to EN 60079. Snow-load zone 2, earthquake zone 1 (low). Typical containers: works QC ISO 17025, battery abuse, fuel-cell testing Zone 2. Transport: 80 km, 1–1.5 hours.</p>
+            <p class="text-sm"><a href="/en/lab-containers-munich" class="text-[#7a9900] hover:underline font-medium">Lab containers Munich</a> · <a href="/en/lab-containers-stuttgart" class="text-[#7a9900] hover:underline font-medium">Lab containers Stuttgart</a></p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">DACH West: Frankfurt and Düsseldorf</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">Frankfurt: Industriepark Höchst, Riedberg campus, university medicine. HBO Hessen: permit via the City of Frankfurt; GMP containers with AMG Section 13 notification to the Darmstadt regional council. Snow-load zone 1 (0.65 kN/m²), mild winters — lower heating load, higher summer cooling load for cleanroom HVAC. Transport from Albstadt: 280 km, 3–4 hours.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">Düsseldorf: NRW pharma and chemicals, Hilden diagnostics location, Düsseldorf university medicine. BauO NRW: Düsseldorf/Cologne district government; BioStoffV containers with ZKBS opinion. Snow-load zone 1–2. Typical applications: GMP cleanroom CDMO, pharma QC, BSL-2 biotech. Transport: 380 km, 4–5 hours.</p>
+            <p class="text-sm"><a href="/en/lab-containers-frankfurt" class="text-[#7a9900] hover:underline font-medium">Lab containers Frankfurt</a> · <a href="/en/lab-containers-dusseldorf" class="text-[#7a9900] hover:underline font-medium">Lab containers Düsseldorf</a></p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">Switzerland: Basel, Zurich and Bern</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">Basel: pharma tri-border region, shortest transit time from Albstadt (45 km, 45 minutes). MuKEn (model cantonal energy regulations): cantonal building applications, Swissmedic inspection for GMP containers. Snow load to SIA 261 Zone 2–3. LRV extract-air guideline for chemical and pharma containers. VAT 8.1% on purchase; hire is tax-deductible.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">Zurich: Hönggerberg university campus, university medicine, research in Dübendorf, pharma in Rotkreuz. Cantonal building law ZH, ESV for genetic-engineering containers. Altitude 400–500 m — night frost to −15 °C, container HVAC with freeze protection for media lines. Bern: hospitals, translational research, BAG/Swissmedic. Transport Basel–Zurich–Bern: 1–2.5 hours from Albstadt.</p>
+            <p class="text-sm"><a href="/en/lab-containers-basel" class="text-[#7a9900] hover:underline font-medium">Lab containers Basel</a> · <a href="/en/lab-containers-zurich" class="text-[#7a9900] hover:underline font-medium">Lab containers Zurich</a> · <a href="/en/lab-containers-bern" class="text-[#7a9900] hover:underline font-medium">Lab containers Bern</a></p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">Austria: Vienna, Graz and Linz</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">Vienna: life-science cluster, research in Klosterneuburg, university medicine and hospitals. OIB Guideline 5 (snow-load zone 2–3), City of Vienna Building Technology Act. GTG/BBG for genetic-engineering and biological-agents containers, BASG for GMP authorisation under the AMG. Transport from Albstadt: 650 km, 7–8 hours via A7/A8.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">Graz: industry, research and universities. Styrian Building Act, Styria H₂ cluster — ATEX containers for fuel-cell testing. Linz: steel and chemical industry, chemical park, universities. Upper Austria Building Code, steel and polymer QC containers ISO 17025. Transport Graz: 580 km (6–7 h), Linz: 480 km (5–6 h).</p>
+            <p class="text-sm"><a href="/en/lab-containers-vienna" class="text-[#7a9900] hover:underline font-medium">Lab containers Vienna</a> · <a href="/en/lab-containers-graz" class="text-[#7a9900] hover:underline font-medium">Lab containers Graz</a> · <a href="/en/lab-containers-linz" class="text-[#7a9900] hover:underline font-medium">Lab containers Linz</a></p>
+          </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="text-2xl" aria-hidden="true">🇩🇪</span>
+              <h2 class="font-bold text-slate-900 text-lg">Germany</h2>
+            </div>
+            <ul class="space-y-3">
+              {de.map(c => (
+                <li>
+                  <a href={cityHref(c.slug, 'en')} class="group block">
+                    <span class="text-slate-900 font-medium group-hover:text-[#7a9900] transition-colors">Lab containers {c.name}</span>
+                    <span class="block text-sm text-gray-500">{c.hint}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="text-2xl" aria-hidden="true">🇨🇭</span>
+              <h2 class="font-bold text-slate-900 text-lg">Switzerland</h2>
+            </div>
+            <ul class="space-y-3">
+              {ch.map(c => (
+                <li>
+                  <a href={cityHref(c.slug, 'en')} class="group block">
+                    <span class="text-slate-900 font-medium group-hover:text-[#7a9900] transition-colors">Lab containers {c.name}</span>
+                    <span class="block text-sm text-gray-500">{c.hint}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="text-2xl" aria-hidden="true">🇦🇹</span>
+              <h2 class="font-bold text-slate-900 text-lg">Austria</h2>
+            </div>
+            <ul class="space-y-3">
+              {at.map(c => (
+                <li>
+                  <a href={cityHref(c.slug, 'en')} class="group block">
+                    <span class="text-slate-900 font-medium group-hover:text-[#7a9900] transition-colors">Lab containers {c.name}</span>
+                    <span class="block text-sm text-gray-500">{c.hint}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-6">Permitting and climatic requirements — a DACH comparison</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">Germany: building permit under the state building code; containers &gt;75 m³ gross volume. BioStoffV/GenTSV containers additionally require ZKBS notification or a permit. GMP containers: AMG Section 13 notification to the state authority. Switzerland: cantonal building law (MuKEn), Swissmedic for GMP, ESV/BAFU for genetic engineering. Austria: OIB guidelines, GTG/BBG, BASG for medicinal products. Planexus supplies the appropriate documentation language package for each location (DE/CH/AT).</p>
+          <p class="text-gray-700 leading-relaxed mb-4">Climatic particularities affect HVAC sizing: northern Germany high humidity (dehumidification for GMP), Alpine proximity higher snow load (foundations to DIN EN 1991-1-3), Danube region continental climate (summer cooling load). Container HVAC is factory-designed for the target region — heating load, cooling load and humidity set-points are documented in the quotation. On-site media connections: electricity 32–63 A, water, wastewater, and where required compressed air and process gases depending on laboratory type.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Frequently asked questions about laboratory-container locations</h2>
+          <p class="text-gray-600 text-lg mb-10">Delivery times, permits and regional specifics across DACH.</p>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <article class="bg-slate-50 border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4">Your location not listed?</h2>
+          <p class="text-gray-600 mb-8">We deliver throughout Germany, Switzerland and Austria — including outside the twelve metropolitan regions. Talk to us.</p>
+          <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">
+            Enquire about a project
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

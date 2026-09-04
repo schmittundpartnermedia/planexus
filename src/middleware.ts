@@ -19,9 +19,6 @@ export const onRequest = defineMiddleware((context, next) => {
   }
 
   const url = new URL(context.request.url);
-  if (url.pathname === '/en' || url.pathname.startsWith('/en/')) {
-    return new Response('Not Found', { status: 404, headers: { 'content-type': 'text/plain; charset=utf-8' } });
-  }
   const host = (context.request.headers.get('x-forwarded-host') || context.request.headers.get('host') || url.hostname)
     .split(':')[0]
     .toLowerCase();

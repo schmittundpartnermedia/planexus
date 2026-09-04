@@ -1,0 +1,455 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.tsx';
+import AuthorBio from '../../components/AuthorBio.astro';
+import CityCrossLinks from '../../components/CityCrossLinks.astro';
+
+const title = "Lab containers Basel – cleanroom, GMP, pharma";
+const description = "Rent lab containers in Basel: BSL-3, GMP, SIA 261 seismic zone Z2 for the pharma and biotech cluster. Turnkey from Albstadt in 8–14 weeks. Request a quotation now.";
+const canonical = "/en/lab-containers-basel";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Lab containers and modular laboratory construction Basel",
+  "provider": {
+    "@type": "Organization",
+    "name": "Planexus GmbH",
+    "image": "https://planexus.de/android-chrome-512x512.png",
+    "url": "https://planexus.de",
+    "telephone": "+49 7435 7519 700",
+    "email": "info@planexus.de",
+    "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" },
+    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Basel" },
+    { "@type": "AdministrativeArea", "name": "Canton of Basel-Stadt" },
+    { "@type": "AdministrativeArea", "name": "Canton of Basel-Landschaft" },
+    { "@type": "Country", "name": "Switzerland" }
+  ],
+  "description": "Container laboratories, mobile laboratories and modular laboratory buildings for pharma, biotech, universities and hospitals in the Basel area — customs-cleared from the Albstadt works to Basel via Weil am Rhein.",
+  "offers": { "@type": "AggregateOffer", "priceCurrency": "CHF", "availability": "https://schema.org/InStock" }
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Planexus GmbH – Lab containers Basel",
+      "image": "https://planexus.de/images/labtogo-industrie.webp",
+  "url": "https://planexus.de/en/lab-containers-basel",
+  "telephone": "+49 7435 7519 700",
+  "email": "info@planexus.de",
+  "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" },
+  "areaServed": { "@type": "City", "name": "Basel", "containedInPlace": { "@type": "Country", "name": "Switzerland" } },
+  "priceRange": "CHF",
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" }]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://planexus.de/en/lab-containers" },
+    { "@type": "ListItem", "position": 3, "name": "Lab containers Basel", "item": "https://planexus.de/en/lab-containers-basel" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to deliver a lab container from the Albstadt works to Basel?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The heavy-haulage route from the Albstadt works to Basel runs south on the A81 via Singen/Stockach, then west on the A98 along the German–Swiss border, and through the Weil am Rhein/Basel-Hiltalingerstrasse border crossing directly into the Basel area. Driving time is around 2 hours over approximately 130 kilometres — the shortest heavy-haulage route from a German works to any Swiss location. Customs clearance is at the Weil am Rhein customs office under the T1 transit procedure, with an ATA Carnet for temporary import. Standard delivery points: Basel-Nord for port and industrial sites, Basel-Süd for the sites in St. Johann and Wettstein, Basel-Ost (A2/A3 junction) for the sites on Münchensteinerstrasse and in Rosental. From order to operational handover in Basel takes 8 to 14 weeks." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which permits do I need for a lab container in the Canton of Basel-Stadt or Basel-Landschaft?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In Basel-Stadt the Bau- und Planungsgesetz (BPG, Building and Planning Act of Basel-Stadt) and the Bau- und Planungsverordnung (BPV, Building and Planning Ordinance) apply. The competent authority is the Bauinspektorat Basel-Stadt (Building Inspectorate) at Rittergasse 4, 4051 Basel. In Basel-Landschaft the Raumplanungs- und Baugesetz (RBG BL, Spatial Planning and Building Act) applies, with the Building Inspectorate in Liestal. Containers are treated as buildings and installations; a building permit is required in most cases. Temporary siting of under three months may, depending on the site, be possible under a simplified notification. For GMP, BSL-2 and BSL-3 containers, the Einschliessungsverordnung (ESV, Containment Ordinance) at FOEN/FOPH and the Therapeutic Products Act with Swissmedic competence also apply — particularly important in the pharmaceutical environment. We classify your site in advance and submit procedure-ready building documents for both half-cantons." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which seismic requirements apply to lab containers in Basel under SIA 261?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Under SIA 261, Basel lies in seismic zone Z2 with a horizontal design ground acceleration of agd = 1.0 m/s² — around 67 per cent higher than Zurich (Z1a, agd 0.6 m/s²). The background is the Basel earthquake of 1356, the strongest historically documented earthquake north of the Alps, with an estimated magnitude of 6.6. For Z2 the anchoring of container laboratories is structurally considerably more demanding — Bauwerksklasse II (BWK II) is virtually standard for safety-relevant pharmaceutical and hospital sites, because safety-critical functions are housed here. Planexus supplies Basel with structural design to SIA 261 with the Z2 factor and an SIA 263 anchoring concept from the Albstadt works — not DIN alone, but procedure-ready for the Basel-Stadt Building Inspectorate." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Weil am Rhein customs clearance work for containers into Basel?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Weil am Rhein/Basel border crossing is the most direct Swiss crossing from the Albstadt works — with no detour. We clear goods under the T1 transit procedure, with processing at the Weil am Rhein (DE) and Basel/Hiltalingerstrasse (CH) customs offices. Permanent import attracts Swiss VAT of 8.1 per cent (as at 2026). Temporary import (for example a rental container for clinical studies at hospitals or a pilot container for pharmaceutical companies) can be cleared under temporary admission with an ATA Carnet — no VAT, with a security deposit. Basel trinational special case: sites in French Saint-Louis (the life-sciences corridor towards the EuroAirport region) are in the EU single market — we then do not clear customs. We co-ordinate the entire process." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you deliver containers by ship to the Port of Basel?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Basel is the only Swiss city location with its own inland port (Swiss Rhine Ports, Kleinhüningen harbour and Auhafen Birsfelden). For oversized or several parallel modules, delivery by container vessel from Rotterdam/Antwerp is possible — from the Albstadt works we would take the modules by HGV to the Rhine port of Mannheim or Karlsruhe, then inland vessel to Basel. This is usually only economic for very large orders (≥ 10 modules); for individual containers the direct heavy-haulage route via Weil am Rhein is cheaper and faster. We calculate both variants transparently." }
+    },
+    {
+      "@type": "Question",
+      "name": "What must I consider on brownfield sites in Basel?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The former chemical and pharmaceutical sites in Basel-Nord are classic brownfields with contaminated land from more than 100 years of chemical production. Siting there requires, before construction, a preliminary investigation under the Altlasten-Verordnung (AltlV, Contaminated Sites Ordinance) and the Technische Verordnung über Abfälle (TVA, Technical Ordinance on Waste), co-ordinated with the Amt für Umwelt und Energie Basel-Stadt (Office for the Environment and Energy). We supply construction-preparation recommendations (base slab with barrier layer, drainage concept, possibly a lifting arrangement over existing contamination) and work closely with Swiss ground consultants. These sites are developing into Basel’s new life-science addresses — for transitional uses, pilot and GMP containers are a suitable solution." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which applications are particularly in demand in Basel?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Basel is Switzerland’s pharmaceutical capital and one of the world’s most important life-science locations. Typical uses for lab containers arise around the region’s pharmaceutical and biotech sites — GMP pilot containers and BSL-3 research modules as well as cleanroom and containment containers — around university and basic research — BSL-2 third-party-funded containers and high-end research containers — and around the university hospitals — study containers during hospital refurbishments." }
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="bg-white">
+
+    <!-- HERO -->
+    <section class="relative bg-slate-900 text-white overflow-hidden">
+      <div class="relative z-10 container mx-auto px-4 py-20 md:py-28">
+        <div class="max-w-4xl">
+          <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
+            <a href="/en" class="hover:text-primary transition-colors">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span>Locations</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            <span class="text-primary">Basel</span>
+          </nav>
+
+          <div class="text-primary font-medium text-sm uppercase tracking-wider mb-4">Your specialist for lab containers · Switzerland’s pharmaceutical capital</div>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+            Lab containers Basel – GMP and BSL laboratories for the pharmaceutical region
+          </h1>
+
+          <p class="text-xl text-gray-300 leading-relaxed mb-4">
+            <strong class="text-white">Our managing directors bring more than ten years of experience in lab-container construction.</strong> Modular, SIA 261 Z2-compliant, T1 customs-cleared. We deliver flexible research and GMP environments for pharma, biotech, universities and hospitals in the Basel area — from the Albstadt works directly to Basel, via the A81 and the Weil am Rhein border in only 130 km.
+          </p>
+          <p class="text-base text-gray-400 mb-8">While others are still planning, you are already researching.</p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#anfrage" data-testid="button-cta-hero" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,189,0,0.3)]">Complimentary Basel site audit<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="tel:+4974357519700" class="border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+49 7435 7519 700</a>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Specialist in modular laboratory construction</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Award 2026 EU Business News</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Weil am Rhein customs clearance included</div>
+            <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Wesemann Group · 60+ years of laboratory construction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <AuthorBio city="Basel"  locale="en" />
+
+    <!-- LABtoGO -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10 border-y border-primary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Pattern interrupt · World premiere at analytica 2026</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus shows Basel what a lab container can really do in 2026</h2>
+              <p class="text-lg text-gray-700 leading-relaxed mb-4">An ordinary lab container has 2,400 mm internal height. Working upright at a fume cupboard is a struggle.</p>
+              <p class="text-lg text-slate-900 font-bold leading-relaxed mb-4">The Planexus LABtoGO has 2,750 mm internal height. 9.5 m external length. 3 m external width. A fully glazed front that brings genuine daylight into every Basel pharmaceutical, biotech or research laboratory.</p>
+              <p class="text-lg text-gray-700 leading-relaxed"><strong>An ordinary lab container fits entirely inside a LABtoGO.</strong> We configure it for Basel to SIA 261 seismic zone Z2 (considerably higher than Zurich Z1a), SIA 380/1 energy, T1 customs clearance from the Albstadt works via Weil am Rhein, and a T13/T15 Swiss electrical connection.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">2,750</div><div class="text-xs text-gray-400 uppercase tracking-wider">mm internal height</div><div class="text-xs text-gray-500 mt-1">Standard: 2,400 mm</div></div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">9,500</div><div class="text-xs text-gray-400 uppercase tracking-wider">mm external length</div><div class="text-xs text-gray-500 mt-1">3,000 mm width</div></div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">SIA Z2</div><div class="text-xs text-gray-400 uppercase tracking-wider">Seismic agd 1.0 m/s²</div><div class="text-xs text-gray-500 mt-1">~67% above Zurich</div></div>
+              <div class="bg-slate-900 text-white rounded-2xl p-6 text-center"><div class="text-4xl font-bold text-primary mb-1">130 km</div><div class="text-xs text-gray-400 uppercase tracking-wider">Works → Basel</div><div class="text-xs text-gray-500 mt-1">2 h via Weil</div></div>
+            </div>
+          </div>
+          <div class="text-center"><a href="/en/lab-containers/labtogo" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">View the LABtoGO platform and all configurations<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM-AGITATION -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-10 text-slate-900">Planexus solves the three Basel bottlenecks at which pharma and research containers regularly fail</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">SIA 261 Z2 instead of Z1a — seismic design is critical</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Basel lies in SIA 261 seismic zone Z2 (agd 1.0 m/s²) — around 67 per cent higher than Zurich (Z1a, agd 0.6 m/s²). The background is the historic Basel earthquake of 1356, the strongest north of the Alps. Containers sized only for Z1a or purely to DIN fail at the Basel-Stadt Building Inspectorate. BWK II classification is virtually standard for safety-relevant pharmaceutical and hospital sites.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus answer: Structural design to SIA 261 Z2 with BWK II documented from the works.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Basel pharma cluster — GMP audit-ready from day one</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Basel’s pharmaceutical groups will not accept pilot containers without Swissmedic-ready IQ/OQ/PQ documentation, ISO 14644 cleanroom and Annex 1 compliance. Anyone offering a standard container “with a GMP option” fails in the first audit round. An ESV application to FOEN/FOPH for genetically modified installations is also mandatory and is often forgotten.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus answer: GMP cleanroom containers audit-ready from the works, ESV application included.</p>
+            </div>
+            <div class="bg-slate-50 border-l-4 border-primary rounded-xl p-6">
+              <div class="text-slate-900 font-bold text-lg mb-2">Trinational customs CH/DE/FR — more complex than any other Swiss location</div>
+              <p class="text-gray-700 text-sm leading-relaxed">Basel sites may lie in Basel-Stadt, Basel-Landschaft or in French Saint-Louis. Saint-Louis = EU single market (no customs clearance); BS/BL = Swiss T1 clearance with 8.1% VAT or ATA Carnet for rental. Standard freight operators lump this into a flat rate and are often wrong — several thousand CHF of difference is possible.</p>
+              <p class="text-sm text-slate-900 font-semibold mt-3 pt-3 border-t border-gray-200">Planexus answer: Site-dependent clearance at Weil am Rhein or EU single-market delivery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRATEGISCHE FUSION -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8 text-slate-900">Lab containers for Basel: what the pharma triad, SIA Z2 and Weil am Rhein customs clearance demand of the engineering</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p><strong>Basel is Switzerland’s pharmaceutical capital and one of the world’s most important life-science locations.</strong> Across 37 square kilometres of city area, globally active pharmaceutical groups, CDMO contract manufacturers, universities, university hospitals and extra-university research institutes compete for space, permits and engineering capacity.</p>
+            <p><strong>We know this market in detail.</strong> We know that the Basel-Stadt Building Inspectorate at Rittergasse 4, 4051 Basel, decides under the BPG and BPV, and that the Liestal Building Inspectorate is competent for Basel-Landschaft (RBG BL). We know that SIA 261 defines seismic zone Z2 for Basel with agd = 1.0 m/s² — around 67 per cent higher than Zurich — and that the Basel earthquake of 1356 (magnitude 6.6) has shaped Swiss seismic standards. We know that containers for safety-relevant pharmaceutical and hospital sites are practically always classified in Bauwerksklasse II (BWK II) and that ESV notification to FOEN/FOPH plus Swissmedic inspection readiness from day one are mandatory. We know the trinational special situation: sites in Saint-Louis (FR) lie in the EU single market — without customs clearance — while Basel-Stadt and Basel-Landschaft are processed under the T1 transit procedure with clearance at the Weil am Rhein customs office. These details are not in our quotation — they are the engineering and logistics foundation of every container that leaves our Albstadt works.</p>
+            <p><strong>Made in Albstadt, customs-cleared at Weil am Rhein, turnkey in Basel.</strong> Final assembly and interior fit-out are carried out with Wesemann furniture in our own works — factory visits can be arranged from either side. South on the A81 via Singen/Stockach, then west on the A98 along the German–Swiss border and through the Weil am Rhein/Basel-Hiltalingerstrasse border crossing directly into the Basel area, the heavy-haulage distance is around 130 kilometres — the shortest heavy-haulage route from a German works to any Swiss location. The Basel-Nord junctions for Kleinhüningen harbour and the industrial sites, Basel-Süd for the sites in St. Johann and Wettstein, and Basel-Ost (A2/A3 junction) for the sites on Münchensteinerstrasse and in Rosental are standard delivery points.</p>
+            <p>Whether you need a <strong>mobile laboratory in Basel</strong> for a time-limited hospital refurbishment, a <strong>modular lab container in Basel</strong> for a permanent expansion on a brownfield site in Basel-Nord, or a <strong>container laboratory in Basel</strong> with BSL-3 containment and Swissmedic-ready GMP for pharmaceutical pilot plants — we deliver all three answers from the same platform: the LABtoGO from our Albstadt works, with Swiss customs, Z2 structural and energy documentation from the factory.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 ENGINEERING -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Six engineering disciplines for the pharmaceutical capital</h2>
+          <p class="text-gray-600 text-lg mb-10 max-w-3xl">Planexus builds lab containers for Basel that are aligned in every discipline with Swiss realities and the pharma triad — not generic, but standard- and site-specific.</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">SIA 261 Z2 seismic</div><h3 class="font-bold text-slate-900 mb-2">agd 1.0 m/s² + BWK II</h3><p class="text-sm text-gray-600">Basel lies in Z2 (~67% higher than Zurich Z1a). Structural design with SIA 263 anchoring concept, BWK II for pharmaceutical and hospital sites — not DIN alone.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">GMP + Swissmedic</div><h3 class="font-bold text-slate-900 mb-2">Audit-ready from day one</h3><p class="text-sm text-gray-600">EU Annex 1 + ISO 14644 Class 7, IQ/OQ/PQ documentation Swissmedic-ready. Pharma-audit-ready without rework.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Trinational customs</div><h3 class="font-bold text-slate-900 mb-2">Weil am Rhein or EU Saint-Louis</h3><p class="text-sm text-gray-600">Site-dependent: T1 from Weil am Rhein for BS/BL (8.1% Swiss VAT) or EU single-market delivery to Saint-Louis (FR) without customs clearance.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">ESV at FOEN/FOPH</div><h3 class="font-bold text-slate-900 mb-2">Swiss authority path</h3><p class="text-sm text-gray-600">Genetically modified installations S1/S2/S3 under the Containment Ordinance at FOEN/FOPH — not GenTSV/BVL. Application documents in Swiss form.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">SIA 380/1 energy</div><h3 class="font-bold text-slate-900 mb-2">U ≤ 0.17 + HR ≥ 75%</h3><p class="text-sm text-gray-600">SIA 380/1 and MuKEn 2014/2025 stricter than the German GEG. Sandwich envelope and triple glazing sized at the works.</p></div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-gray-100"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Basel-Nord brownfield</div><h3 class="font-bold text-slate-900 mb-2">AltlV + TVA Basel-Stadt</h3><p class="text-sm text-gray-600">Former chemical sites with pharmaceutical contamination — preliminary review under the Contaminated Sites Ordinance and the Technical Ordinance on Waste, base slab with barrier layer.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STADT-SPEZIFISCH -->
+    <section class="py-12 md:py-16 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Basel – Europe’s pharmaceutical capital at the tri-border</h2>
+          <p class="text-gray-700 leading-relaxed">With the cross-border BioValley cluster, Basel is one of Europe’s densest life-science locations — spread across two half-cantons, each with its own building inspectorate. From the Albstadt works it is only 130 km via the A81 and the Weil am Rhein border crossing, the shortest heavy-haulage route from a German works into Switzerland. Planexus knows the customs clearance, SIA Z2 structural design and Swissmedic paths for St. Johann, Wettstein and the sites in Basel-Nord.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST-WALL -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-primary/5">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Planexus for Basel: EU Award 2026, SIA Z2-compliant, Wesemann ecosystem</h2>
+            <p class="text-gray-600 text-lg">Four pillars that no competitor in the DACH region combines in this way.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100"><div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Award 2026</h3><p class="text-sm text-gray-600">EU Business News – German CEO Excellence Awards 2026: Planexus recognised as “Leading provider of innovative laboratory spaces”. Internationally awarded immediately after the LABtoGO world premiere.</p></div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100"><div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Made in Albstadt</h3><p class="text-sm text-gray-600">Final assembly, interior fit-out and QC at the Albstadt works. SIA 261 Z2 structural design, SIA 380/1 insulation and T13/T15 electrical connection pre-configured at the factory. Factory visits available.</p></div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100"><div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3 class="font-bold text-slate-900 mb-2">Wesemann ecosystem</h3><p class="text-sm text-gray-600">Part of Wesemann Holding, with more than 60 years of experience in laboratory fit-out. Containers, furniture, cleanroom technology — from a single source. Weil am Rhein customs clearance included.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECISION MATRIX -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">Comparison for Basel: LABtoGO, standard containers and conventional construction</h2>
+          <p class="text-gray-600 text-lg mb-8">An honest comparison matrix. So you can make an informed decision before we talk.</p>
+          <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm"><div class="overflow-x-auto"><table class="w-full text-sm">
+            <thead class="bg-slate-900 text-white"><tr><th class="text-left px-6 py-4 font-bold">Criterion</th><th class="text-left px-6 py-4 font-bold">Conventional build, Basel</th><th class="text-left px-6 py-4 font-bold">Standard container</th><th class="text-left px-6 py-4 font-bold bg-primary text-slate-900">LABtoGO</th></tr></thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr><td class="px-6 py-4 font-medium text-slate-900">Lead time</td><td class="px-6 py-4 text-gray-600">24–36 months</td><td class="px-6 py-4 text-gray-600">16–22 weeks</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">8–14 weeks</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-slate-900">SIA 261 Z2 structural</td><td class="px-6 py-4 text-gray-600">Standard</td><td class="px-6 py-4 text-gray-600">Rarely from the factory</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Standard from the factory</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-slate-900">GMP/Swissmedic</td><td class="px-6 py-4 text-gray-600">Case by case</td><td class="px-6 py-4 text-gray-600">Rare</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Audit-ready from the factory</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-slate-900">Weil customs</td><td class="px-6 py-4 text-gray-600">Case by case</td><td class="px-6 py-4 text-gray-600">Rarely co-ordinated</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">T1/ATA Carnet included</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-slate-900">Mobility</td><td class="px-6 py-4 text-gray-600">None</td><td class="px-6 py-4 text-gray-600">Limited</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Fully mobile</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-slate-900">T13/T15 connection</td><td class="px-6 py-4 text-gray-600">Standard</td><td class="px-6 py-4 text-gray-600">Rare</td><td class="px-6 py-4 text-slate-900 font-bold bg-primary/5">Pre-configured at the factory</td></tr>
+            </tbody></table></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTITIONS-MODELLE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Investment models</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Rent, buy or hire-purchase — we build the model around your Basel project</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">Container specification, biosafety level, GMP requirement, SIA Z2 structural design and duration determine the calculation. Instead of a dummy price range, you receive a project-specific written indication in CHF within 24 hours.</p>
+              <p class="text-sm text-gray-600">For the calculation we need: Basel site (Wettstein, St. Johann, Münchenstein, Spitalstrasse, Rosental, Basel-Nord), biosafety level (S1/S2/S3, GMP, ATEX), desired duration and whether T1 clearance at Weil am Rhein (purchase) or ATA Carnet (rental).</p>
+            </div>
+            <div class="space-y-4">
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Rental (ATA Carnet)</div><div class="font-bold text-slate-900 text-lg mb-2">Flexible, without a VAT charge</div><p class="text-sm text-gray-600">For clinical studies at university hospitals, time-limited third-party-funded research at universities, and short-term pilot lines at pharmaceutical companies. ATA Carnet, temporary admission — no Swiss VAT.</p></div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Purchase (T1 Weil)</div><div class="font-bold text-slate-900 text-lg mb-2">Asset, permanent import</div><p class="text-sm text-gray-600">For permanent expansion at pharmaceutical and chemical sites or on brownfield land. T1 with Weil am Rhein clearance, 8.1% Swiss VAT.</p></div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hire-purchase</div><div class="font-bold text-slate-900 text-lg mb-2">Transition from rental to ownership</div><p class="text-sm text-gray-600">When a study interim becomes a permanent site — the ATA Carnet is converted to T1, rental payments later credited against the purchase.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGISTIK -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Logistics evidence</div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Albstadt works → Basel: 130 km via A81 + A98 + Weil am Rhein border</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">From the Albstadt works the heavy-haulage route runs south on the A81 via Singen/Stockach, then west on the A98 along the German–Swiss border and through the Weil am Rhein/Basel-Hiltalingerstrasse border crossing directly into the Basel area. Driving time is about 2 hours; with Weil am Rhein clearance typically one transport day — the shortest heavy-haulage route from a German works to any Swiss location.</p>
+              <p class="text-gray-700 leading-relaxed mb-4">Standard containers under 4 m width and 18 t do not require an abnormal-load permit — next-day installation is possible. Oversized plants are co-ordinated with a 60–200 t mobile crane and escort vehicles. Optional: delivery by container vessel via the Swiss Rhine Ports Kleinhüningen/Auhafen Birsfelden from Rotterdam/Antwerp for very large orders (≥ 10 modules).</p>
+              <p class="text-gray-700 leading-relaxed">From order to operational handover in Basel takes 8 to 14 weeks.</p>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">130</div><div class="text-xs text-gray-600 uppercase tracking-wider">km from works</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">~2 h</div><div class="text-xs text-gray-600 uppercase tracking-wider">Heavy haulage</div></div>
+              <div class="bg-primary/10 rounded-xl p-5 text-center"><div class="text-3xl font-bold text-slate-900">A81/A98</div><div class="text-xs text-gray-600 uppercase tracking-wider">via Weil</div></div>
+              <div class="col-span-3 bg-slate-900 text-white rounded-xl p-5"><div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Motorway junctions</div><p class="text-sm text-gray-300">Basel-Nord for Kleinhüningen harbour and the industrial sites, Basel-Süd for the sites in St. Johann, Wettstein and on Spitalstrasse, Basel-Ost (A2/A3 junction) for the sites on Münchensteinerstrasse and in Rosental. Mobile-crane installation the following day after Weil am Rhein clearance.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BÜROKRATIE -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Basel permits</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">We prepare everything for the BS+BL building inspectorates, FOEN/FOPH and Swissmedic</h2>
+          <p class="text-gray-700 text-lg mb-8 max-w-3xl">Basel has clear competences — with the particularity of two half-cantons. We deal with all authorities; you do not.</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-bold text-slate-900 mb-2">BPG Basel-Stadt + RBG Basel-Landschaft</h3><p class="text-sm text-gray-600 leading-relaxed">In Basel-Stadt the Building and Planning Act (BPG) applies, with the Building Inspectorate at Rittergasse 4, 4051 Basel. In Basel-Landschaft the Spatial Planning and Building Act (RBG) BL applies, with the Building Inspectorate in Liestal. We classify your site and submit examinable building documents for both half-cantons.</p></div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-bold text-slate-900 mb-2">SIA 261 Z2 structural from the works</h3><p class="text-sm text-gray-600 leading-relaxed">Swiss building inspectorates do not accept DIN structural calculations on their own. We supply SIA 261 with the Z2 factor (agd 1.0 m/s²) and an SIA 263 anchoring concept, Bauwerksklasse II for pharmaceutical and hospital sites — procedure-ready for BS and BL.</p></div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-bold text-slate-900 mb-2">ESV at FOEN/FOPH — the Swiss counterpart to GenTG</h3><p class="text-sm text-gray-600 leading-relaxed">BSL-3 in Switzerland requires notification under the Containment Ordinance (ESV) to FOEN and FOPH. We supply a risk assessment, safety concept and complete application documents in Swiss form — not GenTSV/BVL.</p></div>
+            <div class="bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-bold text-slate-900 mb-2">Swissmedic for GMP and therapeutic products</h3><p class="text-sm text-gray-600 leading-relaxed">GMP pilot containers for pharmaceutical production in Basel are inspected by Swissmedic Bern (Therapeutic Products Act, HMG). We supply IQ/OQ/PQ documentation and cleanroom validation that is Swissmedic-ready — suitable for all pharmaceutical and Swiss biotech sites.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 SCHRITTE -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">How Planexus builds your container laboratory in Basel</h2>
+          <p class="text-gray-600 text-lg mb-12">Five steps, one point of contact — from the first sketch to customs-cleared handover.</p>
+          <div class="space-y-5">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">01</div><div><h3 class="font-bold text-slate-900 mb-1">We listen</h3><p class="text-gray-600 text-sm">Requirements workshop on site in Basel or by video. Which biosafety level, which site (Wettstein, St. Johann, Münchenstein, Spitalstrasse, Rosental, Basel-Nord), which SIA standard, which date, T1 purchase or ATA rental.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">02</div><div><h3 class="font-bold text-slate-900 mb-1">We plan</h3><p class="text-gray-600 text-sm">CAD layout, building services, structural design to SIA 261 Z2 + 263, energy to SIA 380/1. BPG-compliant building documents for the Basel-Stadt Building Inspectorate or RBG-compliant for Basel-Landschaft.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">03</div><div><h3 class="font-bold text-slate-900 mb-1">We build</h3><p class="text-gray-600 text-sm">Module prefabrication at our certified Polish partner, final assembly and interior fit-out at the Albstadt works with Wesemann furniture. SIA 380/1 insulation, T13/T15 connection and QC before dispatch.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">04</div><div><h3 class="font-bold text-slate-900 mb-1">We clear customs and deliver</h3><p class="text-gray-600 text-sm">T1 transit or ATA Carnet from the Albstadt works, clearance at the Weil am Rhein customs office. Heavy haulage A81 → A98 (130 km, one transport day). Installation by mobile crane. Connection of all utilities, function and leak tests.</p></div></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-5"><div class="text-4xl font-bold text-primary shrink-0 w-14">05</div><div><h3 class="font-bold text-slate-900 mb-1">We hand over</h3><p class="text-gray-600 text-sm">IQ/OQ/PQ documentation, Swissmedic-ready. Training for your operators. Maintenance options up to 24 months — extendable on request.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 md:py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-3 text-slate-900">FAQ — Lab containers for Basel</h2>
+          <p class="text-gray-600 text-lg mb-10">Seven questions, seven answers. Direct, without marketing speak.</p>
+          <div class="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <article class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">{faq.name}</h3>
+                <p class="text-gray-700 leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="anfrage" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Complimentary site audit</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900">Send us your Basel site and your laboratory profile</h2>
+            <p class="text-gray-600 text-lg">Within 48 hours we deliver: a site assessment (BS, BL or Saint-Louis FR), a container configuration with dimensions and specifications, the permit path under BPG/RBG, a customs strategy (T1 Weil or EU Saint-Louis), a delivery and installation date, and an indicative investment bracket in CHF.</p>
+          </div>
+          <div class="grid lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2">
+              <div class="bg-slate-900 text-white rounded-2xl p-8 h-full">
+                <h3 class="font-bold text-lg mb-6">Direct contact</h3>
+                <div class="space-y-5">
+                  <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="text-xs text-gray-400 mb-1">Phone</div><a href="tel:+4974357519700" class="font-bold hover:text-primary transition-colors">+49 7435 7519 700</a></div></div>
+                  <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="text-xs text-gray-400 mb-1">Email</div><a href="mailto:info@planexus.de" class="font-bold hover:text-primary transition-colors">info@planexus.de</a></div></div>
+                  <div class="flex items-start gap-4"><div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="text-xs text-gray-400 mb-1">Works &amp; headquarters (130 km via A81 + A98 + Weil)</div><div class="font-bold">Emil-Mayer-Straße 1<br/>72461 Albstadt (DE)</div></div></div>
+                  <div class="border-t border-white/10 pt-5 mt-5"><div class="text-xs text-primary font-bold uppercase tracking-wider mb-2">Factory visit</div><p class="text-sm text-gray-300">We show you your container during manufacture — including SIA 261 Z2 structural design and SIA 380/1 insulation before dispatch. By appointment.</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-3"><ContactForm client:visible locale="en" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="text-primary font-bold text-sm uppercase tracking-wider mb-3">Container laboratory Basel</div>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">Lab containers Basel — Albstadt factory visit and site audit</h2>
+          <p class="text-gray-400 mb-8">We manufacture LABtoGO to order at the Albstadt works — SIA 261 Z2 structural design, SIA 380/1 insulation and T13/T15 electrical connection pre-configured at the factory. Factory visits available at any time; complimentary site audit including Weil am Rhein customs strategy.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+4974357519700" class="bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call now</a>
+            <a href="#anfrage" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Complete the enquiry form <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEITERE STANDORTE -->
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-slate-900">Further locations for lab containers in the DACH region</h2>
+          <p class="text-gray-600 mb-8">Basel is Switzerland’s pharmaceutical capital. These locations share related pharma, research or hospital profiles:</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="/en/lab-containers-zurich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Zurich</div><div class="text-xs text-gray-500">Universities, hospitals &amp; pharma</div></a>
+            <a href="/en/lab-containers-bern" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Bern</div><div class="text-xs text-gray-500">Hospitals, federal offices &amp; med-tech</div></a>
+            <a href="/en/lab-containers-frankfurt" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Frankfurt</div><div class="text-xs text-gray-500">Rhine-Main pharma cluster</div></a>
+            <a href="/en/lab-containers-stuttgart" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Stuttgart</div><div class="text-xs text-gray-500">Powertrain research &amp; materials</div></a>
+            <a href="/en/lab-containers-munich" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Munich</div><div class="text-xs text-gray-500">Automotive &amp; research campus</div></a>
+            <a href="/en/lab-containers-vienna" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Vienna</div><div class="text-xs text-gray-500">Austrian pharma, medical technology</div></a>
+            <a href="/en/lab-containers-hamburg" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Hamburg</div><div class="text-xs text-gray-500">Port, pharma &amp; tropical medicine</div></a>
+            <a href="/en/lab-containers-berlin" class="bg-slate-50 border border-gray-100 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all"><div class="font-bold text-slate-900 text-sm mb-1">Berlin</div><div class="text-xs text-gray-500">Hospitals &amp; biomedical research</div></a>
+          </div>
+          <div class="mt-10 pt-8 border-t border-gray-100">
+            <h3 class="font-bold text-slate-900 mb-3">Further resources</h3>
+            <div class="grid md:grid-cols-2 gap-3 text-sm">
+              <a href="/en/lab-containers" class="text-gray-600 hover:text-primary transition-colors">→ Lab containers – product and service overview</a>
+              <a href="/en/locations" class="text-gray-600 hover:text-primary transition-colors">→ Lab container locations in the DACH region</a>
+              <a href="/en/lab-containers/labtogo" class="text-gray-600 hover:text-primary transition-colors">→ LABtoGO – the platform for BSL-2, GMP and ATEX</a>
+              <a href="/en/magazine/lab-container-permits-building-law" class="text-gray-600 hover:text-primary transition-colors">→ Permits and building law for lab containers (practical guide)</a>
+              <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-gray-600 hover:text-primary transition-colors">→ BSL-2 &amp; BSL-3 in a container — is it possible?</a>
+              <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-gray-600 hover:text-primary transition-colors">→ GMP cleanroom in a container for pharmaceutical production</a>
+              <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-gray-600 hover:text-primary transition-colors">→ Climate control in the lab container — standards and practice</a>
+              <a href="/en/magazine/lab-containers-rent-or-buy" class="text-gray-600 hover:text-primary transition-colors">→ Rent or buy a lab container?</a>
+              <a href="/en/magazine/lab-container-project-process" class="text-gray-600 hover:text-primary transition-colors">→ Project process: from idea to handover</a>
+              <a href="/en/about" class="text-gray-600 hover:text-primary transition-colors">→ About Planexus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <CityCrossLinks current="basel" locale="en" />
+
+  </div>
+</Layout>

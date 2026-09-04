@@ -1,17 +1,28 @@
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { t } from "../i18n/ui";
+import { localizeHref, type Locale } from "../i18n/routes";
 
 function cn(...classes: (string | boolean | undefined)[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Navbar() {
+interface NavbarProps {
+  locale?: Locale;
+  alternateHref?: string;
+}
+
+export default function Navbar({ locale = 'de', alternateHref }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [location, setLocation] = useState('/');
+  const copy = t(locale);
+  const href = (path: string) => localizeHref(path, locale);
+  const homeHref = locale === 'en' ? '/en' : '/';
+  const switchHref = alternateHref ?? (locale === 'en' ? '/' : '/en');
 
   useEffect(() => {
     setLocation(window.location.pathname);
@@ -23,62 +34,92 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { href: "/projekte", label: "Projekte" },
-    { href: "/partner", label: "Partner" },
-    { href: "/magazin", label: "Magazin" },
-    { href: "/kontakt", label: "Kontakt" },
+    { href: href("/projekte"), label: copy.nav.projects },
+    { href: href("/partner"), label: copy.nav.partners },
+    { href: href("/magazin"), label: copy.nav.magazine },
+    { href: href("/kontakt"), label: copy.nav.contact },
   ];
-  
+
   const aboutLinks = [
-    { href: "/ueber-uns", label: "Über uns" },
-    { href: "/team", label: "Team" },
-    { href: "/ueber-uns/auszeichnungen", label: "Auszeichnungen" },
+    { href: href("/ueber-uns"), label: copy.nav.aboutCompany },
+    { href: href("/team"), label: copy.nav.team },
+    { href: href("/ueber-uns/auszeichnungen"), label: copy.nav.awards },
   ];
 
   const serviceLinks = [
-    { href: "/leistungen", label: "Leistungsübersicht" },
-    { href: "/laborcontainer", label: "Laborcontainer" },
-    { href: "/laborcontainer-mieten", label: "Laborcontainer mieten" },
-    { href: "/laborcontainer-kaufen", label: "Laborcontainer kaufen" },
-    { href: "/leistungen/planung", label: "Technische Fachplanung" },
-    { href: "/leistungen/modulbau", label: "Modulbau & Fertigung" },
-    { href: "/leistungen/logistik", label: "Logistik & Montage" },
-    { href: "/leistungen/ausstattung", label: "Laborausstattung" },
-    { href: "/leistungen/beratung", label: "Beratung & Genehmigung" },
-    { href: "/leistungen/smart-lab", label: "Smart Lab Integration" },
+    { href: href("/leistungen"), label: copy.nav.servicesOverview },
+    { href: href("/laborcontainer"), label: copy.nav.labContainers },
+    { href: href("/laborcontainer-mieten"), label: copy.nav.rent },
+    { href: href("/laborcontainer-kaufen"), label: copy.nav.buy },
+    { href: href("/leistungen/planung"), label: copy.nav.planning },
+    { href: href("/leistungen/modulbau"), label: copy.nav.modular },
+    { href: href("/leistungen/logistik"), label: copy.nav.logistics },
+    { href: href("/leistungen/ausstattung"), label: copy.nav.equipment },
+    { href: href("/leistungen/beratung"), label: copy.nav.consulting },
+    { href: href("/leistungen/smart-lab"), label: copy.nav.smartLab },
   ];
+
+  const aboutActive =
+    location === href("/ueber-uns") ||
+    location === href("/team") ||
+    location.startsWith(href("/ueber-uns") + "/") ||
+    location.startsWith(href("/team") + "/");
+
+  const servicesActive = location.startsWith(href("/leistungen"));
+
+  const labtogoHref = href("/laborcontainer/labtogo");
+
+  const LanguageSwitch = ({ className }: { className?: string }) => (
+    <div className={cn("flex items-center gap-1 text-xs font-bold uppercase tracking-wide", className)}>
+      {locale === 'de' ? (
+        <span className="text-primary px-1.5 py-1" aria-current="true">{copy.nav.languageDe}</span>
+      ) : (
+        <a href={switchHref} className="text-white/70 hover:text-primary px-1.5 py-1" lang="de" hrefLang="de">
+          {copy.nav.languageDe}
+        </a>
+      )}
+      <span className="text-white/30" aria-hidden="true">|</span>
+      {locale === 'en' ? (
+        <span className="text-primary px-1.5 py-1" aria-current="true">{copy.nav.languageEn}</span>
+      ) : (
+        <a href={switchHref} className="text-white/70 hover:text-primary px-1.5 py-1" lang="en" hrefLang="en">
+          {copy.nav.languageEn}
+        </a>
+      )}
+    </div>
+  );
 
   return (
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20",
-        scrolled 
-          ? "bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg" 
+        scrolled
+          ? "bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg"
           : "bg-slate-900 border-b border-slate-800"
       )}
     >
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2">
-          <img src="/images/planexus-logo.png" 
-            alt="Planexus Logo" 
+        <a href={homeHref} className="flex items-center gap-2">
+          <img src="/images/planexus-logo.png"
+            alt="Planexus Logo"
             className="h-8 lg:h-10 w-auto" width={800} height={169} />
         </a>
 
         <div className="hidden lg:flex items-center gap-8">
           <a
-            href="/"
+            href={homeHref}
             className={cn(
               "text-sm font-medium transition-colors hover:text-primary relative uppercase tracking-wide",
-              location === "/" ? "text-primary" : "text-white/80 hover:text-white"
+              location === homeHref ? "text-primary" : "text-white/80 hover:text-white"
             )}
           >
-            Start
-            {location === "/" && (
+            {copy.nav.home}
+            {location === homeHref && (
               <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary" />
             )}
           </a>
-          
-          <div 
+
+          <div
             className="relative"
             onMouseEnter={() => setAboutOpen(true)}
             onMouseLeave={() => setAboutOpen(false)}
@@ -93,16 +134,16 @@ export default function Navbar() {
               onKeyDown={(e) => { if (e.key === 'Escape') setAboutOpen(false); }}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 uppercase tracking-wide",
-                (location === "/ueber-uns" || location === "/team" || location.startsWith("/ueber-uns/")) ? "text-primary" : "text-white/80 hover:text-white"
+                aboutActive ? "text-primary" : "text-white/80 hover:text-white"
               )}
             >
-              Über uns
+              {copy.nav.about}
               <ChevronDown className={cn("w-4 h-4 transition-transform", aboutOpen && "rotate-180")} />
             </button>
-            {(location === "/ueber-uns" || location === "/team" || location.startsWith("/ueber-uns/")) && (
+            {aboutActive && (
               <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary" />
             )}
-            
+
             <AnimatePresence>
               {aboutOpen && (
                 <motion.div
@@ -128,7 +169,7 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <div 
+          <div
             className="relative"
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
@@ -143,16 +184,16 @@ export default function Navbar() {
               onKeyDown={(e) => { if (e.key === 'Escape') setServicesOpen(false); }}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 uppercase tracking-wide",
-                location.startsWith("/leistungen") ? "text-primary" : "text-white/80 hover:text-white"
+                servicesActive ? "text-primary" : "text-white/80 hover:text-white"
               )}
             >
-              Leistungen
+              {copy.nav.services}
               <ChevronDown className={cn("w-4 h-4 transition-transform", servicesOpen && "rotate-180")} />
             </button>
-            {location.startsWith("/leistungen") && (
+            {servicesActive && (
               <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary" />
             )}
-            
+
             <AnimatePresence>
               {servicesOpen && (
                 <motion.div
@@ -178,16 +219,16 @@ export default function Navbar() {
               )}
             </AnimatePresence>
           </div>
-          
+
           <a
-            href="/laborcontainer/labtogo"
+            href={labtogoHref}
             className={cn(
               "text-sm font-bold transition-colors relative uppercase tracking-wide",
-              location === "/laborcontainer/labtogo" ? "text-primary" : "text-primary/90 hover:text-primary"
+              location === labtogoHref ? "text-primary" : "text-primary/90 hover:text-primary"
             )}
           >
             LABtoGO
-            {location === "/laborcontainer/labtogo" && (
+            {location === labtogoHref && (
               <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary" />
             )}
           </a>
@@ -207,6 +248,7 @@ export default function Navbar() {
               )}
             </a>
           ))}
+          <LanguageSwitch className="text-white" />
           <a
             href="tel:+4974357519700"
             className="flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all border border-primary text-primary bg-transparent hover:bg-primary hover:text-slate-900"
@@ -216,12 +258,16 @@ export default function Navbar() {
           </a>
         </div>
 
-        <button
-          className="lg:hidden p-2 transition-colors text-white"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X /> : <Menu />}
-        </button>
+        <div className="lg:hidden flex items-center gap-3">
+          <LanguageSwitch />
+          <button
+            className="p-2 transition-colors text-white"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -234,12 +280,12 @@ export default function Navbar() {
             style={{ maxHeight: 'calc(100vh - 5rem)' }}
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-2">
-              <a href="/" className={cn("text-left text-lg font-medium py-3 border-b border-gray-50", location === "/" ? "text-primary" : "text-slate-700")}>
-                Start
+              <a href={homeHref} className={cn("text-left text-lg font-medium py-3 border-b border-gray-50", location === homeHref ? "text-primary" : "text-slate-700")}>
+                {copy.nav.home}
               </a>
-              
+
               <div className="border-b border-gray-50">
-                <p className="text-xs uppercase tracking-wider text-gray-400 pt-3 pb-1">Über uns</p>
+                <p className="text-xs uppercase tracking-wider text-gray-400 pt-3 pb-1">{copy.nav.about}</p>
                 {aboutLinks.map((link) => (
                   <a key={link.href} href={link.href} className={cn("block text-left text-lg font-medium py-2 pl-4 w-full", location === link.href ? "text-primary" : "text-slate-700")}>
                     {link.label}
@@ -248,7 +294,7 @@ export default function Navbar() {
               </div>
 
               <div className="border-b border-gray-50">
-                <p className="text-xs uppercase tracking-wider text-gray-400 pt-3 pb-1">Leistungen</p>
+                <p className="text-xs uppercase tracking-wider text-gray-400 pt-3 pb-1">{copy.nav.services}</p>
                 {serviceLinks.map((link) => (
                   <a key={link.href} href={link.href} className={cn("block text-left text-lg font-medium py-2 pl-4 w-full", location === link.href ? "text-primary" : "text-slate-700")}>
                     {link.label}
@@ -256,7 +302,7 @@ export default function Navbar() {
                 ))}
               </div>
 
-              <a href="/laborcontainer/labtogo" className={cn("text-left text-lg font-bold py-3 border-b border-gray-50 w-full block", location === "/laborcontainer/labtogo" ? "text-primary" : "text-primary/80")}>
+              <a href={labtogoHref} className={cn("text-left text-lg font-bold py-3 border-b border-gray-50 w-full block", location === labtogoHref ? "text-primary" : "text-primary/80")}>
                 LABtoGO
               </a>
 
@@ -265,7 +311,7 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              
+
               <div className="flex flex-col gap-4 mt-4 pt-4 border-t border-gray-100">
                  <a href="tel:+4974357519700" className="flex items-center gap-3 text-slate-600 hover:text-primary">
                     <Phone className="w-5 h-5 text-primary" /> +49 7435 7519 700

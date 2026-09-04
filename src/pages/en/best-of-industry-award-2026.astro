@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Picture from '../../components/Picture.astro';
+
+const votingUrl = 'https://www.bestofindustry.de/boi2026';
+const imageSrc = '/images/planexus-labtogo-best-of-industry-award-2026.png';
+const imageAlt =
+  'Planexus GmbH is nominated with LABtoGO for the Best of Industry Award 2026 — call to vote';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://planexus.de/en' },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Best of Industry Award 2026',
+      item: 'https://planexus.de/en/best-of-industry-award-2026',
+    },
+  ],
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  inLanguage: 'en',
+  name: 'LABtoGO at the Best of Industry Award 2026 | Planexus',
+  description:
+    'LABtoGO is nominated for the Best of Industry Award 2026 in Laboratory & Analytical Technology. Users decide the vote. Vote now.',
+  url: 'https://planexus.de/en/best-of-industry-award-2026',
+  isPartOf: { '@type': 'WebSite', name: 'Planexus', url: 'https://planexus.de/en' },
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: `https://planexus.de${imageSrc}`,
+  },
+};
+---
+
+<Layout
+  title="LABtoGO at the Best of Industry Award 2026 | Planexus"
+  description="LABtoGO is nominated for the Best of Industry Award 2026 in Laboratory & Analytical Technology. Users decide the vote. Vote now."
+  canonical="/en/best-of-industry-award-2026"
+  ogImage={imageSrc}
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">
+            Nominated for the Best of Industry Award 2026
+          </h1>
+          <p class="text-xl text-gray-300 leading-relaxed">
+            Category Laboratory &amp; Analytical Technology
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <Breadcrumbs bar items={[{ name: 'Home', href: '/en' }, { name: 'Best of Industry Award 2026' }]} />
+
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
+            <a href={votingUrl} target="_blank" rel="noopener" class="block w-full max-w-md mx-auto md:mx-0" aria-label="Vote for Planexus LABtoGO at the Best of Industry Award 2026">
+              <Picture src={imageSrc} alt={imageAlt} width={1200} height={1200} loading="eager" fetchpriority="high" class="w-full h-auto object-contain rounded-2xl border border-gray-100 shadow-lg" />
+            </a>
+            <div>
+              <a href={votingUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#bbd700] text-slate-900 font-bold px-8 py-3.5 rounded-lg hover:bg-[#a8c200] transition-colors text-sm">
+                Vote now
+              </a>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">What it is about</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            The Best of Industry Award has been presented since 2016 by MM MaschinenMarkt of Vogel Communications Group. It recognises outstanding new industrial products — in 2026 across 16 categories, from more than 130 submitted innovations.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            There is no closed-door jury. The vote sits 100% with practitioners. Who wins is decided by the people who work in industry every day.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-12">
+            LABtoGO is on the shortlist in Laboratory &amp; Analytical Technology, alongside names such as Anton Paar, igus, Retsch, Sartorius and Systec.
+          </p>
+
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">Why LABtoGO is nominated</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Laboratory space usually takes years: planning, permits, shell, fit-out, commissioning. When a project needs capacity faster, that path does not help.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            LABtoGO 2.0 is a full mobile laboratory container module — not a site hut with a sink. The technology is fully integrated: HVAC with heat recovery, controllable pressure zones, 24-hour extract, and building-management systems. Factory prefabrication means the module is operational within hours of delivery.
+          </p>
+          <a href="/en/lab-containers/labtogo" class="inline-flex items-center gap-2 text-primary font-bold mb-12 hover:gap-3 transition-all border-b-2 border-primary/20 hover:border-primary pb-1">
+            More about LABtoGO
+          </a>
+
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">How to vote</h2>
+          <ol class="space-y-3 mb-6 list-decimal list-inside text-gray-700">
+            <li>Open the voting page</li>
+            <li>Select the category Laboratory &amp; Analytical Technology</li>
+            <li>Select LABtoGO by Planexus</li>
+            <li>Submit</li>
+          </ol>
+          <p class="text-gray-600 leading-relaxed mb-6">Takes less than two minutes. Voting runs until 30 November 2026.</p>
+          <a href={votingUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#bbd700] text-slate-900 font-bold px-8 py-3.5 rounded-lg hover:bg-[#a8c200] transition-colors text-sm mb-12">
+            Vote for LABtoGO
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

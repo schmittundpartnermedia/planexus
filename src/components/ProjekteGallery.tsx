@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { t } from '../i18n/ui';
+import type { Locale } from '../i18n/routes';
 
 const IMAGE_DIMS: Record<string, { w: number; h: number }> = {
   "/attached_assets/IMG_20210520_184046_1769690502588.jpg": { w: 3648, h: 2736 },
@@ -53,7 +55,7 @@ interface Project {
   category: string;
 }
 
-const projects: Project[] = [
+const projectsDe: Project[] = [
   {
     name: "Industrielabor",
     description: "Mobile Laborlösung mit vollständiger Lüftungstechnik und Klimatisierung für den Industriestandort.",
@@ -131,6 +133,51 @@ const projects: Project[] = [
   },
 ];
 
+const projectsEn: Project[] = [
+  {
+    name: "Industrial laboratory",
+    description: "Mobile laboratory solution with full ventilation and climate control for an industrial site.",
+    images: projectsDe[0].images,
+    category: "Industry",
+  },
+  {
+    name: "High-security laboratory",
+    description: "High-security laboratory container with a specialised façade.",
+    images: projectsDe[1].images,
+    category: "Public sector",
+  },
+  {
+    name: "Pharmaceutical laboratory",
+    description: "Pharma laboratory with complete cleanroom technology and large-scale equipment for vaccine research.",
+    images: projectsDe[2].images,
+    category: "Pharma",
+  },
+  {
+    name: "Research laboratory",
+    description: "Research laboratory for a technical university with an exposed substructure.",
+    images: projectsDe[3].images,
+    category: "Research",
+  },
+  {
+    name: "Multi-storey pharma laboratory",
+    description: "Multi-storey laboratory container with Secuflow fume hoods and high-spec laboratory fit-out.",
+    images: projectsDe[4].images,
+    category: "Pharma",
+  },
+  {
+    name: "Production laboratory",
+    description: "Large project with extensive rooftop plant and HVAC systems for a production site.",
+    images: projectsDe[5].images,
+    category: "Pharma",
+  },
+  {
+    name: "University research laboratory",
+    description: "Research laboratory for a university with modular construction and flexible room layouts.",
+    images: projectsDe[6].images,
+    category: "Research",
+  },
+];
+
 const messeImages = [
   "/attached_assets/IMG_20160509_190630_1769690631269.jpg",
   "/attached_assets/IMG_20160509_190722_1769690631269.jpg",
@@ -149,14 +196,17 @@ const analyticaImages = [
   "/images/analytica-2026/infowand.jpg"
 ];
 
-const categories = ["Alle", "Industrie", "Pharma", "Forschung", "Öffentlich"];
-
-export default function ProjekteGallery() {
+export default function ProjekteGallery({ locale = 'de' }: { locale?: Locale }) {
+  const copy = t(locale);
+  const projects = locale === 'en' ? projectsEn : projectsDe;
+  const categories = locale === 'en'
+    ? [copy.gallery.all, copy.gallery.industry, copy.gallery.pharma, copy.gallery.research, copy.gallery.public]
+    : [copy.gallery.all, copy.gallery.industry, copy.gallery.pharma, copy.gallery.research, copy.gallery.public];
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [filter, setFilter] = useState("Alle");
+  const [filter, setFilter] = useState(copy.gallery.all);
 
-  const filteredProjects = filter === "Alle"
+  const filteredProjects = filter === copy.gallery.all
     ? projects
     : projects.filter(p => p.category === filter);
 
@@ -213,7 +263,7 @@ export default function ProjekteGallery() {
                   <h3 className="text-xl font-bold text-slate-900 mt-3 mb-2">{project.name}</h3>
                   <p className="text-gray-600 text-sm">{project.description}</p>
                   <p className="inline-block bg-primary text-slate-900 font-medium text-sm mt-4 px-3 py-1 rounded-full">
-                    Bilder ansehen →
+                    {copy.gallery.viewImages}
                   </p>
                 </div>
               </div>
@@ -225,8 +275,14 @@ export default function ProjekteGallery() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">analytica 2026 — LABtoGO Premiere</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Weltpremiere des LABtoGO auf der analytica 2026 in München. Begehbarer LABtoGO mit vollständiger Ausstattung live am Messestand — Halle B2, Stand 322.</p>
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">
+              {locale === 'en' ? 'analytica 2026 — LABtoGO premiere' : 'analytica 2026 — LABtoGO Premiere'}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {locale === 'en'
+                ? 'World premiere of the LABtoGO at analytica 2026 in Munich. Walk-in LABtoGO with a full fit-out live on the stand — Hall B2, Booth 322.'
+                : 'Weltpremiere des LABtoGO auf der analytica 2026 in München. Begehbarer LABtoGO mit vollständiger Ausstattung live am Messestand — Halle B2, Stand 322.'}
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {analyticaImages.map((img, index) => (
@@ -236,7 +292,7 @@ export default function ProjekteGallery() {
               >
                 <img
                   src={img}
-                  alt={`analytica 2026 LABtoGO Premiere - Bild ${index + 1}`}
+                  alt={`analytica 2026 LABtoGO premiere - ${copy.gallery.image} ${index + 1}`}
                   width={imgDims(img).w}
                   height={imgDims(img).h}
                   className="w-full h-full object-cover"
@@ -251,8 +307,16 @@ export default function ProjekteGallery() {
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">Messeauftritt 2016 – erster vollfunktionsfähiger Laborcontainer</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Unser erster Messeauftritt mit begehbarem Laborcontainer-Exponat.</p>
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">
+              {locale === 'en'
+                ? 'Trade-fair appearance 2016 — first fully functional lab container'
+                : 'Messeauftritt 2016 – erster vollfunktionsfähiger Laborcontainer'}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {locale === 'en'
+                ? 'Our first trade-fair appearance with a walk-in laboratory container exhibit.'
+                : 'Unser erster Messeauftritt mit begehbarem Laborcontainer-Exponat.'}
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {messeImages.map((img, index) => (
@@ -262,7 +326,7 @@ export default function ProjekteGallery() {
               >
                 <img
                   src={img}
-                  alt={`Messeauftritt 2016 – erster vollfunktionsfähiger Laborcontainer - Bild ${index + 1}`}
+                  alt={`${locale === 'en' ? 'Trade-fair 2016 — first fully functional lab container' : 'Messeauftritt 2016 – erster vollfunktionsfähiger Laborcontainer'} - ${copy.gallery.image} ${index + 1}`}
                   width={imgDims(img).w}
                   height={imgDims(img).h}
                   className="w-full h-full object-cover"
@@ -299,7 +363,7 @@ export default function ProjekteGallery() {
             <div className="aspect-video rounded-lg overflow-hidden mb-4">
               <img
                 src={selectedProject.images[selectedImageIndex]}
-                alt={`${selectedProject.name} - Bild ${selectedImageIndex + 1}`}
+                alt={`${selectedProject.name} - ${copy.gallery.image} ${selectedImageIndex + 1}`}
                 width={imgDims(selectedProject.images[selectedImageIndex]).w}
                 height={imgDims(selectedProject.images[selectedImageIndex]).h}
                 className="w-full h-full object-contain bg-black"

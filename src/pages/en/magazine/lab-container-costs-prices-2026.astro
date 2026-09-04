@@ -1,0 +1,647 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lab-container costs: what really determines the price – the 2026 costing guide",
+  "description": "Which factors determine the price of a lab-container project? Equipment classes, eight cost blocks, rent vs. purchase vs. hire purchase, seven hidden cost items and the 14-point quotation comparison checklist – no blanket figures, with clear costing logic.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Managing Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-05-28",
+  "dateModified": "2026-05-28",
+  "image": "https://planexus.de/en/magazine/laborcontainer-kosten-preise-hero.png",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/lab-container-costs-prices-2026" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Lab-container costs – costing guide", "item": "https://planexus.de/en/magazine/lab-container-costs-prices-2026" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Why is there no list price for lab containers?", "acceptedAnswer": { "@type": "Answer", "text": "A lab container is never a catalogue product, but always a project-specific configuration. Usable area, equipment class (standard, GLP, GMP, BSL level, ISO 14644 cleanroom class), HVAC design, safety equipment, installation site, connection conditions, rental term and regulatory requirements change the price by a multiple. Two projects with identical floor area can differ by a factor of five – through different HVAC design and validation requirements alone. For that reason we cost every quotation individually after a requirements workshop; a published price list would be misleading for clients and research managers." } },
+    { "@type": "Question", "name": "Which cost blocks does a lab-container project comprise?", "acceptedAnswer": { "@type": "Answer", "text": "Every project is built from eight blocks: container shell and basic fit-out (steel frame, sandwich panels, raised floor); interior fit-out and laboratory furniture to DIN EN 14056 and DIN EN 13150; HVAC and cleanroom technology by class; safety systems (fire detection and alarm system, sprinklers, emergency showers, hazardous-substance extract); structural design, foundation and installation to DIN 1054 and Eurocode 7; logistics and delivery by low-loader and mobile crane; permits and design to the MBO or LBO; and connections for electricity, water, wastewater and data. Anyone who overlooks a block builds a budget gap." } },
+    { "@type": "Question", "name": "Does renting or buying a lab container make more sense?", "acceptedAnswer": { "@type": "Answer", "text": "The decision hangs on four variables: period of use, capital availability, accounting requirement and the expected technical half-life of the equipment. Rule of thumb: up to around 24 months of use, rent is almost always economically superior; from around 48 months purchase pays off; in between lies the decision zone in which hire purchase is a valid alternative. Rent protects liquidity and shifts residual-value risk to the lessor; purchase leads to capital lock-up and depreciation over 10–15 years under the tax guidelines, but creates a balance-sheet asset. Hire purchase credits a share of the rent against a later residual purchase price." } },
+    { "@type": "Question", "name": "Which one-off costs are added to container rental or purchase?", "acceptedAnswer": { "@type": "Answer", "text": "Five one-off cost blocks arise on every project, whether rented or purchased. First, inbound and outbound transport by low-loader; for abnormal loads from 3.5 m width, §29 StVZO applies, from 4 m with escort vehicles. Second, installation by mobile crane including traffic management to RSA 21 and a lifting-equipment operator to DGUV Regulation 52. Third, the foundation – pad foundations, strip foundations, a ground slab or screw piles, depending on ground conditions and period of use. Fourth, services connection – electricity to DIN VDE 0100, potable water to DIN 1988, wastewater to DIN 1986-100, data network. Fifth, permit and design costs – structural proof, building notice or building application, and if applicable a GenTG, BImSchG or radiation-protection permit. These five blocks are quantified individually on every project." } },
+    { "@type": "Question", "name": "Which hidden costs are often omitted from cheap quotations?", "acceptedAnswer": { "@type": "Answer", "text": "Seven items regularly disappear from discount quotations and only reappear on the final invoice. Strip-out at the end of the rental (dismantling, removal, reinstatement of the pad). Round-the-clock HVAC electricity consumption – BSL and cleanroom containers draw year-round base load, and energy costs are a substantial OPEX item. Filter changes for HEPA H13/H14 every 12 to 24 months. Re-qualification of analytical instruments after a site move (IQ/OQ/PQ) and, at accredited test houses to DIN EN ISO/IEC 17025, additionally a DAkkS site notification. All-risks insurance for container and contents. Maintenance contracts for HVAC, filters, fire detection and alarm system, emergency showers. Index clauses in rental contracts that raise the rate annually to the CPI or an agreed escalation rate." } },
+    { "@type": "Question", "name": "What does a GMP cleanroom container to Annex 1 cost?", "acceptedAnswer": { "@type": "Answer", "text": "GMP cleanroom containers to EU GMP Annex 1 (in force since August 2023) are the most demanding equipment class, because they require a pressure cascade, HEPA terminal filters, an airlock concept, a material airlock, low-contamination surfaces and complete validation documentation to Annex 15 (DQ/IQ/OQ/PQ). A concrete price figure would be misleading here – the price hangs on cleanroom class (ISO 14644 Class 5/7/8), air-change rate, number of airlocks, pressure-cascade stages, validation scope and contract term. We cost Annex 1-compliant cleanroom containers after a detailed requirements workshop with the client’s pharmaceutical QA; a robust quotation is typically available within two weeks." } },
+    { "@type": "Question", "name": "What funding is available for lab containers in Germany in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Four funding routes are relevant. Federal research and innovation funding via BMBF, BMWK and project management agencies (DLR, Jülich, VDI/VDE-IT) – third-party projects can claim container rentals and purchases as capital or rental-cost items. State development banks (NRW.Bank, L-Bank, LfA Bayern, IBB) offer interest-subsidised investment loans with repayment-free years. EU programmes Horizon Europe and EIC Accelerator accept container solutions as CAPEX or OPEX. KfW programmes such as the ERP SME loan and the KfW climate-protection offensive offer subsidised terms for energy-efficient modular laboratories. On larger investment schemes it almost always pays to involve the in-house third-party funding office or a specialised funding adviser in the pre-project phase – application processing time must be built into the project plan." } }
+  ]
+};
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Lab-container costs: what determines the price"
+  description="What determines the price of a lab-container project? Eight cost blocks, equipment classes, rent vs. purchase and a comparison checklist. Read now."
+  canonical="/en/magazine/lab-container-costs-prices-2026"
+  ogImage="/magazin/laborcontainer-kosten-preise-hero.png"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/magazin/laborcontainer-kosten-preise-hero.png')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              Costs &amp; costing
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              14 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Lab-container costs: what really determines the price
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            A lab container is not a catalogue product. Two projects with identical floor area can differ in price by a factor of five – through different HVAC design, containment level and validation requirements alone. This guide shows which factors actually determine your price, how a serious costing is built and what you must watch when comparing quotations.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              28 May 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald, Managing Director, Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Costs – costing guide</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                Anyone searching the internet for <strong class="text-slate-900 font-semibold">“lab container price per month”</strong> finds blanket figures that are worthless. A <strong class="text-slate-900 font-semibold">lab container</strong> is never a catalogue product, but always a <strong class="text-slate-900 font-semibold">project-specific configuration</strong>. We would be deceiving ourselves – and you as the client – if we wrote down a list of fixed prices at this point.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                What we give you instead – and what this guide is about – are the <strong class="text-slate-900 font-semibold">cost factors</strong>. Once you understand which <strong class="text-slate-900 font-semibold">eight blocks</strong> build a project and which levers actually move the final sum, you can formulate requirements cleanly, <strong class="text-slate-900 font-semibold">make quotations comparable</strong> and avoid expensive surprises at the end of the contract. We then take on the concrete costing – free of charge, transparently structured and typically within a few working days after the requirements workshop.
+              </p>
+
+              <h2 id="faktentabelle" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fact table: the eight cost blocks and their price drivers</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Every <strong class="text-slate-900 font-semibold">lab-container project</strong> is built from the same <strong class="text-slate-900 font-semibold">eight blocks</strong> – whether it is a temporary <strong class="text-slate-900 font-semibold">interim laboratory</strong>, a permanent <strong class="text-slate-900 font-semibold">works extension</strong> or a <strong class="text-slate-900 font-semibold">pilot cleanroom project</strong>. The following table names for each block the <strong class="text-slate-900 font-semibold">standards basis</strong> and the factors that actually determine its share of the price.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Cost block</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Standards basis</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Principal price drivers</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">1. Container shell &amp; basic fit-out</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 14056, GEG 2024</td>
+                      <td class="border border-gray-200 px-4 py-3">Number of modules, insulation standard (U-value), fire-protection class, sandwich panels</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">2. Interior fit-out &amp; laboratory furniture</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 14056, DIN EN 13150, DIN EN 14470-1/2, DIN 12899</td>
+                      <td class="border border-gray-200 px-4 py-3">Furniture scope, worktop material, safety cabinets, emergency showers</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">3. HVAC &amp; cleanroom technology</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 1946-7, ISO 14644, EU GMP Annex 1, Annex 15</td>
+                      <td class="border border-gray-200 px-4 py-3">Air-change rate, filter stages H13/H14, pressure cascade, validation scope</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">4. Safety systems</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 14675, VdS CEA 4001, DIN EN 12469, BioStoffV/TRBA 100</td>
+                      <td class="border border-gray-200 px-4 py-3">BSL level, ATEX requirement, fire-detection/sprinkler concept, standby power</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">5. Structural design, foundation &amp; installation</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 1991 (EC 1), DIN 1054, DIN EN 1997 (EC 7), RSA 21</td>
+                      <td class="border border-gray-200 px-4 py-3">Ground conditions, snow-load zone, foundation type, mobile-crane size, installation days</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">6. Logistics &amp; delivery</td>
+                      <td class="border border-gray-200 px-4 py-3">§29 StVZO, DGUV V 52</td>
+                      <td class="border border-gray-200 px-4 py-3">Distance from the factory, module width (abnormal load from 3.5 m), escort vehicles</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">7. Permits &amp; design</td>
+                      <td class="border border-gray-200 px-4 py-3">MBO §61/§63/§76, state LBOs, GenTSV, StrlSchG, BImSchG</td>
+                      <td class="border border-gray-200 px-4 py-3">Permit path (procedure-free / simplified / full application), special permits</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">8. Electricity/water/data connections</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN VDE 0100, DIN 1988-100, DIN 1986-100</td>
+                      <td class="border border-gray-200 px-4 py-3">Run lengths to the handover point, connection ratings, purified water, fibre</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The next sections walk through each of these eight blocks in turn. Anyone who overlooks a block in the requirements specification builds a budget gap – and that is the most common reason final invoices diverge from the first quotation.
+              </p>
+
+              <h2 id="kein-listenpreis" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Why there is no list price for lab containers</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The reason lies in the nature of the thing: a 30 m² <strong class="text-slate-900 font-semibold">standard analytical laboratory</strong> and a 30 m² <strong class="text-slate-900 font-semibold">GMP cleanroom to Annex 1</strong> share the same collective term “lab container” – but in design, material and documentation they are completely different buildings. The <strong class="text-slate-900 font-semibold">HVAC of a BSL-3 module</strong> costs a multiple of a standard ventilation module. Complete <strong class="text-slate-900 font-semibold">Annex 15 validation documentation</strong> can influence the price of a cleanroom container more than the container shell itself.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Added to this are <strong class="text-slate-900 font-semibold">project-specific variables</strong> that nobody could map in a price list in advance: installation site and delivery logistics, connection conditions at the existing building, contract term with <strong class="text-slate-900 font-semibold">index clauses</strong>, scalability and funding eligibility, the regulatory path for <strong class="text-slate-900 font-semibold">BSL/GMP/Ex-protection applications</strong>. A blanket <strong class="text-slate-900 font-semibold">“from €/month” statement</strong> is therefore either a teaser figure that has nothing to do with the real quotation, or a minimum price that describes the standard module in the most favourable case and does not fit 90 per cent of enquiries.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For that reason we at Planexus do not issue blanket list prices. Instead we work through every project individually after a requirements workshop – free of charge, in the same structured form (see Chapter 6) for every interested party. That is no more effort than a lump-sum quotation, but it is honest.
+              </p>
+
+              <h2 id="kostenbloecke" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">The eight cost blocks in detail</h2>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Block 1 – Container shell and basic fit-out</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong class="text-slate-900 font-semibold">Steel frame construction</strong> in weathering or hot-dip galvanised steel, insulated <strong class="text-slate-900 font-semibold">sandwich panels</strong> with a project-dependent U-value, <strong class="text-slate-900 font-semibold">raised floor</strong> for services routing, washable wall lining, acoustic ceiling, floor covering with coved skirting. This shell accounts, depending on equipment class, for a substantial share of the container price. The exact share hangs on <strong class="text-slate-900 font-semibold">module size</strong>, <strong class="text-slate-900 font-semibold">insulation standard to GEG 2024</strong> (§§ 71 ff.) and the <strong class="text-slate-900 font-semibold">fire-protection requirement</strong> of the installation site.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Block 2 – Interior fit-out and laboratory furniture</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong class="text-slate-900 font-semibold">Laboratory run</strong> with a ceramic or chemically resistant composite worktop, <strong class="text-slate-900 font-semibold">safety cabinets</strong> (FWF cabinets to DIN EN 14470-1 for flammable liquids, gas-cylinder cabinets to DIN EN 14470-2 if required), stainless-steel or PP sinks, <strong class="text-slate-900 font-semibold">eye and body emergency showers to DIN 12899</strong>, thermal disinfection in BSL areas. We deliver the complete interior fit-out from the <strong class="text-slate-900 font-semibold">Wesemann group</strong> – the furniture components meet <strong class="text-slate-900 font-semibold">DIN EN 14056</strong> for construction and <strong class="text-slate-900 font-semibold">DIN EN 13150</strong> for work surfaces. The price scales with instrument count, special furniture, chemical-resistance requirements and the desired design standard.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Block 3 – HVAC and cleanroom technology</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This is where the <strong class="text-slate-900 font-semibold">largest price differences</strong> between equipment classes arise. Standard laboratories manage with a split air-conditioning unit and mechanical ventilation. <strong class="text-slate-900 font-semibold">BSL-2 ventilation</strong> needs <strong class="text-slate-900 font-semibold">H13 terminal filters</strong>, differential-pressure monitoring and higher air-change rates to <strong class="text-slate-900 font-semibold">DIN 1946-7</strong>. <strong class="text-slate-900 font-semibold">GMP cleanrooms to ISO 14644 Class 7</strong> (or stricter) need <strong class="text-slate-900 font-semibold">HEPA terminal filters</strong>, <strong class="text-slate-900 font-semibold">pressure cascades</strong> across several rooms, very high air-change rates and complete validation documentation to <strong class="text-slate-900 font-semibold">EU GMP Annex 15 (DQ/IQ/OQ/PQ)</strong>. <strong class="text-slate-900 font-semibold">BSL-3</strong> additionally requires emergency extract, autoclavable extract air and standby-power backup. Anyone who saves at the wrong end here fails the <strong class="text-slate-900 font-semibold">validation</strong> or the <strong class="text-slate-900 font-semibold">authority audit</strong> – HVAC is the most common reason for Annex 1 findings at pharmaceutical inspections.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Block 4 – Safety systems</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong class="text-slate-900 font-semibold">Fire detection and alarm system to DIN 14675</strong>, sprinklers to VdS CEA 4001 or a gas-extinguishing system for sensitive equipment, emergency showers and eye washes, <strong class="text-slate-900 font-semibold">hazardous-substance extract at microbiological safety cabinets to DIN EN 12469</strong>, gas alarming for flammable or toxic gases, emergency ventilation with redundant power supply. At <strong class="text-slate-900 font-semibold">BSL-2</strong>, an airlock, autoclavable extract and a standby generator are added; at <strong class="text-slate-900 font-semibold">BSL-3</strong>, additionally pressure monitors with alarm, emergency shut-down and a personnel airlock with shower. The safety-systems share of the total price grows <strong class="text-slate-900 font-semibold">disproportionately with the containment level</strong> – that is mathematically unavoidable.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Block 5 – Structural design, foundation and installation</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Load assumptions to <strong class="text-slate-900 font-semibold">DIN EN 1991 (Eurocode 1)</strong>, bearing capacity of the pad to <strong class="text-slate-900 font-semibold">DIN 1054</strong> and <strong class="text-slate-900 font-semibold">DIN EN 1997 (Eurocode 7)</strong>, snow-load zone, wind zone, frost depth to DIN EN ISO 13793. Three foundation variants dominate in practice: <strong class="text-slate-900 font-semibold">pad foundations</strong> of concrete blocks, <strong class="text-slate-900 font-semibold">strip foundations</strong> for multi-storey assemblies, or a continuous <strong class="text-slate-900 font-semibold">reinforced-concrete ground slab</strong> for GMP and BSL-3 installation. <strong class="text-slate-900 font-semibold">Screw piles</strong> save time on short rental terms, but are not suitable for all soil classes. Installation by <strong class="text-slate-900 font-semibold">mobile crane</strong> (40-tonner for one module, 80-tonner and larger for several modules) including traffic management to RSA 21 and a lifting-equipment operator with a competence certificate to DGUV Regulation 52 is a cost block of its own.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Block 6 – Logistics and delivery</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong class="text-slate-900 font-semibold">Low-loader transport from the Albstadt factory</strong> to the installation site. Freight costs scale with number of modules, distance and permit duty: from <strong class="text-slate-900 font-semibold">3.5 m transport width</strong>, a §29 StVZO special permit applies; from <strong class="text-slate-900 font-semibold">4 m</strong> escort vehicles are required; from <strong class="text-slate-900 font-semibold">4.5 m</strong> or for night movements, a police escort. With several modules a fixed-cost share arises for mobile-crane delivery per installation day – <strong class="text-slate-900 font-semibold">bundling several modules in one delivery</strong> almost always pays and is one of the most effective levers for logistics-cost optimisation.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Block 7 – Permits and design</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong class="text-slate-900 font-semibold">Structural proof</strong> by a checking engineer to the state building code, building application or notice to <strong class="text-slate-900 font-semibold">§63 or §76 MBO</strong>, if applicable a <strong class="text-slate-900 font-semibold">GenTG notification</strong> to the regional council at safety level S1/S2 to GenTSV, a <strong class="text-slate-900 font-semibold">radiation-protection permit to the StrlSchG</strong> for radioactive substances, an immission-control notification to <strong class="text-slate-900 font-semibold">§15 BImSchG</strong> for extract air streams. <strong class="text-slate-900 font-semibold">Design services</strong> by an architect or building-services engineer for media and ventilation design – we deliver these services <strong class="text-slate-900 font-semibold">integrated from a single source</strong> and relieve the client of coordinating several specialist designers.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Block 8 – Connections</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong class="text-slate-900 font-semibold">Main electrical connection to DIN VDE 0100</strong>, often via a construction-site distribution board with 30 mA residual-current device; the connection rating per module depends on HVAC design and the instrument inventory. <strong class="text-slate-900 font-semibold">Potable water to DIN 1988 Part 100</strong> with Category 5 system separation in BSL areas. <strong class="text-slate-900 font-semibold">Wastewater connection to DIN 1986-100</strong> with a sampling chamber and, if required, a neutralisation plant. Data connection by fibre or optical fibre, often via a leased line to the existing building. On longer service runs, <strong class="text-slate-900 font-semibold">civil works and trenching</strong> are added and can quickly multiply the connection-cost item – the <strong class="text-slate-900 font-semibold">position of the pad relative to the nearest handover point</strong> is one of the most underestimated price drivers in the entire project.
+              </p>
+
+              <h2 id="ausstattungsklassen" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Equipment classes as price drivers</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The <strong class="text-slate-900 font-semibold">equipment class determines the price frame more than raw floor area</strong>. Eight classes are relevant in DACH practice – each with its own <strong class="text-slate-900 font-semibold">standards basis</strong> and its own <strong class="text-slate-900 font-semibold">costing logic</strong>. The following overview shows which factor drives the price in which class.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Equipment class</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Standards basis</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Principal price drivers</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Standard lab container</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN 14056, GEG 2024</td>
+                      <td class="border border-gray-200 px-4 py-3">Number of modules, interior fit-out, standard HVAC</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">GLP laboratory</td>
+                      <td class="border border-gray-200 px-4 py-3">OECD GLP, DIN EN ISO/IEC 17025</td>
+                      <td class="border border-gray-200 px-4 py-3">+ microbiological safety cabinet, quality documentation</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">BSL-2 module</td>
+                      <td class="border border-gray-200 px-4 py-3">BioStoffV, TRBA 100/466</td>
+                      <td class="border border-gray-200 px-4 py-3">+ airlock, H13 filter, autoclavable extract</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">BSL-3 module</td>
+                      <td class="border border-gray-200 px-4 py-3">BioStoffV, TRBA 100, GenTSV S3</td>
+                      <td class="border border-gray-200 px-4 py-3">+ pressure cascade, emergency extract, standby power</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">GMP cleanroom ISO 7</td>
+                      <td class="border border-gray-200 px-4 py-3">EU GMP Annex 1, ISO 14644, Annex 15</td>
+                      <td class="border border-gray-200 px-4 py-3">+ pressure cascade, HEPA terminal, DQ/IQ/OQ/PQ</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">GMP cleanroom ISO 5 (LAF)</td>
+                      <td class="border border-gray-200 px-4 py-3">EU GMP Annex 1 Grade A/B</td>
+                      <td class="border border-gray-200 px-4 py-3">+ laminar air flow, highest validation</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Ex protection ATEX Zone 1/2</td>
+                      <td class="border border-gray-200 px-4 py-3">Dir. 2014/34/EU, EN 60079, BetrSichV</td>
+                      <td class="border border-gray-200 px-4 py-3">+ Ex equipment, gas-warning system, EX ventilation</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Radiation-protection laboratory</td>
+                      <td class="border border-gray-200 px-4 py-3">StrlSchG, StrlSchV, DIN 6844</td>
+                      <td class="border border-gray-200 px-4 py-3">+ shielding, activity measurement, permit</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The typical misjudgement in requirements planning: a <strong class="text-slate-900 font-semibold">containment level that is too high</strong> is specified “as a precaution” because it is unclear whether more hazardous agents might be handled in future. That drives the price without real benefit. Conversely, a <strong class="text-slate-900 font-semibold">specification that is too low</strong> leads to later retrofit effort that costs more than the direct design would have. An <strong class="text-slate-900 font-semibold">honest requirements workshop with the research or quality manager before quotations are invited</strong> is the largest lever for cost optimisation.
+              </p>
+
+              <h2 id="miete-kauf-mietkauf" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Rent vs. purchase vs. hire purchase – the decision matrix</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The most common question on the telephone is not “What does it cost?”, but <strong class="text-slate-900 font-semibold">“Should I rent or buy?”</strong>. The honest answer hangs on four variables: <strong class="text-slate-900 font-semibold">period of use</strong>, <strong class="text-slate-900 font-semibold">capital availability</strong>, <strong class="text-slate-900 font-semibold">accounting requirement</strong> and <strong class="text-slate-900 font-semibold">the expected technical half-life of the equipment</strong>.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Criterion</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Rent</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Hire purchase</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Purchase</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Economical from duration</td>
+                      <td class="border border-gray-200 px-4 py-3">up to approx. 24 months</td>
+                      <td class="border border-gray-200 px-4 py-3">24 – 48 months</td>
+                      <td class="border border-gray-200 px-4 py-3">from 48 months</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Capital lock-up</td>
+                      <td class="border border-gray-200 px-4 py-3">none</td>
+                      <td class="border border-gray-200 px-4 py-3">partial</td>
+                      <td class="border border-gray-200 px-4 py-3">full</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Balance-sheet effect</td>
+                      <td class="border border-gray-200 px-4 py-3">OPEX, immediately deductible</td>
+                      <td class="border border-gray-200 px-4 py-3">CAPEX in part</td>
+                      <td class="border border-gray-200 px-4 py-3">CAPEX, depreciation 10–15 years</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Scalability</td>
+                      <td class="border border-gray-200 px-4 py-3">high (add/return modules)</td>
+                      <td class="border border-gray-200 px-4 py-3">medium</td>
+                      <td class="border border-gray-200 px-4 py-3">low</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Residual-value risk</td>
+                      <td class="border border-gray-200 px-4 py-3">none</td>
+                      <td class="border border-gray-200 px-4 py-3">contractually regulated</td>
+                      <td class="border border-gray-200 px-4 py-3">fully with the buyer</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Maintenance &amp; service</td>
+                      <td class="border border-gray-200 px-4 py-3">included in the rental</td>
+                      <td class="border border-gray-200 px-4 py-3">partly included</td>
+                      <td class="border border-gray-200 px-4 py-3">the buyer’s responsibility</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Typical users</td>
+                      <td class="border border-gray-200 px-4 py-3">research projects, refurbishments, campaigns</td>
+                      <td class="border border-gray-200 px-4 py-3">pilot plants, mid-size projects</td>
+                      <td class="border border-gray-200 px-4 py-3">permanent works extension</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The <strong class="text-slate-900 font-semibold">practical rule of thumb</strong> we have given clients for years: multiply the expected monthly rent by the planned period of use in months. If the result is <strong class="text-slate-900 font-semibold">clearly below the purchase price</strong>, rent. If it is <strong class="text-slate-900 font-semibold">clearly above</strong>, buy. In between, the <strong class="text-slate-900 font-semibold">hire-purchase model</strong> with credited rental instalments and a residual purchase price at the end of the contract pays – that makes the later switch from a bridging solution to a permanent facility possible without a double investment. Concrete rental rates and purchase prices we cost individually after a requirements workshop. The detailed qualitative advantages and disadvantages are set out in the separate article <a href="/en/magazine/lab-containers-rent-or-buy" class="text-primary font-medium hover:underline">lab containers: rent or buy</a>.
+              </p>
+
+              <h2 id="versteckte-kosten" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">The seven hidden cost items</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong class="text-slate-900 font-semibold">Seven items regularly disappear from discount quotations</strong> – but they reappear at the latest on the final invoice. Anyone who knows them <strong class="text-slate-900 font-semibold">asks for them actively</strong> and prevents the nasty surprise.
+              </p>
+
+              <ol class="list-decimal pl-6 space-y-4 text-gray-600 leading-relaxed mb-8 marker:text-primary marker:font-bold">
+                <li><strong class="text-slate-900">Strip-out at the end of the rental:</strong> dismantling, removal, reinstatement of the pad. Often mentioned only as a clause “strip-out at the tenant’s cost”, without a price in the quotation.</li>
+                <li><strong class="text-slate-900">Continuous HVAC electricity:</strong> BSL and cleanroom containers draw substantial year-round base load. That does not appear in the rental quotation – but it does on the university’s or company’s electricity bill. Energy costs over the contract term can become a substantial OPEX item.</li>
+                <li><strong class="text-slate-900">Filter changes:</strong> HEPA terminal filters H13 at BSL-2 change every 12 to 24 months; ULPA filters in an ISO 5 cleanroom correspondingly more often. Material costs plus a service charge per change.</li>
+                <li><strong class="text-slate-900">Re-qualification after a site move:</strong> every analytical instrument must be IQ/OQ/PQ-validated after relocation. At accredited test houses to DIN EN ISO/IEC 17025, a DAkkS site notification is added.</li>
+                <li><strong class="text-slate-900">Insurance:</strong> all-risks cover for rented containers is usually the tenant’s responsibility and is often not shown in the quotation.</li>
+                <li><strong class="text-slate-900">Maintenance contracts:</strong> HVAC, filters, fire detection and alarm system, emergency showers – often not included in the base rent, but to be agreed separately.</li>
+                <li><strong class="text-slate-900">Index clauses:</strong> rental rates rise with the consumer price index or an agreed annual escalation rate. Over a multi-year term the rate can move substantially from the opening quotation – the clause belongs on the table explicitly.</li>
+              </ol>
+
+              <h2 id="vergleichscheckliste" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">The 14-point quotation comparison checklist</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Comparability only arises if you give every supplier the same point list. These fourteen points belong in every briefing:
+              </p>
+
+              <ol class="list-decimal pl-6 space-y-2 text-gray-600 leading-relaxed mb-8 marker:text-primary marker:font-bold">
+                <li>Number of modules, internal dimensions L × W × H, usable area in m²</li>
+                <li>Equipment class with standard reference (standard, GLP, GMP class, BSL level, ISO 14644 class)</li>
+                <li>HVAC design in kW and air-change rate per hour</li>
+                <li>Filter stages F7/F9/H13/H14 and maintenance intervals in months</li>
+                <li>Electrical connection rating in amperes per module and maximum continuous load in kW</li>
+                <li>Water and wastewater connection including purified-water treatment if required</li>
+                <li>Fire-safety concept, sprinklers or gas-extinguishing system, fire detection and alarm system</li>
+                <li>Monthly net rental including an explicit list of included services</li>
+                <li>Minimum rental term and extension options with a concrete price-adjustment formula</li>
+                <li>One-off costs for delivery, installation and strip-out, each shown separately</li>
+                <li>Foundation and structural requirements with load assumptions in kN/m²</li>
+                <li>Validation and qualification documentation IQ/OQ/PQ including scope</li>
+                <li>Maintenance charge and guaranteed response time for faults</li>
+                <li>Optional: resale value or buy-back option at the end of the rental with a concrete residual-value factor</li>
+              </ol>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                With this list, <strong class="text-slate-900 font-semibold">discount suppliers and serious suppliers become directly comparable for the first time</strong>. We at Planexus issue every quotation in exactly this structure – <strong class="text-slate-900 font-semibold">on one sheet, without asterisks, without “as incurred” at the end of the contract</strong>.
+              </p>
+
+              <h2 id="foerderung" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Funding and financing 2026</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Four funding routes are relevant in practice. <strong class="text-slate-900 font-semibold">Federal research and innovation funding</strong> via <strong class="text-slate-900 font-semibold">BMBF, BMWK</strong> and project management agencies (DLR, Jülich, VDI/VDE-IT) – third-party projects can claim container rentals and purchases as capital or rental-cost items, provided they are eligible project costs under the funding guideline. <strong class="text-slate-900 font-semibold">State development banks</strong> (NRW.Bank, L-Bank, LfA Bayern, IBB) offer interest-subsidised investment loans for SMEs and research institutions, often with repayment-free years. <strong class="text-slate-900 font-semibold">EU programmes</strong> Horizon Europe and EIC Accelerator accept container solutions as CAPEX or OPEX. <strong class="text-slate-900 font-semibold">KfW programmes</strong> such as the ERP SME loan and the KfW climate-protection offensive offer subsidised terms for energy-efficient modular laboratories.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                On larger investment schemes a <strong class="text-slate-900 font-semibold">funding review</strong> almost always pays; we recommend involving the in-house <strong class="text-slate-900 font-semibold">third-party funding office</strong> or a specialised adviser in the pre-project phase. Processing time for a <strong class="text-slate-900 font-semibold">KfW application is typically six to twelve weeks; BMBF funding applications take six to nine months</strong> – this lead time must be built into the project plan.
+              </p>
+
+              <h2 id="kalkulationsprozess" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">How a serious costing runs</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-8">
+                From the first telephone call to a robust quotation, <strong class="text-slate-900 font-semibold">five to ten working days</strong> typically elapse at Planexus. The process follows a clear <strong class="text-slate-900 font-semibold">four-step model</strong>:
+              </p>
+
+              <div class="relative my-10">
+                <div class="absolute left-6 top-6 bottom-6 w-px bg-gradient-to-b from-primary via-primary/40 to-primary/10 hidden sm:block"></div>
+
+                <div class="space-y-6">
+                  <div class="relative flex gap-5 items-start">
+                    <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-primary text-slate-900 font-heading font-bold text-lg flex items-center justify-center shadow-md ring-4 ring-white">1</div>
+                    <div class="flex-1 bg-white border border-gray-200 rounded-2xl p-5 hover:border-primary/40 hover:shadow-md transition-all">
+                      <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+                        <h3 class="font-heading font-bold text-slate-900 text-lg">Requirements workshop</h3>
+                        <span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Call · 30–60 min</span>
+                      </div>
+                      <p class="text-gray-600 leading-relaxed text-sm">We walk through the eight cost blocks together and clarify <strong class="text-slate-900 font-semibold">application, containment level, module size, period of use, installation site and connection conditions</strong>. Research or quality managers should take part – not only purchasing.</p>
+                    </div>
+                  </div>
+
+                  <div class="relative flex gap-5 items-start">
+                    <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-primary text-slate-900 font-heading font-bold text-lg flex items-center justify-center shadow-md ring-4 ring-white">2</div>
+                    <div class="flex-1 bg-white border border-gray-200 rounded-2xl p-5 hover:border-primary/40 hover:shadow-md transition-all">
+                      <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+                        <h3 class="font-heading font-bold text-slate-900 text-lg">Site visit or location analysis</h3>
+                        <span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Optional · 1 day</span>
+                      </div>
+                      <p class="text-gray-600 leading-relaxed text-sm">On complex installation sites (<strong class="text-slate-900 font-semibold">courtyards, high-rise connections, difficult delivery</strong>) we look at the situation. Photographs and a site plan often work remotely as well.</p>
+                    </div>
+                  </div>
+
+                  <div class="relative flex gap-5 items-start">
+                    <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-primary text-slate-900 font-heading font-bold text-lg flex items-center justify-center shadow-md ring-4 ring-white">3</div>
+                    <div class="flex-1 bg-white border border-gray-200 rounded-2xl p-5 hover:border-primary/40 hover:shadow-md transition-all">
+                      <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+                        <h3 class="font-heading font-bold text-slate-900 text-lg">Costing and quotation</h3>
+                        <span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">3–7 working days</span>
+                      </div>
+                      <p class="text-gray-600 leading-relaxed text-sm">We cost all eight blocks individually, check <strong class="text-slate-900 font-semibold">hire-purchase models against outright purchase</strong>, and clarify funding eligibility and the permit path with the competent building-control authority. The quotation comes in the <strong class="text-slate-900 font-semibold">fourteen-point structure</strong> – no lump sums, no asterisks.</p>
+                    </div>
+                  </div>
+
+                  <div class="relative flex gap-5 items-start">
+                    <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-primary text-slate-900 font-heading font-bold text-lg flex items-center justify-center shadow-md ring-4 ring-white">4</div>
+                    <div class="flex-1 bg-white border border-gray-200 rounded-2xl p-5 hover:border-primary/40 hover:shadow-md transition-all">
+                      <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+                        <h3 class="font-heading font-bold text-slate-900 text-lg">Quotation review and adjustment</h3>
+                        <span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Meeting · 60–90 min</span>
+                      </div>
+                      <p class="text-gray-600 leading-relaxed text-sm">We walk through every item together, show <strong class="text-slate-900 font-semibold">saving potential</strong> (lowering the containment level if it is not strictly necessary, bundling several modules in one delivery) and adjust the quotation if required. Only then does the order phase begin.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-slate-50 border-l-4 border-primary rounded-r-xl p-5 my-8">
+                <p class="text-gray-700 leading-relaxed text-sm">
+                  These four steps are <strong class="text-slate-900 font-semibold">free of charge for you as the client and commit you to nothing</strong>. A robust, written quotation for your project is thereby <strong class="text-slate-900 font-semibold">typically available within two weeks</strong> – early enough to start <strong class="text-slate-900 font-semibold">permit procedures, funding applications and internal budget approvals</strong>.
+                </p>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Conclusion</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A serious <strong class="text-slate-900 font-semibold">lab-container quotation</strong> does not consist of a lump-sum figure, but of <strong class="text-slate-900 font-semibold">eight clearly costed blocks plus five one-off items plus seven transparently shown follow-on costs</strong>. Anyone who knows this structure can compare suppliers directly for the first time – and avoids the <strong class="text-slate-900 font-semibold">expensive surprises with which discount quotations regularly end</strong>.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The concrete costing is <strong class="text-slate-900 font-semibold">always project-specific</strong>. It hangs on <strong class="text-slate-900 font-semibold">application, containment level, installation site, contract term and regulatory path</strong>. We supply it <strong class="text-slate-900 font-semibold">free of charge</strong>, in the <strong class="text-slate-900 font-semibold">fourteen-point structure</strong> described here, typically within a few working days after the requirements workshop.
+              </p>
+
+              <div class="bg-primary/10 border-l-4 border-primary p-6 my-8 rounded-r-xl">
+                <p class="font-bold text-slate-900 mb-2">Are you planning a lab-container project?</p>
+                <p class="text-gray-700 text-sm mb-4">In a 30-minute preliminary discussion we walk through the eight cost blocks together and review equipment class, rental model, permit path and funding eligibility. We then prepare a complete quotation in the fourteen-point structure – free of charge and without obligation.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">
+                  Request a costing
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+
+              <h2 id="faq" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Frequently asked questions on lab-container costing</h2>
+
+              <div class="space-y-4 my-8">
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    Why is there no list price for lab containers?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">A lab container is never a catalogue product, but always a project-specific configuration. Two projects with identical floor area can differ by a factor of five – through different HVAC design, containment level and validation requirements alone. For that reason we cost every quotation individually after a requirements workshop; a published price list would be misleading for clients and research managers.</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    Which cost blocks does a lab-container project comprise?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Eight blocks: container shell and basic fit-out, interior fit-out and laboratory furniture (DIN EN 14056, DIN EN 13150), HVAC and cleanroom technology (DIN 1946-7, ISO 14644), safety systems, structural design and foundation and installation (DIN 1054, Eurocode 7), logistics and delivery, permits and design (MBO, LBO, GenTG, BImSchG), and connections for electricity, water, wastewater and data. Anyone who overlooks a block builds a budget gap.</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    Does renting or buying a lab container make more sense?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Rule of thumb: up to around 24 months rent, from around 48 months purchase, hire purchase in between. Four variables decide in practice: period of use, capital availability, accounting requirement and the expected technical half-life of the equipment. Rent protects liquidity, purchase creates a balance-sheet asset, hire purchase credits a share of the rent against a later residual purchase price.</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    Which one-off costs are added to rent or purchase?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Five one-off cost blocks: inbound and outbound transport by low-loader (from 3.5 m width a special permit to §29 StVZO), installation by mobile crane with traffic management to RSA 21 and a lifting-equipment operator to DGUV Regulation 52, foundation (pad foundations, strip foundations, ground slab or screw piles), services connection (electricity to DIN VDE 0100, potable water to DIN 1988, wastewater to DIN 1986-100, data network), and permits and design. Quantified individually on every project.</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    Which hidden costs are often omitted from cheap quotations?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Seven items: strip-out at the end of the rental, continuous HVAC electricity (BSL and cleanroom draw substantial year-round base load), HEPA filter changes every 12 to 24 months, re-qualification (IQ/OQ/PQ) after a site move including DAkkS site notification at accredited test houses to DIN EN ISO/IEC 17025, all-risks insurance for container and contents, maintenance contracts for HVAC and filters and fire detection and alarm system and emergency showers, and index clauses for annual rent increases to the CPI or a fixed escalation rate.</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    What does a GMP cleanroom container to Annex 1 cost?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">A concrete price figure would be misleading – the price hangs on cleanroom class (ISO 14644 Class 5/7/8), air-change rate, number of airlocks, pressure-cascade stages, validation scope to EU GMP Annex 15 (DQ/IQ/OQ/PQ) and contract term. We cost Annex 1-compliant cleanroom containers after a detailed requirements workshop with the client’s pharmaceutical QA; a robust quotation is typically available within two weeks.</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    What funding is available for lab containers in Germany in 2026?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Four routes: BMBF/BMWK research funding (third-party capital), state development banks NRW.Bank, L-Bank, LfA Bayern and IBB (interest-subsidised loans with repayment-free years), EU Horizon Europe and EIC Accelerator (CAPEX funding), KfW programmes (ERP SME loan, climate-protection offensive). On larger investment schemes a funding review almost always pays. Processing time for a KfW application is typically six to twelve weeks, BMBF applications six to nine months – lead time must be built into the project plan.</p>
+                </details>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">About the author</h2>
+
+              <div class="bg-slate-50 rounded-2xl p-6 my-8 flex items-start gap-4">
+                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-slate-900 font-bold text-2xl flex-shrink-0">SB</div>
+                <div>
+                  <p class="font-bold text-slate-900 mb-1">Sven Biewald</p>
+                  <p class="text-sm text-gray-500 mb-3">Managing Director, Planexus GmbH</p>
+                  <p class="text-gray-600 text-sm leading-relaxed">Sven Biewald leads Planexus GmbH and is responsible for project costing of modular laboratory projects in DACH – from the first requirements workshop through permits and instrument relocation to handover ready for use. More than a decade of experience in container laboratory construction for universities, university hospitals, pharma, biotech and industry.</p>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Related articles</h2>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+                <a href="/en/magazine/lab-containers-rent-or-buy" class="block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition-all">
+                  <p class="text-xs text-primary font-bold mb-1">Guide</p>
+                  <p class="font-bold text-slate-900 text-sm">Lab containers: rent or buy – decision guide</p>
+                </a>
+                <a href="/en/magazine/lab-container-installation-foundation-statics" class="block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition-all">
+                  <p class="text-xs text-primary font-bold mb-1">Construction &amp; foundations</p>
+                  <p class="font-bold text-slate-900 text-sm">Installation, ground slab and structural design for lab containers</p>
+                </a>
+                <a href="/en/magazine/lab-container-permits-building-law" class="block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition-all">
+                  <p class="text-xs text-primary font-bold mb-1">Guide</p>
+                  <p class="font-bold text-slate-900 text-sm">Lab-container permits – building law and regulations</p>
+                </a>
+                <a href="/en/magazine/temporary-lab-renovation-rental-containers" class="block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition-all">
+                  <p class="text-xs text-primary font-bold mb-1">Rental solution</p>
+                  <p class="font-bold text-slate-900 text-sm">Interim laboratory during refurbishment – rental containers as a bridging solution</p>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-24 space-y-6">
+              <div class="bg-slate-900 text-white rounded-2xl p-6">
+                <h3 class="font-bold text-lg mb-3">Contents</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                  <li><a href="#faktentabelle" class="hover:text-primary">Fact table, cost blocks</a></li>
+                  <li><a href="#kein-listenpreis" class="hover:text-primary">Why no list price</a></li>
+                  <li><a href="#kostenbloecke" class="hover:text-primary">The 8 cost blocks in detail</a></li>
+                  <li><a href="#ausstattungsklassen" class="hover:text-primary">Equipment classes as price drivers</a></li>
+                  <li><a href="#miete-kauf-mietkauf" class="hover:text-primary">Rent vs. purchase vs. hire purchase</a></li>
+                  <li><a href="#versteckte-kosten" class="hover:text-primary">7 hidden cost items</a></li>
+                  <li><a href="#vergleichscheckliste" class="hover:text-primary">14-point comparison checklist</a></li>
+                  <li><a href="#foerderung" class="hover:text-primary">Funding &amp; financing</a></li>
+                  <li><a href="#kalkulationsprozess" class="hover:text-primary">How a costing runs</a></li>
+                  <li><a href="#faq" class="hover:text-primary">Frequently asked questions</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-primary/10 border border-primary/30 rounded-2xl p-6">
+                <p class="font-bold text-slate-900 mb-2">Direct advice</p>
+                <p class="text-sm text-gray-700 mb-4">Are you planning a lab-container project? We discuss the eight cost blocks and your requirements in a 30-minute preliminary discussion.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold text-center py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Request a costing</a>
+              </div>
+
+              <div class="bg-slate-50 rounded-2xl p-6">
+                <p class="font-bold text-slate-900 mb-3 text-sm">DACH locations</p>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <a href="/en/lab-containers-hamburg" class="text-gray-600 hover:text-primary">Hamburg</a>
+                  <a href="/en/lab-containers-berlin" class="text-gray-600 hover:text-primary">Berlin</a>
+                  <a href="/en/lab-containers-munich" class="text-gray-600 hover:text-primary">Munich</a>
+                  <a href="/en/lab-containers-stuttgart" class="text-gray-600 hover:text-primary">Stuttgart</a>
+                  <a href="/en/lab-containers-frankfurt" class="text-gray-600 hover:text-primary">Frankfurt</a>
+                  <a href="/en/lab-containers-dusseldorf" class="text-gray-600 hover:text-primary">Düsseldorf</a>
+                  <a href="/en/lab-containers-zurich" class="text-gray-600 hover:text-primary">Zurich</a>
+                  <a href="/en/lab-containers-basel" class="text-gray-600 hover:text-primary">Basel</a>
+                  <a href="/en/lab-containers-bern" class="text-gray-600 hover:text-primary">Bern</a>
+                  <a href="/en/lab-containers-vienna" class="text-gray-600 hover:text-primary">Vienna</a>
+                  <a href="/en/lab-containers-graz" class="text-gray-600 hover:text-primary">Graz</a>
+                  <a href="/en/lab-containers-linz" class="text-gray-600 hover:text-primary">Linz</a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <RelatedArticles slug="laborcontainer-kosten-preise-2026" locale="en" />
+  </div>
+</Layout>

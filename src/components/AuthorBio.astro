@@ -1,8 +1,16 @@
 ---
+import { t } from '../i18n/ui';
+import type { Locale } from '../i18n/routes';
+
 export interface Props {
   city?: string;
+  locale?: Locale;
 }
-const { city } = Astro.props;
+const { city, locale = 'de' } = Astro.props;
+const copy = t(locale);
+const title = city
+  ? `${copy.authorBio.title} · ${copy.authorBio.titleCity} ${city}`
+  : copy.authorBio.title;
 ---
 <section class="py-10 bg-white border-y border-gray-100">
   <div class="container mx-auto px-4">
@@ -12,16 +20,16 @@ const { city } = Astro.props;
           <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#7a9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11h6m-6 4h6M7 21h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2Z"/><path d="M9 7h6"/></svg>
         </div>
         <div class="flex-1">
-          <div class="text-xs uppercase tracking-wider text-[#7a9900] font-bold mb-1">Fachlich verantwortet von</div>
-          <h2 class="text-xl md:text-2xl font-heading font-bold text-slate-900 mb-2">Planexus Engineering Team{city ? ` · Standortverantwortung ${city}` : ''}</h2>
+          <div class="text-xs uppercase tracking-wider text-[#7a9900] font-bold mb-1">{copy.authorBio.kicker}</div>
+          <h2 class="text-xl md:text-2xl font-heading font-bold text-slate-900 mb-2">{title}</h2>
           <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-            Inhaltlich verantwortet vom <strong class="text-slate-900">Planexus-Engineering-Team</strong> – Bauingenieure, Verfahrenstechniker und Laborplaner mit langjähriger spezialisierter Erfahrung im modularen Laborbau. Planexus GmbH ist Teil der <strong class="text-slate-900">Wesemann Holding GmbH</strong> und realisiert BSL-2-, BSL-3-, GMP- und ATEX-Container für Pharma, Biotech, Forschung und Krisenstäbe in DACH.
+            {copy.authorBio.body}
           </p>
           <div class="flex flex-wrap gap-x-5 gap-y-1 mt-3 text-xs text-gray-500">
-            <span><strong class="text-slate-700">Sitz:</strong> Albstadt, BW</span>
-            <span><strong class="text-slate-700">Werk:</strong> Am Steinbach 8, 72459 Albstadt</span>
-            <span><strong class="text-slate-700">Auszeichnung:</strong> German CEO Excellence Award 2026</span>
-            <span><strong class="text-slate-700">Letzte fachliche Prüfung:</strong> April 2026</span>
+            <span><strong class="text-slate-700">{copy.authorBio.seat}:</strong> Albstadt, BW</span>
+            <span><strong class="text-slate-700">{copy.authorBio.plant}:</strong> Am Steinbach 8, 72459 Albstadt</span>
+            <span><strong class="text-slate-700">{copy.authorBio.award}:</strong> German CEO Excellence Award 2026</span>
+            <span><strong class="text-slate-700">{copy.authorBio.lastReview}:</strong> {locale === 'en' ? 'April 2026' : 'April 2026'}</span>
           </div>
         </div>
       </div>

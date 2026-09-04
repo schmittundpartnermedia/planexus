@@ -1,0 +1,572 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Interim laboratory during refurbishment – rental containers as a bridging solution for research, clinic and industry",
+  "description": "How universities, clinics and industrial laboratories bridge a major refurbishment without research or production downtime: rental containers as a full interim laboratory – with permit path, instrument relocation, re-qualification to IQ/OQ/PQ and realistic rental-term models.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Managing Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-05-20",
+  "dateModified": "2026-05-20",
+  "image": "https://planexus.de/attached_assets/Kopf_green-scaled_1768306688943.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/temporary-lab-renovation-rental-containers" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Interim laboratory during refurbishment", "item": "https://planexus.de/en/magazine/temporary-lab-renovation-rental-containers" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How long does installation of an interim laboratory take in the rental model?", "acceptedAnswer": { "@type": "Answer", "text": "From the requirements workshop to handover ready for use we allow eight to twelve weeks for standard modules, and twelve to sixteen weeks for BSL-2 or cleanroom equipment. Of that, around four to six weeks fall to preparation of the pad by the client (ground slab or pad foundations to DIN EN 1997, services connection for electricity/water/wastewater/data network), two weeks to logistics and installation by mobile crane, and two to four weeks to interior fine-tuning and instrument recommissioning including IQ/OQ/PQ. The rental containers come from the existing pool – so the production lead times of eight to fourteen weeks that arise on new fabrication fall away." } },
+    { "@type": "Question", "name": "Do I need a full building application for an interim laboratory?", "acceptedAnswer": { "@type": "Answer", "text": "Not in every case. The Model Building Code and most state building codes allow a simplified procedure for ‘temporary structures’ and temporary buildings, or even procedure-free status up to certain sizes. Concretely: §76 MBO governs temporary structures, §63 MBO the simplified permit procedure, and the annex to §61 MBO lists procedure-free building works. Interim containers of less than 100 square metres and an installation period of up to five years fall under simplified procedures in many federal states. As soon as hazardous substances to the GefStoffV, biological agents BSL-2 or higher, genetic engineering to the GenTSV or radiation-protection areas move in, the permit becomes more demanding – then §18 GenTG, §1 GefStoffV, §11 StrlSchG or an immission-control notification to §15 BImSchG also apply. We clarify the concrete permit path in the pre-project phase with the client and the competent building-control authority." } },
+    { "@type": "Question", "name": "What does renting an interim laboratory cost compared with downtime?", "acceptedAnswer": { "@type": "Answer", "text": "The honest answer is: the rent costs a fraction of the downtime – as soon as a day of outage in a research, clinical or production laboratory costs more than the daily rent, the bridging solution pays economically. Typical rental terms lie between six months (partial refurbishment of a floor) and four years (complete new research building). Rental rates scale with number of modules, equipment class (standard, GLP, GMP, BSL-2/3) and contract term; we give concrete figures after a requirements match. In comparison, universities and clinics set this against threatened third-party funding losses, lost study patients and unused research windows – and industrial operations against delivery obligations and accreditation deadlines to ISO/IEC 17025." } },
+    { "@type": "Question", "name": "Where do I place the interim laboratory during the refurbishment?", "acceptedAnswer": { "@type": "Answer", "text": "Three location classes work in practice. First: courtyard or yard of the existing building – short routes for staff and sample handover, often already with a services connection nearby, but limited pad area and delivery logistics by mobile crane over the roof or through a gateway to be checked. Second: adjacent car park or outdoor area – more space, simple delivery, longer service runs required. Third: a site in the nearer vicinity – only worthwhile on major refurbishments, because staff transport and sample logistics arise. The decision is taken in the pre-project phase with structural design (bearing capacity of the pad to DIN 1054), crane logistics (lift radius, boom position, traffic management to RSA 21) and services routing (potable water DIN 1988, wastewater DIN 1986-100, electrical connection up to 250 A per module)." } },
+    { "@type": "Question", "name": "How do instrument relocation and re-qualification of analytical instruments run?", "acceptedAnswer": { "@type": "Answer", "text": "Instrument relocation is the underestimated bottleneck of every laboratory refurbishment. Sensitive instruments – HPLC, GC-MS, ICP-MS, NMR, flow cytometers, PCR cyclers, climate cabinets – need a controlled decommissioning to the manufacturer protocol before transport, vibration-damped packing and a complete re-qualification at the new site: IQ (Installation Qualification) checks correct set-up, OQ (Operational Qualification) functionality in the intended operating ranges, PQ (Performance Qualification) application-related performance. For accredited laboratories to DIN EN ISO/IEC 17025 every re-qualification must be documented and DAkkS informed; for GMP areas the analogous repetition of validation to EU GMP Guide Annex 15 applies. We coordinate this together with the manufacturer service and the client’s quality management – that belongs in the programme of every interim-laboratory project." } },
+    { "@type": "Question", "name": "Which refurbishment triggers typically create demand for an interim container?", "acceptedAnswer": { "@type": "Answer", "text": "Six trigger groups dominate in practice. First, energy-related major refurbishment to the Building Energy Act (GEG 2024): envelope insulation, window replacement, heating replacement – rarely runs without emptying several floors. Second, fire-protection upgrading to the Model Building Code and state building codes: fire-compartment division, means of escape, sprinkler upgrading. Third, HVAC and cleanroom upgrading to DIN 1946-7, often in connection with the GMP Annex 1 update (in force since August 2023). Fourth, contaminant remediation: asbestos to TRGS 519, man-made mineral fibres to TRGS 521, PCB to the PCB guideline, mould to the UBA mould guide. Fifth, structural upgrading on change of use or load increase. Sixth, flood or fire damage with subsequent reinstatement. In all six cases research, diagnostics or production is acutely threatened at the start of the refurbishment – interim containers are the only practicable bridge." } },
+    { "@type": "Question", "name": "What happens to the data and the accreditation during the interim period?", "acceptedAnswer": { "@type": "Answer", "text": "Data integrity and accreditation continue without interruption – that is precisely the point of the interim solution. Common LIMS systems can be continued in live operation at the new site via VPN or a direct fibre connection; a data migration does not take place, only the hardware locations change. For accredited test houses to DIN EN ISO/IEC 17025 the site change must be notified to DAkkS under the Accreditation Body Act (AkkStelleG); on material changes an on-site assessment at the new location may become due. For GMP areas, EU GMP Annex 11 (computerised systems) and 21 CFR Part 11 (FDA) apply unchanged – the ALCOA+ criteria for data integrity (Attributable, Legible, Contemporaneous, Original, Accurate, Complete, Consistent, Enduring, Available) must be met in the interim container just as in the main building." } }
+  ]
+};
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+---
+
+<Layout
+  type="article"
+  title="Interim laboratory during refurbishment – rental containers | Planexus"
+  description="Major refurbishment without downtime: rental containers as an interim laboratory for university, clinic and industry – permits, instrument relocation, IQ/OQ/PQ. Read now."
+  canonical="/en/magazine/temporary-lab-renovation-rental-containers"
+  ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/attached_assets/Kopf_green-scaled_1768306688943.jpg')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Rental solution &amp; refurbishment
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              14 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Interim laboratory during refurbishment – rental containers as a bridging solution
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Universities, clinics and industrial laboratories face a dilemma: the refurbishment is overdue, but research, diagnostics or production must not stand still for a day. Rental containers close this gap – fully capable, quickly installed and with a clear strip-out at the end of the refurbishment.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              20 May 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald, Managing Director, Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Interim laboratory during refurbishment</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                The most expensive decision in every refurbishment project is not taken with the architect, but with the research manager, consultant or QC manager: what happens to live operations? A major refurbishment in university and clinic buildings typically lasts between eighteen and thirty-six months. Anyone who shuts down research, diagnostics or production in that period risks six-figure third-party funding losses, departing doctoral students, lost study patients and – in the accredited or GMP area – suspension of the accreditation or manufacturing authorisation.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Interim containers are the only practicable bridge. They do not replace the main laboratory – but they keep operations in the critical functions running without a gap. This article shows when an interim laboratory makes economic sense, how the permit path to the state building code runs, how sensitive analytical instruments relocate without damage, how re-qualification to IQ/OQ/PQ works and which rental models are realistic.
+              </p>
+
+              <h2 id="faktentabelle" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fact table: the regulatory framework for interim laboratories</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Anyone who installs an interim laboratory in Germany during a refurbishment moves between building-control law, occupational safety, sector-specific requirements and accreditation or GMP rules. The following overview is required reading for the pre-project phase.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Area</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Standard / requirement</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">What it means for an interim laboratory</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Temporary structures</td>
+                      <td class="border border-gray-200 px-4 py-3">§76 MBO + LBOs of the 16 federal states</td>
+                      <td class="border border-gray-200 px-4 py-3">Special permit for temporary buildings, simplified path versus a full building application</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Simplified procedure</td>
+                      <td class="border border-gray-200 px-4 py-3">§63 MBO</td>
+                      <td class="border border-gray-200 px-4 py-3">Shorter building-application procedure for special buildings below certain thresholds</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Procedure-free status</td>
+                      <td class="border border-gray-200 px-4 py-3">Annex to §61 MBO + state-specific annexes</td>
+                      <td class="border border-gray-200 px-4 py-3">Certain temporary containers installable without a permit up to size/time thresholds</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Occupational safety, laboratory</td>
+                      <td class="border border-gray-200 px-4 py-3">ArbStättV + ASR A1.2/A2.3/A3.6</td>
+                      <td class="border border-gray-200 px-4 py-3">Room dimensions, circulation routes, means of escape, ventilation – equally mandatory in the interim container</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Hazardous substances</td>
+                      <td class="border border-gray-200 px-4 py-3">GefStoffV + TRGS 526 (laboratory guideline)</td>
+                      <td class="border border-gray-200 px-4 py-3">Storage, fume cupboard, segregated storage, substitution check – without exception in the temporary facility</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Biological agents</td>
+                      <td class="border border-gray-200 px-4 py-3">BioStoffV + TRBA 100 (containment levels 1–4)</td>
+                      <td class="border border-gray-200 px-4 py-3">BSL-1/2/3 must be demonstrated constructionally and organisationally in the interim container</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Genetic engineering</td>
+                      <td class="border border-gray-200 px-4 py-3">GenTG + GenTSV §10</td>
+                      <td class="border border-gray-200 px-4 py-3">Notification or permit duty with BMBF/state authority before installation</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Laboratory ventilation</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN 1946-7:2009</td>
+                      <td class="border border-gray-200 px-4 py-3">Air-change rates, pressure cascade, filter classes – exactly as in the existing laboratory</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Test-laboratory accreditation</td>
+                      <td class="border border-gray-200 px-4 py-3">DIN EN ISO/IEC 17025:2018 + AkkStelleG</td>
+                      <td class="border border-gray-200 px-4 py-3">Notify DAkkS of the site change, possibly an on-site assessment at the interim location</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">GMP pharma</td>
+                      <td class="border border-gray-200 px-4 py-3">EU GMP Guide Annex 11 + 15</td>
+                      <td class="border border-gray-200 px-4 py-3">Re-qualification (IQ/OQ/PQ) of plant at the new site, data integrity ALCOA+</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">FDA-compliant data</td>
+                      <td class="border border-gray-200 px-4 py-3">21 CFR Part 11</td>
+                      <td class="border border-gray-200 px-4 py-3">Data integrity in the LIMS to be ensured unchanged, audit trail without gaps</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Operator duties, equipment</td>
+                      <td class="border border-gray-200 px-4 py-3">BetrSichV + TRBS 1201/1203</td>
+                      <td class="border border-gray-200 px-4 py-3">Recurring tests after a site change, risk assessment renewed</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Energy-related refurbishment</td>
+                      <td class="border border-gray-200 px-4 py-3">GEG 2024 (§§ 71 ff.)</td>
+                      <td class="border border-gray-200 px-4 py-3">Driver of many university and clinic major refurbishments since 2024</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Research-building funding</td>
+                      <td class="border border-gray-200 px-4 py-3">Art. 91b GG + Science Council recommendations</td>
+                      <td class="border border-gray-200 px-4 py-3">Federal–state funding for university new-builds and refurbishments from €5 million</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="sanierungsstau" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Why now: the refurbishment backlog 2024–2030</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Demand for interim laboratories rose sharply in 2024 – and it will dominate the next five years. Three drivers act in parallel. First, the Building Energy Act (GEG 2024): tighter refurbishment duties apply to public estates, forcing universities and university hospitals into envelope insulation, window replacement and heating replacement. Second, the special fund for education and research and Art. 91b GG resources, which have financed research-building refurbishments on a large scale since 2023. Third, the massive building stock of the 1970s to 1990s: many universities, clinics and industrial research centres date from this phase and are now reaching the end of the refurbishment cycle.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Concretely that means: where a laboratory could previously keep running because only a plant room was refurbished, a whole wing or a complete building now goes into multi-year construction phases. The question “Where do we work during the refurbishment?” becomes project-critical – and it often only reaches the table once the architectural competition has already run. Anyone who only then starts planning an interim solution loses six to nine months of lead time – and with it often the entire next third-party funding round.
+              </p>
+
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 rounded-r-xl">
+                <p class="font-bold text-slate-900 mb-2">Practice note: interim logic belongs in the building-application phase</p>
+                <p class="text-gray-700 text-sm">We recommend every research, diagnostic or manufacturing organisation to answer the interim question in parallel with the refurbishment design – not only once the building application is approved. Pad, services connections, permit path and instrument-relocation plan need six to nine months of lead time. Anyone who integrates the interim laboratory into the refurbishment tender avoids double design and in many cases saves 15 to 25 per cent of the total cost.</p>
+              </div>
+
+              <h2 id="anlaesse" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">The six typical refurbishment triggers</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                From our project experience in the DACH region we know six trigger groups that almost always create demand for an interim container.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>First: energy-related major refurbishment.</strong> GEG 2024 forces envelope insulation, window replacement and heating replacement. In the laboratory building that usually also means an HVAC renewal, because new insulation overloads the existing ventilation. The result: floor-by-floor emptying over six to eighteen months per construction phase.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Second: fire-protection upgrading.</strong> The Model Building Code and state building codes require proof of current fire-protection requirements on a change to the existing building. Fire-compartment formation, F90 walls, sprinkler systems, redundant means of escape – a laboratory building from 1985 generally does not meet that. As soon as the fire-safety concept is implemented, operations on the affected floors cannot be maintained.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Third: HVAC and cleanroom upgrading.</strong> Pharmaceutical manufacturers have been under refurbishment pressure since the EU GMP Annex 1 update (in force since 25 August 2023): Contamination Control Strategy (CCS), extended environmental-monitoring requirements, tighter room concepts. Anyone converting a sterile manufacturing suite cannot run it alongside – the batch has to come out, and the interim laboratory takes over analytical support and, if required, pilot batches.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Fourth: contaminant remediation.</strong> Asbestos (TRGS 519), man-made mineral fibres (TRGS 521), PCB, mould, fire-damage substances after a cable fire – in laboratory buildings before 1995 the probability is high that at least one of these contaminants appears when fabric is opened. The result: immediate emptying and a multi-week to multi-month remediation site.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Fifth: structural upgrading on change of use.</strong> When an office building is converted into a laboratory – a growing trend at start-up incubators in 2024–2026 – the higher imposed load (laboratory furniture, instruments up to 1,500 kg/m²) often requires strengthening of the floor slabs. While the slabs are opened, the floor is unusable.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Sixth: flood or fire damage.</strong> The unplanned variant – flooding (most recently the Ahr valley 2021, southern Germany 2024) or a laboratory fire (rare, but grave when it happens). Here every hour counts: we have several times handed over interim containers ready for use on site within 96 hours of the enquiry.
+              </p>
+
+              <h2 id="entscheidung" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Decision matrix: when does the interim container pay?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Not every refurbishment justifies an interim container. The decision falls along four axes: refurbishment duration, value-creation loss per day, critical functions, regulatory binding.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Axis</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">The interim container pays if …</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">An alternative suffices if …</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Refurbishment duration</td>
+                      <td class="border border-gray-200 px-4 py-3">Longer than 4 months per construction phase</td>
+                      <td class="border border-gray-200 px-4 py-3">Under 2 months, holiday period usable</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Value creation/day</td>
+                      <td class="border border-gray-200 px-4 py-3">Third-party funding, study patients, delivery contracts affected</td>
+                      <td class="border border-gray-200 px-4 py-3">Teaching, plannable pauses possible</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Critical functions</td>
+                      <td class="border border-gray-200 px-4 py-3">Analytics, GMP batch, diagnostics, accredited testing</td>
+                      <td class="border border-gray-200 px-4 py-3">Demo/practical laboratory without external binding</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Regulatory binding</td>
+                      <td class="border border-gray-200 px-4 py-3">Accreditation ISO/IEC 17025, GMP authorisation, KRINKO requirements</td>
+                      <td class="border border-gray-200 px-4 py-3">No external accreditation, freely reorganisable</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Rule of thumb from practice: as soon as at least two of the four axes speak for the container, the interim solution is economic. As soon as three or four speak, it is without alternative.
+              </p>
+
+              <h2 id="genehmigung" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Permit path: temporary structure or special building?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The most important permit question is: is the interim container treated as a <strong>temporary structure</strong> to §76 MBO or as a regular special building? The answer depends on size, installation period and type of use and decides three to six months of permit duration.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Temporary structure (§76 MBO):</strong> buildings intended for repeated erection and dismantling. The type approval is granted by construction type and can be used nationwide – once tested at the manufacturer, only a use inspection remains at each installation site. Classic case: temporary event laboratories, mobile diagnostic laboratories in disaster protection, show containers for trade fairs. Permit duration: two to four weeks on site.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Simplified procedure (§63 MBO):</strong> the relevant path for many interim containers. Only planning-law admissibility and fire protection are checked; the remaining building-control responsibility lies with the authorised designer. Permit duration: typically six to twelve weeks, markedly faster with prior coordination.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Procedure-free status (annex to §61 MBO):</strong> some federal states (e.g. Bavaria, Saxony) allow containers up to certain size classes or installation periods without a permit – but not for laboratory operation as soon as hazardous substances, biological agents or genetic-engineering work arise. In practice: procedure-free status only for office or storage containers on existing works sites.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Full building application as a special building:</strong> mandatory as soon as BSL-2 or higher, GenTSV level 2 or higher, radiation-protection areas or extensive hazardous-substance storage are intended in the container. Permit duration: four to eight months – this is the path that belongs in the refurbishment pre-planning.
+              </p>
+
+              <h2 id="standorte" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Pad: three location classes in practice</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Where the container stands decides staff routes, sample logistics, services routing and crane access. In practice three location classes work.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Class A – courtyard or yard of the existing building.</strong> Staff and samples take the same route as before, only two doors further. Services connection (electricity, water, data network) is generally possible via the existing building. Bottleneck: pad area limited (often only one or two modules), crane access through a gateway or over the roof with a large mobile crane required. For bearing capacity of the yard, DIN 1054 applies with a typical allowable bearing pressure of 150–250 kN/m².
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Class B – adjacent car park or outdoor area.</strong> More pad area (four to ten modules possible), simple delivery with a standard articulated trailer and a 50- to 100-tonne mobile crane. Bottleneck: longer service runs (typically 30–80 metres), often a dedicated transformer station or at least a separate medium-voltage take-off required. Staff routes become longer (60–150 metres), sample logistics with a refrigerated container or a small electric vehicle.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Class C – a site in the nearer vicinity.</strong> Only worthwhile on major refurbishments, because complete staff mobility and daily sample logistics arise. In university cities often realisable on a neighbouring hospital site or in a research park. Bottleneck: organisational effort, data-network connection by fibre or VPN tunnel, security concept for sample transport (especially with BSL-2 material or GMP samples to ADR Class 6.2).
+              </p>
+
+              <h2 id="geraeteumzug" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Instrument relocation: the underestimated critical path</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The container is in place – now the instruments have to go in. And this is exactly where many interim-laboratory projects fail. High-resolution analytical instruments tolerate neither shock nor temperature change nor improper decommissioning.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Three instrument classes need particular attention. <strong>Mass spectrometers</strong> (LC-MS, GC-MS, ICP-MS, MALDI-TOF) require manufacturer service for dismantling, vibration-isolated transport and multi-week recommissioning including recalibration. Service costs per large instrument typically €8,000 to €25,000, downtime two to six weeks per instrument – that belongs in every honest interim plan. <strong>NMR spectrometers</strong> with superconducting magnets are a special case: demagnetisation and remagnetisation are so onerous that in many cases they remain at the existing site, with constructional containment during the refurbishment. <strong>Climate cabinets and stability chambers</strong> (ICH Q1A) must under no circumstances leave the storage conditions – that means either mobile refrigerated transport with a data logger or a double inventory for the interim period.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For all other laboratory instruments (HPLC, UV/VIS, FTIR, PCR cyclers, microscopes, centrifuges, incubators) a qualified laboratory move with documented decommissioning, packing, transport and installation at the new site generally suffices. Re-qualification runs by the categories IQ (Installation), OQ (Operation), PQ (Performance) and is documented with a standard operating procedure depending on accreditation or GMP status. For accredited test houses, DAkkS must be informed under the AkkStelleG – material changes at the site may trigger an on-site assessment at the interim location.
+              </p>
+
+              <h2 id="datenkontinuitaet" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Data continuity: LIMS, IT and accreditation</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                While staff and instruments relocate, the data must continue without a gap. In the laboratory today that is no longer witchcraft – but it must be planned.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>LIMS connection:</strong> modern laboratory information systems run on central servers and are usable identically at the new site via VPN, MPLS or a direct fibre connection. The hardware locations change; the data holdings do not. A redundant connection (fibre + LTE/5G backup) is advisable, because a network outage in the interim container stops laboratory operations immediately.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Data integrity to ALCOA+:</strong> the FDA requirements on data integrity (Attributable, Legible, Contemporaneous, Original, Accurate, Complete, Consistent, Enduring, Available) apply identically in the interim laboratory. Audit trails of the instruments and the LIMS must be without gaps – including the relocation day. Best practice: we recommend a documented “frozen period” of 24 to 48 hours per instrument, in which no GMP-relevant measurements arise, and in parallel a complete audit-trail backup.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Accreditation notification:</strong> for accredited testing and calibration laboratories to DIN EN ISO/IEC 17025 the site change must be notified to DAkkS under §13 AkkStelleG. On material changes an on-site assessment at the interim location follows – this should be scheduled six to eight weeks before commissioning. For GMP areas the competent state authority (regional council, district government, state office) must be informed in parallel; a change notification of the manufacturing authorisation to §13 AMG may become necessary.
+              </p>
+
+              <h2 id="mietmodelle" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Rental models: what is in the price</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Rental contracts for interim laboratories follow three typical structures, depending on refurbishment duration and cost bearer.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Short rental up to 12 months:</strong> classic rental model with a monthly rate, one-off erection and dismantling costs, transport, services connection. Advantage: maximum flexibility, no locked-up capital. Worthwhile for partial refurbishments of individual floors or for damage events.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Long rental 12 to 48 months:</strong> reduced monthly rate, often with inflation adjustment. Worthwhile for major refurbishments of complete research buildings or clinic construction phases. Typical equipment classes range from a standard lab container (basic HVAC, laboratory furniture, sink, fume cupboard) to a BSL-2 container (pressure cascade, HEPA, airlock).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Hire purchase:</strong> the rental instalments flow in part into a later purchase price. Worthwhile for organisations that wish to keep the container as a permanent extension after the refurbishment – often in growing research areas or with permanently increased sample throughput. The detailed terms are set out in the separate article <a href="/en/magazine/lab-containers-rent-or-buy" class="text-primary font-medium hover:underline">lab containers: rent or buy</a>.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Regularly included in the rental: the module with standard equipment, erection and dismantling at the pad, transport within Germany, services-connection packages (electricity 63 A/125 A/250 A, water, wastewater, data-network patch panel), HVAC maintenance, insurance. Not included: ground slabs or pad foundations (client’s work to DIN EN 1997), permit fees, instrument relocation, re-qualification IQ/OQ/PQ, customer-specific special equipment (e.g. cleanroom ceilings to DIN EN ISO 14644-1, microbiological safety cabinets to DIN EN 12469, refrigerators to DIN 58375).
+              </p>
+
+              <h2 id="szenarien" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Three interim scenarios from practice</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Scenario 1 – university research institute, GEG major refurbishment:</strong> a life-sciences faculty in southern Germany faced a thirty-three-month major refurbishment of a research building from 1989 in 2024. Third-party funding volume around €6 million per year, of which about 70 per cent was bound to running experimental series. Solution: eight modules of interim containers (two BSL-2, six standard research laboratories) on an adjacent car park, services connection via a separate medium-voltage take-off, LIMS connection by fibre, DAkkS site change notified, re-qualification of all instruments over six weeks on a rolling basis. Effect: third-party funding continues unbroken, no staff reduction, no loss of doctoral students.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Scenario 2 – university hospital, HVAC upgrading of the central laboratory:</strong> a hospital had to empty its central laboratory (clinical chemistry, haematology, microbiology) for fourteen months because the ventilation plant was fully refurbished. Daily sample throughput around 4,500 samples, of which 1,200 emergency samples with a 60-minute turnaround. Solution: six modules of interim containers in the courtyard between the ward block and the functional building, sample logistics via a pneumatic-tube connection, full BSL-2 microbiology, ISO/IEC 17025 accreditation assessed at the interim location. Effect: no transfer to external laboratories, emergency diagnostics available unchanged.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong>Scenario 3 – industrial QC laboratory, fire-damage reinstatement:</strong> a mid-sized chemical manufacturer lost its quality-control laboratory to fire damage. ISO/IEC 17025 accreditation, GMP authorisation to §13 AMG, daily batch releases. Solution: four modules of interim containers delivered and installed within 96 hours of the enquiry, existing instruments taken over from the neighbouring pilot laboratory, re-qualification completed in two weeks, notification to DAkkS and the regional council in parallel. Effect: batch releases possible again within three weeks, delivery obligations held.
+              </p>
+
+              <h2 id="rueckbau" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Strip-out and close-out: what happens after the refurbishment</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                As soon as the refurbishment is complete, close-out runs in four phases. <strong>Phase one:</strong> instrument strip-out at the interim location, return transport into the refurbished building, fresh re-qualification at the original site. <strong>Phase two:</strong> decommissioning of the interim containers, cleaning, documentation for subsequent use. <strong>Phase three:</strong> strip-out of the service runs, ground-slab strip-out on a hired foundation, reinstatement of the pad under the client agreement. <strong>Phase four:</strong> removal of the containers, final acceptance, final invoice. Usual time allowance for the strip-out: four to six weeks from emptying.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Anyone who wishes to keep the interim container – as a permanent extension, as a surge laboratory for peak loads or as a specialist container for a special function (e.g. a permanent BSL-2 module) – switches at the end of the refurbishment from the rental to a hire-purchase or purchase contract. That has been a growing trend in the last five years: what began as a bridging solution becomes a strategic extension.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Conclusion</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Interim containers are no longer an emergency solution – they are the professional tool for running refurbishments without research downtime. Anyone who asks the interim question early (in parallel with the refurbishment tender, not after it), chooses the permit path cleanly, sets up instrument relocation with IQ/OQ/PQ re-qualification professionally and secures data continuity from LIMS to accreditation without gaps, gains two things: a smooth refurbishment and a competitive advantage over every organisation that suspends operations for eighteen or thirty months.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The investment in an interim laboratory pays back in practically every case in which regulatory bindings, third-party funding obligations or delivery contracts must survive the refurbishment period – that is the case today in almost every university, clinic and industrial-research refurbishment.
+              </p>
+
+              <div class="bg-primary/10 border-l-4 border-primary p-6 my-8 rounded-r-xl">
+                <p class="font-bold text-slate-900 mb-2">Are you planning a refurbishment with research or production operations?</p>
+                <p class="text-gray-700 text-sm mb-4">We review with you in a preliminary discussion whether an interim laboratory pays, which permit path fits in your federal state and what the programme for installation, instrument relocation and re-qualification looks like.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">
+                  Request a preliminary discussion
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+
+              <h2 id="faq" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Frequently asked questions on the interim laboratory</h2>
+
+              <div class="space-y-4 my-8">
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    How long does installation of an interim laboratory take in the rental model?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">From the requirements workshop to handover ready for use we allow eight to twelve weeks for standard modules, and twelve to sixteen weeks for BSL-2 or cleanroom equipment. Of that, around four to six weeks fall to preparation of the pad by the client (ground slab or pad foundations to DIN EN 1997, services connection for electricity/water/wastewater/data network), two weeks to logistics and installation by mobile crane, and two to four weeks to interior fine-tuning and instrument recommissioning including IQ/OQ/PQ. The rental containers come from the existing pool – so the production lead times of eight to fourteen weeks that arise on new fabrication fall away.</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    Do I need a full building application for an interim laboratory?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Not in every case. The Model Building Code and most state building codes allow a simplified procedure for “temporary structures” and temporary buildings, or even procedure-free status up to certain sizes. Concretely: §76 MBO governs temporary structures, §63 MBO the simplified permit procedure, and the annex to §61 MBO lists procedure-free building works. Interim containers of less than 100 square metres and an installation period of up to five years fall under simplified procedures in many federal states. As soon as hazardous substances to the GefStoffV, biological agents BSL-2 or higher, genetic engineering to the GenTSV or radiation-protection areas move in, the permit becomes more demanding – then §18 GenTG, §1 GefStoffV, §11 StrlSchG or an immission-control notification to §15 BImSchG also apply. We clarify the concrete permit path in the pre-project phase with the client and the competent building-control authority.</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    What does renting an interim laboratory cost compared with downtime?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">The honest answer is: the rent costs a fraction of the downtime – as soon as a day of outage in a research, clinical or production laboratory costs more than the daily rent, the bridging solution pays economically. Typical rental terms lie between six months (partial refurbishment of a floor) and four years (complete new research building). Rental rates scale with number of modules, equipment class (standard, GLP, GMP, BSL-2/3) and contract term; we give concrete figures after a requirements match. In comparison, universities and clinics set this against threatened third-party funding losses, lost study patients and unused research windows – and industrial operations against delivery obligations and accreditation deadlines to ISO/IEC 17025.</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    Where do I place the interim laboratory during the refurbishment?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Three location classes work in practice. First: courtyard or yard of the existing building – short routes for staff and sample handover, often already with a services connection nearby, but limited pad area and delivery logistics by mobile crane over the roof or through a gateway to be checked. Second: adjacent car park or outdoor area – more space, simple delivery, longer service runs required. Third: a site in the nearer vicinity – only worthwhile on major refurbishments, because staff transport and sample logistics arise. The decision is taken in the pre-project phase with structural design (bearing capacity of the pad to DIN 1054), crane logistics (lift radius, boom position, traffic management to RSA 21) and services routing (potable water DIN 1988, wastewater DIN 1986-100, electrical connection up to 250 A per module).</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    How do instrument relocation and re-qualification of analytical instruments run?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Instrument relocation is the underestimated bottleneck of every laboratory refurbishment. Sensitive instruments – HPLC, GC-MS, ICP-MS, NMR, flow cytometers, PCR cyclers, climate cabinets – need a controlled decommissioning to the manufacturer protocol before transport, vibration-damped packing and a complete re-qualification at the new site: IQ (Installation Qualification) checks correct set-up, OQ (Operational Qualification) functionality in the intended operating ranges, PQ (Performance Qualification) application-related performance. For accredited laboratories to DIN EN ISO/IEC 17025 every re-qualification must be documented and DAkkS informed; for GMP areas the analogous repetition of validation to EU GMP Guide Annex 15 applies. We coordinate this together with the manufacturer service and the client’s quality management – that belongs in the programme of every interim-laboratory project.</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    Which refurbishment triggers typically create demand for an interim container?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Six trigger groups dominate in practice. First, energy-related major refurbishment to the Building Energy Act (GEG 2024): envelope insulation, window replacement, heating replacement – rarely runs without emptying several floors. Second, fire-protection upgrading to the Model Building Code and state building codes: fire-compartment division, means of escape, sprinkler upgrading. Third, HVAC and cleanroom upgrading to DIN 1946-7, often in connection with the GMP Annex 1 update (in force since August 2023). Fourth, contaminant remediation: asbestos to TRGS 519, man-made mineral fibres to TRGS 521, PCB to the PCB guideline, mould to the UBA mould guide. Fifth, structural upgrading on change of use or load increase. Sixth, flood or fire damage with subsequent reinstatement. In all six cases research, diagnostics or production is acutely threatened at the start of the refurbishment – interim containers are the only practicable bridge.</p>
+                </details>
+                <details class="bg-slate-50 rounded-xl p-6 group">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    What happens to the data and the accreditation during the interim period?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <p class="mt-4 text-gray-600 text-sm leading-relaxed">Data integrity and accreditation continue without interruption – that is precisely the point of the interim solution. Common LIMS systems can be continued in live operation at the new site via VPN or a direct fibre connection; a data migration does not take place, only the hardware locations change. For accredited test houses to DIN EN ISO/IEC 17025 the site change must be notified to DAkkS under the Accreditation Body Act (AkkStelleG); on material changes an on-site assessment at the new location may become due. For GMP areas, EU GMP Annex 11 (computerised systems) and 21 CFR Part 11 (FDA) apply unchanged – the ALCOA+ criteria for data integrity (Attributable, Legible, Contemporaneous, Original, Accurate, Complete, Consistent, Enduring, Available) must be met in the interim container just as in the main building.</p>
+                </details>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">About the author</h2>
+
+              <div class="bg-slate-50 rounded-2xl p-6 my-8 flex items-start gap-4">
+                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-slate-900 font-bold text-2xl flex-shrink-0">SB</div>
+                <div>
+                  <p class="font-bold text-slate-900 mb-1">Sven Biewald</p>
+                  <p class="text-sm text-gray-500 mb-3">Managing Director, Planexus GmbH</p>
+                  <p class="text-gray-600 text-sm leading-relaxed">Sven Biewald leads Planexus GmbH and is responsible for delivering modular laboratory projects in DACH – from the first requirements workshop through permits and instrument relocation to handover ready for use. More than a decade of experience in container laboratory construction for universities, university hospitals, pharma, biotech and industry.</p>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Related articles</h2>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+                <a href="/en/magazine/lab-containers-rent-or-buy" class="block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition-all">
+                  <p class="text-xs text-primary font-bold mb-1">Guide</p>
+                  <p class="font-bold text-slate-900 text-sm">Lab containers: rent or buy – decision guide</p>
+                </a>
+                <a href="/en/magazine/lab-container-installation-foundation-statics" class="block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition-all">
+                  <p class="text-xs text-primary font-bold mb-1">Construction &amp; foundations</p>
+                  <p class="font-bold text-slate-900 text-sm">Installation, ground slab and structural design for lab containers</p>
+                </a>
+                <a href="/en/magazine/lab-container-permits-building-law" class="block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition-all">
+                  <p class="text-xs text-primary font-bold mb-1">Guide</p>
+                  <p class="font-bold text-slate-900 text-sm">Lab-container permits – building law and regulations</p>
+                </a>
+                <a href="/en/magazine/lab-container-project-process" class="block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition-all">
+                  <p class="text-xs text-primary font-bold mb-1">Guide</p>
+                  <p class="font-bold text-slate-900 text-sm">From idea to handover – project process</p>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-24 space-y-6">
+              <div class="bg-slate-900 text-white rounded-2xl p-6">
+                <h3 class="font-bold text-lg mb-3">Contents</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                  <li><a href="#faktentabelle" class="hover:text-primary">Regulatory fact table</a></li>
+                  <li><a href="#sanierungsstau" class="hover:text-primary">Refurbishment backlog 2024–2030</a></li>
+                  <li><a href="#anlaesse" class="hover:text-primary">Six typical refurbishment triggers</a></li>
+                  <li><a href="#entscheidung" class="hover:text-primary">Decision matrix</a></li>
+                  <li><a href="#genehmigung" class="hover:text-primary">Permit path</a></li>
+                  <li><a href="#standorte" class="hover:text-primary">Three location classes</a></li>
+                  <li><a href="#geraeteumzug" class="hover:text-primary">Instrument relocation &amp; IQ/OQ/PQ</a></li>
+                  <li><a href="#datenkontinuitaet" class="hover:text-primary">Data continuity, LIMS</a></li>
+                  <li><a href="#mietmodelle" class="hover:text-primary">Rental models</a></li>
+                  <li><a href="#szenarien" class="hover:text-primary">Three practice scenarios</a></li>
+                  <li><a href="#rueckbau" class="hover:text-primary">Strip-out and close-out</a></li>
+                  <li><a href="#faq" class="hover:text-primary">Frequently asked questions</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-primary/10 border border-primary/30 rounded-2xl p-6">
+                <p class="font-bold text-slate-900 mb-2">Direct advice</p>
+                <p class="text-sm text-gray-700 mb-4">Are you planning a refurbishment with live laboratory operations? We discuss your requirements in a 30-minute preliminary discussion.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold text-center py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm">Request an appointment</a>
+              </div>
+
+              <div class="bg-slate-50 rounded-2xl p-6">
+                <p class="font-bold text-slate-900 mb-3 text-sm">DACH locations</p>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <a href="/en/lab-containers-hamburg" class="text-gray-600 hover:text-primary">Hamburg</a>
+                  <a href="/en/lab-containers-berlin" class="text-gray-600 hover:text-primary">Berlin</a>
+                  <a href="/en/lab-containers-munich" class="text-gray-600 hover:text-primary">Munich</a>
+                  <a href="/en/lab-containers-stuttgart" class="text-gray-600 hover:text-primary">Stuttgart</a>
+                  <a href="/en/lab-containers-frankfurt" class="text-gray-600 hover:text-primary">Frankfurt</a>
+                  <a href="/en/lab-containers-dusseldorf" class="text-gray-600 hover:text-primary">Düsseldorf</a>
+                  <a href="/en/lab-containers-zurich" class="text-gray-600 hover:text-primary">Zurich</a>
+                  <a href="/en/lab-containers-basel" class="text-gray-600 hover:text-primary">Basel</a>
+                  <a href="/en/lab-containers-bern" class="text-gray-600 hover:text-primary">Bern</a>
+                  <a href="/en/lab-containers-vienna" class="text-gray-600 hover:text-primary">Vienna</a>
+                  <a href="/en/lab-containers-graz" class="text-gray-600 hover:text-primary">Graz</a>
+                  <a href="/en/lab-containers-linz" class="text-gray-600 hover:text-primary">Linz</a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <RelatedArticles slug="uebergangslabor-sanierung-mietcontainer" locale="en" />
+  </div>
+</Layout>
