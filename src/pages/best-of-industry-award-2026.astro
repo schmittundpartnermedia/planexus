@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Picture from '../components/Picture.astro';
+
+const votingUrl = 'https://www.bestofindustry.de/boi2026';
+const imageSrc = '/images/planexus-labtogo-best-of-industry-award-2026.png';
+const imageAlt =
+  'Planexus GmbH ist mit LABtoGO für den Best of Industry Award 2026 nominiert – Aufruf zur Abstimmung';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: 'https://planexus.de/' },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Best of Industry Award 2026',
+      item: 'https://planexus.de/best-of-industry-award-2026',
+    },
+  ],
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'LABtoGO beim Best of Industry Award 2026 | Planexus',
+  description:
+    'LABtoGO ist beim Best of Industry Award 2026 in der Kategorie Labor- & Analysentechnik nominiert. Über das Voting entscheiden die Anwender. Jetzt abstimmen.',
+  url: 'https://planexus.de/best-of-industry-award-2026',
+  isPartOf: { '@type': 'WebSite', name: 'Planexus', url: 'https://planexus.de/' },
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: `https://planexus.de${imageSrc}`,
+  },
+};
+---
+
+<Layout
+  title="LABtoGO beim Best of Industry Award 2026 | Planexus"
+  description="LABtoGO ist beim Best of Industry Award 2026 in der Kategorie Labor- & Analysentechnik nominiert. Über das Voting entscheiden die Anwender. Jetzt abstimmen."
+  canonical="/best-of-industry-award-2026"
+  ogImage={imageSrc}
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800"></div>
+      <div
+        class="absolute inset-0 opacity-20"
+        style="background-image: radial-gradient(circle at 20% 50%, #bbd700 0%, transparent 50%), radial-gradient(circle at 80% 20%, #bbd700 0%, transparent 40%);"
+      ></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">
+            Nominiert für den Best of Industry Award 2026
+          </h1>
+          <p class="text-xl text-gray-300 leading-relaxed">
+            Kategorie Labor- &amp; Analysentechnik
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <Breadcrumbs bar items={[{ name: 'Start', href: '/' }, { name: 'Best of Industry Award 2026' }]} />
+
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
+            <a
+              href={votingUrl}
+              target="_blank"
+              rel="noopener"
+              class="block w-full max-w-md mx-auto md:mx-0"
+              aria-label="Jetzt für Planexus LABtoGO beim Best of Industry Award 2026 abstimmen"
+            >
+              <Picture
+                src={imageSrc}
+                alt={imageAlt}
+                width={1200}
+                height={1200}
+                loading="eager"
+                fetchpriority="high"
+                class="w-full h-auto object-contain rounded-2xl border border-gray-100 shadow-lg"
+              />
+            </a>
+            <div class="flex flex-col items-start justify-center">
+              <a
+                href={votingUrl}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 bg-[#bbd700] text-slate-900 font-bold px-8 py-3.5 rounded-lg hover:bg-[#a8c200] transition-colors text-sm group"
+              >
+                Jetzt abstimmen
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline
+                    points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg
+                >
+              </a>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4 mt-4">
+            Worum es geht
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Der Best of Industry Award wird seit 2016 vom MM MaschinenMarkt der Vogel Communications Group vergeben. Ausgezeichnet werden die herausragendsten neuen Lösungen und Produkte der Industrie — 2026 in 16 Kategorien, aus über 130 eingereichten Innovationen.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Die Besonderheit: Es gibt keine Jury, die im Hinterzimmer entscheidet. Das Voting liegt zu 100 % bei den Anwendern. Wer gewinnt, bestimmen die Menschen, die täglich in der Industrie arbeiten.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-12">
+            LABtoGO steht in der Kategorie Labor- &amp; Analysentechnik zur Wahl. Mitbewerber sind unter anderem Anton Paar, igus, Retsch, Sartorius und Systec. Gesellschaft, in der wir gerne stehen.
+          </p>
+
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4 mt-12">
+            Warum LABtoGO nominiert ist
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Laborfläche entsteht klassisch in Jahren: Planung, Genehmigung, Rohbau, Ausbau, Inbetriebnahme. Wenn ein Projekt schneller Laborkapazität braucht, hilft dieser Weg nicht.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            LABtoGO 2.0 ist ein vollwertiges, mobiles Laborcontainermodul — kein Provisorium, kein Baustellencontainer mit Waschbecken. Die Technik ist vollständig integriert:
+          </p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3 text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span>RLT-Anlage mit Wärmerückgewinnung</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span>Regelbare Druckzonen</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span>24-Stunden-Abluft</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span>Vollintegrierte Gebäudeleittechnik</span>
+            </li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Durch 100 % Vorfertigung im Werk ist das Modul nach der Anlieferung in wenigen Stunden einsatzbereit. Es ist modular erweiterbar und lässt sich an veränderte Anforderungen anpassen, ohne dass gebaut werden muss.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Das ist der Punkt, den die Nominierung anerkennt: Laborbetrieb auf Top-Niveau, ohne die Zeitachse eines Neubaus.
+          </p>
+          <a href="/laborcontainer/labtogo" class="inline-flex items-center gap-2 text-primary font-bold mb-12 hover:gap-3 transition-all border-b-2 border-primary/20 hover:border-primary pb-1">
+            Mehr über LABtoGO
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4 mt-12">
+            So stimmen Sie ab
+          </h2>
+          <ol class="space-y-3 mb-6 list-decimal list-inside text-gray-700">
+            <li>Voting-Seite öffnen</li>
+            <li>Kategorie „Labor- &amp; Analysentechnik" auswählen</li>
+            <li>LABtoGO von Planexus anklicken</li>
+            <li>Absenden</li>
+          </ol>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Dauert weniger als zwei Minuten. Die Abstimmung läuft bis zum 30. November 2026.
+          </p>
+          <a
+            href={votingUrl}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-2 bg-[#bbd700] text-slate-900 font-bold px-8 py-3.5 rounded-lg hover:bg-[#a8c200] transition-colors text-sm group mb-12"
+          >
+            Jetzt für LABtoGO abstimmen
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 mb-12">
+            <h2 class="text-xl font-heading font-bold text-slate-900 mb-4">Der weitere Ablauf</h2>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start gap-3">
+                <span class="font-bold text-[#7a9900] shrink-0 w-44">bis 30.11.2026</span>
+                <span>Online-Voting</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="font-bold text-[#7a9900] shrink-0 w-44">Anfang Dezember 2026</span>
+                <span>Bekanntgabe der Top 3 je Kategorie</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="font-bold text-[#7a9900] shrink-0 w-44">Ende Januar 2027</span>
+                <span>Preisverleihung in Würzburg</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-primary/10 border border-primary/30 rounded-2xl p-8">
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-3">
+              Danke
+            </h2>
+            <p class="text-slate-700 leading-relaxed">
+              Eine Nominierung ist schön. Eine Nominierung, die von den Menschen getragen wird, die mit Laboren arbeiten, ist etwas anderes. Wenn Sie uns Ihre Stimme geben, freuen wir uns — und sagen an dieser Stelle vorab danke.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -11,6 +11,16 @@ export interface MagazinPost {
 
 export const magazinPosts: MagazinPost[] = [
   {
+    id: -15,
+    slug: "made-in-germany-qualitaet-tempo-laborbau",
+    title: "Made in Germany: Qualität und Tempo im Laborbau vereint",
+    excerpt: "Warum Made in Germany im modularen Laborbau kein Widerspruch zu Tempo ist: schlüsselfertige Labore in 8–14 Wochen, GMP-, BSL- und ATEX-konform aus Albstadt-Laufen.",
+    date: "22. Juli 2026",
+    author: "Sven Biewald",
+    category: "Ratgeber",
+    image: "/images/blog-made-in-germany-qualitaet-tempo-laborbau.jpg",
+  },
+  {
     id: -14,
     slug: "wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler",
     title: "Wenn das neue Labor zu spät kommt: 5 Planungsfehler",
@@ -224,6 +234,11 @@ export const magazinPosts: MagazinPost[] = [
 
 /** Thematische Verwandtschaft – 3 Slugs pro Artikel */
 const relatedSlugsMap: Record<string, string[]> = {
+  "made-in-germany-qualitaet-tempo-laborbau": [
+    "innovation-modulbau-zukunft-mobiles-labor",
+    "gmp-reinraum-container-pharma-produktion",
+    "laborcontainer-projektablauf-von-idee-bis-uebergabe",
+  ],
   "wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler": [
     "laborcontainer-projektablauf-von-idee-bis-uebergabe",
     "laborcontainer-genehmigung-baurecht-vorschriften",

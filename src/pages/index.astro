@@ -1,6 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { LiquidDistortion } from '../components/LiquidDistortion';
+import Picture from '../components/Picture.astro';
+import { showBestOfIndustryBanner } from '../data/site-flags';
+
+const bestOfIndustryVotingUrl = 'https://www.bestofindustry.de/boi2026';
+const bestOfIndustryImageSrc = '/images/planexus-labtogo-best-of-industry-award-2026.png';
+const bestOfIndustryImageAlt =
+  'Planexus GmbH ist mit LABtoGO für den Best of Industry Award 2026 nominiert – Aufruf zur Abstimmung';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -87,39 +94,88 @@ const faqSchema = {
     <!-- Award Banner -->
     <section class="py-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
       <div class="container mx-auto px-4">
-        <div class="max-w-7xl mx-auto bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
-          <div class="grid grid-cols-1 md:grid-cols-5 items-center">
-            <div class="md:col-span-2 p-8 md:p-12 flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 to-white">
-              <div class="relative">
-                <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-[#bbd700]/20 via-[#bbd700]/10 to-transparent flex items-center justify-center border-2 border-[#bbd700]/30">
-                  <div class="text-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 md:w-16 md:h-16 text-[#bbd700] mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-                    <p class="text-[#7a9900] font-bold text-xs uppercase tracking-wider">Award 2026</p>
+        <div class="max-w-7xl mx-auto space-y-6">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
+            <div class="grid grid-cols-1 md:grid-cols-5 items-center">
+              <div class="md:col-span-2 p-8 md:p-12 flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 to-white">
+                <div class="relative">
+                  <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-[#bbd700]/20 via-[#bbd700]/10 to-transparent flex items-center justify-center border-2 border-[#bbd700]/30">
+                    <div class="text-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 md:w-16 md:h-16 text-[#bbd700] mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                      <p class="text-[#7a9900] font-bold text-xs uppercase tracking-wider">Award 2026</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="md:col-span-3 p-8 md:p-12 flex flex-col items-start justify-center">
-              <span class="bg-[#bbd700]/10 text-[#7a9900] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">Auszeichnung</span>
-              <h3 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-3 leading-tight">
-                Führender Anbieter innovativer Laborräume 2026
-              </h3>
-              <p class="text-gray-500 text-sm font-medium mb-2">EU Business News — German CEO Excellence Awards 2026</p>
-              <p class="text-gray-600 text-base mb-6 leading-relaxed">
-                Erst auf der analytica 2026 präsentiert, jetzt international ausgezeichnet. Planexus wurde bei den German CEO Excellence Awards als führender Anbieter innovativer Laborräume 2026 prämiert.
-              </p>
-              <div class="flex flex-wrap gap-3">
-                <a href="/laborcontainer/labtogo" class="inline-flex items-center gap-2 bg-[#bbd700] text-slate-900 font-bold px-8 py-3.5 rounded-lg hover:bg-[#a8c200] transition-colors text-sm group">
-                  LABtoGO entdecken
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-                <a href="https://www.eubusinessnews.com/winners/planexus-gmbh/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border-2 border-slate-200 text-slate-700 font-bold px-6 py-3.5 rounded-lg hover:border-[#bbd700] hover:text-slate-900 transition-colors text-sm group">
-                  Zur Auszeichnung
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
+              <div class="md:col-span-3 p-8 md:p-12 flex flex-col items-start justify-center">
+                <span class="bg-[#bbd700]/10 text-[#7a9900] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">Auszeichnung</span>
+                <h3 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-3 leading-tight">
+                  Führender Anbieter innovativer Laborräume 2026
+                </h3>
+                <p class="text-gray-500 text-sm font-medium mb-2">EU Business News — German CEO Excellence Awards 2026</p>
+                <p class="text-gray-600 text-base mb-6 leading-relaxed">
+                  Erst auf der analytica 2026 präsentiert, jetzt international ausgezeichnet. Planexus wurde bei den German CEO Excellence Awards als führender Anbieter innovativer Laborräume 2026 prämiert.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                  <a href="/laborcontainer/labtogo" class="inline-flex items-center gap-2 bg-[#bbd700] text-slate-900 font-bold px-8 py-3.5 rounded-lg hover:bg-[#a8c200] transition-colors text-sm group">
+                    LABtoGO entdecken
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                  <a href="https://www.eubusinessnews.com/winners/planexus-gmbh/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border-2 border-slate-200 text-slate-700 font-bold px-6 py-3.5 rounded-lg hover:border-[#bbd700] hover:text-slate-900 transition-colors text-sm group">
+                    Zur Auszeichnung
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Best of Industry Award 2026 — abschaltbar über src/data/site-flags.ts */}
+          {showBestOfIndustryBanner && (
+          <div class="bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center">
+              <div class="p-6 md:p-10 flex items-center justify-center bg-gradient-to-br from-slate-50 to-white">
+                <a
+                  href={bestOfIndustryVotingUrl}
+                  target="_blank"
+                  rel="noopener"
+                  class="block w-full max-w-sm"
+                  aria-label="Jetzt für Planexus LABtoGO beim Best of Industry Award 2026 abstimmen"
+                >
+                  <Picture
+                    src={bestOfIndustryImageSrc}
+                    alt={bestOfIndustryImageAlt}
+                    width={1200}
+                    height={1200}
+                    loading="lazy"
+                    class="w-full h-auto object-contain"
+                  />
+                </a>
+              </div>
+              <div class="p-8 md:p-12 flex flex-col items-start justify-center">
+                <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-3 leading-tight">
+                  Ausgezeichnet: LABtoGO ist nominiert
+                </h2>
+                <p class="text-gray-600 text-base mb-4 leading-relaxed">
+                  Der Best of Industry Award 2026 kürt die stärksten Innovationen der deutschen Industrie. LABtoGO steht in der Kategorie Labor- &amp; Analysentechnik zur Wahl — gegen acht Wettbewerber, ausgewählt aus über 130 Einreichungen.
+                </p>
+                <p class="text-gray-600 text-base mb-6 leading-relaxed">
+                  Entschieden wird ausschließlich durch das offene Online-Voting. Jede Stimme zählt gleich viel.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                  <a href={bestOfIndustryVotingUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#bbd700] text-slate-900 font-bold px-8 py-3.5 rounded-lg hover:bg-[#a8c200] transition-colors text-sm group">
+                    Jetzt abstimmen
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                  <a href="/best-of-industry-award-2026" class="inline-flex items-center gap-2 border-2 border-slate-200 text-slate-700 font-bold px-6 py-3.5 rounded-lg hover:border-[#bbd700] hover:text-slate-900 transition-colors text-sm group">
+                    Was LABtoGO auszeichnet
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          )}
         </div>
       </div>
     </section>

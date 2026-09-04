@@ -1,0 +1,80 @@
+---
+description: Planexus Live-Deploy auf dem IONOS-Server – was Joachim eingibt, Mac vs. SSH, kein deploy-rpw
+alwaysApply: true
+---
+
+# Planexus Server-Deploy
+
+`deploy-rpw` ist **nur RankPilot**, nicht Planexus.
+
+**Englisch bleibt offline:** Branch `origin/cursor/english-i18n-eb67` nicht nach `main` mergen und nicht auf den Server ziehen, bis Joachim das ausdrücklich freigibt.
+
+- Server: `ssh root@82.165.27.244` (IONOS, Ubuntu)
+- App-Pfad: `/var/www/app`
+- PM2: `planexus` (id 0)
+- Domain: `https://planexus.de`
+- Mac-Repo: `/Users/joachimschmitt/Desktop/Webseiten/planexus`
+
+Befehle **einzeln** geben (ein Befehl, Ausgabe abwarten). Mac-Pfade nie in der SSH-Session ausführen. Auf dem Server nie `git push` nach GitHub.
+
+## 1. Zuerst Mac (Code muss auf `origin/main`)
+
+Im Mac-Terminal, im Repo:
+
+```bash
+cd /Users/joachimschmitt/Desktop/Webseiten/planexus
+```
+
+Commit ist schon da. Wenn uncommitted WIP den `checkout main` blockiert: zuerst stash. Dann `main` aktualisieren, Feature mergen, pushen:
+
+```bash
+git stash push -u -m "wip vor main-merge"
+git checkout main
+git pull origin main
+git merge origin/<branch>
+git push origin main
+git checkout <branch>
+git stash pop
+```
+
+Ohne Merge auf `main` zieht der Server die neue Seite nicht (wenn er auf `main` steht).
+
+## 2. Dann Server (SSH schon offen: `root@ubuntu`)
+
+```bash
+cd /var/www/app
+```
+
+Sauberer Normalfall:
+
+```bash
+git checkout -- .astro && git pull && npm run build && pm2 restart planexus --update-env
+```
+
+`git checkout -- .astro` **vor** jedem `git pull` (getrackte `.astro/`-Dateien vom letzten Build).
+
+Danach prüfen: betroffene URL, z. B. `https://planexus.de/branchen/oel-gas`
+
+## Wenn Git auf dem Server spinnt
+
+Nacheinander, nicht als Block:
+
+- `git status` — Branch, Merge, Konflikte
+- Bei Merge/Konflikten: `git merge --abort` (nur wenn ein Merge läuft)
+- Sonst Index-Müll: `git reset --hard HEAD`
+- Dann: `git checkout main` (oder der Branch, der den Stand hat)
+- Dann: `git pull`
+- Dann: `npm run build`
+- Dann: `pm2 restart planexus --update-env`
+
+Kein `git stash` auf dem Server, außer ausdrücklich nötig. Kein GitHub-Login auf dem Server.
+
+## Alternative: rsync vom Mac (nicht von SSH)
+
+Kopiert den lokalen Ordner auf den Server und baut dort. `.env` und `.git` bleiben ausgeschlossen. Kopiert auch **uncommitted** lokale Dateien mit.
+
+```bash
+rsync -avz --exclude='.git' --exclude='node_modules' --exclude='dist' --exclude='.env' ~/Desktop/Webseiten/planexus/ root@82.165.27.244:/var/www/app/ && ssh root@82.165.27.244 "cd /var/www/app && npm run build && pm2 restart planexus"
+```
+
+Nur vom Mac. Passwort nicht in Regeln/Chats speichern.

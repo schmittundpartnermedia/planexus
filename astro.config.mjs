@@ -71,7 +71,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) => !/\/(admin|api)(\/|$)/.test(page),
+      filter: (page) => !/\/(admin|api|en)(\/|$)/.test(page),
       serialize(item) {
         const parsed = new URL(item.url);
         const pathName = parsed.pathname === '/' ? '/' : parsed.pathname.replace(/\/+$/, '');

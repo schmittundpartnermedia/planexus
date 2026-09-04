@@ -1,0 +1,465 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Picture from '../../components/Picture.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Made in Germany: Qualität und Tempo im Laborbau vereint",
+  "description": "Warum Made in Germany im modularen Laborbau kein Widerspruch zu Tempo ist: schlüsselfertige Labore in 8–14 Wochen, GMP-, BSL- und ATEX-konform aus Albstadt-Laufen.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/team/sven-biewald", "jobTitle": "Geschäftsführer", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-07-22",
+  "dateModified": "2026-07-22",
+  "image": "https://planexus.de/images/blog-made-in-germany-qualitaet-tempo-laborbau.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/magazin/made-in-germany-qualitaet-tempo-laborbau" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/magazin" },
+    { "@type": "ListItem", "position": 3, "name": "Made in Germany: Qualität und Tempo im Laborbau", "item": "https://planexus.de/magazin/made-in-germany-qualitaet-tempo-laborbau" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Wie kann ein komplexes Labor in nur 8 bis 14 Wochen fertig sein?", "acceptedAnswer": { "@type": "Answer", "text": "Die kurze Lieferzeit resultiert aus parallelen Prozessen und modularer Vorbauweise. Während am Aufstellort Fundament und Anschlüsse vorbereitet werden, entsteht im Werk das komplette Labormodul. Qualitätsprüfungen laufen während der Fertigung. Das Modul verlässt die Werkshalle zu 90 Prozent fertig – nur Anschlussarbeiten bleiben vor Ort." } },
+    { "@type": "Question", "name": "Erfüllen modulare Labore die gleichen Normen wie traditionelle Bauten?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, ohne Einschränkung. Planexus baut nach den gleichen GMP-Richtlinien, Reinraumnormen und Biosicherheitsstandards wie konventionelle Labore. Der Unterschied liegt in der Bauweise, nicht in den Anforderungen. Zertifizierungen und Dokumentation entsprechen den Vorgaben für regulierte Bereiche." } },
+    { "@type": "Question", "name": "Was passiert bei Erweiterungen oder Umbauten später?", "acceptedAnswer": { "@type": "Answer", "text": "Module sind erweiterbar und umrüstbar. Wandelemente lassen sich versetzen, technische Systeme nachrüsten und Raumaufteilungen anpassen. Ein Unternehmen kann klein starten und bei Bedarf erweitern – ohne kompletten Neubau." } },
+    { "@type": "Question", "name": "Welche Garantien gibt es auf die technischen Systeme?", "acceptedAnswer": { "@type": "Answer", "text": "Planexus gewährt standardmäßig Gewährleistung nach BGB. Zusätzlich bietet das Unternehmen Wartungsverträge an, die regelmäßige Inspektionen, vorbeugende Instandhaltung und Ersatzteilversorgung umfassen. Kritische Komponenten wie HEPA-Filter und Steuerungstechnik werden nach Herstellervorgaben gewartet." } },
+    { "@type": "Question", "name": "Ist Made in Germany noch wettbewerbsfähig im Preis?", "acceptedAnswer": { "@type": "Answer", "text": "Der Vergleich reiner Anschaffungskosten greift zu kurz. Deutsche Fertigung punktet bei Gesamtkosten: kürzere Lieferzeiten, geringere Transportkosten, niedrigere Ausfallrisiken und längere Lebensdauer. Ein Labor, das früher Umsätze generiert, amortisiert sich oft schneller als eine günstigere Lösung mit langer Wartezeit." } }
+  ]
+};
+---
+
+<Layout
+  type="article"
+  title="Made in Germany: Qualität und Tempo im Laborbau vereint"
+  description="Made in Germany im Laborbau: schlüsselfertige Module in 8–14 Wochen, GMP-, BSL- und ATEX-konform – Qualität und Tempo aus Albstadt-Laufen."
+  canonical="/magazin/made-in-germany-qualitaet-tempo-laborbau"
+  ogImage="https://planexus.de/images/blog-made-in-germany-qualitaet-tempo-laborbau.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-made-in-germany-qualitaet-tempo-laborbau.jpg')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+              Ratgeber
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              16 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Made in Germany: Qualität und Tempo im Laborbau vereint
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Hochkomplexe Labore mit strengen Normvorgaben – und das in kürzester Zeit. Viele glauben, sie müssten sich zwischen deutscher Ingenieurskunst und schneller Verfügbarkeit entscheiden. Die Realität zeigt: Made in Germany bedeutet heute beides zugleich.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              22. Juli 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald, Geschäftsführer Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/magazin" class="hover:text-primary">Magazin</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Made in Germany im Laborbau</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                Pharmaunternehmen und Forschungseinrichtungen stehen vor einer paradoxen Situation: Sie benötigen <strong>hochkomplexe Laborlösungen</strong> mit strengen Normvorgaben – und das in kürzester Zeit. Viele glauben, sie müssten sich zwischen deutscher Ingenieurskunst und schneller Verfügbarkeit entscheiden. Die Realität zeigt: <strong>Made in Germany</strong> bedeutet heute beides zugleich. Planexus GmbH liefert <strong>schlüsselfertige Labore</strong> in 8 bis 14 Wochen, ohne bei <a href="/magazin/gmp-reinraum-container-pharma-produktion" class="text-primary font-medium hover:underline">GMP-Reinraum</a>-Standards oder <a href="/magazin/bsl-2-bsl-3-container-labor" class="text-primary font-medium hover:underline">BSL-3 Labor</a>-Anforderungen Abstriche zu machen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der <strong>modulare Laborbau</strong> macht diesen Spagat möglich. Während traditionelle Laborbauprojekte Monate oder Jahre dauern, entstehen bei Planexus <a href="/laborcontainer" class="text-primary font-medium hover:underline">Laborcontainer</a> parallel zur Planung. Jedes Modul wird in Deutschland gefertigt, geprüft und kann binnen Wochen einsatzbereit sein. Das Versprechen klingt zu gut? Die Zahlen sprechen eine klare Sprache.
+              </p>
+
+              <figure class="my-10">
+                <Picture
+                  src="/images/blog-made-in-germany-qualitaet-tempo-laborbau.jpg"
+                  alt="Präzisionsarbeit an Edelstahlkomponenten in der Laborfertigung – Made in Germany Qualität bei Planexus"
+                  width={1024}
+                  height={1024}
+                  loading="eager"
+                  fetchpriority="high"
+                  class="w-full rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Deutsche Fertigungsqualität: Präzision und Kontrolle in der Werkshalle – bevor das Modul den Aufstellort erreicht.
+                </figcaption>
+              </figure>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Deutsche Ingenieurskunst trifft auf modulare Effizienz</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der Begriff <strong>Made in Germany</strong> hat sich von einer britischen Stigmatisierungsmaßnahme zum weltweit anerkannten Qualitätsversprechen entwickelt. Im <strong>Laborbau</strong> bedeutet das konkret: Präzision bei der Umsetzung von Reinraumnormen, lückenlose Dokumentation für Audits und Langlebigkeit der technischen Ausstattung. Planexus vereint diese Stärken mit einem industrialisierten Fertigungsprozess.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Produktion in Albstadt-Laufen folgt einem klaren Prinzip: Standardisierte Module werden nach kundenspezifischen Anforderungen konfiguriert. Ein <strong>GMP-konformes Labor</strong> entsteht nicht mehr auf der grünen Wiese, sondern in einer kontrollierten Werkshalle. Dort laufen Qualitätsprüfungen parallel zur Montage. Wenn das Modul die Fertigung verlässt, ist es zu 90 Prozent einsatzbereit.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Qualitätsmanagement beginnt in der Planung</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Jedes <strong>schlüsselfertige Labor</strong> durchläuft bei Planexus mehrere Prüfschleifen, bevor es das Werk verlässt. Die Qualitätssicherung startet bereits in der digitalen Planung: CAD-Modelle simulieren Luftströme in Reinräumen, Druckverhältnisse in <strong>BSL-2/BSL-3</strong>-Bereichen und Materialflüsse in Produktionsumgebungen. Fehler werden erkannt, bevor das erste Blechteil geschnitten wird.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In der Fertigung überwachen Sensoren jeden Arbeitsschritt. Schweißnähte an ATEX-konformen Gehäusen werden dokumentiert, Filterprüfstände messen die Abscheideleistung von HEPA-Filtern und elektrische Systeme durchlaufen Funktionsprüfungen unter Last. Diese Prozesse sind keine Zusatzleistung – sie gehören zum Standard jedes Projekts von Planexus.
+              </p>
+
+              <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8 not-prose">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Kernaussage</h4>
+                    <p class="text-gray-600 text-sm">
+                      Qualität und Tempo schließen sich im modularen Laborbau nicht aus – weil Fertigung, Prüfung und Vor-Ort-Vorbereitung parallel laufen statt nacheinander.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Warum 8 bis 14 Wochen Lieferzeit keine Utopie sind</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die kurze Lieferzeit basiert auf drei Säulen: vorgefertigte Grundmodule, parallele Arbeitsprozesse und digitale Planung. Während ein Architekt noch Genehmigungen einholt, läuft bei Planexus bereits die technische Detailplanung. Während die Bodenplatte am Aufstellort gegossen wird, entstehen im Werk die Labormodule. Diese Überlappung spart Monate.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein konkretes Beispiel: Ein Biotech-Unternehmen benötigt ein <strong>BSL-3 Labor</strong> für die Arbeit mit Krankheitserregern. Traditioneller Bau würde 18 bis 24 Monate dauern. Planexus liefert das Modul in zwölf Wochen. Die restliche Zeit entfällt auf Fundament und Anschlüsse vor Ort. Das Unternehmen kann vier Monate nach Projektstart mit der Forschung beginnen.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Standardisierung ohne Kompromisse bei der Individualisierung</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Standardisierte Module bedeuten nicht Einheitsbrei. Jedes Labor wird nach Kundenvorgaben konfiguriert: Raumaufteilung, technische Ausstattung, Medienversorgung und Sicherheitssysteme folgen den spezifischen Anforderungen. Ein <strong>GMP Reinraum</strong> für die Arzneimittelproduktion unterscheidet sich grundlegend von einem Forschungslabor für die Materialwissenschaft.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Flexibilität entsteht durch modulare Komponenten: Wandelemente mit verschiedenen Oberflächenqualitäten, Deckensysteme mit integrierten Filtereinheiten, Bodensysteme mit unterschiedlichen Ableitfähigkeiten. Diese Bausteine werden wie bei einem Baukasten kombiniert. Das Ergebnis ist ein maßgeschneidertes Labor – in einem Bruchteil der üblichen Bauzeit.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">GMP-Konformität und Biosicherheit aus deutscher Fertigung</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Pharmaunternehmen stehen unter enormem Druck: Produktionsräume müssen strengste Auflagen erfüllen, Audits bestehen und im laufenden Betrieb zuverlässig funktionieren. Ein <strong>GMP-Reinraum</strong> ist kein normaler Raum mit sauberen Oberflächen – er ist ein hochkomplexes System aus Lüftung, Materialschleusen, Druckkaskaden und Überwachungstechnik.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Planexus baut solche Systeme seit Jahren. Die Expertise zeigt sich in Details: Fugenlose Wandübergänge verhindern Partikelansammlungen, abgerundete Ecken erleichtern die Reinigung und Türen mit Verriegelungssystemen sichern Druckverhältnisse. Diese Merkmale sind nicht optional – sie folgen aus den Normen und der Erfahrung mit hunderten Projekten.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">BSL-Labore für hochpathogene Erreger</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Forschungseinrichtungen, die mit gefährlichen Mikroorganismen arbeiten, benötigen <strong>BSL-2/BSL-3</strong>-Labore. Die Anforderungen gehen weit über Reinraumstandards hinaus: Unterdrucksysteme verhindern das Entweichen von Partikeln, Notduschen und Augenspülstationen sind obligatorisch und Zugangskontrollsysteme dokumentieren jeden Eintritt.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Modul von Planexus erfüllt diese Vorgaben ab Werk. Die Abluftführung ist redundant ausgelegt, HEPA-Filter sitzen in abgedichteten Gehäusen und Sensoren melden jeden Druckabfall sofort. Diese Technik rettet im Ernstfall Leben – und sie funktioniert nur, wenn sie präzise gebaut wird.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">ATEX-Konformität für explosive Atmosphären</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Chemielabore und Produktionsumgebungen mit brennbaren Lösungsmitteln benötigen <a href="/magazin/laborcontainer-energiewende-h2-batterie-ex-schutz" class="text-primary font-medium hover:underline">ATEX-konforme Labore</a>. Die Herausforderung: Elektrische Geräte dürfen keine Funken erzeugen, Lüftungssysteme müssen explosionsgeschützt sein und Böden brauchen definierte Ableitfähigkeit.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Planexus setzt auf geprüfte Komponenten: Ex-geschützte Leuchten, funkenfreie Lüfter und leitfähige Bodensysteme. Jedes Element trägt Zertifizierungen, die bei Inspektionen vorgelegt werden können. Die Dokumentation ist lückenlos – von der Komponentenauswahl bis zur Endabnahme.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Digitalisierung als Wettbewerbsvorteil</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Deutsche Fertigung kann mit internationalen Anbietern preislich nicht über reine Lohnkosten konkurrieren. Der Vorteil liegt in Automatisierung, Prozessoptimierung und Qualitätssicherung. Planexus nutzt digitale Werkzeuge in allen Phasen: Von der 3D-Planung über CNC-gesteuerte Fertigung bis zur digitalen Dokumentation.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Beispiel: Die Materialverwaltung läuft über ein ERP-System, das Lieferzeiten berücksichtigt und Engpässe frühzeitig meldet. Wenn ein Kunde ein <strong>schlüsselfertiges Labor</strong> bestellt, kennt Planexus am selben Tag die Verfügbarkeit kritischer Komponenten. Diese Information fließt in die Terminplanung ein – Verzögerungen werden minimiert.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Warum Kunden auf deutsche Fertigung setzen</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Internationale Anbieter werben mit niedrigeren Preisen, aber die Gesamtkosten entscheiden. Ein Labor aus Fernost mag auf dem Papier günstiger sein – die versteckten Kosten zeigen sich später: Lange Transportzeiten, unklare Zertifizierungen, fehlende Ersatzteildokumentation und schwierige Kommunikation bei Problemen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Planexus sitzt in Deutschland, spricht Deutsch und kennt deutsche Normen. Wenn ein Kunde eine Frage hat, erreicht er binnen Stunden einen Ansprechpartner. Wenn eine Pumpe ausfällt, liegt das Ersatzteil am nächsten Tag auf der Baustelle. Diese Verlässlichkeit hat ihren Wert – gerade in zeitkritischen Projekten.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Vertrauen durch Transparenz</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Jedes Modul verlässt das Werk mit vollständiger Dokumentation: Schaltpläne, Materialnachweise, Prüfprotokolle und Bedienungsanleitungen. Diese Unterlagen sind keine Marketingbeilage – sie sind die Grundlage für Betrieb, Wartung und Audits. Ein GMP-Inspektor prüft nicht nur das Labor, sondern auch die Nachweise über verwendete Materialien und durchgeführte Tests.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Transparenz zeigt sich auch in der Kalkulation: Planexus legt offen, welche Leistungen im Festpreis enthalten sind. Keine versteckten Zuschläge, keine nachträglichen Forderungen. Der Kunde weiß vom ersten Tag, was ihn erwartet – finanziell und terminlich.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Rückverlagerung von Produktion als Trend</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Immer mehr Unternehmen verlagern kritische Fertigungsschritte zurück nach Deutschland. Die Gründe sind vielfältig: kürzere Lieferketten, bessere Qualitätskontrolle und geringere Abhängigkeit von internationalen Krisen. Die Corona-Pandemie hat gezeigt, wie verwundbar globale Lieferketten sind. Wer ein Labor aus Asien importiert, wartet heute oft Monate auf Container.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Diese Entwicklung stärkt deutsche Anbieter. Planexus profitiert davon, dass Kunden Liefersicherheit höher bewerten als minimale Preisvorteile. Ein Labor, das termingerecht geliefert wird, ermöglicht pünktliche Projektabschlüsse. Verzögerungen kosten Geld – oft mehr als die Ersparnis bei einem günstigeren Anbieter.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Fachkräfte als Erfolgsgarant</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Automatisierung ersetzt Routineaufgaben, aber sie braucht qualifizierte Menschen für Planung, Überwachung und Fehlerbehebung. Planexus beschäftigt Ingenieure, Techniker und Facharbeiter, die ihr Handwerk verstehen. Diese Expertise fließt in jedes Projekt ein – von der ersten Skizze bis zur Endabnahme.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Reinraumtechniker weiß, wie Luftströme in kritischen Bereichen verlaufen müssen. Ein Elektriker kennt die Anforderungen explosionsgeschützter Installationen. Ein Projektleiter koordiniert Gewerke und hält Termine ein. Diese Menschen machen den Unterschied zwischen einem funktionierenden Labor und einem teuren Problemfall.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Umweltbewusstsein durch regionale Fertigung</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Nachhaltigkeit ist mehr als ein Marketingbegriff. Kurze Transportwege reduzieren CO₂-Emissionen, regionale Lieferanten verkürzen Lieferketten und langlebige Konstruktionen vermeiden vorzeitigen Ersatz. Ein <strong>Laborcontainer</strong> von Planexus ist für Jahrzehnte ausgelegt – nicht für geplante Obsoleszenz. Mehr dazu im Beitrag <a href="/magazin/nachhaltigkeit-laborbau-energieeffizienz" class="text-primary font-medium hover:underline">Nachhaltigkeit im Laborbau</a>.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die verwendeten Materialien sind recyclingfähig. Edelstahl, Aluminium und Glas lassen sich am Ende der Nutzungsdauer wiederverwerten. Diese Kreislaufwirtschaft schont Ressourcen und entspricht den Nachhaltigkeitszielen vieler Forschungseinrichtungen.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Energieeffizienz als Standard</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Laborlüftungen gehören zu den größten Energieverbrauchern in Forschungsgebäuden. Planexus setzt auf hocheffiziente Komponenten: EC-Ventilatoren mit Drehzahlregelung, Wärmerückgewinnungssysteme und bedarfsgerechte Steuerungen. Diese Technik senkt die Betriebskosten erheblich – über die Lebensdauer des Labors summieren sich die Einsparungen auf fünfstellige Beträge.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                LED-Beleuchtung, optimierte Isolierung und intelligente Gebäudetechnik tragen zusätzlich zur Effizienz bei. Ein modernes Labor von Planexus verbraucht bis zu 40 Prozent weniger Energie als vergleichbare Altbauten. Diese Werte sind messbar und dokumentiert – keine Schätzungen, sondern Fakten aus der Praxis.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Projektmanagement für komplexe Anforderungen</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein <strong>modularer Laborbau</strong> ist mehr als die Lieferung eines Containers. Es ist ein Gesamtprojekt mit Planung, Genehmigungen, Logistik, Montage und Inbetriebnahme. Planexus übernimmt diese Koordination und entlastet den Kunden. Ein dedizierter Projektleiter ist vom ersten Gespräch bis zur Übergabe der Ansprechpartner. Den Ablauf beschreibt auch unser <a href="/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe" class="text-primary font-medium hover:underline">Projektleitfaden</a>.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Kommunikation läuft strukturiert: Wöchentliche Status-Updates, transparente Terminplanung und klare Verantwortlichkeiten. Wenn Probleme auftreten, reagiert Planexus sofort – nicht Tage später. Diese Reaktionsfähigkeit verhindert, dass kleine Verzögerungen zu großen Problemen werden.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Schnittstellen zu bestehenden Gebäuden</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Viele Labore entstehen nicht auf freiem Feld, sondern als Erweiterung bestehender Forschungsgebäude. Die Herausforderung: Medienversorgung, Datenleitungen und Zugangskontrolle müssen nahtlos integriert werden. Planexus plant diese Schnittstellen von Anfang an mit.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Beispiel: Ein Pharmaunternehmen erweitert seine Produktion um einen <strong>GMP Reinraum</strong>. Das neue Modul muss an das bestehende Dampf-, Druckluft- und Reinstwassersystem angeschlossen werden. Planexus koordiniert die Arbeiten mit dem Haustechnikteam des Kunden und stellt sicher, dass alle Anschlüsse passen – ohne Nacharbeiten, ohne Improvisationen.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Kostenvergleich: Schnellbau versus traditioneller Laborbau</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die initiale Investition für einen <strong>Laborcontainer</strong> liegt oft im gleichen Bereich wie ein konventioneller Neubau. Der wirtschaftliche Vorteil zeigt sich anderswo: Vier bis sechs Monate frühere Nutzung bedeuten frühere Umsätze. Für ein Biotech-Start-up kann das über Erfolg oder Scheitern entscheiden.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Hinzu kommen reduzierte Baunebenkosten: Kein langwieriges Vergabeverfahren, keine Koordination zwischen zehn Gewerken, keine unerwarteten Baukostensteigerungen. Planexus liefert zum Festpreis – kalkulierbar und transparent.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Total Cost of Ownership berücksichtigen</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der Kaufpreis ist nur ein Teil der Gesamtkosten. Wartung, Energie und Ersatzteile summieren sich über Jahre. Ein Labor von Planexus ist auf niedrige Betriebskosten ausgelegt: Langlebige Komponenten, einfache Wartungszugänge und energieeffiziente Technik senken die laufenden Ausgaben.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Zusätzlich steigt der Wiederverkaufswert: Ein gepflegtes, normkonformes Labor lässt sich nach Jahren noch verkaufen oder vermieten. Diese Flexibilität haben fest gemauerte Labore nicht – sie sind für den jeweiligen Standort gebaut und kaum veräußerbar.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Internationale Regelungen und Herkunftskennzeichnung</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der Begriff <strong>Made in Germany</strong> ist rechtlich nicht geschützt – es gibt keine zentrale Zertifizierungsstelle. Hersteller tragen Eigenverantwortung für korrekte Angaben. Bei Planexus bedeutet das: Die wesentlichen Fertigungsschritte finden in Deutschland statt, die Qualitätsprüfung erfolgt vor Ort und die Projektleitung sitzt in Albstadt-Laufen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Internationale Kunden schätzen diese Transparenz. Sie wissen, dass deutsche Normen gelten, deutsche Haftungsregeln greifen und deutsche Gerichte im Konfliktfall zuständig sind. Diese Rechtssicherheit ist bei Projekten mit Millionenwerten kein Nebenfaktor.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Zollbestimmungen bei Export</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Planexus liefert auch ins europäische Ausland und gelegentlich in Drittstaaten. Die Herkunftskennzeichnung spielt bei Zollabwicklungen eine Rolle: Ursprungsnachweise beschleunigen die Abfertigung und können Zollvorteile erschließen. Die Dokumentation bei Planexus ist so aufgebaut, dass alle relevanten Nachweise vorliegen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Export nach Asien erfordert detaillierte Materiallisten, Prüfzertifikate und manchmal Konformitätserklärungen für lokale Normen. Planexus kennt diese Anforderungen und bereitet die Unterlagen entsprechend vor. Der Kunde muss sich nicht um bürokratische Details kümmern – er bekommt ein Labor, das am Zielort zugelassen wird.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Digitalisierung im Laboralltag</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Moderne Labore sind digital vernetzt: Sensoren erfassen Temperatur, Druck und Partikelzahlen in Echtzeit. Diese Daten fließen in Überwachungssysteme, die Abweichungen sofort melden. Planexus integriert solche Systeme standardmäßig – nicht als Zusatzoption. Details dazu finden Sie unter <a href="/magazin/laborcontainer-digitalisierung-lims-iot-remote-monitoring" class="text-primary font-medium hover:underline">Digitalisierung im Laborcontainer</a>.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die digitale Infrastruktur ermöglicht auch Fernwartung: Ein Techniker kann Störungen diagnostizieren, ohne vor Ort zu sein. Software-Updates werden eingespielt, ohne dass das Labor abgeschaltet werden muss. Diese Servicekonzepte reduzieren Ausfallzeiten und senken Kosten.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Datenintegrität und Compliance</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Pharmaunternehmen müssen Datenintegrität nachweisen – eine zentrale GMP-Anforderung. Messgeräte dürfen nicht manipulierbar sein, Aufzeichnungen müssen revisionssicher archiviert werden und Zugriffe sind zu protokollieren. Planexus berücksichtigt diese Vorgaben bei der Auswahl von Steuerungssystemen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Audit verlangt Nachweise über Kalibrierungen, Wartungen und Systemänderungen. Die digitale Dokumentation bei Planexus erfüllt diese Anforderungen ab Werk. Der Kunde bekommt ein System, das audit-ready ist – ohne nachträgliche Anpassungen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Pharmaunternehmen, Forschungseinrichtungen und Biotech-Firmen können sich auf Planexus GmbH verlassen: <strong>Made in Germany</strong> verbindet im <strong>Laborbau</strong> höchste Qualität mit beeindruckender Geschwindigkeit. Wer normkonforme <strong>schlüsselfertige Labore</strong> in 8 bis 14 Wochen benötigt, findet in Albstadt-Laufen einen Partner, der Versprechen hält.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center not-prose">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Termin in Albstadt-Laufen vereinbaren</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Persönlich oder digital: Wir besprechen Ihre Anforderungen, den realistischen Zeitplan und die nächsten Schritte – unverbindlich und auf Ihr Projekt zugeschnitten.</p>
+                <a href="/kontakt" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Kontakt aufnehmen
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">Auf einen Blick</h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Lieferzeit: 8–14 Wochen</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Fertigung in Albstadt-Laufen</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Modul zu 90 % werkstattfertig</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> GMP-, BSL-2/3- und ATEX-fähig</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Parallelfertigung statt Sequenzbau</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Festpreis &amp; volle Dokumentation</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Bis 40 % weniger Energieverbrauch</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <h4 class="font-bold text-slate-900 mb-4">Weiterführende Inhalte</h4>
+                <ul class="space-y-3">
+                  <li><a href="/magazin/gmp-reinraum-container-pharma-produktion" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>GMP-Reinraum im Container</a></li>
+                  <li><a href="/magazin/bsl-2-bsl-3-container-labor" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>BSL-2- &amp; BSL-3-Container</a></li>
+                  <li><a href="/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Projektablauf Idee bis Übergabe</a></li>
+                  <li><a href="/magazin/innovation-modulbau-zukunft-mobiles-labor" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Innovation im Modulbau</a></li>
+                  <li><a href="/magazin/nachhaltigkeit-laborbau-energieeffizienz" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Nachhaltigkeit &amp; Energieeffizienz</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <h4 class="font-bold mb-3">Projekt anfragen</h4>
+                <p class="text-gray-400 text-sm mb-4">Sie brauchen ein normkonformes Labor in Wochen statt Monaten? Wir prüfen Machbarkeit und Zeitplan für Ihr Vorhaben.</p>
+                <a href="/kontakt" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Kontakt aufnehmen</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Häufig gestellte Fragen</h2>
+          <div class="space-y-4">
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wie kann ein komplexes Labor in nur 8 bis 14 Wochen fertig sein?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Die kurze Lieferzeit resultiert aus parallelen Prozessen und modularer Vorbauweise. Während am Aufstellort Fundament und Anschlüsse vorbereitet werden, entsteht im Werk das komplette Labormodul. Qualitätsprüfungen laufen während der Fertigung, nicht erst nach Abschluss. Das Modul verlässt die Werkshalle zu <strong>90 Prozent fertig</strong> – nur Anschlussarbeiten bleiben vor Ort.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Erfüllen modulare Labore die gleichen Normen wie traditionelle Bauten?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Ja, ohne Einschränkung. Planexus baut nach den gleichen <strong>GMP-Richtlinien</strong>, Reinraumnormen und Biosicherheitsstandards wie konventionelle Labore. Der Unterschied liegt in der Bauweise, nicht in den Anforderungen. Zertifizierungen und Dokumentation entsprechen den Vorgaben für regulierte Bereiche.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Was passiert bei Erweiterungen oder Umbauten später?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Module sind erweiterbar und umrüstbar. Wandelemente lassen sich versetzen, technische Systeme nachrüsten und Raumaufteilungen anpassen. Diese Flexibilität ist ein Kernvorteil modularer Bauweise. Ein Unternehmen kann klein starten und bei Bedarf erweitern – ohne kompletten Neubau.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Garantien gibt es auf die technischen Systeme?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Planexus gewährt standardmäßig Gewährleistung nach BGB. Zusätzlich bietet das Unternehmen Wartungsverträge an, die über die gesetzliche Pflicht hinausgehen: regelmäßige Inspektionen, vorbeugende Instandhaltung und Ersatzteilversorgung. Kritische Komponenten wie HEPA-Filter und Steuerungstechnik werden nach Herstellervorgaben gewartet.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Ist Made in Germany noch wettbewerbsfähig im Preis?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Der Vergleich reiner Anschaffungskosten greift zu kurz. Deutsche Fertigung punktet bei Gesamtkosten: kürzere Lieferzeiten, geringere Transportkosten, niedrigere Ausfallrisiken und längere Lebensdauer. Ein Labor, das zwei Jahre früher Umsätze generiert, amortisiert sich schneller als eine günstigere Lösung mit langer Wartezeit.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedArticles slug="made-in-germany-qualitaet-tempo-laborbau" />
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/magazin" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Zurück zum Magazin
+      </a>
+    </div>
+  </div>
+</Layout>
