@@ -47,6 +47,8 @@ export const DE_TO_EN: Record<string, string> = {
   '/laborcontainer-graz': '/en/lab-containers-graz',
   '/laborcontainer-linz': '/en/lab-containers-linz',
   '/magazin': '/en/magazine',
+  '/magazin/laborcontainer-ausschreibung-lastenheft':
+    '/en/magazine/lab-container-tender-specifications',
   '/magazin/wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler':
     '/en/magazine/when-the-new-lab-arrives-too-late-5-planning-mistakes',
   '/magazin/laborcontainer-laborabzug-din-en-14175':

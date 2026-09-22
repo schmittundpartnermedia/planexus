@@ -1,0 +1,467 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Picture from '../../components/Picture.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Laborcontainer ausschreiben: Lastenheft und Checkliste",
+  "description": "Laborcontainer richtig ausschreiben: Anforderungen, Schnittstellen, Abnahme und Angebotsvergleich. Mit Checkliste für belastbare Vergabeunterlagen.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/team/sven-biewald", "jobTitle": "Geschäftsführer", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22",
+  "image": "https://planexus.de/images/blog-laborcontainer-ausschreibung-lastenheft.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/magazin/laborcontainer-ausschreibung-lastenheft" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/magazin" },
+    { "@type": "ListItem", "position": 3, "name": "Laborcontainer ausschreiben: Lastenheft und Checkliste", "item": "https://planexus.de/magazin/laborcontainer-ausschreibung-lastenheft" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welche Angaben braucht ein Anbieter für ein erstes Laborcontainer Angebot?", "acceptedAnswer": { "@type": "Answer", "text": "Mindestens Nutzung, gewünschte Fläche, Sicherheitsniveau, Geräteliste, Standort, verfügbare Medien, Zieltermin und Nutzungsdauer. Für ein belastbares Angebot kommen Raumprogramm, Anschlusswerte, Schnittstellen und Abnahmeanforderungen hinzu." } },
+    { "@type": "Question", "name": "Was gehört in ein Lastenheft für einen Laborcontainer?", "acceptedAnswer": { "@type": "Answer", "text": "Das Lastenheft beschreibt Ziele, Arbeitsprozesse, Nutzer, Risiken, Räume, Geräte, technische Anforderungen, Standortbedingungen, Termine, Genehmigungen, Dokumentation und Abnahmekriterien aus Sicht des Auftraggebers." } },
+    { "@type": "Question", "name": "Soll ein Laborcontainer funktional oder mit Leistungsverzeichnis ausgeschrieben werden?", "acceptedAnswer": { "@type": "Answer", "text": "Das hängt vom Planungsstand ab. Häufig ist eine Kombination sinnvoll: funktionale Zielvorgaben für die Gesamtlösung und detaillierte Mindestanforderungen für Sicherheit, Schnittstellen, Medien, Abnahme und Dokumentation." } },
+    { "@type": "Question", "name": "Wie lassen sich Laborcontainer Angebote vergleichen?", "acceptedAnswer": { "@type": "Answer", "text": "Nicht nur über den Endpreis. Verglichen werden sollten Leistungsumfang, technische Werte, Schnittstellen, Prüfungen, Dokumentation, Terminplan, Referenzen, Betriebskosten und klar ausgewiesene Optionen oder Ausschlüsse." } },
+    { "@type": "Question", "name": "Welche Schnittstellen führen besonders oft zu Nachträgen?", "acceptedAnswer": { "@type": "Answer", "text": "Typisch sind Fundament, Medienzuleitungen, Kran und Transport, Genehmigungsleistungen, Laborabwasser, externe Gasversorgung, IT, Außenanlagen sowie Qualifizierung und Abnahme." } },
+    { "@type": "Question", "name": "Wann sollte ein Fachplaner eingebunden werden?", "acceptedAnswer": { "@type": "Answer", "text": "Spätestens bevor die Leistungsbeschreibung finalisiert und an Anbieter versendet wird. Bei Sicherheitslaboren, Reinräumen, komplexer TGA oder öffentlichen Vergaben sollte die Fachplanung bereits die Bedarfs- und Konzeptphase begleiten." } }
+  ]
+};
+---
+
+<Layout
+  type="article"
+  title="Laborcontainer ausschreiben: Lastenheft und Checkliste"
+  description="Laborcontainer richtig ausschreiben: Anforderungen, Schnittstellen, Abnahme und Angebotsvergleich. Mit Checkliste für belastbare Vergabeunterlagen."
+  canonical="/magazin/laborcontainer-ausschreibung-lastenheft"
+  ogImage="/images/blog-laborcontainer-ausschreibung-lastenheft.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-laborcontainer-ausschreibung-lastenheft.jpg')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+              Ratgeber
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              12 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Laborcontainer richtig ausschreiben
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Eine ungenaue Ausschreibung macht Laborcontainer-Angebote scheinbar günstig, aber technisch unvergleichbar. Dieser Leitfaden zeigt, welche Angaben in Lastenheft und Leistungsbeschreibung gehören.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              22. September 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald, Geschäftsführer Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/magazin" class="hover:text-primary">Magazin</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Laborcontainer ausschreiben</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                Ein <strong class="text-slate-900 font-semibold">Laborcontainer</strong> ist kein Standardcontainer mit Labormöbeln. Er ist ein technisch hochintegriertes Gebäude mit Lüftung, Medienversorgung, Sicherheitsfunktionen und klaren Anforderungen an Betrieb und Abnahme. Genau deshalb entscheidet die Qualität der <strong class="text-slate-900 font-semibold">Laborcontainer Ausschreibung</strong> darüber, ob Sie belastbare Angebote erhalten oder später über Nachträge, fehlende Schnittstellen und Terminverschiebungen sprechen müssen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Dieser Leitfaden zeigt, welche Angaben Auftraggeber vor der Anfrage klären sollten, was in <strong class="text-slate-900 font-semibold">Lastenheft</strong> und Leistungsbeschreibung gehört und wie sich Angebote fachlich statt nur über den Endpreis vergleichen lassen. Den Gesamtablauf von der Idee bis zur Übergabe beschreibt unser <a href="/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe" class="text-primary font-medium hover:underline">Projektleitfaden</a>.
+              </p>
+
+              <figure class="my-10">
+                <Picture
+                  src="/images/blog-laborcontainer-ausschreibung-lastenheft.jpg"
+                  alt="Projektteam aus Laborplanung und Technik prüft Grundriss, Leistungsverzeichnis und Geräteliste für einen modularen Laborcontainer"
+                  width={1280}
+                  height={720}
+                  loading="eager"
+                  fetchpriority="high"
+                  class="w-full rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Belastbare Vergabeunterlagen entstehen am Tisch: Raumprogramm, Geräteliste und Schnittstellen, bevor der erste Anbieter kalkuliert.
+                </figcaption>
+              </figure>
+
+              <h2 id="zu-frueh" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Warum Laborcontainer Ausschreibungen oft zu früh starten</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der häufigste Fehler liegt nicht in einem falschen technischen Detail. Die Ausschreibung beginnt, bevor die Nutzung des Labors ausreichend beschrieben ist. Dann erhalten Anbieter zwar dieselbe Anfrage, kalkulieren aber unterschiedliche Lösungen. Der eine rechnet mit einer einfachen Abluftanlage, der nächste mit redundanter Regelung. Einer berücksichtigt die Medienanschlüsse bis zum Übergabepunkt, ein anderer nur innerhalb des Containers.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Auf dem Papier stehen drei Preise. Technisch sind es drei verschiedene Projekte. Das ist derselbe Mechanismus, der in unserem Beitrag zu <a href="/magazin/wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler" class="text-primary font-medium hover:underline">Planungsfehlern</a> Terminverschiebungen auslöst – nur dass er hier schon in der Vergabe unsichtbar bleibt.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für öffentliche Auftraggeber ist die Vergleichbarkeit nicht nur praktisch wichtig. <a href="https://www.gesetze-im-internet.de/gwb/__121.html" class="text-primary font-medium hover:underline" rel="noopener noreferrer">§ 121 GWB</a> verlangt, den Auftragsgegenstand so eindeutig wie möglich zu beschreiben, dass Unternehmen die Beschreibung im gleichen Sinne verstehen und Angebote verglichen werden können. Auch bei privaten Vergaben ist das der richtige Maßstab: gleiche Anforderungen, klar definierte Grenzen und nachvollziehbare Nachweise.
+              </p>
+
+              <h2 id="lastenheft" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Lastenheft und Leistungsbeschreibung sind nicht dasselbe</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Das <strong class="text-slate-900 font-semibold">Laborcontainer Lastenheft</strong> beschreibt aus Sicht des Auftraggebers, was das neue Labor leisten muss. Es enthält Ziele, Nutzungsprofil, Rahmenbedingungen und Muss-Anforderungen. Die <strong class="text-slate-900 font-semibold">Laborcontainer Leistungsbeschreibung</strong> übersetzt diesen Bedarf in eine ausschreibungsfähige Struktur: Welche Planungs-, Bau-, Ausstattungs-, Prüf- und Dokumentationsleistungen sind geschuldet?
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Bei funktionalen Ausschreibungen wird das erwartete Ergebnis beschrieben, während der Anbieter die technische Lösung entwickelt. Bei detaillierten Leistungsverzeichnissen werden einzelne Leistungen und Mengen genauer vorgegeben. Für individuelle Laborcontainer ist häufig eine Kombination sinnvoll: verbindliche Funktions- und Leistungsanforderungen plus konkrete Mindeststandards für sicherheitskritische und schnittstellenrelevante Bereiche.
+              </p>
+
+              <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8 not-prose">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Kernaussage</h4>
+                    <p class="text-gray-600 text-sm">
+                      Lastenheft = Bedarf des Auftraggebers. Leistungsbeschreibung = geschuldete Leistung. Ohne diese Trennung vergleichen Sie Preise, nicht Projekte.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 id="pflichtbereiche" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Die 10 Pflichtbereiche einer belastbaren Ausschreibung</h2>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">1. Nutzung und Prozesse</h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                Beginnen Sie nicht mit Quadratmetern, sondern mit den Tätigkeiten im Labor. Welche Proben, Stoffe und Verfahren kommen vor? Welche Personen arbeiten gleichzeitig? Welche Stoffmengen, Temperaturen, Emissionen oder biologischen Risiken entstehen? Erst aus dem Prozess ergeben sich Raumlayout, Lüftung, Oberflächen, Sicherheitsausstattung und Entsorgung.
+              </p>
+              <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+                <li>Laborart und konkrete Arbeitsabläufe</li>
+                <li>Gefahrstoffe, biologische Arbeitsstoffe oder explosionsfähige Atmosphären</li>
+                <li>Personenzahl, Schichtbetrieb und Besucher</li>
+                <li>Reinigungs- und Hygienekonzept</li>
+                <li>Geplante Nutzungsdauer und spätere Erweiterungen</li>
+              </ul>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">2. Standort und Aufstellung</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die beste Containerplanung scheitert, wenn der Aufstellort nicht zum Konzept passt. Die Ausschreibungsunterlagen sollten Lageplan, Zufahrt, Kranstellfläche, Baugrundinformationen, Höhenbeschränkungen und örtliche Lastannahmen enthalten. Ebenso wichtig ist die klare Zuordnung, wer Fundament, Erdarbeiten und Genehmigungen übernimmt. Details dazu im Beitrag zu <a href="/magazin/laborcontainer-aufstellung-bodenplatte-statik" class="text-primary font-medium hover:underline">Aufstellung, Bodenplatte und Statik</a>.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">3. Raumprogramm und Arbeitsabläufe</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Definieren Sie nicht nur die Gesamtfläche. Benennen Sie Räume, Arbeitsplätze, Schleusen, Lager, Technikbereiche und die notwendigen Beziehungen untereinander. Material-, Proben-, Personal- und Abfallwege müssen ohne Konflikte funktionieren. Bei Reinraum-, GMP- oder Sicherheitslaboren kommen Druckzonen und kontrollierte Übergänge hinzu.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">4. Geräte und Wärmelasten</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Eine vollständige Geräteliste ist eine der wertvollsten Anlagen der Ausschreibung. Sie sollte Abmessungen, Gewicht, elektrische Anschlussleistung, Abwärme, Medienbedarf, Abluftmenge und besondere Aufstellbedingungen enthalten. Werden Geräte erst nachträglich konkretisiert, ändern sich häufig Elektroverteilung, Klimaauslegung, Möblierung und Statik gleichzeitig.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">5. Lüftung und Klima</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für die Raumlufttechnik reichen Formulierungen wie „ausreichende Lüftung“ nicht aus. Beschreiben Sie Solltemperaturen, zulässige Feuchtebereiche, Betriebszeiten, erforderliche Druckverhältnisse, Abluftquellen, Filterstufen und Anforderungen an Redundanz oder Monitoring. Laborabzüge sind mit ihrer Betriebsweise und den maßgeblichen Anforderungen, etwa nach DIN EN 14175, einzubeziehen. Für Laborlüftung und Schutzmaßnahmen sind je nach Nutzung unter anderem DIN 1946-7 und TRGS 526 relevant. Vertiefend: <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="text-primary font-medium hover:underline">Klimatisierung und Lüftungsnormen</a> sowie <a href="/magazin/laborcontainer-laborabzug-din-en-14175" class="text-primary font-medium hover:underline">Laborabzüge nach DIN EN 14175</a>.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">6. Medienversorgung und Entsorgung</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Strom, Daten, Trinkwasser, Reinstwasser, Abwasser, Druckluft und technische Gase brauchen definierte Anschlusswerte und Übergabepunkte. Legen Sie fest, ob der Anbieter nur die interne Verteilung oder auch Leitungen bis zum bauseitigen Netz schuldet. Für Laborabwasser muss geklärt werden, ob Neutralisation, Rückhaltung, getrennte Erfassung oder eine behördliche Abstimmung erforderlich ist.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">7. Sicherheit und Genehmigungen</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Ausschreibung muss das Sicherheitsniveau aus der Nutzung ableiten. Dazu gehören Brandschutz, Flucht- und Rettungswege, Zugangskontrolle, Gaswarntechnik, Notduschen, Sicherheitsstromversorgung und gegebenenfalls Explosionsschutz, Biostoff- oder Gentechnikrecht. Nennen Sie außerdem, wer Bauantrag, Brandschutzkonzept, Statik, Schallschutz und weitere Fachnachweise erstellt und bis zur Freigabe begleitet. Praxisleitfaden: <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="text-primary font-medium hover:underline">Genehmigung, Baurecht und Vorschriften</a>.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">8. Liefergrenzen und Schnittstellen</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Hier entstehen die meisten Nachträge. Jede technische und organisatorische Grenze muss eindeutig sein: Wo endet die Leistung des Containeranbieters? Wer stellt Fundamente, Medienzuleitungen, Netzwerk, Außenanlagen, Kran, Absperrungen und behördliche Gebühren? Ein guter Schnittstellenplan benennt für jede Position Leistung, Verantwortlichen, Übergabepunkt, Termin und erforderlichen Nachweis.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">9. Prüfung, Abnahme und Qualifizierung</h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                „Betriebsbereit“ ist zu ungenau. Definieren Sie vorab, welche Prüfungen vor Auslieferung und am Standort stattfinden. Typisch sind eine Werksabnahme, die Inbetriebnahme am Aufstellort und dokumentierte Funktionsprüfungen. Bei regulierten Anwendungen kommen Qualifizierungs- oder Validierungsleistungen hinzu. Akzeptanzkriterien, Messmethoden, Protokolle und der Umgang mit Abweichungen gehören bereits in die Vergabeunterlagen.
+              </p>
+              <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+                <li>Werksabnahme mit dokumentiertem Prüfumfang</li>
+                <li>Abnahme nach Montage und Medienanschluss</li>
+                <li>Messungen zu Luftmengen, Druckstufen, Temperatur und Alarmfunktionen</li>
+                <li>Prüfprotokolle für Elektro-, Sicherheits- und Medienanlagen</li>
+                <li>Mängelliste, Fristen und Kriterien für die endgültige Abnahme</li>
+              </ul>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">10. Dokumentation, Schulung und Wartung</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Zur geschuldeten Leistung sollten Bestandspläne, Schalt- und Fließbilder, Datenblätter, Prüfprotokolle, Konformitätsunterlagen, Bedienungsanleitungen und Wartungspläne gehören. Legen Sie Datenformate und Sprache fest. Planen Sie außerdem die Einweisung des Betriebspersonals und definieren Sie, welche Wartungs- und Serviceleistungen optional oder verbindlich angeboten werden sollen.
+              </p>
+
+              <h2 id="unterlagen" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Welche Unterlagen Anbieter wirklich brauchen</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Je vollständiger die Ausgangsdaten, desto weniger Risikozuschläge und Rückfragen entstehen. Für eine belastbare Anfrage sollten mindestens folgende Unterlagen bereitstehen:
+              </p>
+
+              <div class="bg-slate-50 border border-gray-100 rounded-2xl p-8 my-8 not-prose">
+                <h3 class="text-xl font-heading font-bold text-slate-900 mb-4">Checkliste Anfrageunterlagen</h3>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Projektsteckbrief mit Ziel, Termin und Budgetrahmen</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Nutzungs- und Prozessbeschreibung</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Raumprogramm mit Flächen und Funktionsbeziehungen</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Geräteliste mit Anschlusswerten und Abwärme</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Lageplan, Baugrund- und Zufahrtsinformationen</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Übersicht vorhandener Medien und möglicher Übergabepunkte</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Genehmigungsstand und bekannte behördliche Auflagen</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Verantwortungs- und Schnittstellenmatrix</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Geforderter Prüf-, Abnahme- und Dokumentationsumfang</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Terminplan mit verbindlichen Meilensteinen</span></li>
+                </ul>
+              </div>
+
+              <h2 id="vergleich" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Angebote richtig vergleichen</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der niedrigste Angebotspreis ist nur dann aussagekräftig, wenn Leistungsumfang und technische Qualität übereinstimmen. Erstellen Sie deshalb vor der Wertung eine Vergleichsmatrix. Fehlende Positionen werden nicht als Preisvorteil behandelt, sondern als Klärungspunkt oder kalkulatorisches Risiko. Wie sich Preise überhaupt zusammensetzen, zeigt der Beitrag zu <a href="/magazin/laborcontainer-kosten-preise-2026" class="text-primary font-medium hover:underline">Laborcontainer-Kosten und Preisen</a>.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Prüffeld</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Was verglichen wird</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Warnsignal</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Leistungsumfang</td>
+                      <td class="border border-gray-200 px-4 py-3">Planung, Fertigung, Ausstattung, Logistik, Montage</td>
+                      <td class="border border-gray-200 px-4 py-3">Pauschalpreis ohne klare Abgrenzung</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Technik</td>
+                      <td class="border border-gray-200 px-4 py-3">Luftmengen, Redundanz, Filter, Regelung, Medien</td>
+                      <td class="border border-gray-200 px-4 py-3">Nur Produktnamen ohne Leistungswerte</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Schnittstellen</td>
+                      <td class="border border-gray-200 px-4 py-3">Fundament, Anschlüsse, Kran, Genehmigung</td>
+                      <td class="border border-gray-200 px-4 py-3">Viele bauseitige Leistungen ohne Kostenausweis</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Abnahme</td>
+                      <td class="border border-gray-200 px-4 py-3">Prüfumfang, Messwerte, Dokumentation</td>
+                      <td class="border border-gray-200 px-4 py-3">„Funktionsfähig“ ohne Akzeptanzkriterien</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Termin</td>
+                      <td class="border border-gray-200 px-4 py-3">Meilensteine, Freigaben, Liefer- und Montagezeit</td>
+                      <td class="border border-gray-200 px-4 py-3">Lieferwoche ohne Voraussetzungen</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Betrieb</td>
+                      <td class="border border-gray-200 px-4 py-3">Energie, Filter, Wartung, Ersatzteile, Service</td>
+                      <td class="border border-gray-200 px-4 py-3">Niedriger Kaufpreis, hohe Folgekosten</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Erfahrung</td>
+                      <td class="border border-gray-200 px-4 py-3">Vergleichbare Referenzen und Fachplanung</td>
+                      <td class="border border-gray-200 px-4 py-3">Allgemeiner Containerbau ohne Labornachweis</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Bewerten Sie neben dem Preis mindestens technische Erfüllung, Projektorganisation, Terminrisiko, Dokumentationsumfang, Referenzen und Betriebskosten. Für öffentliche Vergaben müssen Zuschlagskriterien und Gewichtung transparent in den Vergabeunterlagen festgelegt werden. Bei privaten Projekten schafft dieselbe Vorgehensweise eine nachvollziehbare Entscheidung.
+              </p>
+
+              <h2 id="fehler" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Sieben typische Ausschreibungsfehler</h2>
+
+              <ol class="space-y-3 text-gray-700 mb-8 not-prose">
+                <li class="flex gap-3"><span class="text-primary font-bold">1.</span> <span>Der gewünschte Liefertermin wird genannt, aber Planungsfreigaben und Genehmigungszeiten fehlen.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">2.</span> <span>Eine Quadratmeterzahl ersetzt das Raum- und Prozessprogramm.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">3.</span> <span>Geräte werden aufgelistet, aber Anschlusswerte, Abwärme und Abluftbedarf fehlen.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">4.</span> <span>Normen werden pauschal gesammelt, ohne ihre Anwendung auf die konkrete Nutzung zu klären.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">5.</span> <span>Bauseitige Leistungen und Übergabepunkte bleiben offen.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">6.</span> <span>Abnahme und Dokumentation werden erst kurz vor der Lieferung besprochen.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">7.</span> <span>Angebote werden nach Endsumme verglichen, obwohl Leistungsumfang und Qualitätsniveau abweichen.</span></li>
+              </ol>
+
+              <h2 id="ablauf" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">So läuft die Ausschreibung in sechs Schritten</h2>
+
+              <ol class="space-y-4 text-gray-700 mb-8 not-prose">
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">1.</span> <span><strong class="text-slate-900">Bedarf klären:</strong> Prozesse, Risiken, Kapazität, Nutzungsdauer und Zieltermin erfassen.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">2.</span> <span><strong class="text-slate-900">Standort prüfen:</strong> Aufstellung, Zufahrt, Baugrund, Medien und Genehmigungsweg bewerten.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">3.</span> <span><strong class="text-slate-900">Planungsgrundlage erstellen:</strong> Raumprogramm, Geräteliste, Funktionsschema und Schnittstellen festlegen.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">4.</span> <span><strong class="text-slate-900">Leistung beschreiben:</strong> Muss-Anforderungen, Optionen, Nachweise, Abnahmen und Dokumentation definieren.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">5.</span> <span><strong class="text-slate-900">Bieterfragen strukturiert beantworten:</strong> Informationen für alle Anbieter einheitlich bereitstellen.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">6.</span> <span><strong class="text-slate-900">Angebote technisch und wirtschaftlich werten:</strong> Abweichungen, Lücken und Lebenszykluskosten sichtbar machen.</span></li>
+              </ol>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In der HOAI ist die Vorbereitung der Vergabe als eigene Leistungsphase beschrieben. Dazu gehören unter anderem Vergabeterminplan, Leistungsbeschreibungen mit Leistungsverzeichnissen, Mengenermittlung und Schnittstellenkoordination. Das zeigt, warum eine belastbare Ausschreibung kein Nebenprodukt einer frühen Skizze ist, sondern eine eigenständige Planungsleistung – bei Planexus Teil der <a href="/leistungen/planung" class="text-primary font-medium hover:underline">technischen Fachplanung</a>.
+              </p>
+
+              <h2 id="funktional" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Wann eine funktionale Ausschreibung sinnvoll ist</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Eine funktionale Beschreibung kann sinnvoll sein, wenn Auftraggeber das gewünschte Ergebnis und die verbindlichen Randbedingungen klar benennen, den Lösungsweg aber bewusst der Fachplanung des Anbieters überlassen. Das nutzt die Erfahrung spezialisierter Laborplaner und lässt Raum für wirtschaftliche Lösungen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Sie funktioniert jedoch nur, wenn die Mindestanforderungen messbar sind. „Moderne Lüftung“, „hochwertige Ausstattung“ oder „schlüsselfertig“ sind keine überprüfbaren Kriterien. Funktionswerte, Kapazitäten, Materialbeständigkeit, Schnittstellen, Prüfungen und Lieferumfang müssen auch bei einer funktionalen Ausschreibung eindeutig bleiben.
+              </p>
+
+              <h2 id="fazit" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fazit</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Eine gute <strong class="text-slate-900 font-semibold">Laborcontainer Ausschreibung</strong> macht nicht alles maximal detailliert. Sie macht das Wesentliche eindeutig. Nutzung, Sicherheitsniveau, Leistungsgrenzen, technische Zielwerte, Abnahmekriterien und Dokumentation müssen so beschrieben sein, dass mehrere Anbieter dasselbe Projekt kalkulieren.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Wer diese Grundlagen vor der Anfrage sauber erarbeitet, erhält vergleichbarere Angebote, reduziert Nachträge und schützt den Terminplan. Die Ausschreibung wird damit nicht länger, sondern belastbarer – und aus einem Containerpreis wird eine fundierte Projektentscheidung. Ob <a href="/laborcontainer-mieten" class="text-primary font-medium hover:underline">Miete</a> oder <a href="/laborcontainer-kaufen" class="text-primary font-medium hover:underline">Kauf</a>: Die Unterlagen entscheiden über die Vergleichbarkeit, nicht das Vertragsmodell.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center not-prose">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Lastenheft vor der Anfrage klären</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Sie planen einen Laborcontainer und möchten Lastenheft, Schnittstellen und technische Anforderungen vor der Anfrage belastbar klären? Planexus begleitet Sie von der Bedarfsanalyse und Fachplanung bis zur Ausschreibung, Fertigung und schlüsselfertigen Übergabe.</p>
+                <a href="/kontakt" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Kostenlose Erstberatung anfragen
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">Auf einen Blick</h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Lastenheft ≠ Leistungsbeschreibung</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> 10 Pflichtbereiche der Ausschreibung</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Schnittstellen verursachen die Nachträge</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Angebote nie nur nach Endpreis werten</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Abnahme mit Akzeptanzkriterien</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Funktional nur mit messbaren Mindestwerten</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> HOAI LP 6: Vergabe ist Planungsleistung</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <h4 class="font-bold text-slate-900 mb-4">Weiterführende Inhalte</h4>
+                <ul class="space-y-3">
+                  <li><a href="/laborcontainer" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Laborcontainer Übersicht</a></li>
+                  <li><a href="/leistungen/planung" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Technische Fachplanung</a></li>
+                  <li><a href="/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Projektablauf Idee bis Übergabe</a></li>
+                  <li><a href="/magazin/laborcontainer-kosten-preise-2026" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Kosten und Kalkulation</a></li>
+                  <li><a href="/magazin/wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Planungsfehler vermeiden</a></li>
+                  <li><a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Genehmigung und Baurecht</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <h4 class="font-bold mb-3">Ausschreibung absichern?</h4>
+                <p class="text-gray-400 text-sm mb-4">Wir prüfen Lastenheft, Schnittstellen und Abnahmekriterien, bevor Sie anbieten lassen.</p>
+                <a href="/kontakt" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Kontakt aufnehmen</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Häufige Fragen zur Laborcontainer Ausschreibung</h2>
+          <div class="space-y-4">
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Angaben braucht ein Anbieter für ein erstes Laborcontainer Angebot?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Mindestens Nutzung, gewünschte Fläche, Sicherheitsniveau, Geräteliste, Standort, verfügbare Medien, Zieltermin und Nutzungsdauer. Für ein belastbares Angebot kommen Raumprogramm, Anschlusswerte, Schnittstellen und Abnahmeanforderungen hinzu.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Was gehört in ein Lastenheft für einen Laborcontainer?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Das Lastenheft beschreibt Ziele, Arbeitsprozesse, Nutzer, Risiken, Räume, Geräte, technische Anforderungen, Standortbedingungen, Termine, Genehmigungen, Dokumentation und Abnahmekriterien aus Sicht des Auftraggebers.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Soll ein Laborcontainer funktional oder mit Leistungsverzeichnis ausgeschrieben werden?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Das hängt vom Planungsstand ab. Häufig ist eine Kombination sinnvoll: funktionale Zielvorgaben für die Gesamtlösung und detaillierte Mindestanforderungen für Sicherheit, Schnittstellen, Medien, Abnahme und Dokumentation.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wie lassen sich Laborcontainer Angebote vergleichen?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Nicht nur über den Endpreis. Verglichen werden sollten Leistungsumfang, technische Werte, Schnittstellen, Prüfungen, Dokumentation, Terminplan, Referenzen, Betriebskosten und klar ausgewiesene Optionen oder Ausschlüsse.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Welche Schnittstellen führen besonders oft zu Nachträgen?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Typisch sind Fundament, Medienzuleitungen, Kran und Transport, Genehmigungsleistungen, Laborabwasser, externe Gasversorgung, IT, Außenanlagen sowie Qualifizierung und Abnahme.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Wann sollte ein Fachplaner eingebunden werden?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Spätestens bevor die Leistungsbeschreibung finalisiert und an Anbieter versendet wird. Bei Sicherheitslaboren, Reinräumen, komplexer TGA oder öffentlichen Vergaben sollte die Fachplanung bereits die Bedarfs- und Konzeptphase begleiten.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedArticles slug="laborcontainer-ausschreibung-lastenheft" />
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/magazin" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Zurück zum Magazin
+      </a>
+    </div>
+  </div>
+</Layout>

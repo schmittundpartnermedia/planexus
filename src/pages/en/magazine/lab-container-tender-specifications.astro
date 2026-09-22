@@ -1,0 +1,469 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Picture from '../../../components/Picture.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "inLanguage": "en-GB",
+  "headline": "Tendering a lab container: requirements specification and checklist",
+  "description": "How to tender a laboratory container properly: requirements, interfaces, acceptance and bid comparison. With a checklist for robust procurement documents.",
+  "author": { "@type": "Person", "name": "Sven Biewald", "url": "https://planexus.de/en/team/sven-biewald", "jobTitle": "Managing Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22",
+  "image": "https://planexus.de/images/blog-laborcontainer-ausschreibung-lastenheft.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/lab-container-tender-specifications" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Tendering a lab container: requirements specification and checklist", "item": "https://planexus.de/en/magazine/lab-container-tender-specifications" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    { "@type": "Question", "name": "What information does a supplier need for an initial lab-container bid?", "acceptedAnswer": { "@type": "Answer", "text": "At minimum: intended use, required floor area, safety level, equipment list, site, available media, target date and service life. A robust bid also needs a room programme, connection values, interfaces and acceptance requirements." } },
+    { "@type": "Question", "name": "What belongs in a requirements specification for a lab container?", "acceptedAnswer": { "@type": "Answer", "text": "The client’s requirements specification describes objectives, work processes, users, risks, rooms, equipment, technical requirements, site conditions, dates, permits, documentation and acceptance criteria." } },
+    { "@type": "Question", "name": "Should a lab container be tendered functionally or with a bill of quantities?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the planning stage. A combination is often best: functional targets for the overall solution and detailed minimum requirements for safety, interfaces, media, acceptance and documentation." } },
+    { "@type": "Question", "name": "How should lab-container bids be compared?", "acceptedAnswer": { "@type": "Answer", "text": "Not on the bottom-line price alone. Compare scope of works, technical values, interfaces, tests, documentation, programme, references, operating costs and clearly stated options or exclusions." } },
+    { "@type": "Question", "name": "Which interfaces most often lead to variations?", "acceptedAnswer": { "@type": "Answer", "text": "Typical items are foundations, incoming media, crane and transport, permit services, laboratory wastewater, external gas supply, IT, external works, and qualification and acceptance." } },
+    { "@type": "Question", "name": "When should a specialist planner be involved?", "acceptedAnswer": { "@type": "Answer", "text": "At the latest before the specification is finalised and sent to suppliers. For containment laboratories, cleanrooms, complex building services or public procurement, specialist design should already support the needs and concept phase." } }
+  ]
+};
+---
+
+<Layout
+  type="article"
+  title="Tendering a lab container: requirements specification and checklist"
+  description="How to tender a laboratory container properly: requirements, interfaces, acceptance and bid comparison. With a checklist for robust procurement documents."
+  canonical="/en/magazine/lab-container-tender-specifications"
+  ogImage="/images/blog-laborcontainer-ausschreibung-lastenheft.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-laborcontainer-ausschreibung-lastenheft.jpg')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+              Guide
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              12 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            How to tender a lab container properly
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            A vague tender makes lab-container bids look cheap but technically incomparable. This guide shows what belongs in the client’s requirements and the specification of works.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              22 September 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Sven Biewald, Managing Director Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">Tendering a lab container</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                A <strong class="text-slate-900 font-semibold">laboratory container</strong> is not a standard container with laboratory furniture. It is a highly integrated building with ventilation, media supply, safety functions and clear requirements for operation and acceptance. That is why the quality of the <strong class="text-slate-900 font-semibold">lab-container tender</strong> decides whether you receive comparable bids — or later discuss variations, missing interfaces and delayed handover.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This guide shows what clients should clarify before the enquiry, what belongs in the requirements specification and the specification of works, and how bids can be compared on technical merit rather than bottom-line price alone. The overall sequence from idea to handover is set out in our <a href="/en/magazine/lab-container-project-process" class="text-primary font-medium hover:underline">project process article</a>.
+              </p>
+
+              <figure class="my-10">
+                <Picture
+                  src="/images/blog-laborcontainer-ausschreibung-lastenheft.jpg"
+                  alt="Laboratory planning and engineering team reviewing a floor plan, bill of quantities and equipment list for a modular lab container"
+                  width={1280}
+                  height={720}
+                  loading="eager"
+                  fetchpriority="high"
+                  class="w-full rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Robust procurement documents are written at the table: room programme, equipment list and interfaces, before the first supplier prices the job.
+                </figcaption>
+              </figure>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Why lab-container tenders often start too early</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The most common mistake is not a wrong technical detail. The tender starts before laboratory use is described well enough. Suppliers then receive the same enquiry but price different solutions. One assumes a simple extract system, the next a redundant control strategy. One includes media connections to the handover point, another only the distribution inside the container.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                On paper you have three prices. Technically you have three different projects. It is the same mechanism that causes delay in our article on <a href="/en/magazine/when-the-new-lab-arrives-too-late-5-planning-mistakes" class="text-primary font-medium hover:underline">planning mistakes</a> — except here it stays invisible in the procurement.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For public clients, comparability is not only a practical issue. German competition law requires the subject of the contract to be described as clearly as possible so that undertakings understand it in the same way and bids can be compared. The same standard is right for private procurement: identical requirements, defined boundaries and verifiable evidence.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Requirements specification and specification of works are not the same</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The client’s <strong class="text-slate-900 font-semibold">requirements specification</strong> describes what the new laboratory must achieve. It contains objectives, use profile, constraints and mandatory requirements. The <strong class="text-slate-900 font-semibold">specification of works</strong> translates that need into a tenderable structure: which design, construction, fit-out, testing and documentation services are owed.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In a functional tender the expected result is described and the supplier develops the technical solution. In a detailed bill of quantities, individual items and quantities are prescribed more tightly. For custom laboratory containers a combination is often best: binding functional and performance requirements plus concrete minimum standards for safety-critical and interface-critical areas.
+              </p>
+
+              <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8 not-prose">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Key point</h4>
+                    <p class="text-gray-600 text-sm">
+                      Requirements specification = the client’s need. Specification of works = the owed performance. Without that split you compare prices, not projects.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">The ten mandatory areas of a robust tender</h2>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">1. Use and processes</h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                Do not start with square metres. Start with the work that will happen in the laboratory. Which samples, substances and methods? How many people at once? What quantities, temperatures, emissions or biological risks arise? Layout, ventilation, surfaces, safety equipment and waste routes follow from the process.
+              </p>
+              <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+                <li>Laboratory type and concrete workflows</li>
+                <li>Hazardous substances, biological agents or explosive atmospheres</li>
+                <li>Headcount, shift operation and visitors</li>
+                <li>Cleaning and hygiene concept</li>
+                <li>Intended service life and later extensions</li>
+              </ul>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">2. Site and installation</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The best container design fails if the site does not match the concept. Tender documents should include a site plan, access, crane pad, ground conditions, height restrictions and local load assumptions. Equally important is a clear allocation of who provides foundations, earthworks and permits. See <a href="/en/magazine/lab-container-installation-foundation-statics" class="text-primary font-medium hover:underline">installation, foundation slab and structural design</a>.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">3. Room programme and workflows</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Do not specify total area alone. Name rooms, workplaces, airlocks, stores, plant areas and the relationships between them. Material, sample, staff and waste routes must work without conflict. Cleanroom, GMP or containment laboratories also need pressure zoning and controlled transfers.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">4. Equipment and heat loads</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A complete equipment list is one of the most valuable annexes. It should include dimensions, weight, electrical demand, heat output, media demand, extract volume and special installation conditions. If equipment is only specified later, electrical distribution, HVAC, furniture and structure often change at the same time.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">5. Ventilation and climate</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Phrases such as “adequate ventilation” are not enough. Describe set temperatures, permitted humidity bands, operating hours, required pressure relationships, extract sources, filter grades and redundancy or monitoring. Fume cupboards must be included with their operating mode and the relevant requirements, for example DIN EN 14175. Depending on use, DIN 1946-7 and TRGS 526 also apply. More detail: <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-primary font-medium hover:underline">HVAC and ventilation standards</a> and <a href="/en/magazine/lab-container-fume-hood-din-en-14175" class="text-primary font-medium hover:underline">fume hoods to DIN EN 14175</a>.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">6. Media supply and waste</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Power, data, potable water, purified water, wastewater, compressed air and process gases need defined connection values and handover points. State whether the supplier owes only internal distribution or also the runs to the site network. For laboratory wastewater it must be clear whether neutralisation, retention, separate collection or a regulatory agreement is required.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">7. Safety and permits</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The tender must derive the safety level from the use. That includes fire protection, escape routes, access control, gas detection, emergency showers, essential power and, where relevant, explosion protection, biological agents or genetic engineering law. Also name who prepares the building application, fire strategy, structural design, acoustics and other specialist evidence through to approval. Practical guide: <a href="/en/magazine/lab-container-permits-building-law" class="text-primary font-medium hover:underline">permits and building law</a>.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">8. Scope boundaries and interfaces</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This is where most variations arise. Every technical and organisational boundary must be unambiguous: where does the container supplier’s work end? Who provides foundations, incoming media, network, external works, crane, barriers and statutory fees? A good interface schedule names, for each item, the work, the responsible party, the handover point, the date and the required evidence.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">9. Testing, acceptance and qualification</h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                “Ready for operation” is too vague. Define in advance which tests take place before delivery and on site. Typical are a factory acceptance test, commissioning at the installation site and documented functional tests. Regulated applications add qualification or validation. Acceptance criteria, measurement methods, protocols and the handling of deviations belong in the procurement documents.
+              </p>
+              <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+                <li>Factory acceptance test with documented test scope</li>
+                <li>Acceptance after installation and media connection</li>
+                <li>Measurements of air volumes, pressure stages, temperature and alarm functions</li>
+                <li>Test reports for electrical, safety and media installations</li>
+                <li>Snagging list, timescales and criteria for final acceptance</li>
+              </ul>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">10. Documentation, training and maintenance</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                As-built drawings, schematics, data sheets, test reports, conformity documents, operating manuals and maintenance schedules should form part of the owed works. Specify data formats and language. Plan briefing of operating staff and define which maintenance and service items are optional or mandatory.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">What documents suppliers actually need</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The more complete the starting data, the fewer risk premiums and queries. A robust enquiry should include at least:
+              </p>
+
+              <div class="bg-slate-50 border border-gray-100 rounded-2xl p-8 my-8 not-prose">
+                <h3 class="text-xl font-heading font-bold text-slate-900 mb-4">Enquiry document checklist</h3>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Project brief with objective, date and budget envelope</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Use and process description</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Room programme with areas and functional relationships</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Equipment list with connection values and heat output</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Site plan, ground conditions and access information</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Overview of existing media and possible handover points</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Permit status and known regulatory conditions</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Responsibility and interface matrix</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Required testing, acceptance and documentation scope</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Programme with binding milestones</span></li>
+                </ul>
+              </div>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Comparing bids properly</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The lowest bid price is only meaningful if scope and technical quality match. Prepare a comparison matrix before evaluation. Missing items are not a price advantage — they are a clarification point or a pricing risk. How prices are built up is explained in <a href="/en/magazine/lab-container-costs-prices-2026" class="text-primary font-medium hover:underline">lab-container costs and prices</a>.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Check field</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">What is compared</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Warning sign</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Scope</td>
+                      <td class="border border-gray-200 px-4 py-3">Design, manufacture, fit-out, logistics, installation</td>
+                      <td class="border border-gray-200 px-4 py-3">Lump sum without a clear boundary</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Engineering</td>
+                      <td class="border border-gray-200 px-4 py-3">Air volumes, redundancy, filters, controls, media</td>
+                      <td class="border border-gray-200 px-4 py-3">Product names without performance values</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Interfaces</td>
+                      <td class="border border-gray-200 px-4 py-3">Foundations, connections, crane, permits</td>
+                      <td class="border border-gray-200 px-4 py-3">Many client-side items without a cost line</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Acceptance</td>
+                      <td class="border border-gray-200 px-4 py-3">Test scope, measured values, documentation</td>
+                      <td class="border border-gray-200 px-4 py-3">“Functional” without acceptance criteria</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Programme</td>
+                      <td class="border border-gray-200 px-4 py-3">Milestones, approvals, delivery and installation time</td>
+                      <td class="border border-gray-200 px-4 py-3">Delivery week without preconditions</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Operation</td>
+                      <td class="border border-gray-200 px-4 py-3">Energy, filters, maintenance, spares, service</td>
+                      <td class="border border-gray-200 px-4 py-3">Low purchase price, high running cost</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Experience</td>
+                      <td class="border border-gray-200 px-4 py-3">Comparable references and specialist design</td>
+                      <td class="border border-gray-200 px-4 py-3">General container work without laboratory evidence</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Alongside price, score at least technical compliance, project organisation, programme risk, documentation, references and operating cost. For public procurement, award criteria and weighting must be set out transparently in the documents. Private projects gain the same benefit: a decision that can be explained.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Seven typical tendering mistakes</h2>
+
+              <ol class="space-y-3 text-gray-700 mb-8 not-prose">
+                <li class="flex gap-3"><span class="text-primary font-bold">1.</span> <span>The desired delivery date is stated, but design approvals and permit times are missing.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">2.</span> <span>A square-metre figure replaces the room and process programme.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">3.</span> <span>Equipment is listed, but connection values, heat output and extract demand are missing.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">4.</span> <span>Standards are collected in bulk without clarifying their application to the actual use.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">5.</span> <span>Client-side works and handover points remain open.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">6.</span> <span>Acceptance and documentation are only discussed shortly before delivery.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold">7.</span> <span>Bids are compared on the total even though scope and quality differ.</span></li>
+              </ol>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">The tender in six steps</h2>
+
+              <ol class="space-y-4 text-gray-700 mb-8 not-prose">
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">1.</span> <span><strong class="text-slate-900">Clarify need:</strong> capture processes, risks, capacity, service life and target date.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">2.</span> <span><strong class="text-slate-900">Check the site:</strong> assess installation, access, ground, media and the permit path.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">3.</span> <span><strong class="text-slate-900">Build the design basis:</strong> fix room programme, equipment list, functional diagram and interfaces.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">4.</span> <span><strong class="text-slate-900">Describe the works:</strong> define mandatory requirements, options, evidence, acceptance and documentation.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">5.</span> <span><strong class="text-slate-900">Answer bidder questions consistently:</strong> issue the same information to all suppliers.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">6.</span> <span><strong class="text-slate-900">Evaluate bids technically and commercially:</strong> make deviations, gaps and life-cycle cost visible.</span></li>
+              </ol>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Under the German fee scale for architects and engineers, preparation of the tender is a distinct work stage. It includes a procurement programme, specifications with bills of quantities, quantity take-off and interface coordination. That is why a robust tender is not a by-product of an early sketch, but a design service in its own right — at Planexus part of <a href="/en/services/planning" class="text-primary font-medium hover:underline">technical specialist design</a>.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">When a functional tender makes sense</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A functional description can work when the client states the required result and the binding constraints, but deliberately leaves the solution path to the supplier’s specialist design. That uses the experience of laboratory planners and leaves room for economical solutions.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                It only works if the minimum requirements are measurable. “Modern ventilation”, “high-quality fit-out” or “turnkey” are not testable criteria. Performance values, capacities, material resistance, interfaces, tests and delivery scope must remain unambiguous even in a functional tender.
+              </p>
+
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Conclusion</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A good lab-container tender does not make everything maximally detailed. It makes the essentials unambiguous. Use, safety level, scope boundaries, technical targets, acceptance criteria and documentation must be described so that several suppliers price the same project.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Clients who prepare these foundations before the enquiry receive more comparable bids, fewer variations and a protected programme. The tender does not become longer — it becomes more robust, and a container price becomes a project decision. Whether you <a href="/en/rent-lab-containers" class="text-primary font-medium hover:underline">rent</a> or <a href="/en/buy-lab-containers" class="text-primary font-medium hover:underline">buy</a>: the documents decide comparability, not the contract model.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center not-prose">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Clarify the specification before the enquiry</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Planning a laboratory container and want requirements, interfaces and technical targets robust before you go out to market? Planexus supports you from needs analysis and specialist design through tendering, manufacture and turnkey handover.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Request a free initial consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">At a glance</h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Requirements ≠ specification of works</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Ten mandatory tender areas</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Interfaces cause the variations</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Never score bids on price alone</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Acceptance with measurable criteria</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Functional tenders need measurable minima</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Tendering is a design service</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <h4 class="font-bold text-slate-900 mb-4">Further reading</h4>
+                <ul class="space-y-3">
+                  <li><a href="/en/lab-containers" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Lab containers overview</a></li>
+                  <li><a href="/en/services/planning" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Technical specialist design</a></li>
+                  <li><a href="/en/magazine/lab-container-project-process" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>From idea to handover</a></li>
+                  <li><a href="/en/magazine/lab-container-costs-prices-2026" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Costs and calculation</a></li>
+                  <li><a href="/en/magazine/when-the-new-lab-arrives-too-late-5-planning-mistakes" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Avoid planning mistakes</a></li>
+                  <li><a href="/en/magazine/lab-container-permits-building-law" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Permits and building law</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <h4 class="font-bold mb-3">Need a robust tender?</h4>
+                <p class="text-gray-400 text-sm mb-4">We review requirements, interfaces and acceptance criteria before you go out to market.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Get in touch</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions on lab-container tenders</h2>
+          <div class="space-y-4">
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What information does a supplier need for an initial lab-container bid?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">At minimum: intended use, required floor area, safety level, equipment list, site, available media, target date and service life. A robust bid also needs a room programme, connection values, interfaces and acceptance requirements.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What belongs in a requirements specification for a lab container?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">The client’s requirements specification describes objectives, work processes, users, risks, rooms, equipment, technical requirements, site conditions, dates, permits, documentation and acceptance criteria.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Should a lab container be tendered functionally or with a bill of quantities?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">It depends on the planning stage. A combination is often best: functional targets for the overall solution and detailed minimum requirements for safety, interfaces, media, acceptance and documentation.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How should lab-container bids be compared?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Not on the bottom-line price alone. Compare scope of works, technical values, interfaces, tests, documentation, programme, references, operating costs and clearly stated options or exclusions.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which interfaces most often lead to variations?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Typical items are foundations, incoming media, crane and transport, permit services, laboratory wastewater, external gas supply, IT, external works, and qualification and acceptance.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">When should a specialist planner be involved?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">At the latest before the specification is finalised and sent to suppliers. For containment laboratories, cleanrooms, complex building services or public procurement, specialist design should already support the needs and concept phase.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedArticles slug="laborcontainer-ausschreibung-lastenheft" locale="en" />
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/en/magazine" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to the magazine
+      </a>
+    </div>
+  </div>
+</Layout>

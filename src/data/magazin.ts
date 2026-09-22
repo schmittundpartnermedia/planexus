@@ -20,6 +20,13 @@ export interface MagazinLocaleFields {
 }
 
 export const magazinEn: Record<string, MagazinLocaleFields> = {
+  "laborcontainer-ausschreibung-lastenheft": {
+    slug: "lab-container-tender-specifications",
+    title: "Tendering a lab container: requirements specification and checklist",
+    excerpt: "A vague tender makes lab-container bids look cheap but technically incomparable. What belongs in the requirements, the specification of works and the bid comparison.",
+    date: "22 September 2026",
+    category: "Guide",
+  },
   "made-in-germany-qualitaet-tempo-laborbau": {
     slug: "made-in-germany-quality-speed-lab-construction",
     title: "Made in Germany: quality and speed in laboratory construction",
@@ -194,6 +201,16 @@ export function localizePost(post: MagazinPost, locale: Locale = 'de') {
 }
 
 export const magazinPosts: MagazinPost[] = [
+  {
+    id: -16,
+    slug: "laborcontainer-ausschreibung-lastenheft",
+    title: "Laborcontainer ausschreiben: Lastenheft und Checkliste",
+    excerpt: "Eine ungenaue Ausschreibung macht Laborcontainer-Angebote scheinbar günstig, aber technisch unvergleichbar. Was in Lastenheft, Leistungsbeschreibung und Angebotsvergleich gehört.",
+    date: "22. September 2026",
+    author: "Sven Biewald",
+    category: "Ratgeber",
+    image: "/images/blog-laborcontainer-ausschreibung-lastenheft.jpg",
+  },
   {
     id: -15,
     slug: "made-in-germany-qualitaet-tempo-laborbau",
@@ -418,15 +435,20 @@ export const magazinPosts: MagazinPost[] = [
 
 /** Thematische Verwandtschaft – 3 Slugs pro Artikel */
 const relatedSlugsMap: Record<string, string[]> = {
+  "laborcontainer-ausschreibung-lastenheft": [
+    "laborcontainer-projektablauf-von-idee-bis-uebergabe",
+    "laborcontainer-kosten-preise-2026",
+    "wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler",
+  ],
   "made-in-germany-qualitaet-tempo-laborbau": [
     "innovation-modulbau-zukunft-mobiles-labor",
     "gmp-reinraum-container-pharma-produktion",
     "laborcontainer-projektablauf-von-idee-bis-uebergabe",
   ],
   "wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler": [
+    "laborcontainer-ausschreibung-lastenheft",
     "laborcontainer-projektablauf-von-idee-bis-uebergabe",
     "laborcontainer-genehmigung-baurecht-vorschriften",
-    "laborcontainer-kosten-preise-2026",
   ],
   "laborcontainer-laborabzug-din-en-14175": [
     "laborcontainer-klimatisierung-lueftung-normen",
@@ -439,8 +461,8 @@ const relatedSlugsMap: Record<string, string[]> = {
     "laborcontainer-ausstattung-checkliste",
   ],
   "laborcontainer-kosten-preise-2026": [
+    "laborcontainer-ausschreibung-lastenheft",
     "laborcontainer-mieten-oder-kaufen",
-    "laborcontainer-ausstattung-checkliste",
     "laborcontainer-projektablauf-von-idee-bis-uebergabe",
   ],
   "uebergangslabor-sanierung-mietcontainer": [
@@ -494,9 +516,9 @@ const relatedSlugsMap: Record<string, string[]> = {
     "laborcontainer-mieten-oder-kaufen",
   ],
   "laborcontainer-projektablauf-von-idee-bis-uebergabe": [
+    "laborcontainer-ausschreibung-lastenheft",
     "laborcontainer-genehmigung-baurecht-vorschriften",
     "laborcontainer-kosten-preise-2026",
-    "wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler",
   ],
   "planexus-analytica-2026-muenchen": [
     "analytica-2026-rueckblick-labtogo-premiere",
