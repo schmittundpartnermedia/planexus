@@ -131,9 +131,9 @@ ssh root@82.165.27.244 'cd /var/www/app && git checkout -- .astro && git fetch o
 | Google Search Console | Sitemap `https://planexus.de/sitemap-index.xml` | – |
 
 - Alle Secrets stehen in `.env` auf dem Server (`/var/www/app/.env`, nicht in Git). Mail wird nur versendet, wenn `SMTP_PASS` gesetzt ist; die Anfrage wird trotzdem in der DB gespeichert.
-- Die Tabellen stehen in `src/lib/schema.ts`. Achtung: `drizzle.config.ts` zeigt auf das alte `shared/schema.ts` – `npm run db:push` würde die falschen Tabellen anlegen. Nicht ohne Anpassung benutzen.
+- Die Tabellen stehen in `src/lib/schema.ts`, `drizzle.config.ts` zeigt darauf. `npm run db:push` braucht `DATABASE_URL` und fragt nach, bevor es Tabellen löscht, die nicht im Schema stehen (z. B. eine alte `users`-Tabelle) – solche Löschungen ablehnen.
 - Offene Ungereimtheiten (nicht geprüft, vor Änderungen am Server klären): `ecosystem.config.cjs` setzt `PORT=4321`, die nginx-Vorlagen und `replit.md` sprechen von Port 5000. Die `.cursor`-Regel nennt als Mac-Repo `~/Desktop/Webseiten/planexus`, gearbeitet wird aktuell in `/Volumes/ELEVUM/Projekte/joachim/planexus`.
-- `.replit` ist ein Überbleibsel aus Replit und enthält Klartext-Zugangsdaten. Die Werte nie in Chats, Commits oder Doku übernehmen.
+- `.replit` ist ein Überbleibsel aus Replit. Das Admin-Passwort stand dort früher im Klartext und ist noch in der Git-Historie – nie wieder Secrets in `.replit` oder andere getrackte Dateien schreiben.
 
 ## Was du nie tun sollst
 
