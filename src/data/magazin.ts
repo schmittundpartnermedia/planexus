@@ -20,6 +20,13 @@ export interface MagazinLocaleFields {
 }
 
 export const magazinEn: Record<string, MagazinLocaleFields> = {
+  "pfas-analytik-labor-laborcontainer": {
+    slug: "pfas-analysis-lab-capacity-lab-container",
+    title: "PFAS analysis: expanding laboratory capacity with lab containers",
+    excerpt: "PFAS limit in German drinking water since January 2026, PFAS-4 from 2028: what an LC-MS/MS trace lab needs and how lab containers add measurement capacity fast.",
+    date: "8 October 2026",
+    category: "Environmental & water analysis",
+  },
   "laborcontainer-ausschreibung-lastenheft": {
     slug: "lab-container-tender-specifications",
     title: "Tendering a lab container: requirements specification and checklist",
@@ -201,6 +208,16 @@ export function localizePost(post: MagazinPost, locale: Locale = 'de') {
 }
 
 export const magazinPosts: MagazinPost[] = [
+  {
+    id: -17,
+    slug: "pfas-analytik-labor-laborcontainer",
+    title: "PFAS-Analytik: Laborkapazität mit Laborcontainern erweitern",
+    excerpt: "PFAS-Grenzwert im Trinkwasser seit Januar 2026, PFAS-4 ab 2028: Was ein Labor für LC-MS/MS-Spurenanalytik braucht und wie Laborcontainer schnell Messkapazität schaffen.",
+    date: "8. Oktober 2026",
+    author: "Thomas Boss",
+    category: "Umwelt- & Wasseranalytik",
+    image: "/images/blog-pfas-analytik-laborcontainer.jpg",
+  },
   {
     id: -16,
     slug: "laborcontainer-ausschreibung-lastenheft",
@@ -435,6 +452,11 @@ export const magazinPosts: MagazinPost[] = [
 
 /** Thematische Verwandtschaft – 3 Slugs pro Artikel */
 const relatedSlugsMap: Record<string, string[]> = {
+  "pfas-analytik-labor-laborcontainer": [
+    "laborcontainer-klimatisierung-lueftung-normen",
+    "laborcontainer-laborabzug-din-en-14175",
+    "uebergangslabor-sanierung-mietcontainer",
+  ],
   "laborcontainer-ausschreibung-lastenheft": [
     "laborcontainer-projektablauf-von-idee-bis-uebergabe",
     "laborcontainer-kosten-preise-2026",
@@ -481,9 +503,9 @@ const relatedSlugsMap: Record<string, string[]> = {
     "laborcontainer-ausstattung-checkliste",
   ],
   "laborcontainer-baustelle-materialpruefung": [
+    "pfas-analytik-labor-laborcontainer",
     "laborcontainer-genehmigung-baurecht-vorschriften",
     "laborcontainer-aufstellung-bodenplatte-statik",
-    "laborcontainer-katastropheneinsatz-krisenreaktion",
   ],
   "laborcontainer-energiewende-h2-batterie-ex-schutz": [
     "laborcontainer-brandschutz-feuerwiderstand",
@@ -508,7 +530,7 @@ const relatedSlugsMap: Record<string, string[]> = {
   "laborcontainer-klimatisierung-lueftung-normen": [
     "laborcontainer-laborabzug-din-en-14175",
     "laborcontainer-ausstattung-checkliste",
-    "bsl-2-bsl-3-container-labor",
+    "pfas-analytik-labor-laborcontainer",
   ],
   "laborcontainer-genehmigung-baurecht-vorschriften": [
     "laborcontainer-projektablauf-von-idee-bis-uebergabe",

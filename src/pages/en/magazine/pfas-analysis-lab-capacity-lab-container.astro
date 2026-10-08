@@ -1,0 +1,538 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Picture from '../../../components/Picture.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "inLanguage": "en-GB",
+  "headline": "PFAS analysis: expanding laboratory capacity with lab containers",
+  "description": "PFAS limit in German drinking water since 12 Jan 2026, PFAS-4 from 2028: what an LC-MS/MS trace lab needs and how lab containers add capacity fast.",
+  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/en/team/thomas-boss", "jobTitle": "Shareholder & Technical Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "image": "https://planexus.de/images/blog-pfas-analytik-laborcontainer.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/pfas-analysis-lab-capacity-lab-container" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "PFAS analysis: expanding laboratory capacity with lab containers", "item": "https://planexus.de/en/magazine/pfas-analysis-lab-capacity-lab-container" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Which PFAS limits apply to drinking water in Germany?", "acceptedAnswer": { "@type": "Answer", "text": "Since 12 January 2026, the sum of 20 PFAS (Sum of PFAS-20) is limited to 0.0001 mg/l, i.e. 0.1 µg/l or 100 ng/l. From 12 January 2028, an additional limit of 0.00002 mg/l, i.e. 20 ng/l, applies to the sum of PFOA, PFNA, PFHxS and PFOS (Sum of PFAS-4). Both values are set out in Annex 2 of the German Drinking Water Ordinance (TrinkwV)." } },
+    { "@type": "Question", "name": "What limit of quantification must a laboratory achieve for PFAS in drinking water?", "acceptedAnswer": { "@type": "Answer", "text": "Under Annex 7 of the TrinkwV, the limit of quantification must not exceed 30 per cent of the parametric value. For the sum parameters this is applied to the individual substances: each one must be quantifiable down to 0.0000015 mg/l, i.e. 1.5 ng/l. The permitted measurement uncertainty is 50 per cent." } },
+    { "@type": "Question", "name": "Which standards describe PFAS analysis in water?", "acceptedAnswer": { "@type": "Answer", "text": "In Germany the key standards are DIN 38407-42 for drinking, ground and surface water as well as treated wastewater, and DIN EN 17892 specifically for drinking water. Both use liquid chromatography with tandem mass spectrometry (LC-MS/MS)." } },
+    { "@type": "Question", "name": "Can a lab container house an accredited PFAS laboratory?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, provided the room climate, power supply, gas supply, extract and choice of materials are designed for LC-MS/MS trace analysis. The container itself does not confer accreditation: the laboratory must agree a new measurement room or site with its accreditation body and reflect it in its quality management system." } },
+    { "@type": "Question", "name": "Why are blank values so critical in PFAS analysis?", "acceptedAnswer": { "@type": "Answer", "text": "Measurements are made at a few nanograms per litre. Yet PFAS are also present in laboratory equipment and consumables, for example PTFE tubing or PTFE-lined closures. The achievable limit of quantification therefore depends directly on how low a laboratory can keep its blank values." } },
+    { "@type": "Question", "name": "How quickly can additional PFAS laboratory space be created?", "acceptedAnswer": { "@type": "Answer", "text": "A custom-designed Planexus lab container is typically manufactured in 8 to 14 weeks. Design, permits, installation, instrument set-up and coordination with the accreditation body come on top. Anyone who needs additional capacity by the PFAS-4 deadline on 12 January 2028 should start planning in 2026." } }
+  ]
+};
+---
+
+<Layout
+  type="article"
+  title="PFAS analysis: lab capacity in a lab container"
+  description="PFAS limit in German drinking water since 12 Jan 2026, PFAS-4 from 2028: what an LC-MS/MS trace lab needs and how lab containers add capacity fast."
+  canonical="/en/magazine/pfas-analysis-lab-capacity-lab-container"
+  ogImage="/images/blog-pfas-analytik-laborcontainer.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-pfas-analytik-laborcontainer.jpg')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+              Environmental &amp; water analysis
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              14 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            PFAS analysis: expanding laboratory capacity with lab containers
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            The PFAS limit in the German Drinking Water Ordinance has applied since 12 January 2026, and the second stage follows on 12 January 2028. What a laboratory needs for trace analysis at nanogram level, and how additional measurement capacity can be created before the next deadline.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              8 October 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Thomas Boss, Technical Director, Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-primary font-medium">PFAS analysis</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                Since early 2026, PFAS, the so-called forever chemicals, have stopped being a research topic and become routine. Every water supplier in Germany must comply with the new limit for the <strong class="text-slate-900 font-semibold">Sum of PFAS-20</strong> and demonstrate compliance. That evidence comes from laboratories able to quantify individual substances reliably at around 1.5 nanograms per litre. According to the German accreditation body DAkkS, around 50 testing laboratories were accredited for this <strong class="text-slate-900 font-semibold">PFAS analysis</strong> under the Drinking Water Ordinance in January 2026.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This article is written for laboratory managers at water suppliers, environmental laboratories and public testing agencies who need more measurement capacity. It explains the legal requirements in Germany, Austria and Switzerland. It shows why a <strong class="text-slate-900 font-semibold">PFAS laboratory</strong> places different demands on rooms and building services than a conventional water lab. And it describes how a <a href="/en/lab-containers" class="text-primary font-medium hover:underline">lab container</a> meets those demands.
+              </p>
+
+              <figure class="my-10">
+                <Picture
+                  src="/images/blog-pfas-analytik-laborcontainer.jpg"
+                  alt="PFAS analysis in a lab container: LC-MS/MS system with UHPLC and solvent bottles, sample vials in racks and laboratory workstations in a modular lab"
+                  width={1600}
+                  height={900}
+                  loading="eager"
+                  fetchpriority="high"
+                  class="w-full rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Illustrative image: LC-MS/MS workstation in a lab container. Trace analysis needs a stable room climate, a clean power supply and well-planned service routing.
+                </figcaption>
+              </figure>
+
+              <h2 id="limits" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">PFAS limits in drinking water: what applies since 2026</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The 2023 Drinking Water Ordinance (TrinkwV) transposes the EU Drinking Water Directive (EU) 2020/2184 into German law. It introduces PFAS as a parameter in two stages. Both values are set out in <a href="https://www.gesetze-im-internet.de/trinkwv_2023/anlage_2.html" class="text-primary font-medium hover:underline" rel="noopener noreferrer">Annex 2 of the TrinkwV</a>:
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Parameter</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Limit</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Applies from</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Substances</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Sum of PFAS-20</td>
+                      <td class="border border-gray-200 px-4 py-3">0.1 µg/l (100 ng/l)</td>
+                      <td class="border border-gray-200 px-4 py-3">12 January 2026</td>
+                      <td class="border border-gray-200 px-4 py-3">10 perfluorocarboxylic acids (PFBA to PFTrDA) and 10 perfluorosulfonic acids (PFBS to PFTrDS)</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Sum of PFAS-4</td>
+                      <td class="border border-gray-200 px-4 py-3">0.02 µg/l (20 ng/l)</td>
+                      <td class="border border-gray-200 px-4 py-3">12 January 2028</td>
+                      <td class="border border-gray-200 px-4 py-3">PFOA, PFNA, PFHxS, PFOS</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Only substances that have been detected and quantified count towards the sums. Values below the limit of quantification are excluded. The concentrations of the individual substances must still be reported separately. That has a direct consequence for the laboratory: a higher limit of quantification produces lower reported sums. This is why the ordinance specifies how sensitive the measurement must be.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Method requirements under Annex 7</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-4">
+                <a href="https://www.gesetze-im-internet.de/trinkwv_2023/anlage_7.html" class="text-primary font-medium hover:underline" rel="noopener noreferrer">Annex 7 of the TrinkwV</a> sets the performance characteristics. For PFAS this means:
+              </p>
+              <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+                <li>The limit of quantification must not exceed 30 per cent of the parametric value.</li>
+                <li>For the sum parameters this is applied to the individual substances. Each must be quantifiable down to <strong class="text-slate-900">1.5 ng/l</strong>, for both PFAS-20 and PFAS-4.</li>
+                <li>The permitted measurement uncertainty (k = 2) is 50 per cent of the parametric value.</li>
+                <li>The method must reliably measure concentrations at the parametric value with this uncertainty.</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Only approved testing bodies may carry out the analysis. Under <a href="https://www.gesetze-im-internet.de/trinkwv_2023/__40.html" class="text-primary font-medium hover:underline" rel="noopener noreferrer">section 40 TrinkwV</a> the federal states publish lists of these bodies and their parameter scope. According to <a href="https://www.dakks.de/de/aktuelle-meldung/grenzwerte-fuer-pfas-in-kraft-getreten-akkreditierung-sichert-verlaessliche-trinkwasseranalytik.html" class="text-primary font-medium hover:underline" rel="noopener noreferrer">DAkkS</a>, the prerequisite is accreditation as a testing laboratory to DIN EN ISO/IEC 17025.
+              </p>
+
+              <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-8 not-prose">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Key point</h4>
+                    <p class="text-gray-600 text-sm">
+                      1.5 ng/l per substance means 1.5 billionths of a gram in one litre of water. At this level the quality of results is decided not only by the instrument but by the whole laboratory: materials, room climate, workflows and blank values.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 id="dach" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Austria and Switzerland: status of PFAS rules</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong class="text-slate-900 font-semibold">Austria</strong> added the parameter through an amendment to its Drinking Water Ordinance in February 2024. Since 12 January 2026 a parametric value of 0.10 µg/l for the sum of 20 PFAS applies there too. According to the state of Upper Austria, supplies delivering more than 100 m³ per day must include PFAS in their annual full analysis from 2026. Smaller supplies of 10 to 100 m³ per day have until 2032. An Austrian PFAS-4 stage for drinking water could not be confirmed at the time of writing.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In <strong class="text-slate-900 font-semibold">Switzerland</strong>, the TBDV ordinance currently regulates three PFAS individually: PFOS and PFHxS at 0.3 µg/l each, PFOA at 0.5 µg/l. On 27 May 2026 the Federal Council opened a consultation that proposes, among other things, a maximum of 0.1 µg/l for the sum of 20 PFAS. The consultation closed on 18 September 2026. No date of entry into force had been set at the time of writing. For laboratories in Switzerland this means measurement requirements are likely to move towards the EU level.
+              </p>
+
+              <h2 id="demand" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Why demand for PFAS laboratories is rising</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Three developments coincide. First, PFAS is now a mandatory parameter for every water supplier, not just suspected cases. Second, PFAS-4 arrives in 2028 with a limit five times lower than PFAS-20. Suppliers with values close to that threshold will monitor more closely and track treatment measures with their own measurement series. Third, demand is growing beyond drinking water: groundwater, contaminated sites, soils, wastewater and food are all being tested for PFAS.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                German broadcaster <a href="https://www.zdfheute.de/wissen/pfas-trinkwasser-grenzwert-trinkwasserverordnung-100.html" class="text-primary font-medium hover:underline" rel="noopener noreferrer">ZDF</a> reported in early 2026 that an approved drinking water laboratory had been working at full stretch for months. Reliable nationwide figures on waiting times do not exist. One thing is clear, though: an additional LC-MS/MS system can be ordered, but a suitable room for it is often the bottleneck. Converting an existing laboratory while it keeps measuring samples is difficult. Options during a refurbishment are covered in our article on the <a href="/en/magazine/temporary-lab-renovation-rental-containers" class="text-primary font-medium hover:underline">temporary lab in rental containers</a>.
+              </p>
+
+              <h2 id="blanks" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">How a PFAS lab differs from a conventional water lab</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The methods are standardised. <strong class="text-slate-900 font-semibold">DIN 38407-42</strong> (2011 edition) covers selected PFAS in drinking, ground and surface water as well as treated wastewater. Samples are enriched by solid-phase extraction (SPE) and measured by HPLC-MS/MS. <strong class="text-slate-900 font-semibold">DIN EN 17892:2024</strong> deals specifically with PFAS in drinking water by LC-MS/MS and allows both direct injection and SPE.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The real challenge is stated in the standard itself: how low the limit of quantification actually is depends on the blank values a laboratory achieves. PFAS are present not only in the sample but also in the laboratory.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Typical PFAS sources in the laboratory</h3>
+              <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+                <li><strong class="text-slate-900">LC system:</strong> PTFE solvent lines, degassers and pump parts can release PFAS. Instrument manufacturers recommend PEEK lines and polypropylene bottle caps.</li>
+                <li><strong class="text-slate-900">Delay column:</strong> a delay column between mixer and injector retains PFAS from the system. They then elute later than the PFAS from the sample and do not interfere with the evaluation.</li>
+                <li><strong class="text-slate-900">Vials and closures:</strong> PTFE-lined septa are unsuitable for PFAS analysis. Polypropylene or polyethylene vials and caps are the norm.</li>
+                <li><strong class="text-slate-900">Sample preparation:</strong> SPE cartridges, solvents and tubing must be checked for PFAS background. Long-chain PFAS also adsorb onto surfaces, causing losses.</li>
+                <li><strong class="text-slate-900">Room and fit-out:</strong> fluoropolymers are also found in seals, coatings and equipment. When planning a trace laboratory, every material in the working area should therefore be reviewed.</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Carry-over adds to this. Calibration standards are far more concentrated than the samples. Preparing standards and samples at the same bench risks cross-contamination. Good practice is therefore to separate high-concentration and low-concentration work physically. That separation is easier to build into the floor plan than to enforce later through organisation.
+              </p>
+
+              <h2 id="room-schedule" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Room schedule for a PFAS lab in a container</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                PFAS workflows are well established. They translate into a room schedule that maps neatly onto modules. How many modules a project needs depends on sample throughput and the number of instruments.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Area</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Function</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Design focus</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Sample reception</td>
+                      <td class="border border-gray-200 px-4 py-3">Receipt, registration, cold storage</td>
+                      <td class="border border-gray-200 px-4 py-3">Refrigeration capacity, short routes, LIMS connection</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Sample preparation</td>
+                      <td class="border border-gray-200 px-4 py-3">SPE, evaporation under nitrogen, reconstitution in solvent</td>
+                      <td class="border border-gray-200 px-4 py-3">Fume cupboard, solvent handling, nitrogen supply</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Standards preparation</td>
+                      <td class="border border-gray-200 px-4 py-3">Preparing calibration and internal standards</td>
+                      <td class="border border-gray-200 px-4 py-3">Separate from trace sample preparation</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Instrument room</td>
+                      <td class="border border-gray-200 px-4 py-3">LC-MS/MS systems</td>
+                      <td class="border border-gray-200 px-4 py-3">Temperature stability, heat load, power, roughing-pump exhaust</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Plant</td>
+                      <td class="border border-gray-200 px-4 py-3">Nitrogen generator, compressor, ultrapure water, UPS</td>
+                      <td class="border border-gray-200 px-4 py-3">Keep noise and heat out of the instrument room</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Data evaluation</td>
+                      <td class="border border-gray-200 px-4 py-3">Data processing, release, reporting</td>
+                      <td class="border border-gray-200 px-4 py-3">Display-screen workstations, network, data backup</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Evaporating extracts under nitrogen and handling methanol belong in a <a href="/en/magazine/lab-container-fume-hood-din-en-14175" class="text-primary font-medium hover:underline">fume cupboard to DIN EN 14175</a>. For fitting out the other areas, see our <a href="/en/magazine/lab-container-equipment-checklist" class="text-primary font-medium hover:underline">equipment checklist</a>.
+              </p>
+
+              <h2 id="technical" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">LC-MS/MS in a lab container: the technical requirements</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Triple quadrupole mass spectrometers place clear demands on their location. Manufacturers summarise them in site preparation documents. The values below come from such documents for LC/MS triple quadrupole systems. They indicate the order of magnitude. The current document for your specific model always takes precedence.
+              </p>
+
+              <div class="overflow-x-auto my-8">
+                <table class="w-full text-sm border-collapse border border-gray-200">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Requirement</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Example values from manufacturer documents</th>
+                      <th class="border border-gray-200 px-4 py-3 text-left font-bold text-slate-900">Implementation in the container</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Room temperature</td>
+                      <td class="border border-gray-200 px-4 py-3">Operation 15–35 °C, constant within ±3 °C of the calibration temperature</td>
+                      <td class="border border-gray-200 px-4 py-3">Cooling sized for instrument heat, insulated envelope, monitoring</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Rate of change</td>
+                      <td class="border border-gray-200 px-4 py-3">Older LC/MS documents: no more than 2–3 °C per hour</td>
+                      <td class="border border-gray-200 px-4 py-3">Supply air routed so it does not blow directly onto instruments</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Heat output</td>
+                      <td class="border border-gray-200 px-4 py-3">Below 4,500 BTU/h per system, roughly 1.3 kW. A nitrogen generator can add up to about 2.8 kW.</td>
+                      <td class="border border-gray-200 px-4 py-3">Cooling load calculated from the equipment list, generator ideally in a separate plant room</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Nitrogen</td>
+                      <td class="border border-gray-200 px-4 py-3">Depending on model up to 30 or 50 l/min, 5.5–6.8 bar, hydrocarbon-free</td>
+                      <td class="border border-gray-200 px-4 py-3">Generator or liquid nitrogen, pipe routing, check need for oxygen-depletion alarm</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Power</td>
+                      <td class="border border-gray-200 px-4 py-3">200–240 V, dedicated outlets per system, voltage tolerance +10 / −5 %, noise-free earth</td>
+                      <td class="border border-gray-200 px-4 py-3">Dedicated circuits, UPS for measurement and data acquisition</td>
+                    </tr>
+                    <tr class="bg-slate-50">
+                      <td class="border border-gray-200 px-4 py-3 font-medium">Extract</td>
+                      <td class="border border-gray-200 px-4 py-3">Ion source and roughing-pump exhaust ducted outside</td>
+                      <td class="border border-gray-200 px-4 py-3">Connected local extract, included in the ventilation balance</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The most important factor in a container is the heat balance. Several instruments, HPLC pumps, computers and possibly a nitrogen generator share a small footprint, and summer outdoor temperatures add to the load. How we reconcile cooling load, air change rates and standards in a container is described in our article on <a href="/en/magazine/lab-container-hvac-ventilation-standards" class="text-primary font-medium hover:underline">HVAC in lab containers</a>. Temperature, instrument status and nitrogen pressure can also be monitored remotely, as explained in the article on <a href="/en/magazine/lab-container-digitalization-lims-iot-remote-monitoring" class="text-primary font-medium hover:underline">LIMS, IoT and remote monitoring</a>.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Materials chosen at the factory</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                When converting an existing building you inherit the materials already there. With a lab container they are specified before construction starts. For a PFAS lab it is worth keeping a materials list for the working area as part of the <a href="/en/services/planning" class="text-primary font-medium hover:underline">specialist design</a>: seals, tubing, furniture and surface coatings, fittings and the ultrapure water pipework. Where fluoropolymers are technically necessary, for instance for chemical resistance, that is a deliberate, documented decision.
+              </p>
+
+              <h2 id="why-container" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Why a lab container makes sense for PFAS capacity</h2>
+
+              <div class="grid md:grid-cols-2 gap-6 my-8 not-prose">
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Time</h4>
+                  <p class="text-gray-600 text-sm">Factory manufacture typically takes 8 to 14 weeks, in parallel with permits and foundations. Ongoing laboratory work is not disrupted by a building site inside the premises.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Controlled environment</h4>
+                  <p class="text-gray-600 text-sm">New envelope, new ventilation, specified materials. For a trace laboratory that is a better starting point than a converted older building.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Next to the existing lab</h4>
+                  <p class="text-gray-600 text-sm">The container stands right beside the existing laboratory. Sample logistics, staff and LIMS remain shared.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100">
+                  <h4 class="font-bold text-slate-900 mb-2">Rent or buy</h4>
+                  <p class="text-gray-600 text-sm"><a href="/en/rent-lab-containers" class="text-primary font-medium hover:underline">Renting</a> suits a bridge until a new building is ready. For a permanent extension, <a href="/en/buy-lab-containers" class="text-primary font-medium hover:underline">buying</a> pays off.</p>
+                </div>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For mobile deployments, such as measurement campaigns at waterworks or contaminated sites, a compact transportable system like the <a href="/en/lab-containers/labtogo" class="text-primary font-medium hover:underline">LABtoGO</a> is a good fit. How mobile labs work on site is also shown in our article on <a href="/en/magazine/lab-container-construction-site-materials-testing" class="text-primary font-medium hover:underline">materials testing on construction sites</a>. If you plan laboratories for authorities and public testing agencies, see our page on <a href="/en/industries/public-health-emergency-preparedness" class="text-primary font-medium hover:underline">public health and emergency preparedness</a>.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Accreditation remains the laboratory's responsibility</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A lab container provides the spatial and technical conditions. It does not confer accreditation. The laboratory must agree a new measurement room or site with its accreditation body and reflect it in its quality management system. That includes the room description, environmental monitoring, instrument qualification and method validation at the new location. Build this step into the programme from the outset. Clean technical documentation of the container makes it considerably easier.
+              </p>
+
+              <h2 id="programme" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Programme: counting back from 12 January 2028</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                If you want additional capacity ready for the PFAS-4 deadline, count backwards. The phases below are typical. Actual durations depend on permits, instrument lead times and the accreditation body.
+              </p>
+
+              <ol class="space-y-4 text-gray-700 mb-8 not-prose">
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">1.</span> <span><strong class="text-slate-900">Requirements and room schedule:</strong> sample volumes, number of instruments, equipment list with heat output and services.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">2.</span> <span><strong class="text-slate-900">Site and permits:</strong> location, foundation, service connections, planning law. Background in our articles on <a href="/en/magazine/lab-container-permits-building-law" class="text-primary font-medium hover:underline">permits</a> and <a href="/en/magazine/lab-container-installation-foundation-statics" class="text-primary font-medium hover:underline">installation and structural design</a>.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">3.</span> <span><strong class="text-slate-900">Specialist design and procurement:</strong> ventilation, cooling, power, gases, materials list. What belongs in the documents is covered in the article on <a href="/en/magazine/lab-container-tender-specifications" class="text-primary font-medium hover:underline">tendering with a requirements specification</a>.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">4.</span> <span><strong class="text-slate-900">Factory manufacture:</strong> typically 8 to 14 weeks, with foundation and connections prepared on site in parallel.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">5.</span> <span><strong class="text-slate-900">Installation and commissioning:</strong> assembly, service connections, measurement of room conditions.</span></li>
+                <li class="flex gap-3"><span class="text-primary font-bold shrink-0">6.</span> <span><strong class="text-slate-900">Instruments, validation, accreditation:</strong> LC-MS/MS installation, blank checks, method validation, coordination with the accreditation body.</span></li>
+              </ol>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Experience shows that delays rarely arise in the factory but from open questions at the start. The most common causes are described in our article on <a href="/en/magazine/when-the-new-lab-arrives-too-late-5-planning-mistakes" class="text-primary font-medium hover:underline">five planning mistakes</a>. As of October 2026 that means: if you want to be measuring by early 2028, start step 1 now.
+              </p>
+
+              <div class="bg-slate-50 border border-gray-100 rounded-2xl p-8 my-8 not-prose">
+                <h3 class="text-xl font-heading font-bold text-slate-900 mb-4">Checklist: planning a PFAS lab in a container</h3>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Estimate sample volumes today and after 2028</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Choose the method: DIN 38407-42 or DIN EN 17892, direct injection or SPE</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Obtain site preparation documents for the planned LC-MS/MS systems</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Compile the heat load of all equipment, including the nitrogen generator</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Provide separate areas for standards and trace samples</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Keep a materials list for the working area with fluoropolymers in mind</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Settle nitrogen, ultrapure water and power supply, including UPS</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Plan environmental monitoring (temperature, humidity) with data logging</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Inform the accreditation body early about the new measurement room</span></li>
+                  <li class="flex gap-3"><span class="text-primary font-bold">→</span> <span>Decide between renting and buying based on the period of use</span></li>
+                </ul>
+              </div>
+
+              <h2 id="conclusion" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Conclusion</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong class="text-slate-900 font-semibold">PFAS analysis</strong> of drinking water has been mandatory since 2026 and becomes more demanding in 2028. Measurements are made at 1.5 ng/l per substance. At that level, the quality of results depends on the whole laboratory: stable room climate, clean services, well-planned workflows and controlled materials.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A lab container can create these conditions faster than a conversion during ongoing operation. The prerequisite is a design that starts from the analytical methods rather than from square metres. Then an additional instrument becomes additional, accreditation-ready measurement capacity.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center not-prose">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Plan your PFAS capacity</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Do you need additional PFAS measurement capacity and want to know what a lab container has to deliver? Planexus works with you on room schedule, climate, services and materials and delivers the laboratory turnkey.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Request a free initial consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Sources: TrinkwV Annex 2, Annex 7 and section 40 (gesetze-im-internet.de); DAkkS announcement of 15 January 2026; AGES and the state of Upper Austria on the Austrian ordinance; FOEN and FSVO on the revision of the Swiss TBDV; DIN 38407-42, DIN EN 17892; site preparation documents from an LC/MS manufacturer. As of 8 October 2026.
+              </p>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-slate-900 mb-4">At a glance</h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> PFAS-20: 0.1 µg/l since 12 Jan 2026</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> PFAS-4: 0.02 µg/l from 12 Jan 2028</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> LOQ 1.5 ng/l per substance</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Around 50 accredited labs (Jan 2026)</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Blank values set the measurement limit</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Heat load is the container bottleneck</li>
+                  <li class="flex gap-2"><span class="text-primary font-bold">→</span> Plan accreditation early</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <h4 class="font-bold text-slate-900 mb-4">Further reading</h4>
+                <ul class="space-y-3">
+                  <li><a href="/en/lab-containers" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Lab containers overview</a></li>
+                  <li><a href="/en/services/equipment" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Laboratory equipment</a></li>
+                  <li><a href="/en/magazine/lab-container-hvac-ventilation-standards" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>HVAC and ventilation</a></li>
+                  <li><a href="/en/magazine/lab-container-fume-hood-din-en-14175" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Fume cupboards DIN EN 14175</a></li>
+                  <li><a href="/en/magazine/temporary-lab-renovation-rental-containers" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Temporary lab during renovation</a></li>
+                  <li><a href="/en/industries/industry-materials-testing" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>Industry and testing labs</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <h4 class="font-bold mb-3">Need more capacity?</h4>
+                <p class="text-gray-400 text-sm mb-4">We review your equipment list, heat load and site for your PFAS laboratory.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Get in touch</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions on PFAS analysis</h2>
+          <div class="space-y-4">
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which PFAS limits apply to drinking water in Germany?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Since 12 January 2026, the sum of 20 PFAS (Sum of PFAS-20) is limited to 0.0001 mg/l, i.e. 0.1 µg/l or 100 ng/l. From 12 January 2028, an additional limit of 0.00002 mg/l, i.e. 20 ng/l, applies to the sum of PFOA, PFNA, PFHxS and PFOS (Sum of PFAS-4). Both values are set out in Annex 2 of the German Drinking Water Ordinance (TrinkwV).</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">What limit of quantification must a laboratory achieve for PFAS in drinking water?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Under Annex 7 of the TrinkwV, the limit of quantification must not exceed 30 per cent of the parametric value. For the sum parameters this is applied to the individual substances: each one must be quantifiable down to 0.0000015 mg/l, i.e. 1.5 ng/l. The permitted measurement uncertainty is 50 per cent.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which standards describe PFAS analysis in water?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">In Germany the key standards are DIN 38407-42 for drinking, ground and surface water as well as treated wastewater, and DIN EN 17892 specifically for drinking water. Both use liquid chromatography with tandem mass spectrometry (LC-MS/MS).</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Can a lab container house an accredited PFAS laboratory?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Yes, provided the room climate, power supply, gas supply, extract and choice of materials are designed for LC-MS/MS trace analysis. The container itself does not confer accreditation: the laboratory must agree a new measurement room or site with its accreditation body and reflect it in its quality management system.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Why are blank values so critical in PFAS analysis?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Measurements are made at a few nanograms per litre. Yet PFAS are also present in laboratory equipment and consumables, for example PTFE tubing or PTFE-lined closures. The achievable limit of quantification therefore depends directly on how low a laboratory can keep its blank values.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How quickly can additional PFAS laboratory space be created?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">A custom-designed Planexus lab container is typically manufactured in 8 to 14 weeks. Design, permits, installation, instrument set-up and coordination with the accreditation body come on top. Anyone who needs additional capacity by the PFAS-4 deadline on 12 January 2028 should start planning in 2026.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedArticles slug="pfas-analytik-labor-laborcontainer" locale="en" />
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/en/magazine" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to the magazine
+      </a>
+    </div>
+  </div>
+</Layout>
