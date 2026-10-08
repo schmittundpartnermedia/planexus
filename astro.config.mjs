@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
+import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { DE_TO_EN, EN_TO_DE, normalizePath } from './src/i18n/routes.ts';
@@ -35,7 +36,6 @@ function sitemapHomeSlash() {
     name: 'sitemap-home-slash',
     hooks: {
       'astro:build:done': async ({ dir }) => {
-        const { readdir, readFile, writeFile } = await import('node:fs/promises');
         const roots = [fileURLToPath(dir), path.join(fileURLToPath(dir), 'client')];
         for (const root of roots) {
           let files = [];
