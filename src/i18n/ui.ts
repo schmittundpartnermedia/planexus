@@ -289,7 +289,10 @@ export const ui = {
   },
 } as const;
 
-export type UiDictionary = (typeof ui)['de'];
+// Gleiche Struktur wie DE, aber Texte als string statt deutscher Literaltypen, damit EN passt.
+type WidenStrings<T> = { readonly [K in keyof T]: T[K] extends string ? string : WidenStrings<T[K]> };
+
+export type UiDictionary = WidenStrings<(typeof ui)['de']>;
 
 export function t(locale: Locale): UiDictionary {
   return ui[locale];
