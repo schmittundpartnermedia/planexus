@@ -150,3 +150,13 @@ ssh root@82.165.27.244 'cd /var/www/app && git checkout -- .astro && git fetch o
 - Secrets, Passwörter oder `.env` committen oder in Chats/Doku schreiben.
 - Ohne Freigabe pushen oder live stellen.
 - „Fertig" melden, ohne dass `npm run build` sauber durchgelaufen und das Ergebnis in `dist/` geprüft ist.
+
+## Was „fertig“ heißt (gilt für jeden Auftrag)
+- Bevor du baust: schreib eine Abnahmeliste aus prüfbaren Sätzen („wenn X, dann siehst du Y“) nach docs/ABNAHME-<auftrag>.md. Sie ist der Vertrag.
+- Fertig heißt: jeder Satz der Abnahmeliste belegt, in docs/PRUEFUNG-<auftrag>.md mit „geprüft wie, Ergebnis, Commit“.
+- Jede Leitung, die Daten verarbeitet, bekommt einen echten Durchlauf als Textdatei: was kam rein, was wurde gespeichert, welche Regel hat mit welchen Zahlen entschieden, was wurde empfohlen. Kannst du den nicht schreiben, ist die Leitung nicht fertig.
+- Was ein Mensch von dieser Funktion erwartet, ist drin, auch wenn es nicht gesagt wurde (Fehlerfälle, Abbruch, Wiederholung, Zeitzone, Leerzustand, Handy). Joachim fragt nie „geht auch noch …?“.
+- Kein „nicht geprüft“ im STAND, außer es braucht Joachims Geld oder Ja – dann mit Betrag.
+- Kein Test wird ans Ist-Verhalten angepasst. Jede Reparatur bekommt eine Gegenprobe, die ohne sie rot ist.
+- Unklar? Nimm die sicherere Auslegung, schreib die Entscheidung in STAND.md, bau weiter. Keine Rückfrage nachts.
+- Du sagst nie „fertig“, bevor PRUEFUNG-<auftrag>.md vollständig ist. Teilweise fertig heißt: nicht fertig.
