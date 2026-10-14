@@ -160,3 +160,34 @@ ssh root@82.165.27.244 'cd /var/www/app && git checkout -- .astro && git fetch o
 - Kein Test wird ans Ist-Verhalten angepasst. Jede Reparatur bekommt eine Gegenprobe, die ohne sie rot ist.
 - Unklar? Nimm die sicherere Auslegung, schreib die Entscheidung in STAND.md, bau weiter. Keine Rückfrage nachts.
 - Du sagst nie „fertig“, bevor PRUEFUNG-<auftrag>.md vollständig ist. Teilweise fertig heißt: nicht fertig.
+
+
+## Skills – wer macht was (Vorrang von oben nach unten)
+
+Installiert im Projekt unter `.claude/skills/` (Quellen und Prüfsummen: `skills-lock.json`). Jeder Skill macht nur seine Rolle.
+Die Regeln weiter oben in dieser Datei (Design, Texte, „Nie tun“, „fertig“) gehen allen Skills vor.
+
+- **Korrektheit** (Abstände, Bedienung, Kontrast, Barrierefreiheit, Mobil): `web-design-guidelines` – gilt immer, auch über dem Stil.
+  Der Skill liest seine Regeln frisch von `raw.githubusercontent.com/vercel-labs/web-interface-guidelines` (nur lesen).
+- **Bestehende Kundenseite:** VOR jeder Änderung `extract-design-system` gegen die öffentliche Adresse der Seite ausführen und das
+  Ergebnis im Projekt ablegen (`design-system/`, `.extract-design-system/`). Ist ein Design vorhanden (Ergebnis oder die
+  Designvorgaben in dieser Datei), hat es Vorrang vor jeder freien Stilwahl – die Seite darf nicht vom Kunden-Design abweichen.
+- **Gestaltungsrichtung neuer Seiten/Abschnitte:** `frontend-design` legt die Richtung fest (Farben, Schrift, Aufbau, die eine
+  besondere Idee). Jedes Mal eine andere Richtung, nie zweimal dasselbe Layout.
+- **Zusätzliche Stilideen:** `high-end-visual-design` liefert nur Ideen (Texturen, Details, Knöpfe), entscheidet aber nichts.
+  Widerspricht er `frontend-design`, gilt `frontend-design`. Seine festen Verbote (z. B. „nie Inter“) gelten nur, wenn sie
+  nicht gegen das Kunden-Design oder `frontend-design` stehen.
+- **Kritik, Prüfung, Feinschliff nach dem Bauen:** `impeccable` – nur die Befehle `critique`, `audit`, `polish`.
+  impeccable gibt NICHT den Stil vor; widerspricht es beim Stil, gilt `frontend-design`. Nicht benutzen: `shape`, `craft`,
+  `live`, `generate-image`, `init`, `hooks`, neue Entwürfe (concept-seed). `generate-image` würde OpenAI mit Joachims Schlüssel
+  aufrufen (kostet Geld). Telemetrie und Update-Abfrage sind in `.claude/settings.json` abgeschaltet
+  (`IMPECCABLE_NO_TELEMETRY`, `DO_NOT_TRACK`, `IMPECCABLE_NO_UPDATE_CHECK`). Das Hilfsprogramm lädt beim ersten Lauf
+  einmal seine Engine von `github.com/pbakaus/impeccable/releases` (mit Prüfsumme) nach `~/.impeccable/`.
+- **Google-SEO** (Technik, On-Page, Meta, Überschriften, interne Links): `seo-audit`.
+- **Sichtbarkeit in KI-Antworten** (AI Overviews, Perplexity, ChatGPT): `ai-seo`. Fremde Prüfwerkzeuge daraus
+  (z. B. `npx is-agentic`, Online-Checker) nur mit Joachims Ja.
+- **Anfragen/Conversion** (CTA, Formulare, Aufbau auf Anfrage): `cro` (Nachfolger von `page-cro`, gleiche Quelle).
+- **Bewegung/Animation:** kein eigener Skill in dieser Karte – nur dezente Scroll-Einblendungen, wie `frontend-design` sie vorsieht.
+- **Vor „fertig“:** Seite mit `playwright-cli` auf Desktop und Handy (`--mobile`) durchklicken, Screenshots unter
+  `docs/nachweise/` ablegen. `playwright-cli` öffnet keine `file:`-Adressen: lokal über `127.0.0.1` ausliefern.
+- Kein Skill darf etwas Kostenpflichtiges starten, `.env` lesen oder live stellen. Skills nur aus dieser Liste; neue nur mit Joachims Ja.
