@@ -191,3 +191,26 @@ Die Regeln weiter oben in dieser Datei (Design, Texte, „Nie tun“, „fertig�
 - **Vor „fertig“:** Seite mit `playwright-cli` auf Desktop und Handy (`--mobile`) durchklicken, Screenshots unter
   `docs/nachweise/` ablegen. `playwright-cli` öffnet keine `file:`-Adressen: lokal über `127.0.0.1` ausliefern.
 - Kein Skill darf etwas Kostenpflichtiges starten, `.env` lesen oder live stellen. Skills nur aus dieser Liste; neue nur mit Joachims Ja.
+
+### Ergänzung High-End
+
+Zusätzlich installiert: GSAP-Skills (`gsap-core`, `gsap-timeline`, `gsap-scrolltrigger`, `gsap-plugins`, `gsap-react`,
+`gsap-performance`, offiziell von GreenSock). Für alle Projekte (Benutzer-Ebene): Chrome DevTools MCP (`chrome-devtools`,
+offiziell von Google, ohne Nutzungsstatistik und ohne CrUX-Abfrage) und das Figma-Plugin mit Figma MCP (offiziell).
+Die Karte oben bleibt gültig; hier steht, was dazukommt oder schärfer gilt.
+
+- **Gestaltungsrichtung neuer Seiten:** `frontend-design` legt die Richtung fest; `high-end-visual-design` liefert zusätzliche
+  Stilideen, entscheidet aber nicht. Bei Widerspruch gilt `frontend-design`.
+- **Figma-Entwurf vorhanden:** Figma MCP ist die Vorlage und hat Vorrang vor allen Stil-Skills (`frontend-design`,
+  `high-end-visual-design`, impeccable) – exakt umsetzen (Skill `figma:figma-design-to-code`). Das Kunden-Design einer
+  bestehenden Seite und `web-design-guidelines` gelten trotzdem. Aus Figma nur lesen; nichts in Figma anlegen oder ändern
+  und keine Figma-Bilder erzeugen ohne Joachims Ja.
+- **Bewegung:** GSAP ist die einzige Animations-Bibliothek. Die einfachen Einblendungen aus `high-end-visual-design`
+  (IntersectionObserver) werden mit GSAP ScrollTrigger umgesetzt. Leistung nach `gsap-performance`
+  (nur `transform`/`opacity`, `gsap.matchMedia()` für „Bewegung reduzieren“ und Handy). In React-Seiten `gsap-react` (`useGSAP`).
+  GSAP ist kostenlos, auch kommerziell (Lizenz: gsap.com/standard-license). Nicht erlaubt laut Lizenz: GSAP in einem
+  Werkzeug, mit dem Nutzer ohne Code Animationen zusammenklicken (Konkurrenz zu Webflow).
+- **Vor „fertig“ zusätzlich:** Chrome DevTools MCP misst die Seite: Ladezeit (LCP, CLS), Ruckeln (lange Aufgaben,
+  Bilder pro Sekunde beim Scrollen), Fehler in der Konsole, Handy mit gedrosseltem Netz und 4-fach gedrosselter CPU.
+  Ziel: flüssig (≈ 60 Bilder/s), keine Konsolenfehler. Werte in `docs/nachweise/`. Chrome unsichtbar starten (`--headless`),
+  nicht auf Joachims Bildschirm.
