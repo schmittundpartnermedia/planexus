@@ -214,3 +214,24 @@ Die Karte oben bleibt gültig; hier steht, was dazukommt oder schärfer gilt.
   Bilder pro Sekunde beim Scrollen), Fehler in der Konsole, Handy mit gedrosseltem Netz und 4-fach gedrosselter CPU.
   Ziel: flüssig (≈ 60 Bilder/s), keine Konsolenfehler. Werte in `docs/nachweise/`. Chrome unsichtbar starten (`--headless`),
   nicht auf Joachims Bildschirm.
+
+### Ergänzung Animationen
+
+Zusätzlich installiert: `emil-design-eng` (emilkowalski/skills). Die Karten oben bleiben gültig; dieser Abschnitt
+ersetzt den Punkt „Bewegung/Animation“ der ersten Karte.
+
+- **WAS sich wann bewegt** (Choreografie, welche Abschnitte einblenden, wie viel Bewegung zum Stil passt): `frontend-design`
+  entscheidet. `high-end-visual-design` liefert dazu nur Ideen. Leitsatz aus `frontend-design`: ein orchestrierter Moment
+  wirkt stärker als viele verstreute Effekte.
+- **WIE es technisch umgesetzt wird:** GSAP (`gsap-core`, `gsap-timeline`, `gsap-scrolltrigger`, `gsap-plugins`; in
+  React-Seiten `gsap-react`). Für Animationen nur GSAP, keine zweite Bibliothek daneben; die einfachen
+  IntersectionObserver-Einblendungen aus `high-end-visual-design` werden mit GSAP ScrollTrigger umgesetzt.
+- **Gefühl und Feinheiten** (Tempo, Kurven, Hover, Klick-Rückmeldung, nichts wirkt hektisch): `emil-design-eng`.
+  Seine Beispiele mit CSS-Übergängen, Framer Motion oder WAAPI sind hier nur Maßstab für Tempo und Kurven; gebaut wird mit
+  GSAP bzw. mit schlichten CSS-Übergängen für Hover und Fokus.
+- **Leistung:** `gsap-performance` – nur `transform`/`opacity`, kein Ruckeln, Seite bleibt schnell
+  (Lighthouse/Core Web Vitals dürfen nicht schlechter werden; vorher/nachher messen).
+- **Pflicht:** „Bewegung reduzieren“ des Geräts wird respektiert (`prefers-reduced-motion` → keine großen Bewegungen,
+  über `gsap.matchMedia()`), Inhalte sind auch ohne JavaScript lesbar, auf dem Handy nichts, was das Scrollen bremst
+  (kein Anpinnen mit Scroll-Bindung am Handy). `web-design-guidelines` geht immer vor.
+- `impeccable` nur für Kritik/Feinschliff, nicht für eigene Animationen (`animate`, `overdrive`, `delight` nicht benutzen).
