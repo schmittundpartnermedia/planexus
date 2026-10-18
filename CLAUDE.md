@@ -160,3 +160,28 @@ ssh root@82.165.27.244 'cd /var/www/app && git checkout -- .astro && git fetch o
 - Kein Test wird ans Ist-Verhalten angepasst. Jede Reparatur bekommt eine Gegenprobe, die ohne sie rot ist.
 - Unklar? Nimm die sicherere Auslegung, schreib die Entscheidung in STAND.md, bau weiter. Keine Rückfrage nachts.
 - Du sagst nie „fertig“, bevor PRUEFUNG-<auftrag>.md vollständig ist. Teilweise fertig heißt: nicht fertig.
+
+## Skills – Rollenkarte (ergänzt 18.10.2026)
+
+**Die Design-Vorgaben dieser CLAUDE.md (Farben, Schriften, Logo, Rechtstexte, URLs) stehen über jedem Skill. Kein Skill ändert sie.**
+
+**Grundsatz:** Pro Aufgabe ist genau ein Skill zuständig. Die Regeln dieser CLAUDE.md stehen über jedem Skill. Ein Skill ändert nie Messlogik, Designgrundlagen, Kostenregeln oder Freigaben. Kein Skill löst etwas Kostenpflichtiges aus. Skills liegen in `.claude/skills/`, Quelle und Stand in `skills-lock.json`. Global (für alle Projekte, `~/.claude/skills/`): verification-before-completion, writing-plans, executing-plans, systematic-debugging, test-driven-development, requesting-code-review, receiving-code-review, handoff, playwright-cli, to-spec, codebase-design, wizard, agents-md, claude-settings-audit, context7-mcp (Doku über den MCP-Server context7). `setup-pre-commit` ist installiert, wird aber nur mit eigenem Auftrag ausgeführt.
+
+| Aufgabe | Zuständiger Skill | Grenzen |
+|---|---|---|
+| Astro-Aufbau | `astro` | Kein Upgrade von Astro ohne eigenen Auftrag. |
+| Leistung, Lighthouse | `perf-astro`, `core-web-vitals`, `perf-lighthouse` | Messung lokal, kein bezahlter Dienst. |
+| SEO Google | `seo-audit` | Nur Wissen und Bericht. |
+| SEO KI-Suche | `ai-seo` | Nur Wissen und Bericht. |
+| Strukturierte Daten (JSON-LD) | `schema` (früher `schema-markup`) | Keine erfundenen Bewertungen oder Preise. |
+| Texte | `marketing-psychology`, `cro` (früher `page-cro`), `lead-magnets` | Textregeln dieser Seite gelten: Ansprache wie auf der bestehenden Seite, keine Preise, keine erfundenen Referenzen (auch nicht im JSON-LD). Keine erfundenen Fakten. |
+| Bewegung | GSAP-Skills, `animation-performance` | Die Seite nutzt GSAP: Bewegung nur mit der vorhandenen GSAP-Einbindung, Leistung nach animation-performance. |
+| Stil-Pflege | `high-end-visual-design`, `design-taste-frontend`, `brandkit` | Nur innerhalb der bestehenden Vorgaben. |
+| Bild → Code | `image-to-code` | Nur Vorlagen von Joachim. |
+| Prüfung | `impeccable` (critique/audit/polish, dazu `impeccable adapt` und `impeccable harden`), `web-design-guidelines`, `landing-page-conversion-audit` | Nur Bericht und Feinschliff, gibt nicht den Stil vor. |
+| Vollständigkeit | `full-output-enforcement` | Keine Platzhalter, keine halben Dateien. |
+| Design auslesen | `extract-design-system` | Nur öffentliche Seiten. |
+
+**Nicht in diesem Projekt:** withastro/astro-Skills (astro-developer usw. – die sind für die Entwicklung von Astro selbst), keine Next-Skills. **Kein Skill stellt live:** Deploy nur durch Joachim über den SSH-Einzeiler; `script/deploy.sh` nie.
+
+Hinweis: `adapt`, `harden` und `audit` gibt es bei pbakaus/impeccable nicht mehr als eigene Skills; sie sind Befehle von `impeccable` (`impeccable adapt|harden|audit`, Anleitungen in `.claude/skills/impeccable/reference/adapt.md`, `harden.md`, `audit.md`). Das Hilfsprogramm (Live-Browser) von impeccable wird nicht heruntergeladen, Hooks werden nicht eingeschaltet. In der Marketing-Sammlung heißen `schema-markup` jetzt `schema` und `page-cro` jetzt `cro`.
