@@ -1,6 +1,6 @@
 # Prüfprotokoll – Umsetzung Skill-Audit (20.10.2026)
 
-Abnahmeliste: docs/ABNAHME-skill-umsetzung.md. Build: `lockf … npm run build` → „Complete!“, Exit 0 (letzter Lauf 03:56:29); `astro check` 0 Fehler. Geprüft gegen `dist/client` (138 Seiten), lokalen Server mit Wegwerf-DB und Browser (375 px / 1024–1440 px). Commit: noch keiner (wartet auf Freigabe).
+Abnahmeliste: docs/ABNAHME-skill-umsetzung.md. Build: `lockf … npm run build` → „Complete!“, Exit 0 (letzter Lauf 03:56:29); `astro check` 0 Fehler. Geprüft gegen `dist/client` (138 Seiten), lokalen Server mit Wegwerf-DB und Browser (375 px / 1024–1440 px). Commit: bcf0d9a (gepusht nach origin/main am 20.10.2026).
 
 | # | Prüfpunkt | Geprüft wie | Ergebnis |
 |---|---|---|---|

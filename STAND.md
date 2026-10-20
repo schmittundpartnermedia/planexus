@@ -19,4 +19,4 @@ Vorgaben von Joachim: Startseiten-Hero (Bild, Animation, Logo-PNG, Alt-Text) ble
 - nginx gzip live einspielen (Server-Änderung, siehe docs/nginx/planexus-gzip.conf) – braucht sein Ja und seinen SSH-Zugang.
 - Projekte-Seite als anonymisierte Fallbeispiele – braucht echte Projektdaten (Branche, Region, Fläche, Bauzeit).
 - Mieten/Kaufen inhaltlich vertiefen – braucht Konkurrenzanalyse mit Google-DE-Daten.
-- Commit/Push/Deploy – nur mit Freigabe.
+- Commit bcf0d9a gepusht (Freigabe Joachim 20.10.2026). Live-Deploy macht Joachim per SSH-Einzeiler.
