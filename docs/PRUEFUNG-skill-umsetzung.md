@@ -20,7 +20,7 @@ Abnahmeliste: docs/ABNAHME-skill-umsetzung.md. Build: `lockf … npm run build` 
 | 14 | Video erst bei Klick | dist: beide `<video>` `preload="none"`; Lighthouse LABtoGO 1.115 KiB (vorher live 30.118 KiB) | ✔ |
 | 15 | CSS-Hintergründe als WebP | 36 + 8 Dateien umgestellt, 3 WebP neu erzeugt; Mieten lädt `…_001….webp`, `…_017….webp`; Startseiten-Hero ausgenommen | ✔ |
 | 16 | Cookie-Banner statisch | dist: `id="cookie-consent"` im HTML, keine React-Insel; Browser: ablehnen → `localStorage`, `consent_update`; Footer-Link öffnet Einstellungen | ✔; Startseiten-LCP lokal 4,0 s (live vorher 14,7 s) |
-| 17 | gzip in nginx-Vorlage | docs/nginx/planexus-gzip.conf + Verweis in planexus.de.conf | ✔ Vorlage; **live einspielen braucht Joachims Ja** |
+| 17 | gzip in nginx-Vorlage | docs/nginx/planexus-gzip.conf + Verweis in planexus.de.conf | ✔ live eingespielt (Joachim, 20.10.2026); geprüft: /_astro CSS+JS und llms.txt mit `content-encoding: gzip`, `Vary: Accept-Encoding` |
 | 18 | Navigation einzeilig | Browser 1024 (Burger-Menü, kein Überlauf), 1280/1366/1440: kein Element > 40 px hoch, Telefon innerhalb | ✔ |
 | 19 | Barrierefreiheit ≥ 95 | Lighthouse lokal: Start 98, Mieten 99, LABtoGO 98, Hamburg 99, Kontakt 99, Pharma 99, EN 98 | ✔ (vorher live 91/93/83/93/92) |
 | 20 | Anfrage-Button im ersten Handy-Bildschirm | Browser: feste Leiste „Anfrage stellen / Anrufen“ auf Mieten, Pharma, Hamburg, LABtoGO; springt zum Formular | ✔ (nicht auf Start/Kontakt) |
@@ -42,7 +42,6 @@ Abnahmeliste: docs/ABNAHME-skill-umsetzung.md. Build: `lockf … npm run build` 
 Start 85, Mieten 86, LABtoGO 68, Hamburg 69, Kontakt 72, Pharma 76, EN 71. Lokal läuft ohne nginx-gzip und auf einem stark belasteten Rechner; die Zahlen sind nicht direkt mit live vergleichbar. Sicher messbar: LABtoGO 30.118 → 1.115 KiB, Startseiten-LCP 14,7 → 4,0 s.
 
 ## Nicht umgesetzt (braucht Joachim)
-- gzip auf dem Server einspielen (Befehl im Bericht).
 - Projekte als Fallbeispiele (echte Projektdaten nötig).
 - Mieten/Kaufen vertiefen (Konkurrenzanalyse mit Google-DE-Daten nötig).
 - Belege für „50+ Projekte“ und „24/7 Service & Support“.

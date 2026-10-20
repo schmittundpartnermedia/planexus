@@ -16,7 +16,7 @@ Vorgaben von Joachim: Startseiten-Hero (Bild, Animation, Logo-PNG, Alt-Text) ble
 - Blaupause: Keyword-Dichte-Pflicht (1,8–2,2 %) gestrichen.
 
 ### Offen (braucht Joachim)
-- nginx gzip live einspielen (Server-Änderung, siehe docs/nginx/planexus-gzip.conf) – braucht sein Ja und seinen SSH-Zugang.
+- erledigt 20.10.2026: nginx-gzip live eingespielt (nginx -t erfolgreich, reload; CSS/JS/Text mit content-encoding: gzip und Vary geprüft).
 - Projekte-Seite als anonymisierte Fallbeispiele – braucht echte Projektdaten (Branche, Region, Fläche, Bauzeit).
 - Mieten/Kaufen inhaltlich vertiefen – braucht Konkurrenzanalyse mit Google-DE-Daten.
 - Commit bcf0d9a gepusht (Freigabe Joachim 20.10.2026). Live-Deploy macht Joachim per SSH-Einzeiler.
