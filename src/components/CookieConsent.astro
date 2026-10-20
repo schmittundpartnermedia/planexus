@@ -1,0 +1,192 @@
+---
+// Cookie-Banner als statisches HTML (vorher React-Insel).
+// Grund: Der Banner wurde erst nach dem Laden von React gezeichnet und war damit
+// das LCP-Element der Startseite (Lighthouse 20.10.2026: 14,7 s). Verhalten,
+// Texte und Consent-Mode-Signale sind unverändert (siehe src/lib/consent.ts).
+import { t } from '../i18n/ui';
+import { localizeHref, type Locale } from '../i18n/routes';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'de' } = Astro.props;
+const copy = t(locale);
+const privacyHref = localizeHref('/datenschutz', locale);
+---
+
+<div
+  id="cookie-consent"
+  class="fixed inset-x-0 bottom-0 z-[100] p-4 md:p-6"
+  role="dialog"
+  aria-label={copy.cookies.aria}
+  hidden
+>
+  <div class="mx-auto max-w-4xl rounded-xl border border-slate-700 bg-slate-900 p-6 shadow-2xl">
+    <h2 class="font-heading text-lg font-bold text-white mb-2">
+      {copy.cookies.title}
+    </h2>
+
+    <div data-consent-view="intro">
+      <p class="text-sm text-slate-300 leading-relaxed mb-6">
+        {copy.cookies.intro}{' '}
+        <a href={privacyHref} class="text-primary hover:underline">
+          {copy.cookies.privacyLink}
+        </a>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button
+          type="button"
+          data-consent-action="accept-all"
+          class="bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+        >
+          {copy.cookies.acceptAll}
+        </button>
+        <button
+          type="button"
+          data-consent-action="reject-all"
+          class="border border-slate-600 text-white font-medium px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors"
+        >
+          {copy.cookies.necessaryOnly}
+        </button>
+        <button
+          type="button"
+          data-consent-action="show-settings"
+          class="text-slate-300 font-medium px-6 py-3 rounded-lg hover:text-white transition-colors"
+        >
+          {copy.cookies.settings}
+        </button>
+      </div>
+    </div>
+
+    <div data-consent-view="settings" hidden>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start justify-between gap-4 rounded-lg bg-slate-800/50 p-4">
+          <div>
+            <p class="font-semibold text-white text-sm">{copy.cookies.necessary}</p>
+            <p class="text-slate-400 text-sm mt-1">{copy.cookies.necessaryDesc}</p>
+          </div>
+          <span class="text-xs font-medium text-slate-400 shrink-0 mt-1">{copy.cookies.active}</span>
+        </div>
+
+        <label class="flex items-start justify-between gap-4 rounded-lg bg-slate-800/50 p-4 cursor-pointer">
+          <div>
+            <p class="font-semibold text-white text-sm">{copy.cookies.analytics}</p>
+            <p class="text-slate-400 text-sm mt-1">{copy.cookies.analyticsDesc}</p>
+          </div>
+          <input
+            type="checkbox"
+            data-consent-field="analytics"
+            class="mt-1 h-5 w-5 rounded border-slate-600 bg-slate-700 text-primary focus:ring-primary"
+          />
+        </label>
+
+        <label class="flex items-start justify-between gap-4 rounded-lg bg-slate-800/50 p-4 cursor-pointer">
+          <div>
+            <p class="font-semibold text-white text-sm">{copy.cookies.marketing}</p>
+            <p class="text-slate-400 text-sm mt-1">{copy.cookies.marketingDesc}</p>
+          </div>
+          <input
+            type="checkbox"
+            data-consent-field="marketing"
+            class="mt-1 h-5 w-5 rounded border-slate-600 bg-slate-700 text-primary focus:ring-primary"
+          />
+        </label>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button
+          type="button"
+          data-consent-action="save"
+          class="bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+        >
+          {copy.cookies.save}
+        </button>
+        <button
+          type="button"
+          data-consent-action="back"
+          class="text-slate-300 font-medium px-6 py-3 rounded-lg hover:text-white transition-colors"
+        >
+          {copy.cookies.back}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  // Sofort beim Parsen zeigen, wenn noch keine Wahl gespeichert ist – ohne auf JS-Bundles zu warten.
+  (function () {
+    var banner = document.getElementById('cookie-consent');
+    if (!banner) return;
+    try {
+      if (!localStorage.getItem('planexus_consent')) banner.hidden = false;
+    } catch (e) {
+      banner.hidden = false;
+    }
+  })();
+</script>
+
+<script>
+  import { CONSENT_OPEN_EVENT, loadConsent, saveConsent } from '../lib/consent';
+
+  const banner = document.getElementById('cookie-consent');
+  if (banner) {
+    const intro = banner.querySelector<HTMLElement>('[data-consent-view="intro"]');
+    const settings = banner.querySelector<HTMLElement>('[data-consent-view="settings"]');
+    const analyticsBox = banner.querySelector<HTMLInputElement>('[data-consent-field="analytics"]');
+    const marketingBox = banner.querySelector<HTMLInputElement>('[data-consent-field="marketing"]');
+
+    const fillFromSaved = () => {
+      const saved = loadConsent();
+      if (analyticsBox) analyticsBox.checked = saved ? saved.analytics : false;
+      if (marketingBox) marketingBox.checked = saved ? saved.marketing : false;
+    };
+
+    const showView = (view: 'intro' | 'settings') => {
+      if (intro) intro.hidden = view !== 'intro';
+      if (settings) settings.hidden = view !== 'settings';
+    };
+
+    const close = () => {
+      banner.hidden = true;
+      showView('intro');
+    };
+
+    fillFromSaved();
+
+    banner.addEventListener('click', (event) => {
+      const target = (event.target as HTMLElement).closest<HTMLElement>('[data-consent-action]');
+      if (!target) return;
+      switch (target.dataset.consentAction) {
+        case 'accept-all':
+          saveConsent({ analytics: true, marketing: true });
+          close();
+          break;
+        case 'reject-all':
+          saveConsent({ analytics: false, marketing: false });
+          close();
+          break;
+        case 'show-settings':
+          showView('settings');
+          break;
+        case 'save':
+          saveConsent({
+            analytics: Boolean(analyticsBox?.checked),
+            marketing: Boolean(marketingBox?.checked),
+          });
+          close();
+          break;
+        case 'back':
+          showView('intro');
+          break;
+      }
+    });
+
+    window.addEventListener(CONSENT_OPEN_EVENT, () => {
+      fillFromSaved();
+      showView('settings');
+      banner.hidden = false;
+    });
+  }
+</script>

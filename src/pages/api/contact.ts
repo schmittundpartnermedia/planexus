@@ -1,7 +1,8 @@
 import type { APIRoute } from 'astro';
-import nodemailer from 'nodemailer';
 import { db } from '../../lib/db';
 import { contactMessages } from '../../lib/schema';
+import { createMailer, mailRow, recipientEmail } from '../../lib/mail';
+import { isJsonRequest, redirectBack } from '../../lib/form-fallback';
 
 export const prerender = false;
 
@@ -12,7 +13,22 @@ const MAX_LENGTH = {
   email: 254,
   subject: 200,
   message: 5000,
+  company: 200,
+  phone: 50,
 } as const;
+
+const INTEREST_LABELS: Record<string, string> = {
+  miete: 'Laborcontainer mieten',
+  kauf: 'Laborcontainer kaufen',
+  labtogo: 'LABtoGO',
+  offen: 'Noch offen – Beratung gewünscht',
+};
+
+const optionalText = (value: unknown, max: number): string | null => {
+  if (value === undefined || value === null || value === '') return '';
+  if (typeof value !== 'string' || value.length > max) return null;
+  return value.trim();
+};
 
 const jsonResponse = (body: object, status: number) =>
   new Response(JSON.stringify(body), {
@@ -21,9 +37,15 @@ const jsonResponse = (body: object, status: number) =>
   });
 
 export const POST: APIRoute = async ({ request }) => {
+  if (!isJsonRequest(request)) {
+    return redirectBack(request);
+  }
   try {
     const data = await request.json();
     const { name, email, subject, message, website, elapsedMs } = data;
+    const company = optionalText(data.company, MAX_LENGTH.company);
+    const phone = optionalText(data.phone, MAX_LENGTH.phone);
+    const interest = typeof data.interest === 'string' && INTEREST_LABELS[data.interest] ? INTEREST_LABELS[data.interest] : '';
 
     // 1. Honeypot: nur Bots füllen das unsichtbare Feld aus.
     //    Erfolg vorgaukeln, aber WEDER Mail versenden NOCH in der DB speichern.
@@ -64,6 +86,10 @@ export const POST: APIRoute = async ({ request }) => {
       return jsonResponse({ error: 'Eingabe zu lang.' }, 400);
     }
 
+    if (company === null || phone === null) {
+      return jsonResponse({ error: 'Ungültige Eingabe.' }, 400);
+    }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return jsonResponse({ error: 'Ungültige E-Mail-Adresse.' }, 400);
@@ -74,38 +100,36 @@ export const POST: APIRoute = async ({ request }) => {
       return jsonResponse({ error: 'Zu viele Links in der Nachricht.' }, 400);
     }
 
+    // Zusatzangaben ohne Schema-Änderung mit der Nachricht speichern.
+    const extraLines = [
+      company ? `Firma: ${company}` : '',
+      phone ? `Telefon: ${phone}` : '',
+      interest ? `Anliegen: ${interest}` : '',
+    ].filter(Boolean);
+    const storedMessage = extraLines.length ? `${extraLines.join('\n')}\n\n${message}` : message;
+
     let emailSent = false;
 
-    const smtpPass = process.env.SMTP_PASS || '';
-    if (smtpPass) {
+    const mailer = createMailer();
+    if (mailer) {
       try {
-        const smtpHost = process.env.SMTP_HOST || 'smtp.ionos.de';
-        const smtpPort = parseInt(process.env.SMTP_PORT || '465');
-        const smtpUser = process.env.SMTP_USER || 'Server@planexus.de';
-        const recipientEmail = process.env.RECIPIENT_EMAIL || 'info@planexus.de';
-
-        const transporter = nodemailer.createTransport({
-          host: smtpHost,
-          port: smtpPort,
-          secure: smtpPort === 465,
-          auth: {
-            user: smtpUser,
-            pass: smtpPass,
-          },
-        });
+        const { transporter, from } = mailer;
 
         await transporter.sendMail({
-          from: `"Planexus Webseite" <${smtpUser}>`,
-          replyTo: `"${name}" <${email}>`,
-          to: recipientEmail,
-          subject: `Kontaktformular: ${subject}`,
+          from,
+          replyTo: { name: name.replace(/["\r\n]/g, ''), address: email },
+          to: recipientEmail(),
+          subject: `Kontaktformular: ${subject.replace(/[\r\n]+/g, ' ')}`,
           html: `
             <h2>Neue Kontaktanfrage</h2>
             <table style="border-collapse: collapse; width: 100%;">
-              <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Name:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${name}</td></tr>
-              <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">E-Mail:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${email}</td></tr>
-              <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Betreff:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${subject}</td></tr>
-              <tr><td style="padding: 8px; font-weight: bold; vertical-align: top;">Nachricht:</td><td style="padding: 8px;">${message.replace(/\n/g, '<br>')}</td></tr>
+              ${mailRow('Name', name)}
+              ${mailRow('E-Mail', email)}
+              ${company ? mailRow('Firma', company) : ''}
+              ${phone ? mailRow('Telefon', phone) : ''}
+              ${interest ? mailRow('Anliegen', interest) : ''}
+              ${mailRow('Betreff', subject)}
+              ${mailRow('Nachricht', message)}
             </table>
             <hr style="margin-top: 20px;">
             <p style="color: #888; font-size: 12px;">Gesendet über das Kontaktformular auf planexus.de</p>
@@ -122,7 +146,7 @@ export const POST: APIRoute = async ({ request }) => {
       name,
       email,
       subject,
-      message,
+      message: storedMessage,
       emailSent,
     });
 

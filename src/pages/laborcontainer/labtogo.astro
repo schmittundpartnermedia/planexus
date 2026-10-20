@@ -2,11 +2,48 @@
 import Layout from '../../layouts/Layout.astro';
 import Picture from '../../components/Picture.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const labtogoFaqs = [
+  {
+    "q": "Wie groß ist der LABtoGO?",
+    "a": "Außen misst der LABtoGO 9.500 × 3.000 × 3.400 mm (Länge × Breite × Höhe). Innen bietet er 2.750 mm lichte Raumhöhe und mehr als 6.200 mm Labortiefe. Die Außenlackierung ist RAL 7016 Anthrazit."
+  },
+  {
+    "q": "Was unterscheidet den LABtoGO von einem herkömmlichen Laborcontainer?",
+    "a": "Ein herkömmlicher Laborcontainer ist rund 6.050 mm lang und hat etwa 2.400 mm Raumhöhe. Der LABtoGO ist so groß, dass ein solcher Container komplett hineinpassen würde. Er ist von Grund auf als Labor geplant – mit Laborinfrastruktur, Sicherheitstechnik und Normen ab Werk, nicht als Container mit Labormöbeln."
+  },
+  {
+    "q": "Braucht der Transport des LABtoGO eine Sondergenehmigung?",
+    "a": "Nein. Die Klimaanlage und alle Anbauteile liegen innerhalb der Containermaße. Es müssen keine Teile ab- oder wieder angebaut werden, der LABtoGO fährt im normalen Straßentransport ohne Sondergenehmigung."
+  },
+  {
+    "q": "Ist der LABtoGO für BSL-2-Arbeiten geeignet?",
+    "a": "Ja. Der Laborraum ist S2-fähig und lässt sich mit wenigen Handgriffen auf BSL-2 umrüsten. Die regelbaren Druckbereiche für Über- oder Unterdruck sind ab Werk vorhanden."
+  },
+  {
+    "q": "Welche Technik ist im LABtoGO ab Werk eingebaut?",
+    "a": "Ab Werk sind eine RLT-Anlage mit Wärmerückgewinnung nach DIN 1946-7, ein getrenntes 24-Stunden-Abluftsystem, eine Klimaanlage, Brandmeldetechnik, Notrufsystem, Zugangskontrolle, Gebäudeleittechnik mit Touchbedienfeld sowie Fernwartung und LAN/WLAN mit Glasfaser eingebaut. Die Technik sitzt in einem getrennten Technikraum."
+  },
+  {
+    "q": "Kann man den LABtoGO mieten oder kaufen?",
+    "a": "Beides ist möglich. Wie Miete und Kauf ablaufen, steht auf den Seiten Laborcontainer mieten und Laborcontainer kaufen. Auf Ihre Anfrage erhalten Sie eine erste schriftliche Indikation in der Regel innerhalb von 48 Stunden."
+  }
+];
+
+const labtogoFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": labtogoFaqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
 ---
 
 <Layout
-  title="LABtoGO – mobiler Laborcontainer mit 2.750 mm Raumhöhe"
-  description="LABtoGO: der schlüsselfertige Plug-and-Play-Laborcontainer mit 2.750 mm Raumhöhe und vollverglaster Front. 3D-Modell, Innenrundgang per Video und Datenblatt zum Download. Jetzt entdecken."
+  title="LABtoGO – Laborcontainer mit 2.750 mm Raumhöhe"
+  description="LABtoGO: schlüsselfertiger Plug-and-Play-Laborcontainer mit 2.750 mm Raumhöhe und vollverglaster Front. Innenrundgang per Video, Datenblatt als PDF."
   canonical="/laborcontainer/labtogo"
   ogImage="/images/labtogo-logo.png"
 >
@@ -26,7 +63,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
         <Picture src="/images/labtogo-industrie.png" alt="LABtoGO von Planexus im industriellen Einsatz – mobiler Laborcontainer auf einem Petrochemie-Standort bei Abendstimmung, vollverglaste Front, RAL 7016 Anthrazit" class="w-full h-full object-cover" loading="eager" fetchpriority="high" width={1536} height={1024} />
       </div>
       <div id="hero-media-vid" class="absolute inset-0 hidden">
-        <video id="hero-video" class="w-full h-full object-cover" muted playsinline preload="auto" loop style="opacity:0;">
+        <video id="hero-video" class="w-full h-full object-cover" muted playsinline preload="none" loop style="opacity:0;">
           <source src="/videos/laborcontainer-innenansicht.mp4" type="video/mp4" />
         </video>
         <div id="hero-vid-overlay" class="absolute inset-0 bg-black/40"></div>
@@ -44,10 +81,10 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
           <a href="/kontakt" class="inline-flex items-center gap-3 bg-[#bbd700] hover:bg-[#a8c200] text-slate-900 font-bold px-8 py-4 rounded-lg text-sm uppercase tracking-wider transition-colors shadow-lg">
             Jetzt anfragen
           </a>
-          <a href="/laborcontainer-mieten" class="inline-flex items-center gap-3 bg-black/50 hover:bg-black/70 backdrop-blur-md text-white font-semibold px-8 py-4 rounded-lg text-sm uppercase tracking-wider transition-all border border-white/30 hover:border-white/50 shadow-lg">
+          <a href="/laborcontainer-mieten" class="hidden sm:inline-flex items-center gap-3 bg-black/50 hover:bg-black/70 backdrop-blur-md text-white font-semibold px-8 py-4 rounded-lg text-sm uppercase tracking-wider transition-all border border-white/30 hover:border-white/50 shadow-lg">
             Mieten
           </a>
-          <a href="/laborcontainer-kaufen" class="inline-flex items-center gap-3 bg-black/50 hover:bg-black/70 backdrop-blur-md text-white font-semibold px-8 py-4 rounded-lg text-sm uppercase tracking-wider transition-all border border-white/30 hover:border-white/50 shadow-lg">
+          <a href="/laborcontainer-kaufen" class="hidden sm:inline-flex items-center gap-3 bg-black/50 hover:bg-black/70 backdrop-blur-md text-white font-semibold px-8 py-4 rounded-lg text-sm uppercase tracking-wider transition-all border border-white/30 hover:border-white/50 shadow-lg">
             Kaufen
           </a>
           <button id="cta-video" class="inline-flex items-center gap-3 bg-black/50 hover:bg-black/70 backdrop-blur-md text-white font-semibold px-8 py-4 rounded-lg text-sm uppercase tracking-wider transition-all border border-white/30 hover:border-white/50 cursor-pointer shadow-lg">
@@ -109,7 +146,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
         <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-white/40 group-hover:text-[#bbd700] shrink-0 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       </a>
 
-      <a href="https://www.eubusinessnews.com/winners/planexus-gmbh/" target="_blank" rel="noopener noreferrer" class="flex md:hidden items-center justify-center gap-3 mt-5 bg-black/50 backdrop-blur-md rounded-xl px-5 py-3 mx-auto w-fit border border-[#bbd700]/25">
+      <a href="https://www.eubusinessnews.com/winners/planexus-gmbh/" target="_blank" rel="noopener noreferrer" class="hidden items-center justify-center gap-3 mt-5 bg-black/50 backdrop-blur-md rounded-xl px-5 py-3 mx-auto w-fit border border-[#bbd700]/25">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#bbd700] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
         <div class="text-center">
           <p class="text-[10px] tracking-[2px] uppercase text-[#bbd700] font-bold">Award Winner 2026</p>
@@ -121,11 +158,11 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
     <div id="video-player" class="fixed inset-0 z-[50] bg-black/95 backdrop-blur-sm flex flex-col items-center justify-center transition-opacity duration-500 pointer-events-none" style="opacity:0;">
       <div id="vid-wrap" class="w-[min(90vw,1080px)] bg-black border border-[rgba(187,215,0,0.35)] rounded-lg overflow-hidden" style="aspect-ratio:16/9;cursor:grab;">
         <div class="relative w-full h-full">
-          <video id="lab-video" class="w-full h-full object-cover" muted playsinline preload="auto" style="opacity:0;">
+          <video id="lab-video" class="w-full h-full object-cover" muted playsinline preload="none" style="opacity:0;">
             <source src="/videos/laborcontainer-innenansicht.mp4" type="video/mp4" />
           </video>
           <div id="vid-poster" class="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-[#0a160b] via-[#162814] to-[#0a160b]">
-            <button id="play-big" class="w-16 h-16 rounded-full border-2 border-[rgba(187,215,0,0.38)] flex items-center justify-center cursor-pointer hover:border-[#bbd700] transition-all" style="animation:pulse-glow 2s ease-in-out infinite;">
+            <button id="play-big" type="button" aria-label="Video abspielen" class="w-16 h-16 rounded-full border-2 border-[rgba(187,215,0,0.38)] flex items-center justify-center cursor-pointer hover:border-[#bbd700] transition-all" style="animation:pulse-glow 2s ease-in-out infinite;">
               <div class="w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-l-[20px] border-l-[#bbd700] ml-1"></div>
             </button>
             <p class="text-white font-bold text-lg tracking-[3px] uppercase">LABtoGO Innenansicht</p>
@@ -134,7 +171,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
           <div id="vid-hint" class="absolute bottom-4 left-0 right-0 text-center hidden">
             <div class="inline-flex items-center gap-3 bg-black/70 backdrop-blur-sm border border-[rgba(187,215,0,0.2)] rounded-full px-5 py-2">
               <svg class="w-4 h-4 text-[#bbd700] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
-              <span class="text-[10px] tracking-[2px] uppercase text-[#bbd700]">Maus ziehen: Rundgang steuern</span>
+              <span class="text-[10px] tracking-[2px] uppercase text-[#5c7300]">Maus ziehen: Rundgang steuern</span>
               <span class="text-[10px] text-white/30">|</span>
               <span class="text-[10px] tracking-[2px] uppercase text-[#7a8fa8]">Regler: Position wählen</span>
             </div>
@@ -176,14 +213,14 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
   <section class="bg-white py-20 md:py-28">
     <div class="container mx-auto px-4 max-w-5xl">
       <div class="text-center mb-16">
-        <p class="text-[#bbd700] font-semibold text-sm tracking-widest uppercase mb-4">Der LABtoGO</p>
+        <p class="text-[#5c7300] font-semibold text-sm tracking-widest uppercase mb-4">Der LABtoGO</p>
         <h1 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-          Ein normaler Laborcontainer passt<br class="hidden md:block" /> <span class="text-[#bbd700]">in den LABtoGO rein.</span>
+          Ein normaler Laborcontainer passt<br class="hidden md:block" /> <span class="text-[#7a9900]">in den LABtoGO rein.</span>
         </h1>
         <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
           Herkömmliche Laborcontainer basieren auf Standard-Containermaßen — klein, beengt, voller Kompromisse. 
-          Der LABtoGO von <a href="/ueber-uns" class="text-[#7a9900] hover:underline">Planexus</a> ist so groß, dass ein konventioneller Laborcontainer komplett hineinpassen würde. 
-          Das Ergebnis: echte Labortiefe, echte Raumhöhe, echtes Arbeiten — mit professioneller <a href="/leistungen/ausstattung" class="text-[#7a9900] hover:underline">Laborausstattung</a> auf höchstem Niveau.
+          Der LABtoGO von <a href="/ueber-uns" class="text-[#5c7300] hover:underline">Planexus</a> ist so groß, dass ein konventioneller Laborcontainer komplett hineinpassen würde. 
+          Das Ergebnis: echte Labortiefe, echte Raumhöhe, echtes Arbeiten — mit professioneller <a href="/leistungen/ausstattung" class="text-[#5c7300] hover:underline">Laborausstattung</a> auf höchstem Niveau.
         </p>
       </div>
 
@@ -262,19 +299,19 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
             <h3 class="font-bold text-slate-900 text-lg mb-3">LABtoGO – Mobile Laborcontainer</h3>
             <div class="space-y-2 text-sm text-slate-600">
               <div class="flex justify-between border-b border-slate-100 pb-1">
-                <span>Außenlänge</span><span class="font-bold text-[#7a9900]">9.500 mm</span>
+                <span>Außenlänge</span><span class="font-bold text-[#5c7300]">9.500 mm</span>
               </div>
               <div class="flex justify-between border-b border-slate-100 pb-1">
-                <span>Außenbreite</span><span class="font-bold text-[#7a9900]">3.000 mm</span>
+                <span>Außenbreite</span><span class="font-bold text-[#5c7300]">3.000 mm</span>
               </div>
               <div class="flex justify-between border-b border-slate-100 pb-1">
-                <span>Außenhöhe</span><span class="font-bold text-[#7a9900]">3.400 mm</span>
+                <span>Außenhöhe</span><span class="font-bold text-[#5c7300]">3.400 mm</span>
               </div>
               <div class="flex justify-between border-b border-slate-100 pb-1">
-                <span>Labortiefe</span><span class="font-bold text-[#7a9900]">&gt; 6.200 mm</span>
+                <span>Labortiefe</span><span class="font-bold text-[#5c7300]">&gt; 6.200 mm</span>
               </div>
               <div class="flex justify-between">
-                <span>Raumhöhe innen</span><span class="font-bold text-[#7a9900]">2.750 mm</span>
+                <span>Raumhöhe innen</span><span class="font-bold text-[#5c7300]">2.750 mm</span>
               </div>
             </div>
           </div>
@@ -300,12 +337,12 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-6">
-          <div class="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center mb-4 text-slate-400 font-bold text-sm">01</div>
+          <div class="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center mb-4 text-slate-200 font-bold text-sm">01</div>
           <h3 class="text-white font-bold text-lg mb-3">Zweck & Nutzung</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Ein Labor ist für Experimente, Analysen oder Forschung vorgesehen — mit speziellen Anforderungen an Hygiene, Reproduzierbarkeit und Sicherheit.</p>
         </div>
         <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-6">
-          <div class="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center mb-4 text-slate-400 font-bold text-sm">02</div>
+          <div class="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center mb-4 text-slate-200 font-bold text-sm">02</div>
           <h3 class="text-white font-bold text-lg mb-3">Infrastruktur</h3>
           <ul class="text-slate-400 text-sm space-y-1.5 leading-relaxed">
             <li>Stromversorgung für Geräte mit hoher Leistung</li>
@@ -315,7 +352,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
           </ul>
         </div>
         <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-6">
-          <div class="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center mb-4 text-slate-400 font-bold text-sm">03</div>
+          <div class="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center mb-4 text-slate-200 font-bold text-sm">03</div>
           <h3 class="text-white font-bold text-lg mb-3">Sicherheitsausstattung</h3>
           <ul class="text-slate-400 text-sm space-y-1.5 leading-relaxed">
             <li>Notdusche und Augenspülstation</li>
@@ -325,7 +362,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
           </ul>
         </div>
         <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-6">
-          <div class="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center mb-4 text-slate-400 font-bold text-sm">04</div>
+          <div class="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center mb-4 text-slate-200 font-bold text-sm">04</div>
           <h3 class="text-white font-bold text-lg mb-3">Spezialisierte Einrichtung</h3>
           <ul class="text-slate-400 text-sm space-y-1.5 leading-relaxed">
             <li>Labortische mit chemikalienbeständigen Oberflächen</li>
@@ -334,7 +371,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
           </ul>
         </div>
         <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-6 md:col-span-2 lg:col-span-2">
-          <div class="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center mb-4 text-slate-400 font-bold text-sm">05</div>
+          <div class="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center mb-4 text-slate-200 font-bold text-sm">05</div>
           <h3 class="text-white font-bold text-lg mb-3">Normen & Vorschriften</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Ein Labor muss gesetzliche Sicherheitsstandards erfüllen: DIN-Normen, Arbeitsschutzrichtlinien, Laborrichtlinien. Je nach Art (Chemielabor, Biolabor, Physiklabor, Geräte- und Analysenlabor) gelten zusätzliche Vorschriften wie BSL-Stufen für Biolabore.</p>
         </div>
@@ -350,9 +387,9 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
   <section class="bg-white py-20 md:py-28">
     <div class="container mx-auto px-4 max-w-5xl">
       <div class="text-center mb-16">
-        <p class="text-[#bbd700] font-semibold text-sm tracking-widest uppercase mb-4">Der LABtoGO-Mehrwert</p>
+        <p class="text-[#5c7300] font-semibold text-sm tracking-widest uppercase mb-4">Der LABtoGO-Mehrwert</p>
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-          Was den LABtoGO so <span class="text-[#bbd700]">besonders</span> macht
+          Was den LABtoGO so <span class="text-[#7a9900]">besonders</span> macht
         </h2>
         <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
           Der LABtoGO erfüllt nicht nur alle oben genannten Anforderungen — er übertrifft sie. 
@@ -415,21 +452,21 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
           </p>
           <div class="grid md:grid-cols-2 gap-4 mb-6">
             <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
-              <h4 class="text-[#bbd700] font-bold text-sm uppercase tracking-wider mb-3">Klimatechnik & Lüftung</h4>
+              <h4 class="text-[#5c7300] font-bold text-sm uppercase tracking-wider mb-3">Klimatechnik & Lüftung</h4>
               <ul class="space-y-2 text-slate-600 text-sm">
-                <li class="flex items-start gap-2"><span class="text-[#bbd700] shrink-0">&#9654;</span>Integrierte RLT-Anlage mit Wärmerückgewinnung nach DIN 1946-7</li>
-                <li class="flex items-start gap-2"><span class="text-[#bbd700] shrink-0">&#9654;</span>Regelbare Druckbereiche für Über- oder Unterdruck</li>
-                <li class="flex items-start gap-2"><span class="text-[#bbd700] shrink-0">&#9654;</span>Getrenntes 24h-Abluftsystem mit PPs-Verrohrung</li>
-                <li class="flex items-start gap-2"><span class="text-[#bbd700] shrink-0">&#9654;</span>Klimaanlage innerhalb der Containermaße — keine Anbauten</li>
+                <li class="flex items-start gap-2"><span class="text-[#5c7300] shrink-0">&#9654;</span>Integrierte RLT-Anlage mit Wärmerückgewinnung nach DIN 1946-7</li>
+                <li class="flex items-start gap-2"><span class="text-[#5c7300] shrink-0">&#9654;</span>Regelbare Druckbereiche für Über- oder Unterdruck</li>
+                <li class="flex items-start gap-2"><span class="text-[#5c7300] shrink-0">&#9654;</span>Getrenntes 24h-Abluftsystem mit PPs-Verrohrung</li>
+                <li class="flex items-start gap-2"><span class="text-[#5c7300] shrink-0">&#9654;</span>Klimaanlage innerhalb der Containermaße — keine Anbauten</li>
               </ul>
             </div>
             <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
-              <h4 class="text-[#bbd700] font-bold text-sm uppercase tracking-wider mb-3">Konstruktion & Design</h4>
+              <h4 class="text-[#5c7300] font-bold text-sm uppercase tracking-wider mb-3">Konstruktion & Design</h4>
               <ul class="space-y-2 text-slate-600 text-sm">
-                <li class="flex items-start gap-2"><span class="text-[#bbd700] shrink-0">&#9654;</span>Vollintegrierte Zwischendecke, abwaschbar & desinfizierbar</li>
-                <li class="flex items-start gap-2"><span class="text-[#bbd700] shrink-0">&#9654;</span>Getrennter Technikraum für Wartungspersonal</li>
-                <li class="flex items-start gap-2"><span class="text-[#bbd700] shrink-0">&#9654;</span>500 kg/m² Bodenbelastung per Standard</li>
-                <li class="flex items-start gap-2"><span class="text-[#bbd700] shrink-0">&#9654;</span>Gasversorgung mit Reinheitsgrad bis 6.0</li>
+                <li class="flex items-start gap-2"><span class="text-[#5c7300] shrink-0">&#9654;</span>Vollintegrierte Zwischendecke, abwaschbar & desinfizierbar</li>
+                <li class="flex items-start gap-2"><span class="text-[#5c7300] shrink-0">&#9654;</span>Getrennter Technikraum für Wartungspersonal</li>
+                <li class="flex items-start gap-2"><span class="text-[#5c7300] shrink-0">&#9654;</span>500 kg/m² Bodenbelastung per Standard</li>
+                <li class="flex items-start gap-2"><span class="text-[#5c7300] shrink-0">&#9654;</span>Gasversorgung mit Reinheitsgrad bis 6.0</li>
               </ul>
             </div>
           </div>
@@ -509,11 +546,11 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
           </div>
           <p class="text-slate-600 text-base leading-relaxed mb-6">
             Von modularen Labormöbeln über die Gebäudeleittechnik bis zur Fernwartung — der LABtoGO vereint 
-            alles, was ein modernes Labor braucht, in einem durchdachten, vernetzten System. Unsere <a href="/leistungen/smart-lab" class="text-[#7a9900] hover:underline">Smart Lab Integration</a> macht's möglich.
+            alles, was ein modernes Labor braucht, in einem durchdachten, vernetzten System. Unsere <a href="/leistungen/smart-lab" class="text-[#5c7300] hover:underline">Smart Lab Integration</a> macht's möglich.
           </p>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <h4 class="text-[#bbd700] font-bold text-sm uppercase tracking-wider mb-4">Labor & Ausstattung</h4>
+              <h4 class="text-[#5c7300] font-bold text-sm uppercase tracking-wider mb-4">Labor & Ausstattung</h4>
               <div class="space-y-4">
                 <div class="flex items-start gap-3">
                   <div class="w-8 h-8 bg-[#bbd700]/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
@@ -539,7 +576,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
                   </div>
                   <div>
                     <p class="text-slate-900 font-semibold text-sm">S2-fähig</p>
-                    <p class="text-slate-500 text-xs leading-relaxed">Laborraum mit wenigen Handgriffen auf <a href="/magazin/bsl-2-bsl-3-container-labor" class="text-[#7a9900] hover:underline">BSL-2</a> umrüstbar</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Laborraum mit wenigen Handgriffen auf <a href="/magazin/bsl-2-bsl-3-container-labor" class="text-[#5c7300] hover:underline">BSL-2</a> umrüstbar</p>
                   </div>
                 </div>
                 <div class="flex items-start gap-3">
@@ -554,7 +591,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
               </div>
             </div>
             <div>
-              <h4 class="text-[#bbd700] font-bold text-sm uppercase tracking-wider mb-4">Digitale Vernetzung</h4>
+              <h4 class="text-[#5c7300] font-bold text-sm uppercase tracking-wider mb-4">Digitale Vernetzung</h4>
               <div class="space-y-4">
                 <div class="flex items-start gap-3">
                   <div class="w-8 h-8 bg-[#bbd700]/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
@@ -602,32 +639,32 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
           </p>
           <div class="grid md:grid-cols-2 gap-4">
             <div class="bg-slate-50 rounded-lg p-4 border border-slate-200 flex items-start gap-3">
-              <span class="text-[#bbd700] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">DIN 12899-3</span>
+              <span class="text-[#5c7300] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">DIN 12899-3</span>
               <p class="text-slate-600 text-sm">Körper- und Augennotduschen nach DIN EN 15154 Teil I+II, BGI, GUV-I 850-0</p>
             </div>
             <div class="bg-slate-50 rounded-lg p-4 border border-slate-200 flex items-start gap-3">
-              <span class="text-[#bbd700] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">DIN EN 12464-1</span>
+              <span class="text-[#5c7300] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">DIN EN 12464-1</span>
               <p class="text-slate-600 text-sm">Höhere Beleuchtungsintensität für Arbeitsstätten in Innenräumen und Laborflächen</p>
             </div>
             <div class="bg-slate-50 rounded-lg p-4 border border-slate-200 flex items-start gap-3">
-              <span class="text-[#bbd700] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">ASR A3.4</span>
+              <span class="text-[#5c7300] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">ASR A3.4</span>
               <p class="text-slate-600 text-sm">Überdurchschnittlich große Glasflächen für natürliche Beleuchtung mit Tageslicht</p>
             </div>
             <div class="bg-slate-50 rounded-lg p-4 border border-slate-200 flex items-start gap-3">
-              <span class="text-[#bbd700] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">DVGW</span>
+              <span class="text-[#5c7300] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">DVGW</span>
               <p class="text-slate-600 text-sm">Automatische Spüleinheit mit Protokollierung und Hauswasserstation mit Rückspülung</p>
             </div>
             <div class="bg-slate-50 rounded-lg p-4 border border-slate-200 flex items-start gap-3">
-              <span class="text-[#bbd700] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">ASR A1.7</span>
+              <span class="text-[#5c7300] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">ASR A1.7</span>
               <p class="text-slate-600 text-sm">Anti-Panik-Türen, nach außen aufschlagend, vollverglast für sichere Flucht im Havariefall</p>
             </div>
             <div class="bg-slate-50 rounded-lg p-4 border border-slate-200 flex items-start gap-3">
-              <span class="text-[#bbd700] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">WasgefStAnIV</span>
+              <span class="text-[#5c7300] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">WasgefStAnIV</span>
               <p class="text-slate-600 text-sm">Integrierter Ölprotektor und Klimaanlage innerhalb der Containerabmessungen</p>
             </div>
           </div>
           <div class="bg-[#bbd700]/5 border border-[#bbd700]/20 rounded-xl p-5 mt-4 flex items-start gap-4">
-            <span class="text-[#bbd700] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">ASR 47/1-3,5</span>
+            <span class="text-[#5c7300] font-bold text-xs bg-[#bbd700]/10 px-2 py-1 rounded shrink-0">ASR 47/1-3,5</span>
             <p class="text-slate-600 text-sm">Windfang und/oder Flur integriert — durch alle genannten Punkte <strong class="text-slate-900">vollumfängliche Einhaltung der aktuellen Laborrichtlinien</strong>.</p>
           </div>
         </div>
@@ -635,7 +672,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
       </div>
 
       <div class="bg-[#bbd700]/10 border border-[#bbd700]/30 rounded-xl p-8 text-center">
-        <p class="text-[#bbd700] text-lg font-semibold mb-2">Das Fazit:</p>
+        <p class="text-[#5c7300] text-lg font-semibold mb-2">Das Fazit:</p>
         <p class="text-slate-900 text-xl md:text-2xl font-bold">Der LABtoGO wird durch die genannten funktionalen, technischen und sicherheitsrelevanten Merkmale zu einem vollwertigen, vollumfänglichen Laborcontainer.</p>
         <p class="text-slate-500 mt-4 text-sm max-w-2xl mx-auto">Container mit Labormöbeln ≠ Laborcontainer. Der LABtoGO ist kein umgebauter Container — er ist von Grund auf als Labor konzipiert und gebaut.</p>
       </div>
@@ -865,7 +902,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
             </tr>
             <tr>
               <td class="py-4 px-3 font-medium text-slate-200">Mobilität</td>
-              <td class="text-center py-4 px-3"><span class="inline-block bg-slate-700 text-slate-400 text-xs font-bold px-2 py-1 rounded">Keine</span></td>
+              <td class="text-center py-4 px-3"><span class="inline-block bg-slate-700 text-slate-200 text-xs font-bold px-2 py-1 rounded">Keine</span></td>
               <td class="text-center py-4 px-3"><span class="inline-block bg-slate-700 text-slate-300 text-xs font-bold px-2 py-1 rounded">Bedingt</span></td>
               <td class="text-center py-4 px-3"><span class="inline-block bg-slate-700 text-slate-300 text-xs font-bold px-2 py-1 rounded">Bedingt</span></td>
               <td class="text-center py-4 px-3"><span class="inline-block bg-slate-700 text-slate-300 text-xs font-bold px-2 py-1 rounded">Bedingt</span></td>
@@ -874,7 +911,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
           </tbody>
         </table>
       </div>
-      <p class="text-xs text-slate-500 mb-12">* Standardisierte Ausstattungsvarianten, kombinierbar. Durch De-/Remontage von Außenwänden auch Großraumlabore möglich.</p>
+      <p class="text-xs text-slate-400 mb-12">* Standardisierte Ausstattungsvarianten, kombinierbar. Durch De-/Remontage von Außenwänden auch Großraumlabore möglich.</p>
 
       <div class="mb-12">
         <h3 class="text-2xl font-bold text-white mb-8">Was bedeuten die einzelnen Kriterien?</h3>
@@ -1026,9 +1063,9 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
   <section class="bg-white py-20 md:py-28">
     <div class="container mx-auto px-4 max-w-5xl">
       <div class="text-center mb-16">
-        <p class="text-[#bbd700] font-semibold text-sm tracking-widest uppercase mb-4">Unique Design</p>
+        <p class="text-[#5c7300] font-semibold text-sm tracking-widest uppercase mb-4">Unique Design</p>
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-          Was den LABtoGO so <span class="text-[#bbd700]">einzigartig</span> macht
+          Was den LABtoGO so <span class="text-[#7a9900]">einzigartig</span> macht
         </h2>
         <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
           Kein anderer Laborcontainer vereint so viele durchdachte Details in einem einzigen System. 
@@ -1152,7 +1189,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
           <p class="text-slate-600 text-sm mb-5 leading-relaxed">
             Während ein Massivbau Jahre dauern kann und sich Bedarfe oft schneller ändern als gebaut wird, 
             ist der LABtoGO zu 100% im Werk vorgefertigt und muss vor Ort nur noch angeschlossen werden. 
-            Vom Werk Albstadt aus erreichen wir z. B. <a href="/laborcontainer-stuttgart" class="text-[#bbd700] font-medium hover:underline">Standorte für Laborcontainer Stuttgart</a> in 1,5 Stunden über die A81.
+            Vom Werk Albstadt aus erreichen wir z. B. <a href="/laborcontainer-stuttgart" class="text-[#5c7300] font-medium hover:underline">Standorte für Laborcontainer Stuttgart</a> in 1,5 Stunden über die A81.
           </p>
           <ul class="space-y-3 text-slate-600 text-sm">
             <li class="flex items-start gap-3">
@@ -1181,6 +1218,29 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
     </div>
   </section>
 
+  <script type="application/ld+json" set:html={JSON.stringify(labtogoFaqSchema)} />
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-10">Häufige Fragen zum LABtoGO</h2>
+        <div class="space-y-4">
+          {labtogoFaqs.map((f, i) => (
+            <details class="bg-slate-50 rounded-xl border border-slate-200 group" open={i === 0}>
+              <summary class="cursor-pointer p-6 font-bold text-slate-900 flex items-center justify-between gap-4 list-none">
+                <span class="flex-1">{f.q}</span>
+                <svg class="w-5 h-5 text-primary group-open:rotate-180 transition-transform flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-slate-600 leading-relaxed">{f.a}</div>
+            </details>
+          ))}
+        </div>
+        <p class="mt-8 text-slate-600">
+          <a href="/laborcontainer-mieten" class="font-semibold text-[#5c7300] underline">Laborcontainer mieten</a> · <a href="/laborcontainer-kaufen" class="font-semibold text-[#5c7300] underline">Laborcontainer kaufen</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="bg-slate-900 py-20 md:py-28">
     <div class="container mx-auto px-4 max-w-4xl text-center">
       <Picture src="/images/labtogo-logo.png" alt="LABtoGO Logo — standardisierter LABtoGO von Planexus" class="h-12 md:h-16 w-auto mx-auto mb-8" loading="lazy" width={2362} height={409} />
@@ -1191,7 +1251,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
         Ob Gerätelabor, Chemielabor oder BSL-2 — der LABtoGO passt sich an. 
         Sprechen Sie mit unseren <a href="/team" class="text-[#bbd700] hover:underline">Experten</a> über Ihre Anforderungen.
       </p>
-      <p class="text-sm text-slate-500 mb-10 max-w-xl mx-auto">
+      <p class="text-sm text-slate-400 mb-10 max-w-xl mx-auto">
         Von der ersten <a href="/leistungen/beratung" class="text-slate-300 hover:text-[#bbd700] underline">Beratung</a> über die <a href="/leistungen/planung" class="text-slate-300 hover:text-[#bbd700] underline">Fachplanung</a> bis zur schlüsselfertigen Übergabe per <a href="/leistungen/logistik" class="text-slate-300 hover:text-[#bbd700] underline">Logistik & Montage</a>: Planexus begleitet Sie durch den gesamten <a href="/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe" class="text-slate-300 hover:text-[#bbd700] underline">Projektablauf</a>. 
         Jeder LABtoGO wird individuell auf Ihre Laboranforderungen abgestimmt.
       </p>
@@ -1225,6 +1285,8 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
     let videoReady = false;
 
     ctaVideo.addEventListener('click', () => {
+      // Video erst laden, wenn der Player geöffnet wird (spart ca. 27 MB beim Seitenaufruf).
+      if (video.preload !== 'auto') { video.preload = 'auto'; video.load(); }
       videoPlayer.style.opacity = '1';
       videoPlayer.style.pointerEvents = 'all';
       document.body.style.overflow = 'hidden';

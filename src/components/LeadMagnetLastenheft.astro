@@ -1,0 +1,179 @@
+---
+// Lead-Magnet „Lastenheft-Vorlage Laborcontainer“ (Word, DE/EN).
+// E-Mail + Einwilligung → Download-Link sofort; Lead landet im Admin-Bereich.
+import { localizeHref, type Locale } from '../i18n/routes';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'de' } = Astro.props;
+const uid = `lm-${Math.random().toString(36).slice(2, 8)}`;
+const privacyHref = localizeHref('/datenschutz', locale);
+const articleHref =
+  locale === 'en'
+    ? '/en/magazine/lab-container-tender-specifications'
+    : '/magazin/laborcontainer-ausschreibung-lastenheft';
+
+const c =
+  locale === 'en'
+    ? {
+        eyebrow: 'Free template',
+        title: 'Lab container specification template',
+        text: 'A Word template to fill in: project profile, the ten areas every tender needs, equipment list, interface matrix and checklist. Based on our guide to',
+        articleLink: 'tendering a lab container',
+        points: ['Suppliers price the same project', 'Fewer variations from open interfaces', 'Send it to us and get a first indication within 48 hours'],
+        email: 'Business email *',
+        company: 'Company / institution',
+        consent: 'Planexus may contact me once by email about my laboratory project. I can withdraw this at any time.',
+        privacy: 'Privacy policy',
+        button: 'Get the template',
+        sending: 'Please wait…',
+        success: 'Thank you. Your download is ready:',
+        download: 'Download template (Word, approx. 40 KB)',
+        errorEmail: 'Please enter a valid email address.',
+        errorConsent: 'Please confirm the consent so we can send you the template.',
+        error: 'That did not work. Please try again or write to info@planexus.de.',
+      }
+    : {
+        eyebrow: 'Kostenlose Vorlage',
+        title: 'Lastenheft-Vorlage Laborcontainer',
+        text: 'Eine Word-Vorlage zum Ausfüllen: Projektsteckbrief, die zehn Pflichtbereiche einer Ausschreibung, Geräteliste, Schnittstellenmatrix und Checkliste. Grundlage ist unser Leitfaden',
+        articleLink: 'Laborcontainer ausschreiben',
+        points: ['Anbieter kalkulieren dasselbe Projekt', 'Weniger Nachträge durch offene Schnittstellen', 'Ausgefüllt an uns senden: erste Indikation in 48 Stunden'],
+        email: 'Geschäftliche E-Mail *',
+        company: 'Firma / Institution',
+        consent: 'Planexus darf mich einmal per E-Mail zu meinem Laborprojekt kontaktieren. Ich kann das jederzeit widerrufen.',
+        privacy: 'Datenschutzerklärung',
+        button: 'Vorlage anfordern',
+        sending: 'Einen Moment …',
+        success: 'Danke. Ihr Download ist bereit:',
+        download: 'Vorlage herunterladen (Word, ca. 40 KB)',
+        errorEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+        errorConsent: 'Bitte bestätigen Sie die Einwilligung, damit wir Ihnen die Vorlage geben können.',
+        error: 'Das hat nicht geklappt. Bitte erneut versuchen oder an info@planexus.de schreiben.',
+      };
+---
+
+<section class="py-16 md:py-20 bg-slate-50 border-y border-slate-200" aria-labelledby={`${uid}-title`}>
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+      <div>
+        <p class="text-xs uppercase tracking-wider font-bold text-[#5c7300] mb-3">{c.eyebrow}</p>
+        <h2 id={`${uid}-title`} class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">{c.title}</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          {c.text} <a href={articleHref} class="text-[#5c7300] font-semibold underline">{c.articleLink}</a>.
+        </p>
+        <ul class="space-y-3">
+          {c.points.map((point) => (
+            <li class="flex items-start gap-3 text-slate-900">
+              <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true"></span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm">
+        <form class="space-y-5" method="post" action="/api/lastenheft" data-lead-magnet data-locale={locale} novalidate>
+          <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+            <label for={`${uid}-website`}>Website</label>
+            <input id={`${uid}-website`} name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <div>
+            <label for={`${uid}-email`} class="block text-sm font-medium text-slate-700 mb-2">{c.email}</label>
+            <input id={`${uid}-email`} name="email" type="email" required autocomplete="email" inputmode="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" />
+          </div>
+          <div>
+            <label for={`${uid}-company`} class="block text-sm font-medium text-slate-700 mb-2">{c.company}</label>
+            <input id={`${uid}-company`} name="company" type="text" autocomplete="organization" class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" />
+          </div>
+          <div class="flex items-start gap-3">
+            <input id={`${uid}-consent`} name="consent" type="checkbox" required class="mt-1 h-5 w-5 shrink-0 rounded border-gray-300" />
+            <label for={`${uid}-consent`} class="text-sm text-gray-700 leading-relaxed">
+              {c.consent} <a href={privacyHref} class="underline text-slate-900">{c.privacy}</a>
+            </label>
+          </div>
+          <p class="text-sm text-red-700 hidden" data-lm-error role="alert"></p>
+          <button type="submit" class="w-full bg-primary text-slate-900 font-bold min-h-12 py-3 rounded-lg hover:bg-primary/90 transition-colors" data-lm-button>
+            {c.button}
+          </button>
+        </form>
+        <div class="hidden" data-lm-success role="status">
+          <p class="text-slate-900 font-semibold mb-4">{c.success}</p>
+          <a href="#" class="inline-flex items-center justify-center w-full bg-primary text-slate-900 font-bold py-3 rounded-lg hover:bg-primary/90 transition-colors" data-lm-download download>
+            {c.download}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="application/json" data-lm-copy set:html={JSON.stringify({ sending: c.sending, button: c.button, errorEmail: c.errorEmail, errorConsent: c.errorConsent, error: c.error })} />
+</section>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('form[data-lead-magnet]').forEach((form) => {
+    const startedAt = Date.now();
+    const section = form.closest('section');
+    const copy = JSON.parse(section?.querySelector('[data-lm-copy]')?.textContent || '{}');
+    const errorBox = form.querySelector<HTMLElement>('[data-lm-error]');
+    const button = form.querySelector<HTMLButtonElement>('[data-lm-button]');
+    const success = section?.querySelector<HTMLElement>('[data-lm-success]');
+    const downloadLink = section?.querySelector<HTMLAnchorElement>('[data-lm-download]');
+
+    const showError = (text: string) => {
+      if (!errorBox) return;
+      errorBox.textContent = text;
+      errorBox.classList.remove('hidden');
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      errorBox?.classList.add('hidden');
+      const fd = new FormData(form);
+      const email = String(fd.get('email') || '').trim();
+      const consent = fd.get('consent') === 'on';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showError(copy.errorEmail);
+      if (!consent) return showError(copy.errorConsent);
+
+      if (button) {
+        button.disabled = true;
+        button.textContent = copy.sending;
+      }
+      try {
+        const response = await fetch('/api/lastenheft', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            company: String(fd.get('company') || ''),
+            consent,
+            website: String(fd.get('website') || ''),
+            elapsedMs: Date.now() - startedAt,
+            locale: form.dataset.locale,
+            page: window.location.pathname,
+          }),
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || !result.downloadUrl) throw new Error('failed');
+        if (downloadLink) downloadLink.href = result.downloadUrl;
+        form.classList.add('hidden');
+        success?.classList.remove('hidden');
+        try {
+          const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+          w.dataLayer = w.dataLayer || [];
+          w.dataLayer.push({ event: 'lead_magnet_lastenheft', lead_seite: window.location.pathname });
+        } catch {
+          // Messung darf den Ablauf nie blockieren.
+        }
+      } catch {
+        showError(copy.error);
+      } finally {
+        if (button) {
+          button.disabled = false;
+          button.textContent = copy.button;
+        }
+      }
+    });
+  });
+</script>

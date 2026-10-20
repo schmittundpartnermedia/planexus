@@ -17,9 +17,12 @@ Projekt-Erinnerungen aus früheren Agenten-Sessions: `.agents/memory/`. Deploy-R
 ## Design-Vorgaben
 
 - **Stil:** Weiß, clean, professionell, nicht verspielt. Konsistente Bildsprache (Laborcontainer, Module, Technik).
+- **Startseiten-Hero ist unantastbar (Kundenwunsch, Joachim 20.10.2026):** Bild `Kopf_green-scaled_…jpg`, LiquidDistortion-Animation, Logo-PNG `Planexus_Home-…png`, Alt-Texte, Größen, Ladeverhalten im Hero von `src/pages/index.astro` und `src/pages/en/index.astro` – NIEMALS ändern, auch nicht zur Optimierung.
+- **Heros bleiben dunkel** (Kundenwunsch). „Weiß, clean“ gilt für den Seitenkörper, nicht für die Heros.
 - **Akzentfarbe:** `#bbd700` (Planexus-Grün) – nie ändern. Auch `theme-color` im Layout.
   - In CSS als `--primary` / `--accent` / `--ring` = `hsl(68 100% 42%)` in `src/styles/global.css`.
-  - Dunklere Variante für Text/Hover auf Weiß: `#7a9900`. Weitere vorhandene Grüntöne: `#a8c200`, `#d4e157`.
+  - Dunklere Variante für Text/Hover auf Weiß: `#7a9900` – nur für große Schrift (ab `text-2xl` bzw. H1/H2), Kontrast 3,3:1.
+  - Grüner **Fließ-/Kleintext** auf hellem Grund: `#5c7300` (Kontrast 5,4:1, WCAG AA; eingeführt 20.10.2026). `#bbd700`/`text-primary` als Textfarbe nur auf dunklem Grund. Weitere vorhandene Grüntöne: `#a8c200`, `#d4e157`.
 - **Neutrale Farben:** Text `text-slate-900` (Überschriften/Hauptfarbe), `text-gray-600`/`text-gray-700` (Fließtext), Flächen `bg-slate-50`, dunkle Sektionen `bg-slate-900`.
 - **Schriften (selbst gehostet, kein Google Fonts):** `public/fonts/`
   - Fließtext: **Inter** (variabel 100–900) → `font-sans`
@@ -175,7 +178,7 @@ ssh root@82.165.27.244 'cd /var/www/app && git checkout -- .astro && git fetch o
 | SEO KI-Suche | `ai-seo` | Nur Wissen und Bericht. |
 | Strukturierte Daten (JSON-LD) | `schema` (früher `schema-markup`) | Keine erfundenen Bewertungen oder Preise. |
 | Texte | `marketing-psychology`, `cro` (früher `page-cro`), `lead-magnets` | Textregeln dieser Seite gelten: Ansprache wie auf der bestehenden Seite, keine Preise, keine erfundenen Referenzen (auch nicht im JSON-LD). Keine erfundenen Fakten. |
-| Bewegung | GSAP-Skills, `animation-performance` | Die Seite nutzt GSAP: Bewegung nur mit der vorhandenen GSAP-Einbindung, Leistung nach animation-performance. |
+| Bewegung | `animation-performance` (GSAP-Skills nur, falls GSAP eingebunden wird) | Die Seite nutzt **framer-motion** (Navbar, AnimatedGlobe) und CSS-Animationen; GSAP steht in package.json, ist aber nirgends eingebunden (geprüft 20.10.2026). Leistung nach animation-performance. |
 | Stil-Pflege | `high-end-visual-design`, `design-taste-frontend`, `brandkit` | Nur innerhalb der bestehenden Vorgaben. |
 | Bild → Code | `image-to-code` | Nur Vorlagen von Joachim. |
 | Prüfung | `impeccable` (critique/audit/polish, dazu `impeccable adapt` und `impeccable harden`), `web-design-guidelines`, `landing-page-conversion-audit` | Nur Bericht und Feinschliff, gibt nicht den Stil vor. |

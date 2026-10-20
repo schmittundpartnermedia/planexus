@@ -5,7 +5,7 @@ import AuthorBio from '../../components/AuthorBio.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 const title = "Laborcontainer für 7 Branchen – Übersicht";
-const description = "Laborcontainer für 7 Branchen: Pharma/Biotech (GMP, Annex 1), Forschung (DFG), Industrie (ISO 17025), Bildung, Public Health (IfSG), H₂ & Batterie (ATEX), Öl & Gas (Raffinerie).";
+const description = "Laborcontainer für 7 Branchen: Pharma/Biotech (GMP), Forschung (DFG), Industrie (ISO 17025), Bildung, Public Health, H₂ & Batterie (ATEX), Öl & Gas.";
 const canonical = "/branchen";
 
 const collectionSchema = {
@@ -109,11 +109,11 @@ const branchen = [
           <div class="grid md:grid-cols-2 gap-6">
             {branchen.map(b => (
               <a href={`/branchen/${b.slug}`} class={`block bg-gradient-to-br ${b.color} border border-gray-200 rounded-2xl p-7 hover:shadow-xl hover:border-primary/40 transition-all group`}>
-                <div class="text-xs uppercase tracking-wider text-[#7a9900] font-bold mb-2">{b.badge}</div>
+                <div class="text-xs uppercase tracking-wider text-[#5c7300] font-bold mb-2">{b.badge}</div>
                 <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-2 group-hover:text-[#7a9900]">{b.name}</h2>
                 <p class="text-sm text-slate-700 font-semibold mb-3">{b.tagline}</p>
                 <p class="text-gray-700 text-sm leading-relaxed mb-4">{b.desc}</p>
-                <div class="inline-flex items-center gap-2 text-[#7a9900] font-bold text-sm">Branchen-Seite ansehen
+                <div class="inline-flex items-center gap-2 text-[#5c7300] font-bold text-sm">Branchen-Seite ansehen
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </div>
               </a>
@@ -130,17 +130,17 @@ const branchen = [
           <p class="text-lg text-gray-700 leading-relaxed mb-10 text-center">Ein Generalist baut für alle Branchen ein bisschen. Ein Spezialist baut für jede Branche genau richtig. Unser Werk in Albstadt fertigt ausschließlich Laborcontainer – nicht nebenher Bürocontainer oder Sanitärmodule. Unsere Geschäftsführer bringen über zehn Jahre Erfahrung im Laborcontainerbau mit. Das macht den Unterschied bei Inspektionen.</p>
           <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-white rounded-xl p-6 border border-gray-100">
-              <div class="text-3xl font-bold text-primary mb-1">10+</div>
+              <div class="text-3xl font-bold text-[#7a9900] mb-1">10+</div>
               <div class="font-bold text-slate-900 mb-2">Jahre Erfahrung der Geschäftsführung</div>
               <p class="text-sm text-gray-700">Fokus ausschließlich auf Labor- und Reinraum-Container, keine Generalist-Verzettlung.</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-gray-100">
-              <div class="text-3xl font-bold text-primary mb-1">DACH</div>
+              <div class="text-3xl font-bold text-[#7a9900] mb-1">DACH</div>
               <div class="font-bold text-slate-900 mb-2">DE / CH / AT in einer Hand</div>
               <p class="text-sm text-gray-700">Wir kennen LBO/MBO + SIA + OIB + ÖNORM und liefern jeweils inkl. Verzollung wo nötig.</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-gray-100">
-              <div class="text-3xl font-bold text-primary mb-1">100 %</div>
+              <div class="text-3xl font-bold text-[#7a9900] mb-1">100 %</div>
               <div class="font-bold text-slate-900 mb-2">Dokumentations-Standard</div>
               <p class="text-sm text-gray-700">Branchen-Norm-konformes Doku-Paket ab Werk – keine Nacharbeit am Aufstellort.</p>
             </div>

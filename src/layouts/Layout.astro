@@ -2,7 +2,8 @@
 import '../styles/global.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer.astro';
-import CookieConsent from '../components/CookieConsent';
+import CookieConsent from '../components/CookieConsent.astro';
+import MobileCtaBar from '../components/MobileCtaBar.astro';
 import { planexusPostalAddress, planexusGeo, planexusContact } from '../lib/planexus-address';
 import { SITE_ORIGIN, canonicalUrlForPath, stripTrailingSlash } from '../lib/canonical';
 import {
@@ -59,6 +60,8 @@ const pathForGeo = normalizedPath || '/';
 const isCH = CH_PATHS.includes(pathForGeo);
 const isAT = AT_PATHS.includes(pathForGeo);
 const htmlLang = locale === 'en' ? 'en' : 'de';
+// Nicht auf der Startseite: deren Hero bleibt optisch unberührt (Kundenwunsch).
+const showMobileCta = !['', '/', '/en', '/kontakt', '/en/contact', '/admin'].includes(normalizedPath) && !isNoindex;
 const ogLocale = locale === 'en' ? 'en_GB' : isCH ? 'de_CH' : isAT ? 'de_AT' : 'de_DE';
 const ogLocaleAlternate = locale === 'en' ? (isCH ? 'de_CH' : isAT ? 'de_AT' : 'de_DE') : 'en_GB';
 ---
@@ -158,10 +161,10 @@ const ogLocaleAlternate = locale === 'en' ? (isCH ? 'de_CH' : isAT ? 'de_AT' : '
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Planexus GmbH",
-      "image": "https://planexus.de/android-chrome-512x512.png",
+      "image": `${siteUrl}/images/planexus-logo.png`,
       "alternateName": "Planexus",
       "url": canonicalUrlForPath('/'),
-      "logo": `${siteUrl}/android-chrome-512x512.png`,
+      "logo": `${siteUrl}/images/planexus-logo.png`,
       "description": copy.schema.orgDescription,
       "inLanguage": locale === 'en' ? 'en' : 'de-DE',
       "foundingDate": "2025",
@@ -193,7 +196,6 @@ const ogLocaleAlternate = locale === 'en' ? (isCH ? 'de_CH' : isAT ? 'de_AT' : '
       "description": copy.schema.localDescription,
       "inLanguage": locale === 'en' ? 'en' : 'de-DE',
       "url": canonicalUrlForPath('/'),
-      "priceRange": "€€€",
       "address": planexusPostalAddress,
       "geo": planexusGeo,
       "openingHoursSpecification": {
@@ -220,7 +222,7 @@ const ogLocaleAlternate = locale === 'en' ? (isCH ? 'de_CH' : isAT ? 'de_AT' : '
     <link rel="preload" href="/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/SpaceGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="min-h-screen bg-background text-foreground flex flex-col font-sans">
+  <body class:list={["min-h-screen bg-background text-foreground flex flex-col font-sans", showMobileCta && "pb-[72px] lg:pb-0"]}>
     <noscript>
       <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-PDDSZ44P"
@@ -234,6 +236,7 @@ const ogLocaleAlternate = locale === 'en' ? (isCH ? 'de_CH' : isAT ? 'de_AT' : '
       <slot />
     </main>
     <Footer />
-    <CookieConsent client:load locale={locale} />
+    {showMobileCta && <MobileCtaBar locale={locale} />}
+    <CookieConsent locale={locale} />
   </body>
 </html>

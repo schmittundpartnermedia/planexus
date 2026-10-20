@@ -29,14 +29,14 @@ export const magazinEn: Record<string, MagazinLocaleFields> = {
   },
   "laborcontainer-ausschreibung-lastenheft": {
     slug: "lab-container-tender-specifications",
-    title: "Tendering a lab container: requirements specification and checklist",
+    title: "Tendering a lab container: specification",
     excerpt: "A vague tender makes lab-container bids look cheap but technically incomparable. What belongs in the requirements, the specification of works and the bid comparison.",
     date: "22 September 2026",
     category: "Guide",
   },
   "made-in-germany-qualitaet-tempo-laborbau": {
     slug: "made-in-germany-quality-speed-lab-construction",
-    title: "Made in Germany: quality and speed in laboratory construction",
+    title: "Made in Germany: quality and speed in lab builds",
     excerpt: "Why Made in Germany is not at odds with pace in modular lab construction: turnkey laboratories in 8–14 weeks, GMP, BSL and ATEX compliant from Albstadt-Laufen.",
     date: "22 July 2026",
     category: "Guide",
@@ -141,7 +141,7 @@ export const magazinEn: Record<string, MagazinLocaleFields> = {
   },
   "laborcontainer-projektablauf-von-idee-bis-uebergabe": {
     slug: "lab-container-project-process",
-    title: "From idea to handover — how a lab container project runs",
+    title: "From idea to handover: a lab container project",
     excerpt: "The complete project process with timeline and checklist for clients.",
     date: "18 February 2026",
     category: "Guide",
@@ -221,7 +221,7 @@ export const magazinPosts: MagazinPost[] = [
   {
     id: -16,
     slug: "laborcontainer-ausschreibung-lastenheft",
-    title: "Laborcontainer ausschreiben: Lastenheft und Checkliste",
+    title: "Laborcontainer ausschreiben – Lastenheft",
     excerpt: "Eine ungenaue Ausschreibung macht Laborcontainer-Angebote scheinbar günstig, aber technisch unvergleichbar. Was in Lastenheft, Leistungsbeschreibung und Angebotsvergleich gehört.",
     date: "22. September 2026",
     author: "Sven Biewald",
@@ -231,7 +231,7 @@ export const magazinPosts: MagazinPost[] = [
   {
     id: -15,
     slug: "made-in-germany-qualitaet-tempo-laborbau",
-    title: "Made in Germany: Qualität und Tempo im Laborbau vereint",
+    title: "Made in Germany: Qualität und Tempo im Laborbau",
     excerpt: "Warum Made in Germany im modularen Laborbau kein Widerspruch zu Tempo ist: schlüsselfertige Labore in 8–14 Wochen, GMP-, BSL- und ATEX-konform aus Albstadt-Laufen.",
     date: "22. Juli 2026",
     author: "Sven Biewald",
@@ -241,7 +241,7 @@ export const magazinPosts: MagazinPost[] = [
   {
     id: -14,
     slug: "wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler",
-    title: "Wenn das neue Labor zu spät kommt: 5 Planungsfehler",
+    title: "Wenn das Labor zu spät kommt: 5 Planungsfehler",
     excerpt: "Die meisten Laborverzögerungen entstehen nicht durch technische Pannen, sondern durch vermeidbare Fehler in der Anfangsphase. Die 5 häufigsten Planungsfehler – und wie Sie sie vermeiden.",
     date: "25. Juni 2026",
     author: "Sven Biewald",

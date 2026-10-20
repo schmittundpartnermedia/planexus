@@ -164,3 +164,12 @@
     transform: scale(1);
   }
 }
+
+/* Links im Fließtext sind auch ohne Farbe erkennbar (WCAG 1.4.1, Lighthouse „link-in-text-block“). */
+@layer base {
+  main :is(p, li, td, dd) a:not([class*="bg-"]):not([class*="inline-flex"]):not([class*="flex "]) {
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+}

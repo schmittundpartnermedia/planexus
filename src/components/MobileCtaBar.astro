@@ -1,0 +1,58 @@
+---
+// Feste Anfrage-Leiste nur auf dem Handy (< lg). Ziel: Auf jeder Seite ist ab dem
+// ersten Bildschirm ein Anfrage-Weg sichtbar (Audit 20.10.2026: Städte- und
+// Branchenseiten hatten im ersten Handy-Bildschirm keinen Button).
+// Springt zum Formular auf der Seite, wenn es eins gibt, sonst zur Kontaktseite.
+import { localizeHref, type Locale } from '../i18n/routes';
+import { planexusContact } from '../lib/planexus-address';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'de' } = Astro.props;
+const contactHref = localizeHref('/kontakt', locale);
+const label = locale === 'en' ? 'Send enquiry' : 'Anfrage stellen';
+const callLabel = locale === 'en' ? 'Call' : 'Anrufen';
+const telHref = `tel:${planexusContact.telephone.replace(/[^\d+]/g, '')}`;
+---
+
+<div
+  id="mobile-cta-bar"
+  class="lg:hidden fixed inset-x-0 bottom-0 z-[60] border-t border-slate-800 bg-slate-900/95 backdrop-blur-md px-4 py-3"
+>
+  <div class="flex gap-3">
+    <a
+      id="mobile-cta-enquiry"
+      href={contactHref}
+      class="flex-1 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-bold text-slate-900"
+    >
+      {label}
+    </a>
+    <a
+      href={telHref}
+      class="inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 px-4 py-3 text-sm font-semibold text-white"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      {callLabel}
+    </a>
+  </div>
+</div>
+
+<script>
+  // Formular auf der Seite? Dann direkt dorthin springen statt zur Kontaktseite.
+  const link = document.getElementById('mobile-cta-enquiry') as HTMLAnchorElement | null;
+  if (link) {
+    const anchor = document.getElementById('anfrage');
+    if (anchor) {
+      link.href = '#anfrage';
+    } else {
+      const form = document.querySelector('main form, main [data-contact-form]');
+      const target = form?.closest('section') ?? form;
+      if (target) {
+        if (!target.id) target.id = 'anfrage-formular';
+        link.href = `#${target.id}`;
+      }
+    }
+  }
+</script>

@@ -171,7 +171,7 @@ Dieser Masterplan ergänzt und verschärft alle bisherigen Regeln. Er gilt für 
 - **H1-Hierarchie:** [Haupt-Fokus-Keyword] [Stadt] | [Technische Kern-Leistung] & [USP]
 - **H2 & H3 Struktur:** Fokus-Keyword in mindestens **1 H2** und **2 H3**, gekoppelt mit regionalen Longtails.
 - **Keyword-Cluster:** Integration semantisch verwandter LSI-Begriffe.
-- **Keyword-Dichte:** Zielwert **1,8 % bis 2,2 %**.
+- **Keyword-Dichte:** Keine feste Zielquote mehr (gestrichen 20.10.2026). Hauptkeyword natürlich in H1, Title, einer H2 und im ersten Absatz; verwandte Begriffe statt Wiederholung. Grund: Keyword-Stuffing senkt die Sichtbarkeit in KI-Suchen (Princeton-GEO-Studie, Skill `ai-seo`) und bringt bei Google nichts.
 - **Title:** Keyword + Stadt + stärkster USP (max. 60 Zeichen).
 - **Description:** Lokale Problemlösung + CTA (max. 155 Zeichen).
 
@@ -239,7 +239,7 @@ Dieser Masterplan ergänzt und verschärft alle bisherigen Regeln. Er gilt für 
 
 ### RAA-Masterplan-Checkliste (Zusatz für Städteseiten)
 - [ ] H1 nach Schema „Laborcontainer [Stadt] | [Tech] & [USP]"
-- [ ] Keyword-Dichte 1,8–2,2 % (gemessen, nicht geschätzt)
+- [ ] Hauptkeyword in H1, Title, einer H2 und erstem Absatz – ohne Keyword-Stuffing
 - [ ] Strategische Fusion: jeder Absatz verzahnt Region + Service
 - [ ] 5–8 lokale Anker (Stadtteile, Industriegebiete, Konzerne)
 - [ ] 3x2 Technical Depth Matrix vorhanden

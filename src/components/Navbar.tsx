@@ -99,13 +99,13 @@ export default function Navbar({ locale = 'de', alternateHref }: NavbarProps) {
       )}
     >
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
-        <a href={homeHref} className="flex items-center gap-2">
+        <a href={homeHref} className="flex items-center gap-2 shrink-0 mr-4">
           <img src="/images/planexus-logo.png"
             alt="Planexus Logo"
             className="h-8 lg:h-10 w-auto" width={800} height={169} />
         </a>
 
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden xl:flex items-center gap-5 2xl:gap-8 whitespace-nowrap">
           <a
             href={homeHref}
             className={cn(
@@ -251,14 +251,15 @@ export default function Navbar({ locale = 'de', alternateHref }: NavbarProps) {
           <LanguageSwitch className="text-white" />
           <a
             href="tel:+4974357519700"
-            className="flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all border border-primary text-primary bg-transparent hover:bg-primary hover:text-slate-900"
+            aria-label="+49 7435 7519 700"
+            className="flex shrink-0 items-center gap-2 text-sm font-bold p-2.5 2xl:px-5 rounded-full transition-all border border-primary text-primary bg-transparent hover:bg-primary hover:text-slate-900"
           >
-            <Phone className="w-4 h-4" />
-            <span>+49 7435 7519 700</span>
+            <Phone className="w-4 h-4" aria-hidden="true" />
+            <span className="hidden 2xl:inline">+49 7435 7519 700</span>
           </a>
         </div>
 
-        <div className="lg:hidden flex items-center gap-3">
+        <div className="xl:hidden flex items-center gap-3">
           <LanguageSwitch />
           <button
             className="p-2 transition-colors text-white"
@@ -276,7 +277,7 @@ export default function Navbar({ locale = 'de', alternateHref }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-b border-gray-100 overflow-y-auto shadow-xl"
+            className="xl:hidden bg-white border-b border-gray-100 overflow-y-auto shadow-xl"
             style={{ maxHeight: 'calc(100vh - 5rem)' }}
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-2">

@@ -346,7 +346,7 @@ export function AnimatedGlobe() {
       <div className="md:hidden flex flex-col items-center justify-center min-h-screen px-6 py-24 relative z-10">
         <h2 className="text-3xl font-heading text-white/90 text-center mb-3">
           <span className="font-light">Business</span>{" "}
-          <span className="font-bold text-primary">Ökosystem</span>
+          <span className="font-bold text-[#7a9900]">Ökosystem</span>
         </h2>
         <p className="text-gray-400 text-xs mb-10 uppercase tracking-[0.3em]">Wesemann Netzwerk</p>
         <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
@@ -379,7 +379,7 @@ export function AnimatedGlobe() {
       >
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white/90">
           <span className="font-light">Business</span>{" "}
-          <span className="font-bold text-primary">Ökosystem</span>
+          <span className="font-bold text-[#7a9900]">Ökosystem</span>
         </h2>
         <p className="text-gray-500 text-xs mt-2 uppercase tracking-[0.35em]">
           Wesemann Netzwerk
