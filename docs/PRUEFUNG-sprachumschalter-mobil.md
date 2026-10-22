@@ -27,4 +27,11 @@ Umschalter-Breite vorher: 152 px („DEUTSCH | ENGLISH“).
 
 Commit: `313ed1d` – „Sprachumschalter: DE/EN statt Deutsch/English (Handy-Menü erreichbar)“.
 
-Offen: Live stellen erst nach Joachims Ja (push + SSH-Einzeiler aus CLAUDE.md).
+## Live (22.10.2026, nach Push `a021ba0` und Deploy durch Joachim)
+
+| Seite | Breite | Umschalter-Breite | Menü-Button rechte Kante | Menü geht auf | `scrollWidth` |
+|---|---|---|---|---|---|
+| https://planexus.de/ | 320 px | 70 px | 306 px | ja | 320 |
+| https://planexus.de/en | 375 px | 70 px | 359 px | ja | 375 |
+
+Screenshot 375 px `/en`: Logo, „DE | EN“ (EN grün) und Menü-Button vollständig sichtbar.
