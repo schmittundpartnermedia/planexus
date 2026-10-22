@@ -3,7 +3,7 @@
 Grundlage: `docs/ABNAHME-magazin-s1-s2-labor.md`. Geprüft am 22.10.2026 gegen einen frischen Build
 (`lockf -t 3600 /tmp/elevum-bau.lock npm run build`, Exit 0, „Complete!“) in `dist/client/`.
 Prüfskript: liest `index.html` aus `dist/client`, zählt H1, Title, Description, JSON-LD, FAQ, Wörter, Links, Bilder.
-Commit: siehe Nachtrag unten.
+Commit: 4ecd38d
 
 | Nr. | Satz der Abnahmeliste | Geprüft wie | Ergebnis |
 |---|---|---|---|
