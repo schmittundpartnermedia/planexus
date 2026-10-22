@@ -25,6 +25,6 @@ Umschalter-Breite vorher: 152 px („DEUTSCH | ENGLISH“).
 | 8 | Hero, Farben, Schriften unverändert | `git diff --stat` auf `index.astro`, `en/index.astro`, `global.css` | keine Änderung ✅ |
 | 9 | Build | `lockf -t 3600 /tmp/elevum-bau.lock npm run build` | Exit 0, „Complete!“; Umschalter mit DE/EN in `dist/client/index.html` und `dist/client/en/index.html` ✅ |
 
-Commit: siehe `git log` – „Sprachumschalter: DE/EN statt Deutsch/English (Handy-Menü erreichbar)“.
+Commit: `313ed1d` – „Sprachumschalter: DE/EN statt Deutsch/English (Handy-Menü erreichbar)“.
 
 Offen: Live stellen erst nach Joachims Ja (push + SSH-Einzeiler aus CLAUDE.md).
