@@ -2,6 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import RelatedArticles from '../../../components/RelatedArticles.astro';
 import LeadMagnetLastenheft from '../../../components/LeadMagnetLastenheft.astro';
+import Picture from '../../../components/Picture.astro';
 
 const pageUrl = "https://planexus.de/en/magazine/s1-s2-lab-requirements-germany";
 const headline = "S2 lab requirements in Germany: what is mandatory and what you can skip";
@@ -16,7 +17,7 @@ const articleSchema = {
   "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/en/team/thomas-boss", "jobTitle": "Shareholder & Technical Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de/" } },
   "datePublished": "2026-10-22",
   "dateModified": "2026-10-22",
-  "image": "https://planexus.de/images/backgrounds/magazin-bsl-labor.webp",
+  "image": "https://planexus.de/images/blog-s2-labor-anforderungen.jpg",
   "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
   "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
   "about": [
@@ -106,7 +107,7 @@ const furtherLinks = [
   title="S2 lab requirements in Germany: GenTSV & BioStoffV"
   description={description}
   canonical="/en/magazine/s1-s2-lab-requirements-germany"
-  ogImage="/images/backgrounds/magazin-bsl-labor.webp"
+  ogImage="/images/blog-s2-labor-anforderungen.jpg"
 >
   <div class="pt-20 min-h-screen bg-white">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
@@ -114,7 +115,7 @@ const furtherLinks = [
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
     <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
-      <div class="absolute inset-0 bg-[url('/images/backgrounds/magazin-bsl-labor.webp')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-[url('/images/blog-s2-labor-anforderungen.webp')] bg-cover bg-center opacity-30"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl mx-auto">
@@ -244,6 +245,20 @@ const furtherLinks = [
               <p class="text-gray-600 leading-relaxed mb-6">
                 An S2 lab needs liquid-tight surfaces right into the corners, a basin by the door, an eye wash, no floor drains, a safety cabinet for anything that forms aerosols and an autoclave in the same building. The table sets the GenTSV (Annex 2, Part A, Section II) beside the Biological Agents Ordinance (Annex II, protection level 2). "Mandatory" and "recommended" are the ordinance's own terms, and recommended measures must be implemented where they reduce the risk (Section 10 BioStoffV).
               </p>
+
+              <figure class="my-10 not-prose">
+                <Picture
+                  src="/images/blog-s2-labor-anforderungen.jpg"
+                  alt="Illustrative image of an S2 laboratory in a lab container: safety cabinet on the left, seamless grey floor coved up the wall, stainless steel basin with elbow lever, dispensers and eye wash next to the door with vision panel and biohazard sign, autoclave and incubator behind"
+                  width={1448}
+                  height={1086}
+                  loading="lazy"
+                  class="w-full h-auto rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Illustrative image: an S2 lab in a container. Safety cabinet in a quiet spot, basin with dispensers and eye wash by the door, biohazard sign, seamless coved floor, autoclave in the room.
+                </figcaption>
+              </figure>
 
               <div class="overflow-x-auto my-8 not-prose">
                 <table class="w-full text-sm border-collapse border border-gray-200 min-w-[620px]">
@@ -399,21 +414,6 @@ const furtherLinks = [
               </p>
 
               <h2 id="container" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">An S2 lab as a lab container: weeks instead of years</h2>
-
-              <figure class="my-10 not-prose">
-                <img
-                  src="/images/backgrounds/magazin-bsl-labor.webp"
-                  alt="Laboratory with continuous, easy-to-clean work surfaces, instruments on the benches and a door with a vision panel, as an S2 laboratory requires"
-                  width="2070"
-                  height="1380"
-                  loading="lazy"
-                  decoding="async"
-                  class="w-full h-auto rounded-2xl shadow-lg"
-                />
-                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
-                  Illustrative image: continuous work surfaces and a door with a vision panel. S2 adds the seamless floor coved up the wall and the signage.
-                </figcaption>
-              </figure>
 
               <p class="text-gray-600 leading-relaxed mb-6">
                 Lab space for life science companies is scarce in Munich and Berlin. The Munich cluster association BioM reports that demand for lab space there exceeds supply, and a provider of fully equipped labs quoted in that report names S2 labs as particularly short. A lab container creates the space where it is needed: on your own site, next to the institute, at the hospital.

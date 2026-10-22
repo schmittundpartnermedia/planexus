@@ -4,7 +4,7 @@ Erstellt mit den Skills `social` (LinkedIn-Regeln, Hook, keine KI-Muster), `copy
 und `ai-seo` (Referenz „LinkedIn AI citations“: Zielbegriff an den Anfang, 200–300 Wörter, keine Unicode-Fettschrift).
 
 Absender: Planexus-Unternehmensseite. Thomas Boss im Beitrag markieren (@Thomas Boss), damit er im eigenen Netzwerk erscheint.
-Bild: Titelbild des Artikels (`/images/backgrounds/magazin-bsl-labor.webp`) oder ein Screenshot der Anforderungstabelle.
+Bild: `public/images/blog-s2-labor-anforderungen.jpg` (Symbolbild S2-Labor im Container, 1448 × 1086) hochladen.
 Bester Zeitpunkt laut Skill `social`: Dienstag bis Donnerstag, 7–8 Uhr oder 12 Uhr. In der ersten Stunde auf Kommentare antworten.
 
 ---

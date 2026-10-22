@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
 import LeadMagnetLastenheft from '../../components/LeadMagnetLastenheft.astro';
+import Picture from '../../components/Picture.astro';
 
 const pageUrl = "https://planexus.de/magazin/s1-s2-labor-anforderungen";
 const headline = "S2-Labor Anforderungen: Was Pflicht ist und was Sie sich sparen können";
@@ -16,7 +17,7 @@ const articleSchema = {
   "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/team/thomas-boss", "jobTitle": "Gesellschafter & Technischer Leiter", "worksFor": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de/" } },
   "datePublished": "2026-10-22",
   "dateModified": "2026-10-22",
-  "image": "https://planexus.de/images/backgrounds/magazin-bsl-labor.webp",
+  "image": "https://planexus.de/images/blog-s2-labor-anforderungen.jpg",
   "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
   "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
   "about": [
@@ -106,7 +107,7 @@ const furtherLinks = [
   title="S2-Labor Anforderungen: Checkliste GenTSV & BioStoffV"
   description={description}
   canonical="/magazin/s1-s2-labor-anforderungen"
-  ogImage="/images/backgrounds/magazin-bsl-labor.webp"
+  ogImage="/images/blog-s2-labor-anforderungen.jpg"
 >
   <div class="pt-20 min-h-screen bg-white">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
@@ -114,7 +115,7 @@ const furtherLinks = [
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
     <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
-      <div class="absolute inset-0 bg-[url('/images/backgrounds/magazin-bsl-labor.webp')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-[url('/images/blog-s2-labor-anforderungen.webp')] bg-cover bg-center opacity-30"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl mx-auto">
@@ -244,6 +245,20 @@ const furtherLinks = [
               <p class="text-gray-600 leading-relaxed mb-6">
                 Ein S2-Labor braucht flüssigkeitsdichte Flächen bis in die Ecken, ein Waschbecken an der Tür, eine Augenspülung, keine Bodenabläufe, eine Sicherheitswerkbank für alles, was Aerosole bildet, und einen Autoklav im selben Gebäude. Die Tabelle stellt GenTSV (Anlage 2, Teil A, Abschnitt II) und Biostoffverordnung (Anhang II, Schutzstufe 2) nebeneinander. „Verbindlich“ und „empfohlen“ sind die Begriffe der Biostoffverordnung. Empfohlenes müssen Sie umsetzen, wenn es die Gefährdung senkt (§ 10 BioStoffV).
               </p>
+
+              <figure class="my-10 not-prose">
+                <Picture
+                  src="/images/blog-s2-labor-anforderungen.jpg"
+                  alt="Symbolbild eines S2-Labors im Laborcontainer: Sicherheitswerkbank links, fugenloser grauer Boden mit Hohlkehle, Edelstahl-Waschbecken mit Ellenbogenhebel, Spendern und Augendusche neben der Tür mit Sichtfenster und Biogefährdungszeichen, dahinter Autoklav und Inkubator"
+                  width={1448}
+                  height={1086}
+                  loading="lazy"
+                  class="w-full h-auto rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Symbolbild: ein S2-Labor im Container. Sicherheitswerkbank am ruhigen Platz, Waschbecken mit Spendern und Augendusche an der Tür, Biogefährdungszeichen, fugenloser Boden mit Hohlkehle, Autoklav im Raum.
+                </figcaption>
+              </figure>
 
               <div class="overflow-x-auto my-8 not-prose">
                 <table class="w-full text-sm border-collapse border border-gray-200 min-w-[620px]">
@@ -399,21 +414,6 @@ const furtherLinks = [
               </p>
 
               <h2 id="container" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">S2-Labor als Laborcontainer: in Wochen statt Jahren</h2>
-
-              <figure class="my-10 not-prose">
-                <img
-                  src="/images/backgrounds/magazin-bsl-labor.webp"
-                  alt="Labor mit durchgehenden, leicht zu reinigenden Arbeitsflächen, Geräten auf den Laborzeilen und einer Tür mit Sichtfenster, wie sie ein S2-Labor braucht"
-                  width="2070"
-                  height="1380"
-                  loading="lazy"
-                  decoding="async"
-                  class="w-full h-auto rounded-2xl shadow-lg"
-                />
-                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
-                  Symbolbild: durchgehende Arbeitsflächen und eine Tür mit Sichtfenster. Für S2 kommen der hochgezogene, fugenlose Boden und die Kennzeichnung dazu.
-                </figcaption>
-              </figure>
 
               <p class="text-gray-600 leading-relaxed mb-6">
                 Laborflächen für Life-Science-Unternehmen sind in München und Berlin knapp. Der Münchner Clusterverband BioM berichtet, dass dort die Nachfrage nach Laborflächen das Angebot übersteigt, und ein Anbieter vollausgestatteter Labore nennt in diesem Bericht besonders S2-Labore als knapp. Ein Laborcontainer schafft die Fläche dort, wo sie gebraucht wird: auf dem eigenen Gelände, neben dem Institut, am Klinikum.

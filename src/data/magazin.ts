@@ -223,7 +223,7 @@ export const magazinPosts: MagazinPost[] = [
     date: "22. Oktober 2026",
     author: "Thomas Boss",
     category: "Sicherheit",
-    image: "/images/backgrounds/magazin-bsl-labor.webp",
+    image: "/images/blog-s2-labor-anforderungen.jpg",
   },
   {
     id: -17,
