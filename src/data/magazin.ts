@@ -20,6 +20,13 @@ export interface MagazinLocaleFields {
 }
 
 export const magazinEn: Record<string, MagazinLocaleFields> = {
+  "s1-s2-labor-anforderungen": {
+    slug: "s1-s2-lab-requirements-germany",
+    title: "S1 and S2 laboratories: requirements under GenTSV and BioStoffV",
+    excerpt: "A design checklist for S1 and S2 labs in Germany: surfaces, hand-wash basin, biosafety cabinet, autoclave, ventilation, notification and what S2 does not require.",
+    date: "22 October 2026",
+    category: "Safety",
+  },
   "pfas-analytik-labor-laborcontainer": {
     slug: "pfas-analysis-lab-capacity-lab-container",
     title: "PFAS analysis: expanding laboratory capacity with lab containers",
@@ -208,6 +215,16 @@ export function localizePost(post: MagazinPost, locale: Locale = 'de') {
 }
 
 export const magazinPosts: MagazinPost[] = [
+  {
+    id: -18,
+    slug: "s1-s2-labor-anforderungen",
+    title: "S1- und S2-Labor: Anforderungen nach GenTSV und BioStoffV",
+    excerpt: "Bauliche Checkliste für S1- und S2-Labore: Oberflächen, Waschbecken, Sicherheitswerkbank, Autoklav, Lüftung, Anmeldung nach GenTG und was S2 nicht verlangt.",
+    date: "22. Oktober 2026",
+    author: "Thomas Boss",
+    category: "Sicherheit",
+    image: "/images/backgrounds/magazin-bsl-labor.webp",
+  },
   {
     id: -17,
     slug: "pfas-analytik-labor-laborcontainer",
@@ -452,6 +469,11 @@ export const magazinPosts: MagazinPost[] = [
 
 /** Thematische Verwandtschaft – 3 Slugs pro Artikel */
 const relatedSlugsMap: Record<string, string[]> = {
+  "s1-s2-labor-anforderungen": [
+    "bsl-2-bsl-3-container-labor",
+    "laborcontainer-genehmigung-baurecht-vorschriften",
+    "laborcontainer-klimatisierung-lueftung-normen",
+  ],
   "pfas-analytik-labor-laborcontainer": [
     "laborcontainer-klimatisierung-lueftung-normen",
     "laborcontainer-laborabzug-din-en-14175",
@@ -568,8 +590,8 @@ const relatedSlugsMap: Record<string, string[]> = {
     "laborcontainer-energiewende-h2-batterie-ex-schutz",
   ],
   "bsl-2-bsl-3-container-labor": [
+    "s1-s2-labor-anforderungen",
     "gmp-reinraum-container-pharma-produktion",
-    "laborcontainer-katastropheneinsatz-krisenreaktion",
     "laborcontainer-brandschutz-feuerwiderstand",
   ],
 };

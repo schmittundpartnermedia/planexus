@@ -1,0 +1,546 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "inLanguage": "en-GB",
+  "headline": "S1 and S2 laboratories: requirements under GenTSV and BioStoffV",
+  "description": "S2 lab requirements in Germany: a design checklist under GenTSV and BioStoffV, ventilation, autoclave, notification and what S2 does not require.",
+  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/en/team/thomas-boss", "jobTitle": "Shareholder & Technical Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "image": "https://planexus.de/images/backgrounds/magazin-bsl-labor.webp",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/en/magazine/s1-s2-lab-requirements-germany" },
+  "about": [
+    { "@type": "Thing", "name": "German Genetic Engineering Safety Ordinance (GenTSV)" },
+    { "@type": "Thing", "name": "German Biological Agents Ordinance (BioStoffV)" },
+    { "@type": "Thing", "name": "S2 laboratory" }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "S1 and S2 laboratories: requirements under GenTSV and BioStoffV", "item": "https://planexus.de/en/magazine/s1-s2-lab-requirements-germany" }
+  ]
+};
+
+const faqs = [
+  {
+    q: "What is the difference between an S1 and an S2 laboratory?",
+    a: "In an S1 laboratory, the work is not expected to pose any risk to people or the environment according to the state of science. In an S2 laboratory, the work carries a low risk. In design terms, S2 adds liquid-tight work surfaces and floors, a hand-wash basin with disinfectant dispenser near the door, an eye-wash facility, a microbiological safety cabinet wherever aerosols may form, an autoclave within the facility or in the same building, and signage with the biohazard symbol."
+  },
+  {
+    q: "Does an S2 laboratory need a permit?",
+    a: "Not necessarily under the German Genetic Engineering Act. For a genetic engineering facility at safety level 2 and the first work carried out in it, a written notification (Anmeldung) to the competent state authority is sufficient (Section 8 GenTG). Work may start 45 days after the authority receives the notification, or earlier with its consent (Section 12 GenTG). A permit is only mandatory for safety levels 3 and 4. Building the laboratory may still require planning permission."
+  },
+  {
+    q: "Does an S2 laboratory need negative pressure?",
+    a: "No, not under the regulations. Annex II of the Biological Agents Ordinance lists permanent negative pressure as not required for protection level 2, and the GenTSV does not require it for safety level 2 either. What is mandatory is that contaminated process exhaust air does not enter the work area unfiltered and that aerosols are contained, for example by a microbiological safety cabinet."
+  },
+  {
+    q: "Does an S2 laboratory need an airlock?",
+    a: "No. Under Annex II of the Biological Agents Ordinance, an airlock with interlocking doors is only intended from protection level 3. For protection level 2, separating the laboratory from other areas is recommended. An anteroom for changing can still be useful, because protective clothing must be stored separately from street clothing."
+  },
+  {
+    q: "What ventilation does an S2 laboratory need?",
+    a: "Neither GenTSV nor BioStoffV specifies an air change rate for S2. If hazardous substances are used in the laboratory, TRGS 526 applies: its reference value is 25 cubic metres of air per hour per square metre of laboratory floor area, which equals a little over eight air changes per hour at a room height of 3 metres. A reduction is only possible on the basis of the risk assessment. Because windows must stay closed during work, an S2 laboratory needs mechanical ventilation in practice."
+  },
+  {
+    q: "Does the autoclave have to be inside the S2 laboratory?",
+    a: "Not necessarily inside the lab room. For safety level 2, the GenTSV requires an autoclave or equivalent inactivation equipment with sufficient capacity within the genetic engineering facility or in the same building. If the S2 laboratory is a stand-alone lab container, clarify with the authority early on whether an autoclave in the container is needed or whether a unit in a neighbouring building is accepted."
+  },
+  {
+    q: "May pregnant employees work in an S2 laboratory?",
+    a: "That depends on the individual risk assessment. Under Section 11(2) of the German Maternity Protection Act, a pregnant woman must not carry out work in which contact with biological agents of risk groups 2 to 4 would pose an unjustifiable risk to her or her child. Rubella virus and Toxoplasma are named explicitly. If she has sufficient immunity, that risk is deemed excluded."
+  },
+  {
+    q: "Can a lab container be operated as an S2 laboratory?",
+    a: "Yes. The requirements for an S2 laboratory concern surfaces, equipment, ventilation, signage and organisation, not the construction method. A lab container can meet all the structural and technical points. The notification to the authority and the risk assessment remain the operator's responsibility. Planexus typically manufactures S1 and S2 lab containers in 8 to 14 weeks."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-GB",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+
+const linkClass = "text-[#5c7300] font-medium hover:underline";
+---
+
+<Layout
+  type="article"
+  title="S2 lab requirements in Germany: GenTSV & BioStoffV"
+  description="S2 lab requirements in Germany: a design checklist under GenTSV and BioStoffV, ventilation, autoclave, notification and what S2 does not require."
+  canonical="/en/magazine/s1-s2-lab-requirements-germany"
+  ogImage="/images/backgrounds/magazin-bsl-labor.webp"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/backgrounds/magazin-bsl-labor.webp')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-wrap items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Safety
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              16 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            S1 and S2 laboratories: requirements under GenTSV and BioStoffV
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            The structural and technical requirements an S1 and an S2 laboratory in Germany must meet, what the regulations explicitly do not require, and when the authority becomes involved. With a checklist and the legal references.
+          </p>
+          <div class="flex flex-wrap items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              22 October 2026
+            </span>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Thomas Boss, Technical Director, Planexus
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav aria-label="Breadcrumb" class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-[#5c7300] font-medium">S1/S2 laboratory</span>
+        </div>
+      </div>
+    </nav>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8 min-w-0">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                Anyone planning a laboratory for microbiology, cell culture or molecular biology in Germany soon comes across two abbreviations: <strong class="text-slate-900 font-semibold">S1</strong> and <strong class="text-slate-900 font-semibold">S2</strong>. They determine what floors, work surfaces, basins, ventilation and waste routes must look like, and whether the authority has 45 days to review the plans before work may begin. The rules are not in one place, though. They are spread across the Genetic Engineering Act, the Genetic Engineering Safety Ordinance, the Biological Agents Ordinance and several technical rules.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This article summarises the <strong class="text-slate-900 font-semibold">S2 lab requirements</strong> and the requirements for an S1 laboratory so that lab managers, project leaders and those responsible for construction can derive a plan from them. Every requirement is backed by its legal reference, and a checklist closes the article. It does not replace the risk assessment or a conversation with the competent authority, but it shows which questions should be settled before the first line is drawn on the floor plan. Readers used to international terminology will find that S1 and S2 broadly correspond to BSL-1 and BSL-2, although the German requirements are defined by German law.
+              </p>
+
+              <div class="bg-slate-50 border border-gray-100 rounded-2xl p-6 my-8 not-prose">
+                <p class="font-bold text-slate-900 mb-3">Contents</p>
+                <ol class="space-y-2 text-sm text-gray-700 list-decimal list-inside">
+                  <li><a href="#two-frameworks" class={linkClass}>Two frameworks, one abbreviation</a></li>
+                  <li><a href="#s1-lab" class={linkClass}>Requirements for an S1 laboratory</a></li>
+                  <li><a href="#s2-lab" class={linkClass}>S2 laboratory: structural and technical requirements</a></li>
+                  <li><a href="#not-required" class={linkClass}>What an S2 laboratory does not need</a></li>
+                  <li><a href="#ventilation" class={linkClass}>Ventilation in an S2 laboratory</a></li>
+                  <li><a href="#notification" class={linkClass}>Notification, registration, permit</a></li>
+                  <li><a href="#organisation" class={linkClass}>Staff, maternity protection and operation</a></li>
+                  <li><a href="#dach" class={linkClass}>Switzerland and Austria</a></li>
+                  <li><a href="#container" class={linkClass}>An S2 laboratory in a lab container</a></li>
+                  <li><a href="#checklist" class={linkClass}>Checklist</a></li>
+                </ol>
+              </div>
+
+              <h2 id="two-frameworks" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Two frameworks, one abbreviation: GenTSV and BioStoffV</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In everyday lab life, a room quickly becomes "the S2 lab". Legally, depending on the work, one of two frameworks stands behind it, and both apply side by side:
+              </p>
+
+              <ul class="space-y-3 text-gray-600 mb-6">
+                <li><strong class="text-slate-900">Genetic engineering law:</strong> The Genetic Engineering Act (GenTG) and the Genetic Engineering Safety Ordinance (GenTSV) apply to work with genetically modified organisms, such as cloning in bacteria or work with transfected cell lines. They classify work into <strong class="text-slate-900">safety levels 1 to 4</strong>. These are the "S" levels in the strict sense.</li>
+                <li><strong class="text-slate-900">Occupational safety law:</strong> The Biological Agents Ordinance (BioStoffV) applies to activities involving biological agents, meaning bacteria, viruses, fungi or cell cultures that may endanger people. It assigns biological agents to <strong class="text-slate-900">risk groups 1 to 4</strong> and derives <strong class="text-slate-900">protection levels 1 to 4</strong> for laboratories from them. It is specified in more detail by TRBA 100, which was reissued in November 2025.</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Many laboratories fall under both frameworks, for example when genetically modified bacteria of risk group 2 are handled. The requirements of both then apply together, and for planning purposes the stricter requirement prevails. The table shows how the levels line up.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse border border-gray-200 min-w-[560px]">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">Level</th>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">Genetic engineering (Section 7 GenTG)</th>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">Biological agents (BioStoffV)</th>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">Typical examples</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr><td class="p-3 border border-gray-200 font-semibold">1</td><td class="p-3 border border-gray-200">no risk to people or the environment expected</td><td class="p-3 border border-gray-200">Risk group 1: unlikely to cause human disease</td><td class="p-3 border border-gray-200">Cloning in laboratory strains of E. coli K12</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">2</td><td class="p-3 border border-gray-200">low risk</td><td class="p-3 border border-gray-200">Risk group 2: can cause disease, spread in the population unlikely, treatment usually available</td><td class="p-3 border border-gray-200">Staphylococcus aureus, work with lentiviral vectors</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">3</td><td class="p-3 border border-gray-200">moderate risk</td><td class="p-3 border border-gray-200">Risk group 3: severe disease, spread possible</td><td class="p-3 border border-gray-200">Mycobacterium tuberculosis</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">4</td><td class="p-3 border border-gray-200">high risk</td><td class="p-3 border border-gray-200">Risk group 4: severe disease, high risk of spread</td><td class="p-3 border border-gray-200">Ebola virus</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Where there is doubt about the correct level, the Genetic Engineering Act assigns the work to the higher level (Section 7(1a) GenTG). The classification of individual organisms is published by the Central Committee on Biological Safety (ZKBS) in statements and lists. For biological agents, the classifications are set out in the technical rules TRBA 460 to 468. The examples in the table are typical cases for orientation; the binding classification follows from the risk assessment for the specific work.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This article covers levels 1 and 2, because they account for most research, diagnostic and industrial laboratories. What is added from level 3, such as an airlock, a pressure cascade and HEPA filters, is described in our article <a href="/en/magazine/bsl-2-bsl-3-container-lab" class={linkClass}>BSL-2 and BSL-3 in a container</a>.
+              </p>
+
+              <h2 id="s1-lab" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Requirements for an S1 laboratory</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The safety measures for laboratory areas are set out in Annex 2, Part A of the GenTSV. For safety level 1 they are limited, by design: S1 work is considered risk-free according to the state of science. Even so, an S1 laboratory must be clearly identifiable as a genetic engineering work area and allow basic hygiene.
+              </p>
+
+              <ul class="space-y-3 text-gray-600 mb-6">
+                <li><strong class="text-slate-900">Signage:</strong> The room is marked as a genetic engineering work area of safety level 1.</li>
+                <li><strong class="text-slate-900">Surfaces:</strong> Work surfaces are easy to clean and resistant to the substances used and to cleaning agents and disinfectants.</li>
+                <li><strong class="text-slate-900">Basin:</strong> A hand-wash basin with dispensers for hand soap and disposable towels, and for disinfectant where needed.</li>
+                <li><strong class="text-slate-900">Doors:</strong> They should open in the direction of escape and have a vision panel.</li>
+                <li><strong class="text-slate-900">Autoclave:</strong> An autoclave or equivalent equipment must be available on the site.</li>
+                <li><strong class="text-slate-900">Windows:</strong> They should be closed during work.</li>
+                <li><strong class="text-slate-900">Aerosols:</strong> Their formation must be avoided as far as possible.</li>
+                <li><strong class="text-slate-900">Protective clothing:</strong> Lab coats, and gloves and safety glasses where needed, stored separately from street clothing.</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In planning terms, a well-equipped standard laboratory with smooth, chemical-resistant surfaces usually meets the structural requirements for S1. The autoclave may be located elsewhere on the site. If you are planning for S1 today and expect to take on S2 work later, it pays to build the S2 requirements in from the start. Replacing flooring and work surfaces afterwards is far more disruptive than choosing them correctly during construction.
+              </p>
+
+              <h2 id="s2-lab" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">S2 laboratory: structural and technical requirements</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Safety level 2 adds considerably more structural requirements. The table compares the requirements of Annex 2, Part A, Section II of the GenTSV with the protection level 2 measures in Annex II of the BioStoffV. "Mandatory" and "recommended" are the terms used by the Biological Agents Ordinance. Under Section 10 BioStoffV, recommended measures must be taken if they can reduce the risk to employees.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse border border-gray-200 min-w-[620px]">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">Requirement</th>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">GenTSV, safety level 2</th>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">BioStoffV, protection level 2</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Signage</td><td class="p-3 border border-gray-200">genetic engineering work area level 2 and "biohazard" warning sign</td><td class="p-3 border border-gray-200">protection level and biohazard symbol on the access door</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Doors and view</td><td class="p-3 border border-gray-200">should open in the direction of escape and have a vision panel</td><td class="p-3 border border-gray-200">vision panel or comparable view into the room: mandatory</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Surfaces</td><td class="p-3 border border-gray-200">easy to clean and resistant; work surfaces, adjacent walls, floor and wall-floor junction liquid-tight</td><td class="p-3 border border-gray-200">impermeable to water, easy to clean, resistant to chemicals and disinfectants: mandatory</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Hand-wash basin</td><td class="p-3 border border-gray-200">near the door, with dispensers for disinfectant, hand soap and disposable towels; taps hands-free where possible</td><td class="p-3 border border-gray-200">decontamination and washing facilities for employees: mandatory</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Eye wash</td><td class="p-3 border border-gray-200">an eye-wash facility must be available</td><td class="p-3 border border-gray-200">via the risk assessment</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Drains</td><td class="p-3 border border-gray-200">no floor drains; sinks in work surfaces with a raised rim</td><td class="p-3 border border-gray-200">no specific requirement</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Aerosols</td><td class="p-3 border border-gray-200">must not enter the work area, e.g. by using a safety cabinet or aerosol-tight equipment</td><td class="p-3 border border-gray-200">microbiological safety cabinet where aerosols form: mandatory</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Process exhaust air</td><td class="p-3 border border-gray-200">filtered or thermally treated before release</td><td class="p-3 border border-gray-200">not released into the work area: mandatory</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Autoclave</td><td class="p-3 border border-gray-200">with sufficient capacity in the facility or in the same building</td><td class="p-3 border border-gray-200">dedicated autoclave: recommended; effective inactivation defined: mandatory</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Windows</td><td class="p-3 border border-gray-200">must be closed during work</td><td class="p-3 border border-gray-200">may be openable, but closed during work</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Access</td><td class="p-3 border border-gray-200">only those involved and persons authorised by the project leader</td><td class="p-3 border border-gray-200">restricted to named employees, with access control for listed human pathogens</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Separation</td><td class="p-3 border border-gray-200">no specific requirement</td><td class="p-3 border border-gray-200">separation from other areas: recommended</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Waste</td><td class="p-3 border border-gray-200">collected and transported in tightly closed, labelled containers</td><td class="p-3 border border-gray-200">inactivation before disposal unless disposed of properly by a specialist contractor</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Emergency power</td><td class="p-3 border border-gray-200">no specific requirement</td><td class="p-3 border border-gray-200">for safety-related equipment: recommended</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Three points from the table are particularly often underestimated in planning.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Liquid-tight surfaces right into the corner</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                At level 2, the GenTSV requires not only liquid-tight work surfaces but explicitly also liquid-tight adjacent walls, floors and wall-floor junctions. In practice this means seamless floor covering coved up the wall, welded seams and sealed penetrations for pipes and cables, plus worktops made of ceramic, synthetic resin or stainless steel with tight wall joints. The materials must withstand the disinfectant that will actually be used, which should be decided before samples are approved, not afterwards.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">The basin belongs by the door</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The hand-wash basin should be near the door, so that hands are washed and disinfected on the way out, before the handle is touched. Taps should be operable without hand contact where possible, for example with an elbow lever or sensor. The eye-wash facility belongs here too. Floor drains are not intended in the S2 area, and sinks in work surfaces need a raised rim so that spilled liquid cannot drain away uncontrolled. This affects drainage and therefore the floor plan.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">The safety cabinet shapes the room</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                As soon as aerosols may form during S2 work, for instance when pipetting, vortexing, opening culture vessels or centrifuging, a microbiological safety cabinet is mandatory. Class II to DIN EN 12469 is the usual choice. Its performance depends on where it stands: doors, walkways and supply air outlets close to the front opening disturb the air curtain. The cabinet therefore belongs in a quiet corner, not next to the door. Whether the cabinet exhaust is returned to the room or ducted outside is a matter for the ventilation design. If hazardous substances are used in the same lab, a fume cupboard is added. The requirements for fume cupboards are explained in our article on <a href="/en/magazine/lab-container-fume-hood-din-en-14175" class={linkClass}>fume cupboards to DIN EN 14175</a>.
+              </p>
+
+              <h2 id="not-required" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">What an S2 laboratory does not need</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                S2 laboratories are often designed beyond what is required. That costs floor space and construction time and makes operation more demanding. Annex II of the Biological Agents Ordinance explicitly lists the following measures as <strong class="text-slate-900">not required</strong> for protection level 2:
+              </p>
+
+              <ul class="space-y-3 text-gray-600 mb-6">
+                <li>An <strong class="text-slate-900">airlock</strong> with interlocking doors</li>
+                <li><strong class="text-slate-900">Permanent negative pressure</strong> in the laboratory area</li>
+                <li><strong class="text-slate-900">HEPA filters</strong> or comparable filters for room supply and exhaust air</li>
+                <li><strong class="text-slate-900">Sealability</strong> of the room for fumigation</li>
+                <li><strong class="text-slate-900">Showers</strong> before leaving the area</li>
+                <li><strong class="text-slate-900">Windows that cannot be opened</strong> (they must, however, be closed during work)</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The GenTSV does not require these measures for safety level 2 either; they belong to level 3. That does not mean they never make sense at S2. The risk assessment may call for more for individual activities, and some operators deliberately design one level higher to keep their options open. That decision should be deliberate and justified, though. An "S2 plus" with negative pressure and an airlock is not legally an S3 laboratory. Genuine S3 work requires its own authorisation and permit with its own requirements.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Recommended but not mandatory at protection level 2 are separation from other areas of the building, dedicated equipment for the area, a dedicated autoclave, an emergency call option for lone working, emergency power for safety-related equipment and pest control. These are worth weighing case by case. Emergency power for the safety cabinet and refrigeration, for example, also protects valuable samples.
+              </p>
+
+              <h2 id="ventilation" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">S2 lab requirements for ventilation</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ventilation raises many questions and has few direct rules. Neither the GenTSV nor the BioStoffV prescribes a particular air change rate for level 2. The only binding point is that contaminated process exhaust air, for instance from equipment or fermenters, is filtered or thermally treated before release and does not enter the work area.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The actual requirement for room ventilation usually comes from hazardous substances law. Almost every biological laboratory also uses hazardous substances, such as ethanol, formaldehyde, phenol or disinfectants. TRGS 526 "Laboratories" then applies. It requires adequate mechanical ventilation that is effective at all times and gives a reference value of <strong class="text-slate-900">25 cubic metres of air per hour per square metre of usable floor area</strong>. At a room height of 3 metres, that is a little over eight air changes per hour. A reduction is possible if the risk assessment shows that a lower rate is permanently sufficient, but work with larger quantities of volatile or flammable substances is then restricted, and the entrance must carry a notice about the reduced air change rate.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                There is also a practical consequence of the S2 rules: windows must be closed during work. Without mechanical ventilation, an S2 laboratory can neither be supplied with enough fresh air nor kept cool in summer. Safety cabinets, incubators, centrifuges and refrigeration generate considerable heat. Ventilation design should therefore consider hazardous substances, heat load, fume cupboards and safety cabinets together. How we reconcile air change rates, cooling load and standards in a container is described in our article on <a href="/en/magazine/lab-container-hvac-ventilation-standards" class={linkClass}>HVAC in lab containers</a>.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Slight negative pressure relative to the corridor or neighbouring rooms is not required for S2, but it is often designed in to keep odours and aerosols inside the lab. In that case, the airflow must not disturb the safety cabinet. Negative pressure that creates a strong draught when the door opens does more harm than good.
+              </p>
+
+              <h2 id="notification" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Notification, registration, permit: when the authority becomes involved</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Genetic engineering work may only be carried out in genetic engineering facilities (Section 8(1) GenTG). Which procedure applies to the facility depends on the safety level. For biological agents, the BioStoffV adds its own notification and authorisation duties.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse border border-gray-200 min-w-[560px]">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">Case</th>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">Procedure</th>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">Start of work</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Genetic engineering facility S1, first work</td><td class="p-3 border border-gray-200">written notification, "Anzeige" (Section 8(2) GenTG)</td><td class="p-3 border border-gray-200">immediately after receipt (Section 12(5a) GenTG)</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Genetic engineering facility S2, first work</td><td class="p-3 border border-gray-200">written registration, "Anmeldung" (Section 8(2) GenTG), or a permit on application</td><td class="p-3 border border-gray-200">45 days after receipt, earlier with the authority's consent (Section 12(5) GenTG)</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Further S2 work in a registered facility</td><td class="p-3 border border-gray-200">notification (Section 9 GenTG)</td><td class="p-3 border border-gray-200">immediately after receipt</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Genetic engineering facility S3 or S4</td><td class="p-3 border border-gray-200">facility permit (Section 8(1) GenTG)</td><td class="p-3 border border-gray-200">once the permit is granted</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">First targeted activity with risk group 2 agents</td><td class="p-3 border border-gray-200">notification to the occupational safety authority (Section 16 BioStoffV)</td><td class="p-3 border border-gray-200">notification at least 30 days before starting</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Activities at protection level 3 or 4</td><td class="p-3 border border-gray-200">authorisation (Section 15 BioStoffV)</td><td class="p-3 border border-gray-200">once authorisation is granted</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The 45 days for S2 are not a fixed processing time. The period is suspended while the authority waits for requested documents or obtains a statement from the ZKBS, which happens when the planned work is not comparable to work already classified (Section 12(4) GenTG). If the period expires without a response, this counts as consent. Submitting a complete set of documents the first time is therefore the most effective way to protect the schedule.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Under Section 12(2) in conjunction with Section 10 GenTG, the registration includes a description of the facility with site plan and floor plan, the risk assessment, the planned work, the safety measures, and details of the project leader, the biological safety officer and waste disposal. The federal states provide their own forms. Depending on the state, the competent authority may be the regional council (Regierungspräsidium), the district government (Bezirksregierung) or a state office.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Building law is separate. A new laboratory, a conversion with a change of use or an installed lab container may require planning permission, and the genetic engineering procedure does not replace it. The questions that come up are covered in our practical guide to <a href="/en/magazine/lab-container-permits-building-law" class={linkClass}>lab container permits</a>. Both procedures can be prepared in parallel if the floor plan and equipment are fixed early.
+              </p>
+
+              <h2 id="organisation" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Staff, maternity protection and operation</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                An S2 laboratory is not just a matter of building components. Anyone carrying out genetic engineering work must appoint a project leader and biological safety officers or a biological safety committee (Section 6(4) GenTG). Operation also requires operating instructions, staff training, a hygiene plan and records of the genetic engineering work. The November 2025 edition of TRBA 100 expanded the rules on training and on external contractors. This also covers tradespeople and service technicians working in the S2 area.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A frequently searched question concerns pregnant employees in the S2 lab. Under Section 11(2) of the German Maternity Protection Act, an employer must not let a pregnant woman carry out work in which she may come into contact with biological agents of risk groups 2, 3 or 4 to an extent that poses an unjustifiable risk to her or her child. Rubella virus and Toxoplasma are named explicitly. With sufficient immunity, that risk is deemed excluded. This does not amount to a general ban on working in an S2 laboratory. What matters is the risk assessment for the specific activities, which the employer must adapt as soon as they learn of the pregnancy.
+              </p>
+
+              <h2 id="dach" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Switzerland and Austria</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In <strong class="text-slate-900">Switzerland</strong>, the Containment Ordinance (ESV) governs the handling of organisms in contained systems. It classifies activities into classes 1 to 4. Class 1 and 2 activities must be notified, while class 3 and 4 activities require authorisation. Notifications go to the federal Biotechnology Contact Point and are submitted via the ECOGEN portal. Class 1 and 2 work may begin once the notification has been received. Occupational safety is additionally governed by the Ordinance on the Protection of Employees from Hazards related to Microorganisms (SAMV).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In <strong class="text-slate-900">Austria</strong>, the Genetic Engineering Act (GTG) governs work with genetically modified organisms in contained systems, likewise with safety levels and notification and approval duties. Worker protection for biological agents is governed by the Biological Agents Ordinance (VbA). Procedures and deadlines differ from German law and should be clarified with the competent authority. For sites in <a href="/en/lab-containers-zurich" class={linkClass}>Zurich</a>, <a href="/en/lab-containers-basel" class={linkClass}>Basel</a> or <a href="/en/lab-containers-vienna" class={linkClass}>Vienna</a>, our location pages summarise the regional specifics.
+              </p>
+
+              <h2 id="container" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">An S2 laboratory in a lab container</h2>
+
+              <figure class="my-10 not-prose">
+                <img
+                  src="/images/backgrounds/magazin-bsl-labor.webp"
+                  alt="Laboratory with smooth, easy-to-clean work surfaces, instruments on the benches and a door with a vision panel, as required for an S2 laboratory"
+                  width="2070"
+                  height="1380"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-auto rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Illustrative image: continuous work surfaces, closed lab benches and a door with a vision panel. S2 adds liquid-tight wall-floor junctions and signage.
+                </figcaption>
+              </figure>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The regulations for S1 and S2 laboratories describe surfaces, equipment, ventilation, signage and organisation. They do not prescribe the construction method. A <a href="/en/lab-containers" class={linkClass}>lab container</a> can therefore be registered and operated as an S1 or S2 laboratory. For S2 in particular, factory prefabrication has advantages: coved flooring, sealed penetrations and work surfaces are installed under workshop conditions and checked before delivery.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                These points have proven themselves when planning an S2 container:
+              </p>
+
+              <ul class="space-y-3 text-gray-600 mb-6">
+                <li><strong class="text-slate-900">Zoning:</strong> A small anteroom for changing separates street and protective clothing and marks off the S2 area. It is not mandatory, but it makes hygiene and access control easier.</li>
+                <li><strong class="text-slate-900">Clarify the autoclave:</strong> The GenTSV requires the autoclave within the facility or in the same building. If the container stands alone, the question is whether an autoclave inside the container is needed. Settle this at the start, because an autoclave needs space, power, water and heat removal.</li>
+                <li><strong class="text-slate-900">Place the safety cabinet first:</strong> Fix the quiet position for the cabinet first, then plan the door, supply air and walkways.</li>
+                <li><strong class="text-slate-900">Drainage without floor drains:</strong> Group basins and sinks along the wall, and agree waste water routes and, where needed, inactivation of lab waste water with the installation site early on.</li>
+                <li><strong class="text-slate-900">Design ventilation and cooling together:</strong> Equipment heat load, air change rate under TRGS 526 and cabinet exhaust in one concept.</li>
+                <li><strong class="text-slate-900">Signage and access:</strong> Signs for the genetic engineering work area and biohazard, a lockable door and, where needed, electronic access control.</li>
+                <li><strong class="text-slate-900">Documentation for the registration:</strong> Prepare floor plan, site plan, equipment list and material details so that they can go straight into the documents under Section 10 GenTG.</li>
+              </ul>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Planexus builds S1 and S2 lab containers at its plant in Albstadt. A custom-planned container is typically manufactured in 8 to 14 weeks. The 45 days of the S2 registration can run in parallel with manufacturing if the documents are ready early. How a project runs from first enquiry to handover is shown in our article on the <a href="/en/magazine/lab-container-project-process" class={linkClass}>project process</a>. For equipment in detail, see our <a href="/en/magazine/lab-container-equipment-checklist" class={linkClass}>equipment checklist</a>.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                That leaves the question of renting or buying. For a transitional period, for instance during a refurbishment or until a new building is ready, a <a href="/en/rent-lab-containers" class={linkClass}>rental lab container</a> is a good fit. Our article on the <a href="/en/magazine/temporary-lab-renovation-rental-containers" class={linkClass}>temporary lab during renovation</a> shows how this works in practice. For a permanent extension, <a href="/en/buy-lab-containers" class={linkClass}>buying</a> pays off. If you need a compact solution that is ready to use, the <a href="/en/lab-containers/labtogo" class={linkClass}>LABtoGO</a> is a lab container whose lab room is designed to be S2-capable.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Demand is there. The Munich biotech cluster association BioM reports that demand for laboratory space in the Munich area exceeds supply, and a provider of fully equipped labs there names S2 laboratories as particularly scarce. For research groups and biotech companies in locations such as <a href="/en/lab-containers-munich" class={linkClass}>Munich</a> or <a href="/en/lab-containers-berlin" class={linkClass}>Berlin</a>, an S2 container can bridge the time until suitable space becomes available. Our solutions for research and industry are presented on the industry pages <a href="/en/industries/pharma-biotech" class={linkClass}>pharma and biotech</a> and <a href="/en/industries/research-universities" class={linkClass}>research and universities</a>.
+              </p>
+
+              <div id="checklist" class="bg-slate-50 border border-gray-100 rounded-2xl p-8 my-8 not-prose">
+                <h3 class="text-xl font-heading font-bold text-slate-900 mb-4">Checklist: planning an S2 laboratory</h3>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Describe and classify the activities: safety level under GenTG, protection level under BioStoffV, or both</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Appoint a project leader and a biological safety officer</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Work surfaces, adjacent walls, floor and wall-floor junction liquid-tight and resistant to disinfectants</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Hand-wash basin near the door with dispensers, hands-free tap where possible, eye-wash facility</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>No floor drains, sinks with a raised rim</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Door with vision panel, opening in the direction of escape, marked with level and biohazard sign</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Class II microbiological safety cabinet in a quiet position</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Autoclave in the facility or in the same building, inactivation procedure defined</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Mechanical ventilation under TRGS 526, equipment heat load taken into account</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Access restricted to named persons, changing area for protective clothing</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Submit the registration under Section 8 GenTG and the notification under Section 16 BioStoffV in good time</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Clarify planning permission in parallel</span></li>
+                </ul>
+              </div>
+
+              <h2 id="conclusion" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Conclusion</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The requirements for an S1 laboratory are limited and are usually met by a well-equipped standard laboratory. An S2 laboratory demands more: liquid-tight surfaces down to the wall-floor junction, a basin by the door, an eye wash, a safety cabinet where aerosols may form, an autoclave in the facility or the same building, no floor drains and clear signage. An airlock, negative pressure and HEPA filters, on the other hand, are not among the level 2 obligations.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Legally, an S2 facility in Germany needs a registration with a 45-day waiting period rather than a permit. Submitting complete documents and agreeing the design with the authority early means no time is lost here. Whether as a conversion, a new building or <a href="/en/services/modular-construction" class={linkClass}>modular laboratory construction</a>, the requirements stay the same. What matters is knowing them before the first floor plan is drawn.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center not-prose">
+                <h3 class="text-2xl font-bold mb-4 text-primary">Plan your S2 laboratory</h3>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Are you planning an S1 or S2 laboratory and want to know what it could look like as a lab container? Planexus works through the room programme, equipment and ventilation with you and supplies the documents you need for the registration.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Request a free initial consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Sources: Genetic Engineering Act (GenTG) Sections 6, 7, 8, 9, 10, 12 (gesetze-im-internet.de); Genetic Engineering Safety Ordinance (GenTSV) Annex 2 Part A, version of 12 August 2019 (BGBl. I p. 1235); Biological Agents Ordinance (BioStoffV) Sections 10, 15, 16 and Annex II (gesetze-im-internet.de); TRBA 100, November 2025 edition (GMBl. of 10 November 2025, amended 19 November 2025); TRGS 526 "Laboratories"; Maternity Protection Act Section 11; Swiss Federal Office of Public Health (FOPH) on notifications and authorisations under the Containment Ordinance; BioM, "Available laboratory space in Munich". This article is not legal advice and does not replace a risk assessment. As of 22 October 2026.
+              </p>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <p class="font-bold text-slate-900 mb-4">At a glance</p>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S1: notification, start immediately</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S2: registration, start after 45 days</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S3/S4: permit</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S2: liquid-tight surfaces down to the floor</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S2: basin by the door, no floor drains</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S2: no mandatory negative pressure or airlock</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Ventilation: 25 m³/(h·m²) under TRGS 526</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <p class="font-bold text-slate-900 mb-4">Further reading</p>
+                <ul class="space-y-3">
+                  <li><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>BSL-2 and BSL-3 in a container</a></li>
+                  <li><a href="/en/magazine/lab-container-permits-building-law" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>Permits and building law</a></li>
+                  <li><a href="/en/magazine/lab-container-hvac-ventilation-standards" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>HVAC and ventilation</a></li>
+                  <li><a href="/en/magazine/lab-container-fire-protection" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>Fire protection in lab containers</a></li>
+                  <li><a href="/en/services/planning" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>Laboratory planning</a></li>
+                  <li><a href="/en/services/equipment" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>Laboratory equipment</a></li>
+                  <li><a href="/en/magazine/lab-container-tender-specifications" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>Tendering with a specification</a></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <p class="font-bold mb-3">Need an S2 laboratory?</p>
+                <p class="text-gray-400 text-sm mb-4">We review the room programme, equipment and ventilation for your S1 or S2 laboratory with you.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Get in touch</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions about S1 and S2 laboratories</h2>
+          <div class="space-y-4">
+            {faqs.map((f, i) => (
+              <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open={i === 0}>
+                <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">{f.q}
+                  <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">{f.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedArticles slug="s1-s2-labor-anforderungen" locale="en" />
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/en/magazine" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to the magazine
+      </a>
+    </div>
+  </div>
+</Layout>
