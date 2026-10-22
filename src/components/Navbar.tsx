@@ -71,19 +71,24 @@ export default function Navbar({ locale = 'de', alternateHref }: NavbarProps) {
 
   const LanguageSwitch = ({ className }: { className?: string }) => (
     <div className={cn("flex items-center gap-1 text-xs font-bold uppercase tracking-wide", className)}>
+      {/* Sichtbar nur das Kürzel (Platz auf dem Handy), Screenreader hören den vollen Namen */}
       {locale === 'de' ? (
-        <span className="text-primary px-1.5 py-1" aria-current="true">{copy.nav.languageDe}</span>
+        <span className="text-primary px-1.5 py-1" aria-current="true" lang="de">
+          <span aria-hidden="true">DE</span><span className="sr-only">{copy.nav.languageDe}</span>
+        </span>
       ) : (
-        <a href={switchHref} className="text-white/70 hover:text-primary px-1.5 py-1" lang="de" hrefLang="de">
-          {copy.nav.languageDe}
+        <a href={switchHref} className="text-white/70 hover:text-primary px-1.5 py-1" lang="de" hrefLang="de" title={copy.nav.languageDe}>
+          <span aria-hidden="true">DE</span><span className="sr-only">{copy.nav.languageDe}</span>
         </a>
       )}
       <span className="text-white/30" aria-hidden="true">|</span>
       {locale === 'en' ? (
-        <span className="text-primary px-1.5 py-1" aria-current="true">{copy.nav.languageEn}</span>
+        <span className="text-primary px-1.5 py-1" aria-current="true" lang="en">
+          <span aria-hidden="true">EN</span><span className="sr-only">{copy.nav.languageEn}</span>
+        </span>
       ) : (
-        <a href={switchHref} className="text-white/70 hover:text-primary px-1.5 py-1" lang="en" hrefLang="en">
-          {copy.nav.languageEn}
+        <a href={switchHref} className="text-white/70 hover:text-primary px-1.5 py-1" lang="en" hrefLang="en" title={copy.nav.languageEn}>
+          <span aria-hidden="true">EN</span><span className="sr-only">{copy.nav.languageEn}</span>
         </a>
       )}
     </div>
