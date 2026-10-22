@@ -2,7 +2,7 @@
 // Drives an installed Chrome / Edge / Chromium in headless mode over Node's built-in WebSocket.
 // Requires Node 22+. No npm install.
 import { spawn } from 'node:child_process';
-import { existsSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -15,7 +15,14 @@ export function findChrome() {
   const local = process.env.LOCALAPPDATA || '';
   const pf = process.env.PROGRAMFILES || 'C:\\Program Files';
   const pf86 = process.env['PROGRAMFILES(X86)'] || 'C:\\Program Files (x86)';
+  // macOS zuerst Playwrights Test-Browser: ein unsichtbarer System-Chrome blockiert Joachims eigenen Chrome (22.10.2026).
+  const pw = process.env.PLAYWRIGHT_BROWSERS_PATH || join(home, 'Library/Caches/ms-playwright');
+  const testBrowser = (existsSync(pw) ? readdirSync(pw) : [])
+    .filter((n) => /^chromium-\d+$/.test(n))
+    .sort((a, b) => Number(b.slice(9)) - Number(a.slice(9)))
+    .map((n) => join(pw, n, 'chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'));
   const candidates = [
+    ...testBrowser,
     // Windows
     join(pf, 'Google/Chrome/Application/chrome.exe'),
     join(pf86, 'Google/Chrome/Application/chrome.exe'),
@@ -48,7 +55,7 @@ export class Browser {
     }
     const dir = mkdtempSync(join(tmpdir(), 'ad-chrome-'));
     const args = [
-      '--headless=new', '--remote-debugging-port=0', `--user-data-dir=${dir}`,
+      '--headless=new', '--use-mock-keychain', '--remote-debugging-port=0', `--user-data-dir=${dir}`,
       '--no-first-run', '--no-default-browser-check', '--mute-audio', '--hide-scrollbars',
       '--disable-background-timer-throttling', '--disable-renderer-backgrounding',
       '--disable-backgrounding-occluded-windows', '--disable-features=Translate,MediaRouter',
