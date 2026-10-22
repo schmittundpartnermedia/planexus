@@ -60,3 +60,5 @@ Frischer Build (`lockf … npm run build`, Exit 0, „Complete!“, 17:20 Uhr), 
 Offen und nur mit Joachims Ja oder Mitwirkung lösbar:
 - Thomas Boss muss den Text lesen und freigeben. Der Artikel enthält zwei als seine Meinung formulierte Sätze („Ich rate dazu, ein S2-Labor als S2-Labor zu planen.“ / „My advice is …“).
 - Genaue Suchvolumen (OpenRush, ca. 15 Credits) und eine Prüfung der Sichtbarkeit in KI-Antworten (ChatGPT/Perplexity, ab Livegang) wurden nicht gemacht.
+
+Commit der Überarbeitung: b8a2655
