@@ -38,3 +38,25 @@ Bei der Faktenprüfung fielen auf bestehenden Seiten falsche Rechtsaussagen zu S
 - `src/pages/magazin/laborcontainer-genehmigung-baurecht-vorschriften.astro`: „Für ein Standard-S1-Labor rechnen Sie mit 8 bis 12 Wochen für die Genehmigung“ (S1 = Anzeige, Beginn sofort nach Eingang).
 - Weitere Stellen mit „S2–S4 genehmigungspflichtig“, „S1-Anlagen: nur Anzeige, 4–8 Wochen“, „Für S2 … separate Personal- und Materialschleusen“, „ZKBS-Anzeige“: `branchen/pharma-biotech`, `standorte`, `branchen/public-health-krisenvorsorge`, `leistungen/beratung` und die englischen Gegenstücke.
 Ursache: frühere Texte ohne Abgleich mit § 8/§ 12 GenTG und BioStoffV Anhang II. Lösung: eigene Korrektur aller Stellen DE/EN mit den Belegen aus diesem Artikel.
+
+## Überarbeitung mit Skills (22.10.2026, zweiter Durchgang)
+
+Frischer Build (`lockf … npm run build`, Exit 0, „Complete!“, 17:20 Uhr), Prüfskript wie oben, Handy-Ansicht im eingebauten Browser.
+
+| Nr. | Satz der Abnahmeliste | Geprüft wie | Ergebnis |
+|---|---|---|---|
+| 24 | Skills geladen und angewendet | Sitzungsverlauf: Skill-Aufrufe copywriting, seo-audit, ai-seo, marketing-psychology, cro, schema, social, verification-before-completion; Referenzen ai-tells.md, linkedin-ai-citations.md, platforms.md, post-templates.md, platform-limits.md, content-patterns.md, rankings-push.md, copy-frameworks.md gelesen | ✓ |
+| 25 | Keine KI-Muster, keine unbelegten Praxisbehauptungen | Textsuche im gerenderten `<article>`: „—“ 0, „ – “ 0, „sondern“/„nicht nur“/„Mein Rat:“/„Meine Meinung:“ 0 (DE), „not just“/„isn't“ 0 (EN). Entfernt: „Wir legen in jedem S2-Grundriss …“, „planen wir oft ein“, „in einer Stunde“, „Die meisten S1-Labore …“ | ✓ |
+| 26 | Kurz-gesagt-Kasten und Fragen-Überschriften | Kasten DE 54 Wörter, EN 71 Wörter; 10 von 12 H2 als Suchfrage oder Aussage zur Suchfrage | ✓ (EN-Kasten 1 Wort über Zielwert, inhaltlich gleich) |
+| 27 | Datum und Autorenkasten | `<time datetime="2026-10-22">` vorhanden, „Über den Autor“ / „About the author“ mit Link auf Teamseite | ✓ |
+| 28 | Handlungsaufrufe und Lead-Magnet | 7 Links auf `/kontakt` bzw. `/en/contact` (Navigation, Textkasten, Seitenleiste, unter FAQ), Lastenheft-Formular (`data-lm-button`) vorhanden | ✓ |
+| 29 | ≥ 3 bestehende Seiten verlinken | `dist/client`: BSL-Artikel (2 Links: Text + Karte), Genehmigungs-Artikel 1, Forschung & Hochschule 1; EN: BSL 2, Permits 1, Research & universities 1 | ✓ |
+| 30 | LinkedIn-Beitrag | `docs/linkedin-s2-labor-anforderungen.md`: 1.511 Zeichen, 214 Wörter, erste Wörter „S2-Labor Anforderungen“, 0 Gedankenstriche, Link im ersten Kommentar mit UTM, 5 Hashtags | ✓ |
+| 2 (neu gemessen) | ≥ 3.000 Wörter | DE: 2.855 Wörter im `<article>` (Fließtext, Tabellen, Kästen, Seitenleiste) + 446 Wörter FAQ = 3.301; EN 3.367 + 524 = 3.891. Zum Vergleich PFAS 2.341, BSL 1.345 (gleiche Methode) | ✓ mit FAQ gezählt; reiner Artikelbereich DE 2.855 |
+| 13 | Interne Links | DE 26, EN 26, keine ohne Ziel | ✓ |
+| 11 | FAQ Schema = sichtbar | 8 FAQ, 0 Abweichungen DE und EN | ✓ |
+| 23 | Handy 375 px | `scrollWidth` 375 = `innerWidth` 375 (DE und EN), 0 Elemente im Artikel ragen über den Rand außerhalb der Tabellen-Scrollkästen | ✓ |
+
+Offen und nur mit Joachims Ja oder Mitwirkung lösbar:
+- Thomas Boss muss den Text lesen und freigeben. Der Artikel enthält zwei als seine Meinung formulierte Sätze („Ich rate dazu, ein S2-Labor als S2-Labor zu planen.“ / „My advice is …“).
+- Genaue Suchvolumen (OpenRush, ca. 15 Credits) und eine Prüfung der Sichtbarkeit in KI-Antworten (ChatGPT/Perplexity, ab Livegang) wurden nicht gemacht.

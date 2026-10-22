@@ -37,3 +37,15 @@ Fertig, wenn jeder Satz belegt ist (Nachweis in `docs/PRUEFUNG-magazin-s1-s2-lab
 ## Build
 22. `npm run build` läuft ohne Fehler durch. Beide Seiten liegen als `index.html` in `dist/client/`.
 23. Die Seite ist auf dem Handy (375 px) ohne waagrechtes Scrollen lesbar, Tabellen scrollen innerhalb ihres Kastens.
+
+## Überarbeitung mit Skills (Joachim, 22.10.2026)
+
+Auftrag: Artikel mit den Text-, SEO- und Social-Skills komplett überarbeiten, SEO-Audit und AI-SEO-Audit durchführen, LinkedIn-Beitrag schreiben.
+
+24. Die Skills `copywriting`, `marketing-psychology`, `cro`, `seo-audit`, `ai-seo`, `schema`, `social` und `verification-before-completion` sind per Skill-Werkzeug geladen und angewendet (sichtbar im Sitzungsverlauf).
+25. Im Artikeltext (DE und EN) stehen keine Gedankenstriche, keine „nicht X, sondern Y“-Enthüllungen, keine Doppelpunkt-Enthüllungen und keine unbelegten Planexus-Praxisbehauptungen.
+26. Die Antwort auf „Was ist ein S2-Labor?“ steht als Kurz-gesagt-Kasten (40 bis 70 Wörter) vor dem ersten Abschnitt; die H2-Überschriften sind als Suchfragen formuliert.
+27. Sichtbar sind ein Aktualisierungsdatum mit `<time>` und ein Autorenkasten mit Link auf die Teamseite.
+28. Es gibt drei Handlungsaufforderungen zum Thema (Kasten im Text, Seitenleiste, unter den FAQ) und die Lastenheft-Vorlage als Lead-Magnet.
+29. Mindestens drei bestehende Seiten verlinken im Fließtext auf den Artikel (DE und EN).
+30. Der LinkedIn-Beitrag liegt in `docs/linkedin-s2-labor-anforderungen.md`: Zielbegriff in den ersten Wörtern, höchstens 1.600 Zeichen, keine Gedankenstriche, Link im ersten Kommentar mit UTM-Parametern, 3 bis 5 Hashtags.

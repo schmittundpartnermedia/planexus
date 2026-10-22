@@ -22,8 +22,8 @@ export interface MagazinLocaleFields {
 export const magazinEn: Record<string, MagazinLocaleFields> = {
   "s1-s2-labor-anforderungen": {
     slug: "s1-s2-lab-requirements-germany",
-    title: "S1 and S2 laboratories: requirements under GenTSV and BioStoffV",
-    excerpt: "A design checklist for S1 and S2 labs in Germany: surfaces, hand-wash basin, biosafety cabinet, autoclave, ventilation, notification and what S2 does not require.",
+    title: "S2 lab requirements in Germany: what is mandatory and what you can skip",
+    excerpt: "Floors, basin, safety cabinet, autoclave, ventilation and registration: what GenTSV and the Biological Agents Ordinance require for S1 and S2 labs, and which costly extras no rule asks for.",
     date: "22 October 2026",
     category: "Safety",
   },
@@ -218,8 +218,8 @@ export const magazinPosts: MagazinPost[] = [
   {
     id: -18,
     slug: "s1-s2-labor-anforderungen",
-    title: "S1- und S2-Labor: Anforderungen nach GenTSV und BioStoffV",
-    excerpt: "Bauliche Checkliste für S1- und S2-Labore: Oberflächen, Waschbecken, Sicherheitswerkbank, Autoklav, Lüftung, Anmeldung nach GenTG und was S2 nicht verlangt.",
+    title: "S2-Labor Anforderungen: Was Pflicht ist und was Sie sich sparen können",
+    excerpt: "Boden, Waschbecken, Werkbank, Autoklav, Lüftung und Anmeldung: was GenTSV und Biostoffverordnung für S1- und S2-Labore verlangen, und welche teuren Extras keine Vorschrift fordert.",
     date: "22. Oktober 2026",
     author: "Thomas Boss",
     category: "Sicherheit",

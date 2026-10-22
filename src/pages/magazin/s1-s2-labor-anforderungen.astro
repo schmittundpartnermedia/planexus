@@ -1,22 +1,35 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
+import LeadMagnetLastenheft from '../../components/LeadMagnetLastenheft.astro';
+
+const pageUrl = "https://planexus.de/magazin/s1-s2-labor-anforderungen";
+const headline = "S2-Labor Anforderungen: Was Pflicht ist und was Sie sich sparen können";
+const description = "S2-Labor Anforderungen nach GenTSV und BioStoffV: bauliche Checkliste, Lüftung, Anmeldung in 45 Tagen und was ein S2-Labor nicht braucht.";
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "S1- und S2-Labor: Anforderungen nach GenTSV und BioStoffV",
-  "description": "S2-Labor Anforderungen im Überblick: bauliche Checkliste nach GenTSV und BioStoffV, Lüftung, Autoklav, Anmeldung und was S2 nicht verlangt.",
-  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/team/thomas-boss", "jobTitle": "Gesellschafter & Technischer Leiter", "worksFor": { "@type": "Organization", "name": "Planexus GmbH" } },
+  "inLanguage": "de-DE",
+  "headline": headline,
+  "description": description,
+  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/team/thomas-boss", "jobTitle": "Gesellschafter & Technischer Leiter", "worksFor": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de/" } },
   "datePublished": "2026-10-22",
   "dateModified": "2026-10-22",
   "image": "https://planexus.de/images/backgrounds/magazin-bsl-labor.webp",
   "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://planexus.de/magazin/s1-s2-labor-anforderungen" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
   "about": [
+    { "@type": "Thing", "name": "S2-Labor" },
     { "@type": "Thing", "name": "Gentechnik-Sicherheitsverordnung (GenTSV)" },
-    { "@type": "Thing", "name": "Biostoffverordnung (BioStoffV)" },
-    { "@type": "Thing", "name": "S2-Labor" }
+    { "@type": "Thing", "name": "Biostoffverordnung (BioStoffV)" }
+  ],
+  "citation": [
+    "https://www.gesetze-im-internet.de/gentg/__8.html",
+    "https://www.gesetze-im-internet.de/gentg/__12.html",
+    "https://www.gesetze-im-internet.de/biostoffv_2013/anhang_ii.html",
+    "https://www.gesetze-im-internet.de/biostoffv_2013/__16.html",
+    "https://www.gesetze-im-internet.de/muschg_2018/__11.html"
   ]
 };
 
@@ -26,48 +39,49 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/" },
     { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/magazin" },
-    { "@type": "ListItem", "position": 3, "name": "S1- und S2-Labor: Anforderungen nach GenTSV und BioStoffV", "item": "https://planexus.de/magazin/s1-s2-labor-anforderungen" }
+    { "@type": "ListItem", "position": 3, "name": "S2-Labor Anforderungen", "item": pageUrl }
   ]
 };
 
 const faqs = [
   {
     q: "Was ist der Unterschied zwischen einem S1- und einem S2-Labor?",
-    a: "Im S1-Labor finden Arbeiten statt, bei denen nach dem Stand der Wissenschaft kein Risiko für Mensch und Umwelt zu erwarten ist. Im S2-Labor wird mit einem geringen Risiko gearbeitet. Baulich kommen bei S2 vor allem flüssigkeitsdichte Arbeitsflächen und Böden, ein Waschbecken mit Desinfektionsmittelspender nahe der Tür, eine Augenspüleinrichtung, eine mikrobiologische Sicherheitswerkbank bei Aerosolgefahr, ein Autoklav in der Anlage oder im selben Gebäude und die Kennzeichnung mit dem Symbol für Biogefährdung hinzu."
+    a: "Im S1-Labor wird ohne Risiko für Mensch und Umwelt gearbeitet, im S2-Labor mit geringem Risiko. Für S2 kommen flüssigkeitsdichte Flächen bis zum Wand-Boden-Anschluss hinzu, ein Waschbecken mit Desinfektionsmittelspender an der Tür, eine Augenspülung, eine Sicherheitswerkbank bei Aerosolgefahr, ein Autoklav im selben Gebäude und das Symbol für Biogefährdung an der Tür."
   },
   {
     q: "Ist ein S2-Labor genehmigungspflichtig?",
-    a: "Nach dem Gentechnikgesetz nicht zwingend. Für eine gentechnische Anlage der Sicherheitsstufe 2 und die erstmaligen Arbeiten darin reicht eine schriftliche Anmeldung bei der zuständigen Landesbehörde (§ 8 GenTG). Mit den Arbeiten darf 45 Tage nach Eingang der Anmeldung begonnen werden, früher nur mit Zustimmung der Behörde (§ 12 GenTG). Eine Genehmigung ist erst für Sicherheitsstufe 3 und 4 vorgeschrieben. Unabhängig davon kann für den Laborbau selbst eine Baugenehmigung nötig sein."
+    a: "Nein, eine Anmeldung reicht. Für eine gentechnische Anlage der Sicherheitsstufe 2 reichen Sie bei der Landesbehörde eine schriftliche Anmeldung ein (§ 8 GenTG). Arbeiten dürfen 45 Tage nach Eingang beginnen, mit Zustimmung der Behörde früher (§ 12 GenTG). Genehmigungspflichtig sind erst Stufe 3 und 4. Für den Bau selbst kann trotzdem eine Baugenehmigung nötig sein."
   },
   {
     q: "Braucht ein S2-Labor Unterdruck?",
-    a: "Nein, nicht nach den Vorschriften. Anhang II der Biostoffverordnung führt den ständigen Unterdruck für Schutzstufe 2 als nicht erforderlich. Auch die GenTSV verlangt für Sicherheitsstufe 2 keinen Unterdruck. Pflicht ist, dass kontaminierte Prozessabluft nicht ungefiltert in den Arbeitsbereich gelangt und Aerosole zurückgehalten werden, etwa durch eine mikrobiologische Sicherheitswerkbank."
+    a: "Nein. Anhang II der Biostoffverordnung führt den ständigen Unterdruck für Schutzstufe 2 als nicht erforderlich, und die GenTSV verlangt ihn für Sicherheitsstufe 2 ebenfalls nicht. Pflicht ist, dass Aerosole zurückgehalten werden, etwa durch eine mikrobiologische Sicherheitswerkbank, und dass kontaminierte Prozessabluft nicht ungefiltert in den Raum gelangt."
   },
   {
     q: "Braucht ein S2-Labor eine Schleuse?",
-    a: "Nein. Eine Schleuse mit gegeneinander verriegelten Türen ist nach Anhang II der Biostoffverordnung erst ab Schutzstufe 3 vorgesehen. Für Schutzstufe 2 wird empfohlen, den Laborbereich von anderen Bereichen abzugrenzen. Ein Vorraum zum Umkleiden kann trotzdem sinnvoll sein, weil Schutzkleidung getrennt von Straßenkleidung aufbewahrt werden muss."
+    a: "Nein. Eine Schleuse mit gegeneinander verriegelten Türen sieht die Biostoffverordnung erst ab Schutzstufe 3 vor. Für Schutzstufe 2 empfiehlt sie, den Laborbereich von anderen Bereichen abzugrenzen. Ein kleiner Vorraum zum Umkleiden ist trotzdem praktisch, weil Schutzkleidung getrennt von Straßenkleidung aufbewahrt werden muss."
   },
   {
     q: "Welche Lüftung braucht ein S2-Labor?",
-    a: "Eine eigene Luftwechselrate für S2 schreiben weder GenTSV noch BioStoffV vor. Wird im Labor mit Gefahrstoffen gearbeitet, gilt die TRGS 526: Als Richtwert nennt sie 25 Kubikmeter Zuluft pro Stunde und Quadratmeter Laborfläche, was bei 3 Metern Raumhöhe gut acht Luftwechseln pro Stunde entspricht. Eine Reduzierung ist nur auf Basis der Gefährdungsbeurteilung möglich. Weil Fenster während der Arbeiten geschlossen bleiben müssen, braucht ein S2-Labor in der Praxis eine technische Lüftung."
+    a: "Eine eigene Luftwechselrate für S2 gibt es nicht. Sobald im Labor mit Gefahrstoffen gearbeitet wird, gilt die TRGS 526 mit einem Richtwert von 25 Kubikmetern Luft pro Stunde und Quadratmeter Laborfläche, bei 3 Metern Raumhöhe gut acht Luftwechsel pro Stunde. Weil die Fenster während der Arbeit geschlossen bleiben, braucht ein S2-Labor in der Praxis eine Lüftungsanlage."
   },
   {
     q: "Muss der Autoklav im S2-Labor stehen?",
-    a: "Nicht zwingend im Laborraum. Die GenTSV verlangt für Sicherheitsstufe 2 einen Autoklav oder eine gleichwertige Inaktivierungseinrichtung mit ausreichender Kapazität in der gentechnischen Anlage oder im selben Gebäude. Steht das S2-Labor als eigenständiger Laborcontainer, sollte früh mit der Behörde geklärt werden, ob ein Autoklav im Container nötig ist oder ein Gerät im Nachbargebäude anerkannt wird."
+    a: "Nicht im Laborraum selbst. Die GenTSV verlangt für Sicherheitsstufe 2 einen Autoklav mit ausreichender Kapazität in der gentechnischen Anlage oder im selben Gebäude. Bei einem freistehenden Laborcontainer sollten Sie früh mit der Behörde klären, ob ein Autoklav in den Container gehört oder ein Gerät im Nachbargebäude anerkannt wird."
   },
   {
     q: "Dürfen Schwangere im S2-Labor arbeiten?",
-    a: "Das entscheidet die Gefährdungsbeurteilung im Einzelfall. Nach § 11 Abs. 2 Mutterschutzgesetz darf eine schwangere Frau keinen Tätigkeiten mit Biostoffen der Risikogruppen 2 bis 4 ausgesetzt sein, wenn dies für sie oder ihr Kind eine unverantwortbare Gefährdung darstellt. Ausdrücklich genannt sind Rötelnvirus und Toxoplasma. Liegt ein ausreichender Immunschutz vor, gilt die Gefährdung insoweit als ausgeschlossen."
+    a: "Ein pauschales Verbot gibt es nicht. Nach § 11 Abs. 2 Mutterschutzgesetz darf eine Schwangere keinen Kontakt mit Biostoffen der Risikogruppen 2 bis 4 haben, der für sie oder ihr Kind eine unverantwortbare Gefährdung bedeutet. Ausdrücklich genannt sind Rötelnvirus und Toxoplasma. Bei ausreichendem Immunschutz gilt diese Gefährdung als ausgeschlossen. Entscheidend ist die Gefährdungsbeurteilung für die konkrete Tätigkeit."
   },
   {
     q: "Kann ein Laborcontainer als S2-Labor betrieben werden?",
-    a: "Ja. Die Anforderungen an ein S2-Labor betreffen Oberflächen, Ausstattung, Lüftung, Kennzeichnung und Organisation, nicht die Bauweise. Ein Laborcontainer kann alle baulichen und technischen Punkte erfüllen. Die Anmeldung bei der Behörde und die Gefährdungsbeurteilung bleiben Aufgabe des Betreibers. Planexus fertigt S1- und S2-Laborcontainer typischerweise in 8 bis 14 Wochen."
+    a: "Ja. GenTSV und Biostoffverordnung regeln Oberflächen, Ausstattung, Lüftung, Kennzeichnung und Organisation, nicht die Bauweise. Ein Laborcontainer kann alle baulichen Punkte erfüllen und als S2-Anlage angemeldet werden. Planexus fertigt S1- und S2-Laborcontainer typischerweise in 8 bis 14 Wochen. Die 45 Tage der Anmeldung laufen parallel zur Fertigung."
   }
 ];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "de-DE",
   "mainEntity": faqs.map((f) => ({
     "@type": "Question",
     "name": f.q,
@@ -76,12 +90,21 @@ const faqSchema = {
 };
 
 const linkClass = "text-[#5c7300] font-medium hover:underline";
+const chevron = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>`;
+const furtherLinks = [
+  { href: "/magazin/bsl-2-bsl-3-container-labor", label: "BSL-2 und BSL-3 im Container" },
+  { href: "/magazin/laborcontainer-genehmigung-baurecht-vorschriften", label: "Genehmigung und Baurecht" },
+  { href: "/magazin/laborcontainer-klimatisierung-lueftung-normen", label: "Klimatisierung und Lüftung" },
+  { href: "/magazin/laborcontainer-brandschutz-feuerwiderstand", label: "Brandschutz im Laborcontainer" },
+  { href: "/leistungen/planung", label: "Laborplanung" },
+  { href: "/leistungen/ausstattung", label: "Laborausstattung" },
+];
 ---
 
 <Layout
   type="article"
   title="S2-Labor Anforderungen: Checkliste GenTSV & BioStoffV"
-  description="S2-Labor Anforderungen im Überblick: bauliche Checkliste nach GenTSV und BioStoffV, Lüftung, Autoklav, Anmeldung und was S2 nicht verlangt."
+  description={description}
   canonical="/magazin/s1-s2-labor-anforderungen"
   ogImage="/images/backgrounds/magazin-bsl-labor.webp"
 >
@@ -102,24 +125,24 @@ const linkClass = "text-[#5c7300] font-medium hover:underline";
             </span>
             <span class="text-gray-400 text-sm flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              16 Min. Lesezeit
+              15 Min. Lesezeit
             </span>
           </div>
           <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-            S1- und S2-Labor: Anforderungen nach GenTSV und BioStoffV
+            S2-Labor Anforderungen: Was Pflicht ist und was Sie sich sparen können
           </h1>
           <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-            Welche baulichen und technischen Anforderungen ein S1- und ein S2-Labor erfüllen muss, was die Vorschriften ausdrücklich nicht verlangen und wann die Behörde ins Spiel kommt. Mit Checkliste und den Paragrafen zum Nachlesen.
+            Boden, Waschbecken, Werkbank, Autoklav, Lüftung und die Anmeldung bei der Behörde: Was GenTSV und Biostoffverordnung für S1- und S2-Labore vorschreiben, mit Paragraf und Checkliste. Und welche teuren Extras keine Vorschrift verlangt.
           </p>
-          <div class="flex flex-wrap items-center gap-6 text-sm text-gray-400">
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
             <span class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-              22. Oktober 2026
+              <time datetime="2026-10-22">Aktualisiert am 22. Oktober 2026</time>
             </span>
-            <span class="flex items-center gap-2">
+            <a href="/team/thomas-boss" class="flex items-center gap-2 hover:text-primary">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               Thomas Boss, Technischer Leiter Planexus
-            </span>
+            </a>
           </div>
         </div>
       </div>
@@ -132,7 +155,7 @@ const linkClass = "text-[#5c7300] font-medium hover:underline";
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           <a href="/magazin" class="hover:text-primary">Magazin</a>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-          <span class="text-[#5c7300] font-medium">S1/S2-Labor</span>
+          <span class="text-[#5c7300] font-medium">S2-Labor Anforderungen</span>
         </div>
       </div>
     </nav>
@@ -143,254 +166,244 @@ const linkClass = "text-[#5c7300] font-medium hover:underline";
           <div class="lg:col-span-8 min-w-0">
             <div class="prose prose-lg max-w-none">
 
-              <p class="text-xl text-gray-700 leading-relaxed mb-8">
-                Wer ein Labor für Mikrobiologie, Zellkultur oder Molekularbiologie plant, stößt schnell auf zwei Kürzel: <strong class="text-slate-900 font-semibold">S1</strong> und <strong class="text-slate-900 font-semibold">S2</strong>. Sie entscheiden darüber, wie Böden, Arbeitsflächen, Waschbecken, Lüftung und Abfallwege aussehen müssen und ob die Behörde vor Arbeitsbeginn 45 Tage Zeit zur Prüfung hat. Die Vorgaben stehen allerdings nicht an einer Stelle, sondern verteilt auf das Gentechnikgesetz, die Gentechnik-Sicherheitsverordnung, die Biostoffverordnung und mehrere Technische Regeln.
+              <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                Sie planen ein Labor für Zellkultur, Mikrobiologie oder Gentechnik, und die Sicherheitsfachkraft fragt als Erstes: S1 oder S2? Von der Antwort hängt ab, welcher Boden verlegt wird, wo das Waschbecken hängt, ob eine Sicherheitswerkbank in den Raum muss und ob Sie 45 Tage auf die Behörde warten.
               </p>
+
+              <div class="bg-slate-50 border-l-4 border-primary rounded-r-2xl p-6 my-8 not-prose">
+                <p class="text-sm uppercase tracking-wider text-[#5c7300] font-bold mb-2">Kurz gesagt</p>
+                <p class="text-gray-800 leading-relaxed">
+                  Ein <strong class="text-slate-900">S2-Labor</strong> ist ein Labor der Sicherheitsstufe 2 nach Gentechnikrecht oder der Schutzstufe 2 nach Biostoffverordnung, in dem mit geringem Risiko gearbeitet wird. Pflicht sind flüssigkeitsdichte Flächen bis zum Wand-Boden-Anschluss, ein Waschbecken an der Tür, eine Augenspülung, eine Sicherheitswerkbank bei Aerosolgefahr und ein Autoklav im selben Gebäude. Schleuse, Unterdruck und HEPA-Filter gehören nicht dazu.
+                </p>
+              </div>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Dieser Beitrag fasst die <strong class="text-slate-900 font-semibold">S2-Labor Anforderungen</strong> und die Anforderungen an ein S1-Labor so zusammen, dass Laborleitungen, Projektleitungen und Bauverantwortliche daraus eine Planung ableiten können. Jede Anforderung ist mit der Fundstelle belegt. Am Ende steht eine Checkliste. Sie ersetzt nicht die Gefährdungsbeurteilung und nicht das Gespräch mit der zuständigen Behörde, sie zeigt aber, welche Fragen vor dem ersten Strich im Grundriss geklärt sein sollten.
+                Die Vorgaben stehen verteilt im Gentechnikgesetz, in der Gentechnik-Sicherheitsverordnung, in der Biostoffverordnung und in mehreren Technischen Regeln. Wer danach googelt, landet meist bei Behörden-PDFs, die teils über 20 Jahre alt sind. Dieser Beitrag fasst den aktuellen Stand zusammen, jede Anforderung mit Fundstelle. Geschrieben hat ihn Thomas Boss, Technischer Leiter bei Planexus, der Laborcontainer für Pharma, Biotech und Forschung plant und baut. Deshalb geht es auch darum, was die Vorschriften auf der Baustelle bedeuten.
               </p>
 
-              <div class="bg-slate-50 border border-gray-100 rounded-2xl p-6 my-8 not-prose">
+              <div class="bg-white border border-gray-200 rounded-2xl p-6 my-8 not-prose">
                 <p class="font-bold text-slate-900 mb-3">Inhalt</p>
                 <ol class="space-y-2 text-sm text-gray-700 list-decimal list-inside">
-                  <li><a href="#zwei-regelwerke" class={linkClass}>Zwei Regelwerke, ein Kürzel</a></li>
-                  <li><a href="#s1-labor" class={linkClass}>Anforderungen an ein S1-Labor</a></li>
-                  <li><a href="#s2-labor" class={linkClass}>S2-Labor: bauliche und technische Anforderungen</a></li>
+                  <li><a href="#was-ist-s2" class={linkClass}>Was ist ein S2-Labor?</a></li>
+                  <li><a href="#s1-labor" class={linkClass}>Welche Anforderungen gelten für ein S1-Labor?</a></li>
+                  <li><a href="#s2-labor" class={linkClass}>Welche baulichen Anforderungen hat ein S2-Labor?</a></li>
                   <li><a href="#nicht-verlangt" class={linkClass}>Was ein S2-Labor nicht braucht</a></li>
-                  <li><a href="#lueftung" class={linkClass}>Lüftung im S2-Labor</a></li>
-                  <li><a href="#anmeldung" class={linkClass}>Anzeige, Anmeldung, Genehmigung</a></li>
-                  <li><a href="#organisation" class={linkClass}>Personal, Mutterschutz und Betrieb</a></li>
+                  <li><a href="#lueftung" class={linkClass}>Welche Lüftung braucht ein S2-Labor?</a></li>
+                  <li><a href="#anmeldung" class={linkClass}>Muss ein S2-Labor genehmigt werden?</a></li>
+                  <li><a href="#umruesten" class={linkClass}>Vom S1- zum S2-Labor</a></li>
+                  <li><a href="#fehler" class={linkClass}>Fünf Planungsfehler</a></li>
+                  <li><a href="#personal" class={linkClass}>Personal und Mutterschutz</a></li>
                   <li><a href="#dach" class={linkClass}>Schweiz und Österreich</a></li>
-                  <li><a href="#container" class={linkClass}>S2-Labor im Laborcontainer</a></li>
-                  <li><a href="#checkliste" class={linkClass}>Checkliste</a></li>
+                  <li><a href="#container" class={linkClass}>S2-Labor als Laborcontainer</a></li>
+                  <li><a href="#checkliste" class={linkClass}>Checkliste zum Abhaken</a></li>
                 </ol>
               </div>
 
-              <h2 id="zwei-regelwerke" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Zwei Regelwerke, ein Kürzel: GenTSV und BioStoffV</h2>
+              <h2 id="was-ist-s2" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Was ist ein S2-Labor?</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Im Laboralltag heißt ein Raum schnell „das S2-Labor“. Rechtlich steckt dahinter je nach Arbeit eines von zwei Regelwerken, die nebeneinander gelten:
-              </p>
-
-              <ul class="space-y-3 text-gray-600 mb-6">
-                <li><strong class="text-slate-900">Gentechnikrecht:</strong> Das Gentechnikgesetz (GenTG) und die Gentechnik-Sicherheitsverordnung (GenTSV) gelten für Arbeiten mit gentechnisch veränderten Organismen, etwa für die Klonierung in Bakterien oder die Arbeit mit transfizierten Zelllinien. Sie teilen die Arbeiten in die <strong class="text-slate-900">Sicherheitsstufen 1 bis 4</strong> ein. Das sind die „S“-Stufen im engeren Sinn.</li>
-                <li><strong class="text-slate-900">Arbeitsschutzrecht:</strong> Die Biostoffverordnung (BioStoffV) gilt für Tätigkeiten mit biologischen Arbeitsstoffen, also mit Bakterien, Viren, Pilzen oder Zellkulturen, die Menschen gefährden können. Sie ordnet die Biostoffe in <strong class="text-slate-900">Risikogruppen 1 bis 4</strong> ein und leitet daraus die <strong class="text-slate-900">Schutzstufen 1 bis 4</strong> für Laboratorien ab. Konkretisiert wird sie durch die TRBA 100, die im November 2025 neu herausgegeben wurde.</li>
-              </ul>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Viele Labore fallen unter beide Regelwerke, zum Beispiel wenn gentechnisch veränderte Bakterien der Risikogruppe 2 bearbeitet werden. Dann gelten die Anforderungen beider Vorschriften zusammen. Für die Planung heißt das: Die strengere Anforderung setzt sich durch. Die folgende Tabelle zeigt die Zuordnung.
+                „S2“ sagt man im Labor zu zwei verschiedenen Dingen, und viele Labore fallen unter beide. Das <strong class="text-slate-900">Gentechnikrecht</strong> (GenTG und GenTSV) teilt Arbeiten mit gentechnisch veränderten Organismen in die Sicherheitsstufen 1 bis 4 ein. Die <strong class="text-slate-900">Biostoffverordnung</strong> ordnet Bakterien, Viren, Pilze und Zellkulturen den Risikogruppen 1 bis 4 zu und leitet daraus Schutzstufen für Labore ab. Wer gentechnisch veränderte Bakterien der Risikogruppe 2 bearbeitet, muss beide Regelwerke erfüllen. Für die Planung heißt das: Die jeweils strengere Anforderung gilt.
               </p>
 
               <div class="overflow-x-auto my-8 not-prose">
                 <table class="w-full text-sm border-collapse border border-gray-200 min-w-[560px]">
+                  <caption class="text-left text-sm text-gray-500 pb-2">Sicherheitsstufen und Risikogruppen im Vergleich</caption>
                   <thead class="bg-slate-100">
                     <tr>
                       <th class="text-left p-3 border border-gray-200 text-slate-900">Stufe</th>
                       <th class="text-left p-3 border border-gray-200 text-slate-900">Gentechnik (§ 7 GenTG)</th>
                       <th class="text-left p-3 border border-gray-200 text-slate-900">Biostoffe (BioStoffV)</th>
-                      <th class="text-left p-3 border border-gray-200 text-slate-900">Typische Beispiele</th>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">Typisches Beispiel</th>
                     </tr>
                   </thead>
                   <tbody class="text-gray-700">
-                    <tr><td class="p-3 border border-gray-200 font-semibold">1</td><td class="p-3 border border-gray-200">kein Risiko für Mensch und Umwelt zu erwarten</td><td class="p-3 border border-gray-200">Risikogruppe 1: Krankheit beim Menschen unwahrscheinlich</td><td class="p-3 border border-gray-200">Klonierung in Laborstämmen von E. coli K12</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">2</td><td class="p-3 border border-gray-200">geringes Risiko</td><td class="p-3 border border-gray-200">Risikogruppe 2: kann Krankheit hervorrufen, Verbreitung in der Bevölkerung unwahrscheinlich, Behandlung meist möglich</td><td class="p-3 border border-gray-200">Staphylococcus aureus, Arbeiten mit Lentiviren-Vektoren</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">3</td><td class="p-3 border border-gray-200">mäßiges Risiko</td><td class="p-3 border border-gray-200">Risikogruppe 3: schwere Krankheit, Verbreitung möglich</td><td class="p-3 border border-gray-200">Mycobacterium tuberculosis</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">4</td><td class="p-3 border border-gray-200">hohes Risiko</td><td class="p-3 border border-gray-200">Risikogruppe 4: schwere Krankheit, große Verbreitungsgefahr</td><td class="p-3 border border-gray-200">Ebolavirus</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">1</td><td class="p-3 border border-gray-200">kein Risiko zu erwarten</td><td class="p-3 border border-gray-200">Krankheit beim Menschen unwahrscheinlich</td><td class="p-3 border border-gray-200">Klonierung in E. coli K12</td></tr>
+                    <tr class="bg-primary/5"><td class="p-3 border border-gray-200 font-semibold">2</td><td class="p-3 border border-gray-200">geringes Risiko</td><td class="p-3 border border-gray-200">kann krank machen, Verbreitung unwahrscheinlich, meist behandelbar</td><td class="p-3 border border-gray-200">Staphylococcus aureus, Lentivirus-Vektoren</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">3</td><td class="p-3 border border-gray-200">mäßiges Risiko</td><td class="p-3 border border-gray-200">schwere Krankheit, Verbreitung möglich</td><td class="p-3 border border-gray-200">Mycobacterium tuberculosis</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">4</td><td class="p-3 border border-gray-200">hohes Risiko</td><td class="p-3 border border-gray-200">schwere Krankheit, große Verbreitungsgefahr</td><td class="p-3 border border-gray-200">Ebolavirus</td></tr>
                   </tbody>
                 </table>
               </div>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Bestehen Zweifel an der richtigen Stufe, ordnet das Gentechnikgesetz die Arbeit der höheren Stufe zu (§ 7 Abs. 1a GenTG). Die Einstufung einzelner Organismen veröffentlicht die Zentrale Kommission für die Biologische Sicherheit (ZKBS) in Stellungnahmen und Listen. Für die Biostoffe stehen die Einstufungen in den Technischen Regeln TRBA 460 bis 468. Die Beispiele in der Tabelle sind typische Fälle zur Orientierung, die verbindliche Einstufung folgt aus der Risikobewertung für die konkrete Arbeit.
+                Die Beispiele dienen zur Orientierung. Verbindlich ist die Einstufung Ihrer konkreten Arbeit: für Organismen in den Stellungnahmen der Zentralen Kommission für die Biologische Sicherheit (ZKBS), für Biostoffe in den Technischen Regeln TRBA 460 bis 468. Im Zweifel gilt nach § 7 Abs. 1a GenTG die höhere Stufe. Was ab Stufe 3 dazukommt, beschreibt unser Beitrag <a href="/magazin/bsl-2-bsl-3-container-labor" class={linkClass}>BSL-2 und BSL-3 im Container</a>.
+              </p>
+
+              <h2 id="s1-labor" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Welche Anforderungen gelten für ein S1-Labor?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein S1-Labor ist schnell beschrieben. Nach Anlage 2 der GenTSV braucht es eine Kennzeichnung als Gentechnik-Arbeitsbereich der Stufe 1, leicht zu reinigende und desinfektionsmittelbeständige Arbeitsflächen, ein Waschbecken mit Seifen- und Handtuchspender, Türen mit Sichtfenster und einen Autoklav irgendwo auf dem Betriebsgelände. Fenster sollen während der Arbeit zu sein, Kittel und Straßenkleidung hängen getrennt.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Dieser Beitrag behandelt die Stufen 1 und 2, weil sie den größten Teil der Forschungs-, Diagnostik- und Industrielabore ausmachen. Was ab Stufe 3 dazukommt, etwa Schleuse, Unterdruckkaskade und HEPA-Filter, beschreibt unser Beitrag <a href="/magazin/bsl-2-bsl-3-container-labor" class={linkClass}>BSL-2 und BSL-3 im Container</a>.
+                Ein ordentlich ausgestattetes Standardlabor erfüllt das meist schon. Wenn absehbar ist, dass in zwei oder drei Jahren S2-Arbeiten dazukommen, planen Sie Boden und Arbeitsflächen gleich in S2-Qualität. Einen Bodenbelag im laufenden Betrieb zu tauschen kostet ein Vielfaches dessen, was die bessere Ausführung beim Bau kostet.
               </p>
 
-              <h2 id="s1-labor" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Anforderungen an ein S1-Labor</h2>
+              <h2 id="s2-labor" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Welche baulichen Anforderungen hat ein S2-Labor?</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die Sicherheitsmaßnahmen für Laborbereiche stehen in Anlage 2 der GenTSV, Teil A. Für Sicherheitsstufe 1 sind sie überschaubar. Das ist gewollt: S1-Arbeiten gelten nach dem Stand der Wissenschaft als risikofrei. Trotzdem muss ein S1-Labor klar als Gentechnik-Arbeitsbereich erkennbar sein und eine Grundhygiene ermöglichen.
-              </p>
-
-              <ul class="space-y-3 text-gray-600 mb-6">
-                <li><strong class="text-slate-900">Kennzeichnung:</strong> Der Raum ist als Gentechnik-Arbeitsbereich der Sicherheitsstufe 1 gekennzeichnet.</li>
-                <li><strong class="text-slate-900">Oberflächen:</strong> Arbeitsflächen sind leicht zu reinigen und beständig gegen die verwendeten Stoffe sowie gegen Reinigungs- und Desinfektionsmittel.</li>
-                <li><strong class="text-slate-900">Waschbecken:</strong> Ein Waschbecken mit Spendern für Handwaschmittel und Einmalhandtücher, bei Bedarf auch für Desinfektionsmittel.</li>
-                <li><strong class="text-slate-900">Türen:</strong> Sie sollen in Fluchtrichtung aufschlagen und ein Sichtfenster haben.</li>
-                <li><strong class="text-slate-900">Autoklav:</strong> Ein Autoklav oder eine gleichwertige Einrichtung muss auf dem Betriebsgelände vorhanden sein.</li>
-                <li><strong class="text-slate-900">Fenster:</strong> Sie sollen während der Arbeiten geschlossen sein.</li>
-                <li><strong class="text-slate-900">Aerosole:</strong> Ihre Bildung ist so weit wie möglich zu vermeiden.</li>
-                <li><strong class="text-slate-900">Schutzkleidung:</strong> Laborkittel, bei Bedarf Handschuhe und Schutzbrille. Die Schutzkleidung wird getrennt von der Straßenkleidung aufbewahrt.</li>
-              </ul>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Für die Planung bedeutet das: Ein gut ausgestattetes Standardlabor mit glatten, chemikalienbeständigen Oberflächen erfüllt die baulichen Anforderungen an S1 meist schon. Der Autoklav darf an anderer Stelle auf dem Gelände stehen. Wer heute mit S1 plant und absehbar S2-Arbeiten aufnehmen will, sollte die S2-Anforderungen aber gleich mit einplanen. Ein nachträglicher Austausch von Bodenbelag und Arbeitsflächen ist deutlich aufwendiger als die richtige Wahl beim Bau.
-              </p>
-
-              <h2 id="s2-labor" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">S2-Labor: bauliche und technische Anforderungen</h2>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Bei Sicherheitsstufe 2 kommen deutlich mehr bauliche Anforderungen dazu. Die Tabelle stellt die Vorgaben aus Anlage 2 Teil A Abschnitt II der GenTSV und die Maßnahmen der Schutzstufe 2 aus Anhang II der BioStoffV nebeneinander. „Verbindlich“ und „empfohlen“ sind die Begriffe der Biostoffverordnung. Empfohlene Maßnahmen sind nach § 10 BioStoffV zu ergreifen, wenn sie die Gefährdung der Beschäftigten verringern können.
+                Ein S2-Labor braucht flüssigkeitsdichte Flächen bis in die Ecken, ein Waschbecken an der Tür, eine Augenspülung, keine Bodenabläufe, eine Sicherheitswerkbank für alles, was Aerosole bildet, und einen Autoklav im selben Gebäude. Die Tabelle stellt GenTSV (Anlage 2, Teil A, Abschnitt II) und Biostoffverordnung (Anhang II, Schutzstufe 2) nebeneinander. „Verbindlich“ und „empfohlen“ sind die Begriffe der Biostoffverordnung. Empfohlenes müssen Sie umsetzen, wenn es die Gefährdung senkt (§ 10 BioStoffV).
               </p>
 
               <div class="overflow-x-auto my-8 not-prose">
                 <table class="w-full text-sm border-collapse border border-gray-200 min-w-[620px]">
+                  <caption class="text-left text-sm text-gray-500 pb-2">Bauliche und technische Anforderungen an ein S2-Labor</caption>
                   <thead class="bg-slate-100">
                     <tr>
-                      <th class="text-left p-3 border border-gray-200 text-slate-900">Anforderung</th>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">Bauteil</th>
                       <th class="text-left p-3 border border-gray-200 text-slate-900">GenTSV, Sicherheitsstufe 2</th>
                       <th class="text-left p-3 border border-gray-200 text-slate-900">BioStoffV, Schutzstufe 2</th>
                     </tr>
                   </thead>
                   <tbody class="text-gray-700">
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Kennzeichnung</td><td class="p-3 border border-gray-200">Gentechnik-Arbeitsbereich Stufe 2 und Warnzeichen „Biogefährdung“</td><td class="p-3 border border-gray-200">Schutzstufe und Symbol für Biogefährdung an der Zugangstür</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Türen und Einsicht</td><td class="p-3 border border-gray-200">sollen in Fluchtrichtung aufschlagen und ein Sichtfenster haben</td><td class="p-3 border border-gray-200">Sichtfenster oder vergleichbare Einsicht: verbindlich</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Oberflächen</td><td class="p-3 border border-gray-200">leicht zu reinigen und beständig; Arbeitsflächen, angrenzende Wände, Boden und Wand-Boden-Anschluss flüssigkeitsdicht</td><td class="p-3 border border-gray-200">wasserundurchlässig, leicht zu reinigen, beständig gegen Chemikalien und Desinfektionsmittel: verbindlich</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Waschbecken</td><td class="p-3 border border-gray-200">nahe der Tür, mit Spendern für Desinfektionsmittel, Handwaschmittel und Einmalhandtücher; Armaturen möglichst berührungsfrei</td><td class="p-3 border border-gray-200">Dekontaminations- und Wascheinrichtungen für Beschäftigte: verbindlich</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Augenspülung</td><td class="p-3 border border-gray-200">Einrichtung zum Spülen der Augen muss vorhanden sein</td><td class="p-3 border border-gray-200">über die Gefährdungsbeurteilung</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Abläufe</td><td class="p-3 border border-gray-200">keine Bodenabläufe; Ausgussbecken in Arbeitsflächen mit Aufkantung</td><td class="p-3 border border-gray-200">keine eigene Vorgabe</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Aerosole</td><td class="p-3 border border-gray-200">dürfen nicht in den Arbeitsbereich gelangen, z. B. durch Sicherheitswerkbank oder aerosoldichte Geräte</td><td class="p-3 border border-gray-200">mikrobiologische Sicherheitswerkbank bei Aerosolbildung: verbindlich</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Prozessabluft</td><td class="p-3 border border-gray-200">vor der Abgabe filtern oder thermisch behandeln</td><td class="p-3 border border-gray-200">nicht in den Arbeitsbereich abgeben: verbindlich</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Autoklav</td><td class="p-3 border border-gray-200">mit ausreichender Kapazität in der Anlage oder im selben Gebäude</td><td class="p-3 border border-gray-200">eigener Autoklav: empfohlen; wirksame Inaktivierung festgelegt: verbindlich</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Fenster</td><td class="p-3 border border-gray-200">müssen während der Arbeiten geschlossen sein</td><td class="p-3 border border-gray-200">dürfen sich öffnen lassen, sind während der Tätigkeit aber geschlossen</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Zugang</td><td class="p-3 border border-gray-200">nur Beteiligte und von der Projektleitung ermächtigte Personen</td><td class="p-3 border border-gray-200">auf benannte Beschäftigte beschränkt, mit Zugangskontrolle bei gelisteten humanpathogenen Erregern</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Abgrenzung</td><td class="p-3 border border-gray-200">keine eigene Vorgabe</td><td class="p-3 border border-gray-200">Abgrenzung von anderen Bereichen: empfohlen</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Abfall</td><td class="p-3 border border-gray-200">in dicht geschlossenen, gekennzeichneten Behältern sammeln und transportieren</td><td class="p-3 border border-gray-200">Inaktivierung vor der Entsorgung, sofern keine sachgerechte Entsorgung durch Fachfirma</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Notstrom</td><td class="p-3 border border-gray-200">keine eigene Vorgabe</td><td class="p-3 border border-gray-200">für sicherheitsrelevante Einrichtungen: empfohlen</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Boden, Wände, Arbeitsflächen</td><td class="p-3 border border-gray-200">flüssigkeitsdicht, inklusive angrenzender Wände und Wand-Boden-Anschluss</td><td class="p-3 border border-gray-200">wasserundurchlässig, leicht zu reinigen, beständig gegen Desinfektionsmittel: verbindlich</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Waschbecken</td><td class="p-3 border border-gray-200">nahe der Tür, mit Spendern für Desinfektionsmittel, Seife und Einmalhandtücher, Armatur möglichst berührungsfrei</td><td class="p-3 border border-gray-200">Wasch- und Dekontaminationseinrichtung: verbindlich</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Augenspülung</td><td class="p-3 border border-gray-200">muss vorhanden sein</td><td class="p-3 border border-gray-200">nach Gefährdungsbeurteilung</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Abläufe</td><td class="p-3 border border-gray-200">keine Bodenabläufe, Ausgussbecken mit Aufkantung</td><td class="p-3 border border-gray-200">keine eigene Vorgabe</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Sicherheitswerkbank</td><td class="p-3 border border-gray-200">Aerosole dürfen nicht in den Raum gelangen</td><td class="p-3 border border-gray-200">bei Aerosolbildung: verbindlich</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Autoklav</td><td class="p-3 border border-gray-200">in der Anlage oder im selben Gebäude</td><td class="p-3 border border-gray-200">eigener Autoklav empfohlen, festgelegte Inaktivierung verbindlich</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Prozessabluft</td><td class="p-3 border border-gray-200">vor Abgabe filtern oder thermisch behandeln</td><td class="p-3 border border-gray-200">nicht in den Arbeitsbereich: verbindlich</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Tür</td><td class="p-3 border border-gray-200">Sichtfenster, Öffnung in Fluchtrichtung, Kennzeichnung Stufe 2 und Biogefährdung</td><td class="p-3 border border-gray-200">Sichtfenster verbindlich, Schutzstufe und Biogefährdungssymbol an der Tür</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Fenster</td><td class="p-3 border border-gray-200">während der Arbeit geschlossen</td><td class="p-3 border border-gray-200">dürfen sich öffnen lassen, sind bei der Arbeit zu</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Zugang</td><td class="p-3 border border-gray-200">nur Beteiligte und von der Projektleitung Ermächtigte</td><td class="p-3 border border-gray-200">benannte Beschäftigte, Zugangskontrolle bei gelisteten Erregern</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Abfall</td><td class="p-3 border border-gray-200">dicht verschlossene, gekennzeichnete Behälter</td><td class="p-3 border border-gray-200">vor Entsorgung inaktivieren, sofern keine Fachfirma entsorgt</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Notstrom</td><td class="p-3 border border-gray-200">keine Vorgabe</td><td class="p-3 border border-gray-200">für sicherheitsrelevante Geräte empfohlen</td></tr>
                   </tbody>
                 </table>
               </div>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Drei Punkte aus der Tabelle werden in der Planung besonders oft unterschätzt.
+                Auf dem Papier sieht das übersichtlich aus. In der Planung sind es drei Punkte, an denen Projekte immer wieder hängen bleiben.
               </p>
 
-              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Flüssigkeitsdichte Flächen bis in die Ecke</h3>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Der Boden muss die Wand hochlaufen</h3>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die GenTSV verlangt bei Stufe 2 nicht nur dichte Arbeitsflächen, sondern ausdrücklich auch flüssigkeitsdichte angrenzende Wände, Böden und Wand-Boden-Anschlüsse. In der Praxis heißt das: ein fugenloser Bodenbelag, der an der Wand als Hohlkehle hochgezogen wird, verschweißte Nähte und abgedichtete Durchführungen für Leitungen. Arbeitsplatten aus Keramik, Kunstharz oder Edelstahl mit dichten Wandanschlüssen. Die Materialien müssen dem Desinfektionsmittel standhalten, das später tatsächlich verwendet wird. Das sollte vor der Bemusterung feststehen, nicht danach.
+                „Flüssigkeitsdicht“ endet bei S2 nicht an der Bodenkante. Die GenTSV nennt ausdrücklich die angrenzenden Wände und den Wand-Boden-Anschluss, und laut einem Fachbeitrag auf baulinks.de fordert auch die DGUV Information 213-086 wasserdichte Bodenbeläge ab S2. Gebaut heißt das: fugenloser Belag, an der Wand als Hohlkehle hochgezogen, verschweißte Nähte, abgedichtete Leitungsdurchführungen und Laborzeilen, die dicht an Wand und Boden anschließen, ohne Hohlräume dahinter. Klären Sie vor der Bemusterung, welches Desinfektionsmittel Ihr Hygieneplan vorsieht. Nicht jeder Belag verträgt jedes Mittel auf Dauer.
               </p>
 
-              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Das Waschbecken gehört an die Tür</h3>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Das Waschbecken gehört an die Tür, der Abfluss nicht in den Boden</h3>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Das Waschbecken soll nahe der Tür liegen, damit Hände beim Verlassen des Labors gewaschen und desinfiziert werden, bevor die Klinke berührt wird. Armaturen sollen möglichst ohne Handkontakt bedienbar sein, etwa mit Ellenbogenhebel oder Sensor. Dazu gehört die Augenspüleinrichtung. Bodenabläufe sind im S2-Bereich nicht vorgesehen. Ausgussbecken in den Arbeitsflächen brauchen eine Aufkantung, damit verschüttete Flüssigkeit nicht unkontrolliert abläuft. Das hat Folgen für die Entwässerung und damit für den Grundriss.
+                Hände werden beim Hinausgehen gewaschen und desinfiziert, bevor jemand die Klinke anfasst. Deshalb sitzt das Waschbecken neben der Tür, am besten mit Ellenbogenhebel oder Sensor, und die Augenspülung gleich daneben. Bodenabläufe sind im S2-Bereich nicht vorgesehen, Ausgussbecken in den Arbeitsflächen brauchen eine Aufkantung. Für den Grundriss bedeutet das: Alle Wasserstellen an eine Wand, Abwasser früh mit dem Aufstellort abstimmen.
               </p>
 
-              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Die Sicherheitswerkbank bestimmt den Raum</h3>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Die Sicherheitswerkbank bekommt den ruhigsten Platz</h3>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Sobald bei S2-Arbeiten Aerosole entstehen können, etwa beim Pipettieren, Vortexen, Öffnen von Kulturgefäßen oder Zentrifugieren, ist eine mikrobiologische Sicherheitswerkbank Pflicht. Üblich ist die Klasse II nach DIN EN 12469. Ihre Leistung hängt vom Aufstellort ab: Türen, Laufwege und Zuluftauslässe in der Nähe der Arbeitsöffnung stören den Luftvorhang. Die Werkbank gehört deshalb in eine ruhige Ecke, nicht neben die Tür. Ob die Werkbank-Abluft in den Raum zurückgeführt oder nach außen abgeführt wird, ist eine Frage der Lüftungsplanung. Bei Arbeiten mit Gefahrstoffen im selben Labor kommt ein Abzug hinzu. Die Anforderungen an Abzüge erläutert unser Beitrag zu <a href="/magazin/laborcontainer-laborabzug-din-en-14175" class={linkClass}>Laborabzügen nach DIN EN 14175</a>.
+                Pipettieren, Vortexen, Zentrifugieren und das Öffnen von Kulturgefäßen bilden Aerosole. Dafür ist bei S2 eine mikrobiologische Sicherheitswerkbank Pflicht, üblich ist Klasse II nach DIN EN 12469. Ihr Luftvorhang an der Arbeitsöffnung ist empfindlich: Eine Tür, ein Laufweg oder ein Zuluftauslass in der Nähe kann ihn stören. Legen Sie deshalb im Grundriss zuerst den Platz der Werkbank fest und planen Sie Tür, Zuluft und Wege drumherum. Wird im selben Raum mit Gefahrstoffen gearbeitet, kommt ein Abzug dazu. Was der leisten muss, steht im Beitrag zu <a href="/magazin/laborcontainer-laborabzug-din-en-14175" class={linkClass}>Laborabzügen nach DIN EN 14175</a>.
               </p>
 
               <h2 id="nicht-verlangt" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Was ein S2-Labor nicht braucht</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Bei S2 wird häufig mehr geplant als vorgeschrieben ist. Das kostet Fläche und Bauzeit und macht den späteren Betrieb aufwendiger. Anhang II der Biostoffverordnung führt für Schutzstufe 2 folgende Maßnahmen ausdrücklich als <strong class="text-slate-900">nicht erforderlich</strong>:
+                Schleuse, Unterdruck und HEPA-Filter klingen nach Sicherheit und landen deshalb gern im Raumprogramm für ein S2-Labor. Vorgeschrieben ist keines davon. Anhang II der Biostoffverordnung führt für Schutzstufe 2 ausdrücklich als <strong class="text-slate-900">nicht erforderlich</strong>:
               </p>
 
-              <ul class="space-y-3 text-gray-600 mb-6">
-                <li><strong class="text-slate-900">Schleuse</strong> mit gegeneinander verriegelten Türen</li>
-                <li><strong class="text-slate-900">Ständiger Unterdruck</strong> im Laborbereich</li>
-                <li><strong class="text-slate-900">HEPA-Filter</strong> oder vergleichbare Filter für Zu- und Abluft des Raums</li>
-                <li><strong class="text-slate-900">Abdichtbarkeit</strong> des Raums für eine Begasung</li>
-                <li><strong class="text-slate-900">Duschen</strong> vor dem Verlassen des Bereichs</li>
-                <li><strong class="text-slate-900">Fenster, die sich nicht öffnen lassen</strong> (sie müssen während der Arbeit aber geschlossen sein)</li>
+              <ul class="space-y-2 text-gray-600 mb-6">
+                <li>eine Schleuse mit gegeneinander verriegelten Türen,</li>
+                <li>ständigen Unterdruck im Laborbereich,</li>
+                <li>HEPA-Filter für Zu- und Abluft des Raums,</li>
+                <li>einen gasdicht abschließbaren Raum für die Begasung,</li>
+                <li>Duschen vor dem Verlassen des Bereichs,</li>
+                <li>Fenster, die sich nicht öffnen lassen.</li>
               </ul>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Auch die GenTSV sieht diese Maßnahmen für Sicherheitsstufe 2 nicht vor. Sie gehören zu Stufe 3. Das heißt nicht, dass sie bei S2 nie sinnvoll sind. Die Gefährdungsbeurteilung kann für einzelne Tätigkeiten mehr verlangen, und manche Betreiber planen bewusst eine Stufe höher, um später flexibler zu sein. Diese Entscheidung sollte aber bewusst und begründet fallen. Ein „S2 plus“ mit Unterdruck und Schleuse ist rechtlich kein S3-Labor. Für echte S3-Arbeiten braucht es Erlaubnis und Genehmigung mit eigenen Anforderungen.
+                Auch die GenTSV sieht diese Maßnahmen erst für Stufe 3 vor. Jede davon kostet Fläche, Technik und Wartung, und eine Schleuse macht jeden Gang ins Labor länger. Ich rate dazu, ein S2-Labor als S2-Labor zu planen. Wer später S3-Arbeiten plant, braucht ohnehin eine Erlaubnis und Genehmigung mit eigenen Anforderungen. Ein „S2 plus“ mit Schleuse und Unterdruck ersetzt das nicht.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Empfohlen, aber nicht verbindlich sind bei Schutzstufe 2 eine Abgrenzung von anderen Bereichen im Gebäude, eigene Ausrüstung für den Bereich, ein eigener Autoklav, eine Notrufmöglichkeit bei Alleinarbeit, eine Notstromversorgung für sicherheitsrelevante Einrichtungen und eine Kontrolle von Schädlingen. Hier lohnt sich die Abwägung im Einzelfall. Eine Notstromversorgung für Sicherheitswerkbank und Kühlgeräte schützt zum Beispiel auch wertvolle Proben.
+                Zwei Ausnahmen sind sinnvoll. Ein kleiner Vorraum zum Umkleiden erleichtert die vorgeschriebene Trennung von Schutz- und Straßenkleidung und grenzt den Bereich ab, was die Biostoffverordnung empfiehlt. Und eine Notstromversorgung für Sicherheitswerkbank und Kühlgeräte, ebenfalls empfohlen, schützt nebenbei Proben, an denen Monate Arbeit hängen. Mehr verlangt bei S2 im Normalfall keine Vorschrift. Fordert die Gefährdungsbeurteilung für eine bestimmte Tätigkeit mehr, gilt selbstverständlich die Gefährdungsbeurteilung.
               </p>
 
-              <h2 id="lueftung" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">S2-Labor Anforderungen an die Lüftung</h2>
+              <h2 id="lueftung" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Welche Lüftung braucht ein S2-Labor?</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Zur Lüftung gibt es viele Fragen und wenige direkte Vorgaben. Weder die GenTSV noch die BioStoffV schreiben für Stufe 2 eine bestimmte Luftwechselrate vor. Verbindlich ist nur, dass kontaminierte Prozessabluft, etwa aus Geräten oder Fermentern, vor der Abgabe gefiltert oder thermisch behandelt wird und nicht in den Arbeitsbereich gelangt.
-              </p>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Die eigentliche Vorgabe für die Raumlüftung kommt meist aus dem Gefahrstoffrecht. Fast jedes biologische Labor arbeitet auch mit Gefahrstoffen, etwa mit Ethanol, Formaldehyd, Phenol oder Desinfektionsmitteln. Dann gilt die TRGS 526 „Laboratorien“. Sie verlangt ausreichende, jederzeit wirksame technische Lüftungseinrichtungen und nennt als Richtwert <strong class="text-slate-900">25 Kubikmeter Luft pro Stunde und Quadratmeter Nutzfläche</strong>. Bei 3 Metern Raumhöhe entspricht das gut acht Luftwechseln pro Stunde. Eine Reduzierung ist möglich, wenn die Gefährdungsbeurteilung zeigt, dass ein geringerer Luftwechsel dauerhaft ausreicht. Arbeiten mit größeren Mengen leicht flüchtiger oder entzündbarer Stoffe sind dann aber eingeschränkt, und der Eingang muss einen Hinweis auf den reduzierten Luftwechsel tragen.
+                Für S2 selbst gibt es keine vorgeschriebene Luftwechselrate. Die Vorgabe kommt fast immer aus dem Gefahrstoffrecht, weil kaum ein biologisches Labor ohne Ethanol, Formaldehyd oder Desinfektionsmittel auskommt. Dann gilt die <strong class="text-slate-900">TRGS 526 „Laboratorien“</strong> mit einem Richtwert von <strong class="text-slate-900">25 m³ Luft pro Stunde und Quadratmeter</strong> Laborfläche. Bei 3 Metern Raumhöhe sind das gut acht Luftwechsel pro Stunde. Weniger geht nur, wenn die Gefährdungsbeurteilung das dauerhaft trägt. Dann sind Arbeiten mit größeren Mengen flüchtiger oder brennbarer Stoffe eingeschränkt, und an der Tür muss ein Hinweis auf den reduzierten Luftwechsel hängen.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Dazu kommt eine praktische Folge der S2-Regeln: Fenster müssen während der Arbeit geschlossen sein. Ohne technische Lüftung lässt sich ein S2-Labor deshalb weder ausreichend mit Frischluft versorgen noch im Sommer kühlen. Sicherheitswerkbänke, Inkubatoren, Zentrifugen und Kühlgeräte erzeugen erhebliche Wärme. In der Lüftungsplanung sollten deshalb Gefahrstoffe, Wärmelast, Abzüge und Sicherheitswerkbänke gemeinsam betrachtet werden. Wie wir Luftwechsel, Kühllast und Normen in einem Container zusammenbringen, beschreibt der Beitrag zur <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class={linkClass}>Klimatisierung und Lüftung im Laborcontainer</a>.
+                Die S2-Regel „Fenster zu während der Arbeit“ macht eine Lüftungsanlage praktisch unverzichtbar. Ein voller S2-Raum mit Werkbank, Inkubatoren, Zentrifugen und Kühlschränken heizt sich im Sommer stark auf. Lüftung und Kühlung gehören deshalb in ein gemeinsames Konzept, zusammen mit Abzug und Werkbank-Abluft. Wie wir das im Container lösen, steht im Beitrag zur <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class={linkClass}>Klimatisierung und Lüftung im Laborcontainer</a>. Ein leichter Unterdruck zum Flur ist erlaubt und hält Gerüche im Labor. Er sollte aber so schwach bleiben, dass beim Türöffnen kein Luftzug durch die Werkbank zieht.
               </p>
 
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Ein leichter Unterdruck gegenüber Flur oder Nachbarräumen ist bei S2 nicht vorgeschrieben, wird aber oft geplant, damit Gerüche und Aerosole im Labor bleiben. Wichtig ist dann, dass die Luftströmung die Sicherheitswerkbank nicht stört. Ein Unterdruck, der beim Öffnen der Tür einen starken Luftzug erzeugt, schadet mehr als er nützt.
-              </p>
-
-              <h2 id="anmeldung" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Anzeige, Anmeldung, Genehmigung: Wann die Behörde ins Spiel kommt</h2>
+              <h2 id="anmeldung" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Muss ein S2-Labor genehmigt werden?</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Gentechnische Arbeiten dürfen nur in gentechnischen Anlagen stattfinden (§ 8 Abs. 1 GenTG). Welches Verfahren für die Anlage gilt, hängt von der Sicherheitsstufe ab. Bei Biostoffen regelt die BioStoffV zusätzlich eigene Anzeige- und Erlaubnispflichten.
+                Nein. Für eine gentechnische Anlage der Stufe 2 reicht eine <strong class="text-slate-900">Anmeldung</strong> bei der Landesbehörde (§ 8 Abs. 2 GenTG). Mit der Arbeit dürfen Sie <strong class="text-slate-900">45 Tage nach Eingang</strong> beginnen, mit Zustimmung der Behörde früher (§ 12 Abs. 5 GenTG). Eine Genehmigung ist erst ab Stufe 3 vorgeschrieben.
               </p>
 
               <div class="overflow-x-auto my-8 not-prose">
                 <table class="w-full text-sm border-collapse border border-gray-200 min-w-[560px]">
+                  <caption class="text-left text-sm text-gray-500 pb-2">Behördenverfahren nach Gentechnikgesetz und Biostoffverordnung</caption>
                   <thead class="bg-slate-100">
                     <tr>
                       <th class="text-left p-3 border border-gray-200 text-slate-900">Fall</th>
                       <th class="text-left p-3 border border-gray-200 text-slate-900">Verfahren</th>
-                      <th class="text-left p-3 border border-gray-200 text-slate-900">Beginn der Arbeiten</th>
+                      <th class="text-left p-3 border border-gray-200 text-slate-900">Arbeitsbeginn</th>
                     </tr>
                   </thead>
                   <tbody class="text-gray-700">
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Gentechnische Anlage S1, erstmalige Arbeiten</td><td class="p-3 border border-gray-200">schriftliche Anzeige (§ 8 Abs. 2 GenTG)</td><td class="p-3 border border-gray-200">sofort nach Eingang der Anzeige (§ 12 Abs. 5a GenTG)</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Gentechnische Anlage S2, erstmalige Arbeiten</td><td class="p-3 border border-gray-200">schriftliche Anmeldung (§ 8 Abs. 2 GenTG), alternativ Genehmigung auf Antrag</td><td class="p-3 border border-gray-200">45 Tage nach Eingang, früher mit Zustimmung der Behörde (§ 12 Abs. 5 GenTG)</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Weitere S2-Arbeiten in angemeldeter Anlage</td><td class="p-3 border border-gray-200">Anzeige (§ 9 GenTG)</td><td class="p-3 border border-gray-200">sofort nach Eingang der Anzeige</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Gentechnische Anlage S3 oder S4</td><td class="p-3 border border-gray-200">Anlagengenehmigung (§ 8 Abs. 1 GenTG)</td><td class="p-3 border border-gray-200">nach Erteilung der Genehmigung</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Erstmalige gezielte Tätigkeit mit Biostoffen der Risikogruppe 2</td><td class="p-3 border border-gray-200">Anzeige an die Arbeitsschutzbehörde (§ 16 BioStoffV)</td><td class="p-3 border border-gray-200">Anzeige spätestens 30 Tage vor Aufnahme</td></tr>
-                    <tr><td class="p-3 border border-gray-200 font-semibold">Tätigkeiten der Schutzstufe 3 oder 4</td><td class="p-3 border border-gray-200">Erlaubnis (§ 15 BioStoffV)</td><td class="p-3 border border-gray-200">nach Erteilung der Erlaubnis</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">S1-Anlage, erste Arbeiten</td><td class="p-3 border border-gray-200">Anzeige (§ 8 Abs. 2 GenTG)</td><td class="p-3 border border-gray-200">sofort nach Eingang (§ 12 Abs. 5a)</td></tr>
+                    <tr class="bg-primary/5"><td class="p-3 border border-gray-200 font-semibold">S2-Anlage, erste Arbeiten</td><td class="p-3 border border-gray-200">Anmeldung (§ 8 Abs. 2 GenTG), auf Wunsch Genehmigung</td><td class="p-3 border border-gray-200">nach 45 Tagen, früher mit Zustimmung (§ 12 Abs. 5)</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Weitere S2-Arbeiten in angemeldeter Anlage</td><td class="p-3 border border-gray-200">Anzeige (§ 9 GenTG)</td><td class="p-3 border border-gray-200">sofort nach Eingang</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">S3- oder S4-Anlage</td><td class="p-3 border border-gray-200">Anlagengenehmigung (§ 8 Abs. 1 GenTG)</td><td class="p-3 border border-gray-200">nach Genehmigung</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Erste gezielte Tätigkeit mit Biostoffen der Risikogruppe 2</td><td class="p-3 border border-gray-200">Anzeige an die Arbeitsschutzbehörde (§ 16 BioStoffV)</td><td class="p-3 border border-gray-200">Anzeige spätestens 30 Tage vorher</td></tr>
+                    <tr><td class="p-3 border border-gray-200 font-semibold">Schutzstufe 3 oder 4</td><td class="p-3 border border-gray-200">Erlaubnis (§ 15 BioStoffV)</td><td class="p-3 border border-gray-200">nach Erlaubnis</td></tr>
                   </tbody>
                 </table>
               </div>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die 45 Tage bei S2 sind keine feste Bearbeitungszeit. Die Frist ruht, solange die Behörde auf nachgeforderte Unterlagen wartet oder die Stellungnahme der ZKBS einholt. Das geschieht, wenn die geplante Arbeit nicht mit einer bereits eingestuften Arbeit vergleichbar ist (§ 12 Abs. 4 GenTG). Läuft die Frist ohne Rückmeldung ab, gilt das als Zustimmung. Vollständige Unterlagen beim ersten Einreichen sind deshalb der wichtigste Hebel für den Zeitplan.
+                Die 45 Tage können länger werden. Die Frist ruht, solange die Behörde auf nachgeforderte Unterlagen wartet oder eine Stellungnahme der ZKBS einholt. Letzteres passiert bei Arbeiten, die noch nicht vergleichbar eingestuft sind (§ 12 Abs. 4 GenTG). Meldet sich die Behörde bis zum Fristende nicht, gilt das als Zustimmung. Der größte Hebel für Ihren Zeitplan ist deshalb eine vollständige Anmeldung beim ersten Mal: Lageplan, Grundriss, Beschreibung der Anlage, Risikobewertung, Sicherheitsmaßnahmen, Projektleitung, Beauftragter für die Biologische Sicherheit und Abfallentsorgung (§ 12 Abs. 2 mit § 10 GenTG). Die Formblätter stellen die Länder bereit, zuständig ist je nach Land etwa das Regierungspräsidium, die Bezirksregierung oder ein Landesamt.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Zur Anmeldung gehören nach § 12 Abs. 2 in Verbindung mit § 10 GenTG unter anderem die Beschreibung der Anlage mit Lageplan und Grundriss, die Risikobewertung, die geplanten Arbeiten, die Sicherheitsmaßnahmen sowie Angaben zu Projektleitung, Beauftragtem für die Biologische Sicherheit und Abfallentsorgung. Die Länder stellen dafür eigene Formblätter bereit. Zuständig ist je nach Bundesland zum Beispiel das Regierungspräsidium, die Bezirksregierung oder ein Landesamt.
+                Das Baurecht läuft getrennt. Ein Neubau, ein Umbau mit Nutzungsänderung oder ein aufgestellter Laborcontainer kann eine Baugenehmigung brauchen, die das gentechnische Verfahren nicht ersetzt. Beide Verfahren lassen sich parallel vorbereiten, sobald Grundriss und Ausstattung stehen. Was baurechtlich auf Sie zukommt, zeigt der Leitfaden zur <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class={linkClass}>Genehmigung von Laborcontainern</a>.
+              </p>
+
+              <h2 id="umruesten" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Wie wird aus einem S1- ein S2-Labor?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Wer in einem bestehenden S1-Labor künftig S2-Arbeiten durchführen will, ändert die Anlage wesentlich. Für wesentliche Änderungen gelten bei Stufe 1 und 2 die Regeln für Anzeige und Anmeldung entsprechend (§ 8 Abs. 4 GenTG). Praktisch heißt das: Sie melden die Anlage für Stufe 2 an und warten die 45 Tage ab, bevor die ersten S2-Arbeiten beginnen.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Getrennt davon steht das Baurecht. Ein neuer Laborbau, ein Umbau mit Nutzungsänderung oder ein aufgestellter Laborcontainer kann eine Baugenehmigung brauchen. Das gentechnische Verfahren ersetzt sie nicht. Welche Fragen dabei auftauchen, beschreibt unser Praxisleitfaden zur <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class={linkClass}>Genehmigung von Laborcontainern</a>. Beide Verfahren lassen sich parallel vorbereiten, wenn Grundriss und Ausstattung früh feststehen.
+                Baulich lohnt sich vorher ein ehrlicher Rundgang mit der Tabelle oben. Typische Schwachstellen eines S1-Labors sind diese: Der Boden ist an der Wand nur mit einer Sockelleiste abgeschlossen statt mit Hohlkehle, das Waschbecken hängt in der Raummitte statt an der Tür, ein alter Bodenablauf ist noch offen, und eine Augenspülung fehlt. Kennzeichnung, Spender und Zugangsregeln sind schnell nachgerüstet. Boden und Wasserstellen dagegen bedeuten Umbau im laufenden Betrieb, und genau dann ist ein <a href="/magazin/uebergangslabor-sanierung-mietcontainer" class="text-[#5c7300] font-medium hover:underline">Übergangslabor im Container</a> oft die schnellere Lösung als ein Umbau Raum für Raum.
               </p>
 
-              <h2 id="organisation" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Personal, Mutterschutz und Betrieb</h2>
+              <h2 id="fehler" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fünf Planungsfehler, die beim S2-Labor Zeit kosten</h2>
+
+              <ol class="space-y-4 text-gray-700 mb-8 not-prose">
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">1.</span> <span><strong class="text-slate-900">Die Einstufung kommt nach dem Grundriss.</strong> Wer erst plant und dann einstuft, baut für die falsche Stufe. Tätigkeiten und Organismen gehören an den Anfang.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">2.</span> <span><strong class="text-slate-900">Die Werkbank steht neben der Tür.</strong> Jeder, der den Raum betritt, stört dann ihren Luftvorhang. Umstellen geht später oft nur mit neuen Anschlüssen.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">3.</span> <span><strong class="text-slate-900">Die Autoklav-Frage bleibt offen.</strong> Steht im selben Gebäude keiner, muss Platz, Strom, Wasser und Abwärme für ein eigenes Gerät her. Das verschiebt den ganzen Grundriss.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">4.</span> <span><strong class="text-slate-900">Die Lüftung wird nach Fläche statt nach Wärmelast geplant.</strong> 25 m³ pro Stunde und Quadratmeter reichen für die Luftqualität, aber nicht automatisch für die Abwärme von Werkbank, Inkubatoren und Kühlgeräten.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">5.</span> <span><strong class="text-slate-900">Die Anmeldung geht unvollständig raus.</strong> Jede Nachforderung hält die 45-Tage-Frist an. Mehr zu typischen Verzögerungen steht im Beitrag <a href="/magazin/wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler" class="text-[#5c7300] font-medium hover:underline">Wenn das Labor zu spät kommt</a>.</span></li>
+              </ol>
+
+              <h2 id="personal" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Personal und Mutterschutz</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Ein S2-Labor ist nicht nur eine Frage der Bauteile. Wer gentechnische Arbeiten durchführt, muss eine Projektleitung sowie Beauftragte oder einen Ausschuss für die Biologische Sicherheit bestellen (§ 6 Abs. 4 GenTG). Zum Betrieb gehören außerdem eine Betriebsanweisung, Unterweisungen der Beschäftigten, ein Hygieneplan und die Aufzeichnungen über die gentechnischen Arbeiten. Die TRBA 100 in der Fassung von November 2025 hat die Regeln zu Unterweisungen und zum Einsatz von Fremdfirmen erweitert. Das betrifft auch Handwerker und Servicetechniker, die im S2-Bereich arbeiten.
+                Wer gentechnisch arbeitet, bestellt eine Projektleitung und einen Beauftragten oder Ausschuss für die Biologische Sicherheit (§ 6 Abs. 4 GenTG). Dazu kommen Betriebsanweisung, Unterweisungen, Hygieneplan und Aufzeichnungen. Die TRBA 100 wurde im November 2025 neu herausgegeben und regelt Unterweisungen und Fremdfirmen jetzt ausführlicher, was auch Handwerker und Servicetechniker im S2-Bereich betrifft.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Eine häufig gesuchte Frage betrifft Schwangere im S2-Labor. Nach § 11 Abs. 2 Mutterschutzgesetz darf der Arbeitgeber eine schwangere Frau keine Tätigkeiten ausüben lassen, bei denen sie mit Biostoffen der Risikogruppen 2, 3 oder 4 in einem Maß in Kontakt kommen kann, das für sie oder ihr Kind eine unverantwortbare Gefährdung darstellt. Ausdrücklich genannt sind Rötelnvirus und Toxoplasma. Bei ausreichendem Immunschutz gilt die Gefährdung insoweit als ausgeschlossen. Ein generelles Arbeitsverbot im S2-Labor folgt daraus nicht. Entscheidend ist die Gefährdungsbeurteilung für die konkreten Tätigkeiten, die der Arbeitgeber anpassen muss, sobald er von der Schwangerschaft erfährt.
+                In vielen Laborbelehrungen steht, Schwangere dürften nicht ins S2-Labor. Das Gesetz ist genauer. § 11 Abs. 2 Mutterschutzgesetz verbietet Tätigkeiten, bei denen eine Schwangere mit Biostoffen der Risikogruppen 2 bis 4 so in Kontakt kommen kann, dass es für sie oder ihr Kind eine unverantwortbare Gefährdung bedeutet. Ausdrücklich genannt sind Rötelnvirus und Toxoplasma, und bei ausreichendem Immunschutz gilt die Gefährdung insoweit als ausgeschlossen. Ob eine Mitarbeiterin weiter im S2-Labor arbeiten kann, entscheidet also die angepasste Gefährdungsbeurteilung für ihre konkreten Tätigkeiten.
               </p>
 
               <h2 id="dach" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Schweiz und Österreich</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                In der <strong class="text-slate-900">Schweiz</strong> regelt die Einschliessungsverordnung (ESV) den Umgang mit Organismen in geschlossenen Systemen. Sie teilt Tätigkeiten in die Klassen 1 bis 4 ein. Tätigkeiten der Klassen 1 und 2 sind meldepflichtig, Klassen 3 und 4 bewilligungspflichtig. Die Meldung geht an die Kontaktstelle Biotechnologie des Bundes, eingereicht über das Portal ECOGEN. Nach Eingang der Meldung darf mit Arbeiten der Klasse 1 und 2 begonnen werden. Den Arbeitsschutz regelt zusätzlich die Verordnung über den Schutz der Arbeitnehmerinnen und Arbeitnehmer vor Gefährdung durch Mikroorganismen (SAMV).
+                In der <strong class="text-slate-900">Schweiz</strong> gilt die Einschliessungsverordnung (ESV) mit den Klassen 1 bis 4. Tätigkeiten der Klassen 1 und 2 werden gemeldet, über das Portal ECOGEN an die Kontaktstelle Biotechnologie des Bundes, und dürfen nach Eingang der Meldung beginnen. Klassen 3 und 4 brauchen eine Bewilligung. Den Arbeitsschutz regelt die SAMV. In <strong class="text-slate-900">Österreich</strong> regeln das Gentechnikgesetz (GTG) und die Verordnung biologische Arbeitsstoffe (VbA) das Thema, mit eigenen Melde- und Genehmigungswegen. Verfahren und Fristen klären Sie dort direkt mit der Behörde. Regionale Hinweise für <a href="/laborcontainer-zuerich" class={linkClass}>Zürich</a>, <a href="/laborcontainer-basel" class={linkClass}>Basel</a> und <a href="/laborcontainer-wien" class={linkClass}>Wien</a> finden Sie auf unseren Standortseiten.
               </p>
 
-              <p class="text-gray-600 leading-relaxed mb-6">
-                In <strong class="text-slate-900">Österreich</strong> regelt das Gentechnikgesetz (GTG) Arbeiten mit gentechnisch veränderten Organismen in geschlossenen Systemen, ebenfalls mit Sicherheitsstufen sowie Melde- und Genehmigungspflichten. Den Arbeitnehmerschutz bei biologischen Arbeitsstoffen regelt die Verordnung biologische Arbeitsstoffe (VbA). Verfahren und Fristen weichen vom deutschen Recht ab und sollten mit der zuständigen Behörde geklärt werden. Für Standorte in <a href="/laborcontainer-zuerich" class={linkClass}>Zürich</a>, <a href="/laborcontainer-basel" class={linkClass}>Basel</a> oder <a href="/laborcontainer-wien" class={linkClass}>Wien</a> fassen unsere Standortseiten die regionalen Besonderheiten zusammen.
-              </p>
-
-              <h2 id="container" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">S2-Labor im Laborcontainer umsetzen</h2>
+              <h2 id="container" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">S2-Labor als Laborcontainer: in Wochen statt Jahren</h2>
 
               <figure class="my-10 not-prose">
                 <img
                   src="/images/backgrounds/magazin-bsl-labor.webp"
-                  alt="Labor mit glatten, leicht zu reinigenden Arbeitsflächen, Geräten auf den Laborzeilen und einer Tür mit Sichtfenster, wie sie für ein S2-Labor gefordert ist"
+                  alt="Labor mit durchgehenden, leicht zu reinigenden Arbeitsflächen, Geräten auf den Laborzeilen und einer Tür mit Sichtfenster, wie sie ein S2-Labor braucht"
                   width="2070"
                   height="1380"
                   loading="lazy"
@@ -398,78 +411,71 @@ const linkClass = "text-[#5c7300] font-medium hover:underline";
                   class="w-full h-auto rounded-2xl shadow-lg"
                 />
                 <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
-                  Symbolbild: Durchgehende Arbeitsflächen, geschlossene Laborzeilen und eine Tür mit Sichtfenster. Bei S2 kommen flüssigkeitsdichte Wand-Boden-Anschlüsse und die Kennzeichnung hinzu.
+                  Symbolbild: durchgehende Arbeitsflächen und eine Tür mit Sichtfenster. Für S2 kommen der hochgezogene, fugenlose Boden und die Kennzeichnung dazu.
                 </figcaption>
               </figure>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die Vorschriften für S1- und S2-Labore beschreiben Oberflächen, Ausstattung, Lüftung, Kennzeichnung und Organisation. Die Bauweise schreiben sie nicht vor. Ein <a href="/laborcontainer" class={linkClass}>Laborcontainer</a> kann deshalb als S1- oder S2-Labor angemeldet und betrieben werden. Gerade bei S2 hat die Vorfertigung im Werk Vorteile: Bodenbelag mit Hohlkehle, dichte Durchführungen und Arbeitsflächen werden unter Werkstattbedingungen eingebaut und vor der Auslieferung geprüft.
+                Laborflächen für Life-Science-Unternehmen sind in München und Berlin knapp. Der Münchner Clusterverband BioM berichtet, dass dort die Nachfrage nach Laborflächen das Angebot übersteigt, und ein Anbieter vollausgestatteter Labore nennt in diesem Bericht besonders S2-Labore als knapp. Ein Laborcontainer schafft die Fläche dort, wo sie gebraucht wird: auf dem eigenen Gelände, neben dem Institut, am Klinikum.
               </p>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Für die Planung eines S2-Containers haben sich diese Punkte bewährt:
+                Die Vorschriften regeln Oberflächen, Ausstattung, Lüftung, Kennzeichnung und Organisation. Die Bauweise regeln sie nicht. Ein <a href="/laborcontainer" class={linkClass}>Laborcontainer</a> kann deshalb als S1- oder S2-Anlage angemeldet werden. Die heiklen S2-Details gelingen im Werk sogar leichter als auf der Baustelle, weil Hohlkehle, Schweißnähte, Durchführungen und Laborzeilen in der Halle eingebaut und vor der Auslieferung geprüft werden. Planexus fertigt S1- und S2-Container im Werk Albstadt, ein individuell geplanter Container ist typischerweise in <strong class="text-slate-900">8 bis 14 Wochen</strong> fertig.
               </p>
 
-              <ul class="space-y-3 text-gray-600 mb-6">
-                <li><strong class="text-slate-900">Zonierung:</strong> Ein kleiner Vorraum zum Umkleiden trennt Straßen- und Schutzkleidung und grenzt den S2-Bereich ab. Vorgeschrieben ist er nicht, er erleichtert aber Hygiene und Zugangskontrolle.</li>
-                <li><strong class="text-slate-900">Autoklav klären:</strong> Die GenTSV verlangt den Autoklav in der Anlage oder im selben Gebäude. Steht der Container für sich, stellt sich die Frage, ob ein Autoklav im Container nötig ist. Diese Frage gehört an den Anfang, weil ein Autoklav Platz, Strom, Wasser und Abwärme braucht.</li>
-                <li><strong class="text-slate-900">Sicherheitswerkbank zuerst platzieren:</strong> Erst den ruhigen Platz für die Werkbank festlegen, dann Tür, Zuluft und Laufwege planen.</li>
-                <li><strong class="text-slate-900">Entwässerung ohne Bodenablauf:</strong> Waschbecken und Ausgussbecken an der Wand bündeln, Abwasserwege und gegebenenfalls Inaktivierung von Laborabwasser früh mit dem Aufstellort abstimmen.</li>
-                <li><strong class="text-slate-900">Lüftung und Kühlung gemeinsam auslegen:</strong> Wärmelast der Geräte, Luftwechsel nach TRGS 526 und Werkbank-Abluft in einem Konzept.</li>
-                <li><strong class="text-slate-900">Kennzeichnung und Zugang:</strong> Schilder für Gentechnik-Arbeitsbereich und Biogefährdung, abschließbare Tür, bei Bedarf elektronische Zutrittskontrolle.</li>
-                <li><strong class="text-slate-900">Dokumentation für die Anmeldung:</strong> Grundriss, Lageplan, Ausstattungsliste und Materialangaben so aufbereiten, dass sie direkt in die Unterlagen nach § 10 GenTG übernommen werden können.</li>
-              </ul>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Planexus baut S1- und S2-Laborcontainer im Werk Albstadt. Ein individuell geplanter Container wird typischerweise in 8 bis 14 Wochen gefertigt. Die 45 Tage der S2-Anmeldung lassen sich parallel zur Fertigung nutzen, wenn die Unterlagen früh stehen. Wie ein Projekt von der ersten Anfrage bis zur Übergabe abläuft, zeigt der Beitrag zum <a href="/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe" class={linkClass}>Projektablauf</a>. Für die Ausstattung im Detail gibt es unsere <a href="/magazin/laborcontainer-ausstattung-checkliste" class={linkClass}>Ausstattungs-Checkliste</a>.
+              <p class="text-gray-600 leading-relaxed mb-4">
+                So greifen Fertigung und Anmeldung ineinander:
               </p>
 
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Bleibt die Frage, ob der Container gemietet oder gekauft wird. Für eine Übergangszeit, etwa während einer Sanierung oder bis ein Neubau fertig ist, eignet sich ein <a href="/laborcontainer-mieten" class={linkClass}>Laborcontainer zur Miete</a>. Unser Beitrag zum <a href="/magazin/uebergangslabor-sanierung-mietcontainer" class={linkClass}>Übergangslabor bei Sanierung</a> zeigt, wie das in der Praxis aussieht. Für eine dauerhafte Erweiterung lohnt sich der <a href="/laborcontainer-kaufen" class={linkClass}>Kauf</a>. Wer eine kompakte, sofort einsetzbare Lösung sucht, findet mit dem <a href="/laborcontainer/labtogo" class={linkClass}>LABtoGO</a> einen Laborcontainer, dessen Laborraum S2-fähig ausgelegt ist.
-              </p>
+              <ol class="space-y-4 text-gray-700 mb-8 not-prose">
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">1.</span> <span><strong class="text-slate-900">Raumprogramm und Einstufung:</strong> Tätigkeiten, Geräte, Stufe nach GenTG und Schutzstufe nach BioStoffV. Hier fällt auch die Autoklav-Frage.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">2.</span> <span><strong class="text-slate-900">Grundriss mit Werkbank zuerst:</strong> Planexus liefert Grundriss, Ausstattungsliste und Materialangaben so, dass sie direkt in Ihre Anmeldeunterlagen passen.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">3.</span> <span><strong class="text-slate-900">Anmeldung einreichen, Fertigung starten:</strong> Die 45 Tage der Behörde laufen, während der Container im Werk entsteht. Parallel klären Sie Baugenehmigung, Fundament und Anschlüsse.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">4.</span> <span><strong class="text-slate-900">Aufstellen, anschließen, Werkbank prüfen:</strong> Danach Unterweisung und Start der Arbeiten. Wie ein Projekt im Detail abläuft, zeigt unser Beitrag zum <a href="/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe" class={linkClass}>Projektablauf</a>.</span></li>
+              </ol>
 
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Der Bedarf ist da. Der Münchner Biotech-Clusterverband BioM berichtet, dass die Nachfrage nach Laborflächen im Großraum München das Angebot übersteigt, und ein Anbieter vollausgestatteter Labore nennt dort besonders S2-Labore als knapp. Für Forschungsgruppen und Biotech-Unternehmen an Standorten wie <a href="/laborcontainer-muenchen" class={linkClass}>München</a> oder <a href="/laborcontainer-berlin" class={linkClass}>Berlin</a> kann ein S2-Container die Zeit überbrücken, bis passende Flächen frei werden. Welche Lösungen wir für Forschung und Industrie anbieten, zeigen die Branchenseiten <a href="/branchen/pharma-biotech" class={linkClass}>Pharma und Biotech</a> sowie <a href="/branchen/forschung-hochschule" class={linkClass}>Forschung und Hochschule</a>.
-              </p>
-
-              <div id="checkliste" class="bg-slate-50 border border-gray-100 rounded-2xl p-8 my-8 not-prose">
-                <h3 class="text-xl font-heading font-bold text-slate-900 mb-4">Checkliste: S2-Labor planen</h3>
-                <ul class="space-y-3 text-gray-700">
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Tätigkeiten beschreiben und einstufen: Sicherheitsstufe nach GenTG, Schutzstufe nach BioStoffV, oder beides</span></li>
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Projektleitung und Beauftragten für die Biologische Sicherheit benennen</span></li>
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Arbeitsflächen, angrenzende Wände, Boden und Wand-Boden-Anschluss flüssigkeitsdicht und desinfektionsmittelbeständig</span></li>
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Waschbecken nahe der Tür mit Spendern, Armatur möglichst berührungsfrei, Augenspüleinrichtung</span></li>
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Keine Bodenabläufe, Ausgussbecken mit Aufkantung</span></li>
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Tür mit Sichtfenster, in Fluchtrichtung aufschlagend, gekennzeichnet mit Stufe und Biogefährdung</span></li>
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Mikrobiologische Sicherheitswerkbank Klasse II an einem ruhigen Platz</span></li>
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Autoklav in der Anlage oder im selben Gebäude, Inaktivierungsverfahren festlegen</span></li>
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Technische Lüftung nach TRGS 526, Kühllast der Geräte berücksichtigen</span></li>
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Zugang auf benannte Personen beschränken, Umkleidebereich für Schutzkleidung</span></li>
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Anmeldung nach § 8 GenTG und Anzeige nach § 16 BioStoffV rechtzeitig einreichen</span></li>
-                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold">→</span> <span>Baurechtliche Genehmigung parallel klären</span></li>
-                </ul>
-              </div>
-
-              <h2 id="fazit" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Fazit</h2>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Die Anforderungen an ein S1-Labor sind überschaubar und werden von einem gut ausgestatteten Standardlabor meist erfüllt. Ein S2-Labor verlangt mehr: flüssigkeitsdichte Flächen bis zum Wand-Boden-Anschluss, ein Waschbecken an der Tür, eine Augenspülung, eine Sicherheitswerkbank bei Aerosolgefahr, einen Autoklav in der Anlage oder im selben Gebäude, keine Bodenabläufe und eine klare Kennzeichnung. Schleuse, Unterdruck und HEPA-Filter gehören dagegen nicht zu den Pflichten der Stufe 2.
-              </p>
-
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Rechtlich braucht eine S2-Anlage in Deutschland keine Genehmigung, sondern eine Anmeldung mit 45 Tagen Wartezeit. Wer die Unterlagen vollständig einreicht und die Planung früh mit der Behörde abstimmt, verliert hier keine Zeit. Ob als Umbau, Neubau oder <a href="/leistungen/modulbau" class={linkClass}>modularer Laborbau</a>: Die Anforderungen bleiben dieselben. Entscheidend ist, sie vor dem ersten Grundriss zu kennen.
-              </p>
-
-              <div class="bg-slate-900 text-white rounded-2xl p-8 my-12 text-center not-prose">
-                <h3 class="text-2xl font-bold mb-4 text-primary">S2-Labor planen</h3>
-                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Sie planen ein S1- oder S2-Labor und wollen wissen, wie es als Laborcontainer aussehen kann? Planexus klärt mit Ihnen Raumprogramm, Ausstattung und Lüftung und liefert die Unterlagen, die Sie für die Anmeldung brauchen.</p>
-                <a href="/kontakt" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Kostenlose Erstberatung anfragen
+              <div class="bg-slate-900 text-white rounded-2xl p-6 md:p-8 my-10 not-prose">
+                <p class="text-xl font-heading font-bold text-primary mb-3">Ihr S2-Raumprogramm gemeinsam klären</p>
+                <p class="text-gray-300 mb-5 leading-relaxed">Schicken Sie uns Ihre Geräteliste oder eine Skizze. Im kostenlosen Erstgespräch klären wir mit Ihnen Fläche, Werkbankplatz, Autoklav, Lüftung und welche Unterlagen Ihre Anmeldung braucht.</p>
+                <a href="/kontakt" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Erstgespräch zum S2-Labor anfragen
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
               </div>
 
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Brauchen Sie das Labor für eine begrenzte Zeit, etwa während einer Sanierung oder bis ein Neubau fertig ist, ist ein <a href="/laborcontainer-mieten" class={linkClass}>Laborcontainer zur Miete</a> die passende Lösung. Wie das in der Praxis aussieht, zeigt der Beitrag zum <a href="/magazin/uebergangslabor-sanierung-mietcontainer" class={linkClass}>Übergangslabor</a>. Für eine dauerhafte Erweiterung lohnt sich der <a href="/laborcontainer-kaufen" class={linkClass}>Kauf</a>. Und wer schnell eine kompakte Einheit braucht, findet im <a href="/laborcontainer/labtogo" class={linkClass}>LABtoGO</a> einen Laborcontainer mit S2-fähigem Laborraum. Forschungsgruppen in <a href="/laborcontainer-muenchen" class={linkClass}>München</a>, <a href="/laborcontainer-berlin" class={linkClass}>Berlin</a> und an anderen Standorten finden die passenden Lösungen auf unseren Seiten für <a href="/branchen/pharma-biotech" class={linkClass}>Pharma und Biotech</a> und <a href="/branchen/forschung-hochschule" class={linkClass}>Forschung und Hochschule</a>.
+              </p>
+
+              <div id="checkliste" class="bg-slate-50 border border-gray-100 rounded-2xl p-6 md:p-8 my-8 not-prose">
+                <h2 class="text-xl font-heading font-bold text-slate-900 mb-4">Checkliste: S2-Labor planen</h2>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Tätigkeiten einstufen: Sicherheitsstufe nach GenTG, Schutzstufe nach BioStoffV oder beides</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Projektleitung und Beauftragten für die Biologische Sicherheit benennen</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Boden fugenlos mit Hohlkehle, Arbeitsflächen und Wandanschlüsse flüssigkeitsdicht</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Desinfektionsmittel festlegen, dann Materialien bemustern</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Waschbecken mit Spendern an der Tür, Augenspülung daneben</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Keine Bodenabläufe, Ausgussbecken mit Aufkantung</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Sicherheitswerkbank Klasse II am ruhigsten Platz</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Autoklav im selben Gebäude oder im Container, Inaktivierung festlegen</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Lüftung nach TRGS 526 und Kühllast der Geräte gemeinsam planen</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Tür mit Sichtfenster, Kennzeichnung Stufe 2 und Biogefährdung, Zugang beschränkt</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Anmeldung nach § 8 GenTG und Anzeige nach § 16 BioStoffV vollständig einreichen</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Baugenehmigung parallel klären</span></li>
+                </ul>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-5 items-start bg-white border border-gray-200 rounded-2xl p-6 my-10 not-prose">
+                <div class="shrink-0 w-14 h-14 rounded-full bg-slate-900 text-primary flex items-center justify-center font-heading font-bold text-lg" aria-hidden="true">TB</div>
+                <div>
+                  <p class="font-bold text-slate-900">Über den Autor</p>
+                  <p class="text-gray-600 text-sm leading-relaxed mt-1">
+                    <a href="/team/thomas-boss" class={linkClass}>Thomas Boss</a> ist Gesellschafter und Technischer Leiter der Planexus GmbH in Albstadt. Er verantwortet Planung, Anlagentechnik und die schlüsselfertige Umsetzung von Laborcontainern für Pharma, Biotech, Forschung, Klinik und Krisenstäbe in Deutschland, der Schweiz und Österreich.
+                  </p>
+                </div>
+              </div>
+
               <p class="text-xs text-gray-400 leading-relaxed">
-                Quellen: Gentechnikgesetz §§ 6, 7, 8, 9, 10, 12 (gesetze-im-internet.de); Gentechnik-Sicherheitsverordnung Anlage 2 Teil A, Fassung vom 12.08.2019 (BGBl. I S. 1235); Biostoffverordnung §§ 10, 15, 16 und Anhang II (gesetze-im-internet.de); TRBA 100, Ausgabe November 2025 (GMBl. vom 10.11.2025, geändert 19.11.2025); TRGS 526 „Laboratorien“; Mutterschutzgesetz § 11; Bundesamt für Gesundheit (BAG) zu Meldungen und Bewilligungen nach der Einschliessungsverordnung; BioM, „Verfügbare Laborflächen in München“. Dieser Beitrag ersetzt keine Rechtsberatung und keine Gefährdungsbeurteilung. Stand: 22. Oktober 2026.
+                Quellen: Gentechnikgesetz §§ 6, 7, 8, 9, 10, 12; Gentechnik-Sicherheitsverordnung Anlage 2 Teil A, Fassung vom 12.08.2019 (BGBl. I S. 1235); Biostoffverordnung §§ 10, 15, 16 und Anhang II; Mutterschutzgesetz § 11 (alle gesetze-im-internet.de); TRBA 100, Ausgabe November 2025 (GMBl. vom 10.11.2025, geändert 19.11.2025); TRGS 526 „Laboratorien“; DGUV Information 213-086 laut baulinks.de vom 14.02.2022; Bundesamt für Gesundheit (BAG) zu Meldungen nach der Einschliessungsverordnung; BioM, „Verfügbare Laborflächen in München“. Dieser Beitrag ersetzt keine Rechtsberatung und keine Gefährdungsbeurteilung. Stand: 22. Oktober 2026.
               </p>
 
             </div>
@@ -478,41 +484,38 @@ const linkClass = "text-[#5c7300] font-medium hover:underline";
           <aside class="lg:col-span-4">
             <div class="sticky top-28 space-y-8">
               <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
-                <p class="font-bold text-slate-900 mb-4">Auf einen Blick</p>
+                <p class="font-bold text-slate-900 mb-4">S2 auf einen Blick</p>
                 <ul class="space-y-3 text-sm text-gray-700">
-                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S1: Anzeige, Beginn sofort</li>
-                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S2: Anmeldung, Beginn nach 45 Tagen</li>
-                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S3/S4: Genehmigung</li>
-                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S2: Flächen flüssigkeitsdicht bis zum Boden</li>
-                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S2: Waschbecken an der Tür, keine Bodenabläufe</li>
-                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> S2: kein Unterdruck, keine Schleuse Pflicht</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Anmeldung statt Genehmigung, Start nach 45 Tagen</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Boden fugenlos, mit Hohlkehle die Wand hoch</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Waschbecken an der Tür, kein Bodenablauf</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Werkbank bei Aerosolen, Autoklav im Gebäude</li>
                   <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Lüftung: 25 m³/(h·m²) nach TRGS 526</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Keine Pflicht: Schleuse, Unterdruck, HEPA</li>
                 </ul>
               </div>
 
               <div class="bg-white border border-gray-100 p-6 rounded-2xl">
                 <p class="font-bold text-slate-900 mb-4">Weiterführende Inhalte</p>
                 <ul class="space-y-3">
-                  <li><a href="/magazin/bsl-2-bsl-3-container-labor" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>BSL-2 und BSL-3 im Container</a></li>
-                  <li><a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>Genehmigung und Baurecht</a></li>
-                  <li><a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>Klimatisierung und Lüftung</a></li>
-                  <li><a href="/magazin/laborcontainer-brandschutz-feuerwiderstand" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>Brandschutz im Laborcontainer</a></li>
-                  <li><a href="/leistungen/planung" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>Laborplanung</a></li>
-                  <li><a href="/leistungen/ausstattung" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>Laborausstattung</a></li>
-                  <li><a href="/magazin/laborcontainer-ausschreibung-lastenheft" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>Ausschreibung mit Lastenheft</a></li>
+                  {furtherLinks.map((l) => (
+                    <li><a href={l.href} class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><Fragment set:html={chevron} />{l.label}</a></li>
+                  ))}
                 </ul>
               </div>
 
               <div class="bg-slate-900 text-white p-6 rounded-2xl">
-                <p class="font-bold mb-3">S2-Labor gesucht?</p>
-                <p class="text-gray-400 text-sm mb-4">Wir prüfen mit Ihnen Raumprogramm, Ausstattung und Lüftung für Ihr S1- oder S2-Labor.</p>
-                <a href="/kontakt" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Kontakt aufnehmen</a>
+                <p class="font-bold mb-3">S2-Labor geplant?</p>
+                <p class="text-gray-400 text-sm mb-4">Wir klären mit Ihnen Werkbankplatz, Autoklav, Lüftung und die Unterlagen für Ihre Anmeldung.</p>
+                <a href="/kontakt" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Erstgespräch anfragen</a>
               </div>
             </div>
           </aside>
         </div>
       </div>
     </article>
+
+    <LeadMagnetLastenheft />
 
     <section class="py-16 border-t border-gray-100">
       <div class="container mx-auto px-4">
@@ -527,6 +530,11 @@ const linkClass = "text-[#5c7300] font-medium hover:underline";
                 <div class="px-6 pb-6 text-gray-600 leading-relaxed">{f.a}</div>
               </details>
             ))}
+          </div>
+          <div class="mt-10 text-center">
+            <a href="/kontakt" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Erstgespräch zum S2-Labor anfragen
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
       </div>
