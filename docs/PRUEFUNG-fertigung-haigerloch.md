@@ -66,7 +66,7 @@ Werte (z. B. Basel „45 km, 45 Minuten“, München 180 km). Jetzt nennen Städ
 - Besichtigungstermin LABtoGO (analytica-Artikel): Ortsangabe „in Albstadt“ gestrichen, weil nicht belegt ist, wo der
   LABtoGO heute steht.
 
-## Offene Befunde (nicht geändert, brauchen Joachims Entscheidung)
+## Offene Befunde (Stand vor dem Nachtrag)
 
 1. **„Ein Transporttag“ steht auf 11 Städteseiten, kritisch bei Berlin (700 km), Hamburg (730 km), Wien (730 km), Graz (710 km), Linz (570 km).** Ursache: Die Fahrzeit ist
    Pkw-Fahrzeit; ein Schwerlast-Lkw ist langsamer und hat höchstens 9 bis 10 h Lenkzeit am Tag. Vorschlag: mit der
@@ -81,3 +81,18 @@ Hinweis Meta-Descriptions: Alle Seiten haben höchstens 155 Zeichen (gezählt mi
    ein. Inhaltlich richtig; ein Halbsatz „Büro in Albstadt-Laufen, Fertigung in Haigerloch“ wäre für Leser klarer.
 5. **Live:** Nichts ist gepusht oder live. Nach Joachims Ja: pushen, dann Server-Einzeiler laut CLAUDE.md, danach
    /kontakt, /laborcontainer-basel und /llms.txt live prüfen.
+
+## Nachtrag 23.10.2026: Befunde 1 bis 3 umgesetzt (Joachim: „ja mach das so“)
+
+| Befund | Änderung (DE und EN) | Geprüft wie | Ergebnis |
+|---|---|---|---|
+| 1. „Ein Transporttag“ | Berlin, Hamburg, Wien, Graz, Linz: „ein Transporttag“ / „1 Transporttag“ ersetzt durch „Beim Schwertransport kommen Lenkzeitpausen und die Auflagen der Transportgenehmigung hinzu, den Anliefertermin stimmen wir mit Ihnen ab.“ (EN: „Heavy haulage adds statutory rest breaks and the conditions of the transport permit; we agree the delivery date with you.“); in den Kurzangaben nur noch km. Graz/Linz: „Schwerlastfahrzeit“ → „Fahrzeit“, weil die Werte Pkw-Fahrzeiten sind. Seiten bis 450 km (München, Frankfurt, Düsseldorf, Stuttgart, Zürich, Basel, Bern) behalten „ein Transporttag“. | Build-Text der 10 Seiten: 0 × „Transporttag“ / „transport day“ | ✓ |
+| 2. Linz „mautgünstigste Anfahrt nach Salzburg“ | Alle 4 Stellen je Sprache gestrichen; stehen bleibt „ohne A9-Pyhrn-Umweg und ohne Bosruck-/Gleinalmtunnel-Sondermaut“ | Build-Text Linz DE/EN: 0 × „mautgünstigste“ / „cheapest“ | ✓ |
+| 3. Public Health, Verlegezeiten | Unbelegte Stunden je Region ersetzt durch: „Die Verlegezeit ab Haigerloch hängt von Entfernung, Lenkzeiten und Genehmigungsauflagen ab. Entfernungen und Fahrzeiten … auf der Seite Standorte“ (mit Link) | Build-Text: 0 × „24-36 Stunden“ | ✓ |
+
+Build 14:08:52 Exit 0 „Complete!“, `astro check` 0 Fehler/0 Warnungen, Prüfskript 144 Seiten / 0 Fundstellen, FAQ-Abgleich
+der 8 geänderten Seiten 0 Abweichungen.
+
+Weiter offen (nicht Teil der Entscheidung): Auf der Public-Health-Seite stehen im selben Absatz weitere Zeiten ohne
+Quelle (Sondertransport +24–48 h, Hubschrauber-Verlegung CH-53 mit Aufbau 4 h, Funktionsprüfung 8–12 h). Vorschlag:
+belegen oder streichen.
