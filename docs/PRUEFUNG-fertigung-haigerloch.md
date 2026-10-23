@@ -96,3 +96,22 @@ der 8 geänderten Seiten 0 Abweichungen.
 Weiter offen (nicht Teil der Entscheidung): Auf der Public-Health-Seite stehen im selben Absatz weitere Zeiten ohne
 Quelle (Sondertransport +24–48 h, Hubschrauber-Verlegung CH-53 mit Aufbau 4 h, Funktionsprüfung 8–12 h). Vorschlag:
 belegen oder streichen.
+
+## Live-Prüfung 23.10.2026 (nach Deploy durch Joachim, Server-Build „Complete!“, pm2 `planexus` online)
+
+`curl` auf https://planexus.de (mit und ohne Cache-Umgehung), Text ohne HTML-Tags:
+
+| Seite | Status | „Hospach 1“ | `tel:+4974744273000` | „Emil-Mayer“ / „Werk Albstadt“ | Sonst |
+|---|---|---|---|---|---|
+| / | 200 | 1 | 1 | 0 / 0 | Haigerloch 10× |
+| /kontakt | 200 | 2 | 2 | 0 / 0 | auch ohne Cache-Umgehung 2× Hospach |
+| /en/contact | 200 | 2 | 2 | 0 / 0 | |
+| /laborcontainer-basel | 200 | 3 | 1 | 0 / 0 | „230 km“ 7× |
+| /laborcontainer-linz | 200 | 3 | 1 | 0 / 0 | „Transporttag“ 0, „mautgünstigste“ 0 |
+| /en/lab-containers-vienna | 200 | 3 | 1 | 0 / 0 | „transport day“ 0 |
+| /standorte | 200 | 2 | 1 | 0 / 0 | |
+| /branchen/public-health-krisenvorsorge | 200 | 2 | 1 | 0 / 0 | „24-36 Stunden“ 0 |
+| /llms.txt | 200 | – | – | 0 / 0 | „Haigerloch“ 1× |
+| /laborcontainer-berlin | 200 | 2 | – | – | ohne Cache-Umgehung geprüft |
+
+Ergebnis: Alle Sätze der Abnahmeliste sind live erfüllt.
