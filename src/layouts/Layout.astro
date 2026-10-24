@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import MobileCtaBar from '../components/MobileCtaBar.astro';
-import { planexusPostalAddress, planexusGeo, planexusContact } from '../lib/planexus-address';
+import { planexusPostalAddress, planexusGeo, planexusContact, planexusLocations } from '../lib/planexus-address';
 import { SITE_ORIGIN, canonicalUrlForPath, stripTrailingSlash } from '../lib/canonical';
 import {
   detectLocale,
@@ -182,6 +182,7 @@ const ogLocaleAlternate = locale === 'en' ? (isCH ? 'de_CH' : isAT ? 'de_AT' : '
         "availableLanguage": ["German", "English"]
       },
       "address": planexusPostalAddress,
+      "location": planexusLocations(locale),
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61578221935839",
         "https://www.linkedin.com/company/planexus-gmbh"
@@ -197,6 +198,7 @@ const ogLocaleAlternate = locale === 'en' ? (isCH ? 'de_CH' : isAT ? 'de_AT' : '
       "inLanguage": locale === 'en' ? 'en' : 'de-DE',
       "url": canonicalUrlForPath('/'),
       "address": planexusPostalAddress,
+      "location": planexusLocations(locale),
       "geo": planexusGeo,
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
