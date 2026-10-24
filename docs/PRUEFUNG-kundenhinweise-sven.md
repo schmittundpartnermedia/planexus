@@ -39,3 +39,13 @@ Satz „Alle Schemas …“ (DE/EN), Widerspruch Festpreis/Pauschalpreis (DE/EN)
 
 - Live-Stellung: braucht Joachims Freigabe (Push + SSH-Einzeiler). Danach live mit dem Prüfskript-Ansatz gegen die
   Live-URLs prüfen.
+
+## Live-Prüfung (26.10.2026)
+
+Deploy durch Joachim per SSH-Einzeiler: Pull auf `74d3184`, Build auf dem Server sauber, PM2 `planexus` online.
+Danach alle 140 URLs aus `https://planexus.de/sitemap-0.xml` (mit Cache-Umgehung) heruntergeladen und mit
+`scripts/check-kundenhinweise-sven.mjs` geprüft: **140 Seiten, 0 Fundstellen**, inkl. Pflichtsätze auf der DE/EN-Startseite.
+Ohne Cache-Umgehung (wie Besucher sie sehen): Startseite und `/laborcontainer-wien` HTTP 200, keine alten Formulierungen,
+Fertigung „Hospach 1“ im JSON-LD vorhanden.
+
+**Stand: fertig und live.**
