@@ -188,3 +188,20 @@ ssh root@82.165.27.244 'cd /var/www/app && git checkout -- .astro && git fetch o
 **Nicht in diesem Projekt:** withastro/astro-Skills (astro-developer usw. – die sind für die Entwicklung von Astro selbst), keine Next-Skills. **Kein Skill stellt live:** Deploy nur durch Joachim über den SSH-Einzeiler; `script/deploy.sh` nie.
 
 Hinweis: `adapt`, `harden` und `audit` gibt es bei pbakaus/impeccable nicht mehr als eigene Skills; sie sind Befehle von `impeccable` (`impeccable adapt|harden|audit`, Anleitungen in `.claude/skills/impeccable/reference/adapt.md`, `harden.md`, `audit.md`). Das Hilfsprogramm (Live-Browser) von impeccable wird nicht heruntergeladen, Hooks werden nicht eingeschaltet. In der Marketing-Sammlung heißen `schema-markup` jetzt `schema` und `page-cro` jetzt `cro`.
+
+## Skill-Lotse (27.10.2026)
+
+Joachim redet frei und kennt die Skill-Namen nicht; Claude übersetzt. Bei jeder Nachricht zuerst `.claude/skills-lotse.md` (Joachims Worte → Skills) und diese Rollenkarte lesen, die passenden Skills in einem Satz nennen, laden und ihre Checklisten vollständig abarbeiten. Bei jeder Bauaufgabe zuerst `writing-plans`, am Ende `verification-before-completion`, zum Schluss eine Zeile „Skill-Protokoll: …“ in der Antwort und in `docs/STAND.md`. Die vorhandene Rollenkarte oben bleibt unverändert und geht bei Widerspruch vor; die Regeln dieser Datei stehen über jedem Skill. Kein Skill löst Kosten, Live-Stellen oder Löschen aus.
+
+Neue Zeilen der Rollenkarte (Marketing-Skills aus coreyhaines31/marketingskills):
+
+| Aufgabe | Zuständiger Skill | Grenzen |
+|---|---|---|
+| Texte, Überschriften, Hooks | `copywriting` (+ `marketing-psychology`) | Keine erfundenen Fakten, Zahlen oder Kundenstimmen. |
+| Texte schärfen | `copy-editing` | Inhalt und Fakten bleiben; nur Klarheit, Ton, Länge. |
+| Angebot, Garantie, Dringlichkeit | `offers` | Preise, Rabatte und Garantien legt nur Joachim bzw. der Kunde fest. Keine künstliche Verknappung. |
+| Seitenaufbau, Nutzerführung | `site-architecture` | Bestehende Adressen nur mit Weiterleitung ändern. |
+| Zielgruppe | `customer-research` | Nur belegte Quellen; nichts erfinden; keine bezahlten Werkzeuge. |
+| Mitbewerber | `competitor-profiling` | Nur öffentliche Angaben; keine bezahlten Werkzeuge. |
+
+Immer dabei: `high-end-website` (Maßstab), `full-output-enforcement`, `web-design-guidelines` (Korrektheit).
