@@ -209,3 +209,7 @@ Neue Zeilen der Rollenkarte (Marketing-Skills aus coreyhaines31/marketingskills)
 | Mitbewerber | `competitor-profiling` | Nur öffentliche Angaben; keine bezahlten Werkzeuge. |
 
 Immer dabei: `high-end-website` (Maßstab), `full-output-enforcement`, `web-design-guidelines` (Korrektheit).
+
+**Rangfolge (03.11.2026, Entscheidung Joachim):** Beim Design entscheidet `hallmark`: Look, Farben, Schriften, Seitenaufbau, Bewegung und Bildauswahl. Hallmark zeigt Theme und Aufbau vor dem Bau im Picks-Block; das ist die Stelle für Joachims Freigabe des Looks. `high-end-website` gilt weiter für Texte, Fakten, Kostenregeln, die mobile Aktionsleiste „Anrufen | Anfrage“ und die Pflichtprüfung vor „fertig“ (Lighthouse, Überlauf, axe, Formular, unabhängige Prüfung). Bilder: Kundenfotos zuerst, sonst Hallmarks Bildbibliothek (Wikimedia, mit Nachweis); KI-Bilder nur nach Joachims Ja mit Betrag.
+
+**Pflichtseiten (03.11.2026):** Impressum und Datenschutzerklärung gehören bei jeder neuen Seite in den Plan.
