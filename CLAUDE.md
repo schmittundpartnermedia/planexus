@@ -179,15 +179,19 @@ ssh root@82.165.27.244 'cd /var/www/app && git checkout -- .astro && git fetch o
 | Strukturierte Daten (JSON-LD) | `schema` (früher `schema-markup`) | Keine erfundenen Bewertungen oder Preise. |
 | Texte | `marketing-psychology`, `cro` (früher `page-cro`), `lead-magnets` | Textregeln dieser Seite gelten: Ansprache wie auf der bestehenden Seite, keine Preise, keine erfundenen Referenzen (auch nicht im JSON-LD). Keine erfundenen Fakten. |
 | Bewegung | `animation-performance` (GSAP-Skills nur, falls GSAP eingebunden wird) | Die Seite nutzt **framer-motion** (Navbar, AnimatedGlobe) und CSS-Animationen; GSAP steht in package.json, ist aber nirgends eingebunden (geprüft 20.10.2026). Leistung nach animation-performance. |
-| Stil-Pflege | `high-end-visual-design`, `design-taste-frontend`, `brandkit` | Nur innerhalb der bestehenden Vorgaben. |
+| Design bauen (Webseite) | `hallmark` | Neue Seiten werden mit Hallmark gebaut. Bestehende Seiten nur auf ausdrückliche Anweisung `/hallmark redesign <Pfad>`. |
+| Stil-Pflege | `design-taste-frontend`, `brandkit` | Nur innerhalb der bestehenden Vorgaben. |
 | Bild → Code | `image-to-code` | Nur Vorlagen von Joachim. |
-| Prüfung | `impeccable` (critique/audit/polish, dazu `impeccable adapt` und `impeccable harden`), `web-design-guidelines`, `landing-page-conversion-audit` | Nur Bericht und Feinschliff, gibt nicht den Stil vor. |
+| Design prüfen/Feinschliff | `hallmark audit` | Nur auf ausdrückliche Anweisung `/hallmark audit <Pfad>`. Nur Bericht. |
+| Prüfung | `web-design-guidelines`, `landing-page-conversion-audit` | Nur Bericht, gibt nicht den Stil vor. |
 | Vollständigkeit | `full-output-enforcement` | Keine Platzhalter, keine halben Dateien. |
 | Design auslesen | `extract-design-system` | Nur öffentliche Seiten. |
 
 **Nicht in diesem Projekt:** withastro/astro-Skills (astro-developer usw. – die sind für die Entwicklung von Astro selbst), keine Next-Skills. **Kein Skill stellt live:** Deploy nur durch Joachim über den SSH-Einzeiler; `script/deploy.sh` nie.
 
-Hinweis: `adapt`, `harden` und `audit` gibt es bei pbakaus/impeccable nicht mehr als eigene Skills; sie sind Befehle von `impeccable` (`impeccable adapt|harden|audit`, Anleitungen in `.claude/skills/impeccable/reference/adapt.md`, `harden.md`, `audit.md`). Das Hilfsprogramm (Live-Browser) von impeccable wird nicht heruntergeladen, Hooks werden nicht eingeschaltet. In der Marketing-Sammlung heißen `schema-markup` jetzt `schema` und `page-cro` jetzt `cro`.
+**Hallmark (03.11.2026):** Hallmark fasst bestehende Seiten nur an, wenn ausdrücklich `/hallmark redesign <Pfad>` oder `/hallmark audit <Pfad>` angewiesen ist. Neue Seiten werden mit Hallmark gebaut. Es wird nichts erfunden – fehlende Fotos, Zahlen oder Texte werden im STAND als fehlend gemeldet, nicht ausgedacht. Hallmark liegt global (`~/.claude/skills/hallmark`). Die KI-Bilderzeugung von Hallmark (`scripts/imagegen.mjs`, Together AI) kostet Geld und läuft nur mit Joachims ausdrücklichem Ja.
+
+Hinweis: In der Marketing-Sammlung heißen `schema-markup` jetzt `schema` und `page-cro` jetzt `cro`.
 
 ## Skill-Lotse (27.10.2026)
 

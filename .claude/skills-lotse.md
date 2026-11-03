@@ -10,7 +10,10 @@ gleichzeitig passen; dann alle genannten Skills laden. Die Rollenkarte in der CL
 | Angebot, Paket, Preis, Garantie, Bonus | `offers` |
 | Aufbau, Reihenfolge, Menü, wo klickt der Kunde hin | `site-architecture` + `cro` |
 | Warum kauft keiner, niemand fragt an, läuft nicht | `landing-page-conversion-audit` + `cro` |
-| Sieht billig / nach KI / nach Baukasten aus, mach es hochwertig | `design-taste-frontend` + `high-end-visual-design`, danach `impeccable` (critique, polish) |
+| Design, schöner machen, sieht billig / nach KI / nach Baukasten aus, High-End, mach es hochwertig | `hallmark` (bestehende Seite nur als `/hallmark redesign <Pfad>` auf ausdrückliche Anweisung) |
+| Landingpage bauen, neue Seite gestalten | `hallmark` |
+| Startseite neu gestalten | `hallmark` als `/hallmark redesign <Pfad>` – nur auf ausdrückliche Anweisung mit Pfad |
+| Prüf das Design, Feinschliff, Designfehler | `hallmark audit` als `/hallmark audit <Pfad>` – nur auf ausdrückliche Anweisung mit Pfad, nur Bericht |
 | Bewegung, Animation, Scroll-Effekt | `gsap-core` + `gsap-scrolltrigger` + `animation-performance` |
 | Schnell, Lighthouse, lädt langsam | `perf-astro` / `core-web-vitals` / `perf-lighthouse` |
 | Bei Google gefunden werden, Ranking, Maps | `seo-audit` + `schema` |
@@ -20,8 +23,10 @@ gleichzeitig passen; dann alle genannten Skills laden. Die Rollenkarte in der CL
 | Marke, Logo, Farben | `brandkit` (nur aus Kundenangaben) |
 | Zielgruppe, Kunde verstehen | `customer-research` |
 | Konkurrenz, Mitbewerber | `competitor-profiling` |
-| Neue Seite bauen, Seite umbauen | `writing-plans` zuerst, dann `high-end-website` + `astro`, am Ende `verification-before-completion` |
+| Neue Seite bauen, Seite umbauen | `writing-plans` zuerst, dann `hallmark` + `high-end-website` + `astro`, am Ende `verification-before-completion` |
 | Fehler, geht nicht, kaputt | `systematic-debugging` |
+
+**Hallmark (03.11.2026):** Hallmark fasst bestehende Seiten nur an, wenn ausdrücklich `/hallmark redesign <Pfad>` oder `/hallmark audit <Pfad>` angewiesen ist. Neue Seiten werden mit Hallmark gebaut. Es wird nichts erfunden – fehlende Fotos, Zahlen oder Texte werden im STAND als fehlend gemeldet, nicht ausgedacht. Hallmark liegt global (`~/.claude/skills/hallmark`). Die KI-Bilderzeugung von Hallmark (`scripts/imagegen.mjs`, Together AI) kostet Geld und läuft nur mit Joachims ausdrücklichem Ja.
 
 **Immer dazu:** `high-end-website` (Maßstab), `full-output-enforcement`, `web-design-guidelines` (Korrektheit).
 **Bei jeder Bauaufgabe:** zuerst `writing-plans`, am Ende `verification-before-completion`, dann eine Zeile
