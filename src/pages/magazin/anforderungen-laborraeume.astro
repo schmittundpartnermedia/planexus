@@ -1,0 +1,556 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import LeadMagnetLastenheft from '../../components/LeadMagnetLastenheft.astro';
+import Picture from '../../components/Picture.astro';
+
+const pageUrl = "https://planexus.de/magazin/anforderungen-laborraeume";
+const headline = "Anforderungen an Laborräume: Was ein Labor baulich braucht";
+const description = "Anforderungen an Laborräume nach TRGS 526 und DGUV 213-850: Türen, Fluchtwege, Lüftung, Notduschen, Gasabsperrung und Raummaße mit Fundstelle.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "inLanguage": "de-DE",
+  "headline": headline,
+  "description": description,
+  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/team/thomas-boss", "jobTitle": "Gesellschafter & Technischer Leiter", "worksFor": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de/" } },
+  "datePublished": "2026-11-16",
+  "dateModified": "2026-11-16",
+  "image": "https://planexus.de/images/blog-laborraeume-anforderungen.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
+  "about": [
+    { "@type": "Thing", "name": "Laboratorium" },
+    { "@type": "Thing", "name": "TRGS 526 Laboratorien" },
+    { "@type": "Thing", "name": "DGUV Information 213-850 Sicheres Arbeiten in Laboratorien" }
+  ],
+  "citation": [
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/trgs526/6.htm",
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/trgs526/7.htm",
+    "https://publikationen.dguv.de/regelwerk/dguv-informationen/828/sicheres-arbeiten-in-laboratorien",
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/asr_a2_3/5.htm",
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/asr_a1_2/6.htm",
+    "https://www.gesetze-im-internet.de/arbst_ttv_2004/anhang.html"
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/magazin" },
+    { "@type": "ListItem", "position": 3, "name": "Anforderungen an Laborräume", "item": pageUrl }
+  ]
+};
+
+const faqs = [
+  {
+    q: "Welche Vorschriften gelten für Laborräume?",
+    a: "Für Labore, in denen mit Gefahrstoffen gearbeitet wird, gilt die TRGS 526 „Laboratorien“ (Ausgabe Februar 2008). Ihr Inhalt steht wortgleich in der DGUV Information 213-850 „Sicheres Arbeiten in Laboratorien“, ergänzt um Erläuterungen. Dazu kommen die Arbeitsstättenverordnung mit ihren Technischen Regeln, etwa ASR A1.2 für Raummaße und ASR A2.3 für Fluchtwege, und die TRGS 510 für die Lagerung von Gefahrstoffen."
+  },
+  {
+    q: "Ist eine Notdusche im Labor Pflicht?",
+    a: "Ja. Nach TRGS 526 Nr. 6.6.1 müssen in Laboratorien Körpernotduschen am Ausgang installiert sein, gespeist möglichst mit Trinkwasser und mit mindestens 30 Litern pro Minute. Augennotduschen sind nach Nr. 6.6.2 ebenfalls Pflicht, von jedem Arbeitsplatz aus unverzüglich erreichbar und mit mindestens 6 Litern pro Minute je Auslass. Beide werden mindestens monatlich auf Funktion geprüft."
+  },
+  {
+    q: "Wie oft müssen Notduschen im Labor geprüft werden?",
+    a: "Mindestens einmal im Monat. TRGS 526 Nr. 7.2 verlangt, dass Körper- und Augennotduschen mindestens monatlich durch eine vom Arbeitgeber beauftragte Person auf Funktionsfähigkeit geprüft werden. Praktisch heißt das: auslösen, Wasser laufen lassen, Durchfluss und Strahlbild ansehen und das Ergebnis dokumentieren."
+  },
+  {
+    q: "Welchen Luftwechsel braucht ein Labor?",
+    a: "Die TRGS 526 nennt 25 Kubikmeter Luft pro Stunde je Quadratmeter Nutzfläche. Bei 3 Metern Raumhöhe sind das etwa acht Luftwechsel pro Stunde. Weniger ist nur zulässig, wenn die Gefährdungsbeurteilung das dauerhaft trägt. Dann sind Arbeiten mit brennbaren oder flüchtigen Stoffen auf kleinsten Maßstab beschränkt, und an der Tür muss „Achtung: Reduzierter Luftwechsel!“ stehen."
+  },
+  {
+    q: "Wie müssen Labortüren aufgehen?",
+    a: "In Fluchtrichtung, also aus dem Labor heraus. TRGS 526 Nr. 6.2.3 verlangt außerdem ein Sichtfenster und verbietet Schiebetüren für Laboratorien. Labortüren sind geschlossen zu halten. Auch die ASR A2.3 nennt Laboratorien ausdrücklich als Beispiel, bei dem Türen in Fluchtrichtung aufschlagen müssen."
+  },
+  {
+    q: "Braucht ein Labor einen zweiten Ausgang?",
+    a: "Die TRGS 526 verlangt Ausgänge „in ausreichender Zahl“, je nach Raum, Stoffen und Arbeitsverfahren. Die DGUV Information 213-850 empfiehlt für jeden Laborraum eine zweite Fluchtmöglichkeit und nennt höchstens 25 Meter Fluchtweg. Die ASR A2.3 erlaubt in Räumen mit normaler Brandgefährdung bis zu 35 Meter, bei erhöhter Brandgefährdung ohne Löschanlage 25 Meter."
+  },
+  {
+    q: "Wie hoch muss ein Laborraum sein?",
+    a: "Das regelt die ASR A1.2 nach der Grundfläche: bis 50 Quadratmeter mindestens 2,50 Meter lichte Höhe, über 50 Quadratmeter 2,75 Meter, über 100 Quadratmeter 3,00 Meter. Die Werte dürfen um 0,25 Meter unterschritten werden, wenn keine gesundheitlichen Bedenken bestehen, aber nie unter 2,50 Meter."
+  },
+  {
+    q: "Gelten diese Anforderungen auch für einen Laborcontainer?",
+    a: "Ja. TRGS 526 und Arbeitsstättenrecht regeln Türen, Fluchtwege, Lüftung, Notduschen und Ausstattung, nicht die Bauweise. Ein Laborcontainer muss dieselben Punkte erfüllen wie ein Labor im Massivbau. Im Container lohnt es sich, Ausgang, Notdusche, Wasseranschluss und Abluft schon im ersten Grundriss festzulegen, weil diese Punkte die Anordnung der Module bestimmen."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de-DE",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+
+const linkClass = "text-[#5c7300] font-medium hover:underline";
+const td = "p-3 border border-gray-200";
+const chevron = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>`;
+const furtherLinks = [
+  { href: "/magazin/s1-s2-labor-anforderungen", label: "S1- und S2-Labor: Anforderungen" },
+  { href: "/magazin/laborcontainer-laborabzug-din-en-14175", label: "Laborabzüge nach DIN EN 14175" },
+  { href: "/magazin/laborcontainer-brandschutz-feuerwiderstand", label: "Brandschutz im Laborcontainer" },
+  { href: "/magazin/laborcontainer-klimatisierung-lueftung-normen", label: "Klimatisierung und Lüftung" },
+  { href: "/leistungen/planung", label: "Laborplanung" },
+  { href: "/leistungen/ausstattung", label: "Laborausstattung" },
+];
+---
+
+<Layout
+  type="article"
+  title="Anforderungen an Laborräume: Checkliste TRGS 526"
+  description={description}
+  canonical="/magazin/anforderungen-laborraeume"
+  ogImage="/images/blog-laborraeume-anforderungen.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-laborraeume-anforderungen.webp')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-wrap items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Sicherheit
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              14 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Anforderungen an Laborräume: Was ein Labor baulich braucht
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Türen, Fluchtwege, Raumhöhe, Boden, Lüftung, Notduschen, Gasabsperrung und Lagerung brennbarer Flüssigkeiten: Was TRGS 526, DGUV Information 213-850 und Arbeitsstättenrecht für jeden Laborraum verlangen, jede Zahl mit Fundstelle.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              <time datetime="2026-11-16">Aktualisiert am 16. November 2026</time>
+            </span>
+            <a href="/team/thomas-boss" class="flex items-center gap-2 hover:text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Thomas Boss, Technischer Leiter Planexus
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav aria-label="Brotkrümelnavigation" class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/magazin" class="hover:text-primary">Magazin</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-[#5c7300] font-medium">Laborräume</span>
+        </div>
+      </div>
+    </nav>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8 min-w-0">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                Ein neues Analytiklabor, ein Chemielabor für die Qualitätskontrolle oder ein Praktikumsraum an der Hochschule: Bevor die erste Laborzeile bestellt wird, steht die Frage, was der Raum selbst können muss. In welche Richtung geht die Tür auf, wo hängt die Notdusche, wie viel Luft muss die Lüftung bewegen, und wie hoch muss die Decke sein?
+              </p>
+
+              <div class="bg-slate-50 border-l-4 border-primary rounded-r-2xl p-6 my-8 not-prose">
+                <p class="text-sm uppercase tracking-wider text-[#5c7300] font-bold mb-2">Kurz gesagt</p>
+                <p class="text-gray-800 leading-relaxed">
+                  Ein <strong class="text-slate-900">Laborraum</strong>, in dem mit Gefahrstoffen gearbeitet wird, braucht nach TRGS 526 Türen mit Sichtfenster, die in Fluchtrichtung aufschlagen, einen wasserdichten Boden, eine Lüftung mit 25 m³ Luft pro Stunde und Quadratmeter, eine Körpernotdusche am Ausgang, Augennotduschen in Reichweite jedes Arbeitsplatzes und eine Brenngas-Absperrung außerhalb des Raums. Notduschen werden monatlich geprüft.
+                </p>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Vorgaben stehen in mehreren Regelwerken. Wer danach sucht, findet ein Lernprogramm der Berufsgenossenschaft mit vielen kurzen Einzelseiten und Behörden-PDFs zu Gentechnik-Laboren. Dieser Beitrag stellt die baulichen Anforderungen an einen Laborraum an einer Stelle zusammen, jede Zahl mit Fundstelle, und trennt sauber zwischen Pflicht und Empfehlung. Geschrieben hat ihn Thomas Boss, Technischer Leiter bei Planexus. Er plant und baut Laborcontainer und Modullabore und zeigt deshalb auch, was die Vorschriften für den Grundriss bedeuten.
+              </p>
+
+              <div class="bg-white border border-gray-200 rounded-2xl p-6 my-8 not-prose">
+                <p class="font-bold text-slate-900 mb-3">Inhalt</p>
+                <ol class="space-y-2 text-sm text-gray-700 list-decimal list-inside">
+                  <li><a href="#regeln" class={linkClass}>Welche Vorschriften gelten für Laborräume?</a></li>
+                  <li><a href="#raummasse" class={linkClass}>Wie groß und hoch muss ein Laborraum sein?</a></li>
+                  <li><a href="#tueren" class={linkClass}>Welche Türen und Fluchtwege braucht ein Labor?</a></li>
+                  <li><a href="#boden" class={linkClass}>Boden und Arbeitsflächen</a></li>
+                  <li><a href="#lueftung" class={linkClass}>Welchen Luftwechsel braucht ein Labor?</a></li>
+                  <li><a href="#notduschen" class={linkClass}>Notdusche und Augendusche</a></li>
+                  <li><a href="#medien" class={linkClass}>Gas, Wasser, Strom: Absperren und Kennzeichnen</a></li>
+                  <li><a href="#fluessigkeiten" class={linkClass}>Brennbare Flüssigkeiten im Labor</a></li>
+                  <li><a href="#schreibplatz" class={linkClass}>Schreibplatz und Alleinarbeit</a></li>
+                  <li><a href="#container" class={linkClass}>Was im Laborcontainer anders ist</a></li>
+                  <li><a href="#dach" class={linkClass}>Schweiz und Österreich</a></li>
+                  <li><a href="#checkliste" class={linkClass}>Checkliste zum Abhaken</a></li>
+                </ol>
+              </div>
+
+              <h2 id="regeln" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Welche Vorschriften gelten für Laborräume?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die zentrale Regel ist die <strong class="text-slate-900">TRGS 526 „Laboratorien“</strong>, Ausgabe Februar 2008 (GMBl Nr. 15 vom 2. April 2008, S. 294). Sie gilt für Labore, in denen „nach chemischen, physikalischen oder physikalisch-chemischen Methoden präparativ, analytisch oder anwendungstechnisch mit Gefahrstoffen gearbeitet wird“ (Nr. 1). Das betrifft Analytik, Qualitätskontrolle, Forschung und Lehre gleichermaßen. Biologische Labore sind eingeschlossen, sobald dort Ethanol, Formaldehyd oder andere Gefahrstoffe im Spiel sind, und das ist fast immer der Fall.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die <strong class="text-slate-900">DGUV Information 213-850 „Sicheres Arbeiten in Laboratorien“</strong>, auch Laborrichtlinien genannt, enthält den Text der TRGS 526 wörtlich und erläutert ihn. Die aktuelle Fassung ist von Mai 2020. Wichtig für die Planung: Einige häufig zitierte Zahlen stehen nur in den Erläuterungen der 213-850 und sind dort als Empfehlung formuliert. Im Folgenden ist deshalb bei jeder Zahl angegeben, woher sie kommt.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse border border-gray-200 min-w-[560px]">
+                  <caption class="text-left text-sm text-gray-500 pb-2">Die Regelwerke für Laborräume und was sie abdecken</caption>
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class={`text-left ${td} text-slate-900`}>Regel</th>
+                      <th class={`text-left ${td} text-slate-900`}>Regelt im Labor</th>
+                      <th class={`text-left ${td} text-slate-900`}>Art</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr class="bg-primary/5"><td class={`${td} font-semibold`}>TRGS 526</td><td class={td}>Türen, Fluchtwege, Boden, Lüftung, Notduschen, Medien, Elektrik, Mengen, Prüfungen</td><td class={td}>Technische Regel zur Gefahrstoffverordnung</td></tr>
+                    <tr><td class={`${td} font-semibold`}>DGUV Information 213-850</td><td class={td}>TRGS 526 im Wortlaut plus Erläuterungen und Empfehlungen</td><td class={td}>Information der Unfallversicherung</td></tr>
+                    <tr><td class={`${td} font-semibold`}>ASR A1.2</td><td class={td}>Grundfläche, lichte Höhe, Luftraum, Bewegungsfläche</td><td class={td}>Technische Regel zur Arbeitsstättenverordnung</td></tr>
+                    <tr><td class={`${td} font-semibold`}>ASR A2.3</td><td class={td}>Fluchtwege, Notausgänge, Fluchtweglänge</td><td class={td}>Technische Regel zur Arbeitsstättenverordnung</td></tr>
+                    <tr><td class={`${td} font-semibold`}>TRGS 510</td><td class={td}>Lagerung von Gefahrstoffen, Sicherheitsschränke</td><td class={td}>Technische Regel zur Gefahrstoffverordnung</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Technische Regeln sind kein Gesetz. Wer sie einhält, kann aber davon ausgehen, die Anforderungen der Verordnung zu erfüllen. Wer abweicht, muss eine gleichwertige Lösung begründen und dokumentieren. Für die Planung heißt das: Die TRGS 526 ist der Maßstab, an dem Behörde und Berufsgenossenschaft ein Labor messen. Arbeiten Sie mit Gentechnik oder Biostoffen, kommen GenTSV und Biostoffverordnung dazu. Was dort zusätzlich gilt, steht im Beitrag <a href="/magazin/s1-s2-labor-anforderungen" class={linkClass}>S1- und S2-Labor: Anforderungen</a>.
+              </p>
+
+              <h2 id="raummasse" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Wie groß und hoch muss ein Laborraum sein?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Eine eigene Mindestgröße für Labore gibt es nicht. Es gelten die allgemeinen Maße der <strong class="text-slate-900">ASR A1.2 „Raumabmessungen und Bewegungsflächen“</strong>. Ein Arbeitsraum braucht mindestens 8 Quadratmeter für einen Arbeitsplatz und 6 Quadratmeter für jeden weiteren (Nr. 5). An jedem Arbeitsplatz muss eine freie Bewegungsfläche von mindestens 1,50 Quadratmetern bleiben, mindestens 1,00 Meter breit und tief (Nr. 5.1).
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse border border-gray-200 min-w-[480px]">
+                  <caption class="text-left text-sm text-gray-500 pb-2">Lichte Raumhöhe nach ASR A1.2 Nr. 6</caption>
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class={`text-left ${td} text-slate-900`}>Grundfläche des Raums</th>
+                      <th class={`text-left ${td} text-slate-900`}>Lichte Höhe mindestens</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr><td class={td}>bis 50 m²</td><td class={td}>2,50 m</td></tr>
+                    <tr><td class={td}>mehr als 50 m²</td><td class={td}>2,75 m</td></tr>
+                    <tr><td class={td}>mehr als 100 m²</td><td class={td}>3,00 m</td></tr>
+                    <tr><td class={td}>mehr als 2.000 m²</td><td class={td}>3,25 m</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Werte über 50 Quadratmetern dürfen um 0,25 Meter unterschritten werden, wenn keine gesundheitlichen Bedenken bestehen, aber nie unter 2,50 Meter. Dazu kommt ein Mindest-Luftraum je Person von 12, 15 oder 18 Kubikmetern, je nach Schwere der Arbeit (Nr. 7). In Laboren ist die Höhe selten das Problem. Knapp wird es eher über den Abzügen, wo Abluftkanäle, Kabeltrassen und Leuchten um denselben Platz konkurrieren. Planen Sie die Höhe deshalb vom Kanal aus und nicht von der Decke.
+              </p>
+
+              <h2 id="tueren" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Welche Türen und Fluchtwege braucht ein Labor?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Türregel der TRGS 526 ist kurz und streng: „Türen von Laboratorien müssen in Fluchtrichtung aufschlagen und mit einem Sichtfenster ausgerüstet sein. Schiebetüren sind für Laboratorien nicht zulässig.“ (Nr. 6.2.3). Labortüren sind geschlossen zu halten. Die ASR A2.3 bestätigt das von der anderen Seite: Bei erhöhter Gefährdung müssen manuell betätigte Türen in Fluchtrichtung aufschlagen, und als Beispiel nennt sie ausdrücklich den „Umgang mit besonders gefährlichen Stoffen, z. B. in chemischen, physikalischen oder medizinischen Laboratorien“ (Nr. 7 Abs. 6).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Zu den Fluchtwegen sagt die TRGS 526, dass Rettungswege und Ausgänge „in ausreichender Zahl“ vorhanden sein müssen, abhängig von Raum, Stoffen und Arbeitsverfahren (Nr. 6.2.2). Ein Fluchtweg darf nur durch einen Nachbarraum führen, wenn man diesen auch im Gefahrfall sicher und ohne fremde Hilfe verlassen kann. Konkrete Längen stehen in der ASR A2.3 und in den Erläuterungen der 213-850.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse border border-gray-200 min-w-[560px]">
+                  <caption class="text-left text-sm text-gray-500 pb-2">Fluchtweglängen und zweiter Ausgang: was woher kommt</caption>
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class={`text-left ${td} text-slate-900`}>Fall</th>
+                      <th class={`text-left ${td} text-slate-900`}>Höchstlänge Hauptfluchtweg</th>
+                      <th class={`text-left ${td} text-slate-900`}>Fundstelle</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr><td class={td}>Raum ohne oder mit normaler Brandgefährdung</td><td class={td}>35 m</td><td class={td}>ASR A2.3 Nr. 5 Abs. 2</td></tr>
+                    <tr><td class={td}>erhöhte Brandgefährdung mit selbsttätiger Löschanlage</td><td class={td}>35 m</td><td class={td}>ASR A2.3 Nr. 5 Abs. 2</td></tr>
+                    <tr><td class={td}>erhöhte Brandgefährdung ohne Löschanlage</td><td class={td}>25 m</td><td class={td}>ASR A2.3 Nr. 5 Abs. 2</td></tr>
+                    <tr><td class={td}>Gefährdung durch explosionsgefährliche Stoffe</td><td class={td}>10 m</td><td class={td}>ASR A2.3 Nr. 5 Abs. 2</td></tr>
+                    <tr class="bg-primary/5"><td class={td}>Laborraum, Empfehlung der Laborrichtlinien</td><td class={td}>25 m, zweite Fluchtmöglichkeit empfohlen</td><td class={td}>DGUV-I 213-850 Nr. 6.2.2</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der tatsächliche Laufweg darf nach ASR A2.3 höchstens das 1,5-Fache der gemessenen Fluchtweglänge betragen. Ein zweiter Fluchtweg ist nach ASR A2.3 Nr. 6 unter anderem dann nötig, wenn in der Nähe des Hauptfluchtwegs Gefahrstoffe gelagert oder verwendet werden. Im Labor ist das die Regel. Die 213-850 empfiehlt deshalb für jeden Laborraum eine zweite Fluchtmöglichkeit, und in Laboren mit hoher Brandgefahr sowie in Praktikumslaboren sollen von jeder Stelle zwei Ausgänge erreichbar sein. Mein Rat aus der Planung: Legen Sie die zweite Tür gleich in den ersten Entwurf. Nachträglich kostet sie fast immer eine Laborzeile.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">Wie breit muss der Gang zwischen den Labortischen sein?</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die TRGS 526 verlangt nur, dass Bedien- und Verkehrsflächen „ausreichend bemessen“ sind (Nr. 6.2.1). Die Zahl liefert die 213-850: „Arbeiten zwei bis vier Personen zwischen den Arbeitsflächen, so beträgt der Mindestabstand 1,45 m.“ Mehr Abstand braucht es, wenn der Gang zugleich Verkehrsweg ist, bei erhöhter Brand- oder Explosionsgefahr, bei Arbeitsflächen über 6 Meter Länge, bei mehr als vier Personen oder wenn sich zwei Abzüge gegenüberstehen. Reine Verkehrswege ohne Bedienflächen müssen mindestens 0,90 Meter breit sein. Stehen sich Arbeitsflächen gegenüber, fordert die TRGS 526 einen Spritzschutz bis mindestens 175 Zentimeter Höhe (Nr. 6.4.1).
+              </p>
+
+              <figure class="my-10 not-prose">
+                <Picture
+                  src="/attached_assets/Labor_2_1769690564538.jpg"
+                  alt="Leerer Laborraum in einem mehrgeschossigen Laborcontainer: zwei Reihen Labortische mit Medienzeilen, Gang dazwischen, Zuluftauslässe und Kabeltrassen an der Decke, Fenster an der Stirnseite"
+                  width={1600}
+                  height={1200}
+                  loading="lazy"
+                  class="w-full h-auto rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Laborraum aus einem Planexus-Projekt vor dem Einzug: Labortische mit Medienzeilen, Zuluft über Deckenauslässe, Leitungen offen geführt und erreichbar.
+                </figcaption>
+              </figure>
+
+              <h2 id="boden" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Welche Anforderungen gelten für Boden und Arbeitsflächen?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                „Fußböden oder deren Beläge sowie hindurchgehende Leitungsdurchführungen müssen wasserdicht sein.“ (TRGS 526 Nr. 6.2.4). Der Satz wird gern auf den Belag reduziert. Er gilt ausdrücklich auch für jede Leitung, die durch den Boden geht. Die 213-850 hält Holz und Parkett in der Regel für ungeeignet. Aus der Arbeitsstättenverordnung kommt dazu, dass Fußböden leicht zu reinigen und rutschhemmend sein müssen (Anhang Nr. 1.5). Die ASR A1.5 ordnet „Laborräume“ im Gesundheitsdienst der Bewertungsgruppe R 9 zu. Eine eigene Zeile für Chemielabore hat sie nicht. Bei Arbeiten mit viel Wasser oder Öl kann die Gefährdungsbeurteilung eine höhere Gruppe ergeben.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für Labortische und Abzüge verlangt die TRGS 526 Arbeitsflächen, die den Beanspruchungen standhalten, mit flüssigkeitsdichtem Belag und Randwulst (Nr. 6.4.1). Der Randwulst hält verschüttete Flüssigkeit auf der Platte. Welcher Belag zu Ihren Chemikalien passt, gehört in die Bemusterung. Eine vollständige Ausstattungsliste finden Sie in der <a href="/magazin/laborcontainer-ausstattung-checkliste" class={linkClass}>Checkliste zur Laborausstattung</a>.
+              </p>
+
+              <h2 id="lueftung" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Welchen Luftwechsel braucht ein Labor?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Laboratorien müssen „mit ausreichenden, jederzeit wirksamen technischen Lüftungseinrichtungen ausgerüstet sein“ (TRGS 526 Nr. 6.2.5). Der Maßstab ist ein Luftwechsel von <strong class="text-slate-900">25 m³ pro Stunde je Quadratmeter Nutzfläche</strong>. Bei 3 Metern Raumhöhe entspricht das nach der 213-850 etwa einem achtfachen Luftwechsel. Die Zuluft muss bei Bedarf erwärmt und zugfrei zugeführt werden. Die Abluft darf ganz oder teilweise über die Abzüge laufen, solange deren volle Leistung erhalten bleibt.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Weniger Luft ist möglich, wenn die Gefährdungsbeurteilung zeigt, dass es für die vorgesehenen Tätigkeiten dauerhaft reicht. Der Preis dafür steht in derselben Nummer: Tätigkeiten mit brennbaren Flüssigkeiten oder leicht flüchtigen, staubenden oder Aerosole bildenden Gefahrstoffen sind dann nur in kleinstem Maßstab möglich, die Einschränkung ist zu dokumentieren und jedem späteren Verantwortlichen bekannt zu geben, und am Eingang muss das Schild „Achtung: Reduzierter Luftwechsel!“ hängen. Abluft mit gefährlichen Konzentrationen darf nicht in Arbeitsbereiche zurückgeführt werden. Für die Auslegung der Anlage verweist die 213-850 auf VDI 2051 und DIN 1946-7.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In der Praxis bestimmen die Abzüge die Luftmenge oft stärker als die Fläche. Wie viel Luft ein Abzug braucht und warum eine variable Regelung Energie spart, steht im Beitrag zu <a href="/magazin/laborcontainer-laborabzug-din-en-14175" class={linkClass}>Laborabzügen nach DIN EN 14175</a>. Kühlung, Wärmelast der Geräte und Zuluftführung behandelt der Beitrag zur <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class={linkClass}>Klimatisierung und Lüftung</a>.
+              </p>
+
+              <h2 id="notduschen" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Ist eine Notdusche im Labor Pflicht?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ja, und zwar zwei Arten. Die TRGS 526 verlangt in Laboratorien <strong class="text-slate-900">Körpernotduschen am Ausgang</strong> und <strong class="text-slate-900">Augennotduschen</strong>, die von jedem Arbeitsplatz aus unverzüglich erreichbar sind (Nr. 6.6). Die Normen für die Geräte sind DIN EN 15154-1 für Körperduschen und DIN EN 15154-2 für Augenduschen.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse border border-gray-200 min-w-[600px]">
+                  <caption class="text-left text-sm text-gray-500 pb-2">Körpernotdusche und Augennotdusche nach TRGS 526 und DGUV-I 213-850</caption>
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class={`text-left ${td} text-slate-900`}>Punkt</th>
+                      <th class={`text-left ${td} text-slate-900`}>Körpernotdusche</th>
+                      <th class={`text-left ${td} text-slate-900`}>Augennotdusche</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr><td class={`${td} font-semibold`}>Pflicht</td><td class={td}>ja, TRGS 526 Nr. 6.6.1</td><td class={td}>ja, TRGS 526 Nr. 6.6.2</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Ort</td><td class={td}>am Ausgang</td><td class={td}>von jedem Arbeitsplatz unverzüglich erreichbar, möglichst bei der Körperdusche oder am Ausgussbecken</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Wasser</td><td class={td}>möglichst Trinkwasserqualität</td><td class={td}>Trinkwasserqualität</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Menge</td><td class={td}>mindestens 30 l pro Minute</td><td class={td}>mindestens 6 l pro Minute je Auslass</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Ventil</td><td class={td}>schließt nicht selbsttätig, 213-850: keine Zugkette</td><td class={td}>schließt nicht selbsttätig; Handbrausen mit Griffventil zulässig</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Kennzeichnung</td><td class={td}>Rettungszeichen „Notdusche“</td><td class={td}>Rettungszeichen „Augenspüleinrichtung“, Zugang frei</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Erreichbarkeit</td><td class={td}>213-850: höchstens 5 Sekunden</td><td class={td}>213-850: höchstens 5 Sekunden</td></tr>
+                    <tr class="bg-primary/5"><td class={`${td} font-semibold`}>Prüfung</td><td class={td}>mindestens monatlich, TRGS 526 Nr. 7.2</td><td class={td}>mindestens monatlich, TRGS 526 Nr. 7.2</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Norm</td><td class={td}>DIN EN 15154-1</td><td class={td}>DIN EN 15154-2</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Augenspülflaschen mit steriler Flüssigkeit sind nur zulässig, wenn kein fließendes Trinkwasser zur Verfügung steht. Für ein festes Labor heißt das: Die Flasche ersetzt die Augendusche nicht. Die monatliche Prüfung macht eine vom Arbeitgeber beauftragte Person. Sie löst die Dusche aus, sieht sich Durchfluss und Strahlbild an und dokumentiert das Ergebnis. Nebenbei wird so abgestandenes Wasser aus der Leitung gespült.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Zwei Planungspunkte werden oft übersehen. Erstens braucht die Körperdusche am Ausgang Platz, an dem niemand eine Tür oder einen Schrank davorstellt. Zweitens müssen 30 Liter pro Minute irgendwohin. Ob ein Bodenablauf zulässig ist, hängt von der Nutzung ab: Im S2-Bereich sind Bodenabläufe nicht vorgesehen. Klären Sie Wasserdruck, Leitungsquerschnitt und den Umgang mit dem Duschwasser deshalb vor der Ausschreibung.
+              </p>
+
+              <h2 id="medien" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Wie werden Gas, Wasser und Strom im Labor abgesichert?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Flüssige und gasförmige Stoffe kommen über fest verlegte, auf Dichtheit geprüfte Leitungen an Labortische und Abzüge. Diese Leitungen müssen „eindeutig und dauerhaft gekennzeichnet sein“ (TRGS 526 Nr. 6.5.1). Für die Kennzeichnung nennt die 213-850 DIN 2403 und DIN EN 13792.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für Brenngas gilt eine doppelte Absperrung. Jede Brenngasleitung zu einer oder mehreren Entnahmestellen muss gesondert absperrbar sein. Zusätzlich muss es eine weitere Absperreinrichtung geben, deren Stellteile „außerhalb des Laboratoriums, in dessen Nähe, leicht erreichbar, eindeutig gekennzeichnet und jederzeit zugänglich“ sind (Nr. 6.5.2). Die Entnahmearmaturen müssen gegen unbeabsichtigtes Öffnen gesichert sein. Wer im Brandfall den Raum verlässt, soll das Gas also an der Tür abdrehen können, ohne noch einmal hineinzugehen.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Bei der Elektrik verlangt die TRGS 526 getrennte Stromkreise für Beleuchtung, Lüftung und die übrige Versorgung. Labortische und Abzüge sollen einzeln oder in Gruppen freischaltbar sein (Nr. 6.7.1). Die 213-850 empfiehlt zusätzlich einen Hauptschalter an gut zugänglicher Stelle, etwa am Ausgang, wobei Rührer und andere sicherheitsrelevante Geräte weiterlaufen sollen. Sie empfiehlt außerdem Fehlerstrom-Schutzschalter. Beides ist eine Empfehlung der Laborrichtlinien. Ob ein Fehlerstrom-Schutzschalter elektrotechnisch vorgeschrieben ist, legt die Elektrofachplanung nach den VDE-Normen fest.
+              </p>
+
+              <h2 id="fluessigkeiten" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Wie viel brennbare Flüssigkeit darf im Labor stehen?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die TRGS 526 begrenzt die Gebindegröße. Flüssigkeiten mit einem Flammpunkt unter 55 °C dürfen am Arbeitsplatz nur in Behältern bis 1 Liter bereitgehalten werden. An geschützter Stelle, etwa in einem Sicherheitsschrank nach DIN EN 14470-1, sind Behälter bis 5 Liter erlaubt, wenn sie nicht bruchsicher sind, und bis 10 Liter, wenn sie bruchsicher sind (Nr. 4.15.1).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für die Lagerung im Arbeitsraum verweist die TRGS 510 auf Sicherheitsschränke nach DIN EN 14470-1 mit mindestens 90 Minuten Feuerwiderstand (Anhang 1). Schränke mit kürzerer Feuerwiderstandsdauer sind nur eingeschränkt zulässig, etwa einer je Brandabschnitt beziehungsweise je 100 Quadratmeter oder mit Brandmeldeanlage und Löschanlage. Für den Grundriss bedeutet das: Der Schrank braucht einen festen Platz mit Abluftanschluss, und dieser Platz liegt nicht am Fluchtweg. Mehr zu Feuerwiderstand und Gefahrstofflager steht im Beitrag zum <a href="/magazin/laborcontainer-brandschutz-feuerwiderstand" class={linkClass}>Brandschutz im Laborcontainer</a>.
+              </p>
+
+              <h2 id="schreibplatz" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Darf ein Schreibplatz im Labor stehen?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ja, als sogenannte Labordokumentationszone. Die 213-850 beschreibt sie in Nr. 6.2.1.1: abgetrennt vom Labor durch eine großflächige, transparente und bruchsichere Glasfront mit Glastür, zugfrei belüftet, mit einer Luftströmung von der Schreibzone ins Labor. Die Zone zählt zur Laborfläche und ist kein Büroarbeitsplatz. Für Planer ist das eine gute Lösung, weil Proben und Protokoll in Sichtweite bleiben und trotzdem niemand am Labortisch tippt. In der TRGS 526 selbst stehen diese Zonen nicht.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Zur Alleinarbeit ist die TRGS 526 deutlich: „Kann eine Alleinarbeit nicht ausreichend abgesichert werden, darf diese nicht durchgeführt werden.“ (Nr. 4.3.3). Für den Bau folgt daraus, dass Sichtverbindung, Glastüren und gegebenenfalls ein Personen-Notsignal früh mitgedacht werden sollten, wenn im Labor auch abends oder am Wochenende gearbeitet wird.
+              </p>
+
+              <h2 id="container" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Was ist im Laborcontainer anders?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Rechtlich nichts. TRGS 526 und Arbeitsstättenrecht regeln, was ein Laborraum können muss, und nicht, woraus er gebaut ist. Ein <a href="/laborcontainer" class={linkClass}>Laborcontainer</a> erfüllt dieselben Anforderungen wie ein Labor im Massivbau. Im Modulbau entscheiden einige Punkte aber schon über die Anordnung der Module und gehören deshalb ganz an den Anfang:
+              </p>
+
+              <ol class="space-y-4 text-gray-700 mb-8 not-prose">
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">1.</span> <span><strong class="text-slate-900">Ausgänge und Fluchtweg:</strong> Wo liegen Haupt- und zweite Tür, und schlagen beide nach außen auf? Bei einem langen Modul ist die zweite Tür an der gegenüberliegenden Stirnseite meist der kürzeste Weg zur empfohlenen zweiten Fluchtmöglichkeit.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">2.</span> <span><strong class="text-slate-900">Notdusche am Ausgang:</strong> Sie braucht einen Wasseranschluss mit ausreichendem Durchfluss genau dort, wo auch die Tür ist. Bei einem freistehenden Container muss die Zuleitung vom Gelände her frostsicher geführt werden.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">3.</span> <span><strong class="text-slate-900">Abluft:</strong> Abzüge und Raumabluft werden über Dach geführt. Die Lage der Abzüge bestimmt damit die Lage der Dachdurchführungen und der Lüftungsgeräte.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">4.</span> <span><strong class="text-slate-900">Gasabsperrung außen:</strong> Die zweite Brenngas-Absperrung gehört außerhalb des Labors in die Nähe der Tür. Das ist im Container leicht, wenn es im Plan steht, und lästig, wenn es fehlt.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">5.</span> <span><strong class="text-slate-900">Höhe und Fläche:</strong> Bei Modulverbünden über 50 Quadratmetern ohne Trennwände steigt die verlangte lichte Höhe. Prüfen Sie die Raumhöhe gegen die ASR A1.2, bevor der Grundriss feststeht.</span></li>
+              </ol>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Im Modulbau werden Boden, Durchführungen, Medienzeilen und Leitungskennzeichnung im Werk eingebaut und vor der Auslieferung geprüft. Auf der Baustelle bleiben dann vor allem die Anschlüsse. Planexus fertigt Laborcontainer im Werk Haigerloch, ein individuell geplanter Container ist typischerweise in <strong class="text-slate-900">8 bis 14 Wochen</strong> fertig. Wie Fundament und Anschlüsse vor Ort vorbereitet werden, steht im Beitrag zu <a href="/magazin/laborcontainer-aufstellung-bodenplatte-statik" class={linkClass}>Aufstellung, Bodenplatte und Statik</a>, das Baurecht im Leitfaden zur <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class={linkClass}>Genehmigung von Laborcontainern</a>.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-6 md:p-8 my-10 not-prose">
+                <p class="text-xl font-heading font-bold text-primary mb-3">Ihren Laborgrundriss gemeinsam prüfen</p>
+                <p class="text-gray-300 mb-5 leading-relaxed">Schicken Sie uns eine Skizze oder Ihre Geräteliste. Im kostenlosen Erstgespräch gehen wir mit Ihnen Ausgänge, Notduschen, Abzüge, Lüftung und Gasversorgung durch, bevor etwas gebaut wird.</p>
+                <a href="/kontakt" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Erstgespräch zum Laborraum anfragen
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Brauchen Sie das Labor nur für eine begrenzte Zeit, ist ein <a href="/laborcontainer-mieten" class={linkClass}>Laborcontainer zur Miete</a> die passende Lösung, für eine dauerhafte Erweiterung der <a href="/laborcontainer-kaufen" class={linkClass}>Kauf</a>. Eine kompakte Einheit mit fertig ausgestattetem Laborraum ist der <a href="/laborcontainer/labtogo" class={linkClass}>LABtoGO</a>. Planung und Ausstattung übernehmen wir über unsere Leistungen <a href="/leistungen/planung" class={linkClass}>Laborplanung</a> und <a href="/leistungen/ausstattung" class={linkClass}>Laborausstattung</a>. Wer ein Labor ausschreiben muss, findet die Gliederung im Beitrag <a href="/magazin/laborcontainer-ausschreibung-lastenheft" class={linkClass}>Laborcontainer ausschreiben: Lastenheft</a>. Lösungen nach Branche zeigen die Seiten für <a href="/branchen/pharma-biotech" class={linkClass}>Pharma und Biotech</a>, <a href="/branchen/forschung-hochschule" class={linkClass}>Forschung und Hochschule</a> und <a href="/branchen/industrie-werkstoffpruefung" class={linkClass}>Industrie und Werkstoffprüfung</a>.
+              </p>
+
+              <h2 id="dach" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Welche Regeln gelten in der Schweiz und in Österreich?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In der <strong class="text-slate-900">Schweiz</strong> beschreibt die EKAS-Richtlinie „Labor“ für chemische Laboratorien (Suva-Bestellnummer 1871.d, Ausgabe Juli 2022) die Anforderungen an Laborräume, Einrichtungen und Organisation. In <strong class="text-slate-900">Österreich</strong> gelten das ArbeitnehmerInnenschutzgesetz und die Arbeitsstättenverordnung (AStV). Laborspezifische Details klären Sie dort am besten früh mit dem zuständigen Arbeitsinspektorat. Regionale Hinweise für <a href="/laborcontainer-zuerich" class={linkClass}>Zürich</a>, <a href="/laborcontainer-basel" class={linkClass}>Basel</a> und <a href="/laborcontainer-wien" class={linkClass}>Wien</a> finden Sie auf unseren Standortseiten.
+              </p>
+
+              <div id="checkliste" class="bg-slate-50 border border-gray-100 rounded-2xl p-6 md:p-8 my-8 not-prose">
+                <h2 class="text-xl font-heading font-bold text-slate-900 mb-4">Checkliste: Laborraum planen</h2>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Tätigkeiten und Stoffe festhalten, Gefährdungsbeurteilung beginnen</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Fläche und lichte Höhe nach ASR A1.2 prüfen</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Türen in Fluchtrichtung, mit Sichtfenster, keine Schiebetür</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Fluchtweglänge nach ASR A2.3, zweite Fluchtmöglichkeit einplanen</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Gang zwischen Arbeitsflächen mindestens 1,45 m, Spritzschutz bis 175 cm</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Boden und Leitungsdurchführungen wasserdicht, rutschhemmend</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Lüftung mit 25 m³/(h·m²), Abzüge und Zuluft gemeinsam auslegen</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Körpernotdusche am Ausgang (30 l/min), Augennotdusche in Reichweite (6 l/min)</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Brenngas doppelt absperrbar, zweite Absperrung außen an der Tür</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Leitungen dauerhaft gekennzeichnet, Stromkreise getrennt</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Sicherheitsschrank Typ 90 mit Abluft, nicht am Fluchtweg</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Monatliche Notduschen-Prüfung und jährliche Abzugsprüfung organisieren</span></li>
+                </ul>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-5 items-start bg-white border border-gray-200 rounded-2xl p-6 my-10 not-prose">
+                <div class="shrink-0 w-14 h-14 rounded-full bg-slate-900 text-primary flex items-center justify-center font-heading font-bold text-lg" aria-hidden="true">TB</div>
+                <div>
+                  <p class="font-bold text-slate-900">Über den Autor</p>
+                  <p class="text-gray-600 text-sm leading-relaxed mt-1">
+                    <a href="/team/thomas-boss" class={linkClass}>Thomas Boss</a> ist Gesellschafter und Technischer Leiter der Planexus GmbH (Büro Albstadt, Fertigung Haigerloch). Er verantwortet Planung, Anlagentechnik und die schlüsselfertige Umsetzung von Laborcontainern für Pharma, Biotech, Forschung, Klinik und Krisenstäbe in Deutschland, der Schweiz und Österreich.
+                  </p>
+                </div>
+              </div>
+
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Quellen: TRGS 526 „Laboratorien“, Ausgabe Februar 2008 (GMBl Nr. 15 vom 2.4.2008, S. 294), Nr. 1, 4.3.3, 4.15.1, 6.2.1 bis 6.2.5, 6.4.1, 6.5.1, 6.5.2, 6.6, 6.7.1 und 7.2; DGUV Information 213-850 „Sicheres Arbeiten in Laboratorien“, Fassung Mai 2020, Nr. 6.2.1, 6.2.1.1, 6.2.2, 6.2.5.1, 6.6 und 6.7; TRGS 510 „Lagerung von Gefahrstoffen in ortsbeweglichen Behältern“, Ausgabe Dezember 2020, Anhang 1; ASR A1.2 Nr. 5 bis 7; ASR A1.5 Anhang 2; ASR A2.3, Ausgabe 2022, Nr. 5 bis 7; Arbeitsstättenverordnung Anhang Nr. 1.5 (gesetze-im-internet.de); DIN EN 15154-1 und -2; EKAS-Richtlinie „Labor“, Suva 1871.d, Juli 2022. Texte der Technischen Regeln gelesen in der Vorschriftendatenbank der BGN (vorschriften.bgn-branchenwissen.de). Dieser Beitrag ersetzt keine Rechtsberatung und keine Gefährdungsbeurteilung. Stand: 16. November 2026.
+              </p>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <p class="font-bold text-slate-900 mb-4">Laborraum auf einen Blick</p>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Tür in Fluchtrichtung, Sichtfenster, keine Schiebetür</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Boden und Durchführungen wasserdicht</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Lüftung: 25 m³/(h·m²) nach TRGS 526</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Notdusche 30 l/min, Augendusche 6 l/min</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Notduschen monatlich prüfen</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Brenngas-Absperrung außen an der Tür</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <p class="font-bold text-slate-900 mb-4">Weiterführende Inhalte</p>
+                <ul class="space-y-3">
+                  {furtherLinks.map((l) => (
+                    <li><a href={l.href} class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><Fragment set:html={chevron} />{l.label}</a></li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <p class="font-bold mb-3">Neues Labor geplant?</p>
+                <p class="text-gray-400 text-sm mb-4">Wir prüfen mit Ihnen Grundriss, Ausgänge, Notduschen, Abzüge und Lüftung, bevor gebaut wird.</p>
+                <a href="/kontakt" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Erstgespräch anfragen</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <LeadMagnetLastenheft />
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Häufige Fragen zu Laborräumen</h2>
+          <div class="space-y-4">
+            {faqs.map((f, i) => (
+              <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open={i === 0}>
+                <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">{f.q}
+                  <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">{f.a}</div>
+              </details>
+            ))}
+          </div>
+          <div class="mt-10 text-center">
+            <a href="/kontakt" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Erstgespräch zum Laborraum anfragen
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedArticles slug="anforderungen-laborraeume" />
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/magazin" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Zurück zum Magazin
+      </a>
+    </div>
+  </div>
+</Layout>

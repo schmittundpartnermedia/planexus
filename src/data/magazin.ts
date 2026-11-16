@@ -20,6 +20,13 @@ export interface MagazinLocaleFields {
 }
 
 export const magazinEn: Record<string, MagazinLocaleFields> = {
+  "anforderungen-laborraeume": {
+    slug: "laboratory-room-requirements-germany",
+    title: "Laboratory room requirements in Germany: what every lab must provide",
+    excerpt: "Doors, escape routes, ventilation, emergency showers, gas shut-off and room height: what TRGS 526 and DGUV 213-850 require of every laboratory room, with sources.",
+    date: "16 November 2026",
+    category: "Safety",
+  },
   "s1-s2-labor-anforderungen": {
     slug: "s1-s2-lab-requirements-germany",
     title: "S2 lab requirements in Germany: what is mandatory and what you can skip",
@@ -215,6 +222,16 @@ export function localizePost(post: MagazinPost, locale: Locale = 'de') {
 }
 
 export const magazinPosts: MagazinPost[] = [
+  {
+    id: -19,
+    slug: "anforderungen-laborraeume",
+    title: "Anforderungen an Laborräume: Was ein Labor baulich braucht",
+    excerpt: "Türen, Fluchtwege, Lüftung, Notdusche, Gasabsperrung und Raumhöhe: was TRGS 526 und DGUV 213-850 für jeden Laborraum verlangen, mit Fundstelle.",
+    date: "16. November 2026",
+    author: "Thomas Boss",
+    category: "Sicherheit",
+    image: "/images/blog-laborraeume-anforderungen.jpg",
+  },
   {
     id: -18,
     slug: "s1-s2-labor-anforderungen",
@@ -469,6 +486,11 @@ export const magazinPosts: MagazinPost[] = [
 
 /** Thematische Verwandtschaft – 3 Slugs pro Artikel */
 const relatedSlugsMap: Record<string, string[]> = {
+  "anforderungen-laborraeume": [
+    "s1-s2-labor-anforderungen",
+    "laborcontainer-laborabzug-din-en-14175",
+    "laborcontainer-brandschutz-feuerwiderstand",
+  ],
   "s1-s2-labor-anforderungen": [
     "bsl-2-bsl-3-container-labor",
     "laborcontainer-genehmigung-baurecht-vorschriften",

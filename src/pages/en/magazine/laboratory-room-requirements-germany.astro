@@ -1,0 +1,556 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+import LeadMagnetLastenheft from '../../../components/LeadMagnetLastenheft.astro';
+import Picture from '../../../components/Picture.astro';
+
+const pageUrl = "https://planexus.de/en/magazine/laboratory-room-requirements-germany";
+const headline = "Laboratory room requirements in Germany: what every lab must provide";
+const description = "Laboratory room requirements under TRGS 526 and DGUV 213-850: doors, escape routes, ventilation, emergency showers, gas shut-off and room sizes.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "inLanguage": "en-GB",
+  "headline": headline,
+  "description": description,
+  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/en/team/thomas-boss", "jobTitle": "Shareholder & Technical Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de/" } },
+  "datePublished": "2026-11-16",
+  "dateModified": "2026-11-16",
+  "image": "https://planexus.de/images/blog-laborraeume-anforderungen.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
+  "about": [
+    { "@type": "Thing", "name": "Laboratory" },
+    { "@type": "Thing", "name": "TRGS 526 Laboratories" },
+    { "@type": "Thing", "name": "DGUV Information 213-850 Safe Working in Laboratories" }
+  ],
+  "citation": [
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/trgs526/6.htm",
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/trgs526/7.htm",
+    "https://publikationen.dguv.de/regelwerk/dguv-informationen/828/sicheres-arbeiten-in-laboratorien",
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/asr_a2_3/5.htm",
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/asr_a1_2/6.htm",
+    "https://www.gesetze-im-internet.de/arbst_ttv_2004/anhang.html"
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Laboratory room requirements", "item": pageUrl }
+  ]
+};
+
+const faqs = [
+  {
+    q: "Which regulations apply to laboratory rooms in Germany?",
+    a: "Laboratories that work with hazardous substances fall under TRGS 526 “Laboratories” (February 2008 edition). Its text is reproduced word for word in DGUV Information 213-850 “Safe Working in Laboratories”, together with explanatory notes. The Workplaces Ordinance and its technical rules also apply, such as ASR A1.2 for room dimensions and ASR A2.3 for escape routes, plus TRGS 510 for storing hazardous substances."
+  },
+  {
+    q: "Is an emergency shower mandatory in a laboratory?",
+    a: "Yes. Under TRGS 526 No. 6.6.1, laboratories must have body showers installed at the exit, supplied with water of drinking quality where possible and delivering at least 30 litres per minute. Eye showers are also mandatory under No. 6.6.2, reachable without delay from every workstation and delivering at least 6 litres per minute per outlet. Both are checked at least monthly."
+  },
+  {
+    q: "How often do laboratory emergency showers have to be tested?",
+    a: "At least once a month. TRGS 526 No. 7.2 requires body and eye showers to be checked for proper function at least monthly by a person appointed by the employer. In practice that means activating the shower, letting the water run, checking flow and spray pattern and recording the result."
+  },
+  {
+    q: "What air change rate does a laboratory need?",
+    a: "TRGS 526 sets 25 cubic metres of air per hour per square metre of usable floor area. At a 3-metre ceiling that is roughly eight air changes per hour. A lower rate is only allowed if the risk assessment shows it is permanently sufficient. Work with flammable or volatile substances is then limited to the smallest scale, and the door must carry the sign “Caution: reduced air change!”."
+  },
+  {
+    q: "Which way must laboratory doors open?",
+    a: "In the direction of escape, out of the lab. TRGS 526 No. 6.2.3 also requires a vision panel and does not permit sliding doors for laboratories. Lab doors are to be kept closed. ASR A2.3 names laboratories explicitly as an example where doors must open in the direction of escape."
+  },
+  {
+    q: "Does a laboratory need a second exit?",
+    a: "TRGS 526 requires exits “in sufficient number”, depending on the room, the substances and the work. DGUV Information 213-850 recommends a second means of escape for every lab room and a maximum escape route of 25 metres. ASR A2.3 allows up to 35 metres in rooms with normal fire risk and 25 metres with increased fire risk and no automatic extinguishing system."
+  },
+  {
+    q: "How high must a laboratory room be?",
+    a: "ASR A1.2 sets the clear height by floor area: at least 2.50 metres up to 50 square metres, 2.75 metres above 50 square metres and 3.00 metres above 100 square metres. These values may be reduced by 0.25 metres if there are no health concerns, but never below 2.50 metres."
+  },
+  {
+    q: "Do these requirements apply to a lab container too?",
+    a: "Yes. TRGS 526 and workplace law regulate doors, escape routes, ventilation, emergency showers and fit-out, not the construction method. A lab container must meet the same points as a lab in a conventional building. In a container it pays to fix the exit, emergency shower, water supply and exhaust air in the very first layout, because these points determine how the modules are arranged."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-GB",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+
+const linkClass = "text-[#5c7300] font-medium hover:underline";
+const td = "p-3 border border-gray-200";
+const chevron = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>`;
+const furtherLinks = [
+  { href: "/en/magazine/s1-s2-lab-requirements-germany", label: "S1 and S2 lab requirements" },
+  { href: "/en/magazine/lab-container-fume-hood-din-en-14175", label: "Fume hoods and DIN EN 14175" },
+  { href: "/en/magazine/lab-container-fire-protection", label: "Fire protection in lab containers" },
+  { href: "/en/magazine/lab-container-hvac-ventilation-standards", label: "Climate control and ventilation" },
+  { href: "/en/services/planning", label: "Laboratory planning" },
+  { href: "/en/services/equipment", label: "Laboratory equipment" },
+];
+---
+
+<Layout
+  type="article"
+  title="Laboratory room requirements: TRGS 526 checklist"
+  description={description}
+  canonical="/en/magazine/laboratory-room-requirements-germany"
+  ogImage="/images/blog-laborraeume-anforderungen.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/blog-laborraeume-anforderungen.webp')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-wrap items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Safety
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              14 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Laboratory room requirements in Germany: what every lab must provide
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Doors, escape routes, ceiling height, floors, ventilation, emergency showers, gas shut-off and the storage of flammable liquids: what TRGS 526, DGUV Information 213-850 and German workplace law require of every laboratory room, each figure with its source.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              <time datetime="2026-11-16">Updated 16 November 2026</time>
+            </span>
+            <a href="/en/team/thomas-boss" class="flex items-center gap-2 hover:text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Thomas Boss, Technical Director at Planexus
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav aria-label="Breadcrumb" class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-[#5c7300] font-medium">Laboratory rooms</span>
+        </div>
+      </div>
+    </nav>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8 min-w-0">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                A new analytical lab, a chemistry lab for quality control or a teaching lab at a university: before the first bench is ordered, there is the question of what the room itself has to provide. Which way does the door open, where does the emergency shower go, how much air must the ventilation move, and how high must the ceiling be?
+              </p>
+
+              <div class="bg-slate-50 border-l-4 border-primary rounded-r-2xl p-6 my-8 not-prose">
+                <p class="text-sm uppercase tracking-wider text-[#5c7300] font-bold mb-2">In short</p>
+                <p class="text-gray-800 leading-relaxed">
+                  Under TRGS 526, a <strong class="text-slate-900">laboratory room</strong> where hazardous substances are used needs doors with vision panels that open in the direction of escape, a watertight floor, ventilation of 25 m³ of air per hour per square metre, a body shower at the exit, eye showers within reach of every workstation and a fuel gas shut-off outside the room. Emergency showers are tested monthly.
+                </p>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The requirements are spread across several sets of rules. Anyone searching for them finds an e-learning module from the statutory accident insurer split into many short pages, and authority PDFs on genetic engineering labs. This article brings the structural requirements for a laboratory room together in one place, gives the source for every figure and separates what is mandatory from what is recommended. It was written by Thomas Boss, Technical Director at Planexus, who plans and builds lab containers and modular labs, so it also shows what the rules mean for the floor plan.
+              </p>
+
+              <div class="bg-white border border-gray-200 rounded-2xl p-6 my-8 not-prose">
+                <p class="font-bold text-slate-900 mb-3">Contents</p>
+                <ol class="space-y-2 text-sm text-gray-700 list-decimal list-inside">
+                  <li><a href="#rules" class={linkClass}>Which regulations apply to laboratory rooms?</a></li>
+                  <li><a href="#dimensions" class={linkClass}>How large and how high must a lab be?</a></li>
+                  <li><a href="#doors" class={linkClass}>Which doors and escape routes does a lab need?</a></li>
+                  <li><a href="#floor" class={linkClass}>Floors and work surfaces</a></li>
+                  <li><a href="#ventilation" class={linkClass}>What air change rate does a lab need?</a></li>
+                  <li><a href="#showers" class={linkClass}>Body showers and eye showers</a></li>
+                  <li><a href="#utilities" class={linkClass}>Gas, water, power: shut-off and labelling</a></li>
+                  <li><a href="#liquids" class={linkClass}>Flammable liquids in the lab</a></li>
+                  <li><a href="#desk" class={linkClass}>Write-up areas and lone working</a></li>
+                  <li><a href="#container" class={linkClass}>What is different in a lab container</a></li>
+                  <li><a href="#dach" class={linkClass}>Switzerland and Austria</a></li>
+                  <li><a href="#checklist" class={linkClass}>Checklist</a></li>
+                </ol>
+              </div>
+
+              <h2 id="rules" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Which regulations apply to laboratory rooms?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The central rule is <strong class="text-slate-900">TRGS 526 "Laboratories"</strong>, February 2008 edition (GMBl No. 15 of 2 April 2008, p. 294), one of the German Technical Rules for Hazardous Substances. It applies to laboratories where work with hazardous substances is carried out "preparatively, analytically or for applications using chemical, physical or physico-chemical methods" (No. 1). That covers analysis, quality control, research and teaching alike. Biological labs are included as soon as ethanol, formaldehyde or other hazardous substances are used, which is almost always the case.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong class="text-slate-900">DGUV Information 213-850 "Safe Working in Laboratories"</strong>, often called the laboratory guidelines, contains the text of TRGS 526 word for word and explains it. The current version dates from May 2020. One point matters for planning: several frequently quoted figures appear only in the explanatory notes of 213-850, where they are worded as recommendations. Below, each figure is therefore given with its source.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse border border-gray-200 min-w-[560px]">
+                  <caption class="text-left text-sm text-gray-500 pb-2">The rules for laboratory rooms and what they cover</caption>
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class={`text-left ${td} text-slate-900`}>Rule</th>
+                      <th class={`text-left ${td} text-slate-900`}>Covers in the lab</th>
+                      <th class={`text-left ${td} text-slate-900`}>Type</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr class="bg-primary/5"><td class={`${td} font-semibold`}>TRGS 526</td><td class={td}>doors, escape routes, floors, ventilation, emergency showers, utilities, electrics, quantities, inspections</td><td class={td}>technical rule under the Hazardous Substances Ordinance</td></tr>
+                    <tr><td class={`${td} font-semibold`}>DGUV Information 213-850</td><td class={td}>TRGS 526 verbatim plus explanations and recommendations</td><td class={td}>guidance from the statutory accident insurance</td></tr>
+                    <tr><td class={`${td} font-semibold`}>ASR A1.2</td><td class={td}>floor area, clear height, air space, movement area</td><td class={td}>technical rule under the Workplaces Ordinance</td></tr>
+                    <tr><td class={`${td} font-semibold`}>ASR A2.3</td><td class={td}>escape routes, emergency exits, escape route length</td><td class={td}>technical rule under the Workplaces Ordinance</td></tr>
+                    <tr><td class={`${td} font-semibold`}>TRGS 510</td><td class={td}>storage of hazardous substances, safety cabinets</td><td class={td}>technical rule under the Hazardous Substances Ordinance</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Technical rules are not statutes. If you follow them, however, you can assume that the requirements of the ordinance are met. If you deviate, you must justify and document an equivalent solution. For planning, TRGS 526 is the yardstick against which authorities and the accident insurer assess a lab. If you work with genetic engineering or biological agents, GenTSV and the Biological Agents Ordinance apply on top. What they add is covered in <a href="/en/magazine/s1-s2-lab-requirements-germany" class={linkClass}>S1 and S2 lab requirements</a>.
+              </p>
+
+              <h2 id="dimensions" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">How large and how high must a laboratory room be?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                There is no separate minimum size for laboratories. The general dimensions of <strong class="text-slate-900">ASR A1.2 "Room dimensions and movement areas"</strong> apply. A workroom needs at least 8 square metres for one workstation and 6 square metres for each additional one (No. 5). Each workstation must keep a free movement area of at least 1.50 square metres, at least 1.00 metre wide and deep (No. 5.1).
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse border border-gray-200 min-w-[480px]">
+                  <caption class="text-left text-sm text-gray-500 pb-2">Clear room height under ASR A1.2 No. 6</caption>
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class={`text-left ${td} text-slate-900`}>Floor area of the room</th>
+                      <th class={`text-left ${td} text-slate-900`}>Minimum clear height</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr><td class={td}>up to 50 m²</td><td class={td}>2.50 m</td></tr>
+                    <tr><td class={td}>more than 50 m²</td><td class={td}>2.75 m</td></tr>
+                    <tr><td class={td}>more than 100 m²</td><td class={td}>3.00 m</td></tr>
+                    <tr><td class={td}>more than 2,000 m²</td><td class={td}>3.25 m</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The values above 50 square metres may be reduced by 0.25 metres if there are no health concerns, but never below 2.50 metres. On top of that there is a minimum air space per person of 12, 15 or 18 cubic metres depending on how strenuous the work is (No. 7). In labs, height is rarely the problem across the whole room. It gets tight above the fume hoods, where exhaust ducts, cable trays and lights compete for the same space. Plan the height from the duct, not from the ceiling.
+              </p>
+
+              <h2 id="doors" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Which doors and escape routes does a laboratory need?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The door rule in TRGS 526 is short and strict: laboratory doors must open in the direction of escape and have a vision panel, and sliding doors are not permitted for laboratories (No. 6.2.3). Lab doors are to be kept closed. ASR A2.3 confirms this from the other side: where the hazard is increased, manually operated doors must open in the direction of escape, and its example is explicitly the handling of particularly hazardous substances “in chemical, physical or medical laboratories” (No. 7 para. 6).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                On escape routes, TRGS 526 says that escape routes and exits must be provided “in sufficient number”, depending on the room, the substances and the work (No. 6.2.2). An escape route may only lead through a neighbouring room if that room can also be left safely and without help in an emergency. Specific lengths are in ASR A2.3 and in the notes of 213-850.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse border border-gray-200 min-w-[560px]">
+                  <caption class="text-left text-sm text-gray-500 pb-2">Escape route lengths and second exit: which figure comes from where</caption>
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class={`text-left ${td} text-slate-900`}>Case</th>
+                      <th class={`text-left ${td} text-slate-900`}>Maximum main escape route</th>
+                      <th class={`text-left ${td} text-slate-900`}>Source</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr><td class={td}>room with no or normal fire risk</td><td class={td}>35 m</td><td class={td}>ASR A2.3 No. 5 para. 2</td></tr>
+                    <tr><td class={td}>increased fire risk with automatic extinguishing system</td><td class={td}>35 m</td><td class={td}>ASR A2.3 No. 5 para. 2</td></tr>
+                    <tr><td class={td}>increased fire risk without extinguishing system</td><td class={td}>25 m</td><td class={td}>ASR A2.3 No. 5 para. 2</td></tr>
+                    <tr><td class={td}>hazard from explosive substances</td><td class={td}>10 m</td><td class={td}>ASR A2.3 No. 5 para. 2</td></tr>
+                    <tr class="bg-primary/5"><td class={td}>laboratory room, recommendation of the laboratory guidelines</td><td class={td}>25 m, second means of escape recommended</td><td class={td}>DGUV-I 213-850 No. 6.2.2</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Under ASR A2.3 the actual walking distance may be at most 1.5 times the measured escape route length. A second escape route is required under ASR A2.3 No. 6, among other cases, where hazardous substances are stored or used near the main escape route. In a lab that is the norm. 213-850 therefore recommends a second means of escape for every lab room, and in labs with high fire risk and in teaching labs two exits should be reachable from every point. My advice from planning practice: put the second door into the very first draft. Added later, it almost always costs a bench.
+              </p>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">How wide must the aisle between lab benches be?</h3>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                TRGS 526 only requires operating and circulation areas to be “adequately sized” (No. 6.2.1). The figure comes from 213-850: if two to four people work between the work surfaces, the minimum distance is 1.45 metres. More space is needed if the aisle is also a circulation route, with increased fire or explosion risk, with work surfaces longer than 6 metres, with more than four people or where two fume hoods face each other. Pure circulation routes without operating areas must be at least 0.90 metres wide. Where work surfaces face each other, TRGS 526 requires a splash guard up to a height of at least 175 centimetres (No. 6.4.1).
+              </p>
+
+              <figure class="my-10 not-prose">
+                <Picture
+                  src="/attached_assets/Labor_2_1769690564538.jpg"
+                  alt="Empty laboratory room in a multi-storey lab container: two rows of lab benches with service spines, aisle between them, supply air diffusers and cable trays on the ceiling, windows at the end wall"
+                  width={1600}
+                  height={1200}
+                  loading="lazy"
+                  class="w-full h-auto rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Laboratory room from a Planexus project before move-in: benches with service spines, supply air through ceiling diffusers, services run openly and within reach.
+                </figcaption>
+              </figure>
+
+              <h2 id="floor" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">What are the requirements for floors and work surfaces?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Floors or their coverings, and any service penetrations through them, must be watertight (TRGS 526 No. 6.2.4). The sentence is often reduced to the floor covering, yet it explicitly covers every pipe passing through the floor. 213-850 considers wood and parquet generally unsuitable. The Workplaces Ordinance adds that floors must be easy to clean and slip-resistant (Annex No. 1.5). ASR A1.5 assigns “laboratory rooms” in healthcare to slip-resistance class R 9. It has no separate line for chemistry labs. Where a lot of water or oil is used, the risk assessment may call for a higher class.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For lab benches and fume hoods, TRGS 526 requires work surfaces that withstand the loads, with a liquid-tight surface and a raised edge (No. 6.4.1). The raised edge keeps spills on the worktop. Which surface suits your chemicals belongs in the sampling stage. A complete fit-out list is in the <a href="/en/magazine/lab-container-equipment-checklist" class={linkClass}>lab equipment checklist</a>.
+              </p>
+
+              <h2 id="ventilation" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">What air change rate does a laboratory need?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Laboratories must be equipped with adequate technical ventilation that is effective at all times (TRGS 526 No. 6.2.5). The benchmark is an air change of <strong class="text-slate-900">25 m³ per hour per square metre of usable floor area</strong>. At a 3-metre ceiling, 213-850 puts this at roughly eight air changes per hour. Supply air must be heated where necessary and introduced without draughts. Exhaust air may be routed wholly or partly through the fume hoods, provided they keep their full performance.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Less air is possible if the risk assessment shows it is permanently sufficient for the intended work. The price is set out in the same clause: work with flammable liquids or volatile, dusty or aerosol-forming hazardous substances is then only possible on the smallest scale, the restriction must be documented and passed on to every later person in charge, and the entrance must carry the sign “Caution: reduced air change!”. Exhaust air with hazardous concentrations must not be returned to work areas. For designing the system, 213-850 refers to VDI 2051 and DIN 1946-7.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In practice, the fume hoods often determine the air volume more than the floor area does. How much air a hood needs and why variable control saves energy is covered in <a href="/en/magazine/lab-container-fume-hood-din-en-14175" class={linkClass}>fume hoods and DIN EN 14175</a>. Cooling, equipment heat load and supply air are covered in <a href="/en/magazine/lab-container-hvac-ventilation-standards" class={linkClass}>climate control and ventilation</a>.
+              </p>
+
+              <h2 id="showers" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Is an emergency shower mandatory in a laboratory?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Yes, two kinds. TRGS 526 requires <strong class="text-slate-900">body showers at the exit</strong> and <strong class="text-slate-900">eye showers</strong> that can be reached without delay from every workstation (No. 6.6). The product standards are EN 15154-1 for body showers and EN 15154-2 for eye showers.
+              </p>
+
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse border border-gray-200 min-w-[600px]">
+                  <caption class="text-left text-sm text-gray-500 pb-2">Body shower and eye shower under TRGS 526 and DGUV-I 213-850</caption>
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class={`text-left ${td} text-slate-900`}>Item</th>
+                      <th class={`text-left ${td} text-slate-900`}>Body shower</th>
+                      <th class={`text-left ${td} text-slate-900`}>Eye shower</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr><td class={`${td} font-semibold`}>Mandatory</td><td class={td}>yes, TRGS 526 No. 6.6.1</td><td class={td}>yes, TRGS 526 No. 6.6.2</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Location</td><td class={td}>at the exit</td><td class={td}>reachable without delay from every workstation, ideally by the body shower or the sink</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Water</td><td class={td}>drinking quality where possible</td><td class={td}>drinking quality</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Flow</td><td class={td}>at least 30 l per minute</td><td class={td}>at least 6 l per minute per outlet</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Valve</td><td class={td}>does not close by itself; 213-850: no pull chain</td><td class={td}>does not close by itself; hand-held units with grip valve permitted</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Signage</td><td class={td}>safety sign “emergency shower”</td><td class={td}>safety sign “eye wash”, access kept clear</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Reach</td><td class={td}>213-850: no more than 5 seconds</td><td class={td}>213-850: no more than 5 seconds</td></tr>
+                    <tr class="bg-primary/5"><td class={`${td} font-semibold`}>Testing</td><td class={td}>at least monthly, TRGS 526 No. 7.2</td><td class={td}>at least monthly, TRGS 526 No. 7.2</td></tr>
+                    <tr><td class={`${td} font-semibold`}>Standard</td><td class={td}>EN 15154-1</td><td class={td}>EN 15154-2</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Eye wash bottles with sterile liquid are only permitted where no running drinking water is available. In a permanent lab, the bottle does not replace the eye shower. The monthly test is carried out by a person appointed by the employer, who activates the shower, checks flow and spray pattern and records the result. It also flushes stagnant water out of the pipe.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Two planning points are often missed. First, the body shower at the exit needs a space where nobody puts a door leaf or a cabinet in front of it. Second, 30 litres per minute have to go somewhere. Whether a floor drain is acceptable depends on the use: in S2 areas, floor drains are not provided for. Clarify water pressure, pipe size and the handling of shower water before tendering.
+              </p>
+
+              <h2 id="utilities" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">How are gas, water and power secured in a laboratory?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Liquids and gases reach benches and fume hoods through permanently installed pipes that have been tested for tightness. These pipes must be labelled clearly and permanently (TRGS 526 No. 6.5.1). For the labelling, 213-850 refers to DIN 2403 and EN 13792.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Fuel gas needs two shut-offs. Every fuel gas line to one or more outlets must be able to be shut off separately. In addition there must be a further shut-off whose controls are located outside the laboratory, close to it, easy to reach, clearly labelled and accessible at all times (No. 6.5.2). Gas taps must be secured against accidental opening. Anyone leaving the room in a fire should be able to turn off the gas at the door without going back in.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For electrics, TRGS 526 requires separate circuits for lighting, ventilation and other supplies. Benches and fume hoods should be isolatable individually or in groups (No. 6.7.1). 213-850 also recommends a main switch in an easily accessible place, for example at the exit, with stirrers and other safety-relevant equipment kept running. It further recommends residual current devices. Both are recommendations of the laboratory guidelines. Whether an RCD is required for electrical reasons is decided by the electrical design under the VDE standards.
+              </p>
+
+              <h2 id="liquids" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">How much flammable liquid may be kept in a lab?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                TRGS 526 limits container sizes. Liquids with a flash point below 55 °C may only be kept at the workstation in containers of up to 1 litre. In a protected place, for example a safety cabinet to EN 14470-1, containers of up to 5 litres are permitted if they are not break-proof, and up to 10 litres if they are (No. 4.15.1).
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For storage in the workroom, TRGS 510 refers to safety cabinets to EN 14470-1 with a fire resistance of at least 90 minutes (Annex 1). Cabinets with a shorter fire resistance are only permitted with restrictions, such as one per fire compartment or per 100 square metres, or with a fire alarm and an extinguishing system. For the floor plan this means the cabinet needs a fixed place with an exhaust connection, and that place is not on the escape route. More on fire resistance and hazardous substance storage is in <a href="/en/magazine/lab-container-fire-protection" class={linkClass}>fire protection in lab containers</a>.
+              </p>
+
+              <h2 id="desk" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Can there be a desk in the laboratory?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Yes, as a so-called laboratory write-up zone. 213-850 describes it in No. 6.2.1.1: separated from the lab by a large, transparent, shatter-proof glass front with a glass door, ventilated without draughts and with airflow from the write-up zone into the lab. The zone counts as lab floor area and is not an office workstation. For planners this is a good solution, because samples and records stay in sight while nobody types at the bench. TRGS 526 itself does not mention these zones.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                On lone working, TRGS 526 is clear: if lone working cannot be adequately safeguarded, it must not take place (No. 4.3.3). For the building this means that visual contact, glass doors and, where needed, a lone worker alarm should be considered early if the lab will also be used in the evening or at weekends.
+              </p>
+
+              <h2 id="container" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">What is different in a lab container?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Legally, nothing. TRGS 526 and workplace law govern what a laboratory room must provide, not what it is built from. A <a href="/en/lab-containers" class={linkClass}>lab container</a> meets the same requirements as a lab in a conventional building. In modular construction, however, a few points already decide how the modules are arranged and therefore belong right at the start:
+              </p>
+
+              <ol class="space-y-4 text-gray-700 mb-8 not-prose">
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">1.</span> <span><strong class="text-slate-900">Exits and escape route:</strong> where are the main and the second door, and do both open outwards? In a long module, a second door at the opposite end wall is usually the shortest way to the recommended second means of escape.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">2.</span> <span><strong class="text-slate-900">Body shower at the exit:</strong> it needs a water connection with sufficient flow exactly where the door is. For a free-standing container, the supply pipe from the site must be protected against frost.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">3.</span> <span><strong class="text-slate-900">Exhaust air:</strong> fume hood and room exhaust are taken out above the roof. The position of the hoods therefore sets the position of the roof penetrations and the ventilation units.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">4.</span> <span><strong class="text-slate-900">Gas shut-off outside:</strong> the second fuel gas shut-off belongs outside the lab, close to the door. In a container that is easy if it is on the drawing and awkward if it is not.</span></li>
+                <li class="flex gap-3"><span class="text-[#5c7300] font-bold shrink-0">5.</span> <span><strong class="text-slate-900">Height and area:</strong> in module clusters above 50 square metres without partition walls, the required clear height increases. Check the room height against ASR A1.2 before the layout is fixed.</span></li>
+              </ol>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In modular construction, floors, penetrations, service spines and pipe labelling are installed at the factory and checked before delivery. What remains on site is mainly the connections. Planexus builds lab containers at its plant in Haigerloch, and an individually planned container is typically ready in <strong class="text-slate-900">8 to 14 weeks</strong>. How the foundation and connections are prepared on site is covered in <a href="/en/magazine/lab-container-installation-foundation-statics" class={linkClass}>installation, foundation slab and structural design</a>, building law in the guide to <a href="/en/magazine/lab-container-permits-building-law" class={linkClass}>lab container permits</a>.
+              </p>
+
+              <div class="bg-slate-900 text-white rounded-2xl p-6 md:p-8 my-10 not-prose">
+                <p class="text-xl font-heading font-bold text-primary mb-3">Review your lab layout with us</p>
+                <p class="text-gray-300 mb-5 leading-relaxed">Send us a sketch or your equipment list. In a free initial consultation we go through exits, emergency showers, fume hoods, ventilation and gas supply with you before anything is built.</p>
+                <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">Request a lab room consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                If you need the lab for a limited period, a <a href="/en/rent-lab-containers" class={linkClass}>rental lab container</a> is the right solution; for a permanent extension, <a href="/en/buy-lab-containers" class={linkClass}>buying</a> makes sense. A compact unit with a fully fitted lab room is the <a href="/en/lab-containers/labtogo" class={linkClass}>LABtoGO</a>. We handle design and fit-out through our <a href="/en/services/planning" class={linkClass}>laboratory planning</a> and <a href="/en/services/equipment" class={linkClass}>laboratory equipment</a> services. If you have to tender a lab, the structure is set out in <a href="/en/magazine/lab-container-tender-specifications" class={linkClass}>tendering a lab container: specification</a>. Solutions by sector are on our pages for <a href="/en/industries/pharma-biotech" class={linkClass}>pharma and biotech</a>, <a href="/en/industries/research-universities" class={linkClass}>research and universities</a> and <a href="/en/industries/industry-materials-testing" class={linkClass}>industry and materials testing</a>.
+              </p>
+
+              <h2 id="dach" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Which rules apply in Switzerland and Austria?</h2>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In <strong class="text-slate-900">Switzerland</strong>, the EKAS guideline “Labor” for chemical laboratories (Suva order number 1871.d, July 2022 edition) sets out the requirements for lab rooms, facilities and organisation. In <strong class="text-slate-900">Austria</strong>, the Employee Protection Act (ASchG) and the Workplaces Ordinance (AStV) apply. Lab-specific details are best clarified early with the responsible labour inspectorate. Regional information for <a href="/en/lab-containers-zurich" class={linkClass}>Zurich</a>, <a href="/en/lab-containers-basel" class={linkClass}>Basel</a> and <a href="/en/lab-containers-vienna" class={linkClass}>Vienna</a> is on our location pages.
+              </p>
+
+              <div id="checklist" class="bg-slate-50 border border-gray-100 rounded-2xl p-6 md:p-8 my-8 not-prose">
+                <h2 class="text-xl font-heading font-bold text-slate-900 mb-4">Checklist: planning a laboratory room</h2>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Record activities and substances, start the risk assessment</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Check floor area and clear height against ASR A1.2</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Doors open in the direction of escape, with vision panel, no sliding doors</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Escape route length under ASR A2.3, plan a second means of escape</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Aisle between work surfaces at least 1.45 m, splash guard up to 175 cm</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Floor and penetrations watertight, slip-resistant</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Ventilation at 25 m³/(h·m²), design fume hoods and supply air together</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Body shower at the exit (30 l/min), eye shower within reach (6 l/min)</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Fuel gas with two shut-offs, the second outside by the door</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Pipes permanently labelled, separate electrical circuits</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Type 90 safety cabinet with exhaust, away from the escape route</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Organise monthly shower tests and annual fume hood tests</span></li>
+                </ul>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-5 items-start bg-white border border-gray-200 rounded-2xl p-6 my-10 not-prose">
+                <div class="shrink-0 w-14 h-14 rounded-full bg-slate-900 text-primary flex items-center justify-center font-heading font-bold text-lg" aria-hidden="true">TB</div>
+                <div>
+                  <p class="font-bold text-slate-900">About the author</p>
+                  <p class="text-gray-600 text-sm leading-relaxed mt-1">
+                    <a href="/en/team/thomas-boss" class={linkClass}>Thomas Boss</a> is a shareholder and Technical Director of Planexus GmbH (office in Albstadt, production in Haigerloch). He is responsible for planning, building services and the turnkey delivery of lab containers for pharma, biotech, research, hospitals and crisis teams in Germany, Switzerland and Austria.
+                  </p>
+                </div>
+              </div>
+
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Sources: TRGS 526 “Laboratories”, February 2008 edition (GMBl No. 15 of 2 April 2008, p. 294), Nos. 1, 4.3.3, 4.15.1, 6.2.1 to 6.2.5, 6.4.1, 6.5.1, 6.5.2, 6.6, 6.7.1 and 7.2; DGUV Information 213-850 “Safe Working in Laboratories”, May 2020 version, Nos. 6.2.1, 6.2.1.1, 6.2.2, 6.2.5.1, 6.6 and 6.7; TRGS 510 “Storage of hazardous substances in non-stationary containers”, December 2020 edition, Annex 1; ASR A1.2 Nos. 5 to 7; ASR A1.5 Annex 2; ASR A2.3, 2022 edition, Nos. 5 to 7; Workplaces Ordinance Annex No. 1.5 (gesetze-im-internet.de); EN 15154-1 and -2; EKAS guideline “Labor”, Suva 1871.d, July 2022. Texts of the technical rules read in the BGN regulations database (vorschriften.bgn-branchenwissen.de). Quotations from German rules are our translations. This article is not legal advice and does not replace a risk assessment. As of 16 November 2026.
+              </p>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <p class="font-bold text-slate-900 mb-4">Lab room at a glance</p>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Door opens towards escape, vision panel, no sliding door</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Floor and penetrations watertight</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Ventilation: 25 m³/(h·m²) under TRGS 526</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Body shower 30 l/min, eye shower 6 l/min</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Test emergency showers monthly</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Fuel gas shut-off outside by the door</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <p class="font-bold text-slate-900 mb-4">Further reading</p>
+                <ul class="space-y-3">
+                  {furtherLinks.map((l) => (
+                    <li><a href={l.href} class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><Fragment set:html={chevron} />{l.label}</a></li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <p class="font-bold mb-3">Planning a new lab?</p>
+                <p class="text-gray-400 text-sm mb-4">We review layout, exits, emergency showers, fume hoods and ventilation with you before anything is built.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Request a consultation</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <LeadMagnetLastenheft locale="en" />
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions about laboratory rooms</h2>
+          <div class="space-y-4">
+            {faqs.map((f, i) => (
+              <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open={i === 0}>
+                <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">{f.q}
+                  <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">{f.a}</div>
+              </details>
+            ))}
+          </div>
+          <div class="mt-10 text-center">
+            <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Request a lab room consultation
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedArticles slug="anforderungen-laborraeume" locale="en" />
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/en/magazine" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to the magazine
+      </a>
+    </div>
+  </div>
+</Layout>
