@@ -32,7 +32,7 @@ Prüfskript: liest `dist/client/<route>/index.html` und zählt bzw. vergleicht H
 | 24 | Sprachumschalter | DE-Seite verlinkt EN-Fassung, EN-Seite verlinkt DE-Fassung (Browser, Dev-Server) ✓ |
 | 25 | Build ohne Fehler, beide index.html | Exit 0, beide Dateien vorhanden ✓ |
 | 26 | Handy 375 px ohne waagrechtes Scrollen | Browser 375×812: scrollWidth 375 = Breite, 0 Elemente außerhalb (Tabellen in eigenem Scroll-Kasten), keine Konsolenfehler ✓ |
-| 27 | Live | offen: wartet auf Joachims Ja |
+| 27 | Live | Commit fdc86f3 auf main, Server-Deploy nach CLAUDE.md (Pull, Build, `pm2 restart planexus` → online). Live 16.11.2026: beide Adressen 200, Title/Canonical richtig, je 8 FAQ im Schema, beide in sitemap-0.xml, jeweils erster Eintrag in /magazin und /en/magazine, Artikelbilder 200, Ausstattung-Checkliste ohne „max. 10 m“, S2-Artikel verlinkt den neuen Artikel ✓ |
 
 ## Nebenbefund, mit erledigt
 Der bestehende Artikel „Laborcontainer Ausstattung – Checkliste“ (DE/EN) nannte „Notdusche max. 10 m vom Arbeitsplatz“, „Augendusche an jedem Laborspülbecken“, einen „Not-Aus-Schalter“ als TRGS-526-Pflicht und „ehemals GUV-I 8553“. Ursache: frühere Texte ohne Abgleich mit dem Wortlaut. Korrigiert auf TRGS 526 Nr. 6.6.1/6.6.2/6.5.2 (Notdusche am Ausgang 30 l/min, Augendusche 6 l/min, Gasabsperrung außen, Hauptschalter als Empfehlung der 213-850) und „früher BGI/GUV-I 850-0“; Kastenüberschrift neutral „Sicherheitseinrichtungen im Laborcontainer“.
