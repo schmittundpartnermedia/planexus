@@ -179,17 +179,17 @@ ssh root@82.165.27.244 'cd /var/www/app && git checkout -- .astro && git fetch o
 | Strukturierte Daten (JSON-LD) | `schema` (früher `schema-markup`) | Keine erfundenen Bewertungen oder Preise. |
 | Texte | `marketing-psychology`, `cro` (früher `page-cro`), `lead-magnets` | Textregeln dieser Seite gelten: Ansprache wie auf der bestehenden Seite, keine Preise, keine erfundenen Referenzen (auch nicht im JSON-LD). Keine erfundenen Fakten. |
 | Bewegung | `animation-performance` (GSAP-Skills nur, falls GSAP eingebunden wird) | Die Seite nutzt **framer-motion** (Navbar, AnimatedGlobe) und CSS-Animationen; GSAP steht in package.json, ist aber nirgends eingebunden (geprüft 20.10.2026). Leistung nach animation-performance. |
-| Design bauen (Webseite) | `hallmark` | Neue Seiten werden mit Hallmark gebaut. Bestehende Seiten nur auf ausdrückliche Anweisung `/hallmark redesign <Pfad>`. |
+| Design bauen (Webseite) | `frontend-design` | Neue Seiten werden mit `frontend-design` gebaut. Bestehende Seiten nur auf ausdrückliche Anweisung umgestalten. |
 | Stil-Pflege | `design-taste-frontend`, `brandkit` | Nur innerhalb der bestehenden Vorgaben. |
 | Bild → Code | `image-to-code` | Nur Vorlagen von Joachim. |
-| Design prüfen/Feinschliff | `hallmark audit` | Nur auf ausdrückliche Anweisung `/hallmark audit <Pfad>`. Nur Bericht. |
+| Design prüfen/Feinschliff | `web-design-guidelines` | Nur auf ausdrückliche Anweisung. Nur Bericht. |
 | Prüfung | `web-design-guidelines`, `landing-page-conversion-audit` | Nur Bericht, gibt nicht den Stil vor. |
 | Vollständigkeit | `full-output-enforcement` | Keine Platzhalter, keine halben Dateien. |
 | Design auslesen | `extract-design-system` | Nur öffentliche Seiten. |
 
 **Nicht in diesem Projekt:** withastro/astro-Skills (astro-developer usw. – die sind für die Entwicklung von Astro selbst), keine Next-Skills. **Kein Skill stellt live:** Deploy nur durch Joachim über den SSH-Einzeiler; `script/deploy.sh` nie.
 
-**Hallmark (03.11.2026):** Hallmark fasst bestehende Seiten nur an, wenn ausdrücklich `/hallmark redesign <Pfad>` oder `/hallmark audit <Pfad>` angewiesen ist. Neue Seiten werden mit Hallmark gebaut. Es wird nichts erfunden – fehlende Fotos, Zahlen oder Texte werden im STAND als fehlend gemeldet, nicht ausgedacht. Hallmark liegt global (`~/.claude/skills/hallmark`). Die KI-Bilderzeugung von Hallmark (`scripts/imagegen.mjs`, Together AI) kostet Geld und läuft nur mit Joachims ausdrücklichem Ja.
+**Design (16.11.2026, Entscheidung Joachim):** Hallmark ist entfernt. Neue Seiten gestaltet `frontend-design`, geprüft wird mit `web-design-guidelines`. Bestehende Seiten werden nur auf ausdrückliche Anweisung umgestaltet. Es wird nichts erfunden – fehlende Fotos, Zahlen oder Texte werden im STAND als fehlend gemeldet, nicht ausgedacht.
 
 Hinweis: In der Marketing-Sammlung heißen `schema-markup` jetzt `schema` und `page-cro` jetzt `cro`.
 
@@ -210,6 +210,6 @@ Neue Zeilen der Rollenkarte (Marketing-Skills aus coreyhaines31/marketingskills)
 
 Immer dabei: `high-end-website` (Maßstab), `full-output-enforcement`, `web-design-guidelines` (Korrektheit).
 
-**Rangfolge (03.11.2026, Entscheidung Joachim):** Beim Design entscheidet `hallmark`: Look, Farben, Schriften, Seitenaufbau, Bewegung und Bildauswahl. Hallmark zeigt Theme und Aufbau vor dem Bau im Picks-Block; das ist die Stelle für Joachims Freigabe des Looks. `high-end-website` gilt weiter für Texte, Fakten, Kostenregeln, die mobile Aktionsleiste „Anrufen | Anfrage“ und die Pflichtprüfung vor „fertig“ (Lighthouse, Überlauf, axe, Formular, unabhängige Prüfung). Bilder: Kundenfotos zuerst, sonst Hallmarks Bildbibliothek (Wikimedia, mit Nachweis); KI-Bilder nur nach Joachims Ja mit Betrag.
+**Rangfolge (16.11.2026, Entscheidung Joachim):** Beim Design entscheidet `frontend-design`: Look, Farben, Schriften, Seitenaufbau und Bewegung. Theme und Aufbau werden vor dem Bau gezeigt; das ist die Stelle für Joachims Freigabe des Looks. `high-end-website` gilt weiter für Texte, Fakten, Kostenregeln, die mobile Aktionsleiste „Anrufen | Anfrage“ und die Pflichtprüfung vor „fertig“ (Lighthouse, Überlauf, axe, Formular, unabhängige Prüfung). Bilder: Kundenfotos zuerst, sonst freie Bilder mit Nachweis (z. B. Wikimedia); KI-Bilder nur nach Joachims Ja mit Betrag.
 
 **Pflichtseiten (03.11.2026):** Impressum und Datenschutzerklärung gehören bei jeder neuen Seite in den Plan.
