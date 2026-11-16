@@ -24,7 +24,7 @@ export const magazinEn: Record<string, MagazinLocaleFields> = {
     slug: "laboratory-room-requirements-germany",
     title: "Laboratory room requirements in Germany: what every lab must provide",
     excerpt: "Doors, escape routes, ventilation, emergency showers, gas shut-off and room height: what TRGS 526 and DGUV 213-850 require of every laboratory room, with sources.",
-    date: "16 November 2026",
+    date: "13 November 2026",
     category: "Safety",
   },
   "s1-s2-labor-anforderungen": {
@@ -227,7 +227,7 @@ export const magazinPosts: MagazinPost[] = [
     slug: "anforderungen-laborraeume",
     title: "Anforderungen an Laborräume: Was ein Labor baulich braucht",
     excerpt: "Türen, Fluchtwege, Lüftung, Notdusche, Gasabsperrung und Raumhöhe: was TRGS 526 und DGUV 213-850 für jeden Laborraum verlangen, mit Fundstelle.",
-    date: "16. November 2026",
+    date: "13. November 2026",
     author: "Thomas Boss",
     category: "Sicherheit",
     image: "/images/blog-laborraeume-anforderungen.jpg",
