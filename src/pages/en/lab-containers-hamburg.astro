@@ -19,13 +19,7 @@ const serviceSchema = {
   "@type": "Service",
   "name": "Lab containers Hamburg – LABtoGO, BSL-2/3, GMP cleanroom and port climate",
   "description": "Turnkey lab containers for Hamburg and the metropolitan region. LABtoGO with 2,750 mm internal height, BSL-2/3, GMP cleanroom, C5-M port-climate configuration and VC-D vibration isolation for the Bahrenfeld research campus. Delivery via the A81/A8/A5/A7 from the Haigerloch works – 730 km. Awarded at the German CEO Excellence Awards 2026.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Planexus GmbH",
-    "image": "https://planexus.de/android-chrome-512x512.png",
-    "url": "https://planexus.de",
-    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
-  },
+  "provider": { "@id": "https://planexus.de/#organization", "@type": "Organization", "name": "Planexus GmbH" },
   "serviceType": [
     "Lab containers Hamburg",
     "Container laboratory Hamburg",
@@ -48,43 +42,6 @@ const serviceSchema = {
   "url": "https://planexus.de/en/lab-containers-hamburg"
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://planexus.de/en/lab-containers-hamburg#business",
-  "name": "Planexus GmbH – Lab containers Hamburg",
-  "description": "Your specialist for lab containers and modular laboratory solutions in Hamburg and the metropolitan region. LABtoGO, BSL-2/3, GMP cleanroom, C5-M port climate. Haigerloch works – 730 km delivery via the A81/A8/A5/A7.",
-  "url": "https://planexus.de/en/lab-containers-hamburg",
-  "telephone": "+49 7435 7519 700",
-  "email": "info@planexus.de",
-  "image": "https://planexus.de/images/labtogo-industrie.webp",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Am Steinbach 8",
-    "addressLocality": "Albstadt-Laufen",
-    "postalCode": "72459",
-    "addressRegion": "Baden-Württemberg",
-    "addressCountry": "DE"
-  }, "location": [{ "@type": "Place", "name": "Planexus GmbH – office (registered seat)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Haigerloch works", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-  "areaServed": {
-    "@type": "City",
-    "name": "Hamburg",
-    "containedInPlace": [
-      { "@type": "AdministrativeArea", "name": "Hamburg-Mitte" },
-      { "@type": "AdministrativeArea", "name": "HafenCity" },
-      { "@type": "AdministrativeArea", "name": "Eppendorf" },
-      { "@type": "AdministrativeArea", "name": "Bahrenfeld" },
-      { "@type": "AdministrativeArea", "name": "Eimsbüttel" },
-      { "@type": "AdministrativeArea", "name": "Hammerbrook" },
-      { "@type": "AdministrativeArea", "name": "Altona" },
-      { "@type": "AdministrativeArea", "name": "Harburg" },
-      { "@type": "AdministrativeArea", "name": "Wilhelmsburg" },
-      { "@type": "AdministrativeArea", "name": "Finkenwerder" }
-    ]
-  },
-  "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" },
-  "foundingDate": "2025-04-01"
-};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -167,7 +124,6 @@ const faqSchema = {
   schema={serviceSchema}
   ogImage="/attached_assets/Laborcontainer_001_1769688326918.jpg"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
 

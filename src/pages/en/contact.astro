@@ -5,8 +5,8 @@ import ContactForm from '../../components/ContactForm';
 ---
 
 <Layout
-  title="Contact – laboratory container enquiry"
-  description="Contact Planexus about your laboratory-container project. Consulting, quotations and project start. We look forward to your enquiry."
+  title="Lab container enquiry – contact"
+  description="Enquire about a lab container: we usually reply within 48 hours (working days), free of charge and without obligation. Phone +49 7435 7519 700."
   canonical="/en/contact"
   ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
 >
@@ -23,7 +23,7 @@ import ContactForm from '../../components/ContactForm';
       <div class="absolute inset-0 bg-[url('/images/backgrounds/kontakt-bg.webp')] bg-cover bg-center opacity-10"></div>
       <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
       <div class="container mx-auto px-4 text-center relative z-10">
-        <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">Get in touch</h1>
+        <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">Enquire about a lab container</h1>
         <p class="text-xl text-gray-300 max-w-2xl mx-auto">
           Start your laboratory project with a strong partner — from <a href="/en/services/consulting" class="text-primary hover:underline">consulting</a> through to turnkey handover.
         </p>
@@ -109,7 +109,36 @@ import ContactForm from '../../components/ContactForm';
             </div>
           </div>
 
-          <div class="order-1 lg:order-2"><ContactForm client:load locale="en" /></div>
+          <div class="order-1 lg:order-2 space-y-8">
+            <ContactForm client:load locale="en" />
+            <div class="bg-slate-50 border border-gray-100 rounded-xl p-6" data-contact-steps>
+              <h2 class="text-xl font-bold text-slate-900 mb-5">What happens after your enquiry</h2>
+              <ol class="space-y-4">
+                <li class="flex gap-4">
+                  <span class="w-8 h-8 shrink-0 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center" aria-hidden="true">1</span>
+                  <div><p class="font-bold text-slate-900">Reply</p><p class="text-gray-600 text-sm leading-relaxed">We usually get back to you within 48 hours (working days).</p></div>
+                </li>
+                <li class="flex gap-4">
+                  <span class="w-8 h-8 shrink-0 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center" aria-hidden="true">2</span>
+                  <div><p class="font-bold text-slate-900">Clarify your needs</p><p class="text-gray-600 text-sm leading-relaxed">Together we clarify use, biosafety or cleanroom level, site and timeframe.</p></div>
+                </li>
+                <li class="flex gap-4">
+                  <span class="w-8 h-8 shrink-0 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center" aria-hidden="true">3</span>
+                  <div><p class="font-bold text-slate-900">First assessment</p><p class="text-gray-600 text-sm leading-relaxed">You receive a first written indication – free of charge and without obligation.</p></div>
+                </li>
+              </ol>
+            </div>
+            <div class="flex items-center gap-5 border border-gray-200 rounded-xl p-6" data-contact-person>
+              <img src="/team/sven-biewald-192.webp" alt="Sven Biewald, Managing Director of Planexus GmbH" width="96" height="96" loading="lazy" decoding="async" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shrink-0" />
+              <div>
+                <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-1">Your contact</h2>
+                <p class="font-bold text-slate-900 text-lg">Sven Biewald</p>
+                <p class="text-gray-600 text-sm mb-2">Managing Director, Planexus GmbH</p>
+                <a href="tel:+4974357519700" class="block font-semibold text-slate-900 underline decoration-primary underline-offset-4 hover:text-[#5c7300]">+49 7435 7519 700</a>
+                <a href="/en/team/sven-biewald" class="text-sm text-[#5c7300] underline underline-offset-4">View profile</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -160,13 +160,6 @@ export const magazinEn: Record<string, MagazinLocaleFields> = {
     date: "18 February 2026",
     category: "Guide",
   },
-  "planexus-analytica-2026-muenchen": {
-    slug: "planexus-analytica-2026-munich",
-    title: "Laboratories of the future: Planexus at Analytica 2026 in Munich",
-    excerpt: "Modular laboratories, Smart Lab integration and sustainable solutions at analytica 2026.",
-    date: "11 February 2026",
-    category: "Trade fairs & events",
-  },
   "laborcontainer-mieten-oder-kaufen": {
     slug: "lab-containers-rent-or-buy",
     title: "Rent vs buy a lab container: a decision guide for research leads",
@@ -423,16 +416,6 @@ export const magazinPosts: MagazinPost[] = [
     image: "/images/blog-laborcontainer-projektablauf.jpg",
   },
   {
-    id: 1,
-    slug: "planexus-analytica-2026-muenchen",
-    title: "Labore der Zukunft: Planexus auf der Analytica 2026 in München",
-    excerpt: "Modulare Labore, Smart Lab Integration und nachhaltige Lösungen auf der analytica 2026.",
-    date: "11. Februar 2026",
-    author: "Sven Biewald",
-    category: "Messe & Events",
-    image: "/attached_assets/planexus-messe-analytica-2026-muenchen_1770786130636.png",
-  },
-  {
     id: 2,
     slug: "laborcontainer-mieten-oder-kaufen",
     title: "Laborcontainer mieten vs. kaufen: Der Entscheidungsguide für Forschungsleiter",
@@ -562,7 +545,7 @@ const relatedSlugsMap: Record<string, string[]> = {
     "laborcontainer-baustelle-materialpruefung",
   ],
   "analytica-2026-rueckblick-labtogo-premiere": [
-    "planexus-analytica-2026-muenchen",
+    "uebergangslabor-sanierung-mietcontainer",
     "innovation-modulbau-zukunft-mobiles-labor",
     "laborcontainer-ausstattung-checkliste",
   ],
@@ -585,11 +568,6 @@ const relatedSlugsMap: Record<string, string[]> = {
     "laborcontainer-ausschreibung-lastenheft",
     "laborcontainer-genehmigung-baurecht-vorschriften",
     "laborcontainer-kosten-preise-2026",
-  ],
-  "planexus-analytica-2026-muenchen": [
-    "analytica-2026-rueckblick-labtogo-premiere",
-    "innovation-modulbau-zukunft-mobiles-labor",
-    "gmp-reinraum-container-pharma-produktion",
   ],
   "laborcontainer-mieten-oder-kaufen": [
     "laborcontainer-kosten-preise-2026",

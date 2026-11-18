@@ -21,13 +21,7 @@ const serviceSchema = {
   "@type": "Service",
   "name": "Laborcontainer München – LABtoGO, BSL-2/3, GMP-Reinraum & Vibrationsschutz für die Großforschung",
   "description": "Schlüsselfertige Laborcontainer für München, Garching, Martinsried und das gesamte Münchner Forschungs- und Pharma-Umfeld. LABtoGO mit 2.750 mm Innenhöhe, BSL-2/3, GMP-Reinraum, Pfahlgründung für die Münchner Schotterebene, Föhn-stabile HVAC-Regelung, Vibrationsentkopplung VC-D für die Großforschung in Garching. Ausgezeichnet bei den German CEO Excellence Awards 2026.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Planexus GmbH",
-    "image": "https://planexus.de/android-chrome-512x512.png",
-    "url": "https://planexus.de",
-    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
-  },
+  "provider": { "@id": "https://planexus.de/#organization", "@type": "Organization", "name": "Planexus GmbH" },
   "serviceType": [
     "Laborcontainer München",
     "Containerlabor München",
@@ -50,43 +44,6 @@ const serviceSchema = {
   "url": "https://planexus.de/laborcontainer-muenchen"
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://planexus.de/laborcontainer-muenchen#business",
-  "name": "Planexus GmbH – Laborcontainer München",
-  "description": "Fachplaner für Containerlabore. Ihr Spezialist für Laborcontainer und modulare Laborlösungen in München, Garching und Martinsried. LABtoGO, BSL-2/3, GMP, Föhn-stabile HVAC, Vibrationsentkopplung für die Großforschung. Werk Haigerloch – Lieferung in 1 Transporttag via A81/A8.",
-  "url": "https://planexus.de/laborcontainer-muenchen",
-  "telephone": "+49 7435 7519 700",
-  "email": "info@planexus.de",
-  "image": "https://planexus.de/images/labtogo-industrie.webp",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Am Steinbach 8",
-    "addressLocality": "Albstadt-Laufen",
-    "postalCode": "72459",
-    "addressRegion": "Baden-Württemberg",
-    "addressCountry": "DE"
-  }, "location": [{ "@type": "Place", "name": "Planexus GmbH – Büro (Firmensitz)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Fertigung", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-  "areaServed": {
-    "@type": "City",
-    "name": "München",
-    "containedInPlace": [
-      { "@type": "AdministrativeArea", "name": "Garching bei München" },
-      { "@type": "AdministrativeArea", "name": "Martinsried-Planegg" },
-      { "@type": "AdministrativeArea", "name": "Großhadern" },
-      { "@type": "AdministrativeArea", "name": "Schwabing" },
-      { "@type": "AdministrativeArea", "name": "Neuherberg" },
-      { "@type": "AdministrativeArea", "name": "Weihenstephan-Freising" },
-      { "@type": "AdministrativeArea", "name": "Ottobrunn" },
-      { "@type": "AdministrativeArea", "name": "Penzberg" },
-      { "@type": "AdministrativeArea", "name": "Ismaning" },
-      { "@type": "AdministrativeArea", "name": "Unterschleißheim" }
-    ]
-  },
-  "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" },
-  "foundingDate": "2025"
-};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -169,7 +126,6 @@ const faqSchema = {
   schema={serviceSchema}
   ogImage="/attached_assets/Laborcontainer_010_1769690502589.jpg"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
 

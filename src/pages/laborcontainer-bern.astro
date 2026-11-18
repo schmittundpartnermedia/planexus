@@ -12,37 +12,15 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Laborcontainer und modularer Laborbau Bern",
-  "provider": {
-    "@type": "Organization",
-    "name": "Planexus GmbH",
-    "image": "https://planexus.de/android-chrome-512x512.png",
-    "url": "https://planexus.de",
-    "telephone": "+49 7435 7519 700",
-    "email": "info@planexus.de",
-    "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" }, "location": [{ "@type": "Place", "name": "Planexus GmbH – Büro (Firmensitz)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Fertigung", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
-  },
+  "provider": { "@id": "https://planexus.de/#organization", "@type": "Organization", "name": "Planexus GmbH" },
   "areaServed": [
     { "@type": "City", "name": "Bern" },
     { "@type": "AdministrativeArea", "name": "Kanton Bern" },
     { "@type": "Country", "name": "Schweiz" }
   ],
-  "description": "Containerlabore, mobile Labore und modulare Laborgebäude für Pharma, Biotech, Hochschulen, Kliniken und öffentliche Gesundheitsbehörden wie das Bundesamt für Gesundheit BAG und Swissmedic – ab Werk Haigerloch verzollt nach Bern über Schaffhausen oder Basel.",
-  "offers": { "@type": "AggregateOffer", "priceCurrency": "CHF", "availability": "https://schema.org/InStock" }
+  "description": "Containerlabore, mobile Labore und modulare Laborgebäude für Pharma, Biotech, Hochschulen, Kliniken und öffentliche Gesundheitsbehörden wie das Bundesamt für Gesundheit BAG und Swissmedic – ab Werk Haigerloch verzollt nach Bern über Schaffhausen oder Basel."
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Planexus GmbH – Laborcontainer Bern",
-      "image": "https://planexus.de/images/labtogo-industrie.webp",
-  "url": "https://planexus.de/laborcontainer-bern",
-  "telephone": "+49 7435 7519 700",
-  "email": "info@planexus.de",
-  "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" }, "location": [{ "@type": "Place", "name": "Planexus GmbH – Büro (Firmensitz)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Fertigung", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-  "areaServed": { "@type": "City", "name": "Bern", "containedInPlace": { "@type": "Country", "name": "Schweiz" } },
-  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" }]
-};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -97,9 +75,8 @@ const faqSchema = {
 };
 ---
 
-<Layout title={title} description={description} canonical={canonical}>
+<Layout title={title} description={description} canonical={canonical} ogImage="/attached_assets/Laborcontainer_013_1769690552935.jpg">
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
@@ -306,7 +283,7 @@ const faqSchema = {
               <p class="text-sm text-gray-600">Für die Kalkulation benötigen wir: Berner Standort (Freiburgstrasse, Liebefeld, Länggasse, Murtenstrasse, Wankdorf), Sicherheitsstufe (S1/S2/S3, GMP, BSL-3), gewünschte Laufzeit und ob T1-Verzollung Schaffhausen (Kauf) oder ATA-Carnet (Miete).</p>
             </div>
             <div class="space-y-4">
-              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-[#5c7300] text-xs font-bold uppercase tracking-wider mb-2">Miete (ATA-Carnet)</div><div class="font-bold text-slate-900 text-lg mb-2">Flexibel, ohne MwSt-Belastung</div><p class="text-sm text-gray-600">Für klinische Studien, befristete SNF-Drittmittel-Forschung an Hochschulen, Pandemie-Vorhalte-Container für das BAG. ATA-Carnet, vorübergehende Verwendung – keine Schweizer MwSt.</p></div>
+              <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-[#5c7300] text-xs font-bold uppercase tracking-wider mb-2">Miete (ATA-Carnet)</div><div class="font-bold text-slate-900 text-lg mb-2">Flexibel, ohne MwSt-Belastung</div><p class="text-sm text-gray-600">Für klinische Studien, befristete SNF-Drittmittel-Forschung an Hochschulen, <a href="/magazin/laborcontainer-katastropheneinsatz-krisenreaktion" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Pandemie-Vorhalte-Container</a> für das BAG. ATA-Carnet, vorübergehende Verwendung – keine Schweizer MwSt.</p></div>
               <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-[#5c7300] text-xs font-bold uppercase tracking-wider mb-2">Kauf (T1 Schaffhausen)</div><div class="font-bold text-slate-900 text-lg mb-2">Asset, dauerhafte Einfuhr</div><p class="text-sm text-gray-600">Für dauerhafte Erweiterung an translationalen Forschungsstandorten, Bundesamt-Liegenschaften und Standorten der Agrarforschung. T1-Verzollung Schaffhausen-Thayngen, 8,1 % CH-MwSt.</p></div>
               <div class="bg-white border-2 border-primary/30 rounded-2xl p-6"><div class="text-[#5c7300] text-xs font-bold uppercase tracking-wider mb-2">Mietkauf</div><div class="font-bold text-slate-900 text-lg mb-2">Übergang Miete → Eigentum</div><p class="text-sm text-gray-600">Wenn aus dem Studien-Interim ein Dauerstandort wird – ATA-Carnet wird in T1 umgewandelt, Miete später anrechenbar auf den Kauf.</p></div>
             </div>

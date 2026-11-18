@@ -19,13 +19,7 @@ const serviceSchema = {
   "@type": "Service",
   "name": "Laborcontainer Berlin – LABtoGO, BSL-2/3, GMP-Reinraum & Adlershof-Vibrationsschutz",
   "description": "Schlüsselfertige Laborcontainer für Berlin und die Hauptstadtregion. LABtoGO mit 2.750 mm Innenhöhe, BSL-2/3, GMP-Reinraum, Pfahlgründung für Sandboden und Spree-Grundwasser, Vibrationsschutz für Adlershof. Ausgezeichnet bei den German CEO Excellence Awards 2026.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Planexus GmbH",
-    "image": "https://planexus.de/android-chrome-512x512.png",
-    "url": "https://planexus.de",
-    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
-  },
+  "provider": { "@id": "https://planexus.de/#organization", "@type": "Organization", "name": "Planexus GmbH" },
   "serviceType": [
     "Laborcontainer Berlin",
     "Containerlabor Berlin",
@@ -48,43 +42,6 @@ const serviceSchema = {
   "url": "https://planexus.de/laborcontainer-berlin"
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://planexus.de/laborcontainer-berlin#business",
-  "name": "Planexus GmbH – Laborcontainer Berlin",
-  "description": "Ihr Spezialist für Laborcontainer und modulare Laborlösungen in Berlin und der Hauptstadtregion. LABtoGO, BSL-2/3, GMP-Reinraum, Pfahlgründung für Spree-Grundwasser. Werk Haigerloch – Lieferung via A81/A6/A9.",
-  "url": "https://planexus.de/laborcontainer-berlin",
-  "telephone": "+49 7435 7519 700",
-  "email": "info@planexus.de",
-  "image": "https://planexus.de/images/labtogo-industrie.webp",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Am Steinbach 8",
-    "addressLocality": "Albstadt-Laufen",
-    "postalCode": "72459",
-    "addressRegion": "Baden-Württemberg",
-    "addressCountry": "DE"
-  }, "location": [{ "@type": "Place", "name": "Planexus GmbH – Büro (Firmensitz)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Fertigung", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-  "areaServed": {
-    "@type": "City",
-    "name": "Berlin",
-    "containedInPlace": [
-      { "@type": "AdministrativeArea", "name": "Berlin-Mitte" },
-      { "@type": "AdministrativeArea", "name": "Wedding" },
-      { "@type": "AdministrativeArea", "name": "Charlottenburg-Wilmersdorf" },
-      { "@type": "AdministrativeArea", "name": "Steglitz-Zehlendorf" },
-      { "@type": "AdministrativeArea", "name": "Pankow" },
-      { "@type": "AdministrativeArea", "name": "Berlin-Buch" },
-      { "@type": "AdministrativeArea", "name": "Treptow-Köpenick" },
-      { "@type": "AdministrativeArea", "name": "Adlershof" },
-      { "@type": "AdministrativeArea", "name": "Tempelhof-Schöneberg" },
-      { "@type": "AdministrativeArea", "name": "Friedrichshain-Kreuzberg" }
-    ]
-  },
-  "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" },
-  "foundingDate": "2025-04-01"
-};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -167,7 +124,6 @@ const faqSchema = {
   schema={serviceSchema}
   ogImage="/attached_assets/Laborcontainer_007_1769688326918.jpg"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
 
@@ -358,7 +314,7 @@ const faqSchema = {
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">01</div>
               <div class="font-bold mb-1">Universitätsmedizin</div>
-              <p class="text-xs text-gray-400">Klinik-Campusse in Mitte und Buch – Interimslabore während Sanierung</p>
+              <p class="text-xs text-gray-400">Klinik-Campusse in Mitte und Buch – <a href="/magazin/uebergangslabor-sanierung-mietcontainer" class="text-primary font-medium underline underline-offset-2 hover:no-underline">Interimslabore während Sanierung</a></p>
             </div>
             <div class="bg-slate-800/60 rounded-xl p-5 border border-slate-700 hover:border-primary/40 transition-colors">
               <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">02</div>

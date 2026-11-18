@@ -160,7 +160,9 @@ const ogLocaleAlternate = locale === 'en' ? (isCH ? 'de_CH' : isAT ? 'de_AT' : '
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
       "name": "Planexus GmbH",
+      "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" },
       "image": `${siteUrl}/images/planexus-logo.png`,
       "alternateName": "Planexus",
       "url": canonicalUrlForPath('/'),
@@ -192,6 +194,7 @@ const ogLocaleAlternate = locale === 'en' ? (isCH ? 'de_CH' : isAT ? 'de_AT' : '
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": `${siteUrl}/#organization`,
       "name": "Planexus GmbH",
       "image": `${siteUrl}/images/labtogo-industrie.webp`,
       "description": copy.schema.localDescription,

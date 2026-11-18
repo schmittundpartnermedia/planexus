@@ -4,67 +4,23 @@ import ContactForm from '../../components/ContactForm.tsx';
 import AuthorBio from '../../components/AuthorBio.astro';
 import CityCrossLinks from '../../components/CityCrossLinks.astro';
 
-const title = "Lab containers Zurich – GMP, Swissmedic";
-const description = "Lab containers in Zurich: BSL-3, SIA 261, GMP cleanroom, 2.75 m LABtoGO. Delivery from Haigerloch via the A81 and the Thayngen border.";
+const title = "Lab containers Zurich – BSL-3, GMP, Swissmedic";
+const description = "Lab containers for Zurich: BSL-3, GMP cleanrooms, seismic design to SIA 261, LABtoGO with 2.75 m room height. From Haigerloch, reply usually in 48 h.";
 const canonical = "/en/lab-containers-zurich";
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Lab containers and modular laboratory construction Zurich",
-  "provider": {
-    "@type": "Organization",
-    "name": "Planexus GmbH",
-    "image": "https://planexus.de/android-chrome-512x512.png",
-    "url": "https://planexus.de",
-    "telephone": "+49 7435 7519 700",
-    "email": "info@planexus.de",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Am Steinbach 8",
-      "addressLocality": "Albstadt-Laufen",
-      "addressRegion": "Baden-Württemberg",
-      "postalCode": "72459",
-      "addressCountry": "DE"
-    }, "location": [{ "@type": "Place", "name": "Planexus GmbH – office (registered seat)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Haigerloch works", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
-  },
+  "provider": { "@id": "https://planexus.de/#organization", "@type": "Organization", "name": "Planexus GmbH" },
   "areaServed": [
     { "@type": "City", "name": "Zurich" },
     { "@type": "AdministrativeArea", "name": "Canton of Zurich" },
     { "@type": "Country", "name": "Switzerland" }
   ],
-  "description": "Container laboratories, mobile laboratories and modular laboratory buildings for universities, university hospitals, pharma, biotech and the German-speaking Swiss pharma-biotech cluster – customs-cleared from the Haigerloch works to Zurich.",
-  "offers": { "@type": "AggregateOffer", "priceCurrency": "CHF", "availability": "https://schema.org/InStock" }
+  "description": "Container laboratories, mobile laboratories and modular laboratory buildings for universities, university hospitals, pharma, biotech and the German-speaking Swiss pharma-biotech cluster – customs-cleared from the Haigerloch works to Zurich."
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Planexus GmbH – Lab containers Zurich",
-      "image": "https://planexus.de/images/labtogo-industrie.webp",
-  "url": "https://planexus.de/en/lab-containers-zurich",
-  "telephone": "+49 7435 7519 700",
-  "email": "info@planexus.de",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Am Steinbach 8",
-    "addressLocality": "Albstadt-Laufen",
-    "addressRegion": "Baden-Württemberg",
-    "postalCode": "72459",
-    "addressCountry": "DE"
-  }, "location": [{ "@type": "Place", "name": "Planexus GmbH – office (registered seat)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Haigerloch works", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-  "areaServed": {
-    "@type": "City",
-    "name": "Zurich",
-    "containedInPlace": { "@type": "Country", "name": "Switzerland" }
-  },
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "08:00","closes": "17:00"
-  }]
-};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -140,9 +96,8 @@ const faqSchema = {
 };
 ---
 
-<Layout title={title} description={description} canonical={canonical}>
+<Layout title={title} description={description} canonical={canonical} ogImage="/attached_assets/Laborcontainer_014_1769690552936.jpg">
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 

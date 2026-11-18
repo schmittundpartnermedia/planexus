@@ -129,7 +129,17 @@ const regionen = [
 
   <!-- 1. HERO -->
   <section class="relative pt-32 pb-20 bg-slate-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/attached_assets/Laborcontainer_001_1769688326918.webp')] bg-cover bg-center opacity-30"></div>
+    <img
+      src="/attached_assets/Laborcontainer_001_1769688326918-1600.webp"
+      srcset="/attached_assets/Laborcontainer_001_1769688326918-800.webp 800w, /attached_assets/Laborcontainer_001_1769688326918-1200.webp 1200w, /attached_assets/Laborcontainer_001_1769688326918-1600.webp 1600w"
+      sizes="100vw"
+      alt=""
+      width="1600"
+      height="1600"
+      fetchpriority="high"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-30"
+    />
     <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/85 to-slate-900/40"></div>
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-4xl">
@@ -471,6 +481,7 @@ const regionen = [
 
         <div class="bg-white text-slate-900 rounded-2xl p-8 shadow-2xl">
           <h3 class="text-2xl font-bold mb-6">Projekt anfragen</h3>
+          <p data-cta-response class="text-sm text-slate-600 -mt-3 mb-6">Antwort in der Regel innerhalb von 48 Stunden (werktags) – unverbindlich und kostenfrei.</p>
           <ContactForm client:visible />
         </div>
       </div>

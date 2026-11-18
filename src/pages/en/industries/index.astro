@@ -5,7 +5,7 @@ import AuthorBio from '../../../components/AuthorBio.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 
 const title = "Lab containers for 7 industries – overview";
-const description = "Lab containers for 7 industries: pharma/biotech (GMP), research (DFG), industry (ISO 17025), education, public health, H₂ & batteries (ATEX), oil & gas.";
+const description = "Lab containers for 7 industries: pharma/biotech (GMP), research, industry (ISO 17025), education, public health, H₂ & batteries (ATEX), oil & gas.";
 const canonical = "/en/industries";
 
 const collectionSchema = {
@@ -84,7 +84,7 @@ const branchen = [
   },
 ];
 ---
-<Layout title={title} description={description} canonical={canonical} schema={collectionSchema}>
+<Layout title={title} description={description} canonical={canonical} schema={collectionSchema} ogImage="/attached_assets/Laborcontainer_013_1769690552935.jpg">
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <div class="bg-white">

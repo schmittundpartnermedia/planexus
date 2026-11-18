@@ -12,7 +12,7 @@ import { DE_TO_EN, EN_TO_DE, normalizePath } from './src/i18n/routes.ts';
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const siteUrl = 'https://planexus.de';
-const SITEMAP_EXCLUDE = new Set(['/about', '/services', '/contact', '/products', '/404', '/en/404']);
+const SITEMAP_EXCLUDE = new Set(['/about', '/services', '/contact', '/products', '/magazin/planexus-analytica-2026-muenchen', '/en/magazine/planexus-analytica-2026-munich', '/404', '/en/404']);
 
 function gitLastmod(pathname) {
   const rel = pathname === '/' ? 'index' : pathname.replace(/^\/+|\/+$/g, '');
@@ -92,6 +92,8 @@ export default defineConfig({
     '/services': { status: 301, destination: '/leistungen' },
     '/contact': { status: 301, destination: '/kontakt' },
     '/products': { status: 301, destination: '/laborcontainer' },
+    '/magazin/planexus-analytica-2026-muenchen': { status: 301, destination: '/magazin/analytica-2026-rueckblick-labtogo-premiere' },
+    '/en/magazine/planexus-analytica-2026-munich': { status: 301, destination: '/en/magazine/analytica-2026-review-labtogo-premiere' },
   },
   adapter: node({
     mode: 'standalone',

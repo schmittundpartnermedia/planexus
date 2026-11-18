@@ -5,8 +5,8 @@ import ContactForm from '../components/ContactForm';
 ---
 
 <Layout
-  title="Kontakt - Laborcontainer Anfrage"
-  description="Kontaktieren Sie Planexus für Ihr Laborcontainer-Projekt. Beratung, Angebote und Projektstart. Wir freuen uns auf Ihre Anfrage."
+  title="Laborcontainer anfragen – Kontakt"
+  description="Laborcontainer anfragen: Antwort in der Regel innerhalb von 48 Stunden (werktags), unverbindlich und kostenfrei. Telefon +49 7435 7519 700."
   canonical="/kontakt"
   ogImage="/attached_assets/Kopf_green-scaled_1768306688943.jpg"
 >
@@ -23,7 +23,7 @@ import ContactForm from '../components/ContactForm';
       <div class="absolute inset-0 bg-[url('/images/backgrounds/kontakt-bg.webp')] bg-cover bg-center opacity-10"></div>
       <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900"></div>
       <div class="container mx-auto px-4 text-center relative z-10">
-        <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">Kontaktieren Sie uns</h1>
+        <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">Laborcontainer anfragen</h1>
         <p class="text-xl text-gray-300 max-w-2xl mx-auto">
           Starten Sie Ihr Laborprojekt mit einem starken Partner – von der <a href="/leistungen/beratung" class="text-primary hover:underline">Beratung</a> bis zur schlüsselfertigen Übergabe.
         </p>
@@ -109,7 +109,36 @@ import ContactForm from '../components/ContactForm';
             </div>
           </div>
 
-          <div class="order-1 lg:order-2"><ContactForm client:load /></div>
+          <div class="order-1 lg:order-2 space-y-8">
+            <ContactForm client:load />
+            <div class="bg-slate-50 border border-gray-100 rounded-xl p-6" data-contact-steps>
+              <h2 class="text-xl font-bold text-slate-900 mb-5">Was nach Ihrer Anfrage passiert</h2>
+              <ol class="space-y-4">
+                <li class="flex gap-4">
+                  <span class="w-8 h-8 shrink-0 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center" aria-hidden="true">1</span>
+                  <div><p class="font-bold text-slate-900">Rückmeldung</p><p class="text-gray-600 text-sm leading-relaxed">Wir melden uns in der Regel innerhalb von 48 Stunden (werktags).</p></div>
+                </li>
+                <li class="flex gap-4">
+                  <span class="w-8 h-8 shrink-0 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center" aria-hidden="true">2</span>
+                  <div><p class="font-bold text-slate-900">Bedarf klären</p><p class="text-gray-600 text-sm leading-relaxed">Gemeinsam klären wir Nutzung, Sicherheitsstufe, Standort und Zeitrahmen.</p></div>
+                </li>
+                <li class="flex gap-4">
+                  <span class="w-8 h-8 shrink-0 rounded-full bg-primary text-slate-900 font-bold flex items-center justify-center" aria-hidden="true">3</span>
+                  <div><p class="font-bold text-slate-900">Erste Einschätzung</p><p class="text-gray-600 text-sm leading-relaxed">Sie erhalten eine erste schriftliche Indikation – unverbindlich und kostenfrei.</p></div>
+                </li>
+              </ol>
+            </div>
+            <div class="flex items-center gap-5 border border-gray-200 rounded-xl p-6" data-contact-person>
+              <img src="/team/sven-biewald-192.webp" alt="Sven Biewald, Geschäftsführer der Planexus GmbH" width="96" height="96" loading="lazy" decoding="async" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shrink-0" />
+              <div>
+                <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-1">Ihr Ansprechpartner</h2>
+                <p class="font-bold text-slate-900 text-lg">Sven Biewald</p>
+                <p class="text-gray-600 text-sm mb-2">Geschäftsführer, Planexus GmbH</p>
+                <a href="tel:+4974357519700" class="block font-semibold text-slate-900 underline decoration-primary underline-offset-4 hover:text-[#5c7300]">+49 7435 7519 700</a>
+                <a href="/team/sven-biewald" class="text-sm text-[#5c7300] underline underline-offset-4">Profil ansehen</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -85,8 +85,6 @@ export const DE_TO_EN: Record<string, string> = {
     '/en/magazine/lab-container-permits-building-law',
   '/magazin/laborcontainer-projektablauf-von-idee-bis-uebergabe':
     '/en/magazine/lab-container-project-process',
-  '/magazin/planexus-analytica-2026-muenchen':
-    '/en/magazine/planexus-analytica-2026-munich',
   '/magazin/laborcontainer-mieten-oder-kaufen':
     '/en/magazine/lab-containers-rent-or-buy',
   '/magazin/gmp-reinraum-container-pharma-produktion':

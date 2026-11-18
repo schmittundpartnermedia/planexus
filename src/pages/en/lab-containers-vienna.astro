@@ -12,37 +12,15 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Lab containers and modular laboratory construction Vienna",
-  "provider": {
-    "@type": "Organization",
-    "name": "Planexus GmbH",
-    "image": "https://planexus.de/android-chrome-512x512.png",
-    "url": "https://planexus.de",
-    "telephone": "+49 7435 7519 700",
-    "email": "info@planexus.de",
-    "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" }, "location": [{ "@type": "Place", "name": "Planexus GmbH – office (registered seat)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Haigerloch works", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
-  },
+  "provider": { "@id": "https://planexus.de/#organization", "@type": "Organization", "name": "Planexus GmbH" },
   "areaServed": [
     { "@type": "City", "name": "Vienna" },
     { "@type": "AdministrativeArea", "name": "Federal State of Vienna" },
     { "@type": "Country", "name": "Austria" }
   ],
-  "description": "Container laboratories, mobile laboratories and modular laboratory buildings for the life-science cluster, university hospitals, universities, research institutes, pharmaceutical sites and authorities such as AGES and BASG — from the Haigerloch works, EU single-market compliant, to Vienna via the A81 + A8 + Walserberg + A1.",
-  "offers": { "@type": "AggregateOffer", "priceCurrency": "EUR", "availability": "https://schema.org/InStock" }
+  "description": "Container laboratories, mobile laboratories and modular laboratory buildings for the life-science cluster, university hospitals, universities, research institutes, pharmaceutical sites and authorities such as AGES and BASG — from the Haigerloch works, EU single-market compliant, to Vienna via the A81 + A8 + Walserberg + A1."
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Planexus GmbH – Lab containers Vienna",
-      "image": "https://planexus.de/images/labtogo-industrie.webp",
-  "url": "https://planexus.de/en/lab-containers-vienna",
-  "telephone": "+49 7435 7519 700",
-  "email": "info@planexus.de",
-  "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" }, "location": [{ "@type": "Place", "name": "Planexus GmbH – office (registered seat)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Haigerloch works", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-  "areaServed": { "@type": "City", "name": "Vienna", "containedInPlace": { "@type": "Country", "name": "Austria" } },
-  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" }]
-};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -97,9 +75,8 @@ const faqSchema = {
 };
 ---
 
-<Layout title={title} description={description} canonical={canonical}>
+<Layout title={title} description={description} canonical={canonical} ogImage="/attached_assets/Laborcontainer_008_1769688326918.jpg">
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 

@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+// Beim Aufruf rendern: vorab gebaut lieferte der direkte Aufruf von /404 einen Serverfehler (FailedToFindPageMapSSR).
+export const prerender = false;
 Astro.response.status = 404;
 
 const topLinks = [

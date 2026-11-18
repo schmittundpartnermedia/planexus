@@ -99,8 +99,8 @@ const projectsDe: Project[] = [
     category: "Forschung"
   },
   {
-    name: "Mehrgeschossiges Pharmalabor",
-    description: "Mehrgeschossiger Laborcontainer mit Secuflow-Abzügen und hochwertiger Laborausstattung.",
+    name: "Mehrgeschossiges Modullabor",
+    description: "Mehrgeschossiger Modulbau, innen Laborräume mit Secuflow-Abzügen.",
     images: [
       "/attached_assets/IMG-20230628-WA0037_1769690564537.jpg",
       "/attached_assets/IMG-20230628-WA0039_1769690564538.jpg",
@@ -159,8 +159,8 @@ const projectsEn: Project[] = [
     category: "Research",
   },
   {
-    name: "Multi-storey pharma laboratory",
-    description: "Multi-storey laboratory container with Secuflow fume hoods and high-spec laboratory fit-out.",
+    name: "Multi-storey modular laboratory",
+    description: "Multi-storey modular building; inside, laboratory rooms with Secuflow fume cupboards.",
     images: projectsDe[4].images,
     category: "Pharma",
   },

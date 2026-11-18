@@ -10,14 +10,12 @@ interface FormData {
   company: string;
   phone: string;
   interest: ContactInterest;
-  subject: string;
   message: string;
 }
 
 interface FormErrors {
   name?: string;
   email?: string;
-  subject?: string;
   message?: string;
 }
 
@@ -43,7 +41,6 @@ export default function ContactForm({
     company: '',
     phone: '',
     interest: defaultInterest,
-    subject: '',
     message: '',
   };
   const [formData, setFormData] = useState<FormData>(emptyForm);
@@ -61,7 +58,6 @@ export default function ContactForm({
     const newErrors: FormErrors = {};
     if (formData.name.trim().length < 2) newErrors.name = copy.form.nameError;
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) newErrors.email = copy.form.emailError;
-    if (formData.subject.trim().length < 5) newErrors.subject = copy.form.subjectError;
     if (formData.message.trim().length < 10) newErrors.message = copy.form.messageError;
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -250,24 +246,6 @@ export default function ContactForm({
             <option value="labtogo">{copy.form.interestOptions.labtogo}</option>
             <option value="offen">{copy.form.interestOptions.offen}</option>
           </select>
-        </div>
-
-        <div>
-          <label htmlFor={fieldId('subject')} className={labelClass}>{copy.form.subject}</label>
-          <input
-            type="text"
-            id={fieldId('subject')}
-            name="subject"
-            required
-            aria-invalid={errors.subject ? true : undefined}
-            aria-describedby={errors.subject ? fieldId('subject-error') : undefined}
-            placeholder={copy.form.subjectPlaceholder}
-            value={formData.subject}
-            onChange={(e) => handleChange('subject', e.target.value)}
-            className={inputClass}
-            data-testid="input-subject"
-          />
-          {errors.subject && <p id={fieldId('subject-error')} className={errorClass}>{errors.subject}</p>}
         </div>
 
         <div>

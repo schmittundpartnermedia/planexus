@@ -18,13 +18,7 @@ const serviceSchema = {
   "@type": "Service",
   "name": "Laborcontainer Stuttgart – LABtoGO, BSL-2/3, GMP-Reinraum & ATEX",
   "description": "Schlüsselfertige Laborcontainer für Stuttgart und die Region Mittlerer Neckar. LABtoGO mit 2.750 mm Innenhöhe, BSL-2/3, GMP-Reinraum und ATEX-Konfigurationen. Lieferung in rund 1 Stunde über die A81 ab Werk Haigerloch – nur 70 km entfernt. Ausgezeichnet bei den German CEO Excellence Awards 2026.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Planexus GmbH",
-    "image": "https://planexus.de/android-chrome-512x512.png",
-    "url": "https://planexus.de",
-    "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" }
-  },
+  "provider": { "@id": "https://planexus.de/#organization", "@type": "Organization", "name": "Planexus GmbH" },
   "serviceType": [
     "Laborcontainer Stuttgart",
     "Containerlabor Stuttgart",
@@ -47,43 +41,6 @@ const serviceSchema = {
   "url": "https://planexus.de/laborcontainer-stuttgart"
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://planexus.de/laborcontainer-stuttgart#business",
-  "name": "Planexus GmbH – Laborcontainer Stuttgart",
-  "description": "Fachplaner für Containerlabore. Ihr Spezialist für Laborcontainer und modulare Laborlösungen in Stuttgart und Baden-Württemberg. LABtoGO, BSL-2/3, GMP-Reinraum, ATEX. Werk Haigerloch – 70 km vom Stuttgarter Kreuz.",
-  "url": "https://planexus.de/laborcontainer-stuttgart",
-  "telephone": "+49 7435 7519 700",
-  "email": "info@planexus.de",
-  "image": "https://planexus.de/images/labtogo-industrie.webp",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Am Steinbach 8",
-    "addressLocality": "Albstadt-Laufen",
-    "postalCode": "72459",
-    "addressRegion": "Baden-Württemberg",
-    "addressCountry": "DE"
-  }, "location": [{ "@type": "Place", "name": "Planexus GmbH – Büro (Firmensitz)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Fertigung", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-  "areaServed": {
-    "@type": "City",
-    "name": "Stuttgart",
-    "containedInPlace": [
-      { "@type": "AdministrativeArea", "name": "Stuttgart-Mitte" },
-      { "@type": "AdministrativeArea", "name": "Stuttgart-Vaihingen" },
-      { "@type": "AdministrativeArea", "name": "Stuttgart-Feuerbach" },
-      { "@type": "AdministrativeArea", "name": "Stuttgart-Zuffenhausen" },
-      { "@type": "AdministrativeArea", "name": "Stuttgart-Untertürkheim" },
-      { "@type": "AdministrativeArea", "name": "Stuttgart-Möhringen" },
-      { "@type": "AdministrativeArea", "name": "Stuttgart-Bad Cannstatt" },
-      { "@type": "AdministrativeArea", "name": "Stuttgart-Hohenheim" },
-      { "@type": "AdministrativeArea", "name": "Filderebene" },
-      { "@type": "AdministrativeArea", "name": "Ditzingen" }
-    ]
-  },
-  "parentOrganization": { "@type": "Organization", "name": "Wesemann Holding GmbH" },
-  "foundingDate": "2025"
-};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -174,7 +131,6 @@ const faqSchema = {
   schema={serviceSchema}
   ogImage="/attached_assets/Laborcontainer_001_1769688326918.jpg"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
 

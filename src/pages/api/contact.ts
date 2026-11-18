@@ -42,10 +42,13 @@ export const POST: APIRoute = async ({ request }) => {
   }
   try {
     const data = await request.json();
-    const { name, email, subject, message, website, elapsedMs } = data;
+    const { name, email, message, website, elapsedMs } = data;
+    // Betreff ist kein Pflichtfeld mehr: fehlt er, wird er aus dem Anliegen gebildet.
+    const rawSubject = typeof data.subject === 'string' ? data.subject.trim() : '';
     const company = optionalText(data.company, MAX_LENGTH.company);
     const phone = optionalText(data.phone, MAX_LENGTH.phone);
     const interest = typeof data.interest === 'string' && INTEREST_LABELS[data.interest] ? INTEREST_LABELS[data.interest] : '';
+    const subject = rawSubject || (interest ? `Anfrage: ${interest}` : 'Anfrage über planexus.de');
 
     // 1. Honeypot: nur Bots füllen das unsichtbare Feld aus.
     //    Erfolg vorgaukeln, aber WEDER Mail versenden NOCH in der DB speichern.

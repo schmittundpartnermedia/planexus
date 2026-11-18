@@ -12,72 +12,15 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Laborcontainer und modularer Laborbau Düsseldorf",
-  "provider": {
-    "@type": "Organization",
-    "name": "Planexus GmbH",
-    "image": "https://planexus.de/android-chrome-512x512.png",
-    "url": "https://planexus.de",
-    "telephone": "+49 7435 7519 700",
-    "email": "info@planexus.de",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Am Steinbach 8",
-      "addressLocality": "Albstadt-Laufen",
-      "addressRegion": "Baden-Württemberg",
-      "postalCode": "72459",
-      "addressCountry": "DE"
-    }, "location": [{ "@type": "Place", "name": "Planexus GmbH – Büro (Firmensitz)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Fertigung", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "Wesemann Holding GmbH"
-    }
-  },
+  "provider": { "@id": "https://planexus.de/#organization", "@type": "Organization", "name": "Planexus GmbH" },
   "areaServed": [
     { "@type": "City", "name": "Düsseldorf" },
     { "@type": "AdministrativeArea", "name": "Nordrhein-Westfalen" },
     { "@type": "AdministrativeArea", "name": "Rheinland" }
   ],
-  "description": "Containerlabore, mobile Labore und modulare Laborgebäude für Pharma, Life Sciences, Universitätsmedizin, Hochschulen und Forschungseinrichtungen im Rheinland – ab Werk Haigerloch schlüsselfertig nach Düsseldorf.",
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "EUR",
-    "availability": "https://schema.org/InStock"
-  }
+  "description": "Containerlabore, mobile Labore und modulare Laborgebäude für Pharma, Life Sciences, Universitätsmedizin, Hochschulen und Forschungseinrichtungen im Rheinland – ab Werk Haigerloch schlüsselfertig nach Düsseldorf."
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Planexus GmbH – Laborcontainer Düsseldorf",
-      "image": "https://planexus.de/images/labtogo-industrie.webp",
-  "url": "https://planexus.de/laborcontainer-duesseldorf",
-  "telephone": "+49 7435 7519 700",
-  "email": "info@planexus.de",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Am Steinbach 8",
-    "addressLocality": "Albstadt-Laufen",
-    "addressRegion": "Baden-Württemberg",
-    "postalCode": "72459",
-    "addressCountry": "DE"
-  }, "location": [{ "@type": "Place", "name": "Planexus GmbH – Büro (Firmensitz)", "address": { "@type": "PostalAddress", "streetAddress": "Am Steinbach 8", "addressLocality": "Albstadt-Laufen", "addressRegion": "Baden-Württemberg", "postalCode": "72459", "addressCountry": "DE" } }, { "@type": "Place", "name": "Planexus GmbH – Fertigung", "telephone": "+49 7474 4273000", "address": { "@type": "PostalAddress", "streetAddress": "Hospach 1", "addressLocality": "Haigerloch", "addressRegion": "Baden-Württemberg", "postalCode": "72401", "addressCountry": "DE" } }],
-  "areaServed": {
-    "@type": "City",
-    "name": "Düsseldorf",
-    "containedInPlace": {
-      "@type": "AdministrativeArea",
-      "name": "Nordrhein-Westfalen"
-    }
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "08:00",
-      "closes": "17:00"
-    }
-  ]
-};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -156,10 +99,8 @@ const faqSchema = {
 <Layout
   title={title}
   description={description}
-  canonical={canonical}
->
+  canonical={canonical} ogImage="/attached_assets/Laborcontainer_014_1769690552936.jpg">
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
@@ -310,7 +251,7 @@ const faqSchema = {
               <strong>Made in Haigerloch, schlüsselfertig in Düsseldorf.</strong> Endmontage und Innenausbau erfolgen mit Wesemann-Möbeln im eigenen Werk – Werksbesichtigung beidseitig planbar. Über A81 nordwärts, A8 westwärts, A5 nordwärts via Karlsruhe, A3 ab Frankfurter Kreuz Richtung Köln und A57 oder A46 in das Düsseldorfer Stadtgebiet beträgt die Schwerlastdistanz rund 450 Kilometer; Anschlussstellen Düsseldorf-Wersten (A46), Düsseldorf-Hafen (A52) und Düsseldorf-Mörsenbroich (A52) sind Standardanlieferpunkte für Bilk, Holthausen, Hilden und den Düsseldorfer Hafen.
             </p>
             <p>
-              Ob Sie ein <strong>mobiles Labor Düsseldorf</strong> für eine befristete Sanierungsphase an einem Universitätsklinikum brauchen, einen <strong>modularen Laborcontainer Düsseldorf</strong> für die dauerhafte Pharma-Erweiterung in Holthausen oder Hilden oder ein <strong>Containerlabor Düsseldorf</strong> mit BSL-3-Containment für die universitätsmedizinische Forschung – wir liefern alle drei Antworten aus derselben Plattform: dem LABtoGO unseres Werks Haigerloch.
+              Ob Sie ein <strong>mobiles Labor Düsseldorf</strong> für eine <a href="/magazin/uebergangslabor-sanierung-mietcontainer" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">befristete Sanierungsphase</a> an einem Universitätsklinikum brauchen, einen <strong>modularen Laborcontainer Düsseldorf</strong> für die dauerhafte Pharma-Erweiterung in Holthausen oder Hilden oder ein <strong>Containerlabor Düsseldorf</strong> mit BSL-3-Containment für die universitätsmedizinische Forschung – wir liefern alle drei Antworten aus derselben Plattform: dem LABtoGO unseres Werks Haigerloch.
             </p>
           </div>
         </div>
