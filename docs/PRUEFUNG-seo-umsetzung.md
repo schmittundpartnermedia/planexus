@@ -97,3 +97,13 @@ Urteil „Mit Korrekturen“, nichts Kritisches. Umgesetzt:
 4.–12. § 61-Liste vollständig (Gerüste, Toilettenwagen, Landesverteidigung); Transport-Satz eingeschränkt; „gehört“ → „eignet sich“; Laborabzug: DGUV-213-850-Satz abgeschwächt, Quellenliste ergänzt (DIN EN 14175-6/-7, DIN 12924-1, DGUV 213-850), Inbetriebnahme-Zeile auf TRGS 526 Nr. 7.1 gestützt; TRGS 526 Nr. 7.4 präzisiert (Wortlaut selbst gelesen – Prüferhinweis „unbelegt“ widerlegt); ASR-Minderung 0,25 m ergänzt; Hub-BSL-FAQ „Ausgelegt nach“, Dusche nach Gefährdungsbeurteilung; BSL-Tabelle Ausnahme RG 3(**); Bayern „außer im Außenbereich“; EN-Begriffe „undesignated outlying area“, „combustion appliances“; Pfeile #5c7300 mit aria-hidden; DIN EN 14175-5 „Installation &amp; Wartung (CEN/TS)“.
 Danach: Build Exit 0, Prüfskript 25/25, FAQ-Abgleich 791/0.
 Offen gelassen (Kundenbestätigung, Phase 3): H14-Filter und gefilterte Zuluft im BSL-Artikel als Planexus-Ausführung; Lebensdauer 15–20 J., Wiederverkauf 40–50 %, Wartung 2–4 %, Klimatisierung 30–40 %, 48-h-Aufstellung; CH/AT-Fristaussagen auf Städteseiten.
+
+## Live (20.11.2026, nach Deploy 88c043f)
+Deploy per SSH: Build ohne Fehler, PM2 `planexus` online, `nginx -t` successful, nginx neu geladen (Warnungen „protocol options redefined“ bestanden schon vorher).
+Live-Prüfskript (scratchpad/live.mjs, mit Cache-Umgehung): 18/18 grün.
+- 142/142 Sitemap-Adressen 200; neuer Artikel DE/EN in der Sitemap; Analytica-Vorbericht nicht mehr drin, 301 DE/EN auf den Rückblick.
+- /404 → 404.
+- Satz 21: genau eine `Cache-Control`-Zeile (Seiten `public, max-age=0, s-maxage=300, stale-while-revalidate=86400`, `/_astro/` `immutable`); `/admin` und `/api` → `no-store`.
+- Inhalte live: AfA korrigiert, Mieten-Abschnitte, 48-h-Satz am Knopf, Hub-Maße ohne ÖNORM B 1300, Genehmigung ohne 3-Monats-Spalte, Kontakt mit Schritten/Ansprechpartner ohne Betreff, Wien ohne Zusatz-Schema, Startseite mit @id/Wesemann.
+- Lighthouse mobil live: /laborcontainer 93 (vorher 77), LCP 3,2 s (vorher 6,3 s); Mieten 98; Kontakt 93 (vorher 86); Laborabzug 95; Barrierefreiheit und SEO je 100.
+- Satz 12/30 Formular-Volldurchlauf live: noch nicht ausgeführt – eine Testanfrage erzeugt einen DB-Eintrag und eine echte Mail an info@planexus.de; wartet auf Joachims Ja.
