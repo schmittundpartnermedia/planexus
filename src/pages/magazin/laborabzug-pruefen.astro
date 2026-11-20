@@ -1,0 +1,439 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import LeadMagnetLastenheft from '../../components/LeadMagnetLastenheft.astro';
+import Picture from '../../components/Picture.astro';
+
+const pageUrl = "https://planexus.de/magazin/laborabzug-pruefen";
+const headline = "Laborabzug prüfen: Prüfpflicht, Fristen und Ablauf";
+const description = "Laborabzug prüfen: jährlich durch befähigte Person (TRGS 526). Ablauf, Messgrößen, DIN EN 14175-4, Protokoll und wann ein Spürgastest sinnvoll ist.";
+
+const faqs = [
+  {
+    q: "Wie oft muss ein Laborabzug geprüft werden?",
+    a: "Mindestens einmal im Jahr durch eine befähigte Person (TRGS 526 Nr. 7.3). Zusätzlich kontrollieren die Nutzer arbeitstäglich die Funktion, etwa die Anzeige. Eine selbstüberwachende Dauerüberwachung ist in Abständen von nicht mehr als drei Jahren zu prüfen."
+  },
+  {
+    q: "Wer darf einen Laborabzug prüfen?",
+    a: "Eine zur Prüfung befähigte Person: Sie hat durch Berufsausbildung, Berufserfahrung und zeitnahe berufliche Tätigkeit die nötigen Kenntnisse (§ 2 Abs. 6 BetrSichV). Die Prüfliste der BG RCI nennt als Voraussetzung einen Lehrgang beim Abzugshersteller oder vergleichbare Kenntnisse aus der Berufserfahrung."
+  },
+  {
+    q: "Was wird bei der Abzugsprüfung geprüft?",
+    a: "Eine Sichtkontrolle, die Mechanik des Frontschiebers, die lufttechnischen Werte (Einströmgeschwindigkeit und/oder Abluftvolumenstrom) und die Funktionskontrolleinheit mit Alarm bei Unterfunktion, Überfunktion und Stromausfall (DGUV Information 213-857, Nr. 2.3.3). Bei Abzügen mit variablem Volumenstrom kommt die Regelstrecke hinzu."
+  },
+  {
+    q: "Kann die jährliche Messung entfallen?",
+    a: "Nur die Prüfung der lufttechnischen Funktion, und nur bei einer selbstüberwachenden Funktionskontrolle, die das Unterschreiten des Mindestvolumenstroms optisch und akustisch anzeigt (TRGS 526 Nr. 7.3). Eine Funktionskontrolleinheit nach DIN 12924:1991 gilt nicht als selbstüberwachend. Sichtkontrolle und Mechanik bleiben jährlich."
+  },
+  {
+    q: "Was muss im Prüfprotokoll stehen?",
+    a: "Nach § 14 Abs. 7 BetrSichV mindestens die Art der Prüfung, der Prüfumfang, das Ergebnis sowie Name und Unterschrift der befähigten Person. Das Protokoll ist mindestens bis zur nächsten Prüfung aufzubewahren, elektronisch ist zulässig."
+  },
+  {
+    q: "Gehört ein Spürgastest zur jährlichen Prüfung?",
+    a: "Bei baumustergeprüften Abzügen nicht. Die Wiederholungsprüfung nach DIN EN 14175-4, Kapitel 6, führt laut Inhaltsverzeichnis der Norm kein Rückhaltevermögen auf. Eine Prüfung des Rückhaltevermögens vor Ort beschreibt die Norm bei der Inbetriebnahme und bei Abzügen ohne Baumusterprüfung."
+  },
+  {
+    q: "Was passiert, wenn der Abzug die Prüfung nicht besteht?",
+    a: "Deutliche Mängel sind unverzüglich zu beheben, zum Beispiel ein verschlissener Seilzug. Ist das nicht möglich, ist der Abzug außer Betrieb zu nehmen (DGUV Information 213-857, Nr. 2.3.3)."
+  },
+  {
+    q: "Gilt die Prüfpflicht auch für ein Digestorium oder einen Tischabzug?",
+    a: "Ja. Digestorium ist eine andere Bezeichnung für den Laborabzug, der Tischabzug eine Bauart neben Tief- und begehbaren Abzügen. Für alle Abzüge gilt TRGS 526 Nr. 7.3. Abzüge mit Umluft- oder Filtertechnik werden ebenfalls jährlich geprüft, die Filter nach Herstellerangabe."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "inLanguage": "de-DE",
+  "headline": headline,
+  "description": description,
+  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/team/thomas-boss", "jobTitle": "Gesellschafter & Technischer Leiter", "worksFor": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de/" } },
+  "datePublished": "2026-11-20",
+  "dateModified": "2026-11-20",
+  "image": "https://planexus.de/attached_assets/Labor_1_1769690564538.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
+  "about": [
+    { "@type": "Thing", "name": "Laborabzug" },
+    { "@type": "Thing", "name": "TRGS 526 Laboratorien" },
+    { "@type": "Thing", "name": "DIN EN 14175" }
+  ],
+  "citation": [
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/trgs526/7.htm",
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/trgs526/6.htm",
+    "https://www.gesetze-im-internet.de/gefstoffv_2010/__7.html",
+    "https://www.gesetze-im-internet.de/betrsichv_2015/__14.html",
+    "https://www.gesetze-im-internet.de/betrsichv_2015/__2.html",
+    "https://www.dinmedia.de/de/norm/din-en-14175-4/71538715",
+    "https://www.bgrci.de/fachwissen-portal/themenspektrum/laboratorien/abzuege"
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://planexus.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Magazin", "item": "https://planexus.de/magazin" },
+    { "@type": "ListItem", "position": 3, "name": "Laborabzug prüfen", "item": pageUrl }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de-DE",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+
+const linkClass = "text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline";
+const td = "p-3 border border-gray-200";
+const chevron = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>`;
+const furtherLinks = [
+  { href: "/magazin/laborcontainer-laborabzug-din-en-14175", label: "Laborabzüge im Container nach DIN EN 14175" },
+  { href: "/magazin/anforderungen-laborraeume", label: "Anforderungen an Laborräume" },
+  { href: "/magazin/laborcontainer-klimatisierung-lueftung-normen", label: "Klimatisierung und Lüftung" },
+  { href: "/magazin/laborcontainer-ausstattung-checkliste", label: "Ausstattung: Checkliste A–Z" },
+  { href: "/leistungen/ausstattung", label: "Laborausstattung" },
+  { href: "/laborcontainer", label: "Laborcontainer im Überblick" },
+];
+---
+
+<Layout
+  type="article"
+  title="Laborabzug-Prüfung: Fristen, Ablauf, DIN EN 14175"
+  description={description}
+  canonical="/magazin/laborabzug-pruefen"
+  ogImage="/attached_assets/Labor_1_1769690564538.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/attached_assets/Labor_1_1769690564538.webp')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-wrap items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Sicherheit
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11 Min. Lesezeit
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Laborabzug prüfen: Prüfpflicht, Fristen und Ablauf
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Wer prüft, wie oft und was gemessen wird: Fristen nach TRGS 526, Prüfumfang nach Baujahr, Vor-Ort-Prüfung nach DIN EN 14175-4 und Pflichtangaben im Protokoll
+          </p>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              <time datetime="2026-11-20">Aktualisiert am 20. November 2026</time>
+            </span>
+            <a href="/team/thomas-boss" class="flex items-center gap-2 hover:text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Thomas Boss, Technischer Leiter Planexus
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav aria-label="Brotkrümelnavigation" class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/" class="hover:text-primary">Start</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/magazin" class="hover:text-primary">Magazin</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-[#5c7300] font-medium">Laborabzug prüfen</span>
+        </div>
+      </div>
+    </nav>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8 min-w-0">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                Der Laborabzug ist die wichtigste technische Schutzmaßnahme im Labor. Seine Leistung lässt aber nicht schlagartig nach, sondern schleichend: ein verbauter Abluftschlitz, ein nachlassender Ventilator, eine verschmutzte Anzeige. Ein Windrädchen oder Wollfaden zeigt solche Veränderungen nicht an. Deshalb verlangt das Regelwerk eine regelmäßige Prüfung mit Messung.
+              </p>
+
+              <div class="bg-slate-50 border-l-4 border-primary rounded-r-2xl p-6 my-8 not-prose">
+                <p class="text-sm uppercase tracking-wider text-[#5c7300] font-bold mb-2">Kurz gesagt</p>
+                <p class="text-gray-800 leading-relaxed">
+                  Ein <strong class="text-slate-900">Laborabzug</strong> ist <strong class="text-slate-900">mindestens einmal im Jahr</strong> durch eine befähigte Person zu prüfen (TRGS 526 Nr. 7.3). Die Nutzer kontrollieren die Funktion arbeitstäglich. Meldet eine selbstüberwachende Dauerüberwachung das Unterschreiten des Mindestvolumenstroms optisch und akustisch, darf die jährliche lufttechnische Messung entfallen; die Überwachung selbst ist dann spätestens alle drei Jahre zu prüfen. Das Protokoll nennt Art, Umfang, Ergebnis sowie Name und Unterschrift des Prüfers (§ 14 Abs. 7 BetrSichV).
+                </p>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Dieser Beitrag beschreibt die Prüfung. Wie Abzüge aufgebaut sind, welche Bauarten es gibt und was die Baumusterprüfung nach DIN EN 14175-3 leistet, steht im Beitrag <a href="/magazin/laborcontainer-laborabzug-din-en-14175" class={linkClass}>Laborabzüge im Container nach DIN EN 14175</a>.
+              </p>
+
+              <div class="bg-white border border-gray-200 rounded-2xl p-6 my-8 not-prose">
+                <p class="font-bold text-slate-900 mb-3">Inhalt</p>
+                <ol class="space-y-2 text-sm text-gray-700 list-decimal list-inside">
+                  <li><a href="#recht" class={linkClass}>Wer verlangt die Prüfung?</a></li>
+                  <li><a href="#fristen" class={linkClass}>Prüffristen im Überblick</a></li>
+                  <li><a href="#baujahr" class={linkClass}>Prüfumfang nach Baujahr und Norm</a></li>
+                  <li><a href="#ablauf" class={linkClass}>Ablauf der jährlichen Prüfung</a></li>
+                  <li><a href="#dauerueberwachung" class={linkClass}>Dauerüberwachung oder Funktionsanzeige?</a></li>
+                  <li><a href="#din-en-14175-4" class={linkClass}>DIN EN 14175-4: Inbetriebnahme und Wiederholung</a></li>
+                  <li><a href="#spuergas" class={linkClass}>Spürgastest vor Ort</a></li>
+                  <li><a href="#pruefer" class={linkClass}>Wer darf prüfen?</a></li>
+                  <li><a href="#maengel" class={linkClass}>Wenn die Prüfung nicht bestanden ist</a></li>
+                  <li><a href="#zusatz" class={linkClass}>Zusatzprüfungen, die oft vergessen werden</a></li>
+                  <li><a href="#neubau" class={linkClass}>Prüfung beim Neubau mitplanen</a></li>
+                </ol>
+              </div>
+
+              <h2 id="recht" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Wer verlangt die Prüfung?</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Pflicht beginnt in der <strong class="text-slate-900">Gefahrstoffverordnung</strong>: Der Arbeitgeber muss Funktion und Wirksamkeit technischer Schutzmaßnahmen regelmäßig, mindestens jedes dritte Jahr, überprüfen und das Ergebnis aufzeichnen (§ 7 Abs. 7 GefStoffV).
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für Abzüge wird die <strong class="text-slate-900">TRGS 526 „Laboratorien“</strong> genauer. In Nr. 7.3 heißt es: Abzüge müssen regelmäßig gewartet und ihre Funktionsfähigkeit geprüft und dokumentiert werden. „Die Prüfung muss mindestens einmal jährlich durch eine befähigte Person durchgeführt werden.“ Art, Umfang und Fristen legt der Arbeitgeber auf Grundlage der Gefährdungsbeurteilung fest (Nr. 7.1). Die DGUV Information 213-850 „Sicheres Arbeiten in Laboratorien“ gibt nach Angaben der BG RCI denselben Regeltext wieder.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die <strong class="text-slate-900">Betriebssicherheitsverordnung</strong> regelt, wer prüft und wie dokumentiert wird. Die TRGS 526 verweist für Arbeitsmittel im Labor ausdrücklich darauf (Nr. 7.1). Eine zur Prüfung befähigte Person hat die nötigen Kenntnisse durch Berufsausbildung, Berufserfahrung und zeitnahe berufliche Tätigkeit (§ 2 Abs. 6 BetrSichV). Das Ergebnis ist aufzuzeichnen (§ 14 Abs. 7).
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Norm <strong class="text-slate-900">DIN EN 14175</strong> legt keine Fristen fest. Ihr Teil 4 beschreibt die Prüfverfahren vor Ort, für die Inbetriebnahme und für Wiederholungsprüfungen im Rahmen der Wartung.
+              </p>
+              <h2 id="fristen" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Prüffristen im Überblick</h2>
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse">
+                  <thead><tr class="bg-slate-900 text-white"><th class="p-3 text-left">Wann</th><th class="p-3 text-left">Was</th><th class="p-3 text-left">Wer</th><th class="p-3 text-left">Fundstelle</th></tr></thead>
+                  <tbody class="text-gray-700">
+                    <tr><td class={td}>Vor der ersten Nutzung</td><td class={td}>Inbetriebnahmeprüfung</td><td class={td}>fachlich geeignete, benannte Person</td><td class={td}>TRGS 526 Nr. 7.1; Verfahren: DIN EN 14175-4 Kap. 5</td></tr>
+                    <tr class="bg-slate-50"><td class={td}>Arbeitstäglich</td><td class={td}>Funktionskontrolle, Anzeige, Sichtprüfung</td><td class={td}>unterwiesene Nutzer</td><td class={td}>BG RCI-Prüfliste</td></tr>
+                    <tr><td class={td}>Mindestens jährlich</td><td class={td}>Sichtkontrolle, Mechanik, Lufttechnik, Alarm</td><td class={td}>befähigte Person</td><td class={td}>TRGS 526 Nr. 7.3</td></tr>
+                    <tr class="bg-slate-50"><td class={td}>Höchstens alle 3 Jahre</td><td class={td}>Selbstüberwachende Dauerüberwachung</td><td class={td}>befähigte Person</td><td class={td}>TRGS 526 Nr. 7.3</td></tr>
+                    <tr><td class={td}>Jährlich</td><td class={td}>Regelstrecke bei variablem Volumenstrom</td><td class={td}>befähigte Person</td><td class={td}>DGUV 213-857 Nr. 2.3.3</td></tr>
+                    <tr class="bg-slate-50"><td class={td}>Richtwert 4 Jahre</td><td class={td}>Elektrische Einrichtungen am Abzug</td><td class={td}>Elektrofachkraft</td><td class={td}>BG RCI-Prüfliste</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="baujahr" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Welcher Abzug steht bei Ihnen? Prüfumfang nach Baujahr und Norm</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Was bei der Prüfung gemessen wird, hängt davon ab, nach welcher Norm der Abzug gebaut ist. Die DGUV Information 213-857 „Laborabzüge – Bauarten und sicherer Betrieb“ unterscheidet drei Gruppen:
+              </p>
+              <ul class="space-y-3 text-gray-700 mb-6 not-prose">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Abzüge nach DIN 12924-1:1978:</strong> Geprüft werden der Volumenstrom je laufendem Meter (Tischabzug 400 m³/h, Tiefabzug 600 m³/h, begehbar 700 m³/h) und mindestens 0,7 m/s Einströmgeschwindigkeit bei 100 mm geöffnetem Frontschieber. Beide Werte müssen eingehalten sein.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Abzüge nach DIN 12924-1:1991:</strong> Sie haben eine Funktionskontrolleinheit, die bei Unter- oder Überschreiten der Grenzwerte optisch und akustisch alarmiert. Diese Einheit ist bei der Prüfung selbst Prüfgegenstand.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Abzüge nach DIN EN 14175:</strong> Geprüft werden Sichtkontrolle, Mechanik, Abluftvolumenstrom und die Dauerüberwachung bzw. Regelstrecke. Den minimalen Sollvolumenstrom legt der Betreiber bei der Erstinbetriebnahme fest, anhand der Typprüfunterlagen und der Gefährdungsbeurteilung.</span></li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Woran Sie den Typ erkennen: Abzüge nach DIN EN 14175 tragen ein dauerhaftes Typenschild mit Hersteller, Typ, Produktionsjahr und dem Hinweis auf DIN EN 14175-3. Die DGUV Information 213-857 empfiehlt, zusätzlich die Soll-Luftmenge auf dem Schild anzugeben.
+              </p>
+              <h2 id="ablauf" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Ablauf der jährlichen Prüfung Schritt für Schritt</h2>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">1. Unterlagen bereitlegen</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Typprüfprotokoll oder Herstellerangaben, Bedienungsanleitung, festgelegter Soll-Volumenstrom und das letzte Prüfprotokoll. Ohne Sollwert lässt sich nicht entscheiden, ob ein Messwert ausreicht.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">2. Sichtkontrolle</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Typische Befunde: nachträglich gebohrte Öffnungen, Regaleinbauten oder Chemikalienlagerung im Abzug, verstopfte oder verbaute Abluftschlitze, große Geräte ohne Bodenfreiheit, trübe Scheiben, ausgefallene Beleuchtung.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">3. Mechanik</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Der Frontschieber muss leicht laufen und gegen Herunterfallen gesichert sein (TRGS 526 Nr. 6.3.1 Abs. 4). Hängt er schräg, ist oft ein Seil gerissen.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">4. Lufttechnik messen</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Gemessen wird die Einströmgeschwindigkeit in der Frontschieberöffnung und/oder der Abluftvolumenstrom. Geeignet sind Flügelrad- und thermische Anemometer. Der Messkopf muss genau in der Ebene der Öffnung geführt werden, sonst entstehen erhebliche Messfehler. Die ganze Öffnung wird gleichmäßig abgefahren; bei Geräten ohne Mittelwertbildung liegen die Umkehrpunkte höchstens 300 mm auseinander (BG RCI, Handlungsanleitung zur Abzugsprüfung).
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">5. Funktionsanzeige und Alarm testen</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Funktionskontrolleinheit wird auf Unterfunktion, Überfunktion und Stromausfall geprüft (DGUV Information 213-857, Nr. 2.3.3). Nach TRGS 526 Nr. 6.3.1 Abs. 5 muss die lufttechnische Funktion jedes Abzugs durch eine selbsttätig wirkende Einrichtung überwacht werden; eine Meldeleuchte für den Lüftermotor reicht dafür nicht.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">6. Variable Volumenströme und Herstellerprüfungen</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Bei Abzügen mit variablem Volumenstrom (DIN EN 14175-6) wird die Regelstrecke jährlich geprüft. Je nach Bauart kommen Prüfungen nach Bedienungsanleitung hinzu, etwa der Stützluft.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">7. Protokoll und Prüfplakette</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Das Protokoll enthält mindestens Art der Prüfung, Prüfumfang, Ergebnis sowie Name und Unterschrift der befähigten Person; es ist bis zur nächsten Prüfung aufzubewahren (§ 14 Abs. 7 BetrSichV). Die BG RCI empfiehlt zusätzlich einen Aufkleber mit Prüfdatum am Abzug.
+              </p>
+              <figure class="my-10 not-prose">
+                <Picture
+                  src="/attached_assets/Labor_1_1769690564538.jpg"
+                  alt="Laborraum mit mehreren Laborabzügen in einer Reihe, darunter Unterschränke, Lüftungsleitungen offen unter der Decke"
+                  width={1600}
+                  height={1200}
+                  loading="lazy"
+                  class="w-full h-auto rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Laborabzüge in einer Reihe: Frontschieber, Bedienfeld und Abluftanschluss müssen für die Prüfung zugänglich sein.
+                </figcaption>
+              </figure>
+
+              <h2 id="dauerueberwachung" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Dauerüberwachung oder nur Funktionsanzeige?</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Hier entscheidet sich, ob die jährliche Messung nötig ist. Nach TRGS 526 Nr. 7.3 kann die jährliche Prüfung der lufttechnischen Funktion entfallen, „wenn durch eine selbstüberwachende Funktionskontrolle des einzelnen Abzugs sichergestellt ist, dass eine Unterschreitung des Mindestvolumenstromes optisch und akustisch angezeigt wird“. Die Dauerüberwachung selbst ist dann in Abständen von nicht mehr als drei Jahren zu prüfen.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Selbstüberwachend heißt: Auch ein Ausfall der Überwachung, etwa durch Verschmutzung, Korrosion, Alterung, einen Elektronikfehler oder Stromausfall, wird als Störung optisch und akustisch gemeldet. Eine Funktionskontrolleinheit nach DIN 12924:1991 erfüllt das nicht. Bei solchen Abzügen bleibt die lufttechnische Prüfung jährlich (DGUV Information 213-857, Nr. 2.3.3). Sichtkontrolle und Mechanik sind in jedem Fall jährlich zu prüfen.
+              </p>
+              <h2 id="din-en-14175-4" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">DIN EN 14175-4: Inbetriebnahme, Wiederholung, Qualifizierung</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Teil 4 der Norm beschreibt Vor-Ort-Prüfverfahren für eingebaute Abzüge. Nach dem öffentlichen Inhaltsverzeichnis gliedert er sich in vier Prüfarten:
+              </p>
+              <ul class="space-y-3 text-gray-700 mb-6 not-prose">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Inbetriebnahmeprüfung baumustergeprüfter Abzüge (Kapitel 5):</strong> unter anderem Einströmgeschwindigkeit, Abluftvolumenstrom, Druckverlust, Visualisierung der Strömung, Raumluftgeschwindigkeit, Alarmsystem und Rückhaltevermögen.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Wiederholungsprüfung baumustergeprüfter Abzüge (Kapitel 6):</strong> Einströmgeschwindigkeit, Abluftvolumenstrom, Druckverlust, Visualisierung, Alarmsystem und Inspektionen.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Qualifizierungsprüfung für Abzüge ohne Baumusterprüfung (Kapitel 7):</strong> umfangreicher, unter anderem mit Rückhaltevermögen und dessen Robustheit.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Wiederholungsprüfung qualifizierter Abzüge (Kapitel 8).</strong></span></li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Vor-Ort-Ergebnis gilt nur für den geprüften Abzug. Es lässt sich nicht auf andere Exemplare derselben Baureihe übertragen; für die Konformität bleibt die Baumusterprüfung nach DIN EN 14175-3 Voraussetzung.
+              </p>
+              <h2 id="spuergas" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Spürgastest vor Ort: Wann ist er sinnvoll?</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ein Spürgastest misst, ob Gas aus dem Abzug in den Raum austritt. Zur jährlichen Wiederholungsprüfung baumustergeprüfter Abzüge gehört er nicht: Kapitel 6 der DIN EN 14175-4 führt laut Inhaltsverzeichnis kein Rückhaltevermögen auf. Die Norm beschreibt eine Prüfung des Rückhaltevermögens vor Ort bei der Inbetriebnahme und bei Abzügen ohne Baumusterprüfung.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ob ein Spürgastest darüber hinaus nötig ist, ergibt sich aus der Gefährdungsbeurteilung. Die DGUV Information 213-857 weist darauf hin, dass manche Verfahren aus Teil 4 eher für die Erstinbetriebnahme oder zusätzliche Qualifizierungen sinnvoll sind. Beim Prüfgas ist zu beachten: Die Ausgabe 2019 der DIN EN 14175-3 schränkt den Einsatz von SF₆ je nach nationalem Recht ein.
+              </p>
+              <h2 id="pruefer" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Wer darf Laborabzüge prüfen?</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Eine zur Prüfung befähigte Person nach § 2 Abs. 6 BetrSichV. Die Prüfliste der BG RCI (Stand Dezember 2021) nennt als Voraussetzung die Teilnahme an einem Lehrgang beim Abzugshersteller oder vergleichbare Kenntnisse aus der Berufserfahrung. Das Messen selbst will geübt sein: Schon ein schräg gehaltener Messkopf verfälscht das Ergebnis.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ob vor der Prüfung Schadstoffe gemessen oder persönliche Schutzausrüstung getragen werden muss, entscheidet die befähigte Person im Einzelfall, zum Beispiel wenn im Abzug mit Flusssäure gearbeitet wurde.
+              </p>
+              <h2 id="maengel" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Wenn die Prüfung nicht bestanden ist</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Deutliche Mängel sind unverzüglich zu beheben, zum Beispiel ein verschlissenes Seil. Ist das nicht möglich, ist der Abzug außer Betrieb zu nehmen (DGUV Information 213-857, Nr. 2.3.3). Häufige Ursachen für zu wenig Abluft sind verbaute Abluftöffnungen, Undichtigkeiten und eine nachlassende zentrale Abluftanlage. Nach der Nachbesserung wird erneut gemessen.
+              </p>
+              <h2 id="zusatz" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Zusatzprüfungen, die oft vergessen werden</h2>
+              <ul class="space-y-3 text-gray-700 mb-6 not-prose">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Elektrische Einrichtungen am Abzug:</strong> als ortsfeste elektrische Betriebsmittel, Richtwert alle vier Jahre durch eine Elektrofachkraft (BG RCI-Prüfliste). Die TRGS 526 weist in Nr. 7.1 ausdrücklich auf die Prüfung elektrischer Betriebsmittel hin.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Abzüge in explosionsgefährdeten Bereichen:</strong> jährlich, nach den Vorgaben der BetrSichV für Ex-Bereiche. Mehr dazu im Beitrag <a href="/magazin/laborcontainer-energiewende-h2-batterie-ex-schutz" class={linkClass}>Ex-Schutz im H₂- und Batterielabor</a>.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Abzüge mit Umluft- oder Filtertechnik:</strong> jährlich, die Filtereinrichtung nach Herstellerangabe.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Abrauchabzüge für hohe Wärme- und Säurelast:</strong> für sie gilt DIN EN 14175-7; bei größeren Mengen Perchlorsäure gehört ein Abzugswäscher dazu.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Sicherheitsschränke für brennbare Flüssigkeiten:</strong> regelmäßig durch eine befähigte Person, insbesondere Schließeinrichtungen für Türen und Anschlüsse, Dichtungen und Luftwechsel (TRGS 526 Nr. 7.4).</span></li>
+              </ul>
+              <h2 id="neubau" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Prüfung beim Laborneubau oder Laborcontainer mitplanen</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die erste Prüfung fällt vor der ersten Nutzung an. Wer ein Labor neu baut oder einen <a href="/laborcontainer" class={linkClass}>Laborcontainer</a> plant, sollte deshalb früh festlegen, wer die Inbetriebnahmeprüfung übernimmt, und die Typprüfunterlagen der Abzüge mit der Übergabe anfordern. Für die wiederkehrende Prüfung muss der Abluftanschluss jedes Abzugs zugänglich bleiben, und der festgelegte Sollvolumenstrom gehört in die Anlagendokumentation.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Welche Lüftungsleistung Abzüge und Raum gemeinsam brauchen, steht im Beitrag <a href="/magazin/laborcontainer-klimatisierung-lueftung-normen" class={linkClass}>Klimatisierung und Lüftung im Laborcontainer</a>. Die übrigen baulichen Vorgaben fasst der Beitrag <a href="/magazin/anforderungen-laborraeume" class={linkClass}>Anforderungen an Laborräume</a> zusammen.
+              </p>
+              <div id="checkliste" class="bg-slate-50 border border-gray-100 rounded-2xl p-6 md:p-8 my-8 not-prose">
+                <h2 class="text-xl font-heading font-bold text-slate-900 mb-4">Checkliste: Abzugsprüfung organisieren</h2>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Alle Abzüge mit Norm und Baujahr erfassen (Typenschild)</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Sollvolumenstrom je Abzug dokumentieren</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Befähigte Person benennen, Messgerät kalibriert</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Nutzer für die arbeitstägliche Funktionskontrolle unterweisen</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Jährliche Prüfung terminieren, Dauerüberwachung spätestens alle drei Jahre</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Protokoll mit Art, Umfang, Ergebnis, Name und Unterschrift ablegen</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Elektrische Prüfung, Ex-Bereich und Filter gesondert einplanen</span></li>
+                </ul>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-5 items-start bg-white border border-gray-200 rounded-2xl p-6 my-10 not-prose">
+                <div class="shrink-0 w-14 h-14 rounded-full bg-slate-900 text-primary flex items-center justify-center font-heading font-bold text-lg" aria-hidden="true">TB</div>
+                <div>
+                  <p class="font-bold text-slate-900">Über den Autor</p>
+                  <p class="text-gray-600 text-sm leading-relaxed mt-1">
+                    <a href="/team/thomas-boss" class={linkClass}>Thomas Boss</a> ist Gesellschafter und Technischer Leiter der Planexus GmbH (Büro Albstadt, Fertigung Haigerloch). Er verantwortet Planung und Anlagentechnik der Laborcontainer.
+                  </p>
+                </div>
+              </div>
+
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Quellen: GefStoffV § 7 Abs. 7; TRGS 526 „Laboratorien“, Ausgabe Februar 2008 (GMBl Nr. 15 vom 2.4.2008, S. 294), Nr. 6.3.1 und 7.1 bis 7.4; BetrSichV § 2 Abs. 6 und § 14 Abs. 7; DGUV Information 213-857 (BG RCI Merkblatt T 032) „Laborabzüge – Bauarten und sicherer Betrieb“, Nr. 2.2 und 2.3.3 mit Tabelle 1; BG RCI, Prüfliste „Prüfungen im Labor“, Stand 15.12.2021; BG RCI, Handlungsanleitung zur Abzugsprüfung; DIN EN 14175-4:2004-12 (Inhaltsverzeichnis, DIN Media); DIN EN 14175-3:2019-07; DIN EN 14175-6 und -7 sowie DIN 12924-1 (nach DGUV Information 213-857); DGUV Information 213-850 „Sicheres Arbeiten in Laboratorien“. Abgerufen am 20.11.2026.
+              </p>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <p class="font-bold text-slate-900 mb-4">Abzugsprüfung auf einen Blick</p>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Prüfung mindestens jährlich (TRGS 526 Nr. 7.3)</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Nutzer: arbeitstägliche Funktionskontrolle</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Dauerüberwachung spätestens alle 3 Jahre</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Befähigte Person nach BetrSichV</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Protokoll: Art, Umfang, Ergebnis, Unterschrift</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Spürgastest nicht Teil der Jahresprüfung</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <p class="font-bold text-slate-900 mb-4">Weiterführende Inhalte</p>
+                <ul class="space-y-3">
+                  {furtherLinks.map((l) => (
+                    <li><a href={l.href} class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><Fragment set:html={chevron} />{l.label}</a></li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <p class="font-bold mb-3">Neues Labor geplant?</p>
+                <p class="text-gray-400 text-sm mb-4">Wir planen Abzüge, Abluft und Zugänglichkeit für die Prüfung von Anfang an mit.</p>
+                <a href="/kontakt" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Erstgespräch anfragen</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <LeadMagnetLastenheft />
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Häufige Fragen zur Prüfung von Laborabzügen</h2>
+          <div class="space-y-4">
+            {faqs.map((f, i) => (
+              <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open={i === 0}>
+                <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">{f.q}
+                  <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">{f.a}</div>
+              </details>
+            ))}
+          </div>
+          <div class="mt-10 text-center">
+            <a href="/kontakt" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Erstgespräch zum Labor anfragen
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedArticles slug="laborabzug-pruefen" />
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/magazin" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Zurück zum Magazin
+      </a>
+    </div>
+  </div>
+</Layout>

@@ -92,3 +92,28 @@ D2 Fallstudien, D3 Herkunft „Mehrgeschossiges Pharmalabor“ (bis dahin Text a
 ## Phase 4 – braucht Joachims Zugang oder Ja
 
 G1a/c/d/e Unternehmensprofil, H6 URL-Prüfung + Indexierung beantragen, G2 Bing Webmaster Tools, E8 Anfrage als Ziel in GTM/GA4, A5 Brotli, A8 CSP, F2 KI-Messung, F3 Verzeichnisse/Presse, D5b Award-Schalter am 01.12.2026, D10 Quartalsprüfung, H7 monatliche Search-Console-Abfrage.
+
+---
+
+## Phase 2 – Ausführung (20.11.2026)
+
+Grundlage: Search-Console-Abfrage 20.11. (Seite + Suchbegriff, Position 11–20) und vier Recherchen in `scratchpad/recherche-*.md` (Top 3 je Begriff, Fakten mit Fundstelle, Lücken).
+
+### Aufgabe 11: Mieten und Kaufen (DE/EN)
+- `src/pages/laborcontainer-mieten.astro`, `src/pages/laborcontainer-kaufen.astro`, EN `rent-lab-containers.astro`, `buy-lab-containers.astro`: neue Abschnitte aus der Lückenliste (je 2–4 H2), zusätzliche FAQ (FAQ-Schema = sichtbare Frage wörtlich), eigene Texte statt gemeinsamer Bausteine. Nur belegte Aussagen, keine Preise.
+- Hub-Anreißer bleiben kurz und verlinken mit „Laborcontainer mieten“/„kaufen“ (H1).
+
+### Aufgabe 12: Übersicht `/laborcontainer` (DE/EN)
+- Neue Abschnitte aus der Lückenliste (Begriffe, Maße, Kombination, Aufstellung, Medien, Lebensdauer), neue FAQ; Startseite und Hub bleiben getrennt (H2/B8).
+
+### Aufgabe 13: Artikel „Laborabzug prüfen“ (DE/EN)
+- Neu: `src/pages/magazin/laborabzug-pruefen.astro`, EN `src/pages/en/magazine/fume-cupboard-testing.astro`; Eintrag `magazinPosts`, `magazinEn`, Related-Liste, `DE_TO_EN`, `llms.txt`; Bild vorhandenes `Labor_1` (Bildtext nur Sichtbares). Der alte Container-Abzug-Artikel verlinkt darauf und umgekehrt.
+
+### Aufgabe 14: Seiten auf Position 11–20
+- BSL-Artikel DE/EN: Begriffserklärung „Was bedeutet BSL?“ und Vergleich BSL-2/BSL-3 als Tabelle.
+- Genehmigungs-Artikel: Antwortblock „Braucht ein Container eine Baugenehmigung?“ mit Fundstellen.
+- Ausstattungs-Checkliste: Abschnitt „20 oder 40 Fuß?“ und Giftschrank vs. Sicherheitsschrank.
+- Basel/Bern: keine Änderung – Search Console zeigt dort nur Markenanfragen (geprüft 20.11.).
+
+### Gegenprobe
+`scripts/check-seo-abnahme.mjs` um Phase-2-Sätze erweitert, vorher rot.

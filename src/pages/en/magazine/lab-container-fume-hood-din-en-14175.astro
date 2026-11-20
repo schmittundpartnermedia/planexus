@@ -28,7 +28,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Which standard governs fume cupboards?", "acceptedAnswer": { "@type": "Answer", "text": "The governing standard is the DIN EN 14175 “Fume cupboards” series, which replaced the former DIN 12924-1. It comprises seven parts: Part 1 (Terms), Part 2 (Safety and performance requirements), Part 3 (Type test methods with SF₆ tracer-gas measurement), Part 4 (On-site test methods at the operator), Part 5 (Recommendations for installation and use), Part 6 (VAV fume cupboards with variable air volume) and Part 7 (non-conventional special types). Important: DIN EN 14175 no longer sets fixed guide values for containment or extract volume flow – these are determined by the operator under their own responsibility as part of the risk assessment. In addition, TRGS 526 “Laboratories” and DGUV Information 213-850 apply to laboratory operation, and DIN 1946-7 to room-air technology. Cupboards installed before 2003 remain subject to DIN 12924-1 or 12924-2 as valid at the time of installation." } },
+    { "@type": "Question", "name": "Which standard governs fume cupboards?", "acceptedAnswer": { "@type": "Answer", "text": "The governing standard is the DIN EN 14175 “Fume cupboards” series, which replaced the former DIN 12924-1. It comprises seven parts: Part 1 (Terms), Part 2 (Safety and performance requirements), Part 3 (Type test methods with SF₆ tracer-gas measurement), Part 4 (On-site test methods at the operator), Part 5 (Recommendations for installation and use), Part 6 (VAV fume cupboards with variable air volume) and Part 7 (fume cupboards for high heat and acid loads). Important: DIN EN 14175 no longer sets fixed guide values for containment or extract volume flow – these are determined by the operator under their own responsibility as part of the risk assessment. In addition, TRGS 526 “Laboratories” and DGUV Information 213-850 apply to laboratory operation, and DIN 1946-7 to room-air technology. Cupboards installed before 2003 remain subject to DIN 12924-1 or 12924-2 as valid at the time of installation." } },
     { "@type": "Question", "name": "How high must the face velocity be?", "acceptedAnswer": { "@type": "Answer", "text": "On older cupboards to DIN 12924 (January 1978 edition) the mean face velocity with the sash open 100 mm must be at least 0.7 m/s – a measured value of only 0.5 m/s is below that and is not sufficient for safe operation. On modern cupboards to DIN EN 14175 there is no blanket velocity value: what matters is the containment demonstrated in the type test; the required extract volume flow is set by the risk assessment. Measurement is made with a thermal or vane anemometer. An important distinction: the frequently cited value of 0.5 m refers to the maximum sash opening height (limiter to Part 2), not to the face velocity." } },
     { "@type": "Question", "name": "What is containment and how is it tested?", "acceptedAnswer": { "@type": "Answer", "text": "Containment describes the ability of a fume cupboard to keep airborne substances inside the working chamber and not allow them to escape into the breathing zone of the staff. It is tested in the type test to DIN EN 14175-3 with the tracer gas sulphur hexafluoride (SF₆), which is non-toxic but strongly climate-damaging (global warming potential around 30,000 times that of CO₂). Part 3 comprises three measurements: the inner plane (containment directly at the working opening), the outer plane and the robustness test. In the robustness test a standardised plate (1900 × 400 × 20 mm) moves past the cupboard at 1 m/s and simulates a person walking briskly by – this checks whether the cupboard remains tight even when the airflow is disturbed. In operation, the on-site measurement to Part 4 checks function on the installed unit." } },
     { "@type": "Question", "name": "How often must a fume cupboard be tested?", "acceptedAnswer": { "@type": "Answer", "text": "Under TRGS 526 (Section 7.3) and the substantively identical DGUV Information 213-850, fume cupboards must be maintained regularly, their function tested and the result documented – at least once a year by a competent person. Overarching this, the Hazardous Substances Ordinance requires the employer to check the effectiveness of technical protective measures at least every third year; type, scope and test intervals are set by the employer on the basis of the risk assessment under their own responsibility. Items tested include face velocity or volume flow, the function of the airflow monitor and alarm, the sash mechanism and the physical condition. On VAV cupboards to Part 6 the function of the control loop must also be tested annually. This test is an operator duty – we deliver the cupboard ready for use; the operator organises the recurring test." } },
@@ -146,7 +146,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                     <tr>
                       <td class="border border-gray-200 px-4 py-3 font-medium">Product standard, fume cupboards</td>
                       <td class="border border-gray-200 px-4 py-3">DIN EN 14175 (Parts 1–7)</td>
-                      <td class="border border-gray-200 px-4 py-3">Terms, safety, type and on-site testing, VAV, special types</td>
+                      <td class="border border-gray-200 px-4 py-3">Terms, safety, type and on-site testing, VAV, high heat and acid loads</td>
                     </tr>
                     <tr class="bg-slate-50">
                       <td class="border border-gray-200 px-4 py-3 font-medium">Legacy cupboards (pre-2003)</td>
@@ -235,7 +235,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                     </tr>
                     <tr>
                       <td class="border border-gray-200 px-4 py-3 font-medium">Part 5</td>
-                      <td class="border border-gray-200 px-4 py-3">Installation &amp; use</td>
+                      <td class="border border-gray-200 px-4 py-3">Installation &amp; maintenance (technical specification CEN/TS)</td>
                       <td class="border border-gray-200 px-4 py-3">Recommendations on installation, use and safe operation</td>
                     </tr>
                     <tr class="bg-slate-50">
@@ -245,8 +245,8 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                     </tr>
                     <tr>
                       <td class="border border-gray-200 px-4 py-3 font-medium">Part 7</td>
-                      <td class="border border-gray-200 px-4 py-3">Special types</td>
-                      <td class="border border-gray-200 px-4 py-3">Non-conventional cupboards (e.g. with supply-air introduction), own test criteria</td>
+                      <td class="border border-gray-200 px-4 py-3">High heat and acid loads</td>
+                      <td class="border border-gray-200 px-4 py-3">Fume cupboards for high thermal and acid loads (e.g. perchloric or hydrofluoric acid), replaces DIN 12924-2</td>
                     </tr>
                   </tbody>
                 </table>
@@ -367,6 +367,10 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Testing and operation: TRGS 526, annually, competent person</h2>
 
               <p class="text-gray-600 leading-relaxed mb-6">
+                Intervals, procedure, measurements and the test record are explained in detail in <a href="/en/magazine/fume-cupboard-testing" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Fume cupboard testing: obligations, intervals and procedure</a>.
+              </p>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
                 A fume cupboard is not a “fit and forget” device. Under <strong>TRGS 526 (Section 7.3)</strong> and the substantively identical <strong>DGUV Information 213-850</strong>, cupboards must be maintained regularly, their function tested and the result documented – <strong>at least once a year by a competent person</strong>. Overarching this, the <strong>Hazardous Substances Ordinance</strong> requires the employer to check the effectiveness of technical protective measures at least every third year; type, scope and intervals are set on the basis of the risk assessment and documented. Further duties that TRGS 526 sets for the lab room, such as emergency showers with monthly testing, are covered in <a href="/en/magazine/laboratory-room-requirements-germany" class="text-[#5c7300] font-medium hover:underline">laboratory room requirements</a>.
               </p>
 
@@ -443,7 +447,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">Which standard governs fume cupboards?
                 <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-600 leading-relaxed">The governing standard is the <strong>DIN EN 14175 “Fume cupboards”</strong> series, which replaced the former DIN 12924-1. It comprises seven parts: Terms (1), Safety &amp; performance (2), Type test with SF₆ (3), On-site test (4), Installation &amp; use (5), VAV cupboards (6) and special types (7). Important: the standard <strong>no longer sets fixed guide values</strong> for containment or volume flow – the operator determines these via the risk assessment. In addition, <strong>TRGS 526</strong>, <strong>DGUV 213-850</strong> and, for room-air technology, <strong>DIN 1946-7</strong> apply. Cupboards installed before 2003 remain subject to DIN 12924-1/-2.</div>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">The governing standard is the <strong>DIN EN 14175 “Fume cupboards”</strong> series, which replaced the former DIN 12924-1. It comprises seven parts: Terms (1), Safety &amp; performance (2), Type test with SF₆ (3), On-site test (4), Installation &amp; use (5), VAV cupboards (6) and fume cupboards for high heat and acid loads (7). Important: the standard <strong>no longer sets fixed guide values</strong> for containment or volume flow – the operator determines these via the risk assessment. In addition, <strong>TRGS 526</strong>, <strong>DGUV 213-850</strong> and, for room-air technology, <strong>DIN 1946-7</strong> apply. Cupboards installed before 2003 remain subject to DIN 12924-1/-2.</div>
             </details>
             <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
               <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">How high must the face velocity be?

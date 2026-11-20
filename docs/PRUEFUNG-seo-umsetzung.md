@@ -59,3 +59,41 @@ Urteil des Prüfers: „Mit Korrekturen“, nichts Kritisches. Umgesetzt:
 8. Offen bis Deploy: Formular-Volldurchlauf mit Speichern (Satz 12).
 
 Danach: Build Exit 0, Prüfskript 19/19 grün, Lighthouse Barrierefreiheit Kaufen/Mieten/EN-Kaufen je 100.
+
+## Phase 2 (20.11.2026)
+
+Gegenprobe vorher: Sätze 23–28 rot (Mieten 967 W/4 FAQ, Kaufen 957 W/4 FAQ, Hub 1.100 W ohne Maßabschnitt, Laborabzug-Artikel fehlt, BSL ohne Begriffsklärung/Vergleich, Genehmigung/Checkliste ohne neue Abschnitte).
+Nachher: Build Exit 0, Prüfskript **25/25 grün**.
+
+| Satz | Geprüft wie | Ergebnis |
+|---|---|---|
+| 23 | Skript | Mieten 1.674 W/8 FAQ, Kaufen 1.605 W/8 FAQ, EN Rent 1.922 W/8, EN Buy 1.856 W/8; alle FAQ sichtbar |
+| 24 | Skript | /laborcontainer 1.959 W, /en/lab-containers 2.324 W, Maßabschnitt mit ISO 668 |
+| 25 | Skript | /magazin/laborabzug-pruefen und /en/magazine/fume-cupboard-testing: Article, Breadcrumb, FAQPage, Titel/Description in Grenzen, 1 H1, in Sitemap |
+| 26 | Skript | Alter Abzug-Artikel ↔ neuer Artikel verlinkt, in Magazinlisten DE/EN |
+| 27 | Skript | BSL DE/EN: Abschnitt „Was bedeutet BSL?“ + Vergleichstabelle |
+| 28 | Skript | Genehmigung: Abschnitt „Braucht ein Container eine Baugenehmigung?“; Checkliste: „Zwei 20-Fuß-Container oder ein 40-Fuß-Container?“ |
+| 29 | Suche in allen geänderten/neuen Dateien | 0 €-Beträge in Seitentexten; alle neuen Zahlen aus Recherche-Fundstellen (scratchpad/recherche-*.md) bzw. vorhandenen Website-Angaben (LABtoGO-Maße). TRGS 526 Nr. 7.3 im Original gelesen (BGN-Vorschriftendatenbank, 20.11.2026) |
+| 30 | – | nach Deploy |
+
+Zusätzlich:
+- FAQ-Abgleich über alle 142+ Seiten: 791 Fragen, 0 ohne sichtbare Entsprechung (vorher 17 in 10 älteren Artikeln – Schema an sichtbare Frage angeglichen).
+- Lighthouse lokal (Barrierefreiheit/SEO): Hub, Mieten, Kaufen, Laborabzug DE/EN je 100/100; BSL, Genehmigung, Checkliste nach Korrektur der Überschriften-Ebenen (90 Überschriften in 24 Artikeln), Knopfbeschriftungen und Kontrast je 100.
+
+### Korrigierte Falschaussagen (gefunden in der Recherche)
+- Kaufen DE/EN: „AfA 10–15 Jahre“ → 10 Jahre (AfA-Tabelle AV Nr. 3.6), Gebäudefall bei fester Gründung (BFH III R 47/93).
+- Übersicht DE/EN: „ÖNORM B 1300“ (regelt Objektsicherheitsprüfungen für Wohngebäude) entfernt; Festbau-Dauer vereinheitlicht („oft 24 Monate und länger“); „hunderte realisierte Projekte“ entfernt (widersprach „50+“).
+- Genehmigung DE/EN: „3 Monate verfahrensfrei“-Tabellenspalte und „30–75 m²“ entfernt (MBO/LBO BW/BayBO kennen 3 Monate nur für Messegelände; Grenzen in m³); unbelegte Spalte „Besonderheit Labor“ entfernt.
+- BSL DE/EN: „30 bis 50 Pascal“ → TRBA-Wortlaut (ständiger, kontrollierter Unterdruck mit Alarm); Duschpassage nur nach Gefährdungsbeurteilung.
+- Checkliste DE/EN: „Pflicht ab 20 Litern“ → TRGS 510 empfiehlt; Giftschrank-Fundstelle ChemVerbotsV → GefStoffV § 8 Abs. 7 / TRGS 510 Nr. 4.3.
+- Abzug-Artikel DE/EN: DIN EN 14175-7 = Abrauchabzüge (nicht „Sonderbauformen“); Teil 5 als CEN/TS gekennzeichnet.
+- Mieten/Kaufen/Übersicht: „Konform mit BioStoffV …“ → „Ausgelegt nach …“.
+
+### Unabhängige Prüfung Phase 2 und Nacharbeit
+Urteil „Mit Korrekturen“, nichts Kritisches. Umgesetzt:
+1. Gleiche Falschaussagen auf weiteren Seiten korrigiert (DE/EN): Kosten-Artikel und Energiewende-Artikel (AfA 10–15 J.), Projektablauf (3-Monats-Regel), Übergangslabor (Fliegender Bau/vereinfachtes Verfahren „<100 m², bis fünf Jahre“). Danach im Build: 0 Treffer für die alten Formulierungen außerhalb der CH-Städteseiten.
+2. BFH III R 47/93 im Volltext gelesen (lexetius.com/1996,41): „Bürocontainer, die auf festen Fundamenten ruhen, sind … unabhängig von ihrer Zweckbestimmung als Gebäude anzusehen“; ohne Fundament zählt dauernde Nutzung und äußere Ortsfestigkeit. Formulierung „ohne feste Gründung in der Regel beweglich“ entsprechend korrigiert; AfA-Kennzahl im Kaufen-Hero durch „BSL-3 bis Sicherheitsstufe“ ersetzt; Hinweis Steuerberatung ergänzt.
+3. nginx-Vorlage: Kopierschritt für planexus-cache-map.conf ergänzt.
+4.–12. § 61-Liste vollständig (Gerüste, Toilettenwagen, Landesverteidigung); Transport-Satz eingeschränkt; „gehört“ → „eignet sich“; Laborabzug: DGUV-213-850-Satz abgeschwächt, Quellenliste ergänzt (DIN EN 14175-6/-7, DIN 12924-1, DGUV 213-850), Inbetriebnahme-Zeile auf TRGS 526 Nr. 7.1 gestützt; TRGS 526 Nr. 7.4 präzisiert (Wortlaut selbst gelesen – Prüferhinweis „unbelegt“ widerlegt); ASR-Minderung 0,25 m ergänzt; Hub-BSL-FAQ „Ausgelegt nach“, Dusche nach Gefährdungsbeurteilung; BSL-Tabelle Ausnahme RG 3(**); Bayern „außer im Außenbereich“; EN-Begriffe „undesignated outlying area“, „combustion appliances“; Pfeile #5c7300 mit aria-hidden; DIN EN 14175-5 „Installation &amp; Wartung (CEN/TS)“.
+Danach: Build Exit 0, Prüfskript 25/25, FAQ-Abgleich 791/0.
+Offen gelassen (Kundenbestätigung, Phase 3): H14-Filter und gefilterte Zuluft im BSL-Artikel als Planexus-Ausführung; Lebensdauer 15–20 J., Wiederverkauf 40–50 %, Wartung 2–4 %, Klimatisierung 30–40 %, 48-h-Aufstellung; CH/AT-Fristaussagen auf Städteseiten.

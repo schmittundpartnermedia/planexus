@@ -1,0 +1,439 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import RelatedArticles from '../../../components/RelatedArticles.astro';
+import LeadMagnetLastenheft from '../../../components/LeadMagnetLastenheft.astro';
+import Picture from '../../../components/Picture.astro';
+
+const pageUrl = "https://planexus.de/en/magazine/fume-cupboard-testing";
+const headline = "Fume cupboard testing: obligations, intervals and procedure";
+const description = "Fume cupboard testing in Germany: at least annually by a competent person (TRGS 526). Procedure, measurements, EN 14175-4 and the required test record.";
+
+const faqs = [
+  {
+    q: "How often must a fume cupboard be tested?",
+    a: "At least once a year by a competent person (TRGS 526 no. 7.3). Users also check its function every working day, for example the indicator. A self-monitoring continuous monitoring device must be tested at intervals of no more than three years."
+  },
+  {
+    q: "Who may test a fume cupboard?",
+    a: "A person qualified to carry out inspections: someone with the necessary knowledge through vocational training, professional experience and recent professional activity (section 2(6) of the German Industrial Safety Regulation, BetrSichV). The BG RCI checklist names a course with the fume cupboard manufacturer or comparable professional experience as the prerequisite."
+  },
+  {
+    q: "What does the fume cupboard test cover?",
+    a: "A visual inspection, the sash mechanics, the airflow values (face velocity and/or exhaust volume flow) and the monitoring unit with alarms for under-function, over-function and power failure (DGUV Information 213-857, no. 2.3.3). Variable air volume cupboards also need their control loop checked."
+  },
+  {
+    q: "Can the annual measurement be dropped?",
+    a: "Only the test of the airflow function, and only with self-monitoring function control that signals a drop below the minimum volume flow visually and audibly (TRGS 526 no. 7.3). A monitoring unit to DIN 12924:1991 does not count as self-monitoring. Visual inspection and mechanics remain annual."
+  },
+  {
+    q: "What must the test record contain?",
+    a: "Under section 14(7) BetrSichV at least the type of test, its scope, the result and the name and signature of the competent person. The record must be kept at least until the next test; electronic records are permitted."
+  },
+  {
+    q: "Is a tracer-gas test part of the annual test?",
+    a: "Not for type-tested fume cupboards. According to the published table of contents of EN 14175-4, the routine test in chapter 6 does not list containment. The standard describes an on-site containment test at commissioning and for fume cupboards without a type test."
+  },
+  {
+    q: "What happens if the fume cupboard fails the test?",
+    a: "Significant defects must be remedied without delay, for example a worn sash cable. If that is not possible, the fume cupboard must be taken out of service (DGUV Information 213-857, no. 2.3.3)."
+  },
+  {
+    q: "Does the testing obligation also apply to bench-mounted fume cupboards?",
+    a: "Yes. The bench-mounted cupboard is one design alongside low-level and walk-in cupboards, and TRGS 526 no. 7.3 applies to all of them. Fume cupboards with recirculation or filter technology are also tested annually, the filters as specified by the manufacturer."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "inLanguage": "en",
+  "headline": headline,
+  "description": description,
+  "author": { "@type": "Person", "name": "Thomas Boss", "url": "https://planexus.de/en/team/thomas-boss", "jobTitle": "Shareholder & Technical Director", "worksFor": { "@type": "Organization", "name": "Planexus GmbH", "url": "https://planexus.de/en" } },
+  "datePublished": "2026-11-20",
+  "dateModified": "2026-11-20",
+  "image": "https://planexus.de/attached_assets/Labor_1_1769690564538.jpg",
+  "publisher": { "@type": "Organization", "name": "Planexus GmbH", "logo": { "@type": "ImageObject", "url": "https://planexus.de/images/planexus-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
+  "about": [
+    { "@type": "Thing", "name": "Fume cupboard" },
+    { "@type": "Thing", "name": "TRGS 526 Laboratories" },
+    { "@type": "Thing", "name": "EN 14175" }
+  ],
+  "citation": [
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/trgs526/7.htm",
+    "https://vorschriften.bgn-branchenwissen.de/daten/tr/trgs526/6.htm",
+    "https://www.gesetze-im-internet.de/gefstoffv_2010/__7.html",
+    "https://www.gesetze-im-internet.de/betrsichv_2015/__14.html",
+    "https://www.gesetze-im-internet.de/betrsichv_2015/__2.html",
+    "https://www.dinmedia.de/de/norm/din-en-14175-4/71538715",
+    "https://www.bgrci.de/fachwissen-portal/themenspektrum/laboratorien/abzuege"
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://planexus.de/en" },
+    { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://planexus.de/en/magazine" },
+    { "@type": "ListItem", "position": 3, "name": "Fume cupboard testing", "item": pageUrl }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+
+const linkClass = "text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline";
+const td = "p-3 border border-gray-200";
+const chevron = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>`;
+const furtherLinks = [
+  { href: "/en/magazine/lab-container-fume-hood-din-en-14175", label: "Fume cupboards in lab containers (EN 14175)" },
+  { href: "/en/magazine/laboratory-room-requirements-germany", label: "Laboratory room requirements" },
+  { href: "/en/magazine/lab-container-hvac-ventilation-standards", label: "HVAC and ventilation" },
+  { href: "/en/magazine/lab-container-equipment-checklist", label: "Equipment checklist A–Z" },
+  { href: "/en/services/equipment", label: "Laboratory equipment" },
+  { href: "/en/lab-containers", label: "Lab containers overview" },
+];
+---
+
+<Layout
+  type="article"
+  title="Fume cupboard testing: intervals, procedure"
+  description={description}
+  canonical="/en/magazine/fume-cupboard-testing"
+  ogImage="/attached_assets/Labor_1_1769690564538.jpg"
+>
+  <div class="pt-20 min-h-screen bg-white">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <section class="relative py-20 bg-slate-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/attached_assets/Labor_1_1769690564538.webp')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-wrap items-center gap-4 mb-6">
+            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Safety
+            </span>
+            <span class="text-gray-400 text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11 min read
+            </span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+            Fume cupboard testing: obligations, intervals and procedure
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Who tests, how often and what is measured: TRGS 526 intervals, scope by year of manufacture, on-site testing to EN 14175-4 and the required test record
+          </p>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              <time datetime="2026-11-20">Updated 20 November 2026</time>
+            </span>
+            <a href="/en/team/thomas-boss" class="flex items-center gap-2 hover:text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Thomas Boss, Technical Director at Planexus
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav aria-label="Breadcrumb" class="bg-slate-50 border-b border-gray-100 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <a href="/en" class="hover:text-primary">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="/en/magazine" class="hover:text-primary">Magazine</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="text-[#5c7300] font-medium">Fume cupboard testing</span>
+        </div>
+      </div>
+    </nav>
+
+    <article class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8 min-w-0">
+            <div class="prose prose-lg max-w-none">
+
+              <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                The fume cupboard is the most important technical safety measure in a laboratory. Its performance rarely fails suddenly; it drifts: a blocked exhaust slot, a weakening fan, a dirty indicator. A small vane or a woollen thread will not show such changes. That is why German rules require regular testing with measurement.
+              </p>
+
+              <div class="bg-slate-50 border-l-4 border-primary rounded-r-2xl p-6 my-8 not-prose">
+                <p class="text-sm uppercase tracking-wider text-[#5c7300] font-bold mb-2">In short</p>
+                <p class="text-gray-800 leading-relaxed">
+                  In Germany a <strong class="text-slate-900">fume cupboard</strong> must be tested <strong class="text-slate-900">at least once a year</strong> by a competent person (TRGS 526 no. 7.3). Users check its function every working day. If self-monitoring continuous monitoring signals a drop below the minimum volume flow visually and audibly, the annual airflow measurement may be dropped; the monitoring device itself must then be tested at least every three years. The record states type, scope, result and the name and signature of the tester (section 14(7) BetrSichV).
+                </p>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This article covers testing. How fume cupboards are built, which designs exist and what the EN 14175-3 type test does is explained in <a href="/en/magazine/lab-container-fume-hood-din-en-14175" class={linkClass}>fume cupboards in lab containers to EN 14175</a>.
+              </p>
+
+              <div class="bg-white border border-gray-200 rounded-2xl p-6 my-8 not-prose">
+                <p class="font-bold text-slate-900 mb-3">Contents</p>
+                <ol class="space-y-2 text-sm text-gray-700 list-decimal list-inside">
+                  <li><a href="#law" class={linkClass}>Who requires the test?</a></li>
+                  <li><a href="#intervals" class={linkClass}>Test intervals at a glance</a></li>
+                  <li><a href="#generation" class={linkClass}>Scope by year and standard</a></li>
+                  <li><a href="#procedure" class={linkClass}>The annual test step by step</a></li>
+                  <li><a href="#monitoring" class={linkClass}>Continuous monitoring or indicator?</a></li>
+                  <li><a href="#en-14175-4" class={linkClass}>EN 14175-4: commissioning and routine tests</a></li>
+                  <li><a href="#tracer-gas" class={linkClass}>Tracer-gas test on site</a></li>
+                  <li><a href="#tester" class={linkClass}>Who may test?</a></li>
+                  <li><a href="#defects" class={linkClass}>If the test is failed</a></li>
+                  <li><a href="#additional" class={linkClass}>Additional tests that get forgotten</a></li>
+                  <li><a href="#new-build" class={linkClass}>Plan testing into a new lab</a></li>
+                </ol>
+              </div>
+
+              <h2 id="law" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Who requires the test?</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The duty starts in the <strong class="text-slate-900">German Hazardous Substances Ordinance</strong>: employers must check the function and effectiveness of technical protective measures regularly, at least every third year, and record the result (section 7(7) GefStoffV).
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                <strong class="text-slate-900">TRGS 526 “Laboratories”</strong> is more specific for fume cupboards. No. 7.3 states that fume cupboards must be maintained regularly and their functionality tested and documented, and that the test must be carried out at least once a year by a competent person. The employer sets type, scope and intervals on the basis of the risk assessment (no. 7.1). According to BG RCI, DGUV Information 213-850 “Safe working in laboratories” reproduces the same rule text.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The <strong class="text-slate-900">Industrial Safety Regulation (BetrSichV)</strong> governs who tests and how results are recorded; TRGS 526 refers to it explicitly for laboratory work equipment (no. 7.1). A person qualified to test has the necessary knowledge through vocational training, professional experience and recent professional activity (section 2(6) BetrSichV). The result must be recorded (section 14(7)).
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The standard <strong class="text-slate-900">EN 14175</strong> sets no intervals. Its part 4 describes on-site test methods for commissioning and for routine tests as part of maintenance.
+              </p>
+              <h2 id="intervals" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Test intervals at a glance</h2>
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse">
+                  <thead><tr class="bg-slate-900 text-white"><th class="p-3 text-left">When</th><th class="p-3 text-left">What</th><th class="p-3 text-left">Who</th><th class="p-3 text-left">Source</th></tr></thead>
+                  <tbody class="text-gray-700">
+                    <tr><td class={td}>Before first use</td><td class={td}>Commissioning test</td><td class={td}>Suitably qualified, appointed person</td><td class={td}>TRGS 526 no. 7.1; method: EN 14175-4 ch. 5</td></tr>
+                    <tr class="bg-slate-50"><td class={td}>Every working day</td><td class={td}>Function check, indicator, visual check</td><td class={td}>Trained users</td><td class={td}>BG RCI checklist</td></tr>
+                    <tr><td class={td}>At least annually</td><td class={td}>Visual check, mechanics, airflow, alarm</td><td class={td}>Competent person</td><td class={td}>TRGS 526 no. 7.3</td></tr>
+                    <tr class="bg-slate-50"><td class={td}>At most every 3 years</td><td class={td}>Self-monitoring continuous monitoring</td><td class={td}>Competent person</td><td class={td}>TRGS 526 no. 7.3</td></tr>
+                    <tr><td class={td}>Annually</td><td class={td}>Control loop of variable air volume cupboards</td><td class={td}>Competent person</td><td class={td}>DGUV 213-857 no. 2.3.3</td></tr>
+                    <tr class="bg-slate-50"><td class={td}>Guide value 4 years</td><td class={td}>Electrical equipment on the cupboard</td><td class={td}>Qualified electrician</td><td class={td}>BG RCI checklist</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 id="generation" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Which fume cupboard do you have? Scope by year and standard</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                What is measured depends on the standard the cupboard was built to. DGUV Information 213-857 “Laboratory fume cupboards – designs and safe operation” distinguishes three groups:
+              </p>
+              <ul class="space-y-3 text-gray-700 mb-6 not-prose">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Cupboards to DIN 12924-1:1978:</strong> the test checks the volume flow per running metre (bench-mounted 400 m³/h, low-level 600 m³/h, walk-in 700 m³/h) and a face velocity of at least 0.7 m/s with the sash open 100 mm. Both values must be met.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Cupboards to DIN 12924-1:1991:</strong> they have a monitoring unit that alarms visually and audibly when the limits are exceeded or not reached. That unit is itself part of the test.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Cupboards to EN 14175:</strong> the test covers visual inspection, mechanics, exhaust volume flow and the continuous monitoring or control loop. The operator sets the minimum target volume flow at first commissioning, based on the type-test documents and the risk assessment.</span></li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                How to tell: cupboards to EN 14175 carry a permanent rating plate with manufacturer, type, year of production and a reference to EN 14175-3. DGUV Information 213-857 recommends also stating the target air volume on the plate.
+              </p>
+              <h2 id="procedure" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">The annual test step by step</h2>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">1. Gather the documents</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Type-test report or manufacturer data, operating instructions, the set target volume flow and the previous test record. Without a target value there is no way to judge whether a measurement is sufficient.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">2. Visual inspection</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Typical findings: holes drilled afterwards, shelving or chemical storage inside the cupboard, blocked or obstructed exhaust slots, large equipment without floor clearance, cloudy glass, failed lighting.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">3. Mechanics</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The sash must run smoothly and be secured against falling (TRGS 526 no. 6.3.1(4)). If it hangs at an angle, a cable has often broken.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">4. Measure the airflow</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The face velocity in the sash opening and/or the exhaust volume flow are measured, using vane or thermal anemometers. The probe must be held exactly in the plane of the opening, otherwise the error is considerable. The whole opening is traversed evenly; with instruments that do not average, the turning points are no more than 300 mm apart (BG RCI guidance on fume cupboard testing).
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">5. Test the indicator and alarm</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The monitoring unit is checked for under-function, over-function and power failure (DGUV Information 213-857, no. 2.3.3). Under TRGS 526 no. 6.3.1(5) the airflow function of every fume cupboard must be monitored by an automatic device; an indicator lamp for the fan motor is not enough.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">6. Variable air volume and manufacturer tests</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                For variable air volume cupboards (EN 14175-6) the control loop is tested annually. Depending on the design, tests from the operating instructions are added, such as the support air.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-8 mb-4">7. Record and test label</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The record contains at least type of test, scope, result and the name and signature of the competent person, and is kept until the next test (section 14(7) BetrSichV). BG RCI also recommends a label with the test date on the cupboard.
+              </p>
+              <figure class="my-10 not-prose">
+                <Picture
+                  src="/attached_assets/Labor_1_1769690564538.jpg"
+                  alt="Laboratory with several fume cupboards in a row, base cabinets below, ventilation ducts exposed under the ceiling"
+                  width={1600}
+                  height={1200}
+                  loading="lazy"
+                  class="w-full h-auto rounded-2xl shadow-lg"
+                />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center italic">
+                  Fume cupboards in a row: sash, control panel and exhaust connection must be accessible for testing.
+                </figcaption>
+              </figure>
+
+              <h2 id="monitoring" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Continuous monitoring or just an indicator?</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                This decides whether the annual measurement is needed. Under TRGS 526 no. 7.3 the annual test of the airflow function may be dropped if self-monitoring function control of the individual cupboard ensures that a drop below the minimum volume flow is signalled visually and audibly. The continuous monitoring device must then be tested at intervals of no more than three years.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Self-monitoring means that a failure of the monitoring itself, for example through dirt, corrosion, ageing, an electronic fault or power failure, is also reported visually and audibly as a fault. A monitoring unit to DIN 12924:1991 does not do this. For such cupboards the airflow test stays annual (DGUV Information 213-857, no. 2.3.3). Visual inspection and mechanics are tested annually in every case.
+              </p>
+              <h2 id="en-14175-4" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">EN 14175-4: commissioning, routine tests, qualification</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Part 4 of the standard describes on-site test methods for installed cupboards. According to its published table of contents it covers four types of test:
+              </p>
+              <ul class="space-y-3 text-gray-700 mb-6 not-prose">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Commissioning test for type-tested cupboards (chapter 5):</strong> including face velocity, exhaust volume flow, pressure drop, airflow visualisation, room air velocity, alarm system and containment.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Routine test for type-tested cupboards (chapter 6):</strong> face velocity, exhaust volume flow, pressure drop, visualisation, alarm system and inspections.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Qualification test for cupboards without a type test (chapter 7):</strong> more extensive, including containment and its robustness.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Routine test for qualified cupboards (chapter 8).</strong></span></li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                An on-site result applies only to the cupboard tested. It cannot be transferred to other units of the same series; conformity still requires the EN 14175-3 type test.
+              </p>
+              <h2 id="tracer-gas" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Tracer-gas test on site: when does it make sense?</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A tracer-gas test measures whether gas escapes from the cupboard into the room. It is not part of the annual routine test of type-tested cupboards: according to its table of contents, chapter 6 of EN 14175-4 does not list containment. The standard describes an on-site containment test at commissioning and for cupboards without a type test.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Whether a tracer-gas test is needed beyond that follows from the risk assessment. DGUV Information 213-857 notes that some methods in part 4 are more suited to first commissioning or additional qualification. On the test gas: the 2019 edition of EN 14175-3 restricts the use of SF₆ depending on national law.
+              </p>
+              <h2 id="tester" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Who may test fume cupboards?</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A person qualified to test under section 2(6) BetrSichV. The BG RCI checklist (December 2021) names a course with the fume cupboard manufacturer or comparable knowledge from professional experience as the prerequisite. Measuring takes practice: a probe held at an angle already distorts the result.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Whether pollutants must be measured or personal protective equipment worn before the test is decided case by case by the competent person, for example if hydrofluoric acid has been used in the cupboard.
+              </p>
+              <h2 id="defects" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">If the test is failed</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Significant defects must be remedied without delay, for example a worn cable. If that is not possible, the fume cupboard must be taken out of service (DGUV Information 213-857, no. 2.3.3). Common causes of too little exhaust are obstructed exhaust openings, leaks and a weakening central exhaust system. After the repair, the cupboard is measured again.
+              </p>
+              <h2 id="additional" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Additional tests that often get forgotten</h2>
+              <ul class="space-y-3 text-gray-700 mb-6 not-prose">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Electrical equipment on the cupboard:</strong> as fixed electrical equipment, guide value every four years by a qualified electrician (BG RCI checklist). TRGS 526 no. 7.1 explicitly refers to testing electrical equipment.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Fume cupboards in explosion hazard areas:</strong> annually, under the BetrSichV requirements for hazardous areas. More in <a href="/en/magazine/lab-container-energy-transition-h2-battery-ex-protection" class={linkClass}>explosion protection in H₂ and battery labs</a>.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Cupboards with recirculation or filter technology:</strong> annually, the filter unit as specified by the manufacturer.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Fume cupboards for high heat and acid loads:</strong> EN 14175-7 applies; larger quantities of perchloric acid require a scrubber.</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span><strong class="text-slate-900">Safety cabinets for flammable liquids:</strong> regularly by a competent person, in particular the closing devices for doors and connections, seals and air change (TRGS 526 no. 7.4).</span></li>
+              </ul>
+              <h2 id="new-build" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Plan testing into a new laboratory or lab container</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The first test is due before first use. Anyone building a new laboratory or planning a <a href="/en/lab-containers" class={linkClass}>lab container</a> should decide early who carries out the commissioning test and request the type-test documents of the fume cupboards with the handover. For routine testing, the exhaust connection of each cupboard must remain accessible, and the set target volume flow belongs in the system documentation.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                How much ventilation the fume cupboards and the room need together is covered in <a href="/en/magazine/lab-container-hvac-ventilation-standards" class={linkClass}>HVAC and ventilation in lab containers</a>. The other building requirements are summarised in <a href="/en/magazine/laboratory-room-requirements-germany" class={linkClass}>laboratory room requirements</a>.
+              </p>
+              <div id="checklist" class="bg-slate-50 border border-gray-100 rounded-2xl p-6 md:p-8 my-8 not-prose">
+                <h2 class="text-xl font-heading font-bold text-slate-900 mb-4">Checklist: organising fume cupboard tests</h2>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Record every fume cupboard with its standard and year (rating plate)</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Document the target volume flow for each cupboard</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Name a competent person; use a calibrated instrument</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Train users for the daily function check</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Schedule the annual test; continuous monitoring at least every three years</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>File the record with type, scope, result, name and signature</span></li>
+                  <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span> <span>Plan electrical, hazardous-area and filter tests separately</span></li>
+                </ul>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-5 items-start bg-white border border-gray-200 rounded-2xl p-6 my-10 not-prose">
+                <div class="shrink-0 w-14 h-14 rounded-full bg-slate-900 text-primary flex items-center justify-center font-heading font-bold text-lg" aria-hidden="true">TB</div>
+                <div>
+                  <p class="font-bold text-slate-900">About the author</p>
+                  <p class="text-gray-600 text-sm leading-relaxed mt-1">
+                    <a href="/en/team/thomas-boss" class={linkClass}>Thomas Boss</a> is a shareholder and Technical Director of Planexus GmbH (office in Albstadt, production in Haigerloch). He is responsible for planning and building services of the lab containers.
+                  </p>
+                </div>
+              </div>
+
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Sources: GefStoffV section 7(7); TRGS 526 “Laboratories”, February 2008 edition (GMBl no. 15 of 2 April 2008, p. 294), nos. 6.3.1 and 7.1 to 7.4; BetrSichV sections 2(6) and 14(7); DGUV Information 213-857 (BG RCI leaflet T 032) “Laboratory fume cupboards – designs and safe operation”, nos. 2.2 and 2.3.3 with table 1; BG RCI checklist “Tests in the laboratory”, as of 15 December 2021; BG RCI guidance on fume cupboard testing; DIN EN 14175-4:2004-12 (table of contents, DIN Media); DIN EN 14175-3:2019-07; DIN EN 14175-6 and -7 and DIN 12924-1 (as described in DGUV Information 213-857); DGUV Information 213-850 “Safe working in laboratories”. Retrieved 20 November 2026. German rules; other countries have their own requirements.
+              </p>
+
+            </div>
+          </div>
+
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
+                <p class="font-bold text-slate-900 mb-4">Fume cupboard test at a glance</p>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Test at least annually (TRGS 526 no. 7.3)</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Users: daily function check</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Continuous monitoring at least every 3 years</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Competent person under BetrSichV</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Record: type, scope, result, signature</li>
+                  <li class="flex gap-2"><span class="text-[#5c7300] font-bold">→</span> Tracer gas not part of the annual test</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-100 p-6 rounded-2xl">
+                <p class="font-bold text-slate-900 mb-4">Further reading</p>
+                <ul class="space-y-3">
+                  {furtherLinks.map((l) => (
+                    <li><a href={l.href} class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors text-sm"><Fragment set:html={chevron} />{l.label}</a></li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                <p class="font-bold mb-3">Planning a new lab?</p>
+                <p class="text-gray-400 text-sm mb-4">We plan fume cupboards, exhaust and access for testing into the design from the start.</p>
+                <a href="/en/contact" class="block w-full bg-primary text-slate-900 font-bold py-3 rounded-lg text-center hover:bg-primary/90 transition-colors">Request a consultation</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <LeadMagnetLastenheft locale="en" />
+
+    <section class="py-16 border-t border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-8">Frequently asked questions about fume cupboard testing</h2>
+          <div class="space-y-4">
+            {faqs.map((f, i) => (
+              <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group" open={i === 0}>
+                <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">{f.q}
+                  <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">{f.a}</div>
+              </details>
+            ))}
+          </div>
+          <div class="mt-10 text-center">
+            <a href="/en/contact" class="inline-flex items-center gap-2 bg-primary text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors">Request a laboratory consultation
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedArticles slug="laborabzug-pruefen" locale="en" />
+
+    <div class="container mx-auto px-4 py-8">
+      <a href="/en/magazine" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to the magazine
+      </a>
+    </div>
+  </div>
+</Layout>

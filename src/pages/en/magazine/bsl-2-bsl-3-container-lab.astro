@@ -88,6 +88,49 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               <p class="text-xl text-gray-700 leading-relaxed mb-8">
                 Work with hazardous biological agents requires the highest safety precautions. Laboratories at biosafety levels BSL-2 and BSL-3 must meet strict structural and technical requirements to protect staff and the environment. For a long time this was regarded as the domain of involved solid construction. Yet modern container laboratories prove: the highest safety is also possible in modular construction.
               </p>
+              <h2 id="what-does-bsl-mean" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">What does BSL mean? Biosafety level, German protection level and UK containment level</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                BSL stands for <strong class="text-slate-900">biosafety level</strong>, the internationally used classification of laboratories by infection risk in four levels. The term comes from the WHO Laboratory Biosafety Manual and US practice. German law uses different terms in two separate regimes, and the UK uses containment levels:
+              </p>
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse" data-table="bsl-terms">
+                  <thead><tr class="bg-slate-900 text-white"><th class="p-3 text-left">International</th><th class="p-3 text-left">Germany: BioStoffV</th><th class="p-3 text-left">Germany: genetic engineering</th><th class="p-3 text-left">UK: COSHH</th></tr></thead>
+                  <tbody class="text-gray-700">
+<tr><td class="p-3 border border-gray-200 align-top">BSL-1</td><td class="p-3 border border-gray-200 align-top">Protection level 1</td><td class="p-3 border border-gray-200 align-top">Safety level S1</td><td class="p-3 border border-gray-200 align-top">Containment Level 1</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">BSL-2</td><td class="p-3 border border-gray-200 align-top">Protection level 2 (notification 30 days before start, section 16)</td><td class="p-3 border border-gray-200 align-top">Safety level S2</td><td class="p-3 border border-gray-200 align-top">Containment Level 2</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">BSL-3</td><td class="p-3 border border-gray-200 align-top">Protection level 3 (permit before first activity, section 15; for risk group 3 agents marked (**) a notification under section 16 suffices)</td><td class="p-3 border border-gray-200 align-top">Safety level S3</td><td class="p-3 border border-gray-200 align-top">Containment Level 3</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">BSL-4</td><td class="p-3 border border-gray-200 align-top">Protection level 4 (permit)</td><td class="p-3 border border-gray-200 align-top">Safety level S4</td><td class="p-3 border border-gray-200 align-top">Containment Level 4</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In Germany the protection level follows the activities: for targeted activities the risk group of the agent is decisive, with several agents the highest one (section 5 BioStoffV, risk groups in section 3). Genetic engineering work falls under safety levels 1 to 4 of section 7 of the Genetic Engineering Act with its own procedure. Equating BSL-2 with protection level 2 and S2 is practice, not a legal definition. The 4th edition of the WHO manual also moves away from a fixed link between risk group and laboratory level towards risk assessment.
+              </p>
+              <p class="text-xs text-gray-600 leading-relaxed mb-8">Sources: BioStoffV sections 3, 5, 15, 16; GenTG section 7; WHO Laboratory Biosafety Manual, 4th edition (2020); The Control of Substances Hazardous to Health Regulations 2002, Schedule 3.</p>
+              <h2 id="bsl-2-vs-bsl-3" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">BSL-2 vs BSL-3: the differences point by point</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In Germany, protection level 3 builds on the measures of protection level 2 and adds to them. The main structural and technical differences under TRBA 100:
+              </p>
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse" data-table="bsl-vergleich">
+                  <thead><tr class="bg-slate-900 text-white"><th class="p-3 text-left">Feature</th><th class="p-3 text-left">Protection level 2 (BSL-2)</th><th class="p-3 text-left">Protection level 3 (BSL-3)</th></tr></thead>
+                  <tbody class="text-gray-700">
+<tr><td class="p-3 border border-gray-200 align-top">Access</td><td class="p-3 border border-gray-200 align-top">Physically separated rooms, laboratory doors with vision panel</td><td class="p-3 border border-gray-200 align-top">Anteroom with two self-closing, interlocked doors with vision panels</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Air pressure</td><td class="p-3 border border-gray-200 align-top">No negative-pressure requirement</td><td class="p-3 border border-gray-200 align-top">Constant, controlled negative pressure with a pressure gradient to the anteroom, visual and audible alarm</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Extract air</td><td class="p-3 border border-gray-200 align-top">No filter requirement</td><td class="p-3 border border-gray-200 align-top">Through high-efficiency particulate (HEPA) filters or equivalent, filter change without release</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Room envelope</td><td class="p-3 border border-gray-200 align-top">Easy-to-clean, disinfectant-resistant surfaces</td><td class="p-3 border border-gray-200 align-top">Also sealable for fumigation</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Windows</td><td class="p-3 border border-gray-200 align-top">Closed during work</td><td class="p-3 border border-gray-200 align-top">Sealed and not openable</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Waste and waste water</td><td class="p-3 border border-gray-200 align-top">Autoclave</td><td class="p-3 border border-gray-200 align-top">Autoclave within the containment area, waste water inactivated</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Power</td><td class="p-3 border border-gray-200 align-top">–</td><td class="p-3 border border-gray-200 align-top">Emergency power for ventilation, monitoring and alarm, safety lighting</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Personnel shower</td><td class="p-3 border border-gray-200 align-top">–</td><td class="p-3 border border-gray-200 align-top">Where the risk assessment requires it</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Authority</td><td class="p-3 border border-gray-200 align-top">Notification (section 16 BioStoffV)</td><td class="p-3 border border-gray-200 align-top">Permit (section 15 BioStoffV)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Under UK COSHH Schedule 3, Containment Level 3 differs from Level 2 in requiring HEPA-filtered extract air, a workplace sealable for disinfection, negative pressure to atmosphere and an observation window; an air-lock is only required at Containment Level 4. In a container this means planning the anteroom as a separate room or front module, controlling and monitoring the pressure cascade through the ventilation, and sealing every penetration for electrics, media and ventilation.
+              </p>
+              <p class="text-xs text-gray-600 leading-relaxed mb-8">Sources: TRBA 100 “Protective measures for activities involving biological agents in laboratories”, requirements for protection levels 2 and 3, as quoted in the University of Göttingen checklists for S2 and S3 laboratories; current edition of TRBA 100: November 2025 (GMBl. 2025 p. 718). COSHH Regulations 2002, Schedule 3 Part II.</p>
 
               <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
                 Fundamentals of biological biosafety levels
@@ -103,7 +146,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                     <span class="font-bold">BSL-1</span>
                   </div>
                   <p class="font-medium mb-1">Low risk</p>
-                  <p class="text-sm opacity-80">Organisms with no known hazard to healthy adults</p>
+                  <p class="text-sm">Organisms with no known hazard to healthy adults</p>
                 </div>
                 <div class="p-5 rounded-xl border bg-yellow-100 text-yellow-700 border-yellow-200">
                   <div class="flex items-center gap-2 mb-2">
@@ -111,7 +154,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                     <span class="font-bold">BSL-2</span>
                   </div>
                   <p class="font-medium mb-1">Moderate risk</p>
-                  <p class="text-sm opacity-80">Organisms with moderate hazard potential</p>
+                  <p class="text-sm">Organisms with moderate hazard potential</p>
                 </div>
                 <div class="p-5 rounded-xl border bg-orange-100 text-orange-700 border-orange-200">
                   <div class="flex items-center gap-2 mb-2">
@@ -119,7 +162,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                     <span class="font-bold">BSL-3</span>
                   </div>
                   <p class="font-medium mb-1">High risk</p>
-                  <p class="text-sm opacity-80">Organisms that can cause serious disease</p>
+                  <p class="text-sm">Organisms that can cause serious disease</p>
                 </div>
                 <div class="p-5 rounded-xl border bg-red-100 text-red-700 border-red-200">
                   <div class="flex items-center gap-2 mb-2">
@@ -127,7 +170,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                     <span class="font-bold">BSL-4</span>
                   </div>
                   <p class="font-medium mb-1">Highest risk</p>
-                  <p class="text-sm opacity-80">Highly hazardous pathogens with no treatment option</p>
+                  <p class="text-sm">Highly hazardous pathogens with no treatment option</p>
                 </div>
               </div>
 
@@ -146,10 +189,10 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               </p>
 
               <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
-                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                   BSL-2 requirements
-                </h4>
+                </h3>
                 <ul class="space-y-3">
                   <li class="flex items-start gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -212,7 +255,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                   <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                   </div>
-                  <h4 class="font-bold text-slate-900 mb-1">Access control</h4>
+                  <h3 class="font-bold text-slate-900 mb-1">Access control</h3>
                   <p class="text-gray-600 text-sm">Multiply secured airlocks with interlock function</p>
                 </div>
                 <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
@@ -242,7 +285,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                 The negative-pressure zone: heart of safety
               </h3>
               <p class="text-gray-600 leading-relaxed mb-6">
-                The most important safety feature of a BSL-3 laboratory is controlled negative-pressure holding. Air pressure in the laboratory area sits about 30 to 50 pascals below ambient pressure. As a result, air flows inwards from outside at every opening — never the reverse. Potentially contaminated air cannot therefore reach the surroundings.
+                The most important safety feature of a BSL-3 laboratory is controlled negative-pressure holding. TRBA 100 requires constant, controlled negative pressure with a pressure gradient to the anteroom and an alarm; the pressure stages are set during design. As a result, air flows inwards from outside at every opening — never the reverse. Potentially contaminated air cannot therefore reach the surroundings.
               </p>
               <p class="text-gray-600 leading-relaxed mb-6">
                 In a container laboratory this negative-pressure zone is realised by a gas-tight cabin construction. All penetrations — for electrics, media, ventilation — are executed with specialist sealing systems. The ventilation plant is designed redundantly and fitted with automatic emergency shutdown in the event of faults.
@@ -266,7 +309,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                 The airlock concept
               </h3>
               <p class="text-gray-600 leading-relaxed mb-6">
-                Access to the BSL-3 area is via a multi-stage airlock system. Typically this consists of a black-and-white separation with changing area, a shower passage and the actual personnel airlock. The airlocks are fitted with interlocks so that both doors can never be opened at the same time.
+                Access to the BSL-3 area is via a multi-stage airlock system. It consists of a black-and-white separation with changing area and the actual personnel airlock; a shower passage is added where the risk assessment requires it. The airlocks are fitted with interlocks so that both doors can never be opened at the same time.
               </p>
               <p class="text-gray-600 leading-relaxed mb-6">
                 In a compact container laboratory this airlock concept must be implemented cleverly. Optimised layouts make it possible to accommodate all required functions in a tight space. Depending on requirements, the airlocks can be housed in a separate upstream container or in the same module.
@@ -318,7 +361,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               </p>
 
               <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
-                <h4 class="font-bold text-slate-900 mb-4">Our Smart Lab solution for BSL-3 includes:</h4>
+                <h3 class="font-bold text-slate-900 mb-4">Our Smart Lab solution for BSL-3 includes:</h3>
                 <ul class="space-y-3">
                   <li class="flex items-start gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -429,7 +472,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
                 <h4 class="font-bold text-slate-900 mb-4">About the author</h4>
                 <div class="flex items-center gap-4">
-                  <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-xl">
+                  <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-[#5c7300] font-bold text-xl">
                     PX
                   </div>
                   <div>
@@ -442,10 +485,10 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               <div class="bg-white p-6 rounded-2xl border border-gray-100">
                 <h4 class="font-bold text-slate-900 mb-4">Share article</h4>
                 <div class="flex gap-3">
-                  <button class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-slate-900 transition-colors">
+                  <button class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-slate-900 transition-colors" aria-label="Share article">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
                   </button>
-                  <button class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-slate-900 transition-colors">
+                  <button class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-slate-900 transition-colors" aria-label="Save article">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
                   </button>
                 </div>
@@ -543,6 +586,27 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               </summary>
               <div class="px-6 pb-6 text-gray-600 leading-relaxed">Yes. Modern container laboratories meet exactly the same safety requirements as conventional BSL-3 laboratories. Controlled workshop manufacture even offers quality advantages, because all installations are fitted and tested under optimal conditions.</div>
             </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                What does BSL mean?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">BSL stands for biosafety level, the internationally used classification of laboratories by infection risk in four levels. In German law this corresponds to the protection level under the Biological Agents Ordinance (section 5 BioStoffV) and, for genetic engineering, to safety levels S1 to S4 under section 7 of the Genetic Engineering Act.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                What is the UK equivalent of BSL-3?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Containment Level 3 under COSHH Schedule 3 Part II. Compared with Level 2 it requires HEPA-filtered extract air, a workplace sealable for disinfection, negative pressure to atmosphere and an observation window.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                Does a BSL-3 laboratory need an airlock?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">In the UK, COSHH Schedule 3 requires an air-lock only at Containment Level 4. In Germany, TRBA 100 requires an anteroom with two self-closing, interlocked doors for protection level 3.</div>
+            </details>
           </div>
         </div>
       </div>
@@ -561,6 +625,9 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
+      { "@type": "Question", "name": "What does BSL mean?", "acceptedAnswer": { "@type": "Answer", "text": "BSL stands for biosafety level, the internationally used classification of laboratories by infection risk in four levels. In German law this corresponds to the protection level under the Biological Agents Ordinance (section 5 BioStoffV) and, for genetic engineering, to safety levels S1 to S4 under section 7 of the Genetic Engineering Act." } },
+      { "@type": "Question", "name": "What is the UK equivalent of BSL-3?", "acceptedAnswer": { "@type": "Answer", "text": "Containment Level 3 under COSHH Schedule 3 Part II. Compared with Level 2 it requires HEPA-filtered extract air, a workplace sealable for disinfection, negative pressure to atmosphere and an observation window." } },
+      { "@type": "Question", "name": "Does a BSL-3 laboratory need an airlock?", "acceptedAnswer": { "@type": "Answer", "text": "In the UK, COSHH Schedule 3 requires an air-lock only at Containment Level 4. In Germany, TRBA 100 requires an anteroom with two self-closing, interlocked doors for protection level 3." } },
       { "@type": "Question", "name": "What is the difference between BSL-2 and BSL-3 in a container laboratory?", "acceptedAnswer": { "@type": "Answer", "text": "BSL-2 laboratories work with risk-group 2 pathogens and require a biosafety cabinet, autoclaves and controlled access. BSL-3 laboratories additionally require negative pressure, HEPA filtration, airlocks and gas-tight penetrations. Both levels can be implemented in container construction." }},
       { "@type": "Question", "name": "How long does it take to realise a BSL container laboratory?", "acceptedAnswer": { "@type": "Answer", "text": "A BSL-2 container laboratory can be realised within a few months — considerably faster than a conventional new build. BSL-3 projects take somewhat longer because of more complex permit procedures, but are still faster than solid construction." }},
       { "@type": "Question", "name": "Which permits do I need for a BSL container laboratory?", "acceptedAnswer": { "@type": "Answer", "text": "For BSL-2 a notification to the competent authority is generally sufficient. BSL-3 requires a permit under the Biological Agents Ordinance (BioStoffV). Building-law permits come on top." }},

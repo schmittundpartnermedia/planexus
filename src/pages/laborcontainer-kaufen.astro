@@ -64,11 +64,27 @@ const faqs = [
   },
   {
     q: "Wie wird ein gekaufter Laborcontainer bilanziert?",
-    a: "Ein gekaufter Laborcontainer ist Anlagevermögen (CAPEX) und wird über die Abschreibung für Abnutzung (AfA) von 10 bis 15 Jahren nach Steuerrichtlinie abgeschrieben. Er schafft einen bilanziellen Vermögenswert. Sprechen Sie die für Ihre Situation optimale Variante mit Ihrer Steuerberatung ab."
+    a: "Ein gekaufter Laborcontainer ist Anlagevermögen (CAPEX) und wird über die Abschreibung für Abnutzung (AfA) abgeschrieben: nach der amtlichen AfA-Tabelle für Container über 10 Jahre (Nr. 3.6), bei fester Gründung als Gebäude. Er schafft einen bilanziellen Vermögenswert. Sprechen Sie die für Ihre Situation optimale Variante mit Ihrer Steuerberatung ab."
   },
   {
     q: "Kann ich einen gekauften Laborcontainer später wieder verkaufen?",
     a: "Ja. Der Wiederverkaufswert liegt nach rund fünf Jahren erfahrungsgemäß bei etwa 40 bis 50 Prozent des Neuwertes. Standardkonfigurationen lassen sich deutlich besser veräußern als stark spezialisierte Sonderlösungen. Hochwertige Einheiten halten 15 bis 20 Jahre."
+  },
+  {
+    q: "Über wie viele Jahre wird ein Laborcontainer abgeschrieben?",
+    a: "Die amtliche AfA-Tabelle für allgemein verwendbare Anlagegüter nennt für Container 10 Jahre (Fundstelle 3.6). Steht der Container auf festen Fundamenten, gilt er steuerlich als Gebäude; dann gelten 3 Prozent pro Jahr oder die kürzere tatsächliche Nutzungsdauer (§ 7 Abs. 4 EStG). Klären Sie die Einordnung mit Ihrer Steuerberatung."
+  },
+  {
+    q: "Gilt ein Laborcontainer steuerlich als Gebäude?",
+    a: "Das hängt von der Gründung ab. Der Bundesfinanzhof hat Bürocontainer auf festen Fundamenten als Gebäude eingestuft (BFH, Urteil vom 25.04.1996, III R 47/93). Ruht er nicht auf Fundamenten, kommt es darauf an, ob er für eine dauernde Nutzung aufgestellt ist und diese Ortsfestigkeit auch äußerlich erkennbar ist. Klären Sie die Einordnung mit Ihrer Steuerberatung."
+  },
+  {
+    q: "Kann ich einen Laborcontainer degressiv abschreiben?",
+    a: "Für bewegliche Wirtschaftsgüter, die zwischen dem 1. Juli 2025 und dem 31. Dezember 2027 angeschafft werden, erlaubt § 7 Abs. 2 EStG die degressive Abschreibung mit höchstens 30 Prozent. Gilt der Container wegen fester Fundamente als Gebäude, ist das nicht möglich. Klären Sie die Einordnung vor dem Kauf mit Ihrer Steuerberatung."
+  },
+  {
+    q: "Brauche ich für einen gekauften Laborcontainer eine Baugenehmigung?",
+    a: "In aller Regel ja. Ein aufgestellter Laborcontainer ist eine bauliche Anlage, auch ohne Fundament (§ 2 Abs. 1 Musterbauordnung). Maßgeblich ist die Landesbauordnung am Standort. Wird der Container später versetzt, braucht er am neuen Standort eine neue Genehmigung."
   }
 ];
 
@@ -122,7 +138,7 @@ const faqSchema = {
         <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
           <div><div class="text-3xl font-bold text-primary">8–14</div><div class="text-sm text-slate-400">Wochen bis Übergabe</div></div>
           <div><div class="text-3xl font-bold text-primary">15–20</div><div class="text-sm text-slate-400">Jahre Lebensdauer</div></div>
-          <div><div class="text-3xl font-bold text-primary">10–15</div><div class="text-sm text-slate-400">Jahre AfA</div></div>
+          <div><div class="text-3xl font-bold text-primary">BSL-3</div><div class="text-sm text-slate-400">bis Sicherheitsstufe</div></div>
           <div><div class="text-3xl font-bold text-primary">2.750</div><div class="text-sm text-slate-400">mm Raumhöhe</div></div>
         </div>
       </div>
@@ -140,7 +156,7 @@ const faqSchema = {
           Sie erwerben ein betriebsbereites, dauerhaft nutzbares Labor, das Ihnen gehört. Vom Auftrag bis zur betriebsbereiten Übergabe rechnen wir mit 8 bis 14 Wochen – ein klassischer Labor-Festbau benötigt für vergleichbare Labore oft 24 Monate und länger. Umbauten erfolgen nach Ihren Vorgaben, ohne Rücksprache mit Vermietern.
         </p>
         <p class="text-lg text-slate-600 leading-relaxed">
-          Der Kauf schafft einen bilanziellen Vermögenswert und wird über die AfA von 10 bis 15 Jahren abgeschrieben. Hochwertige Einheiten halten 15 bis 20 Jahre. Wartung und Versicherung liegen beim Kauf in Ihrer Verantwortung – als laufende Position rechnen sich Wartungskosten von zwei bis vier Prozent des Anschaffungswertes pro Jahr.
+          Der Kauf schafft einen bilanziellen Vermögenswert und wird nach der amtlichen AfA-Tabelle über 10 Jahre abgeschrieben, bei fester Gründung als Gebäude. Hochwertige Einheiten halten 15 bis 20 Jahre. Wartung und Versicherung liegen beim Kauf in Ihrer Verantwortung – als laufende Position rechnen sich Wartungskosten von zwei bis vier Prozent des Anschaffungswertes pro Jahr.
         </p>
       </div>
     </div>
@@ -214,7 +230,7 @@ const faqSchema = {
           </div>
           <div class="bg-white rounded-xl p-6 border border-slate-200">
             <h3 class="font-bold text-slate-900 mb-2">BSL-2 &amp; BSL-3</h3>
-            <p class="text-slate-600 text-sm"><a href="/magazin/bsl-2-bsl-3-container-labor" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Sicherheitslabore mit Unterdruckkaskaden</a>, redundanter HEPA-Filtration, Schleuse und Autoklav. Konform mit BioStoffV, GenTG, TRBA 100.</p>
+            <p class="text-slate-600 text-sm"><a href="/magazin/bsl-2-bsl-3-container-labor" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Sicherheitslabore mit Unterdruckkaskaden</a>, redundanter HEPA-Filtration, Schleuse und Autoklav. Ausgelegt nach BioStoffV, GenTG und TRBA 100.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-slate-200">
             <h3 class="font-bold text-slate-900 mb-2">GMP-Reinraum</h3>
@@ -264,6 +280,43 @@ const faqSchema = {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABSCHREIBUNG -->
+  <section class="py-16 bg-white" id="abschreibung">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Abschreibung: über wie viele Jahre?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Für Container nennt die amtliche AfA-Tabelle für allgemein verwendbare Anlagegüter eine betriebsgewöhnliche Nutzungsdauer von <strong class="text-slate-900">10 Jahren</strong> (Fundstelle 3.6, „Transportcontainer, Baucontainer, Bürocontainer und Wohncontainer“). Laborcontainer sind dort nicht eigens aufgeführt, fallen aber am ehesten unter diese Position. Eine kürzere Nutzungsdauer darf angesetzt werden, wenn sie glaubhaft gemacht wird.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Anders ist es, wenn der Container fest gegründet wird. Der Bundesfinanzhof hat entschieden, dass Bürocontainer auf festen Fundamenten unabhängig von ihrer Zweckbestimmung Gebäude sind (Urteil vom 25.04.1996, III R 47/93). Für Betriebsgebäude gelten dann 3 Prozent pro Jahr, oder die kürzere tatsächliche Nutzungsdauer (§ 7 Abs. 4 EStG).</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">Bleibt der Container ein bewegliches Wirtschaftsgut, ist für Anschaffungen zwischen dem 1. Juli 2025 und dem 31. Dezember 2027 auch die degressive Abschreibung mit höchstens 30 Prozent möglich (§ 7 Abs. 2 EStG). Welche Variante greift, hängt von der Gründung ab. Klären Sie das vor dem Kauf mit Ihrer Steuerberatung.</p>
+        <p class="text-xs text-gray-600 mt-4">Quellen: AfA-Tabelle AV, BMF-Schreiben vom 15.12.2000 (BStBl I 2000 S. 1532), Nr. 3.6 und Vorbemerkung 2; BFH III R 47/93 (BStBl II 1996 S. 613); § 7 Abs. 2 und 4 EStG.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BILANZ -->
+  <section class="py-16 bg-slate-50" id="bilanz">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Kauf, Mietkauf oder Leasing: wer bilanziert den Container?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Beim Kauf steht der Laborcontainer als Anlagevermögen in Ihrer Bilanz und wird abgeschrieben. Beim Mietkauf entscheidet das wirtschaftliche Eigentum: Bilanziert wird ein Vermögensgegenstand von dem, dem er wirtschaftlich zuzurechnen ist (§ 246 Abs. 1 HGB; steuerlich § 39 Abs. 2 Nr. 1 AO). Mit festem Eigentumsübergang liegt er oft von Anfang an bei Ihnen.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">Beim Leasing richtet sich die steuerliche Zuordnung nach den Leasingerlassen der Finanzverwaltung. Maßgeblich ist unter anderem das Verhältnis der Grundmietzeit zur Nutzungsdauer. Die genaue Einordnung Ihres Vertrags gehört in die Steuerberatung. Für die Entscheidung zwischen den Wegen hilft der Ratgeber <a href="/magazin/laborcontainer-mieten-oder-kaufen" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Laborcontainer mieten oder kaufen</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENEHMIGUNG -->
+  <section class="py-16 bg-white" id="genehmigung">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Baugenehmigung, Gründung und Standortwechsel</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Auch ein gekaufter Laborcontainer braucht in aller Regel eine Baugenehmigung. Er ist eine bauliche Anlage, selbst wenn er nur durch sein Gewicht auf dem Boden ruht (§ 2 Abs. 1 Musterbauordnung). Errichtung, Änderung und Nutzungsänderung sind genehmigungspflichtig, soweit die Bauordnung keine Ausnahme vorsieht (§ 59).</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Wer den Container später an einen anderen Ort versetzt, braucht dort eine neue Genehmigung. Für Anlagen, die in gleicher Ausführung an mehreren Stellen errichtet werden, kennen die Bauordnungen die Typengenehmigung (§ 72a MBO). Sie ersetzt die Genehmigung am Standort nicht, beschränkt die Prüfung dort aber auf die standortbezogenen Fragen.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">Für die Aufstellung brauchen Sie eine tragfähige Fläche mit geplanter Gründung, eine Zufahrt für den Mobilkran und die Anschlüsse für Strom, Wasser und Abwasser. Mehr zur Gründung steht im Beitrag <a href="/magazin/laborcontainer-aufstellung-bodenplatte-statik" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Aufstellung und Statik</a>, zum Verfahren unter <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Genehmigung und Baurecht</a>.</p>
+        <p class="text-xs text-gray-600 mt-4">Quelle: Musterbauordnung (Fassung 2002, zuletzt geändert 25.09.2020), §§ 2, 59, 72a. Maßgeblich ist die Landesbauordnung am Standort.</p>
       </div>
     </div>
   </section>

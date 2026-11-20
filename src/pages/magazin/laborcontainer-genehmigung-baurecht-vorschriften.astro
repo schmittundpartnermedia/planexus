@@ -37,8 +37,23 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Darf ich einen Container ohne Genehmigung auf mein Grundstück stellen?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Meist nicht. Ein Container gilt auch ohne Fundament als bauliche Anlage, weil er durch eigene Schwere auf dem Boden ruht (§ 2 Abs. 1 Musterbauordnung). Verfahrensfrei sind nur kleine Gebäude nach Landesrecht, zum Beispiel in Bayern bis 75 m³ Brutto-Rauminhalt außer im Außenbereich (Art. 57 BayBO) oder in Baden-Württemberg bis 40 m³ ohne Aufenthaltsräume (LBO BW, Anhang 1). Für ein Labor greift das wegen der Nutzung meist nicht." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist ein Container bis drei Monate genehmigungsfrei?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nach Musterbauordnung, LBO Baden-Württemberg und Bayerischer Bauordnung nicht allgemein. Die Drei-Monats-Grenze gilt dort nur für bauliche Anlagen auf genehmigtem Messe- und Ausstellungsgelände (§ 61 Abs. 1 Nr. 13 MBO)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist ein Laborcontainer ein Fliegender Bau?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In der Regel nicht. Fliegende Bauten sind dazu bestimmt, wiederholt an verschiedenen Orten auf- und abgebaut zu werden (§ 76 Abs. 1 MBO). Ein Laborcontainer, der an einem Standort betrieben wird, braucht das normale Bauverfahren. Die Einordnung im Einzelfall trifft die Bauaufsicht." }
+        },
+        {
+          "@type": "Question",
           "name": "Braucht ein Laborcontainer immer eine Baugenehmigung?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Nicht immer. In vielen Bundesländern sind temporäre Aufstellungen bis zu 3 Monaten genehmigungsfrei. Bei dauerhafter Nutzung über 3 Monate ist in der Regel eine Baugenehmigung oder zumindest eine Bauanzeige erforderlich. Entscheidend sind Landesbauordnung, Nutzungsart und Standort." }
+          "acceptedAnswer": { "@type": "Answer", "text": "In aller Regel ja. Ein aufgestellter Laborcontainer ist eine bauliche Anlage, auch ohne Fundament (§ 2 Abs. 1 Musterbauordnung). Verfahrensfrei sind nur kleine Gebäude nach Landesrecht, etwa in Bayern bis 75 m³ Brutto-Rauminhalt außerhalb des Außenbereichs oder in Baden-Württemberg bis 40 m³ ohne Aufenthaltsräume. Eine allgemeine Drei-Monats-Frist für Container gibt es in Musterbauordnung, LBO BW und BayBO nicht." }
         },
         {
           "@type": "Question",
@@ -132,10 +147,10 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
               </p>
 
               <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 my-8 not-prose">
-                <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                <h2 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                   Auf einen Blick: Genehmigung in 5 Schritten
-                </h4>
+                </h2>
                 <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
                   <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
                     <div class="text-2xl font-bold text-[#7a9900] mb-1">1</div>
@@ -179,8 +194,8 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
                 In einigen Bundesländern gibt es Ausnahmen von der Genehmigungspflicht. Diese gelten typischerweise für:
               </p>
               <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
-                <li><strong>Temporäre Aufstellungen</strong> unter 3 Monaten auf demselben Grundstück (variiert je nach Landesbauordnung zwischen 2 und 6 Monaten)</li>
-                <li><strong>Untergeordnete Nebengebäude</strong> bis zu einer bestimmten Grundfläche (meist 30–75 m²), sofern sie nicht dem dauerhaften Aufenthalt von Personen dienen</li>
+                <li><strong>Kleine Gebäude</strong> bis zu einer Größe, die jedes Land selbst festlegt: in der Musterbauordnung eingeschossige Gebäude bis 10 m² Brutto-Grundfläche, in Bayern bis 75 m³ Brutto-Rauminhalt (außer im Außenbereich), in Baden-Württemberg bis 40 m³ und nur ohne Aufenthaltsräume, Toiletten oder Feuerstätten</li>
+                <li><strong>Vorübergehend aufgestellte Anlagen</strong> nur in eng begrenzten Fällen: Baustelleneinrichtungen, Behelfsbauten für Katastrophenschutz oder Unfallhilfe und Anlagen auf genehmigtem Messe- und Ausstellungsgelände für höchstens drei Monate</li>
                 <li><strong>Baustellen-Container</strong> für die Dauer einer Baumaßnahme</li>
               </ul>
               <p class="text-gray-600 leading-relaxed mb-6">
@@ -197,6 +212,44 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
                 </p>
               </div>
 
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="baugenehmigung-container">
+                Braucht ein Container eine Baugenehmigung? Die Grundregel
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Ja, in aller Regel. Ein Container ist auch ohne Fundament eine bauliche Anlage: Nach § 2 Abs. 1 der Musterbauordnung besteht die Verbindung mit dem Boden auch dann, wenn die Anlage „durch eigene Schwere auf dem Boden ruht“. Die Landesbauordnung Baden-Württemberg sagt dasselbe. Für Errichtung, Änderung und Nutzungsänderung gilt der Grundsatz der Baugenehmigung (§ 59 Abs. 1 MBO), solange das Landesrecht keine Ausnahme vorsieht.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Verfahrensfrei heißt nicht regelfrei. Auch ein genehmigungsfreies Vorhaben muss Bebauungsplan, Abstandsflächen und Brandschutz einhalten (§ 59 Abs. 2 MBO).
+              </p>
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8 not-prose">
+                <p class="font-bold text-slate-900 mb-2">Der Irrtum mit den drei Monaten</p>
+                <p class="text-gray-700 text-sm">Oft heißt es, ein Container dürfe drei Monate ohne Genehmigung stehen. In der Musterbauordnung, der LBO Baden-Württemberg und der Bayerischen Bauordnung gilt die Drei-Monats-Grenze nur für bauliche Anlagen auf genehmigtem Messe- und Ausstellungsgelände (§ 61 Abs. 1 Nr. 13 MBO; LBO BW Anhang 1 Nr. 10; Art. 57 Abs. 1 Nr. 13 BayBO). Für einen Container auf dem eigenen Grundstück gibt es dort keine solche Frist.</p>
+              </div>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Beispiele aus drei Bauordnungen
+              </h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Musterbauordnung:</strong> verfahrensfrei sind eingeschossige Gebäude bis 10 m² Brutto-Grundfläche, außer im Außenbereich (§ 61 Abs. 1 Nr. 1 a). Ein Laborcontainer ist größer.</li>
+                <li><strong>Baden-Württemberg:</strong> verfahrensfrei sind Gebäude ohne Aufenthaltsräume, Toiletten oder Feuerstätten bis 40 m³ Brutto-Rauminhalt im Innenbereich (LBO BW, Anhang 1 Nr. 1 a, Neufassung vom 16.03.2026). Ein Labor mit Arbeitsplätzen fällt in der Regel nicht darunter.</li>
+                <li><strong>Bayern:</strong> verfahrensfrei sind Gebäude bis 75 m³ Brutto-Rauminhalt, außer im Außenbereich (Art. 57 Abs. 1 Nr. 1 a BayBO). Eine Nutzungsänderung ist nur verfahrensfrei, wenn für die neue Nutzung keine anderen Anforderungen gelten (Art. 57 Abs. 4).</li>
+              </ul>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Zum Größenvergleich: Ein 20-Fuß-ISO-Container misst außen 6,058 × 2,438 × 2,591 m, das sind rund 38 m³ Rauminhalt. Ausschlaggebend für ein Labor ist aber meist nicht die Größe, sondern die Nutzung mit Arbeitsplätzen, Gefahrstoffen und Laborlüftung.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Ist ein Laborcontainer ein Fliegender Bau?
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                In der Regel nicht. Fliegende Bauten sind bauliche Anlagen, die geeignet und bestimmt sind, an verschiedenen Orten wiederholt aufgestellt und zerlegt zu werden (§ 76 Abs. 1 MBO), etwa Zelte oder Fahrgeschäfte. Ein Laborcontainer, der für die Dauer eines Projekts an einem Standort betrieben wird, ist nach diesem Wortlaut kein Fliegender Bau. Die Einordnung im Einzelfall trifft die Bauaufsicht.
+              </p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">
+                Serien-Container: Typengenehmigung und Vorbescheid
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Für bauliche Anlagen, die in derselben Ausführung oder nach einem bestimmten System an mehreren Stellen errichtet werden, sieht die Musterbauordnung eine Typengenehmigung vor (§ 72a). Sie gilt fünf Jahre und ersetzt das Verfahren am Standort nicht, die dort geprüften Fragen werden aber nicht erneut geprüft. Ein Vorbescheid auf eine Bauvoranfrage gilt drei Jahre (§ 75 MBO); eine Baugenehmigung erlischt, wenn nicht innerhalb von drei Jahren mit dem Bau begonnen wird (§ 73).
+              </p>
+              <p class="text-xs text-gray-600 leading-relaxed mb-8">Quellen: Musterbauordnung (Fassung 2002, zuletzt geändert 25.09.2020), §§ 2, 59, 61, 72a, 73, 75, 76; LBO Baden-Württemberg, Neufassung vom 16.03.2026 (GBl. 2026 Nr. 44), § 2 und Anhang 1; Bayerische Bauordnung Art. 57 (Fassung ab 01.05.2026); ISO 668 (Außenmaße). Maßgeblich ist immer die Landesbauordnung am Standort.</p>
+
               <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="landesbauordnungen">
                 16 Landesbauordnungen: Was in welchem Bundesland gilt
               </h2>
@@ -209,114 +262,81 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
                   <thead>
                     <tr class="bg-slate-900 text-white">
                       <th class="text-left p-3 rounded-tl-lg">Bundesland</th>
-                      <th class="text-left p-3">LBO</th>
-                      <th class="text-left p-3">Verfahrensfrei bis</th>
-                      <th class="text-left p-3 rounded-tr-lg">Besonderheit Labor</th>
+                      <th class="text-left p-3 rounded-tr-lg">Landesbauordnung</th>
+
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-gray-100">
                     <tr class="bg-white">
                       <td class="p-3 font-medium">Baden-Württemberg</td>
                       <td class="p-3 text-gray-600">LBO BW</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Sonderbau ab 1.600 m² BGF</td>
                     </tr>
                     <tr class="bg-slate-50">
                       <td class="p-3 font-medium">Bayern</td>
                       <td class="p-3 text-gray-600">BayBO</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Gefahrstofflager ab 200 kg genehmigungspflichtig</td>
                     </tr>
                     <tr class="bg-white">
                       <td class="p-3 font-medium">Berlin</td>
                       <td class="p-3 text-gray-600">BauO Bln</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Nutzungsänderung immer genehmigungspflichtig</td>
                     </tr>
                     <tr class="bg-slate-50">
                       <td class="p-3 font-medium">Brandenburg</td>
                       <td class="p-3 text-gray-600">BbgBO</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Anzeigeverfahren für Sonderbauten</td>
                     </tr>
                     <tr class="bg-white">
                       <td class="p-3 font-medium">Bremen</td>
                       <td class="p-3 text-gray-600">BremLBO</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Enge Abstimmung Hafenbehörde bei Hafenstandorten</td>
                     </tr>
                     <tr class="bg-slate-50">
                       <td class="p-3 font-medium">Hamburg</td>
                       <td class="p-3 text-gray-600">HBauO</td>
-                      <td class="p-3 text-gray-600">6 Monate</td>
-                      <td class="p-3 text-gray-600">Längste verfahrensfreie Frist in DE</td>
                     </tr>
                     <tr class="bg-white">
                       <td class="p-3 font-medium">Hessen</td>
                       <td class="p-3 text-gray-600">HBO</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Pharma-Cluster Rhein-Main: behördliche Erfahrung vorhanden</td>
                     </tr>
                     <tr class="bg-slate-50">
                       <td class="p-3 font-medium">Mecklenburg-Vorpommern</td>
                       <td class="p-3 text-gray-600">LBauO M-V</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Vereinfachtes Verfahren bei GK 1–3</td>
                     </tr>
                     <tr class="bg-white">
                       <td class="p-3 font-medium">Niedersachsen</td>
                       <td class="p-3 text-gray-600">NBauO</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Baugenehmigungsfreistellung bei B-Plan-Konformität</td>
                     </tr>
                     <tr class="bg-slate-50">
                       <td class="p-3 font-medium">Nordrhein-Westfalen</td>
                       <td class="p-3 text-gray-600">BauO NRW</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Chemie-Cluster Rheinland: strenge Immissionsschutzauflagen</td>
                     </tr>
                     <tr class="bg-white">
                       <td class="p-3 font-medium">Rheinland-Pfalz</td>
                       <td class="p-3 text-gray-600">LBauO RP</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Life-Science-Standort Mainz: Erfahrung mit BSL-Genehmigungen</td>
                     </tr>
                     <tr class="bg-slate-50">
                       <td class="p-3 font-medium">Saarland</td>
                       <td class="p-3 text-gray-600">LBO SL</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Kompakte Behördenstruktur: kurze Wege</td>
                     </tr>
                     <tr class="bg-white">
                       <td class="p-3 font-medium">Sachsen</td>
                       <td class="p-3 text-gray-600">SächsBO</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Mikroelektronik-Cluster Dresden: Reinraum-Erfahrung</td>
                     </tr>
                     <tr class="bg-slate-50">
                       <td class="p-3 font-medium">Sachsen-Anhalt</td>
                       <td class="p-3 text-gray-600">BauO LSA</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Chemiepark Leuna: etablierte Genehmigungsprozesse</td>
                     </tr>
                     <tr class="bg-white">
                       <td class="p-3 font-medium">Schleswig-Holstein</td>
                       <td class="p-3 text-gray-600">LBO SH</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Maritime Forschung: Sonderregelungen Küstengebiete</td>
                     </tr>
                     <tr class="bg-slate-50">
                       <td class="p-3 font-medium">Thüringen</td>
                       <td class="p-3 text-gray-600">ThürBO</td>
-                      <td class="p-3 text-gray-600">3 Monate</td>
-                      <td class="p-3 text-gray-600">Optik/Photonik-Cluster Jena: spezialisierte Behörden</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
               <p class="text-gray-600 leading-relaxed mb-6">
-                Die Tabelle zeigt: In den meisten Bundesländern liegt die Grenze für verfahrensfreie Aufstellungen bei 3 Monaten. Hamburg bildet mit 6 Monaten die Ausnahme. Aber – und das ist der entscheidende Punkt – diese Fristen gelten nur für die reine Aufstellung. Sobald ein Container als Labor genutzt wird und damit eine Nutzungsänderung darstellt, ist in der Regel ein Genehmigungsverfahren erforderlich.
+                Welche kleinen Gebäude verfahrensfrei sind, regelt jede Landesbauordnung selbst; Beispiele mit Fundstelle stehen im Abschnitt <a href="#baugenehmigung-container" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Braucht ein Container eine Baugenehmigung?</a>. Eine allgemeine Frist, bis zu der ein Container genehmigungsfrei auf einem Grundstück stehen darf, kennen die Musterbauordnung, die LBO Baden-Württemberg und die Bayerische Bauordnung nicht. Wird ein Container als Labor genutzt, ist in der Regel ein Genehmigungsverfahren erforderlich.
               </p>
               <p class="text-gray-600 leading-relaxed mb-6">
                 Wenn Sie wissen möchten, welche regionalen Besonderheiten an Ihrem Standort gelten, helfen unsere Städteseiten weiter – etwa für <a href="/laborcontainer-berlin" class="text-[#5c7300] font-medium hover:underline">Berlin</a>, <a href="/laborcontainer-muenchen" class="text-[#5c7300] font-medium hover:underline">München</a> oder <a href="/laborcontainer-stuttgart" class="text-[#5c7300] font-medium hover:underline">Stuttgart</a>.
@@ -443,7 +463,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
                   <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
                   </div>
-                  <h4 class="font-bold text-slate-900 mb-3 text-lg">Bauvoranfrage</h4>
+                  <h3 class="font-bold text-slate-900 mb-3 text-lg">Bauvoranfrage</h3>
                   <ul class="space-y-2 text-sm text-gray-700">
                     <li class="flex items-start gap-2">
                       <span class="text-[#5c7300] font-bold">+</span>
@@ -531,7 +551,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
               </p>
 
               <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
-                <h4 class="font-bold text-slate-900 mb-4">Typischer Zeitplan für die Genehmigung eines Laborcontainers</h4>
+                <h3 class="font-bold text-slate-900 mb-4">Typischer Zeitplan für die Genehmigung eines Laborcontainers</h3>
                 <div class="space-y-4">
                   <div class="flex items-start gap-4">
                     <div class="w-24 shrink-0">
@@ -596,13 +616,13 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
               </p>
 
               <div class="bg-white border-2 border-gray-100 rounded-xl p-8 my-8 not-prose">
-                <h4 class="font-bold text-slate-900 mb-6 flex items-center gap-2 text-lg">
+                <h3 class="font-bold text-slate-900 mb-6 flex items-center gap-2 text-lg">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                   Checkliste Bauantrag Laborcontainer
-                </h4>
+                </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
                   <div class="space-y-2">
-                    <h5 class="font-bold text-slate-900 text-sm uppercase tracking-wider mt-4 mb-3">Allgemeine Unterlagen</h5>
+                    <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wider mt-4 mb-3">Allgemeine Unterlagen</h4>
                     <label class="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
                       <input type="checkbox" class="mt-1 accent-primary" />
                       <span>Bauantragsformular (landesspezifisch)</span>
@@ -687,7 +707,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
 
               <div class="space-y-4 my-8 not-prose">
                 <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
-                  <h4 class="font-bold text-slate-900 text-sm mb-1">Fehler 1: Genehmigungsprozess zu spät starten</h4>
+                  <h3 class="font-bold text-slate-900 text-sm mb-1">Fehler 1: Genehmigungsprozess zu spät starten</h3>
                   <p class="text-gray-600 text-sm">Die Genehmigung wird erst beantragt, wenn der Container schon in der Fertigung ist. Wird sie dann verzögert oder abgelehnt, steht ein fertiger Container ohne Aufstellgenehmigung. Richtig: Genehmigungsprozess parallel zur <a href="/leistungen/planung" class="text-[#5c7300] hover:underline">Fachplanung</a> starten.</p>
                 </div>
                 <div class="bg-red-50 border-l-4 border-red-300 p-4 rounded-r-lg">
@@ -750,7 +770,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
               </p>
 
               <div class="bg-primary/5 border border-primary/20 rounded-xl p-8 my-8 not-prose text-center">
-                <h4 class="font-bold text-slate-900 mb-3 text-lg">Genehmigung für Ihr Laborcontainer-Projekt?</h4>
+                <h3 class="font-bold text-slate-900 mb-3 text-lg">Genehmigung für Ihr Laborcontainer-Projekt?</h3>
                 <p class="text-gray-600 mb-6">
                   Wir prüfen die baurechtliche Situation an Ihrem Standort, beraten Sie zu den erforderlichen Genehmigungen und übernehmen auf Wunsch die komplette Antragstellung – von der Bauvoranfrage bis zur Betriebsgenehmigung.
                 </p>
@@ -767,11 +787,38 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
               <div class="space-y-6 my-8">
                 <details class="group border border-gray-200 rounded-xl overflow-hidden">
                   <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Darf ich einen Container ohne Genehmigung auf mein Grundstück stellen?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary group-open:rotate-180 transition-transform shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Meist nicht. Ein Container gilt auch ohne Fundament als bauliche Anlage, weil er durch eigene Schwere auf dem Boden ruht (§ 2 Abs. 1 Musterbauordnung). Verfahrensfrei sind nur kleine Gebäude nach Landesrecht, zum Beispiel in Bayern bis 75 m³ Brutto-Rauminhalt außer im Außenbereich (Art. 57 BayBO) oder in Baden-Württemberg bis 40 m³ ohne Aufenthaltsräume (LBO BW, Anhang 1). Für ein Labor greift das wegen der Nutzung meist nicht.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Ist ein Container bis drei Monate genehmigungsfrei?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary group-open:rotate-180 transition-transform shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    Nach Musterbauordnung, LBO Baden-Württemberg und Bayerischer Bauordnung nicht allgemein. Die Drei-Monats-Grenze gilt dort nur für bauliche Anlagen auf genehmigtem Messe- und Ausstellungsgelände (§ 61 Abs. 1 Nr. 13 MBO).
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-slate-900 pr-4">Ist ein Laborcontainer ein Fliegender Bau?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary group-open:rotate-180 transition-transform shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </summary>
+                  <div class="p-6 pt-0 text-gray-600">
+                    In der Regel nicht. Fliegende Bauten sind dazu bestimmt, wiederholt an verschiedenen Orten auf- und abgebaut zu werden (§ 76 Abs. 1 MBO). Ein Laborcontainer, der an einem Standort betrieben wird, braucht das normale Bauverfahren. Die Einordnung im Einzelfall trifft die Bauaufsicht.
+                  </div>
+                </details>
+                <details class="group border border-gray-200 rounded-xl overflow-hidden">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
                     <span class="font-bold text-slate-900 pr-4">Braucht ein Laborcontainer immer eine Baugenehmigung?</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 group-open:rotate-180 transition-transform"><polyline points="6 9 12 15 18 9"/></svg>
                   </summary>
                   <div class="p-6 pt-0 text-gray-600">
-                    Nicht immer. In vielen Bundesländern sind temporäre Aufstellungen bis zu 3 Monaten genehmigungsfrei. Bei dauerhafter Nutzung über 3 Monate ist in der Regel eine Baugenehmigung oder zumindest eine Bauanzeige erforderlich. Entscheidend sind Landesbauordnung, Nutzungsart und Standort. Bei Laboren mit Gefahrstoffumgang greifen oft zusätzliche Genehmigungspflichten unabhängig von der Dauer.
+                    In aller Regel ja. Ein aufgestellter Laborcontainer ist eine bauliche Anlage, auch ohne Fundament (§ 2 Abs. 1 Musterbauordnung). Verfahrensfrei sind nur kleine Gebäude nach Landesrecht, etwa in Bayern bis 75 m³ Brutto-Rauminhalt außerhalb des Außenbereichs oder in Baden-Württemberg bis 40 m³ ohne Aufenthaltsräume. Eine allgemeine Drei-Monats-Frist für Container gibt es in Musterbauordnung, LBO BW und BayBO nicht. Bei Laboren mit Gefahrstoffumgang greifen oft zusätzliche Genehmigungspflichten unabhängig von der Dauer.
                   </div>
                 </details>
                 <details class="group border border-gray-200 rounded-xl overflow-hidden">
@@ -827,10 +874,10 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
           <aside class="lg:col-span-4">
             <div class="sticky top-24 space-y-8">
               <div class="bg-slate-50 rounded-xl p-6">
-                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
                   Inhaltsverzeichnis
-                </h4>
+                </h3>
                 <nav class="space-y-2">
                   <a href="#grundlagen" class="block text-sm text-gray-600 hover:text-primary transition-colors">Baurecht-Grundlagen</a>
                   <a href="#landesbauordnungen" class="block text-sm text-gray-600 hover:text-primary transition-colors">16 Landesbauordnungen</a>

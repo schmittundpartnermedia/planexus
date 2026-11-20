@@ -64,11 +64,27 @@ const faqs = [
   },
   {
     q: "How is a purchased lab container capitalised?",
-    a: "A purchased lab container is a capital asset (capex) and is written down via tax depreciation (AfA) over 10 to 15 years under the tax guidelines. It creates a balance-sheet asset. Discuss the variant that is optimal for your situation with your tax adviser."
+    a: "A purchased lab container is a capital asset (capex) and is depreciated: over 10 years under the official German depreciation table for containers (item 3.6), or as a building if it has a permanent foundation. It creates a balance-sheet asset. Discuss the variant that is optimal for your situation with your tax adviser."
   },
   {
     q: "Can I resell a purchased lab container later?",
     a: "Yes. After around five years the resale value is typically around 40 to 50 per cent of new value. Standard configurations are significantly easier to sell than highly specialised custom solutions. High-quality units last 15 to 20 years."
+  },
+  {
+    q: "Over how many years is a lab container depreciated?",
+    a: "The official German depreciation table for general fixed assets sets 10 years for containers (item 3.6). If the container sits on permanent foundations it counts as a building for tax purposes; then 3 per cent a year or the shorter actual useful life applies (section 7(4) EStG). Clarify the classification with your tax adviser."
+  },
+  {
+    q: "Is a lab container a building for tax purposes?",
+    a: "That depends on the foundation. The German Federal Fiscal Court classified office containers on fixed foundations as buildings (BFH, judgment of 25 April 1996, III R 47/93). If it does not rest on foundations, it depends on whether it is set up for permanent use and that permanence is visible from the outside. Clarify the classification with your tax adviser."
+  },
+  {
+    q: "Can a lab container be depreciated on a declining-balance basis?",
+    a: "For movable assets acquired between 1 July 2025 and 31 December 2027, section 7(2) EStG allows declining-balance depreciation of up to 30 per cent. If the container counts as a building because of fixed foundations, this is not available. Clarify the classification with your tax adviser before you buy."
+  },
+  {
+    q: "Do I need building permission for a purchased lab container?",
+    a: "In almost all cases, yes. A sited lab container is a structure under building law, even without a foundation (section 2(1) German Model Building Code). The building code at the site applies. If the container is moved later, it needs a new permit at the new site."
   }
 ];
 
@@ -122,8 +138,8 @@ const faqSchema = {
         <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
           <div><div class="text-3xl font-bold text-primary">8–14</div><div class="text-sm text-slate-400">weeks to handover</div></div>
           <div><div class="text-3xl font-bold text-primary">15–20</div><div class="text-sm text-slate-400">years service life</div></div>
-          <div><div class="text-3xl font-bold text-primary">10–15</div><div class="text-sm text-slate-400">years tax depreciation (AfA)</div></div>
-          <div><div class="text-3xl font-bold text-primary">2.750</div><div class="text-sm text-slate-400">mm room height</div></div>
+          <div><div class="text-3xl font-bold text-primary">BSL-3</div><div class="text-sm text-slate-400">up to containment level</div></div>
+          <div><div class="text-3xl font-bold text-primary">2,750</div><div class="text-sm text-slate-400">mm room height</div></div>
         </div>
       </div>
     </div>
@@ -140,7 +156,7 @@ const faqSchema = {
           You acquire an operational, permanently usable laboratory that belongs to you. From order to operational handover we allow 8 to 14 weeks — conventional laboratory new-build often needs 24 months and more for comparable laboratories. Modifications follow your specifications, without consulting a lessor.
         </p>
         <p class="text-lg text-slate-600 leading-relaxed">
-          Purchase creates a balance-sheet asset and is written down via tax depreciation (AfA) over 10 to 15 years. High-quality units last 15 to 20 years. Maintenance and insurance sit with you on a purchase — as a running item, maintenance costs of two to four per cent of acquisition value per year are typical.
+          Purchase creates a balance-sheet asset and is depreciated over 10 years under the official German depreciation table, or as a building if it has a permanent foundation. High-quality units last 15 to 20 years. Maintenance and insurance sit with you on a purchase — as a running item, maintenance costs of two to four per cent of acquisition value per year are typical.
         </p>
       </div>
     </div>
@@ -214,7 +230,7 @@ const faqSchema = {
           </div>
           <div class="bg-white rounded-xl p-6 border border-slate-200">
             <h3 class="font-bold text-slate-900 mb-2">BSL-2 &amp; BSL-3</h3>
-            <p class="text-slate-600 text-sm"><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Containment laboratories with negative-pressure cascades</a>, redundant HEPA filtration, airlock and autoclave. Conformant with BioStoffV, GenTG, TRBA 100.</p>
+            <p class="text-slate-600 text-sm"><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Containment laboratories with negative-pressure cascades</a>, redundant HEPA filtration, airlock and autoclave. Designed to BioStoffV, GenTG and TRBA 100.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-slate-200">
             <h3 class="font-bold text-slate-900 mb-2">GMP cleanroom</h3>
@@ -264,6 +280,43 @@ const faqSchema = {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPRECIATION -->
+  <section class="py-16 bg-white" id="depreciation">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Depreciation: over how many years?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">For containers, the official German depreciation table for general fixed assets (AfA-Tabelle AV) sets a normal useful life of <strong class="text-slate-900">10 years</strong> (item 3.6, “transport, site, office and residential containers”). Lab containers are not listed separately but fit this item most closely. A shorter useful life may be used if it can be substantiated.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">It is different if the container sits on a permanent foundation. The Federal Fiscal Court ruled that office containers on fixed foundations are buildings regardless of their intended purpose (judgment of 25 April 1996, III R 47/93). Commercial buildings are then depreciated at 3 per cent a year, or over their shorter actual useful life (section 7(4) EStG).</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">If the container remains a movable asset, declining-balance depreciation of up to 30 per cent is also available for acquisitions between 1 July 2025 and 31 December 2027 (section 7(2) EStG). Which applies depends on the foundation, so discuss it with your tax adviser before you buy.</p>
+        <p class="text-xs text-gray-600 mt-4">Sources: AfA-Tabelle AV, Federal Ministry of Finance letter of 15 December 2000 (BStBl I 2000 p. 1532), item 3.6 and preliminary note 2; BFH III R 47/93 (BStBl II 1996 p. 613); section 7(2) and (4) EStG. German tax law; Austria and Switzerland have their own rules.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OWNERSHIP -->
+  <section class="py-16 bg-slate-50" id="ownership">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Purchase, hire purchase or leasing: who carries the container in the accounts?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">On purchase, the lab container is a fixed asset on your balance sheet and is depreciated. With hire purchase, economic ownership decides: an asset is recognised by the party it economically belongs to (section 246(1) HGB; for tax, section 39(2) no. 1 AO). With a fixed transfer of ownership it often sits with you from the start.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">For leasing, German tax allocation follows the leasing decrees of the tax authorities, which look among other things at the basic lease term in relation to the useful life. The exact classification of your contract is a matter for your tax adviser. Our guide <a href="/en/magazine/lab-containers-rent-or-buy" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">hire or buy a lab container</a> helps with the choice between the routes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMIT -->
+  <section class="py-16 bg-white" id="permit">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Building permission, foundation and relocation</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">A purchased lab container also needs building permission in almost all cases. It is a structure under building law even if it only rests on the ground under its own weight (section 2(1) German Model Building Code). Erection, alteration and change of use require a permit unless the code provides an exception (section 59).</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">If you move the container to another site later, it needs a new permit there. For structures built in the same design at several locations, the building codes provide a type approval (section 72a MBO). It does not replace the permit at the site, but limits the review there to site-specific questions.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">For siting you need a load-bearing area with a designed foundation, access for the mobile crane and connections for power, water and drainage. Foundations are covered in <a href="/en/magazine/lab-container-installation-foundation-statics" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">installation and structural design</a>, the procedure in <a href="/en/magazine/lab-container-permits-building-law" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">permits and building law</a>.</p>
+        <p class="text-xs text-gray-600 mt-4">Source: German Model Building Code (Musterbauordnung, 2002 version, last amended 25 September 2020). The state building codes differ in detail.</p>
       </div>
     </div>
   </section>

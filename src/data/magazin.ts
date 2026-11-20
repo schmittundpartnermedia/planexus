@@ -20,6 +20,13 @@ export interface MagazinLocaleFields {
 }
 
 export const magazinEn: Record<string, MagazinLocaleFields> = {
+  "laborabzug-pruefen": {
+    slug: "fume-cupboard-testing",
+    title: "Fume cupboard testing: obligations, intervals and procedure",
+    excerpt: "Who tests, how often and what is measured: TRGS 526 intervals, scope by year of manufacture, on-site testing to EN 14175-4 and the required test record.",
+    date: "20 November 2026",
+    category: "Safety",
+  },
   "anforderungen-laborraeume": {
     slug: "laboratory-room-requirements-germany",
     title: "Laboratory room requirements in Germany: what every lab must provide",
@@ -215,6 +222,16 @@ export function localizePost(post: MagazinPost, locale: Locale = 'de') {
 }
 
 export const magazinPosts: MagazinPost[] = [
+  {
+    id: -20,
+    slug: "laborabzug-pruefen",
+    title: "Laborabzug prüfen: Prüfpflicht, Fristen und Ablauf",
+    excerpt: "Wer prüft, wie oft und was gemessen wird: Fristen nach TRGS 526, Prüfumfang nach Baujahr, Vor-Ort-Prüfung nach DIN EN 14175-4 und das Prüfprotokoll.",
+    date: "20. November 2026",
+    author: "Thomas Boss",
+    category: "Sicherheit",
+    image: "/attached_assets/Labor_1_1769690564538.jpg",
+  },
   {
     id: -19,
     slug: "anforderungen-laborraeume",
@@ -499,10 +516,15 @@ const relatedSlugsMap: Record<string, string[]> = {
     "laborcontainer-projektablauf-von-idee-bis-uebergabe",
     "laborcontainer-genehmigung-baurecht-vorschriften",
   ],
+  "laborabzug-pruefen": [
+    "laborcontainer-laborabzug-din-en-14175",
+    "anforderungen-laborraeume",
+    "laborcontainer-klimatisierung-lueftung-normen",
+  ],
   "laborcontainer-laborabzug-din-en-14175": [
+    "laborabzug-pruefen",
     "laborcontainer-klimatisierung-lueftung-normen",
     "laborcontainer-ausstattung-checkliste",
-    "laborcontainer-brandschutz-feuerwiderstand",
   ],
   "laborcontainer-brandschutz-feuerwiderstand": [
     "bsl-2-bsl-3-container-labor",

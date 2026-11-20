@@ -69,6 +69,22 @@ const faqs = [
   {
     q: "Gibt es Mietkauf für einen Laborcontainer?",
     a: "Ja. Mietkauf ist zwischen rund 24 und 48 Monaten Nutzungsdauer die wirtschaftlich sinnvolle Zwischenlösung. Ein Teil der Mieten wird auf einen späteren Restkaufpreis verrechnet – so lässt sich eine Brückenlösung ohne doppelte Investition in die Dauerausstattung überführen."
+  },
+  {
+    q: "Brauche ich für einen gemieteten Laborcontainer eine Baugenehmigung?",
+    a: "In aller Regel ja. Ein aufgestellter Laborcontainer ist eine bauliche Anlage, auch wenn er nur durch sein eigenes Gewicht auf dem Boden steht (§ 2 Abs. 1 Musterbauordnung). Üblich ist eine befristete Baugenehmigung (§ 72 Abs. 3 MBO). Maßgeblich ist die Landesbauordnung am Standort."
+  },
+  {
+    q: "Macht eine kurze Mietdauer den Laborcontainer genehmigungsfrei?",
+    a: "Nein, nicht allein wegen der Befristung. Die Musterbauordnung nennt als verfahrensfreie, vorübergehend aufgestellte Anlagen Baustelleneinrichtungen, Gerüste, Toilettenwagen, Behelfsbauten für Landesverteidigung, Katastrophenschutz oder Unfallhilfe, Anlagen auf Messegeländen für höchstens drei Monate und Marktstände (§ 61 Abs. 1 Nr. 13). Ein Mietlabor gehört nicht dazu."
+  },
+  {
+    q: "Wie wird eine Miete bilanziert?",
+    a: "Bei einer reinen Miete sind die Zahlungen laufender Aufwand; der Container bleibt Eigentum des Vermieters. Bei einem Mietkauf kann das wirtschaftliche Eigentum von Anfang an beim Mieter liegen (§ 246 Abs. 1 HGB, § 39 AO). IFRS-Bilanzierer weisen Mieten über zwölf Monate meist als Nutzungsrecht aus. Klären Sie das im Einzelfall mit Ihrer Steuerberatung."
+  },
+  {
+    q: "Was muss ich am Aufstellort bereitstellen?",
+    a: "Eine ebene, tragfähige Aufstellfläche mit geplanter Gründung, eine Zufahrt und Stellfläche für den Mobilkran, einen 400-V-Stromanschluss sowie Wasser und Abwasser. Dazu kommen die Baugenehmigung und, je nach Labor, die Anzeigen nach Biostoff- oder Gentechnikrecht."
   }
 ];
 
@@ -214,7 +230,7 @@ const faqSchema = {
           </div>
           <div class="bg-white rounded-xl p-6 border border-slate-200">
             <h3 class="font-bold text-slate-900 mb-2">BSL-2 &amp; BSL-3</h3>
-            <p class="text-slate-600 text-sm"><a href="/magazin/bsl-2-bsl-3-container-labor" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Sicherheitslabore mit Unterdruckkaskaden</a>, redundanter HEPA-Filtration, Schleuse und Autoklav. Konform mit BioStoffV, GenTG, TRBA 100.</p>
+            <p class="text-slate-600 text-sm"><a href="/magazin/bsl-2-bsl-3-container-labor" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Sicherheitslabore mit Unterdruckkaskaden</a>, redundanter HEPA-Filtration, Schleuse und Autoklav. Ausgelegt nach BioStoffV, GenTG und TRBA 100.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-slate-200">
             <h3 class="font-bold text-slate-900 mb-2">GMP-Reinraum</h3>
@@ -264,6 +280,59 @@ const faqSchema = {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENEHMIGUNG -->
+  <section class="py-16 bg-white" id="genehmigung">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Brauche ich für einen gemieteten Laborcontainer eine Baugenehmigung?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">In aller Regel ja. Ein aufgestellter Laborcontainer ist eine bauliche Anlage, auch wenn er nur durch sein eigenes Gewicht auf dem Boden steht (§ 2 Abs. 1 Musterbauordnung). Weil Menschen ihn betreten und darin arbeiten, ist er baurechtlich ein Gebäude (§ 2 Abs. 2).</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Die Befristung allein macht ihn nicht genehmigungsfrei. Die Musterbauordnung nennt in § 61 Abs. 1 Nr. 13 als verfahrensfreie, vorübergehend aufgestellte Anlagen Baustelleneinrichtungen, Gerüste, Toilettenwagen, Behelfsbauten für Landesverteidigung, Katastrophenschutz oder Unfallhilfe, Anlagen auf Messegeländen für höchstens drei Monate und Stände auf Märkten. Ein Mietlabor gehört nicht dazu.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">Der übliche Weg für ein Mietlabor ist deshalb eine <strong class="text-slate-900">befristete Baugenehmigung</strong>: Die Behörde kann eine Genehmigung ausdrücklich befristet erteilen (§ 72 Abs. 3). Maßgeblich ist immer die Landesbauordnung am Standort, in Österreich die Bauordnung des Bundeslandes, in der Schweiz das kantonale Baurecht. Für Biostoff- oder Gentechnik-Labore kommen die Anzeigen und Genehmigungen des Betreibers hinzu. Den Ablauf beschreibt der Beitrag <a href="/magazin/laborcontainer-genehmigung-baurecht-vorschriften" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Genehmigung und Baurecht für Laborcontainer</a>.</p>
+        <p class="text-xs text-gray-600 mt-4">Quelle: Musterbauordnung (Fassung 2002, zuletzt geändert 25.09.2020), §§ 2, 61, 72. Die Landesbauordnungen weichen im Detail ab.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIETKAUF-BILANZ -->
+  <section class="py-16 bg-slate-50" id="mietkauf-bilanz">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Miete, Mietkauf und Bilanz</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Bei einer reinen Miete bleibt der Laborcontainer Eigentum des Vermieters. Die Mietzahlungen sind laufender Aufwand. Das schont Liquidität und Eigenkapital, weil kein Anlagevermögen entsteht.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Beim Mietkauf ist das anders. Bilanziert wird ein Vermögensgegenstand nicht zwingend vom rechtlichen Eigentümer, sondern von dem, dem er wirtschaftlich zuzurechnen ist (§ 246 Abs. 1 HGB). Steuerlich gilt dasselbe: Wer den Eigentümer für die gewöhnliche Nutzungsdauer wirtschaftlich ausschließen kann, dem wird das Wirtschaftsgut zugerechnet (§ 39 Abs. 2 Nr. 1 AO). Ein Mietkauf mit festem Eigentumsübergang führt deshalb oft dazu, dass der Container von Anfang an bei Ihnen in der Bilanz steht.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">Unternehmen, die nach IFRS bilanzieren, weisen Mietverträge über mehr als zwölf Monate in der Regel als Nutzungsrecht aus (IFRS 16). Welche Variante für Ihre Bilanz passt, klären Sie im Einzelfall mit Ihrer Steuerberatung. Wir liefern dafür die Vertragsdaten und die Laufzeiten.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDORT -->
+  <section class="py-16 bg-white" id="standort">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Was Sie am Aufstellort vorbereiten</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Damit ein Mietlabor in der geplanten Zeit betriebsbereit ist, sollten diese Punkte früh geklärt sein:</p>
+        <ul class="space-y-3 text-slate-600 text-lg">
+          <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span><span><strong class="text-slate-900">Genehmigung:</strong> Bauantrag am Standort, bei Bedarf befristet, und die Anzeigen nach Biostoff- oder Gentechnikrecht.</span></li>
+          <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span><span><strong class="text-slate-900">Fläche und Gründung:</strong> eine ebene, tragfähige Aufstellfläche. Die Gründung wird für den Standort geplant.</span></li>
+          <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span><span><strong class="text-slate-900">Zufahrt:</strong> Der Container wird per Mobilkran gestellt. Kran und Transport brauchen eine befahrbare Zufahrt und eine Stellfläche.</span></li>
+          <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span><span><strong class="text-slate-900">Anschlüsse:</strong> 400-V-Stromanschluss, Wasser und Abwasser, je nach Ausstattung weitere Medien.</span></li>
+        </ul>
+        <p class="text-lg text-slate-600 leading-relaxed mt-6 mb-0">Die Punkte klären wir mit Ihnen in der <a href="/leistungen/beratung" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Bedarfsklärung</a>, oft schon per Foto und Lageplan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIETLABOR -->
+  <section class="py-16 bg-slate-50" id="mietlabor">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Mietlabor im Gebäude oder Laborcontainer?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Wer „Mietlabor“ sucht, findet zwei Wege. Gemietete Laborflächen in einem Technologiepark sind sofort verfügbar, liegen aber an einem festen Ort, der meist nicht Ihr Standort ist. Die Ausstattung und die Sicherheitsstufe sind vorgegeben.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">Ein gemieteter Laborcontainer steht dort, wo Ihr Team arbeitet: auf dem eigenen Gelände, neben dem Bestandslabor oder auf dem Klinikcampus während einer Sanierung. Sicherheitsstufe, Ausstattung und Grundriss richten sich nach Ihrer Anwendung. Dafür braucht er eine Aufstellfläche und eine Genehmigung. Für Übergangslösungen beschreibt der Beitrag <a href="/magazin/uebergangslabor-sanierung-mietcontainer" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Übergangslabor bei Sanierung</a> die typischen Abläufe.</p>
       </div>
     </div>
   </section>

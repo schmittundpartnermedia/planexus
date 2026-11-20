@@ -24,3 +24,14 @@ Jeder Satz ist prüfbar. Belege stehen in `docs/PRUEFUNG-seo-umsetzung.md`. Auto
 20. Höchstens 2 Seiten (Impressum/Datenschutz je Sprache ausgenommen) nutzen noch `opengraph.jpg`.
 21. Live-Abruf liefert nur noch eine `Cache-Control`-Zeile (erst nach Deploy prüfbar; nginx-Teil braucht Joachims SSH).
 22. `npm run build` läuft ohne Fehler; Startseiten-Hero ist bytegleich zum Stand vor der Änderung (Diff des Hero-Abschnitts leer).
+
+## Phase 2 (20.11.2026)
+
+23. Mieten und Kaufen (DE/EN) haben je mindestens 1.500 Wörter im Hauptinhalt und mindestens 3 neue FAQ; jede FAQ-Schema-Frage steht wortgleich sichtbar auf der Seite.
+24. `/laborcontainer` (DE/EN) hat mindestens 1.600 Wörter im Hauptinhalt und einen Abschnitt zu Maßen/Raumhöhe mit Quellenangabe.
+25. `/magazin/laborabzug-pruefen` und `/en/magazine/fume-cupboard-testing` liefern 200, stehen in der Sitemap mit hreflang-Paar, haben Article-, BreadcrumbList- und FAQPage-Schema, Titel ≤ 60 und Description ≤ 155, genau eine H1, und jede Fundstelle im Text hat eine Quelle in der Quellenliste.
+26. Der alte Artikel `/magazin/laborcontainer-laborabzug-din-en-14175` verlinkt auf den neuen Artikel und umgekehrt; der neue Artikel steht in der Magazinliste DE/EN.
+27. Der BSL-Artikel (DE/EN) enthält einen Abschnitt „Was bedeutet BSL?“ und eine Vergleichstabelle BSL-2/BSL-3.
+28. Der Genehmigungs-Artikel enthält einen Abschnitt „Braucht ein Container eine Baugenehmigung?“; die Ausstattungs-Checkliste einen Abschnitt „20 oder 40 Fuß?“.
+29. In keinem neuen Text steht ein €-Betrag, ein Firmenname als Kunde oder eine nicht belegte Zahl (Stichprobe aller neuen Zahlen gegen Recherche-Fundstellen in PRUEFUNG).
+30. Nach dem Deploy: alle neuen und geänderten Adressen liefern live 200; eine Formularanfrage ohne Betreff wird live gespeichert (Admin-Liste); `curl -I` zeigt genau eine `Cache-Control`-Zeile, `/api/…` und `/admin` zeigen `no-store`.

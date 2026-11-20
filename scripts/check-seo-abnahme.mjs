@@ -143,7 +143,30 @@ try {
 } catch {}
 check(22, heroSame, 'Hero DE/EN gegen Commit fee93a4');
 
+// ===== Phase 2 =====
+const words = (h) => text(mainOf(h)).split(' ').filter(Boolean).length;
+const faqNames = (h) => { const out = []; for (const j of ldOf(h)) { try { const walk = (o) => { if (Array.isArray(o)) o.forEach(walk); else if (o && typeof o === 'object') { if (o['@type'] === 'Question') out.push(o.name); Object.values(o).forEach(walk); } }; walk(JSON.parse(j)); } catch {} } return out; };
+const norm = (x) => x.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim();
+const faqVisible = (h) => { const vis = norm(text(h)); return faqNames(h).every((q) => vis.includes(norm(q))); };
+const baseFaq = { '/laborcontainer-mieten': 4, '/laborcontainer-kaufen': 4, '/en/rent-lab-containers': 4, '/en/buy-lab-containers': 4 };
+const p23 = Object.keys(baseFaq).map((r) => { const h = page(r)?.html || ''; return { r, w: words(h), f: faqNames(h).length, v: faqVisible(h) }; });
+check(23, p23.every((x) => x.w >= 1500 && x.f >= baseFaq[x.r] + 3 && x.v), p23.map((x) => `${x.r} ${x.w}W ${x.f}FAQ sichtbar:${x.v}`).join(' | '));
+const p24 = ['/laborcontainer', '/en/lab-containers'].map((r) => { const h = page(r)?.html || ''; return { r, w: words(h), m: /data-section="masse"/.test(h) && /ISO 668/.test(h) }; });
+check(24, p24.every((x) => x.w >= 1600 && x.m), p24.map((x) => `${x.r} ${x.w}W Maße:${x.m}`).join(' | '));
+const art = ['/magazin/laborabzug-pruefen', '/en/magazine/fume-cupboard-testing'].map((r) => {
+  const h = page(r)?.html || ''; const types = ldOf(h).join(' ');
+  const t = ((h.match(/<title>([^<]*)<\/title>/) || [])[1] || '').replace(/&amp;/g, '&');
+  const d = ((h.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '').replace(/&amp;/g, '&');
+  return { r, ok: !!h && /"@type":"Article"/.test(types) && /"@type":"BreadcrumbList"/.test(types) && /"@type":"FAQPage"/.test(types) && t.length <= 60 && d.length <= 155 && (h.match(/<h1[\s>]/g) || []).length === 1 && faqVisible(h) && sitemap.includes('https://planexus.de' + r + '<') };
+});
+check(25, art.every((x) => x.ok), art.map((x) => `${x.r}:${x.ok}`).join(' '));
+const oldA = page('/magazin/laborcontainer-laborabzug-din-en-14175')?.html || '', newA = page('/magazin/laborabzug-pruefen')?.html || '';
+check(26, /href="\/magazin\/laborabzug-pruefen"/.test(oldA) && /href="\/magazin\/laborcontainer-laborabzug-din-en-14175"/.test(newA) && /laborabzug-pruefen/.test(page('/magazin')?.html || '') && /fume-cupboard-testing/.test(page('/en/magazine')?.html || ''));
+const bsl = ['/magazin/bsl-2-bsl-3-container-labor', '/en/magazine/bsl-2-bsl-3-container-lab'].map((r) => page(r)?.html || '');
+check(27, bsl.every((h) => /id="was-bedeutet-bsl"|id="what-does-bsl-mean"/.test(h) && /data-table="bsl-vergleich"/.test(h)));
+check(28, /id="baugenehmigung-container"/.test(page('/magazin/laborcontainer-genehmigung-baurecht-vorschriften')?.html || '') && /id="20-oder-40-fuss"/.test(page('/magazin/laborcontainer-ausstattung-checkliste')?.html || ''));
+
 let fail = 0;
 for (const r of results.sort((a, b) => a.nr - b.nr)) { if (!r.ok) fail++; console.log(`${r.ok ? 'OK  ' : 'ROT '} Satz ${r.nr}${r.detail ? ' – ' + r.detail : ''}`); }
-console.log(`\n${results.length - fail}/${results.length} grün (Sätze 11, 19, 21 werden separat belegt)`);
+console.log(`\n${results.length - fail}/${results.length} grün (Sätze 11, 19, 21, 29, 30 werden separat belegt)`);
 process.exit(fail ? 1 : 0);

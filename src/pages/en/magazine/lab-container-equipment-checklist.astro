@@ -37,6 +37,21 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "What is a poison cabinet?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A lockable cabinet for toxic hazardous substances. Under German law, acutely toxic substances of categories 1 to 3 must be kept locked or stored so that only competent and reliable persons have access (section 8(7) GefStoffV, TRGS 510 no. 4.3)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a steel poison cabinet fire-resistant?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not automatically. A safety cabinet to EN 14470-1 is fire-resistant for flammable liquids; German TRGS 510 Annex 1 sets at least 90 minutes’ fire resistance for this. If a toxic substance is also flammable, a safety cabinet with a lockable compartment is suitable." }
+        },
+        {
+          "@type": "Question",
+          "name": "Two 20 ft containers or one 40 ft container: which is better for a laboratory?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on room sequence, transport and extension. A 20 ft ISO container is 6.058 m long, a 40 ft container 12.192 m, and both are 2.438 m wide. As far as width is concerned, road transport in Germany needs no permit up to 2.55 m (section 22(2) StVO); height, length and weight also count. Two modules separate zones more easily; one long module gives a continuous laboratory." }
+        },
+        {
+          "@type": "Question",
           "name": "What basic equipment does a laboratory container need?",
           "acceptedAnswer": { "@type": "Answer", "text": "Basic equipment includes: chemically resistant workbenches, at least one fume cupboard (depending on the hazardous-substance class), a laboratory sink with hot and cold water, safety installations (emergency shower, eyewash, fire extinguisher), chemically resistant flooring (e.g. epoxy resin or vinyl), standards-compliant lighting (500 lux to DIN EN 12464-1), sufficient socket outlets and data connections, and cabinet systems for chemicals and instruments." }
         },
@@ -132,10 +147,10 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               </p>
 
               <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 my-8 not-prose">
-                <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                <h2 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                   The 7 equipment areas at a glance
-                </h4>
+                </h2>
                 <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
                   <div class="text-center p-3 bg-white rounded-lg border border-gray-100">
                     <div class="text-2xl font-bold text-[#7a9900] mb-1">1</div>
@@ -303,10 +318,10 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               </p>
 
               <div class="bg-red-50 border border-red-200 rounded-xl p-6 my-8 not-prose">
-                <h4 class="font-bold text-red-900 mb-3 flex items-center gap-2">
+                <h3 class="font-bold text-red-900 mb-3 flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
                   Safety installations in the lab container
-                </h4>
+                </h3>
                 <ul class="space-y-2 text-sm text-red-900">
                   <li class="flex items-start gap-2"><span class="text-red-600 font-bold mt-0.5">•</span> Body shower at the exit, at least 30 l/min (TRGS 526 No. 6.6.1), EN 15154-1</li>
                   <li class="flex items-start gap-2"><span class="text-red-600 font-bold mt-0.5">•</span> Eye shower reachable without delay from every workstation, at least 6 l/min per outlet (TRGS 526 No. 6.6.2), EN 15154-2</li>
@@ -323,10 +338,10 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                 Storage of hazardous substances in the laboratory container requires standards-compliant safety cabinets. The most important types:
               </p>
               <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-6">
-                <li><strong>F90 safety cabinet (DIN EN 14470-1):</strong> 90 minutes’ fire resistance for flammable liquids. Mandatory from 20 litres in the laboratory.</li>
+                <li><strong>F90 safety cabinet (DIN EN 14470-1):</strong> at least 90 minutes’ fire resistance for flammable liquids. German TRGS 510 recommends storing flammable liquids outside stores in such cabinets (no. 4.2(12)).</li>
                 <li><strong>Compressed-gas cylinder cabinet (DIN EN 14470-2):</strong> G30 or G90 execution for gas cylinders that must be stored in the building/container.</li>
                 <li><strong>Acid–alkali cabinet (PP):</strong> polypropylene body, acid-resistant, with drip tray and extract spigot.</li>
-                <li><strong>Poison cabinet:</strong> lockable, with drip tray, for substances under ChemVerbotsV.</li>
+                <li><strong>Poison cabinet:</strong> lockable, with drip tray, for acutely toxic substances that must be kept locked away (section 8(7) GefStoffV, TRGS 510 no. 4.3).</li>
               </ul>
 
               <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Personal protective equipment (PPE)</h3>
@@ -334,6 +349,14 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                 Storage space for PPE must be planned into the container: laboratory coats, safety spectacles, gloves (various chemical classes), hearing protection (for noisy instruments such as ultrasonic baths) and, where required, respiratory protection. A small cloakroom cabinet or a wall-hook system next to the entrance is mandatory.
               </p>
 
+              <h3 id="poison-cabinet" class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Poison cabinet or safety cabinet? The difference</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                The two cabinets protect against different things. A <strong>safety cabinet to EN 14470-1</strong> protects flammable liquids in a fire; under German TRGS 510 Annex 1 it meets the requirements with at least 90 minutes’ fire resistance, and its extract usually leads outdoors. A <strong>poison cabinet</strong> protects against unauthorised access: acutely toxic substances of categories 1 to 3 must be kept locked or stored so that only competent and reliable persons have access (section 8(7) German Hazardous Substances Ordinance); TRGS 510 (no. 4.3) adds carcinogenic and germ-cell mutagenic substances of categories 1A and 1B.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                A lockable steel poison cabinet is therefore not automatically a fire-protection cabinet. If a toxic substance is also flammable, a safety cabinet with a lockable compartment is suitable. In a container, floor space, weight and the extract route through the wall also count. Gas cylinders in workrooms go into safety cabinets to EN 14470-2 (TRGS 510 no. 4.2(6)).
+              </p>
+              <p class="text-xs text-gray-600 leading-relaxed mb-8">Sources: GefStoffV section 8(7); TRGS 510 “Storage of hazardous substances in non-stationary containers”, nos. 4.2(6) and (12), 4.3(1), Annex 1 no. A1.2. German rules.</p>
               <!-- KAPITEL 4: BÖDEN & WÄNDE -->
               <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="boeden-waende">
                 <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">4</span>
@@ -534,6 +557,18 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
                 For particularly complex requirements we rely on <strong>multi-container solutions</strong>: two or more containers are joined side-on or end-on so that separate zones (e.g. laboratory + airlock + store) are created. That is particularly relevant for <a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-[#5c7300] font-medium hover:underline">BSL laboratories</a> and <a href="/en/magazine/gmp-cleanroom-container-pharma-production" class="text-[#5c7300] font-medium hover:underline">GMP cleanrooms</a>.
               </p>
 
+              <h3 id="20-oder-40-fuss" class="text-xl font-heading font-bold text-slate-900 mt-10 mb-4">Two 20 ft containers or one 40 ft container?</h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                There is no blanket answer. Under ISO 668 a 20 ft container is 6.058 m long externally, a 40 ft container 12.192 m, and both are 2.438 m wide. Laboratory modules are often built to other sizes; the Planexus <a href="/en/lab-containers/labtogo" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">LABtoGO</a>, for example, measures 9,500 × 3,000 mm. These points decide:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-6">
+                <li><strong>Room sequence:</strong> two modules easily give separate zones, such as anteroom or store plus laboratory. One long module gives a continuous laboratory without a joint between modules.</li>
+                <li><strong>Transport:</strong> on German roads vehicle and load may be at most 2.55 m wide and 4 m high together (section 22(2) StVO). Wider modules need a permit under section 29(3) StVO. Length, access and crane standing area determine which module suits the site.</li>
+                <li><strong>Extension and relocation:</strong> smaller modules can be moved individually or added later.</li>
+                <li><strong>Building services:</strong> one module needs one ventilation and media plant; two modules may need two or a shared one.</li>
+                <li><strong>Building law:</strong> the permit-free sizes of the German building codes rarely apply to laboratories. More in <a href="/en/magazine/lab-container-permits-building-law" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">permits and building law</a>.</li>
+              </ul>
+              <p class="text-xs text-gray-600 leading-relaxed mb-8">Sources: ISO 668 (external dimensions, as given by DGUV/IFA); German Road Traffic Regulations (StVO) section 22(2) and section 29(3).</p>
               <!-- KAPITEL 10: DACH-BESONDERHEITEN -->
               <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6 flex items-center gap-3" id="dach">
                 <span class="bg-primary text-slate-900 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">10</span>
@@ -558,7 +593,7 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               </h2>
 
               <div class="bg-slate-900 text-white rounded-xl p-8 my-8 not-prose">
-                <h4 class="font-bold text-primary text-lg mb-4">Project profile</h4>
+                <h3 class="font-bold text-primary text-lg mb-4">Project profile</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
                   <div>
                     <div class="text-gray-400 mb-1">Container type</div>
@@ -622,10 +657,10 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               </p>
 
               <div class="bg-slate-50 border border-gray-200 rounded-xl p-6 my-8 not-prose">
-                <h4 class="font-bold text-slate-900 mb-4 text-lg">Planning checklist: laboratory-container equipment</h4>
+                <h3 class="font-bold text-slate-900 mb-4 text-lg">Planning checklist: laboratory-container equipment</h3>
                 <div class="space-y-6">
                   <div>
-                    <h5 class="font-bold text-[#5c7300] mb-2 text-sm uppercase tracking-wide">Laboratory furniture</h5>
+                    <h4 class="font-bold text-[#5c7300] mb-2 text-sm uppercase tracking-wide">Laboratory furniture</h4>
                     <div class="space-y-2 text-sm text-gray-700">
                       <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Workbenches: number, length and worktop material defined</span></label>
                       <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-0.5 accent-[#bbd700]" /><span>Fume cupboards: number, type and dimensions determined</span></label>
@@ -748,6 +783,27 @@ import RelatedArticles from '../../../components/RelatedArticles.astro';
               <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6" id="faq">Frequently asked questions (FAQ)</h2>
 
               <div class="space-y-4 my-8 not-prose">
+                <details class="bg-white border border-gray-200 rounded-lg group">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                    What is a poison cabinet?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-primary group-open:rotate-180 transition-transform" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">A lockable cabinet for toxic hazardous substances. Under German law, acutely toxic substances of categories 1 to 3 must be kept locked or stored so that only competent and reliable persons have access (section 8(7) GefStoffV, TRGS 510 no. 4.3).</div>
+                </details>
+                <details class="bg-white border border-gray-200 rounded-lg group">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                    Is a steel poison cabinet fire-resistant?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-primary group-open:rotate-180 transition-transform" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">Not automatically. A safety cabinet to EN 14470-1 is fire-resistant for flammable liquids; German TRGS 510 Annex 1 sets at least 90 minutes’ fire resistance for this. If a toxic substance is also flammable, a safety cabinet with a lockable compartment is suitable.</div>
+                </details>
+                <details class="bg-white border border-gray-200 rounded-lg group">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                    Two 20 ft containers or one 40 ft container: which is better for a laboratory?
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-primary group-open:rotate-180 transition-transform" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">It depends on room sequence, transport and extension. A 20 ft ISO container is 6.058 m long, a 40 ft container 12.192 m, and both are 2.438 m wide. As far as width is concerned, road transport in Germany needs no permit up to 2.55 m (section 22(2) StVO); height, length and weight also count. Two modules separate zones more easily; one long module gives a continuous laboratory.</div>
+                </details>
                 <details class="bg-white border border-gray-200 rounded-lg group">
                   <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
                     What basic equipment does a laboratory container need?

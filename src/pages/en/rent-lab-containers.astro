@@ -69,6 +69,22 @@ const faqs = [
   {
     q: "Is hire-purchase available for a lab container?",
     a: "Yes. Hire-purchase is the economically sensible intermediate solution between around 24 and 48 months of use. Part of the hire payments is credited against a later residual purchase price — so a bridging solution can be converted into permanent equipment without a double investment."
+  },
+  {
+    q: "Do I need building permission for a hired lab container?",
+    a: "In almost all cases, yes. A sited lab container is a structure under building law even if it rests on the ground under its own weight (section 2(1) German Model Building Code). A time-limited permit is the usual route (section 72(3) MBO). The building code of the federal state applies."
+  },
+  {
+    q: "Does a short hire period make a lab container permit-free?",
+    a: "No, not because of the time limit alone. The Model Building Code lists site facilities, scaffolding, toilet trailers, temporary structures for defence, civil protection or accident relief, trade-fair installations for up to three months and market stalls as permit-free temporary installations (section 61(1) no. 13). A hired laboratory is not among them."
+  },
+  {
+    q: "How is a hire agreement shown in the accounts?",
+    a: "With a straight hire the payments are an ongoing expense and the container remains the lessor’s property. With hire purchase the economic ownership can sit with the hirer from the start (section 246(1) HGB, section 39 AO). IFRS reporters usually show hires over twelve months as a right-of-use asset. Clarify the details with your tax adviser."
+  },
+  {
+    q: "What do I need to provide on site?",
+    a: "A level, load-bearing area with a designed foundation, access and a standing area for the mobile crane, a 400 V supply, water and drainage, plus the building permit and, depending on the laboratory, notifications under biological-agents or GMO law."
   }
 ];
 
@@ -214,7 +230,7 @@ const faqSchema = {
           </div>
           <div class="bg-white rounded-xl p-6 border border-slate-200">
             <h3 class="font-bold text-slate-900 mb-2">BSL-2 &amp; BSL-3</h3>
-            <p class="text-slate-600 text-sm"><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Containment laboratories with negative-pressure cascades</a>, redundant HEPA filtration, airlock and autoclave. Conformant with BioStoffV, GenTG, TRBA 100.</p>
+            <p class="text-slate-600 text-sm"><a href="/en/magazine/bsl-2-bsl-3-container-lab" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">Containment laboratories with negative-pressure cascades</a>, redundant HEPA filtration, airlock and autoclave. Designed to BioStoffV, GenTG and TRBA 100.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-slate-200">
             <h3 class="font-bold text-slate-900 mb-2">GMP cleanroom</h3>
@@ -264,6 +280,59 @@ const faqSchema = {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMIT -->
+  <section class="py-16 bg-white" id="permit">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Do I need building permission for a hired lab container?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">In almost all cases, yes. A sited lab container is a structure under building law even if it rests on the ground under its own weight alone (section 2(1) of the German Model Building Code, MBO). Because people enter it and work inside, it counts as a building (section 2(2)).</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">A limited hire period does not make it permit-free on its own. Section 61(1) no. 13 MBO lists the temporary installations that need no procedure: site facilities, scaffolding, toilet trailers, temporary structures for defence, civil protection or accident relief, installations on approved trade-fair grounds for no more than three months, and market stalls. A hired laboratory is not among them.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">The usual route for a hired laboratory is therefore a <strong class="text-slate-900">time-limited building permit</strong>: the authority may grant permission for a fixed period (section 72(3) MBO). The building code of the federal state applies, in Austria the building code of the Bundesland, in Switzerland cantonal law. Laboratories handling biological agents or GMOs also need the operator’s own notifications and approvals. The process is covered in <a href="/en/magazine/lab-container-permits-building-law" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">permits and building law for lab containers</a>.</p>
+        <p class="text-xs text-gray-600 mt-4">Source: German Model Building Code (Musterbauordnung, 2002 version, last amended 25 September 2020). The state building codes differ in detail.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIRE-PURCHASE-ACCOUNTS -->
+  <section class="py-16 bg-slate-50" id="hire-purchase-accounts">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Hire, hire purchase and the balance sheet</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">With a straight hire the lab container stays the property of the lessor. Hire payments are an ongoing expense. That protects liquidity and equity because no fixed asset is created.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Hire purchase works differently. Under German commercial law an asset is recognised by whoever owns it economically, not necessarily by the legal owner (section 246(1) HGB); tax law follows the same principle (section 39(2) no. 1 AO). A hire purchase with a fixed transfer of ownership therefore often puts the container on your balance sheet from the start.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">Companies reporting under IFRS usually recognise hire agreements of more than twelve months as a right-of-use asset (IFRS 16). Which route suits your accounts is a question for your tax adviser. We provide the contract data and terms you need for that.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE -->
+  <section class="py-16 bg-white" id="site">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">What to prepare on site</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">For a hired laboratory to be ready on schedule, settle these points early:</p>
+        <ul class="space-y-3 text-slate-600 text-lg">
+          <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span><span><strong class="text-slate-900">Permits:</strong> a building application for the site, time-limited if needed, plus notifications under biological-agents or GMO law.</span></li>
+          <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span><span><strong class="text-slate-900">Ground and foundation:</strong> a level, load-bearing area; the foundation is designed for the site.</span></li>
+          <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span><span><strong class="text-slate-900">Access:</strong> the container is set by mobile crane, so transport and crane need an access route and a standing area.</span></li>
+          <li class="flex gap-3"><span class="text-[#5c7300] font-bold" aria-hidden="true">→</span><span><strong class="text-slate-900">Connections:</strong> a 400 V supply, water and drainage, and further media depending on the fit-out.</span></li>
+        </ul>
+        <p class="text-lg text-slate-600 leading-relaxed mt-6 mb-0">We go through these points with you during the <a href="/en/services/consulting" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">needs assessment</a>, often from photos and a site plan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENTAL-LAB -->
+  <section class="py-16 bg-slate-50" id="rental-lab">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Rented lab space in a building or a lab container?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">Searching for a rental laboratory turns up two options. Rented lab space in a science park is available at once, but it sits at a fixed location that is usually not your site, and the fit-out and containment level are given.</p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-0">A hired lab container stands where your team works: on your own premises, next to the existing laboratory or on a hospital campus during refurbishment. Containment level, fit-out and layout follow your application. In return it needs a site and a permit. Typical interim set-ups are described in <a href="/en/magazine/temporary-lab-renovation-rental-containers" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">temporary laboratories during refurbishment</a>.</p>
       </div>
     </div>
   </section>

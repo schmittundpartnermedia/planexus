@@ -57,6 +57,7 @@ export const DE_TO_EN: Record<string, string> = {
     '/en/magazine/lab-container-tender-specifications',
   '/magazin/wenn-das-neue-labor-zu-spaet-kommt-5-planungsfehler':
     '/en/magazine/when-the-new-lab-arrives-too-late-5-planning-mistakes',
+  '/magazin/laborabzug-pruefen': '/en/magazine/fume-cupboard-testing',
   '/magazin/laborcontainer-laborabzug-din-en-14175':
     '/en/magazine/lab-container-fume-hood-din-en-14175',
   '/magazin/laborcontainer-brandschutz-feuerwiderstand':

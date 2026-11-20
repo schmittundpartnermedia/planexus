@@ -88,6 +88,49 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
               <p class="text-xl text-gray-700 leading-relaxed mb-8">
                 Die Arbeit mit gefährlichen biologischen Arbeitsstoffen erfordert höchste Sicherheitsvorkehrungen. Labore der Schutzstufen BSL-2 und BSL-3 müssen strenge bauliche und technische Anforderungen erfüllen, um Mitarbeiter und Umwelt zu schützen. Lange Zeit galt dies als Domäne aufwendiger Massivbauten. Doch moderne Containerlabore beweisen: Höchste Sicherheit ist auch in modularer Bauweise möglich.
               </p>
+              <h2 id="was-bedeutet-bsl" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">Was bedeutet BSL? Biosafety Level, Schutzstufe und S-Stufe</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                BSL steht für <strong class="text-slate-900">Biosafety Level</strong>, die international übliche Einteilung von Laboren nach der Infektionsgefährdung in vier Stufen. Der Begriff stammt aus dem Laborhandbuch der WHO und der US-Praxis. Im deutschen Recht heißt er anders, und es gibt zwei Rechtskreise mit eigenen Begriffen:
+              </p>
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse" data-table="bsl-begriffe">
+                  <thead><tr class="bg-slate-900 text-white"><th class="p-3 text-left">International</th><th class="p-3 text-left">Biostoffverordnung</th><th class="p-3 text-left">Gentechnikrecht</th><th class="p-3 text-left">Behördenweg (BioStoffV)</th></tr></thead>
+                  <tbody class="text-gray-700">
+<tr><td class="p-3 border border-gray-200 align-top">BSL-1</td><td class="p-3 border border-gray-200 align-top">Schutzstufe 1</td><td class="p-3 border border-gray-200 align-top">Sicherheitsstufe S1</td><td class="p-3 border border-gray-200 align-top">–</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">BSL-2</td><td class="p-3 border border-gray-200 align-top">Schutzstufe 2</td><td class="p-3 border border-gray-200 align-top">Sicherheitsstufe S2</td><td class="p-3 border border-gray-200 align-top">Anzeige spätestens 30 Tage vor Aufnahme (§ 16)</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">BSL-3</td><td class="p-3 border border-gray-200 align-top">Schutzstufe 3</td><td class="p-3 border border-gray-200 align-top">Sicherheitsstufe S3</td><td class="p-3 border border-gray-200 align-top">Erlaubnis vor der ersten Tätigkeit (§ 15); für Biostoffe der Risikogruppe 3 mit (**) genügt die Anzeige (§ 16)</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">BSL-4</td><td class="p-3 border border-gray-200 align-top">Schutzstufe 4</td><td class="p-3 border border-gray-200 align-top">Sicherheitsstufe S4</td><td class="p-3 border border-gray-200 align-top">Erlaubnis (§ 15)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Die Schutzstufe richtet sich nach den Tätigkeiten: Bei gezielten Tätigkeiten ist die Risikogruppe des Biostoffs maßgeblich, bei mehreren Biostoffen die höchste (§ 5 BioStoffV, Risikogruppen in § 3). Für gentechnische Arbeiten gelten die Sicherheitsstufen 1 bis 4 nach § 7 Gentechnikgesetz mit eigenem Anmelde- und Genehmigungsverfahren. Die Gleichsetzung BSL-2 = Schutzstufe 2 = S2 ist Praxis, keine Rechtsdefinition. Auch die WHO löst in der 4. Ausgabe ihres Laborhandbuchs die starre Kopplung von Risikogruppe und Laborstufe und stellt die Risikobewertung in den Vordergrund.
+              </p>
+              <p class="text-xs text-gray-600 leading-relaxed mb-8">Quellen: BioStoffV §§ 3, 5, 15, 16; GenTG § 7; WHO Laboratory Biosafety Manual, 4. Ausgabe (2020).</p>
+              <h2 id="bsl-2-vs-bsl-3" class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">BSL-2 und BSL-3: die Unterschiede Punkt für Punkt</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Schutzstufe 3 baut auf den Maßnahmen der Schutzstufe 2 auf und ergänzt sie. Die wichtigsten baulichen und technischen Unterschiede nach TRBA 100:
+              </p>
+              <div class="overflow-x-auto my-8 not-prose">
+                <table class="w-full text-sm border-collapse" data-table="bsl-vergleich">
+                  <thead><tr class="bg-slate-900 text-white"><th class="p-3 text-left">Merkmal</th><th class="p-3 text-left">Schutzstufe 2 (BSL-2)</th><th class="p-3 text-left">Schutzstufe 3 (BSL-3)</th></tr></thead>
+                  <tbody class="text-gray-700">
+<tr><td class="p-3 border border-gray-200 align-top">Zugang</td><td class="p-3 border border-gray-200 align-top">Baulich abgegrenzte Räume, Labortüren mit Sichtfenster</td><td class="p-3 border border-gray-200 align-top">Schleuse mit zwei selbstschließenden, gegeneinander verriegelten Türen mit Sichtfenster</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Luftdruck</td><td class="p-3 border border-gray-200 align-top">Keine Unterdruckpflicht</td><td class="p-3 border border-gray-200 align-top">Ständiger, kontrollierter Unterdruck mit Druckgefälle zur Schleuse, optischer und akustischer Alarm</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Abluft</td><td class="p-3 border border-gray-200 align-top">Ohne Filterpflicht</td><td class="p-3 border border-gray-200 align-top">Über Hochleistungsschwebstofffilter (HEPA) oder vergleichbar, Filterwechsel ohne Freisetzung</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Raumhülle</td><td class="p-3 border border-gray-200 align-top">Leicht zu reinigende, desinfektionsmittelbeständige Oberflächen</td><td class="p-3 border border-gray-200 align-top">Zusätzlich zum Begasen abdichtbar</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Fenster</td><td class="p-3 border border-gray-200 align-top">Während der Arbeit geschlossen</td><td class="p-3 border border-gray-200 align-top">Dicht und nicht zu öffnen</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Abfall und Abwasser</td><td class="p-3 border border-gray-200 align-top">Autoklav</td><td class="p-3 border border-gray-200 align-top">Autoklav im Schutzstufenbereich, Abwasser inaktivieren</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Energie</td><td class="p-3 border border-gray-200 align-top">–</td><td class="p-3 border border-gray-200 align-top">Notstrom für Lüftung, Überwachung und Notruf, Sicherheitsbeleuchtung</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Personendusche</td><td class="p-3 border border-gray-200 align-top">–</td><td class="p-3 border border-gray-200 align-top">Wenn die Gefährdungsbeurteilung sie verlangt</td></tr>
+<tr><td class="p-3 border border-gray-200 align-top">Behörde</td><td class="p-3 border border-gray-200 align-top">Anzeige (§ 16 BioStoffV)</td><td class="p-3 border border-gray-200 align-top">Erlaubnis (§ 15 BioStoffV)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Im Container heißt das: Die Schleuse wird als eigener Raum oder Vorschaltmodul geplant, die Druckkaskade über die Lüftung geregelt und überwacht, und alle Durchführungen für Elektrik, Medien und Lüftung werden abgedichtet ausgeführt. Welche Anforderungen schon für S1- und S2-Labore gelten, beschreibt der Beitrag <a href="/magazin/s1-s2-labor-anforderungen" class="text-[#5c7300] font-medium underline underline-offset-2 hover:no-underline">S2-Labor Anforderungen</a>.
+              </p>
+              <p class="text-xs text-gray-600 leading-relaxed mb-8">Quelle: TRBA 100 „Schutzmaßnahmen für Tätigkeiten mit biologischen Arbeitsstoffen in Laboratorien“, Anforderungen an Schutzstufe 2 und 3, zitiert nach den Checklisten der Universität Göttingen für S2- und S3-Labore; aktuelle Ausgabe der TRBA 100: November 2025 (GMBl. 2025 S. 718). BioStoffV §§ 15, 16.</p>
 
               <h2 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-6">
                 Grundlagen der biologischen Sicherheitsstufen
@@ -103,7 +146,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
                     <span class="font-bold">BSL-1</span>
                   </div>
                   <p class="font-medium mb-1">Geringes Risiko</p>
-                  <p class="text-sm opacity-80">Organismen ohne bekannte Gefährdung für gesunde Erwachsene</p>
+                  <p class="text-sm">Organismen ohne bekannte Gefährdung für gesunde Erwachsene</p>
                 </div>
                 <div class="p-5 rounded-xl border bg-yellow-100 text-yellow-700 border-yellow-200">
                   <div class="flex items-center gap-2 mb-2">
@@ -111,7 +154,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
                     <span class="font-bold">BSL-2</span>
                   </div>
                   <p class="font-medium mb-1">Moderates Risiko</p>
-                  <p class="text-sm opacity-80">Organismen mit moderatem Gefährdungspotential</p>
+                  <p class="text-sm">Organismen mit moderatem Gefährdungspotential</p>
                 </div>
                 <div class="p-5 rounded-xl border bg-orange-100 text-orange-700 border-orange-200">
                   <div class="flex items-center gap-2 mb-2">
@@ -119,7 +162,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
                     <span class="font-bold">BSL-3</span>
                   </div>
                   <p class="font-medium mb-1">Hohes Risiko</p>
-                  <p class="text-sm opacity-80">Organismen, die schwere Erkrankungen verursachen können</p>
+                  <p class="text-sm">Organismen, die schwere Erkrankungen verursachen können</p>
                 </div>
                 <div class="p-5 rounded-xl border bg-red-100 text-red-700 border-red-200">
                   <div class="flex items-center gap-2 mb-2">
@@ -127,7 +170,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
                     <span class="font-bold">BSL-4</span>
                   </div>
                   <p class="font-medium mb-1">Höchstes Risiko</p>
-                  <p class="text-sm opacity-80">Hochgefährliche Erreger ohne Therapiemöglichkeit</p>
+                  <p class="text-sm">Hochgefährliche Erreger ohne Therapiemöglichkeit</p>
                 </div>
               </div>
 
@@ -146,10 +189,10 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
               </p>
 
               <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
-                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                   BSL-2 Anforderungen
-                </h4>
+                </h3>
                 <ul class="space-y-3">
                   <li class="flex items-start gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -212,7 +255,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
                   <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                   </div>
-                  <h4 class="font-bold text-slate-900 mb-1">Zugangskontrolle</h4>
+                  <h3 class="font-bold text-slate-900 mb-1">Zugangskontrolle</h3>
                   <p class="text-gray-600 text-sm">Mehrfach gesicherte Schleusen mit Interlock-Funktion</p>
                 </div>
                 <div class="bg-slate-50 p-5 rounded-xl border border-gray-100">
@@ -242,7 +285,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
                 Die Unterdruckzone: Herzstück der Sicherheit
               </h3>
               <p class="text-gray-600 leading-relaxed mb-6">
-                Das wichtigste Sicherheitsmerkmal eines BSL-3 Labors ist die kontrollierte Unterdruckhaltung. Der Luftdruck im Laborbereich liegt etwa 30 bis 50 Pascal unter dem Umgebungsdruck. Dadurch strömt die Luft bei jeder Öffnung von außen nach innen – nie umgekehrt. Potentiell kontaminierte Luft kann somit nicht in die Umgebung gelangen.
+                Das wichtigste Sicherheitsmerkmal eines BSL-3 Labors ist die kontrollierte Unterdruckhaltung. Die TRBA 100 verlangt einen ständigen, kontrollierten Unterdruck mit Druckgefälle zur Schleuse und Alarm; die Druckstufen legt die Planung fest. Dadurch strömt die Luft bei jeder Öffnung von außen nach innen – nie umgekehrt. Potentiell kontaminierte Luft kann somit nicht in die Umgebung gelangen.
               </p>
               <p class="text-gray-600 leading-relaxed mb-6">
                 In einem Containerlabor wird diese Unterdruckzone durch eine gasdichte Kabinenkonstruktion realisiert. Alle Durchführungen – für Elektrik, Medien, Lüftung – werden mit speziellen Dichtungssystemen ausgeführt. Die Lüftungsanlage ist redundant ausgelegt und mit automatischer Notabschaltung bei Störungen versehen.
@@ -266,7 +309,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
                 Das Schleusenkonzept
               </h3>
               <p class="text-gray-600 leading-relaxed mb-6">
-                Der Zugang zum BSL-3 Bereich erfolgt über ein mehrstufiges Schleusensystem. Typischerweise besteht dies aus einer Schwarz-Weiß-Trennung mit Umkleidebereich, einer Duschpassage und einer eigentlichen Personenschleuse. Die Schleusen sind mit Interlock-Verriegelungen ausgestattet, sodass niemals beide Türen gleichzeitig geöffnet werden können.
+                Der Zugang zum BSL-3 Bereich erfolgt über ein mehrstufiges Schleusensystem. Es besteht aus einer Schwarz-Weiß-Trennung mit Umkleidebereich und der eigentlichen Personenschleuse; eine Duschpassage kommt hinzu, wenn die Gefährdungsbeurteilung sie verlangt. Die Schleusen sind mit Interlock-Verriegelungen ausgestattet, sodass niemals beide Türen gleichzeitig geöffnet werden können.
               </p>
               <p class="text-gray-600 leading-relaxed mb-6">
                 In einem kompakten Containerlabor muss dieses Schleusenkonzept clever umgesetzt werden. Durch optimierte Layouts gelingt es, alle erforderlichen Funktionen auf engem Raum unterzubringen. Je nach Anforderung können die Schleusen in einem separaten Vorschaltcontainer oder im gleichen Modul untergebracht werden.
@@ -318,7 +361,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
               </p>
 
               <div class="bg-slate-50 p-6 rounded-xl my-8 not-prose">
-                <h4 class="font-bold text-slate-900 mb-4">Unsere Smart-Lab-Lösung für BSL-3 umfasst:</h4>
+                <h3 class="font-bold text-slate-900 mb-4">Unsere Smart-Lab-Lösung für BSL-3 umfasst:</h3>
                 <ul class="space-y-3">
                   <li class="flex items-start gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -429,7 +472,7 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
               <div class="bg-slate-50 p-6 rounded-2xl border border-gray-100">
                 <h4 class="font-bold text-slate-900 mb-4">Über den Autor</h4>
                 <div class="flex items-center gap-4">
-                  <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-xl">
+                  <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-[#5c7300] font-bold text-xl">
                     PX
                   </div>
                   <div>
@@ -442,10 +485,10 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
               <div class="bg-white p-6 rounded-2xl border border-gray-100">
                 <h4 class="font-bold text-slate-900 mb-4">Artikel teilen</h4>
                 <div class="flex gap-3">
-                  <button class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-slate-900 transition-colors">
+                  <button class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-slate-900 transition-colors" aria-label="Beitrag teilen">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
                   </button>
-                  <button class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-slate-900 transition-colors">
+                  <button class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-primary hover:text-slate-900 transition-colors" aria-label="Beitrag merken">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
                   </button>
                 </div>
@@ -543,6 +586,20 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
               </summary>
               <div class="px-6 pb-6 text-gray-600 leading-relaxed">Ja. Moderne Containerlabore erfüllen exakt die gleichen Sicherheitsanforderungen wie konventionelle BSL-3 Labore. Die kontrollierte Werkstattfertigung bietet sogar Qualitätsvorteile, da alle Einbauten unter optimalen Bedingungen installiert und geprüft werden.</div>
             </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                Was bedeutet BSL?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">BSL steht für Biosafety Level, die international übliche Einteilung von Laboren nach der Infektionsgefährdung in vier Stufen. Im deutschen Recht entspricht das der Schutzstufe nach Biostoffverordnung (§ 5 BioStoffV) und, für gentechnische Arbeiten, der Sicherheitsstufe S1 bis S4 nach § 7 Gentechnikgesetz.</div>
+            </details>
+            <details class="bg-slate-50 rounded-xl border border-gray-100 overflow-hidden group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-primary transition-colors">
+                Braucht ein BSL-3-Labor immer eine Dusche?
+                <svg class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">Nein. Eine Personendusche ist nach TRBA 100 vorzusehen, wenn die Gefährdungsbeurteilung sie verlangt. Pflicht für Schutzstufe 3 ist dagegen eine Schleuse mit zwei selbstschließenden, gegeneinander verriegelten Türen.</div>
+            </details>
           </div>
         </div>
       </div>
@@ -561,6 +618,8 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
+      { "@type": "Question", "name": "Was bedeutet BSL?", "acceptedAnswer": { "@type": "Answer", "text": "BSL steht für Biosafety Level, die international übliche Einteilung von Laboren nach der Infektionsgefährdung in vier Stufen. Im deutschen Recht entspricht das der Schutzstufe nach Biostoffverordnung (§ 5 BioStoffV) und, für gentechnische Arbeiten, der Sicherheitsstufe S1 bis S4 nach § 7 Gentechnikgesetz." } },
+      { "@type": "Question", "name": "Braucht ein BSL-3-Labor immer eine Dusche?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Eine Personendusche ist nach TRBA 100 vorzusehen, wenn die Gefährdungsbeurteilung sie verlangt. Pflicht für Schutzstufe 3 ist dagegen eine Schleuse mit zwei selbstschließenden, gegeneinander verriegelten Türen." } },
       { "@type": "Question", "name": "Was ist der Unterschied zwischen BSL-2 und BSL-3 im Containerlabor?", "acceptedAnswer": { "@type": "Answer", "text": "BSL-2 Labore arbeiten mit Erregern der Risikogruppe 2 und benötigen eine Sicherheitswerkbank, Autoklaven und kontrollierte Zugänge. BSL-3 Labore erfordern zusätzlich Unterdruck, HEPA-Filterung, Schleusen und gasdichte Durchführungen. Beide Stufen sind im Containerbau umsetzbar." }},
       { "@type": "Question", "name": "Wie lange dauert die Realisierung eines BSL-Containerlabors?", "acceptedAnswer": { "@type": "Answer", "text": "Ein BSL-2 Containerlabor kann innerhalb weniger Monate realisiert werden — deutlich schneller als ein konventioneller Neubau. BSL-3 Projekte benötigen aufgrund der komplexeren Genehmigungsverfahren etwas länger, sind aber immer noch schneller als Massivbauten." }},
       { "@type": "Question", "name": "Welche Genehmigungen brauche ich für ein BSL-Containerlabor?", "acceptedAnswer": { "@type": "Answer", "text": "Für BSL-2 ist in der Regel eine Anzeige bei der zuständigen Behörde ausreichend. BSL-3 erfordert eine Erlaubnis nach Biostoffverordnung (BioStoffV). Hinzu kommen baurechtliche Genehmigungen." }},
