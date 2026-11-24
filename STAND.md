@@ -1,5 +1,11 @@
 # STAND – Planexus Website
 
+## 24.11.2026 – Fuß-Hinweis „Design by ELEVUM“
+
+Im Fuß jeder Seite steht jetzt „Design by ELEVUM“ mit Link auf https://elevum.io/ (nofollow, neues Fenster) statt „Designed by rankPilot.de“. Grund: Entscheidung Joachim 24.11.2026, alle Kundenwebsites tragen den Design-Hinweis von ELEVUM. Test auf den neuen Hinweis nachgezogen. Geprüft: astro check und Bau grün, alle 144 gebauten Seiten tragen den Link, keine mehr mit rankpilot.de/webseiten. Noch nicht live, wartet auf Joachims Ja.
+
+Skill-Protokoll: writing-plans (Plan im Chat), verification-before-completion (Bau und Prüfung grün vor dem Commit).
+
 ## 20.10.2026 – Umsetzung Skill-Audit (docs/BERICHT-skill-audit.md)
 
 Vorgaben von Joachim: Startseiten-Hero (Bild, Animation, Logo-PNG, Alt-Text) bleibt unverändert, alle Heros bleiben dunkel. Abnahme: docs/ABNAHME-skill-umsetzung.md, Nachweise: docs/PRUEFUNG-skill-umsetzung.md.
