@@ -2,13 +2,13 @@
 
 ## 24.11.2026 (2) – Schreibweise „design by ELEVUM“
 
-Joachims Vorgabe wörtlich: „design by ELEVUM design klein schreiben ohne als textlink unterstrcihen aber mit Link zu elevum“. Umgesetzt: der ganze Text „design by ELEVUM“ ist der Link auf https://elevum.io/ (nofollow, neues Fenster), ohne Unterstreichung, auch nicht beim Darüberfahren; Hover nur über die Farbe der Seite. Test auf die neue Schreibweise nachgezogen. Noch nicht live, wartet auf Joachims Ja.
+Joachims Vorgabe wörtlich: „design by ELEVUM design klein schreiben ohne als textlink unterstrcihen aber mit Link zu elevum“. Umgesetzt: der ganze Text „design by ELEVUM“ ist der Link auf https://elevum.io/ (nofollow, neues Fenster), ohne Unterstreichung, auch nicht beim Darüberfahren; Hover nur über die Farbe der Seite. Test auf die neue Schreibweise nachgezogen. Stand: live seit 24.11.2026 abends (Joachim hat den Server-Befehl ausgeführt), auf https://planexus.de/ geprüft.
 
 Skill-Protokoll: Nicht per Skill-Werkzeug geladen, nach den Regeln gearbeitet: writing-plans (Plan im Chat, kein eigenes Plan-Dokument, weil eine Zeile je Seite), test-driven-development (Test zuerst auf die neue Schreibweise, dann die Fußzeile), verification-before-completion (Bau und Tests grün vor dem Commit). Bewusst weggelassen: Browser-Sichtprüfung und Lighthouse (reine Textänderung im Fuß, Regel „keine Tests bei Textänderungen“), requesting-code-review (Kleinständerung).
 
 ## 24.11.2026 – Fuß-Hinweis „Design by ELEVUM“
 
-Im Fuß jeder Seite steht jetzt „Design by ELEVUM“ mit Link auf https://elevum.io/ (nofollow, neues Fenster) statt „Designed by rankPilot.de“. Grund: Entscheidung Joachim 24.11.2026, alle Kundenwebsites tragen den Design-Hinweis von ELEVUM. Test auf den neuen Hinweis nachgezogen. Geprüft: astro check und Bau grün, alle 144 gebauten Seiten tragen den Link, keine mehr mit rankpilot.de/webseiten. Noch nicht live, wartet auf Joachims Ja.
+Im Fuß jeder Seite steht jetzt „Design by ELEVUM“ mit Link auf https://elevum.io/ (nofollow, neues Fenster) statt „Designed by rankPilot.de“. Grund: Entscheidung Joachim 24.11.2026, alle Kundenwebsites tragen den Design-Hinweis von ELEVUM. Test auf den neuen Hinweis nachgezogen. Geprüft: astro check und Bau grün, alle 144 gebauten Seiten tragen den Link, keine mehr mit rankpilot.de/webseiten. Stand: mit dem Eintrag darüber live.
 
 Skill-Protokoll: writing-plans (Plan im Chat), verification-before-completion (Bau und Prüfung grün vor dem Commit).
 
