@@ -52,7 +52,7 @@ export const ui = {
       imprint: 'Impressum',
       privacy: 'Datenschutz',
       cookieSettings: 'Cookie-Einstellungen',
-      designedBy: 'Design by',
+      designedBy: 'design by',
     },
     cookies: {
       aria: 'Cookie-Einstellungen',
@@ -206,7 +206,7 @@ export const ui = {
       imprint: 'Imprint',
       privacy: 'Privacy',
       cookieSettings: 'Cookie settings',
-      designedBy: 'Design by',
+      designedBy: 'design by',
     },
     cookies: {
       aria: 'Cookie settings',
